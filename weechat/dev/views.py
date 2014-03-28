@@ -95,7 +95,7 @@ def roadmap(request, allversions=False):
 
 
 def stats(request, stats='weechat'):
-    """Page with statistics about source code (weechat/qweechat/scripts)."""
+    """Page with statistics about source code (git repositories)."""
     repository = ''
     sloc = ''
     sloc_lang = ''
@@ -136,6 +136,8 @@ def stats(request, stats='weechat'):
     elif stats == 'qweechat':
         repository = ('https://github.com/weechat/qweechat')
         sloc_lang = 'Python'
+    elif stats == 'weechat.org':
+        repository = ('https://github.com/weechat/weechat.org')
     return render_to_response(
         'dev/stats.html',
         {

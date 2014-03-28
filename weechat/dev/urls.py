@@ -29,7 +29,7 @@ urlpatterns = patterns(
     (r'^roadmap/$', 'weechat.dev.views.roadmap'),
     (r'^roadmap/all/$', 'weechat.dev.views.roadmap', {'allversions': True}),
     (r'^stats/$', 'weechat.dev.views.stats'),
-    (r'^stats/(?P<stats>weechat|scripts|qweechat)/$',
+    (r'^stats/(?P<stats>weechat|scripts|qweechat|weechat\.org)/$',
      'weechat.dev.views.stats'),
     (r'^info/$', 'weechat.dev.views.info'),
     (r'^info/(?P<info>[a-zA-Z0-9_]*)/$', 'weechat.dev.views.info'),
