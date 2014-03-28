@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}WeeChat :: {% trans "themes" %}{% endblock %}
+{% block css %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/themes.css" media="screen" title="Normal" />{% endblock %}
+{% block menu %}themes{% endblock %}
+
+{% block content %}
+
+<div class="navbt">
+  <ul>
+    <li><a href="/themes/" class="{% block menu2_list %}{% endblock %}">{% trans "Themes" %}</a></li>
+    <li><a href="/themes/add/" class="{% block menu2_add %}{% endblock %}">{% trans "Add theme" %}</a></li>
+    <li><a href="/themes/update/" class="{% block menu2_update %}{% endblock %}">{% trans "Update theme" %}</a></li>
+  </ul>
+</div>
+
+{% endblock content %}

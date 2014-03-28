@@ -1,0 +1,73 @@
+{% extends "plugins/plugins.html" %}
+
+{% load i18n %}{% load txt2html %}
+
+{% block menu2_pending %}selected{% endblock %}
+
+{% block content %}
+
+{{ block.super }}
+
+<div class="infobox">
+  {% trans "Following scripts are waiting for approval, possible future is:" %}
+  <ul>
+    <li>{% trans "if script is OK, it is moved to official scripts and git repository." %}</li>
+    <li>{% trans "if script does not meet all requirements, it is moved to unofficial scripts." %}</li>
+    <li>{% trans "if script is rejected, it is deleted." %}</li>
+  </ul>
+  <br />
+  <strong>{% trans "We need your help!" %}</strong>
+  <br />
+  {% trans "You can help us by testing these scripts. Please report bugs to author of script and to" %}
+  <a href="mailto:{% txt2html "flashcode@flashtux.org" %}" title="FlashCode">Sébastien Helleu</a>.
+</div>
+
+{% if plugin_list %}
+  <div class="pluginlist">
+    <table class="table">
+      <tr class="header">
+        <th class="name">{% trans "Name" %}</th>
+        <th class="desc">{% trans "Description" %}</th>
+        <th class="approval">{% trans "Approval notes" %}</th>
+        <th><abbr title="{% trans "Version" %}">V.</abbr></th>
+        <th>{% trans "Language" context "programming language" %}</th>
+        <th>{% trans "License" %}</th>
+        <th>{% trans "Min" %}</th>
+        <th>{% trans "Max" %}</th>
+        <th>{% trans "Author" %}</th>
+        <th>{% trans "Date" %}</th>
+      </tr>
+    {% for plugin in plugin_list %}
+      <tr class="{% cycle 'row1' 'row2' %}">
+        <td class="small name">
+          {% if plugin.file_exists %}
+          <a href="{{ plugin.build_url }}">{{ plugin.name }}<span class="ext">.{{ plugin.extension }}</span></a>
+          {% else %}
+          {{ plugin.name }}<span class="ext">.{{ plugin.extension }}</span>
+          {% endif %}
+        </td>
+        <td class="small">
+          {{ plugin.desc_i18n }}
+          {% if plugin.requirements %}
+            <span class="requirements"> ({% trans "requires" %}: {{ plugin.requirements }})</span>
+          {% endif %}
+        </td>
+        <td class="small">{{ plugin.approval }}</td>
+        <td class="center tiny">{{ plugin.version }}</td>
+        <td class="center tiny">{{ plugin.language_display }}</td>
+        <td class="center tiny">{{ plugin.license }}</td>
+        <td class="center tiny">{{ plugin.min_weechat }}</td>
+        <td class="center tiny">{{ plugin.max_weechat }}</td>
+        <td class="center tiny">{{ plugin.author }}</td>
+        <td class="date">{% if plugin.added %}{{ plugin.added|date:"Y-m-d" }}{% endif %}</td>
+      </tr>
+    {% endfor %}
+    </table>
+  </div>
+{% else %}
+  <div class="warningbox">
+    {% trans "No script pending approval at this time." %}
+  </div>
+{% endif %}
+
+{% endblock content %}

@@ -1,0 +1,144 @@
+{% extends "plugins/plugins.html" %}
+
+{% load i18n %}
+
+{% block menu2_list %}selected{% endblock %}
+
+{% block content %}
+
+{{ block.super }}
+
+{% if plugin_list %}
+  <div class="warningbox">
+    {% trans "<strong>Warning:</strong> these scripts are written by external contributors, therefore WeeChat developers are <strong>NOT RESPONSIBLE</strong> for problems caused by one of these scripts." %}
+    <br />
+    {% trans "You could experience problems like memory leaks, slowdowns, or even <strong>security problems</strong>. You are warned!" %}
+  </div>
+  {% ifequal api "old" %}
+    <div class="errorbox">
+      {% trans "WARNING: the old API is deprecated and these scripts runs only on WeeChat 0.2.x, which is OBSOLETE. You MUST NOT load these scripts with latest stable version of WeeChat!" %}
+    </div>
+  {% endifequal %}
+  <div class="pluginsearch">
+    <div class="filters">
+      <span class="links">
+        {% ifequal api "old" %}
+          <a href="/scripts/stable/">{% trans "Display scripts for stable API (&ge; 0.3.0)" %}</a>
+        {% else %}
+          <a href="/scripts/old/">{% trans "Display scripts for old API (&le; 0.2.6)" %}</a>
+        {% endifequal %}
+        &nbsp; | &nbsp;
+        <a href="/files/plugins.xml">{% trans "XML list" %}</a> (<a href="/files/plugins.xml.gz">gz</a>)
+      </span>
+
+      {% trans "Version:" %} <strong>{{ api }}</strong>,
+      {% if filter_name %}
+        {% trans "filter:" %} {{ filter_name }} = {{ filter_value }} (<a href="/scripts/{{ api }}/">{% trans "remove" %}</a>),
+      {% else %}
+        {% trans "no filter" %},
+      {% endif %}
+      <strong>{{ plugin_list|length }}</strong> {% trans "scripts" %}.
+    </div>
+    <div class="search">
+      {% if tags %}
+        {% trans "Search by tag:" %}
+        {% for tag in tags %}
+          <a href="/scripts/{{ api }}/tag/{{ tag.0 }}/" title="{% trans "Tag:" %} {{ tag.0 }}">{{ tag.0 }}<small>&nbsp;({{ tag.1 }})</small></a>{% if not forloop.last %}&nbsp;&middot;{% endif %}
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="pluginlist">
+    <table class="table">
+      <tr>
+        <th class="name">
+          {% ifequal sort_key "name" %}
+          <a href="/scripts/{{ api }}/">{% trans "Name" %}&nbsp;&uarr;</a>
+          {% else %}
+          <a href="/scripts/{{ api }}/sort/name/">{% trans "Name" %}</a>
+          {% endifequal %}
+          /
+          {% ifequal sort_key "language" %}
+          <a href="/scripts/{{ api }}/">{% trans "Language" context "programming language" %}&nbsp;&uarr;</a>
+          {% else %}
+          <a href="/scripts/{{ api }}/sort/language/">{% trans "Language" context "programming language" %}</a>
+          {% endifequal %}
+        </th>
+        <th class="desc">{% trans "Description" %}</th>
+        <th><abbr title="{% trans "Version" %}">V.</abbr></th>
+        <th>
+          {% ifequal sort_key "license" %}
+          <a href="/scripts/{{ api }}/">{% trans "License" %}&nbsp;&uarr;</a>
+          {% else %}
+          <a href="/scripts/{{ api }}/sort/license/">{% trans "License" %}</a>
+          {% endifequal %}
+        </th>
+        <th>
+          {% ifequal sort_key "min_weechat" %}
+          <a href="/scripts/{{ api }}/">{% trans "Min" %}&nbsp;&darr;</a>
+          {% else %}
+          <a href="/scripts/{{ api }}/sort/min_weechat/">{% trans "Min" %}</a>
+          {% endifequal %}
+        </th>
+        <th>
+          {% ifequal sort_key "max_weechat" %}
+          <a href="/scripts/{{ api }}/">{% trans "Max" %}&nbsp;&darr;</a>
+          {% else %}
+          <a href="/scripts/{{ api }}/sort/max_weechat/">{% trans "Max" %}</a>
+          {% endifequal %}
+        </th>
+        <th>
+          {% ifequal sort_key "author" %}
+          <a href="/scripts/{{ api }}/">{% trans "Author" %}&nbsp;&uarr;</a>
+          {% else %}
+          <a href="/scripts/{{ api }}/sort/author">{% trans "Author" %}</a>
+          {% endifequal %}
+        </th>
+        <th>
+          {% ifequal sort_key "added" %}
+          <a href="/scripts/{{ api }}/">{% trans "Added" %}&nbsp;&darr;</a>
+          {% else %}
+          <a href="/scripts/{{ api }}/sort/added/">{% trans "Added" %}</a>
+          {% endifequal %}
+        </th>
+        <th>
+          {% ifequal sort_key "updated" %}
+          <a href="/scripts/{{ api }}/">{% trans "Updated" %}&nbsp;&darr;</a>
+          {% else %}
+          <a href="/scripts/{{ api }}/sort/updated/">{% trans "Updated" %}</a>
+          {% endifequal %}
+        </th>
+      </tr>
+    {% for plugin in plugin_list %}
+      <tr class="{% cycle 'row1' 'row2' %}">
+        <td class="small name">
+          <div class="popular">{{ plugin.popularity_img|safe }}</div><a href="/scripts/source/{% if api == "old" %}{{ api }}/{% endif %}{{ plugin.name_with_extension }}.html/">{{ plugin.name }}<span class="ext">.{{ plugin.extension }}</span></a>
+        </td>
+        <td class="small">
+          <div class="tags">
+          [{% for tag in plugin.tagslist %}<a href="/scripts/{{ api }}/tag/{{ tag }}/" title="{% trans "Tag:" %} {{ tag }}">{{ tag }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}]
+          </div>
+          {{ plugin.desc_i18n }}
+          {% if plugin.requirements %}
+            <span class="requirements"> ({% trans "requires" %}: {{ plugin.requirements }})</span>
+          {% endif %}
+        </td>
+        <td class="center tiny">{{ plugin.version }}</td>
+        <td class="center tiny">{{ plugin.license }}</td>
+        <td class="center tiny">{{ plugin.min_weechat }}</td>
+        <td class="center tiny">{{ plugin.max_weechat }}</td>
+        <td class="center tiny"><a href="/scripts/{{ api }}/author/{{ plugin.author|iriencode }}/" title="{% trans "Author:" %} {{ plugin.author }}">{{ plugin.author }}</a></td>
+        <td class="date">{% if plugin.added %}{{ plugin.added|date:"Y-m-d" }}{% endif %}</td>
+        <td class="date">{% if plugin.updated %}{% ifnotequal plugin.added plugin.updated %}{{ plugin.updated|date:"Y-m-d" }}{% endifnotequal %}{% endif %}</td>
+      </tr>
+    {% endfor %}
+    </table>
+  </div>
+{% else %}
+  <div class="warningbox">
+    {% trans "No script found." %}
+  </div>
+{% endif %}
+
+{% endblock content %}

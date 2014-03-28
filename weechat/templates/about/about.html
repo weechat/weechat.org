@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}WeeChat :: {% trans "about" %}{% endblock %}
+{% block css %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/about.css" media="screen" title="Normal" />{% endblock %}
+{% block menu %}about{% endblock %}
+
+{% block content %}
+
+<div class="navbt">
+  <ul>
+    <li><a href="/about/features/" class="{% block menu2_features %}{% endblock %}">{% trans "Features" %}</a></li>
+    <li><a href="/about/screenshots/" class="{% block menu2_screenshots %}{% endblock %}">{% trans "Screenshots" %}</a></li>
+    <li><a href="/about/history/" class="{% block menu2_history %}{% endblock %}">{% trans "History" %}</a></li>
+    <li><a href="/about/donate/" class="{% block menu2_donate %}{% endblock %}">{% trans "Make a donation" %}</a></li>
+    <li><a href="/about/weechat.org/" class="{% block menu2_weechatorg %}{% endblock %}">WeeChat.org</a></li>
+  </ul>
+</div>
+
+{% endblock content %}

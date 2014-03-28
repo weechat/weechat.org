@@ -1,0 +1,14 @@
+{% extends "error.html" %}
+
+{% load i18n %}
+
+{% block title %}WeeChat - {% trans "Error 403: forbidden" %}{% endblock %}
+{% block error_title %}{% trans "Error 403" %}{% endblock %}
+
+{% block error_message %}
+
+{% trans "Oh no! This page is forbidden..." %}
+<br /><br />
+{%trans "You're looking where you shouldn't ? ;)" %}
+
+{% endblock error_message %}

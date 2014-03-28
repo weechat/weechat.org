@@ -1,0 +1,177 @@
+{% extends "about/about.html" %}
+
+{% load i18n %}{% load localdate %}{% load txt2html %}
+
+{% block subtitle %} :: {% trans "features" %}{% endblock %}
+{% block menu2_features %}selected{% endblock %}
+
+{% block content %}
+
+{{ block.super }}
+
+<div class="about">
+
+  <div class="img1">
+    <img src="{{ MEDIA_URL }}images/ft_os.png" class="image" alt="" />
+    <h2>{% trans "Free software, multi-platform" %}</h2>
+    <p>
+      {% trans "WeeChat is a fast, light and extensible chat client, released under the terms of the GNU General Public License version 3." %}
+      <br />{% trans "It was written from scratch, and is <strong>actively developed</strong>." %}
+    </p>
+    <p>
+      {% trans "WeeChat has a text interface and runs on many operating systems, such as:" %}
+    </p>
+    <div class="list">
+      <ul>
+        <li>Linux</li>
+        <li>FreeBSD</li>
+        <li>OpenBSD</li>
+        <li>NetBSD</li>
+        <li>Unix</li>
+        <li>GNU Hurd</li>
+        <li>Mac OS X</li>
+        <li>Windows (cygwin)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="hr"></div><hr />
+
+  <div class="img2">
+    <img src="{{ MEDIA_URL }}images/ft_plugins.png" class="image" alt="" />
+    <h2>{% trans "Light and extensible" %}</h2>
+    <p>
+      {% trans "WeeChat is designed to be light and extensible: a <strong>lightweight core</strong> with optional <strong>plugins</strong>." %}
+      <br />{% trans "Plugins and scripts can be dynamically loaded and unloaded at any time." %}
+    </p>
+    <p>
+      {% trans "Almost everything is a plugin, for example:" %}
+    </p>
+    <ul>
+      <li>{% trans "Internet Relay Chat (IRC) protocol" %}</li>
+      <li>{% trans "API for script languages" %} (python, perl, ruby, lua, tcl, guile)</li>
+      <li>{% trans "IRC proxy and remote interface" %} (relay)</li>
+      <li>{% trans "Scripts manager" %}</li>
+      <li>alias, aspell, charset, logger, ...</li>
+    </ul>
+  </div>
+
+  <div class="hr"></div><hr />
+
+  <div class="img1">
+    <img src="{{ MEDIA_URL }}images/ft_scripts.png" class="image" alt="" />
+    <h2>{% trans "The future is now!" %}</h2>
+    <p>
+      {% trans "WeeChat brings a lot of <strong>innovating features</strong>, which makes it different from other console/terminal based chat clients." %}
+    </p>
+    <p>
+      {% trans "Look by yourself (the list is not exhaustive):" %}
+    </p>
+    <div class="list">
+      <ul>
+        <li>{% trans "256 colors" %}</li>
+        <li>{% trans "Mouse support" %}</li>
+        <li>{% trans "Customizable bars" %}</li>
+        <li>{% trans "6 script languages" %}</li>
+        <li>{% trans "Horizontal/vertical split" %}</li>
+        <li>{% trans "Dynamic filtering of lines" %}</li>
+        <li>{% trans "Incremental text search" %}</li>
+        <li>{% trans "FIFO pipe" %}</li>
+        <li>{% trans "Spell checking" %}</li>
+        <li>{% trans "Scripts manager" %}</li>
+        <li>{% trans "Remote interfaces" %}</li>
+        <li>{% trans "Upgrade without quitting" %}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="hr"></div><hr />
+
+  <div class="img2">
+    <img src="{{ MEDIA_URL }}images/ft_irc.png" class="image" alt="" />
+    <h2>{% trans "Full-featured IRC plugin" %}</h2>
+    <p>
+      {% trans "IRC plugin implements the protocol as described in the RFCs 1459 and 2812." %}
+    </p>
+    <p>
+      {% trans "It comes with many <strong>built-in features</strong>, such as:" %}
+    </p>
+    <div class="list">
+      <ul>
+        <li>{% trans "Multi-servers" %}</li>
+        <li>{% trans "IPv6, SSL, proxy" %}</li>
+        <li>{% trans "SASL authentication" %}</li>
+        <li>{% trans "Nicklist" %}</li>
+        <li>{% trans "Color for nicks" %}</li>
+        <li>{% trans "Color for away nicks" %}</li>
+        <li>{% trans "Smart filter" %}</li>
+        <li>{% trans "Anti-flood" %}</li>
+        <li>{% trans "Commands redirection" %}</li>
+        <li>{% trans "Custom CTCP replies" %}</li>
+        <li>{% trans "Lag indicator" %}</li>
+        <li>{% trans "DCC (file/chat)" %}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="hr"></div><hr />
+
+  <div class="img1">
+    <img src="{{ MEDIA_URL }}images/ft_android.png" class="image" alt="" />
+    <h2>{% trans "Remote interfaces" %}</h2>
+    <p>
+      {% trans "External interfaces (graphical or text) can connect to a running WeeChat." %}
+    </p>
+    <p>
+      {% trans "Here is a list of available interfaces:" %}
+    </p>
+    <div>
+      <ul>
+        <li>
+          <a href="/download/devel/" target="_blank">QWeeChat <img src="{{ MEDIA_URL }}images/link.png" alt="" /></a>
+          &mdash; {% trans "Qt interface" %}
+        </li>
+        <li>
+          <a href="https://github.com/ubergeek42/weechat-android" target="_blank">weechat-android <img src="{{ MEDIA_URL }}images/link.png" alt="" /></a>
+          &mdash; Android
+        </li>
+        <li>
+          <a href="https://github.com/the-kenny/weechat.el" target="_blank">weechat.el <img src="{{ MEDIA_URL }}images/link.png" alt="" /></a>
+          &mdash; Emacs
+        </li>
+        <li>
+          <a href="http://cormier.github.io/glowing-bear/" target="_blank">glowing-bear <img src="{{ MEDIA_URL }}images/link.png" alt="" /></a>
+          &mdash; HTML5
+        </li>
+        <li>
+          <a href="https://github.com/eirikb/weecloud" target="_blank">weecloud <img src="{{ MEDIA_URL }}images/link.png" alt="" /></a>
+          &mdash; JavaScript
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="hr"></div><hr />
+
+  <div class="img2">
+    <img src="{{ MEDIA_URL }}images/ft_doc.png" class="image" alt="" />
+    <h2>{% trans "Documentation and support" %}</h2>
+    <p>
+      {% blocktrans %}WeeChat is translated into several languages and has a <a href="/doc/">comprehensive documentation</a>, also translated.{% endblocktrans %}
+    </p>
+    <ul>
+      <li>{% trans "You are new to WeeChat? Read the <strong>quickstart</strong> and <strong>user's</strong> guide." %}</li>
+      <li>{% trans "Got a trivial question? The <strong>FAQ</strong> is waiting for you!" %}</li>
+      <li>{% trans "You want to write a script for WeeChat? Look at <strong>scripting</strong> guide and <strong>plugin API</strong> reference." %}</li>
+      <li>{% trans "Your native tongue is C? Then take a look at the <strong>developer's</strong> guide and contribute!" %}</li>
+    </ul>
+    <p>
+      {% blocktrans %}There is an <a href="/dev/support/"><strong>excellent support</strong></a> for users. Try it if you have any questions!{% endblocktrans %}
+    </p>
+  </div>
+
+  <div class="hr"></div>
+
+</div>
+
+{% endblock content %}

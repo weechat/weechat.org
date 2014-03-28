@@ -1,0 +1,73 @@
+{% extends "about/about.html" %}
+
+{% load i18n %}
+
+{% block subtitle %} :: {% trans "donate" %}{% endblock %}
+{% block menu2_donate %}selected{% endblock %}
+
+{% block content %}
+
+{{ block.super }}
+
+<div class="sponsors">
+
+  <div class="why">
+    <h4>{% trans "Why your donation matters?" %}</h4>
+    <p>
+      {% trans "WeeChat is written by a small group of <strong>volunteers</strong>. Any contribution will show us that the project is appreciated and keep us motivated." %}
+    </p>
+    <h4>{% trans "How is your money used?" %}</h4>
+    <p>
+      {% trans "It is used to pay the <strong>dedicated server</strong>, used for developments, build of packages and hosting of weechat.org." %}
+    </p>
+  </div>
+
+  <p>
+    {% trans "Click on the Paypal icon below this text and follow instructions." %}
+  </p>
+  <p>
+    {% trans "You can leave name and comment, they will be displayed on this page." %}
+    {% trans "Please note that there is <strong>no advertising</strong> on weechat.org, therefore URLs are not displayed." %}
+  </p>
+
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+    <p>
+      <input type="image" src="{{ MEDIA_URL }}images/paypal.png" width="100" height="35" alt="Donate" name="submit" />
+      <input type="hidden" name="cmd" value="_s-xclick" />
+      <input type="hidden" name="hosted_button_id" value="4LSMSNLUAJWNS">
+    </p>
+  </form>
+
+  {% if sponsor_list %}
+  <h3>{% trans "They support WeeChat:" %}</h3>
+  <table class="table">
+    <tr>
+      <th class="date">{% trans "Date" %}</th>
+      {% if viewamount %}<th class="amount">{% trans "Amount" %}</th>{% endif %}
+      <th class="name">{% trans "Name" %}</th>
+      <th class="number">{% trans "Donation number" %}</th>
+      <th class="comment">{% trans "Comment" %}</th>
+    </tr>
+  {% for sponsor in sponsor_list %}
+    <tr class="{% cycle 'row1' 'row2' %}">
+      <td class="date">{{ sponsor.date_l10n }}</td>
+      {% if viewamount %}<td class="amount"><strong>{{ sponsor.amount|floatformat:"-2" }}</strong> {{ sponsor.currency }}</td>{% endif %}
+      <td class="name">{{ sponsor.name }}</td>
+      <td class="number">{% if sponsor.number > 1 %}#{{ sponsor.number }}{% endif %}</td>
+      <td class="comment">{% if sponsor.comment %}<span class="text">&ldquo; {{ sponsor.comment }} &rdquo;</span>{% endif %}</td>
+    </tr>
+  {% endfor %}
+  {% if viewamount %}
+    <tr class="rowtotal">
+      <td></td>
+      <td class="amount">&asymp; <strong>{{ total }}</strong> €</td>
+      <td class="name"><strong>({% trans "total" %})</td>
+      <td></td>
+    </tr>
+  {% endif %}
+  </table>
+  {% endif %}
+
+</div>
+
+{% endblock content %}

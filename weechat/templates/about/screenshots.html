@@ -1,0 +1,40 @@
+{% extends "about/about.html" %}
+
+{% load i18n %}
+
+{% block subtitle %} :: {% trans "screenshots" %}{% endblock %}
+{% block menu2_screenshots %}selected{% endblock %}
+
+{% block content %}
+
+{{ block.super }}
+
+<div class="about">
+
+{% if screenshots %}
+  <div class="screenshots">
+    {% for screenshot in screenshots %}
+      <a href="/about/screenshots/{{ screenshot.filename }}/">
+        <img src="{{ MEDIA_URL }}images/{{ screenshot.directory }}/small/{{ screenshot.filename }}" alt="{{ screenshot.filename }}" title="{{ screenshot.comment }}" />
+      </a>
+    {% endfor %}
+  </div>
+{% else %}
+  {% if screenshot %}
+    <div class="screenshot">
+      <h3>{{ screenshot.comment }}</h3>
+      <a href="/about/screenshots/">
+        <img src="{{ MEDIA_URL }}images/{{ screenshot.directory }}/medium/{{ screenshot.filename }}" alt="{{ screenshot.filename }}" title="{{ screenshot.comment }}" />
+      </a>
+      <br />{{ screenshot.filename }}
+    </div>
+  {% else %}
+    <div class="errorbox">
+      {% if filename %}{% trans "Screenshot not found:" %} {{ filename }}{% else %}{% trans "No screenshot." %}{% endif %}
+    </div>
+  {% endif %}
+{% endif %}
+
+</div>
+
+{% endblock content %}

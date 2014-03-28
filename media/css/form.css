@@ -1,0 +1,71 @@
+.form form {
+  color: #999;
+}
+
+.form label {
+  display: inline-block;
+  width: 40%;
+  color: #999;
+  text-align: right;
+}
+
+.form .required label {
+  color: #000;
+}
+
+.form input, textarea, select {
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #eaeaea;
+  border-right: 1px solid #eaeaea;
+  margin: 0 1em;
+  background: #fbfbfb;
+  color: #555;
+}
+
+.form input:focus, textarea:focus, select:focus {
+  border-top: 1px solid #bbb;
+  border-left: 1px solid #bbb;
+  border-bottom: 1px solid #dadada;
+  border-right: 1px solid #dadada;
+  outline: none;
+  background: #eaeaff;
+}
+
+.form .submit {
+  margin-top: 2em;
+  text-align: center;
+}
+
+.form .submit input {
+  padding: .5em 2em;
+  border: 1px solid #cacaca;
+  border-radius: 8px;
+  box-shadow: 1px 1px 3px #cacaca;
+  margin: 0 1em 1em 0;
+  background: #eee;
+  background: -moz-linear-gradient(rgba(252, 252, 252, .9), rgba(238, 238, 238, .9));
+  background: -webkit-linear-gradient(rgba(252, 252, 252, .9), rgba(238, 238, 238, .9));
+  background: linear-gradient(rgba(252, 252, 252, .9), rgba(238, 238, 238, .9));
+  font-size: 1.2em;
+  font-weight: bold;
+  text-shadow: 1px 1px #fafafa;
+  -webkit-transition-property: background-color;
+  -webkit-transition-duration: .5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-property: background-color;
+  transition-duration: .5s;
+  transition-timing-function: ease-out;
+}
+
+.form .submit input:hover {
+  background-color: #aeaeae;
+}
+
+.form .errorlist {
+    padding-left: 3em;
+    margin: 0 0 0 40%;
+    color: #a00;
+    font-weight: bold;
+    list-style-image: url("../images/arrow_down_red.png");
+}

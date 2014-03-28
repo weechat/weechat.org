@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block css %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/home.css" media="screen" title="Normal" />{% endblock %}
+{% block menu %}home{% endblock %}
+
+{% block content %}
+
+<table class="table-2col">
+  <tr>
+
+    {% if max_info or max_event %}
+    <td class="home-bloc col1">
+
+      <h2>{% trans "About WeeChat" %}</h2>
+
+      <p>
+        {% trans "WeeChat is a fast, light and extensible chat client." %}
+        {% trans "It runs on many platforms like Linux, Unix, BSD, GNU Hurd, Mac OS&nbsp;X and Windows (cygwin)." %}
+      </p>
+
+      {% trans "WeeChat is:" %}
+      <ul class="list">
+        <li>{% trans "<strong>modular</strong>: a lightweight core with optional plugins" %}</li>
+        <li>{% trans "<strong>multi-protocols architecture</strong> (mainly IRC)" %}</li>
+        <li>{% trans "<strong>extensible</strong> with C, Python, Perl, Ruby, Lua, Tcl and Scheme" %}</li>
+        <li>{% trans "<strong>fully documented</strong> and translated into several languages" %}</li>
+        <li>{% trans "<strong>a free software</strong> released under GPLv3 license" %}</li>
+        <li>{% trans "<strong>an active project</strong> with a large community for scripts" %}.</li>
+      </ul>
+
+      <p>
+        {% trans "Latest stable version of WeeChat is" %} <span class="stable">{{ release_stable.description }}</span>,
+        {% trans "released on" %} <span class="dateversion">{{ release_stable.date_l10n }}</span>.
+      </p>
+
+      <div class="button">
+        <a href="/features/">{% trans "Features" %}&nbsp;&rsaquo;&rsaquo; </a>
+        <a href="/download/" class="download">{% trans "Download" %}&nbsp;&rsaquo;&rsaquo; </a>
+      </div>
+
+      <h2>{% trans "Get involved!" %}</h2>
+
+      {% trans "You can help the WeeChat project in many ways:" %}
+      <ul class="list">
+        <li>{% trans "<strong>translation</strong>: software, documentation and this web site" %}</li>
+        <li>{% trans "<strong>code</strong>: tests, bug reports, ideas for new features and patches" %}</li>
+        <li>{% trans "<strong>donation</strong>: any contribution is appreciated and important for motivation" %}.</li>
+      </ul>
+
+      <div class="button">
+        <a href="/about/donate/" class="donation">{% trans "Make a donation" %}&nbsp;&rsaquo;&rsaquo; </a>
+      </div>
+
+    </td>
+    <td class="home-bloc col2">&nbsp;</td>
+    {% endif %}
+
+    <td class="home-bloc{% if max_info or max_event %} col3{% endif %}">
+
+      {% if max_info %}
+        <h2>{% if max_info %}<a href="/news/" class="more">{% trans "More" %} &rsaquo;&rsaquo;</a>{% endif %}{% trans "Latest news" %}</h2>
+        <div class="news">
+          <table>
+            {% for info in info_list %}
+            <tr>
+              <th>{{ info.date_l10n }}</th>
+              <td><a href="/news/{{ info.id }}/{{ info.date_title_url }}/">{{ info.title_i18n }}</a></td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+      {% else %}
+        {% for info in info_list %}
+          <h2><a href="/news/{{ info.id }}/{{ info.date_title_url }}/">{{ info.title_i18n }}</a> <span class="date">({{ info.date_l10n }})</span></h2>
+          {% if info.text %}{% autoescape off %}{{ info.text_i18n|linebreaks }}{% endautoescape %}{% endif %}
+          <br />
+        {% endfor %}
+      {% endif %}
+
+      {% if max_event %}
+      <h2>{% if max_event %}<a href="/events/" class="more">{% trans "More" %} &rsaquo;&rsaquo;</a>{% endif %}{% trans "Upcoming events" %}</h2>
+      <div class="news">
+        <table>
+          {% for event in event_list %}
+          <tr>
+            <th>{{ event.date_l10n }}</th>
+            <td><a href="/events/{{ event.id }}/{{ event.date_title_url }}/">{{ event.title_i18n }}</a></td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+      {% else %}
+        {% for event in event_list %}
+          <h2><a href="/events/{{ event.id }}/{{ event.date_title_url }}/">{{ event.title_i18n }}</a> <span class="date">({{ event.date_l10n }})</span></h2>
+          {% if event.text %}{% autoescape off %}{{ event.text_i18n|linebreaks }}{% endautoescape %}{% endif %}
+          <br />
+        {% endfor %}
+      {% endif %}
+      {% if not max_info and not max_event %}
+      <br />
+      <div class="button">
+        <a href="/" class="big" title="Back to home">&lsaquo;&lsaquo;&nbsp;{% trans "Back to home" %}</a>
+      </div>
+      {% endif %}
+
+    </td>
+
+  </tr>
+</table>
+
+{% endblock content %}

@@ -1,0 +1,67 @@
+= WeeChat.org
+:author: Sébastien Helleu
+:email: flashcode@flashtux.org
+:lang: en
+
+
+WeeChat.org is the web site for WeeChat, the extensible chat client.
+
+Homepage: http://weechat.org/
+
+
+== Install
+
+=== Dependencies
+
+Following packages are *required*:
+
+* python >= 2.6
+* python-django >= 1.4
+* python-pygments
+* a database supported by Django, for example SQLite, PostgreSQL or MySQL.
+
+=== Deploy
+
+Run the install script and follow instructions:
+
+----
+$ ./bin/install.sh
+----
+
+Run Django server:
+
+----
+$ ./manage.py runserver
+----
+
+And just point your browser on <http://127.0.0.1:8000/>, that's all!
+
+== Authors
+
+* Design/code:
+** Sébastien Helleu (FlashCode)
+* Translators:
+** Alexandre Bolelli
+** Krzysztof Korościk (soltys)
+** Marco Paolone
+** Nils Görs (nils_2)
+** Ryuunosuke Ayanokouzi
+
+== Copyright
+
+Copyright (C) 2003-2014 Sébastien Helleu <flashcode@flashtux.org>
+
+This file is part of WeeChat.org.
+
+WeeChat.org is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 3 of the License, or
+(at your option) any later version.
+
+WeeChat.org is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.

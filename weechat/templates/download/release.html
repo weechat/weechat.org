@@ -1,0 +1,35 @@
+{% extends "download/download.html" %}
+
+{% load i18n %}{% load localdate %}
+
+{% block extrahead %}{% if release_progress.done >= 0 %}<meta http-equiv="refresh" content="30" />{% endif %}{% endblock %}
+{% block menu2_release %}selected{% endblock %}
+
+{% block content %}
+
+{{ block.super }}
+
+{% if release_progress.done >= 0 %}
+<h2>WeeChat: {{ release_progress.version }}</h2>
+{% endif %}
+
+{% if release_progress.done >= 0 %}
+  <div class="release">
+    <div class="bar">
+      <div class="pct">{{ release_progress.pct }}%{% if release_progress.pct == 100 %} &mdash; {% trans "YEAH! You can download and install it!" %}{% endif %}</div>
+      <div class="done" style="width: {{ release_progress.pct }}%">&nbsp;</div>
+      &nbsp;
+    </div>
+    <ul>
+    {% for todo in release_progress.todo %}
+      <!--{{ forloop.counter }}--><li class="{% if forloop.counter <= release_progress.done %}done{% else %}{% if forloop.counter0 == release_progress.done %}progress{% endif %}{% endif %}"><em>&nbsp;</em>{{ forloop.counter }}. {{ todo.description }}</li>
+    {% endfor %}
+    </ul>
+  </div>
+{% else %}
+  <h3>{% trans "No release in progress." %}</h3>
+  {% trans "We are working hard on the next version:" %}
+  <strong>{{ release_progress.version }}</strong> (&asymp; {{ release_progress.date|localdate }}).
+{% endif %}
+
+{% endblock content %}

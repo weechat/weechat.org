@@ -1,0 +1,95 @@
+{% extends "download/download.html" %}
+
+{% load i18n %}{% load localdate %}
+
+{% block subtitle %} :: debian{% endblock %}
+{% block menu2_debian %}selected{% endblock %}
+
+{% block content %}
+
+{{ block.super }}
+
+<div class="warningbox">
+  {% trans "<strong>Warning:</strong> these Debian packages are unofficial, not signed, and come with absolutely no guarantees." %}
+</div>
+
+{% if debpkgs %}
+
+{% regroup debpkgs by repoarch as debpkgs_by_repoarch %}
+{% for repoarch in debpkgs_by_repoarch %}
+  <div class="debian {{ repoarch.grouper }}">
+    {% regroup repoarch.list|dictsortreversed:"builddatetime" by Source as debpkgs_by_source %}
+    {% for debpkg_source in debpkgs_by_source %}
+      {% if forloop.first %}
+        <div class="repoinfo">
+          {% if debpkg_source.list.0.repo.message %}
+          <div class="message"><strong>{% trans "Important" %}:</strong> {{ debpkg_source.list.0.repo.message }}</div>
+          {% endif %}
+          <div class="sources" title="Line to add in /etc/apt/sources.list">
+            deb http://{{ debpkg_source.list.0.repo.domain }} {{ debpkg_source.list.0.repo.version.codename }} main
+          </div>
+          <div class="builder">
+            {% trans "Builds by" %} {{ debpkg_source.list.0.repo.builder.name }}
+            <span class="nick">({{ debpkg_source.list.0.repo.builder.nick }})</span>
+          </div>
+          <div class="latestbuild">
+            {% trans "Latest build:" %}
+            <strong>
+              {{ debpkg_source.list.0.builddate|localstrdate }}<span class="time">{{ debpkg_source.list.0.buildtime }}</span>
+            </strong>
+          </div>
+        </div>
+        <div class="name{% if not debpkg_source.list.0.repo.active %} discontinued{% endif %}">
+          {{ debpkg_source.list.0.repo.name|capfirst }}
+          &ldquo;{{ debpkg_source.list.0.repo.version.codename }}&rdquo;
+          ({{ debpkg_source.list.0.repo.version.version }})
+        </div>
+        <table>
+      {% endif %}
+        {% regroup debpkg_source.list|dictsort:"arch" by arch as debpkgs_by_arch %}
+        {% for debpkg_arch in debpkgs_by_arch %}
+          <tr>
+            <td>
+              {{ debpkg_arch.list.0.Source }}
+            </td>
+            <td class="version{% if "dev" in debpkg_arch.list.0.Version %} version_dev{% endif %}">
+              {{ debpkg_arch.list.0.Version }}
+            </td>
+            <td>
+              <span title="{% trans "Architecture" %}">{{ debpkg_arch.list.0.arch }}</span>
+            </td>
+            <td>
+              <a href="/download/debian/{% if not allfiles %}files/#{{ debpkg_arch.list.0.anchor }}{% endif %}" id="{{ debpkg_arch.list.0.anchor }}">{{ debpkg_arch.list|length }} {% trans "files" %}</a>
+            </td>
+            <td class="date">
+              ({{ debpkg_arch.list.0.builddate|localstrdate }}<span class="time">{{ debpkg_arch.list.0.buildtime }})</span>
+            </td>
+          </tr>
+          {% if allfiles %}
+          <tr>
+            <td colspan="5" class="files">
+              {% for debpkg in debpkg_arch.list|dictsort:"basename" %}
+                <a href="http://{{ debpkg.repo.domain }}/{{ debpkg.Filename }}">{{ debpkg.basename }}</a>
+                <span class="size">({{ debpkg.size|filesizeformat }})</span>
+                <br />
+              {% endfor %}
+            </td>
+          </tr>
+          <tr><td colspan="4">&nbsp;</td></tr>
+          {% endif %}
+        {% endfor %}
+    {% endfor %}
+    </table>
+    <div class="end"></div>
+  </div>
+{% endfor %}
+
+{% else %}
+
+<div class="errorbox">
+  {% trans "No debian repository." %}
+</div>
+
+{% endif %}
+
+{% endblock content %}

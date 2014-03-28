@@ -1,0 +1,356 @@
+[
+  {
+    "pk": "0.4.0",
+    "model": "download.release",
+    "fields": {
+      "date": "2013-01-20",
+      "securityfix": "",
+      "description": ""
+    }
+  },
+  {
+    "pk": "1.0.0",
+    "model": "download.release",
+    "fields": {
+      "date": "2127-05-25",
+      "securityfix": "",
+      "description": ""
+    }
+  },
+  {
+    "pk": "stable",
+    "model": "download.release",
+    "fields": {
+      "date": "2013-01-20",
+      "securityfix": "",
+      "description": "0.4.0"
+    }
+  },
+  {
+    "pk": "devel",
+    "model": "download.release",
+    "fields": {
+      "date": "2127-05-25",
+      "securityfix": "",
+      "description": "1.0.0-dev"
+    }
+  },
+  {
+    "pk": "src1-gz",
+    "model": "download.type",
+    "fields": {
+      "priority": 100,
+      "directory": "src",
+      "description": "Sources (gzip)",
+      "icon": "src"
+    }
+  },
+  {
+    "pk": "src1-bz2",
+    "model": "download.type",
+    "fields": {
+      "priority": 150,
+      "directory": "src",
+      "description": "Sources (bzip2)",
+      "icon": "src"
+    }
+  },
+  {
+    "pk": "src2-gz",
+    "model": "download.type",
+    "fields": {
+      "priority": 200,
+      "directory": "src",
+      "description": "Sources (gzip)",
+      "icon": "src"
+    }
+  },
+  {
+    "pk": "src2-bzip2",
+    "model": "download.type",
+    "fields": {
+      "priority": 250,
+      "directory": "src",
+      "description": "Sources (bzip2)",
+      "icon": "src"
+    }
+  },
+  {
+    "pk": "old",
+    "model": "download.type",
+    "fields": {
+      "priority": 275,
+      "directory": "",
+      "description": "Old packages",
+      "icon": "src"
+    }
+  },
+  {
+    "pk": "debian",
+    "model": "download.type",
+    "fields": {
+      "priority": 300,
+      "directory": "debian",
+      "description": "Debian",
+      "icon": "debian"
+    }
+  },
+  {
+    "pk": "debian2",
+    "model": "download.type",
+    "fields": {
+      "priority": 310,
+      "directory": "debian",
+      "description": "Debian",
+      "icon": "debian"
+    }
+  },
+  {
+    "pk": "ubuntu",
+    "model": "download.type",
+    "fields": {
+      "priority": 400,
+      "directory": "ubuntu",
+      "description": "Ubuntu",
+      "icon": "ubuntu"
+    }
+  },
+  {
+    "pk": "ubuntu2",
+    "model": "download.type",
+    "fields": {
+      "priority": 410,
+      "directory": "ubuntu",
+      "description": "Ubuntu",
+      "icon": "ubuntu"
+    }
+  },
+  {
+    "pk": "ubuntu3",
+    "model": "download.type",
+    "fields": {
+      "priority": 420,
+      "directory": "ubuntu",
+      "description": "Ubuntu",
+      "icon": "ubuntu"
+    }
+  },
+  {
+    "pk": "windows-cygwin",
+    "model": "download.type",
+    "fields": {
+      "priority": 3000,
+      "directory": "windows/cygwin",
+      "description": "Windows / Cygwin",
+      "icon": "cygwin"
+    }
+  },
+  {
+    "pk": "scripts-gz",
+    "model": "download.type",
+    "fields": {
+      "priority": 10000,
+      "directory": "src",
+      "description": "Scripts (gzip)",
+      "icon": "src"
+    }
+  },
+  {
+    "pk": "scripts-bz2",
+    "model": "download.type",
+    "fields": {
+      "priority": 10100,
+      "directory": "src",
+      "description": "Scripts (bzip2)",
+      "icon": "src"
+    }
+  },
+  {
+    "pk": "qweechat-gz",
+    "model": "download.type",
+    "fields": {
+      "priority": 20000,
+      "directory": "src",
+      "description": "QWeeChat (gzip)",
+      "icon": "src"
+    }
+  },
+  {
+    "pk": "qweechat-bz2",
+    "model": "download.type",
+    "fields": {
+      "priority": 20100,
+      "directory": "src",
+      "description": "QWeeChat (bzip2)",
+      "icon": "src"
+    }
+  },
+  {
+    "pk": 12,
+    "model": "download.package",
+    "fields": {
+      "display_time": false,
+      "url": "https://launchpad.net/~nesthib/+archive/weechat-stable",
+      "text": "",
+      "filename": "",
+      "version": "0.4.0",
+      "directory": "",
+      "type": "ubuntu",
+      "sha1sum": ""
+    }
+  },
+  {
+    "pk": 11,
+    "model": "download.package",
+    "fields": {
+      "display_time": false,
+      "url": "",
+      "text": "",
+      "filename": "",
+      "version": "0.4.0",
+      "directory": "debian/wheezy/0.4.0/",
+      "type": "debian2",
+      "sha1sum": ""
+    }
+  },
+  {
+    "pk": 10,
+    "model": "download.package",
+    "fields": {
+      "display_time": false,
+      "url": "",
+      "text": "",
+      "filename": "",
+      "version": "0.4.0",
+      "directory": "debian/squeeze/0.4.0/",
+      "type": "debian",
+      "sha1sum": ""
+    }
+  },
+  {
+    "pk": 9,
+    "model": "download.package",
+    "fields": {
+      "display_time": false,
+      "url": "",
+      "text": "",
+      "filename": "weechat-0.4.0.tar.bz2",
+      "version": "0.4.0",
+      "directory": "",
+      "type": "src1-bz2",
+      "sha1sum": "e4b891d9d3d68196f97d226f487c4a2382d59d99"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "download.package",
+    "fields": {
+      "display_time": false,
+      "url": "",
+      "text": "",
+      "filename": "weechat-0.4.0.tar.gz",
+      "version": "0.4.0",
+      "directory": "",
+      "type": "src1-gz",
+      "sha1sum": "661a9081aa9422e63b547340fb49094fd2b5a4d5"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "download.package",
+    "fields": {
+      "display_time": true,
+      "url": "",
+      "text": "",
+      "filename": "weechat-scripts.tar.bz2",
+      "version": "devel",
+      "directory": "",
+      "type": "scripts-bz2",
+      "sha1sum": ""
+    }
+  },
+  {
+    "pk": 6,
+    "model": "download.package",
+    "fields": {
+      "display_time": true,
+      "url": "",
+      "text": "",
+      "filename": "weechat-scripts.tar.gz",
+      "version": "devel",
+      "directory": "",
+      "type": "scripts-gz",
+      "sha1sum": ""
+    }
+  },
+  {
+    "pk": 5,
+    "model": "download.package",
+    "fields": {
+      "display_time": false,
+      "url": "",
+      "text": "",
+      "filename": "",
+      "version": "devel",
+      "directory": "cygwin/",
+      "type": "windows-cygwin",
+      "sha1sum": ""
+    }
+  },
+  {
+    "pk": 4,
+    "model": "download.package",
+    "fields": {
+      "display_time": false,
+      "url": "http://debian.weechat.org/",
+      "text": "",
+      "filename": "",
+      "version": "devel",
+      "directory": "",
+      "type": "debian",
+      "sha1sum": ""
+    }
+  },
+  {
+    "pk": 3,
+    "model": "download.package",
+    "fields": {
+      "display_time": false,
+      "url": "",
+      "text": "",
+      "filename": "",
+      "version": "devel",
+      "directory": "src/devel/",
+      "type": "old",
+      "sha1sum": ""
+    }
+  },
+  {
+    "pk": 2,
+    "model": "download.package",
+    "fields": {
+      "display_time": true,
+      "url": "",
+      "text": "",
+      "filename": "weechat-devel.tar.bz2",
+      "version": "devel",
+      "directory": "",
+      "type": "src1-bz2",
+      "sha1sum": ""
+    }
+  },
+  {
+    "pk": 1,
+    "model": "download.package",
+    "fields": {
+      "display_time": true,
+      "url": "",
+      "text": "",
+      "filename": "weechat-devel.tar.gz",
+      "version": "devel",
+      "directory": "",
+      "type": "src1-gz",
+      "sha1sum": ""
+    }
+  }
+]

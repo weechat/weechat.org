@@ -1,0 +1,21 @@
+{% extends "themes/themes.html" %}
+
+{% load i18n %}
+
+{% block menu2_add %}selected{% endblock %}
+
+{% block content %}
+
+{{ block.super }}
+
+<div class="infobox">
+  {% trans "Your theme was submitted for review, it usually takes 24 or 48 hours (several weeks if many themes are pending)." %}
+  <br /><br />
+  {% trans "You'll be informed if there is a problem with your theme." %}
+  <br /><br />
+  {% trans "Thank you for your patience." %}
+</div>
+
+<a href="/themes/"><img src="{{ MEDIA_URL }}images/arrow_left_green.png" alt="&lt;&lt;" /> {% trans "Back to themes" %}</a>
+
+{% endblock content %}

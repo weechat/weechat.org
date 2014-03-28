@@ -1,0 +1,53 @@
+{% extends "dev/dev.html" %}
+
+{% load i18n %}
+
+{% block subtitle %} :: {% trans "statistics" %}{% endblock %}
+{% block menu2_stats %}selected{% endblock %}
+
+{% block content %}
+
+{{ block.super }}
+
+<div class="navbt" style="border-bottom: none">
+  <ul>
+    <li><a href="/dev/stats/weechat/"{% ifequal stats "weechat" %} class="selected"{% endifequal %}>WeeChat</a></li>
+    <li><a href="/dev/stats/scripts/"{% ifequal stats "scripts" %} class="selected"{% endifequal %}>{% trans "Scripts" %}</a></li>
+    <li><a href="/dev/stats/qweechat/"{% ifequal stats "qweechat" %} class="selected"{% endifequal %}>QWeeChat</a></li>
+  </ul>
+</div>
+
+<div class="stats">
+
+  {% trans "Git repository:" %}
+  <a href="{{ repository }}" target="_blank">{{ repository }} <img src={{ MEDIA_URL}}images/link.png width="16" height="16" alt="" /></a>
+  <br /><br />
+
+  {% if sloc %}
+  <strong>{{ sloc }}</strong> {% trans "lines of code" %} ({{ sloc_lang }}).
+  <br /><br />
+  {% endif %}
+
+  {% trans "Commits by range:" %}
+  &nbsp;
+  {% trans "month:" %} <strong>{{ git_commits_last_month }}</strong>
+  {% trans "year:" %} <strong>{{ git_commits_last_year }}</strong>
+  {% trans "total:" %} <strong>{{ git_commits_total }}</strong>
+
+  {% for svg in svg_list %}
+  <div class="svg">
+    <a href="{{ MEDIA_URL }}images/stats/{{ stats }}_{{ svg }}.svg" target="_blank">SVG <img src={{ MEDIA_URL}}images/link.png width="16" height="16" alt="" /></a>
+    <object type="image/svg+xml" data="{{ MEDIA_URL }}images/stats/{{ stats }}_{{ svg }}.svg">{{ svg }}.svg</object>
+  </div>
+  {% endfor %}
+
+  {% ifequal stats "scripts" %}
+  <pre>{{ scripts_downloads }}</pre>
+  {% endifequal %}
+
+  {% trans "Charts built with" %}
+  <a href="https://github.com/flashcode/gitchart" target="_blank">gitchart <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="" /></a>.
+
+</div>
+
+{% endblock content %}

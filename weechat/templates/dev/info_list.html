@@ -1,0 +1,34 @@
+{% extends "dev/dev.html" %}
+
+{% load i18n %}
+
+{% block subtitle %} :: {% trans "info" %}{% endblock %}
+{% block menu2_info %}selected{% endblock %}
+
+{% block content %}
+
+{{ block.super }}
+
+{% trans "Following infos are available (click on info for the URL):" %}
+
+<div class="infolist">
+  <table>
+    <tr>
+      <th>{% trans "Info" %}</th>
+      <th>{% trans "Current value" %}</th>
+      <th>{% trans "Description" %}</th>
+    </tr>
+    {% for info in infos %}
+    <tr class="{% cycle 'row1' 'row2' %}">
+      <td><a href="/dev/info/{{ info.0 }}/" target="_blank">{{ info.0 }}</a></td>
+      <td>{{ info.1|linebreaksbr }}</td>
+      <td>{{ info.2 }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+
+<br />
+{% trans "You can fetch these URLs from scripts or other sites." %}
+
+{% endblock content %}

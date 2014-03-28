@@ -1,0 +1,19 @@
+{% extends "themes/themes.html" %}
+
+{% load i18n %}
+
+{% block menu2_update %}selected{% endblock %}
+
+{% block content %}
+
+{{ block.super }}
+
+<div class="infobox">
+  {% trans "Updated theme has been submitted for review." %}
+  <br /><br />
+  {% trans "Thank you for your patience." %}
+</div>
+
+<a href="/themes/"><img src="{{ MEDIA_URL }}images/arrow_left_green.png" alt="&lt;&lt;" /> {% trans "Back to themes" %}</a>
+
+{% endblock content %}

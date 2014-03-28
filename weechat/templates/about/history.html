@@ -1,0 +1,62 @@
+{% extends "about/about.html" %}
+
+{% load i18n %}{% load localdate %}
+
+{% block subtitle %} :: {% trans "history" %}{% endblock %}
+{% block menu2_history %}selected{% endblock %}
+
+{% block content %}
+
+{{ block.super }}
+
+<div class="about">
+
+  <h2>{% trans "Why WeeChat?" %}</h2>
+
+  {% blocktrans %}WeeChat stands for "Wee Enhanced Environment for Chat".{% endblocktrans %}
+  <br /><br />
+  {% trans "In early 2003, I looked for an IRC client with following features:" %}
+  <ul>
+    <li>{% trans "free software" %}</li>
+    <li>{% trans "running on Linux" %}</li>
+    <li>{% trans "text interface" %}</li>
+    <li>{% trans "real nicklist" %}</li>
+    <li>{% trans "extensible with scripts written in various languages" %}</li>
+  </ul>
+  {% trans "My search was unsuccessful!" %}
+  <br /><br />
+  {% trans "And then WeeChat was born, on June 2003." %}
+  <div class="author">
+  -- Sébastien Helleu (FlashCode)
+  </div>
+
+  {% if keydate_list %}
+  <h2>{% trans "Key dates" %}</h2>
+  <table class="table">
+  {% for keydate in keydate_list %}
+    <tr class="{% cycle 'row1' 'row2' %}">
+      <td>{{ keydate.date|date:"Y, F" }}</td>
+      <td>{{ keydate.version }}</td>
+      <td>{% autoescape off %}{{ keydate.text_i18n }}{% endautoescape %}</td>
+    </tr>
+  {% endfor %}
+  </table>
+  {% endif %}
+
+{% comment %}
+  <h2>{% trans "Screenshots by version" %}</h2>
+
+  <div class="story">
+  {% if releases %}
+    {% for release in releases %}
+      <img src="{{ MEDIA_URL }}images/story/weechat-{{ release.0 }}.png" alt="WeeChat {{ release.0 }}" />
+      <br />{% trans "Version" %} <strong>{{ release.0 }}</strong>, {% trans "released on" %} {{ release.1|localdate }}
+      <br /><br /><br /><br />
+    {% endfor %}
+  {% endif %}
+  </div>
+{% endcomment %}
+
+</div>
+
+{% endblock content %}

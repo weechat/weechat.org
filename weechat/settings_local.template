@@ -1,0 +1,101 @@
+# -*- coding: utf-8 -*-
+#
+# Copyright (C) 2003-2014 Sébastien Helleu <flashcode@flashtux.org>
+#
+# This file is part of WeeChat.org.
+#
+# WeeChat.org is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 3 of the License, or
+# (at your option) any later version.
+#
+# WeeChat.org is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
+#
+
+# Template for local Django settings.
+# Copy this file to "settings_local.py" and make necessary changes.
+
+from os import path
+
+PRODUCTION = False
+
+if PRODUCTION:
+
+    # =============== Settings for PRODUCTION ===============
+
+    DEBUG = False
+    TEMPLATE_DEBUG = DEBUG
+
+    ADMINS = (('root', 'root@localhost'),)
+    MANAGERS = ADMINS
+
+    # These recipients will receive new/updated scripts by e-mail.
+    SCRIPTS_MAILTO = ['root <root@localhost>']
+
+    # These recipients will receive new/updated themes by e-mail.
+    THEMES_MAILTO = SCRIPTS_MAILTO
+
+    # Database
+    DATABASES = {
+        'default': {
+            # postgresql_psycopg2 / postgresql / mysql / sqlite3 / oracle
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'weechat',
+            'USER': 'user',
+            'PASSWORD': 'password',
+            'HOST': '',
+            'PORT': '',
+        }
+    }
+
+    # Adjust URL for media, if different from default '/media/'
+    # (for example if media are served by another domain)
+    #MEDIA_URL = '/media/'
+
+    # Make this unique, and don't share it with anybody.
+    SECRET_KEY = 'replace-me'
+
+else:
+
+    # =============== Settings for DEVELOPMENT ===============
+
+    DEBUG = True
+    TEMPLATE_DEBUG = DEBUG
+
+    ADMINS = ()
+    MANAGERS = ADMINS
+
+    # These recipients will receive new/updated scripts by e-mail.
+    SCRIPTS_MAILTO = ['root <root@localhost>']
+
+    # These recipients will receive new/updated themes by e-mail.
+    THEMES_MAILTO = SCRIPTS_MAILTO
+
+    # Default database for development is sqlite3
+    DATABASES = {
+        'default': {
+            # postgresql_psycopg2 / postgresql / mysql / sqlite3 / oracle
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': path.join(path.dirname(path.abspath(__file__)),
+                              '..', 'db', 'weechat.db'),
+            'USER': '',
+            'PASSWORD': '',
+            'HOST': '',
+            'PORT': '',
+        }
+    }
+
+    # Adjust URL for media, if different from default '/media/'
+    # (for example if media are served by another domain)
+    #MEDIA_URL = '/media/'
+
+    # Make this unique, and don't share it with anybody.
+    SECRET_KEY = 'replace-me'
+
+    INTERNAL_IPS = ('127.0.0.1',)

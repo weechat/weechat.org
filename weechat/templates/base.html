@@ -1,0 +1,96 @@
+<!doctype html>
+
+<!-- WeeChat.org - Copyright (C) 2003-{% now "Y" %} by Sébastien Helleu (FlashCode) -->
+{% load i18n %}{% load txt2html %}
+<html lang="{{ LANGUAGE_CODE }}">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="author" content="Sébastien HELLEU FlashCode" />
+  <meta name="description" content="WeeChat, the extensible chat client" />
+  <meta name="keywords" content="weechat free fast light extensible chat client irc jabber linux bsd gpl console terminal curses" />
+  <meta name="ROBOTS" content="ALL" />
+  {% comment %}<meta name="viewport" content="width=device-width,initial-scale=1" />{% endcomment %}
+  <title>{% block title %}{% trans "WeeChat, the extensible chat client" %}{% endblock %}{% block subtitle %}{% endblock %}</title>
+  <link rel="shortcut icon" type="image/png" href="{{ MEDIA_URL }}images/favicon.png" />
+  {% block css %}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/style.css" media="screen" title="Normal" />{% endblock %}
+  <link rel="alternate" type="application/rss+xml" href="/feeds/news/" title="WeeChat RSS feed" />
+  <link href="https://plus.google.com/+WeeChat" rel="publisher" />
+  {% block extrahead %}{% endblock %}
+</head>
+
+<body>
+
+  <div id="header-and-main">
+
+    <map id="weechatMap" name="weechatMap">
+      <area href="/" alt="Home" coords="0,0,160,70" shape="rect" />
+    </map>
+
+    <div id="header">
+      <div class="content">
+        <div class="logo">
+          <a href="/"><img src="{{ MEDIA_URL }}images/weechat_logo_small.png" alt="WeeChat" width="146" height="100" /></a>
+        </div>
+        <div class="slogan">
+          <a href="/"><img src="{{MEDIA_URL}}images/weechat_text.png" width="201" height="55" alt="WeeChat" /></a>
+        </div>
+        <div class="lang">
+          <form name="lang" action="/i18n/setlang/" method="post">
+            <input type="hidden" name="language" value="{{ LANGUAGE_CODE }}">
+            {% for lang in LANGUAGES %}
+            <a href="#" {% ifequal lang.0 LANGUAGE_CODE %} class="selected"{% endifequal %} onclick="javascript:document.forms['lang'].elements['language'].value = '{{ lang.0 }}'; document.forms['lang'].submit();">
+              {% trans lang.1 %}
+            </a>
+            {% endfor %}
+          </form>
+        </div>
+      </div>
+      <div class="gradient"></div>
+
+    </div> <!-- header -->
+
+    <!-- menu -->
+    <div id="nav1-{% block menu %}{% endblock %}" class="center">
+      <ul id="nav">
+{% include "menu.html" %}
+      </ul>
+    </div>
+    <!-- end of menu -->
+
+    <div class="main">
+
+<!-- page content -->
+{% block content %}{% endblock %}
+<!-- end of page content -->
+
+    </div> <!-- main -->
+
+  </div> <!-- header-and-main -->
+
+  <div id="footer">
+
+    <!-- menu items -->
+    <div class="nav2">
+      <ul id="nav2">
+{% include "menu.html" %}
+      </ul>
+    </div>
+    <!-- end of menu items -->
+
+    <div id="copyright">
+      Copyright &#169; 2003-{% now "Y" %} <a href="mailto:{% txt2html "flashcode@flashtux.org" %}" title="email webmaster">Sébastien Helleu</a>
+      &mdash;
+      <a href="/about/weechat.org/">{% trans "About WeeChat.org" %}</a>
+      &mdash;
+      {% trans "Valid" %}:
+      <a href="http://validator.w3.org/check?uri=referer">HTML5</a> |
+      <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> |
+      <a href="http://www.w3.org/TR/WCAG20/">WCAG 2.0<!-- AAA --></a>
+    </div>
+
+  </div> <!-- footer -->
+
+</body>
+
+</html>

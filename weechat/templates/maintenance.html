@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}WeeChat :: {% trans "temporarily unavailable" %}{% endblock %}
+
+{% block content %}
+
+<h1>{% trans "This page is under maintenance." %}</h1>
+
+<div class="center">
+  <br />
+  {% trans "Page will be back soon, please come back later." %}
+  <br />
+  {% trans "Thank you for your patience." %}
+  <br /><br /><br />
+  <a href="javascript:history.back()"><img src="{{ MEDIA_URL }}images/arrow_left_green.png" alt="&lt;&lt;" /> {% trans "Back" %}</a>
+</div>
+
+{% endblock content %}

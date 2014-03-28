@@ -1,0 +1,15 @@
+{% extends "error.html" %}
+
+{% load i18n %}{% load txt2html %}
+
+{% block title %}WeeChat - {% trans "Error 404: page not found" %}{% endblock %}
+{% block error_title %}{% trans "Error 404" %}{% endblock %}
+
+{% block error_message %}
+
+{% trans "Oh no! This page does not exist..." %}
+<br /><br />
+{% trans "You can go back to WeeChat home with link below,<br />or report broken link to" %}
+<a href="mailto:{% txt2html "webmaster@weechat.org" %}?subject=Broken link on weechat site: {{ request_path }}">{% txt2html "webmaster@weechat.org" %}</a>
+
+{% endblock error_message %}
