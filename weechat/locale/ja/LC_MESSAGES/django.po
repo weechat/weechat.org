@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-03-29 08:00+0100\n"
-"PO-Revision-Date: 2014-03-28 07:38+0100\n"
+"PO-Revision-Date: 2014-03-30 08:36+0900\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <i38w7i3@yahoo.co.jp>\n"
 "Language: ja\n"
@@ -101,6 +101,7 @@ msgstr "完全な UTF-8。"
 #: about/_i18n_keydates.py:14
 msgid "Gaps in buffers numbers, IPv6 for DCC file/chat, command /print."
 msgstr ""
+"バッファ番号の間隔、DCC file および chat の IPv6 サポート、/print コマンド。"
 
 #: about/_i18n_keydates.py:15
 msgid ""
@@ -129,6 +130,8 @@ msgstr "マウスサポート、カーソルモード。"
 #: about/_i18n_keydates.py:20
 msgid "Multiple layouts, auto-unmask IRC joins, WebSocket support in relay."
 msgstr ""
+"複数レイアウト、IRC 参加メッセージの自動マスク解除、リレーの WebSocket サポー"
+"ト。"
 
 #: about/_i18n_keydates.py:21
 msgid ""
@@ -168,6 +171,8 @@ msgid ""
 "Secured data, search of regular expression in buffer with text emphasis, "
 "dynamic day change message."
 msgstr ""
+"安全なデータ、テキスト強調を含むバッファ内で正規表現検索、日付変更メッセージ"
+"の動的変化。"
 
 #: dev/views.py:35
 msgid "stable version"
@@ -177,8 +182,8 @@ msgstr "安定版のバージョン番号"
 msgid ""
 "stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
-"安定版のバージョン番号 (数表記)、プラグイン API における "
-"info_get(\"version_number\") と同様"
+"安定版のバージョン番号 (数表記)、プラグイン API における info_get"
+"(\"version_number\") と同様"
 
 #: dev/views.py:44
 msgid "date of stable version"
@@ -204,8 +209,8 @@ msgstr "次期安定版のバージョン番号"
 msgid ""
 "next stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
-"次期安定版のバージョン番号 (数表記)、プラグイン API における "
-"info_get(\"version_number\") と同様<"
+"次期安定版のバージョン番号 (数表記)、プラグイン API における info_get"
+"(\"version_number\") と同様<"
 
 #: dev/views.py:69
 msgid "approximate date of next stable version"
@@ -667,7 +672,7 @@ msgstr ""
 
 #: news/_i18n_info.py:28
 msgid "Git repositories moved to GitHub"
-msgstr ""
+msgstr "Git リポジトリを GitHub に移動"
 
 #: news/_i18n_info.py:29
 msgid "Happy birthday WeeChat, 10 years old!"
@@ -2139,9 +2144,39 @@ msgid ""
 "\"http://dev.weechat.org/post/2013/10/06/Version-0.4.2\">development blog</"
 "a> or <a href=\"/files/changelog/ChangeLog-0.4.2.html\">ChangeLog</a>."
 msgstr ""
+"バージョン 0.4.2 をリリースしました!\n"
+"\n"
+"新しい機能:\n"
+"\n"
+"- バイナリの名前を \"weechat-curses\" から \"weechat\" に変えました (互換性の"
+"ため \"weechat-curses\" はシンボリックリンクになっています)\n"
+"- 安全なデータを追加 (パスワードや個人用データの暗号化)、新しいコマンド /"
+"secure、新しいファイル sec.conf\n"
+"- テキスト強調を含むバッファ、プレフィックスやメッセージの正規表現検索\n"
+"- コマンド /window に \"scroll_beyond_end\" オプションを追加\n"
+"- バーアイテムに任意のバッファコンテキストを追加 (例えばルートバーに bitlbee "
+"のニックネームリストを表示)\n"
+"- 新しいオプション weechat.look.hotlist_{prefix|suffix}\n"
+"- ユーザがキー割り当てエラーにならないようにする新しいオプション weechat."
+"look.key_bind_safe\n"
+"- curl で URL をダウンロードする際にプロキシを使うようにする新しいオプション "
+"weechat.network.proxy_curl\n"
+"- 日付変更メッセージを動的に表示\n"
+"- IRC コマンド (de)op/halfop/voice でワイルドカードをサポート\n"
+"- チャンネルのようこそ通知をチャンネルバッファにリダイレクトする新しいオプ"
+"ション irc.look.notice_welcome_redirect\n"
+"- 新しいオプション irc.look.nick_color_hash: ニックネームの色を探す新しいハッ"
+"シュアルゴリズム (djb2 の亜種)\n"
+"- スクリプトの詳細表示 (/script show) にスクリプトが定義したものに関する情報"
+"を追加\n"
+"- aspell プラグインの \"enchant\" ライブラリのサポート\n"
+"- 多くのバグを修正。\n"
+"\n"
+"新機能と修正されたバグの完全なリストは<a href=\"http://dev.weechat.org/"
+"post/2013/10/06/Version-0.4.2\">開発ブログ</a>または <a href=\"/files/"
+"changelog/ChangeLog-0.4.2.html\">ChangeLog</a> を御覧ください。"
 
 #: news/_i18n_info.py:91
-#, fuzzy
 msgid ""
 "Version 0.4.3 is available!\n"
 "\n"
@@ -2164,27 +2199,26 @@ msgid ""
 "\"http://dev.weechat.org/post/2014/02/09/Version-0.4.3\">development blog</"
 "a> or <a href=\"/files/changelog/ChangeLog-0.4.3.html\">ChangeLog</a>."
 msgstr ""
-"バージョン 0.4.0 をリリースしました!\n"
+"バージョン 0.4.3 をリリースしました!\n"
 "\n"
 "新しい機能:\n"
-"- /set コマンドに \"diff\" オプションを追加、/set コマンドの出力にデフォルト"
-"値を出力\n"
-"- プレフィックスオプションにおける色サポートを追加\n"
-"- /eval コマンドを追加、バーの状態を示す表式を利用\n"
-"- デフォルトではサーバに IPv6 で接続、代替として IPv4 で接続\n"
-"- aspell を使った候補を追加\n"
-"- irc メッセージのタグと \"server-time\" のサポートを追加\n"
-"- irc の /quiet コマンドを追加\n"
-"- リレープラグインにおける IPv6 のサポートを追加\n"
-"- リレープラグインにおける irc プロトコルのバックログ機能を追加\n"
-"- xfer プラグインにおける DCC チャットやファイル転送で相手の IP アドレスを表"
-"示\n"
-"- ビルド中に git バージョンを追加\n"
+"\n"
+"- 新しいコマンド /print\n"
+"- /filter と hook_print で指定するタグに対する論理 and/or\n"
+"- バッファ番号に間隔を空ける\n"
+"- イタリックテキストのサポート\n"
+"- バッファ中のデフォルトテキスト検索をカスタマイズする新しいオプション\n"
+"- /notify で IRC monitor コマンドを使用 (サーバでこれが利用可能な場合)\n"
+"- 新しい IRC サーバオプション \"ssl_fingerprint\"\n"
+"- IRC モードメッセージに対するスマートフィルタの新しいオプション\n"
+"- デフォルトの IRC 禁止マスクを設定する新しいオプション\n"
+"- DCC chat および file で IPv6 をサポート\n"
+"- DCC で受信したファイルの CRC32 を自動チェック\n"
 "- 多くのバグを修正。\n"
 "\n"
 "新機能と修正されたバグの完全なリストは<a href=\"http://dev.weechat.org/"
-"post/2013/01/20/Version-0.4.0\">開発ブログ</a>または <a href=\"/files/"
-"changelog/ChangeLog-0.4.0.html\">ChangeLog</a> を御覧ください。"
+"post/2014/02/09/Version-0.4.3\">開発ブログ</a>または <a href=\"/files/"
+"changelog/ChangeLog-0.4.3.html\">ChangeLog</a> を御覧ください。"
 
 #: news/_i18n_info.py:92
 msgid ""
@@ -2222,7 +2256,7 @@ msgstr ""
 
 #: news/_i18n_info.py:93
 msgid "WeeChat - Wee Enhanced Environment for Chat"
-msgstr "WeeChat - 小さく強力なチャット環境"
+msgstr "WeeChat - 小さくて強力なチャット環境"
 
 #: news/_i18n_info.py:94
 msgid ""
@@ -2248,9 +2282,8 @@ msgstr ""
 "問題やバッファ/ウィンドウ間の操作を改良するための提案を募集しています。"
 
 #: news/_i18n_info.py:95
-#, fuzzy
 msgid "WeeChat in Cygwin"
-msgstr "WeeChat とは:"
+msgstr "WeeChat の Cygwin 版"
 
 #: news/_i18n_info.py:96
 msgid ""
@@ -2260,6 +2293,12 @@ msgid ""
 "Note: Guile plugin is missing, since it requires guile >= 2.0, which is not "
 "yet available in Cygwin."
 msgstr ""
+"WeeChat が Cygwin で使えるようになり、setup.exe でインストール可能になりま"
+"す。\n"
+"32 と 64 ビット Cygwin 向けにバージョン 0.4.2 が利用可能です。\n"
+"\n"
+"注意: Guile プラグインは Cygwin ではまだ利用できない guile >= 2.0 が必要なの"
+"で、削除されています。"
 
 #: news/_i18n_info.py:97
 msgid ""
@@ -2298,6 +2337,12 @@ msgid ""
 "For more info, please look at <a href=\"http://dev.weechat.org/"
 "post/2014/03/03/Git-repositories-moved-to-Github\">development blog</a>."
 msgstr ""
+"WeeChat リポジトリ (weechat、スクリプト、qweechat) が GitHub の WeeChat "
+"organization に移動しました: <a href=\"http://github.com/weechat\">http://"
+"github.com/weechat</a>。 \n"
+"\n"
+"より詳しい情報は、<a href=\"http://dev.weechat.org/post/2014/03/03/Git-"
+"repositories-moved-to-Github\">開発ブログ</a>をご覧ください。"
 
 #: news/_i18n_info.py:100
 msgid "WeeChat screenshot"
@@ -2480,12 +2525,12 @@ msgstr "プレーンテキストのバーアイテムを追加。"
 #. Translators: description for script "triggerbot_helper.py" (0.3.4+)
 #: plugins/_i18n_plugins.py:41
 msgid "Add users relayed to to the nicklist in a triggersafe channel."
-msgstr ""
+msgstr "triggersafe チャンネルのニックネームリストにユーザを追加。"
 
 #. Translators: description for script "autojoinem.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:43
 msgid "Add/del channels in autojoin option."
-msgstr ""
+msgstr "自動参加オプションにチャンネルを追加および削除。"
 
 #. Translators: description for script "pagetitle.py" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:45
@@ -2595,7 +2640,7 @@ msgstr "\"招待\" を受信したら自動的にチャンネルに参加。"
 #. Translators: description for script "autopong.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:83
 msgid "Auto-reply to ping queries."
-msgstr ""
+msgstr "ping 問い合わせに自動応答。"
 
 #. Translators: description for script "buffer_autoset.py" (0.3.2+)
 #: plugins/_i18n_plugins.py:85
@@ -2610,7 +2655,7 @@ msgstr "自動 dcc_own_ip。"
 #. Translators: description for script "responsive_layout.py" (0.4.3+)
 #: plugins/_i18n_plugins.py:89
 msgid "Automatically apply layouts according to terminal size."
-msgstr ""
+msgstr "端末サイズに応じてレイアウトを自動的に適用。"
 
 #. Translators: description for script "nickregain.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:91
@@ -2640,6 +2685,7 @@ msgstr ""
 #: plugins/_i18n_plugins.py:99
 msgid "Automatically keep buffers grouped by server and sorted by name."
 msgstr ""
+"サーバによるグループ化と名前によるソートを行ってバッファを自動的にキープ。"
 
 #. Translators: description for script "auto_op.py" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:101
@@ -2740,7 +2786,7 @@ msgstr "ニックネーム色でチャンネルテキストを色付け。"
 #. Translators: description for script "cmdind.pl" (0.4.2+)
 #: plugins/_i18n_plugins.py:137
 msgid "Command line indicator: command or text."
-msgstr ""
+msgstr "コマンドラインインジケータ: コマンドまたはテキスト。"
 
 #. Translators: description for script "queue.py" (0.3.3+)
 #: plugins/_i18n_plugins.py:139
@@ -2786,7 +2832,7 @@ msgstr "moc 用の操作と現在再生中の曲の情報を得るスクリプ�
 #. Translators: description for script "weemoticons.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:155
 msgid "Convert ascii emotes to the unicode emoticon."
-msgstr ""
+msgstr "ascii 顔文字を unicode 顔文字に変換。"
 
 #. Translators: description for script "leet.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:157
@@ -2852,7 +2898,7 @@ msgstr "チャンネル内でホストが同じニックネームを検出。"
 #. Translators: description for script "btc_ticker.py" (0.3.7+)
 #: plugins/_i18n_plugins.py:181
 msgid "Display Bitcoin or other crypto currency spot exchange value."
-msgstr ""
+msgstr "Bitcoin やその他の暗号通貨の交換レートを表示。"
 
 #. Translators: description for script "bitlback.py" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:183
@@ -2874,9 +2920,8 @@ msgstr "dzen (とビープ音) で Weechat のハイライトを表示。"
 
 #. Translators: description for script "countdown.rb" (0.3.0+)
 #: plugins/_i18n_plugins.py:189
-#, fuzzy
 msgid "Display a countdown on current buffer."
-msgstr "現在のバッファに対するログファイルを削除。"
+msgstr "現在のバッファにカウントダウンを表示。"
 
 #. Translators: description for script "urlbar.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:191
@@ -2971,18 +3016,17 @@ msgstr "mp3blaster が現在再生中の曲を表示。"
 #. Translators: description for script "mpdnp.py" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:227
 msgid "Display which song mpd is currently playing."
-msgstr "音声 mpd が現在再生中の曲を表示。"
+msgstr "mpd が現在再生中の曲を表示。"
 
 #. Translators: description for script "rhythmbox.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:229
 msgid "Display which song rhythmbox is currently playing."
-msgstr "rhythmbox で現在再生中の曲を表示。"
+msgstr "rhythmbox が現在再生中の曲を表示。"
 
 #. Translators: description for script "weespotify.rb" (0.3.0+)
 #: plugins/_i18n_plugins.py:231
-#, fuzzy
 msgid "Display which song spotify is currently playing."
-msgstr "音声 mpd が現在再生中の曲を表示。"
+msgstr "spotify が現在再生中の曲を表示。"
 
 #. Translators: description for script "xmms.pl" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:233
@@ -3192,7 +3236,7 @@ msgstr "Jabber/XMPP プロトコル。"
 #. Translators: description for script "jump_smart_higher.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:311
 msgid "Jump to a higher buffer with activity."
-msgstr ""
+msgstr "バッファ番号が大きくて活発なバッファに移動。"
 
 #. Translators: description for script "keepnick.py" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:313
@@ -3221,9 +3265,8 @@ msgstr "todo をファイルに保存。"
 
 #. Translators: description for script "samechannel.rb" (0.4.1+)
 #: plugins/_i18n_plugins.py:323
-#, fuzzy
 msgid "List multiple occurences of the same nick(s) in a set of channels."
-msgstr "チャンネル内でホストが同じニックネームを検出。"
+msgstr "一連のチャンネルに参加している同一のニックネームをリストアップ。"
 
 #. Translators: description for script "input_lock.rb" (0.3.0+)
 #: plugins/_i18n_plugins.py:325
@@ -3237,7 +3280,6 @@ msgstr "SQL データベースに URL を保存。"
 
 #. Translators: description for script "awaylog.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:329
-#, fuzzy
 msgid "Log highlights/private messages when you are away."
 msgstr "離席時に受信したハイライトおよびプライベートメッセージを記録。"
 
@@ -3268,9 +3310,8 @@ msgstr "魔法の八番玉。"
 
 #. Translators: description for script "mnotify.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:341
-#, fuzzy
 msgid "Mail notifications of private/highlight/DCC and more."
-msgstr "プライベートメッセージ、ハイライト、DCC send/receive などを通知。"
+msgstr "プライベートメッセージ、ハイライト、DCC などをメール通知。"
 
 #. Translators: description for script "xterm_paste.pl" (0.3.9+)
 #: plugins/_i18n_plugins.py:343
@@ -3479,9 +3520,8 @@ msgstr "\"s/誤/正\" 型の補完を提供。"
 
 #. Translators: description for script "weeprowl.py" (0.3.7+)
 #: plugins/_i18n_plugins.py:419
-#, fuzzy
 msgid "Prowl notifications."
-msgstr "Growl 通知スクリプト。"
+msgstr "Prowl で通知。"
 
 #. Translators: description for script "notifo_notify.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:421
@@ -3562,9 +3602,10 @@ msgstr "WeeChat の終了時に開いていたサーバとチャンネルを開�
 
 #. Translators: description for script "shutup.py" (0.3.6+)
 #: plugins/_i18n_plugins.py:451
-#, fuzzy
 msgid "Replace text from specified IRC users with random or preset text."
-msgstr "送信テキストを置換。"
+msgstr ""
+"特定の IRC ユーザから受信したテキストをランダムまたは事前に設定したテキストで"
+"置換。"
 
 #. Translators: description for script "text_replace.py" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:453
@@ -3584,7 +3625,7 @@ msgstr "送信テキストを上下逆さまにする。"
 #. Translators: description for script "undernet_challenge.rb" (0.3.0+)
 #: plugins/_i18n_plugins.py:459
 msgid "Respond to undernet challenge when there's no identd."
-msgstr ""
+msgstr "identd がない場合に undernet の要求に応答する。"
 
 #. Translators: description for script "bashorg.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:461
@@ -3619,7 +3660,7 @@ msgstr "WeeChat 内部からシェルコマンドを実行。"
 #. Translators: description for script "weetext.py" (0.4.3+)
 #: plugins/_i18n_plugins.py:473
 msgid "SMS Text Messaging using Google Voice."
-msgstr ""
+msgstr "Google Voice を使った SMS テキストメッセージ。"
 
 #. Translators: description for script "samegame.py" (0.3.6+)
 #: plugins/_i18n_plugins.py:475
@@ -3633,14 +3674,13 @@ msgstr "グローバルおよびバッファコマンド履歴を保存、読み
 
 #. Translators: description for script "queryman.py" (0.3.7+)
 #: plugins/_i18n_plugins.py:479
-#, fuzzy
 msgid "Save and restore query buffers after /quit."
-msgstr "バッファレイアウトの保存および回復。"
+msgstr "/quit の後にクエリバッファの保存と回復を行う。"
 
 #. Translators: description for script "autosavekey.py" (0.3.2+)
 #: plugins/_i18n_plugins.py:481
 msgid "Save channel key to autojoin or secured data."
-msgstr ""
+msgstr "チャンネルキーを自動参加または安全なデータに保存。"
 
 #. Translators: description for script "confversion.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:483
@@ -3779,9 +3819,8 @@ msgstr "プライベートメッセージとハイライトを AMQP に送信す
 
 #. Translators: description for script "pushover.pl" (0.3.7+)
 #: plugins/_i18n_plugins.py:531
-#, fuzzy
 msgid "Send push notifications to your mobile devices using Pushover or NMA."
-msgstr "pushover.net を使ってモバイルデバイス宛に通知を送信。"
+msgstr "Pushover または NMA を使ってモバイルデバイス宛にプッシュ通知を送信。"
 
 #. Translators: description for script "ragefaces.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:533
@@ -3908,9 +3947,8 @@ msgstr "自前の HTTP サーバを使って URL を短縮化。"
 
 #. Translators: description for script "url_arza.pl" (0.3.6+)
 #: plugins/_i18n_plugins.py:579
-#, fuzzy
 msgid "Shorten long URLs in buffers and input line."
-msgstr "チャンネルの長い URL を短縮化。"
+msgstr "バッファと入力行に含まれる長い URL を短縮化。"
 
 #. Translators: description for script "url_shorten.rb" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:581
@@ -3939,9 +3977,8 @@ msgstr "OSD でハイライトとプライベートメッセージを表示。"
 
 #. Translators: description for script "hl_here.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:591
-#, fuzzy
 msgid "Show highlights in the active buffer."
-msgstr "ハイライトモニタバッファを追加。"
+msgstr "アクティブバッファにハイライトを表示。"
 
 #. Translators: description for script "foo_spam.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:593
@@ -4009,9 +4046,8 @@ msgstr "ハイライト用の Snarl 通知。"
 
 #. Translators: description for script "sort_servers.py" (0.3.9+)
 #: plugins/_i18n_plugins.py:617
-#, fuzzy
 msgid "Sort buffers by server and alphabetically."
-msgstr "irc バッファをアルファベット順にソート。"
+msgstr "バッファをサーバ順およびアルファベット順にソート。"
 
 #. Translators: description for script "sort_buffers.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:619
@@ -4041,7 +4077,7 @@ msgstr "バッファをウィンドウから離れないようにする。"
 #. Translators: description for script "substitution.rb" (0.3.7+)
 #: plugins/_i18n_plugins.py:629
 msgid "Substitute strings in messages before they are sent."
-msgstr ""
+msgstr "メッセージの送信前に文字列を置換。"
 
 #. Translators: description for script "buffer_swap.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:631
@@ -4113,7 +4149,7 @@ msgstr "Ubus 通知。"
 #. Translators: description for script "undernet_totp.py" (0.4.2+)
 #: plugins/_i18n_plugins.py:657
 msgid "UnderNET's X OTP (OATH-TOTP) authentication."
-msgstr ""
+msgstr "UnderNET の X OTP (OATH-TOTP) 認証。"
 
 #. Translators: description for script "maildir.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:659
@@ -4123,9 +4159,8 @@ msgstr ""
 
 #. Translators: description for script "tmux_env.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:661
-#, fuzzy
 msgid "Update WeeChat environment from tmux."
-msgstr "WeeChat - 小さく強力なチャット環境"
+msgstr "tmux から WeeChat 環境をアップデート。"
 
 #. Translators: description for script "mac-update-status.pl" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:663
@@ -4140,22 +4175,22 @@ msgstr "チャットエリアとコマンドラインで weechat ニックネー
 #. Translators: description for script "vimode.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:667
 msgid "Vi-like key bindings/commands with normal and insert mode."
-msgstr ""
+msgstr "ノーマルと挿入モードを持つ Vi ライクなキー割り当ておよびコマンド。"
 
 #. Translators: description for script "pastebuf.lua" (0.4.3+)
 #: plugins/_i18n_plugins.py:669
 msgid "View content of pastebin site in a buffer."
-msgstr ""
+msgstr "バッファ内で pastebin サイトの内容を見る。"
 
 #. Translators: description for script "oldswarner.lua" (0.3.7+)
 #: plugins/_i18n_plugins.py:671
 msgid "Warn user if about to paste URL already existing in buffer."
-msgstr ""
+msgstr "貼り付けた URL がバッファ内にある場合にユーザに警告を出す。"
 
 #. Translators: description for script "weatherbot.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:673
 msgid "Weather bot using the WeatherUnderground API."
-msgstr ""
+msgstr "WeatherUnderground API を使うお天気ボット。"
 
 #. Translators: description for script "weetweet.py" (0.4.0+)
 #: plugins/_i18n_plugins.py:675
@@ -4200,7 +4235,7 @@ msgstr ""
 
 #: plugins/models.py:177
 msgid "This name is too long (must be max 20 chars)."
-msgstr ""
+msgstr "名前が長すぎます (最長 20 文字)。"
 
 #: plugins/models.py:222 templates/plugins/list.html:63
 #: templates/plugins/list.html.py:65 templates/plugins/pending.html:33
@@ -4215,10 +4250,9 @@ msgid "Name"
 msgstr "名称"
 
 #: plugins/models.py:227
-#, fuzzy
 msgid ""
 "short name of script (max 20 chars, only lower case letters, digits or \"_\")"
-msgstr "スクリプトの短縮名 (小文字、数字、\"_\" のみ使用可)"
+msgstr "スクリプトの短縮名 (最大で 20 文字、小文字、数字、\"_\" のみ使用可)"
 
 #: plugins/models.py:234
 msgid "version of script (only digits or dots)"
@@ -4351,9 +4385,8 @@ msgid "WeeChat, the extensible chat client"
 msgstr "WeeChat、拡張可能なチャットクライアント"
 
 #: templates/base.html:85
-#, fuzzy
 msgid "About WeeChat.org"
-msgstr "WeeChat について"
+msgstr "WeeChat.org について"
 
 #: templates/base.html:87
 msgid "Valid"
@@ -4437,9 +4470,8 @@ msgid "Stable version"
 msgstr "安定版"
 
 #: templates/menu.html:31
-#, fuzzy
 msgid "Dev. version"
-msgstr "新しいバージョン"
+msgstr "開発版"
 
 #: templates/menu.html:32
 msgid "Debian repositories"
@@ -4488,7 +4520,7 @@ msgstr "サポート"
 
 #: templates/menu.html:63
 msgid "Bugs"
-msgstr ""
+msgstr "バグ"
 
 #: templates/about/about.html:5
 msgid "about"
@@ -4555,9 +4587,8 @@ msgid "Amount"
 msgstr "寄付金額"
 
 #: templates/about/donate.html:48
-#, fuzzy
 msgid "Donation number"
-msgstr "文書とサポート"
+msgstr "寄付番号"
 
 #: templates/about/donate.html:49
 msgid "Comment"
@@ -4884,36 +4915,35 @@ msgid "No screenshot."
 msgstr "スクリーンショットがありません。"
 
 #: templates/about/weechat.org.html:14
-#, fuzzy
 msgid "Authors"
 msgstr "作者"
 
 #: templates/about/weechat.org.html:16
-#, fuzzy
 msgid "Developers:"
-msgstr "開発者ガイド"
+msgstr "開発者:"
 
 #: templates/about/weechat.org.html:23
-#, fuzzy
 msgid "Translators:"
-msgstr "翻訳済み"
+msgstr "翻訳者:"
 
 #: templates/about/weechat.org.html:33
 msgid "Source code"
-msgstr ""
+msgstr "ソースコード"
 
 #: templates/about/weechat.org.html:35
 msgid "Source code of WeeChat.org is available on GitHub:"
-msgstr ""
+msgstr "WeeChat.org のソースコードは GitHub で利用可能です:"
 
 #: templates/about/weechat.org.html:41
 msgid "Hosting"
-msgstr ""
+msgstr "ホスティング"
 
 #: templates/about/weechat.org.html:43
 msgid ""
 "WeeChat.org is hosted by <a href=\"https://www.hetzner.de/en/\">Hetzner</a>."
 msgstr ""
+"WeeChat.org は <a href=\"https://www.hetzner.de/en/\">Hetzner</a> によってホ"
+"ストされています。"
 
 #: templates/dev/dev.html:5
 msgid "dev"
@@ -5046,31 +5076,32 @@ msgstr ""
 
 #: templates/dev/support.html:18
 msgid "On server chat.freenode.net:"
-msgstr ""
+msgstr "サーバ chat.freenode.net 上:"
 
 #: templates/dev/support.html:22
-#, fuzzy
 msgid "official channels (with developers):"
 msgstr "公式チャンネル (開発者が参加しています):"
 
 #: templates/dev/support.html:29
-#, fuzzy
 msgid "non-official channels:"
 msgstr "非公式チャンネル:"
 
 #: templates/dev/support.html:36
 msgid "Bugs / Feature requests"
-msgstr ""
+msgstr "バグ / 機能リクエスト"
 
 #: templates/dev/support.html:38
 msgid ""
 "Bugs and feature requests for WeeChat, QWeeChat and scripts can be submitted "
 "on GitHub:"
 msgstr ""
+"WeeChat、QWeeChat、スクリプトのバグと機能リクエストは GitHub から投稿してくだ"
+"さい:"
 
 #: templates/dev/support.html:43
 msgid "WeeChat is on <a href=\"https://plus.google.com/\">Google+</a>:"
 msgstr ""
+"WeeChat は <a href=\"https://plus.google.com/\">Google+</a> にあります:"
 
 #: templates/dev/support.html:46
 msgid "Page"
@@ -5091,30 +5122,31 @@ msgid ""
 "\"_blank\">3 mailing lists <img src=\"%(MEDIA_URL)simages/link.png\" width="
 "\"16\" height=\"16\" alt=\"\" /></a>:"
 msgstr ""
+"<a href=\"https://savannah.nongnu.org/mail/?group=weechat\" target=\"_blank"
+"\">3 つのメーリングリスト<img src=\"%(MEDIA_URL)simages/link.png\" width="
+"\"16\" height=\"16\" alt=\"\" /></a>があります:"
 
 #: templates/dev/support.html:56
 msgid "<strong>weechat-security</strong> (security advisories about WeeChat):"
-msgstr ""
+msgstr "<strong>weechat-security</strong> (WeeChat に関するセキュリティ勧告):"
 
 #: templates/dev/support.html:58 templates/dev/support.html.py:65
 #: templates/dev/support.html:72
-#, fuzzy
 msgid "subscribe:"
 msgstr "登録:"
 
 #: templates/dev/support.html:59 templates/dev/support.html.py:66
 #: templates/dev/support.html:73
-#, fuzzy
 msgid "send mail to:"
-msgstr "メールを送信先:"
+msgstr "メールの送信先:"
 
 #: templates/dev/support.html:63
 msgid "<strong>weechat-support</strong> (installation, usage, bugs, ...):"
-msgstr ""
+msgstr "<strong>weechat-support</strong> (インストール、使い方、バグ、...):"
 
 #: templates/dev/support.html:70
 msgid "<strong>weechat-dev</strong> (everything related to the development):"
-msgstr ""
+msgstr "<strong>weechat-dev</strong> (開発に関する内容すべて):"
 
 #: templates/doc/doc.html:5
 msgid "documentation"
@@ -5300,7 +5332,7 @@ msgstr "リリースノート"
 
 #: templates/download/packages.html:119
 msgid "(see above)"
-msgstr ""
+msgstr "(上記の通り)"
 
 #: templates/download/packages.html:149
 msgid "Checking the signatures"
@@ -5360,16 +5392,15 @@ msgstr "エラー: そのバージョンは存在しません"
 
 #: templates/download/release.html:19
 msgid "YEAH! You can download and install it!"
-msgstr ""
+msgstr "ええ!ダウンロードとインストールが可能ですよ!"
 
 #: templates/download/release.html:30
-#, fuzzy
 msgid "No release in progress."
-msgstr "リリースノート"
+msgstr "進行中のリリースはありません。"
 
 #: templates/download/release.html:31
 msgid "We are working hard on the next version:"
-msgstr ""
+msgstr "次期バージョンに向けて一生懸命作業しています:"
 
 #: templates/download/security.html:5
 msgid "security"
@@ -5482,9 +5513,8 @@ msgid "<strong>modular</strong>: a lightweight core with optional plugins"
 msgstr "<strong>モジュール式</strong>: 軽量のコアと選べるプラグイン"
 
 #: templates/home/home.html:26
-#, fuzzy
 msgid "<strong>multi-protocols architecture</strong> (mainly IRC)"
-msgstr "<strong>マルチプロトコル</strong>: IRC と Jabber"
+msgstr "<strong>マルチプロトコルアーキテクチャ</strong> (主に IRC)"
 
 #: templates/home/home.html:27
 msgid ""
@@ -5562,9 +5592,8 @@ msgstr ""
 "pending/\">承認待ちスクリプト</a>) が無いことを確認してください"
 
 #: templates/plugins/add.html:19
-#, fuzzy
 msgid "script name"
-msgstr "スクリプトマネージャ"
+msgstr "スクリプト名"
 
 #: templates/plugins/add.html:21
 msgid ""
@@ -5586,27 +5615,27 @@ msgid ""
 "the word 'weechat' is not needed in name: for example don't use "
 "'weechat_notify' but 'notify' instead (the script is only for WeeChat)"
 msgstr ""
+"'weechat' という単語を名前に含める必要はありません: 例えば 'weechat_notify' "
+"を使う代わりに 'notify' を使ってください (WeeChat 用のスクリプトしかありませ"
+"ん)"
 
 #: templates/plugins/add.html:27
-#, fuzzy
 msgid "script content"
-msgstr "説明"
+msgstr "スクリプトの内容"
 
 #: templates/plugins/add.html:29
-#, fuzzy
 msgid ""
 "a comment at beginning with your name (or pseudo), your e-mail, and the "
 "chosen license (the license must be free)"
 msgstr ""
 "最初のコメントにはあなたの名前 (偽名も可)、電子メールアドレス、ライセンスを含"
-"めてください"
+"めてください (必ず自由ライセンスにしてください)"
 
 #: templates/plugins/add.html:30
 msgid "no shebang on first line (like '#!/usr/bin/perl'), it's not needed"
 msgstr "1 行目のシェバン行 ('#!/usr/bin/perl' など) は不要"
 
 #: templates/plugins/add.html:31
-#, fuzzy
 msgid "use only English for code and comments"
 msgstr "英語以外でコードとコメントを書かないでください"
 
