@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-03-30 10:56+0200\n"
-"PO-Revision-Date: 2014-03-28 08:33+0100\n"
+"PO-Revision-Date: 2014-04-01 18:52+0100\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <weechatter@arcor.de>\n"
 "Language: de\n"
@@ -102,6 +102,8 @@ msgstr "vollständige Unterstützung von utf-8."
 #: about/_i18n_keydates.py:14
 msgid "Gaps in buffers numbers, IPv6 for DCC file/chat, command /print."
 msgstr ""
+"Buffer brauchen keine fortlaufende Nummerierung, IPv6 für DCC Datentransfer/"
+"Chat, /print Befehl."
 
 #: about/_i18n_keydates.py:15
 msgid ""
@@ -211,8 +213,8 @@ msgstr "kommende stabile Version"
 msgid ""
 "next stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
-"kommende stabile Version, als Nummer, siehe Erweiterung-API: "
-"info_get(\"version_number\")"
+"kommende stabile Version, als Nummer, siehe Erweiterung-API: info_get"
+"(\"version_number\")"
 
 #: dev/views.py:69
 msgid "approximate date of next stable version"
@@ -690,7 +692,7 @@ msgstr ""
 
 #: news/_i18n_info.py:28
 msgid "Git repositories moved to GitHub"
-msgstr ""
+msgstr "Git Repositorien befinden sich nun auf GitHub"
 
 #: news/_i18n_info.py:29
 msgid "Happy birthday WeeChat, 10 years old!"
@@ -2422,6 +2424,12 @@ msgid ""
 "For more info, please look at <a href=\"http://dev.weechat.org/"
 "post/2014/03/03/Git-repositories-moved-to-Github\">development blog</a>."
 msgstr ""
+"WeeChat Repositorien (weechat, scripts, qweechat) befinden sich nun auf "
+"GitHub, in Organisation WeeChat: <a href=\"http://github.com/weechat"
+"\">http://github.com/weechat</a>. \n"
+"\n"
+"Für weitere Informationen, siehe <a href=\"http://dev.weechat.org/"
+"post/2014/03/03/Git-repositories-moved-to-Github\">Entwickler Blog</a>."
 
 #: news/_i18n_info.py:100
 msgid "WeeChat screenshot"
@@ -2621,8 +2629,7 @@ msgstr ""
 #. Translators: description for script "autojoinem.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:43
 msgid "Add/del channels in autojoin option."
-msgstr ""
-"einfaches hinzufügen/löschen von Einträgen von Channel in die autojoin-Liste."
+msgstr "einfaches hinzufügen/löschen von Channel(s) in die autojoin-Liste."
 
 #. Translators: description for script "pagetitle.py" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:45
@@ -2754,7 +2761,7 @@ msgstr "automatische dcc_own_ip."
 #. Translators: description for script "responsive_layout.py" (0.4.3+)
 #: plugins/_i18n_plugins.py:89
 msgid "Automatically apply layouts according to terminal size."
-msgstr ""
+msgstr "automatische Anpassung der Layouts nach Größe des Terminals."
 
 #. Translators: description for script "nickregain.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:91
@@ -3014,7 +3021,7 @@ msgstr ""
 #. Translators: description for script "btc_ticker.py" (0.3.7+)
 #: plugins/_i18n_plugins.py:181
 msgid "Display Bitcoin or other crypto currency spot exchange value."
-msgstr ""
+msgstr "zeigt den Umrechnungswert für Bitcoin oder andere Krypto-Währungen an."
 
 #. Translators: description for script "bitlback.py" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:183
@@ -3036,9 +3043,8 @@ msgstr "zeigt Highlight in dzen an (und nutzt beep)."
 
 #. Translators: description for script "countdown.rb" (0.3.0+)
 #: plugins/_i18n_plugins.py:189
-#, fuzzy
 msgid "Display a countdown on current buffer."
-msgstr "löscht die Protokoll-Datei des aktuellen Buffers."
+msgstr "Zeigt einen Countdown im aktuellen Buffer an."
 
 #. Translators: description for script "urlbar.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:191
@@ -3779,9 +3785,8 @@ msgstr ""
 
 #. Translators: description for script "shutup.py" (0.3.6+)
 #: plugins/_i18n_plugins.py:451
-#, fuzzy
 msgid "Replace text from specified IRC users with random or preset text."
-msgstr "ersetzt den geschriebenen Text durch einen anderen Text."
+msgstr "ersetzt den Text von ausgewählten Usern mit einem vergebenen Text."
 
 #. Translators: description for script "text_replace.py" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:453
@@ -4005,9 +4010,9 @@ msgstr "schickt private Nachrichten und Highlights an einen AMQP Exchange."
 
 #. Translators: description for script "pushover.pl" (0.3.7+)
 #: plugins/_i18n_plugins.py:531
-#, fuzzy
 msgid "Send push notifications to your mobile devices using Pushover or NMA."
-msgstr "schickt Mitteilungen zu einem mobilen Gerät, mittels pushover.net."
+msgstr ""
+"schickt Mitteilungen zu einem mobilen Gerät, mittels Pushover oder NMA."
 
 #. Translators: description for script "ragefaces.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:533
@@ -4591,9 +4596,8 @@ msgid "WeeChat, the extensible chat client"
 msgstr "WeeChat, der erweiterbare Chat Client"
 
 #: templates/base.html:85
-#, fuzzy
 msgid "About WeeChat.org"
-msgstr "Über WeeChat"
+msgstr "Über WeeChat.org"
 
 #: templates/base.html:87
 msgid "Valid"
@@ -4677,9 +4681,8 @@ msgid "Stable version"
 msgstr "stabile Version"
 
 #: templates/menu.html:31
-#, fuzzy
 msgid "Dev version"
-msgstr "Neue Version"
+msgstr "Entwicklerversion"
 
 #: templates/menu.html:32
 msgid "Debian repositories"
@@ -4728,7 +4731,7 @@ msgstr "Support"
 
 #: templates/menu.html:63
 msgid "Bugs"
-msgstr ""
+msgstr "Fehler"
 
 #: templates/about/about.html:5
 msgid "about"
@@ -5132,36 +5135,35 @@ msgid "No screenshot."
 msgstr "kein Bildschirmfoto."
 
 #: templates/about/weechat.org.html:14
-#, fuzzy
 msgid "Authors"
-msgstr "Autor"
+msgstr "Autoren"
 
 #: templates/about/weechat.org.html:16
-#, fuzzy
 msgid "Developers:"
-msgstr "Entwicklerhandbuch"
+msgstr "Entwickler:"
 
 #: templates/about/weechat.org.html:23
-#, fuzzy
 msgid "Translators:"
-msgstr "übersetzt"
+msgstr "übersetzter:"
 
 #: templates/about/weechat.org.html:33
 msgid "Source code"
-msgstr ""
+msgstr "Quellprogramm"
 
 #: templates/about/weechat.org.html:35
 msgid "Source code of WeeChat.org is available on GitHub:"
-msgstr ""
+msgstr "Quellcode von WeeChat.org ist auf GitHub veröffentlicht:"
 
 #: templates/about/weechat.org.html:41
 msgid "Hosting"
-msgstr ""
+msgstr "Hosting"
 
 #: templates/about/weechat.org.html:43
 msgid ""
 "WeeChat.org is hosted by <a href=\"https://www.hetzner.de/en/\">Hetzner</a>."
 msgstr ""
+"WeeChat.org wird auf <a href=\"https://www.hetzner.de/en/\">Hetzner</a> "
+"gehostet."
 
 #: templates/dev/dev.html:5
 msgid "dev"
@@ -5293,31 +5295,31 @@ msgstr ""
 
 #: templates/dev/support.html:18
 msgid "On server chat.freenode.net:"
-msgstr ""
+msgstr "auf Server chat.freenode.net:"
 
 #: templates/dev/support.html:22
-#, fuzzy
 msgid "official channels (with developers):"
-msgstr "offizielle Channels (mit Entwicklern):"
+msgstr "offizielle Channel (mit Entwicklern):"
 
 #: templates/dev/support.html:29
-#, fuzzy
 msgid "non-official channels:"
-msgstr "keine offiziellen Channels:"
+msgstr "keine offiziellen Channel:"
 
 #: templates/dev/support.html:36
 msgid "Bugs / Feature requests"
-msgstr ""
+msgstr "Fehler / Funktionswünsche"
 
 #: templates/dev/support.html:38
 msgid ""
 "Bugs and feature requests for WeeChat, QWeeChat and scripts can be submitted "
 "on GitHub:"
 msgstr ""
+"Fehlermeldungen und Funktionswünsche für WeeChat, QWeeChat und Skripten "
+"können auf GitHub mitgeteilt werden:"
 
 #: templates/dev/support.html:43
 msgid "WeeChat is on <a href=\"https://plus.google.com/\">Google+</a>:"
-msgstr ""
+msgstr "WeeChat ist auf <a href=\"https://plus.google.com/\">Google+</a>:"
 
 #: templates/dev/support.html:46
 msgid "Page"
@@ -5338,30 +5340,35 @@ msgid ""
 "\"_blank\">3 mailing lists <img src=\"%(MEDIA_URL)simages/link.png\" width="
 "\"16\" height=\"16\" alt=\"\" /></a>:"
 msgstr ""
+"Es existieren <a href=\"https://savannah.nongnu.org/mail/?group=weechat\" "
+"target=\"_blank\">drei Mailinglisten <img src=\"%(MEDIA_URL)simages/link.png"
+"\" width=\"16\" height=\"16\" alt=\"\" /></a>:"
 
 #: templates/dev/support.html:56
 msgid "<strong>weechat-security</strong> (security advisories about WeeChat):"
 msgstr ""
+"<strong>weechat-security</strong> (Sicherheitsankündigungen, die WeeChat "
+"betreffen):"
 
 #: templates/dev/support.html:58 templates/dev/support.html.py:65
 #: templates/dev/support.html:72
-#, fuzzy
 msgid "subscribe:"
-msgstr "Abonnieren:"
+msgstr "abonnieren:"
 
 #: templates/dev/support.html:59 templates/dev/support.html.py:66
 #: templates/dev/support.html:73
-#, fuzzy
 msgid "send mail to:"
-msgstr "Sende eine Mail an:"
+msgstr "sende eine Mail an:"
 
 #: templates/dev/support.html:63
 msgid "<strong>weechat-support</strong> (installation, usage, bugs, ...):"
 msgstr ""
+"<strong>weechat-support</strong> (Installation, Anwendung, Fehler, ...):"
 
 #: templates/dev/support.html:70
 msgid "<strong>weechat-dev</strong> (everything related to the development):"
 msgstr ""
+"<strong>weechat-dev</strong> (alles was mit der Entwicklung zu tun hat):"
 
 #: templates/doc/doc.html:5
 msgid "documentation"
@@ -5611,16 +5618,15 @@ msgstr "Fehler: Es wurde keine Version ausgewählt"
 
 #: templates/download/release.html:19
 msgid "YEAH! You can download and install it!"
-msgstr ""
+msgstr "JAWOLL! Du kannst es herunterladen und installieren!"
 
 #: templates/download/release.html:30
-#, fuzzy
 msgid "No release in progress."
-msgstr "Release notes"
+msgstr "keine Veröffentlichung im Gange."
 
 #: templates/download/release.html:31
 msgid "We are working hard on the next version:"
-msgstr ""
+msgstr "Es wird intensiv an der nächsten Version gearbeitet:"
 
 #: templates/download/security.html:5
 msgid "security"
@@ -5739,9 +5745,8 @@ msgstr ""
 "<strong>modular</strong>: ein schlanker Kern mit optionalen Erweiterungen"
 
 #: templates/home/home.html:26
-#, fuzzy
 msgid "<strong>multi-protocols architecture</strong> (mainly IRC)"
-msgstr "<strong>Multi-Protokoll fähig</strong>: IRC (Jabber mittels jabber.py)"
+msgstr "<strong>Multi-Protokoll fähig</strong> (hauptsächlich IRC)"
 
 #: templates/home/home.html:27
 msgid ""
@@ -5869,11 +5874,10 @@ msgstr ""
 "perl')"
 
 #: templates/plugins/add.html:31
-#, fuzzy
 msgid "use only English for code and comments"
 msgstr ""
-"für den Programmcode und Kommentare darf nur die englische Sprache verwendet "
-"werden"
+"für den Programmcode und die Kommentare darf nur die englische Sprache "
+"verwendet werden"
 
 #: templates/plugins/add.html:32
 msgid ""
