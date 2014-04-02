@@ -125,6 +125,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Block mass highlights."),
     # Translators: description for script "browse.rb" (0.0.1-0.2.6)
     gettext_lazy("Browse/list URLs in channels."),
+    # Translators: description for script "mnick.pl" (0.3.0+)
+    gettext_lazy("Change nick on multiple servers using custom masks."),
     # Translators: description for script "luanma.pl" (0.3.9+)
     gettext_lazy("Charset replacement for IRC, recode past message."),
     # Translators: description for script "pop3_mail.pl" (0.3.0+)
