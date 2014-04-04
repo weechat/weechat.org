@@ -205,9 +205,9 @@ def form_add(request):
                     'Requirements: %s\n' \
                     'Min WeeChat : %s\n' \
                     'Max WeeChat : %s\n' \
-                    'Author      : %s\n' \
-                    'Mail        : %s\n' \
-                    'Comment     :\n%s\n' % \
+                    'Author      : %s <%s>\n' \
+                    '\n' \
+                    'Comment:\n%s\n' % \
                     (form.cleaned_data['name'],
                      form.cleaned_data['version'],
                      form.cleaned_data['language'],
@@ -254,9 +254,9 @@ def form_update(request):
                 body = '' \
                     'Script     : %s (%s)\n' \
                     'New version: %s\n' \
-                    'Author     : %s\n' \
-                    'Mail       : %s\n' \
-                    'Comment    :\n%s\n' % \
+                    'Author     : %s <%s>\n' \
+                    '\n' \
+                    'Comment:\n%s\n' % \
                     (plugin.name_with_extension(), plugin.version_weechat(),
                      form.cleaned_data['version'],
                      form.cleaned_data['author'],
