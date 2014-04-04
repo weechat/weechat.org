@@ -89,6 +89,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Automatically apply layouts according to terminal size."),
     # Translators: description for script "nickregain.pl" (0.3.0+)
     gettext_lazy("Automatically attempts to regain IRC primary nick."),
+    # Translators: description for script "auth.rb" (0.3.0+)
+    gettext_lazy("Automatically authenticate with NickServ using SASL username/password."),
     # Translators: description for script "automode.pl" (0.0.1-0.2.6)
     gettext_lazy("Automatically change IRC modes of other users when they join."),
     # Translators: description for script "buffer_autoclose.py" (0.3.0+)
