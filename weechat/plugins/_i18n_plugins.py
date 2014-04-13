@@ -147,6 +147,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Configure autojoin for all servers according to currently joined channels."),
     # Translators: description for script "cmd_help.py" (0.3.5+)
     gettext_lazy("Contextual command line help."),
+    # Translators: description for script "clemy.py" (0.3.0+)
+    gettext_lazy("Control Clementine from WeeChat."),
     # Translators: description for script "rhythmbus.pl" (0.3.6+)
     gettext_lazy("Control Rhythmbox through qdbus."),
     # Translators: description for script "ncmpcpp.pl" (0.3.0+)
@@ -251,6 +253,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Do funny things with your input and enerve others."),
     # Translators: description for script "topicsed.pl" (0.3.0+)
     gettext_lazy("Edit channel topics by perl regular expressions or in input-line."),
+    # Translators: description for script "axolotl.py" (0.3.0+)
+    gettext_lazy("Encrypt/decrypt IRC messages using axolotl ratchet and GPG."),
     # Translators: description for script "crypt.py" (0.0.1-0.2.6)
     gettext_lazy("Encrypt/decrypt messages using openssl."),
     # Translators: description for script "allquery.py" (0.3.0+)
@@ -303,6 +307,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Highlight some channels on each message."),
     # Translators: description for script "weestats.py" (0.3.0+)
     gettext_lazy("Insert some statistics about buffers/windows on command line."),
+    # Translators: description for script "urlselect.lua" (0.4.4+)
+    gettext_lazy("Interactively select URL with keyboard and perform some commands on it."),
     # Translators: description for script "color_popup.pl" (0.3.0+)
     gettext_lazy("Interpret mirc formatting codes in the command line and show a color popup when needed."),
     # Translators: description for script "irssinotifier.py" (0.3.7+)
