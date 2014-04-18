@@ -73,7 +73,7 @@ def history(request):
 
 def donate(request, key=''):
     """Page with link for donation and list of sponsors."""
-    sponsor_list = Sponsor.objects.all().order_by('-date')
+    sponsor_list = Sponsor.objects.all().order_by('-date', '-id')
     total = 0.0
     viewamount = False
     try:
