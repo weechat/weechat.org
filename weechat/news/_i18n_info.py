@@ -98,7 +98,7 @@ _i18n_news_info = [
     gettext_lazy("WeeChat is now in Cygwin, and can be installed with setup.exe.\nVersion 0.4.2 is available for 32 and 64-bit Cygwin.\n\nNote: Guile plugin is missing, since it requires guile >= 2.0, which is not yet available in Cygwin."),
     gettext_lazy("WeeChat project is started.\n\nIt is a chat client, with many features like:\n- irc client,\n- many GUI: text, ncurses and gtk,\n- multi-platforms,\n- fast, light and extensible with scripts.\n- ..."),
     gettext_lazy("WeeChat project now accepts donations via Paypal account, with secured payment."),
-    gettext_lazy("WeeChat repositories (weechat, scripts, qweechat) have been moved to GitHub, in WeeChat organization: <a href=\"http://github.com/weechat\">http://github.com/weechat</a>. \n\nFor more info, please look at <a href=\"http://dev.weechat.org/post/2014/03/03/Git-repositories-moved-to-Github\">development blog</a>."),
+    gettext_lazy("WeeChat repositories (weechat, scripts, qweechat) have been moved to GitHub, in WeeChat organization: <a href=\"http://github.com/weechat\">http://github.com/weechat</a>.\n\nFor more info, please look at <a href=\"http://dev.weechat.org/post/2014/03/03/Git-repositories-moved-to-Github\">development blog</a>."),
     gettext_lazy("WeeChat screenshot"),
     gettext_lazy("WeeChat scripts page"),
     gettext_lazy("WeeChat scripts page (today Perl scripts only) has been added.\nOn this page you can submit your script (need to be approved by WeeChat development team).\n\nNote: Perl scripts require version of WeeChat > 0.0.3, so today you must download development version."),
