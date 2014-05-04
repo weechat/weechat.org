@@ -36,7 +36,11 @@ urlpatterns += patterns(
      'weechat.about.views.screenshots'),
     (r'^history/$', 'weechat.about.views.history'),
     (r'^donate/$', 'weechat.about.views.donate'),
-    (r'^donate/(?P<key>[a-zA-Z0-9_]*)/$', 'weechat.about.views.donate'),
+    (r'^donate/sort/(?P<sort_key>(date|top10))/$',
+     'weechat.about.views.donate'),
+    (r'^donate/sort/(?P<sort_key>(date|top10))/'
+     'view/(?P<view_key>[a-zA-Z0-9_]*)/$',
+     'weechat.about.views.donate'),
 )
 
 urlpatterns += patterns(

@@ -68,13 +68,11 @@ class Sponsor(models.Model):
     date = models.DateField()
     site = models.CharField(max_length=512, blank=True)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
-    currency = models.CharField(max_length=8)
     number = models.IntegerField(default=1)
     comment = models.CharField(max_length=1024, blank=True)
 
     def __unicode__(self):
-        return '%s, %s, %d %s' % (self.name, self.date, self.amount,
-                                  self.currency)
+        return '%s, %s, %.02f Eur' % (self.name, self.date, self.amount)
 
     def date_l10n(self):
         return localdate(self.date)

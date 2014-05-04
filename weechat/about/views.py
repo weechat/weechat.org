@@ -21,6 +21,7 @@
 from os import path
 
 from django.conf import settings
+from django.db.models import Sum
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
@@ -71,25 +72,28 @@ def history(request):
         context_instance=RequestContext(request))
 
 
-def donate(request, key=''):
+def donate(request, sort_key='date', view_key=''):
     """Page with link for donation and list of sponsors."""
-    sponsor_list = Sponsor.objects.all().order_by('-date', '-id')
-    total = 0.0
-    viewamount = False
+    if sort_key == 'top10':
+        sponsor_list = Sponsor.objects.values('name').\
+            annotate(amount=Sum('amount')).order_by('-amount')[:10]
+        total = sum(sponsor['amount'] for sponsor in sponsor_list)
+    else:
+        # by default: sort by date
+        sponsor_list = Sponsor.objects.all().order_by('-date', '-id')
+        total = sum(sponsor.amount for sponsor in sponsor_list)
+    view_amount = False
     try:
-        if key and key == settings.KEY_VIEWAMOUNT:
-            viewamount = True
+        if view_key and view_key == settings.KEY_VIEWAMOUNT:
+            view_amount = True
     except:
         pass
-    if viewamount:
-        for sponsor in sponsor_list:
-            total += float(sponsor.amount) * 0.7659 \
-                if sponsor.currency == '$' else float(sponsor.amount)
     return render_to_response(
         'about/donate.html',
         {
             'sponsor_list': sponsor_list,
-            'viewamount': viewamount,
-            'total': int(total),
+            'sort_key': sort_key,
+            'view_amount': view_amount,
+            'total': total,
         },
         context_instance=RequestContext(request))

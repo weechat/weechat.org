@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-19 16:02+0200\n"
-"PO-Revision-Date: 2014-04-19 16:02+0200\n"
+"POT-Creation-Date: 2014-05-04 14:35+0200\n"
+"PO-Revision-Date: 2014-05-04 14:36+0200\n"
 "Last-Translator: Sébastien Helleu <flashcode@flashtux.org>\n"
 "Language-Team: French <flashcode@flashtux.org>\n"
 "Language: fr\n"
@@ -180,8 +180,8 @@ msgstr "version stable"
 msgid ""
 "stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
-"version stable, sous forme de nombre, comme l'API extension : info_get"
-"(\"version_number\")"
+"version stable, sous forme de nombre, comme l'API extension : "
+"info_get(\"version_number\")"
 
 #: dev/views.py:44
 msgid "date of stable version"
@@ -1344,8 +1344,8 @@ msgstr ""
 "weechat_pv, weechat_highlight, weechat_ctcp, weechat_dcc\n"
 "- les extensions scripts chargent désormais les scripts dans le répertoire "
 "share système de WeeChat\n"
-"- ajout du temps d'inactivité, accessible pour les extensions via get_info"
-"(\"inactivity\")\n"
+"- ajout du temps d'inactivité, accessible pour les extensions via "
+"get_info(\"inactivity\")\n"
 "- nouvelles fonctions pour les extensions : add_timer_handler, "
 "remove_timer_handler, remove_infobar\n"
 "- plusieurs commandes autorisées pour les alias\n"
@@ -4436,7 +4436,7 @@ msgctxt "programming language"
 msgid "Language"
 msgstr "Langage"
 
-#: plugins/models.py:226 templates/about/donate.html:47
+#: plugins/models.py:226 templates/about/donate.html:55
 #: templates/plugins/list.html:57 templates/plugins/list.html.py:59
 #: templates/plugins/pending.html:29
 msgid "Name"
@@ -4773,25 +4773,45 @@ msgstr ""
 msgid "They support WeeChat:"
 msgstr "Ils soutiennent WeeChat :"
 
-#: templates/about/donate.html:45 templates/plugins/pending.html:38
+#: templates/about/donate.html:42
+msgid "whole list"
+msgstr "liste entière"
+
+#: templates/about/donate.html:42
+msgid "top 10"
+msgstr "top 10"
+
+#: templates/about/donate.html:44
+msgid "show the top 10"
+msgstr "voir le top 10"
+
+#: templates/about/donate.html:46
+msgid "show the whole list"
+msgstr "voir la liste entière"
+
+#: templates/about/donate.html:51 templates/plugins/pending.html:38
 msgid "Date"
 msgstr "Date"
 
-#: templates/about/donate.html:46
+#: templates/about/donate.html:53
+msgid "Rank"
+msgstr "Rang"
+
+#: templates/about/donate.html:56
 msgid "Amount"
 msgstr "Montant"
 
-#: templates/about/donate.html:48
+#: templates/about/donate.html:58
 msgid "Donation number"
 msgstr "Numéro de don"
 
-#: templates/about/donate.html:49
+#: templates/about/donate.html:59
 msgid "Comment"
 msgstr "Commentaire"
 
-#: templates/about/donate.html:64
-msgid "total"
-msgstr "total"
+#: templates/about/donate.html:84 templates/doc/doc.html:73
+msgid "Total"
+msgstr "Total"
 
 #: templates/about/features.html:5
 msgid "features"
@@ -5396,10 +5416,6 @@ msgstr "Approximatif"
 #: templates/doc/doc.html:72
 msgid "Untranslated"
 msgstr "Non traduit"
-
-#: templates/doc/doc.html:73
-msgid "Total"
-msgstr "Total"
 
 #: templates/doc/doc.html:74
 msgid "Progress"

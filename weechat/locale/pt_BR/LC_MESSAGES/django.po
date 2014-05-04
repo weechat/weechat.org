@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-19 16:02+0200\n"
+"POT-Creation-Date: 2014-05-04 14:35+0200\n"
 "PO-Revision-Date: 2014-03-28 07:40+0100\n"
 "Last-Translator: Alexandre Bolelli <semeion7@gmail.com>\n"
 "Language-Team: Portuguese <semeion7@gmail.com>\n"
@@ -204,8 +204,8 @@ msgstr "próxima versão estável"
 msgid ""
 "next stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
-"próxima versão estável, como número, como plugin da API: info_get"
-"(\"version_number\")"
+"próxima versão estável, como número, como plugin da API: "
+"info_get(\"version_number\")"
 
 #: dev/views.py:69
 msgid "approximate date of next stable version"
@@ -1321,8 +1321,8 @@ msgstr ""
 "weechat_pv, weechat_highlight, weechat_ctcp, weechat_dcc\n"
 "- plugin script agora carrega scripts no WeeChat do diretório compartilhado "
 "do sistema\n"
-"- adicionado tempo de inatividade, disponível para plugins via get_info"
-"(\"inactivity\")\n"
+"- adicionado tempo de inatividade, disponível para plugins via "
+"get_info(\"inactivity\")\n"
 "- adicionada novas funções para plugins: add_timer_handler, "
 "remove_timer_handler, remove_infobar\n"
 "- muitos comandos permitidos para aliases\n"
@@ -4323,7 +4323,7 @@ msgctxt "programming language"
 msgid "Language"
 msgstr "Linguagem"
 
-#: plugins/models.py:226 templates/about/donate.html:47
+#: plugins/models.py:226 templates/about/donate.html:55
 #: templates/plugins/list.html:57 templates/plugins/list.html.py:59
 #: templates/plugins/pending.html:29
 msgid "Name"
@@ -4665,26 +4665,46 @@ msgstr ""
 msgid "They support WeeChat:"
 msgstr "Eles suportam o WeeChat:"
 
-#: templates/about/donate.html:45 templates/plugins/pending.html:38
+#: templates/about/donate.html:42
+msgid "whole list"
+msgstr ""
+
+#: templates/about/donate.html:42
+msgid "top 10"
+msgstr ""
+
+#: templates/about/donate.html:44
+msgid "show the top 10"
+msgstr ""
+
+#: templates/about/donate.html:46
+msgid "show the whole list"
+msgstr ""
+
+#: templates/about/donate.html:51 templates/plugins/pending.html:38
 msgid "Date"
 msgstr "Data"
 
-#: templates/about/donate.html:46
+#: templates/about/donate.html:53
+msgid "Rank"
+msgstr ""
+
+#: templates/about/donate.html:56
 msgid "Amount"
 msgstr "Quantia"
 
-#: templates/about/donate.html:48
+#: templates/about/donate.html:58
 #, fuzzy
 msgid "Donation number"
 msgstr "Documentação e suporte"
 
-#: templates/about/donate.html:49
+#: templates/about/donate.html:59
 msgid "Comment"
 msgstr "Comentário"
 
-#: templates/about/donate.html:64
-msgid "total"
-msgstr "total"
+#: templates/about/donate.html:84 templates/doc/doc.html:73
+msgid "Total"
+msgstr "Total"
 
 #: templates/about/features.html:5
 msgid "features"
@@ -5291,10 +5311,6 @@ msgstr "Fuzzy"
 #: templates/doc/doc.html:72
 msgid "Untranslated"
 msgstr "Não traduzidas"
-
-#: templates/doc/doc.html:73
-msgid "Total"
-msgstr "Total"
 
 #: templates/doc/doc.html:74
 msgid "Progress"
@@ -6093,3 +6109,6 @@ msgstr "Erro interno."
 #: themes/models.py:251
 msgid "Invalid name: different from theme."
 msgstr "Nome inválido: diferente do tema."
+
+#~ msgid "total"
+#~ msgstr "total"

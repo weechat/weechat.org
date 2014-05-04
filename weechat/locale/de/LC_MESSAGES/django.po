@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-19 16:02+0200\n"
+"POT-Creation-Date: 2014-05-04 14:35+0200\n"
 "PO-Revision-Date: 2014-04-15 22:26+0100\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <weechatter@arcor.de>\n"
@@ -213,8 +213,8 @@ msgstr "kommende stabile Version"
 msgid ""
 "next stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
-"kommende stabile Version, als Nummer, siehe Erweiterung-API: info_get"
-"(\"version_number\")"
+"kommende stabile Version, als Nummer, siehe Erweiterung-API: "
+"info_get(\"version_number\")"
 
 #: dev/views.py:69
 msgid "approximate date of next stable version"
@@ -4500,7 +4500,7 @@ msgctxt "programming language"
 msgid "Language"
 msgstr "Sprache"
 
-#: plugins/models.py:226 templates/about/donate.html:47
+#: plugins/models.py:226 templates/about/donate.html:55
 #: templates/plugins/list.html:57 templates/plugins/list.html.py:59
 #: templates/plugins/pending.html:29
 msgid "Name"
@@ -4839,24 +4839,44 @@ msgstr ""
 msgid "They support WeeChat:"
 msgstr "WeeChat wurde bisher unterstützt von:"
 
-#: templates/about/donate.html:45 templates/plugins/pending.html:38
+#: templates/about/donate.html:42
+msgid "whole list"
+msgstr ""
+
+#: templates/about/donate.html:42
+msgid "top 10"
+msgstr ""
+
+#: templates/about/donate.html:44
+msgid "show the top 10"
+msgstr ""
+
+#: templates/about/donate.html:46
+msgid "show the whole list"
+msgstr ""
+
+#: templates/about/donate.html:51 templates/plugins/pending.html:38
 msgid "Date"
 msgstr "Datum"
 
-#: templates/about/donate.html:46
+#: templates/about/donate.html:53
+msgid "Rank"
+msgstr ""
+
+#: templates/about/donate.html:56
 msgid "Amount"
 msgstr "Betrag"
 
-#: templates/about/donate.html:48
+#: templates/about/donate.html:58
 msgid "Donation number"
 msgstr "Anzahl Spende"
 
-#: templates/about/donate.html:49
+#: templates/about/donate.html:59
 msgid "Comment"
 msgstr "Kommentar"
 
-#: templates/about/donate.html:64
-msgid "total"
+#: templates/about/donate.html:84 templates/doc/doc.html:73
+msgid "Total"
 msgstr "Total"
 
 #: templates/about/features.html:5
@@ -5471,10 +5491,6 @@ msgstr "zu überarbeiten"
 #: templates/doc/doc.html:72
 msgid "Untranslated"
 msgstr "nicht übersetzt"
-
-#: templates/doc/doc.html:73
-msgid "Total"
-msgstr "Total"
 
 #: templates/doc/doc.html:74
 msgid "Progress"
@@ -6296,3 +6312,6 @@ msgstr "interner Fehler."
 #: themes/models.py:251
 msgid "Invalid name: different from theme."
 msgstr "ungültiger Name: unterscheidet sich vom Theme."
+
+#~ msgid "total"
+#~ msgstr "Total"
