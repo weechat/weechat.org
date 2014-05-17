@@ -75,7 +75,7 @@ urlpatterns = patterns(
     url(r'^security/$', RedirectView.as_view(url='/download/security/')),
     url(r'^stats/$', RedirectView.as_view(url='/dev/stats/')),
     url(r'^info/$', RedirectView.as_view(url='/dev/info/')),
-    url(r'^info/(?P<info>[a-zA-Z0-9-_]*)/$', 'weechat.dev.views.info'),
+    url(r'^info/(?P<name>[a-zA-Z0-9-_]*)/$', 'weechat.dev.views.info'),
     url(r'^support/$', RedirectView.as_view(url='/dev/support/')),
 
     # feeds
