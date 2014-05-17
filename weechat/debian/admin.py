@@ -18,6 +18,8 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+"""Admin for Debian repositories."""
+
 from django.contrib import admin
 
 from weechat.debian.models import Version, Builder, Repo

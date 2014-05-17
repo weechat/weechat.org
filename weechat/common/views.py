@@ -18,10 +18,13 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+"""Some useful views."""
+
 from django.views.generic import TemplateView
 
 
 class TextTemplateView(TemplateView):
+    """View for a plain text file."""
     def render_to_response(self, context, **response_kwargs):
         response_kwargs['content_type'] = 'text/plain'
         return super(TemplateView, self).render_to_response(

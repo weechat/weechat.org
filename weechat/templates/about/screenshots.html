@@ -11,9 +11,9 @@
 
 <div class="about">
 
-{% if screenshots %}
+{% if screenshot_list %}
   <div class="screenshots">
-    {% for screenshot in screenshots %}
+    {% for screenshot in screenshot_list %}
       <a href="/about/screenshots/{{ screenshot.filename }}/">
         <img src="{{ MEDIA_URL }}images/{{ screenshot.directory }}/small/{{ screenshot.filename }}" alt="{{ screenshot.filename }}" title="{{ screenshot.comment }}" />
       </a>

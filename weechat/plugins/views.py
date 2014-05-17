@@ -18,6 +18,8 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+"""Views for "scripts" menu."""
+
 from datetime import datetime
 from pygments import highlight
 from pygments.formatters import HtmlFormatter
@@ -50,6 +52,7 @@ PYGMENTS_LEXER = {
 
 
 def get_sort_key(sort_key):
+    """Get sort keys to sort scripts (in SQL request)."""
     keys = sort_key.split(',')
     if 'name' not in keys:
         keys.append('name')
@@ -60,6 +63,7 @@ def get_sort_key(sort_key):
 
 
 def get_highlighted_source(source, language):
+    """Get source highlighted with pygments."""
     return highlight(source,
                      get_lexer_by_name(language, stripnl=True,
                                        encoding='utf-8'),
@@ -121,8 +125,9 @@ def script_source(request, api='stable', scriptid='', scriptname=''):
             plugin = Plugin.objects.get(id=scriptid)
             with open(files_path_join(plugin.path(),
                                       plugin.name_with_extension()),
-                      'rb') as f:
-                htmlsource = get_highlighted_source(f.read(), plugin.language)
+                      'rb') as _file:
+                htmlsource = get_highlighted_source(_file.read(),
+                                                    plugin.language)
         except:
             htmlsource = ''
     else:
@@ -143,8 +148,9 @@ def script_source(request, api='stable', scriptid='', scriptname=''):
                                             min_weechat__gte=API_STABLE)
             with open(files_path_join(plugin.path(),
                                       plugin.name_with_extension()),
-                      'rb') as f:
-                htmlsource = get_highlighted_source(f.read(), plugin.language)
+                      'rb') as _file:
+                htmlsource = get_highlighted_source(_file.read(),
+                                                    plugin.language)
         except:
             htmlsource = ''
     return render_to_response(
@@ -189,8 +195,8 @@ def form_add(request):
             # write script in pending directory
             filename = files_path_join('scripts', 'pending1',
                                        plugin.name_with_extension())
-            with open(filename, 'w') as f:
-                f.write(scriptfile.read().replace('\r\n', '\n'))
+            with open(filename, 'w') as _file:
+                _file.write(scriptfile.read().replace('\r\n', '\n'))
 
             # send e-mail
             try:

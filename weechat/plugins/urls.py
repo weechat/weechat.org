@@ -18,42 +18,47 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-# URLs for menu "scripts"
+"""URLs for "scripts" menu."""
 
-from django.conf.urls import *
+# pylint: disable=invalid-name, no-value-for-parameter
+
+from django.conf.urls import patterns, url
 from django.views.generic.base import TemplateView
 
 urlpatterns = patterns(
     '',
-    (r'^$', 'weechat.plugins.views.scripts'),
-    (r'^(?P<api>(old|stable))/$', 'weechat.plugins.views.scripts'),
-    (r'^(?P<api>(old|stable))/(?P<filter_name>(tag|language|license|author))/'
-     '(?P<filter_value>(.*))/$', 'weechat.plugins.views.scripts'),
-    (r'^(?P<api>(old|stable))/sort/(?P<sort_key>(name|language|license|'
-     'min_weechat|max_weechat|author|added|updated))/$',
-     'weechat.plugins.views.scripts'),
-    (r'^source/(?P<scriptid>\d+)/$', 'weechat.plugins.views.script_source'),
-    (r'^source/(?P<api>(old|stable))/(?P<scriptname>[a-zA-Z0-9_.]+)\.html/$',
-     'weechat.plugins.views.script_source'),
-    (r'^source/(?P<api>(old|stable))/(?P<scriptname>[a-zA-Z0-9_.]+)/$',
-     'weechat.plugins.views.script_source'),
-    (r'^source/(?P<scriptname>[a-zA-Z0-9_.]+)\.html/$',
-     'weechat.plugins.views.script_source', {'api': 'stable'}),
-    (r'^source/(?P<scriptname>[a-zA-Z0-9_.]+)/$',
-     'weechat.plugins.views.script_source', {'api': 'stable'}),
-    (r'^add/$', 'weechat.plugins.views.form_add'),
-    (r'^update/$', 'weechat.plugins.views.form_update'),
-    (r'^pending/$', 'weechat.plugins.views.pending'),
+    url(r'^$', 'weechat.plugins.views.scripts'),
+    url(r'^(?P<api>(old|stable))/$', 'weechat.plugins.views.scripts'),
+    url(r'^(?P<api>(old|stable))/'
+        r'(?P<filter_name>(tag|language|license|author))/'
+        r'(?P<filter_value>(.*))/$',
+        'weechat.plugins.views.scripts'),
+    url(r'^(?P<api>(old|stable))/sort/(?P<sort_key>(name|language|license|'
+        r'min_weechat|max_weechat|author|added|updated))/$',
+        'weechat.plugins.views.scripts'),
+    url(r'^source/(?P<scriptid>\d+)/$', 'weechat.plugins.views.script_source'),
+    url(r'^source/(?P<api>(old|stable))/(?P<scriptname>[a-zA-Z0-9_.]+)'
+        r'\.html/$',
+        'weechat.plugins.views.script_source'),
+    url(r'^source/(?P<api>(old|stable))/(?P<scriptname>[a-zA-Z0-9_.]+)/$',
+        'weechat.plugins.views.script_source'),
+    url(r'^source/(?P<scriptname>[a-zA-Z0-9_.]+)\.html/$',
+        'weechat.plugins.views.script_source', {'api': 'stable'}),
+    url(r'^source/(?P<scriptname>[a-zA-Z0-9_.]+)/$',
+        'weechat.plugins.views.script_source', {'api': 'stable'}),
+    url(r'^add/$', 'weechat.plugins.views.form_add'),
+    url(r'^update/$', 'weechat.plugins.views.form_update'),
+    url(r'^pending/$', 'weechat.plugins.views.pending'),
 )
 
 urlpatterns += patterns(
     'django.views.generic.simple',
-    (r'^addok/$',
-     TemplateView.as_view(template_name='plugins/add_ok.html')),
-    (r'^adderror/$',
-     TemplateView.as_view(template_name='plugins/add_error.html')),
-    (r'^updateok/$',
-     TemplateView.as_view(template_name='plugins/update_ok.html')),
-    (r'^updateerror/$',
-     TemplateView.as_view(template_name='plugins/update_error.html')),
+    url(r'^addok/$',
+        TemplateView.as_view(template_name='plugins/add_ok.html')),
+    url(r'^adderror/$',
+        TemplateView.as_view(template_name='plugins/add_error.html')),
+    url(r'^updateok/$',
+        TemplateView.as_view(template_name='plugins/update_ok.html')),
+    url(r'^updateerror/$',
+        TemplateView.as_view(template_name='plugins/update_error.html')),
 )

@@ -18,6 +18,8 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+"""Views for Debian repositories."""
+
 from datetime import datetime
 import gzip
 from os import path, stat
@@ -44,12 +46,12 @@ def repos(request, files=''):
                     'date': None,
                     'files': [],
                 }
-                filename = repo.path_package_gz(arch)
+                filename = repo.path_packages_gz(arch)
                 build['date'] = stat(filename).st_mtime
-                f = gzip.open(filename, 'rb')
-                if f:
+                _file = gzip.open(filename, 'rb')
+                if _file:
                     pkg = {}
-                    for line in f.readlines():
+                    for line in _file.readlines():
                         line = line.strip()
                         if len(line) == 0:
                             if pkg:
@@ -61,9 +63,11 @@ def repos(request, files=''):
                                                              pkg['Filename'])
                                 fstat = stat(pkgfilename)
                                 pkg['size'] = fstat.st_size
-                                dt = datetime.fromtimestamp(fstat.st_mtime)
-                                pkg['builddate'] = dt.strftime('%Y-%m-%d')
-                                pkg['buildtime'] = dt.strftime('%H:%M')
+                                date_time = datetime.fromtimestamp(
+                                    fstat.st_mtime)
+                                pkg['builddate'] = date_time.strftime(
+                                    '%Y-%m-%d')
+                                pkg['buildtime'] = date_time.strftime('%H:%M')
                                 pkg['builddatetime'] = pkg['builddate'] + \
                                     pkg['buildtime']
                                 pkg['basename'] = \
@@ -75,10 +79,10 @@ def repos(request, files=''):
                                     pkg['Source'] = pkg['Package']
                                 repopkgs.append(pkg)
                             pkg = {}
-                        m = re.match('^([^ ]+): (.*)$', line)
-                        if m:
-                            pkg[m.group(1)] = m.group(2)
-                    f.close()
+                        match = re.match('^([^ ]+): (.*)$', line)
+                        if match:
+                            pkg[match.group(1)] = match.group(2)
+                    _file.close()
             debpkgs.extend(sorted(repopkgs, key=lambda p: p['builddatetime'],
                                   reverse=True))
     except:

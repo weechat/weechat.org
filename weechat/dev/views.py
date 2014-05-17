@@ -18,6 +18,8 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+"""Views for "dev" menu."""
+
 import re
 
 from django.shortcuts import render_to_response
@@ -94,7 +96,7 @@ def roadmap(request, allversions=False):
         context_instance=RequestContext(request))
 
 
-def stats(request, stats='weechat'):
+def stats_repo(request, stats='weechat'):
     """Page with statistics about source code (git repositories)."""
     repository = ''
     sloc = ''
@@ -107,16 +109,16 @@ def stats(request, stats='weechat'):
 
     try:
         with open(files_path_join('stats',
-                                  'git_%s_commits.txt' % stats), 'r') as f:
-            git_commits = f.read().split(',')
+                                  'git_%s_commits.txt' % stats), 'r') as _file:
+            git_commits = _file.read().split(',')
     except:
         pass
 
     if stats in ('weechat', 'qweechat'):
         try:
             with open(files_path_join('stats',
-                                      'sloc_%s.txt' % stats), 'r') as f:
-                sloc = f.read()
+                                      'sloc_%s.txt' % stats), 'r') as _file:
+                sloc = _file.read()
         except:
             pass
 
@@ -129,8 +131,8 @@ def stats(request, stats='weechat'):
         svg_list += ['downloads']
         try:
             with open(files_path_join('stats',
-                                      'scripts_downloads.txt'), 'r') as f:
-                scripts_downloads = f.read()
+                                      'scripts_downloads.txt'), 'r') as _file:
+                scripts_downloads = _file.read()
         except:
             pass
     elif stats == 'qweechat':
@@ -155,63 +157,64 @@ def stats(request, stats='weechat'):
         context_instance=RequestContext(request))
 
 
-def get_info(info, version):
-    if info == 'stable':
+def get_info(name, version):
+    """Get an info."""
+    if name == 'stable':
         return version['stable'].description
-    elif info == 'stable_number':
+    elif name == 'stable_number':
         return version_as_int(version['stable'].description)
-    elif info == 'stable_date':
+    elif name == 'stable_date':
         return str(version['stable'].date)
-    elif info == 'devel':
+    elif name == 'devel':
         return version['devel'].description
-    elif info == 'git':
+    elif name == 'git':
         git = ''
         try:
-            with open(files_path_join('git_sources_head.txt'), 'r') as f:
-                git = f.read().strip()
+            with open(files_path_join('git_sources_head.txt'), 'r') as _file:
+                git = _file.read().strip()
         except:
             pass
         return git
-    elif info == 'git_scripts':
+    elif name == 'git_scripts':
         git = ''
         try:
-            with open(files_path_join('git_scripts_head.txt'), 'r') as f:
-                git = f.read().strip()
+            with open(files_path_join('git_scripts_head.txt'), 'r') as _file:
+                git = _file.read().strip()
         except:
             pass
         return git
-    elif info == 'next_stable':
+    elif name == 'next_stable':
         return re.sub('-.*', '', version['devel'].description)
-    elif info == 'next_stable_number':
+    elif name == 'next_stable_number':
         return version_as_int(version['devel'].description)
-    elif info == 'next_stable_date':
+    elif name == 'next_stable_date':
         return str(version['devel'].date)
-    elif info == 'all':
+    elif name == 'all':
         infos = []
         for key in INFO_KEYS:
-            if key[0] != info:
+            if key[0] != name:
                 infos.append('%s:%s' % (key[0], get_info(key[0], version)))
         return '\n'.join(infos)
     return ''
 
 
-def info(request, info=None):
+def info(request, name=None):
     """Page with one or all available infos."""
     version = {
         'stable': Release.objects.get(version='stable'),
         'devel': Release.objects.get(version='devel')
     }
-    if info:
+    if name:
         return render_to_response('dev/info.html',
-                                  {'info': get_info(info, version)},
+                                  {'info': get_info(name, version)},
                                   context_instance=RequestContext(request))
     else:
         infos = []
-        for info in INFO_KEYS:
-            value = get_info(info[0], version)
-            if info[0].endswith('_number'):
+        for oneinfo in INFO_KEYS:
+            value = get_info(oneinfo[0], version)
+            if oneinfo[0].endswith('_number'):
                 value = '%s (0x%08lx)' % (value, value)
-            infos.append((info[0], value, info[1]))
+            infos.append((oneinfo[0], value, oneinfo[1]))
         return render_to_response('dev/info_list.html',
                                   {'infos': infos},
                                   context_instance=RequestContext(request))

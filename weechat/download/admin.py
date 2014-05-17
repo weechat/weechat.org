@@ -18,6 +18,8 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+"""Admin for "download" menu."""
+
 from django.contrib import admin
 
 from weechat.download.models import Release, Type, Package, Security

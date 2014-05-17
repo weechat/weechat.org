@@ -18,6 +18,8 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+"""Views for "themes" menu."""
+
 from datetime import datetime
 from pygments import highlight
 from pygments.formatters import HtmlFormatter
@@ -62,8 +64,8 @@ def theme_source(request, themeid=None, themename=None):
     else:
         theme = Theme.objects.get(name=themename)
     try:
-        with open(files_path_join(theme.path(), theme.name), 'rb') as f:
-            htmlsource = highlight(f.read(),
+        with open(files_path_join(theme.path(), theme.name), 'rb') as _file:
+            htmlsource = highlight(_file.read(),
                                    get_lexer_by_name('ini', stripnl=True,
                                                      encoding='utf-8'),
                                    HtmlFormatter(cssclass='pygments',
@@ -103,8 +105,8 @@ def form_add(request):
 
             # write theme in pending directory
             filename = files_path_join('themes', 'pending', theme.name)
-            with open(filename, 'w') as f:
-                f.write(content)
+            with open(filename, 'w') as _file:
+                _file.write(content)
 
             # send e-mail
             try:

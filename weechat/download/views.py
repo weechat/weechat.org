@@ -18,13 +18,13 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-from os import path
+"""Views for "download" menu."""
+
 import re
 
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
-from weechat.common.path import files_path_join
 from weechat.download.models import Release, Package, Security
 from weechat.download.models import ReleaseTodo, ReleaseProgress
 

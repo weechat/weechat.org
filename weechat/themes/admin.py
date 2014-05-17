@@ -18,13 +18,15 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+"""Admin for "themes" menu."""
+
 from django.contrib import admin
 
 from weechat.themes.models import Theme
 
 
 class ThemeAdmin(admin.ModelAdmin):
-    # display everything on same page
+    """Display all themes on the same page."""
     list_per_page = 10000
 
 admin.site.register(Theme, ThemeAdmin)

@@ -18,11 +18,13 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+"""Some useful functions for versions."""
+
 import re
 
 from django import template
-from django.template.defaultfilters import stringfilter
 
+# pylint: disable=invalid-name
 register = template.Library()
 
 

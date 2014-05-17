@@ -18,11 +18,14 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+"""Models for "doc" menu."""
+
 from django.db import models
 from django.utils.translation import ugettext, ugettext_noop
 
 
 class Language(models.Model):
+    """A language with at least one translated doc."""
     LANG_I18N = {
         'cs': ugettext_noop('Czech'),
         'de': ugettext_noop('German'),
@@ -44,6 +47,7 @@ class Language(models.Model):
         return '%s (%d)' % (self.lang, self.priority)
 
     def lang_i18n(self):
+        """Return the translated language."""
         return ugettext(self.LANG_I18N[self.lang])
 
     class Meta:
@@ -51,6 +55,7 @@ class Language(models.Model):
 
 
 class Version(models.Model):
+    """A version for docs."""
     version = models.CharField(max_length=32, primary_key=True)
     priority = models.IntegerField(default=0)
     directory = models.CharField(max_length=256, blank=True)
@@ -63,6 +68,7 @@ class Version(models.Model):
 
 
 class Doc(models.Model):
+    """A WeeChat document file."""
     NAME_I18N = {
         'faq': ugettext_noop('FAQ'),
         'user': ugettext_noop('User\'s guide'),
@@ -82,6 +88,7 @@ class Doc(models.Model):
         return '%s (%s, %d)' % (self.name, self.version, self.priority)
 
     def name_i18n(self):
+        """Return the translated doc name."""
         return ugettext(self.NAME_I18N[self.name])
 
     class Meta:

@@ -18,24 +18,26 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-# URLs for menu "dev"
+"""URLs for "dev" menu."""
 
-from django.conf.urls import *
+# pylint: disable=invalid-name, no-value-for-parameter
+
+from django.conf.urls import patterns, url
 from django.views.generic.base import TemplateView
 
 urlpatterns = patterns(
     '',
-    (r'^$', 'weechat.dev.views.roadmap'),
-    (r'^roadmap/$', 'weechat.dev.views.roadmap'),
-    (r'^roadmap/all/$', 'weechat.dev.views.roadmap', {'allversions': True}),
-    (r'^stats/$', 'weechat.dev.views.stats'),
-    (r'^stats/(?P<stats>weechat|scripts|qweechat|weechat\.org)/$',
-     'weechat.dev.views.stats'),
-    (r'^info/$', 'weechat.dev.views.info'),
-    (r'^info/(?P<info>[a-zA-Z0-9_]*)/$', 'weechat.dev.views.info'),
+    url(r'^$', 'weechat.dev.views.roadmap'),
+    url(r'^roadmap/$', 'weechat.dev.views.roadmap'),
+    url(r'^roadmap/all/$', 'weechat.dev.views.roadmap', {'allversions': True}),
+    url(r'^stats/$', 'weechat.dev.views.stats_repo'),
+    url(r'^stats/(?P<stats>weechat|scripts|qweechat|weechat\.org)/$',
+        'weechat.dev.views.stats_repo'),
+    url(r'^info/$', 'weechat.dev.views.info'),
+    url(r'^info/(?P<name>[a-zA-Z0-9_]*)/$', 'weechat.dev.views.info'),
 )
 
 urlpatterns += patterns(
     'django.views.generic.simple',
-    (r'^support/$', TemplateView.as_view(template_name='dev/support.html')),
+    url(r'^support/$', TemplateView.as_view(template_name='dev/support.html')),
 )

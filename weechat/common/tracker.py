@@ -18,6 +18,8 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+"""Some useful tracker functions."""
+
 import re
 
 from django.conf import settings
@@ -35,12 +37,14 @@ SAVANNAH_PATTERN = re.compile(r'(bug|task|patch) #([0-9]+)')
 
 
 def _replace_github_link(match):
+    """Replace a match of GitHub keyword (like "closes #123") by URL."""
     return '<a href="%s" target="_blank">%s</a>' % (
         GITHUB_LINK % match.group(2),
         match.group(0))
 
 
 def _replace_savannah_link(match):
+    """Replace a match of Savannah keyword (like "bug #12345") by URL."""
     if match.group(1) not in SAVANNAH_LINKS:
         return match.group(0)
     return '<a href="%s" target="_blank">%s</a>' % (
@@ -49,15 +53,16 @@ def _replace_savannah_link(match):
 
 
 def tracker_links(tracker):
-    """
-    Replace github tracker item(s) (for example: "closes #123")
+    """Replace tracker items by URLs.
+
+    Replace GitHub tracker item(s) (for example: "closes #123")
     and savannah tracker item(s) (for example: "bug #12345")
     by URL(s) to this/these item(s).
     """
     if not tracker:
         return ''
-    s = GITHUB_PATTERN.sub(_replace_github_link, tracker)
-    return SAVANNAH_PATTERN.sub(_replace_savannah_link, s)
+    string = GITHUB_PATTERN.sub(_replace_github_link, tracker)
+    return SAVANNAH_PATTERN.sub(_replace_savannah_link, string)
 
 
 def commits_links(commits):

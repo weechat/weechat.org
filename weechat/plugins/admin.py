@@ -18,13 +18,16 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+"""Admin for "scripts" menu."""
+
 from django.contrib import admin
 
 from weechat.plugins.models import Plugin
 
 
+# pylint: disable=too-many-public-methods
 class PluginAdmin(admin.ModelAdmin):
-    # display everything on same page
+    """Display all scripts on the same page."""
     list_per_page = 10000
 
 admin.site.register(Plugin, PluginAdmin)

@@ -18,9 +18,12 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+"""Views for "about" menu."""
+
 from os import path
 
 from django.conf import settings
+from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Sum
 from django.shortcuts import render_to_response
 from django.template import RequestContext
@@ -38,7 +41,7 @@ def screenshots(request, filename=''):
     if filename:
         try:
             screenshot = Screenshot.objects.get(filename=filename)
-        except:
+        except ObjectDoesNotExist:
             screenshot = None
         return render_to_response(
             'about/screenshots.html',
@@ -48,9 +51,9 @@ def screenshots(request, filename=''):
             },
             context_instance=RequestContext(request))
     else:
-        screenshots = Screenshot.objects.all().order_by('priority')
+        screenshot_list = Screenshot.objects.all().order_by('priority')
         return render_to_response('about/screenshots.html',
-                                  {'screenshots': screenshots},
+                                  {'screenshot_list': screenshot_list},
                                   context_instance=RequestContext(request))
 
 
@@ -86,7 +89,7 @@ def donate(request, sort_key='date', view_key=''):
     try:
         if view_key and view_key == settings.KEY_VIEWAMOUNT:
             view_amount = True
-    except:
+    except AttributeError:
         pass
     return render_to_response(
         'about/donate.html',

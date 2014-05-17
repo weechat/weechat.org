@@ -18,33 +18,35 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-# URLs for menu ""themes"
+"""URLs for "themes" menu."""
 
-from django.conf.urls import *
+# pylint: disable=invalid-name, no-value-for-parameter
+
+from django.conf.urls import patterns, url
 from django.views.generic.base import TemplateView
 
 urlpatterns = patterns(
     '',
-    (r'^$', 'weechat.themes.views.themes'),
-    (r'^(?P<filter_name>(author))/(?P<filter_value>(.*))/$',
-     'weechat.themes.views.themes'),
-    (r'^sort/(?P<sort_key>(name|version|added|updated))/$',
-     'weechat.themes.views.themes'),
-    (r'^source/(?P<themeid>\d+)/$', 'weechat.themes.views.theme_source'),
-    (r'^source/(?P<themename>[a-zA-Z0-9_]+\.theme)\.html/$',
-     'weechat.themes.views.theme_source'),
-    (r'^add/$', 'weechat.themes.views.form_add'),
-    (r'^update/$', 'weechat.themes.views.form_update'),
+    url(r'^$', 'weechat.themes.views.themes'),
+    url(r'^(?P<filter_name>(author))/(?P<filter_value>(.*))/$',
+        'weechat.themes.views.themes'),
+    url(r'^sort/(?P<sort_key>(name|version|added|updated))/$',
+        'weechat.themes.views.themes'),
+    url(r'^source/(?P<themeid>\d+)/$', 'weechat.themes.views.theme_source'),
+    url(r'^source/(?P<themename>[a-zA-Z0-9_]+\.theme)\.html/$',
+        'weechat.themes.views.theme_source'),
+    url(r'^add/$', 'weechat.themes.views.form_add'),
+    url(r'^update/$', 'weechat.themes.views.form_update'),
 )
 
 urlpatterns += patterns(
     'django.views.generic.simple',
-    (r'^addok/$',
-     TemplateView.as_view(template_name='themes/add_ok.html')),
-    (r'^adderror/$',
-     TemplateView.as_view(template_name='themes/add_error.html')),
-    (r'^updateok/$',
-     TemplateView.as_view(template_name='themes/update_ok.html')),
-    (r'^updateerror/$',
-     TemplateView.as_view(template_name='themes/update_error.html')),
+    url(r'^addok/$',
+        TemplateView.as_view(template_name='themes/add_ok.html')),
+    url(r'^adderror/$',
+        TemplateView.as_view(template_name='themes/add_error.html')),
+    url(r'^updateok/$',
+        TemplateView.as_view(template_name='themes/update_ok.html')),
+    url(r'^updateerror/$',
+        TemplateView.as_view(template_name='themes/update_error.html')),
 )

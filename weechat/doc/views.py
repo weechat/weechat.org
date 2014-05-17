@@ -18,6 +18,8 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+"""Views for "doc" menu."""
+
 from datetime import datetime
 from math import ceil
 from os import path, listdir
@@ -30,32 +32,39 @@ from weechat.common.path import files_path_join
 from weechat.doc.models import Language, Version, Doc
 from weechat.download.models import Release
 
+I18N_MAINTAINER = {
+    'en': ('FlashCode', 'Sébastien Helleu'),
+    'fr': ('FlashCode', 'Sébastien Helleu'),
+    'it': ('Quizzlo', 'Marco Paolone'),
+    'de': ('nils_2', 'Nils Görs'),
+    'ja': ('R. Ayanokouzi', 'Ryuunosuke Ayanokouzi'),
+    'pl': ('soltys', 'Krzysztof Korościk'),
+    'ru': ('ixti', 'Aleksey Zapparov'),
+    'pt_BR': ('ISF_ec09', 'Ivan Sichmann Freitas'),
+    'tr': ('turgay', 'Hasan Kiran'),
+    'es': ('-', ''),
+    'cs': ('-', ''),
+    'hu': ('-', ''),
+}
+
 
 def get_i18n_stats():
-    I18N_MAINTAINER = {
-        'en': ('FlashCode', 'Sébastien Helleu'),
-        'fr': ('FlashCode', 'Sébastien Helleu'),
-        'it': ('Quizzlo', 'Marco Paolone'),
-        'de': ('nils_2', 'Nils Görs'),
-        'ja': ('R. Ayanokouzi', 'Ryuunosuke Ayanokouzi'),
-        'pl': ('soltys', 'Krzysztof Korościk'),
-        'ru': ('ixti', 'Aleksey Zapparov'),
-        'pt_BR': ('ISF_ec09', 'Ivan Sichmann Freitas'),
-        'tr': ('turgay', 'Hasan Kiran'),
-        'es': ('-', ''),
-        'cs': ('-', ''),
-        'hu': ('-', ''),
-    }
+    """Return i18n stats, as a dictionary.
+
+    The returned dictionary has following keys:
+    - date: date/time of last translations update
+    - langs: a dictionary with info about status of this language.
+    """
     try:
         filename = files_path_join('stats', 'i18n.txt')
         date = datetime.fromtimestamp(path.getmtime(filename))
-        with open(filename, 'r') as f:
+        with open(filename, 'r') as _file:
             langs = []
-            for line in f:
-                list = line.split(':')
-                if len(list) == 2:
-                    lang = list[0]
-                    count = list[1].split(',')
+            for line in _file:
+                items = line.split(':')
+                if len(items) == 2:
+                    lang = items[0]
+                    count = items[1].split(',')
                     translated = float(count[0])
                     fuzzy = float(count[1])
                     untranslated = float(count[2])
@@ -67,21 +76,20 @@ def get_i18n_stats():
                         pct_translated = 100 - pct_fuzzy - pct_untranslated
                         if pct_translated < 0:
                             pct_translated = 0
-                        langs.append(
-                            {
-                                'lang': lang,
-                                'lang_i18n': ugettext(
-                                    Language.LANG_I18N[lang]),
-                                'nick': I18N_MAINTAINER[lang][0],
-                                'name': I18N_MAINTAINER[lang][1],
-                                'translated': int(translated),
-                                'pct_translated': pct_translated,
-                                'fuzzy': int(fuzzy),
-                                'pct_fuzzy': pct_fuzzy,
-                                'untranslated': int(untranslated),
-                                'pct_untranslated': pct_untranslated,
-                                'total': int(total),
-                            })
+                        langs.append({
+                            'lang': lang,
+                            'lang_i18n': ugettext(
+                                Language.LANG_I18N[lang]),
+                            'nick': I18N_MAINTAINER[lang][0],
+                            'name': I18N_MAINTAINER[lang][1],
+                            'translated': int(translated),
+                            'pct_translated': pct_translated,
+                            'fuzzy': int(fuzzy),
+                            'pct_fuzzy': pct_fuzzy,
+                            'untranslated': int(untranslated),
+                            'pct_untranslated': pct_untranslated,
+                            'total': int(total),
+                        })
         return {'date': date, 'langs': langs}
     except:
         return None
@@ -96,13 +104,13 @@ def get_bestlang(request, languages):
         for item2 in item.split(';'):
             lang = item2[:2]
             if lang != 'q=':
-                for l in languages:
-                    if l.lang == lang:
+                for onelang in languages:
+                    if onelang.lang == lang:
                         return lang
     return ''
 
 
-def doc(request, version='stable'):
+def documentation(request, version='stable'):
     """Page with docs for stable or devel version."""
     if version == 'old':
         doc_list = None
@@ -124,7 +132,6 @@ def doc(request, version='stable'):
     docs = Doc.objects.all().order_by('version__priority', 'priority')
     doc_list = []
     doc_list2 = []
-    prev_version = ''
     for doc in docs:
         if doc.version.version != '-':
             docv = Release.objects.get(
@@ -147,8 +154,6 @@ def doc(request, version='stable'):
                         ])
                 else:
                     files.append(['', '', lang.lang])
-            separator = prev_version and prev_version != docv
-            prev_version = docv
             if docv == '-':
                 doc_list.append([doc, files])
             else:

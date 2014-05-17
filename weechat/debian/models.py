@@ -18,6 +18,8 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+"""Models for Debian repositories."""
+
 from django.db import models
 from django.db.models.signals import post_save
 
@@ -26,6 +28,10 @@ from weechat.common.path import repo_path_join
 
 
 class Version(models.Model):
+    """Version of a Debian repository (codename + version).
+
+    Examples: (wheezy, stable), (jessie, testing), (sid, unstable), ...
+    """
     codename = models.CharField(max_length=64, primary_key=True)
     version = models.CharField(max_length=64)
 
@@ -34,6 +40,7 @@ class Version(models.Model):
 
 
 class Builder(models.Model):
+    """The nick and name of person building packages in this repository."""
     nick = models.CharField(max_length=64, primary_key=True)
     name = models.CharField(max_length=128)
 
@@ -42,6 +49,7 @@ class Builder(models.Model):
 
 
 class Repo(models.Model):
+    """A Debian repository."""
     active = models.BooleanField(default=True)
     name = models.CharField(max_length=64)
     version = models.ForeignKey(Version)
@@ -59,7 +67,8 @@ class Repo(models.Model):
             self.arch,
             self.priority)
 
-    def path_package_gz(self, arch):
+    def path_packages_gz(self, arch):
+        """Return path/name to the Packages.gz file of repository."""
         return repo_path_join(self.domain, 'dists',
                               self.version.codename, 'main',
                               'binary-%s' % arch, 'Packages.gz')

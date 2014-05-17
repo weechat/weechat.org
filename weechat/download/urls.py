@@ -18,16 +18,18 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-# URLs for menu "download"
+"""URLs for "download" menu."""
 
-from django.conf.urls import *
+# pylint: disable=invalid-name, no-value-for-parameter
+
+from django.conf.urls import patterns, url
 
 urlpatterns = patterns(
     '',
-    (r'^$', 'weechat.download.views.packages'),
-    (r'^debian/$', 'weechat.debian.views.repos'),
-    (r'^debian/(?P<files>[a-zA-Z0-9.]*)/$', 'weechat.debian.views.repos'),
-    (r'^release/$', 'weechat.download.views.release'),
-    (r'^security/$', 'weechat.download.views.security'),
-    (r'^(?P<version>[a-zA-Z0-9.]*)/$', 'weechat.download.views.packages'),
+    url(r'^$', 'weechat.download.views.packages'),
+    url(r'^debian/$', 'weechat.debian.views.repos'),
+    url(r'^debian/(?P<files>[a-zA-Z0-9.]*)/$', 'weechat.debian.views.repos'),
+    url(r'^release/$', 'weechat.download.views.release'),
+    url(r'^security/$', 'weechat.download.views.security'),
+    url(r'^(?P<version>[a-zA-Z0-9.]*)/$', 'weechat.download.views.packages'),
 )

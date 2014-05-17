@@ -18,6 +18,8 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+"""Models for "scripts" menu."""
+
 import gzip
 from hashlib import md5
 from os import path
@@ -60,6 +62,7 @@ MAX_LENGTH_MAIL = 256
 
 
 class Plugin(models.Model):
+    """A WeeChat script."""
     visible = models.BooleanField(default=False)
     popularity = models.IntegerField()
     name = models.CharField(max_length=MAX_LENGTH_NAME)
@@ -87,9 +90,11 @@ class Plugin(models.Model):
                                      self.author, self.added)
 
     def tagslist(self):
+        """Return a list with script tags."""
         return self.tags.split(',')
 
     def path(self):
+        """Return path to script (for URL)."""
         pending = ''
         if not self.visible:
             pending = '/pending'
@@ -99,6 +104,7 @@ class Plugin(models.Model):
             return 'scripts%s' % pending
 
     def popularity_img(self):
+        """Return HTML code with image for popular script."""
         if self.popularity == 0:
             return '&nbsp;'
         return '<img src="%simages/star.png" alt="*" title="%s" ' \
@@ -106,50 +112,60 @@ class Plugin(models.Model):
                                            gettext_lazy('Popular script'))
 
     def name_with_extension(self):
+        """Return the name of script with its extension."""
         return '%s.%s' % (self.name, SCRIPT_LANGUAGE[self.language][0])
 
     def extension(self):
+        """Return script extension."""
         return SCRIPT_LANGUAGE[self.language][0]
 
     def language_display(self):
+        """Return script language."""
         return SCRIPT_LANGUAGE[self.language][1]
 
     def desc_i18n(self):
+        """Return translated description."""
         return gettext_lazy(self.desc_en.encode('utf-8'))
 
     def version_weechat(self):
-        min = self.min_weechat
-        if min == '':
-            min = '0.0.1'
+        """Return the min/max WeeChat versions in a string."""
+        wee_min = self.min_weechat
+        if wee_min == '':
+            wee_min = '0.0.1'
         if self.max_weechat == '':
-            return '%s+' % min
+            return '%s+' % wee_min
         else:
-            return '%s-%s' % (min, self.max_weechat)
+            return '%s-%s' % (wee_min, self.max_weechat)
 
     def version_weechat_html(self):
-        min = self.min_weechat
-        if min == '':
-            min = '0.0.1'
+        """Return the min/max WeeChat versions in a string for HTML."""
+        wee_min = self.min_weechat
+        if wee_min == '':
+            wee_min = '0.0.1'
         if self.max_weechat == '':
-            return '&ge; %s' % min
+            return '&ge; %s' % wee_min
         else:
-            return '%s &rarr; %s' % (min, self.max_weechat)
+            return '%s &rarr; %s' % (wee_min, self.max_weechat)
 
     def build_url(self):
+        """Return URL to the script."""
         return '/files/%s/%s' % (self.path(), self.name_with_extension())
 
     def filename(self):
+        """Return script filename (on disk)."""
         return files_path_join(self.path(),
                                path.basename(self.name_with_extension()))
 
     def file_exists(self):
+        """Check if script exists (on disk)."""
         return path.isfile(self.filename())
 
     def md5(self):
+        """Return MD5 checksum of script."""
         try:
-            with open(self.filename(), 'rb') as f:
+            with open(self.filename(), 'rb') as _file:
                 filemd5 = md5()
-                filemd5.update(f.read())
+                filemd5.update(_file.read())
                 return filemd5.hexdigest()
         except:
             return ''
@@ -159,6 +175,7 @@ class Plugin(models.Model):
 
 
 class NameField(forms.CharField):
+    """Name field in new script form."""
     def clean(self, value):
         if not value:
             raise forms.ValidationError(
@@ -179,6 +196,7 @@ class NameField(forms.CharField):
 
 
 class TestField(forms.CharField):
+    """Anti-spam field in forms."""
     def clean(self, value):
         if not value:
             raise forms.ValidationError(
@@ -190,10 +208,12 @@ class TestField(forms.CharField):
 
 
 class Html5EmailInput(Input):
+    """E-mail field (with HTML5 validator)."""
     input_type = 'email'
 
 
 class PluginFormAdd(forms.Form):
+    """Form to add a script."""
     languages = (
         ('python', 'Python (.py)'),
         ('perl', 'Perl (.pl)'),
@@ -286,6 +306,7 @@ class PluginFormAdd(forms.Form):
 
 
 def get_plugin_choices():
+    """Get list of scripts for update form."""
     try:
         plugin_list = Plugin.objects.exclude(max_weechat='0.2.6') \
             .filter(visible=1).order_by('name')
@@ -300,6 +321,7 @@ def get_plugin_choices():
 
 
 class PluginFormUpdate(forms.Form):
+    """Form to update a script."""
     required_css_class = 'required'
     plugin = forms.ChoiceField(
         choices=get_plugin_choices(),
@@ -344,18 +366,21 @@ class PluginFormUpdate(forms.Form):
 
 
 def getxmlline(key, value):
+    """Get a XML line for a key/value."""
     strvalue = '%s' % value
     return '    <%s>%s</%s>\n' % (
         key, strvalue.replace('<', '&lt;').replace('>', '&gt;'), key)
 
 
 def getjsonline(key, value):
+    """Get a JSON line for a key/value."""
     strvalue = '%s' % value
     return '    "%s": "%s",\n' % (
         key, strvalue.replace('"', '\\"').replace("'", "\\'"))
 
 
 def handler_plugin_saved(sender, **kwargs):
+    """Build files plugins.{xml,json}(.gz) after update of a script."""
     xml = '<?xml version="1.0" encoding="utf-8"?>\n'
     xml += '<plugins>\n'
     json = '[\n'
@@ -411,25 +436,25 @@ def handler_plugin_saved(sender, **kwargs):
 
     # create plugins.xml
     filename = files_path_join('plugins.xml')
-    with open(filename, 'w') as f:
-        f.write(xml.encode('utf-8'))
+    with open(filename, 'w') as _file:
+        _file.write(xml.encode('utf-8'))
 
     # create plugins.xml.gz
-    with open(filename, 'rb') as f_in:
-        f_out = gzip.open(filename + '.gz', 'wb')
-        f_out.writelines(f_in)
-        f_out.close()
+    with open(filename, 'rb') as _f_in:
+        _f_out = gzip.open(filename + '.gz', 'wb')
+        _f_out.writelines(_f_in)
+        _f_out.close()
 
     # create plugins.json
     filename = files_path_join('plugins.json')
-    with open(filename, 'w') as f:
-        f.write(json.encode('utf-8'))
+    with open(filename, 'w') as _file:
+        _file.write(json.encode('utf-8'))
 
     # create plugins.json.gz
-    with open(filename, 'rb') as f_in:
-        f_out = gzip.open(filename + '.gz', 'wb')
-        f_out.writelines(f_in)
-        f_out.close()
+    with open(filename, 'rb') as _f_in:
+        _f_out = gzip.open(filename + '.gz', 'wb')
+        _f_out.writelines(_f_in)
+        _f_out.close()
 
     # create _i18n_plugins.py
     i18n_autogen('plugins', 'plugins', strings)

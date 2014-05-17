@@ -18,6 +18,8 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+"""Models for "dev" menu."""
+
 from datetime import date
 
 from django.db import models
@@ -29,6 +31,7 @@ from weechat.download.models import Release
 
 
 class Task(models.Model):
+    """A task (a new feature or bug to fix)."""
     visible = models.BooleanField(default=True)
     version = models.CharField(max_length=32)
     tracker = models.CharField(max_length=64, blank=True)
@@ -52,9 +55,9 @@ class Task(models.Model):
             self.priority)
 
     def version_date(self):
-        """
-        Return date of version (prefixed with "≈ " if the date is
-        in the future).
+        """Return the date of version.
+
+        It is prefixed with "≈ " if the date is in the future.
         """
         try:
             release_date = Release.objects.get(version=self.version).date
@@ -65,12 +68,15 @@ class Task(models.Model):
             return ''
 
     def url_tracker(self):
+        """Return the tracker URL using keyword(s) in string."""
         return tracker_links(self.tracker) or '-'
 
     def status_remaining(self):
+        """Return the remaining status as % (100 - status)."""
         return 100 - self.status
 
     def url_commits(self):
+        """Return the URL for commit(s)."""
         return commits_links(self.commits)
 
     class Meta:

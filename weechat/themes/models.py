@@ -18,6 +18,8 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+"""Models for "themes" menu."""
+
 import gzip
 from hashlib import md5
 from os import chdir, listdir, path
@@ -44,6 +46,7 @@ MAX_LENGTH_MAIL = 256
 
 
 class Theme(models.Model):
+    """A WeeChat theme."""
     visible = models.BooleanField(default=False)
     name = models.CharField(max_length=MAX_LENGTH_NAME)
     version = models.CharField(max_length=MAX_LENGTH_VERSION)
@@ -60,47 +63,54 @@ class Theme(models.Model):
                                      self.added)
 
     def short_name(self):
+        """Return short name (without extension)."""
         pos = self.name.find('.')
         if pos > 0:
             return self.name[0:pos]
         return self.name
 
     def path(self):
+        """Return path to theme (for URL)."""
         pending = ''
         if not self.visible:
             pending = '/pending'
         return 'themes%s' % pending
 
     def html_preview(self):
+        """Return HTML with theme preview."""
         filename = files_path_join('themes', 'html',
                                    path.basename('%s.html' % self.name))
         if path.isfile(filename):
-            with open(filename, 'rb') as f:
-                content = f.read()
+            with open(filename, 'rb') as _file:
+                content = _file.read()
             return content
         return ''
 
     def desc_i18n(self):
+        """Return translated description."""
         if self.desc:
             return gettext_lazy(self.desc.encode('utf-8'))
         return ''
 
     def build_url(self):
+        """Return URL to the theme."""
         return '/files/%s/%s' % (self.path(), self.name)
 
     def file_exists(self):
+        """Checks if the theme exists (on disk)."""
         return path.isfile(files_path_join(self.path(),
                                            path.basename(self.name)))
 
     @staticmethod
     def get_props(themestring):
+        """Get theme properties (from header in file)."""
         props = {}
         for line in themestring.split('\n'):
             line = str(line.strip().decode('utf-8'))
             if line.startswith('#'):
-                m = re.match('^# \\$([A-Za-z]+): (.*)', line)
-                if m:
-                    props[m.group(1)] = m.group(2)
+                match = re.match('^# \\$([A-Za-z]+): (.*)', line)
+                if match:
+                    props[match.group(1)] = match.group(2)
         return props
 
     class Meta:
@@ -108,6 +118,7 @@ class Theme(models.Model):
 
 
 class TestField(forms.CharField):
+    """Anti-spam field in forms."""
     def clean(self, value):
         if not value:
             raise forms.ValidationError(
@@ -119,6 +130,7 @@ class TestField(forms.CharField):
 
 
 class ThemeFormAdd(forms.Form):
+    """Form to add a theme."""
     required_css_class = 'required'
     themefile = forms.FileField(
         label=gettext_lazy('File'),
@@ -157,10 +169,11 @@ class ThemeFormAdd(forms.Form):
     )
 
     def clean_themefile(self):
-        f = self.cleaned_data['themefile']
-        if f.size > 512*1024:
+        """Check if theme file is valid."""
+        _file = self.cleaned_data['themefile']
+        if _file.size > 512*1024:
             raise forms.ValidationError(gettext_lazy('Theme file too big.'))
-        props = Theme.get_props(f.read())
+        props = Theme.get_props(_file.read())
         if 'name' not in props or 'weechat' not in props:
             raise forms.ValidationError(gettext_lazy('Invalid theme file.'))
         themes = Theme.objects.filter(name=props['name'])
@@ -181,11 +194,12 @@ class ThemeFormAdd(forms.Form):
                                            release_devel.description)):
             raise forms.ValidationError(
                 gettext_lazy('Invalid WeeChat version, too old!'))
-        f.seek(0)
-        return f
+        _file.seek(0)
+        return _file
 
 
 def get_theme_choices():
+    """Get list of themes for update form."""
     try:
         theme_list = Theme.objects.filter(visible=1).order_by('name')
         theme_choices = []
@@ -198,6 +212,7 @@ def get_theme_choices():
 
 
 class ThemeFormUpdate(forms.Form):
+    """Form to update a theme."""
     required_css_class = 'required'
     theme = forms.ChoiceField(
         choices=get_theme_choices(),
@@ -237,10 +252,11 @@ class ThemeFormUpdate(forms.Form):
         self.fields['theme'].choices = get_theme_choices()
 
     def clean_themefile(self):
-        f = self.cleaned_data['themefile']
-        if f.size > 512*1024:
+        """Check if theme file is valid."""
+        _file = self.cleaned_data['themefile']
+        if _file.size > 512*1024:
             raise forms.ValidationError(gettext_lazy('Theme file too big.'))
-        props = Theme.get_props(f.read())
+        props = Theme.get_props(_file.read())
         if 'name' not in props or 'weechat' not in props:
             raise forms.ValidationError(gettext_lazy('Invalid theme file.'))
         theme = Theme.objects.get(id=self.cleaned_data['theme'])
@@ -256,21 +272,24 @@ class ThemeFormUpdate(forms.Form):
                                            release_devel.description)):
             raise forms.ValidationError(
                 gettext_lazy('Invalid WeeChat version, too old!'))
-        f.seek(0)
-        return f
+        _file.seek(0)
+        return _file
 
 
 def xml_value(key, value):
+    """Get a XML line for a key/value."""
     return '<%s>%s</%s>' % (
         key, value.replace('<', '&lt;').replace('>', '&gt;'), key)
 
 
 def json_value(key, value):
+    """Get a JSON line for a key/value."""
     return '"%s": "%s",' % (
         key, value.replace('"', '\\"').replace("'", "\\'"))
 
 
 def handler_theme_saved(sender, **kwargs):
+    """Build files themes.{xml,json}(.gz) after update of a theme."""
     theme_list = Theme.objects.filter(visible=1).order_by('id')
     xml = '<?xml version="1.0" encoding="utf-8"?>\n'
     xml += '<themes>\n'
@@ -292,9 +311,9 @@ def handler_theme_saved(sender, **kwargs):
                             try:
                                 with open(files_path_join(theme.path(),
                                                           theme.name),
-                                          'rb') as f:
+                                          'rb') as _file:
                                     filemd5 = md5()
-                                    filemd5.update(f.read())
+                                    filemd5.update(_file.read())
                                     value = filemd5.hexdigest()
                             except:
                                 value = ''
@@ -316,25 +335,25 @@ def handler_theme_saved(sender, **kwargs):
 
     # create themes.xml
     filename = files_path_join('themes.xml')
-    with open(filename, 'w') as f:
-        f.write(xml.encode('utf-8'))
+    with open(filename, 'w') as _file:
+        _file.write(xml.encode('utf-8'))
 
     # create themes.xml.gz
-    with open(filename, 'rb') as f_in:
-        f_out = gzip.open(filename + '.gz', 'wb')
-        f_out.writelines(f_in)
-        f_out.close()
+    with open(filename, 'rb') as _f_in:
+        _f_out = gzip.open(filename + '.gz', 'wb')
+        _f_out.writelines(_f_in)
+        _f_out.close()
 
     # create themes.json
     filename = files_path_join('themes.json')
-    with open(filename, 'w') as f:
-        f.write(json.encode('utf-8'))
+    with open(filename, 'w') as _file:
+        _file.write(json.encode('utf-8'))
 
     # create themes.json.gz
-    with open(filename, 'rb') as f_in:
-        f_out = gzip.open(filename + '.gz', 'wb')
-        f_out.writelines(f_in)
-        f_out.close()
+    with open(filename, 'rb') as _f_in:
+        _f_out = gzip.open(filename + '.gz', 'wb')
+        _f_out.writelines(_f_in)
+        _f_out.close()
 
     # create themes.tar.bz2 (with theme.xml + 'themes' directory)
     chdir(settings.FILES_ROOT)

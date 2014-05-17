@@ -18,14 +18,16 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+"""Some useful tags for localized dates."""
+
 from datetime import datetime
 
 from django import template
 from django.conf import settings
-from django.template.defaultfilters import stringfilter
 from django.utils import dateformat
 from django.utils.translation import ugettext
 
+# pylint: disable=invalid-name
 register = template.Library()
 
 
@@ -33,8 +35,8 @@ register = template.Library()
 def localdate(value):
     """Format date with localized date format."""
     try:
-        format = ugettext(settings.DATE_FORMAT)
-        return dateformat.format(value, format)
+        fmt = ugettext(settings.DATE_FORMAT)
+        return dateformat.format(value, fmt)
     except:
         return ''
 
@@ -43,8 +45,8 @@ def localdate(value):
 def localstrdate(value):
     """Format string date with localized date format."""
     try:
-        format = ugettext(settings.DATE_FORMAT)
-        dt = datetime.strptime(value, '%Y-%m-%d')
-        return dateformat.format(dt, format)
+        fmt = ugettext(settings.DATE_FORMAT)
+        date_time = datetime.strptime(value, '%Y-%m-%d')
+        return dateformat.format(date_time, fmt)
     except:
         return ''

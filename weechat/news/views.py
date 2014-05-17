@@ -18,6 +18,8 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+"""Views for news."""
+
 from datetime import datetime
 
 from django.shortcuts import render_to_response
@@ -28,6 +30,7 @@ from weechat.news.models import Info
 
 
 def render(request, info_list, max_info, event_list, max_event):
+    """Render homepage."""
     return render_to_response(
         'home/home.html',
         {

@@ -18,33 +18,35 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-# URLs for menu "about"
+"""URLs for "about" menu."""
 
-from django.conf.urls import *
+# pylint: disable=invalid-name, no-value-for-parameter
+
+from django.conf.urls import patterns, url
 from django.views.generic.base import TemplateView
 
 urlpatterns = patterns(
     'django.views.generic.simple',
-    (r'^(features/)?$',
-     TemplateView.as_view(template_name='about/features.html')),
+    url(r'^(features/)?$',
+        TemplateView.as_view(template_name='about/features.html')),
 )
 
 urlpatterns += patterns(
     '',
-    (r'^screenshots/$', 'weechat.about.views.screenshots'),
-    (r'^screenshots/(?P<filename>[a-zA-Z0-9_\-.]*)/$',
-     'weechat.about.views.screenshots'),
-    (r'^history/$', 'weechat.about.views.history'),
-    (r'^donate/$', 'weechat.about.views.donate'),
-    (r'^donate/sort/(?P<sort_key>(date|top10))/$',
-     'weechat.about.views.donate'),
-    (r'^donate/sort/(?P<sort_key>(date|top10))/'
-     'view/(?P<view_key>[a-zA-Z0-9_]*)/$',
-     'weechat.about.views.donate'),
+    url(r'^screenshots/$', 'weechat.about.views.screenshots'),
+    url(r'^screenshots/(?P<filename>[a-zA-Z0-9_\-.]*)/$',
+        'weechat.about.views.screenshots'),
+    url(r'^history/$', 'weechat.about.views.history'),
+    url(r'^donate/$', 'weechat.about.views.donate'),
+    url(r'^donate/sort/(?P<sort_key>(date|top10))/$',
+        'weechat.about.views.donate'),
+    url(r'^donate/sort/(?P<sort_key>(date|top10))/'
+        'view/(?P<view_key>[a-zA-Z0-9_]*)/$',
+        'weechat.about.views.donate'),
 )
 
 urlpatterns += patterns(
     'django.views.generic.simple',
-    (r'^weechat\.org/$',
-     TemplateView.as_view(template_name='about/weechat.org.html')),
+    url(r'^weechat\.org/$',
+        TemplateView.as_view(template_name='about/weechat.org.html')),
 )

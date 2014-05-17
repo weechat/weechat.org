@@ -18,6 +18,8 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+"""Some i18n useful functions."""
+
 from weechat.common.path import project_path_join
 
 
@@ -37,20 +39,20 @@ def i18n_autogen(app, name, strings):
         if type(string) is tuple:
             # if type is tuple of 2 strings: use the second as note for
             # translators
-            (s, translators) = (string[0], string[1])
+            (message, translators) = (string[0], string[1])
         else:
             # single string (no note for translators)
-            (s, translators) = (string, None)
+            (message, translators) = (string, None)
         # add string if not already done
-        if s not in done:
+        if message not in done:
             if translators:
                 content.append('    # Translators: %s' % translators)
             content.append('    gettext_lazy("%s"),' %
-                           s.replace('"', '\\"').replace('\r\n', '\\n'))
-            done.add(s)
+                           message.replace('"', '\\"').replace('\r\n', '\\n'))
+            done.add(message)
     content.append(']')
     content.append('')
     # write file
     filename = project_path_join(app, '_i18n_%s.py' % name)
-    with open(filename, 'w') as f:
-        f.write('\n'.join(content).encode('utf-8'))
+    with open(filename, 'w') as _file:
+        _file.write('\n'.join(content).encode('utf-8'))

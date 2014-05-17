@@ -18,6 +18,8 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+"""Models for news."""
+
 import re
 
 from django.db import models
@@ -31,6 +33,7 @@ PATTERN_TITLE_VERSION = re.compile('(Version) ([0-9.a-z-]*)$')
 
 
 class Info(models.Model):
+    """A WeeChat info."""
     visible = models.BooleanField(default=False)
     date = models.DateTimeField()
     title = models.CharField(max_length=64)
@@ -42,23 +45,28 @@ class Info(models.Model):
         return self.title
 
     def date_l10n(self):
+        """Return the info date formatted with localized date format."""
         return localdate(self.date)
 
     def title_i18n(self):
-        m = PATTERN_TITLE_VERSION.match(self.title)
-        if m:
+        """Return translated title."""
+        match = PATTERN_TITLE_VERSION.match(self.title)
+        if match:
             # if the title is "Version x.y.z", translate only "Version"
-            return '%s %s' % (str(gettext_lazy(m.group(1))).decode('utf-8'),
-                              m.group(2))
+            return '%s %s' % \
+                (str(gettext_lazy(match.group(1))).decode('utf-8'),
+                 match.group(2))
         else:
             return gettext_lazy(self.title)
 
     def text_i18n(self):
+        """Return translated text."""
         if self.text:
             return gettext_lazy(self.text.replace('\r\n', '\n'))
         return ''
 
     def date_title_url(self):
+        """Return date+title to include in URL."""
         return '%04d%02d%02d-%s' % (self.date.year, self.date.month,
                                     self.date.day,
                                     re.sub(' +', '-',

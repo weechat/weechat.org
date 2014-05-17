@@ -18,9 +18,11 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-from django import template
-from django.template.defaultfilters import stringfilter
+"""Tag to obfuscate e-mails in HTML code."""
 
+from django import template
+
+# pylint: disable=invalid-name
 register = template.Library()
 
 

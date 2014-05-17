@@ -18,6 +18,8 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+"""Models for "download" menu."""
+
 from datetime import datetime
 from hashlib import sha1
 from os import path
@@ -31,8 +33,12 @@ from weechat.common.path import files_path_join
 from weechat.common.tracker import commits_links, tracker_links
 from weechat.common.templatetags.localdate import localdate
 
+CVE_URL = ('<a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=%(cve)s" '
+           'target="_blank">%(cve)s</a>')
+
 
 class Release(models.Model):
+    """A WeeChat release."""
     version = models.CharField(max_length=64, primary_key=True)
     description = models.CharField(max_length=64, blank=True)
     date = models.DateField(blank=True, null=True)
@@ -42,6 +48,7 @@ class Release(models.Model):
         return '%s (%s)' % (self.version, self.date)
 
     def date_l10n(self):
+        """Return the release date formatted with localized date format."""
         return localdate(self.date)
 
     class Meta:
@@ -49,6 +56,7 @@ class Release(models.Model):
 
 
 class Type(models.Model):
+    """A type of package (source, debian, ...)."""
     type = models.CharField(max_length=64, primary_key=True)
     priority = models.IntegerField(default=0)
     description = models.CharField(max_length=256)
@@ -59,6 +67,7 @@ class Type(models.Model):
         return '%s - %s (%d)' % (self.type, self.description, self.priority)
 
     def htmldir(self):
+        """Return the HTML directory for the type of package."""
         if self.directory != '':
             return '/%s' % self.directory
         return ''
@@ -68,6 +77,7 @@ class Type(models.Model):
 
 
 class Package(models.Model):
+    """A WeeChat package."""
     version = models.ForeignKey(Release)
     type = models.ForeignKey(Type)
     filename = models.CharField(max_length=512, blank=True)
@@ -79,16 +89,17 @@ class Package(models.Model):
 
     def __unicode__(self):
         if self.filename != '':
-            str = self.filename
+            string = self.filename
         elif self.directory != '':
-            str = self.directory
+            string = self.directory
         elif self.url != '':
-            str = self.url
+            string = self.url
         else:
-            str = self.text
-        return '%s-%s, %s' % (self.version.version, self.type.type, str)
+            string = self.text
+        return '%s-%s, %s' % (self.version.version, self.type.type, string)
 
     def fullname(self):
+        """Return the path for package."""
         if self.filename:
             return files_path_join(self.type.directory, self.filename)
         if self.directory:
@@ -96,21 +107,26 @@ class Package(models.Model):
         return ''
 
     def fullname_gpg_sig(self):
+        """Return the path for the GPG signature."""
         return self.fullname() + '.asc'
 
     def has_gpg_sig(self):
+        """Checks if the package has a GPG signature."""
         return path.isfile(self.fullname_gpg_sig())
 
     def exists(self):
+        """Checks if the package exists (on disk)."""
         return path.exists(self.fullname())
 
     def filesize(self):
+        """Return the size of package, in bytes (as string)."""
         try:
             return str(path.getsize(self.fullname()))
         except:
             return ''
 
     def filedate(self):
+        """Return the package date/time."""
         try:
             return datetime.fromtimestamp(path.getmtime(self.fullname()))
         except:
@@ -125,8 +141,8 @@ def handler_package_saved(sender, **kwargs):
     try:
         package = kwargs['instance']
         if package.filename:
-            with open(package.fullname(), 'rb') as f:
-                package.sha1sum = sha1(f.read()).hexdigest()
+            with open(package.fullname(), 'rb') as _file:
+                package.sha1sum = sha1(_file.read()).hexdigest()
     except:
         pass
 
@@ -145,6 +161,7 @@ SECURITY_SEVERITIES = (
 
 
 class Security(models.Model):
+    """A security vulnerability in WeeChat."""
     visible = models.BooleanField(default=True)
     date = models.DateTimeField()
     external = models.CharField(max_length=1024, blank=True)
@@ -156,8 +173,6 @@ class Security(models.Model):
     commits = models.CharField(max_length=1024, blank=True)
     description = models.TextField()
     workaround = models.TextField(blank=True)
-    cve_url = ('<a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=%s" '
-               'target="_blank">%s</a>')
 
     def __unicode__(self):
         return '%s, %s, %s, %s / %s, %s, %s' % (
@@ -166,31 +181,38 @@ class Security(models.Model):
             self.description)
 
     def external_links(self):
+        """Return URL to CVE (or "external" as-is if it's not a CVE)."""
         if self.external.startswith('CVE'):
-            return self.cve_url % (self.external, self.external)
+            return CVE_URL % {'cve': self.external}
         return self.external
 
     def url_tracker(self):
+        """Return URL with links to tracker items."""
         return tracker_links(self.tracker)
 
     def severity_i18n(self):
+        """Return translated severity."""
         text = dict(SECURITY_SEVERITIES).get(self.severity, '')
         if text:
             return ugettext(text)
         return ''
 
     def affected_html(self):
+        """Return affected versions for display in HTML."""
         return self.affected.replace(',', ' &rarr; ')
 
     def url_commits(self):
+        """Return URL with links to commits."""
         return commits_links(self.commits)
 
     def description_i18n(self):
+        """Return the translated description."""
         if self.description:
             return gettext_lazy(self.description.replace('\r\n', '\n'))
         return ''
 
     def workaround_i18n(self):
+        """Return translated workaround."""
         if self.workaround:
             return gettext_lazy(self.workaround.replace('\r\n', '\n'))
         return ''
@@ -200,6 +222,7 @@ class Security(models.Model):
 
 
 def handler_security_saved(sender, **kwargs):
+    """Write file _i18n_security.py with security issues to translate."""
     strings = []
     for security in Security.objects.filter(visible=1).order_by('-date'):
         if security.description:
@@ -212,6 +235,7 @@ post_save.connect(handler_security_saved, sender=Security)
 
 
 class ReleaseTodo(models.Model):
+    """A 'to do' item for a release."""
     description = models.CharField(max_length=1024)
     priority = models.IntegerField(default=0)
 
@@ -223,6 +247,7 @@ class ReleaseTodo(models.Model):
 
 
 class ReleaseProgress(models.Model):
+    """The progress for the next release."""
     version = models.ForeignKey(Release, primary_key=True)
     done = models.IntegerField(default=0)
 

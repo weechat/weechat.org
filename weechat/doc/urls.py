@@ -18,12 +18,15 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-# URLs for menu "doc"
+"""URLs for "doc" menu."""
 
-from django.conf.urls import *
+# pylint: disable=invalid-name, no-value-for-parameter
+
+from django.conf.urls import patterns, url
 
 urlpatterns = patterns(
     '',
-    (r'^$', 'weechat.doc.views.doc'),
-    (r'^(?P<version>stable|devel|old)/$', 'weechat.doc.views.doc'),
+    url(r'^$', 'weechat.doc.views.documentation'),
+    url(r'^(?P<version>stable|devel|old)/$',
+        'weechat.doc.views.documentation'),
 )

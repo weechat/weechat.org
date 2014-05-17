@@ -18,6 +18,8 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+"""Admin for news."""
+
 from django.contrib import admin
 
 from weechat.news.models import Info

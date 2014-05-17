@@ -18,6 +18,8 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+"""WeeChat feeds."""
+
 from datetime import datetime
 
 from django.contrib.syndication.views import Feed
@@ -26,6 +28,7 @@ from weechat.news.models import Info
 
 
 class LatestNewsFeed(Feed):
+    """Feed with latest news."""
     title = 'WeeChat news'
     description = title
     link = '/news/'
@@ -45,10 +48,12 @@ class LatestNewsFeed(Feed):
             self.request.META.get('HTTP_HOST', ''), info.id)
 
     def item_pubdate(self, info):
+        """Return idem date."""
         return info.date
 
 
 class UpcomingEventsFeed(Feed):
+    """Feed with upcoming events."""
     title = 'Upcoming WeeChat events'
     description = title
     link = '/events/'
@@ -68,4 +73,5 @@ class UpcomingEventsFeed(Feed):
             self.request.META.get('HTTP_HOST', ''), info.id)
 
     def item_pubdate(self, info):
+        """Return item date."""
         return info.date

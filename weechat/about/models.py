@@ -18,6 +18,8 @@
 # along with WeeChat.org.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+"""Models for "about" menu."""
+
 from django.db import models
 from django.db.models.signals import post_save
 from django.utils.translation import gettext_lazy
@@ -27,6 +29,7 @@ from weechat.common.templatetags.localdate import localdate
 
 
 class Screenshot(models.Model):
+    """A WeeChat screenshot."""
     directory = models.CharField(max_length=256)
     filename = models.CharField(max_length=256)
     comment = models.TextField(blank=True)
@@ -36,10 +39,12 @@ class Screenshot(models.Model):
         return '%s/%s (%d)' % (self.directory, self.filename, self.priority)
 
     class Meta:
+        """Meta class for ScreenShot."""
         ordering = ['priority']
 
 
 class Keydate(models.Model):
+    """A WeeChat key date."""
     date = models.DateField()
     version = models.TextField(max_length=32)
     text = models.TextField()
@@ -48,13 +53,16 @@ class Keydate(models.Model):
         return '%s - %s' % (self.date, self.text)
 
     def text_i18n(self):
+        """Return translated key date."""
         return gettext_lazy(self.text.replace('\r\n', '\n'))
 
     class Meta:
+        """Meta class for KeyDate."""
         ordering = ['-date']
 
 
 def handler_keydate_saved(sender, **kwargs):
+    """Write file _i18n_keydates.py with key dates to translate."""
     strings = []
     for keydate in Keydate.objects.order_by('-date'):
         strings.append(keydate.text)
@@ -64,6 +72,7 @@ post_save.connect(handler_keydate_saved, sender=Keydate)
 
 
 class Sponsor(models.Model):
+    """A WeeChat sponsor."""
     name = models.CharField(max_length=64)
     date = models.DateField()
     site = models.CharField(max_length=512, blank=True)
@@ -75,4 +84,5 @@ class Sponsor(models.Model):
         return '%s, %s, %.02f Eur' % (self.name, self.date, self.amount)
 
     def date_l10n(self):
+        """Return the sponsor date formatted with localized date format."""
         return localdate(self.date)
