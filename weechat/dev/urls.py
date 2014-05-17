@@ -27,17 +27,20 @@ from django.views.generic.base import TemplateView
 
 urlpatterns = patterns(
     '',
-    url(r'^$', 'weechat.dev.views.roadmap'),
-    url(r'^roadmap/$', 'weechat.dev.views.roadmap'),
-    url(r'^roadmap/all/$', 'weechat.dev.views.roadmap', {'allversions': True}),
-    url(r'^stats/$', 'weechat.dev.views.stats_repo'),
+    url(r'^$', 'weechat.dev.views.roadmap', name='dev'),
+    url(r'^roadmap/$', 'weechat.dev.views.roadmap', name='dev_roadmap'),
+    url(r'^roadmap/all/$', 'weechat.dev.views.roadmap', {'allversions': True},
+        name='dev_roadmap_all'),
+    url(r'^stats/$', 'weechat.dev.views.stats_repo', name='dev_stats'),
     url(r'^stats/(?P<stats>weechat|scripts|qweechat|weechat\.org)/$',
-        'weechat.dev.views.stats_repo'),
-    url(r'^info/$', 'weechat.dev.views.info'),
-    url(r'^info/(?P<name>[a-zA-Z0-9_]*)/$', 'weechat.dev.views.info'),
+        'weechat.dev.views.stats_repo', name='dev_stats_git'),
+    url(r'^info/$', 'weechat.dev.views.info', name='dev_info'),
+    url(r'^info/(?P<name>[a-zA-Z0-9_]*)/$', 'weechat.dev.views.info',
+        name='dev_info_name'),
 )
 
 urlpatterns += patterns(
     'django.views.generic.simple',
-    url(r'^support/$', TemplateView.as_view(template_name='dev/support.html')),
+    url(r'^support/$', TemplateView.as_view(template_name='dev/support.html'),
+        name='dev_support'),
 )

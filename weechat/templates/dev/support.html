@@ -10,7 +10,9 @@
 {{ block.super }}
 
 <div class="warningbox">
-{% blocktrans %}<strong>Warning:</strong> before asking for help, please read carefully <a href="/doc/">documentation</a> and <a href="/faq/">FAQ</a>.{% endblocktrans %}
+{% url 'doc' as doc_url %}
+{% url 'faq' as faq_url %}
+{% blocktrans %}<strong>Warning:</strong> before asking for help, please read carefully <a href="{{ doc_url }}">documentation</a> and <a href="{{ faq_url }}">FAQ</a>.{% endblocktrans %}
 </div>
 
 <h2>IRC</h2>

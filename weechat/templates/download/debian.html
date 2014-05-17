@@ -59,7 +59,7 @@
               <span title="{% trans "Architecture" %}">{{ debpkg_arch.list.0.arch }}</span>
             </td>
             <td>
-              <a href="/download/debian/{% if not allfiles %}files/#{{ debpkg_arch.list.0.anchor }}{% endif %}" id="{{ debpkg_arch.list.0.anchor }}">{{ debpkg_arch.list|length }} {% trans "files" %}</a>
+              <a href="{% url 'download_debian' %}{% if not allfiles %}files/#{{ debpkg_arch.list.0.anchor }}{% endif %}" id="{{ debpkg_arch.list.0.anchor }}">{{ debpkg_arch.list|length }} {% trans "files" %}</a>
             </td>
             <td class="date">
               ({{ debpkg_arch.list.0.builddate|localstrdate }}<span class="time">{{ debpkg_arch.list.0.buildtime }})</span>

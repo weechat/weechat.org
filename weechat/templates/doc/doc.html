@@ -10,9 +10,9 @@
 
 <div class="navbt">
   <ul>
-    <li><a href="/doc/stable/"{% ifequal version "stable" %} class="selected"{% endifequal %}>{% trans "Stable" %}</a></li>
-    <li><a href="/doc/devel/"{% ifequal version "devel" %} class="selected"{% endifequal %}>{% trans "Devel" %}</a></li>
-    <li><a href="/doc/old/"{% ifequal version "old" %} class="selected"{% endifequal %}>{% trans "Old versions" %}</a></li>
+    <li><a href="{% url 'doc_version' 'stable' %}"{% ifequal version "stable" %} class="selected"{% endifequal %}>{% trans "Stable" %}</a></li>
+    <li><a href="{% url 'doc_version' 'devel' %}"{% ifequal version "devel" %} class="selected"{% endifequal %}>{% trans "Devel" %}</a></li>
+    <li><a href="{% url 'doc_version' 'old' %}"{% ifequal version "old" %} class="selected"{% endifequal %}>{% trans "Old versions" %}</a></li>
   </ul>
 </div>
 

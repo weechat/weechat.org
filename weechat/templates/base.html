@@ -14,7 +14,7 @@
   <title>{% block title %}{% trans "WeeChat, the extensible chat client" %}{% endblock %}{% block subtitle %}{% endblock %}</title>
   <link rel="shortcut icon" type="image/png" href="{{ MEDIA_URL }}images/favicon.png" />
   {% block css %}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/style.css" media="screen" title="Normal" />{% endblock %}
-  <link rel="alternate" type="application/rss+xml" href="/feeds/news/" title="WeeChat RSS feed" />
+  <link rel="alternate" type="application/rss+xml" href="{% url 'feeds_news' %}" title="WeeChat RSS feed" />
   <link href="https://plus.google.com/+WeeChat" rel="publisher" />
   {% block extrahead %}{% endblock %}
 </head>
@@ -24,16 +24,16 @@
   <div id="header-and-main">
 
     <map id="weechatMap" name="weechatMap">
-      <area href="/" alt="Home" coords="0,0,160,70" shape="rect" />
+      <area href="{% url 'home' %}" alt="Home" coords="0,0,160,70" shape="rect" />
     </map>
 
     <div id="header">
       <div class="content">
         <div class="logo">
-          <a href="/"><img src="{{ MEDIA_URL }}images/weechat_logo_small.png" alt="WeeChat" width="146" height="100" /></a>
+          <a href="{% url 'home' %}"><img src="{{ MEDIA_URL }}images/weechat_logo_small.png" alt="WeeChat" width="146" height="100" /></a>
         </div>
         <div class="slogan">
-          <a href="/"><img src="{{MEDIA_URL}}images/weechat_text.png" width="201" height="55" alt="WeeChat" /></a>
+          <a href="{% url 'home' %}"><img src="{{MEDIA_URL}}images/weechat_text.png" width="201" height="55" alt="WeeChat" /></a>
         </div>
         <div class="lang">
           <form name="lang" action="/i18n/setlang/" method="post">
@@ -81,7 +81,7 @@
     <div id="copyright">
       Copyright &#169; 2003-{% now "Y" %} <a href="mailto:{% txt2html "flashcode@flashtux.org" %}" title="email webmaster">Sébastien Helleu</a>
       &mdash;
-      <a href="/about/weechat.org/">{% trans "About WeeChat.org" %}</a>
+      <a href="{% url 'about_weechat.org' %}">{% trans "About WeeChat.org" %}</a>
       &mdash;
       {% trans "Valid" %}:
       <a href="http://validator.w3.org/check?uri=referer" target="_blank">HTML5</a> |

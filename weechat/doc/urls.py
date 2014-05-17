@@ -26,7 +26,7 @@ from django.conf.urls import patterns, url
 
 urlpatterns = patterns(
     '',
-    url(r'^$', 'weechat.doc.views.documentation'),
+    url(r'^$', 'weechat.doc.views.documentation', name='doc'),
     url(r'^(?P<version>stable|devel|old)/$',
-        'weechat.doc.views.documentation'),
+        'weechat.doc.views.documentation', name='doc_version'),
 )

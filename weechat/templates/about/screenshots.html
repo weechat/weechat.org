@@ -14,7 +14,7 @@
 {% if screenshot_list %}
   <div class="screenshots">
     {% for screenshot in screenshot_list %}
-      <a href="/about/screenshots/{{ screenshot.filename }}/">
+      <a href="{% url 'about_screenshot' screenshot.filename %}">
         <img src="{{ MEDIA_URL }}images/{{ screenshot.directory }}/small/{{ screenshot.filename }}" alt="{{ screenshot.filename }}" title="{{ screenshot.comment }}" />
       </a>
     {% endfor %}
@@ -23,7 +23,7 @@
   {% if screenshot %}
     <div class="screenshot">
       <h3>{{ screenshot.comment }}</h3>
-      <a href="/about/screenshots/">
+      <a href="{% url 'about_screenshots' %}">
         <img src="{{ MEDIA_URL }}images/{{ screenshot.directory }}/medium/{{ screenshot.filename }}" alt="{{ screenshot.filename }}" title="{{ screenshot.comment }}" />
       </a>
       <br />{{ screenshot.filename }}

@@ -26,10 +26,13 @@ from django.conf.urls import patterns, url
 
 urlpatterns = patterns(
     '',
-    url(r'^$', 'weechat.download.views.packages'),
-    url(r'^debian/$', 'weechat.debian.views.repos'),
+    url(r'^$', 'weechat.download.views.packages', name='download'),
+    url(r'^debian/$', 'weechat.debian.views.repos', name='download_debian'),
     url(r'^debian/(?P<files>[a-zA-Z0-9.]*)/$', 'weechat.debian.views.repos'),
-    url(r'^release/$', 'weechat.download.views.release'),
-    url(r'^security/$', 'weechat.download.views.security'),
-    url(r'^(?P<version>[a-zA-Z0-9.]*)/$', 'weechat.download.views.packages'),
+    url(r'^release/$', 'weechat.download.views.release',
+        name='download_release'),
+    url(r'^security/$', 'weechat.download.views.security',
+        name='download_security'),
+    url(r'^(?P<version>[a-zA-Z0-9.]*)/$', 'weechat.download.views.packages',
+        name='download_version'),
 )

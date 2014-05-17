@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-04 15:15+0200\n"
-"PO-Revision-Date: 2014-05-04 15:16+0200\n"
+"POT-Creation-Date: 2014-05-17 13:57+0200\n"
+"PO-Revision-Date: 2014-05-17 14:00+0200\n"
 "Last-Translator: Alexandre Bolelli <semeion7@gmail.com>\n"
 "Language-Team: Portuguese <semeion7@gmail.com>\n"
 "Language: pt_BR\n"
@@ -30,32 +30,32 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: settings.py:61 doc/models.py:29 templates/menu.html:23
-#: templates/menu.html.py:24 templates/dev/support.html:24
+#: settings.py:61 doc/models.py:32 templates/menu.html:23
+#: templates/menu.html.py:24 templates/dev/support.html:26
 msgid "English"
 msgstr "Inglês"
 
-#: settings.py:62 doc/models.py:31 templates/dev/support.html:25
+#: settings.py:62 doc/models.py:34 templates/dev/support.html:27
 msgid "French"
 msgstr "Francês"
 
-#: settings.py:63 doc/models.py:28 templates/dev/support.html:31
+#: settings.py:63 doc/models.py:31 templates/dev/support.html:33
 msgid "German"
 msgstr "Alemão"
 
-#: settings.py:64 doc/models.py:33
+#: settings.py:64 doc/models.py:36
 msgid "Italian"
 msgstr "Italiano"
 
-#: settings.py:65 doc/models.py:35
+#: settings.py:65 doc/models.py:38
 msgid "Polish"
 msgstr "Polonês"
 
-#: settings.py:66 doc/models.py:36
+#: settings.py:66 doc/models.py:39
 msgid "Portuguese (Brazil)"
 msgstr "Portugues (Brasil)"
 
-#: settings.py:67 doc/models.py:34
+#: settings.py:67 doc/models.py:37
 msgid "Japanese"
 msgstr "Japonês"
 
@@ -170,101 +170,101 @@ msgid ""
 "dynamic day change message."
 msgstr ""
 
-#: dev/views.py:35
+#: dev/views.py:37
 msgid "stable version"
 msgstr "versão estável"
 
-#: dev/views.py:39
+#: dev/views.py:41
 msgid ""
 "stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
 "versão estável, como número, como plugin da API: info_get(\"version_number\")"
 
-#: dev/views.py:44
+#: dev/views.py:46
 msgid "date of stable version"
 msgstr "data da versão estável"
 
-#: dev/views.py:48
+#: dev/views.py:50
 msgid "development version"
 msgstr "versão de desenvolvimento"
 
-#: dev/views.py:52
+#: dev/views.py:54
 msgid "output of \"git rev-parse HEAD\" for sources repository"
 msgstr "saída de \"git rev-parse HEAD\" para o repositório de fontes"
 
-#: dev/views.py:56
+#: dev/views.py:58
 msgid "output of \"git rev-parse HEAD\" for scripts repository"
 msgstr "saída de \"git rev-parse HEAD\" para o repositório scripts"
 
-#: dev/views.py:60 templates/download/packages.html:50
+#: dev/views.py:62 templates/download/packages.html:51
 msgid "next stable version"
 msgstr "próxima versão estável"
 
-#: dev/views.py:64
+#: dev/views.py:66
 msgid ""
 "next stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
 "próxima versão estável, como número, como plugin da API: "
 "info_get(\"version_number\")"
 
-#: dev/views.py:69
+#: dev/views.py:71
 msgid "approximate date of next stable version"
 msgstr "data aproximada da próxima versão estável"
 
-#: dev/views.py:74
+#: dev/views.py:76
 msgid "all infos (one info by line, format: \"info:value\")"
 msgstr ""
 "todas as informações (uma informação por linha, formato: \"info:value\")"
 
-#: doc/models.py:27
+#: doc/models.py:30
 msgid "Czech"
 msgstr "Tcheco"
 
-#: doc/models.py:30
+#: doc/models.py:33
 msgid "Spanish"
 msgstr "Espanhol"
 
-#: doc/models.py:32
+#: doc/models.py:35
 msgid "Hungarian"
 msgstr "Húngaro"
 
-#: doc/models.py:37
+#: doc/models.py:40
 msgid "Russian"
 msgstr "Russo"
 
-#: doc/models.py:38
+#: doc/models.py:41
 msgid "Turkish"
 msgstr "Turco"
 
-#: doc/models.py:67 templates/menu.html:23
+#: doc/models.py:73 templates/menu.html:23
 msgid "FAQ"
 msgstr "Perguntas Frequentes"
 
-#: doc/models.py:68
+#: doc/models.py:74
 msgid "User's guide"
 msgstr "Guia do usuário"
 
-#: doc/models.py:69
+#: doc/models.py:75
 msgid "Plugin API reference"
 msgstr "Referência da API do plugin"
 
-#: doc/models.py:70
+#: doc/models.py:76
 msgid "Scripting guide"
 msgstr "Guia para fazer scripts"
 
-#: doc/models.py:71
+#: doc/models.py:77
 msgid "Quick Start guide"
 msgstr "Guia de Início Rápido"
 
-#: doc/models.py:72
+#: doc/models.py:78
 msgid "Tester's guide"
 msgstr "Guia dos Testadores"
 
-#: doc/models.py:73
+#: doc/models.py:79
 msgid "Developer's guide"
 msgstr "Guia dos Developer's"
 
-#: doc/models.py:74
+#: doc/models.py:80
 msgid "Relay protocol"
 msgstr "Protocolo de retransmissão"
 
@@ -362,22 +362,22 @@ msgstr ""
 "por alguns scripts, não pelo WeeChatem si)."
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:137 templates/download/security.html:67
+#: download/models.py:153 templates/download/security.html:67
 msgid "low"
 msgstr "baixo"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:139 templates/download/security.html:68
+#: download/models.py:155 templates/download/security.html:68
 msgid "medium"
 msgstr "médio"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:141 templates/download/security.html:69
+#: download/models.py:157 templates/download/security.html:69
 msgid "high"
 msgstr "alto"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:143 templates/download/security.html:70
+#: download/models.py:159 templates/download/security.html:70
 msgid "critical"
 msgstr "crítico"
 
@@ -817,8 +817,8 @@ msgstr ""
 "Terceiro release candidate (versão 0.3.0-rc3) para a futura versão 0.3.0 "
 "está disponível."
 
-#: news/_i18n_info.py:49 plugins/models.py:233 templates/doc/doc.html:28
-#: templates/download/packages.html:43 templates/plugins/list.html:69
+#: news/_i18n_info.py:49 plugins/models.py:253 templates/doc/doc.html:28
+#: templates/download/packages.html:44 templates/plugins/list.html:69
 #: templates/plugins/pending.html:32
 msgid "Version"
 msgstr "Versão"
@@ -4292,20 +4292,20 @@ msgstr "Timestamps no estilo do iChat."
 msgid "iTunes control and now playing script."
 msgstr "Script de controle e reproduzindo-agora para iTunes."
 
-#: plugins/models.py:106
+#: plugins/models.py:112
 msgid "Popular script"
 msgstr "Script popular"
 
-#: plugins/models.py:165 plugins/models.py:185 plugins/models.py:188
-#: themes/models.py:114 themes/models.py:117
+#: plugins/models.py:182 plugins/models.py:203 plugins/models.py:206
+#: themes/models.py:125 themes/models.py:128
 msgid "This field is required."
 msgstr "Este campo é obrigatório."
 
-#: plugins/models.py:168
+#: plugins/models.py:185
 msgid "This name is invalid."
 msgstr "Este nome é inválido."
 
-#: plugins/models.py:173
+#: plugins/models.py:190
 msgid ""
 "This name already exists, please choose another name (update script content "
 "accordingly)."
@@ -4313,115 +4313,115 @@ msgstr ""
 "Este nome já existe, por favor escolha outro nome (atualize o conteúdo do "
 "script em conformidade)."
 
-#: plugins/models.py:177
+#: plugins/models.py:194
 msgid "This name is too long (must be max 20 chars)."
 msgstr ""
 
-#: plugins/models.py:222 templates/plugins/list.html:63
+#: plugins/models.py:242 templates/plugins/list.html:63
 #: templates/plugins/list.html.py:65 templates/plugins/pending.html:33
 msgctxt "programming language"
 msgid "Language"
 msgstr "Linguagem"
 
-#: plugins/models.py:226 templates/about/donate.html:55
+#: plugins/models.py:246 templates/about/donate.html:55
 #: templates/plugins/list.html:57 templates/plugins/list.html.py:59
 #: templates/plugins/pending.html:29
 msgid "Name"
 msgstr "Nome"
 
-#: plugins/models.py:227
+#: plugins/models.py:247
 #, fuzzy
 msgid ""
 "short name of script (max 20 chars, only lower case letters, digits or \"_\")"
 msgstr "nome abreviado do script (somente letras minúsculas, numeros ou \"_\")"
 
-#: plugins/models.py:234
+#: plugins/models.py:254
 msgid "version of script (only digits or dots)"
 msgstr "versão do script (somente numeros ou pontos)"
 
-#: plugins/models.py:239 templates/plugins/list.html:72
+#: plugins/models.py:259 templates/plugins/list.html:72
 #: templates/plugins/list.html.py:74 templates/plugins/pending.html:34
 msgid "License"
 msgstr "Licença"
 
-#: plugins/models.py:240
+#: plugins/models.py:260
 msgid "license (for example: GPL3, BSD, ...)"
 msgstr "licença (por exemplo: GPL3, BSD, ...)"
 
-#: plugins/models.py:244 plugins/models.py:314 templates/doc/doc.html:69
-#: themes/models.py:124 themes/models.py:207
+#: plugins/models.py:264 plugins/models.py:336 templates/doc/doc.html:69
+#: themes/models.py:136 themes/models.py:222
 msgid "File"
 msgstr "Arquivo"
 
-#: plugins/models.py:245 plugins/models.py:315
+#: plugins/models.py:265 plugins/models.py:337
 msgid "the script"
 msgstr "o script"
 
-#: plugins/models.py:249 templates/dev/info_list.html:19
+#: plugins/models.py:269 templates/dev/info_list.html:19
 #: templates/dev/roadmap.html:46 templates/download/security.html:31
 #: templates/plugins/list.html:68 templates/plugins/pending.html:30
-#: themes/models.py:131
+#: themes/models.py:143
 msgid "Description"
 msgstr "Descrição"
 
-#: plugins/models.py:255
+#: plugins/models.py:275
 msgid "Requirements"
 msgstr "Requisitos"
 
-#: plugins/models.py:256 themes/models.py:132
+#: plugins/models.py:276 themes/models.py:144
 msgid "optional"
 msgstr "opcional"
 
-#: plugins/models.py:261
+#: plugins/models.py:281
 msgid "Min/max WeeChat"
 msgstr "Min/max WeeChat"
 
-#: plugins/models.py:264 plugins/models.py:319 themes/models.py:137
-#: themes/models.py:213
+#: plugins/models.py:284 plugins/models.py:341 themes/models.py:149
+#: themes/models.py:228
 msgid "Your name or nick"
 msgstr "Seu nome ou nick"
 
-#: plugins/models.py:265 plugins/models.py:270
+#: plugins/models.py:285 plugins/models.py:290
 msgid "used for scripts page and git commit"
 msgstr "usado para página de scripts e commit do git"
 
-#: plugins/models.py:269 plugins/models.py:324 themes/models.py:141
-#: themes/models.py:217
+#: plugins/models.py:289 plugins/models.py:346 themes/models.py:153
+#: themes/models.py:232
 msgid "Your e-mail"
 msgstr "Seu e-mail"
 
-#: plugins/models.py:276 plugins/models.py:330 themes/models.py:148
-#: themes/models.py:224
+#: plugins/models.py:296 plugins/models.py:352 themes/models.py:160
+#: themes/models.py:239
 msgid "Comments"
 msgstr "Comentários"
 
-#: plugins/models.py:277 themes/models.py:149 themes/models.py:225
+#: plugins/models.py:297 themes/models.py:161 themes/models.py:240
 msgid "optional, not displayed"
 msgstr "opcional, não exibido"
 
-#: plugins/models.py:282 plugins/models.py:336 themes/models.py:154
-#: themes/models.py:230
+#: plugins/models.py:302 plugins/models.py:358 themes/models.py:166
+#: themes/models.py:245
 msgid "Are you a spammer?"
 msgstr "Você é um spammer?"
 
-#: plugins/models.py:283 plugins/models.py:337 themes/models.py:155
-#: themes/models.py:231
+#: plugins/models.py:303 plugins/models.py:359 themes/models.py:167
+#: themes/models.py:246
 msgid "enter \"no\" if you are not a spammer"
 msgstr "entrar \"no\" se você não é um spammer"
 
-#: plugins/models.py:306 templates/plugins/source.html:13
+#: plugins/models.py:328 templates/plugins/source.html:13
 msgid "Script"
 msgstr "Script"
 
-#: plugins/models.py:310
+#: plugins/models.py:332
 msgid "New version"
 msgstr "Nova versão"
 
-#: plugins/models.py:320 plugins/models.py:325
+#: plugins/models.py:342 plugins/models.py:347
 msgid "used for git commit"
 msgstr "Usado para Git commits"
 
-#: plugins/models.py:331
+#: plugins/models.py:353
 msgid "changes in this release"
 msgstr "mudanças nesta versão"
 
@@ -4826,7 +4826,7 @@ msgid "Spell checking"
 msgstr "Verificação ortográfica"
 
 #: templates/about/features.html:82 templates/about/features.html.py:121
-#: templates/download/packages.html:115
+#: templates/download/packages.html:117
 msgid "Remote interfaces"
 msgstr "Interface remota"
 
@@ -4914,15 +4914,16 @@ msgstr "Interface Qt"
 msgid "Documentation and support"
 msgstr "Documentação e suporte"
 
-#: templates/about/features.html:160
+#: templates/about/features.html:161
+#, python-format
 msgid ""
-"WeeChat is translated into several languages and has a <a href=\"/doc/"
+"WeeChat is translated into several languages and has a <a href=\"%(doc_url)s"
 "\">comprehensive documentation</a>, also translated."
 msgstr ""
-"WeeChat é traduzido em diversas linguagens e possui uma <a href=\"/doc/"
+"WeeChat é traduzido em diversas linguagens e possui uma <a href=\"%(doc_url)s"
 "\">documentação compreensiva</a>, também traduzida."
 
-#: templates/about/features.html:163
+#: templates/about/features.html:164
 msgid ""
 "You are new to WeeChat? Read the <strong>quickstart</strong> and "
 "<strong>user's</strong> guide."
@@ -4930,12 +4931,12 @@ msgstr ""
 "Você é novo ao WeeChat? Leia o <strong>guia rápido</strong> e <strong>guida "
 "de usuário</strong>."
 
-#: templates/about/features.html:164
+#: templates/about/features.html:165
 msgid "Got a trivial question? The <strong>FAQ</strong> is waiting for you!"
 msgstr ""
 "Tem uma dúvida trivial? O <strong>FAQ</strong> está esperando por você!"
 
-#: templates/about/features.html:165
+#: templates/about/features.html:166
 msgid ""
 "You want to write a script for WeeChat? Look at <strong>scripting</strong> "
 "guide and <strong>plugin API</strong> reference."
@@ -4943,7 +4944,7 @@ msgstr ""
 "Você quer escrever um scriptpara WeeChat? Veja no <strong>guia de scripting</"
 "strong> e na <strong>referência de API de plugin</strong>."
 
-#: templates/about/features.html:166
+#: templates/about/features.html:167
 msgid ""
 "Your native tongue is C? Then take a look at the <strong>developer's</"
 "strong> guide and contribute!"
@@ -4951,12 +4952,13 @@ msgstr ""
 "Sua língua nativa é C? Então dê uma olhada no <strong>guia de "
 "desenvolvedores</strong> e contribua!"
 
-#: templates/about/features.html:169
+#: templates/about/features.html:171
+#, python-format
 msgid ""
-"There is an <a href=\"/dev/support/\"><strong>excellent support</strong></a> "
-"for users. Try it if you have any questions!"
+"There is an <a href=\"%(support_url)s\"><strong>excellent support</strong></"
+"a> for users. Try it if you have any questions!"
 msgstr ""
-"Existe um <a href=\"/dev/support/\"><strong>excelente suporte</strong></a> "
+"Existe um <a href=\"%(support_url)s\"><strong>excelente suporte</strong></a> "
 "para usuários. Experimente usá-lo se tiver qualquer questão!"
 
 #: templates/about/history.html:5
@@ -5174,55 +5176,56 @@ msgstr "Gráficos construídos com"
 msgid "support"
 msgstr "suporte"
 
-#: templates/dev/support.html:13
+#: templates/dev/support.html:15
+#, python-format
 msgid ""
 "<strong>Warning:</strong> before asking for help, please read carefully <a "
-"href=\"/doc/\">documentation</a> and <a href=\"/faq/\">FAQ</a>."
+"href=\"%(doc_url)s\">documentation</a> and <a href=\"%(faq_url)s\">FAQ</a>."
 msgstr ""
-"<strong>Aviso:</strong> antes de pedir ajuda, leia atentamente a <a href=\"/"
-"doc/\">documentação</a> e <a href=\"/faq/\">FAQ</a>."
+"<strong>Aviso:</strong> antes de pedir ajuda, leia atentamente a <a href="
+"\"%(doc_url)s\">documentação</a> e <a href=\"%(faq_url)s\">FAQ</a>."
 
-#: templates/dev/support.html:18
+#: templates/dev/support.html:20
 msgid "On server chat.freenode.net:"
 msgstr ""
 
-#: templates/dev/support.html:22
+#: templates/dev/support.html:24
 #, fuzzy
 msgid "official channels (with developers):"
 msgstr "Canais oficiais (com desenvolvedores):"
 
-#: templates/dev/support.html:29
+#: templates/dev/support.html:31
 #, fuzzy
 msgid "non-official channels:"
 msgstr "Canais não oficiais:"
 
-#: templates/dev/support.html:36
+#: templates/dev/support.html:38
 msgid "Bugs / Feature requests"
 msgstr ""
 
-#: templates/dev/support.html:38
+#: templates/dev/support.html:40
 msgid ""
 "Bugs and feature requests for WeeChat, QWeeChat and scripts can be submitted "
 "on GitHub:"
 msgstr ""
 
-#: templates/dev/support.html:43
+#: templates/dev/support.html:45
 msgid "WeeChat is on <a href=\"https://plus.google.com/\">Google+</a>:"
 msgstr ""
 
-#: templates/dev/support.html:46
+#: templates/dev/support.html:48
 msgid "Page"
 msgstr "Página"
 
-#: templates/dev/support.html:47
+#: templates/dev/support.html:49
 msgid "Community"
 msgstr "Comunidade"
 
-#: templates/dev/support.html:50
+#: templates/dev/support.html:52
 msgid "Mailing list"
 msgstr "Lista de discussão"
 
-#: templates/dev/support.html:52
+#: templates/dev/support.html:54
 #, python-format
 msgid ""
 "There are <a href=\"https://savannah.nongnu.org/mail/?group=weechat\" target="
@@ -5230,27 +5233,27 @@ msgid ""
 "\"16\" height=\"16\" alt=\"\" /></a>:"
 msgstr ""
 
-#: templates/dev/support.html:56
+#: templates/dev/support.html:58
 msgid "<strong>weechat-security</strong> (security advisories about WeeChat):"
 msgstr ""
 
-#: templates/dev/support.html:58 templates/dev/support.html.py:65
-#: templates/dev/support.html:72
+#: templates/dev/support.html:60 templates/dev/support.html.py:67
+#: templates/dev/support.html:74
 #, fuzzy
 msgid "subscribe:"
 msgstr "Inscreva-se:"
 
-#: templates/dev/support.html:59 templates/dev/support.html.py:66
-#: templates/dev/support.html:73
+#: templates/dev/support.html:61 templates/dev/support.html.py:68
+#: templates/dev/support.html:75
 #, fuzzy
 msgid "send mail to:"
 msgstr "Enviar email para:"
 
-#: templates/dev/support.html:63
+#: templates/dev/support.html:65
 msgid "<strong>weechat-support</strong> (installation, usage, bugs, ...):"
 msgstr ""
 
-#: templates/dev/support.html:70
+#: templates/dev/support.html:72
 msgid "<strong>weechat-dev</strong> (everything related to the development):"
 msgstr ""
 
@@ -5385,15 +5388,16 @@ msgstr "Segurança"
 msgid "Release"
 msgstr "Notas de lançamento"
 
-#: templates/download/packages.html:20
+#: templates/download/packages.html:21
+#, python-format
 msgid ""
 "<strong>A new release is under construction!</strong> Follow the progress on "
-"<a href=\"/download/release/\">this page</a>."
+"<a href=\"%(download_release_url)s\">this page</a>."
 msgstr ""
 "<strong>Um novo lançamento está em construção!</strong> Siga o progresso <a "
-"href=\"/download/release/\">nesta página</a>."
+"href=\"%(download_release_url)s\">nesta página</a>."
 
-#: templates/download/packages.html:27
+#: templates/download/packages.html:28
 msgid ""
 "<strong>Warning:</strong> this version may be unstable or it may not "
 "compile, you're warned!"
@@ -5401,7 +5405,7 @@ msgstr ""
 "<strong>Aviso:</strong> esta versão pode ser instável ou pode não compilar, "
 "você está avisado!"
 
-#: templates/download/packages.html:33
+#: templates/download/packages.html:34
 msgid ""
 "<strong>Warning:</strong> it is not recommended to download any old version, "
 "because they are less stable."
@@ -5409,7 +5413,7 @@ msgstr ""
 "<strong>Aviso:</strong> não é recomendado baixar qualquer versão antiga, "
 "porque eles são menos estáveis."
 
-#: templates/download/packages.html:35
+#: templates/download/packages.html:36
 msgid ""
 "Do it only if you've got problems with latest version and that developers "
 "didn't manage to solve your problem!"
@@ -5417,47 +5421,49 @@ msgstr ""
 "Faça isso somente se você tem problemas com a versão mais recente, e que os "
 "desenvolvedores não conseguem resolver o seu problema!"
 
-#: templates/download/packages.html:55
+#: templates/download/packages.html:57
+#, python-format
 msgid ""
-"<strong>Warning:</strong> this version has a <a href=\"/download/security/"
-"\">vulnerability</a> which is fixed in version"
+"<strong>Warning:</strong> this version has a <a href="
+"\"%(download_security_url)s\">vulnerability</a> which is fixed in version"
 msgstr ""
-"<strong>Aviso:</strong> esta versão tem uma <a href=\"/download/security/"
-"\">vulnerabilidade</a> a qual foi consertada na versão"
+"<strong>Aviso:</strong> esta versão tem uma <a href="
+"\"%(download_security_url)s\">vulnerabilidade</a> a qual foi consertada na "
+"versão"
 
-#: templates/download/packages.html:60
+#: templates/download/packages.html:62
 msgid "Packages"
 msgstr "Pacotes"
 
-#: templates/download/packages.html:97
+#: templates/download/packages.html:99
 msgid "About release"
 msgstr "Sobre o lançamento"
 
-#: templates/download/packages.html:99
+#: templates/download/packages.html:101
 msgid "ChangeLog"
 msgstr "ChangeLog"
 
-#: templates/download/packages.html:105
+#: templates/download/packages.html:107
 msgid "Release notes"
 msgstr "Notas de lançamento"
 
-#: templates/download/packages.html:119
+#: templates/download/packages.html:121
 msgid "(see above)"
 msgstr "(veja acima)"
 
-#: templates/download/packages.html:149
+#: templates/download/packages.html:151
 msgid "Checking the signatures"
 msgstr "Verificando as assinaturas"
 
-#: templates/download/packages.html:153
+#: templates/download/packages.html:155
 msgid "Import the gpg key:"
 msgstr "Importando a chave gpg:"
 
-#: templates/download/packages.html:157
+#: templates/download/packages.html:159
 msgid "Display the fingerprint:"
 msgstr "Mostrando o fingerprint:"
 
-#: templates/download/packages.html:161
+#: templates/download/packages.html:163
 msgid ""
 "Check that the fingerprint is correct by asking to a developer on #weechat "
 "(irc.freenode.net)."
@@ -5465,39 +5471,39 @@ msgstr ""
 "Verifique que o fingerprint é correto perguntando à um desenvolvedor em "
 "#weechat (irc.freenode.net)."
 
-#: templates/download/packages.html:164
+#: templates/download/packages.html:166
 msgid "Trust the key:"
 msgstr "Confie na chave:"
 
-#: templates/download/packages.html:173
+#: templates/download/packages.html:175
 msgid "In directory with package + signature:"
 msgstr "No diretório com o pacote + assinatura:"
 
-#: templates/download/packages.html:177
+#: templates/download/packages.html:179
 msgid "If the signature is OK you should see a message like this one:"
 msgstr "Se a assinatura está OK você deve ser uma mensagem como esta:"
 
-#: templates/download/packages.html:190
+#: templates/download/packages.html:192
 msgid "Links"
 msgstr "Links"
 
-#: templates/download/packages.html:192
+#: templates/download/packages.html:194
 msgid "Savannah page"
 msgstr "Página Savannah"
 
-#: templates/download/packages.html:198
+#: templates/download/packages.html:200
 msgid "Git - sources"
 msgstr "Git - sources"
 
-#: templates/download/packages.html:204
+#: templates/download/packages.html:206
 msgid "Git - scripts"
 msgstr "Git - scripts"
 
-#: templates/download/packages.html:210
+#: templates/download/packages.html:212
 msgid "Git - clone"
 msgstr "Git - clone"
 
-#: templates/download/packages.html:220
+#: templates/download/packages.html:222
 msgid "Error: there is no version called"
 msgstr "Erro: não existe uma versão chamada"
 
@@ -5700,27 +5706,28 @@ msgstr ""
 "<strong>Aviso:</strong> por favor siga <strong>todas</strong> essas regras, "
 "caso contrário, seu script será rejeitado:"
 
-#: templates/plugins/add.html:17
+#: templates/plugins/add.html:18
+#, python-format
 msgid ""
-"check that no script (or <a href=\"/scripts/pending/\">pending script</a>) "
-"does exactly same thing as your script"
+"check that no script (or <a href=\"%(scripts_pending_url)s\">pending script</"
+"a>) does exactly same thing as your script"
 msgstr ""
-"verifique se não existem scripts (ou <a href=\"/scripts/pending\">scripts "
-"pendentes</a>) que fazem exatamente a mesma coisa que o seu script"
+"verifique se não existem scripts (ou <a href=\"%(scripts_pending_url)s"
+"\">scripts pendentes</a>) que fazem exatamente a mesma coisa que o seu script"
 
-#: templates/plugins/add.html:19
+#: templates/plugins/add.html:20
 #, fuzzy
 msgid "script name"
 msgstr "Gerenciador de scripts"
 
-#: templates/plugins/add.html:21
+#: templates/plugins/add.html:22
 msgid ""
 "unique name (not used by any other script, even in a different language)"
 msgstr ""
 "nome exclusivo (não utilizado por qualquer outro script, mesmo em um idioma "
 "diferente)"
 
-#: templates/plugins/add.html:22
+#: templates/plugins/add.html:23
 msgid ""
 "the script name in register function must be exactly same name as script "
 "(without extension)"
@@ -5728,18 +5735,18 @@ msgstr ""
 "o nome do script na função de registro deve ser exatamente o mesmo nome que "
 "o script (sem a extensão)"
 
-#: templates/plugins/add.html:23
+#: templates/plugins/add.html:24
 msgid ""
 "the word 'weechat' is not needed in name: for example don't use "
 "'weechat_notify' but 'notify' instead (the script is only for WeeChat)"
 msgstr ""
 
-#: templates/plugins/add.html:27
+#: templates/plugins/add.html:28
 #, fuzzy
 msgid "script content"
 msgstr "Descrição"
 
-#: templates/plugins/add.html:29
+#: templates/plugins/add.html:30
 #, fuzzy
 msgid ""
 "a comment at beginning with your name (or pseudo), your e-mail, and the "
@@ -5748,18 +5755,18 @@ msgstr ""
 "um comentário no início com o seu nome (ou pseudo), seu e-mail, e da licença "
 "escolhida"
 
-#: templates/plugins/add.html:30
+#: templates/plugins/add.html:31
 msgid "no shebang on first line (like '#!/usr/bin/perl'), it's not needed"
 msgstr ""
 "sem shebang na primeira linha (por exemplo '#!/usr/bin/perl'), isso não é "
 "necessário"
 
-#: templates/plugins/add.html:31
+#: templates/plugins/add.html:32
 #, fuzzy
 msgid "use only English for code and comments"
 msgstr "usar somente Inglês para o código e comentários"
 
-#: templates/plugins/add.html:32
+#: templates/plugins/add.html:33
 msgid ""
 "no use of extra API between WeeChat and your script (like Ruby gem "
 "'WeeChat'), you must use standard WeeChat API"
@@ -5767,7 +5774,7 @@ msgstr ""
 "sem o uso de API extra entre WeeChat e seu script (por exemplo Ruby gem "
 "'WeeChat'), você deve usar a API padrão WeeChat"
 
-#: templates/plugins/add.html:33
+#: templates/plugins/add.html:34
 msgid ""
 "if your script is doing something blocking (like fetching URL), you must use "
 "function hook_process (or hook_process_hashtable) to not block WeeChat"
@@ -5775,7 +5782,7 @@ msgstr ""
 "se o seu script está bloqueando algo (como buscar URL), você deve usar a "
 "função hook_process (ou hook_process_hashtable) para não bloquear o WeeChat"
 
-#: templates/plugins/add.html:42 templates/plugins/update.html:25
+#: templates/plugins/add.html:43 templates/plugins/update.html:25
 #: templates/themes/add.html:25 templates/themes/update.html:17
 msgid "Submit"
 msgstr "Entregar"
@@ -6046,7 +6053,7 @@ msgstr "postado por"
 msgid "No theme found."
 msgstr "Nenhum tema encontrado."
 
-#: templates/themes/source.html:13 themes/models.py:204
+#: templates/themes/source.html:13 themes/models.py:219
 msgid "Theme"
 msgstr "Tema"
 
@@ -6074,38 +6081,38 @@ msgstr "Atualizar tema"
 msgid "Updated theme has been submitted for review."
 msgstr "Nova versão do tema foi submetida para análise."
 
-#: themes/models.py:125 themes/models.py:208
+#: themes/models.py:137 themes/models.py:223
 msgid "the theme"
 msgstr "o tema"
 
-#: themes/models.py:142 themes/models.py:218
+#: themes/models.py:154 themes/models.py:233
 msgid "no spam, never displayed on site"
 msgstr "sem spam, nunca exibido no site"
 
-#: themes/models.py:162 themes/models.py:242
+#: themes/models.py:175 themes/models.py:258
 msgid "Theme file too big."
 msgstr "Arquivo de tema muito grande."
 
-#: themes/models.py:165 themes/models.py:245
+#: themes/models.py:178 themes/models.py:261
 msgid "Invalid theme file."
 msgstr "Arquivo de tema inválido."
 
-#: themes/models.py:169
+#: themes/models.py:182
 msgid "This name already exists."
 msgstr "Este nome já existe."
 
-#: themes/models.py:172 themes/models.py:176
+#: themes/models.py:185 themes/models.py:189
 msgid "Invalid name inside theme file."
 msgstr "Nome inválido dentro do arquivo de tema."
 
-#: themes/models.py:183 themes/models.py:258
+#: themes/models.py:196 themes/models.py:274
 msgid "Invalid WeeChat version, too old!"
 msgstr "Versão WeeChat inválida, muito antiga!"
 
-#: themes/models.py:248
+#: themes/models.py:264
 msgid "Internal error."
 msgstr "Erro interno."
 
-#: themes/models.py:251
+#: themes/models.py:267
 msgid "Invalid name: different from theme."
 msgstr "Nome inválido: diferente do tema."

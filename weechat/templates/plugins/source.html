@@ -31,7 +31,7 @@
   <div class="errorbox">
     {% trans "Script not found" %}
     <br /><br />
-    <a href="/scripts/"><img src="{{ MEDIA_URL }}images/arrow_left_green.png" alt="&lt;&lt;" /> {% trans "Back to scripts" %}</a>
+    <a href="{% url 'scripts' %}"><img src="{{ MEDIA_URL }}images/arrow_left_green.png" alt="&lt;&lt;" /> {% trans "Back to scripts" %}</a>
   </div>
 {% endif %}
 

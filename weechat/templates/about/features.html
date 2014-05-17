@@ -128,7 +128,7 @@
     <div>
       <ul>
         <li>
-          <a href="/download/devel/" target="_blank">QWeeChat <img src="{{ MEDIA_URL }}images/link.png" alt="" /></a>
+          <a href="{% url 'download_version' 'devel' %}" target="_blank">QWeeChat <img src="{{ MEDIA_URL }}images/link.png" alt="" /></a>
           &mdash; {% trans "Qt interface" %}
         </li>
         <li>
@@ -157,7 +157,8 @@
     <img src="{{ MEDIA_URL }}images/ft_doc.png" class="image" alt="" />
     <h2>{% trans "Documentation and support" %}</h2>
     <p>
-      {% blocktrans %}WeeChat is translated into several languages and has a <a href="/doc/">comprehensive documentation</a>, also translated.{% endblocktrans %}
+      {% url 'doc' as doc_url %}
+      {% blocktrans %}WeeChat is translated into several languages and has a <a href="{{ doc_url }}">comprehensive documentation</a>, also translated.{% endblocktrans %}
     </p>
     <ul>
       <li>{% trans "You are new to WeeChat? Read the <strong>quickstart</strong> and <strong>user's</strong> guide." %}</li>
@@ -166,7 +167,8 @@
       <li>{% trans "Your native tongue is C? Then take a look at the <strong>developer's</strong> guide and contribute!" %}</li>
     </ul>
     <p>
-      {% blocktrans %}There is an <a href="/dev/support/"><strong>excellent support</strong></a> for users. Try it if you have any questions!{% endblocktrans %}
+      {% url 'dev_support' as support_url %}
+      {% blocktrans %}There is an <a href="{{ support_url }}"><strong>excellent support</strong></a> for users. Try it if you have any questions!{% endblocktrans %}
     </p>
   </div>
 

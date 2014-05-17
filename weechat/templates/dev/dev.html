@@ -10,10 +10,10 @@
 
 <div class="navbt">
   <ul>
-    <li><a href="/dev/roadmap/" class="{% block menu2_roadmap %}{% endblock %}">{% trans "Roadmap" %}</a></li>
-    <li><a href="/dev/stats/" class="{% block menu2_stats %}{% endblock %}">{% trans "Stats" %}</a></li>
-    <li><a href="/dev/info/" class="{% block menu2_info %}{% endblock %}">{% trans "Info" %}</a></li>
-    <li><a href="/dev/support/" class="{% block menu2_support %}{% endblock %}">{% trans "Support" %}</a></li>
+    <li><a href="{% url 'dev_roadmap' %}" class="{% block menu2_roadmap %}{% endblock %}">{% trans "Roadmap" %}</a></li>
+    <li><a href="{% url 'dev_stats' %}" class="{% block menu2_stats %}{% endblock %}">{% trans "Stats" %}</a></li>
+    <li><a href="{% url 'dev_info' %}" class="{% block menu2_info %}{% endblock %}">{% trans "Info" %}</a></li>
+    <li><a href="{% url 'dev_support' %}" class="{% block menu2_support %}{% endblock %}">{% trans "Support" %}</a></li>
   </ul>
 </div>
 

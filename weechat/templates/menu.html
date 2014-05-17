@@ -1,64 +1,64 @@
         <li class="nav-home">{% load i18n %}
-          <a href="/">{% trans "Home" %}</a>
+          <a href="{% url 'home' %}">{% trans "Home" %}</a>
           <ul>
-            <li><a href="/news/">{% trans "Latest news" %}</a></li>
-            <li><a href="/events/">{% trans "Upcoming events" %}</a></li>
+            <li><a href="{% url 'home_news' %}">{% trans "Latest news" %}</a></li>
+            <li><a href="{% url 'home_events' %}">{% trans "Upcoming events" %}</a></li>
           </ul>
         </li>
         <li class="nav-about">
-          <a href="/about/">{% trans "About" %}</a>
+          <a href="{% url 'about' %}">{% trans "About" %}</a>
           <ul>
-            <li><a href="/about/features/">{% trans "Features" %}</a></li>
-            <li><a href="/about/screenshots/">{% trans "Screenshots" %}</a></li>
-            <li><a href="/about/history/">{% trans "History" %}</a></li>
-            <li><a href="/about/donate/">{% trans "Make a donation" %}</a></li>
-            <li><a href="/about/weechat.org/">WeeChat.org</a></li>
+            <li><a href="{% url 'about_features' %}">{% trans "Features" %}</a></li>
+            <li><a href="{% url 'about_screenshots' %}">{% trans "Screenshots" %}</a></li>
+            <li><a href="{% url 'about_history' %}">{% trans "History" %}</a></li>
+            <li><a href="{% url 'about_donate' %}">{% trans "Make a donation" %}</a></li>
+            <li><a href="{% url 'about_weechat.org' %}">WeeChat.org</a></li>
           </ul>
         </li>
         <li class="nav-doc">
-          <a href="/doc/">{% trans "Documentation" %}</a>
+          <a href="{% url 'doc' %}">{% trans "Documentation" %}</a>
           <ul>
-            <li><a href="/doc/stable/">{% trans "Docs (stable)" %}</a></li>
-            <li><a href="/doc/devel/">{% trans "Docs (devel)" %}</a></li>
+            <li><a href="{% url 'doc_version' 'stable' %}">{% trans "Docs (stable)" %}</a></li>
+            <li><a href="{% url 'doc_version' 'devel' %}">{% trans "Docs (devel)" %}</a></li>
             <li><a href="/files/doc/weechat_faq.en.html" target="_blank">{% trans "FAQ" %} ({% trans "English" %}) <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="" /></a></li>
             <li><a href="/files/doc/devel/weechat_plugin_api.en.html" target="_blank">API ({% trans "English" %}) <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="" /></a></li>
           </ul>
         </li>
         <li class="nav-download">
-          <a href="/download/">{% trans "Download" %}</a>
+          <a href="{% url 'download' %}">{% trans "Download" %}</a>
           <ul>
-            <li><a href="/download/stable/">{% trans "Stable version" %}</a></li>
-            <li><a href="/download/devel/">{% trans "Dev version" %}</a></li>
-            <li><a href="/download/debian/">{% trans "Debian repositories" %}</a></li>
-            <li><a href="/download/security/">{% trans "Security issues" %}</a></li>
+            <li><a href="{% url 'download_version' 'stable' %}">{% trans "Stable version" %}</a></li>
+            <li><a href="{% url 'download_version' 'devel' %}">{% trans "Dev version" %}</a></li>
+            <li><a href="{% url 'download_debian' %}">{% trans "Debian repositories" %}</a></li>
+            <li><a href="{% url 'download_security' %}">{% trans "Security issues" %}</a></li>
           </ul>
         </li>
         <li class="nav-plugins">
-          <a href="/scripts/">{% trans "Scripts" %}</a>
+          <a href="{% url 'scripts' %}">{% trans "Scripts" %}</a>
           <ul>
-            <li><a href="/scripts/">{% trans "Browse scripts" %}</a></li>
-            <li><a href="/scripts/add/">{% trans "Add script" %}</a></li>
-            <li><a href="/scripts/update/">{% trans "Update script" %}</a></li>
-            <li><a href="/scripts/pending/">{% trans "Pending scripts" %}</a></li>
+            <li><a href="{% url 'scripts' %}">{% trans "Browse scripts" %}</a></li>
+            <li><a href="{% url 'scripts_add' %}">{% trans "Add script" %}</a></li>
+            <li><a href="{% url 'scripts_update' %}">{% trans "Update script" %}</a></li>
+            <li><a href="{% url 'scripts_pending' %}">{% trans "Pending scripts" %}</a></li>
             <li><a href="/files/scripts/unofficial/">{% trans "Unofficial scripts" %}</a></li>
           </ul>
         </li>
 {% comment %}
         <li class="nav-themes">
-          <a href="/themes/">{% trans "Themes" %}</a>
+          <a href="{% url 'themes' %}">{% trans "Themes" %}</a>
           <ul>
-            <li><a href="/themes/">{% trans "Browse themes" %}</a></li>
-            <li><a href="/themes/add/">{% trans "Add theme" %}</a></li>
-            <li><a href="/themes/update/">{% trans "Update theme" %}</a></li>
+            <li><a href="{% url 'themes' %}">{% trans "Browse themes" %}</a></li>
+            <li><a href="{% url 'themes_add' %}">{% trans "Add theme" %}</a></li>
+            <li><a href="{% url 'themes_update' %}">{% trans "Update theme" %}</a></li>
           </ul>
         </li>
 {% endcomment %}
         <li class="nav-dev">
-          <a href="/dev/">Dev</a>
+          <a href="{% url 'dev' %}">Dev</a>
           <ul>
-            <li><a href="/dev/roadmap/">{% trans "Roadmap" %}</a></li>
-            <li><a href="/dev/stats/">{% trans "Statistics" %}</a></li>
-            <li><a href="/dev/support/">{% trans "Support" %}</a></li>
+            <li><a href="{% url 'dev_roadmap' %}">{% trans "Roadmap" %}</a></li>
+            <li><a href="{% url 'dev_stats' %}">{% trans "Statistics" %}</a></li>
+            <li><a href="{% url 'dev_support' %}">{% trans "Support" %}</a></li>
             <li><a href="http://dev.weechat.org/" target="_blank">{% trans "Devel blog" %} <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="" /></a></li>
             <li><a href="https://github.com/weechat" target="_blank">{% trans "Bugs" %} <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="" /></a></li>
           </ul>

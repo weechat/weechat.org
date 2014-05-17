@@ -44,14 +44,23 @@ urlpatterns = patterns(
     # set language
     url(r'^i18n/', include('django.conf.urls.i18n')),
 
-    url(r'^$', 'weechat.news.views.home', {'max_info': 6, 'max_event': 4}),
-    url(r'^news/$', 'weechat.news.views.news'),
-    url(r'^news/(?P<info_id>\d+)(/.*)?/$', 'weechat.news.views.news'),
-    url(r'^events/$', 'weechat.news.views.events'),
-    url(r'^events/(?P<event_id>\d+)(/.*)?/$', 'weechat.news.views.events'),
+    # main WeeChat URLs
+    url(r'^$', 'weechat.news.views.home', {'max_info': 6, 'max_event': 4},
+        name='home'),
+    url(r'^news/$', 'weechat.news.views.news', name='home_news'),
+    url(r'^news/(?P<info_id>\d+)/$', 'weechat.news.views.news',
+        name='home_info_id'),
+    url(r'^news/(?P<info_id>\d+)/(.*)/$', 'weechat.news.views.news',
+        name='home_info_id_title'),
+    url(r'^events/$', 'weechat.news.views.events', name='home_events'),
+    url(r'^events/(?P<event_id>\d+)/$', 'weechat.news.views.events',
+        name='home_event_id'),
+    url(r'^events/(?P<event_id>\d+)/(.*)/$', 'weechat.news.views.events',
+        name='home_event_id_title'),
     url(r'^about/', include('weechat.about.urls')),
     url(r'^doc/', include('weechat.doc.urls')),
-    url(r'^faq/$', RedirectView.as_view(url='/files/doc/weechat_faq.en.html')),
+    url(r'^faq/$', RedirectView.as_view(url='/files/doc/weechat_faq.en.html'),
+        name='faq'),
     url(r'^download/', include('weechat.download.urls')),
     url(r'^plugins/', include('weechat.plugins.urls')),
     url(r'^scripts/', include('weechat.plugins.urls')),
@@ -70,8 +79,8 @@ urlpatterns = patterns(
     url(r'^support/$', RedirectView.as_view(url='/dev/support/')),
 
     # feeds
-    url(r'^feeds/news/$', LatestNewsFeed()),
-    url(r'^feeds/events/$', UpcomingEventsFeed()),
+    url(r'^feeds/news/$', LatestNewsFeed(), name='feeds_news'),
+    url(r'^feeds/events/$', UpcomingEventsFeed(), name='feeds_events'),
 
     # files and media
     url('^files$', RedirectView.as_view(url='/files/')),

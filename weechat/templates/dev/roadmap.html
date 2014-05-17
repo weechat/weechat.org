@@ -19,8 +19,8 @@
 
   <div class="navbt" style="border-bottom: none">
     <ul>
-      <li><a href="/dev/roadmap/"{% if not allversions %} class="selected"{% endif %}>{% trans "Next versions" %}</a></li>
-      <li><a href="/dev/roadmap/all/"{% if allversions %} class="selected"{% endif %}>{% trans "All versions" %}</a></li>
+      <li><a href="{% url 'dev_roadmap' %}"{% if not allversions %} class="selected"{% endif %}>{% trans "Next versions" %}</a></li>
+      <li><a href="{% url 'dev_roadmap_all' %}"{% if allversions %} class="selected"{% endif %}>{% trans "All versions" %}</a></li>
     </ul>
   </div>
 

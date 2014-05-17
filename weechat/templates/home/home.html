@@ -36,8 +36,8 @@
       </p>
 
       <div class="button">
-        <a href="/features/">{% trans "Features" %}&nbsp;&rsaquo;&rsaquo; </a>
-        <a href="/download/" class="download">{% trans "Download" %}&nbsp;&rsaquo;&rsaquo; </a>
+        <a href="{% url 'about_features' %}">{% trans "Features" %}&nbsp;&rsaquo;&rsaquo; </a>
+        <a href="{% url 'download' %}" class="download">{% trans "Download" %}&nbsp;&rsaquo;&rsaquo; </a>
       </div>
 
       <h2>{% trans "Get involved!" %}</h2>
@@ -50,7 +50,7 @@
       </ul>
 
       <div class="button">
-        <a href="/about/donate/" class="donation">{% trans "Make a donation" %}&nbsp;&rsaquo;&rsaquo; </a>
+        <a href="{% url 'about_donate' %}" class="donation">{% trans "Make a donation" %}&nbsp;&rsaquo;&rsaquo; </a>
       </div>
 
     </td>
@@ -60,40 +60,40 @@
     <td class="home-bloc{% if max_info or max_event %} col3{% endif %}">
 
       {% if max_info %}
-        <h2>{% if max_info %}<a href="/news/" class="more">{% trans "More" %} &rsaquo;&rsaquo;</a>{% endif %}{% trans "Latest news" %}</h2>
+        <h2>{% if max_info %}<a href="{% url 'home_news' %}" class="more">{% trans "More" %} &rsaquo;&rsaquo;</a>{% endif %}{% trans "Latest news" %}</h2>
         <div class="news">
           <table>
             {% for info in info_list %}
             <tr>
               <th>{{ info.date_l10n }}</th>
-              <td><a href="/news/{{ info.id }}/{{ info.date_title_url }}/">{{ info.title_i18n }}</a></td>
+              <td><a href="{% url 'home_info_id_title' info.id info.date_title_url %}">{{ info.title_i18n }}</a></td>
             </tr>
             {% endfor %}
           </table>
         </div>
       {% else %}
         {% for info in info_list %}
-          <h2><a href="/news/{{ info.id }}/{{ info.date_title_url }}/">{{ info.title_i18n }}</a> <span class="date">({{ info.date_l10n }})</span></h2>
+          <h2><a href="{% url 'home_info_id_title' info.id info.date_title_url %}">{{ info.title_i18n }}</a> <span class="date">({{ info.date_l10n }})</span></h2>
           {% if info.text %}{% autoescape off %}{{ info.text_i18n|linebreaks }}{% endautoescape %}{% endif %}
           <br />
         {% endfor %}
       {% endif %}
 
       {% if max_event %}
-      <h2>{% if max_event %}<a href="/events/" class="more">{% trans "More" %} &rsaquo;&rsaquo;</a>{% endif %}{% trans "Upcoming events" %}</h2>
+      <h2>{% if max_event %}<a href="{% url 'home_events' %}" class="more">{% trans "More" %} &rsaquo;&rsaquo;</a>{% endif %}{% trans "Upcoming events" %}</h2>
       <div class="news">
         <table>
           {% for event in event_list %}
           <tr>
             <th>{{ event.date_l10n }}</th>
-            <td><a href="/events/{{ event.id }}/{{ event.date_title_url }}/">{{ event.title_i18n }}</a></td>
+            <td><a href="{% url 'home_event_id_title' event.id event.date_title_url %}">{{ event.title_i18n }}</a></td>
           </tr>
           {% endfor %}
         </table>
       </div>
       {% else %}
         {% for event in event_list %}
-          <h2><a href="/events/{{ event.id }}/{{ event.date_title_url }}/">{{ event.title_i18n }}</a> <span class="date">({{ event.date_l10n }})</span></h2>
+          <h2><a href="{% url 'home_event_id_title' event.id event.date_title_url %}">{{ event.title_i18n }}</a> <span class="date">({{ event.date_l10n }})</span></h2>
           {% if event.text %}{% autoescape off %}{{ event.text_i18n|linebreaks }}{% endautoescape %}{% endif %}
           <br />
         {% endfor %}
@@ -101,7 +101,7 @@
       {% if not max_info and not max_event %}
       <br />
       <div class="button">
-        <a href="/" class="big" title="Back to home">&lsaquo;&lsaquo;&nbsp;{% trans "Back to home" %}</a>
+        <a href="{% url 'home' %}" class="big" title="Back to home">&lsaquo;&lsaquo;&nbsp;{% trans "Back to home" %}</a>
       </div>
       {% endif %}
 

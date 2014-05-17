@@ -27,16 +27,21 @@ from django.views.generic.base import TemplateView
 
 urlpatterns = patterns(
     '',
-    url(r'^$', 'weechat.themes.views.themes'),
+    url(r'^$', 'weechat.themes.views.themes', name='themes'),
     url(r'^(?P<filter_name>(author))/(?P<filter_value>(.*))/$',
-        'weechat.themes.views.themes'),
+        'weechat.themes.views.themes',
+        name='themes_filter'),
     url(r'^sort/(?P<sort_key>(name|version|added|updated))/$',
-        'weechat.themes.views.themes'),
+        'weechat.themes.views.themes',
+        name='themes_sort'),
     url(r'^source/(?P<themeid>\d+)/$', 'weechat.themes.views.theme_source'),
     url(r'^source/(?P<themename>[a-zA-Z0-9_]+\.theme)\.html/$',
-        'weechat.themes.views.theme_source'),
-    url(r'^add/$', 'weechat.themes.views.form_add'),
-    url(r'^update/$', 'weechat.themes.views.form_update'),
+        'weechat.themes.views.theme_source',
+        name='themes_source_name_html'),
+    url(r'^add/$', 'weechat.themes.views.form_add',
+        name='themes_add'),
+    url(r'^update/$', 'weechat.themes.views.form_update',
+        name='themes_update'),
 )
 
 urlpatterns += patterns(

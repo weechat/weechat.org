@@ -10,10 +10,10 @@
 
 <div class="navbt">
   <ul>
-    <li><a href="/scripts/" class="{% block menu2_list %}{% endblock %}">{% trans "Scripts" %}</a></li>
-    <li><a href="/scripts/add/" class="{% block menu2_add %}{% endblock %}">{% trans "Add script" %}</a></li>
-    <li><a href="/scripts/update/" class="{% block menu2_update %}{% endblock %}">{% trans "Update script" %}</a></li>
-    <li><a href="/scripts/pending/" class="{% block menu2_pending %}{% endblock %}">{% trans "Pending scripts" %}</a></li>
+    <li><a href="{% url 'scripts' %}" class="{% block menu2_list %}{% endblock %}">{% trans "Scripts" %}</a></li>
+    <li><a href="{% url 'scripts_add' %}" class="{% block menu2_add %}{% endblock %}">{% trans "Add script" %}</a></li>
+    <li><a href="{% url 'scripts_update' %}" class="{% block menu2_update %}{% endblock %}">{% trans "Update script" %}</a></li>
+    <li><a href="{% url 'scripts_pending' %}" class="{% block menu2_pending %}{% endblock %}">{% trans "Pending scripts" %}</a></li>
     <li><a href="/files/scripts/unofficial/" class="{% block menu2_unofficial %}{% endblock %}">{% trans "Unofficial scripts" %}</a></li>
   </ul>
 </div>

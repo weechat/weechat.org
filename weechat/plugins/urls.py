@@ -27,28 +27,39 @@ from django.views.generic.base import TemplateView
 
 urlpatterns = patterns(
     '',
-    url(r'^$', 'weechat.plugins.views.scripts'),
-    url(r'^(?P<api>(old|stable))/$', 'weechat.plugins.views.scripts'),
+    url(r'^$', 'weechat.plugins.views.scripts', name='scripts'),
+    url(r'^(?P<api>(old|stable))/$', 'weechat.plugins.views.scripts',
+        name='scripts_api'),
     url(r'^(?P<api>(old|stable))/'
         r'(?P<filter_name>(tag|language|license|author))/'
         r'(?P<filter_value>(.*))/$',
-        'weechat.plugins.views.scripts'),
+        'weechat.plugins.views.scripts',
+        name='scripts_api_filter'),
     url(r'^(?P<api>(old|stable))/sort/(?P<sort_key>(name|language|license|'
         r'min_weechat|max_weechat|author|added|updated))/$',
-        'weechat.plugins.views.scripts'),
-    url(r'^source/(?P<scriptid>\d+)/$', 'weechat.plugins.views.script_source'),
+        'weechat.plugins.views.scripts',
+        name='scripts_api_sort'),
+    url(r'^source/(?P<scriptid>\d+)/$', 'weechat.plugins.views.script_source',
+        name='scripts_source_id'),
     url(r'^source/(?P<api>(old|stable))/(?P<scriptname>[a-zA-Z0-9_.]+)'
         r'\.html/$',
-        'weechat.plugins.views.script_source'),
+        'weechat.plugins.views.script_source',
+        name='scripts_source_api_name_html'),
     url(r'^source/(?P<api>(old|stable))/(?P<scriptname>[a-zA-Z0-9_.]+)/$',
-        'weechat.plugins.views.script_source'),
+        'weechat.plugins.views.script_source',
+        name='scripts_source_api_name'),
     url(r'^source/(?P<scriptname>[a-zA-Z0-9_.]+)\.html/$',
-        'weechat.plugins.views.script_source', {'api': 'stable'}),
+        'weechat.plugins.views.script_source', {'api': 'stable'},
+        name='scripts_source_name_html'),
     url(r'^source/(?P<scriptname>[a-zA-Z0-9_.]+)/$',
-        'weechat.plugins.views.script_source', {'api': 'stable'}),
-    url(r'^add/$', 'weechat.plugins.views.form_add'),
-    url(r'^update/$', 'weechat.plugins.views.form_update'),
-    url(r'^pending/$', 'weechat.plugins.views.pending'),
+        'weechat.plugins.views.script_source', {'api': 'stable'},
+        name='scripts_source_name'),
+    url(r'^add/$', 'weechat.plugins.views.form_add',
+        name='scripts_add'),
+    url(r'^update/$', 'weechat.plugins.views.form_update',
+        name='scripts_update'),
+    url(r'^pending/$', 'weechat.plugins.views.pending',
+        name='scripts_pending'),
 )
 
 urlpatterns += patterns(

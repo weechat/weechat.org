@@ -16,6 +16,6 @@
   {% trans "Thank you for your patience." %}
 </div>
 
-<a href="/themes/"><img src="{{ MEDIA_URL }}images/arrow_left_green.png" alt="&lt;&lt;" /> {% trans "Back to themes" %}</a>
+<a href="{% url 'themes' %}"><img src="{{ MEDIA_URL }}images/arrow_left_green.png" alt="&lt;&lt;" /> {% trans "Back to themes" %}</a>
 
 {% endblock content %}

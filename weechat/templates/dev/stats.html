@@ -11,10 +11,10 @@
 
 <div class="navbt" style="border-bottom: none">
   <ul>
-    <li><a href="/dev/stats/weechat/"{% ifequal stats "weechat" %} class="selected"{% endifequal %}>WeeChat</a></li>
-    <li><a href="/dev/stats/scripts/"{% ifequal stats "scripts" %} class="selected"{% endifequal %}>{% trans "Scripts" %}</a></li>
-    <li><a href="/dev/stats/qweechat/"{% ifequal stats "qweechat" %} class="selected"{% endifequal %}>QWeeChat</a></li>
-    <li><a href="/dev/stats/weechat.org/"{% ifequal stats "weechat.org" %} class="selected"{% endifequal %}>WeeChat.org</a></li>
+    <li><a href="{% url 'dev_stats_git' 'weechat' %}"{% ifequal stats "weechat" %} class="selected"{% endifequal %}>WeeChat</a></li>
+    <li><a href="{% url 'dev_stats_git' 'scripts' %}"{% ifequal stats "scripts" %} class="selected"{% endifequal %}>{% trans "Scripts" %}</a></li>
+    <li><a href="{% url 'dev_stats_git' 'qweechat' %}"{% ifequal stats "qweechat" %} class="selected"{% endifequal %}>QWeeChat</a></li>
+    <li><a href="{% url 'dev_stats_git' 'weechat.org' %}"{% ifequal stats "weechat.org" %} class="selected"{% endifequal %}>WeeChat.org</a></li>
   </ul>
 </div>
 

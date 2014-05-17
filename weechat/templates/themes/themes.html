@@ -10,9 +10,9 @@
 
 <div class="navbt">
   <ul>
-    <li><a href="/themes/" class="{% block menu2_list %}{% endblock %}">{% trans "Themes" %}</a></li>
-    <li><a href="/themes/add/" class="{% block menu2_add %}{% endblock %}">{% trans "Add theme" %}</a></li>
-    <li><a href="/themes/update/" class="{% block menu2_update %}{% endblock %}">{% trans "Update theme" %}</a></li>
+    <li><a href="{% url 'themes' %}" class="{% block menu2_list %}{% endblock %}">{% trans "Themes" %}</a></li>
+    <li><a href="{% url 'themes_add' %}" class="{% block menu2_add %}{% endblock %}">{% trans "Add theme" %}</a></li>
+    <li><a href="{% url 'themes_update' %}" class="{% block menu2_update %}{% endblock %}">{% trans "Update theme" %}</a></li>
   </ul>
 </div>
 

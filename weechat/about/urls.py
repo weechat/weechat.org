@@ -27,19 +27,24 @@ from django.views.generic.base import TemplateView
 
 urlpatterns = patterns(
     'django.views.generic.simple',
-    url(r'^(features/)?$',
-        TemplateView.as_view(template_name='about/features.html')),
+    url(r'^$', TemplateView.as_view(template_name='about/features.html'),
+        name='about'),
+    url(r'^features/$',
+        TemplateView.as_view(template_name='about/features.html'),
+        name='about_features'),
 )
 
 urlpatterns += patterns(
     '',
-    url(r'^screenshots/$', 'weechat.about.views.screenshots'),
+    url(r'^screenshots/$', 'weechat.about.views.screenshots',
+        name='about_screenshots'),
     url(r'^screenshots/(?P<filename>[a-zA-Z0-9_\-.]*)/$',
-        'weechat.about.views.screenshots'),
-    url(r'^history/$', 'weechat.about.views.history'),
-    url(r'^donate/$', 'weechat.about.views.donate'),
+        'weechat.about.views.screenshots',
+        name='about_screenshot'),
+    url(r'^history/$', 'weechat.about.views.history', name='about_history'),
+    url(r'^donate/$', 'weechat.about.views.donate', name='about_donate'),
     url(r'^donate/sort/(?P<sort_key>(date|top10))/$',
-        'weechat.about.views.donate'),
+        'weechat.about.views.donate', name='about_donate_sort'),
     url(r'^donate/sort/(?P<sort_key>(date|top10))/'
         'view/(?P<view_key>[a-zA-Z0-9_]*)/$',
         'weechat.about.views.donate'),
@@ -48,5 +53,6 @@ urlpatterns += patterns(
 urlpatterns += patterns(
     'django.views.generic.simple',
     url(r'^weechat\.org/$',
-        TemplateView.as_view(template_name='about/weechat.org.html')),
+        TemplateView.as_view(template_name='about/weechat.org.html'),
+        name='about_weechat.org'),
 )

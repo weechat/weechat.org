@@ -17,7 +17,8 @@
     {% ifequal version "stable" %}
       {% if release_progress.done >= 0 and release_progress.pct < 100 %}
         <div class="infobox">
-          {% blocktrans %}<strong>A new release is under construction!</strong> Follow the progress on <a href="/download/release/">this page</a>.{% endblocktrans %}
+          {% url 'download_release' as download_release_url %}
+          {% blocktrans %}<strong>A new release is under construction!</strong> Follow the progress on <a href="{{ download_release_url }}">this page</a>.{% endblocktrans %}
         </div>
       {% endif %}
     {% endifequal %}
@@ -52,7 +53,8 @@
       </div>
       {% if package_version.grouper.securityfix %}
         <div class="warningbox">
-          {% blocktrans %}<strong>Warning:</strong> this version has a <a href="/download/security/">vulnerability</a> which is fixed in version{% endblocktrans %}
+          {% url 'download_security' as download_security_url %}
+          {% blocktrans %}<strong>Warning:</strong> this version has a <a href="{{ download_security_url }}">vulnerability</a> which is fixed in version{% endblocktrans %}
           {{ package_version.grouper.securityfix }}.
         </div>
       {% endif %}
@@ -116,7 +118,7 @@
         <div class="dlitem">
           <span class="dltype">Qt</span>
           <img src="{{ MEDIA_URL }}images/dl_qt.png" class="dlicon" alt="android" />
-          {% if version == "devel" %}QWeeChat {% trans "(see above)" %}{% else %}<a href="/download/devel/">QWeeChat</a>{% endif %}
+          {% if version == "devel" %}QWeeChat {% trans "(see above)" %}{% else %}<a href="{% url 'download_version' 'devel' %}">QWeeChat</a>{% endif %}
         </div>
         <div class="dlitem">
           <span class="dltype">Android</span>

@@ -20,8 +20,8 @@
     {{ theme.html_preview|safe }}
     </div>
     <div class="detail">
-      <span class="theme"><a href="/themes/source/{{ theme.name }}.html/">{{ theme.name }}</a></span> &mdash;
-      {% trans "submitted by" %} <a href="/themes/author/{{ theme.author|iriencode }}" title="{% trans "Author:" %} {{ theme.author }}">{{ theme.author }}</a>
+      <span class="theme"><a href="{% url 'themes_source_name_html' theme.name %}">{{ theme.name }}</a></span> &mdash;
+      {% trans "submitted by" %} <a href="{% url 'themes_filter' 'author' theme.author %}" title="{% trans "Author:" %} {{ theme.author }}">{{ theme.author }}</a>
       <span class="weechat">(v{{ theme.version }})</span>
       {% if theme.desc %}<div class="description">“ {{ theme.desc_i18n }} ”</div>{% endif %}
       <div class="date">
@@ -38,7 +38,7 @@
     <strong>{% trans "No theme found." %}</strong>
   </div>
   <br />
-  <a href="/themes/"><img src="{{ MEDIA_URL }}images/arrow_left_green.png" alt="&lt;&lt;" /> {% trans "Back to themes" %}</a>
+  <a href="{% url 'themes' %}"><img src="{{ MEDIA_URL }}images/arrow_left_green.png" alt="&lt;&lt;" /> {% trans "Back to themes" %}</a>
 {% endif %}
 
 {% endblock content %}
