@@ -32,6 +32,8 @@ if PRODUCTION:
     DEBUG = False
     TEMPLATE_DEBUG = DEBUG
 
+    ALLOWED_HOSTS = []
+
     ADMINS = (('root', 'root@localhost'),)
     MANAGERS = ADMINS
 
