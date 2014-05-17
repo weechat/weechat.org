@@ -21,7 +21,6 @@
 # Django settings for weechat project.
 
 from os import path
-from warnings import warn
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
