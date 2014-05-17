@@ -4,7 +4,8 @@ python:
   - "2.7"
 
 install:
-  - pip install flake8
+  - pip install flake8 msgcheck
 
 script:
   - flake8 --exclude="_i18n_*,settings.py" weechat
+  - msgcheck weechat/locale/*/LC_MESSAGES/django.po
