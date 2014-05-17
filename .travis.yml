@@ -4,6 +4,8 @@ python:
   - "2.7"
 
 install:
+  - sudo apt-get update -qq
+  - sudo apt-get -y install libenchant-dev
   - pip install flake8 msgcheck
 
 script:
