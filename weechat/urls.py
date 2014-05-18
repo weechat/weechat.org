@@ -62,7 +62,6 @@ urlpatterns = patterns(
     url(r'^faq/$', RedirectView.as_view(url='/files/doc/weechat_faq.en.html'),
         name='faq'),
     url(r'^download/', include('weechat.download.urls')),
-    url(r'^plugins/', include('weechat.plugins.urls')),
     url(r'^scripts/', include('weechat.plugins.urls')),
     url(r'^themes/', include('weechat.themes.urls')),
     url(r'^dev/', include('weechat.dev.urls')),
