@@ -55,7 +55,6 @@
       <th class="name">{% trans "Name" %}</th>
       {% if view_amount %}<th class="amount">{% trans "Amount" %}</th>{% endif %}
       {% ifequal sort_key "date" %}
-      <th class="number">{% trans "Donation number" %}</th>
       <th class="comment">{% trans "Comment" %}</th>
       {% else %}
       <th class="comment"></th>
@@ -68,10 +67,12 @@
       {% else %}
       <td class="rank">{{ forloop.counter }}.</td>
       {% endifequal %}
-      <td class="name">{{ sponsor.name }}</td>
+      <td class="name">
+        {{ sponsor.name }}
+        {% if sponsor.number > 1 %}<span class="number">(#{{ sponsor.number }})</span>{% endif %}
+      </td>
       {% if view_amount %}<td class="amount">{{ sponsor.amount|floatformat:"-2" }} &euro;</td>{% endif %}
       {% ifequal sort_key "date" %}
-      <td class="number">{% if sponsor.number > 1 %}#{{ sponsor.number }}{% endif %}</td>
       <td class="comment">{% if sponsor.comment %}<span class="text">&ldquo; {{ sponsor.comment }} &rdquo;</span>{% endif %}</td>
       {% else %}
       <td class="comment"></td>
