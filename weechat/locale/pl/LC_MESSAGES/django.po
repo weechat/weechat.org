@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-05-18 15:54+0200\n"
-"PO-Revision-Date: 2014-05-18 15:54+0200\n"
+"PO-Revision-Date: 2014-06-05 23:28+0100\n"
 "Last-Translator: Krzysztof Korościk <soltys@szluug.org>\n"
 "Language-Team: Polish <soltys@szluug.org>\n"
 "Language: pl\n"
@@ -99,6 +99,8 @@ msgstr "Pełne wsparcie dla UTF-8."
 #: about/_i18n_keydates.py:14
 msgid "Gaps in buffers numbers, IPv6 for DCC file/chat, command /print."
 msgstr ""
+"Przerwy w numeracji buforów, IPv6 dla przesyłania plików/rozmów za pomocą "
+"DCC, komenda /print."
 
 #: about/_i18n_keydates.py:15
 msgid ""
@@ -667,7 +669,7 @@ msgstr ""
 
 #: news/_i18n_info.py:28
 msgid "Git repositories moved to GitHub"
-msgstr ""
+msgstr "Repozytoria git zostały przeniesione na GitHub"
 
 #: news/_i18n_info.py:29
 msgid "Happy birthday WeeChat, 10 years old!"
@@ -776,9 +778,8 @@ msgid "Site weechat.org and all subdomains are now accessible via IPv6."
 msgstr "Strona weechat.org i wszystkie subdomeny dą teraz dostępne przez IPv6."
 
 #: news/_i18n_info.py:44
-#, fuzzy
 msgid "Source code of weechat.org"
-msgstr "Nowy wygląd weechat.org"
+msgstr "Kod źródłowy weechat.org"
 
 #: news/_i18n_info.py:45
 msgid "Story... with screenshots"
@@ -791,6 +792,10 @@ msgid ""
 "a>.\n"
 "It is written in Python and uses Django, and gettext for translations."
 msgstr ""
+"Kod źródłowy weechat.org jest teraz dostępny w serwisie GitHub: <a href="
+"\"https://github.com/weechat/weechat.org\">https://github.com/weechat/"
+"weechat.org</a>.\n"
+"Jest on napisany w Pythonie, używa Django i gettexta dla tłumaczeń."
 
 #: news/_i18n_info.py:47
 msgid ""
@@ -2223,7 +2228,6 @@ msgstr ""
 "\">ChangeLog</a>."
 
 #: news/_i18n_info.py:93
-#, fuzzy
 msgid ""
 "Version 0.4.3 is available!\n"
 "\n"
@@ -2246,28 +2250,26 @@ msgid ""
 "\"http://dev.weechat.org/post/2014/02/09/Version-0.4.3\">development blog</"
 "a> or <a href=\"/files/changelog/ChangeLog-0.4.3.html\">ChangeLog</a>."
 msgstr ""
-"Wersja 0.4.0 jest dostępna!\n"
+"Wersja 0.4.3 jest dostępna!\n"
 "\n"
 "Nowe funkcje:\n"
-"- dodano parametr \"diff\" dla komendy /set, wyświetlanie wartości "
-"domyślnych przy wywołaniu /set\n"
-"- dodano wsparcie dla kolorów w opcjach przedtostków\n"
-"- dodano komendę /eval, użycie wyrażeń w warunkach dla pasków\n"
-"- domyślne łączenie się z serwerami po IPv6, w razie problemów używane jest "
-"IPv4\n"
-"- dodano sugestie aspell\n"
-"- dodano wsparcie dla tagów w wiadomościach irc oraz funkcję \"czas serwera"
-"\"\n"
-"- dodano komendę irc /quiet\n"
-"- dodano wsparcie dla IPv6 we wtyczce relay\n"
-"- dodano backlog dla protokołu irc we wtyczce relay\n"
-"- wyświetlanie zdalnego adresu IP dla transferów/rozmów DCC we wtyczce xfer\n"
-"- dodano wersję git podczas budowy\n"
+"\n"
+"- nowa komenda /print\n"
+"- operacje logiczne i/lub dla tagów w komendzie /filter i hook_print\n"
+"- przerwy w numeracji buforów\n"
+"- wsparcie dla pochyłego tekstu\n"
+"- nowa opcja dla modyfikacji domyślnego wyszukiwania tekstu w buforach\n"
+"- użycie komendy IRC monitor dla /notify (jeśli dostępne na serwerze)\n"
+"- nowa opcja serwera IRC \"ssl_fingerprint\"\n"
+"- nowa opcja do inteligentnego filtrowania wiadomości o zmianach atrybutów\n"
+"- nowa opcja dla domyślnej maski banów na IRC\n"
+"- wsparcie dla IPv6 w przesyłaniu plików/rozmowach DCC\n"
+"- automatyczne sprawdzanie sumy CRC32 dla plików pobranych przez DCC\n"
 "- poprawiono wiele błędów.\n"
 "\n"
 "Pełną listę nowych funkcji i poprawionych błędów można znaleźć na <a href="
-"\"http://dev.weechat.org/post/2013/01/20/Version-0.4.0\">blogu "
-"developerskim</a> oraz w pliku <a href=\"/files/changelog/ChangeLog-0.4.0."
+"\"http://dev.weechat.org/post/2014/02/09/Version-0.4.3\">blogu "
+"developerskim</a> oraz w pliku <a href=\"/files/changelog/ChangeLog-0.4.3."
 "html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:94
@@ -2386,6 +2388,12 @@ msgid ""
 "For more info, please look at <a href=\"http://dev.weechat.org/"
 "post/2014/03/03/Git-repositories-moved-to-Github\">development blog</a>."
 msgstr ""
+"Repozytoria WeeChat (weechat, scripts, qweechat)  zostały przeniesione na "
+"GitHuba, do organizacji WeeChat: <a href=\"http://github.com/weechat"
+"\">http://github.com/weechat</a>.\n"
+"\n"
+"Więcej informacji można znaleźć na <a href=\"http://dev.weechat.org/"
+"post/2014/03/03/Git-repositories-moved-to-Github\">blogu deweloperskim</a>."
 
 #: news/_i18n_info.py:102
 msgid "WeeChat screenshot"
@@ -2699,7 +2707,7 @@ msgstr "Automatycznie ustawia dcc_own_ip."
 #. Translators: description for script "responsive_layout.py" (0.4.3+)
 #: plugins/_i18n_plugins.py:89
 msgid "Automatically apply layouts according to terminal size."
-msgstr ""
+msgstr "Automatyczna zmiana układów w zależności od rozmiaru terminala."
 
 #. Translators: description for script "nickregain.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:91
@@ -2710,6 +2718,8 @@ msgstr "Próbuje automatycznie odzyskać podstawowy nick na IRC."
 #: plugins/_i18n_plugins.py:93
 msgid "Automatically authenticate with NickServ using SASL username/password."
 msgstr ""
+"Automatyczne uwierzytelnianie w NickServ za pomocą nazwy użytkownika/hasła "
+"SASL."
 
 #. Translators: description for script "automode.pl" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:95
@@ -2817,7 +2827,7 @@ msgstr "Przeglądaj/wyświetl adresy URL na kanałach."
 #. Translators: description for script "mnick.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:131
 msgid "Change nick on multiple servers using custom masks."
-msgstr ""
+msgstr "Zmiana nicka na wielu serwerach za pomocą własnych masek."
 
 #. Translators: description for script "luanma.pl" (0.3.9+)
 #: plugins/_i18n_plugins.py:133
@@ -2872,9 +2882,8 @@ msgstr "Kontekstowa pomoc linii komend."
 
 #. Translators: description for script "clemy.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:151
-#, fuzzy
 msgid "Control Clementine from WeeChat."
-msgstr "Uruchamia kod Pythona bezpośrednio z WeeChat."
+msgstr "Kontroluj Clementine z poziomu WeeChat."
 
 #. Translators: description for script "rhythmbus.pl" (0.3.6+)
 #: plugins/_i18n_plugins.py:153
@@ -2972,7 +2981,7 @@ msgstr "Wykrywa nicki obecne z tego samego hosta na kanałach irc."
 #. Translators: description for script "btc_ticker.py" (0.3.7+)
 #: plugins/_i18n_plugins.py:187
 msgid "Display Bitcoin or other crypto currency spot exchange value."
-msgstr ""
+msgstr "Wyświetla aktualny kurs wymiany Bitcoina lub innej kryptowaluty."
 
 #. Translators: description for script "bitlback.py" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:189
@@ -2994,9 +3003,8 @@ msgstr "Wyświetla powiadomienia WeeChat za pomocą dzen."
 
 #. Translators: description for script "countdown.rb" (0.3.0+)
 #: plugins/_i18n_plugins.py:195
-#, fuzzy
 msgid "Display a countdown on current buffer."
-msgstr "Usuwa plik z logiem dla obecnego bufora."
+msgstr "Wyświetla odliczanie w obecnym buforze."
 
 #. Translators: description for script "urlbar.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:197
@@ -3155,9 +3163,8 @@ msgstr ""
 
 #. Translators: description for script "axolotl.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:257
-#, fuzzy
 msgid "Encrypt/decrypt IRC messages using axolotl ratchet and GPG."
-msgstr "Szyfruje/deszyfruje wiadomości używając OpenSSL."
+msgstr "Szyfruje/deszyfruje wiadomości IRC używając axolotl ratchet i GPG."
 
 #. Translators: description for script "crypt.py" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:259
@@ -3300,6 +3307,8 @@ msgstr "Podaje trochę statystyk o buforach/oknach w linii poleceń."
 #: plugins/_i18n_plugins.py:311
 msgid "Interactively select URL with keyboard and perform some commands on it."
 msgstr ""
+"Interaktywne zaznaczanie URLa za pomocą klawiatury i wykonywanie komend na "
+"nim."
 
 #. Translators: description for script "color_popup.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:313
@@ -3715,9 +3724,9 @@ msgstr "Otwiera kanały i serwery otwarte przed ostatnim zamknięciem WeeChat."
 
 #. Translators: description for script "shutup.py" (0.3.6+)
 #: plugins/_i18n_plugins.py:461
-#, fuzzy
 msgid "Replace text from specified IRC users with random or preset text."
-msgstr "Zastępuje napisany tekst zamiennikiem."
+msgstr ""
+"Zastępuje tekst od określonych użytkowników IRC losowym lub obecnym tekstem."
 
 #. Translators: description for script "text_replace.py" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:463
@@ -3937,9 +3946,8 @@ msgstr "Wysyła prywatne wiadomości i higlighty do AMQP exchange."
 
 #. Translators: description for script "pushover.pl" (0.3.7+)
 #: plugins/_i18n_plugins.py:541
-#, fuzzy
 msgid "Send push notifications to your mobile devices using Pushover or NMA."
-msgstr "Wysyła powiadomienia do urządzeń mobilnych używając pushover.net."
+msgstr "Wysyła powiadomienia do urządzeń mobilnych używając Pushover lub NMA."
 
 #. Translators: description for script "ragefaces.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:543
@@ -4487,7 +4495,6 @@ msgid "Oh no! This page is forbidden..."
 msgstr "O nie! Ta strona jest zakazana..."
 
 #: templates/403.html:12
-#, fuzzy
 msgid "You're looking where you shouldn't? ;)"
 msgstr "Zaglądasz, gdzie nie powinieneś ? ;)"
 
@@ -4516,9 +4523,8 @@ msgid "WeeChat, the extensible chat client"
 msgstr "WeeChat, rozszerzalny komunikator"
 
 #: templates/base.html:85
-#, fuzzy
 msgid "About WeeChat.org"
-msgstr "O WeeChat"
+msgstr "O WeeChat.org"
 
 #: templates/base.html:87
 msgid "Valid"
@@ -4582,7 +4588,7 @@ msgstr "Historia"
 #: templates/menu.html:14 templates/about/about.html:16
 #: templates/home/home.html:53
 msgid "Make a donation"
-msgstr "Wesprzyj"
+msgstr "Dotacje"
 
 #: templates/menu.html:21
 msgid "Docs (stable)"
@@ -4602,9 +4608,8 @@ msgid "Stable version"
 msgstr "Wersja stabilna"
 
 #: templates/menu.html:31
-#, fuzzy
 msgid "Dev version"
-msgstr "Nowa wersja"
+msgstr "Wersja rozwojowa"
 
 #: templates/menu.html:32
 msgid "Debian repositories"
@@ -4653,7 +4658,7 @@ msgstr "Wsparcie"
 
 #: templates/menu.html:63
 msgid "Bugs"
-msgstr ""
+msgstr "Błędy"
 
 #: templates/about/about.html:5
 msgid "about"
@@ -4711,19 +4716,19 @@ msgstr "Oni wsparli WeeChat:"
 
 #: templates/about/donate.html:42
 msgid "whole list"
-msgstr ""
+msgstr "pełna lista"
 
 #: templates/about/donate.html:42
 msgid "top 10, ordered by total amount donated"
-msgstr ""
+msgstr "top 10, sortowane po sumie dotacji"
 
 #: templates/about/donate.html:44
 msgid "show the top 10, ordered by total amount donated"
-msgstr ""
+msgstr "pokaż top 10, sortowane po sumie dotacji"
 
 #: templates/about/donate.html:46
 msgid "show the whole list"
-msgstr ""
+msgstr "pokaż pełną listę"
 
 #: templates/about/donate.html:51 templates/plugins/pending.html:38
 msgid "Date"
@@ -4731,7 +4736,7 @@ msgstr "Data"
 
 #: templates/about/donate.html:53
 msgid "Rank"
-msgstr ""
+msgstr "Ranking"
 
 #: templates/about/donate.html:56
 msgid "Amount"
@@ -5061,36 +5066,35 @@ msgid "No screenshot."
 msgstr "Brak zrzutu ekranu."
 
 #: templates/about/weechat.org.html:14
-#, fuzzy
 msgid "Authors"
-msgstr "Autor"
+msgstr "Autorzy"
 
 #: templates/about/weechat.org.html:16
-#, fuzzy
 msgid "Developers:"
-msgstr "Poradnik developera"
+msgstr "Deweloperzy:"
 
 #: templates/about/weechat.org.html:23
-#, fuzzy
 msgid "Translators:"
-msgstr "Przetłumaczone"
+msgstr "Tłumacze:"
 
 #: templates/about/weechat.org.html:33
 msgid "Source code"
-msgstr ""
+msgstr "Kod źródłowy"
 
 #: templates/about/weechat.org.html:35
 msgid "Source code of WeeChat.org is available on GitHub:"
-msgstr ""
+msgstr "Kod źródłowy WeeChat.org jest dostępny na GitHub:"
 
 #: templates/about/weechat.org.html:41
 msgid "Hosting"
-msgstr ""
+msgstr "Hosting"
 
 #: templates/about/weechat.org.html:43
 msgid ""
 "WeeChat.org is hosted by <a href=\"https://www.hetzner.de/en/\">Hetzner</a>."
 msgstr ""
+"WeeChat.org jest hostowane przez <a href=\"https://www.hetzner.de/en/"
+"\">Hetzner</a>."
 
 #: templates/dev/dev.html:5
 msgid "dev"
@@ -5221,31 +5225,31 @@ msgstr ""
 
 #: templates/dev/support.html:20
 msgid "On server chat.freenode.net:"
-msgstr ""
+msgstr "Na serwerze chat.freenode.net:"
 
 #: templates/dev/support.html:24
-#, fuzzy
 msgid "official channels (with developers):"
-msgstr "Oficjalne kanały (z developerami):"
+msgstr "oficjalne kanały (z developerami):"
 
 #: templates/dev/support.html:31
-#, fuzzy
 msgid "non-official channels:"
-msgstr "Nieoficjalne kanały:"
+msgstr "nieoficjalne kanały:"
 
 #: templates/dev/support.html:38
 msgid "Bugs / Feature requests"
-msgstr ""
+msgstr "Błędy / Propozycje nowych funkcji"
 
 #: templates/dev/support.html:40
 msgid ""
 "Bugs and feature requests for WeeChat, QWeeChat and scripts can be submitted "
 "on GitHub:"
 msgstr ""
+"Błędy i propozycje nowych funkcji dla WeeChat, QWeeChat i skryptów można "
+"zgłaszać na GitHubie:"
 
 #: templates/dev/support.html:45
 msgid "WeeChat is on <a href=\"https://plus.google.com/\">Google+</a>:"
-msgstr ""
+msgstr "WeeChat jest na <a href=\"https://plus.google.com/\">Google+</a>:"
 
 #: templates/dev/support.html:48
 msgid "Page"
@@ -5266,30 +5270,33 @@ msgid ""
 "\"_blank\">3 mailing lists <img src=\"%(MEDIA_URL)simages/link.png\" width="
 "\"16\" height=\"16\" alt=\"\" /></a>:"
 msgstr ""
+"Dostępne są <a href=\"https://savannah.nongnu.org/mail/?group=weechat\" "
+"target=\"_blank\">3 listy mailingowe <img src=\"%(MEDIA_URL)simages/link.png"
+"\" width=\"16\" height=\"16\" alt=\"\" /></a>:"
 
 #: templates/dev/support.html:58
 msgid "<strong>weechat-security</strong> (security advisories about WeeChat):"
 msgstr ""
+"<strong>weechat-security</strong> (ostrzeżenia bezpieczeństwa dla WeeChat):"
 
 #: templates/dev/support.html:60 templates/dev/support.html.py:67
 #: templates/dev/support.html:74
-#, fuzzy
 msgid "subscribe:"
-msgstr "Zapisz się:"
+msgstr "zapisz się:"
 
 #: templates/dev/support.html:61 templates/dev/support.html.py:68
 #: templates/dev/support.html:75
-#, fuzzy
 msgid "send mail to:"
-msgstr "Wysyłaj wiadomości do:"
+msgstr "wyślij wiadomości do:"
 
 #: templates/dev/support.html:65
 msgid "<strong>weechat-support</strong> (installation, usage, bugs, ...):"
 msgstr ""
+"<strong>weechat-support</strong> (instalacja, użytkowanie, błędy, ...):"
 
 #: templates/dev/support.html:72
 msgid "<strong>weechat-dev</strong> (everything related to the development):"
-msgstr ""
+msgstr "<strong>weechat-dev</strong> (wszystko związane z rozwojem):"
 
 #: templates/doc/doc.html:5
 msgid "documentation"
@@ -5535,16 +5542,15 @@ msgstr "Błąd: nie wywołano wersji"
 
 #: templates/download/release.html:19
 msgid "YEAH! You can download and install it!"
-msgstr ""
+msgstr "TAK! Możesz teraz ściągnąć i zainstalować!"
 
 #: templates/download/release.html:30
-#, fuzzy
 msgid "No release in progress."
-msgstr "Uwagi do wydania"
+msgstr "Brak wydania w toku."
 
 #: templates/download/release.html:31
 msgid "We are working hard on the next version:"
-msgstr ""
+msgstr "Pracujemy ciężko nad następną wersją:"
 
 #: templates/download/security.html:5
 msgid "security"
@@ -5658,11 +5664,8 @@ msgid "<strong>modular</strong>: a lightweight core with optional plugins"
 msgstr "<strong>modularny</strong>: lekki rdzeń z opcjonalnymi wtyczkami"
 
 #: templates/home/home.html:26
-#, fuzzy
 msgid "<strong>multi-protocols architecture</strong> (mainly IRC)"
-msgstr ""
-"<strong>wieloprotokołowa architektura</strong>: IRC (Jabber za pomocą jabber."
-"py)"
+msgstr "<strong>wieloprotokołowa architektura</strong> (głównie IRC)"
 
 #: templates/home/home.html:27
 msgid ""
@@ -5787,7 +5790,6 @@ msgstr ""
 "to potrzebne"
 
 #: templates/plugins/add.html:32
-#, fuzzy
 msgid "use only English for code and comments"
 msgstr "używaj tylko języka angielskiego w kodzie i komentarzach"
 
