@@ -30,13 +30,13 @@ from weechat.common.templatetags.localdate import localdate
 
 class Screenshot(models.Model):
     """A WeeChat screenshot."""
-    directory = models.CharField(max_length=256)
+    app = models.CharField(max_length=256)
     filename = models.CharField(max_length=256)
     comment = models.TextField(blank=True)
     priority = models.IntegerField(default=0)
 
     def __unicode__(self):
-        return '%s/%s (%d)' % (self.directory, self.filename, self.priority)
+        return '%s: %s (%d)' % (self.app, self.filename, self.priority)
 
     class Meta:
         """Meta class for ScreenShot."""

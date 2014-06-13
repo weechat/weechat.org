@@ -9,13 +9,20 @@
 
 {{ block.super }}
 
+<div class="navbt" style="border-bottom: none">
+  <ul>
+    <li><a href="{% url 'about_screenshots_app' 'weechat' %}"{% ifequal app "weechat" %} class="selected"{% endifequal %}>WeeChat</a></li>
+    <li><a href="{% url 'about_screenshots_app' 'relay' %}"{% ifequal app "relay" %} class="selected"{% endifequal %}>{% trans "Relay clients" %}</a></li>
+  </ul>
+</div>
+
 <div class="about">
 
 {% if screenshot_list %}
   <div class="screenshots">
     {% for screenshot in screenshot_list %}
-      <a href="{% url 'about_screenshot' screenshot.filename %}">
-        <img src="{{ MEDIA_URL }}images/{{ screenshot.directory }}/small/{{ screenshot.filename }}" alt="{{ screenshot.filename }}" title="{{ screenshot.comment }}" />
+      <a href="{% url 'about_screenshot' app screenshot.filename %}">
+        <img src="{{ MEDIA_URL }}images/screenshots/{{ screenshot.app }}/small/{{ screenshot.filename }}" alt="{{ screenshot.filename }}" title="{{ screenshot.comment }}" />
       </a>
     {% endfor %}
   </div>
@@ -23,8 +30,8 @@
   {% if screenshot %}
     <div class="screenshot">
       <h3>{{ screenshot.comment }}</h3>
-      <a href="{% url 'about_screenshots' %}">
-        <img src="{{ MEDIA_URL }}images/{{ screenshot.directory }}/medium/{{ screenshot.filename }}" alt="{{ screenshot.filename }}" title="{{ screenshot.comment }}" />
+      <a href="{% url 'about_screenshots_app' app %}">
+        <img src="{{ MEDIA_URL }}images/screenshots/{{ screenshot.app }}/medium/{{ screenshot.filename }}" alt="{{ screenshot.filename }}" title="{{ screenshot.comment }}" />
       </a>
       <br />{{ screenshot.filename }}
     </div>

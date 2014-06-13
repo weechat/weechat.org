@@ -33,27 +33,32 @@ from weechat.common.path import media_path_join
 from weechat.download.models import Release
 
 
-def screenshots(request, filename=''):
+def screenshots(request, app='weechat', filename=''):
     """
     Page with one screenshot (if filename given),
     or all screenshots as thumbnails.
     """
     if filename:
         try:
-            screenshot = Screenshot.objects.get(filename=filename)
+            screenshot = Screenshot.objects.get(app=app, filename=filename)
         except ObjectDoesNotExist:
             screenshot = None
         return render_to_response(
             'about/screenshots.html',
             {
+                'app': app,
                 'filename': filename,
                 'screenshot': screenshot,
             },
             context_instance=RequestContext(request))
     else:
-        screenshot_list = Screenshot.objects.all().order_by('priority')
+        screenshot_list = \
+            Screenshot.objects.filter(app=app).order_by('priority')
         return render_to_response('about/screenshots.html',
-                                  {'screenshot_list': screenshot_list},
+                                  {
+                                      'app': app,
+                                      'screenshot_list': screenshot_list,
+                                  },
                                   context_instance=RequestContext(request))
 
 
