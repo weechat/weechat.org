@@ -41,7 +41,8 @@ urlpatterns += patterns(
     url(r'^screenshots/(?P<app>weechat|relay)/$',
         'weechat.about.views.screenshots',
         name='about_screenshots_app'),
-    url(r'^screenshots/(?P<app>weechat|relay)/(?P<filename>[a-zA-Z0-9_\-.]*)/$',
+    url(r'^screenshots/(?P<app>weechat|relay)/'
+        r'(?P<filename>[a-zA-Z0-9_\-.]*)/$',
         'weechat.about.views.screenshots',
         name='about_screenshot'),
     url(r'^screenshots/(?P<filename>[a-zA-Z0-9_\-.]*)/$',
