@@ -560,7 +560,7 @@ _i18n_plugins_plugins = [
     # Translators: description for script "myuptime.rb" (0.3.0+)
     gettext_lazy("Sends machine uptime to current channel."),
     # Translators: description for script "now-playing.rb" (0.0.1-0.2.6)
-    gettext_lazy("Sends now-playing informations (fetched from amaroK or moc) to the current channel."),
+    gettext_lazy("Sends now-playing informations (fetched from amarok or moc) to the current channel."),
     # Translators: description for script "mpdbitl.lua" (0.3.5+)
     gettext_lazy("Set Bitlbee's status message with current MPD track."),
     # Translators: description for script "iset.pl" (0.3.0+)
