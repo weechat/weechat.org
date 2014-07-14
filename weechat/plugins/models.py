@@ -399,7 +399,7 @@ def handler_plugin_saved(sender, **kwargs):
                         if key == 'url':
                             # FIXME: use the "Host" from request, but...
                             # request is not available in this handler!
-                            value = 'http://www.weechat.org/%s' % \
+                            value = 'http://weechat.org/%s' % \
                                 plugin.build_url()[1:]
                         elif key == 'mail':
                             value = value.replace('@', ' [at] ')

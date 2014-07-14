@@ -324,7 +324,7 @@ def handler_theme_saved(sender, **kwargs):
                     json += '    %s\n' % json_value(key, strvalue)
             # FIXME: use the "Host" from request, but...
             # request is not available in this handler!
-            strvalue = 'http://www.weechat.org/%s' % theme.build_url()[1:]
+            strvalue = 'http://weechat.org/%s' % theme.build_url()[1:]
             xml += '    %s\n' % xml_value('url', strvalue)
             json += '    %s\n' % json_value('url', strvalue)
             xml += '  </theme>\n'
