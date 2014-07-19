@@ -81,7 +81,9 @@ class Sponsor(models.Model):
     comment = models.CharField(max_length=1024, blank=True)
 
     def __unicode__(self):
-        return '%s, %s, %.02f Eur' % (self.name, self.date, self.amount)
+        str_num = ' (#%d)' % self.number if self.number > 1 else ''
+        return '%s%s, %s, %.02f Eur' % (self.name, str_num, self.date,
+                                        self.amount)
 
     def date_l10n(self):
         """Return the sponsor date formatted with localized date format."""
