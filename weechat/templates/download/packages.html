@@ -116,6 +116,12 @@
       <div class="dlsub">
         <div class="dlsubtitle">{% trans "Remote interfaces" %}</div>
         <div class="dlitem">
+          <span class="dltype">HTML5</span>
+          <img src="{{ MEDIA_URL }}images/dl_html5.png" class="dlicon" alt="html5" />
+          <a href="http://www.glowing-bear.org" target="_blank">http://www.glowing-bear.org/</a>
+          <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt="" />
+        </div>
+        <div class="dlitem">
           <span class="dltype">Qt</span>
           <img src="{{ MEDIA_URL }}images/dl_qt.png" class="dlicon" alt="android" />
           {% if version == "devel" %}QWeeChat {% trans "(see above)" %}{% else %}<a href="{% url 'download_version' 'devel' %}">QWeeChat</a>{% endif %}
@@ -130,12 +136,6 @@
           <span class="dltype">Emacs</span>
           <img src="{{ MEDIA_URL }}images/dl_emacs.png" class="dlicon" alt="emacs" />
           <a href="https://github.com/the-kenny/weechat.el" target="_blank">https://github.com/the-kenny/weechat.el</a>
-          <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt="" />
-        </div>
-        <div class="dlitem">
-          <span class="dltype">HTML5</span>
-          <img src="{{ MEDIA_URL }}images/dl_html5.png" class="dlicon" alt="html5" />
-          <a href="http://www.glowing-bear.org" target="_blank">http://www.glowing-bear.org/</a>
           <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt="" />
         </div>
         <div class="dlitem">
