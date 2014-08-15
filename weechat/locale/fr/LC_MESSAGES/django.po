@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-12 12:52+0200\n"
-"PO-Revision-Date: 2014-07-22 21:26+0200\n"
+"POT-Creation-Date: 2014-08-15 16:00+0200\n"
+"PO-Revision-Date: 2014-08-15 16:02+0200\n"
 "Last-Translator: Sébastien Helleu <flashcode@flashtux.org>\n"
 "Language-Team: French <flashcode@flashtux.org>\n"
 "Language: fr\n"
@@ -172,6 +172,12 @@ msgstr ""
 "Données sécurisées, recherche d'expressions régulières dans les tampons avec "
 "mise en valeur du texte, affichage dynamique du changement de jour."
 
+#: about/_i18n_keydates.py:29
+msgid "Trigger and Exec plugins, bare display, hidden buffers, unit tests."
+msgstr ""
+"Extensions Trigger et Exec plugins, affichage dépouillé (« bare display »), "
+"tampons cachés, tests unitaires."
+
 #: dev/views.py:37
 msgid "stable version"
 msgstr "version stable"
@@ -180,8 +186,8 @@ msgstr "version stable"
 msgid ""
 "stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
-"version stable, sous forme de nombre, comme l'API extension : "
-"info_get(\"version_number\")"
+"version stable, sous forme de nombre, comme l'API extension : info_get"
+"(\"version_number\")"
 
 #: dev/views.py:46
 msgid "date of stable version"
@@ -1344,8 +1350,8 @@ msgstr ""
 "weechat_pv, weechat_highlight, weechat_ctcp, weechat_dcc\n"
 "- les extensions scripts chargent désormais les scripts dans le répertoire "
 "share système de WeeChat\n"
-"- ajout du temps d'inactivité, accessible pour les extensions via "
-"get_info(\"inactivity\")\n"
+"- ajout du temps d'inactivité, accessible pour les extensions via get_info"
+"(\"inactivity\")\n"
 "- nouvelles fonctions pour les extensions : add_timer_handler, "
 "remove_timer_handler, remove_infobar\n"
 "- plusieurs commandes autorisées pour les alias\n"
@@ -2313,6 +2319,66 @@ msgstr ""
 
 #: news/_i18n_info.py:94
 msgid ""
+"Version 1.0 is available!\n"
+"\n"
+"Among the new features:\n"
+"\n"
+"- plugin \"trigger\": Swiss Army knife for WeeChat (replaces \"rmodifier\" "
+"plugin)\n"
+"- plugin \"exec\": execute external commands (replaces script \"shell.py\")\n"
+"- bare display: easy click on long URLs and text selection with mouse\n"
+"- support of environment variables in /set command\n"
+"- hidden buffers\n"
+"- negated tags in filters\n"
+"- toggle of filters in specific buffers\n"
+"- flexible conditions for adding/removing buffers in hotlist\n"
+"- text search in buffers with free content\n"
+"- support of wildcard \"*\" inside masks\n"
+"- support of nested variables in evaluated expressions\n"
+"- tag with host in IRC messages displayed\n"
+"- support of \"away-notify\" IRC capability\n"
+"- IRC commands: /allpv, /remove, /unquiet\n"
+"- bar items: buffer_short_name, irc_nick_modes\n"
+"- unit tests\n"
+"- many bugs fixed.\n"
+"\n"
+"For complete list of new features and bugs fixed, please look at <a href="
+"\"http://dev.weechat.org/post/2014/08/15/Version-1.0\">development blog</a> "
+"or <a href=\"/files/changelog/ChangeLog-1.0.html\">ChangeLog</a>."
+msgstr ""
+"La version 1.0 est disponible !\n"
+"\n"
+"Parmi les nouvelles fonctionnalités :\n"
+"\n"
+"- extension « trigger » : couteau Suisse pour WeeChat (remplace l'extension "
+"« rmodifier »)\n"
+"- extension « exec » : exécution de commandes externes (remplace le script "
+"« shell.py »)\n"
+"- affichage dépouillé (« bare display ») : clic facile sur les URLs longs et "
+"sélection de texte avec la souris\n"
+"- support des variables d'environnement dans la commande /set\n"
+"- tampons cachés\n"
+"- négation d'étiquettes dans les filtres\n"
+"- activation/désactivation des filtres dans des tampons spécifiques\n"
+"- conditions flexibles pour ajouter/supprimer des tampons dans la "
+"« hotlist »\n"
+"- recherche de texte dans les tampons avec contenu libre\n"
+"- support du joker « * » dans les masques\n"
+"- support de variables imbriquées dans les expressions évaluées\n"
+"- étiquette avec le « host » dans les messages IRC affichés\n"
+"- support de la capacité IRC « away-notify »\n"
+"- commandes IRC : /allpv, /remove, /unquiet\n"
+"- objets de barre : buffer_short_name, irc_nick_modes\n"
+"- tests unitaires\n"
+"- nombreux bugs corrigés.\n"
+"\n"
+"Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
+"merci de consulter le <a href=\"http://dev.weechat.org/post/2014/08/15/"
+"Version-1.0\">blog de développement</a> ou le <a href=\"/files/changelog/"
+"ChangeLog-1.0.html\">ChangeLog</a>."
+
+#: news/_i18n_info.py:95
+msgid ""
 "Version v0.1.2 is available!\n"
 "\n"
 "News since last version are:\n"
@@ -2345,11 +2411,11 @@ msgstr ""
 "Ajout le 24/05/2005 : correction d'un plantage au démarrage et d'un bug de "
 "détection de Perl et Python, la version est désormais 0.1.2.1."
 
-#: news/_i18n_info.py:95
+#: news/_i18n_info.py:96
 msgid "WeeChat - Wee Enhanced Environment for Chat"
 msgstr "WeeChat - Wee Enhanced Environment for Chat"
 
-#: news/_i18n_info.py:96
+#: news/_i18n_info.py:97
 msgid ""
 "WeeChat has many new important features since some weeks:\n"
 "- multi-windows management (with horizontal and vertical window split)\n"
@@ -2374,11 +2440,11 @@ msgstr ""
 "N'hésitez pas à remonter tout problème ou suggestion d'amélioration sur la "
 "navigation entre les tampons/fenêtres."
 
-#: news/_i18n_info.py:97
+#: news/_i18n_info.py:98
 msgid "WeeChat in Cygwin"
 msgstr "WeeChat dans Cygwin"
 
-#: news/_i18n_info.py:98
+#: news/_i18n_info.py:99
 msgid ""
 "WeeChat is now in Cygwin, and can be installed with setup.exe.\n"
 "Version 0.4.2 is available for 32 and 64-bit Cygwin.\n"
@@ -2392,7 +2458,7 @@ msgstr ""
 "Note : l'extension Guile est manquante car elle requiert guile >= 2.0, qui "
 "n'est pas encore disponible sous Cygwin."
 
-#: news/_i18n_info.py:99
+#: news/_i18n_info.py:100
 msgid ""
 "WeeChat project is started.\n"
 "\n"
@@ -2412,7 +2478,7 @@ msgstr ""
 "- rapide, léger, et extensible par des scripts.\n"
 "- etc..."
 
-#: news/_i18n_info.py:100
+#: news/_i18n_info.py:101
 msgid ""
 "WeeChat project now accepts donations via Paypal account, with secured "
 "payment."
@@ -2420,7 +2486,7 @@ msgstr ""
 "Le projet WeeChat accepte désormais les dons via un compte Paypal, avec "
 "paiement sécurisé."
 
-#: news/_i18n_info.py:101
+#: news/_i18n_info.py:102
 msgid ""
 "WeeChat repositories (weechat, scripts, qweechat) have been moved to GitHub, "
 "in WeeChat organization: <a href=\"http://github.com/weechat\">http://github."
@@ -2437,15 +2503,15 @@ msgstr ""
 "org/post/2014/03/03/Git-repositories-moved-to-Github\">blog de "
 "développement</a>."
 
-#: news/_i18n_info.py:102
+#: news/_i18n_info.py:103
 msgid "WeeChat screenshot"
 msgstr "Capture d'écran de WeeChat"
 
-#: news/_i18n_info.py:103
+#: news/_i18n_info.py:104
 msgid "WeeChat scripts page"
 msgstr "Page de scripts pour WeeChat"
 
-#: news/_i18n_info.py:104
+#: news/_i18n_info.py:105
 msgid ""
 "WeeChat scripts page (today Perl scripts only) has been added.\n"
 "On this page you can submit your script (need to be approved by WeeChat "
@@ -2462,7 +2528,7 @@ msgstr ""
 "À noter : les scripts Perl fonctionnent avec une version de WeeChat "
 "supérieure à 0.0.3, soit à ce jour la version de développement uniquement."
 
-#: news/_i18n_info.py:105
+#: news/_i18n_info.py:106
 msgid ""
 "WeeChat story page is now available, as screenshots. You can see differences "
 "between all versions in one view!\n"
@@ -2474,15 +2540,15 @@ msgstr ""
 "La version de développement est également visible et mise à jour "
 "régulièrement."
 
-#: news/_i18n_info.py:106
+#: news/_i18n_info.py:107
 msgid "WeeChat users map"
 msgstr "Carte des utilisateurs WeeChat"
 
-#: news/_i18n_info.py:107
+#: news/_i18n_info.py:108
 msgid "WeeChat will merge with irssi"
 msgstr "WeeChat va fusionner avec irssi"
 
-#: news/_i18n_info.py:108
+#: news/_i18n_info.py:109
 msgid ""
 "WeeChat, the fast, light and extensible IRC client, is released for the "
 "first time, version 0.0.1.\n"
@@ -5013,7 +5079,7 @@ msgstr ""
 msgid "Here is a list of available interfaces:"
 msgstr "Ci-dessous une liste des interfaces disponibles :"
 
-#: templates/about/features.html:132
+#: templates/about/features.html:136
 msgid "Qt interface"
 msgstr "interface Qt"
 
@@ -5552,7 +5618,7 @@ msgstr "ChangeLog"
 msgid "Release notes"
 msgstr "Notes de version"
 
-#: templates/download/packages.html:121
+#: templates/download/packages.html:127
 msgid "(see above)"
 msgstr "(voir ci-dessus)"
 

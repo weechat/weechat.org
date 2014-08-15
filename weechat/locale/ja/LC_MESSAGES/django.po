@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-26 07:58+0200\n"
+"POT-Creation-Date: 2014-08-15 16:00+0200\n"
 "PO-Revision-Date: 2014-07-26 18:12+0900\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <i38w7i3@yahoo.co.jp>\n"
@@ -173,6 +173,10 @@ msgid ""
 msgstr ""
 "安全なデータ、テキスト強調を含むバッファ内で正規表現検索、日付変更メッセージ"
 "の動的変化。"
+
+#: about/_i18n_keydates.py:29
+msgid "Trigger and Exec plugins, bare display, hidden buffers, unit tests."
+msgstr ""
 
 #: dev/views.py:37
 msgid "stable version"
@@ -2238,6 +2242,36 @@ msgstr ""
 
 #: news/_i18n_info.py:94
 msgid ""
+"Version 1.0 is available!\n"
+"\n"
+"Among the new features:\n"
+"\n"
+"- plugin \"trigger\": Swiss Army knife for WeeChat (replaces \"rmodifier\" "
+"plugin)\n"
+"- plugin \"exec\": execute external commands (replaces script \"shell.py\")\n"
+"- bare display: easy click on long URLs and text selection with mouse\n"
+"- support of environment variables in /set command\n"
+"- hidden buffers\n"
+"- negated tags in filters\n"
+"- toggle of filters in specific buffers\n"
+"- flexible conditions for adding/removing buffers in hotlist\n"
+"- text search in buffers with free content\n"
+"- support of wildcard \"*\" inside masks\n"
+"- support of nested variables in evaluated expressions\n"
+"- tag with host in IRC messages displayed\n"
+"- support of \"away-notify\" IRC capability\n"
+"- IRC commands: /allpv, /remove, /unquiet\n"
+"- bar items: buffer_short_name, irc_nick_modes\n"
+"- unit tests\n"
+"- many bugs fixed.\n"
+"\n"
+"For complete list of new features and bugs fixed, please look at <a href="
+"\"http://dev.weechat.org/post/2014/08/15/Version-1.0\">development blog</a> "
+"or <a href=\"/files/changelog/ChangeLog-1.0.html\">ChangeLog</a>."
+msgstr ""
+
+#: news/_i18n_info.py:95
+msgid ""
 "Version v0.1.2 is available!\n"
 "\n"
 "News since last version are:\n"
@@ -2270,11 +2304,11 @@ msgstr ""
 "2005-05-24 追記: 起動時と Perl/Python の検出時のクラッシュを修正、現在のバー"
 "ジョンは 0.1.2.1 です。"
 
-#: news/_i18n_info.py:95
+#: news/_i18n_info.py:96
 msgid "WeeChat - Wee Enhanced Environment for Chat"
 msgstr "WeeChat - 小さくて強力なチャット環境"
 
-#: news/_i18n_info.py:96
+#: news/_i18n_info.py:97
 msgid ""
 "WeeChat has many new important features since some weeks:\n"
 "- multi-windows management (with horizontal and vertical window split)\n"
@@ -2297,11 +2331,11 @@ msgstr ""
 "まだ開発中です。\n"
 "問題やバッファ/ウィンドウ間の操作を改良するための提案を募集しています。"
 
-#: news/_i18n_info.py:97
+#: news/_i18n_info.py:98
 msgid "WeeChat in Cygwin"
 msgstr "WeeChat の Cygwin 版"
 
-#: news/_i18n_info.py:98
+#: news/_i18n_info.py:99
 msgid ""
 "WeeChat is now in Cygwin, and can be installed with setup.exe.\n"
 "Version 0.4.2 is available for 32 and 64-bit Cygwin.\n"
@@ -2316,7 +2350,7 @@ msgstr ""
 "注意: Guile プラグインは Cygwin ではまだ利用できない guile >= 2.0 が必要なの"
 "で、削除されています。"
 
-#: news/_i18n_info.py:99
+#: news/_i18n_info.py:100
 msgid ""
 "WeeChat project is started.\n"
 "\n"
@@ -2336,7 +2370,7 @@ msgstr ""
 "- 高速、軽量、スクリプトで拡張可能\n"
 "- ..."
 
-#: news/_i18n_info.py:100
+#: news/_i18n_info.py:101
 msgid ""
 "WeeChat project now accepts donations via Paypal account, with secured "
 "payment."
@@ -2344,7 +2378,7 @@ msgstr ""
 "WeeChat プロジェクトは secured payment を用いた Paypal アカウント経由の寄付を"
 "受け付けるようになりました。"
 
-#: news/_i18n_info.py:101
+#: news/_i18n_info.py:102
 msgid ""
 "WeeChat repositories (weechat, scripts, qweechat) have been moved to GitHub, "
 "in WeeChat organization: <a href=\"http://github.com/weechat\">http://github."
@@ -2360,15 +2394,15 @@ msgstr ""
 "より詳しい情報は、<a href=\"http://dev.weechat.org/post/2014/03/03/Git-"
 "repositories-moved-to-Github\">開発ブログ</a>をご覧ください。"
 
-#: news/_i18n_info.py:102
+#: news/_i18n_info.py:103
 msgid "WeeChat screenshot"
 msgstr "WeeChat のスクリーンショット"
 
-#: news/_i18n_info.py:103
+#: news/_i18n_info.py:104
 msgid "WeeChat scripts page"
 msgstr "WeeChat スクリプトページ"
 
-#: news/_i18n_info.py:104
+#: news/_i18n_info.py:105
 msgid ""
 "WeeChat scripts page (today Perl scripts only) has been added.\n"
 "On this page you can submit your script (need to be approved by WeeChat "
@@ -2385,7 +2419,7 @@ msgstr ""
 "注意: Perl スクリプトを使うには WeeChat 0.0.3 より高いバージョンが必要です。"
 "今のところ開発版を使う以外に方法はありません。"
 
-#: news/_i18n_info.py:105
+#: news/_i18n_info.py:106
 msgid ""
 "WeeChat story page is now available, as screenshots. You can see differences "
 "between all versions in one view!\n"
@@ -2395,15 +2429,15 @@ msgstr ""
 "ジョンが一覧表示できます!\n"
 "開発版も載っており、頻繁に更新されています。"
 
-#: news/_i18n_info.py:106
+#: news/_i18n_info.py:107
 msgid "WeeChat users map"
 msgstr "WeeChat ユーザマップ"
 
-#: news/_i18n_info.py:107
+#: news/_i18n_info.py:108
 msgid "WeeChat will merge with irssi"
 msgstr "WeeChat は irssi と統合される予定です"
 
-#: news/_i18n_info.py:108
+#: news/_i18n_info.py:109
 msgid ""
 "WeeChat, the fast, light and extensible IRC client, is released for the "
 "first time, version 0.0.1.\n"
@@ -4854,7 +4888,7 @@ msgstr ""
 msgid "Here is a list of available interfaces:"
 msgstr "以下は利用可能なインターフェイスです:"
 
-#: templates/about/features.html:132
+#: templates/about/features.html:136
 msgid "Qt interface"
 msgstr "Qt インターフェイス"
 
@@ -5393,7 +5427,7 @@ msgstr "ChangeLog"
 msgid "Release notes"
 msgstr "リリースノート"
 
-#: templates/download/packages.html:121
+#: templates/download/packages.html:127
 msgid "(see above)"
 msgstr "(上記の通り)"
 

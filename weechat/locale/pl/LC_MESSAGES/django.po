@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-12 12:52+0200\n"
+"POT-Creation-Date: 2014-08-15 16:00+0200\n"
 "PO-Revision-Date: 2014-08-02 19:16+0100\n"
 "Last-Translator: Krzysztof Korościk <soltys@szluug.org>\n"
 "Language-Team: Polish <soltys@szluug.org>\n"
@@ -170,6 +170,10 @@ msgstr ""
 "Zabezpieczone dane, wyszukiwanie wyrażeń regularnych w buforze, dynamiczna "
 "wiadomość zmiany dnia."
 
+#: about/_i18n_keydates.py:29
+msgid "Trigger and Exec plugins, bare display, hidden buffers, unit tests."
+msgstr ""
+
 #: dev/views.py:37
 msgid "stable version"
 msgstr "wersja stabilna"
@@ -205,8 +209,8 @@ msgstr "następna stabilna wersja"
 msgid ""
 "next stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
-"następna stabilna wersja, jako numer, jak w API wtyczek: "
-"info_get(\"version_number\")"
+"następna stabilna wersja, jako numer, jak w API wtyczek: info_get"
+"(\"version_number\")"
 
 #: dev/views.py:71
 msgid "approximate date of next stable version"
@@ -1321,8 +1325,8 @@ msgstr ""
 "weechat_pv, weechat_highlight, weechat_ctcp, weechat_dcc\n"
 "- wtyczki skryptowe od teraz ładują skrypty w folderze wymiany systemowej "
 "WeeChat\n"
-"- dodano czas nie aktywności, dostępny we wtyczkach poprzez "
-"get_info(\"inactivity\")\n"
+"- dodano czas nie aktywności, dostępny we wtyczkach poprzez get_info"
+"(\"inactivity\")\n"
 "- dodano nowe funkcje dla wtyczek: add_timer_handler, remove_timer_handler, "
 "remove_infobar\n"
 "- wiele komend dozwolonych dla aliasów\n"
@@ -2274,6 +2278,36 @@ msgstr ""
 
 #: news/_i18n_info.py:94
 msgid ""
+"Version 1.0 is available!\n"
+"\n"
+"Among the new features:\n"
+"\n"
+"- plugin \"trigger\": Swiss Army knife for WeeChat (replaces \"rmodifier\" "
+"plugin)\n"
+"- plugin \"exec\": execute external commands (replaces script \"shell.py\")\n"
+"- bare display: easy click on long URLs and text selection with mouse\n"
+"- support of environment variables in /set command\n"
+"- hidden buffers\n"
+"- negated tags in filters\n"
+"- toggle of filters in specific buffers\n"
+"- flexible conditions for adding/removing buffers in hotlist\n"
+"- text search in buffers with free content\n"
+"- support of wildcard \"*\" inside masks\n"
+"- support of nested variables in evaluated expressions\n"
+"- tag with host in IRC messages displayed\n"
+"- support of \"away-notify\" IRC capability\n"
+"- IRC commands: /allpv, /remove, /unquiet\n"
+"- bar items: buffer_short_name, irc_nick_modes\n"
+"- unit tests\n"
+"- many bugs fixed.\n"
+"\n"
+"For complete list of new features and bugs fixed, please look at <a href="
+"\"http://dev.weechat.org/post/2014/08/15/Version-1.0\">development blog</a> "
+"or <a href=\"/files/changelog/ChangeLog-1.0.html\">ChangeLog</a>."
+msgstr ""
+
+#: news/_i18n_info.py:95
+msgid ""
 "Version v0.1.2 is available!\n"
 "\n"
 "News since last version are:\n"
@@ -2305,11 +2339,11 @@ msgstr ""
 "Dodano, 2005-05-24 : naprawiono awarię podczas uruchamiania oraz wykrywanie "
 "Perla/Pythona , obecny numer wersji to 0.1.2.1."
 
-#: news/_i18n_info.py:95
+#: news/_i18n_info.py:96
 msgid "WeeChat - Wee Enhanced Environment for Chat"
 msgstr "WeeChat - Małe  Udoskonalone Środowisko do rozmów"
 
-#: news/_i18n_info.py:96
+#: news/_i18n_info.py:97
 msgid ""
 "WeeChat has many new important features since some weeks:\n"
 "- multi-windows management (with horizontal and vertical window split)\n"
@@ -2333,11 +2367,11 @@ msgstr ""
 "Śmiało możesz zgłaszać dowolny problem lub sugestie jak usprawnić nawigację "
 "między buforami/oknami."
 
-#: news/_i18n_info.py:97
+#: news/_i18n_info.py:98
 msgid "WeeChat in Cygwin"
 msgstr "WeeChat w Cygwinie"
 
-#: news/_i18n_info.py:98
+#: news/_i18n_info.py:99
 msgid ""
 "WeeChat is now in Cygwin, and can be installed with setup.exe.\n"
 "Version 0.4.2 is available for 32 and 64-bit Cygwin.\n"
@@ -2351,7 +2385,7 @@ msgstr ""
 "Uwaga: wtyczka Guile nie jest dostępna, ponieważ wymaga guile w wersji >= "
 "2.0, która nie jest dostępna w Cygwinie."
 
-#: news/_i18n_info.py:99
+#: news/_i18n_info.py:100
 msgid ""
 "WeeChat project is started.\n"
 "\n"
@@ -2371,7 +2405,7 @@ msgstr ""
 "- szybki, lekki oraz rozszerzalny za pomocą skryptów.\n"
 "- ..."
 
-#: news/_i18n_info.py:100
+#: news/_i18n_info.py:101
 msgid ""
 "WeeChat project now accepts donations via Paypal account, with secured "
 "payment."
@@ -2379,7 +2413,7 @@ msgstr ""
 "Projekt WeeChat od teraz przyjmuje dotacje za pomocą konta Paypal, z "
 "zabezpieczoną płatnością."
 
-#: news/_i18n_info.py:101
+#: news/_i18n_info.py:102
 msgid ""
 "WeeChat repositories (weechat, scripts, qweechat) have been moved to GitHub, "
 "in WeeChat organization: <a href=\"http://github.com/weechat\">http://github."
@@ -2395,15 +2429,15 @@ msgstr ""
 "Więcej informacji można znaleźć na <a href=\"http://dev.weechat.org/"
 "post/2014/03/03/Git-repositories-moved-to-Github\">blogu deweloperskim</a>."
 
-#: news/_i18n_info.py:102
+#: news/_i18n_info.py:103
 msgid "WeeChat screenshot"
 msgstr "Zrzut ekranu WeeChat"
 
-#: news/_i18n_info.py:103
+#: news/_i18n_info.py:104
 msgid "WeeChat scripts page"
 msgstr "Skrypty WeeChat"
 
-#: news/_i18n_info.py:104
+#: news/_i18n_info.py:105
 msgid ""
 "WeeChat scripts page (today Perl scripts only) has been added.\n"
 "On this page you can submit your script (need to be approved by WeeChat "
@@ -2419,7 +2453,7 @@ msgstr ""
 "Uwaga: skrypty w Perlu wymagają wersji WeeChat > 0.0.3, dlatego obecnie "
 "należy pobrać wersję rozwojową."
 
-#: news/_i18n_info.py:105
+#: news/_i18n_info.py:106
 msgid ""
 "WeeChat story page is now available, as screenshots. You can see differences "
 "between all versions in one view!\n"
@@ -2429,15 +2463,15 @@ msgstr ""
 "zobaczyć różnice pomiędzy wersjami!\n"
 "Wersje rozwojowe są również widoczne, oraz często uaktualniane."
 
-#: news/_i18n_info.py:106
+#: news/_i18n_info.py:107
 msgid "WeeChat users map"
 msgstr "Mapa użytkowników WeeChat"
 
-#: news/_i18n_info.py:107
+#: news/_i18n_info.py:108
 msgid "WeeChat will merge with irssi"
 msgstr "WeeChat połączy się z irssi"
 
-#: news/_i18n_info.py:108
+#: news/_i18n_info.py:109
 msgid ""
 "WeeChat, the fast, light and extensible IRC client, is released for the "
 "first time, version 0.0.1.\n"
@@ -4949,7 +4983,7 @@ msgstr ""
 msgid "Here is a list of available interfaces:"
 msgstr "Lista dostępnych interfejsów:"
 
-#: templates/about/features.html:132
+#: templates/about/features.html:136
 msgid "Qt interface"
 msgstr "Interfejs w Qt"
 
@@ -5484,7 +5518,7 @@ msgstr "Lista zmian"
 msgid "Release notes"
 msgstr "Uwagi do wydania"
 
-#: templates/download/packages.html:121
+#: templates/download/packages.html:127
 msgid "(see above)"
 msgstr "(zobacz wyżej)"
 
