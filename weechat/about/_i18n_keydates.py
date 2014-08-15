@@ -26,4 +26,5 @@ _i18n_about_keydates = [
     gettext_lazy("Ruby plugin."),
     gettext_lazy("SASL authentication."),
     gettext_lazy("Secured data, search of regular expression in buffer with text emphasis, dynamic day change message."),
+    gettext_lazy("Trigger and Exec plugins, bare display, hidden buffers, unit tests."),
 ]
