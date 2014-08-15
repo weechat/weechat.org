@@ -36,7 +36,8 @@ def get_release_progress():
     rel_todo = ReleaseTodo.objects.all().order_by('priority')
     next_rel = Release.objects.get(version='devel')
     next_rel_version = re.sub('-.*', '', next_rel.description)
-    rel_progress = ReleaseProgress.objects.filter(version=next_rel_version)
+    next_rel_date = next_rel.date
+    rel_progress = ReleaseProgress.objects.all()
     done = -1
     pct = 0
     if len(rel_todo) > 0 and len(rel_progress) > 0 \
@@ -47,10 +48,12 @@ def get_release_progress():
             pct = 0
         if pct > 100:
             pct = 100
+        next_rel_version = rel_progress[0].version.version
+        next_rel_date = rel_progress[0].version.date
     return \
         {
             'version': next_rel_version,
-            'date': next_rel.date,
+            'date': next_rel_date,
             'todo': rel_todo,
             'done': done,
             'pct': pct
