@@ -24,8 +24,7 @@ from datetime import date
 
 from django.db import models
 
-from weechat.common.tracker \
-    import commits_links, tracker_links
+from weechat.common.tracker import commits_links, tracker_links
 from weechat.common.templatetags.localdate import localdate
 from weechat.download.models import Release
 

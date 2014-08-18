@@ -53,9 +53,9 @@ class Info(models.Model):
         match = PATTERN_TITLE_VERSION.match(self.title)
         if match:
             # if the title is "Version x.y.z", translate only "Version"
-            return '%s %s' % \
-                (str(gettext_lazy(match.group(1))).decode('utf-8'),
-                 match.group(2))
+            return ('%s %s' %
+                    (str(gettext_lazy(match.group(1))).decode('utf-8'),
+                     match.group(2)))
         else:
             return gettext_lazy(self.title)
 

@@ -107,9 +107,10 @@ class Plugin(models.Model):
         """Return HTML code with image for popular script."""
         if self.popularity == 0:
             return '&nbsp;'
-        return '<img src="%simages/star.png" alt="*" title="%s" ' \
-            'width="10" height="10" />' % (settings.MEDIA_URL,
-                                           gettext_lazy('Popular script'))
+        return ('<img src="%simages/star.png" alt="*" title="%s" '
+                'width="10" height="10" />' %
+                (settings.MEDIA_URL,
+                 gettext_lazy('Popular script')))
 
     def name_with_extension(self):
         """Return the name of script with its extension."""
@@ -399,8 +400,8 @@ def handler_plugin_saved(sender, **kwargs):
                         if key == 'url':
                             # FIXME: use the "Host" from request, but...
                             # request is not available in this handler!
-                            value = 'http://weechat.org/%s' % \
-                                plugin.build_url()[1:]
+                            value = ('http://weechat.org/%s' %
+                                     plugin.build_url()[1:])
                         elif key == 'mail':
                             value = value.replace('@', ' [at] ')
                             value = value.replace('.', ' [dot] ')

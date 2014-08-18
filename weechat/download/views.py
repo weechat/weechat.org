@@ -50,14 +50,13 @@ def get_release_progress():
             pct = 100
         next_rel_version = rel_progress[0].version.version
         next_rel_date = rel_progress[0].version.date
-    return \
-        {
-            'version': next_rel_version,
-            'date': next_rel_date,
-            'todo': rel_todo,
-            'done': done,
-            'pct': pct
-        }
+    return {
+        'version': next_rel_version,
+        'date': next_rel_date,
+        'todo': rel_todo,
+        'done': done,
+        'pct': pct,
+    }
 
 
 def packages(request, version='stable'):

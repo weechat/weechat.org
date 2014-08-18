@@ -202,7 +202,7 @@ def info(request, name=None):
     """Page with one or all available infos."""
     version = {
         'stable': Release.objects.get(version='stable'),
-        'devel': Release.objects.get(version='devel')
+        'devel': Release.objects.get(version='devel'),
     }
     if name:
         return render_to_response('dev/info.html',

@@ -111,19 +111,19 @@ def form_add(request):
             # send e-mail
             try:
                 subject = 'WeeChat: new theme %s' % theme.name
-                body = '' \
-                    'Theme      : %s\n' \
-                    'Version    : %s\n' \
-                    'Description: %s\n' \
-                    'Author     : %s\n' \
-                    'Mail       : %s\n' \
-                    'Comment    :\n%s\n' % \
-                    (props['name'],
-                     props['weechat'],
-                     form.cleaned_data['description'],
-                     form.cleaned_data['author'],
-                     form.cleaned_data['mail'],
-                     form.cleaned_data['comment'])
+                body = (''
+                        'Theme      : %s\n'
+                        'Version    : %s\n'
+                        'Description: %s\n'
+                        'Author     : %s\n'
+                        'Mail       : %s\n'
+                        'Comment    :\n%s\n' %
+                        (props['name'],
+                         props['weechat'],
+                         form.cleaned_data['description'],
+                         form.cleaned_data['author'],
+                         form.cleaned_data['mail'],
+                         form.cleaned_data['comment']))
                 sender = '%s <%s>' % (form.cleaned_data['author'],
                                       form.cleaned_data['mail'])
                 email = EmailMessage(subject, body, sender,
@@ -163,19 +163,19 @@ def form_update(request):
             # send e-mail
             try:
                 subject = 'WeeChat: new version of theme %s' % theme.name
-                body = '' \
-                    'Theme      : %s\n' \
-                    'Version    : %s\n' \
-                    'New version: %s\n' \
-                    'Author     : %s\n' \
-                    'Mail       : %s\n' \
-                    'Comment    :\n%s\n' % \
-                    (theme.name,
-                     theme.version,
-                     props['weechat'],
-                     form.cleaned_data['author'],
-                     form.cleaned_data['mail'],
-                     form.cleaned_data['comment'])
+                body = (''
+                        'Theme      : %s\n'
+                        'Version    : %s\n'
+                        'New version: %s\n'
+                        'Author     : %s\n'
+                        'Mail       : %s\n'
+                        'Comment    :\n%s\n' %
+                        (theme.name,
+                         theme.version,
+                         props['weechat'],
+                         form.cleaned_data['author'],
+                         form.cleaned_data['mail'],
+                         form.cleaned_data['comment']))
                 sender = '%s <%s>' % (form.cleaned_data['author'],
                                       form.cleaned_data['mail'])
                 email = EmailMessage(subject, body, sender,
