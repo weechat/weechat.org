@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-16 14:09+0200\n"
+"POT-Creation-Date: 2014-08-27 21:09+0200\n"
 "PO-Revision-Date: 2014-08-16 23:55+0900\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <i38w7i3@yahoo.co.jp>\n"
@@ -187,8 +187,8 @@ msgstr "安定版のバージョン番号"
 msgid ""
 "stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
-"安定版のバージョン番号 (数表記)、プラグイン API における info_get"
-"(\"version_number\") と同様"
+"安定版のバージョン番号 (数表記)、プラグイン API における "
+"info_get(\"version_number\") と同様"
 
 #: dev/views.py:46
 msgid "date of stable version"
@@ -214,8 +214,8 @@ msgstr "次期安定版のバージョン番号"
 msgid ""
 "next stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
-"次期安定版のバージョン番号 (数表記)、プラグイン API における info_get"
-"(\"version_number\") と同様<"
+"次期安定版のバージョン番号 (数表記)、プラグイン API における "
+"info_get(\"version_number\") と同様<"
 
 #: dev/views.py:71
 msgid "approximate date of next stable version"
@@ -822,9 +822,9 @@ msgstr ""
 "次期バージョン 0.3.0 をリリースするための 3 番目のリリース候補版 (バージョン "
 "0.3.0-rc3) です。"
 
-#: news/_i18n_info.py:49 plugins/models.py:253 templates/doc/doc.html:28
-#: templates/download/packages.html:44 templates/plugins/list.html:69
-#: templates/plugins/pending.html:32
+#: news/_i18n_info.py:49 plugins/models.py:254 templates/about/history.html:38
+#: templates/doc/doc.html:28 templates/download/packages.html:44
+#: templates/plugins/list.html:69 templates/plugins/pending.html:32
 msgid "Version"
 msgstr "バージョン"
 
@@ -4316,20 +4316,20 @@ msgstr "iChat スタイルのタイムスタンプ。"
 msgid "iTunes control and now playing script."
 msgstr "iTunes の操作と現在再生中曲に関する情報を得るスクリプト。"
 
-#: plugins/models.py:112
+#: plugins/models.py:113
 msgid "Popular script"
 msgstr "人気のスクリプト"
 
-#: plugins/models.py:182 plugins/models.py:203 plugins/models.py:206
+#: plugins/models.py:183 plugins/models.py:204 plugins/models.py:207
 #: themes/models.py:125 themes/models.py:128
 msgid "This field is required."
 msgstr "このフィールドは必須です。"
 
-#: plugins/models.py:185
+#: plugins/models.py:186
 msgid "This name is invalid."
 msgstr "名前が不正です。"
 
-#: plugins/models.py:190
+#: plugins/models.py:191
 msgid ""
 "This name already exists, please choose another name (update script content "
 "accordingly)."
@@ -4337,114 +4337,114 @@ msgstr ""
 "この名前はすでに存在しています。他の名前を選んでください (スクリプトをアップ"
 "デートすることになります)。"
 
-#: plugins/models.py:194
+#: plugins/models.py:195
 msgid "This name is too long (must be max 20 chars)."
 msgstr "名前が長すぎます (最長 20 文字)。"
 
-#: plugins/models.py:242 templates/plugins/list.html:63
+#: plugins/models.py:243 templates/plugins/list.html:63
 #: templates/plugins/list.html.py:65 templates/plugins/pending.html:33
 msgctxt "programming language"
 msgid "Language"
 msgstr "プログラミング言語"
 
-#: plugins/models.py:246 templates/about/donate.html:55
+#: plugins/models.py:247 templates/about/donate.html:55
 #: templates/plugins/list.html:57 templates/plugins/list.html.py:59
 #: templates/plugins/pending.html:29
 msgid "Name"
 msgstr "名称"
 
-#: plugins/models.py:247
+#: plugins/models.py:248
 msgid ""
 "short name of script (max 20 chars, only lower case letters, digits or \"_\")"
 msgstr "スクリプトの短縮名 (最大で 20 文字、小文字、数字、\"_\" のみ使用可)"
 
-#: plugins/models.py:254
+#: plugins/models.py:255
 msgid "version of script (only digits or dots)"
 msgstr "スクリプトのバージョン (数字とドットのみ使用可)"
 
-#: plugins/models.py:259 templates/plugins/list.html:72
+#: plugins/models.py:260 templates/plugins/list.html:72
 #: templates/plugins/list.html.py:74 templates/plugins/pending.html:34
 msgid "License"
 msgstr "ライセンス"
 
-#: plugins/models.py:260
+#: plugins/models.py:261
 msgid "license (for example: GPL3, BSD, ...)"
 msgstr "ライセンス (例: GPL3、BSD、...)"
 
-#: plugins/models.py:264 plugins/models.py:336 templates/doc/doc.html:69
+#: plugins/models.py:265 plugins/models.py:337 templates/doc/doc.html:69
 #: themes/models.py:136 themes/models.py:222
 msgid "File"
 msgstr "ファイル"
 
-#: plugins/models.py:265 plugins/models.py:337
+#: plugins/models.py:266 plugins/models.py:338
 msgid "the script"
 msgstr "スクリプト"
 
-#: plugins/models.py:269 templates/dev/info_list.html:19
+#: plugins/models.py:270 templates/dev/info_list.html:19
 #: templates/dev/roadmap.html:46 templates/download/security.html:31
 #: templates/plugins/list.html:68 templates/plugins/pending.html:30
 #: themes/models.py:143
 msgid "Description"
 msgstr "説明"
 
-#: plugins/models.py:275
+#: plugins/models.py:276
 msgid "Requirements"
 msgstr "実行に必要なもの"
 
-#: plugins/models.py:276 themes/models.py:144
+#: plugins/models.py:277 themes/models.py:144
 msgid "optional"
 msgstr "任意"
 
-#: plugins/models.py:281
+#: plugins/models.py:282
 msgid "Min/max WeeChat"
 msgstr "WeeChat のバージョン"
 
-#: plugins/models.py:284 plugins/models.py:341 themes/models.py:149
+#: plugins/models.py:285 plugins/models.py:342 themes/models.py:149
 #: themes/models.py:228
 msgid "Your name or nick"
 msgstr "名前またはニックネーム"
 
-#: plugins/models.py:285 plugins/models.py:290
+#: plugins/models.py:286 plugins/models.py:291
 msgid "used for scripts page and git commit"
 msgstr "スクリプトページと git コミットに利用"
 
-#: plugins/models.py:289 plugins/models.py:346 themes/models.py:153
+#: plugins/models.py:290 plugins/models.py:347 themes/models.py:153
 #: themes/models.py:232
 msgid "Your e-mail"
 msgstr "電子メールアドレス"
 
-#: plugins/models.py:296 plugins/models.py:352 themes/models.py:160
+#: plugins/models.py:297 plugins/models.py:353 themes/models.py:160
 #: themes/models.py:239
 msgid "Comments"
 msgstr "コメント"
 
-#: plugins/models.py:297 themes/models.py:161 themes/models.py:240
+#: plugins/models.py:298 themes/models.py:161 themes/models.py:240
 msgid "optional, not displayed"
 msgstr "任意、表示されません"
 
-#: plugins/models.py:302 plugins/models.py:358 themes/models.py:166
+#: plugins/models.py:303 plugins/models.py:359 themes/models.py:166
 #: themes/models.py:245
 msgid "Are you a spammer?"
 msgstr "スパマーですか?"
 
-#: plugins/models.py:303 plugins/models.py:359 themes/models.py:167
+#: plugins/models.py:304 plugins/models.py:360 themes/models.py:167
 #: themes/models.py:246
 msgid "enter \"no\" if you are not a spammer"
 msgstr "スパマーでないなら \"no\" と入力"
 
-#: plugins/models.py:328 templates/plugins/source.html:13
+#: plugins/models.py:329 templates/plugins/source.html:13
 msgid "Script"
 msgstr "スクリプト"
 
-#: plugins/models.py:332
+#: plugins/models.py:333
 msgid "New version"
 msgstr "新しいバージョン"
 
-#: plugins/models.py:342 plugins/models.py:347
+#: plugins/models.py:343 plugins/models.py:348
 msgid "used for git commit"
 msgstr "git コミットに利用"
 
-#: plugins/models.py:353
+#: plugins/models.py:354
 msgid "changes in this release"
 msgstr "このリリースの変更内容"
 
@@ -4539,7 +4539,7 @@ msgid "About"
 msgstr "概要"
 
 #: templates/menu.html:11 templates/about/about.html:13
-#: templates/home/home.html:39
+#: templates/about/history.html:39 templates/home/home.html:39
 msgid "Features"
 msgstr "機能"
 
@@ -4698,7 +4698,8 @@ msgstr "上位 10 名を表示、寄付の総額順"
 msgid "show the whole list"
 msgstr "完全なリストを表示"
 
-#: templates/about/donate.html:51 templates/plugins/pending.html:38
+#: templates/about/donate.html:51 templates/about/history.html:37
+#: templates/plugins/pending.html:38
 msgid "Date"
 msgstr "日付"
 
@@ -5017,7 +5018,8 @@ msgid "My search was unsuccessful!"
 msgstr "そんなものは見つかりませんでした!"
 
 #: templates/about/history.html:28
-msgid "And then WeeChat was born, on June 2003."
+#, fuzzy
+msgid "And thus WeeChat was born, on June 2003."
 msgstr "そこで WeeChat が生まれました。2003 年 6 月のことです。"
 
 #: templates/about/history.html:34
