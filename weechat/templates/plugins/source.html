@@ -22,7 +22,7 @@
     </span>
     <div class="extra">
       {% trans "Author" %}: {{ plugin.author }}, {% trans "version" %} {{ plugin.version }}, {{ plugin.license }} &mdash;
-      {% trans "added" %}: {% if plugin.added %}{{ plugin.added|date:"Y-m-d" }}{% endif %}{% if plugin.updated %}{% ifnotequal plugin.added plugin.updated %}, {% trans "updated" %}: {{ plugin.updated|date:"Y-m-d" }}{% endifnotequal %}{% endif %}
+      {% trans "added" %}: {% if plugin.added %}{{ plugin.added|date:"Y-m-d" }}{% endif %}{% if plugin.updated %}{% if plugin.added != plugin.updated %}, {% trans "updated" %}: {{ plugin.updated|date:"Y-m-d" }}{% endif %}{% endif %}
     </div>
   </div>
 

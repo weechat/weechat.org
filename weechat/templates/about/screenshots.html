@@ -11,8 +11,8 @@
 
 <div class="navbt" style="border-bottom: none">
   <ul>
-    <li><a href="{% url 'about_screenshots_app' 'weechat' %}"{% ifequal app "weechat" %} class="selected"{% endifequal %}>WeeChat</a></li>
-    <li><a href="{% url 'about_screenshots_app' 'relay' %}"{% ifequal app "relay" %} class="selected"{% endifequal %}>{% trans "Relay clients" %}</a></li>
+    <li><a href="{% url 'about_screenshots_app' 'weechat' %}"{% if app == "weechat" %} class="selected"{% endif %}>WeeChat</a></li>
+    <li><a href="{% url 'about_screenshots_app' 'relay' %}"{% if app == "relay" %} class="selected"{% endif %}>{% trans "Relay clients" %}</a></li>
   </ul>
 </div>
 

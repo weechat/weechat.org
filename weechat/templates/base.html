@@ -39,7 +39,7 @@
           <form name="lang" action="/i18n/setlang/" method="post">
             <input type="hidden" name="language" value="{{ LANGUAGE_CODE }}">
             {% for lang in LANGUAGES %}
-            <a href="#" {% ifequal lang.0 LANGUAGE_CODE %} class="selected"{% endifequal %} onclick="javascript:document.forms['lang'].elements['language'].value = '{{ lang.0 }}'; document.forms['lang'].submit();">
+            <a href="#" {% if lang.0 == LANGUAGE_CODE %} class="selected"{% endif %} onclick="javascript:document.forms['lang'].elements['language'].value = '{{ lang.0 }}'; document.forms['lang'].submit();">
               {% trans lang.1 %}
             </a>
             {% endfor %}

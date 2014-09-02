@@ -26,7 +26,7 @@
       {% if theme.desc %}<div class="description">“ {{ theme.desc_i18n }} ”</div>{% endif %}
       <div class="date">
         {% if theme.added %}{% trans "Added" %}: {{ theme.added|date:"Y-m-d" }}{% endif %}
-        {% if theme.updated %}{% ifnotequal theme.added theme.updated %} ({% trans "updated" %}: {{ theme.updated|date:"Y-m-d" }}){% endifnotequal %}{% endif %}
+        {% if theme.updated %}{% if theme.added != theme.updated %} ({% trans "updated" %}: {{ theme.updated|date:"Y-m-d" }}){% endif %}{% endif %}
       </div>
     </div>
     <div class="end"></div>

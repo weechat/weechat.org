@@ -14,19 +14,19 @@
     <br />
     {% trans "You could experience problems like memory leaks, slowdowns, or even <strong>security problems</strong>. You are warned!" %}
   </div>
-  {% ifequal api "old" %}
+  {% if api == "old" %}
     <div class="errorbox">
       {% trans "WARNING: the old API is deprecated and these scripts runs only on WeeChat 0.2.x, which is OBSOLETE. You MUST NOT load these scripts with latest stable version of WeeChat!" %}
     </div>
-  {% endifequal %}
+  {% endif %}
   <div class="pluginsearch">
     <div class="filters">
       <span class="links">
-        {% ifequal api "old" %}
+        {% if api == "old" %}
           <a href="{% url 'scripts_api' 'stable' %}">{% trans "Display scripts for stable API (&ge; 0.3.0)" %}</a>
         {% else %}
           <a href="{% url 'scripts_api' 'old' %}">{% trans "Display scripts for old API (&le; 0.2.6)" %}</a>
-        {% endifequal %}
+        {% endif %}
         &nbsp; | &nbsp;
         <a href="/files/plugins.xml">{% trans "XML list" %}</a> (<a href="/files/plugins.xml.gz">gz</a>)
       </span>
@@ -53,61 +53,61 @@
     <table class="table">
       <tr>
         <th class="name">
-          {% ifequal sort_key "name" %}
+          {% if sort_key == "name" %}
           <a href="{% url 'scripts_api' api %}">{% trans "Name" %}&nbsp;&uarr;</a>
           {% else %}
           <a href="{% url 'scripts_api_sort' api 'name' %}">{% trans "Name" %}</a>
-          {% endifequal %}
+          {% endif %}
           /
-          {% ifequal sort_key "language" %}
+          {% if sort_key == "language" %}
           <a href="{% url 'scripts_api' api %}">{% trans "Language" context "programming language" %}&nbsp;&uarr;</a>
           {% else %}
           <a href="{% url 'scripts_api_sort' api 'language' %}">{% trans "Language" context "programming language" %}</a>
-          {% endifequal %}
+          {% endif %}
         </th>
         <th class="desc">{% trans "Description" %}</th>
         <th><abbr title="{% trans "Version" %}">V.</abbr></th>
         <th>
-          {% ifequal sort_key "license" %}
+          {% if sort_key == "license" %}
           <a href="{% url 'scripts_api' api %}">{% trans "License" %}&nbsp;&uarr;</a>
           {% else %}
           <a href="{% url 'scripts_api_sort' api 'license' %}">{% trans "License" %}</a>
-          {% endifequal %}
+          {% endif %}
         </th>
         <th>
-          {% ifequal sort_key "min_weechat" %}
+          {% if sort_key == "min_weechat" %}
           <a href="{% url 'scripts_api' api %}">{% trans "Min" %}&nbsp;&darr;</a>
           {% else %}
           <a href="{% url 'scripts_api_sort' api 'min_weechat' %}">{% trans "Min" %}</a>
-          {% endifequal %}
+          {% endif %}
         </th>
         <th>
-          {% ifequal sort_key "max_weechat" %}
+          {% if sort_key == "max_weechat" %}
           <a href="{% url 'scripts_api' api %}">{% trans "Max" %}&nbsp;&darr;</a>
           {% else %}
           <a href="{% url 'scripts_api_sort' api 'max_weechat' %}">{% trans "Max" %}</a>
-          {% endifequal %}
+          {% endif %}
         </th>
         <th>
-          {% ifequal sort_key "author" %}
+          {% if sort_key == "author" %}
           <a href="{% url 'scripts_api' api %}">{% trans "Author" %}&nbsp;&uarr;</a>
           {% else %}
           <a href="{% url 'scripts_api_sort' api 'author' %}">{% trans "Author" %}</a>
-          {% endifequal %}
+          {% endif %}
         </th>
         <th>
-          {% ifequal sort_key "added" %}
+          {% if sort_key == "added" %}
           <a href="{% url 'scripts_api' api %}">{% trans "Added" %}&nbsp;&darr;</a>
           {% else %}
           <a href="{% url 'scripts_api_sort' api 'added' %}">{% trans "Added" %}</a>
-          {% endifequal %}
+          {% endif %}
         </th>
         <th>
-          {% ifequal sort_key "updated" %}
+          {% if sort_key == "updated" %}
           <a href="{% url 'scripts_api' api %}">{% trans "Updated" %}&nbsp;&darr;</a>
           {% else %}
           <a href="{% url 'scripts_api_sort' api 'updated' %}">{% trans "Updated" %}</a>
-          {% endifequal %}
+          {% endif %}
         </th>
       </tr>
     {% for plugin in plugin_list %}
@@ -130,7 +130,7 @@
         <td class="center tiny">{{ plugin.max_weechat }}</td>
         <td class="center tiny"><a href="{% url 'scripts_api_filter' api 'author' plugin.author %}" title="{% trans "Author:" %} {{ plugin.author }}">{{ plugin.author }}</a></td>
         <td class="date">{% if plugin.added %}{{ plugin.added|date:"Y-m-d" }}{% endif %}</td>
-        <td class="date">{% if plugin.updated %}{% ifnotequal plugin.added plugin.updated %}{{ plugin.updated|date:"Y-m-d" }}{% endifnotequal %}{% endif %}</td>
+        <td class="date">{% if plugin.updated %}{% if plugin.added != plugin.updated %}{{ plugin.updated|date:"Y-m-d" }}{% endif %}{% endif %}</td>
       </tr>
     {% endfor %}
     </table>

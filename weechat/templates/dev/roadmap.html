@@ -53,24 +53,24 @@
         {% endautoescape %}
       </td>
       <td class="status">
-        {% ifequal task.status 0 %}
+        {% if task.status == 0 %}
           <span class="planned">{% trans "Planned" %}</span>
         {% else %}
-        {% ifequal task.status 100 %}
+        {% if task.status == 100 %}
           <span class="done">{% trans "Done" %}</span>
         {% else %}
         <table class="bar" title="{{ task.status }}%">
           <tr>
-          {% ifnotequal task.status 0 %}
+          {% if task.status != 0 %}
             <td class="done" style="width: {{ task.status }}%">&nbsp;</td>
-          {% endifnotequal %}
-          {% ifnotequal task.status_remaining 0 %}
+          {% endif %}
+          {% if task.status_remaining != 0 %}
             <td style="width: {{ task.status_remaining }}%">&nbsp;</td>
-          {% endifnotequal %}
+          {% endif %}
           </tr>
         </table>
-        {% endifequal %}
-        {% endifequal %}
+        {% endif %}
+        {% endif %}
       </td>
       <td class="git">
         {% autoescape off %}

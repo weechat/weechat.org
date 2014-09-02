@@ -11,10 +11,10 @@
 
 <div class="navbt" style="border-bottom: none">
   <ul>
-    <li><a href="{% url 'dev_stats_git' 'weechat' %}"{% ifequal stats "weechat" %} class="selected"{% endifequal %}>WeeChat</a></li>
-    <li><a href="{% url 'dev_stats_git' 'scripts' %}"{% ifequal stats "scripts" %} class="selected"{% endifequal %}>{% trans "Scripts" %}</a></li>
-    <li><a href="{% url 'dev_stats_git' 'qweechat' %}"{% ifequal stats "qweechat" %} class="selected"{% endifequal %}>QWeeChat</a></li>
-    <li><a href="{% url 'dev_stats_git' 'weechat.org' %}"{% ifequal stats "weechat.org" %} class="selected"{% endifequal %}>WeeChat.org</a></li>
+    <li><a href="{% url 'dev_stats_git' 'weechat' %}"{% if stats == "weechat" %} class="selected"{% endif %}>WeeChat</a></li>
+    <li><a href="{% url 'dev_stats_git' 'scripts' %}"{% if stats == "scripts" %} class="selected"{% endif %}>{% trans "Scripts" %}</a></li>
+    <li><a href="{% url 'dev_stats_git' 'qweechat' %}"{% if stats == "qweechat" %} class="selected"{% endif %}>QWeeChat</a></li>
+    <li><a href="{% url 'dev_stats_git' 'weechat.org' %}"{% if stats == "weechat.org" %} class="selected"{% endif %}>WeeChat.org</a></li>
   </ul>
 </div>
 
@@ -42,9 +42,9 @@
   </div>
   {% endfor %}
 
-  {% ifequal stats "scripts" %}
+  {% if stats == "scripts" %}
   <pre>{{ scripts_downloads }}</pre>
-  {% endifequal %}
+  {% endif %}
 
   {% trans "Charts built with" %}
   <a href="https://github.com/flashcode/gitchart" target="_blank">gitchart <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="" /></a>.

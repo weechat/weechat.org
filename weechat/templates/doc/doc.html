@@ -10,13 +10,13 @@
 
 <div class="navbt">
   <ul>
-    <li><a href="{% url 'doc_version' 'stable' %}"{% ifequal version "stable" %} class="selected"{% endifequal %}>{% trans "Stable" %}</a></li>
-    <li><a href="{% url 'doc_version' 'devel' %}"{% ifequal version "devel" %} class="selected"{% endifequal %}>{% trans "Devel" %}</a></li>
-    <li><a href="{% url 'doc_version' 'old' %}"{% ifequal version "old" %} class="selected"{% endifequal %}>{% trans "Old versions" %}</a></li>
+    <li><a href="{% url 'doc_version' 'stable' %}"{% if version == "stable" %} class="selected"{% endif %}>{% trans "Stable" %}</a></li>
+    <li><a href="{% url 'doc_version' 'devel' %}"{% if version == "devel" %} class="selected"{% endif %}>{% trans "Devel" %}</a></li>
+    <li><a href="{% url 'doc_version' 'old' %}"{% if version == "old" %} class="selected"{% endif %}>{% trans "Old versions" %}</a></li>
   </ul>
 </div>
 
-{% ifequal version "old" %}
+{% if version == "old" %}
 
   <h3>{% trans "Docs for old versions" %}</h3>
   <div class="doc">
@@ -38,15 +38,15 @@
       <tr>
         <th></th>
         {% for lang in languages %}
-        <th class="flag{%if lang.lang == bestlang %} bestlang{% ifequal version "devel" %}dev{% endifequal %}{% endif %}"><img src="{{ MEDIA_URL }}images/flag_{{ lang.lang }}.png" class="flagimg" alt="{{ lang.lang }}" /><br />{{ lang.lang_i18n }}</th>
+        <th class="flag{%if lang.lang == bestlang %} bestlang{% if version == "devel" %}dev{% endif %}{% endif %}"><img src="{{ MEDIA_URL }}images/flag_{{ lang.lang }}.png" class="flagimg" alt="{{ lang.lang }}" /><br />{{ lang.lang_i18n }}</th>
         {% endfor %}
         <th></th>
       </tr>
       {% for doc in doc_list %}
-      <tr class="{% ifequal version "devel" %}{% cycle 'row1alt' 'row2alt' %}{% else %}{% cycle 'row1' 'row2' %}{% endifequal %}">
+      <tr class="{% if version == "devel" %}{% cycle 'row1alt' 'row2alt' %}{% else %}{% cycle 'row1' 'row2' %}{% endif %}">
         <th class="name">{{ doc.0.name_i18n }}</th>
         {% for file in doc.1 %}
-          <td class="icons{% if file.2 == bestlang %} bestlang{% ifequal version "devel" %}dev{% endifequal %}{% endif %}">
+          <td class="icons{% if file.2 == bestlang %} bestlang{% if version == "devel" %}dev{% endif %}{% endif %}">
           {% if file.0 %}
             <a href="/files/doc/{{ file.0 }}" target="_blank"><img src="{{ MEDIA_URL }}images/doc{% if doc.0.devel %}_dev{% endif %}.png" alt="HTML" width="17" height="22" /></a>
           {% else %}
@@ -60,7 +60,7 @@
     </table>
   </div>
 
-  {% ifequal version "devel" %}
+  {% if version == "devel" %}
   <h3>{% trans "Internationalization stats" %}</h3>
   <table class="table i18n">
     <thead>
@@ -82,12 +82,12 @@
         {{ item.lang_i18n }}
       </td>
       <td class="po">
-        <span class="file">{% ifequal item.lang "en" %}-{% else %}{{ item.lang }}.po{% endifequal %}</span>
+        <span class="file">{% if item.lang == "en" %}-{% else %}{{ item.lang }}.po{% endif %}</span>
         <span class="maintainer">
           {% if item.name %}(<abbr title="{{ item.name }}">{{ item.nick }}</abbr>){% endif %}
         </span>
       </td>
-      {% ifequal item.lang "en" %}
+      {% if item.lang == "en" %}
         <td class="baselang" colspan="6">({% trans "base language" %})</td>
       {% else %}
         <td class="cell1 translated1">{{ item.translated }}</td>
@@ -96,20 +96,20 @@
         <td class="cell2 fuzzy2">({{ item.pct_fuzzy }}%)</td>
         <td class="cell1 untranslated1">{{ item.untranslated }}</td>
         <td class="cell2 untranslated2">({{ item.pct_untranslated }}%)</td>
-      {% endifequal %}
+      {% endif %}
       <td class="center">{{ item.total }}</td>
       <td>
         <table class="i18n-bar">
           <tr>
-          {% ifnotequal item.pct_translated 0 %}
+          {% if item.pct_translated != 0 %}
             <td class="translated" title="translated" style="width: {{ item.pct_translated }}%">&nbsp;</td>
-          {% endifnotequal %}
-          {% ifnotequal item.pct_fuzzy 0 %}
+          {% endif %}
+          {% if item.pct_fuzzy != 0 %}
             <td class="fuzzy" title="fuzzy" style="width: {{ item.pct_fuzzy }}%">&nbsp;</td>
-          {% endifnotequal %}
-          {% ifnotequal item.pct_untranslated 0 %}
+          {% endif %}
+          {% if item.pct_untranslated != 0 %}
             <td class="untranslated" title="untranslated" style="width: {{ item.pct_untranslated }}%">&nbsp;</td>
-          {% endifnotequal %}
+          {% endif %}
           </tr>
         </table>
       </td>
@@ -120,7 +120,7 @@
   <div class="i18n-legend">
     ({% trans "statistics for gettext files (*.po), auto-built from development version on" %} {{ i18n.date|localdate }} {{ i18n.date|date:"H:i" }})
   </div>
-  {% endifequal %}
+  {% endif %}
 
   <h3>{% trans "Missing language?" %}</h3>
   {% trans "Feel free to help us by translating WeeChat doc in your language!" %}
@@ -131,6 +131,6 @@
     <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="" />
   </a>
 
-{% endifequal %}
+{% endif %}
 
 {% endblock content %}

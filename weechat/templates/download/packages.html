@@ -2,9 +2,9 @@
 
 {% load i18n %}{% load localdate %}
 
-{% block menu2_stable %}{% ifequal version "stable" %}selected{% endifequal %}{% endblock %}
-{% block menu2_devel %}{% ifequal version "devel" %}selected{% endifequal %}{% endblock %}
-{% block menu2_old %}{% ifequal version "old" %}selected{% endifequal %}{% endblock %}
+{% block menu2_stable %}{% if version == "stable" %}selected{% endif %}{% endblock %}
+{% block menu2_devel %}{% if version == "devel" %}selected{% endif %}{% endblock %}
+{% block menu2_old %}{% if version == "old" %}selected{% endif %}{% endblock %}
 
 {% block content %}
 
@@ -14,28 +14,28 @@
 
   <div class="download">
 
-    {% ifequal version "stable" %}
+    {% if version == "stable" %}
       {% if release_progress.done >= 0 and release_progress.pct < 100 %}
         <div class="infobox">
           {% url 'download_release' as download_release_url %}
           {% blocktrans %}<strong>A new release is under construction!</strong> Follow the progress on <a href="{{ download_release_url }}">this page</a>.{% endblocktrans %}
         </div>
       {% endif %}
-    {% endifequal %}
+    {% endif %}
 
-    {% ifequal version "devel" %}
+    {% if version == "devel" %}
       <div class="warningbox">
         {% trans "<strong>Warning:</strong> this version may be unstable or it may not compile, you're warned!" %}
       </div>
-    {% endifequal %}
+    {% endif %}
 
-    {% ifequal version "old" %}
+    {% if version == "old" %}
       <div class="warningbox">
         {% trans "<strong>Warning:</strong> it is not recommended to download any old version, because they are less stable." %}
         <br />
         {% trans "Do it only if you've got problems with latest version and that developers didn't manage to solve your problem!" %}
       </div>
-    {% endifequal %}
+    {% endif %}
 
     {% regroup package_list by version as packages_by_version %}
     {% for package_version in packages_by_version %}
@@ -48,7 +48,7 @@
           {{ package_version.grouper.version }}
         {% endif %}
         <span class="dldate">
-          ({% ifequal version "devel" %}{% trans "next stable version" %}: &asymp; {% endifequal %}{{ package_version.grouper.date_l10n }})
+          ({% if version == "devel" %}{% trans "next stable version" %}: &asymp; {% endif %}{{ package_version.grouper.date_l10n }})
         </span>
       </div>
       {% if package_version.grouper.securityfix %}
@@ -147,7 +147,7 @@
       </div>
     {% endif %}
 
-    {% ifequal version "stable" %}
+    {% if version == "stable" %}
       <h2>{% trans "Checking the signatures" %}</h2>
       <div class="dlsign">
         <ul>
@@ -186,8 +186,8 @@
           </li>
         </ul>
       </div>
-    {% endifequal %}
-    {% ifequal version "devel" %}
+    {% endif %}
+    {% if version == "devel" %}
       <div class="dlsub">
         <div class="dlsubtitle">{% trans "Links" %}</div>
         <div class="dlitem">
@@ -214,7 +214,7 @@
           git clone https://github.com/weechat/weechat.git
         </div>
       </div>
-    {% endifequal %}
+    {% endif %}
 
   </div>
 {% else %}

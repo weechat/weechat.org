@@ -39,44 +39,44 @@
   </form>
 
   {% if sponsor_list %}
-  <h3>{% trans "They support WeeChat:" %} &nbsp; &nbsp; ({% ifequal sort_key "date" %}{% trans "whole list" %}{% else %}{% trans "top 10, ordered by total amount donated" %}{% endifequal %})</h3>
-  {% ifequal sort_key "date" %}
+  <h3>{% trans "They support WeeChat:" %} &nbsp; &nbsp; ({% if sort_key == "date" %}{% trans "whole list" %}{% else %}{% trans "top 10, ordered by total amount donated" %}{% endif %})</h3>
+  {% if sort_key == "date" %}
   (<a href="{% url 'about_donate_sort' 'top10' %}">{% trans "show the top 10, ordered by total amount donated" %}</a>)
   {% else %}
   (<a href="{% url 'about_donate_sort' 'date' %}">{% trans "show the whole list" %}</a>)
-  {% endifequal %}
+  {% endif %}
   <table class="table">
     <tr>
-      {% ifequal sort_key "date" %}
+      {% if sort_key == "date" %}
       <th class="date">{% trans "Date" %}</th>
       {% else %}
       <th class="rank">{% trans "Rank" %}</th>
-      {% endifequal %}
+      {% endif %}
       <th class="name">{% trans "Name" %}</th>
       {% if view_amount %}<th class="amount">{% trans "Amount" %}</th>{% endif %}
-      {% ifequal sort_key "date" %}
+      {% if sort_key == "date" %}
       <th class="comment">{% trans "Comment" %}</th>
       {% else %}
       <th class="comment"></th>
-      {% endifequal %}
+      {% endif %}
     </tr>
   {% for sponsor in sponsor_list %}
     <tr class="{% cycle 'row1' 'row2' %}">
-      {% ifequal sort_key "date" %}
+      {% if sort_key == "date" %}
       <td class="date">{{ sponsor.date_l10n }}</td>
       {% else %}
       <td class="rank">{{ forloop.counter }}.</td>
-      {% endifequal %}
+      {% endif %}
       <td class="name">
         {{ sponsor.name }}
         {% if sponsor.number > 1 %}<span class="number">(#{{ sponsor.number }})</span>{% endif %}
       </td>
       {% if view_amount %}<td class="amount">{{ sponsor.amount|floatformat:"-2" }} &euro;</td>{% endif %}
-      {% ifequal sort_key "date" %}
+      {% if sort_key == "date" %}
       <td class="comment">{% if sponsor.comment %}<span class="text">&ldquo; {{ sponsor.comment }} &rdquo;</span>{% endif %}</td>
       {% else %}
       <td class="comment"></td>
-      {% endifequal %}
+      {% endif %}
     </tr>
   {% endfor %}
   {% if view_amount %}
