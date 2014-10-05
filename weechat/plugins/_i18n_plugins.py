@@ -307,7 +307,7 @@ _i18n_plugins_plugins = [
     gettext_lazy("Highlight some channels on each message."),
     # Translators: description for script "weestats.py" (0.3.0+)
     gettext_lazy("Insert some statistics about buffers/windows on command line."),
-    # Translators: description for script "urlselect.lua" (0.4.4+)
+    # Translators: description for script "urlselect.lua" (1.0+)
     gettext_lazy("Interactively select URL with keyboard and perform some commands on it."),
     # Translators: description for script "color_popup.pl" (0.3.0+)
     gettext_lazy("Interpret mirc formatting codes in the command line and show a color popup when needed."),
@@ -453,8 +453,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Remove messages from a nick and only print nick."),
     # Translators: description for script "unset_unused.pl" (0.3.0+)
     gettext_lazy("Remove options of scripts that are no longer installed."),
-    # Translators: description for script "facebook_rename.py" (0.3.0+)
-    gettext_lazy("Rename Facebook usernames when using Bitlbee or Minbif."),
+    # Translators: description for script "im_rename.py" (0.3.0+)
+    gettext_lazy("Rename Facebook/Google+ usernames when using Minbif."),
     # Translators: description for script "autoconnect.py" (0.3.2+)
     gettext_lazy("Reopen servers and channels opened last time WeeChat closed."),
     # Translators: description for script "shutup.py" (0.3.6+)
@@ -673,7 +673,7 @@ _i18n_plugins_plugins = [
     gettext_lazy("Update status messages in various Mac IM programs."),
     # Translators: description for script "colorize_nicks.py" (0.3.0+)
     gettext_lazy("Use the weechat nick colors in the chat area and command line."),
-    # Translators: description for script "vimode.py" (0.3.0+)
+    # Translators: description for script "vimode.py" (1.0+)
     gettext_lazy("Vi-like key bindings/commands with normal and insert mode."),
     # Translators: description for script "pastebuf.lua" (0.4.3+)
     gettext_lazy("View content of pastebin site in a buffer."),
