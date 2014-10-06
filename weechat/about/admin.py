@@ -24,6 +24,12 @@ from django.contrib import admin
 
 from weechat.about.models import Screenshot, Keydate, Sponsor
 
+
+# pylint: disable=too-many-public-methods
+class SponsorAdmin(admin.ModelAdmin):
+    """Display all sponsors on the same page."""
+    list_per_page = 10000
+
 admin.site.register(Screenshot)
 admin.site.register(Keydate)
-admin.site.register(Sponsor)
+admin.site.register(Sponsor, SponsorAdmin)
