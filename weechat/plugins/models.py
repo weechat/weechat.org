@@ -213,6 +213,25 @@ class Html5EmailInput(Input):
     input_type = 'email'
 
 
+def get_min_max_choices():
+    """Get min/max versions for add form."""
+    try:
+        version_min_max = []
+        devel_desc = Release.objects.get(version='devel').description
+        releases = Release.objects.filter(
+            version__gte='0.3.0',
+            version__lte=re.sub('-.*', '', devel_desc)).order_by('date')
+        for rel in releases:
+            version_min_max.append(
+                (
+                    '%s:-' % rel.version,
+                    '≥ %s'.decode('utf-8') % rel.version,
+                    ))
+        return version_min_max
+    except:
+        return []
+
+
 class PluginFormAdd(forms.Form):
     """Form to add a script."""
     languages = (
@@ -223,20 +242,6 @@ class PluginFormAdd(forms.Form):
         ('tcl', 'Tcl (.tcl)'),
         ('guile', 'Scheme (.scm)'),
     )
-    version_min_max = []
-    try:
-        devel_desc = Release.objects.get(version='devel').description
-        releases = Release.objects.filter(
-            version__gte='0.3.0',
-            version__lte=re.sub('-.*', '', devel_desc)).order_by('date')
-        for rel in releases:
-            version_min_max.append(
-                (
-                    '%s:-' % rel.version,
-                    '≥ %s'.decode('utf-8') % rel.version,
-                ))
-    except:
-        pass
     required_css_class = 'required'
     language = forms.ChoiceField(
         choices=languages,
@@ -278,7 +283,7 @@ class PluginFormAdd(forms.Form):
         widget=forms.TextInput(attrs={'size': '30'})
     )
     min_max = forms.ChoiceField(
-        choices=version_min_max,
+        choices=[],
         label=gettext_lazy('Min/max WeeChat')
     )
     author = forms.CharField(
@@ -305,6 +310,10 @@ class PluginFormAdd(forms.Form):
         widget=forms.TextInput(attrs={'size': '10'})
     )
 
+    def __init__(self, *args, **kwargs):
+        super(PluginFormAdd, self).__init__(*args, **kwargs)
+        self.fields['min_max'].choices = get_min_max_choices()
+
 
 def get_plugin_choices():
     """Get list of scripts for update form."""
@@ -325,7 +334,7 @@ class PluginFormUpdate(forms.Form):
     """Form to update a script."""
     required_css_class = 'required'
     plugin = forms.ChoiceField(
-        choices=get_plugin_choices(),
+        choices=[],
         label=gettext_lazy('Script')
     )
     version = forms.CharField(

@@ -215,7 +215,7 @@ class ThemeFormUpdate(forms.Form):
     """Form to update a theme."""
     required_css_class = 'required'
     theme = forms.ChoiceField(
-        choices=get_theme_choices(),
+        choices=[],
         label=gettext_lazy('Theme')
     )
     themefile = forms.FileField(
