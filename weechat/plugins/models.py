@@ -29,7 +29,7 @@ from xml.sax.saxutils import escape
 from django import forms
 from django.conf import settings
 from django.db import models
-from django.db.models.signals import post_save
+from django.db.models.signals import post_save, post_delete
 from django.forms.widgets import Input
 from django.utils import translation
 from django.utils.translation import ugettext, gettext_lazy, pgettext_lazy
@@ -389,8 +389,8 @@ def getjsonline(key, value):
         key, strvalue.replace('"', '\\"').replace("'", "\\'"))
 
 
-def handler_plugin_saved(sender, **kwargs):
-    """Build files plugins.{xml,json}(.gz) after update of a script."""
+def handler_plugin_changed(sender, **kwargs):
+    """Build files plugins.{xml,json}(.gz) after update/delete of a script."""
     xml = '<?xml version="1.0" encoding="utf-8"?>\n'
     xml += '<plugins>\n'
     json = '[\n'
@@ -469,4 +469,5 @@ def handler_plugin_saved(sender, **kwargs):
     # create _i18n_plugins.py
     i18n_autogen('plugins', 'plugins', strings)
 
-post_save.connect(handler_plugin_saved, sender=Plugin)
+post_save.connect(handler_plugin_changed, sender=Plugin)
+post_delete.connect(handler_plugin_changed, sender=Plugin)
