@@ -293,8 +293,6 @@ _i18n_plugins_plugins = [
     gettext_lazy("Get \"tinyurl.com\" equivalent for URLs."),
     # Translators: description for script "hotlist2extern.pl" (0.3.0+)
     gettext_lazy("Give hotlist to an external file/program."),
-    # Translators: description for script "opall.py" (0.3.0+)
-    gettext_lazy("Give operator status to everybody in channel."),
     # Translators: description for script "growl-notify.pl" (0.0.1-0.2.6)
     gettext_lazy("Growl notification script."),
     # Translators: description for script "gntpnotify.py" (0.3.0+)
