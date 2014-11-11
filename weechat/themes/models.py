@@ -30,7 +30,7 @@ from xml.sax.saxutils import escape
 from django import forms
 from django.conf import settings
 from django.db import models
-from django.db.models.signals import post_save
+from django.db.models.signals import post_save, post_delete
 from django.utils.translation import gettext_lazy
 
 from weechat.common.path import files_path_join
@@ -288,8 +288,8 @@ def json_value(key, value):
         key, value.replace('"', '\\"').replace("'", "\\'"))
 
 
-def handler_theme_saved(sender, **kwargs):
-    """Build files themes.{xml,json}(.gz) after update of a theme."""
+def handler_theme_changed(sender, **kwargs):
+    """Build files themes.{xml,json}(.gz) after update/delete of a theme."""
     theme_list = Theme.objects.filter(visible=1).order_by('id')
     xml = '<?xml version="1.0" encoding="utf-8"?>\n'
     xml += '<themes>\n'
@@ -364,4 +364,5 @@ def handler_theme_saved(sender, **kwargs):
             tar.add('themes/%s' % name)
     tar.close()
 
-post_save.connect(handler_theme_saved, sender=Theme)
+post_save.connect(handler_theme_changed, sender=Theme)
+post_delete.connect(handler_theme_changed, sender=Theme)
