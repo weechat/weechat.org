@@ -52,6 +52,11 @@ def _replace_savannah_link(match):
         match.group(0))
 
 
+def _replace_link(tracker):
+    string = GITHUB_PATTERN.sub(_replace_github_link, tracker)
+    return SAVANNAH_PATTERN.sub(_replace_savannah_link, string)
+
+
 def tracker_links(tracker):
     """Replace tracker items by URLs.
 
@@ -61,8 +66,8 @@ def tracker_links(tracker):
     """
     if not tracker:
         return ''
-    string = GITHUB_PATTERN.sub(_replace_github_link, tracker)
-    return SAVANNAH_PATTERN.sub(_replace_savannah_link, string)
+    items = [_replace_link(item) for item in tracker.split(',')]
+    return '<br />'.join(items)
 
 
 def commits_links(commits):
