@@ -33,7 +33,7 @@ from weechat.common.path import files_path_join
 from weechat.common.tracker import commits_links, tracker_links
 from weechat.common.templatetags.localdate import localdate
 
-CVE_URL = ('<a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=%(cve)s" '
+CVE_URL = ('<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=%(cve)s" '
            'target="_blank">%(cve)s</a>')
 
 
