@@ -25,7 +25,7 @@
     </div>
     <ul>
       {% for dir in doc_list %}
-      <li><a href="/files/doc/old/{{ dir }}" target="_blank">{% trans "Version" %} {{ dir }} <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="" /></a></li>
+      <li><a href="/files/doc/old/{{ dir }}" target="_blank">{% trans "Version" %} {{ dir }} <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt=">>" /></a></li>
       {% endfor %}
     </ul>
   </div>
@@ -128,7 +128,7 @@
   {% trans "More information about WeeChat translations:" %}
   <a href="http://wiki.flashtux.org/wiki/WeeChat_translator_guide" target="_blank">
     http://wiki.flashtux.org/wiki/WeeChat_translator_guide
-    <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="" />
+    <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt=">>" />
   </a>
 
 {% endif %}

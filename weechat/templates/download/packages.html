@@ -79,14 +79,14 @@
             {% if package.directory %}
               {% if package.exists %}
                 <a href="/files/{{ package.directory }}" target="_blank"{% if not package.exists %} class="notfound"{% endif %}>{{ package.directory }}</a>
-                <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt="" />
+                <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>" />
               {% else %}
                 <span class="notfound">{{ package.directory }}</span>
               {% endif %}
             {% else %}
               {% if package.url %}
                 <a href="{{ package.url }}" target="_blank">{{ package.url }}</a>
-                <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt="" />
+                <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>" />
               {% else %}
                 {{ package.text }}
               {% endif %}
@@ -101,13 +101,13 @@
           <span class="dltype">{% trans "ChangeLog" %}</span>
           <img src="{{ MEDIA_URL }}images/dl_doc.png" class="dlicon" alt="doc" />
           <a href="/files/changelog/ChangeLog-{{ package_version.grouper.version }}.html" target="_blank">ChangeLog-{{ package_version.grouper.version }}.html</a>
-          <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt="" />
+          <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>" />
         </div>
         <div class="dlitem">
           <span class="dltype">{% trans "Release notes" %}</span>
           <img src="{{ MEDIA_URL }}images/dl_doc.png" class="dlicon" alt="doc" />
           <a href="/files/releasenotes/ReleaseNotes-{{ package_version.grouper.version }}.html" target="_blank">ReleaseNotes-{{ package_version.grouper.version }}.html</a>
-          <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt="" />
+          <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>" />
         </div>
       </div>
     {% endfor %}
@@ -119,7 +119,7 @@
           <span class="dltype">HTML5</span>
           <img src="{{ MEDIA_URL }}images/dl_html5.png" class="dlicon" alt="html5" />
           <a href="http://www.glowing-bear.org" target="_blank">http://www.glowing-bear.org/</a>
-          <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt="" />
+          <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>" />
         </div>
         <div class="dlitem">
           <span class="dltype">Qt</span>
@@ -130,19 +130,19 @@
           <span class="dltype">Android</span>
           <img src="{{ MEDIA_URL }}images/dl_android.png" class="dlicon" alt="android" />
           <a href="https://github.com/ubergeek42/weechat-android" target="_blank">https://github.com/ubergeek42/weechat-android</a>
-          <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt="" />
+          <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>" />
         </div>
         <div class="dlitem">
           <span class="dltype">Emacs</span>
           <img src="{{ MEDIA_URL }}images/dl_emacs.png" class="dlicon" alt="emacs" />
           <a href="https://github.com/the-kenny/weechat.el" target="_blank">https://github.com/the-kenny/weechat.el</a>
-          <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt="" />
+          <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>" />
         </div>
         <div class="dlitem">
           <span class="dltype">JavaScript</span>
           <img src="{{ MEDIA_URL }}images/dl_web.png" class="dlicon" alt="web-js" />
           <a href="https://github.com/eirikb/weecloud" target="_blank">https://github.com/eirikb/weecloud</a>
-          <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt="" />
+          <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>" />
         </div>
       </div>
     {% endif %}
@@ -194,19 +194,19 @@
           <span class="dltype">{% trans "Savannah page" %}</span>
           <img src="{{ MEDIA_URL }}images/dl_savannah.png" class="dlicon" alt="savannah" />
           <a href="http://savannah.nongnu.org/projects/weechat" target="_blank">http://savannah.nongnu.org/projects/weechat</a>
-          <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt="" />
+          <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>" />
         </div>
         <div class="dlitem">
           <span class="dltype">{% trans "Git - sources" %}</span>
           <img src="{{ MEDIA_URL }}images/dl_github.png" class="dlicon" alt="git" />
           <a href="https://github.com/weechat/weechat" target="_blank">https://github.com/weechat/weechat</a>
-          <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt="" />
+          <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>" />
         </div>
         <div class="dlitem">
           <span class="dltype">{% trans "Git - scripts" %}</span>
           <img src="{{ MEDIA_URL }}images/dl_github.png" class="dlicon" alt="git" />
           <a href="https://github.com/weechat/scripts" target="_blank">https://github.com/weechat/scripts</a>
-          <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt="" />
+          <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>" />
         </div>
         <div class="dlitem">
           <span class="dltype">{% trans "Git - clone" %}</span>
