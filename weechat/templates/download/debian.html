@@ -13,6 +13,21 @@
   {% trans "<strong>Warning:</strong> these Debian packages are unofficial, not signed, and come with absolutely no guarantees." %}
 </div>
 
+<div class="infobox">
+  <strong>{% trans "Instructions:" %}</strong>
+  <ul>
+    <li>
+      aptitude install apt-transport-https
+      ({% trans "otherwise you can replace https:// by http:// in URLs" %})
+    </li>
+    <li>
+      {% trans "create a weechat.list file with the repository (according to your Debian version):" %}
+      <br />
+      echo "deb https://weechat.org/debian sid main" >/etc/apt/sources.list.d/weechat.list
+    </li>
+  </ul>
+</div>
+
 {% if debpkgs %}
 
 {% regroup debpkgs by repoarch as debpkgs_by_repoarch %}

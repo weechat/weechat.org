@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-11 12:42+0100\n"
+"POT-Creation-Date: 2014-11-22 16:39+0100\n"
 "PO-Revision-Date: 2014-06-26 07:57+0200\n"
 "Last-Translator: Marco Paolone <marcopaolone@gmail.com>\n"
 "Language-Team: Italian <marcopaolone@gmail.com>\n"
@@ -5142,7 +5142,7 @@ msgstr "Mailing list"
 msgid ""
 "There are <a href=\"https://savannah.nongnu.org/mail/?group=weechat\" target="
 "\"_blank\">3 mailing lists <img src=\"%(MEDIA_URL)simages/link.png\" width="
-"\"16\" height=\"16\" alt=\"\" /></a>:"
+"\"16\" height=\"16\" alt=\">>\" /></a>:"
 msgstr ""
 
 #: templates/dev/support.html:58
@@ -5262,27 +5262,41 @@ msgstr ""
 "<strong>Attenzione:</strong> questa versione potrebbe essere instabile o non "
 "compilare affatto!"
 
-#: templates/download/debian.html:26
+#: templates/download/debian.html:17
+msgid "Instructions:"
+msgstr ""
+
+#: templates/download/debian.html:21
+msgid "otherwise you can replace https:// by http:// in URLs"
+msgstr ""
+
+#: templates/download/debian.html:24
+msgid ""
+"create a weechat.list file with the repository (according to your Debian "
+"version):"
+msgstr ""
+
+#: templates/download/debian.html:41
 msgid "Important"
 msgstr ""
 
-#: templates/download/debian.html:32
+#: templates/download/debian.html:47
 msgid "Builds by"
 msgstr ""
 
-#: templates/download/debian.html:36
+#: templates/download/debian.html:51
 msgid "Latest build:"
 msgstr ""
 
-#: templates/download/debian.html:59
+#: templates/download/debian.html:74
 msgid "Architecture"
 msgstr ""
 
-#: templates/download/debian.html:62
+#: templates/download/debian.html:77
 msgid "files"
 msgstr ""
 
-#: templates/download/debian.html:90
+#: templates/download/debian.html:105
 #, fuzzy
 msgid "No debian repository."
 msgstr "Nessuno script trovato."

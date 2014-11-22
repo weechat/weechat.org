@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-11 12:42+0100\n"
+"POT-Creation-Date: 2014-11-22 16:39+0100\n"
 "PO-Revision-Date: 2014-11-11 12:43+0100\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <i38w7i3@yahoo.co.jp>\n"
@@ -5156,11 +5156,15 @@ msgid "Mailing list"
 msgstr "メーリングリスト"
 
 #: templates/dev/support.html:54
-#, python-format
+#, fuzzy, python-format
+#| msgid ""
+#| "There are <a href=\"https://savannah.nongnu.org/mail/?group=weechat\" "
+#| "target=\"_blank\">3 mailing lists <img src=\"%(MEDIA_URL)simages/link.png"
+#| "\" width=\"16\" height=\"16\" alt=\"\" /></a>:"
 msgid ""
 "There are <a href=\"https://savannah.nongnu.org/mail/?group=weechat\" target="
 "\"_blank\">3 mailing lists <img src=\"%(MEDIA_URL)simages/link.png\" width="
-"\"16\" height=\"16\" alt=\"\" /></a>:"
+"\"16\" height=\"16\" alt=\">>\" /></a>:"
 msgstr ""
 "<a href=\"https://savannah.nongnu.org/mail/?group=weechat\" target=\"_blank"
 "\">3 つのメーリングリスト<img src=\"%(MEDIA_URL)simages/link.png\" width="
@@ -5274,27 +5278,41 @@ msgstr ""
 "<strong>警告:</strong> これらの Debian パッケージは非公式であり、署名されてい"
 "ません。またいかなる保証もありません。"
 
-#: templates/download/debian.html:26
+#: templates/download/debian.html:17
+msgid "Instructions:"
+msgstr ""
+
+#: templates/download/debian.html:21
+msgid "otherwise you can replace https:// by http:// in URLs"
+msgstr ""
+
+#: templates/download/debian.html:24
+msgid ""
+"create a weechat.list file with the repository (according to your Debian "
+"version):"
+msgstr ""
+
+#: templates/download/debian.html:41
 msgid "Important"
 msgstr "重要"
 
-#: templates/download/debian.html:32
+#: templates/download/debian.html:47
 msgid "Builds by"
 msgstr "ビルドした人"
 
-#: templates/download/debian.html:36
+#: templates/download/debian.html:51
 msgid "Latest build:"
 msgstr "最新ビルド:"
 
-#: templates/download/debian.html:59
+#: templates/download/debian.html:74
 msgid "Architecture"
 msgstr "アーキテクチャ"
 
-#: templates/download/debian.html:62
+#: templates/download/debian.html:77
 msgid "files"
 msgstr "ファイル"
 
-#: templates/download/debian.html:90
+#: templates/download/debian.html:105
 msgid "No debian repository."
 msgstr "Debian リポジトリがありません。"
 
