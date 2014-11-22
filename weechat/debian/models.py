@@ -54,6 +54,7 @@ class Repo(models.Model):
     name = models.CharField(max_length=64)
     version = models.ForeignKey(Version)
     domain = models.CharField(max_length=128)
+    url = models.CharField(max_length=512)
     arch = models.CharField(max_length=128)
     builder = models.ForeignKey(Builder)
     message = models.CharField(max_length=1024, blank=True)

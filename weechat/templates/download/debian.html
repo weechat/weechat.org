@@ -26,7 +26,7 @@
           <div class="message"><strong>{% trans "Important" %}:</strong> {{ debpkg_source.list.0.repo.message }}</div>
           {% endif %}
           <div class="sources" title="Line to add in /etc/apt/sources.list">
-            deb http://{{ debpkg_source.list.0.repo.domain }} {{ debpkg_source.list.0.repo.version.codename }} main
+            deb {{ debpkg_source.list.0.repo.url }} {{ debpkg_source.list.0.repo.version.codename }} main
           </div>
           <div class="builder">
             {% trans "Builds by" %} {{ debpkg_source.list.0.repo.builder.name }}
@@ -69,7 +69,7 @@
           <tr>
             <td colspan="5" class="files">
               {% for debpkg in debpkg_arch.list|dictsort:"basename" %}
-                <a href="http://{{ debpkg.repo.domain }}/{{ debpkg.Filename }}">{{ debpkg.basename }}</a>
+                <a href="{{ debpkg.repo.url }}/{{ debpkg.Filename }}">{{ debpkg.basename }}</a>
                 <span class="size">({{ debpkg.size|filesizeformat }})</span>
                 <br />
               {% endfor %}
