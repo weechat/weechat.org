@@ -153,11 +153,11 @@
         <ul>
           <li>
             {% trans "Import the gpg key:" %}
-            <br /><kbd>$ gpg --keyserver wwwkeys.pgp.net --recv-keys DEC408F8</kbd>
+            <br /><kbd>$ gpg --keyserver keys.gnupg.net --recv-keys A9AB5AB778FA5C3522FD0378F82F4B16DEC408F8</kbd>
           </li>
           <li>
             {% trans "Display the fingerprint:" %}
-            <br /><kbd>$ gpg --fingerprint DEC408F8</kbd>
+            <br /><kbd>$ gpg --fingerprint A9AB5AB778FA5C3522FD0378F82F4B16DEC408F8</kbd>
           </li>
           <li>
             {% trans "Check that the fingerprint is correct by asking to a developer on #weechat (chat.freenode.net)." %}
@@ -166,7 +166,7 @@
             {% trans "Trust the key:" %}
             <br />
             <kbd>
-              $ gpg --edit-key DEC408F8
+              $ gpg --edit-key A9AB5AB778FA5C3522FD0378F82F4B16DEC408F8
               <br />
               $ trust
             </kbd>
