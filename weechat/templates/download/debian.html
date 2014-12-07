@@ -103,6 +103,10 @@
         <br /><kbd># echo "deb https://weechat.org/debian sid main" >/etc/apt/sources.list.d/weechat.list</kbd>
       </li>
       <li>
+        {% trans "Resynchronize your package index files:" %}
+        <br /><kbd># aptitude update</kbd>
+      </li>
+      <li>
         {% blocktrans %}Install the packages; the "plugins" package is highly recommended but not mandatory.{% endblocktrans %}
         <br />{% trans "For example development version:" %}
         <br /><kbd># aptitude install weechat-devel-curses weechat-devel-plugins</kbd>

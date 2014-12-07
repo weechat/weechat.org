@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-07 09:53+0100\n"
+"POT-Creation-Date: 2014-12-07 10:06+0100\n"
 "PO-Revision-Date: 2014-12-06 11:27+0100\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <i38w7i3@yahoo.co.jp>\n"
@@ -5298,35 +5298,31 @@ msgstr "アーキテクチャ"
 msgid "files"
 msgstr "ファイル"
 
-#: templates/download/debian.html:90
-msgid "No debian repository."
-msgstr "Debian リポジトリがありません。"
-
-#: templates/download/debian.html:95
+#: templates/download/debian.html:87
 msgid "Instructions:"
 msgstr "説明:"
 
-#: templates/download/debian.html:100
+#: templates/download/debian.html:92
 msgid ""
 "You must be root and use apt, apt-get or aptitude to install the packages."
 msgstr ""
 
-#: templates/download/debian.html:101
+#: templates/download/debian.html:93
 msgid "The following examples use aptitude."
 msgstr ""
 
-#: templates/download/debian.html:104
+#: templates/download/debian.html:96
 msgid "Install https transport for apt:"
 msgstr ""
 
-#: templates/download/debian.html:106
+#: templates/download/debian.html:98
 #, fuzzy
 #| msgid "otherwise you can replace https:// by http:// in URLs"
 msgid ""
 "Otherwise you can replace \"https://\" by \"http://\" in URLs (less secure)."
 msgstr "こうすると URL で http:// の代わりに https:// を使うことができます"
 
-#: templates/download/debian.html:109
+#: templates/download/debian.html:101
 #, fuzzy
 #| msgid ""
 #| "create a weechat.list file with the repository (according to your Debian "
@@ -5338,21 +5334,29 @@ msgstr ""
 "このリポジトリを含む weechat.list ファイルを作成してください (お使いの "
 "Debian のバージョンのやり方に従って):"
 
-#: templates/download/debian.html:110
+#: templates/download/debian.html:102
 msgid "For example on Debian unstable:"
 msgstr ""
 
-#: templates/download/debian.html:114
+#: templates/download/debian.html:106
+msgid "Resynchronize your package index files:"
+msgstr ""
+
+#: templates/download/debian.html:110
 msgid ""
 "Install the packages; the \"plugins\" package is highly recommended but not "
 "mandatory."
 msgstr ""
 
-#: templates/download/debian.html:115
+#: templates/download/debian.html:111
 #, fuzzy
 #| msgid "or development version"
 msgid "For example development version:"
 msgstr "または開発版でビルドできなければいけません"
+
+#: templates/download/debian.html:121
+msgid "No debian repository."
+msgstr "Debian リポジトリがありません。"
 
 #: templates/download/download.html:5
 msgid "download"
