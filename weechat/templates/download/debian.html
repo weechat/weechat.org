@@ -10,22 +10,7 @@
 {{ block.super }}
 
 <div class="warningbox">
-  {% trans "<strong>Warning:</strong> these Debian packages are unofficial, not signed, and come with absolutely no guarantees." %}
-</div>
-
-<div class="infobox">
-  <strong>{% trans "Instructions:" %}</strong>
-  <ul>
-    <li>
-      aptitude install apt-transport-https
-      ({% trans "otherwise you can replace https:// by http:// in URLs" %})
-    </li>
-    <li>
-      {% trans "create a weechat.list file with the repository (according to your Debian version):" %}
-      <br />
-      echo "deb https://weechat.org/debian sid main" >/etc/apt/sources.list.d/weechat.list
-    </li>
-  </ul>
+  {% trans "<strong>Warning:</strong> these Debian packages are unofficial, not signed, and come with absolutely no guarantees (see instuctions below)." %}
 </div>
 
 {% if debpkgs %}
@@ -97,7 +82,34 @@
     </table>
     <div class="end"></div>
   </div>
-{% endfor %}
+  {% endfor %}
+
+<h3>{% trans "Instructions:" %}</h3>
+<div class="download">
+  <div class="dlsign">
+    <ul>
+      <li>
+        {% trans "You must be root and use apt, apt-get or aptitude to install the packages." %}
+        <br />{% trans "The following examples use aptitude." %}
+      </li>
+      <li>
+        {% trans "Install https transport for apt:" %}
+        <br /><kbd># aptitude install apt-transport-https</kbd>
+        {% blocktrans %}Otherwise you can replace "https://" by "http://" in URLs (less secure).{% endblocktrans %}
+      </li>
+      <li>
+        {% trans "Create a weechat.list file with the repository, according to your Debian version." %}
+        <br />{% trans "For example on Debian unstable:" %}
+        <br /><kbd># echo "deb https://weechat.org/debian sid main" >/etc/apt/sources.list.d/weechat.list</kbd>
+      </li>
+      <li>
+        {% blocktrans %}Install the packages; the "plugins" package is highly recommended but not mandatory.{% endblocktrans %}
+        <br />{% trans "For example development version:" %}
+        <br /><kbd># aptitude install weechat-devel-curses weechat-devel-plugins</kbd>
+      </li>
+    </ul>
+  </div>
+</div>
 
 {% else %}
 

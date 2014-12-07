@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-06 11:30+0100\n"
-"PO-Revision-Date: 2014-12-06 11:28+0100\n"
+"POT-Creation-Date: 2014-12-07 09:53+0100\n"
+"PO-Revision-Date: 2014-12-07 09:53+0100\n"
 "Last-Translator: Sébastien Helleu <flashcode@flashtux.org>\n"
 "Language-Team: French <flashcode@flashtux.org>\n"
 "Language: fr\n"
@@ -5431,49 +5431,84 @@ msgstr "Plus d'information sur les traductions WeeChat :"
 #: templates/download/debian.html:13
 msgid ""
 "<strong>Warning:</strong> these Debian packages are unofficial, not signed, "
-"and come with absolutely no guarantees."
+"and come with absolutely no guarantees (see instuctions below)."
 msgstr ""
 "<strong>Attention :</strong> ces paquets Debian sont non officiels, non "
-"signés, et sont fournis sans aucune garantie."
+"signés, et sont fournis sans aucune garantie (voir les instructions ci-"
+"dessous)."
 
-#: templates/download/debian.html:17
-msgid "Instructions:"
-msgstr "Instructions :"
-
-#: templates/download/debian.html:21
-msgid "otherwise you can replace https:// by http:// in URLs"
-msgstr "sinon vous pouvez remplacer https:// par http:// dans les URLs"
-
-#: templates/download/debian.html:24
-msgid ""
-"create a weechat.list file with the repository (according to your Debian "
-"version):"
-msgstr ""
-"créez un fichier weechat.list avec le dépôt (selon votre version de Debian) :"
-
-#: templates/download/debian.html:41
+#: templates/download/debian.html:26
 msgid "Important"
 msgstr "Important"
 
-#: templates/download/debian.html:47
+#: templates/download/debian.html:32
 msgid "Builds by"
 msgstr "Constructions par"
 
-#: templates/download/debian.html:51
+#: templates/download/debian.html:36
 msgid "Latest build:"
 msgstr "Dernier build :"
 
-#: templates/download/debian.html:74
+#: templates/download/debian.html:59
 msgid "Architecture"
 msgstr "Architecture"
 
-#: templates/download/debian.html:77
+#: templates/download/debian.html:62
 msgid "files"
 msgstr "fichiers"
 
-#: templates/download/debian.html:105
+#: templates/download/debian.html:90
 msgid "No debian repository."
 msgstr "Pas de dépôt debian."
+
+#: templates/download/debian.html:95
+msgid "Instructions:"
+msgstr "Instructions :"
+
+#: templates/download/debian.html:100
+msgid ""
+"You must be root and use apt, apt-get or aptitude to install the packages."
+msgstr ""
+"Vous devez être root et utiliser apt, apt-get ou aptitude pour installer les "
+"paquets."
+
+#: templates/download/debian.html:101
+msgid "The following examples use aptitude."
+msgstr "Les exemples qui suivent utilisent aptitude."
+
+#: templates/download/debian.html:104
+msgid "Install https transport for apt:"
+msgstr "Installez le transport https pour apt :"
+
+#: templates/download/debian.html:106
+msgid ""
+"Otherwise you can replace \"https://\" by \"http://\" in URLs (less secure)."
+msgstr ""
+"Sinon vous pouvez remplacer \"https://\" par \"http://\" dans les URLs "
+"(moins sûr)."
+
+#: templates/download/debian.html:109
+msgid ""
+"Create a weechat.list file with the repository, according to your Debian "
+"version."
+msgstr ""
+"Créez un fichier weechat.list avec le dépôt, selon votre version de Debian."
+
+#: templates/download/debian.html:110
+msgid "For example on Debian unstable:"
+msgstr "Par exemple sous Debian unstable :"
+
+#: templates/download/debian.html:114
+msgid ""
+"Install the packages; the \"plugins\" package is highly recommended but not "
+"mandatory."
+msgstr ""
+"Installez les paquets ; le paquet « plugins » est fortement recommandé mais "
+"pas obligatoire."
+
+#: templates/download/debian.html:115
+msgid "For example development version:"
+msgstr "Par exemple la version de développement :"
 
 #: templates/download/download.html:5
 msgid "download"
