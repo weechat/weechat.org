@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-07 10:06+0100\n"
-"PO-Revision-Date: 2014-12-06 11:28+0100\n"
+"PO-Revision-Date: 2014-12-07 10:55+0100\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <weechatter@arcor.de>\n"
 "Language: de\n"
@@ -185,8 +185,8 @@ msgstr "kommende stabile Version"
 msgid ""
 "next stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
-"kommende stabile Version, als Nummer, siehe Erweiterung-API: info_get"
-"(\"version_number\")"
+"kommende stabile Version, als Nummer, siehe Erweiterung-API: "
+"info_get(\"version_number\")"
 
 #: dev/views.py:71
 msgid "approximate date of next stable version"
@@ -5385,7 +5385,7 @@ msgid "Mailing list"
 msgstr "Mailingliste"
 
 #: templates/dev/support.html:54
-#, fuzzy, python-format
+#, python-format
 #| msgid ""
 #| "There are <a href=\"https://savannah.nongnu.org/mail/?group=weechat\" "
 #| "target=\"_blank\">3 mailing lists <img src=\"%(MEDIA_URL)simages/link.png"
@@ -5397,7 +5397,7 @@ msgid ""
 msgstr ""
 "Es existieren <a href=\"https://savannah.nongnu.org/mail/?group=weechat\" "
 "target=\"_blank\">drei Mailinglisten <img src=\"%(MEDIA_URL)simages/link.png"
-"\" width=\"16\" height=\"16\" alt=\"\" /></a>:"
+"\" width=\"16\" height=\"16\" alt=\">>\" /></a>:"
 
 #: templates/dev/support.html:58
 msgid "<strong>weechat-security</strong> (security advisories about WeeChat):"
@@ -5508,7 +5508,6 @@ msgid "More information about WeeChat translations:"
 msgstr "Weitere Informationen zu den einzelnen WeeChat Übersetzungen:"
 
 #: templates/download/debian.html:13
-#, fuzzy
 #| msgid ""
 #| "<strong>Warning:</strong> these Debian packages are unofficial, not "
 #| "signed, and come with absolutely no guarantees."
@@ -5517,7 +5516,8 @@ msgid ""
 "and come with absolutely no guarantees (see instuctions below)."
 msgstr ""
 "<strong>Achtung:</strong> Diese Debian Pakete sind keine offiziellen "
-"Versionen, sie sind weder signiert noch wird eine Gewährleistung gegeben."
+"Versionen, sie sind weder signiert noch wird eine Gewährleistung gegeben "
+"(siehe Anleitung am Ende der Seite)."
 
 #: templates/download/debian.html:26
 msgid "Important"
@@ -5541,51 +5541,57 @@ msgstr "Dateien"
 
 #: templates/download/debian.html:87
 msgid "Instructions:"
-msgstr ""
+msgstr "Anleitung:"
 
 #: templates/download/debian.html:92
 msgid ""
 "You must be root and use apt, apt-get or aptitude to install the packages."
 msgstr ""
+"Um mittels apt, apt-get oder aptitude die Pakete installieren zu können, "
+"muss man Root-Rechte besitzen."
 
 #: templates/download/debian.html:93
 msgid "The following examples use aptitude."
-msgstr ""
+msgstr "In den nachfolgenden Beispielen wird aptitude genutzt."
 
 #: templates/download/debian.html:96
 msgid "Install https transport for apt:"
-msgstr ""
+msgstr "Installation von https Transport für apt:"
 
 #: templates/download/debian.html:98
 msgid ""
 "Otherwise you can replace \"https://\" by \"http://\" in URLs (less secure)."
 msgstr ""
+"\"https://\" kann auch durch \"http://\" ersetzt werden (weniger Sicherheit)."
 
 #: templates/download/debian.html:101
 msgid ""
 "Create a weechat.list file with the repository, according to your Debian "
 "version."
 msgstr ""
+"Nun erstellt man eine weechat.list Datei für das Repository, entsprechend "
+"der Debian Version."
 
 #: templates/download/debian.html:102
 msgid "For example on Debian unstable:"
-msgstr ""
+msgstr "Beispiel für Debian unstable:"
 
 #: templates/download/debian.html:106
 msgid "Resynchronize your package index files:"
-msgstr ""
+msgstr "Indexdateien für Pakete neu einlesen:"
 
 #: templates/download/debian.html:110
 msgid ""
 "Install the packages; the \"plugins\" package is highly recommended but not "
 "mandatory."
 msgstr ""
+"Pakte installieren; das  \"plugins\" Paket wird  nachdrücklich empfohlen ist "
+"aber nicht obligatorisch."
 
 #: templates/download/debian.html:111
-#, fuzzy
 #| msgid "or development version"
 msgid "For example development version:"
-msgstr "oder mit einer Entwicklerversion"
+msgstr "Als Beispiel wird die Entwicklerversion installiert:"
 
 #: templates/download/debian.html:121
 msgid "No debian repository."
