@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-07 10:06+0100\n"
+"POT-Creation-Date: 2014-12-14 10:52+0100\n"
 "PO-Revision-Date: 2014-12-07 10:55+0100\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <weechatter@arcor.de>\n"
@@ -185,8 +185,8 @@ msgstr "kommende stabile Version"
 msgid ""
 "next stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
-"kommende stabile Version, als Nummer, siehe Erweiterung-API: "
-"info_get(\"version_number\")"
+"kommende stabile Version, als Nummer, siehe Erweiterung-API: info_get"
+"(\"version_number\")"
 
 #: dev/views.py:71
 msgid "approximate date of next stable version"
@@ -5386,10 +5386,6 @@ msgstr "Mailingliste"
 
 #: templates/dev/support.html:54
 #, python-format
-#| msgid ""
-#| "There are <a href=\"https://savannah.nongnu.org/mail/?group=weechat\" "
-#| "target=\"_blank\">3 mailing lists <img src=\"%(MEDIA_URL)simages/link.png"
-#| "\" width=\"16\" height=\"16\" alt=\"\" /></a>:"
 msgid ""
 "There are <a href=\"https://savannah.nongnu.org/mail/?group=weechat\" target="
 "\"_blank\">3 mailing lists <img src=\"%(MEDIA_URL)simages/link.png\" width="
@@ -5508,9 +5504,6 @@ msgid "More information about WeeChat translations:"
 msgstr "Weitere Informationen zu den einzelnen WeeChat Übersetzungen:"
 
 #: templates/download/debian.html:13
-#| msgid ""
-#| "<strong>Warning:</strong> these Debian packages are unofficial, not "
-#| "signed, and come with absolutely no guarantees."
 msgid ""
 "<strong>Warning:</strong> these Debian packages are unofficial, not signed, "
 "and come with absolutely no guarantees (see instuctions below)."
@@ -5544,14 +5537,20 @@ msgid "Instructions:"
 msgstr "Anleitung:"
 
 #: templates/download/debian.html:92
+#, fuzzy
+#| msgid ""
+#| "You must be root and use apt, apt-get or aptitude to install the packages."
 msgid ""
-"You must be root and use apt, apt-get or aptitude to install the packages."
+"You must use apt, apt-get or aptitude to install the packages (with sudo or "
+"as \"root\" user)."
 msgstr ""
 "Um mittels apt, apt-get oder aptitude die Pakete installieren zu können, "
 "muss man Root-Rechte besitzen."
 
 #: templates/download/debian.html:93
-msgid "The following examples use aptitude."
+#, fuzzy
+#| msgid "The following examples use aptitude."
+msgid "The following examples use sudo and aptitude."
 msgstr "In den nachfolgenden Beispielen wird aptitude genutzt."
 
 #: templates/download/debian.html:96
@@ -5589,7 +5588,6 @@ msgstr ""
 "aber nicht obligatorisch."
 
 #: templates/download/debian.html:111
-#| msgid "or development version"
 msgid "For example development version:"
 msgstr "Als Beispiel wird die Entwicklerversion installiert:"
 

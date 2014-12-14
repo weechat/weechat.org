@@ -89,27 +89,27 @@
   <div class="dlsign">
     <ul>
       <li>
-        {% trans "You must be root and use apt, apt-get or aptitude to install the packages." %}
-        <br />{% trans "The following examples use aptitude." %}
+        {% blocktrans %}You must use apt, apt-get or aptitude to install the packages (with sudo or as "root" user).{% endblocktrans %}
+        <br />{% trans "The following examples use sudo and aptitude." %}
       </li>
       <li>
         {% trans "Install https transport for apt:" %}
-        <br /><kbd># aptitude install apt-transport-https</kbd>
+        <br /><kbd>$ sudo aptitude install apt-transport-https</kbd>
         {% blocktrans %}Otherwise you can replace "https://" by "http://" in URLs (less secure).{% endblocktrans %}
       </li>
       <li>
         {% trans "Create a weechat.list file with the repository, according to your Debian version." %}
         <br />{% trans "For example on Debian unstable:" %}
-        <br /><kbd># echo "deb https://weechat.org/debian sid main" >/etc/apt/sources.list.d/weechat.list</kbd>
+        <br /><kbd>$ sudo echo "deb https://weechat.org/debian sid main" >/etc/apt/sources.list.d/weechat.list</kbd>
       </li>
       <li>
         {% trans "Resynchronize your package index files:" %}
-        <br /><kbd># aptitude update</kbd>
+        <br /><kbd>$ sudo aptitude update</kbd>
       </li>
       <li>
         {% blocktrans %}Install the packages; the "plugins" package is highly recommended but not mandatory.{% endblocktrans %}
         <br />{% trans "For example development version:" %}
-        <br /><kbd># aptitude install weechat-devel-curses weechat-devel-plugins</kbd>
+        <br /><kbd>$ sudo aptitude install weechat-devel-curses weechat-devel-plugins</kbd>
       </li>
     </ul>
   </div>
