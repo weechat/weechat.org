@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-14 10:52+0100\n"
-"PO-Revision-Date: 2014-12-06 11:27+0100\n"
+"POT-Creation-Date: 2014-11-22 16:39+0100\n"
+"PO-Revision-Date: 2014-12-15 14:44+0900\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <i38w7i3@yahoo.co.jp>\n"
 "Language: ja\n"
@@ -5267,16 +5267,12 @@ msgid "More information about WeeChat translations:"
 msgstr "WeeChat の翻訳に関する詳しい情報:"
 
 #: templates/download/debian.html:13
-#, fuzzy
-#| msgid ""
-#| "<strong>Warning:</strong> these Debian packages are unofficial, not "
-#| "signed, and come with absolutely no guarantees."
 msgid ""
 "<strong>Warning:</strong> these Debian packages are unofficial, not signed, "
 "and come with absolutely no guarantees (see instuctions below)."
 msgstr ""
 "<strong>警告:</strong> これらの Debian パッケージは非公式であり、署名されてい"
-"ません。またいかなる保証もありません。"
+"ません。またいかなる保証もありません (以下の説明をご覧ください)。"
 
 #: templates/download/debian.html:26
 msgid "Important"
@@ -5307,53 +5303,51 @@ msgid ""
 "You must use apt, apt-get or aptitude to install the packages (with sudo or "
 "as \"root\" user)."
 msgstr ""
+"パッケージをインストールするには、apt、apt-get または aptitude を (sudo と組"
+"合わせるか \"root\" ユーザになってから) 使ってください。"
 
 #: templates/download/debian.html:93
 msgid "The following examples use sudo and aptitude."
-msgstr ""
+msgstr "以下の例では sudo と aptitude を使います。"
 
 #: templates/download/debian.html:96
 msgid "Install https transport for apt:"
-msgstr ""
+msgstr "apt で https 転送を使うためのパッケージをインストール:"
 
 #: templates/download/debian.html:98
-#, fuzzy
-#| msgid "otherwise you can replace https:// by http:// in URLs"
 msgid ""
 "Otherwise you can replace \"https://\" by \"http://\" in URLs (less secure)."
-msgstr "こうすると URL で http:// の代わりに https:// を使うことができます"
+msgstr ""
+"こうすると URL で (安全性の低い) http:// の代わりに https:// を使うことができ"
+"ます。"
 
 #: templates/download/debian.html:101
-#, fuzzy
-#| msgid ""
-#| "create a weechat.list file with the repository (according to your Debian "
-#| "version):"
 msgid ""
 "Create a weechat.list file with the repository, according to your Debian "
 "version."
 msgstr ""
-"このリポジトリを含む weechat.list ファイルを作成してください (お使いの "
-"Debian のバージョンのやり方に従って):"
+"お使いの Debian のバージョンに対応するリポジトリを含む weechat.list ファイル"
+"を作成してください。"
 
 #: templates/download/debian.html:102
 msgid "For example on Debian unstable:"
-msgstr ""
+msgstr "例えば Debian 不安定版を使う場合:"
 
 #: templates/download/debian.html:106
 msgid "Resynchronize your package index files:"
-msgstr ""
+msgstr "パッケージインデックスファイルを再同期:"
 
 #: templates/download/debian.html:110
 msgid ""
 "Install the packages; the \"plugins\" package is highly recommended but not "
 "mandatory."
 msgstr ""
+"パッケージをインストール; \"plugins\" パッケージは必須ではありませんが、イン"
+"ストールを強くお勧めします。"
 
 #: templates/download/debian.html:111
-#, fuzzy
-#| msgid "or development version"
 msgid "For example development version:"
-msgstr "または開発版でビルドできなければいけません"
+msgstr "開発版を使う例:"
 
 #: templates/download/debian.html:121
 msgid "No debian repository."
