@@ -41,7 +41,7 @@
         </div>
         <div class="name{% if not debpkg_source.list.0.repo.active %} discontinued{% endif %}">
           {{ debpkg_source.list.0.repo.name|capfirst }}
-          &ldquo;{{ debpkg_source.list.0.repo.version.codename }}&rdquo;
+          “{{ debpkg_source.list.0.repo.version.codename }}”
           ({{ debpkg_source.list.0.repo.version.version }})
         </div>
         <table>
@@ -99,7 +99,7 @@
       </li>
       <li>
         {% trans "Create a weechat.list file with the repository, according to your Debian version." %}
-        <br />{% trans "For example on Debian unstable:" %}
+        <br />{% trans "For example on Debian “sid” (unstable):" %}
         <br /><kbd>$ sudo echo "deb https://weechat.org/debian sid main" >/etc/apt/sources.list.d/weechat.list</kbd>
       </li>
       <li>

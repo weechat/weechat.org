@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-14 10:52+0100\n"
+"POT-Creation-Date: 2014-12-20 17:20+0100\n"
 "PO-Revision-Date: 2014-12-20 09:47+0100\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <weechatter@arcor.de>\n"
@@ -185,8 +185,8 @@ msgstr "kommende stabile Version"
 msgid ""
 "next stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
-"kommende stabile Version, als Nummer, siehe Erweiterung-API: "
-"info_get(\"version_number\")"
+"kommende stabile Version, als Nummer, siehe Erweiterung-API: info_get"
+"(\"version_number\")"
 
 #: dev/views.py:71
 msgid "approximate date of next stable version"
@@ -5537,8 +5537,6 @@ msgid "Instructions:"
 msgstr "Anleitung:"
 
 #: templates/download/debian.html:92
-#| msgid ""
-#| "You must be root and use apt, apt-get or aptitude to install the packages."
 msgid ""
 "You must use apt, apt-get or aptitude to install the packages (with sudo or "
 "as \"root\" user)."
@@ -5547,7 +5545,6 @@ msgstr ""
 "muss man \"root\" sein oder den \"sudo\" Befehl verwenden."
 
 #: templates/download/debian.html:93
-#| msgid "The following examples use aptitude."
 msgid "The following examples use sudo and aptitude."
 msgstr "Für die nachfolgenden Beispiele werden sudo und aptitude genutzt."
 
@@ -5570,7 +5567,9 @@ msgstr ""
 "der Debian Version."
 
 #: templates/download/debian.html:102
-msgid "For example on Debian unstable:"
+#, fuzzy
+#| msgid "For example on Debian unstable:"
+msgid "For example on Debian “sid” (unstable):"
 msgstr "Beispiel für Debian unstable:"
 
 #: templates/download/debian.html:106
