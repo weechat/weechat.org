@@ -321,6 +321,7 @@ def get_plugin_choices():
         plugin_list = Plugin.objects.exclude(max_weechat='0.2.6') \
             .filter(visible=1).order_by('name')
         plugin_choices = []
+        plugin_choices.append(('', gettext_lazy('Choose...')))
         for plugin in plugin_list:
             name = '%s - v%s (%s)' % (plugin.name_with_extension(),
                                       plugin.version, plugin.version_weechat())

@@ -203,6 +203,7 @@ def get_theme_choices():
     try:
         theme_list = Theme.objects.filter(visible=1).order_by('name')
         theme_choices = []
+        theme_choices.append(('', gettext_lazy('Choose...')))
         for theme in theme_list:
             theme_choices.append((theme.id, '%s (%s)' % (theme.name,
                                                          theme.version)))

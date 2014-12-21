@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-20 17:20+0100\n"
+"POT-Creation-Date: 2014-12-21 20:13+0100\n"
 "PO-Revision-Date: 2014-12-06 11:27+0100\n"
 "Last-Translator: Krzysztof Korościk <soltys@szluug.org>\n"
 "Language-Team: Polish <soltys@szluug.org>\n"
@@ -4471,12 +4471,12 @@ msgstr "Licencja"
 msgid "license (for example: GPL3, BSD, ...)"
 msgstr "licencja (na przykład: GPL3, BSD, ...)"
 
-#: plugins/models.py:270 plugins/models.py:346 templates/doc/doc.html:69
-#: themes/models.py:136 themes/models.py:222
+#: plugins/models.py:270 plugins/models.py:347 templates/doc/doc.html:69
+#: themes/models.py:136 themes/models.py:223
 msgid "File"
 msgstr "Plik"
 
-#: plugins/models.py:271 plugins/models.py:347
+#: plugins/models.py:271 plugins/models.py:348
 msgid "the script"
 msgstr "skrypt"
 
@@ -4499,8 +4499,8 @@ msgstr "opcjonalny"
 msgid "Min/max WeeChat"
 msgstr "Min/max WeeChat"
 
-#: plugins/models.py:290 plugins/models.py:351 themes/models.py:149
-#: themes/models.py:228
+#: plugins/models.py:290 plugins/models.py:352 themes/models.py:149
+#: themes/models.py:229
 msgid "Your name or nick"
 msgstr "Twoje imię lub nick"
 
@@ -4508,43 +4508,47 @@ msgstr "Twoje imię lub nick"
 msgid "used for scripts page and git commit"
 msgstr "używane dla strony ze skryptami i git commit"
 
-#: plugins/models.py:295 plugins/models.py:356 themes/models.py:153
-#: themes/models.py:232
+#: plugins/models.py:295 plugins/models.py:357 themes/models.py:153
+#: themes/models.py:233
 msgid "Your e-mail"
 msgstr "Twój e-mail"
 
-#: plugins/models.py:302 plugins/models.py:362 themes/models.py:160
-#: themes/models.py:239
+#: plugins/models.py:302 plugins/models.py:363 themes/models.py:160
+#: themes/models.py:240
 msgid "Comments"
 msgstr "Komentarz"
 
-#: plugins/models.py:303 themes/models.py:161 themes/models.py:240
+#: plugins/models.py:303 themes/models.py:161 themes/models.py:241
 msgid "optional, not displayed"
 msgstr "opcjonalny, niewyświetlany"
 
-#: plugins/models.py:308 plugins/models.py:368 themes/models.py:166
-#: themes/models.py:245
+#: plugins/models.py:308 plugins/models.py:369 themes/models.py:166
+#: themes/models.py:246
 msgid "Are you a spammer?"
 msgstr "Czy jesteś spamerem?"
 
-#: plugins/models.py:309 plugins/models.py:369 themes/models.py:167
-#: themes/models.py:246
+#: plugins/models.py:309 plugins/models.py:370 themes/models.py:167
+#: themes/models.py:247
 msgid "enter \"no\" if you are not a spammer"
 msgstr "wpisz \"no\" jeśli  nie jesteś spamerem"
 
-#: plugins/models.py:338 templates/plugins/source.html:13
+#: plugins/models.py:324 themes/models.py:206
+msgid "Choose..."
+msgstr ""
+
+#: plugins/models.py:339 templates/plugins/source.html:13
 msgid "Script"
 msgstr "Skrypt"
 
-#: plugins/models.py:342
+#: plugins/models.py:343
 msgid "New version"
 msgstr "Nowa wersja"
 
-#: plugins/models.py:352 plugins/models.py:357
+#: plugins/models.py:353 plugins/models.py:358
 msgid "used for git commit"
 msgstr "używane przez git commit"
 
-#: plugins/models.py:363
+#: plugins/models.py:364
 msgid "changes in this release"
 msgstr "zmiany w tym wydaniu"
 
@@ -6214,7 +6218,7 @@ msgstr "dodany przez"
 msgid "No theme found."
 msgstr "Nie znaleziono motywu."
 
-#: templates/themes/source.html:13 themes/models.py:219
+#: templates/themes/source.html:13 themes/models.py:220
 msgid "Theme"
 msgstr "Motyw"
 
@@ -6242,19 +6246,19 @@ msgstr "Uaktualnij motyw"
 msgid "Updated theme has been submitted for review."
 msgstr "Uaktualniony motyw został przekazany do oceny."
 
-#: themes/models.py:137 themes/models.py:223
+#: themes/models.py:137 themes/models.py:224
 msgid "the theme"
 msgstr "motyw"
 
-#: themes/models.py:154 themes/models.py:233
+#: themes/models.py:154 themes/models.py:234
 msgid "no spam, never displayed on site"
 msgstr "żadnego spamu, nigdy nie wyświetlany na stronie"
 
-#: themes/models.py:175 themes/models.py:258
+#: themes/models.py:175 themes/models.py:259
 msgid "Theme file too big."
 msgstr "Za duży plik motywu."
 
-#: themes/models.py:178 themes/models.py:261
+#: themes/models.py:178 themes/models.py:262
 msgid "Invalid theme file."
 msgstr "Niewłaściwy plik motywu."
 
@@ -6266,14 +6270,14 @@ msgstr "Ta nazwa już została użyta."
 msgid "Invalid name inside theme file."
 msgstr "Niewłaściwa nazwa wewnątrz pliku motywu."
 
-#: themes/models.py:196 themes/models.py:274
+#: themes/models.py:196 themes/models.py:275
 msgid "Invalid WeeChat version, too old!"
 msgstr "Niewłaściwa wersja WeeChat, za stara!"
 
-#: themes/models.py:264
+#: themes/models.py:265
 msgid "Internal error."
 msgstr "Wewnętrzny błąd."
 
-#: themes/models.py:267
+#: themes/models.py:268
 msgid "Invalid name: different from theme."
 msgstr "Niewłaściwa nazwa: różni się od motywu."
