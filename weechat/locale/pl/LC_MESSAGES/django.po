@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-21 20:13+0100\n"
-"PO-Revision-Date: 2014-12-06 11:27+0100\n"
+"PO-Revision-Date: 2014-12-26 18:18+0100\n"
 "Last-Translator: Krzysztof Korościk <soltys@szluug.org>\n"
 "Language-Team: Polish <soltys@szluug.org>\n"
 "Language: pl\n"
@@ -177,8 +177,8 @@ msgstr "następna stabilna wersja"
 msgid ""
 "next stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
-"następna stabilna wersja, jako numer, jak w API wtyczek: info_get"
-"(\"version_number\")"
+"następna stabilna wersja, jako numer, jak w API wtyczek: "
+"info_get(\"version_number\")"
 
 #: dev/views.py:71
 msgid "approximate date of next stable version"
@@ -1322,8 +1322,8 @@ msgstr ""
 "weechat_pv, weechat_highlight, weechat_ctcp, weechat_dcc\n"
 "- wtyczki skryptowe od teraz ładują skrypty w folderze wymiany systemowej "
 "WeeChat\n"
-"- dodano czas nie aktywności, dostępny we wtyczkach poprzez get_info"
-"(\"inactivity\")\n"
+"- dodano czas nie aktywności, dostępny we wtyczkach poprzez "
+"get_info(\"inactivity\")\n"
 "- dodano nowe funkcje dla wtyczek: add_timer_handler, remove_timer_handler, "
 "remove_infobar\n"
 "- wiele komend dozwolonych dla aliasów\n"
@@ -2341,6 +2341,12 @@ msgid ""
 "For complete list of bugs fixed, please look at <a href=\"/files/changelog/"
 "ChangeLog-1.0.1.html\">ChangeLog</a>."
 msgstr ""
+"Wersja 1.0.1 jest dostępna!\n"
+"\n"
+"Jest to wersja poprawiająca znalezione błędy.\n"
+"\n"
+"Kompletna lista poprawionych błędów znajduje się w pliku <a href=\"/files/"
+"changelog/ChangeLog-1.0.1.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:96
 msgid ""
@@ -3778,10 +3784,9 @@ msgstr "Usuwa opcje dla nie zainstalowanych skryptów."
 
 #. Translators: description for script "im_rename.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:455
-#, fuzzy
 msgid "Rename Facebook/Google+ usernames when using Minbif."
 msgstr ""
-"Zmiana nazw użytkowników Facebooka podczas korzystania z Bitlbee lub Minbif."
+"Zmiana nazw użytkowników Facebooka/Google+ podczas korzystania z Minbif."
 
 #. Translators: description for script "autoconnect.py" (0.3.2+)
 #: plugins/_i18n_plugins.py:457
@@ -4534,7 +4539,7 @@ msgstr "wpisz \"no\" jeśli  nie jesteś spamerem"
 
 #: plugins/models.py:324 themes/models.py:206
 msgid "Choose..."
-msgstr ""
+msgstr "Wybierz..."
 
 #: plugins/models.py:339 templates/plugins/source.html:13
 msgid "Script"
@@ -5245,7 +5250,7 @@ msgid "Mailing list"
 msgstr "Lista mailingowa"
 
 #: templates/dev/support.html:54
-#, fuzzy, python-format
+#, python-format
 #| msgid ""
 #| "There are <a href=\"https://savannah.nongnu.org/mail/?group=weechat\" "
 #| "target=\"_blank\">3 mailing lists <img src=\"%(MEDIA_URL)simages/link.png"
@@ -5257,7 +5262,7 @@ msgid ""
 msgstr ""
 "Dostępne są <a href=\"https://savannah.nongnu.org/mail/?group=weechat\" "
 "target=\"_blank\">3 listy mailingowe <img src=\"%(MEDIA_URL)simages/link.png"
-"\" width=\"16\" height=\"16\" alt=\"\" /></a>:"
+"\" width=\"16\" height=\"16\" alt=\">>\" /></a>:"
 
 #: templates/dev/support.html:58
 msgid "<strong>weechat-security</strong> (security advisories about WeeChat):"
@@ -5364,7 +5369,6 @@ msgid "More information about WeeChat translations:"
 msgstr "Więcej informacji o tłumaczeniach Weechat:"
 
 #: templates/download/debian.html:13
-#, fuzzy
 #| msgid ""
 #| "<strong>Warning:</strong> these Debian packages are unofficial, not "
 #| "signed, and come with absolutely no guarantees."
@@ -5373,7 +5377,7 @@ msgid ""
 "and come with absolutely no guarantees (see instuctions below)."
 msgstr ""
 "<strong>Ostrzeżenie:</strong> to są nieoficjalne pakiety Debiana, nie "
-"podpisane i nie posiadają żadnej gwarancji."
+"podpisane i nie posiadają żadnej gwarancji (zobacz poniższe instrukcje)."
 
 #: templates/download/debian.html:26
 msgid "Important"
@@ -5397,52 +5401,57 @@ msgstr "pliki"
 
 #: templates/download/debian.html:87
 msgid "Instructions:"
-msgstr ""
+msgstr "Instrukcje:"
 
 #: templates/download/debian.html:92
 msgid ""
 "You must use apt, apt-get or aptitude to install the packages (with sudo or "
 "as \"root\" user)."
 msgstr ""
+"Musisz użyć aplikacji apt, apt-get lub aptitude do zainstalowania pakietów "
+"(za pomocą sudo lub jako użytkownik \"root\")."
 
 #: templates/download/debian.html:93
 msgid "The following examples use sudo and aptitude."
-msgstr ""
+msgstr "Poniższe przykłady używają sudo i aptitude."
 
 #: templates/download/debian.html:96
 msgid "Install https transport for apt:"
-msgstr ""
+msgstr "Zainstaluj obsługę https dla apta:"
 
 #: templates/download/debian.html:98
 msgid ""
 "Otherwise you can replace \"https://\" by \"http://\" in URLs (less secure)."
 msgstr ""
+"Inaczej możesz zamienić \"https://\" na \"http://\" w adresach URL (mniej "
+"bezpieczne)."
 
 #: templates/download/debian.html:101
 msgid ""
 "Create a weechat.list file with the repository, according to your Debian "
 "version."
-msgstr ""
+msgstr "Stwórz plik weechat.list z repozytorium dla twojej wersji Debiana."
 
 #: templates/download/debian.html:102
 msgid "For example on Debian “sid” (unstable):"
-msgstr ""
+msgstr "Na przykład dla Debiana \"sid\" (niestabilny):"
 
 #: templates/download/debian.html:106
 msgid "Resynchronize your package index files:"
-msgstr ""
+msgstr "Zsynchronizuj informacje o dostępnych pakietach:"
 
 #: templates/download/debian.html:110
 msgid ""
 "Install the packages; the \"plugins\" package is highly recommended but not "
 "mandatory."
 msgstr ""
+"Zainstaluj następujące pakiety; pakiet \"plugins\" jest zalecany ale nie "
+"obowiązkowy."
 
 #: templates/download/debian.html:111
-#, fuzzy
 #| msgid "or development version"
 msgid "For example development version:"
-msgstr "lub wersja rozwojowa"
+msgstr "Na przykład wersja rozwojowa:"
 
 #: templates/download/debian.html:121
 msgid "No debian repository."
@@ -5860,9 +5869,8 @@ msgid "Statistics"
 msgstr "Statystyki"
 
 #: templates/menu.html:63
-#, fuzzy
 msgid "Repositories"
-msgstr "Repozytoria Debiana"
+msgstr "Repozytoria"
 
 #: templates/plugins/add.html:15 templates/plugins/update.html:16
 msgid ""
