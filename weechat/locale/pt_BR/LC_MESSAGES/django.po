@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-21 20:13+0100\n"
+"POT-Creation-Date: 2015-01-11 11:23+0000\n"
 "PO-Revision-Date: 2014-11-25 20:32+0100\n"
 "Last-Translator: Alexandre Bolelli <semeion7@gmail.com>\n"
 "Language-Team: Portuguese <semeion7@gmail.com>\n"
@@ -29,6 +29,40 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: settings.py:60 doc/models.py:32 templates/menu.html:23
+#: templates/menu.html.py:24 templates/dev/support.html:26
+msgid "English"
+msgstr "Inglês"
+
+#: settings.py:61 doc/models.py:34 templates/dev/support.html:27
+msgid "French"
+msgstr "Francês"
+
+#: settings.py:62 doc/models.py:31 templates/dev/support.html:33
+msgid "German"
+msgstr "Alemão"
+
+#: settings.py:63 doc/models.py:36
+msgid "Italian"
+msgstr "Italiano"
+
+#: settings.py:64 doc/models.py:38
+msgid "Polish"
+msgstr "Polonês"
+
+#: settings.py:65 doc/models.py:39
+msgid "Portuguese (Brazil)"
+msgstr "Portugues (Brasil)"
+
+#: settings.py:66 doc/models.py:37
+msgid "Japanese"
+msgstr "Japonês"
+
+#. Translators: this is a date format, see: http://uk3.php.net/manual/en/function.date.php (note: the result string must be short, use abbreviation for month if possible)
+#: settings.py:158
+msgid "M j, Y"
+msgstr "d/m/Y"
 
 #: about/_i18n_keydates.py:6
 msgid "256 colors, irc proxy, rmodifier, redirection of irc commands."
@@ -190,42 +224,13 @@ msgstr ""
 msgid "Czech"
 msgstr "Tcheco"
 
-#: doc/models.py:31 settings.py:62 templates/dev/support.html:33
-msgid "German"
-msgstr "Alemão"
-
-#: doc/models.py:32 settings.py:60 templates/dev/support.html:26
-#: templates/menu.html:23 templates/menu.html.py:24
-msgid "English"
-msgstr "Inglês"
-
 #: doc/models.py:33
 msgid "Spanish"
 msgstr "Espanhol"
 
-#: doc/models.py:34 settings.py:61 templates/dev/support.html:27
-msgid "French"
-msgstr "Francês"
-
 #: doc/models.py:35
 msgid "Hungarian"
 msgstr "Húngaro"
-
-#: doc/models.py:36 settings.py:63
-msgid "Italian"
-msgstr "Italiano"
-
-#: doc/models.py:37 settings.py:66
-msgid "Japanese"
-msgstr "Japonês"
-
-#: doc/models.py:38 settings.py:64
-msgid "Polish"
-msgstr "Polonês"
-
-#: doc/models.py:39 settings.py:65
-msgid "Portuguese (Brazil)"
-msgstr "Portugues (Brasil)"
 
 #: doc/models.py:40
 msgid "Russian"
@@ -2277,6 +2282,57 @@ msgid ""
 msgstr ""
 
 #: news/_i18n_info.py:96
+#, fuzzy
+msgid ""
+"Version 1.1 is available!\n"
+"\n"
+"Among the new features:\n"
+"\n"
+"- complete inline commands in input\n"
+"- allow incomplete commands if unambiguous\n"
+"- improve speed of completions\n"
+"- add bar item and signals for mouse status\n"
+"- use bar conditions on root bars\n"
+"- add option \"reorder\" in command /server\n"
+"- open irc channel buffers before the join is received from server\n"
+"- add server option \"sasl_fail\"\n"
+"- add support for color codes 16-99 in IRC messages\n"
+"- disable SSLv3 by default\n"
+"- add support of IRC capability \"extended-join\"\n"
+"- add options \"stop\" and \"start\" in command /relay\n"
+"- use HTTPS by default in script plugin for downloads\n"
+"- add option \"restore\" in command /trigger\n"
+"- evaluate and replace regex groups at same time in trigger (new and "
+"incompatible format)\n"
+"- many bugs fixed.\n"
+"\n"
+"For complete list of new features and bugs fixed, please look at <a href="
+"\"http://dev.weechat.org/post/2015/01/11/Version-1.1\">development blog</a> "
+"or <a href=\"/files/changelog/ChangeLog-1.1.html\">ChangeLog</a>."
+msgstr ""
+"Versão 0.4.0 está disponível!\n"
+"\n"
+"Entre as novas características:\n"
+"- adição da opção \"diff\" para o comando /set, exibe valores padrão na "
+"saída de /set\n"
+"- adição de suporte à cores em opções de prefixo\n"
+"- adição do comando /eval, usa expressões em condições para barras\n"
+"- conecta-se por padrão com IPv6 em servidores com fallback para IPv4\n"
+"- adição de sugestões ortográficas\n"
+"- adição de suporte à tags em mensagens irc e capacidade de \"server-time\"\n"
+"- adição do comando IRC /quiet\n"
+"- adição de suporte à IPv6 no plugin de retransmissão\n"
+"- adição de backlog para protocolo irc no plugin de retransmissão\n"
+"- exibe endereço IP remoto para chat/arquivo DCC no plugin xfer\n"
+"- adição da versão git na compilação\n"
+"- muitos bugs corrigidos.\n"
+"\n"
+"Para uma lista completa de novas features e bugs corrigidos, olhe no <a href="
+"\"http://dev.weechat.org/post/2013/01/20/Version-0.4.0\">blog de "
+"desenvolvimento</a> ou <a href=\"/files/changelog/ChangeLog-0.4.0.html"
+"\">ChangeLog</a>."
+
+#: news/_i18n_info.py:97
 msgid ""
 "Version v0.1.2 is available!\n"
 "\n"
@@ -2308,11 +2364,11 @@ msgstr ""
 "Add-on, 2005/05/24: corrigido crash na inicialização e detecção Perl/Python, "
 "a versão agora é 0.1.2.1."
 
-#: news/_i18n_info.py:97
+#: news/_i18n_info.py:98
 msgid "WeeChat - Wee Enhanced Environment for Chat"
 msgstr "WeeChat - Wee Enhanced Environment for Chat"
 
-#: news/_i18n_info.py:98
+#: news/_i18n_info.py:99
 msgid ""
 "WeeChat has many new important features since some weeks:\n"
 "- multi-windows management (with horizontal and vertical window split)\n"
@@ -2337,12 +2393,12 @@ msgstr ""
 "Sinta-se livre para relatar qualquer problema ou sugestão para melhorar a "
 "navegação entre buffers/windows."
 
-#: news/_i18n_info.py:99
+#: news/_i18n_info.py:100
 #, fuzzy
 msgid "WeeChat in Cygwin"
 msgstr "WeeChat é:"
 
-#: news/_i18n_info.py:100
+#: news/_i18n_info.py:101
 msgid ""
 "WeeChat is now in Cygwin, and can be installed with setup.exe.\n"
 "Version 0.4.2 is available for 32 and 64-bit Cygwin.\n"
@@ -2351,7 +2407,7 @@ msgid ""
 "yet available in Cygwin."
 msgstr ""
 
-#: news/_i18n_info.py:101
+#: news/_i18n_info.py:102
 msgid ""
 "WeeChat project is started.\n"
 "\n"
@@ -2371,7 +2427,7 @@ msgstr ""
 "- rápida, leve e extensível com scripts\n"
 "- ..."
 
-#: news/_i18n_info.py:102
+#: news/_i18n_info.py:103
 msgid ""
 "WeeChat project now accepts donations via Paypal account, with secured "
 "payment."
@@ -2379,7 +2435,7 @@ msgstr ""
 "O projeto WeeChat agora aceita doações via conta Paypal, com pagamento "
 "seguro."
 
-#: news/_i18n_info.py:103
+#: news/_i18n_info.py:104
 msgid ""
 "WeeChat repositories (weechat, scripts, qweechat) have been moved to GitHub, "
 "in WeeChat organization: <a href=\"https://github.com/weechat\">https://"
@@ -2389,15 +2445,15 @@ msgid ""
 "post/2014/03/03/Git-repositories-moved-to-Github\">development blog</a>."
 msgstr ""
 
-#: news/_i18n_info.py:104
+#: news/_i18n_info.py:105
 msgid "WeeChat screenshot"
 msgstr "Screenshot WeeChat"
 
-#: news/_i18n_info.py:105
+#: news/_i18n_info.py:106
 msgid "WeeChat scripts page"
 msgstr "Página de scripts do WeeChat"
 
-#: news/_i18n_info.py:106
+#: news/_i18n_info.py:107
 msgid ""
 "WeeChat scripts page (today Perl scripts only) has been added.\n"
 "On this page you can submit your script (need to be approved by WeeChat "
@@ -2413,7 +2469,7 @@ msgstr ""
 "Nota: scripts Perl requerem a versão de WeeChat > 0.0.3, então hoje você "
 "deve baixar a versão de desenvolvimento."
 
-#: news/_i18n_info.py:107
+#: news/_i18n_info.py:108
 msgid ""
 "WeeChat story page is now available, as screenshots. You can see differences "
 "between all versions in one view!\n"
@@ -2423,15 +2479,15 @@ msgstr ""
 "as diferenças entre todas as versões em um só lugar!\n"
 "A versão de desenvolvimento é visível também, e atualizada com freqüência."
 
-#: news/_i18n_info.py:108
+#: news/_i18n_info.py:109
 msgid "WeeChat users map"
 msgstr "Mapa de usuários do WeeChat"
 
-#: news/_i18n_info.py:109
+#: news/_i18n_info.py:110
 msgid "WeeChat will merge with irssi"
 msgstr "WeeChat irá se fundir com o irssi"
 
-#: news/_i18n_info.py:110
+#: news/_i18n_info.py:111
 msgid ""
 "WeeChat, the fast, light and extensible IRC client, is released for the "
 "first time, version 0.0.1.\n"
@@ -4464,11 +4520,6 @@ msgstr "Usado para Git commits"
 msgid "changes in this release"
 msgstr "mudanças nesta versão"
 
-#. Translators: this is a date format, see: http://uk3.php.net/manual/en/function.date.php (note: the result string must be short, use abbreviation for month if possible)
-#: settings.py:158
-msgid "M j, Y"
-msgstr "d/m/Y"
-
 #: templates/403.html:5
 msgid "Error 403: forbidden"
 msgstr "Erro 403: proibido"
@@ -4506,27 +4557,158 @@ msgstr ""
 "Você pode voltar para o Inicio do WeeChat com o link abaixo,<br />ou reporte "
 "link quebrado"
 
-#: templates/about/about.html:5
-msgid "about"
-msgstr "sobre"
+#: templates/base.html:15
+msgid "WeeChat, the extensible chat client"
+msgstr "WeeChat, o cliente de bate-papo extensível"
 
-#: templates/about/about.html:13 templates/about/history.html:39
-#: templates/home/home.html:39 templates/menu.html:11
+#: templates/base.html:85
+#, fuzzy
+msgid "About WeeChat.org"
+msgstr "Sobre o Weechat"
+
+#: templates/base.html:87
+msgid "Valid"
+msgstr "Válido"
+
+#: templates/error.html:11 templates/home/home.html:104
+msgid "Back to home"
+msgstr "Voltar à página inicial"
+
+#: templates/maintenance.html:5
+msgid "temporarily unavailable"
+msgstr "temporariamente indisponível"
+
+#: templates/maintenance.html:9
+msgid "This page is under maintenance."
+msgstr "Esta página está em manutenção."
+
+#: templates/maintenance.html:13
+msgid "Page will be back soon, please come back later."
+msgstr "Página estará de volta em breve, por favor, volte mais tarde."
+
+#: templates/maintenance.html:15 templates/plugins/add_ok.html:16
+#: templates/plugins/update_ok.html:14 templates/themes/add_ok.html:16
+#: templates/themes/update_ok.html:14
+msgid "Thank you for your patience."
+msgstr "Obrigado pela sua paciência."
+
+#: templates/maintenance.html:17
+msgid "Back"
+msgstr "Voltar"
+
+# Home = Casa
+# House = Casa
+# website home = página inicial
+#: templates/menu.html:2
+msgid "Home"
+msgstr "Página Inicial"
+
+#: templates/menu.html:4 templates/home/home.html:63
+msgid "Latest news"
+msgstr "Últimas notícias"
+
+#: templates/menu.html:5 templates/home/home.html:83
+msgid "Upcoming events"
+msgstr "Próximos eventos"
+
+#: templates/menu.html:9
+msgid "About"
+msgstr "Sobre"
+
+#: templates/menu.html:11 templates/about/about.html:13
+#: templates/about/history.html:39 templates/home/home.html:39
 msgid "Features"
 msgstr "Características"
 
-#: templates/about/about.html:14 templates/menu.html:12
+#: templates/menu.html:12 templates/about/about.html:14
 msgid "Screenshots"
 msgstr "Fotos"
 
-#: templates/about/about.html:15 templates/menu.html:13
+#: templates/menu.html:13 templates/about/about.html:15
 msgid "History"
 msgstr "História"
 
-#: templates/about/about.html:16 templates/home/home.html:53
-#: templates/menu.html:14
+#: templates/menu.html:14 templates/about/about.html:16
+#: templates/home/home.html:53
 msgid "Make a donation"
 msgstr "Faça uma doação"
+
+#: templates/menu.html:21
+msgid "Docs (stable)"
+msgstr "Docs (estável)"
+
+#: templates/menu.html:22
+msgid "Docs (devel)"
+msgstr "Docs (desenvolvimento)"
+
+#: templates/menu.html:28 templates/home/home.html:40
+#: templates/plugins/source.html:17 templates/themes/source.html:16
+msgid "Download"
+msgstr "Baixar"
+
+#: templates/menu.html:30
+msgid "Stable version"
+msgstr "Versão estável"
+
+#: templates/menu.html:31
+#, fuzzy
+msgid "Dev version"
+msgstr "Nova versão"
+
+#: templates/menu.html:32
+msgid "Debian repositories"
+msgstr "Repositórios Debian"
+
+#: templates/menu.html:33
+msgid "Security issues"
+msgstr "Problemas de segurança"
+
+#: templates/menu.html:37 templates/dev/stats.html:15
+#: templates/plugins/plugins.html:13
+msgid "Scripts"
+msgstr "Scripts"
+
+#: templates/menu.html:39
+msgid "Browse scripts"
+msgstr "Navegar pelos scripts"
+
+#: templates/menu.html:40 templates/plugins/plugins.html:14
+msgid "Add script"
+msgstr "Adicionar script"
+
+#: templates/menu.html:41 templates/plugins/plugins.html:15
+msgid "Update script"
+msgstr "Atualizar script"
+
+#: templates/menu.html:42 templates/plugins/plugins.html:16
+msgid "Pending scripts"
+msgstr "Scripts pendentes"
+
+#: templates/menu.html:43 templates/plugins/plugins.html:17
+msgid "Unofficial scripts"
+msgstr "Scripts não-oficiais"
+
+#: templates/menu.html:59 templates/dev/dev.html:13
+msgid "Roadmap"
+msgstr "Roteiro"
+
+#: templates/menu.html:60
+msgid "Statistics"
+msgstr "Estatísticas"
+
+# i need know the complete paragraph, here can be: Apoio or Suporte
+#: templates/menu.html:61 templates/dev/dev.html:16
+msgid "Support"
+msgstr "Suporte"
+
+#: templates/menu.html:63
+#, fuzzy
+msgid "Repositories"
+msgstr "Repositórios Debian"
+
+#: templates/about/about.html:5
+msgid "about"
+msgstr "sobre"
 
 #: templates/about/donate.html:5
 msgid "donate"
@@ -4973,26 +5155,9 @@ msgid ""
 "WeeChat.org is hosted by <a href=\"https://www.hetzner.de/en/\">Hetzner</a>."
 msgstr ""
 
-#: templates/base.html:15
-msgid "WeeChat, the extensible chat client"
-msgstr "WeeChat, o cliente de bate-papo extensível"
-
-#: templates/base.html:85
-#, fuzzy
-msgid "About WeeChat.org"
-msgstr "Sobre o Weechat"
-
-#: templates/base.html:87
-msgid "Valid"
-msgstr "Válido"
-
 #: templates/dev/dev.html:5
 msgid "dev"
 msgstr "dev"
-
-#: templates/dev/dev.html:13 templates/menu.html:59
-msgid "Roadmap"
-msgstr "Roteiro"
 
 #: templates/dev/dev.html:14
 msgid "Stats"
@@ -5001,11 +5166,6 @@ msgstr "Estatísticas"
 #: templates/dev/dev.html:15 templates/dev/info_list.html:17
 msgid "Info"
 msgstr "Info"
-
-# i need know the complete paragraph, here can be: Apoio or Suporte
-#: templates/dev/dev.html:16 templates/menu.html:61
-msgid "Support"
-msgstr "Suporte"
 
 #: templates/dev/info_list.html:5
 msgid "info"
@@ -5080,11 +5240,6 @@ msgstr "Concluído"
 #: templates/dev/stats.html:5
 msgid "statistics"
 msgstr "estatísticas"
-
-#: templates/dev/stats.html:15 templates/menu.html:37
-#: templates/plugins/plugins.html:13
-msgid "Scripts"
-msgstr "Scripts"
 
 #: templates/dev/stats.html:23
 msgid "Git repository:"
@@ -5288,9 +5443,6 @@ msgstr "Mais informações sobre traduções do WeeChat:"
 
 #: templates/download/debian.html:13
 #, fuzzy
-#| msgid ""
-#| "<strong>Warning:</strong> these Debian packages are unofficial, not "
-#| "signed, and come with absolutely no guarantees."
 msgid ""
 "<strong>Warning:</strong> these Debian packages are unofficial, not signed, "
 "and come with absolutely no guarantees (see instuctions below)."
@@ -5363,7 +5515,6 @@ msgstr ""
 
 #: templates/download/debian.html:111
 #, fuzzy
-#| msgid "or development version"
 msgid "For example development version:"
 msgstr "ou versão de desenvolvimento"
 
@@ -5605,10 +5756,6 @@ msgstr ""
 "problema crítico, risco de danos no seu sistema. <strong>VocE DEVE atualizar "
 "imediatamente!</strong>"
 
-#: templates/error.html:11 templates/home/home.html:104
-msgid "Back to home"
-msgstr "Voltar à página inicial"
-
 #: templates/home/home.html:16
 msgid "About WeeChat"
 msgstr "Sobre o Weechat"
@@ -5667,11 +5814,6 @@ msgstr "A última versão estável do WeeChat é"
 msgid "released on"
 msgstr "lançado em"
 
-#: templates/home/home.html:40 templates/menu.html:28
-#: templates/plugins/source.html:17 templates/themes/source.html:16
-msgid "Download"
-msgstr "Baixar"
-
 #: templates/home/home.html:43
 msgid "Get involved!"
 msgstr "Involva-se!"
@@ -5702,101 +5844,6 @@ msgstr ""
 #: templates/home/home.html:63 templates/home/home.html.py:83
 msgid "More"
 msgstr "Mais"
-
-#: templates/home/home.html:63 templates/menu.html:4
-msgid "Latest news"
-msgstr "Últimas notícias"
-
-#: templates/home/home.html:83 templates/menu.html:5
-msgid "Upcoming events"
-msgstr "Próximos eventos"
-
-#: templates/maintenance.html:5
-msgid "temporarily unavailable"
-msgstr "temporariamente indisponível"
-
-#: templates/maintenance.html:9
-msgid "This page is under maintenance."
-msgstr "Esta página está em manutenção."
-
-#: templates/maintenance.html:13
-msgid "Page will be back soon, please come back later."
-msgstr "Página estará de volta em breve, por favor, volte mais tarde."
-
-#: templates/maintenance.html:15 templates/plugins/add_ok.html:16
-#: templates/plugins/update_ok.html:14 templates/themes/add_ok.html:16
-#: templates/themes/update_ok.html:14
-msgid "Thank you for your patience."
-msgstr "Obrigado pela sua paciência."
-
-#: templates/maintenance.html:17
-msgid "Back"
-msgstr "Voltar"
-
-# Home = Casa
-# House = Casa
-# website home = página inicial
-#: templates/menu.html:2
-msgid "Home"
-msgstr "Página Inicial"
-
-#: templates/menu.html:9
-msgid "About"
-msgstr "Sobre"
-
-#: templates/menu.html:21
-msgid "Docs (stable)"
-msgstr "Docs (estável)"
-
-#: templates/menu.html:22
-msgid "Docs (devel)"
-msgstr "Docs (desenvolvimento)"
-
-#: templates/menu.html:30
-msgid "Stable version"
-msgstr "Versão estável"
-
-#: templates/menu.html:31
-#, fuzzy
-msgid "Dev version"
-msgstr "Nova versão"
-
-#: templates/menu.html:32
-msgid "Debian repositories"
-msgstr "Repositórios Debian"
-
-#: templates/menu.html:33
-msgid "Security issues"
-msgstr "Problemas de segurança"
-
-#: templates/menu.html:39
-msgid "Browse scripts"
-msgstr "Navegar pelos scripts"
-
-#: templates/menu.html:40 templates/plugins/plugins.html:14
-msgid "Add script"
-msgstr "Adicionar script"
-
-#: templates/menu.html:41 templates/plugins/plugins.html:15
-msgid "Update script"
-msgstr "Atualizar script"
-
-#: templates/menu.html:42 templates/plugins/plugins.html:16
-msgid "Pending scripts"
-msgstr "Scripts pendentes"
-
-#: templates/menu.html:43 templates/plugins/plugins.html:17
-msgid "Unofficial scripts"
-msgstr "Scripts não-oficiais"
-
-#: templates/menu.html:60
-msgid "Statistics"
-msgstr "Estatísticas"
-
-#: templates/menu.html:63
-#, fuzzy
-msgid "Repositories"
-msgstr "Repositórios Debian"
 
 #: templates/plugins/add.html:15 templates/plugins/update.html:16
 msgid ""
