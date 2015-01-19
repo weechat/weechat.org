@@ -536,7 +536,7 @@ _i18n_plugins_plugins = [
     # Translators: description for script "amqp_notify.rb" (0.3.3+)
     gettext_lazy("Send private messages and highlights to an AMQP exchange."),
     # Translators: description for script "pushover.pl" (0.3.7+)
-    gettext_lazy("Send push notifications to your mobile devices using Pushover or NMA."),
+    gettext_lazy("Send push notifications to your mobile devices using Pushover, NMA or Pushbullet."),
     # Translators: description for script "ragefaces.pl" (0.3.0+)
     gettext_lazy("Send ragefac.es URLs."),
     # Translators: description for script "remnotify.pl" (0.0.1-0.2.6)
