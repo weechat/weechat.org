@@ -24,7 +24,7 @@ from datetime import datetime
 from math import ceil
 from os import path, listdir
 
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, redirect
 from django.template import RequestContext
 from django.utils.translation import ugettext
 
@@ -45,6 +45,13 @@ I18N_MAINTAINER = {
     'es': ('-', ''),
     'cs': ('-', ''),
     'hu': ('-', ''),
+}
+
+DOC_SHORTCUT_ALIAS = {
+    'quick': 'quickstart',
+    'plugin': 'plugin_api',
+    'api': 'plugin_api',
+    'relay': 'relay_protocol',
 }
 
 
@@ -170,3 +177,21 @@ def documentation(request, version='stable'):
             'doc_version': Release.objects.get(version=version).description,
         },
         context_instance=RequestContext(request))
+
+def documentation_link(request, version='devel', name=None, lang='en'):
+    """
+    Shortcuts to docs, with English and devel version as default.
+
+    For example:
+      /doc/api           => /files/doc/devel/weechat_plugin_api.en.html
+      /doc/api/fr        => /files/doc/devel/weechat_plugin_api.fr.html
+      /doc/stable/api/fr => /files/doc/stable/weechat_plugin_api.fr.html
+      /doc/user          => /files/doc/devel/weechat_user.en.html
+    """
+    if version and name and lang:
+        doc_name = DOC_SHORTCUT_ALIAS.get(name, name)
+        filename = 'weechat_%s.%s.html' % (doc_name, lang)
+        full_name = files_path_join('doc', version, filename)
+        if path.exists(full_name):
+            return redirect('/files/doc/%s/%s' % (version, filename))
+    return redirect('doc')

@@ -29,4 +29,14 @@ urlpatterns = patterns(
     url(r'^$', 'weechat.doc.views.documentation', name='doc'),
     url(r'^(?P<version>stable|devel|old)/$',
         'weechat.doc.views.documentation', name='doc_version'),
+
+    # shortcuts
+    url(r'^(?P<version>stable|devel)/(?P<name>[a-z_]+)/$',
+        'weechat.doc.views.documentation_link'),
+    url(r'^(?P<name>[a-z_]+)/$',
+        'weechat.doc.views.documentation_link'),
+    url(r'^(?P<version>stable|devel)/(?P<name>[a-z_]+)/(?P<lang>[a-z_]+)/$',
+        'weechat.doc.views.documentation_link'),
+    url(r'^(?P<name>[a-z_]+)/(?P<lang>[a-z_]+)/$',
+        'weechat.doc.views.documentation_link'),
 )
