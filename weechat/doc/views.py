@@ -178,6 +178,7 @@ def documentation(request, version='stable'):
         },
         context_instance=RequestContext(request))
 
+
 def documentation_link(request, version='devel', name=None, lang='en'):
     """
     Shortcuts to docs, with English and devel version as default.
