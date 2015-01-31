@@ -100,7 +100,7 @@
       <li>
         {% trans "Create a weechat.list file with the repository, according to your Debian version." %}
         <br />{% trans "For example on Debian “sid” (unstable):" %}
-        <br /><kbd>$ sudo echo "deb https://weechat.org/debian sid main" >/etc/apt/sources.list.d/weechat.list</kbd>
+        <br /><kbd>$ sudo bash -c "echo 'deb https://weechat.org/debian sid main' >/etc/apt/sources.list.d/weechat.list"</kbd>
       </li>
       <li>
         {% trans "Resynchronize your package index files:" %}
