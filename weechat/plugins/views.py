@@ -48,6 +48,7 @@ PYGMENTS_LEXER = {
     'lua': 'lua',
     'tcl': 'tcl',
     'scm': 'scheme',
+    'js': 'javascript',
 }
 
 

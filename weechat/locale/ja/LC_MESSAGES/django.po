@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-19 20:12+0000\n"
+"POT-Creation-Date: 2015-03-14 12:07+0100\n"
 "PO-Revision-Date: 2015-01-25 14:01+0900\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <i38w7i3@yahoo.co.jp>\n"
@@ -29,40 +29,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#: settings.py:60 doc/models.py:32 templates/menu.html:23
-#: templates/menu.html.py:24 templates/dev/support.html:26
-msgid "English"
-msgstr "英語"
-
-#: settings.py:61 doc/models.py:34 templates/dev/support.html:27
-msgid "French"
-msgstr "フランス語"
-
-#: settings.py:62 doc/models.py:31 templates/dev/support.html:33
-msgid "German"
-msgstr "ドイツ語"
-
-#: settings.py:63 doc/models.py:36
-msgid "Italian"
-msgstr "イタリア語"
-
-#: settings.py:64 doc/models.py:38
-msgid "Polish"
-msgstr "ポーランド語"
-
-#: settings.py:65 doc/models.py:39
-msgid "Portuguese (Brazil)"
-msgstr "ポルトガル語 (ブラジル)"
-
-#: settings.py:66 doc/models.py:37
-msgid "Japanese"
-msgstr "日本語"
-
-#. Translators: this is a date format, see: http://uk3.php.net/manual/en/function.date.php (note: the result string must be short, use abbreviation for month if possible)
-#: settings.py:158
-msgid "M j, Y"
-msgstr "Y 年 m 月 j 日"
 
 #: about/_i18n_keydates.py:6
 msgid "256 colors, irc proxy, rmodifier, redirection of irc commands."
@@ -187,8 +153,8 @@ msgstr "安定版のバージョン番号"
 msgid ""
 "stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
-"安定版のバージョン番号 (数表記)、プラグイン API における info_get"
-"(\"version_number\") と同様"
+"安定版のバージョン番号 (数表記)、プラグイン API における "
+"info_get(\"version_number\") と同様"
 
 #: dev/views.py:46
 msgid "date of stable version"
@@ -214,8 +180,8 @@ msgstr "次期安定版のバージョン番号"
 msgid ""
 "next stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
-"次期安定版のバージョン番号 (数表記)、プラグイン API における info_get"
-"(\"version_number\") と同様<"
+"次期安定版のバージョン番号 (数表記)、プラグイン API における "
+"info_get(\"version_number\") と同様<"
 
 #: dev/views.py:71
 msgid "approximate date of next stable version"
@@ -229,13 +195,42 @@ msgstr "全ての情報 (1 行に 1 情報、フォーマット: \"info:value\")
 msgid "Czech"
 msgstr "チェコ語"
 
+#: doc/models.py:31 settings.py:62 templates/dev/support.html:33
+msgid "German"
+msgstr "ドイツ語"
+
+#: doc/models.py:32 settings.py:60 templates/dev/support.html:26
+#: templates/menu.html:23 templates/menu.html.py:24
+msgid "English"
+msgstr "英語"
+
 #: doc/models.py:33
 msgid "Spanish"
 msgstr "スペイン語"
 
+#: doc/models.py:34 settings.py:61 templates/dev/support.html:27
+msgid "French"
+msgstr "フランス語"
+
 #: doc/models.py:35
 msgid "Hungarian"
 msgstr "ハンガリー語"
+
+#: doc/models.py:36 settings.py:63
+msgid "Italian"
+msgstr "イタリア語"
+
+#: doc/models.py:37 settings.py:66
+msgid "Japanese"
+msgstr "日本語"
+
+#: doc/models.py:38 settings.py:64
+msgid "Polish"
+msgstr "ポーランド語"
+
+#: doc/models.py:39 settings.py:65
+msgid "Portuguese (Brazil)"
+msgstr "ポルトガル語 (ブラジル)"
 
 #: doc/models.py:40
 msgid "Russian"
@@ -822,7 +817,7 @@ msgstr ""
 "次期バージョン 0.3.0 をリリースするための 3 番目のリリース候補版 (バージョン "
 "0.3.0-rc3) です。"
 
-#: news/_i18n_info.py:49 plugins/models.py:259 templates/about/history.html:38
+#: news/_i18n_info.py:49 plugins/models.py:261 templates/about/history.html:38
 #: templates/doc/doc.html:28 templates/download/packages.html:44
 #: templates/plugins/list.html:69 templates/plugins/pending.html:32
 msgid "Version"
@@ -4386,20 +4381,20 @@ msgstr "iChat スタイルのタイムスタンプ。"
 msgid "iTunes control and now playing script."
 msgstr "iTunes の操作と現在再生中曲に関する情報を得るスクリプト。"
 
-#: plugins/models.py:113
+#: plugins/models.py:114
 msgid "Popular script"
 msgstr "人気のスクリプト"
 
-#: plugins/models.py:183 plugins/models.py:204 plugins/models.py:207
+#: plugins/models.py:184 plugins/models.py:205 plugins/models.py:208
 #: themes/models.py:125 themes/models.py:128
 msgid "This field is required."
 msgstr "このフィールドは必須です。"
 
-#: plugins/models.py:186
+#: plugins/models.py:187
 msgid "This name is invalid."
 msgstr "名前が不正です。"
 
-#: plugins/models.py:191
+#: plugins/models.py:192
 msgid ""
 "This name already exists, please choose another name (update script content "
 "accordingly)."
@@ -4407,120 +4402,125 @@ msgstr ""
 "この名前はすでに存在しています。他の名前を選んでください (スクリプトをアップ"
 "デートすることになります)。"
 
-#: plugins/models.py:195
+#: plugins/models.py:196
 msgid "This name is too long (must be max 20 chars)."
 msgstr "名前が長すぎます (最長 20 文字)。"
 
-#: plugins/models.py:248 templates/plugins/list.html:63
+#: plugins/models.py:250 templates/plugins/list.html:63
 #: templates/plugins/list.html.py:65 templates/plugins/pending.html:33
 msgctxt "programming language"
 msgid "Language"
 msgstr "プログラミング言語"
 
-#: plugins/models.py:252 templates/about/donate.html:55
+#: plugins/models.py:254 templates/about/donate.html:55
 #: templates/plugins/list.html:57 templates/plugins/list.html.py:59
 #: templates/plugins/pending.html:29
 msgid "Name"
 msgstr "名称"
 
-#: plugins/models.py:253
+#: plugins/models.py:255
 msgid ""
 "short name of script (max 20 chars, only lower case letters, digits or \"_\")"
 msgstr "スクリプトの短縮名 (最大で 20 文字、小文字、数字、\"_\" のみ使用可)"
 
-#: plugins/models.py:260
+#: plugins/models.py:262
 msgid "version of script (only digits or dots)"
 msgstr "スクリプトのバージョン (数字とドットのみ使用可)"
 
-#: plugins/models.py:265 templates/plugins/list.html:72
+#: plugins/models.py:267 templates/plugins/list.html:72
 #: templates/plugins/list.html.py:74 templates/plugins/pending.html:34
 msgid "License"
 msgstr "ライセンス"
 
-#: plugins/models.py:266
+#: plugins/models.py:268
 msgid "license (for example: GPL3, BSD, ...)"
 msgstr "ライセンス (例: GPL3、BSD、...)"
 
-#: plugins/models.py:270 plugins/models.py:347 templates/doc/doc.html:69
+#: plugins/models.py:272 plugins/models.py:349 templates/doc/doc.html:69
 #: themes/models.py:136 themes/models.py:223
 msgid "File"
 msgstr "ファイル"
 
-#: plugins/models.py:271 plugins/models.py:348
+#: plugins/models.py:273 plugins/models.py:350
 msgid "the script"
 msgstr "スクリプト"
 
-#: plugins/models.py:275 templates/dev/info_list.html:19
+#: plugins/models.py:277 templates/dev/info_list.html:19
 #: templates/dev/roadmap.html:46 templates/download/security.html:31
 #: templates/plugins/list.html:68 templates/plugins/pending.html:30
 #: themes/models.py:143
 msgid "Description"
 msgstr "説明"
 
-#: plugins/models.py:281
+#: plugins/models.py:283
 msgid "Requirements"
 msgstr "実行に必要なもの"
 
-#: plugins/models.py:282 themes/models.py:144
+#: plugins/models.py:284 themes/models.py:144
 msgid "optional"
 msgstr "任意"
 
-#: plugins/models.py:287
+#: plugins/models.py:289
 msgid "Min/max WeeChat"
 msgstr "WeeChat のバージョン"
 
-#: plugins/models.py:290 plugins/models.py:352 themes/models.py:149
+#: plugins/models.py:292 plugins/models.py:354 themes/models.py:149
 #: themes/models.py:229
 msgid "Your name or nick"
 msgstr "名前またはニックネーム"
 
-#: plugins/models.py:291 plugins/models.py:296
+#: plugins/models.py:293 plugins/models.py:298
 msgid "used for scripts page and git commit"
 msgstr "スクリプトページと git コミットに利用"
 
-#: plugins/models.py:295 plugins/models.py:357 themes/models.py:153
+#: plugins/models.py:297 plugins/models.py:359 themes/models.py:153
 #: themes/models.py:233
 msgid "Your e-mail"
 msgstr "電子メールアドレス"
 
-#: plugins/models.py:302 plugins/models.py:363 themes/models.py:160
+#: plugins/models.py:304 plugins/models.py:365 themes/models.py:160
 #: themes/models.py:240
 msgid "Comments"
 msgstr "コメント"
 
-#: plugins/models.py:303 themes/models.py:161 themes/models.py:241
+#: plugins/models.py:305 themes/models.py:161 themes/models.py:241
 msgid "optional, not displayed"
 msgstr "任意、表示されません"
 
-#: plugins/models.py:308 plugins/models.py:369 themes/models.py:166
+#: plugins/models.py:310 plugins/models.py:371 themes/models.py:166
 #: themes/models.py:246
 msgid "Are you a spammer?"
 msgstr "スパマーですか?"
 
-#: plugins/models.py:309 plugins/models.py:370 themes/models.py:167
+#: plugins/models.py:311 plugins/models.py:372 themes/models.py:167
 #: themes/models.py:247
 msgid "enter \"no\" if you are not a spammer"
 msgstr "スパマーでないなら \"no\" と入力"
 
-#: plugins/models.py:324 themes/models.py:206
+#: plugins/models.py:326 themes/models.py:206
 msgid "Choose..."
 msgstr "選択..."
 
-#: plugins/models.py:339 templates/plugins/source.html:13
+#: plugins/models.py:341 templates/plugins/source.html:13
 msgid "Script"
 msgstr "スクリプト"
 
-#: plugins/models.py:343
+#: plugins/models.py:345
 msgid "New version"
 msgstr "新しいバージョン"
 
-#: plugins/models.py:353 plugins/models.py:358
+#: plugins/models.py:355 plugins/models.py:360
 msgid "used for git commit"
 msgstr "git コミットに利用"
 
-#: plugins/models.py:364
+#: plugins/models.py:366
 msgid "changes in this release"
 msgstr "このリリースの変更内容"
+
+#. Translators: this is a date format, see: http://uk3.php.net/manual/en/function.date.php (note: the result string must be short, use abbreviation for month if possible)
+#: settings.py:158
+msgid "M j, Y"
+msgstr "Y 年 m 月 j 日"
 
 #: templates/403.html:5
 msgid "Error 403: forbidden"
@@ -4558,151 +4558,27 @@ msgstr ""
 "以下のリンクから WeeChat のホームに戻るか、<br />壊れたリンクを報告してくださ"
 "い"
 
-#: templates/base.html:15
-msgid "WeeChat, the extensible chat client"
-msgstr "WeeChat、拡張可能なチャットクライアント"
-
-#: templates/base.html:85
-msgid "About WeeChat.org"
-msgstr "WeeChat.org について"
-
-#: templates/base.html:87
-msgid "Valid"
-msgstr "有効"
-
-#: templates/error.html:11 templates/home/home.html:104
-msgid "Back to home"
-msgstr "ホームに戻る"
-
-#: templates/maintenance.html:5
-msgid "temporarily unavailable"
-msgstr "一時的に利用できません"
-
-#: templates/maintenance.html:9
-msgid "This page is under maintenance."
-msgstr "このページはメンテナンス中です。"
-
-#: templates/maintenance.html:13
-msgid "Page will be back soon, please come back later."
-msgstr "ページはまもなく回復します、あとから再度ご訪問ください。"
-
-#: templates/maintenance.html:15 templates/plugins/add_ok.html:16
-#: templates/plugins/update_ok.html:14 templates/themes/add_ok.html:16
-#: templates/themes/update_ok.html:14
-msgid "Thank you for your patience."
-msgstr "ご辛抱に感謝いたします。"
-
-#: templates/maintenance.html:17
-msgid "Back"
-msgstr "戻る"
-
-#: templates/menu.html:2
-msgid "Home"
-msgstr "ホーム"
-
-#: templates/menu.html:4 templates/home/home.html:63
-msgid "Latest news"
-msgstr "最新のニュース"
-
-#: templates/menu.html:5 templates/home/home.html:83
-msgid "Upcoming events"
-msgstr "今後のイベント"
-
-#: templates/menu.html:9
-msgid "About"
-msgstr "概要"
-
-#: templates/menu.html:11 templates/about/about.html:13
-#: templates/about/history.html:39 templates/home/home.html:39
-msgid "Features"
-msgstr "機能"
-
-#: templates/menu.html:12 templates/about/about.html:14
-msgid "Screenshots"
-msgstr "スクリーンショット"
-
-#: templates/menu.html:13 templates/about/about.html:15
-msgid "History"
-msgstr "歴史"
-
-#: templates/menu.html:14 templates/about/about.html:16
-#: templates/home/home.html:53
-msgid "Make a donation"
-msgstr "寄付する"
-
-#: templates/menu.html:21
-msgid "Docs (stable)"
-msgstr "文書 (安定版)"
-
-#: templates/menu.html:22
-msgid "Docs (devel)"
-msgstr "文書 (開発版)"
-
-#: templates/menu.html:28 templates/home/home.html:40
-#: templates/plugins/source.html:17 templates/themes/source.html:16
-msgid "Download"
-msgstr "ダウンロード"
-
-#: templates/menu.html:30
-msgid "Stable version"
-msgstr "安定版"
-
-#: templates/menu.html:31
-msgid "Dev version"
-msgstr "開発版"
-
-#: templates/menu.html:32
-msgid "Debian repositories"
-msgstr "Debian リポジトリ"
-
-#: templates/menu.html:33
-msgid "Security issues"
-msgstr "セキュリティ問題"
-
-#: templates/menu.html:37 templates/dev/stats.html:15
-#: templates/plugins/plugins.html:13
-msgid "Scripts"
-msgstr "スクリプト"
-
-#: templates/menu.html:39
-msgid "Browse scripts"
-msgstr "スクリプトを閲覧"
-
-#: templates/menu.html:40 templates/plugins/plugins.html:14
-msgid "Add script"
-msgstr "スクリプトを追加"
-
-#: templates/menu.html:41 templates/plugins/plugins.html:15
-msgid "Update script"
-msgstr "スクリプトをアップデート"
-
-#: templates/menu.html:42 templates/plugins/plugins.html:16
-msgid "Pending scripts"
-msgstr "承認待ちスクリプト"
-
-#: templates/menu.html:43 templates/plugins/plugins.html:17
-msgid "Unofficial scripts"
-msgstr "非公式スクリプト"
-
-#: templates/menu.html:59 templates/dev/dev.html:13
-msgid "Roadmap"
-msgstr "ロードマップ"
-
-#: templates/menu.html:60
-msgid "Statistics"
-msgstr "統計"
-
-#: templates/menu.html:61 templates/dev/dev.html:16
-msgid "Support"
-msgstr "サポート"
-
-#: templates/menu.html:63
-msgid "Repositories"
-msgstr "リポジトリ"
-
 #: templates/about/about.html:5
 msgid "about"
 msgstr "概要"
+
+#: templates/about/about.html:13 templates/about/history.html:39
+#: templates/home/home.html:39 templates/menu.html:11
+msgid "Features"
+msgstr "機能"
+
+#: templates/about/about.html:14 templates/menu.html:12
+msgid "Screenshots"
+msgstr "スクリーンショット"
+
+#: templates/about/about.html:15 templates/menu.html:13
+msgid "History"
+msgstr "歴史"
+
+#: templates/about/about.html:16 templates/home/home.html:53
+#: templates/menu.html:14
+msgid "Make a donation"
+msgstr "寄付する"
 
 #: templates/about/donate.html:5
 msgid "donate"
@@ -5146,9 +5022,25 @@ msgstr ""
 "WeeChat.org は <a href=\"https://www.hetzner.de/en/\">Hetzner</a> によってホ"
 "ストされています。"
 
+#: templates/base.html:15
+msgid "WeeChat, the extensible chat client"
+msgstr "WeeChat、拡張可能なチャットクライアント"
+
+#: templates/base.html:85
+msgid "About WeeChat.org"
+msgstr "WeeChat.org について"
+
+#: templates/base.html:87
+msgid "Valid"
+msgstr "有効"
+
 #: templates/dev/dev.html:5
 msgid "dev"
 msgstr "開発"
+
+#: templates/dev/dev.html:13 templates/menu.html:59
+msgid "Roadmap"
+msgstr "ロードマップ"
 
 #: templates/dev/dev.html:14
 msgid "Stats"
@@ -5157,6 +5049,10 @@ msgstr "状態"
 #: templates/dev/dev.html:15 templates/dev/info_list.html:17
 msgid "Info"
 msgstr "情報"
+
+#: templates/dev/dev.html:16 templates/menu.html:61
+msgid "Support"
+msgstr "サポート"
 
 #: templates/dev/info_list.html:5
 msgid "info"
@@ -5234,6 +5130,11 @@ msgstr "完了"
 #: templates/dev/stats.html:5
 msgid "statistics"
 msgstr "統計"
+
+#: templates/dev/stats.html:15 templates/menu.html:37
+#: templates/plugins/plugins.html:13
+msgid "Scripts"
+msgstr "スクリプト"
 
 #: templates/dev/stats.html:23
 msgid "Git repository:"
@@ -5744,6 +5645,10 @@ msgstr ""
 "システムを破壊する危険性のある重大な問題。<strong>今すぐアップグレードしてく"
 "ださい!</strong>"
 
+#: templates/error.html:11 templates/home/home.html:104
+msgid "Back to home"
+msgstr "ホームに戻る"
+
 #: templates/home/home.html:16
 msgid "About WeeChat"
 msgstr "WeeChat について"
@@ -5773,8 +5678,13 @@ msgid "<strong>multi-protocols architecture</strong> (mainly IRC)"
 msgstr "<strong>マルチプロトコルアーキテクチャ</strong> (主に IRC)"
 
 #: templates/home/home.html:27
+#, fuzzy
+#| msgid ""
+#| "<strong>extensible</strong> with C, Python, Perl, Ruby, Lua, Tcl and "
+#| "Scheme"
 msgid ""
-"<strong>extensible</strong> with C, Python, Perl, Ruby, Lua, Tcl and Scheme"
+"<strong>extensible</strong> with C, Python, Perl, Ruby, Lua, Tcl, Scheme and "
+"Javascript"
 msgstr ""
 "C 言語、Python、Perl、Ruby、Lua、Tcl、Scheme で<strong>拡張可能</strong>"
 
@@ -5800,6 +5710,11 @@ msgstr "WeeChat の最新の安定版は"
 #: templates/home/home.html:35
 msgid "released on"
 msgstr "リリース日"
+
+#: templates/home/home.html:40 templates/menu.html:28
+#: templates/plugins/source.html:17 templates/themes/source.html:16
+msgid "Download"
+msgstr "ダウンロード"
 
 #: templates/home/home.html:43
 msgid "Get involved!"
@@ -5830,6 +5745,96 @@ msgstr ""
 #: templates/home/home.html:63 templates/home/home.html.py:83
 msgid "More"
 msgstr "その他"
+
+#: templates/home/home.html:63 templates/menu.html:4
+msgid "Latest news"
+msgstr "最新のニュース"
+
+#: templates/home/home.html:83 templates/menu.html:5
+msgid "Upcoming events"
+msgstr "今後のイベント"
+
+#: templates/maintenance.html:5
+msgid "temporarily unavailable"
+msgstr "一時的に利用できません"
+
+#: templates/maintenance.html:9
+msgid "This page is under maintenance."
+msgstr "このページはメンテナンス中です。"
+
+#: templates/maintenance.html:13
+msgid "Page will be back soon, please come back later."
+msgstr "ページはまもなく回復します、あとから再度ご訪問ください。"
+
+#: templates/maintenance.html:15 templates/plugins/add_ok.html:16
+#: templates/plugins/update_ok.html:14 templates/themes/add_ok.html:16
+#: templates/themes/update_ok.html:14
+msgid "Thank you for your patience."
+msgstr "ご辛抱に感謝いたします。"
+
+#: templates/maintenance.html:17
+msgid "Back"
+msgstr "戻る"
+
+#: templates/menu.html:2
+msgid "Home"
+msgstr "ホーム"
+
+#: templates/menu.html:9
+msgid "About"
+msgstr "概要"
+
+#: templates/menu.html:21
+msgid "Docs (stable)"
+msgstr "文書 (安定版)"
+
+#: templates/menu.html:22
+msgid "Docs (devel)"
+msgstr "文書 (開発版)"
+
+#: templates/menu.html:30
+msgid "Stable version"
+msgstr "安定版"
+
+#: templates/menu.html:31
+msgid "Dev version"
+msgstr "開発版"
+
+#: templates/menu.html:32
+msgid "Debian repositories"
+msgstr "Debian リポジトリ"
+
+#: templates/menu.html:33
+msgid "Security issues"
+msgstr "セキュリティ問題"
+
+#: templates/menu.html:39
+msgid "Browse scripts"
+msgstr "スクリプトを閲覧"
+
+#: templates/menu.html:40 templates/plugins/plugins.html:14
+msgid "Add script"
+msgstr "スクリプトを追加"
+
+#: templates/menu.html:41 templates/plugins/plugins.html:15
+msgid "Update script"
+msgstr "スクリプトをアップデート"
+
+#: templates/menu.html:42 templates/plugins/plugins.html:16
+msgid "Pending scripts"
+msgstr "承認待ちスクリプト"
+
+#: templates/menu.html:43 templates/plugins/plugins.html:17
+msgid "Unofficial scripts"
+msgstr "非公式スクリプト"
+
+#: templates/menu.html:60
+msgid "Statistics"
+msgstr "統計"
+
+#: templates/menu.html:63
+msgid "Repositories"
+msgstr "リポジトリ"
 
 #: templates/plugins/add.html:15 templates/plugins/update.html:16
 msgid ""

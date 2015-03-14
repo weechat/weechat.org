@@ -45,6 +45,7 @@ SCRIPT_LANGUAGE = {
     'lua': ('lua', 'lua'),
     'tcl': ('tcl', 'tcl'),
     'guile': ('scm', 'scheme'),
+    'javascript': ('js', 'javascript'),
 }
 
 MAX_LENGTH_NAME = 64
@@ -241,6 +242,7 @@ class PluginFormAdd(forms.Form):
         ('lua', 'Lua (.lua)'),
         ('tcl', 'Tcl (.tcl)'),
         ('guile', 'Scheme (.scm)'),
+        ('javascript', 'Javascript (.js)'),
     )
     required_css_class = 'required'
     language = forms.ChoiceField(
