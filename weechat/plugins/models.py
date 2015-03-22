@@ -62,6 +62,11 @@ MAX_LENGTH_AUTHOR = 256
 MAX_LENGTH_MAIL = 256
 
 
+def get_language_from_extension(ext):
+    return next((key for key, value in SCRIPT_LANGUAGE.items()
+                 if value[0] == ext), None)
+
+
 class Plugin(models.Model):
     """A WeeChat script."""
     visible = models.BooleanField(default=False)

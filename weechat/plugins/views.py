@@ -32,7 +32,8 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 
 from weechat.common.path import files_path_join
-from weechat.plugins.models import Plugin, PluginFormAdd, PluginFormUpdate
+from weechat.plugins.models import Plugin, PluginFormAdd, PluginFormUpdate, \
+    get_language_from_extension
 
 API_OLD = '0.2.6'
 API_STABLE = '0.3.0'
@@ -140,18 +141,20 @@ def script_source(request, api='stable', scriptid='', scriptname=''):
             sname = sname[0:pos]
         try:
             if api == 'old':
-                plugin = Plugin.objects.get(name=sname,
-                                            language=PYGMENTS_LEXER[sext],
-                                            max_weechat=API_OLD)
+                plugin = Plugin.objects.get(
+                    name=sname,
+                    language=get_language_from_extension(sext),
+                    max_weechat=API_OLD)
             else:
-                plugin = Plugin.objects.get(name=sname,
-                                            language=PYGMENTS_LEXER[sext],
-                                            min_weechat__gte=API_STABLE)
+                plugin = Plugin.objects.get(
+                    name=sname,
+                    language=get_language_from_extension(sext),
+                    min_weechat__gte=API_STABLE)
             with open(files_path_join(plugin.path(),
                                       plugin.name_with_extension()),
                       'rb') as _file:
                 htmlsource = get_highlighted_source(_file.read(),
-                                                    plugin.language)
+                                                    PYGMENTS_LEXER[sext])
         except:
             htmlsource = ''
     return render_to_response(
