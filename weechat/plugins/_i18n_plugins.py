@@ -37,6 +37,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Add bar item with highlight/private messages."),
     # Translators: description for script "text_item.py" (0.3.0+)
     gettext_lazy("Add bar items with plain text."),
+    # Translators: description for script "bitlbee_completion.py" (0.4.3+)
+    gettext_lazy("Add tab completion to bitlbee commands."),
     # Translators: description for script "triggerbot_helper.py" (0.3.4+)
     gettext_lazy("Add users relayed to to the nicklist in a triggersafe channel."),
     # Translators: description for script "autojoinem.py" (0.3.0+)
@@ -101,6 +103,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Automatically keep buffers grouped by server and sorted by name."),
     # Translators: description for script "auto_op.py" (0.0.1-0.2.6)
     gettext_lazy("Automatically op and voice some nicks."),
+    # Translators: description for script "triggerreply.py" (0.4.0+)
+    gettext_lazy("Automatically replies over specified triggers."),
     # Translators: description for script "response.py" (0.0.1-0.2.6)
     gettext_lazy("Autoresponse script."),
     # Translators: description for script "unwanted_msg.py" (0.3.6+)
@@ -137,6 +141,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Collects all URLs said in a channel, and launches them in your web browser."),
     # Translators: description for script "colorize_lines.pl" (0.3.4+)
     gettext_lazy("Color the channel text with nick color."),
+    # Translators: description for script "colorizer.rb" (0.3.0+)
+    gettext_lazy("Colorize parts of text in certain buffers based on rules."),
     # Translators: description for script "cmdind.pl" (0.4.2+)
     gettext_lazy("Command line indicator: command or text."),
     # Translators: description for script "queue.py" (0.3.3+)
@@ -161,6 +167,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Convert ascii emotes to the unicode emoticon."),
     # Translators: description for script "leet.py" (0.3.0+)
     gettext_lazy("Convert text to leet."),
+    # Translators: description for script "xfer_scp.py" (0.4.3+)
+    gettext_lazy("Copy files by scp after xfer."),
     # Translators: description for script "spell_correction.py" (0.4.0+)
     gettext_lazy("Correction for misspelled words in command line."),
     # Translators: description for script "spotify_nowplaying.py" (0.3.0+)
@@ -217,6 +225,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Display right-to-left text in chat with fribidi."),
     # Translators: description for script "logsize.py" (0.3.0+)
     gettext_lazy("Display size of current log file in a bar item."),
+    # Translators: description for script "whoissource.py" (0.3.0+)
+    gettext_lazy("Display source of \"End of WHOIS\" numerics."),
     # Translators: description for script "weather.py" (0.3.0+)
     gettext_lazy("Display weather from Google."),
     # Translators: description for script "audacious.pl" (0.0.1-0.2.6)
@@ -391,6 +401,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Now-playing script for banshee."),
     # Translators: description for script "otr.py" (0.3.0+)
     gettext_lazy("Off-The-Record IRC messaging."),
+    # Translators: description for script "url_hinter.rb" (0.3.0+)
+    gettext_lazy("Open URLs without using mouse."),
     # Translators: description for script "xclip.pl" (0.3.0+)
     gettext_lazy("Paste content from X11 clipboard."),
     # Translators: description for script "autoauth.py" (0.0.1-0.2.6)
@@ -407,6 +419,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Postpone written messages for later dispatching if target nick is not on channel."),
     # Translators: description for script "echo.pl" (0.3.0+)
     gettext_lazy("Print a line and additionally set activity level."),
+    # Translators: description for script "smile.py" (0.3.0+)
+    gettext_lazy("Print a random ASCII smiley."),
     # Translators: description for script "xmms2.pl" (0.0.1-0.2.6)
     gettext_lazy("Print currently playing track (format is configurable) in xmms2 to a channel or private buffer."),
     # Translators: description for script "newsbar.pl" (0.3.1+)
@@ -447,6 +461,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Relay highlighted and private messages over XMPP (Jabber)."),
     # Translators: description for script "noirccolors.py" (0.3.0+)
     gettext_lazy("Remove IRC colors from selected buffers."),
+    # Translators: description for script "ws_replace.py" (0.3.0+)
+    gettext_lazy("Remove leading and trailing whitespace before sending text."),
     # Translators: description for script "curiousignore.pl" (0.3.2+)
     gettext_lazy("Remove messages from a nick and only print nick."),
     # Translators: description for script "unset_unused.pl" (0.3.0+)
@@ -455,6 +471,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Rename Facebook/Google+ usernames when using Minbif."),
     # Translators: description for script "autoconnect.py" (0.3.2+)
     gettext_lazy("Reopen servers and channels opened last time WeeChat closed."),
+    # Translators: description for script "emote.scm" (0.4.1+)
+    gettext_lazy("Replace keywords with emoticons."),
     # Translators: description for script "shutup.py" (0.3.6+)
     gettext_lazy("Replace text from specified IRC users with random or preset text."),
     # Translators: description for script "text_replace.py" (0.0.1-0.2.6)
@@ -519,6 +537,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Send Growl notifications upon events."),
     # Translators: description for script "kikoo.pl" (0.0.1-0.2.6)
     gettext_lazy("Send a colored \"kikoo\" on current channel."),
+    # Translators: description for script "socket_notify.rb" (0.3.0+)
+    gettext_lazy("Send highlights and private messages to a unix socket."),
     # Translators: description for script "wtwitter.py" (0.3.0+)
     gettext_lazy("Send latest tweet to the current buffer."),
     # Translators: description for script "notify_send.pl" (0.3.0+)
