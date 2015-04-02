@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-31 17:12+0200\n"
-"PO-Revision-Date: 2015-01-11 17:14+0100\n"
+"PO-Revision-Date: 2015-04-02 21:52+0100\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <weechatter@arcor.de>\n"
 "Language: de\n"
@@ -2459,7 +2459,6 @@ msgstr ""
 "ChangeLog-1.1.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:97
-#, fuzzy
 #| msgid ""
 #| "Version 1.0.1 is available!\n"
 #| "\n"
@@ -2475,13 +2474,13 @@ msgid ""
 "For complete list of bugs fixed, please look at <a href=\"/files/changelog/"
 "ChangeLog-1.1.1.html\">ChangeLog</a>."
 msgstr ""
-"Version 1.0.1 ist verfügbar!\n"
+"Version 1.1.1 ist verfügbar!\n"
 "\n"
 "Diese Version behebt lediglich Fehler und ist als Korrekturversion zu "
 "verstehen.\n"
 "\n"
 "Eine Liste der Fehlerbereinigungen findet man unter <a href=\"/files/"
-"changelog/ChangeLog-1.0.1.html\">ChangeLog</a>."
+"changelog/ChangeLog-1.1.1.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:98
 msgid ""
@@ -2799,7 +2798,7 @@ msgstr "erstellt Items zum Anzeigen von reinem Text."
 #. Translators: description for script "bitlbee_completion.py" (0.4.3+)
 #: plugins/_i18n_plugins.py:41
 msgid "Add tab completion to bitlbee commands."
-msgstr ""
+msgstr "ermöglicht eine TAB-Vervollständigung bei bitlbee Befehlen."
 
 #. Translators: description for script "triggerbot_helper.py" (0.3.4+)
 #: plugins/_i18n_plugins.py:43
@@ -2990,7 +2989,7 @@ msgstr "automatisch \"op\" und \"voice\" an Nicks vergeben."
 #. Translators: description for script "triggerreply.py" (0.4.0+)
 #: plugins/_i18n_plugins.py:107
 msgid "Automatically replies over specified triggers."
-msgstr ""
+msgstr "schickt eine automatisierte Antwort auf einen festgelegten Auslöser."
 
 #. Translators: description for script "response.py" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:109
@@ -3102,6 +3101,8 @@ msgstr "der Text wird in der jeweiligen Farbe des Verfassers dargestellt."
 #: plugins/_i18n_plugins.py:145
 msgid "Colorize parts of text in certain buffers based on rules."
 msgstr ""
+"in bestimmten Buffern werden Teile eines Textes nach vorgegebenen Regeln "
+"eingefärbt."
 
 #. Translators: description for script "cmdind.pl" (0.4.2+)
 #: plugins/_i18n_plugins.py:147
@@ -3172,7 +3173,7 @@ msgstr "wandelt einen Text nach Leetspeek."
 #. Translators: description for script "xfer_scp.py" (0.4.3+)
 #: plugins/_i18n_plugins.py:171
 msgid "Copy files by scp after xfer."
-msgstr ""
+msgstr "kopiert Dateien mit scp nachdem ein xfer-Transfer beendet wurde."
 
 #. Translators: description for script "spell_correction.py" (0.4.0+)
 #: plugins/_i18n_plugins.py:173
@@ -3334,7 +3335,7 @@ msgstr ""
 #. Translators: description for script "whoissource.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:229
 msgid "Display source of \"End of WHOIS\" numerics."
-msgstr ""
+msgstr "zeigt die Quelle der \"End of WHOIS\" Ziffern."
 
 #. Translators: description for script "weather.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:231
@@ -3822,7 +3823,7 @@ msgstr "verschlüsselte Konversation (Off-The-Record) via IRC."
 #. Translators: description for script "url_hinter.rb" (0.3.0+)
 #: plugins/_i18n_plugins.py:405
 msgid "Open URLs without using mouse."
-msgstr ""
+msgstr "öffnet URLs ohne das die Maus genutzt werden muss."
 
 #. Translators: description for script "xclip.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:407
@@ -3877,7 +3878,7 @@ msgstr ""
 #. Translators: description for script "smile.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:423
 msgid "Print a random ASCII smiley."
-msgstr ""
+msgstr "gibt einen zufälligen ASCII smiley aus."
 
 #. Translators: description for script "xmms2.pl" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:425
@@ -4000,6 +4001,8 @@ msgstr "entfernt IRC Farben in ausgewählten Buffern."
 #: plugins/_i18n_plugins.py:465
 msgid "Remove leading and trailing whitespace before sending text."
 msgstr ""
+"entfernt führende und abschließende Leerzeichen aus einem Text, bevor dieser "
+"versendet wird."
 
 #. Translators: description for script "curiousignore.pl" (0.3.2+)
 #: plugins/_i18n_plugins.py:467
@@ -4028,7 +4031,7 @@ msgstr ""
 #. Translators: description for script "emote.scm" (0.4.1+)
 #: plugins/_i18n_plugins.py:475
 msgid "Replace keywords with emoticons."
-msgstr ""
+msgstr "ersetzt Stichwörter durch emoticons."
 
 #. Translators: description for script "shutup.py" (0.3.6+)
 #: plugins/_i18n_plugins.py:477
@@ -4205,10 +4208,9 @@ msgstr "schickt eine farbige \"kikoo\" in den aktuellen Channel."
 
 #. Translators: description for script "socket_notify.rb" (0.3.0+)
 #: plugins/_i18n_plugins.py:541
-#, fuzzy
 #| msgid "Show highlights and private messages with OSD."
 msgid "Send highlights and private messages to a unix socket."
-msgstr "zeigt Highlight- oder private Nachrichten mittels OSD."
+msgstr "sendet Highlight- oder private Nachrichten an eine unix socket."
 
 #. Translators: description for script "wtwitter.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:543
@@ -4264,12 +4266,12 @@ msgstr "schickt private Nachrichten und Highlights an einen AMQP Exchange."
 
 #. Translators: description for script "pushover.pl" (0.3.7+)
 #: plugins/_i18n_plugins.py:559
-#, fuzzy
 msgid ""
 "Send push notifications to your mobile devices using Pushover, NMA or "
 "Pushbullet."
 msgstr ""
-"schickt Mitteilungen zu einem mobilen Gerät, mittels Pushover oder NMA."
+"schickt Mitteilungen zu einem mobilen Gerät, mittels Pushover, NMA oder "
+"Pushbullet."
 
 #. Translators: description for script "ragefaces.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:561
@@ -5999,7 +6001,6 @@ msgid "<strong>multi-protocols architecture</strong> (mainly IRC)"
 msgstr "<strong>Multi-Protokoll fähig</strong> (hauptsächlich IRC)"
 
 #: templates/home/home.html:27
-#, fuzzy
 #| msgid ""
 #| "<strong>extensible</strong> with C, Python, Perl, Ruby, Lua, Tcl and "
 #| "Scheme"
@@ -6007,8 +6008,8 @@ msgid ""
 "<strong>extensible</strong> with C, Python, Perl, Ruby, Lua, Tcl, Scheme and "
 "Javascript"
 msgstr ""
-"<strong>erweiterbar</strong> mittels C, Python, Perl, Ruby, Lua, Tcl und "
-"Scheme"
+"<strong>erweiterbar</strong> mittels C, Python, Perl, Ruby, Lua, Tcl, Scheme "
+"und Javascript"
 
 #: templates/home/home.html:28
 msgid "<strong>fully documented</strong> and translated into several languages"
