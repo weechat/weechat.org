@@ -15,7 +15,7 @@ _i18n_plugins_plugins = [
     gettext_lazy("A now playing and control script for Quodlibet."),
     # Translators: description for script "mpc.py" (0.3.0+)
     gettext_lazy("A now playing and control script for mpd."),
-    # Translators: description for script "mpris_np.py" (0.3.0+)
+    # Translators: description for script "mpris2_np.py" (0.4.0+)
     gettext_lazy("A now playing script for players supporting the mpris dbus interface."),
     # Translators: description for script "mplayer.py" (0.3.0+)
     gettext_lazy("A now watching script for mplayer."),
@@ -165,6 +165,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Control and now-playing script for moc."),
     # Translators: description for script "weemoticons.py" (0.3.0+)
     gettext_lazy("Convert ascii emotes to the unicode emoticon."),
+    # Translators: description for script "fullwidth.py" (0.3.0+)
+    gettext_lazy("Convert text to its full width equivalent and send it to buffer."),
     # Translators: description for script "leet.py" (0.3.0+)
     gettext_lazy("Convert text to leet."),
     # Translators: description for script "xfer_scp.py" (0.4.3+)
@@ -361,6 +363,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Make xterm clipboard paste available as command."),
     # Translators: description for script "fete.pl" (0.0.1-0.2.6)
     gettext_lazy("Manage feasts from french calendar."),
+    # Translators: description for script "automarkbuffer.py" (1.0+)
+    gettext_lazy("Mark buffers as read if there is no new message in a specific time range."),
     # Translators: description for script "mastermind.pl" (0.3.0+)
     gettext_lazy("Mastermind game."),
     # Translators: description for script "minesweeper.py" (0.3.0+)
@@ -402,7 +406,7 @@ _i18n_plugins_plugins = [
     # Translators: description for script "otr.py" (0.3.0+)
     gettext_lazy("Off-The-Record IRC messaging."),
     # Translators: description for script "url_hinter.rb" (0.3.0+)
-    gettext_lazy("Open URLs without using mouse."),
+    gettext_lazy("Open URLs without using the mouse."),
     # Translators: description for script "xclip.pl" (0.3.0+)
     gettext_lazy("Paste content from X11 clipboard."),
     # Translators: description for script "autoauth.py" (0.0.1-0.2.6)
