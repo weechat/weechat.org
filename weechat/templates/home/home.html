@@ -40,7 +40,24 @@
         <a href="{% url 'download' %}" class="download">{% trans "Download" %}&nbsp;&rsaquo;&rsaquo; </a>
       </div>
 
-      <h2>{% trans "Get involved!" %}</h2>
+      <h2>{% trans "Follow and get involved!" %}</h2>
+
+      <p>
+        {% trans "You can follow latest WeeChat developments on:" %}
+        <br />
+        <a href="https://diasp.eu/u/weechat" target="_blank">
+          <img src="{{ MEDIA_URL }}images/diaspora.png" class="follow" alt="*" title="Diaspora" />
+        </a>
+        <a href="https://plus.google.com/+WeeChat" target="_blank">
+          <img src="{{ MEDIA_URL }}images/google_plus.png" class="follow" alt="g+" title="Google+" />
+        </a>
+        <a href="http://dev.weechat.org/" target="_blank">
+          <img src="{{ MEDIA_URL }}images/dotclear.png" class="follow" alt="blog" title="{% trans 'Devel blog' %}" />
+        </a>
+        <a href="{% url 'dev_roadmap' %}">
+          <img src="{{ MEDIA_URL }}images/favicon.png" class="follow" alt="roadmap" title="{% trans 'Roadmap' %}" />
+        </a>
+      </p>
 
       {% trans "You can help the WeeChat project in many ways:" %}
       <ul class="list">

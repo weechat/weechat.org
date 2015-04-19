@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-07 19:57+0200\n"
+"POT-Creation-Date: 2015-04-19 14:52+0200\n"
 "PO-Revision-Date: 2015-02-21 11:42+0100\n"
 "Last-Translator: Krzysztof Korościk <soltys@szluug.org>\n"
 "Language-Team: Polish <soltys@szluug.org>\n"
@@ -614,7 +614,7 @@ msgstr "Repozytoria Debiana/Raspbiana"
 msgid "Dennis Ritchie has left #world"
 msgstr "Dennis Ritchie opuścił #świat"
 
-#: news/_i18n_info.py:22 templates/menu.html:62
+#: news/_i18n_info.py:22 templates/home/home.html:55 templates/menu.html:62
 msgid "Devel blog"
 msgstr "Blog deweloperski"
 
@@ -4758,7 +4758,7 @@ msgstr "Zrzuty ekranu"
 msgid "History"
 msgstr "Historia"
 
-#: templates/about/about.html:16 templates/home/home.html:53
+#: templates/about/about.html:16 templates/home/home.html:70
 #: templates/menu.html:14
 msgid "Make a donation"
 msgstr "Dotacje"
@@ -5216,7 +5216,8 @@ msgstr "Prawidłowy"
 msgid "dev"
 msgstr "rozwojowa"
 
-#: templates/dev/dev.html:13 templates/menu.html:59
+#: templates/dev/dev.html:13 templates/home/home.html:58
+#: templates/menu.html:59
 msgid "Roadmap"
 msgstr "Plan wydań"
 
@@ -5821,7 +5822,7 @@ msgstr ""
 "krytyczny problem, ryzyko uszkodzenia systemu. <strong>MUSISZ zaktualizować "
 "natychmiast!</strong>"
 
-#: templates/error.html:11 templates/home/home.html:104
+#: templates/error.html:11 templates/home/home.html:121
 msgid "Back to home"
 msgstr "Powrót na główną"
 
@@ -5892,41 +5893,47 @@ msgid "Download"
 msgstr "Pobierz"
 
 #: templates/home/home.html:43
-msgid "Get involved!"
+#, fuzzy
+#| msgid "Get involved!"
+msgid "Follow and get involved!"
 msgstr "Zaangażuj się!"
 
-#: templates/home/home.html:45
+#: templates/home/home.html:46
+msgid "You can follow latest WeeChat developments on:"
+msgstr ""
+
+#: templates/home/home.html:62
 msgid "You can help the WeeChat project in many ways:"
 msgstr "Możesz pomóc projektowi WeeChat poprzez:"
 
-#: templates/home/home.html:47
+#: templates/home/home.html:64
 msgid "<strong>translation</strong>: software, documentation and this web site"
 msgstr ""
 "<strong>tłumaczenie</strong>: oprogramowania, dokumentacji i tej strony "
 "internetowej"
 
-#: templates/home/home.html:48
+#: templates/home/home.html:65
 msgid ""
 "<strong>code</strong>: tests, bug reports, ideas for new features and patches"
 msgstr ""
 "<strong>kod</strong>: testy, raporty błędów, pomysły na nowe funkcje i łatki"
 
-#: templates/home/home.html:49
+#: templates/home/home.html:66
 msgid ""
 "<strong>donation</strong>: any contribution is appreciated and important for "
 "motivation"
 msgstr ""
 "<strong>dotacje</strong>: każdy wkład jest doceniany i ważny dla motywacji"
 
-#: templates/home/home.html:63 templates/home/home.html.py:83
+#: templates/home/home.html:80 templates/home/home.html.py:100
 msgid "More"
 msgstr "Więcej"
 
-#: templates/home/home.html:63 templates/menu.html:4
+#: templates/home/home.html:80 templates/menu.html:4
 msgid "Latest news"
 msgstr "Najnowsze aktualności"
 
-#: templates/home/home.html:83 templates/menu.html:5
+#: templates/home/home.html:100 templates/menu.html:5
 msgid "Upcoming events"
 msgstr "Nadchodzące wydarzenia"
 

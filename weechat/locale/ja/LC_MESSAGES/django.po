@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-07 19:57+0200\n"
+"POT-Creation-Date: 2015-04-19 14:52+0200\n"
 "PO-Revision-Date: 2015-04-13 00:04+0900\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <i38w7i3@yahoo.co.jp>\n"
@@ -153,8 +153,8 @@ msgstr "安定版のバージョン番号"
 msgid ""
 "stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
-"安定版のバージョン番号 (数表記)、プラグイン API における info_get"
-"(\"version_number\") と同様"
+"安定版のバージョン番号 (数表記)、プラグイン API における "
+"info_get(\"version_number\") と同様"
 
 #: dev/views.py:46
 msgid "date of stable version"
@@ -180,8 +180,8 @@ msgstr "次期安定版のバージョン番号"
 msgid ""
 "next stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
-"次期安定版のバージョン番号 (数表記)、プラグイン API における info_get"
-"(\"version_number\") と同様<"
+"次期安定版のバージョン番号 (数表記)、プラグイン API における "
+"info_get(\"version_number\") と同様<"
 
 #: dev/views.py:71
 msgid "approximate date of next stable version"
@@ -615,7 +615,7 @@ msgstr "Debian/Raspbian リポジトリ"
 msgid "Dennis Ritchie has left #world"
 msgstr "Dennis Ritchie さんが亡くなりました"
 
-#: news/_i18n_info.py:22 templates/menu.html:62
+#: news/_i18n_info.py:22 templates/home/home.html:55 templates/menu.html:62
 msgid "Devel blog"
 msgstr "開発ブログ"
 
@@ -4653,7 +4653,7 @@ msgstr "スクリーンショット"
 msgid "History"
 msgstr "歴史"
 
-#: templates/about/about.html:16 templates/home/home.html:53
+#: templates/about/about.html:16 templates/home/home.html:70
 #: templates/menu.html:14
 msgid "Make a donation"
 msgstr "寄付する"
@@ -5116,7 +5116,8 @@ msgstr "有効"
 msgid "dev"
 msgstr "開発"
 
-#: templates/dev/dev.html:13 templates/menu.html:59
+#: templates/dev/dev.html:13 templates/home/home.html:58
+#: templates/menu.html:59
 msgid "Roadmap"
 msgstr "ロードマップ"
 
@@ -5723,7 +5724,7 @@ msgstr ""
 "システムを破壊する危険性のある重大な問題。<strong>今すぐアップグレードしてく"
 "ださい!</strong>"
 
-#: templates/error.html:11 templates/home/home.html:104
+#: templates/error.html:11 templates/home/home.html:121
 msgid "Back to home"
 msgstr "ホームに戻る"
 
@@ -5792,24 +5793,30 @@ msgid "Download"
 msgstr "ダウンロード"
 
 #: templates/home/home.html:43
-msgid "Get involved!"
+#, fuzzy
+#| msgid "Get involved!"
+msgid "Follow and get involved!"
 msgstr "参加しませんか!"
 
-#: templates/home/home.html:45
+#: templates/home/home.html:46
+msgid "You can follow latest WeeChat developments on:"
+msgstr ""
+
+#: templates/home/home.html:62
 msgid "You can help the WeeChat project in many ways:"
 msgstr "WeeChat プロジェクトを支援する方法は様々です:"
 
-#: templates/home/home.html:47
+#: templates/home/home.html:64
 msgid "<strong>translation</strong>: software, documentation and this web site"
 msgstr "<strong>翻訳</strong>: ソフトウェア、文書、ウェブサイト"
 
-#: templates/home/home.html:48
+#: templates/home/home.html:65
 msgid ""
 "<strong>code</strong>: tests, bug reports, ideas for new features and patches"
 msgstr ""
 "<strong>コード</strong>: テスト、バグレポート、新機能のアイディア、パッチ"
 
-#: templates/home/home.html:49
+#: templates/home/home.html:66
 msgid ""
 "<strong>donation</strong>: any contribution is appreciated and important for "
 "motivation"
@@ -5817,15 +5824,15 @@ msgstr ""
 "<strong>寄付</strong>: どんな寄付でも歓迎します。寄付はモチベーションの維持に"
 "重要です"
 
-#: templates/home/home.html:63 templates/home/home.html.py:83
+#: templates/home/home.html:80 templates/home/home.html.py:100
 msgid "More"
 msgstr "その他"
 
-#: templates/home/home.html:63 templates/menu.html:4
+#: templates/home/home.html:80 templates/menu.html:4
 msgid "Latest news"
 msgstr "最新のニュース"
 
-#: templates/home/home.html:83 templates/menu.html:5
+#: templates/home/home.html:100 templates/menu.html:5
 msgid "Upcoming events"
 msgstr "今後のイベント"
 

@@ -45,7 +45,7 @@ urlpatterns = patterns(
     url(r'^i18n/', include('django.conf.urls.i18n')),
 
     # main WeeChat URLs
-    url(r'^$', 'weechat.news.views.home', {'max_info': 6, 'max_event': 4},
+    url(r'^$', 'weechat.news.views.home', {'max_info': 8, 'max_event': 4},
         name='home'),
     url(r'^news/$', 'weechat.news.views.news', name='home_news'),
     url(r'^news/(?P<info_id>\d+)/$', 'weechat.news.views.news',
