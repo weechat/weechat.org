@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-07 19:57+0200\n"
+"POT-Creation-Date: 2015-04-25 19:26+0200\n"
 "PO-Revision-Date: 2015-04-22 20:48+0900\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <i38w7i3@yahoo.co.jp>\n"
@@ -153,8 +153,8 @@ msgstr "安定版のバージョン番号"
 msgid ""
 "stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
-"安定版のバージョン番号 (数表記)、プラグイン API における info_get"
-"(\"version_number\") と同様"
+"安定版のバージョン番号 (数表記)、プラグイン API における "
+"info_get(\"version_number\") と同様"
 
 #: dev/views.py:46
 msgid "date of stable version"
@@ -180,8 +180,8 @@ msgstr "次期安定版のバージョン番号"
 msgid ""
 "next stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
-"次期安定版のバージョン番号 (数表記)、プラグイン API における info_get"
-"(\"version_number\") と同様<"
+"次期安定版のバージョン番号 (数表記)、プラグイン API における "
+"info_get(\"version_number\") と同様<"
 
 #: dev/views.py:71
 msgid "approximate date of next stable version"
@@ -5464,22 +5464,22 @@ msgstr ""
 "ます。"
 
 #: templates/download/debian.html:101
+#, fuzzy
+#| msgid ""
+#| "Create a weechat.list file with the repository, according to your Debian "
+#| "version."
 msgid ""
 "Create a weechat.list file with the repository, according to your Debian "
-"version."
+"version:"
 msgstr ""
 "お使いの Debian のバージョンに対応するリポジトリを含む weechat.list ファイル"
 "を作成してください。"
 
-#: templates/download/debian.html:102
-msgid "For example on Debian “sid” (unstable):"
-msgstr "Debian 「sid」(不安定版) を使った例:"
-
-#: templates/download/debian.html:106
+#: templates/download/debian.html:112
 msgid "Resynchronize your package index files:"
 msgstr "パッケージインデックスファイルを再同期:"
 
-#: templates/download/debian.html:110
+#: templates/download/debian.html:116
 msgid ""
 "Install the packages; the \"plugins\" package is highly recommended but not "
 "mandatory."
@@ -5487,11 +5487,19 @@ msgstr ""
 "パッケージをインストール; \"plugins\" パッケージは必須ではありませんが、イン"
 "ストールを強くお勧めします。"
 
-#: templates/download/debian.html:111
-msgid "For example development version:"
-msgstr "開発版を使う例:"
+#: templates/download/debian.html:119
+#, fuzzy
+#| msgid "next stable version"
+msgid "For the stable version:"
+msgstr "次期安定版のバージョン番号"
 
-#: templates/download/debian.html:121
+#: templates/download/debian.html:123
+#, fuzzy
+#| msgid "or development version"
+msgid "For the development version:"
+msgstr "または開発版でビルドできなければいけません"
+
+#: templates/download/debian.html:135
 msgid "No debian repository."
 msgstr "Debian リポジトリがありません。"
 
@@ -6330,3 +6338,9 @@ msgstr "内部エラー。"
 #: themes/models.py:268
 msgid "Invalid name: different from theme."
 msgstr "不正な名前: テーマとは異なります。"
+
+#~ msgid "For example development version:"
+#~ msgstr "開発版を使う例:"
+
+#~ msgid "For example on Debian “sid” (unstable):"
+#~ msgstr "Debian 「sid」(不安定版) を使った例:"

@@ -26,7 +26,7 @@
           <div class="message"><strong>{% trans "Important" %}:</strong> {{ debpkg_source.list.0.repo.message }}</div>
           {% endif %}
           <div class="sources" title="Line to add in /etc/apt/sources.list">
-            deb {{ debpkg_source.list.0.repo.url }} {{ debpkg_source.list.0.repo.version.codename }} main
+            {{ debpkg_source.list.0.repo.apt_url }}
           </div>
           <div class="builder">
             {% trans "Builds by" %} {{ debpkg_source.list.0.repo.builder.name }}
@@ -94,22 +94,36 @@
       </li>
       <li>
         {% trans "Install https transport for apt:" %}
-        <br /><kbd>$ sudo aptitude install apt-transport-https</kbd>
+        <kbd>$ sudo aptitude install apt-transport-https</kbd>
         {% blocktrans %}Otherwise you can replace "https://" by "http://" in URLs (less secure).{% endblocktrans %}
       </li>
       <li>
-        {% trans "Create a weechat.list file with the repository, according to your Debian version." %}
-        <br />{% trans "For example on Debian “sid” (unstable):" %}
-        <br /><kbd>$ sudo bash -c "echo 'deb https://weechat.org/debian sid main' >/etc/apt/sources.list.d/weechat.list"</kbd>
+        {% trans "Create a weechat.list file with the repository, according to your Debian version:" %}
+        <ul>
+          {% for repo in repositories %}
+          <li>
+            {{ repo.name|capfirst }} “{{ repo.version.codename }}” ({{ repo.version.version }}) :
+            <kbd>$ sudo bash -c "echo '{{ repo.apt_url }}' >/etc/apt/sources.list.d/weechat.list"</kbd>
+          </li>
+          {% endfor %}
+        </ul>
       </li>
       <li>
         {% trans "Resynchronize your package index files:" %}
-        <br /><kbd>$ sudo aptitude update</kbd>
+        <kbd>$ sudo aptitude update</kbd>
       </li>
       <li>
         {% blocktrans %}Install the packages; the "plugins" package is highly recommended but not mandatory.{% endblocktrans %}
-        <br />{% trans "For example development version:" %}
-        <br /><kbd>$ sudo aptitude install weechat-devel-curses weechat-devel-plugins</kbd>
+        <ul>
+          <li>
+            {% trans "For the stable version:" %}
+            <kbd>$ sudo aptitude install weechat-curses weechat-plugins</kbd>
+          </li>
+          <li>
+            {% trans "For the development version:" %}
+            <kbd>$ sudo aptitude install weechat-devel-curses weechat-devel-plugins</kbd>
+          </li>
+        </ul>
       </li>
     </ul>
   </div>

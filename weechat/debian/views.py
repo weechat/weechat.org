@@ -34,9 +34,11 @@ from weechat.debian.models import Repo
 
 def repos(request, files=''):
     """Page with debian repositories."""
+    repositories = []
     debpkgs = []
     try:
-        for repo in Repo.objects.all():
+        repositories = Repo.objects.all().filter(active=1).order_by('priority')
+        for repo in repositories:
             repopkgs = []
             for arch in repo.arch.split(','):
                 build = {
@@ -92,5 +94,6 @@ def repos(request, files=''):
         {
             'debpkgs': debpkgs,
             'allfiles': files == 'files',
+            'repositories': repositories,
         },
         context_instance=RequestContext(request))

@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-19 14:52+0200\n"
+"POT-Creation-Date: 2015-04-25 19:26+0200\n"
 "PO-Revision-Date: 2015-02-21 11:42+0100\n"
 "Last-Translator: Krzysztof Korościk <soltys@szluug.org>\n"
 "Language-Team: Polish <soltys@szluug.org>\n"
@@ -5564,20 +5564,20 @@ msgstr ""
 "bezpieczne)."
 
 #: templates/download/debian.html:101
+#, fuzzy
+#| msgid ""
+#| "Create a weechat.list file with the repository, according to your Debian "
+#| "version."
 msgid ""
 "Create a weechat.list file with the repository, according to your Debian "
-"version."
+"version:"
 msgstr "Stwórz plik weechat.list z repozytorium dla twojej wersji Debiana."
 
-#: templates/download/debian.html:102
-msgid "For example on Debian “sid” (unstable):"
-msgstr "Na przykład dla Debiana \"sid\" (niestabilny):"
-
-#: templates/download/debian.html:106
+#: templates/download/debian.html:112
 msgid "Resynchronize your package index files:"
 msgstr "Zsynchronizuj informacje o dostępnych pakietach:"
 
-#: templates/download/debian.html:110
+#: templates/download/debian.html:116
 msgid ""
 "Install the packages; the \"plugins\" package is highly recommended but not "
 "mandatory."
@@ -5585,11 +5585,19 @@ msgstr ""
 "Zainstaluj następujące pakiety; pakiet \"plugins\" jest zalecany ale nie "
 "obowiązkowy."
 
-#: templates/download/debian.html:111
-msgid "For example development version:"
-msgstr "Na przykład wersja rozwojowa:"
+#: templates/download/debian.html:119
+#, fuzzy
+#| msgid "next stable version"
+msgid "For the stable version:"
+msgstr "następna stabilna wersja"
 
-#: templates/download/debian.html:121
+#: templates/download/debian.html:123
+#, fuzzy
+#| msgid "or development version"
+msgid "For the development version:"
+msgstr "lub wersja rozwojowa"
+
+#: templates/download/debian.html:135
 msgid "No debian repository."
 msgstr "Brak repozytorium Debiana."
 
@@ -6436,3 +6444,9 @@ msgstr "Wewnętrzny błąd."
 #: themes/models.py:268
 msgid "Invalid name: different from theme."
 msgstr "Niewłaściwa nazwa: różni się od motywu."
+
+#~ msgid "For example development version:"
+#~ msgstr "Na przykład wersja rozwojowa:"
+
+#~ msgid "For example on Debian “sid” (unstable):"
+#~ msgstr "Na przykład dla Debiana \"sid\" (niestabilny):"

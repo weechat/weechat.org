@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-19 14:52+0200\n"
+"POT-Creation-Date: 2015-04-25 19:26+0200\n"
 "PO-Revision-Date: 2015-04-20 20:43+0100\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <weechatter@arcor.de>\n"
@@ -5709,22 +5709,22 @@ msgstr ""
 "\"https://\" kann auch durch \"http://\" ersetzt werden (weniger Sicherheit)."
 
 #: templates/download/debian.html:101
+#, fuzzy
+#| msgid ""
+#| "Create a weechat.list file with the repository, according to your Debian "
+#| "version."
 msgid ""
 "Create a weechat.list file with the repository, according to your Debian "
-"version."
+"version:"
 msgstr ""
 "Nun erstellt man eine weechat.list Datei für das Repository, entsprechend "
 "der Debian Version."
 
-#: templates/download/debian.html:102
-msgid "For example on Debian “sid” (unstable):"
-msgstr "Beispiel für Debian “sid” (unstable):"
-
-#: templates/download/debian.html:106
+#: templates/download/debian.html:112
 msgid "Resynchronize your package index files:"
 msgstr "Indexdateien für Pakete neu einlesen:"
 
-#: templates/download/debian.html:110
+#: templates/download/debian.html:116
 msgid ""
 "Install the packages; the \"plugins\" package is highly recommended but not "
 "mandatory."
@@ -5732,11 +5732,19 @@ msgstr ""
 "Pakete installieren; das  Paket \"plugins\" wird  ausdrücklich empfohlen, "
 "ist aber nicht obligatorisch."
 
-#: templates/download/debian.html:111
-msgid "For example development version:"
-msgstr "Als Beispiel wird die Entwicklerversion installiert:"
+#: templates/download/debian.html:119
+#, fuzzy
+#| msgid "next stable version"
+msgid "For the stable version:"
+msgstr "kommende stabile Version"
 
-#: templates/download/debian.html:121
+#: templates/download/debian.html:123
+#, fuzzy
+#| msgid "or development version"
+msgid "For the development version:"
+msgstr "oder mit einer Entwicklerversion"
+
+#: templates/download/debian.html:135
 msgid "No debian repository."
 msgstr "Kein Debian Repository."
 
@@ -6044,7 +6052,6 @@ msgid "Download"
 msgstr "Download"
 
 #: templates/home/home.html:43
-#| msgid "Get involved!"
 msgid "Follow and get involved!"
 msgstr "Folge und Engagiere Dich!"
 
@@ -6609,3 +6616,9 @@ msgstr "interner Fehler."
 #: themes/models.py:268
 msgid "Invalid name: different from theme."
 msgstr "ungültiger Name: unterscheidet sich vom Theme."
+
+#~ msgid "For example development version:"
+#~ msgstr "Als Beispiel wird die Entwicklerversion installiert:"
+
+#~ msgid "For example on Debian “sid” (unstable):"
+#~ msgstr "Beispiel für Debian “sid” (unstable):"
