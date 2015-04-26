@@ -17,7 +17,7 @@
 
 {% regroup debpkgs by repoarch as debpkgs_by_repoarch %}
 {% for repoarch in debpkgs_by_repoarch %}
-  <div class="debian {{ repoarch.grouper }}">
+  <div class="debian {% if repoarch.list.0.repo.discontinued %}debian_discontinued{% else %}{{ repoarch.grouper }}{% endif %}">
     {% regroup repoarch.list|dictsortreversed:"builddatetime" by Source as debpkgs_by_source %}
     {% for debpkg_source in debpkgs_by_source %}
       {% if forloop.first %}
