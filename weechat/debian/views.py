@@ -37,7 +37,7 @@ def repos(request, files=''):
     repositories = []
     debpkgs = []
     try:
-        repositories = Repo.objects.all().filter(active=1).order_by('priority')
+        repositories = Repo.objects.all().filter(visible=1).order_by('priority')
         for repo in repositories:
             repopkgs = []
             for arch in repo.arch.split(','):

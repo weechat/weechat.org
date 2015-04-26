@@ -39,7 +39,12 @@
             </strong>
           </div>
         </div>
-        <div class="name{% if not debpkg_source.list.0.repo.active %} discontinued{% endif %}">
+        <div
+           {% if debpkg_source.list.0.repo.discontinued %}
+           class="name discontinued" title="{% trans "There are no more package builds in this repository." %}"
+           {% else %}
+           class="name"
+           {% endif %}>
           {{ debpkg_source.list.0.repo.name|capfirst }}
           “{{ debpkg_source.list.0.repo.version.codename }}”
           ({{ debpkg_source.list.0.repo.version.version }})
@@ -101,10 +106,12 @@
         {% trans "Create a weechat.list file with the repository, according to your Debian version:" %}
         <ul>
           {% for repo in repositories %}
+          {% if repo.visible and not repo.discontinued %}
           <li>
             {{ repo.name|capfirst }} “{{ repo.version.codename }}” ({{ repo.version.version }}) :
             <kbd>$ sudo bash -c "echo '{{ repo.apt_url }}' >/etc/apt/sources.list.d/weechat.list"</kbd>
           </li>
+          {% endif %}
           {% endfor %}
         </ul>
       </li>

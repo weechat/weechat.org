@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-25 19:26+0200\n"
+"POT-Creation-Date: 2015-04-26 16:26+0200\n"
 "PO-Revision-Date: 2015-04-25 20:35+0100\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <weechatter@arcor.de>\n"
@@ -5674,19 +5674,23 @@ msgstr "Erstellt von"
 msgid "Latest build:"
 msgstr "zuletzt Erstellt am:"
 
-#: templates/download/debian.html:59
+#: templates/download/debian.html:44
+msgid "There are no more package builds in this repository."
+msgstr ""
+
+#: templates/download/debian.html:64
 msgid "Architecture"
 msgstr "Architektur"
 
-#: templates/download/debian.html:62
+#: templates/download/debian.html:67
 msgid "files"
 msgstr "Dateien"
 
-#: templates/download/debian.html:87
+#: templates/download/debian.html:92
 msgid "Instructions:"
 msgstr "Anleitung:"
 
-#: templates/download/debian.html:92
+#: templates/download/debian.html:97
 msgid ""
 "You must use apt, apt-get or aptitude to install the packages (with sudo or "
 "as \"root\" user)."
@@ -5694,21 +5698,21 @@ msgstr ""
 "Um mittels apt, apt-get oder aptitude die Pakete installieren zu können, "
 "muss man \"root\" sein oder den \"sudo\" Befehl verwenden."
 
-#: templates/download/debian.html:93
+#: templates/download/debian.html:98
 msgid "The following examples use sudo and aptitude."
 msgstr "Für die nachfolgenden Beispiele werden sudo und aptitude genutzt."
 
-#: templates/download/debian.html:96
+#: templates/download/debian.html:101
 msgid "Install https transport for apt:"
 msgstr "Installation von https Transport für apt:"
 
-#: templates/download/debian.html:98
+#: templates/download/debian.html:103
 msgid ""
 "Otherwise you can replace \"https://\" by \"http://\" in URLs (less secure)."
 msgstr ""
 "\"https://\" kann auch durch \"http://\" ersetzt werden (weniger Sicherheit)."
 
-#: templates/download/debian.html:101
+#: templates/download/debian.html:106
 msgid ""
 "Create a weechat.list file with the repository, according to your Debian "
 "version:"
@@ -5716,11 +5720,11 @@ msgstr ""
 "Nun erstellt man eine weechat.list Datei für das Repository, entsprechend "
 "der Debian Version:"
 
-#: templates/download/debian.html:112
+#: templates/download/debian.html:119
 msgid "Resynchronize your package index files:"
 msgstr "Indexdateien für Pakete neu einlesen:"
 
-#: templates/download/debian.html:116
+#: templates/download/debian.html:123
 msgid ""
 "Install the packages; the \"plugins\" package is highly recommended but not "
 "mandatory."
@@ -5728,15 +5732,15 @@ msgstr ""
 "Pakete installieren; das  Paket \"plugins\" wird  ausdrücklich empfohlen, "
 "ist aber nicht obligatorisch."
 
-#: templates/download/debian.html:119
+#: templates/download/debian.html:126
 msgid "For the stable version:"
 msgstr "für stabile Version:"
 
-#: templates/download/debian.html:123
+#: templates/download/debian.html:130
 msgid "For the development version:"
 msgstr "für die Entwicklerversion:"
 
-#: templates/download/debian.html:135
+#: templates/download/debian.html:142
 msgid "No debian repository."
 msgstr "Kein Debian Repository."
 

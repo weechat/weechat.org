@@ -50,7 +50,8 @@ class Builder(models.Model):
 
 class Repo(models.Model):
     """A Debian repository."""
-    active = models.BooleanField(default=True)
+    visible = models.BooleanField(default=True)
+    discontinued = models.BooleanField(default=False)
     name = models.CharField(max_length=64)
     version = models.ForeignKey(Version)
     domain = models.CharField(max_length=128)
@@ -61,10 +62,11 @@ class Repo(models.Model):
     priority = models.IntegerField(default=0)
 
     def __unicode__(self):
-        return '%s %s, %s (%s) (%d)' % (
+        return '%s %s, %s, %s (%s) (%d)' % (
             self.name,
             self.version,
-            'active' if self.active else 'discontinued',
+            'visible' if self.visible else 'hidden',
+            'discontinued' if self.discontinued else 'active',
             self.arch,
             self.priority)
 
