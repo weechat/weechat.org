@@ -13,7 +13,7 @@
     <li><a href="{% url 'download_version' 'stable' %}" class="{% block menu2_stable %}{% endblock %}">{% trans "Stable" %}</a></li>
     <li><a href="{% url 'download_version' 'devel' %}" class="{% block menu2_devel %}{% endblock %}">{% trans "Devel" %}</a></li>
     <li><a href="{% url 'download_version' 'old' %}" class="{% block menu2_old %}{% endblock %}">{% trans "Old versions" %}</a></li>
-    <li><a href="{% url 'download_debian' %}" class="{% block menu2_debian %}{% endblock %}">Debian</a></li>
+    <li><a href="{% url 'download_debian' %}" class="{% block menu2_debian %}{% endblock %}">{% trans "Debian repositories" %}</a></li>
     <li><a href="{% url 'download_security' %}" class="{% block menu2_security %}{% endblock %}">{% trans "Security" %}</a></li>
     <li><a href="{% url 'download_release' %}" class="{% block menu2_release %}{% endblock %}">{% trans "Release" %}</a></li>
   </ul>
