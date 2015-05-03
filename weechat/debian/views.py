@@ -36,10 +36,9 @@ def repos(request, files=''):
     """Page with debian repositories."""
     repositories = []
     debpkgs = []
-    try:
-        repositories = (Repo.objects.all().filter(visible=1)
-                        .order_by('priority'))
-        for repo in repositories:
+    repositories = (Repo.objects.all().filter(visible=1).order_by('priority'))
+    for repo in repositories:
+        try:
             repopkgs = []
             for arch in repo.arch.split(','):
                 build = {
@@ -88,8 +87,8 @@ def repos(request, files=''):
                     _file.close()
             debpkgs.extend(sorted(repopkgs, key=lambda p: p['builddatetime'],
                                   reverse=True))
-    except:
-        pass
+        except:
+            pass
     return render_to_response(
         'download/debian.html',
         {

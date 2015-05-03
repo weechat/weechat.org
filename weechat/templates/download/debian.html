@@ -17,7 +17,7 @@
 
 {% regroup debpkgs by repoarch as debpkgs_by_repoarch %}
 {% for repoarch in debpkgs_by_repoarch %}
-  <div class="debian {% if repoarch.list.0.repo.discontinued %}debian_discontinued{% else %}{{ repoarch.grouper }}{% endif %}">
+  <div class="debian distro_{% if repoarch.list.0.repo.active %}{{ repoarch.list.0.repo.name }}{% else %}discontinued{% endif %}">
     {% regroup repoarch.list|dictsortreversed:"builddatetime" by Source as debpkgs_by_source %}
     {% for debpkg_source in debpkgs_by_source %}
       {% if forloop.first %}
@@ -40,14 +40,16 @@
           </div>
         </div>
         <div
-           {% if debpkg_source.list.0.repo.discontinued %}
-           class="name discontinued" title="{% trans "There are no more package builds in this repository." %}"
-           {% else %}
+           {% if debpkg_source.list.0.repo.active %}
            class="name"
+           {% else %}
+           class="name discontinued" title="{% trans "There are no more package builds in this repository." %}"
            {% endif %}>
           {{ debpkg_source.list.0.repo.name|capfirst }}
           “{{ debpkg_source.list.0.repo.version.codename }}”
+          {% if debpkg_source.list.0.repo.version.version != debpkg_source.list.0.repo.version.codename %}
           ({{ debpkg_source.list.0.repo.version.version }})
+          {% endif %}
         </div>
         <table>
       {% endif %}
@@ -106,7 +108,7 @@
         {% trans "Create a weechat.list file with the repository, according to your Debian version:" %}
         <ul>
           {% for repo in repositories %}
-          {% if repo.visible and not repo.discontinued %}
+          {% if repo.visible and repo.active %}
           <li>
             {{ repo.name|capfirst }} “{{ repo.version.codename }}” ({{ repo.version.version }}) :
             <kbd>$ sudo bash -c "echo '{{ repo.apt_url }}' >/etc/apt/sources.list.d/weechat.list"</kbd>

@@ -51,7 +51,7 @@ class Builder(models.Model):
 class Repo(models.Model):
     """A Debian repository."""
     visible = models.BooleanField(default=True)
-    discontinued = models.BooleanField(default=False)
+    active = models.BooleanField(default=True)
     name = models.CharField(max_length=64)
     version = models.ForeignKey(Version)
     domain = models.CharField(max_length=128)
@@ -66,7 +66,7 @@ class Repo(models.Model):
             self.name,
             self.version,
             'visible' if self.visible else 'hidden',
-            'discontinued' if self.discontinued else 'active',
+            'active' if self.active else 'discontinued',
             self.arch,
             self.priority)
 

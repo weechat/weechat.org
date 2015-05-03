@@ -80,7 +80,7 @@
 .debian {
   padding: .3em;
   border-radius: 6px;
-  margin: .4em 0 0 0;
+  margin: .7em 0 0 0;
 }
 
 .debian .name {
@@ -137,7 +137,7 @@
 }
 
 .debian .version_dev {
-  color: #a00;
+  color: #620;
 }
 
 .debian .date {
@@ -161,49 +161,33 @@
   font-size: .8em;
 }
 
-.debian_unstable {
-  border: 1px solid #eadada;
-  background: #fff8f8;
-  background: -moz-linear-gradient(#fff2f2, #ffffff);
-  background: -webkit-linear-gradient(#fff2f2, #ffffff);
-  background: linear-gradient(#fff2f2, #ffffff);
+.distro_debian {
+  border: 1px solid #d8d8e8;
+  background: #f6f6ff;
+  background: -moz-linear-gradient(#f0f0ff, #ffffff);
+  background: -webkit-linear-gradient(#f0f0ff, #ffffff);
+  background: linear-gradient(#f0f0ff, #ffffff);
 }
 
-.debian_testing {
-  border: 1px solid #dadaea;
-  background: #f8f8ff;
-  background: -moz-linear-gradient(#f2f2ff, #ffffff);
-  background: -webkit-linear-gradient(#f2f2ff, #ffffff);
-  background: linear-gradient(#f2f2ff, #ffffff);
+.distro_ubuntu {
+  border: 1px solid #ffd9c5;
+  background: #fff4e5;
+  background: -moz-linear-gradient(#fff4da, #ffffff);
+  background: -webkit-linear-gradient(#fff4da, #ffffff);
+  background: linear-gradient(#fff4df, #ffffff);
 }
 
-.debian_stable {
-  border: 1px solid #daeada;
+.distro_raspbian {
+  border: 1px solid #d0e0d0;
   background: #f8fff8;
   background: -moz-linear-gradient(#f2fff2, #ffffff);
   background: -webkit-linear-gradient(#f2fff2, #ffffff);
-  background: linear-gradient(#f2fff2, #ffffff);
+  background: linear-gradient(#ebffeb, #ffffff);
 }
 
-.debian_oldstable, .debian_oldoldstable {
-  border: 1px solid #eaeaea;
-  background: #f8f8f8;
-  background: -moz-linear-gradient(#f2f2f2, #ffffff);
-  background: -webkit-linear-gradient(#f2f2f2, #ffffff);
-  background: linear-gradient(#f2f2f2, #ffffff);
-}
-
-.raspbian_stable, .raspbian_oldstable {
-  border: 1px solid #eaeaca;
-  background: #ffffec;
-  background: -moz-linear-gradient(#ffffe2, #ffffff);
-  background: -webkit-linear-gradient(#ffffe2, #ffffff);
-  background: linear-gradient(#ffffe2, #ffffff);
-}
-
-.debian_discontinued {
-  border: 1px solid #e4e4e4;
-  background: repeating-linear-gradient(135deg, #fff 0, #f6f6f6 2%);
+.distro_discontinued {
+  border: 1px solid #e2e2e2;
+  background: repeating-linear-gradient(135deg, #fcfcfc 0, #f0f0f0 3%);
 }
 
 .debian .end {
