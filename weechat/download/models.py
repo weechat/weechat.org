@@ -180,6 +180,10 @@ class Security(models.Model):
             self.affected, self.fixed, self.release_date,
             self.description)
 
+    def date_l10n(self):
+        """Return the date formatted with localized date format."""
+        return localdate(self.date)
+
     def external_links(self):
         """Return URL to CVE (or "external" as-is if it's not a CVE)."""
         if self.external.startswith('CVE'):
@@ -200,6 +204,10 @@ class Security(models.Model):
     def affected_html(self):
         """Return affected versions for display in HTML."""
         return self.affected.replace(',', ' &rarr; ')
+
+    def release_date_l10n(self):
+        """Return the release date formatted with localized date format."""
+        return localdate(self.release_date)
 
     def url_commits(self):
         """Return URL with links to commits."""

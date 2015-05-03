@@ -43,7 +43,7 @@
       <td class="small sev{{ security.severity }}">{{ security.severity_i18n }}</td>
       <td class="small affected">{% autoescape off %}{{ security.affected_html }}{% endautoescape %}</td>
       <td class="small fixed">{{ security.fixed }}</td>
-      <td class="small">{% if security.release_date %}{{ security.release_date }}{% else %}-{% endif %}</td>
+      <td class="small">{% if security.release_date %}{{ security.release_date_l10n }}{% else %}-{% endif %}</td>
       <td class="small">{% autoescape off %}{{ security.url_commits }}{% endautoescape %}</td>
       <td class="description">
         {{ security.description_i18n }}
