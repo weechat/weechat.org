@@ -5,6 +5,19 @@
 {% block subtitle %} :: debian{% endblock %}
 {% block menu2_debian %}selected{% endblock %}
 
+{% block extrahead %}
+<script>
+var deb_apt_cmds = [
+  "...",
+{% for repo in repositories %}
+{% if repo.visible and repo.active %}
+  "$ sudo bash -c \"echo '{{ repo.apt_url }}' >/etc/apt/sources.list.d/weechat.list\"",
+{% endif %}
+{% endfor %}
+]
+</script>
+{% endblock %}
+
 {% block content %}
 
 {{ block.super }}
@@ -47,9 +60,7 @@
            {% endif %}>
           {{ debpkg_source.list.0.repo.name|capfirst }}
           “{{ debpkg_source.list.0.repo.version.codename }}”
-          {% if debpkg_source.list.0.repo.version.version != debpkg_source.list.0.repo.version.codename %}
           ({{ debpkg_source.list.0.repo.version.version }})
-          {% endif %}
         </div>
         <table>
       {% endif %}
@@ -105,17 +116,17 @@
         {% blocktrans %}Otherwise you can replace "https://" by "http://" in URLs (less secure).{% endblocktrans %}
       </li>
       <li>
-        {% trans "Create a weechat.list file with the repository, according to your Debian version:" %}
-        <ul>
+        {% trans "Create a weechat.list file with the repository, according to your distribution/version:" %}
+        <select id="deb_apt"
+                onchange="document.getElementById('deb_apt_cmd').innerHTML = deb_apt_cmds[document.getElementById('deb_apt').selectedIndex]">
+          <option selected="selected">{% trans "Choose your distribution/version" %}</option>
           {% for repo in repositories %}
           {% if repo.visible and repo.active %}
-          <li>
-            {{ repo.name|capfirst }} “{{ repo.version.codename }}” ({{ repo.version.version }}) :
-            <kbd>$ sudo bash -c "echo '{{ repo.apt_url }}' >/etc/apt/sources.list.d/weechat.list"</kbd>
-          </li>
+          <option>{{ repo.name|capfirst }} “{{ repo.version.codename }}” ({{ repo.version.version }})</option>
           {% endif %}
           {% endfor %}
-        </ul>
+        </select>
+        <kbd id="deb_apt_cmd">...</kbd>
       </li>
       <li>
         {% trans "Resynchronize your package index files:" %}
