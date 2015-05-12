@@ -14,6 +14,7 @@ _i18n_about_keydates = [
     gettext_lazy("Gaps in buffers numbers, IPv6 for DCC file/chat, command /print."),
     gettext_lazy("Guile plugin, support of python 3.x, weechat protocol in relay (remote interfaces), URL transfer in API."),
     gettext_lazy("Incremental text search in buffers."),
+    gettext_lazy("Javascript plugin, IRC SASL mechanism \"ecdsa-nist256p-challenge\"."),
     gettext_lazy("Last version before a major rewrite of WeeChat."),
     gettext_lazy("Lua plugin."),
     gettext_lazy("Mouse support, cursor mode."),

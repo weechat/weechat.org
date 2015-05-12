@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-03 16:53+0200\n"
+"POT-Creation-Date: 2015-05-12 07:46+0200\n"
 "PO-Revision-Date: 2015-02-21 11:42+0100\n"
 "Last-Translator: Krzysztof Korościk <soltys@szluug.org>\n"
 "Language-Team: Polish <soltys@szluug.org>\n"
@@ -81,22 +81,26 @@ msgid "Incremental text search in buffers."
 msgstr "Przyrostowe wyszukiwanie tekstu w buforach."
 
 #: about/_i18n_keydates.py:17
+msgid "Javascript plugin, IRC SASL mechanism \"ecdsa-nist256p-challenge\"."
+msgstr ""
+
+#: about/_i18n_keydates.py:18
 msgid "Last version before a major rewrite of WeeChat."
 msgstr "Ostatnia wersja przed poważnym przepisaniem kodu WeeChat."
 
-#: about/_i18n_keydates.py:18
+#: about/_i18n_keydates.py:19
 msgid "Lua plugin."
 msgstr "Wtyczka lua."
 
-#: about/_i18n_keydates.py:19
+#: about/_i18n_keydates.py:20
 msgid "Mouse support, cursor mode."
 msgstr "Wsparcie dla myszy, tryb kursora."
 
-#: about/_i18n_keydates.py:20
+#: about/_i18n_keydates.py:21
 msgid "Multiple layouts, auto-unmask IRC joins, WebSocket support in relay."
 msgstr "Wiele układów, auto-unmask IRC joins, wsparcie dla WebSocket w relay."
 
-#: about/_i18n_keydates.py:21
+#: about/_i18n_keydates.py:22
 msgid ""
 "New site weechat.org, major rewrite of WeeChat with new plugin API, tcl "
 "plugin."
@@ -104,31 +108,31 @@ msgstr ""
 "Nowa strona weechat.org, poważne przepisanie kodu WeeChat z nowym API dla "
 "wtyczek, wtyczka tcl."
 
-#: about/_i18n_keydates.py:22
+#: about/_i18n_keydates.py:23
 msgid "Perl plugin."
 msgstr "Wtyczka perl."
 
-#: about/_i18n_keydates.py:23
+#: about/_i18n_keydates.py:24
 msgid "Plugin \"script\" (scripts manager), SSL in relay."
 msgstr "Wtyczka \"script\" (zarządzanie skryptami), wsparcie SSL w relay."
 
-#: about/_i18n_keydates.py:24
+#: about/_i18n_keydates.py:25
 msgid "Proxy support, IPv6, SSL."
 msgstr "Wsparcie dla proxy, IPv6, SSL."
 
-#: about/_i18n_keydates.py:25
+#: about/_i18n_keydates.py:26
 msgid "Python plugin."
 msgstr "Wtyczka Python."
 
-#: about/_i18n_keydates.py:26
+#: about/_i18n_keydates.py:27
 msgid "Ruby plugin."
 msgstr "Wtyczka Ruby."
 
-#: about/_i18n_keydates.py:27
+#: about/_i18n_keydates.py:28
 msgid "SASL authentication."
 msgstr "Uwierzytelnianie SASL."
 
-#: about/_i18n_keydates.py:28
+#: about/_i18n_keydates.py:29
 msgid ""
 "Secured data, search of regular expression in buffer with text emphasis, "
 "dynamic day change message."
@@ -136,7 +140,7 @@ msgstr ""
 "Zabezpieczone dane, wyszukiwanie wyrażeń regularnych w buforze, dynamiczna "
 "wiadomość zmiany dnia."
 
-#: about/_i18n_keydates.py:29
+#: about/_i18n_keydates.py:30
 msgid "Trigger and Exec plugins, bare display, hidden buffers, unit tests."
 msgstr ""
 "Wtyczki Trigger i Exec, niesformatowane wyświetlanie ukryte bufory, testy "
@@ -2426,6 +2430,73 @@ msgstr ""
 "changelog/ChangeLog-1.0.1.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:98
+#, fuzzy
+#| msgid ""
+#| "Version 0.4.3 is available!\n"
+#| "\n"
+#| "Among the new features:\n"
+#| "\n"
+#| "- new command /print\n"
+#| "- logical and/or for tags in /filter and hook_print\n"
+#| "- gaps in buffer numbers\n"
+#| "- support of italic text\n"
+#| "- new options to customize default text search in buffers\n"
+#| "- use of IRC monitor command for /notify (if available on server)\n"
+#| "- new IRC server option \"ssl_fingerprint\"\n"
+#| "- new option to smart-filter IRC mode messages\n"
+#| "- new option for default IRC ban mask\n"
+#| "- support of IPv6 for DCC chat/file\n"
+#| "- auto check CRC32 of files received with DCC\n"
+#| "- many bugs fixed.\n"
+#| "\n"
+#| "For complete list of new features and bugs fixed, please look at <a href="
+#| "\"http://dev.weechat.org/post/2014/02/09/Version-0.4.3\">development "
+#| "blog</a> or <a href=\"/files/changelog/ChangeLog-0.4.3.html\">ChangeLog</"
+#| "a>."
+msgid ""
+"Version 1.2 is available!\n"
+"\n"
+"Among the new features:\n"
+"\n"
+"- add options to customize word chars (for detecting word boundaries)\n"
+"- add a welcome message on first WeeChat run\n"
+"- add options to customize quoted messages (in cursor mode)\n"
+"- add support of environment variables in evaluated expressions\n"
+"- add IRC SASL mechanism \"ecdsa-nist256p-challenge\"\n"
+"- add support of SHA-256 and SHA-512 algorithms in IRC server option "
+"\"ssl_fingerprint\"\n"
+"- add support of IRC capability \"account-notify\"\n"
+"- remove \"freenode\" server from default config\n"
+"- new script plugin for javascript\n"
+"- many bugs fixed.\n"
+"\n"
+"For complete list of new features and bugs fixed, please look at <a href="
+"\"http://dev.weechat.org/post/2015/05/10/Version-1.2\">development blog</a> "
+"or <a href=\"/files/changelog/ChangeLog-1.2.html\">ChangeLog</a>."
+msgstr ""
+"Wersja 0.4.3 jest dostępna!\n"
+"\n"
+"Nowe funkcje:\n"
+"\n"
+"- nowa komenda /print\n"
+"- operacje logiczne i/lub dla tagów w komendzie /filter i hook_print\n"
+"- przerwy w numeracji buforów\n"
+"- wsparcie dla pochyłego tekstu\n"
+"- nowa opcja dla modyfikacji domyślnego wyszukiwania tekstu w buforach\n"
+"- użycie komendy IRC monitor dla /notify (jeśli dostępne na serwerze)\n"
+"- nowa opcja serwera IRC \"ssl_fingerprint\"\n"
+"- nowa opcja do inteligentnego filtrowania wiadomości o zmianach atrybutów\n"
+"- nowa opcja dla domyślnej maski banów na IRC\n"
+"- wsparcie dla IPv6 w przesyłaniu plików/rozmowach DCC\n"
+"- automatyczne sprawdzanie sumy CRC32 dla plików pobranych przez DCC\n"
+"- poprawiono wiele błędów.\n"
+"\n"
+"Pełną listę nowych funkcji i poprawionych błędów można znaleźć na <a href="
+"\"http://dev.weechat.org/post/2014/02/09/Version-0.4.3\">blogu "
+"developerskim</a> oraz w pliku <a href=\"/files/changelog/ChangeLog-0.4.3."
+"html\">ChangeLog</a>."
+
+#: news/_i18n_info.py:99
 msgid ""
 "Version v0.1.2 is available!\n"
 "\n"
@@ -2458,11 +2529,11 @@ msgstr ""
 "Dodano, 2005-05-24 : naprawiono awarię podczas uruchamiania oraz wykrywanie "
 "Perla/Pythona , obecny numer wersji to 0.1.2.1."
 
-#: news/_i18n_info.py:99
+#: news/_i18n_info.py:100
 msgid "WeeChat - Wee Enhanced Environment for Chat"
 msgstr "WeeChat - Małe  Udoskonalone Środowisko do rozmów"
 
-#: news/_i18n_info.py:100
+#: news/_i18n_info.py:101
 msgid ""
 "WeeChat has many new important features since some weeks:\n"
 "- multi-windows management (with horizontal and vertical window split)\n"
@@ -2486,11 +2557,11 @@ msgstr ""
 "Śmiało możesz zgłaszać dowolny problem lub sugestie jak usprawnić nawigację "
 "między buforami/oknami."
 
-#: news/_i18n_info.py:101
+#: news/_i18n_info.py:102
 msgid "WeeChat in Cygwin"
 msgstr "WeeChat w Cygwinie"
 
-#: news/_i18n_info.py:102
+#: news/_i18n_info.py:103
 msgid ""
 "WeeChat is now in Cygwin, and can be installed with setup.exe.\n"
 "Version 0.4.2 is available for 32 and 64-bit Cygwin.\n"
@@ -2504,7 +2575,7 @@ msgstr ""
 "Uwaga: wtyczka Guile nie jest dostępna, ponieważ wymaga guile w wersji >= "
 "2.0, która nie jest dostępna w Cygwinie."
 
-#: news/_i18n_info.py:103
+#: news/_i18n_info.py:104
 msgid ""
 "WeeChat project is started.\n"
 "\n"
@@ -2524,7 +2595,7 @@ msgstr ""
 "- szybki, lekki oraz rozszerzalny za pomocą skryptów.\n"
 "- ..."
 
-#: news/_i18n_info.py:104
+#: news/_i18n_info.py:105
 msgid ""
 "WeeChat project now accepts donations via Paypal account, with secured "
 "payment."
@@ -2532,7 +2603,7 @@ msgstr ""
 "Projekt WeeChat od teraz przyjmuje dotacje za pomocą konta Paypal, z "
 "zabezpieczoną płatnością."
 
-#: news/_i18n_info.py:105
+#: news/_i18n_info.py:106
 msgid ""
 "WeeChat repositories (weechat, scripts, qweechat) have been moved to GitHub, "
 "in WeeChat organization: <a href=\"https://github.com/weechat\">https://"
@@ -2548,15 +2619,15 @@ msgstr ""
 "Więcej informacji można znaleźć na <a href=\"http://dev.weechat.org/"
 "post/2014/03/03/Git-repositories-moved-to-Github\">blogu deweloperskim</a>."
 
-#: news/_i18n_info.py:106
+#: news/_i18n_info.py:107
 msgid "WeeChat screenshot"
 msgstr "Zrzut ekranu WeeChat"
 
-#: news/_i18n_info.py:107
+#: news/_i18n_info.py:108
 msgid "WeeChat scripts page"
 msgstr "Skrypty WeeChat"
 
-#: news/_i18n_info.py:108
+#: news/_i18n_info.py:109
 msgid ""
 "WeeChat scripts page (today Perl scripts only) has been added.\n"
 "On this page you can submit your script (need to be approved by WeeChat "
@@ -2572,7 +2643,7 @@ msgstr ""
 "Uwaga: skrypty w Perlu wymagają wersji WeeChat > 0.0.3, dlatego obecnie "
 "należy pobrać wersję rozwojową."
 
-#: news/_i18n_info.py:109
+#: news/_i18n_info.py:110
 msgid ""
 "WeeChat story page is now available, as screenshots. You can see differences "
 "between all versions in one view!\n"
@@ -2582,15 +2653,15 @@ msgstr ""
 "zobaczyć różnice pomiędzy wersjami!\n"
 "Wersje rozwojowe są również widoczne, oraz często uaktualniane."
 
-#: news/_i18n_info.py:110
+#: news/_i18n_info.py:111
 msgid "WeeChat users map"
 msgstr "Mapa użytkowników WeeChat"
 
-#: news/_i18n_info.py:111
+#: news/_i18n_info.py:112
 msgid "WeeChat will merge with irssi"
 msgstr "WeeChat połączy się z irssi"
 
-#: news/_i18n_info.py:112
+#: news/_i18n_info.py:113
 msgid ""
 "WeeChat, the fast, light and extensible IRC client, is released for the "
 "first time, version 0.0.1.\n"

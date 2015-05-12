@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-03 16:53+0200\n"
+"POT-Creation-Date: 2015-05-12 07:46+0200\n"
 "PO-Revision-Date: 2014-11-25 20:31+0100\n"
 "Last-Translator: Marco Paolone <marcopaolone@gmail.com>\n"
 "Language-Team: Italian <marcopaolone@gmail.com>\n"
@@ -87,26 +87,30 @@ msgid "Incremental text search in buffers."
 msgstr "ricerca del testo incrementale nei buffer (v0.2.4)"
 
 #: about/_i18n_keydates.py:17
+msgid "Javascript plugin, IRC SASL mechanism \"ecdsa-nist256p-challenge\"."
+msgstr ""
+
+#: about/_i18n_keydates.py:18
 #, fuzzy
 msgid "Last version before a major rewrite of WeeChat."
 msgstr ""
 "ultima versione prima di una riscrittura principale di WeeChat (v0.2.6)"
 
-#: about/_i18n_keydates.py:18
+#: about/_i18n_keydates.py:19
 #, fuzzy
 msgid "Lua plugin."
 msgstr "plugin lua (v0.1.8)"
 
-#: about/_i18n_keydates.py:19
+#: about/_i18n_keydates.py:20
 #, fuzzy
 msgid "Mouse support, cursor mode."
 msgstr "supporto del mouse, modalità cursore (v0.3.6)"
 
-#: about/_i18n_keydates.py:20
+#: about/_i18n_keydates.py:21
 msgid "Multiple layouts, auto-unmask IRC joins, WebSocket support in relay."
 msgstr ""
 
-#: about/_i18n_keydates.py:21
+#: about/_i18n_keydates.py:22
 #, fuzzy
 msgid ""
 "New site weechat.org, major rewrite of WeeChat with new plugin API, tcl "
@@ -115,42 +119,42 @@ msgstr ""
 "nuovo sito weechat.org, riscrittura principale di WeeChat con le nuove API "
 "per i plugin, plugin tcl (v0.3.0)"
 
-#: about/_i18n_keydates.py:22
+#: about/_i18n_keydates.py:23
 #, fuzzy
 msgid "Perl plugin."
 msgstr "Plugin jabber"
 
-#: about/_i18n_keydates.py:23
+#: about/_i18n_keydates.py:24
 msgid "Plugin \"script\" (scripts manager), SSL in relay."
 msgstr ""
 
-#: about/_i18n_keydates.py:24
+#: about/_i18n_keydates.py:25
 #, fuzzy
 msgid "Proxy support, IPv6, SSL."
 msgstr "supporto proxy, ipv6, SSL (v0.1.3)"
 
-#: about/_i18n_keydates.py:25
+#: about/_i18n_keydates.py:26
 #, fuzzy
 msgid "Python plugin."
 msgstr "plugin python (v0.1.2)"
 
-#: about/_i18n_keydates.py:26
+#: about/_i18n_keydates.py:27
 #, fuzzy
 msgid "Ruby plugin."
 msgstr "plugin ruby (v0.1.7)"
 
-#: about/_i18n_keydates.py:27
+#: about/_i18n_keydates.py:28
 #, fuzzy
 msgid "SASL authentication."
 msgstr "autenticazione SASL (v0.3.2)"
 
-#: about/_i18n_keydates.py:28
+#: about/_i18n_keydates.py:29
 msgid ""
 "Secured data, search of regular expression in buffer with text emphasis, "
 "dynamic day change message."
 msgstr ""
 
-#: about/_i18n_keydates.py:29
+#: about/_i18n_keydates.py:30
 msgid "Trigger and Exec plugins, bare display, hidden buffers, unit tests."
 msgstr ""
 
@@ -2291,6 +2295,54 @@ msgid ""
 msgstr ""
 
 #: news/_i18n_info.py:98
+#, fuzzy
+msgid ""
+"Version 1.2 is available!\n"
+"\n"
+"Among the new features:\n"
+"\n"
+"- add options to customize word chars (for detecting word boundaries)\n"
+"- add a welcome message on first WeeChat run\n"
+"- add options to customize quoted messages (in cursor mode)\n"
+"- add support of environment variables in evaluated expressions\n"
+"- add IRC SASL mechanism \"ecdsa-nist256p-challenge\"\n"
+"- add support of SHA-256 and SHA-512 algorithms in IRC server option "
+"\"ssl_fingerprint\"\n"
+"- add support of IRC capability \"account-notify\"\n"
+"- remove \"freenode\" server from default config\n"
+"- new script plugin for javascript\n"
+"- many bugs fixed.\n"
+"\n"
+"For complete list of new features and bugs fixed, please look at <a href="
+"\"http://dev.weechat.org/post/2015/05/10/Version-1.2\">development blog</a> "
+"or <a href=\"/files/changelog/ChangeLog-1.2.html\">ChangeLog</a>."
+msgstr ""
+"È disponibile la versione 0.3.8!\n"
+"\n"
+"Tra le nuove caratteristiche:\n"
+"- aggiunta la modalità per terminale \"bracketed paste\"\n"
+"- aggiunto il meccanismo SASL \"external\" per IRC\n"
+"- migliora l'analisi delle modalità canale IRC (non invia il comando extra "
+"\"MODE\" al server)\n"
+"- segue i link simbolici ai file di configurazione (*.conf)\n"
+"- nuova opzione weechat.look.prefix_same_nick (nasconde lo stesso prefisso "
+"per messaggi multipli consecutivi dallo stesso nick)\n"
+"- aggiunti i colori per le righe della cronologia\n"
+"- redirezione dei messaggi IRC dai client per nascondere l'output (plugin "
+"relay, protocollo IRC)\n"
+"- aggiunta di un timeout della connessione per il processo figlio in "
+"hook_connect\n"
+"- corretti i bug del display ed i crash con finestre piccole\n"
+"- corretti i file di configurazione troncati (lunghezza-zero) dopo crash di "
+"sistema\n"
+"- molti bug corretti.\n"
+"\n"
+"Per un elenco completo delle nuove caratteristiche ed i bug corretti, "
+"consultare il <a href=\"http://dev.weechat.org/post/2012/06/03/"
+"Version-0.3.8\">blog di sviluppo</a> oppure il <a href=\"/files/changelog/"
+"ChangeLog-0.3.8.html\">ChangeLog</a>."
+
+#: news/_i18n_info.py:99
 msgid ""
 "Version v0.1.2 is available!\n"
 "\n"
@@ -2324,11 +2376,11 @@ msgstr ""
 "Aggiunta, 24-05-2005 : corretto crash all'avvio e rilevamento Perl/Python, "
 "ora la versione è 0.1.2.1."
 
-#: news/_i18n_info.py:99
+#: news/_i18n_info.py:100
 msgid "WeeChat - Wee Enhanced Environment for Chat"
 msgstr "WeeChat - Wee Enhanced Environment for Chat"
 
-#: news/_i18n_info.py:100
+#: news/_i18n_info.py:101
 msgid ""
 "WeeChat has many new important features since some weeks:\n"
 "- multi-windows management (with horizontal and vertical window split)\n"
@@ -2351,12 +2403,12 @@ msgstr ""
 "Sentitevi liberi di notificare qualunque problema o suggerimento per "
 "migliorare la navigazione tra buffer/finestre."
 
-#: news/_i18n_info.py:101
+#: news/_i18n_info.py:102
 #, fuzzy
 msgid "WeeChat in Cygwin"
 msgstr "WeeChat è:"
 
-#: news/_i18n_info.py:102
+#: news/_i18n_info.py:103
 msgid ""
 "WeeChat is now in Cygwin, and can be installed with setup.exe.\n"
 "Version 0.4.2 is available for 32 and 64-bit Cygwin.\n"
@@ -2365,7 +2417,7 @@ msgid ""
 "yet available in Cygwin."
 msgstr ""
 
-#: news/_i18n_info.py:103
+#: news/_i18n_info.py:104
 msgid ""
 "WeeChat project is started.\n"
 "\n"
@@ -2385,7 +2437,7 @@ msgstr ""
 "- veloce, leggero ed estensibile con script.\n"
 "-..."
 
-#: news/_i18n_info.py:104
+#: news/_i18n_info.py:105
 msgid ""
 "WeeChat project now accepts donations via Paypal account, with secured "
 "payment."
@@ -2393,7 +2445,7 @@ msgstr ""
 "Il progetto WeeChat ora accetta donazioni tramite account Paypal, con "
 "pagamento sicuro."
 
-#: news/_i18n_info.py:105
+#: news/_i18n_info.py:106
 msgid ""
 "WeeChat repositories (weechat, scripts, qweechat) have been moved to GitHub, "
 "in WeeChat organization: <a href=\"https://github.com/weechat\">https://"
@@ -2403,15 +2455,15 @@ msgid ""
 "post/2014/03/03/Git-repositories-moved-to-Github\">development blog</a>."
 msgstr ""
 
-#: news/_i18n_info.py:106
+#: news/_i18n_info.py:107
 msgid "WeeChat screenshot"
 msgstr "Schermata di WeeChat"
 
-#: news/_i18n_info.py:107
+#: news/_i18n_info.py:108
 msgid "WeeChat scripts page"
 msgstr "Pagina degli script di WeeChat"
 
-#: news/_i18n_info.py:108
+#: news/_i18n_info.py:109
 msgid ""
 "WeeChat scripts page (today Perl scripts only) has been added.\n"
 "On this page you can submit your script (need to be approved by WeeChat "
@@ -2427,7 +2479,7 @@ msgstr ""
 "Nota: gli script Perl richiedono una versione di WeeChat > 0.0.3, per cui "
 "bisogna scaricare la versione di sviluppo."
 
-#: news/_i18n_info.py:109
+#: news/_i18n_info.py:110
 msgid ""
 "WeeChat story page is now available, as screenshots. You can see differences "
 "between all versions in one view!\n"
@@ -2437,15 +2489,15 @@ msgstr ""
 "notare la differenza tra tutte le versioni in un colpo solo!\n"
 "È visibile anche la versione di sviluppo ed è aggiornata di frequente."
 
-#: news/_i18n_info.py:110
+#: news/_i18n_info.py:111
 msgid "WeeChat users map"
 msgstr "Mappa utenti WeeChat"
 
-#: news/_i18n_info.py:111
+#: news/_i18n_info.py:112
 msgid "WeeChat will merge with irssi"
 msgstr "WeeChat si unirà ad irssi"
 
-#: news/_i18n_info.py:112
+#: news/_i18n_info.py:113
 msgid ""
 "WeeChat, the fast, light and extensible IRC client, is released for the "
 "first time, version 0.0.1.\n"
