@@ -67,6 +67,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Amarok control and now playing script. Works locally and over SSH."),
     # Translators: description for script "surfraw.rb" (0.0.1-0.2.6)
     gettext_lazy("An interface to Surfraw."),
+    # Translators: description for script "commorkers.pl" (0.3.0+)
+    gettext_lazy("Analyze channels nicklists to find common lurkers."),
     # Translators: description for script "announce_url_title.py" (0.3.0+)
     gettext_lazy("Announce URL title to user or to channel."),
     # Translators: description for script "dcc_antispam.py" (0.3.0+)
@@ -233,6 +235,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Display weather from Google."),
     # Translators: description for script "audacious.pl" (0.0.1-0.2.6)
     gettext_lazy("Display which song Audacious is currently playing."),
+    # Translators: description for script "deadbeef_np.py" (0.3.0+)
+    gettext_lazy("Display which song DeaDBeeF is currently playing."),
     # Translators: description for script "rbox.rb" (0.0.1-0.2.6)
     gettext_lazy("Display which song Rhythmbox is currently playing."),
     # Translators: description for script "clemenshow.py" (0.3.0+)
@@ -341,6 +345,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Let users send you assignments that will be put into a file."),
     # Translators: description for script "samechannel.rb" (0.4.1+)
     gettext_lazy("List multiple occurences of the same nick(s) in a set of channels."),
+    # Translators: description for script "weestreamer.py" (0.3.0+)
+    gettext_lazy("Livestreamer companion for WeeChat."),
     # Translators: description for script "input_lock.rb" (0.3.0+)
     gettext_lazy("Lock input (authorize only commands)."),
     # Translators: description for script "logurlsql.pl" (0.0.1-0.2.6)
@@ -363,6 +369,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Make xterm clipboard paste available as command."),
     # Translators: description for script "fete.pl" (0.0.1-0.2.6)
     gettext_lazy("Manage feasts from french calendar."),
+    # Translators: description for script "unread_buffer.py" (1.0+)
+    gettext_lazy("Mark buffer as unread."),
     # Translators: description for script "automarkbuffer.py" (1.0+)
     gettext_lazy("Mark buffers as read if there is no new message in a specific time range."),
     # Translators: description for script "mastermind.pl" (0.3.0+)
@@ -397,6 +405,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Notifications through OS X notification center."),
     # Translators: description for script "notify.py" (0.0.1-0.2.6)
     gettext_lazy("Notifies the user using pynotify module (just like pidgin/gaim)."),
+    # Translators: description for script "dzen_notifier.pl" (0.4.3+)
+    gettext_lazy("Notify dzen when a private message is received."),
     # Translators: description for script "weenotify.py" (0.0.1-0.2.6)
     gettext_lazy("Notify of nick highlight via libnotify."),
     # Translators: description for script "update_notifier.py" (0.3.0+)
@@ -617,6 +627,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Show /list results in a common buffer and interact with them."),
     # Translators: description for script "topicdiff.py" (0.3.0+)
     gettext_lazy("Show differences between old and new topics."),
+    # Translators: description for script "hatwidget.py" (0.3.0+)
+    gettext_lazy("Show hats (user modes like \"@\" or \"+\") in a bar item."),
     # Translators: description for script "xosdnotify.tcl" (0.3.0+)
     gettext_lazy("Show highlights and private messages with OSD."),
     # Translators: description for script "hl_here.pl" (0.3.0+)
@@ -647,6 +659,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Snarl notifications for highlights."),
     # Translators: description for script "sort_servers.py" (0.3.9+)
     gettext_lazy("Sort buffers by server and alphabetically."),
+    # Translators: description for script "sort_arza.pl" (0.3.0+)
+    gettext_lazy("Sort channels inside networks."),
     # Translators: description for script "sort_buffers.pl" (0.3.0+)
     gettext_lazy("Sort irc buffers alphabetically."),
     # Translators: description for script "listsort.pl" (0.3.4+)
