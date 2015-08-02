@@ -18,9 +18,9 @@
         <li class="nav-doc">
           <a href="{% url 'doc' %}">{% trans "Documentation" %}</a>
           <ul>
-            <li><a href="{% url 'doc_version' 'stable' %}">{% trans "Docs (stable)" %}</a></li>
-            <li><a href="{% url 'doc_version' 'devel' %}">{% trans "Docs (devel)" %}</a></li>
-            <li><a href="{% url 'doc_version' 'old' %}">{% trans "Docs (old)" %}</a></li>
+            <li><a href="{% url 'doc_version' 'stable' %}">{% trans "Stable version" %}</a></li>
+            <li><a href="{% url 'doc_version' 'devel' %}">{% trans "Dev version" %}</a></li>
+            <li><a href="{% url 'doc_version' 'old' %}">{% trans "Old versions" %}</a></li>
             <li><a href="/files/doc/weechat_faq.en.html" target="_blank">{% trans "FAQ" %} ({% trans "English" %}) <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt=">>" /></a></li>
             <li><a href="/files/doc/devel/weechat_plugin_api.en.html" target="_blank">API ({% trans "English" %}) <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt=">>" /></a></li>
           </ul>
