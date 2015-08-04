@@ -78,10 +78,17 @@ class Repo(models.Model):
 
     def apt_url(self):
         """
-        Return the URL to use with apt,
+        Return the URL to use with apt for binary packages,
         for example: "deb https://weechat.org/debian sid main".
         """
         return 'deb %s %s main' % (self.url, self.version.codename)
+
+    def apt_url_src(self):
+        """
+        Return the URL to use with apt for sources packages,
+        for example: "deb-src https://weechat.org/debian sid main".
+        """
+        return 'deb-src %s %s main' % (self.url, self.version.codename)
 
     class Meta:
         ordering = ['priority']

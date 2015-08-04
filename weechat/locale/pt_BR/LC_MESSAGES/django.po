@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-14 13:50+0200\n"
-"PO-Revision-Date: 2014-11-25 20:32+0100\n"
+"POT-Creation-Date: 2015-08-04 07:44+0200\n"
+"PO-Revision-Date: 2015-08-04 07:43+0200\n"
 "Last-Translator: Alexandre Bolelli <semeion7@gmail.com>\n"
 "Language-Team: Portuguese <semeion7@gmail.com>\n"
 "Language: pt_BR\n"
@@ -199,7 +199,7 @@ msgid "German"
 msgstr "Alemão"
 
 #: doc/models.py:32 settings.py:60 templates/dev/support.html:26
-#: templates/menu.html:23 templates/menu.html.py:24
+#: templates/menu.html:24 templates/menu.html.py:25
 msgid "English"
 msgstr "Inglês"
 
@@ -239,7 +239,7 @@ msgstr "Russo"
 msgid "Turkish"
 msgstr "Turco"
 
-#: doc/models.py:73 templates/menu.html:23
+#: doc/models.py:73 templates/menu.html:24
 msgid "FAQ"
 msgstr "Perguntas Frequentes"
 
@@ -621,7 +621,7 @@ msgstr "Repositórios Debian/Raspbian"
 msgid "Dennis Ritchie has left #world"
 msgstr "Dennis Ritchie has left #world"
 
-#: news/_i18n_info.py:22 templates/home/home.html:55 templates/menu.html:62
+#: news/_i18n_info.py:22 templates/home/home.html:55 templates/menu.html:65
 msgid "Devel blog"
 msgstr "Blog de desenvolvimento"
 
@@ -5209,8 +5209,7 @@ msgstr "Válido"
 msgid "dev"
 msgstr "dev"
 
-#: templates/dev/dev.html:13 templates/home/home.html:58
-#: templates/menu.html:59
+#: templates/dev/dev.html:13 templates/home/home.html:58 templates/menu.html:61
 msgid "Roadmap"
 msgstr "Roteiro"
 
@@ -5219,11 +5218,12 @@ msgid "Stats"
 msgstr "Estatísticas"
 
 #: templates/dev/dev.html:15 templates/dev/info_list.html:17
+#: templates/menu.html:63
 msgid "Info"
 msgstr "Info"
 
 # i need know the complete paragraph, here can be: Apoio or Suporte
-#: templates/dev/dev.html:16 templates/menu.html:61
+#: templates/dev/dev.html:16 templates/menu.html:64
 msgid "Support"
 msgstr "Suporte"
 
@@ -5301,7 +5301,7 @@ msgstr "Concluído"
 msgid "statistics"
 msgstr "estatísticas"
 
-#: templates/dev/stats.html:15 templates/menu.html:37
+#: templates/dev/stats.html:15 templates/menu.html:39
 #: templates/plugins/plugins.html:13
 msgid "Scripts"
 msgstr "Scripts"
@@ -5432,6 +5432,7 @@ msgid "Devel"
 msgstr "Desenvolvimento"
 
 #: templates/doc/doc.html:15 templates/download/download.html:15
+#: templates/menu.html:23 templates/menu.html.py:33
 msgid "Old versions"
 msgstr "Versões antigas"
 
@@ -5506,7 +5507,7 @@ msgstr ""
 msgid "More information about WeeChat translations:"
 msgstr "Mais informações sobre traduções do WeeChat:"
 
-#: templates/download/debian.html:26
+#: templates/download/debian.html:28
 #, fuzzy
 msgid ""
 "<strong>Warning:</strong> these Debian packages are unofficial, not signed, "
@@ -5515,86 +5516,92 @@ msgstr ""
 "<strong>Aviso:</strong> esta versão pode ser instável ou pode não compilar, "
 "você está avisado."
 
-#: templates/download/debian.html:39
+#: templates/download/debian.html:41
 msgid "Important"
 msgstr "Importante"
 
-#: templates/download/debian.html:45
+#: templates/download/debian.html:47
 msgid "Builds by"
 msgstr "Construção por"
 
-#: templates/download/debian.html:49
+#: templates/download/debian.html:51
 msgid "Latest build:"
 msgstr "Última construção:"
 
-#: templates/download/debian.html:59
+#: templates/download/debian.html:61
 msgid "There are no more package builds in this repository."
 msgstr ""
 
-#: templates/download/debian.html:77
+#: templates/download/debian.html:79
 msgid "Architecture"
 msgstr "Arquitetura"
 
-#: templates/download/debian.html:80
+#: templates/download/debian.html:82
 msgid "files"
 msgstr "arquivos"
 
-#: templates/download/debian.html:105
+#: templates/download/debian.html:107
 msgid "Instructions:"
 msgstr ""
 
-#: templates/download/debian.html:110
+#: templates/download/debian.html:112
 msgid ""
 "You must use apt, apt-get or aptitude to install the packages (with sudo or "
 "as \"root\" user)."
 msgstr ""
 
-#: templates/download/debian.html:111
+#: templates/download/debian.html:113
 msgid "The following examples use sudo and aptitude."
 msgstr ""
 
-#: templates/download/debian.html:114
+#: templates/download/debian.html:116
 msgid "Install https transport for apt:"
 msgstr ""
 
-#: templates/download/debian.html:116
+#: templates/download/debian.html:118
 msgid ""
 "Otherwise you can replace \"https://\" by \"http://\" in URLs (less secure)."
 msgstr ""
 
-#: templates/download/debian.html:119
+#: templates/download/debian.html:121
 msgid ""
 "Create a weechat.list file with the repository, according to your "
 "distribution/version:"
 msgstr ""
 
-#: templates/download/debian.html:122
+#: templates/download/debian.html:124
 msgid "Choose your distribution/version"
 msgstr ""
 
 #: templates/download/debian.html:132
+msgid ""
+"Note: the second command line is optional, it is used to download source "
+"packages."
+msgstr ""
+
+#: templates/download/debian.html:135
 msgid "Resynchronize your package index files:"
 msgstr ""
 
-#: templates/download/debian.html:136
+#: templates/download/debian.html:139
 msgid ""
 "Install the packages; the \"plugins\" package is highly recommended but not "
 "mandatory."
 msgstr ""
 
-#: templates/download/debian.html:139
+#: templates/download/debian.html:142
 #, fuzzy
 #| msgid "next stable version"
 msgid "For the stable version:"
 msgstr "próxima versão estável"
 
-#: templates/download/debian.html:143
+#: templates/download/debian.html:146
 #, fuzzy
 #| msgid "or development version"
 msgid "For the development version:"
 msgstr "ou versão de desenvolvimento"
 
-#: templates/download/debian.html:155
+#: templates/download/debian.html:158
 msgid "No debian repository."
 msgstr "Nenhum repositório debian."
 
@@ -5602,7 +5609,7 @@ msgstr "Nenhum repositório debian."
 msgid "download"
 msgstr "baixar"
 
-#: templates/download/download.html:16 templates/menu.html:32
+#: templates/download/download.html:16 templates/menu.html:34
 #, fuzzy
 #| msgid "Debian repositories"
 msgid "Debian/Ubuntu repositories"
@@ -5905,7 +5912,7 @@ msgstr "A última versão estável do WeeChat é"
 msgid "released on"
 msgstr "lançado em"
 
-#: templates/home/home.html:40 templates/menu.html:28
+#: templates/home/home.html:40 templates/menu.html:29
 #: templates/plugins/source.html:17 templates/themes/source.html:16
 msgid "Download"
 msgstr "Baixar"
@@ -5988,52 +5995,44 @@ msgstr "Página Inicial"
 msgid "About"
 msgstr "Sobre"
 
-#: templates/menu.html:21
-msgid "Docs (stable)"
-msgstr "Docs (estável)"
-
-#: templates/menu.html:22
-msgid "Docs (devel)"
-msgstr "Docs (desenvolvimento)"
-
-#: templates/menu.html:30
+#: templates/menu.html:21 templates/menu.html.py:31
 msgid "Stable version"
 msgstr "Versão estável"
 
-#: templates/menu.html:31
+#: templates/menu.html:22 templates/menu.html.py:32
 #, fuzzy
 msgid "Dev version"
 msgstr "Nova versão"
 
-#: templates/menu.html:33
+#: templates/menu.html:35
 msgid "Security issues"
 msgstr "Problemas de segurança"
 
-#: templates/menu.html:39
+#: templates/menu.html:41
 msgid "Browse scripts"
 msgstr "Navegar pelos scripts"
 
-#: templates/menu.html:40 templates/plugins/plugins.html:14
+#: templates/menu.html:42 templates/plugins/plugins.html:14
 msgid "Add script"
 msgstr "Adicionar script"
 
-#: templates/menu.html:41 templates/plugins/plugins.html:15
+#: templates/menu.html:43 templates/plugins/plugins.html:15
 msgid "Update script"
 msgstr "Atualizar script"
 
-#: templates/menu.html:42 templates/plugins/plugins.html:16
+#: templates/menu.html:44 templates/plugins/plugins.html:16
 msgid "Pending scripts"
 msgstr "Scripts pendentes"
 
-#: templates/menu.html:43 templates/plugins/plugins.html:17
+#: templates/menu.html:45 templates/plugins/plugins.html:17
 msgid "Unofficial scripts"
 msgstr "Scripts não-oficiais"
 
-#: templates/menu.html:60
+#: templates/menu.html:62
 msgid "Statistics"
 msgstr "Estatísticas"
 
-#: templates/menu.html:63
+#: templates/menu.html:66
 #, fuzzy
 msgid "Repositories"
 msgstr "Repositórios Debian"
@@ -6456,7 +6455,3 @@ msgstr "Erro interno."
 #: themes/models.py:268
 msgid "Invalid name: different from theme."
 msgstr "Nome inválido: diferente do tema."
-
-#, fuzzy
-#~ msgid "For example development version:"
-#~ msgstr "ou versão de desenvolvimento"

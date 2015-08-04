@@ -8,10 +8,12 @@
 {% block extrahead %}
 <script>
 var deb_apt_cmds = [
-  "...",
+  "...<br />...",
 {% for repo in repositories %}
 {% if repo.visible and repo.active %}
-  "$ sudo bash -c \"echo '{{ repo.apt_url }}' >/etc/apt/sources.list.d/weechat.list\"",
+  "$ sudo bash -c \"echo '{{ repo.apt_url }}' >/etc/apt/sources.list.d/weechat.list\"" +
+  "<br />" +
+  "$ sudo bash -c \"echo '{{ repo.apt_url_src }}' >>/etc/apt/sources.list.d/weechat.list\"",
 {% endif %}
 {% endfor %}
 ]
@@ -126,7 +128,8 @@ var deb_apt_cmds = [
           {% endif %}
           {% endfor %}
         </select>
-        <kbd id="deb_apt_cmd">...</kbd>
+        <kbd id="deb_apt_cmd">...<br />...</kbd>
+        {% trans "Note: the second command line is optional, it is used to download source packages." %}
       </li>
       <li>
         {% trans "Resynchronize your package index files:" %}

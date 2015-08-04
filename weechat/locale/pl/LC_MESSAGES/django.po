@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-14 13:50+0200\n"
-"PO-Revision-Date: 2015-02-21 11:42+0100\n"
+"POT-Creation-Date: 2015-08-04 07:44+0200\n"
+"PO-Revision-Date: 2015-08-04 07:43+0200\n"
 "Last-Translator: Krzysztof Korościk <soltys@szluug.org>\n"
 "Language-Team: Polish <soltys@szluug.org>\n"
 "Language: pl\n"
@@ -201,7 +201,7 @@ msgid "German"
 msgstr "Niemiecki"
 
 #: doc/models.py:32 settings.py:60 templates/dev/support.html:26
-#: templates/menu.html:23 templates/menu.html.py:24
+#: templates/menu.html:24 templates/menu.html.py:25
 msgid "English"
 msgstr "Angielski"
 
@@ -241,7 +241,7 @@ msgstr "Rosyjski"
 msgid "Turkish"
 msgstr "Turecki"
 
-#: doc/models.py:73 templates/menu.html:23
+#: doc/models.py:73 templates/menu.html:24
 msgid "FAQ"
 msgstr "FAQ"
 
@@ -618,7 +618,7 @@ msgstr "Repozytoria Debiana/Raspbiana"
 msgid "Dennis Ritchie has left #world"
 msgstr "Dennis Ritchie opuścił #świat"
 
-#: news/_i18n_info.py:22 templates/home/home.html:55 templates/menu.html:62
+#: news/_i18n_info.py:22 templates/home/home.html:55 templates/menu.html:65
 msgid "Devel blog"
 msgstr "Blog deweloperski"
 
@@ -5331,8 +5331,7 @@ msgstr "Prawidłowy"
 msgid "dev"
 msgstr "rozwojowa"
 
-#: templates/dev/dev.html:13 templates/home/home.html:58
-#: templates/menu.html:59
+#: templates/dev/dev.html:13 templates/home/home.html:58 templates/menu.html:61
 msgid "Roadmap"
 msgstr "Plan wydań"
 
@@ -5341,10 +5340,11 @@ msgid "Stats"
 msgstr "Statystyki"
 
 #: templates/dev/dev.html:15 templates/dev/info_list.html:17
+#: templates/menu.html:63
 msgid "Info"
 msgstr "Info"
 
-#: templates/dev/dev.html:16 templates/menu.html:61
+#: templates/dev/dev.html:16 templates/menu.html:64
 msgid "Support"
 msgstr "Wsparcie"
 
@@ -5422,7 +5422,7 @@ msgstr "Gotowe"
 msgid "statistics"
 msgstr "statystyki"
 
-#: templates/dev/stats.html:15 templates/menu.html:37
+#: templates/dev/stats.html:15 templates/menu.html:39
 #: templates/plugins/plugins.html:13
 msgid "Scripts"
 msgstr "Skrypty"
@@ -5556,6 +5556,7 @@ msgid "Devel"
 msgstr "Rozwojowa"
 
 #: templates/doc/doc.html:15 templates/download/download.html:15
+#: templates/menu.html:23 templates/menu.html.py:33
 msgid "Old versions"
 msgstr "Poprzednie wersje"
 
@@ -5623,7 +5624,7 @@ msgstr "Możesz nam pomóc tłumacząc dokumentację WeeChat na swój język!"
 msgid "More information about WeeChat translations:"
 msgstr "Więcej informacji o tłumaczeniach Weechat:"
 
-#: templates/download/debian.html:26
+#: templates/download/debian.html:28
 msgid ""
 "<strong>Warning:</strong> these Debian packages are unofficial, not signed, "
 "and come with absolutely no guarantees (see instuctions below)."
@@ -5631,35 +5632,35 @@ msgstr ""
 "<strong>Ostrzeżenie:</strong> to są nieoficjalne pakiety Debiana, nie "
 "podpisane i nie posiadają żadnej gwarancji (zobacz poniższe instrukcje)."
 
-#: templates/download/debian.html:39
+#: templates/download/debian.html:41
 msgid "Important"
 msgstr "Ważne"
 
-#: templates/download/debian.html:45
+#: templates/download/debian.html:47
 msgid "Builds by"
 msgstr "Zbudowane przez"
 
-#: templates/download/debian.html:49
+#: templates/download/debian.html:51
 msgid "Latest build:"
 msgstr "Ostatnio zbudowano:"
 
-#: templates/download/debian.html:59
+#: templates/download/debian.html:61
 msgid "There are no more package builds in this repository."
 msgstr ""
 
-#: templates/download/debian.html:77
+#: templates/download/debian.html:79
 msgid "Architecture"
 msgstr "Architektura"
 
-#: templates/download/debian.html:80
+#: templates/download/debian.html:82
 msgid "files"
 msgstr "pliki"
 
-#: templates/download/debian.html:105
+#: templates/download/debian.html:107
 msgid "Instructions:"
 msgstr "Instrukcje:"
 
-#: templates/download/debian.html:110
+#: templates/download/debian.html:112
 msgid ""
 "You must use apt, apt-get or aptitude to install the packages (with sudo or "
 "as \"root\" user)."
@@ -5667,22 +5668,22 @@ msgstr ""
 "Musisz użyć aplikacji apt, apt-get lub aptitude do zainstalowania pakietów "
 "(za pomocą sudo lub jako użytkownik \"root\")."
 
-#: templates/download/debian.html:111
+#: templates/download/debian.html:113
 msgid "The following examples use sudo and aptitude."
 msgstr "Poniższe przykłady używają sudo i aptitude."
 
-#: templates/download/debian.html:114
+#: templates/download/debian.html:116
 msgid "Install https transport for apt:"
 msgstr "Zainstaluj obsługę https dla apta:"
 
-#: templates/download/debian.html:116
+#: templates/download/debian.html:118
 msgid ""
 "Otherwise you can replace \"https://\" by \"http://\" in URLs (less secure)."
 msgstr ""
 "Inaczej możesz zamienić \"https://\" na \"http://\" w adresach URL (mniej "
 "bezpieczne)."
 
-#: templates/download/debian.html:119
+#: templates/download/debian.html:121
 #, fuzzy
 #| msgid ""
 #| "Create a weechat.list file with the repository, according to your Debian "
@@ -5692,15 +5693,21 @@ msgid ""
 "distribution/version:"
 msgstr "Stwórz plik weechat.list z repozytorium dla twojej wersji Debiana."
 
-#: templates/download/debian.html:122
+#: templates/download/debian.html:124
 msgid "Choose your distribution/version"
 msgstr ""
 
 #: templates/download/debian.html:132
+msgid ""
+"Note: the second command line is optional, it is used to download source "
+"packages."
+msgstr ""
+
+#: templates/download/debian.html:135
 msgid "Resynchronize your package index files:"
 msgstr "Zsynchronizuj informacje o dostępnych pakietach:"
 
-#: templates/download/debian.html:136
+#: templates/download/debian.html:139
 msgid ""
 "Install the packages; the \"plugins\" package is highly recommended but not "
 "mandatory."
@@ -5708,19 +5715,19 @@ msgstr ""
 "Zainstaluj następujące pakiety; pakiet \"plugins\" jest zalecany ale nie "
 "obowiązkowy."
 
-#: templates/download/debian.html:139
+#: templates/download/debian.html:142
 #, fuzzy
 #| msgid "next stable version"
 msgid "For the stable version:"
 msgstr "następna stabilna wersja"
 
-#: templates/download/debian.html:143
+#: templates/download/debian.html:146
 #, fuzzy
 #| msgid "or development version"
 msgid "For the development version:"
 msgstr "lub wersja rozwojowa"
 
-#: templates/download/debian.html:155
+#: templates/download/debian.html:158
 msgid "No debian repository."
 msgstr "Brak repozytorium Debiana."
 
@@ -5728,7 +5735,7 @@ msgstr "Brak repozytorium Debiana."
 msgid "download"
 msgstr "pobierz"
 
-#: templates/download/download.html:16 templates/menu.html:32
+#: templates/download/download.html:16 templates/menu.html:34
 #, fuzzy
 #| msgid "Debian repositories"
 msgid "Debian/Ubuntu repositories"
@@ -6024,7 +6031,7 @@ msgstr "Najnowsza stabilna wersja WeeChat to"
 msgid "released on"
 msgstr "którą wydano"
 
-#: templates/home/home.html:40 templates/menu.html:28
+#: templates/home/home.html:40 templates/menu.html:29
 #: templates/plugins/source.html:17 templates/themes/source.html:16
 msgid "Download"
 msgstr "Pobierz"
@@ -6104,51 +6111,43 @@ msgstr "Strona główna"
 msgid "About"
 msgstr "O WeeChat"
 
-#: templates/menu.html:21
-msgid "Docs (stable)"
-msgstr "Dokumentacja (stabilna)"
-
-#: templates/menu.html:22
-msgid "Docs (devel)"
-msgstr "Dokumentacja (rozwojowa)"
-
-#: templates/menu.html:30
+#: templates/menu.html:21 templates/menu.html.py:31
 msgid "Stable version"
 msgstr "Wersja stabilna"
 
-#: templates/menu.html:31
+#: templates/menu.html:22 templates/menu.html.py:32
 msgid "Dev version"
 msgstr "Wersja rozwojowa"
 
-#: templates/menu.html:33
+#: templates/menu.html:35
 msgid "Security issues"
 msgstr "Problemy bezpieczeństwa"
 
-#: templates/menu.html:39
+#: templates/menu.html:41
 msgid "Browse scripts"
 msgstr "Przeglądaj skrypty"
 
-#: templates/menu.html:40 templates/plugins/plugins.html:14
+#: templates/menu.html:42 templates/plugins/plugins.html:14
 msgid "Add script"
 msgstr "Dodaj skrypt"
 
-#: templates/menu.html:41 templates/plugins/plugins.html:15
+#: templates/menu.html:43 templates/plugins/plugins.html:15
 msgid "Update script"
 msgstr "Uaktualnij skrypt"
 
-#: templates/menu.html:42 templates/plugins/plugins.html:16
+#: templates/menu.html:44 templates/plugins/plugins.html:16
 msgid "Pending scripts"
 msgstr "Oczekujące skrypty"
 
-#: templates/menu.html:43 templates/plugins/plugins.html:17
+#: templates/menu.html:45 templates/plugins/plugins.html:17
 msgid "Unofficial scripts"
 msgstr "Nieoficjalne skrypty"
 
-#: templates/menu.html:60
+#: templates/menu.html:62
 msgid "Statistics"
 msgstr "Statystyki"
 
-#: templates/menu.html:63
+#: templates/menu.html:66
 msgid "Repositories"
 msgstr "Repozytoria"
 
@@ -6569,9 +6568,3 @@ msgstr "Wewnętrzny błąd."
 #: themes/models.py:268
 msgid "Invalid name: different from theme."
 msgstr "Niewłaściwa nazwa: różni się od motywu."
-
-#~ msgid "For example development version:"
-#~ msgstr "Na przykład wersja rozwojowa:"
-
-#~ msgid "For example on Debian “sid” (unstable):"
-#~ msgstr "Na przykład dla Debiana \"sid\" (niestabilny):"

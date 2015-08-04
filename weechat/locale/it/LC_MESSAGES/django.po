@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-14 13:50+0200\n"
-"PO-Revision-Date: 2014-11-25 20:31+0100\n"
+"POT-Creation-Date: 2015-08-04 07:44+0200\n"
+"PO-Revision-Date: 2015-08-04 07:43+0200\n"
 "Last-Translator: Marco Paolone <marcopaolone@gmail.com>\n"
 "Language-Team: Italian <marcopaolone@gmail.com>\n"
 "Language: it\n"
@@ -212,7 +212,7 @@ msgid "German"
 msgstr "Tedesco"
 
 #: doc/models.py:32 settings.py:60 templates/dev/support.html:26
-#: templates/menu.html:23 templates/menu.html.py:24
+#: templates/menu.html:24 templates/menu.html.py:25
 msgid "English"
 msgstr "Inglese"
 
@@ -252,7 +252,7 @@ msgstr "Russo"
 msgid "Turkish"
 msgstr ""
 
-#: doc/models.py:73 templates/menu.html:23
+#: doc/models.py:73 templates/menu.html:24
 msgid "FAQ"
 msgstr "Domande Frequenti"
 
@@ -591,7 +591,7 @@ msgstr ""
 msgid "Dennis Ritchie has left #world"
 msgstr "Dennis Ritchie è uscito da #world"
 
-#: news/_i18n_info.py:22 templates/home/home.html:55 templates/menu.html:62
+#: news/_i18n_info.py:22 templates/home/home.html:55 templates/menu.html:65
 msgid "Devel blog"
 msgstr "Blog di sviluppo"
 
@@ -5180,8 +5180,7 @@ msgstr "Valido"
 msgid "dev"
 msgstr "sviluppo"
 
-#: templates/dev/dev.html:13 templates/home/home.html:58
-#: templates/menu.html:59
+#: templates/dev/dev.html:13 templates/home/home.html:58 templates/menu.html:61
 msgid "Roadmap"
 msgstr "Roadmap"
 
@@ -5191,10 +5190,11 @@ msgid "Stats"
 msgstr "Stato"
 
 #: templates/dev/dev.html:15 templates/dev/info_list.html:17
+#: templates/menu.html:63
 msgid "Info"
 msgstr "Info"
 
-#: templates/dev/dev.html:16 templates/menu.html:61
+#: templates/dev/dev.html:16 templates/menu.html:64
 msgid "Support"
 msgstr "Supporto"
 
@@ -5275,7 +5275,7 @@ msgstr ""
 msgid "statistics"
 msgstr "statistiche"
 
-#: templates/dev/stats.html:15 templates/menu.html:37
+#: templates/dev/stats.html:15 templates/menu.html:39
 #: templates/plugins/plugins.html:13
 msgid "Scripts"
 msgstr "Script"
@@ -5408,6 +5408,7 @@ msgid "Devel"
 msgstr "Sviluppo"
 
 #: templates/doc/doc.html:15 templates/download/download.html:15
+#: templates/menu.html:23 templates/menu.html.py:33
 msgid "Old versions"
 msgstr "Versioni precedenti"
 
@@ -5479,7 +5480,7 @@ msgstr "Sentiti libero di aiutarci traducendo WeeChat nella tua lingua!"
 msgid "More information about WeeChat translations:"
 msgstr "Maggiori informazioni sulle traduzioni di WeeChat:"
 
-#: templates/download/debian.html:26
+#: templates/download/debian.html:28
 #, fuzzy
 msgid ""
 "<strong>Warning:</strong> these Debian packages are unofficial, not signed, "
@@ -5488,86 +5489,92 @@ msgstr ""
 "<strong>Attenzione:</strong> questa versione potrebbe essere instabile o non "
 "compilare affatto!"
 
-#: templates/download/debian.html:39
+#: templates/download/debian.html:41
 msgid "Important"
 msgstr ""
 
-#: templates/download/debian.html:45
+#: templates/download/debian.html:47
 msgid "Builds by"
 msgstr ""
 
-#: templates/download/debian.html:49
+#: templates/download/debian.html:51
 msgid "Latest build:"
 msgstr ""
 
-#: templates/download/debian.html:59
+#: templates/download/debian.html:61
 msgid "There are no more package builds in this repository."
 msgstr ""
 
-#: templates/download/debian.html:77
+#: templates/download/debian.html:79
 msgid "Architecture"
 msgstr ""
 
-#: templates/download/debian.html:80
+#: templates/download/debian.html:82
 msgid "files"
 msgstr ""
 
-#: templates/download/debian.html:105
+#: templates/download/debian.html:107
 msgid "Instructions:"
 msgstr ""
 
-#: templates/download/debian.html:110
+#: templates/download/debian.html:112
 msgid ""
 "You must use apt, apt-get or aptitude to install the packages (with sudo or "
 "as \"root\" user)."
 msgstr ""
 
-#: templates/download/debian.html:111
+#: templates/download/debian.html:113
 msgid "The following examples use sudo and aptitude."
 msgstr ""
 
-#: templates/download/debian.html:114
+#: templates/download/debian.html:116
 msgid "Install https transport for apt:"
 msgstr ""
 
-#: templates/download/debian.html:116
+#: templates/download/debian.html:118
 msgid ""
 "Otherwise you can replace \"https://\" by \"http://\" in URLs (less secure)."
 msgstr ""
 
-#: templates/download/debian.html:119
+#: templates/download/debian.html:121
 msgid ""
 "Create a weechat.list file with the repository, according to your "
 "distribution/version:"
 msgstr ""
 
-#: templates/download/debian.html:122
+#: templates/download/debian.html:124
 msgid "Choose your distribution/version"
 msgstr ""
 
 #: templates/download/debian.html:132
+msgid ""
+"Note: the second command line is optional, it is used to download source "
+"packages."
+msgstr ""
+
+#: templates/download/debian.html:135
 msgid "Resynchronize your package index files:"
 msgstr ""
 
-#: templates/download/debian.html:136
+#: templates/download/debian.html:139
 msgid ""
 "Install the packages; the \"plugins\" package is highly recommended but not "
 "mandatory."
 msgstr ""
 
-#: templates/download/debian.html:139
+#: templates/download/debian.html:142
 #, fuzzy
 #| msgid "next stable version"
 msgid "For the stable version:"
 msgstr "prossima versione stabile"
 
-#: templates/download/debian.html:143
+#: templates/download/debian.html:146
 #, fuzzy
 #| msgid "or development version"
 msgid "For the development version:"
 msgstr "o la versione di sviluppo"
 
-#: templates/download/debian.html:155
+#: templates/download/debian.html:158
 #, fuzzy
 msgid "No debian repository."
 msgstr "Nessuno script trovato."
@@ -5576,7 +5583,7 @@ msgstr "Nessuno script trovato."
 msgid "download"
 msgstr "download"
 
-#: templates/download/download.html:16 templates/menu.html:32
+#: templates/download/download.html:16 templates/menu.html:34
 #, fuzzy
 msgid "Debian/Ubuntu repositories"
 msgstr "Repository:"
@@ -5870,7 +5877,7 @@ msgstr "il tema deve essere compilato con l'ultima versione stabile di WeeChat"
 msgid "released on"
 msgstr "Data di rilascio"
 
-#: templates/home/home.html:40 templates/menu.html:28
+#: templates/home/home.html:40 templates/menu.html:29
 #: templates/plugins/source.html:17 templates/themes/source.html:16
 msgid "Download"
 msgstr "Download"
@@ -5946,58 +5953,48 @@ msgstr "Home"
 msgid "About"
 msgstr "Informazioni"
 
-#: templates/menu.html:21
-#, fuzzy
-msgid "Docs (stable)"
-msgstr "stabile"
-
-#: templates/menu.html:22
-#, fuzzy
-msgid "Docs (devel)"
-msgstr "stabile"
-
-#: templates/menu.html:30
+#: templates/menu.html:21 templates/menu.html.py:31
 #, fuzzy
 msgid "Stable version"
 msgstr "versione stabile"
 
-#: templates/menu.html:31
+#: templates/menu.html:22 templates/menu.html.py:32
 #, fuzzy
 msgid "Dev version"
 msgstr "Nuova versione"
 
-#: templates/menu.html:33
+#: templates/menu.html:35
 msgid "Security issues"
 msgstr "Problemi di sicurezza"
 
-#: templates/menu.html:39
+#: templates/menu.html:41
 #, fuzzy
 msgid "Browse scripts"
 msgstr "Torna agli script"
 
-#: templates/menu.html:40 templates/plugins/plugins.html:14
+#: templates/menu.html:42 templates/plugins/plugins.html:14
 #, fuzzy
 msgid "Add script"
 msgstr "Aggiungi nuovo script"
 
-#: templates/menu.html:41 templates/plugins/plugins.html:15
+#: templates/menu.html:43 templates/plugins/plugins.html:15
 #, fuzzy
 msgid "Update script"
 msgstr "Aggiorna uno script"
 
-#: templates/menu.html:42 templates/plugins/plugins.html:16
+#: templates/menu.html:44 templates/plugins/plugins.html:16
 msgid "Pending scripts"
 msgstr "Script in coda"
 
-#: templates/menu.html:43 templates/plugins/plugins.html:17
+#: templates/menu.html:45 templates/plugins/plugins.html:17
 msgid "Unofficial scripts"
 msgstr "Script non ufficiali"
 
-#: templates/menu.html:60
+#: templates/menu.html:62
 msgid "Statistics"
 msgstr "Statistiche"
 
-#: templates/menu.html:63
+#: templates/menu.html:66
 #, fuzzy
 msgid "Repositories"
 msgstr "Repository:"
@@ -6423,7 +6420,3 @@ msgstr "Errore interno."
 #: themes/models.py:268
 msgid "Invalid name: different from theme."
 msgstr "Nome non valido: differente dal tema."
-
-#, fuzzy
-#~ msgid "For example development version:"
-#~ msgstr "o la versione di sviluppo"
