@@ -136,7 +136,7 @@ var deb_apt_cmds = [
         <kbd>$ sudo aptitude update</kbd>
       </li>
       <li>
-        {% blocktrans %}Install the packages; the "plugins" package is highly recommended but not mandatory.{% endblocktrans %}
+        {% blocktrans %}Install the binary packages; the "plugins" package is highly recommended but not mandatory.{% endblocktrans %}
         <ul>
           <li>
             {% trans "For the stable version:" %}
@@ -147,6 +147,10 @@ var deb_apt_cmds = [
             <kbd>$ sudo aptitude install weechat-devel-curses weechat-devel-plugins</kbd>
           </li>
         </ul>
+      </li>
+      <li>
+        {% trans "If needed, you can download the source package in order to rebuild binary packages:" %}
+        <kbd>$ apt-get source weechat-devel</kbd>
       </li>
     </ul>
   </div>
