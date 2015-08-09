@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-05 07:32+0200\n"
+"POT-Creation-Date: 2015-08-09 23:25+0200\n"
 "PO-Revision-Date: 2015-08-04 07:43+0200\n"
 "Last-Translator: Alexandre Bolelli <semeion7@gmail.com>\n"
 "Language-Team: Portuguese <semeion7@gmail.com>\n"
@@ -365,22 +365,22 @@ msgstr ""
 "por alguns scripts, não pelo WeeChatem si)."
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:153 templates/download/security.html:67
+#: download/models.py:153 templates/download/security.html:71
 msgid "low"
 msgstr "baixo"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:155 templates/download/security.html:68
+#: download/models.py:155 templates/download/security.html:72
 msgid "medium"
 msgstr "médio"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:157 templates/download/security.html:69
+#: download/models.py:157 templates/download/security.html:73
 msgid "high"
 msgstr "alto"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:159 templates/download/security.html:70
+#: download/models.py:159 templates/download/security.html:74
 msgid "critical"
 msgstr "crítico"
 
@@ -4612,7 +4612,7 @@ msgid "the script"
 msgstr "o script"
 
 #: plugins/models.py:282 templates/dev/info_list.html:19
-#: templates/dev/roadmap.html:46 templates/download/security.html:31
+#: templates/dev/roadmap.html:46 templates/download/security.html:35
 #: templates/plugins/list.html:68 templates/plugins/pending.html:30
 #: themes/models.py:143
 msgid "Description"
@@ -5277,7 +5277,7 @@ msgstr ""
 msgid "Dive in the <strong>future</strong> of WeeChat!"
 msgstr "Mergulhe no <strong>futuro</strong> do WeeChat!"
 
-#: templates/dev/roadmap.html:42 templates/download/security.html:25
+#: templates/dev/roadmap.html:42 templates/download/security.html:29
 msgid "Tracker"
 msgstr "Tracker"
 
@@ -5766,10 +5766,23 @@ msgid "security"
 msgstr "segurança"
 
 #: templates/download/security.html:12
+#, fuzzy
+#| msgid "Security issues"
+msgid "Report a security issue"
+msgstr "Problemas de segurança"
+
+#: templates/download/security.html:14
+msgid ""
+"Please <strong>DO NOT</strong> file a GitHub issue for security related "
+"problems, but send an email to <a href=\"mailto:security@weechat.org"
+"\">security@weechat.org</a> instead."
+msgstr ""
+
+#: templates/download/security.html:16
 msgid "Security vulnerabilities"
 msgstr "Vulnerabilidades de segurança"
 
-#: templates/download/security.html:16
+#: templates/download/security.html:20
 msgid ""
 "This table contains a list of all known and fixed security vulnerabilities "
 "in WeeChat stable releases (the security vulnerabilities introduced during "
@@ -5780,7 +5793,7 @@ msgstr ""
 "introduzidas durante o desenvolvimento de uma versão e corrigidos antes do "
 "lançamento estável não são mencionadas."
 
-#: templates/download/security.html:18
+#: templates/download/security.html:22
 msgid ""
 "Note: you can be warned about security vulnerabilities by subscribing to "
 "this mailing list:"
@@ -5788,41 +5801,41 @@ msgstr ""
 "Nota: você pode ser avisado sobre vulnerabilidades de segurança inscrevendo-"
 "se nesta lista de emails:"
 
-#: templates/download/security.html:25
+#: templates/download/security.html:29
 msgid "External link"
 msgstr "Link externo"
 
-#: templates/download/security.html:26
+#: templates/download/security.html:30
 msgid "Severity"
 msgstr "Severidade"
 
-#: templates/download/security.html:27
+#: templates/download/security.html:31
 msgid "Affected versions"
 msgstr "Versões afetadas"
 
-#: templates/download/security.html:28
+#: templates/download/security.html:32
 msgid "Fixed in version"
 msgstr "Corrigido na versão"
 
-#: templates/download/security.html:29
+#: templates/download/security.html:33
 msgid "Release date"
 msgstr "Data de lançamento"
 
-#: templates/download/security.html:31 templates/download/security.html:53
+#: templates/download/security.html:35 templates/download/security.html:57
 msgid "Workaround"
 msgstr "Correção"
 
-#: templates/download/security.html:57
+#: templates/download/security.html:61
 msgid "There is no workaround."
 msgstr "Nao há correção."
 
-#: templates/download/security.html:65
+#: templates/download/security.html:69
 msgid "Security vulnerabilities are classified using 4 severity levels:"
 msgstr ""
 "Vulnerabilidades de segurança são classificadas usando 4 níveis de "
 "severidade:"
 
-#: templates/download/security.html:67
+#: templates/download/security.html:71
 msgid ""
 "local problem which occurs in very specific conditions, low impact. Upgrade "
 "is not mandatory."
@@ -5830,7 +5843,7 @@ msgstr ""
 "problema local que ocorre em condições muito específicas, baixo impacto. "
 "Atualização não é obrigatória."
 
-#: templates/download/security.html:68
+#: templates/download/security.html:72
 msgid ""
 "problem affecting a specific feature. Upgrade is <strong>recommended</"
 "strong> at least for people using the feature."
@@ -5839,11 +5852,11 @@ msgstr ""
 "<strong>recomendada</strong> pelo menos para pessoas usando aquela "
 "característica."
 
-#: templates/download/security.html:69
+#: templates/download/security.html:73
 msgid "severe problem. Upgrade is <strong>highly recommended</strong>."
 msgstr "problema severo. Atualização é <strong>altamente recomendada</strong>."
 
-#: templates/download/security.html:70
+#: templates/download/security.html:74
 msgid ""
 "critical problem, risk of damage on your system. <strong>You MUST upgrade "
 "immediately!</strong>"
