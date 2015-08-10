@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-08-09 23:25+0200\n"
-"PO-Revision-Date: 2015-08-04 07:43+0200\n"
+"PO-Revision-Date: 2015-08-10 09:26+0100\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <weechatter@arcor.de>\n"
 "Language: de\n"
@@ -5440,7 +5440,8 @@ msgstr "Valid"
 msgid "dev"
 msgstr "Entwicklung"
 
-#: templates/dev/dev.html:13 templates/home/home.html:58 templates/menu.html:61
+#: templates/dev/dev.html:13 templates/home/home.html:58
+#: templates/menu.html:61
 msgid "Roadmap"
 msgstr "Meilensteinplan"
 
@@ -5815,22 +5816,20 @@ msgid ""
 "Note: the second command line is optional, it is used to download source "
 "packages."
 msgstr ""
+"Hinweis: die zweite Befehlszeile ist optional, sie dient dazu die "
+"Quellpakete herunterzuladen."
 
 #: templates/download/debian.html:135
 msgid "Resynchronize your package index files:"
 msgstr "Indexdateien für Pakete neu einlesen:"
 
 #: templates/download/debian.html:139
-#, fuzzy
-#| msgid ""
-#| "Install the packages; the \"plugins\" package is highly recommended but "
-#| "not mandatory."
 msgid ""
 "Install the binary packages; the \"plugins\" package is highly recommended "
 "but not mandatory."
 msgstr ""
-"Pakete installieren; das  Paket \"plugins\" wird  ausdrücklich empfohlen, "
-"ist aber nicht obligatorisch."
+"Binärpakete installieren; das  Paket \"plugins\" wird  ausdrücklich "
+"empfohlen, ist aber nicht zwingend notwendig."
 
 #: templates/download/debian.html:142
 msgid "For the stable version:"
@@ -5845,6 +5844,8 @@ msgid ""
 "If needed, you can download the source package in order to rebuild binary "
 "packages:"
 msgstr ""
+"Falls notwendig können die Quellpakete heruntergeladen werden um die "
+"Binärdateien neu zu erstellen:"
 
 #: templates/download/debian.html:162
 msgid "No debian repository."
@@ -5987,7 +5988,7 @@ msgstr "Fehler: Es wurde keine Version ausgewählt"
 
 #: templates/download/release.html:19
 msgid "YEAH! You can download and install it!"
-msgstr "JAWOLL! Du kannst es herunterladen und installieren!"
+msgstr "FERTIG! Es kann nun herunterladen und installiert werden!"
 
 #: templates/download/release.html:30
 msgid "No release in progress."
@@ -6002,10 +6003,8 @@ msgid "security"
 msgstr "Sicherheit"
 
 #: templates/download/security.html:12
-#, fuzzy
-#| msgid "Security issues"
 msgid "Report a security issue"
-msgstr "Sicherheitsfragen"
+msgstr "Sicherheitsproblem melden"
 
 #: templates/download/security.html:14
 msgid ""
@@ -6013,6 +6012,10 @@ msgid ""
 "problems, but send an email to <a href=\"mailto:security@weechat.org"
 "\">security@weechat.org</a> instead."
 msgstr ""
+"Es wird gebeten sicherheitsrelevante Probleme <strong>NICHT</strong> "
+"öffentlich über GitHub zu melden, sondern dafür die email Adresse der "
+"Entwickler zu nutzen:<a href=\"mailto:security@weechat.org"
+"\">security@weechat.org</a>."
 
 #: templates/download/security.html:16
 msgid "Security vulnerabilities"
