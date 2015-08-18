@@ -10,7 +10,7 @@
 var deb_apt_cmds = [
   "...<br />...",
 {% for repo in repositories %}
-{% if repo.visible and repo.active %}
+{% if repo.visible %}
   "$ sudo bash -c \"echo '{{ repo.apt_url }}' >/etc/apt/sources.list.d/weechat.list\"" +
   "<br />" +
   "$ sudo bash -c \"echo '{{ repo.apt_url_src }}' >>/etc/apt/sources.list.d/weechat.list\"",
@@ -123,7 +123,7 @@ var deb_apt_cmds = [
                 onchange="document.getElementById('deb_apt_cmd').innerHTML = deb_apt_cmds[document.getElementById('deb_apt').selectedIndex]">
           <option selected="selected">{% trans "Choose your distribution/version" %}</option>
           {% for repo in repositories %}
-          {% if repo.visible and repo.active %}
+          {% if repo.visible %}
           <option>{{ repo.name|capfirst }} “{{ repo.version.codename }}” ({{ repo.version.version }})</option>
           {% endif %}
           {% endfor %}
