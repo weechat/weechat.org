@@ -39,12 +39,15 @@
   </form>
 
   {% if sponsor_list %}
-  <h3>{% trans "They support WeeChat:" %} &nbsp; &nbsp; ({% if sort_key == "date" %}{% trans "whole list" %}{% else %}{% trans "top 10, ordered by total amount donated" %}{% endif %})</h3>
+  <h3>{% trans "They support WeeChat" %}</h3>
+  {% if sort_key == "date" %}{% trans "Whole list:" %}{% else %}{% trans "Top 10, ordered by total amount donated:" %}{% endif %}
+  <span class="sort">
   {% if sort_key == "date" %}
-  (<a href="{% url 'about_donate_sort' 'top10' %}">{% trans "show the top 10, ordered by total amount donated" %}</a>)
+  [<a href="{% url 'about_donate_sort' 'top10' %}">{% trans "show the top 10, ordered by total amount donated" %}</a>]
   {% else %}
-  (<a href="{% url 'about_donate_sort' 'date' %}">{% trans "show the whole list" %}</a>)
+  [<a href="{% url 'about_donate_sort' 'date' %}">{% trans "show the whole list" %}</a>]
   {% endif %}
+  </span>
   <table class="table">
     <tr>
       {% if sort_key == "date" %}
