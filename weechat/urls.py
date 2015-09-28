@@ -66,7 +66,7 @@ urlpatterns = patterns(
     url(r'^themes/', include('weechat.themes.urls')),
     url(r'^dev/', include('weechat.dev.urls')),
 
-    # old URLs (redirected to new pages)
+    # legacy URLs (redirected to new pages)
     url(r'^features/$', RedirectView.as_view(url='/about/features/')),
     url(r'^screenshots/$', RedirectView.as_view(url='/about/screenshots/')),
     url(r'^story/$', RedirectView.as_view(url='/about/history/')),

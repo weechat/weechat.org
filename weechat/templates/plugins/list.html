@@ -14,18 +14,18 @@
     <br />
     {% trans "You could experience problems like memory leaks, slowdowns, or even <strong>security problems</strong>. You are warned!" %}
   </div>
-  {% if api == "old" %}
+  {% if api == "legacy" %}
     <div class="errorbox">
-      {% trans "WARNING: the old API is deprecated and these scripts runs only on WeeChat 0.2.x, which is OBSOLETE. You MUST NOT load these scripts with latest stable version of WeeChat!" %}
+      {% trans "WARNING: the legacy API is deprecated and these scripts runs only on WeeChat 0.2.x, which is OBSOLETE. You MUST NOT load these scripts with latest stable version of WeeChat!" %}
     </div>
   {% endif %}
   <div class="pluginsearch">
     <div class="filters">
       <span class="links">
-        {% if api == "old" %}
+        {% if api == "legacy" %}
           <a href="{% url 'scripts_api' 'stable' %}">{% trans "Display scripts for stable API (&ge; 0.3.0)" %}</a>
         {% else %}
-          <a href="{% url 'scripts_api' 'old' %}">{% trans "Display scripts for old API (&le; 0.2.6)" %}</a>
+          <a href="{% url 'scripts_api' 'legacy' %}">{% trans "Display scripts for legacy API (&le; 0.2.6)" %}</a>
         {% endif %}
         &nbsp; | &nbsp;
         <a href="/files/plugins.xml">{% trans "XML list" %}</a> (<a href="/files/plugins.xml.gz">gz</a>)
@@ -113,7 +113,7 @@
     {% for plugin in plugin_list %}
       <tr class="{% cycle 'row1' 'row2' %}">
         <td class="small name">
-          <div class="popular">{{ plugin.popularity_img|safe }}</div><a href="{% if api == 'old' %}{% url 'scripts_source_api_name_html' api plugin.name_with_extension %}{% else %}{% url 'scripts_source_name_html' plugin.name_with_extension %}{% endif %}">{{ plugin.name }}<span class="ext">.{{ plugin.extension }}</span></a>
+          <div class="popular">{{ plugin.popularity_img|safe }}</div><a href="{% if api == 'legacy' %}{% url 'scripts_source_api_name_html' api plugin.name_with_extension %}{% else %}{% url 'scripts_source_name_html' plugin.name_with_extension %}{% endif %}">{{ plugin.name }}<span class="ext">.{{ plugin.extension }}</span></a>
         </td>
         <td class="small">
           <div class="tags">

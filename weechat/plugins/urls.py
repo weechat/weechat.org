@@ -28,24 +28,24 @@ from django.views.generic.base import TemplateView
 urlpatterns = patterns(
     '',
     url(r'^$', 'weechat.plugins.views.scripts', name='scripts'),
-    url(r'^(?P<api>(old|stable))/$', 'weechat.plugins.views.scripts',
+    url(r'^(?P<api>(legacy|stable))/$', 'weechat.plugins.views.scripts',
         name='scripts_api'),
-    url(r'^(?P<api>(old|stable))/'
+    url(r'^(?P<api>(legacy|stable))/'
         r'(?P<filter_name>(tag|language|license|author))/'
         r'(?P<filter_value>(.*))/$',
         'weechat.plugins.views.scripts',
         name='scripts_api_filter'),
-    url(r'^(?P<api>(old|stable))/sort/(?P<sort_key>(name|language|license|'
+    url(r'^(?P<api>(legacy|stable))/sort/(?P<sort_key>(name|language|license|'
         r'min_weechat|max_weechat|author|added|updated))/$',
         'weechat.plugins.views.scripts',
         name='scripts_api_sort'),
     url(r'^source/(?P<scriptid>\d+)/$', 'weechat.plugins.views.script_source',
         name='scripts_source_id'),
-    url(r'^source/(?P<api>(old|stable))/(?P<scriptname>[a-zA-Z0-9_.-]+)'
+    url(r'^source/(?P<api>(legacy|stable))/(?P<scriptname>[a-zA-Z0-9_.-]+)'
         r'\.html/$',
         'weechat.plugins.views.script_source',
         name='scripts_source_api_name_html'),
-    url(r'^source/(?P<api>(old|stable))/(?P<scriptname>[a-zA-Z0-9_.-]+)/$',
+    url(r'^source/(?P<api>(legacy|stable))/(?P<scriptname>[a-zA-Z0-9_.-]+)/$',
         'weechat.plugins.views.script_source',
         name='scripts_source_api_name'),
     url(r'^source/(?P<scriptname>[a-zA-Z0-9_.-]+)\.html/$',

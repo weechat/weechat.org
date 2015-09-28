@@ -91,7 +91,7 @@ class Plugin(models.Model):
     def __unicode__(self):
         api = ''
         if self.max_weechat == '0.2.6':
-            api = '(old api) '
+            api = '(legacy api) '
         return '%s %s %s(%s, %s)' % (self.name, self.version, api,
                                      self.author, self.added)
 
@@ -105,7 +105,7 @@ class Plugin(models.Model):
         if not self.visible:
             pending = '/pending'
         if self.max_weechat == '0.2.6':
-            return 'scripts/old%s' % pending
+            return 'scripts/legacy%s' % pending
         else:
             return 'scripts%s' % pending
 

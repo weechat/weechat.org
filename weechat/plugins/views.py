@@ -75,7 +75,7 @@ def get_highlighted_source(source, language):
 def scripts(request, api='stable', sort_key='popularity', filter_name='',
             filter_value=''):
     """Page with list of scripts."""
-    if api == 'old':
+    if api == 'legacy':
         plugin_list = Plugin.objects.filter(visible=1) \
             .filter(max_weechat=API_OLD).order_by(*get_sort_key(sort_key))
     else:
@@ -140,7 +140,7 @@ def script_source(request, api='stable', scriptid='', scriptname=''):
             sext = sname[pos+1:]
             sname = sname[0:pos]
         try:
-            if api == 'old':
+            if api == 'legacy':
                 plugin = Plugin.objects.get(
                     name=sname,
                     language=get_language_from_extension(sext),
