@@ -24,11 +24,13 @@ var deb_apt_cmds = [
 
 {{ block.super }}
 
-<div class="warningbox">
-  {% trans "<strong>Warning:</strong> these Debian packages are unofficial, not signed, and come with absolutely no guarantees (see instuctions below)." %}
+<div class="infobox">
+  {% blocktrans %}<strong>Important:</strong> please <a href="#instructions"><strong>read instructions</strong></a> before using these repositories.{% endblocktrans %}
 </div>
 
 {% if debpkgs %}
+
+<div class="debian_repos">
 
 {% regroup debpkgs by repoarch as debpkgs_by_repoarch %}
 {% for repoarch in debpkgs_by_repoarch %}
@@ -104,10 +106,17 @@ var deb_apt_cmds = [
   </div>
   {% endfor %}
 
-<h3>{% trans "Instructions:" %}</h3>
+</div>
+
+<hr />
+
+<h3 id="instructions">{% trans "Instructions:" %}</h3>
 <div class="download">
   <div class="dlsign">
     <ul>
+      <li>
+        {% trans "<strong>Warning:</strong> these Debian packages are unofficial, not signed, and come with absolutely no guarantees." %}
+      </li>
       <li>
         {% blocktrans %}You must use apt, apt-get or aptitude to install the packages (with sudo or as "root" user).{% endblocktrans %}
         <br />{% trans "The following examples use sudo and apt-get." %}
