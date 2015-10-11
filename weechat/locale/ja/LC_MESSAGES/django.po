@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-03 11:31+0200\n"
+"POT-Creation-Date: 2015-10-11 13:26+0200\n"
 "PO-Revision-Date: 2015-10-07 09:00+0900\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <i38w7i3@yahoo.co.jp>\n"
@@ -5230,8 +5230,7 @@ msgstr "有効"
 msgid "dev"
 msgstr "開発"
 
-#: templates/dev/dev.html:13 templates/home/home.html:58
-#: templates/menu.html:61
+#: templates/dev/dev.html:13 templates/home/home.html:58 templates/menu.html:61
 msgid "Roadmap"
 msgstr "ロードマップ"
 
@@ -5532,43 +5531,47 @@ msgstr ""
 "<strong>重要:</strong> これらのリポジトリを使う前に<a href=\"#instructions"
 "\"><strong>説明を読んでください</strong></a>。"
 
-#: templates/download/debian.html:41
+#: templates/download/debian.html:43
 msgid "Important"
 msgstr "重要"
 
-#: templates/download/debian.html:47
+#: templates/download/debian.html:49
 msgid "Builds by"
 msgstr "ビルドした人"
 
-#: templates/download/debian.html:51
+#: templates/download/debian.html:53
 msgid "Latest build:"
 msgstr "最新ビルド:"
 
-#: templates/download/debian.html:61
+#: templates/download/debian.html:63
 msgid "There are no more package builds in this repository."
 msgstr "もはやこのリポジトリをビルドしたパッケージは存在しません。"
 
-#: templates/download/debian.html:79
+#: templates/download/debian.html:81
 msgid "Architecture"
 msgstr "アーキテクチャ"
 
-#: templates/download/debian.html:82
+#: templates/download/debian.html:84
 msgid "files"
 msgstr "ファイル"
 
-#: templates/download/debian.html:109
+#: templates/download/debian.html:113
 msgid "Instructions:"
 msgstr "説明:"
 
-#: templates/download/debian.html:114
+#: templates/download/debian.html:118
+#, fuzzy
+#| msgid ""
+#| "<strong>Warning:</strong> these Debian packages are unofficial, not "
+#| "signed, and come with absolutely no guarantees."
 msgid ""
-"<strong>Warning:</strong> these Debian packages are unofficial, not signed, "
-"and come with absolutely no guarantees."
+"<strong>Warning:</strong> these Debian packages are unofficial and come with "
+"absolutely no guarantees."
 msgstr ""
 "<strong>警告:</strong> これらの Debian パッケージは非公式なものであり、署名さ"
 "れていません。またいかなる保証もありません。"
 
-#: templates/download/debian.html:117
+#: templates/download/debian.html:121
 msgid ""
 "You must use apt, apt-get or aptitude to install the packages (with sudo or "
 "as \"root\" user)."
@@ -5576,22 +5579,26 @@ msgstr ""
 "パッケージをインストールするには、apt、apt-get または aptitude を (sudo と組"
 "合わせるか \"root\" ユーザになってから) 使ってください。"
 
-#: templates/download/debian.html:118
+#: templates/download/debian.html:122
 msgid "The following examples use sudo and apt-get."
 msgstr "以下の例では sudo と apt-get を使っています。"
 
-#: templates/download/debian.html:121
+#: templates/download/debian.html:125
 msgid "Install https transport for apt:"
 msgstr "apt で https 転送を使うためのパッケージをインストール:"
 
-#: templates/download/debian.html:123
+#: templates/download/debian.html:127
 msgid ""
 "Otherwise you can replace \"https://\" by \"http://\" in URLs (less secure)."
 msgstr ""
 "こうすると URL で (安全性の低い) http:// の代わりに https:// を使うことができ"
 "ます。"
 
-#: templates/download/debian.html:126
+#: templates/download/debian.html:130
+msgid "Import the gpg key used to sign the repository:"
+msgstr ""
+
+#: templates/download/debian.html:134
 msgid ""
 "Create a weechat.list file with the repository, according to your "
 "distribution/version:"
@@ -5599,11 +5606,11 @@ msgstr ""
 "お使いのディストリビューション/バージョンに対応するリポジトリを含む weechat."
 "list ファイルを作成してください:"
 
-#: templates/download/debian.html:129
+#: templates/download/debian.html:137
 msgid "Choose your distribution/version"
 msgstr "ディストリビューション/バージョンを選んでください"
 
-#: templates/download/debian.html:137
+#: templates/download/debian.html:145
 msgid ""
 "Note: the second command line is optional, it is used to download source "
 "packages."
@@ -5611,11 +5618,11 @@ msgstr ""
 "注意: コマンドラインの 2 行目は任意です。これはソースパッケージをダウンロード"
 "するためのものです。"
 
-#: templates/download/debian.html:140
+#: templates/download/debian.html:148
 msgid "Resynchronize your package index files:"
 msgstr "パッケージインデックスファイルを再同期:"
 
-#: templates/download/debian.html:144
+#: templates/download/debian.html:152
 msgid ""
 "Install the binary packages; the \"plugins\" package is highly recommended "
 "but not mandatory."
@@ -5623,15 +5630,15 @@ msgstr ""
 "バイナリパッケージをインストール; \"plugins\" パッケージは必須ではありません"
 "が、インストールを強くお勧めします。"
 
-#: templates/download/debian.html:147
+#: templates/download/debian.html:155
 msgid "For the stable version:"
 msgstr "安定版向け:"
 
-#: templates/download/debian.html:151
+#: templates/download/debian.html:159
 msgid "For the development version:"
 msgstr "開発版向け:"
 
-#: templates/download/debian.html:157
+#: templates/download/debian.html:165
 msgid ""
 "If needed, you can download the source package in order to rebuild binary "
 "packages:"
@@ -5639,7 +5646,7 @@ msgstr ""
 "必要ならば、バイナリパッケージを再ビルドするためにソースパッケージをダウン"
 "ロードすることが可能です:"
 
-#: templates/download/debian.html:167
+#: templates/download/debian.html:175
 msgid "No debian repository."
 msgstr "Debian リポジトリがありません。"
 
