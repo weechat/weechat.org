@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-11 13:26+0200\n"
-"PO-Revision-Date: 2015-08-20 11:34+0100\n"
+"PO-Revision-Date: 2015-10-28 18:46+0100\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <weechatter@arcor.de>\n"
 "Language: de\n"
@@ -29,7 +29,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.7.5\n"
+"X-Generator: Poedit 1.8.4\n"
 
 #: about/_i18n_keydates.py:6
 msgid "256 colors, irc proxy, rmodifier, redirection of irc commands."
@@ -5054,22 +5054,16 @@ msgstr ""
 "werden keine URLs angezeigt."
 
 #: templates/about/donate.html:42
-#, fuzzy
-#| msgid "They support WeeChat:"
 msgid "They support WeeChat"
-msgstr "WeeChat wurde bisher unterstützt von:"
+msgstr "WeeChat wird unterstützt durch"
 
 #: templates/about/donate.html:43
-#, fuzzy
-#| msgid "whole list"
 msgid "Whole list:"
-msgstr "vollständige Liste"
+msgstr "vollständige Liste:"
 
 #: templates/about/donate.html:43
-#, fuzzy
-#| msgid "top 10, ordered by total amount donated"
 msgid "Top 10, ordered by total amount donated:"
-msgstr "Top 10, geordnet nach der Höhe der Spendensumme insgesamt"
+msgstr "Top 10, geordnet nach der Höhe der Spendensumme insgesamt:"
 
 #: templates/about/donate.html:46
 msgid "show the top 10, ordered by total amount donated"
@@ -5478,7 +5472,8 @@ msgstr "Valid"
 msgid "dev"
 msgstr "Entwicklung"
 
-#: templates/dev/dev.html:13 templates/home/home.html:58 templates/menu.html:61
+#: templates/dev/dev.html:13 templates/home/home.html:58
+#: templates/menu.html:61
 msgid "Roadmap"
 msgstr "Meilensteinplan"
 
@@ -5782,6 +5777,9 @@ msgid ""
 "<strong>Important:</strong> please <a href=\"#instructions\"><strong>read "
 "instructions</strong></a> before using these repositories."
 msgstr ""
+"<strong>Wichtig:</strong> Es wird empfohlen die <a href=\"#instructions"
+"\"><strong>Anleitung zu lesen</strong></a> bevor diese Repositorien genutzt "
+"werden."
 
 #: templates/download/debian.html:43
 msgid "Important"
@@ -5812,17 +5810,12 @@ msgid "Instructions:"
 msgstr "Anleitung:"
 
 #: templates/download/debian.html:118
-#, fuzzy
-#| msgid ""
-#| "<strong>Warning:</strong> these Debian packages are unofficial, not "
-#| "signed, and come with absolutely no guarantees (see instuctions below)."
 msgid ""
 "<strong>Warning:</strong> these Debian packages are unofficial and come with "
 "absolutely no guarantees."
 msgstr ""
-"<strong>Achtung:</strong> Diese Debian Pakete sind keine offiziellen "
-"Versionen, sie sind weder signiert noch wird eine Gewährleistung gegeben "
-"(siehe Anleitung am Ende der Seite)."
+"<strong>Achtung:</strong> Diese Pakete sind keine offiziellen Debian-Paketen "
+"und es wird keine Gewährleistung gegeben."
 
 #: templates/download/debian.html:121
 msgid ""
@@ -5849,6 +5842,7 @@ msgstr ""
 #: templates/download/debian.html:130
 msgid "Import the gpg key used to sign the repository:"
 msgstr ""
+"Importieren des gpg Schlüssel mit welchem die Repositorien signiert sind:"
 
 #: templates/download/debian.html:134
 msgid ""
@@ -6493,30 +6487,23 @@ msgstr ""
 "entstehen. Sie sind gewarnt!"
 
 #: templates/plugins/list.html:19
-#, fuzzy
-#| msgid ""
-#| "WARNING: the old API is deprecated and these scripts runs only on WeeChat "
-#| "0.2.x, which is OBSOLETE. You MUST NOT load these scripts with latest "
-#| "stable version of WeeChat!"
 msgid ""
 "WARNING: the legacy API is deprecated and these scripts runs only on WeeChat "
 "0.2.x, which is OBSOLETE. You MUST NOT load these scripts with latest stable "
 "version of WeeChat!"
 msgstr ""
 "WARNUNG: die alte API wird nicht mehr unterstützt und somit sind die "
-"Skripten auf dieser Seite nur lauffähig unter der VERALTETEN WeeChat Version "
-"0.2.x. Diese Skripten können nicht mit einer aktuellen Version von WeeChat "
-"geladen werden!"
+"Skripten nur lauffähig unter WeeChat 0.2.x, welches OBSOLETE ist. Diese "
+"Skripten können NICHT mit einer aktuellen Version von WeeChat verwendet "
+"werden!"
 
 #: templates/plugins/list.html:26
 msgid "Display scripts for stable API (&ge; 0.3.0)"
 msgstr "Zeige Skripten für stabile API (&ge; 0.3.0) an"
 
 #: templates/plugins/list.html:28
-#, fuzzy
-#| msgid "Display scripts for old API (&le; 0.2.6)"
 msgid "Display scripts for legacy API (&le; 0.2.6)"
-msgstr "Zeige Skripten für alte API (&le; 0.2.6) an"
+msgstr "zeige Skripten für veraltete API (&le; 0.2.6) an"
 
 #: templates/plugins/list.html:31
 msgid "XML list"
