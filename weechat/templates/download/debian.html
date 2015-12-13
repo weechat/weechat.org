@@ -63,6 +63,7 @@ var deb_apt_cmds = [
            class="name discontinued" title="{% trans "There are no more package builds in this repository." %}"
            {% endif %}>
           {{ debpkg_source.list.0.repo.name|capfirst }}
+          {% comment %}Translators: purpose is to "translate" only quotes here{% endcomment %}
           {% blocktrans with codename=debpkg_source.list.0.repo.version.codename %}“{{ codename }}”{% endblocktrans %}
           ({{ debpkg_source.list.0.repo.version.version }})
         </div>
@@ -136,6 +137,7 @@ var deb_apt_cmds = [
           {% if repo.visible %}
           <option>
             {{ repo.name|capfirst }}
+            {% comment %}Translators: purpose is to "translate" only quotes here{% endcomment %}
             {% blocktrans with codename=repo.version.codename %}“{{ codename }}”{% endblocktrans %}
             ({{ repo.version.version }})
           </option>
