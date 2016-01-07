@@ -21,14 +21,14 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-31 09:25+0100\n"
-"PO-Revision-Date: 2015-08-14 19:39+0200\n"
+"PO-Revision-Date: 2016-01-07 20:02+0100\n"
 "Last-Translator: Krzysztof Korościk <soltys@szluug.org>\n"
-"Language-Team: Polish <soltys@szluug.org>\n"
+"Language-Team: Polish <soltys1@gmail.com>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.3\n"
+"X-Generator: Poedit 1.8.5\n"
 
 #: about/_i18n_keydates.py:6
 msgid "256 colors, irc proxy, rmodifier, redirection of irc commands."
@@ -2470,29 +2470,6 @@ msgstr ""
 "a>."
 
 #: news/_i18n_info.py:99
-#, fuzzy
-#| msgid ""
-#| "Version 0.4.3 is available!\n"
-#| "\n"
-#| "Among the new features:\n"
-#| "\n"
-#| "- new command /print\n"
-#| "- logical and/or for tags in /filter and hook_print\n"
-#| "- gaps in buffer numbers\n"
-#| "- support of italic text\n"
-#| "- new options to customize default text search in buffers\n"
-#| "- use of IRC monitor command for /notify (if available on server)\n"
-#| "- new IRC server option \"ssl_fingerprint\"\n"
-#| "- new option to smart-filter IRC mode messages\n"
-#| "- new option for default IRC ban mask\n"
-#| "- support of IPv6 for DCC chat/file\n"
-#| "- auto check CRC32 of files received with DCC\n"
-#| "- many bugs fixed.\n"
-#| "\n"
-#| "For complete list of new features and bugs fixed, please look at <a href="
-#| "\"http://dev.weechat.org/post/2014/02/09/Version-0.4.3\">development "
-#| "blog</a> or <a href=\"/files/changelog/ChangeLog-0.4.3.html\">ChangeLog</"
-#| "a>."
 msgid ""
 "Version 1.3 is available!\n"
 "\n"
@@ -2508,27 +2485,20 @@ msgid ""
 "\"http://dev.weechat.org/post/2015/08/16/Version-1.3\">development blog</a> "
 "or <a href=\"/files/changelog/ChangeLog-1.3.html\">ChangeLog</a>."
 msgstr ""
-"Wersja 0.4.3 jest dostępna!\n"
+"Wersja 1.3 jest dostępna!\n"
 "\n"
 "Nowe funkcje:\n"
 "\n"
-"- nowa komenda /print\n"
-"- operacje logiczne i/lub dla tagów w komendzie /filter i hook_print\n"
-"- przerwy w numeracji buforów\n"
-"- wsparcie dla pochyłego tekstu\n"
-"- nowa opcja dla modyfikacji domyślnego wyszukiwania tekstu w buforach\n"
-"- użycie komendy IRC monitor dla /notify (jeśli dostępne na serwerze)\n"
-"- nowa opcja serwera IRC \"ssl_fingerprint\"\n"
-"- nowa opcja do inteligentnego filtrowania wiadomości o zmianach atrybutów\n"
-"- nowa opcja dla domyślnej maski banów na IRC\n"
-"- wsparcie dla IPv6 w przesyłaniu plików/rozmowach DCC\n"
-"- automatyczne sprawdzanie sumy CRC32 dla plików pobranych przez DCC\n"
+"- pozycja w buforze jest zachowana po użyciu interaktywnego wyszukiwania\n"
+"- dodano opcjonalne potwierdzenie dla komendy /upgrade\n"
+"- dodano sygnał \"signal_sighup\"\n"
+"- dodano opcje IRC irc.color.topic_current, irc.network.channel_encode\n"
 "- poprawiono wiele błędów.\n"
 "\n"
 "Pełną listę nowych funkcji i poprawionych błędów można znaleźć na <a href="
-"\"http://dev.weechat.org/post/2014/02/09/Version-0.4.3\">blogu "
-"developerskim</a> oraz w pliku <a href=\"/files/changelog/ChangeLog-0.4.3."
-"html\">ChangeLog</a>."
+"\"http://dev.weechat.org/post/2015/08/16/Version-1.3\">blogu developerskim</"
+"a> oraz w pliku <a href=\"/files/changelog/ChangeLog-1.3.html\">ChangeLog</"
+"a>."
 
 #: news/_i18n_info.py:100
 msgid ""
@@ -4952,22 +4922,16 @@ msgstr ""
 "nie są wyświetlane."
 
 #: templates/about/donate.html:42
-#, fuzzy
-#| msgid "They support WeeChat:"
 msgid "They support WeeChat"
-msgstr "Oni wsparli WeeChat:"
+msgstr "Oni wsparli WeeChat"
 
 #: templates/about/donate.html:43
-#, fuzzy
-#| msgid "whole list"
 msgid "Whole list:"
-msgstr "pełna lista"
+msgstr "Pełna lista:"
 
 #: templates/about/donate.html:43
-#, fuzzy
-#| msgid "top 10, ordered by total amount donated"
 msgid "Top 10, ordered by total amount donated:"
-msgstr "top 10, sortowane po sumie dotacji"
+msgstr "Top 10, sortowane po sumie dotacji:"
 
 #: templates/about/donate.html:46
 msgid "show the top 10, ordered by total amount donated"
@@ -5093,10 +5057,8 @@ msgid "Customizable bars"
 msgstr "Konfigurowalne paski"
 
 #: templates/about/features.html:75
-#, fuzzy
-#| msgid "6 script languages"
 msgid "7 script languages"
-msgstr "6 języków skryptowych"
+msgstr "7 języków skryptowych"
 
 #: templates/about/features.html:76
 msgid "Horizontal/vertical split"
@@ -5666,6 +5628,9 @@ msgid ""
 "please <a href=\"#instructions\"><strong>read instructions</strong></a> "
 "before using these repositories."
 msgstr ""
+"<strong>Ważne:</strong> te pakiety nie są oficjalnymi pakietami Debiana; "
+"przed użyciem repozytoriów należy <a href=\"#instructions"
+"\"><strong>przeczytać instrkcję</strong></a>."
 
 #: templates/download/debian.html:43
 msgid "Important"
@@ -5687,7 +5652,7 @@ msgstr "Brak nowych pakietów binarnych w tym repozytorium."
 #: templates/download/debian.html:67 templates/download/debian.html.py:141
 #, python-format
 msgid "“%(codename)s”"
-msgstr ""
+msgstr "“%(codename)s”"
 
 #: templates/download/debian.html:82
 msgid "Architecture"
@@ -5710,10 +5675,8 @@ msgstr ""
 "(za pomocą sudo lub jako użytkownik \"root\")."
 
 #: templates/download/debian.html:120
-#, fuzzy
-#| msgid "The following examples use sudo and aptitude."
 msgid "The following examples use sudo and apt-get."
-msgstr "Poniższe przykłady używają sudo i aptitude."
+msgstr "Poniższe przykłady używają sudo i apt-get."
 
 #: templates/download/debian.html:123
 msgid "Install https transport for apt:"
@@ -5728,7 +5691,7 @@ msgstr ""
 
 #: templates/download/debian.html:128
 msgid "Import the gpg key used to sign the repository:"
-msgstr ""
+msgstr "Zaimportuj klucz pgp użyty do podpisania repozytorium:"
 
 #: templates/download/debian.html:132
 msgid ""
@@ -6312,16 +6275,12 @@ msgid "Back to form"
 msgstr "Powrót do formularza"
 
 #: templates/plugins/add_ok.html:12
-#, fuzzy
-#| msgid ""
-#| "Your script was submitted for review, it usually takes 24 or 48 hours "
-#| "(several weeks if many scripts are pending)."
 msgid ""
 "Your script was submitted for review, it usually takes some weeks (several "
 "months if many scripts are pending)."
 msgstr ""
-"Twój skrypt został dodany do oceny, zazwyczaj trwa ona 24 lub 48 godzin "
-"(kilka tygodni jeśli jest sporo oczekujących skryptów)."
+"Twój skrypt został dodany do oceny, zazwyczaj trwa ona kilka tygodni (kilka "
+"miesięcy jeśli jest sporo oczekujących skryptów)."
 
 #: templates/plugins/add_ok.html:14
 msgid "You'll be informed if there is a problem with your script."
@@ -6351,11 +6310,6 @@ msgstr ""
 "<strong>problemy bezpieczeństwa</strong>. Zostałeś ostrzeżony!"
 
 #: templates/plugins/list.html:19
-#, fuzzy
-#| msgid ""
-#| "WARNING: the old API is deprecated and these scripts runs only on WeeChat "
-#| "0.2.x, which is OBSOLETE. You MUST NOT load these scripts with latest "
-#| "stable version of WeeChat!"
 msgid ""
 "WARNING: the legacy API is deprecated and these scripts runs only on WeeChat "
 "0.2.x, which is OBSOLETE. You MUST NOT load these scripts with latest stable "
@@ -6370,8 +6324,6 @@ msgid "Display scripts for stable API (&ge; 0.3.0)"
 msgstr "Wyświetl skrypty dla stabilnego API (&ge; 0.3.0)"
 
 #: templates/plugins/list.html:28
-#, fuzzy
-#| msgid "Display scripts for old API (&le; 0.2.6)"
 msgid "Display scripts for legacy API (&le; 0.2.6)"
 msgstr "Wyświetl skrypty dla starego API (&le; 0.2.6)"
 
