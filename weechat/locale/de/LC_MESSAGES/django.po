@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-31 09:25+0100\n"
+"POT-Creation-Date: 2016-01-10 11:22+0100\n"
 "PO-Revision-Date: 2016-01-03 22:18+0100\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <weechatter@arcor.de>\n"
@@ -182,7 +182,7 @@ msgstr "Ausgabe von \"git rev-parse HEAD\" für Quelltext Repository"
 msgid "output of \"git rev-parse HEAD\" for scripts repository"
 msgstr "Ausgabe von \"git rev-parse HEAD\" für Skripten Repository"
 
-#: dev/views.py:62 templates/download/packages.html.py:51
+#: dev/views.py:62 templates/download/packages.html:51
 msgid "next stable version"
 msgstr "kommende stabile Version"
 
@@ -205,11 +205,11 @@ msgstr "alle Informationen (eine Information pro Zeile, Format: \"Info:Wert\")"
 msgid "Czech"
 msgstr "Tschechisch"
 
-#: doc/models.py:31 settings.py:62 templates/dev/support.html.py:33
+#: doc/models.py:31 settings.py:62 templates/dev/support.html:33
 msgid "German"
 msgstr "Deutsch"
 
-#: doc/models.py:32 settings.py:60 templates/dev/support.html.py:26
+#: doc/models.py:32 settings.py:60 templates/dev/support.html:26
 #: templates/menu.html:24 templates/menu.html.py:25
 msgid "English"
 msgstr "Englisch"
@@ -218,7 +218,7 @@ msgstr "Englisch"
 msgid "Spanish"
 msgstr "Spanisch"
 
-#: doc/models.py:34 settings.py:61 templates/dev/support.html.py:27
+#: doc/models.py:34 settings.py:61 templates/dev/support.html:27
 msgid "French"
 msgstr "Französisch"
 
@@ -250,7 +250,7 @@ msgstr "Russisch"
 msgid "Turkish"
 msgstr "türkisch"
 
-#: doc/models.py:73 templates/menu.html.py:24
+#: doc/models.py:73 templates/menu.html:24
 msgid "FAQ"
 msgstr "FAQ"
 
@@ -380,22 +380,22 @@ msgstr ""
 "von WeeChat)."
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:153 templates/download/security.html.py:71
+#: download/models.py:153 templates/download/security.html:71
 msgid "low"
 msgstr "niedrig"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:155 templates/download/security.html.py:72
+#: download/models.py:155 templates/download/security.html:72
 msgid "medium"
 msgstr "mittel"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:157 templates/download/security.html.py:73
+#: download/models.py:157 templates/download/security.html:73
 msgid "high"
 msgstr "hoch"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:159 templates/download/security.html.py:74
+#: download/models.py:159 templates/download/security.html:74
 msgid "critical"
 msgstr "kritisch"
 
@@ -639,7 +639,7 @@ msgstr "Debian/Raspbian Repositorien"
 msgid "Dennis Ritchie has left #world"
 msgstr "Dennis Ritchie ist verstorben"
 
-#: news/_i18n_info.py:22 templates/home/home.html.py:55 templates/menu.html:65
+#: news/_i18n_info.py:22 templates/home/home.html:55 templates/menu.html:65
 msgid "Devel blog"
 msgstr "Devel Blog"
 
@@ -656,7 +656,7 @@ msgstr ""
 "Verbindungen, buddy list management, presence information, MUC und "
 "transports."
 
-#: news/_i18n_info.py:24 templates/menu.html.py:19
+#: news/_i18n_info.py:24 templates/menu.html:19
 msgid "Documentation"
 msgstr "Dokumentation"
 
@@ -850,8 +850,8 @@ msgstr ""
 "ist verfügbar."
 
 #: news/_i18n_info.py:49 plugins/models.py:266 templates/about/history.html:38
-#: templates/doc/doc.html.py:28 templates/download/packages.html:44
-#: templates/plugins/list.html.py:69 templates/plugins/pending.html:32
+#: templates/doc/doc.html:28 templates/download/packages.html:44
+#: templates/plugins/list.html:69 templates/plugins/pending.html:32
 msgid "Version"
 msgstr "Version"
 
@@ -2557,6 +2557,81 @@ msgstr ""
 "ChangeLog-1.3.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:100
+#, fuzzy
+#| msgid ""
+#| "Version 0.4.0 is available!\n"
+#| "\n"
+#| "Among the new features:\n"
+#| "- add option \"diff\" for command /set, display default values in output "
+#| "of /set\n"
+#| "- add color support in prefix options\n"
+#| "- add command /eval, use expression in conditions for bars\n"
+#| "- connect by default with IPv6 to servers with fallback to IPv4\n"
+#| "- add aspell suggestions\n"
+#| "- add support of tags in irc messages and \"server-time\" capability\n"
+#| "- add irc command /quiet\n"
+#| "- add support of IPv6 in relay plugin\n"
+#| "- add backlog for irc protocol in relay plugin\n"
+#| "- display remote IP address for DCC chat/file in xfer plugin\n"
+#| "- add git version in build\n"
+#| "- many bugs fixed.\n"
+#| "\n"
+#| "For complete list of new features and bugs fixed, please look at <a href="
+#| "\"http://dev.weechat.org/post/2013/01/20/Version-0.4.0\">development "
+#| "blog</a> or <a href=\"/files/changelog/ChangeLog-0.4.0.html\">ChangeLog</"
+#| "a>."
+msgid ""
+"Version 1.4 is available!\n"
+"\n"
+"Among the new features:\n"
+"\n"
+"- add a parent name in options, display inherited values if null in /set "
+"output\n"
+"- add option weechat.look.paste_auto_add_newline\n"
+"- add /fifo command\n"
+"- track real names using extended-join and WHO (IRC)\n"
+"- add support of SNI (Server Name Indication) in SSL connection to IRC "
+"server\n"
+"- add support of IRC \"cap-notify\" capability\n"
+"- add IRC command /cap\n"
+"- add hex dump of messages in raw buffer when debug is enabled for irc "
+"plugin\n"
+"- add option relay.irc.backlog_since_last_message\n"
+"- add option script.scripts.download_timeout\n"
+"- add scripts to build Debian packages\n"
+"- many bugs fixed.\n"
+"\n"
+"For complete list of new features and bugs fixed, please look at <a href="
+"\"http://dev.weechat.org/post/2016/01/10/Version-1.4\">development blog</a> "
+"or <a href=\"/files/changelog/ChangeLog-1.4.html\">ChangeLog</a>."
+msgstr ""
+"Version 0.4.0 ist verfügbar!\n"
+"\n"
+"Überblick, der neuen Funktionen:\n"
+"- neu Option, \"diff\", für den /set Befehl um sich Standardwerte anzeigen "
+"zu lassen\n"
+"- die Prefix-Optionen können farblich angepasst werden\n"
+"- neuer Befehl \"/eval\", um Ausdrücke für Bars festzulegen und diese "
+"auszuführen\n"
+"- Standardmäßig wird eine IPv6 Verbindung hergestellt, mit Fallback auf "
+"IPv4\n"
+"- Rechtschreibkorrektur zeigt nun Vorschläge an\n"
+"- Tag-Unterstützung für IRC-Nachrichten und Unterstützung von \"server-time"
+"\"\n"
+"- \"-quiet\" Befehl hinzugefügt\n"
+"- Relay-Erweiterung unterstützt nun IPv6\n"
+"- Buffer-Rückverfolgung im IRC-Protokoll für die Relay-Erweiterung\n"
+"- Xfer-Erweiterung zeigt für DCC Chat/Datentransfer die IP Adresse der "
+"Gegenstelle an\n"
+"- Git-Version wird in build integriert\n"
+"- viele Fehler behoben\n"
+"\n"
+"Eine vollständige Liste der neuen Funktionen und Fehlerbereinigungen findet "
+"man unter folgenden Links: <a href=\"http://dev.weechat.org/post/2013/01/20/"
+"Version-0.4.0\">development blog</a> oder <a href=\"/files/changelog/"
+"ChangeLog-0.4.0.html\">ChangeLog</a>."
+
+#: news/_i18n_info.py:101
 msgid ""
 "Version v0.1.2 is available!\n"
 "\n"
@@ -2589,11 +2664,11 @@ msgstr ""
 "Add-on, 24.05.2005: Absturz beim Programmstart und Perl/Python Erkennung "
 "behoben, Version ist nun 0.1.2.1."
 
-#: news/_i18n_info.py:101
+#: news/_i18n_info.py:102
 msgid "WeeChat - Wee Enhanced Environment for Chat"
 msgstr "WeeChat - Wee Enhanced Environment for Chat"
 
-#: news/_i18n_info.py:102
+#: news/_i18n_info.py:103
 msgid ""
 "WeeChat has many new important features since some weeks:\n"
 "- multi-windows management (with horizontal and vertical window split)\n"
@@ -2618,11 +2693,11 @@ msgstr ""
 "in der Testphase. Wenn Sie Fehler finden oder Anmerkungen haben um die "
 "Funktionalität der buffer/window/nzu erhöhen, dann melden Sie sich."
 
-#: news/_i18n_info.py:103
+#: news/_i18n_info.py:104
 msgid "WeeChat in Cygwin"
 msgstr "WeeChat mit Cygwin"
 
-#: news/_i18n_info.py:104
+#: news/_i18n_info.py:105
 msgid ""
 "WeeChat is now in Cygwin, and can be installed with setup.exe.\n"
 "Version 0.4.2 is available for 32 and 64-bit Cygwin.\n"
@@ -2637,7 +2712,7 @@ msgstr ""
 "Hinweis: Guile Erweiterung ist nicht verfügbar, da guile >= 2.0 benötigt "
 "wird und diese nicht von Cygwin zur Verfügung gestellt wird."
 
-#: news/_i18n_info.py:105
+#: news/_i18n_info.py:106
 msgid ""
 "WeeChat project is started.\n"
 "\n"
@@ -2657,7 +2732,7 @@ msgstr ""
 "- schnell, schlank und erweiterbar durch Skripten.\n"
 "- ..."
 
-#: news/_i18n_info.py:106
+#: news/_i18n_info.py:107
 msgid ""
 "WeeChat project now accepts donations via Paypal account, with secured "
 "payment."
@@ -2665,7 +2740,7 @@ msgstr ""
 "Das WeeChat Projekt kann nun durch das sichere Paypal Verfahren direkt "
 "unterstützt werden."
 
-#: news/_i18n_info.py:107
+#: news/_i18n_info.py:108
 msgid ""
 "WeeChat repositories (weechat, scripts, qweechat) have been moved to GitHub, "
 "in WeeChat organization: <a href=\"https://github.com/weechat\">https://"
@@ -2681,15 +2756,15 @@ msgstr ""
 "Für weitere Informationen, siehe <a href=\"http://dev.weechat.org/"
 "post/2014/03/03/Git-repositories-moved-to-Github\">Entwickler Blog</a>."
 
-#: news/_i18n_info.py:108
+#: news/_i18n_info.py:109
 msgid "WeeChat screenshot"
 msgstr "WeeChat Screenshot"
 
-#: news/_i18n_info.py:109
+#: news/_i18n_info.py:110
 msgid "WeeChat scripts page"
 msgstr "WeeChat Skriptenseite"
 
-#: news/_i18n_info.py:110
+#: news/_i18n_info.py:111
 msgid ""
 "WeeChat scripts page (today Perl scripts only) has been added.\n"
 "On this page you can submit your script (need to be approved by WeeChat "
@@ -2705,7 +2780,7 @@ msgstr ""
 "Hinweis: Perl-Skripten benötigen mindestens Version > 0.0.3 von WeeChat. Zur "
 "Zeit muss somit die Entwicklerversion genutzt werden."
 
-#: news/_i18n_info.py:111
+#: news/_i18n_info.py:112
 msgid ""
 "WeeChat story page is now available, as screenshots. You can see differences "
 "between all versions in one view!\n"
@@ -2716,15 +2791,15 @@ msgstr ""
 "Entwicklungsversionen sind ebenso aufgeführt und es findet ein regelmäßiges "
 "Update statt."
 
-#: news/_i18n_info.py:112
+#: news/_i18n_info.py:113
 msgid "WeeChat users map"
 msgstr "Karte der WeeChat Anwender"
 
-#: news/_i18n_info.py:113
+#: news/_i18n_info.py:114
 msgid "WeeChat will merge with irssi"
 msgstr "WeeChat verschmilzt mit irssi"
 
-#: news/_i18n_info.py:114
+#: news/_i18n_info.py:115
 msgid ""
 "WeeChat, the fast, light and extensible IRC client, is released for the "
 "first time, version 0.0.1.\n"
@@ -4828,13 +4903,13 @@ msgstr "Dieser Name existiert bereits. Bitte wähle einen anderen Namen."
 msgid "This name is too long (must be max 20 chars)."
 msgstr "Der Name ist zu lang (maximal 20 Zeichen werden unterstützt)."
 
-#: plugins/models.py:255 templates/plugins/list.html.py:63
-#: templates/plugins/list.html:65 templates/plugins/pending.html.py:33
+#: plugins/models.py:255 templates/plugins/list.html:63
+#: templates/plugins/list.html.py:65 templates/plugins/pending.html:33
 msgctxt "programming language"
 msgid "Language"
 msgstr "Sprache"
 
-#: plugins/models.py:259 templates/about/donate.html.py:58
+#: plugins/models.py:259 templates/about/donate.html:58
 #: templates/plugins/list.html:57 templates/plugins/list.html.py:59
 #: templates/plugins/pending.html:29
 msgid "Name"
@@ -4851,8 +4926,8 @@ msgstr ""
 msgid "version of script (only digits or dots)"
 msgstr "Version des Skripts (nur Ziffern oder Punkte)"
 
-#: plugins/models.py:272 templates/plugins/list.html.py:72
-#: templates/plugins/list.html:74 templates/plugins/pending.html.py:34
+#: plugins/models.py:272 templates/plugins/list.html:72
+#: templates/plugins/list.html.py:74 templates/plugins/pending.html:34
 msgid "License"
 msgstr "Lizenz"
 
@@ -4860,7 +4935,7 @@ msgstr "Lizenz"
 msgid "license (for example: GPL3, BSD, ...)"
 msgstr "Lizenzen (zum Beispiel: GPL3, BSD, ...)"
 
-#: plugins/models.py:277 plugins/models.py:354 templates/doc/doc.html.py:69
+#: plugins/models.py:277 plugins/models.py:354 templates/doc/doc.html:69
 #: themes/models.py:136 themes/models.py:223
 msgid "File"
 msgstr "Datei"
@@ -4869,9 +4944,9 @@ msgstr "Datei"
 msgid "the script"
 msgstr "nach Skript"
 
-#: plugins/models.py:282 templates/dev/info_list.html.py:19
-#: templates/dev/roadmap.html:46 templates/download/security.html.py:35
-#: templates/plugins/list.html:68 templates/plugins/pending.html.py:30
+#: plugins/models.py:282 templates/dev/info_list.html:19
+#: templates/dev/roadmap.html:46 templates/download/security.html:35
+#: templates/plugins/list.html:68 templates/plugins/pending.html:30
 #: themes/models.py:143
 msgid "Description"
 msgstr "Beschreibung"
@@ -4925,7 +5000,7 @@ msgstr "Gebe \"no\" ein, sofern Du kein Spammer bist"
 msgid "Choose..."
 msgstr "Auswählen..."
 
-#: plugins/models.py:346 templates/plugins/source.html.py:13
+#: plugins/models.py:346 templates/plugins/source.html:13
 msgid "Script"
 msgstr "Skript"
 
@@ -4986,20 +5061,20 @@ msgstr ""
 msgid "about"
 msgstr "Über"
 
-#: templates/about/about.html:13 templates/about/history.html.py:39
-#: templates/home/home.html:39 templates/menu.html.py:11
+#: templates/about/about.html:13 templates/about/history.html:39
+#: templates/home/home.html:39 templates/menu.html:11
 msgid "Features"
 msgstr "Funktionen"
 
-#: templates/about/about.html:14 templates/menu.html.py:12
+#: templates/about/about.html:14 templates/menu.html:12
 msgid "Screenshots"
 msgstr "Bilder"
 
-#: templates/about/about.html:15 templates/menu.html.py:13
+#: templates/about/about.html:15 templates/menu.html:13
 msgid "History"
 msgstr "Geschichte"
 
-#: templates/about/about.html:16 templates/home/home.html.py:70
+#: templates/about/about.html:16 templates/home/home.html:70
 #: templates/menu.html:14
 msgid "Make a donation"
 msgstr "etwas Spenden"
@@ -5073,7 +5148,7 @@ msgstr "zeigt Top 10, geordnet nach der Höhe der Spendensumme insgesamt"
 msgid "show the whole list"
 msgstr "zeigt vollständige Liste an"
 
-#: templates/about/donate.html:54 templates/about/history.html.py:37
+#: templates/about/donate.html:54 templates/about/history.html:37
 #: templates/plugins/pending.html:38
 msgid "Date"
 msgstr "Datum"
@@ -5090,7 +5165,7 @@ msgstr "Betrag"
 msgid "Comment"
 msgstr "Kommentar"
 
-#: templates/about/donate.html:88 templates/doc/doc.html.py:73
+#: templates/about/donate.html:88 templates/doc/doc.html:73
 msgid "Total"
 msgstr "Total"
 
@@ -5472,7 +5547,7 @@ msgstr "Valid"
 msgid "dev"
 msgstr "Entwicklung"
 
-#: templates/dev/dev.html:13 templates/home/home.html.py:58
+#: templates/dev/dev.html:13 templates/home/home.html:58
 #: templates/menu.html:61
 msgid "Roadmap"
 msgstr "Meilensteinplan"
@@ -5481,12 +5556,12 @@ msgstr "Meilensteinplan"
 msgid "Stats"
 msgstr "Statistiken"
 
-#: templates/dev/dev.html:15 templates/dev/info_list.html.py:17
+#: templates/dev/dev.html:15 templates/dev/info_list.html:17
 #: templates/menu.html:63
 msgid "Info"
 msgstr "Info"
 
-#: templates/dev/dev.html:16 templates/menu.html.py:64
+#: templates/dev/dev.html:16 templates/menu.html:64
 msgid "Support"
 msgstr "Support"
 
@@ -5541,7 +5616,7 @@ msgstr ""
 msgid "Dive in the <strong>future</strong> of WeeChat!"
 msgstr "Lass Dich in die <strong>Zukunft</strong> von WeeChat entführen!"
 
-#: templates/dev/roadmap.html:42 templates/download/security.html.py:29
+#: templates/dev/roadmap.html:42 templates/download/security.html:29
 msgid "Tracker"
 msgstr "Tracker"
 
@@ -5565,7 +5640,7 @@ msgstr "erledigt"
 msgid "statistics"
 msgstr "Statistiken"
 
-#: templates/dev/stats.html:15 templates/menu.html.py:39
+#: templates/dev/stats.html:15 templates/menu.html:39
 #: templates/plugins/plugins.html:13
 msgid "Scripts"
 msgstr "Skripten"
@@ -5693,15 +5768,15 @@ msgstr ""
 msgid "documentation"
 msgstr "Dokumentation"
 
-#: templates/doc/doc.html:13 templates/download/download.html.py:13
+#: templates/doc/doc.html:13 templates/download/download.html:13
 msgid "Stable"
 msgstr "Stabil"
 
-#: templates/doc/doc.html:14 templates/download/download.html.py:14
+#: templates/doc/doc.html:14 templates/download/download.html:14
 msgid "Devel"
 msgstr "Instabil"
 
-#: templates/doc/doc.html:15 templates/download/download.html.py:15
+#: templates/doc/doc.html:15 templates/download/download.html:15
 #: templates/menu.html:23 templates/menu.html.py:33
 msgid "Old versions"
 msgstr "alte Versionen"
@@ -5900,7 +5975,7 @@ msgstr "Kein Debian Repository."
 msgid "download"
 msgstr "Download"
 
-#: templates/download/download.html:16 templates/menu.html.py:34
+#: templates/download/download.html:16 templates/menu.html:34
 msgid "Debian/Ubuntu repositories"
 msgstr "Debian/Ubuntu Repositorien"
 
@@ -6149,7 +6224,7 @@ msgstr ""
 "kritisches Problem, welches Schäden am System verursachen kann. <strong>Es "
 "sollte UMGEHEND ein Upgrade erfolgen!</strong>"
 
-#: templates/error.html:11 templates/home/home.html.py:121
+#: templates/error.html:11 templates/home/home.html:121
 msgid "Back to home"
 msgstr "Zurück zur Hauptseite"
 
@@ -6213,8 +6288,8 @@ msgstr "aktuelle stabile Version von WeeChat ist"
 msgid "released on"
 msgstr "veröffentlicht am"
 
-#: templates/home/home.html:40 templates/menu.html.py:29
-#: templates/plugins/source.html:17 templates/themes/source.html.py:16
+#: templates/home/home.html:40 templates/menu.html:29
+#: templates/plugins/source.html:17 templates/themes/source.html:16
 msgid "Download"
 msgstr "Download"
 
@@ -6255,11 +6330,11 @@ msgstr ""
 msgid "More"
 msgstr "Mehr"
 
-#: templates/home/home.html:80 templates/menu.html.py:4
+#: templates/home/home.html:80 templates/menu.html:4
 msgid "Latest news"
 msgstr "aktuelle Neuerungen"
 
-#: templates/home/home.html:100 templates/menu.html.py:5
+#: templates/home/home.html:100 templates/menu.html:5
 msgid "Upcoming events"
 msgstr "bevorstehende Ereignisse"
 
@@ -6275,8 +6350,8 @@ msgstr "Dieser Seite ist zzt. unter Wartung."
 msgid "Page will be back soon, please come back later."
 msgstr "Bitte besuchen Sie uns zu einem späteren Zeitpunkt erneut."
 
-#: templates/maintenance.html:15 templates/plugins/add_ok.html.py:16
-#: templates/plugins/update_ok.html:14 templates/themes/add_ok.html.py:16
+#: templates/maintenance.html:15 templates/plugins/add_ok.html:16
+#: templates/plugins/update_ok.html:14 templates/themes/add_ok.html:16
 #: templates/themes/update_ok.html:14
 msgid "Thank you for your patience."
 msgstr "Danke für Deine Geduld."
@@ -6309,19 +6384,19 @@ msgstr "Sicherheitsfragen"
 msgid "Browse scripts"
 msgstr "Skripten durchstöbern"
 
-#: templates/menu.html:42 templates/plugins/plugins.html.py:14
+#: templates/menu.html:42 templates/plugins/plugins.html:14
 msgid "Add script"
 msgstr "Neues Skript"
 
-#: templates/menu.html:43 templates/plugins/plugins.html.py:15
+#: templates/menu.html:43 templates/plugins/plugins.html:15
 msgid "Update script"
 msgstr "aktualisiere Skript"
 
-#: templates/menu.html:44 templates/plugins/plugins.html.py:16
+#: templates/menu.html:44 templates/plugins/plugins.html:16
 msgid "Pending scripts"
 msgstr "eingereichte Skripten"
 
-#: templates/menu.html:45 templates/plugins/plugins.html.py:17
+#: templates/menu.html:45 templates/plugins/plugins.html:17
 msgid "Unofficial scripts"
 msgstr "nicht veröffentlichte Skripten"
 
@@ -6333,7 +6408,7 @@ msgstr "Statistik"
 msgid "Repositories"
 msgstr "Repositorien"
 
-#: templates/plugins/add.html:15 templates/plugins/update.html.py:16
+#: templates/plugins/add.html:15 templates/plugins/update.html:16
 msgid ""
 "<strong>Warning:</strong> please follow <strong>all</strong> these rules, "
 "otherwise your script will be rejected:"
@@ -6422,8 +6497,8 @@ msgstr ""
 "oder hook_process_hashtable() genutzt werden um ein Blockieren von WeeChat "
 "zu verhindern"
 
-#: templates/plugins/add.html:43 templates/plugins/update.html.py:25
-#: templates/themes/add.html:25 templates/themes/update.html.py:17
+#: templates/plugins/add.html:43 templates/plugins/update.html:25
+#: templates/themes/add.html:25 templates/themes/update.html:17
 msgid "Submit"
 msgstr "Versenden"
 
@@ -6461,7 +6536,7 @@ msgid "You'll be informed if there is a problem with your script."
 msgstr ""
 "Sollte ein Problem mit dem Skript auftreten wirst Du darüber informiert."
 
-#: templates/plugins/add_ok.html:19 templates/plugins/source.html.py:34
+#: templates/plugins/add_ok.html:19 templates/plugins/source.html:34
 #: templates/plugins/update_ok.html:17
 msgid "Back to scripts"
 msgstr "Zurück zu den Skripten"
@@ -6525,7 +6600,7 @@ msgstr "entfernen"
 msgid "no filter"
 msgstr "keine Filterung"
 
-#: templates/plugins/list.html:40 templates/plugins/plugins.html.py:5
+#: templates/plugins/list.html:40 templates/plugins/plugins.html:5
 msgid "scripts"
 msgstr "Skripten"
 
@@ -6548,7 +6623,7 @@ msgid "Max"
 msgstr "Max"
 
 #: templates/plugins/list.html:93 templates/plugins/list.html.py:95
-#: templates/plugins/pending.html:37 templates/plugins/source.html.py:24
+#: templates/plugins/pending.html:37 templates/plugins/source.html:24
 msgid "Author"
 msgstr "Autor"
 
@@ -6561,16 +6636,16 @@ msgstr "hinzugefügt"
 msgid "Updated"
 msgstr "aktualisiert"
 
-#: templates/plugins/list.html:124 templates/plugins/pending.html.py:52
+#: templates/plugins/list.html:124 templates/plugins/pending.html:52
 #: templates/plugins/source.html:21
 msgid "requires"
 msgstr "benötigt"
 
-#: templates/plugins/list.html:131 templates/themes/list.html.py:24
+#: templates/plugins/list.html:131 templates/themes/list.html:24
 msgid "Author:"
 msgstr "Autor:"
 
-#: templates/plugins/list.html:140 templates/plugins/update.html.py:32
+#: templates/plugins/list.html:140 templates/plugins/update.html:32
 msgid "No script found."
 msgstr "Kein Skript gefunden."
 
@@ -6628,7 +6703,7 @@ msgstr "Version"
 msgid "added"
 msgstr "hinzugefügt"
 
-#: templates/plugins/source.html:25 templates/themes/list.html.py:29
+#: templates/plugins/source.html:25 templates/themes/list.html:29
 msgid "updated"
 msgstr "aktualisiert"
 
@@ -6686,7 +6761,7 @@ msgid "You'll be informed if there is a problem with your theme."
 msgstr ""
 "Sollte ein Problem mit Deinem Theme auftreten wirst Du darüber informiert."
 
-#: templates/themes/add_ok.html:19 templates/themes/list.html.py:41
+#: templates/themes/add_ok.html:19 templates/themes/list.html:41
 #: templates/themes/source.html:15 templates/themes/source.html.py:22
 #: templates/themes/update_ok.html:17
 msgid "Back to themes"
