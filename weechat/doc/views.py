@@ -33,18 +33,18 @@ from weechat.doc.models import Language, Version, Doc
 from weechat.download.models import Release
 
 I18N_MAINTAINER = {
-    'en': ('FlashCode', 'Sébastien Helleu'),
-    'fr': ('FlashCode', 'Sébastien Helleu'),
-    'it': ('Quizzlo', 'Marco Paolone'),
+    'cs': ('-', ''),
     'de': ('nils_2', 'Nils Görs'),
+    'en': ('FlashCode', 'Sébastien Helleu'),
+    'es': ('-', ''),
+    'fr': ('FlashCode', 'Sébastien Helleu'),
+    'hu': ('-', ''),
+    'it': ('-', ''),
     'ja': ('R. Ayanokouzi', 'Ryuunosuke Ayanokouzi'),
     'pl': ('soltys', 'Krzysztof Korościk'),
-    'ru': ('ixti', 'Aleksey Zapparov'),
-    'pt_BR': ('ISF_ec09', 'Ivan Sichmann Freitas'),
-    'tr': ('turgay', 'Hasan Kiran'),
-    'es': ('-', ''),
-    'cs': ('-', ''),
-    'hu': ('-', ''),
+    'pt_BR': ('-', ''),
+    'ru': ('-', ''),
+    'tr': ('-', ''),
 }
 
 DOC_SHORTCUT_ALIAS = {
