@@ -167,6 +167,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Control and now-playing script for moc."),
     # Translators: description for script "weemoticons.py" (0.3.0+)
     gettext_lazy("Convert ascii emotes to the unicode emoticon."),
+    # Translators: description for script "emoji_aliases.py" (1.0.1+)
+    gettext_lazy("Convert emoji aliases to unicode emoji."),
     # Translators: description for script "fullwidth.py" (0.3.0+)
     gettext_lazy("Convert text to its full width equivalent and send it to buffer."),
     # Translators: description for script "leet.py" (0.3.0+)
@@ -289,6 +291,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Fetches your last submitted song from last.fm and shows it in the current channel."),
     # Translators: description for script "fish.py" (0.3.0+)
     gettext_lazy("FiSH encryption/decryption."),
+    # Translators: description for script "grep_filter.py" (0.3.5+)
+    gettext_lazy("Filter buffers automatically while searching them."),
     # Translators: description for script "floodit.py" (0.3.0+)
     gettext_lazy("Flood'it game."),
     # Translators: description for script "forcenick.rb" (0.0.1-0.2.6)
@@ -333,6 +337,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Jabber/XMPP protocol."),
     # Translators: description for script "jump_smart_higher.pl" (0.3.0+)
     gettext_lazy("Jump to a higher buffer with activity."),
+    # Translators: description for script "karmastorm.scm" (0.4.1+)
+    gettext_lazy("Karma votes."),
     # Translators: description for script "keepnick.py" (0.0.1-0.2.6)
     gettext_lazy("Keep your nick and recover it in case it's stolen."),
     # Translators: description for script "kbtimeout.py" (0.3.0+)
@@ -345,6 +351,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Let users send you assignments that will be put into a file."),
     # Translators: description for script "samechannel.rb" (0.4.1+)
     gettext_lazy("List multiple occurences of the same nick(s) in a set of channels."),
+    # Translators: description for script "chancomp.py" (1.3+)
+    gettext_lazy("List shared channels with user on command or WHOIS."),
     # Translators: description for script "weestreamer.py" (0.3.0+)
     gettext_lazy("Livestreamer companion for WeeChat."),
     # Translators: description for script "input_lock.rb" (0.3.0+)
@@ -415,6 +423,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Now-playing script for banshee."),
     # Translators: description for script "otr.py" (0.3.0+)
     gettext_lazy("Off-The-Record IRC messaging."),
+    # Translators: description for script "beinc.py" (0.4.0+)
+    gettext_lazy("On screen display notification."),
     # Translators: description for script "url_hinter.rb" (0.3.0+)
     gettext_lazy("Open URLs without using the mouse."),
     # Translators: description for script "xclip.pl" (0.3.0+)
@@ -535,10 +545,14 @@ _i18n_plugins_plugins = [
     gettext_lazy("Script to check if your scripts are up to date with list located at WeeChat website."),
     # Translators: description for script "weeget.py" (0.3.0+)
     gettext_lazy("Scripts manager."),
+    # Translators: description for script "win_scroll_screen.py" (0.3.0+)
+    gettext_lazy("Scroll by fractional screens."),
     # Translators: description for script "grep.py" (0.3.0+)
     gettext_lazy("Search regular expression in buffers or log files."),
     # Translators: description for script "seeks.pl" (0.3.6+)
     gettext_lazy("Search terms on seeks node and display results."),
+    # Translators: description for script "ircrypt.py" (0.3.8+)
+    gettext_lazy("Secure encryption layer for the IRC protocol based on OpenPGP."),
     # Translators: description for script "challengeauth.rb" (0.3.0+)
     gettext_lazy("Securely authenticate with QuakeNet by using CHALLENGEAUTH."),
     # Translators: description for script "coords.pl" (0.4.2+)
@@ -665,6 +679,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Sort irc buffers alphabetically."),
     # Translators: description for script "listsort.pl" (0.3.4+)
     gettext_lazy("Sort the output of /list command by user count."),
+    # Translators: description for script "autospurdo.js" (0.3.0+)
+    gettext_lazy("Speak in spurdo."),
     # Translators: description for script "beep.pl" (0.0.1-0.2.6)
     gettext_lazy("Speaker beep on highlight/private message."),
     # Translators: description for script "jnotify.pl" (0.3.1+)
