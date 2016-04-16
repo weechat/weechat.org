@@ -84,7 +84,11 @@
       <td class="po">
         <span class="file">{% if item.lang == "en" %}-{% else %}{{ item.lang }}.po{% endif %}</span>
         <span class="maintainer">
-          {% if item.name %}(<abbr title="{{ item.name }}">{{ item.nick }}</abbr>){% endif %}
+        {% if item.nick and item.name %}
+          (<abbr title="{{ item.name }}">{{ item.nick }}</abbr>)
+        {% elif item.name %}
+          ({{ item.name }})
+        {% endif %}
         </span>
       </td>
       {% if item.lang == "en" %}
