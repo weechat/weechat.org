@@ -83,12 +83,14 @@ def get_i18n_stats():
                         pct_translated = 100 - pct_fuzzy - pct_untranslated
                         if pct_translated < 0:
                             pct_translated = 0
+                        nick, name = I18N_MAINTAINER.get(lang, ('-', ''))
                         langs.append({
                             'lang': lang,
-                            'lang_i18n': ugettext(
-                                Language.LANG_I18N[lang]),
-                            'nick': I18N_MAINTAINER[lang][0],
-                            'name': I18N_MAINTAINER[lang][1],
+                            'lang_i18n': (ugettext(Language.LANG_I18N[lang])
+                                          if lang in Language.LANG_I18N
+                                          else lang),
+                            'nick': nick,
+                            'name': name,
                             'translated': int(translated),
                             'pct_translated': pct_translated,
                             'fuzzy': int(fuzzy),
