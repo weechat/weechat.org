@@ -36,6 +36,7 @@ class Language(models.Model):
         'it': ugettext_noop('Italian'),
         'ja': ugettext_noop('Japanese'),
         'pl': ugettext_noop('Polish'),
+        'pt': ugettext_noop('Portuguese'),
         'pt_BR': ugettext_noop('Portuguese (Brazil)'),
         'ru': ugettext_noop('Russian'),
         'tr': ugettext_noop('Turkish'),

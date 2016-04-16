@@ -42,6 +42,7 @@ I18N_MAINTAINER = {
     'it': ('-', ''),
     'ja': ('R. Ayanokouzi', 'Ryuunosuke Ayanokouzi'),
     'pl': ('soltys', 'Krzysztof Korościk'),
+    'pt': ('', 'Vasco Almeida'),
     'pt_BR': ('-', ''),
     'ru': ('-', ''),
     'tr': ('-', ''),
