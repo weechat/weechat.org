@@ -207,6 +207,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Display Weechat highlights in dzen (and beep)."),
     # Translators: description for script "countdown.rb" (0.3.0+)
     gettext_lazy("Display a countdown on current buffer."),
+    # Translators: description for script "whowas_timeago.py" (1.3+)
+    gettext_lazy("Display a human-readable time string for WHOWAS data."),
     # Translators: description for script "urlbar.py" (0.3.0+)
     gettext_lazy("Display a url bar for easy clicking or selecting."),
     # Translators: description for script "vdm.py" (0.3.7+)
@@ -257,6 +259,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Display which song xmms is currently playing."),
     # Translators: description for script "xmms2.rb" (0.3.0+)
     gettext_lazy("Display which song xmms2 is currently playing."),
+    # Translators: description for script "maskmatch.py" (1.3+)
+    gettext_lazy("Display who is affected when a mode with a hostmask argument is set."),
     # Translators: description for script "chanstat.py" (0.3.0+)
     gettext_lazy("Displays channel's peak, low and average users."),
     # Translators: description for script "bandwidth.py" (0.3.0+)
