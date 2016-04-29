@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-25 07:32+0200\n"
+"POT-Creation-Date: 2016-04-29 09:06+0200\n"
 "PO-Revision-Date: 2016-04-23 21:07+0200\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <weechatter@arcor.de>\n"
@@ -186,7 +186,7 @@ msgstr "Ausgabe von \"git rev-parse HEAD\" für Quelltext Repository"
 msgid "output of \"git rev-parse HEAD\" for scripts repository"
 msgstr "Ausgabe von \"git rev-parse HEAD\" für Skripten Repository"
 
-#: dev/views.py:62 templates/download/packages.html:51
+#: dev/views.py:62 templates/download/packages.html.py:51
 msgid "next stable version"
 msgstr "kommende stabile Version"
 
@@ -209,11 +209,11 @@ msgstr "alle Informationen (eine Information pro Zeile, Format: \"Info:Wert\")"
 msgid "Czech"
 msgstr "Tschechisch"
 
-#: doc/models.py:31 settings.py:62 templates/dev/support.html:33
+#: doc/models.py:31 settings.py:62 templates/dev/support.html.py:33
 msgid "German"
 msgstr "Deutsch"
 
-#: doc/models.py:32 settings.py:60 templates/dev/support.html:26
+#: doc/models.py:32 settings.py:60 templates/dev/support.html.py:26
 #: templates/menu.html:24 templates/menu.html.py:25
 msgid "English"
 msgstr "Englisch"
@@ -222,7 +222,7 @@ msgstr "Englisch"
 msgid "Spanish"
 msgstr "Spanisch"
 
-#: doc/models.py:34 settings.py:61 templates/dev/support.html:27
+#: doc/models.py:34 settings.py:61 templates/dev/support.html.py:27
 msgid "French"
 msgstr "Französisch"
 
@@ -258,7 +258,7 @@ msgstr "Russisch"
 msgid "Turkish"
 msgstr "türkisch"
 
-#: doc/models.py:74 templates/menu.html:24
+#: doc/models.py:74 templates/menu.html.py:24
 msgid "FAQ"
 msgstr "FAQ"
 
@@ -388,22 +388,22 @@ msgstr ""
 "von WeeChat)."
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:153 templates/download/security.html:71
+#: download/models.py:153 templates/download/security.html.py:71
 msgid "low"
 msgstr "niedrig"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:155 templates/download/security.html:72
+#: download/models.py:155 templates/download/security.html.py:72
 msgid "medium"
 msgstr "mittel"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:157 templates/download/security.html:73
+#: download/models.py:157 templates/download/security.html.py:73
 msgid "high"
 msgstr "hoch"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:159 templates/download/security.html:74
+#: download/models.py:159 templates/download/security.html.py:74
 msgid "critical"
 msgstr "kritisch"
 
@@ -647,7 +647,7 @@ msgstr "Debian/Raspbian Repositorien"
 msgid "Dennis Ritchie has left #world"
 msgstr "Dennis Ritchie ist verstorben"
 
-#: news/_i18n_info.py:22 templates/home/home.html:55 templates/menu.html:65
+#: news/_i18n_info.py:22 templates/home/home.html.py:55 templates/menu.html:65
 msgid "Devel blog"
 msgstr "Devel Blog"
 
@@ -664,7 +664,7 @@ msgstr ""
 "Verbindungen, buddy list management, presence information, MUC und "
 "transports."
 
-#: news/_i18n_info.py:24 templates/menu.html:19
+#: news/_i18n_info.py:24 templates/menu.html.py:19
 msgid "Documentation"
 msgstr "Dokumentation"
 
@@ -858,8 +858,8 @@ msgstr ""
 "ist verfügbar."
 
 #: news/_i18n_info.py:49 plugins/models.py:266 templates/about/history.html:38
-#: templates/doc/doc.html:28 templates/download/packages.html:44
-#: templates/plugins/list.html:69 templates/plugins/pending.html:32
+#: templates/doc/doc.html.py:28 templates/download/packages.html:44
+#: templates/plugins/list.html.py:69 templates/plugins/pending.html:32
 msgid "Version"
 msgstr "Version"
 
@@ -4937,13 +4937,13 @@ msgstr "Dieser Name existiert bereits. Bitte wähle einen anderen Namen."
 msgid "This name is too long (must be max 20 chars)."
 msgstr "Der Name ist zu lang (maximal 20 Zeichen werden unterstützt)."
 
-#: plugins/models.py:255 templates/plugins/list.html:63
-#: templates/plugins/list.html.py:65 templates/plugins/pending.html:33
+#: plugins/models.py:255 templates/plugins/list.html.py:63
+#: templates/plugins/list.html:65 templates/plugins/pending.html.py:33
 msgctxt "programming language"
 msgid "Language"
 msgstr "Sprache"
 
-#: plugins/models.py:259 templates/about/donate.html:58
+#: plugins/models.py:259 templates/about/donate.html.py:58
 #: templates/plugins/list.html:57 templates/plugins/list.html.py:59
 #: templates/plugins/pending.html:29
 msgid "Name"
@@ -4960,8 +4960,8 @@ msgstr ""
 msgid "version of script (only digits or dots)"
 msgstr "Version des Skripts (nur Ziffern oder Punkte)"
 
-#: plugins/models.py:272 templates/plugins/list.html:72
-#: templates/plugins/list.html.py:74 templates/plugins/pending.html:34
+#: plugins/models.py:272 templates/plugins/list.html.py:72
+#: templates/plugins/list.html:74 templates/plugins/pending.html.py:34
 msgid "License"
 msgstr "Lizenz"
 
@@ -4969,7 +4969,7 @@ msgstr "Lizenz"
 msgid "license (for example: GPL3, BSD, ...)"
 msgstr "Lizenzen (zum Beispiel: GPL3, BSD, ...)"
 
-#: plugins/models.py:277 plugins/models.py:354 templates/doc/doc.html:69
+#: plugins/models.py:277 plugins/models.py:354 templates/doc/doc.html.py:69
 #: themes/models.py:136 themes/models.py:223
 msgid "File"
 msgstr "Datei"
@@ -4978,9 +4978,9 @@ msgstr "Datei"
 msgid "the script"
 msgstr "nach Skript"
 
-#: plugins/models.py:282 templates/dev/info_list.html:19
-#: templates/dev/roadmap.html:46 templates/download/security.html:35
-#: templates/plugins/list.html:68 templates/plugins/pending.html:30
+#: plugins/models.py:282 templates/dev/info_list.html.py:19
+#: templates/dev/roadmap.html:46 templates/download/security.html.py:35
+#: templates/plugins/list.html:68 templates/plugins/pending.html.py:30
 #: themes/models.py:143
 msgid "Description"
 msgstr "Beschreibung"
@@ -5034,7 +5034,7 @@ msgstr "Gebe \"no\" ein, sofern Du kein Spammer bist"
 msgid "Choose..."
 msgstr "Auswählen..."
 
-#: plugins/models.py:346 templates/plugins/source.html:13
+#: plugins/models.py:346 templates/plugins/source.html.py:13
 msgid "Script"
 msgstr "Skript"
 
@@ -5095,20 +5095,20 @@ msgstr ""
 msgid "about"
 msgstr "Über"
 
-#: templates/about/about.html:13 templates/about/history.html:39
-#: templates/home/home.html:39 templates/menu.html:11
+#: templates/about/about.html:13 templates/about/history.html.py:39
+#: templates/home/home.html:39 templates/menu.html.py:11
 msgid "Features"
 msgstr "Funktionen"
 
-#: templates/about/about.html:14 templates/menu.html:12
+#: templates/about/about.html:14 templates/menu.html.py:12
 msgid "Screenshots"
 msgstr "Bilder"
 
-#: templates/about/about.html:15 templates/menu.html:13
+#: templates/about/about.html:15 templates/menu.html.py:13
 msgid "History"
 msgstr "Geschichte"
 
-#: templates/about/about.html:16 templates/home/home.html:70
+#: templates/about/about.html:16 templates/home/home.html.py:70
 #: templates/menu.html:14
 msgid "Make a donation"
 msgstr "etwas Spenden"
@@ -5182,7 +5182,7 @@ msgstr "zeigt Top 10, geordnet nach der Höhe der Spendensumme insgesamt"
 msgid "show the whole list"
 msgstr "zeigt vollständige Liste an"
 
-#: templates/about/donate.html:54 templates/about/history.html:37
+#: templates/about/donate.html:54 templates/about/history.html.py:37
 #: templates/plugins/pending.html:38
 msgid "Date"
 msgstr "Datum"
@@ -5199,7 +5199,7 @@ msgstr "Betrag"
 msgid "Comment"
 msgstr "Kommentar"
 
-#: templates/about/donate.html:88 templates/doc/doc.html:73
+#: templates/about/donate.html:88 templates/doc/doc.html.py:73
 msgid "Total"
 msgstr "Total"
 
@@ -5581,7 +5581,7 @@ msgstr "Valid"
 msgid "dev"
 msgstr "Entwicklung"
 
-#: templates/dev/dev.html:13 templates/home/home.html:58
+#: templates/dev/dev.html:13 templates/home/home.html.py:58
 #: templates/menu.html:61
 msgid "Roadmap"
 msgstr "Meilensteinplan"
@@ -5590,12 +5590,12 @@ msgstr "Meilensteinplan"
 msgid "Stats"
 msgstr "Statistiken"
 
-#: templates/dev/dev.html:15 templates/dev/info_list.html:17
+#: templates/dev/dev.html:15 templates/dev/info_list.html.py:17
 #: templates/menu.html:63
 msgid "Info"
 msgstr "Info"
 
-#: templates/dev/dev.html:16 templates/menu.html:64
+#: templates/dev/dev.html:16 templates/menu.html.py:64
 msgid "Support"
 msgstr "Support"
 
@@ -5650,7 +5650,7 @@ msgstr ""
 msgid "Dive in the <strong>future</strong> of WeeChat!"
 msgstr "Lass Dich in die <strong>Zukunft</strong> von WeeChat entführen!"
 
-#: templates/dev/roadmap.html:42 templates/download/security.html:29
+#: templates/dev/roadmap.html:42 templates/download/security.html.py:29
 msgid "Tracker"
 msgstr "Tracker"
 
@@ -5674,7 +5674,7 @@ msgstr "erledigt"
 msgid "statistics"
 msgstr "Statistiken"
 
-#: templates/dev/stats.html:15 templates/menu.html:39
+#: templates/dev/stats.html:15 templates/menu.html.py:39
 #: templates/plugins/plugins.html:13
 msgid "Scripts"
 msgstr "Skripten"
@@ -5802,15 +5802,15 @@ msgstr ""
 msgid "documentation"
 msgstr "Dokumentation"
 
-#: templates/doc/doc.html:13 templates/download/download.html:13
+#: templates/doc/doc.html:13 templates/download/download.html.py:13
 msgid "Stable"
 msgstr "Stabil"
 
-#: templates/doc/doc.html:14 templates/download/download.html:14
+#: templates/doc/doc.html:14 templates/download/download.html.py:14
 msgid "Devel"
 msgstr "Instabil"
 
-#: templates/doc/doc.html:15 templates/download/download.html:15
+#: templates/doc/doc.html:15 templates/download/download.html.py:15
 #: templates/menu.html:23 templates/menu.html.py:33
 msgid "Old versions"
 msgstr "alte Versionen"
@@ -5878,7 +5878,11 @@ msgstr ""
 "übersetzen!"
 
 #: templates/doc/doc.html:132
-msgid "More information about WeeChat translations:"
+#, fuzzy
+#| msgid "More information about WeeChat translations:"
+msgid ""
+"There is more information about WeeChat translations in the developer's "
+"guide."
 msgstr "Weitere Informationen zu den einzelnen WeeChat Übersetzungen:"
 
 #: templates/download/debian.html:28
@@ -6009,7 +6013,7 @@ msgstr "Kein Debian Repository."
 msgid "download"
 msgstr "Download"
 
-#: templates/download/download.html:16 templates/menu.html:34
+#: templates/download/download.html:16 templates/menu.html.py:34
 msgid "Debian/Ubuntu repositories"
 msgstr "Debian/Ubuntu Repositorien"
 
@@ -6259,7 +6263,7 @@ msgstr ""
 "kritisches Problem, welches Schäden am System verursachen kann. <strong>Es "
 "sollte UMGEHEND ein Upgrade erfolgen!</strong>"
 
-#: templates/error.html:11 templates/home/home.html:121
+#: templates/error.html:11 templates/home/home.html.py:121
 msgid "Back to home"
 msgstr "Zurück zur Hauptseite"
 
@@ -6323,8 +6327,8 @@ msgstr "aktuelle stabile Version von WeeChat ist"
 msgid "released on"
 msgstr "veröffentlicht am"
 
-#: templates/home/home.html:40 templates/menu.html:29
-#: templates/plugins/source.html:17 templates/themes/source.html:16
+#: templates/home/home.html:40 templates/menu.html.py:29
+#: templates/plugins/source.html:17 templates/themes/source.html.py:16
 msgid "Download"
 msgstr "Download"
 
@@ -6365,11 +6369,11 @@ msgstr ""
 msgid "More"
 msgstr "Mehr"
 
-#: templates/home/home.html:80 templates/menu.html:4
+#: templates/home/home.html:80 templates/menu.html.py:4
 msgid "Latest news"
 msgstr "aktuelle Neuerungen"
 
-#: templates/home/home.html:100 templates/menu.html:5
+#: templates/home/home.html:100 templates/menu.html.py:5
 msgid "Upcoming events"
 msgstr "bevorstehende Ereignisse"
 
@@ -6385,8 +6389,8 @@ msgstr "Dieser Seite ist zzt. unter Wartung."
 msgid "Page will be back soon, please come back later."
 msgstr "Bitte besuchen Sie uns zu einem späteren Zeitpunkt erneut."
 
-#: templates/maintenance.html:15 templates/plugins/add_ok.html:16
-#: templates/plugins/update_ok.html:14 templates/themes/add_ok.html:16
+#: templates/maintenance.html:15 templates/plugins/add_ok.html.py:16
+#: templates/plugins/update_ok.html:14 templates/themes/add_ok.html.py:16
 #: templates/themes/update_ok.html:14
 msgid "Thank you for your patience."
 msgstr "Danke für Deine Geduld."
@@ -6419,19 +6423,19 @@ msgstr "Sicherheitsfragen"
 msgid "Browse scripts"
 msgstr "Skripten durchstöbern"
 
-#: templates/menu.html:42 templates/plugins/plugins.html:14
+#: templates/menu.html:42 templates/plugins/plugins.html.py:14
 msgid "Add script"
 msgstr "Neues Skript"
 
-#: templates/menu.html:43 templates/plugins/plugins.html:15
+#: templates/menu.html:43 templates/plugins/plugins.html.py:15
 msgid "Update script"
 msgstr "aktualisiere Skript"
 
-#: templates/menu.html:44 templates/plugins/plugins.html:16
+#: templates/menu.html:44 templates/plugins/plugins.html.py:16
 msgid "Pending scripts"
 msgstr "eingereichte Skripten"
 
-#: templates/menu.html:45 templates/plugins/plugins.html:17
+#: templates/menu.html:45 templates/plugins/plugins.html.py:17
 msgid "Unofficial scripts"
 msgstr "nicht veröffentlichte Skripten"
 
@@ -6443,7 +6447,7 @@ msgstr "Statistik"
 msgid "Repositories"
 msgstr "Repositorien"
 
-#: templates/plugins/add.html:15 templates/plugins/update.html:16
+#: templates/plugins/add.html:15 templates/plugins/update.html.py:16
 msgid ""
 "<strong>Warning:</strong> please follow <strong>all</strong> these rules, "
 "otherwise your script will be rejected:"
@@ -6532,8 +6536,8 @@ msgstr ""
 "oder hook_process_hashtable() genutzt werden um ein Blockieren von WeeChat "
 "zu verhindern"
 
-#: templates/plugins/add.html:43 templates/plugins/update.html:25
-#: templates/themes/add.html:25 templates/themes/update.html:17
+#: templates/plugins/add.html:43 templates/plugins/update.html.py:25
+#: templates/themes/add.html:25 templates/themes/update.html.py:17
 msgid "Submit"
 msgstr "Versenden"
 
@@ -6571,7 +6575,7 @@ msgid "You'll be informed if there is a problem with your script."
 msgstr ""
 "Sollte ein Problem mit dem Skript auftreten wirst Du darüber informiert."
 
-#: templates/plugins/add_ok.html:19 templates/plugins/source.html:34
+#: templates/plugins/add_ok.html:19 templates/plugins/source.html.py:34
 #: templates/plugins/update_ok.html:17
 msgid "Back to scripts"
 msgstr "Zurück zu den Skripten"
@@ -6635,7 +6639,7 @@ msgstr "entfernen"
 msgid "no filter"
 msgstr "keine Filterung"
 
-#: templates/plugins/list.html:40 templates/plugins/plugins.html:5
+#: templates/plugins/list.html:40 templates/plugins/plugins.html.py:5
 msgid "scripts"
 msgstr "Skripten"
 
@@ -6658,7 +6662,7 @@ msgid "Max"
 msgstr "Max"
 
 #: templates/plugins/list.html:93 templates/plugins/list.html.py:95
-#: templates/plugins/pending.html:37 templates/plugins/source.html:24
+#: templates/plugins/pending.html:37 templates/plugins/source.html.py:24
 msgid "Author"
 msgstr "Autor"
 
@@ -6671,16 +6675,16 @@ msgstr "hinzugefügt"
 msgid "Updated"
 msgstr "aktualisiert"
 
-#: templates/plugins/list.html:124 templates/plugins/pending.html:52
+#: templates/plugins/list.html:124 templates/plugins/pending.html.py:52
 #: templates/plugins/source.html:21
 msgid "requires"
 msgstr "benötigt"
 
-#: templates/plugins/list.html:131 templates/themes/list.html:24
+#: templates/plugins/list.html:131 templates/themes/list.html.py:24
 msgid "Author:"
 msgstr "Autor:"
 
-#: templates/plugins/list.html:140 templates/plugins/update.html:32
+#: templates/plugins/list.html:140 templates/plugins/update.html.py:32
 msgid "No script found."
 msgstr "Kein Skript gefunden."
 
@@ -6738,7 +6742,7 @@ msgstr "Version"
 msgid "added"
 msgstr "hinzugefügt"
 
-#: templates/plugins/source.html:25 templates/themes/list.html:29
+#: templates/plugins/source.html:25 templates/themes/list.html.py:29
 msgid "updated"
 msgstr "aktualisiert"
 
@@ -6796,7 +6800,7 @@ msgid "You'll be informed if there is a problem with your theme."
 msgstr ""
 "Sollte ein Problem mit Deinem Theme auftreten wirst Du darüber informiert."
 
-#: templates/themes/add_ok.html:19 templates/themes/list.html:41
+#: templates/themes/add_ok.html:19 templates/themes/list.html.py:41
 #: templates/themes/source.html:15 templates/themes/source.html.py:22
 #: templates/themes/update_ok.html:17
 msgid "Back to themes"
