@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-29 09:06+0200\n"
+"POT-Creation-Date: 2016-05-05 08:48+0200\n"
 "PO-Revision-Date: 2016-04-25 09:00+0900\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <i38w7i3@yahoo.co.jp>\n"
@@ -181,7 +181,7 @@ msgstr "ソースリポジトリにおける \"git rev-parse HEAD\" の出力"
 msgid "output of \"git rev-parse HEAD\" for scripts repository"
 msgstr "スクリプトリポジトリにおける \"git rev-parse HEAD\" の出力"
 
-#: dev/views.py:62 templates/download/packages.html.py:51
+#: dev/views.py:62 templates/download/packages.html:51
 msgid "next stable version"
 msgstr "次期安定版のバージョン番号"
 
@@ -204,11 +204,11 @@ msgstr "全ての情報 (1 行に 1 情報、フォーマット: \"info:value\")
 msgid "Czech"
 msgstr "チェコ語"
 
-#: doc/models.py:31 settings.py:62 templates/dev/support.html.py:33
+#: doc/models.py:31 settings.py:62 templates/dev/support.html:33
 msgid "German"
 msgstr "ドイツ語"
 
-#: doc/models.py:32 settings.py:60 templates/dev/support.html.py:26
+#: doc/models.py:32 settings.py:60 templates/dev/support.html:26
 #: templates/menu.html:24 templates/menu.html.py:25
 msgid "English"
 msgstr "英語"
@@ -217,7 +217,7 @@ msgstr "英語"
 msgid "Spanish"
 msgstr "スペイン語"
 
-#: doc/models.py:34 settings.py:61 templates/dev/support.html.py:27
+#: doc/models.py:34 settings.py:61 templates/dev/support.html:27
 msgid "French"
 msgstr "フランス語"
 
@@ -253,7 +253,7 @@ msgstr "ロシア語"
 msgid "Turkish"
 msgstr "トルコ語"
 
-#: doc/models.py:74 templates/menu.html.py:24
+#: doc/models.py:74 templates/menu.html:24
 msgid "FAQ"
 msgstr "FAQ"
 
@@ -376,22 +376,22 @@ msgstr ""
 "です)。"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:153 templates/download/security.html.py:71
+#: download/models.py:153 templates/download/security.html:71
 msgid "low"
 msgstr "低"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:155 templates/download/security.html.py:72
+#: download/models.py:155 templates/download/security.html:72
 msgid "medium"
 msgstr "中"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:157 templates/download/security.html.py:73
+#: download/models.py:157 templates/download/security.html:73
 msgid "high"
 msgstr "高"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:159 templates/download/security.html.py:74
+#: download/models.py:159 templates/download/security.html:74
 msgid "critical"
 msgstr "重大"
 
@@ -628,7 +628,7 @@ msgstr "Debian/Raspbian リポジトリ"
 msgid "Dennis Ritchie has left #world"
 msgstr "Dennis Ritchie さんが亡くなりました"
 
-#: news/_i18n_info.py:22 templates/home/home.html.py:55 templates/menu.html:65
+#: news/_i18n_info.py:22 templates/home/home.html:55 templates/menu.html:65
 msgid "Devel blog"
 msgstr "開発ブログ"
 
@@ -644,7 +644,7 @@ msgstr ""
 "注意: TLS 接続、バディリスト管理、在席情報、MUC、転送などの多くの機能が実装さ"
 "れていません。"
 
-#: news/_i18n_info.py:24 templates/menu.html.py:19
+#: news/_i18n_info.py:24 templates/menu.html:19
 msgid "Documentation"
 msgstr "文書"
 
@@ -831,8 +831,8 @@ msgstr ""
 "0.3.0-rc3) です。"
 
 #: news/_i18n_info.py:49 plugins/models.py:266 templates/about/history.html:38
-#: templates/doc/doc.html.py:28 templates/download/packages.html:44
-#: templates/plugins/list.html.py:69 templates/plugins/pending.html:32
+#: templates/doc/doc.html:28 templates/download/packages.html:44
+#: templates/plugins/list.html:69 templates/plugins/pending.html:32
 msgid "Version"
 msgstr "バージョン"
 
@@ -2517,6 +2517,54 @@ msgstr ""
 "changelog/ChangeLog-1.4.html\">ChangeLog</a> を御覧ください。"
 
 #: news/_i18n_info.py:101
+#, fuzzy
+#| msgid ""
+#| "Version 1.3 is available!\n"
+#| "\n"
+#| "Among the new features:\n"
+#| "\n"
+#| "- keep scroll after interactive search in buffer\n"
+#| "- add optional confirmation on /upgrade\n"
+#| "- add signal \"signal_sighup\"\n"
+#| "- add IRC options irc.color.topic_current, irc.network.channel_encode\n"
+#| "- many bugs fixed.\n"
+#| "\n"
+#| "For complete list of new features and bugs fixed, please look at <a href="
+#| "\"http://dev.weechat.org/post/2015/08/16/Version-1.3\">development blog</"
+#| "a> or <a href=\"/files/changelog/ChangeLog-1.3.html\">ChangeLog</a>."
+msgid ""
+"Version 1.5 is available!\n"
+"\n"
+"Among the new features:\n"
+"\n"
+"- add support of functions in API function \"hook_process\"\n"
+"- move of nick coloring options from irc plugin to core\n"
+"- move irc bar item \"away\" to core\n"
+"- add pointer in callbacks used in scripting API\n"
+"- add option irc.network.sasl_fail_unavailable\n"
+"- add Portuguese translations\n"
+"- many bugs fixed.\n"
+"\n"
+"For complete list of new features and bugs fixed, please look at <a href="
+"\"http://dev.weechat.org/post/2016/05/01/Version-1.5\">development blog</a> "
+"or <a href=\"/files/changelog/ChangeLog-1.5.html\">ChangeLog</a>."
+msgstr ""
+"バージョン 1.3 をリリースしました!\n"
+"\n"
+"新しい機能:\n"
+"\n"
+"- バッファ内で行った対話的検索の後にスクロール位置を元に戻す\n"
+"- /upgrade を実行した際に省略可能な確認を追加\n"
+"- シグナル \"signal_sighup\" の追加\n"
+"- IRC オプション irc.color.topic_current と irc.network.channel_encode を追"
+"加\n"
+"- 多くのバグを修正。\n"
+"\n"
+"新機能と修正されたバグの完全なリストは<a href=\"http://dev.weechat.org/"
+"post/2015/08/16/Version-1.3\">開発ブログ</a>または <a href=\"/files/"
+"changelog/ChangeLog-1.3.html\">ChangeLog</a> を御覧ください。"
+
+#: news/_i18n_info.py:102
 msgid ""
 "Version v0.1.2 is available!\n"
 "\n"
@@ -2550,11 +2598,11 @@ msgstr ""
 "2005-05-24 追記: 起動時と Perl/Python の検出時のクラッシュを修正、現在のバー"
 "ジョンは 0.1.2.1 です。"
 
-#: news/_i18n_info.py:102
+#: news/_i18n_info.py:103
 msgid "WeeChat - Wee Enhanced Environment for Chat"
 msgstr "WeeChat - 小さくて強力なチャット環境"
 
-#: news/_i18n_info.py:103
+#: news/_i18n_info.py:104
 msgid ""
 "WeeChat has many new important features since some weeks:\n"
 "- multi-windows management (with horizontal and vertical window split)\n"
@@ -2577,11 +2625,11 @@ msgstr ""
 "まだ開発中です。\n"
 "問題やバッファ/ウィンドウ間の操作を改良するための提案を募集しています。"
 
-#: news/_i18n_info.py:104
+#: news/_i18n_info.py:105
 msgid "WeeChat in Cygwin"
 msgstr "WeeChat の Cygwin 版"
 
-#: news/_i18n_info.py:105
+#: news/_i18n_info.py:106
 msgid ""
 "WeeChat is now in Cygwin, and can be installed with setup.exe.\n"
 "Version 0.4.2 is available for 32 and 64-bit Cygwin.\n"
@@ -2596,7 +2644,7 @@ msgstr ""
 "注意: Guile プラグインは Cygwin ではまだ利用できない guile >= 2.0 が必要なの"
 "で、削除されています。"
 
-#: news/_i18n_info.py:106
+#: news/_i18n_info.py:107
 msgid ""
 "WeeChat project is started.\n"
 "\n"
@@ -2616,7 +2664,7 @@ msgstr ""
 "- 高速、軽量、スクリプトで拡張可能\n"
 "- ..."
 
-#: news/_i18n_info.py:107
+#: news/_i18n_info.py:108
 msgid ""
 "WeeChat project now accepts donations via Paypal account, with secured "
 "payment."
@@ -2624,7 +2672,7 @@ msgstr ""
 "WeeChat プロジェクトは secured payment を用いた Paypal アカウント経由の寄付を"
 "受け付けるようになりました。"
 
-#: news/_i18n_info.py:108
+#: news/_i18n_info.py:109
 msgid ""
 "WeeChat repositories (weechat, scripts, qweechat) have been moved to GitHub, "
 "in WeeChat organization: <a href=\"https://github.com/weechat\">https://"
@@ -2640,15 +2688,15 @@ msgstr ""
 "より詳しい情報は、<a href=\"http://dev.weechat.org/post/2014/03/03/Git-"
 "repositories-moved-to-Github\">開発ブログ</a>をご覧ください。"
 
-#: news/_i18n_info.py:109
+#: news/_i18n_info.py:110
 msgid "WeeChat screenshot"
 msgstr "WeeChat のスクリーンショット"
 
-#: news/_i18n_info.py:110
+#: news/_i18n_info.py:111
 msgid "WeeChat scripts page"
 msgstr "WeeChat スクリプトページ"
 
-#: news/_i18n_info.py:111
+#: news/_i18n_info.py:112
 msgid ""
 "WeeChat scripts page (today Perl scripts only) has been added.\n"
 "On this page you can submit your script (need to be approved by WeeChat "
@@ -2665,7 +2713,7 @@ msgstr ""
 "注意: Perl スクリプトを使うには WeeChat 0.0.3 より高いバージョンが必要です。"
 "今のところ開発版を使う以外に方法はありません。"
 
-#: news/_i18n_info.py:112
+#: news/_i18n_info.py:113
 msgid ""
 "WeeChat story page is now available, as screenshots. You can see differences "
 "between all versions in one view!\n"
@@ -2675,15 +2723,15 @@ msgstr ""
 "ジョンが一覧表示できます!\n"
 "開発版も載っており、頻繁に更新されています。"
 
-#: news/_i18n_info.py:113
+#: news/_i18n_info.py:114
 msgid "WeeChat users map"
 msgstr "WeeChat ユーザマップ"
 
-#: news/_i18n_info.py:114
+#: news/_i18n_info.py:115
 msgid "WeeChat will merge with irssi"
 msgstr "WeeChat は irssi と統合される予定です"
 
-#: news/_i18n_info.py:115
+#: news/_i18n_info.py:116
 msgid ""
 "WeeChat, the fast, light and extensible IRC client, is released for the "
 "first time, version 0.0.1.\n"
@@ -4709,13 +4757,13 @@ msgstr ""
 msgid "This name is too long (must be max 20 chars)."
 msgstr "名前が長すぎます (最長 20 文字)。"
 
-#: plugins/models.py:255 templates/plugins/list.html.py:63
-#: templates/plugins/list.html:65 templates/plugins/pending.html.py:33
+#: plugins/models.py:255 templates/plugins/list.html:63
+#: templates/plugins/list.html.py:65 templates/plugins/pending.html:33
 msgctxt "programming language"
 msgid "Language"
 msgstr "プログラミング言語"
 
-#: plugins/models.py:259 templates/about/donate.html.py:58
+#: plugins/models.py:259 templates/about/donate.html:58
 #: templates/plugins/list.html:57 templates/plugins/list.html.py:59
 #: templates/plugins/pending.html:29
 msgid "Name"
@@ -4730,8 +4778,8 @@ msgstr "スクリプトの短縮名 (最大で 20 文字、小文字、数字、
 msgid "version of script (only digits or dots)"
 msgstr "スクリプトのバージョン (数字とドットのみ使用可)"
 
-#: plugins/models.py:272 templates/plugins/list.html.py:72
-#: templates/plugins/list.html:74 templates/plugins/pending.html.py:34
+#: plugins/models.py:272 templates/plugins/list.html:72
+#: templates/plugins/list.html.py:74 templates/plugins/pending.html:34
 msgid "License"
 msgstr "ライセンス"
 
@@ -4739,7 +4787,7 @@ msgstr "ライセンス"
 msgid "license (for example: GPL3, BSD, ...)"
 msgstr "ライセンス (例: GPL3、BSD、...)"
 
-#: plugins/models.py:277 plugins/models.py:354 templates/doc/doc.html.py:69
+#: plugins/models.py:277 plugins/models.py:354 templates/doc/doc.html:69
 #: themes/models.py:136 themes/models.py:223
 msgid "File"
 msgstr "ファイル"
@@ -4748,9 +4796,9 @@ msgstr "ファイル"
 msgid "the script"
 msgstr "スクリプト"
 
-#: plugins/models.py:282 templates/dev/info_list.html.py:19
-#: templates/dev/roadmap.html:46 templates/download/security.html.py:35
-#: templates/plugins/list.html:68 templates/plugins/pending.html.py:30
+#: plugins/models.py:282 templates/dev/info_list.html:19
+#: templates/dev/roadmap.html:46 templates/download/security.html:35
+#: templates/plugins/list.html:68 templates/plugins/pending.html:30
 #: themes/models.py:143
 msgid "Description"
 msgstr "説明"
@@ -4804,7 +4852,7 @@ msgstr "スパマーでないなら \"no\" と入力"
 msgid "Choose..."
 msgstr "選択..."
 
-#: plugins/models.py:346 templates/plugins/source.html.py:13
+#: plugins/models.py:346 templates/plugins/source.html:13
 msgid "Script"
 msgstr "スクリプト"
 
@@ -4865,20 +4913,20 @@ msgstr ""
 msgid "about"
 msgstr "概要"
 
-#: templates/about/about.html:13 templates/about/history.html.py:39
-#: templates/home/home.html:39 templates/menu.html.py:11
+#: templates/about/about.html:13 templates/about/history.html:39
+#: templates/home/home.html:39 templates/menu.html:11
 msgid "Features"
 msgstr "機能"
 
-#: templates/about/about.html:14 templates/menu.html.py:12
+#: templates/about/about.html:14 templates/menu.html:12
 msgid "Screenshots"
 msgstr "スクリーンショット"
 
-#: templates/about/about.html:15 templates/menu.html.py:13
+#: templates/about/about.html:15 templates/menu.html:13
 msgid "History"
 msgstr "歴史"
 
-#: templates/about/about.html:16 templates/home/home.html.py:70
+#: templates/about/about.html:16 templates/home/home.html:70
 #: templates/menu.html:14
 msgid "Make a donation"
 msgstr "寄付する"
@@ -4951,7 +4999,7 @@ msgstr "上位 10 名を表示、寄付の総額順"
 msgid "show the whole list"
 msgstr "完全なリストを表示"
 
-#: templates/about/donate.html:54 templates/about/history.html.py:37
+#: templates/about/donate.html:54 templates/about/history.html:37
 #: templates/plugins/pending.html:38
 msgid "Date"
 msgstr "日付"
@@ -4968,7 +5016,7 @@ msgstr "寄付金額"
 msgid "Comment"
 msgstr "コメント"
 
-#: templates/about/donate.html:88 templates/doc/doc.html.py:73
+#: templates/about/donate.html:88 templates/doc/doc.html:73
 msgid "Total"
 msgstr "合計"
 
@@ -5341,7 +5389,7 @@ msgstr "有効"
 msgid "dev"
 msgstr "開発"
 
-#: templates/dev/dev.html:13 templates/home/home.html.py:58
+#: templates/dev/dev.html:13 templates/home/home.html:58
 #: templates/menu.html:61
 msgid "Roadmap"
 msgstr "ロードマップ"
@@ -5350,12 +5398,12 @@ msgstr "ロードマップ"
 msgid "Stats"
 msgstr "状態"
 
-#: templates/dev/dev.html:15 templates/dev/info_list.html.py:17
+#: templates/dev/dev.html:15 templates/dev/info_list.html:17
 #: templates/menu.html:63
 msgid "Info"
 msgstr "情報"
 
-#: templates/dev/dev.html:16 templates/menu.html.py:64
+#: templates/dev/dev.html:16 templates/menu.html:64
 msgid "Support"
 msgstr "サポート"
 
@@ -5412,7 +5460,7 @@ msgstr ""
 msgid "Dive in the <strong>future</strong> of WeeChat!"
 msgstr "WeeChat の<strong>機能</strong>を御覧ください!"
 
-#: templates/dev/roadmap.html:42 templates/download/security.html.py:29
+#: templates/dev/roadmap.html:42 templates/download/security.html:29
 msgid "Tracker"
 msgstr "トラッカー"
 
@@ -5436,7 +5484,7 @@ msgstr "完了"
 msgid "statistics"
 msgstr "統計"
 
-#: templates/dev/stats.html:15 templates/menu.html.py:39
+#: templates/dev/stats.html:15 templates/menu.html:39
 #: templates/plugins/plugins.html:13
 msgid "Scripts"
 msgstr "スクリプト"
@@ -5560,15 +5608,15 @@ msgstr "<strong>weechat-dev</strong> (開発に関する内容すべて):"
 msgid "documentation"
 msgstr "文書"
 
-#: templates/doc/doc.html:13 templates/download/download.html.py:13
+#: templates/doc/doc.html:13 templates/download/download.html:13
 msgid "Stable"
 msgstr "安定版"
 
-#: templates/doc/doc.html:14 templates/download/download.html.py:14
+#: templates/doc/doc.html:14 templates/download/download.html:14
 msgid "Devel"
 msgstr "開発版"
 
-#: templates/doc/doc.html:15 templates/download/download.html.py:15
+#: templates/doc/doc.html:15 templates/download/download.html:15
 #: templates/menu.html:23 templates/menu.html.py:33
 msgid "Old versions"
 msgstr "古いバージョン"
@@ -5766,7 +5814,7 @@ msgstr "Debian リポジトリがありません。"
 msgid "download"
 msgstr "ダウンロード"
 
-#: templates/download/download.html:16 templates/menu.html.py:34
+#: templates/download/download.html:16 templates/menu.html:34
 msgid "Debian/Ubuntu repositories"
 msgstr "Debian/Ubuntu リポジトリ"
 
@@ -6009,7 +6057,7 @@ msgstr ""
 "システムを破壊する危険性のある重大な問題。<strong>今すぐアップグレードしてく"
 "ださい!</strong>"
 
-#: templates/error.html:11 templates/home/home.html.py:121
+#: templates/error.html:11 templates/home/home.html:121
 msgid "Back to home"
 msgstr "ホームに戻る"
 
@@ -6072,8 +6120,8 @@ msgstr "WeeChat の最新の安定版は"
 msgid "released on"
 msgstr "リリース日"
 
-#: templates/home/home.html:40 templates/menu.html.py:29
-#: templates/plugins/source.html:17 templates/themes/source.html.py:16
+#: templates/home/home.html:40 templates/menu.html:29
+#: templates/plugins/source.html:17 templates/themes/source.html:16
 msgid "Download"
 msgstr "ダウンロード"
 
@@ -6111,11 +6159,11 @@ msgstr ""
 msgid "More"
 msgstr "その他"
 
-#: templates/home/home.html:80 templates/menu.html.py:4
+#: templates/home/home.html:80 templates/menu.html:4
 msgid "Latest news"
 msgstr "最新のニュース"
 
-#: templates/home/home.html:100 templates/menu.html.py:5
+#: templates/home/home.html:100 templates/menu.html:5
 msgid "Upcoming events"
 msgstr "今後のイベント"
 
@@ -6131,8 +6179,8 @@ msgstr "このページはメンテナンス中です。"
 msgid "Page will be back soon, please come back later."
 msgstr "ページはまもなく回復します、あとから再度ご訪問ください。"
 
-#: templates/maintenance.html:15 templates/plugins/add_ok.html.py:16
-#: templates/plugins/update_ok.html:14 templates/themes/add_ok.html.py:16
+#: templates/maintenance.html:15 templates/plugins/add_ok.html:16
+#: templates/plugins/update_ok.html:14 templates/themes/add_ok.html:16
 #: templates/themes/update_ok.html:14
 msgid "Thank you for your patience."
 msgstr "ご辛抱に感謝いたします。"
@@ -6165,19 +6213,19 @@ msgstr "セキュリティ問題"
 msgid "Browse scripts"
 msgstr "スクリプトを閲覧"
 
-#: templates/menu.html:42 templates/plugins/plugins.html.py:14
+#: templates/menu.html:42 templates/plugins/plugins.html:14
 msgid "Add script"
 msgstr "スクリプトを追加"
 
-#: templates/menu.html:43 templates/plugins/plugins.html.py:15
+#: templates/menu.html:43 templates/plugins/plugins.html:15
 msgid "Update script"
 msgstr "スクリプトをアップデート"
 
-#: templates/menu.html:44 templates/plugins/plugins.html.py:16
+#: templates/menu.html:44 templates/plugins/plugins.html:16
 msgid "Pending scripts"
 msgstr "承認待ちスクリプト"
 
-#: templates/menu.html:45 templates/plugins/plugins.html.py:17
+#: templates/menu.html:45 templates/plugins/plugins.html:17
 msgid "Unofficial scripts"
 msgstr "非公式スクリプト"
 
@@ -6189,7 +6237,7 @@ msgstr "統計"
 msgid "Repositories"
 msgstr "リポジトリ"
 
-#: templates/plugins/add.html:15 templates/plugins/update.html.py:16
+#: templates/plugins/add.html:15 templates/plugins/update.html:16
 msgid ""
 "<strong>Warning:</strong> please follow <strong>all</strong> these rules, "
 "otherwise your script will be rejected:"
@@ -6272,8 +6320,8 @@ msgstr ""
 "ど) では、hook_process (または hook_process_hashtable) を使って WeeChat の実"
 "行を中断させないようにしてください"
 
-#: templates/plugins/add.html:43 templates/plugins/update.html.py:25
-#: templates/themes/add.html:25 templates/themes/update.html.py:17
+#: templates/plugins/add.html:43 templates/plugins/update.html:25
+#: templates/themes/add.html:25 templates/themes/update.html:17
 msgid "Submit"
 msgstr "投稿"
 
@@ -6305,7 +6353,7 @@ msgstr ""
 msgid "You'll be informed if there is a problem with your script."
 msgstr "スクリプトに問題があった場合にはお知らせします。"
 
-#: templates/plugins/add_ok.html:19 templates/plugins/source.html.py:34
+#: templates/plugins/add_ok.html:19 templates/plugins/source.html:34
 #: templates/plugins/update_ok.html:17
 msgid "Back to scripts"
 msgstr "スクリプトに戻る"
@@ -6366,7 +6414,7 @@ msgstr "削除"
 msgid "no filter"
 msgstr "フィルタがありません"
 
-#: templates/plugins/list.html:40 templates/plugins/plugins.html.py:5
+#: templates/plugins/list.html:40 templates/plugins/plugins.html:5
 msgid "scripts"
 msgstr "スクリプト"
 
@@ -6389,7 +6437,7 @@ msgid "Max"
 msgstr "以下"
 
 #: templates/plugins/list.html:93 templates/plugins/list.html.py:95
-#: templates/plugins/pending.html:37 templates/plugins/source.html.py:24
+#: templates/plugins/pending.html:37 templates/plugins/source.html:24
 msgid "Author"
 msgstr "作者"
 
@@ -6402,16 +6450,16 @@ msgstr "追加日"
 msgid "Updated"
 msgstr "アップデート日"
 
-#: templates/plugins/list.html:124 templates/plugins/pending.html.py:52
+#: templates/plugins/list.html:124 templates/plugins/pending.html:52
 #: templates/plugins/source.html:21
 msgid "requires"
 msgstr "必要なもの"
 
-#: templates/plugins/list.html:131 templates/themes/list.html.py:24
+#: templates/plugins/list.html:131 templates/themes/list.html:24
 msgid "Author:"
 msgstr "作者:"
 
-#: templates/plugins/list.html:140 templates/plugins/update.html.py:32
+#: templates/plugins/list.html:140 templates/plugins/update.html:32
 msgid "No script found."
 msgstr "スクリプトが見つかりません。"
 
@@ -6466,7 +6514,7 @@ msgstr "バージョン"
 msgid "added"
 msgstr "追加日"
 
-#: templates/plugins/source.html:25 templates/themes/list.html.py:29
+#: templates/plugins/source.html:25 templates/themes/list.html:29
 msgid "updated"
 msgstr "アップデート日"
 
@@ -6518,7 +6566,7 @@ msgstr ""
 msgid "You'll be informed if there is a problem with your theme."
 msgstr "テーマに問題があった場合には連絡があります。"
 
-#: templates/themes/add_ok.html:19 templates/themes/list.html.py:41
+#: templates/themes/add_ok.html:19 templates/themes/list.html:41
 #: templates/themes/source.html:15 templates/themes/source.html.py:22
 #: templates/themes/update_ok.html:17
 msgid "Back to themes"
