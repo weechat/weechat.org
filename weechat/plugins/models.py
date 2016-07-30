@@ -32,7 +32,7 @@ from django.db import models
 from django.db.models.signals import post_save, post_delete
 from django.forms.widgets import Input
 from django.utils import translation
-from django.utils.translation import ugettext, gettext_lazy, ugettext_lazy, pgettext_lazy
+from django.utils.translation import ugettext, gettext_lazy, pgettext_lazy
 
 from weechat.common.i18n import i18n_autogen
 from weechat.common.path import files_path_join
