@@ -32,7 +32,7 @@ from django.db import models
 from django.db.models.signals import post_save, post_delete
 from django.forms.widgets import Input
 from django.utils import translation
-from django.utils.translation import ugettext, gettext_lazy, pgettext_lazy
+from django.utils.translation import ugettext, gettext_lazy, ugettext_lazy, pgettext_lazy
 
 from weechat.common.i18n import i18n_autogen
 from weechat.common.path import files_path_join
@@ -48,7 +48,7 @@ SCRIPT_LANGUAGE = {
     'javascript': ('js', 'javascript'),
 }
 
-MAX_LENGTH_NAME = 64
+MAX_LENGTH_NAME = 32
 MAX_LENGTH_VERSION = 32
 MAX_LENGTH_URL = 512
 MAX_LENGTH_LANGUAGE = 32
@@ -196,9 +196,6 @@ class NameField(forms.CharField):
             raise forms.ValidationError(
                 gettext_lazy('This name already exists, please choose another '
                              'name (update script content accordingly).'))
-        if len(value) > 32:
-            raise forms.ValidationError(
-                gettext_lazy('This name is too long (must be max 32 chars).'))
         return value
 
 
@@ -257,9 +254,7 @@ class PluginFormAdd(forms.Form):
     name = NameField(
         max_length=MAX_LENGTH_NAME,
         label=gettext_lazy('Name'),
-        help_text=gettext_lazy('short name of script (max 32 chars, only '
-                               'lower case letters, digits or "_")'),
-        widget=forms.TextInput(attrs={'size': '25'})
+        widget=forms.TextInput(attrs={'size': str(MAX_LENGTH_NAME)})
     )
     version = forms.CharField(
         max_length=MAX_LENGTH_VERSION,
@@ -320,6 +315,10 @@ class PluginFormAdd(forms.Form):
     def __init__(self, *args, **kwargs):
         super(PluginFormAdd, self).__init__(*args, **kwargs)
         self.fields['min_max'].choices = get_min_max_choices()
+        self.fields['name'].help_text = gettext_lazy(
+            'short name of script (max {max_chars} chars, '
+            'only lower case letters, digits or "_")').format(
+                max_chars=MAX_LENGTH_NAME)
 
 
 def get_plugin_choices():

@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-30 14:59+0200\n"
+"POT-Creation-Date: 2016-07-30 16:36+0200\n"
 "PO-Revision-Date: 2016-02-03 21:05+0100\n"
 "Last-Translator: Marco Paolone <marcopaolone@gmail.com>\n"
 "Language-Team: Italian <marcopaolone@gmail.com>\n"
@@ -797,7 +797,7 @@ msgstr ""
 "È disponibile la terza release candidate (versione 0.3.0-rc3) per la futura "
 "versione 0.3.0."
 
-#: news/_i18n_info.py:49 plugins/models.py:266 templates/about/history.html:38
+#: news/_i18n_info.py:49 plugins/models.py:261 templates/about/history.html:38
 #: templates/doc/doc.html:28 templates/download/packages.html:44
 #: templates/plugins/list.html:69 templates/plugins/pending.html:32
 msgid "Version"
@@ -4716,7 +4716,7 @@ msgstr "Script di controllo e riproduzione per Amarok 2."
 msgid "Popular script"
 msgstr "Script popolare"
 
-#: plugins/models.py:189 plugins/models.py:210 plugins/models.py:213
+#: plugins/models.py:189 plugins/models.py:207 plugins/models.py:210
 #: themes/models.py:125 themes/models.py:128
 msgid "This field is required."
 msgstr "Questo campo è obbligatorio."
@@ -4733,120 +4733,117 @@ msgstr ""
 "Esiste già questo nome, per favore sceglierne un altro (aggiornare il "
 "contenuto dello script di conseguenza)."
 
-#: plugins/models.py:201
-msgid "This name is too long (must be max 32 chars)."
-msgstr ""
-
-#: plugins/models.py:255 templates/plugins/list.html:63
+#: plugins/models.py:252 templates/plugins/list.html:63
 #: templates/plugins/list.html:65 templates/plugins/pending.html:33
 #, fuzzy
 msgctxt "programming language"
 msgid "Language"
 msgstr "Linguaggio"
 
-#: plugins/models.py:259 templates/about/donate.html:58
+#: plugins/models.py:256 templates/about/donate.html:58
 #: templates/plugins/list.html:57 templates/plugins/list.html:59
 #: templates/plugins/pending.html:29
 msgid "Name"
 msgstr "Nome"
 
-#: plugins/models.py:260
-#, fuzzy
-msgid ""
-"short name of script (max 32 chars, only lower case letters, digits or \"_\")"
-msgstr "nome breve dello script (solo lettere minuscole, cifre o \"_\")"
-
-#: plugins/models.py:267
+#: plugins/models.py:262
 msgid "version of script (only digits or dots)"
 msgstr "versione dello script (solo cifre o punti)"
 
-#: plugins/models.py:272 templates/plugins/list.html:72
+#: plugins/models.py:267 templates/plugins/list.html:72
 #: templates/plugins/list.html:74 templates/plugins/pending.html:34
 msgid "License"
 msgstr "Licenza"
 
-#: plugins/models.py:273
+#: plugins/models.py:268
 msgid "license (for example: GPL3, BSD, ...)"
 msgstr "licenza (per esempio: GPL3, BSD, ...)"
 
-#: plugins/models.py:277 plugins/models.py:354 templates/doc/doc.html:69
+#: plugins/models.py:272 plugins/models.py:353 templates/doc/doc.html:69
 #: themes/models.py:136 themes/models.py:223
 msgid "File"
 msgstr "File"
 
-#: plugins/models.py:278 plugins/models.py:355
+#: plugins/models.py:273 plugins/models.py:354
 msgid "the script"
 msgstr "lo script"
 
-#: plugins/models.py:282 templates/dev/info_list.html:19
+#: plugins/models.py:277 templates/dev/info_list.html:19
 #: templates/dev/roadmap.html:46 templates/download/security.html:35
 #: templates/plugins/list.html:68 templates/plugins/pending.html:30
 #: themes/models.py:143
 msgid "Description"
 msgstr "Descrizione"
 
-#: plugins/models.py:288
+#: plugins/models.py:283
 msgid "Requirements"
 msgstr "Requisiti"
 
-#: plugins/models.py:289 themes/models.py:144
+#: plugins/models.py:284 themes/models.py:144
 msgid "optional"
 msgstr "opzionale"
 
-#: plugins/models.py:294
+#: plugins/models.py:289
 msgid "Min/max WeeChat"
 msgstr "Versione min/max di WeeChat"
 
-#: plugins/models.py:297 plugins/models.py:359 themes/models.py:149
+#: plugins/models.py:292 plugins/models.py:358 themes/models.py:149
 #: themes/models.py:229
 msgid "Your name or nick"
 msgstr "Nome oppure nick"
 
-#: plugins/models.py:298 plugins/models.py:303
+#: plugins/models.py:293 plugins/models.py:298
 msgid "used for scripts page and git commit"
 msgstr "usato per la pagina degli script ed il commit git"
 
-#: plugins/models.py:302 plugins/models.py:364 themes/models.py:153
+#: plugins/models.py:297 plugins/models.py:363 themes/models.py:153
 #: themes/models.py:233
 msgid "Your e-mail"
 msgstr "E-mail"
 
-#: plugins/models.py:309 plugins/models.py:370 themes/models.py:160
+#: plugins/models.py:304 plugins/models.py:369 themes/models.py:160
 #: themes/models.py:240
 msgid "Comments"
 msgstr "Commenti"
 
-#: plugins/models.py:310 themes/models.py:161 themes/models.py:241
+#: plugins/models.py:305 themes/models.py:161 themes/models.py:241
 msgid "optional, not displayed"
 msgstr "opzionale, non visualizzato"
 
-#: plugins/models.py:315 plugins/models.py:376 themes/models.py:166
+#: plugins/models.py:310 plugins/models.py:375 themes/models.py:166
 #: themes/models.py:246
 msgid "Are you a spammer?"
 msgstr "Sei uno spammer?"
 
-#: plugins/models.py:316 plugins/models.py:377 themes/models.py:167
+#: plugins/models.py:311 plugins/models.py:376 themes/models.py:167
 #: themes/models.py:247
 msgid "enter \"no\" if you are not a spammer"
 msgstr "digita \"no\" se non sei uno spammer"
 
-#: plugins/models.py:331 themes/models.py:206
+#: plugins/models.py:319
+#, fuzzy, python-brace-format
+msgid ""
+"short name of script (max {max_chars} chars, only lower case letters, digits "
+"or \"_\")"
+msgstr "nome breve dello script (solo lettere minuscole, cifre o \"_\")"
+
+#: plugins/models.py:330 themes/models.py:206
 msgid "Choose..."
 msgstr ""
 
-#: plugins/models.py:346 templates/plugins/source.html:13
+#: plugins/models.py:345 templates/plugins/source.html:13
 msgid "Script"
 msgstr "Script"
 
-#: plugins/models.py:350
+#: plugins/models.py:349
 msgid "New version"
 msgstr "Nuova versione"
 
-#: plugins/models.py:360 plugins/models.py:365
+#: plugins/models.py:359 plugins/models.py:364
 msgid "used for git commit"
 msgstr "usato per il commit git"
 
-#: plugins/models.py:371
+#: plugins/models.py:370
 msgid "changes in this release"
 msgstr "cambiamenti in questo rilascio"
 
