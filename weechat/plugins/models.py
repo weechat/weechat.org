@@ -280,7 +280,7 @@ class PluginFormAdd(forms.Form):
     description = forms.CharField(
         max_length=MAX_LENGTH_DESC,
         label=gettext_lazy('Description'),
-        widget=forms.TextInput(attrs={'size': '60'})
+        widget=forms.TextInput(attrs={'size': '75'})
     )
     requirements = forms.CharField(
         required=False,
