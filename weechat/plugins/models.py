@@ -196,9 +196,9 @@ class NameField(forms.CharField):
             raise forms.ValidationError(
                 gettext_lazy('This name already exists, please choose another '
                              'name (update script content accordingly).'))
-        if len(value) > 20:
+        if len(value) > 32:
             raise forms.ValidationError(
-                gettext_lazy('This name is too long (must be max 20 chars).'))
+                gettext_lazy('This name is too long (must be max 32 chars).'))
         return value
 
 
@@ -257,9 +257,9 @@ class PluginFormAdd(forms.Form):
     name = NameField(
         max_length=MAX_LENGTH_NAME,
         label=gettext_lazy('Name'),
-        help_text=gettext_lazy('short name of script (max 20 chars, only '
+        help_text=gettext_lazy('short name of script (max 32 chars, only '
                                'lower case letters, digits or "_")'),
-        widget=forms.TextInput(attrs={'size': '10'})
+        widget=forms.TextInput(attrs={'size': '25'})
     )
     version = forms.CharField(
         max_length=MAX_LENGTH_VERSION,
