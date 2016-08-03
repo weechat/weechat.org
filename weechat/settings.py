@@ -20,10 +20,10 @@
 
 # Django settings for weechat project.
 
+from django import VERSION as DJANGO_VERSION
 from os import path
 
 DEBUG = False
-TEMPLATE_DEBUG = DEBUG
 
 BASE_DIR = path.dirname(path.abspath(__file__))
 
@@ -104,12 +104,38 @@ REPO_DIR = path.normpath(path.join(BASE_DIR, '..', 'repo'))
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = ''  # set it in settings_local.py
 
-# List of callables that know how to import templates from various sources.
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-    #'django.template.loaders.eggs.Loader',
-)
+if DJANGO_VERSION >= (1, 10):
+    # Django >= 1.10
+    TEMPLATES = [
+        {
+            'BACKEND': 'django.template.backends.django.DjangoTemplates',
+            'DIRS': [
+                path.join(BASE_DIR, 'templates'),
+            ],
+            'APP_DIRS': True,
+            'OPTIONS': {
+                'context_processors': [
+                    'django.contrib.auth.context_processors.auth',
+                    'django.template.context_processors.debug',
+                    'django.template.context_processors.i18n',
+                    'django.template.context_processors.media',
+                    'django.template.context_processors.static',
+                    'django.template.context_processors.tz',
+                    'django.contrib.messages.context_processors.messages',
+                ],
+            },
+        },
+    ]
+else:
+    # Django <= 1.9.x
+    TEMPLATE_DEBUG = DEBUG
+    TEMPLATE_LOADERS = (
+        'django.template.loaders.filesystem.Loader',
+        'django.template.loaders.app_directories.Loader',
+    )
+    TEMPLATE_DIRS = (
+        path.join(BASE_DIR, 'templates'),
+    )
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
@@ -121,10 +147,6 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'weechat.urls'
-
-TEMPLATE_DIRS = (
-    path.join(BASE_DIR, 'templates'),
-)
 
 FIXTURE_DIRS = (
     path.join(BASE_DIR, 'fixtures'),
