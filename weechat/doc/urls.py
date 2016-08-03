@@ -22,10 +22,9 @@
 
 # pylint: disable=invalid-name, no-value-for-parameter
 
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 
-urlpatterns = patterns(
-    '',
+urlpatterns = [
     url(r'^$', 'weechat.doc.views.documentation', name='doc'),
     url(r'^(?P<version>stable|devel|old)/$',
         'weechat.doc.views.documentation', name='doc_version'),
@@ -39,4 +38,4 @@ urlpatterns = patterns(
         'weechat.doc.views.documentation_link'),
     url(r'^(?P<name>[a-z_]+)/(?P<lang>[a-z_]+)/$',
         'weechat.doc.views.documentation_link'),
-)
+]

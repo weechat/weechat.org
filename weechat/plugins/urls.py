@@ -22,11 +22,10 @@
 
 # pylint: disable=invalid-name, no-value-for-parameter
 
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 from django.views.generic.base import TemplateView
 
-urlpatterns = patterns(
-    '',
+urlpatterns = [
     url(r'^$', 'weechat.plugins.views.scripts', name='scripts'),
     url(r'^(?P<api>(legacy|stable))/$', 'weechat.plugins.views.scripts',
         name='scripts_api'),
@@ -60,10 +59,6 @@ urlpatterns = patterns(
         name='scripts_update'),
     url(r'^pending/$', 'weechat.plugins.views.pending',
         name='scripts_pending'),
-)
-
-urlpatterns += patterns(
-    'django.views.generic.simple',
     url(r'^addok/$',
         TemplateView.as_view(template_name='plugins/add_ok.html')),
     url(r'^adderror/$',
@@ -72,4 +67,4 @@ urlpatterns += patterns(
         TemplateView.as_view(template_name='plugins/update_ok.html')),
     url(r'^updateerror/$',
         TemplateView.as_view(template_name='plugins/update_error.html')),
-)
+]

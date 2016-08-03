@@ -23,7 +23,8 @@
 # pylint: disable=invalid-name, no-value-for-parameter
 
 from django.conf import settings
-from django.conf.urls import include, patterns, url
+from django.conf.urls import include, url
+from django.conf.urls.static import static
 from django.views.generic.base import RedirectView
 
 from weechat.common.views import TextTemplateView
@@ -33,9 +34,7 @@ from weechat.news.feeds import LatestNewsFeed, UpcomingEventsFeed
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns(
-    '',
-
+urlpatterns = [
     # admin
     url(r'^%s/doc/' % settings.ADMIN_PAGE,
         include('django.contrib.admindocs.urls')),
@@ -84,20 +83,14 @@ urlpatterns = patterns(
     # files and media
     url('^files$', RedirectView.as_view(url='/files/')),
     url('^media$', RedirectView.as_view(url='/media/')),
-)
 
-urlpatterns += patterns(
-    'django.views.generic.simple',
+    # robots.txt
     url(r'^robots\.txt$',
         TextTemplateView.as_view(template_name='robots.txt')),
-)
+]
 
 if settings.DEBUG:
-    urlpatterns += patterns(
-        '',
-        # static files
-        url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
-            {'document_root': settings.MEDIA_ROOT}),
-        url(r'^files/(?P<path>.*)$', 'django.views.static.serve',
-            {'document_root': settings.FILES_ROOT}),
-    )
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.FILES_URL,
+                          document_root=settings.FILES_ROOT)

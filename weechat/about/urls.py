@@ -22,20 +22,15 @@
 
 # pylint: disable=invalid-name, no-value-for-parameter
 
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 from django.views.generic.base import TemplateView
 
-urlpatterns = patterns(
-    'django.views.generic.simple',
+urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='about/features.html'),
         name='about'),
     url(r'^features/$',
         TemplateView.as_view(template_name='about/features.html'),
         name='about_features'),
-)
-
-urlpatterns += patterns(
-    '',
     url(r'^screenshots/$', 'weechat.about.views.screenshots',
         name='about_screenshots'),
     url(r'^screenshots/(?P<app>weechat|relay)/$',
@@ -54,11 +49,7 @@ urlpatterns += patterns(
     url(r'^donate/sort/(?P<sort_key>(date|top10))/'
         'view/(?P<view_key>[a-zA-Z0-9_]*)/$',
         'weechat.about.views.donate'),
-)
-
-urlpatterns += patterns(
-    'django.views.generic.simple',
     url(r'^weechat\.org/$',
         TemplateView.as_view(template_name='about/weechat.org.html'),
         name='about_weechat.org'),
-)
+]

@@ -22,10 +22,9 @@
 
 # pylint: disable=invalid-name, no-value-for-parameter
 
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 
-urlpatterns = patterns(
-    '',
+urlpatterns = [
     url(r'^$', 'weechat.download.views.packages', name='download'),
     url(r'^debian/$', 'weechat.debian.views.repos', name='download_debian'),
     url(r'^debian/(?P<files>[a-zA-Z0-9.]*)/$', 'weechat.debian.views.repos'),
@@ -35,4 +34,4 @@ urlpatterns = patterns(
         name='download_security'),
     url(r'^(?P<version>[a-zA-Z0-9.]*)/$', 'weechat.download.views.packages',
         name='download_version'),
-)
+]

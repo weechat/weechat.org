@@ -96,6 +96,7 @@ ADMIN_PAGE = 'admin'
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
 
+FILES_URL = '/files/'
 FILES_ROOT = path.normpath(path.join(BASE_DIR, '..', 'files'))
 
 REPO_DIR = path.normpath(path.join(BASE_DIR, '..', 'repo'))

@@ -22,11 +22,10 @@
 
 # pylint: disable=invalid-name, no-value-for-parameter
 
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 from django.views.generic.base import TemplateView
 
-urlpatterns = patterns(
-    '',
+urlpatterns = [
     url(r'^$', 'weechat.themes.views.themes', name='themes'),
     url(r'^(?P<filter_name>(author))/(?P<filter_value>(.*))/$',
         'weechat.themes.views.themes',
@@ -42,10 +41,6 @@ urlpatterns = patterns(
         name='themes_add'),
     url(r'^update/$', 'weechat.themes.views.form_update',
         name='themes_update'),
-)
-
-urlpatterns += patterns(
-    'django.views.generic.simple',
     url(r'^addok/$',
         TemplateView.as_view(template_name='themes/add_ok.html')),
     url(r'^adderror/$',
@@ -54,4 +49,4 @@ urlpatterns += patterns(
         TemplateView.as_view(template_name='themes/update_ok.html')),
     url(r'^updateerror/$',
         TemplateView.as_view(template_name='themes/update_error.html')),
-)
+]
