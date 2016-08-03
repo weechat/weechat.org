@@ -25,7 +25,7 @@ import gzip
 from os import path, stat
 import re
 
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 from django.template import RequestContext
 
 from weechat.common.path import repo_path_join
@@ -89,11 +89,12 @@ def repos(request, files=''):
                                   reverse=True))
         except:
             pass
-    return render_to_response(
+    return render(
+        request,
         'download/debian.html',
         {
             'debpkgs': debpkgs,
             'allfiles': files == 'files',
             'repositories': repositories,
         },
-        context_instance=RequestContext(request))
+    )

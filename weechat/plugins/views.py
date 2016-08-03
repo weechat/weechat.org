@@ -28,7 +28,7 @@ from pygments.lexers import get_lexer_by_name
 from django.conf import settings
 from django.core.mail import EmailMessage
 from django.http import HttpResponseRedirect
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 from django.template import RequestContext
 
 from weechat.common.path import files_path_join
@@ -105,7 +105,8 @@ def scripts(request, api='stable', sort_key='popularity', filter_name='',
     tags2 = []
     for tag in tags:
         tags2.append((tag, tags_count[tag]))
-    return render_to_response(
+    return render(
+        request,
         'plugins/list.html',
         {
             'plugin_list': plugin_list,
@@ -116,7 +117,7 @@ def scripts(request, api='stable', sort_key='popularity', filter_name='',
             'tags': tags2,
             'tags_count': tags_count,
         },
-        context_instance=RequestContext(request))
+    )
 
 
 def script_source(request, api='stable', scriptid='', scriptname=''):
@@ -157,13 +158,14 @@ def script_source(request, api='stable', scriptid='', scriptname=''):
                                                     PYGMENTS_LEXER[sext])
         except:
             htmlsource = ''
-    return render_to_response(
+    return render(
+        request,
         'plugins/source.html',
         {
             'plugin': plugin,
             'htmlsource': htmlsource,
         },
-        context_instance=RequestContext(request))
+    )
 
 
 def form_add(request):
@@ -244,9 +246,13 @@ def form_add(request):
             return HttpResponseRedirect('/scripts/addok/')
     else:
         form = PluginFormAdd()
-    return render_to_response('plugins/add.html',
-                              {'form': form},
-                              context_instance=RequestContext(request))
+    return render(
+        request,
+        'plugins/add.html',
+        {
+            'form': form,
+        },
+    )
 
 
 def form_update(request):
@@ -287,15 +293,23 @@ def form_update(request):
             return HttpResponseRedirect('/scripts/updateok/')
     else:
         form = PluginFormUpdate()
-    return render_to_response('plugins/update.html',
-                              {'form': form},
-                              context_instance=RequestContext(request))
+    return render(
+        request,
+        'plugins/update.html',
+        {
+            'form': form,
+        },
+    )
 
 
 def pending(request):
     """Page with scripts pending for approval."""
     plugin_list = Plugin.objects.filter(visible=0) \
         .filter(min_weechat__gte=API_STABLE).order_by('-added')
-    return render_to_response('plugins/pending.html',
-                              {'plugin_list': plugin_list},
-                              context_instance=RequestContext(request))
+    return render(
+        request,
+        'plugins/pending.html',
+        {
+            'plugin_list': plugin_list,
+        },
+    )

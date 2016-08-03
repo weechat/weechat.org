@@ -24,7 +24,7 @@ from datetime import datetime
 from math import ceil
 from os import path, listdir
 
-from django.shortcuts import render_to_response, redirect
+from django.shortcuts import render, redirect
 from django.template import RequestContext
 from django.utils.translation import ugettext
 
@@ -129,13 +129,14 @@ def documentation(request, version='stable'):
                               reverse=True)
         except:
             pass
-        return render_to_response(
+        return render(
+            request,
             'doc/doc.html',
             {
                 'version': version,
                 'doc_list': doc_list,
             },
-            context_instance=RequestContext(request))
+        )
     languages = Language.objects.all().order_by('priority')
     bestlang = get_bestlang(request, languages)
     versions = Version.objects.all().order_by('priority')
@@ -168,7 +169,8 @@ def documentation(request, version='stable'):
                 doc_list.append([doc, files])
             else:
                 doc_list2.append([doc, files])
-    return render_to_response(
+    return render(
+        request,
         'doc/doc.html',
         {
             'version': version,
@@ -179,7 +181,7 @@ def documentation(request, version='stable'):
             'i18n': get_i18n_stats(),
             'doc_version': Release.objects.get(version=version).description,
         },
-        context_instance=RequestContext(request))
+    )
 
 
 def documentation_link(request, version='devel', name=None, lang='en'):

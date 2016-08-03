@@ -22,16 +22,17 @@
 
 from datetime import datetime
 
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 from django.template import RequestContext
 
 from weechat.download.models import Release
 from weechat.news.models import Info
 
 
-def render(request, info_list, max_info, event_list, max_event):
+def render_homepage(request, info_list, max_info, event_list, max_event):
     """Render homepage."""
-    return render_to_response(
+    return render(
+        request,
         'home/home.html',
         {
             'release_stable': Release.objects.get(version='stable'),
@@ -40,7 +41,7 @@ def render(request, info_list, max_info, event_list, max_event):
             'event_list': event_list,
             'max_event': max_event,
         },
-        context_instance=RequestContext(request))
+    )
 
 
 def home(request, max_info=None, max_event=None):
@@ -54,7 +55,7 @@ def home(request, max_info=None, max_event=None):
         .order_by('date')
     if max_event:
         event_list = event_list[:max_event]
-    return render(request, info_list, max_info, event_list, max_event)
+    return render_homepage(request, info_list, max_info, event_list, max_event)
 
 
 def news(request, info_id=None):
@@ -67,7 +68,7 @@ def news(request, info_id=None):
                 .filter(date__lte=datetime.now()).order_by('-date')
     except:
         info_list = None
-    return render(request, info_list, None, None, None)
+    return render_homepage(request, info_list, None, None, None)
 
 
 def events(request, event_id=None):
@@ -80,4 +81,4 @@ def events(request, event_id=None):
                 .filter(date__gt=datetime.now()).order_by('date')
     except:
         event_list = None
-    return render(request, None, None, event_list, None)
+    return render_homepage(request, None, None, event_list, None)

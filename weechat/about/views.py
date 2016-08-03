@@ -25,7 +25,7 @@ from os import path
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Sum
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 from django.template import RequestContext
 
 from weechat.about.models import Screenshot, Keydate, Sponsor
@@ -43,23 +43,26 @@ def screenshots(request, app='weechat', filename=''):
             screenshot = Screenshot.objects.get(app=app, filename=filename)
         except ObjectDoesNotExist:
             screenshot = None
-        return render_to_response(
+        return render(
+            request,
             'about/screenshots.html',
             {
                 'app': app,
                 'filename': filename,
                 'screenshot': screenshot,
             },
-            context_instance=RequestContext(request))
+        )
     else:
         screenshot_list = \
             Screenshot.objects.filter(app=app).order_by('priority')
-        return render_to_response('about/screenshots.html',
-                                  {
-                                      'app': app,
-                                      'screenshot_list': screenshot_list,
-                                  },
-                                  context_instance=RequestContext(request))
+        return render(
+            request,
+            'about/screenshots.html',
+            {
+                'app': app,
+                'screenshot_list': screenshot_list,
+            },
+        )
 
 
 def history(request):
@@ -71,13 +74,14 @@ def history(request):
         name = 'weechat-%s.png' % release.version
         if path.exists(media_path_join('images', 'story', name)):
             releases.append((release.version, release.date))
-    return render_to_response(
+    return render(
+        request,
         'about/history.html',
         {
             'releases': releases,
             'keydate_list': Keydate.objects.all().order_by('date'),
         },
-        context_instance=RequestContext(request))
+    )
 
 
 def donate(request, sort_key='date', view_key=''):
@@ -96,7 +100,8 @@ def donate(request, sort_key='date', view_key=''):
             view_amount = True
     except AttributeError:
         pass
-    return render_to_response(
+    return render(
+        request,
         'about/donate.html',
         {
             'sponsor_list': sponsor_list,
@@ -104,4 +109,4 @@ def donate(request, sort_key='date', view_key=''):
             'view_amount': view_amount,
             'total': total,
         },
-        context_instance=RequestContext(request))
+    )

@@ -22,7 +22,7 @@
 
 import re
 
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 from django.template import RequestContext
 from django.utils.translation import gettext_lazy
 
@@ -87,13 +87,14 @@ def roadmap(request, allversions=False):
         task_list = Task.objects.all().filter(visible=1).filter(
             version__gt=Release.objects.get(
                 version='stable').description).order_by('version', 'priority')
-    return render_to_response(
+    return render(
+        request,
         'dev/roadmap.html',
         {
             'task_list': task_list,
             'allversions': allversions,
         },
-        context_instance=RequestContext(request))
+    )
 
 
 def stats_repo(request, stats='weechat'):
@@ -140,7 +141,8 @@ def stats_repo(request, stats='weechat'):
         sloc_lang = 'Python'
     elif stats == 'weechat.org':
         repository = ('https://github.com/weechat/weechat.org')
-    return render_to_response(
+    return render(
+        request,
         'dev/stats.html',
         {
             'stats': stats,
@@ -154,7 +156,7 @@ def stats_repo(request, stats='weechat'):
             'scripts_downloads': scripts_downloads,
             'svg_list': svg_list,
         },
-        context_instance=RequestContext(request))
+    )
 
 
 def get_info(name, version):
@@ -205,9 +207,13 @@ def info(request, name=None):
         'devel': Release.objects.get(version='devel'),
     }
     if name:
-        return render_to_response('dev/info.html',
-                                  {'info': get_info(name, version)},
-                                  context_instance=RequestContext(request))
+        return render(
+            request,
+            'dev/info.html',
+            {
+                'info': get_info(name, version),
+            },
+        )
     else:
         infos = []
         for oneinfo in INFO_KEYS:
@@ -215,6 +221,10 @@ def info(request, name=None):
             if oneinfo[0].endswith('_number'):
                 value = '%s (0x%08lx)' % (value, value)
             infos.append((oneinfo[0], value, oneinfo[1]))
-        return render_to_response('dev/info_list.html',
-                                  {'infos': infos},
-                                  context_instance=RequestContext(request))
+        return render(
+            request,
+            'dev/info_list.html',
+            {
+                'infos': infos,
+            },
+        )

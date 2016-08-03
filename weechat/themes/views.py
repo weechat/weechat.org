@@ -28,7 +28,7 @@ from pygments.lexers import get_lexer_by_name
 from django.conf import settings
 from django.core.mail import EmailMessage
 from django.http import HttpResponseRedirect
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 from django.template import RequestContext
 
 from weechat.common.path import files_path_join
@@ -46,7 +46,8 @@ def themes(request, sort_key='updated', filter_name='', filter_value=''):
     theme_list = Theme.objects.filter(visible=1).order_by(sort_key)
     if filter_name == 'author':
         theme_list = theme_list.filter(author=filter_value)
-    return render_to_response(
+    return render(
+        request,
         'themes/list.html',
         {
             'theme_list': theme_list,
@@ -54,7 +55,7 @@ def themes(request, sort_key='updated', filter_name='', filter_value=''):
             'filter_name': filter_name,
             'filter_value': filter_value,
         },
-        context_instance=RequestContext(request))
+    )
 
 
 def theme_source(request, themeid=None, themename=None):
@@ -72,13 +73,14 @@ def theme_source(request, themeid=None, themename=None):
                                                  linenos='table'))
     except:
         htmlsource = ''
-    return render_to_response(
+    return render(
+        request,
         'themes/source.html',
         {
             'theme': theme,
             'htmlsource': htmlsource,
         },
-        context_instance=RequestContext(request))
+    )
 
 
 def form_add(request):
@@ -139,13 +141,14 @@ def form_add(request):
             return HttpResponseRedirect('/themes/addok/')
     else:
         form = ThemeFormAdd()
-    return render_to_response(
+    return render(
+        request,
         'themes/add.html',
         {
             'release_stable': Release.objects.get(version='stable'),
             'form': form,
         },
-        context_instance=RequestContext(request))
+    )
 
 
 def form_update(request):
@@ -188,6 +191,10 @@ def form_update(request):
             return HttpResponseRedirect('/themes/updateok/')
     else:
         form = ThemeFormUpdate()
-    return render_to_response('themes/update.html',
-                              {'form': form},
-                              context_instance=RequestContext(request))
+    return render(
+        request,
+        'themes/update.html',
+        {
+            'form': form,
+        },
+    )

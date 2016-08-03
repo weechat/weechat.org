@@ -22,7 +22,7 @@
 
 import re
 
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 from django.template import RequestContext
 
 from weechat.download.models import Release, Package, Security
@@ -80,29 +80,35 @@ def packages(request, version='stable'):
     else:
         package_list = Package.objects.filter(version=version) \
             .order_by('type__priority')
-    return render_to_response(
+    return render(
+        request,
         'download/packages.html',
         {
             'version': version,
             'package_list': package_list,
             'release_progress': get_release_progress(),
         },
-        context_instance=RequestContext(request))
+    )
 
 
 def release(request):
     """Page with release in progress."""
-    return render_to_response(
+    return render(
+        request,
         'download/release.html',
         {
             'release_progress': get_release_progress(),
         },
-        context_instance=RequestContext(request))
+    )
 
 
 def security(request):
     """Page with security vulnerabilities."""
     security_list = Security.objects.all().filter(visible=1).order_by('-date')
-    return render_to_response('download/security.html',
-                              {'security_list': security_list},
-                              context_instance=RequestContext(request))
+    return render(
+        request,
+        'download/security.html',
+        {
+            'security_list': security_list,
+        },
+    )
