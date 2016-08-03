@@ -21,6 +21,7 @@
 """Tag to obfuscate e-mails in HTML code."""
 
 from django import template
+from django.utils.safestring import mark_safe
 
 # pylint: disable=invalid-name
 register = template.Library()
@@ -29,6 +30,6 @@ register = template.Library()
 @register.filter()
 def txt2html(value):
     """Return text with html ascii codes (for example anti-spam for emails)."""
-    return ''.join(['&#%d;' % ord(c) for c in value])
+    return mark_safe(''.join(['&#%d;' % ord(c) for c in value]))
 
 register.simple_tag(txt2html)
