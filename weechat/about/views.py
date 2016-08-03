@@ -26,7 +26,6 @@ from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Sum
 from django.shortcuts import render
-from django.template import RequestContext
 
 from weechat.about.models import Screenshot, Keydate, Sponsor
 from weechat.common.path import media_path_join

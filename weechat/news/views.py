@@ -23,7 +23,6 @@
 from datetime import datetime
 
 from django.shortcuts import render
-from django.template import RequestContext
 
 from weechat.download.models import Release
 from weechat.news.models import Info

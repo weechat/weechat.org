@@ -23,7 +23,6 @@
 import re
 
 from django.shortcuts import render
-from django.template import RequestContext
 from django.utils.translation import gettext_lazy
 
 from weechat.common.path import files_path_join

@@ -26,7 +26,6 @@ from os import path, stat
 import re
 
 from django.shortcuts import render
-from django.template import RequestContext
 
 from weechat.common.path import repo_path_join
 from weechat.debian.models import Repo

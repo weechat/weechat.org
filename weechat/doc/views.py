@@ -25,7 +25,6 @@ from math import ceil
 from os import path, listdir
 
 from django.shortcuts import render, redirect
-from django.template import RequestContext
 from django.utils.translation import ugettext
 
 from weechat.common.path import files_path_join

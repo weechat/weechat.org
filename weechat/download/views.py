@@ -23,7 +23,6 @@
 import re
 
 from django.shortcuts import render
-from django.template import RequestContext
 
 from weechat.download.models import Release, Package, Security
 from weechat.download.models import ReleaseTodo, ReleaseProgress

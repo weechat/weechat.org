@@ -29,7 +29,6 @@ from django.conf import settings
 from django.core.mail import EmailMessage
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from django.template import RequestContext
 
 from weechat.common.path import files_path_join
 from weechat.download.models import Release
