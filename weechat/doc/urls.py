@@ -24,18 +24,19 @@
 
 from django.conf.urls import url
 
+from weechat.doc.views import (
+    documentation as view_doc,
+    documentation_link as view_doc_link,
+)
+
 urlpatterns = [
-    url(r'^$', 'weechat.doc.views.documentation', name='doc'),
-    url(r'^(?P<version>stable|devel|old)/$',
-        'weechat.doc.views.documentation', name='doc_version'),
+    url(r'^$', view_doc, name='doc'),
+    url(r'^(?P<version>stable|devel|old)/$', view_doc, name='doc_version'),
 
     # shortcuts
-    url(r'^(?P<version>stable|devel)/(?P<name>[a-z_]+)/$',
-        'weechat.doc.views.documentation_link'),
-    url(r'^(?P<name>[a-z_]+)/$',
-        'weechat.doc.views.documentation_link'),
+    url(r'^(?P<version>stable|devel)/(?P<name>[a-z_]+)/$', view_doc_link),
+    url(r'^(?P<name>[a-z_]+)/$', view_doc_link),
     url(r'^(?P<version>stable|devel)/(?P<name>[a-z_]+)/(?P<lang>[a-z_]+)/$',
-        'weechat.doc.views.documentation_link'),
-    url(r'^(?P<name>[a-z_]+)/(?P<lang>[a-z_]+)/$',
-        'weechat.doc.views.documentation_link'),
+        view_doc_link),
+    url(r'^(?P<name>[a-z_]+)/(?P<lang>[a-z_]+)/$', view_doc_link),
 ]

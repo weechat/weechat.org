@@ -28,7 +28,13 @@ from django.conf.urls.static import static
 from django.views.generic.base import RedirectView
 
 from weechat.common.views import TextTemplateView
+from weechat.dev.views import info as view_info
 from weechat.news.feeds import LatestNewsFeed, UpcomingEventsFeed
+from weechat.news.views import (
+    home as view_home,
+    news as view_news,
+    events as view_events,
+)
 
 # admin
 from django.contrib import admin
@@ -44,17 +50,15 @@ urlpatterns = [
     url(r'^i18n/', include('django.conf.urls.i18n')),
 
     # main WeeChat URLs
-    url(r'^$', 'weechat.news.views.home', {'max_info': 8, 'max_event': 4},
+    url(r'^$', view_home, {'max_info': 8, 'max_event': 4},
         name='home'),
-    url(r'^news/$', 'weechat.news.views.news', name='home_news'),
-    url(r'^news/(?P<info_id>\d+)/$', 'weechat.news.views.news',
-        name='home_info_id'),
-    url(r'^news/(?P<info_id>\d+)/(.*)/$', 'weechat.news.views.news',
+    url(r'^news/$', view_news, name='home_news'),
+    url(r'^news/(?P<info_id>\d+)/$', view_news, name='home_info_id'),
+    url(r'^news/(?P<info_id>\d+)/(.*)/$', view_news,
         name='home_info_id_title'),
-    url(r'^events/$', 'weechat.news.views.events', name='home_events'),
-    url(r'^events/(?P<event_id>\d+)/$', 'weechat.news.views.events',
-        name='home_event_id'),
-    url(r'^events/(?P<event_id>\d+)/(.*)/$', 'weechat.news.views.events',
+    url(r'^events/$', view_events, name='home_events'),
+    url(r'^events/(?P<event_id>\d+)/$', view_events, name='home_event_id'),
+    url(r'^events/(?P<event_id>\d+)/(.*)/$', view_events,
         name='home_event_id_title'),
     url(r'^about/', include('weechat.about.urls')),
     url(r'^doc/', include('weechat.doc.urls')),
@@ -73,7 +77,7 @@ urlpatterns = [
     url(r'^security/$', RedirectView.as_view(url='/download/security/')),
     url(r'^stats/$', RedirectView.as_view(url='/dev/stats/')),
     url(r'^info/$', RedirectView.as_view(url='/dev/info/')),
-    url(r'^info/(?P<name>[a-zA-Z0-9-_]*)/$', 'weechat.dev.views.info'),
+    url(r'^info/(?P<name>[a-zA-Z0-9-_]*)/$', view_info),
     url(r'^support/$', RedirectView.as_view(url='/dev/support/')),
 
     # feeds

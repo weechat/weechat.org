@@ -25,22 +25,24 @@
 from django.conf.urls import url
 from django.views.generic.base import TemplateView
 
+from weechat.themes.views import (
+    themes as view_themes,
+    theme_source as view_theme_source,
+    form_add as view_form_add,
+    form_update as view_form_update,
+)
+
 urlpatterns = [
-    url(r'^$', 'weechat.themes.views.themes', name='themes'),
+    url(r'^$', view_themes, name='themes'),
     url(r'^(?P<filter_name>(author))/(?P<filter_value>(.*))/$',
-        'weechat.themes.views.themes',
-        name='themes_filter'),
+        view_themes, name='themes_filter'),
     url(r'^sort/(?P<sort_key>(name|version|added|updated))/$',
-        'weechat.themes.views.themes',
-        name='themes_sort'),
-    url(r'^source/(?P<themeid>\d+)/$', 'weechat.themes.views.theme_source'),
+        view_themes, name='themes_sort'),
+    url(r'^source/(?P<themeid>\d+)/$', view_theme_source),
     url(r'^source/(?P<themename>[a-zA-Z0-9_]+\.theme)\.html/$',
-        'weechat.themes.views.theme_source',
-        name='themes_source_name_html'),
-    url(r'^add/$', 'weechat.themes.views.form_add',
-        name='themes_add'),
-    url(r'^update/$', 'weechat.themes.views.form_update',
-        name='themes_update'),
+        view_theme_source, name='themes_source_name_html'),
+    url(r'^add/$', view_form_add, name='themes_add'),
+    url(r'^update/$', view_form_update, name='themes_update'),
     url(r'^addok/$',
         TemplateView.as_view(template_name='themes/add_ok.html')),
     url(r'^adderror/$',

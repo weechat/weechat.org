@@ -25,30 +25,32 @@
 from django.conf.urls import url
 from django.views.generic.base import TemplateView
 
+from weechat.about.views import (
+    screenshots as view_screenshots,
+    history as view_history,
+    donate as view_donate,
+)
+
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='about/features.html'),
         name='about'),
     url(r'^features/$',
         TemplateView.as_view(template_name='about/features.html'),
         name='about_features'),
-    url(r'^screenshots/$', 'weechat.about.views.screenshots',
-        name='about_screenshots'),
-    url(r'^screenshots/(?P<app>weechat|relay)/$',
-        'weechat.about.views.screenshots',
+    url(r'^screenshots/$', view_screenshots, name='about_screenshots'),
+    url(r'^screenshots/(?P<app>weechat|relay)/$', view_screenshots,
         name='about_screenshots_app'),
     url(r'^screenshots/(?P<app>weechat|relay)/'
         r'(?P<filename>[a-zA-Z0-9_\-.]*)/$',
-        'weechat.about.views.screenshots',
-        name='about_screenshot'),
-    url(r'^screenshots/(?P<filename>[a-zA-Z0-9_\-.]*)/$',
-        'weechat.about.views.screenshots'),
-    url(r'^history/$', 'weechat.about.views.history', name='about_history'),
-    url(r'^donate/$', 'weechat.about.views.donate', name='about_donate'),
-    url(r'^donate/sort/(?P<sort_key>(date|top10))/$',
-        'weechat.about.views.donate', name='about_donate_sort'),
+        view_screenshots, name='about_screenshot'),
+    url(r'^screenshots/(?P<filename>[a-zA-Z0-9_\-.]*)/$', view_screenshots),
+    url(r'^history/$', view_history, name='about_history'),
+    url(r'^donate/$', view_donate, name='about_donate'),
+    url(r'^donate/sort/(?P<sort_key>(date|top10))/$', view_donate,
+        name='about_donate_sort'),
     url(r'^donate/sort/(?P<sort_key>(date|top10))/'
-        'view/(?P<view_key>[a-zA-Z0-9_]*)/$',
-        'weechat.about.views.donate'),
+        r'view/(?P<view_key>[a-zA-Z0-9_]*)/$',
+        view_donate),
     url(r'^weechat\.org/$',
         TemplateView.as_view(template_name='about/weechat.org.html'),
         name='about_weechat.org'),

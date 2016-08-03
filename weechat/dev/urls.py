@@ -25,17 +25,22 @@
 from django.conf.urls import url
 from django.views.generic.base import TemplateView
 
+from weechat.dev.views import (
+    roadmap as view_roadmap,
+    stats_repo as view_stats_repo,
+    info as view_info,
+)
+
 urlpatterns = [
-    url(r'^$', 'weechat.dev.views.roadmap', name='dev'),
-    url(r'^roadmap/$', 'weechat.dev.views.roadmap', name='dev_roadmap'),
-    url(r'^roadmap/all/$', 'weechat.dev.views.roadmap', {'allversions': True},
+    url(r'^$', view_roadmap, name='dev'),
+    url(r'^roadmap/$', view_roadmap, name='dev_roadmap'),
+    url(r'^roadmap/all/$', view_roadmap, {'allversions': True},
         name='dev_roadmap_all'),
-    url(r'^stats/$', 'weechat.dev.views.stats_repo', name='dev_stats'),
+    url(r'^stats/$', view_stats_repo, name='dev_stats'),
     url(r'^stats/(?P<stats>weechat|scripts|qweechat|weechat\.org)/$',
-        'weechat.dev.views.stats_repo', name='dev_stats_git'),
-    url(r'^info/$', 'weechat.dev.views.info', name='dev_info'),
-    url(r'^info/(?P<name>[a-zA-Z0-9_]*)/$', 'weechat.dev.views.info',
-        name='dev_info_name'),
+        view_stats_repo, name='dev_stats_git'),
+    url(r'^info/$', view_info, name='dev_info'),
+    url(r'^info/(?P<name>[a-zA-Z0-9_]*)/$', view_info, name='dev_info_name'),
     url(r'^support/$', TemplateView.as_view(template_name='dev/support.html'),
         name='dev_support'),
 ]

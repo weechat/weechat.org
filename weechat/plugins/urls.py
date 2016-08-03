@@ -25,40 +25,39 @@
 from django.conf.urls import url
 from django.views.generic.base import TemplateView
 
+from weechat.plugins.views import (
+    scripts as view_scripts,
+    script_source as view_script_source,
+    form_add as view_form_add,
+    form_update as view_form_update,
+    pending as view_pending,
+)
+
 urlpatterns = [
-    url(r'^$', 'weechat.plugins.views.scripts', name='scripts'),
-    url(r'^(?P<api>(legacy|stable))/$', 'weechat.plugins.views.scripts',
-        name='scripts_api'),
+    url(r'^$', view_scripts, name='scripts'),
+    url(r'^(?P<api>(legacy|stable))/$', view_scripts, name='scripts_api'),
     url(r'^(?P<api>(legacy|stable))/'
         r'(?P<filter_name>(tag|language|license|author))/'
         r'(?P<filter_value>(.*))/$',
-        'weechat.plugins.views.scripts',
-        name='scripts_api_filter'),
+        view_scripts, name='scripts_api_filter'),
     url(r'^(?P<api>(legacy|stable))/sort/(?P<sort_key>(name|language|license|'
         r'min_weechat|max_weechat|author|added|updated))/$',
-        'weechat.plugins.views.scripts',
-        name='scripts_api_sort'),
-    url(r'^source/(?P<scriptid>\d+)/$', 'weechat.plugins.views.script_source',
+        view_scripts, name='scripts_api_sort'),
+    url(r'^source/(?P<scriptid>\d+)/$', view_script_source,
         name='scripts_source_id'),
     url(r'^source/(?P<api>(legacy|stable))/(?P<scriptname>[a-zA-Z0-9_.-]+)'
         r'\.html/$',
-        'weechat.plugins.views.script_source',
-        name='scripts_source_api_name_html'),
+        view_script_source, name='scripts_source_api_name_html'),
     url(r'^source/(?P<api>(legacy|stable))/(?P<scriptname>[a-zA-Z0-9_.-]+)/$',
-        'weechat.plugins.views.script_source',
-        name='scripts_source_api_name'),
+        view_script_source, name='scripts_source_api_name'),
     url(r'^source/(?P<scriptname>[a-zA-Z0-9_.-]+)\.html/$',
-        'weechat.plugins.views.script_source', {'api': 'stable'},
+        view_script_source, {'api': 'stable'},
         name='scripts_source_name_html'),
     url(r'^source/(?P<scriptname>[a-zA-Z0-9_.-]+)/$',
-        'weechat.plugins.views.script_source', {'api': 'stable'},
-        name='scripts_source_name'),
-    url(r'^add/$', 'weechat.plugins.views.form_add',
-        name='scripts_add'),
-    url(r'^update/$', 'weechat.plugins.views.form_update',
-        name='scripts_update'),
-    url(r'^pending/$', 'weechat.plugins.views.pending',
-        name='scripts_pending'),
+        view_script_source, {'api': 'stable'}, name='scripts_source_name'),
+    url(r'^add/$', view_form_add, name='scripts_add'),
+    url(r'^update/$', view_form_update, name='scripts_update'),
+    url(r'^pending/$', view_pending, name='scripts_pending'),
     url(r'^addok/$',
         TemplateView.as_view(template_name='plugins/add_ok.html')),
     url(r'^adderror/$',

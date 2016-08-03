@@ -24,14 +24,19 @@
 
 from django.conf.urls import url
 
+from weechat.debian.views import repos as view_repos
+from weechat.download.views import (
+    packages as view_packages,
+    release as view_release,
+    security as view_security,
+)
+
 urlpatterns = [
-    url(r'^$', 'weechat.download.views.packages', name='download'),
-    url(r'^debian/$', 'weechat.debian.views.repos', name='download_debian'),
-    url(r'^debian/(?P<files>[a-zA-Z0-9.]*)/$', 'weechat.debian.views.repos'),
-    url(r'^release/$', 'weechat.download.views.release',
-        name='download_release'),
-    url(r'^security/$', 'weechat.download.views.security',
-        name='download_security'),
-    url(r'^(?P<version>[a-zA-Z0-9.]*)/$', 'weechat.download.views.packages',
+    url(r'^$', view_packages, name='download'),
+    url(r'^debian/$', view_repos, name='download_debian'),
+    url(r'^debian/(?P<files>[a-zA-Z0-9.]*)/$', view_repos),
+    url(r'^release/$', view_release, name='download_release'),
+    url(r'^security/$', view_security, name='download_security'),
+    url(r'^(?P<version>[a-zA-Z0-9.]*)/$', view_packages,
         name='download_version'),
 ]
