@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-30 16:36+0200\n"
-"PO-Revision-Date: 2016-07-30 16:04+0200\n"
+"POT-Creation-Date: 2016-09-06 21:34+0200\n"
+"PO-Revision-Date: 2016-09-06 21:35+0200\n"
 "Last-Translator: Sébastien Helleu <flashcode@flashtux.org>\n"
 "Language-Team: French <flashcode@flashtux.org>\n"
 "Language: fr\n"
@@ -152,49 +152,49 @@ msgstr ""
 "Extensions Trigger et Exec plugins, affichage dépouillé (« bare display »), "
 "tampons cachés, tests unitaires."
 
-#: dev/views.py:37
+#: dev/views.py:36
 msgid "stable version"
 msgstr "version stable"
 
-#: dev/views.py:41
+#: dev/views.py:40
 msgid ""
 "stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
 "version stable, sous forme de nombre, comme l'API extension : "
 "info_get(\"version_number\")"
 
-#: dev/views.py:46
+#: dev/views.py:45
 msgid "date of stable version"
 msgstr "date de la version stable"
 
-#: dev/views.py:50
+#: dev/views.py:49
 msgid "development version"
 msgstr "version de développement"
 
-#: dev/views.py:54
+#: dev/views.py:53
 msgid "output of \"git rev-parse HEAD\" for sources repository"
 msgstr "sortie de \"git rev-parse HEAD\" pour le dépôt des sources"
 
-#: dev/views.py:58
+#: dev/views.py:57
 msgid "output of \"git rev-parse HEAD\" for scripts repository"
 msgstr "sortie de \"git rev-parse HEAD\" pour le dépôt des scripts"
 
-#: dev/views.py:62 templates/download/packages.html:51
+#: dev/views.py:61 templates/download/packages.html:51
 msgid "next stable version"
 msgstr "prochaine version stable"
 
-#: dev/views.py:66
+#: dev/views.py:65
 msgid ""
 "next stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
 "prochaine version stable, sous forme de nombre, comme l'API extension : "
 "info_get(\"version_number\")"
 
-#: dev/views.py:71
+#: dev/views.py:70
 msgid "approximate date of next stable version"
 msgstr "date approximative de la prochaine version stable"
 
-#: dev/views.py:76
+#: dev/views.py:75
 msgid "all infos (one info by line, format: \"info:value\")"
 msgstr "toutes les infos (une info par ligne, format : \"info:valeur\")"
 
@@ -5024,7 +5024,7 @@ msgid "changes in this release"
 msgstr "changements dans cette version"
 
 #. Translators: this is a date format, see: http://uk3.php.net/manual/en/function.date.php (note: the result string must be short, use abbreviation for month if possible)
-#: settings.py:158
+#: settings.py:181
 msgid "M j, Y"
 msgstr "d/m/Y"
 
@@ -5203,6 +5203,10 @@ msgid ""
 msgstr ""
 "WeeChat dispose d'une interface texte et tourne sur plusieurs systèmes "
 "d'exploitation, comme :"
+
+#: templates/about/features.html:33
+msgid "Windows (bash/ubuntu and cygwin)"
+msgstr "Windows (bash/ubuntu et cygwin)"
 
 #: templates/about/features.html:42
 msgid "Light and extensible"
@@ -6232,10 +6236,10 @@ msgstr "WeeChat est un client de discussion rapide, léger et extensible."
 #: templates/home/home.html:20
 msgid ""
 "It runs on many platforms like Linux, Unix, BSD, GNU Hurd, Mac OS&nbsp;X and "
-"Windows (cygwin)."
+"Windows (bash/ubuntu and cygwin)."
 msgstr ""
 "Il tourne sur plusieurs plates-formes comme Linux, Unix, BSD, GNU Hurd, Mac "
-"OS&nbsp;X, et Windows (cygwin)."
+"OS&nbsp;X, et Windows (bash/ubuntu et cygwin)."
 
 #: templates/home/home.html:23
 msgid "WeeChat is:"

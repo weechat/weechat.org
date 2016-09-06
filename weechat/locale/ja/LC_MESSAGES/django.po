@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-30 16:36+0200\n"
+"POT-Creation-Date: 2016-09-06 21:34+0200\n"
 "PO-Revision-Date: 2016-07-30 16:36+0200\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <i38w7i3@yahoo.co.jp>\n"
@@ -154,49 +154,49 @@ msgid "Trigger and Exec plugins, bare display, hidden buffers, unit tests."
 msgstr ""
 "トリガプラグインと実行プラグイン、最小限表示、隠しバッファ、単体テスト。"
 
-#: dev/views.py:37
+#: dev/views.py:36
 msgid "stable version"
 msgstr "安定版のバージョン番号"
 
-#: dev/views.py:41
+#: dev/views.py:40
 msgid ""
 "stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
 "安定版のバージョン番号 (数表記)、プラグイン API における "
 "info_get(\"version_number\") と同様"
 
-#: dev/views.py:46
+#: dev/views.py:45
 msgid "date of stable version"
 msgstr "安定版のリリース日"
 
-#: dev/views.py:50
+#: dev/views.py:49
 msgid "development version"
 msgstr "開発版のバージョン番号"
 
-#: dev/views.py:54
+#: dev/views.py:53
 msgid "output of \"git rev-parse HEAD\" for sources repository"
 msgstr "ソースリポジトリにおける \"git rev-parse HEAD\" の出力"
 
-#: dev/views.py:58
+#: dev/views.py:57
 msgid "output of \"git rev-parse HEAD\" for scripts repository"
 msgstr "スクリプトリポジトリにおける \"git rev-parse HEAD\" の出力"
 
-#: dev/views.py:62 templates/download/packages.html:51
+#: dev/views.py:61 templates/download/packages.html:51
 msgid "next stable version"
 msgstr "次期安定版のバージョン番号"
 
-#: dev/views.py:66
+#: dev/views.py:65
 msgid ""
 "next stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
 "次期安定版のバージョン番号 (数表記)、プラグイン API における "
 "info_get(\"version_number\") と同様<"
 
-#: dev/views.py:71
+#: dev/views.py:70
 msgid "approximate date of next stable version"
 msgstr "次期安定版のリリース予定日"
 
-#: dev/views.py:76
+#: dev/views.py:75
 msgid "all infos (one info by line, format: \"info:value\")"
 msgstr "全ての情報 (1 行に 1 情報、フォーマット: \"info:value\")"
 
@@ -4854,7 +4854,7 @@ msgid "changes in this release"
 msgstr "このリリースの変更内容"
 
 #. Translators: this is a date format, see: http://uk3.php.net/manual/en/function.date.php (note: the result string must be short, use abbreviation for month if possible)
-#: settings.py:158
+#: settings.py:181
 msgid "M j, Y"
 msgstr "Y 年 m 月 j 日"
 
@@ -5032,6 +5032,10 @@ msgid ""
 msgstr ""
 "WeeChat にはテキストインターフェイスがあり、以下に挙げる多くのオペレーション"
 "システムで実行出来ます:"
+
+#: templates/about/features.html:33
+msgid "Windows (bash/ubuntu and cygwin)"
+msgstr ""
 
 #: templates/about/features.html:42
 msgid "Light and extensible"
@@ -6052,9 +6056,13 @@ msgid "WeeChat is a fast, light and extensible chat client."
 msgstr "WeeChat は高速、軽量、拡張可能なチャットクライアントです。"
 
 #: templates/home/home.html:20
+#, fuzzy
+#| msgid ""
+#| "It runs on many platforms like Linux, Unix, BSD, GNU Hurd, Mac OS&nbsp;X "
+#| "and Windows (cygwin)."
 msgid ""
 "It runs on many platforms like Linux, Unix, BSD, GNU Hurd, Mac OS&nbsp;X and "
-"Windows (cygwin)."
+"Windows (bash/ubuntu and cygwin)."
 msgstr ""
 "Linux、Unix、BSD、GNU Hurd、Mac OS&nbsp;X、Windows (cygwin) などの多くのプ"
 "ラットフォームで動きます。"
