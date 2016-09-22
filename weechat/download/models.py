@@ -144,6 +144,7 @@ def handler_package_saved(sender, **kwargs):
         if package.filename:
             with open(package.fullname(), 'rb') as _file:
                 package.sha1sum = sha1(_file.read()).hexdigest()
+            with open(package.fullname(), 'rb') as _file:
                 package.sha512sum = sha512(_file.read()).hexdigest()
     except:
         pass
