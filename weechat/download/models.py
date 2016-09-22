@@ -21,7 +21,7 @@
 """Models for "download" menu."""
 
 from datetime import datetime
-from hashlib import sha1
+from hashlib import sha1, sha512
 from os import path
 
 from django.db import models
@@ -82,6 +82,7 @@ class Package(models.Model):
     type = models.ForeignKey(Type)
     filename = models.CharField(max_length=512, blank=True)
     sha1sum = models.CharField(max_length=128, blank=True)
+    sha512sum = models.CharField(max_length=128, blank=True)
     display_time = models.BooleanField(default=False)
     directory = models.CharField(max_length=256, blank=True)
     url = models.CharField(max_length=512, blank=True)
@@ -137,12 +138,13 @@ class Package(models.Model):
 
 
 def handler_package_saved(sender, **kwargs):
-    """Compute sha1sum of file."""
+    """Compute SHA-1 and SHA-512 of file."""
     try:
         package = kwargs['instance']
         if package.filename:
             with open(package.fullname(), 'rb') as _file:
                 package.sha1sum = sha1(_file.read()).hexdigest()
+                package.sha512sum = sha512(_file.read()).hexdigest()
     except:
         pass
 
