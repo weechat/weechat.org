@@ -2,7 +2,7 @@
 
 {% load i18n %}
 
-{% block css %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/pygments.css" media="screen" title="Normal" />{% endblock %}
+{% block css %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/pygments.css" media="screen" title="Normal">{% endblock %}
 {% block menu2_list %}selected{% endblock %}
 
 {% block content %}
@@ -12,14 +12,14 @@
 {% if htmlsource %}
   <h2>{% trans "Theme" %}: {{ theme.name }}</h2>
 
-  <a href="{% url 'themes' %}"><img src="{{ MEDIA_URL }}images/arrow_left_green.png" alt="&lt;&lt;" /> {% trans "Back to themes" %}</a> &nbsp; | &nbsp;
-  <a href="{{ theme.build_url }}"><img src="{{ MEDIA_URL }}images/dl_src.png" alt="Download" /> {% trans "Download" %}</a>
+  <a href="{% url 'themes' %}"><img src="{{ MEDIA_URL }}images/arrow_left_green.png" alt="&lt;&lt;"> {% trans "Back to themes" %}</a> &nbsp; | &nbsp;
+  <a href="{{ theme.build_url }}"><img src="{{ MEDIA_URL }}images/dl_src.png" alt="Download"> {% trans "Download" %}</a>
   {{ htmlsource|safe }}
 {% else %}
   <div class="errorbox">
     {% trans "Theme not found" %}
-    <br /><br />
-    <a href="{% url 'themes' %}"><img src="{{ MEDIA_URL }}images/arrow_left_green.png" alt="&lt;&lt;" /> {% trans "Back to themes" %}</a>
+    <br><br>
+    <a href="{% url 'themes' %}"><img src="{{ MEDIA_URL }}images/arrow_left_green.png" alt="&lt;&lt;"> {% trans "Back to themes" %}</a>
   </div>
 {% endif %}
 

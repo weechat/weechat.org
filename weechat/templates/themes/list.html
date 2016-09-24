@@ -33,12 +33,12 @@
   {% endfor %}
   </div>
 {% else %}
-  <br />
+  <br>
   <div class="warningbox">
     <strong>{% trans "No theme found." %}</strong>
   </div>
-  <br />
-  <a href="{% url 'themes' %}"><img src="{{ MEDIA_URL }}images/arrow_left_green.png" alt="&lt;&lt;" /> {% trans "Back to themes" %}</a>
+  <br>
+  <a href="{% url 'themes' %}"><img src="{{ MEDIA_URL }}images/arrow_left_green.png" alt="&lt;&lt;"> {% trans "Back to themes" %}</a>
 {% endif %}
 
 {% endblock content %}

@@ -2,7 +2,7 @@
 
 {% load i18n %}
 
-{% block css %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/home.css" media="screen" title="Normal" />{% endblock %}
+{% block css %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/home.css" media="screen" title="Normal">{% endblock %}
 {% block menu %}home{% endblock %}
 
 {% block content %}
@@ -44,18 +44,18 @@
 
       <p>
         {% trans "You can follow latest WeeChat developments on:" %}
-        <br />
+        <br>
         <a href="https://diasp.eu/u/weechat" target="_blank">
-          <img src="{{ MEDIA_URL }}images/diaspora.png" class="follow" alt="[Diaspora]" title="Diaspora" />
+          <img src="{{ MEDIA_URL }}images/diaspora.png" class="follow" alt="[Diaspora]" title="Diaspora">
         </a>
         <a href="https://plus.google.com/+WeeChat" target="_blank">
-          <img src="{{ MEDIA_URL }}images/google_plus.png" class="follow" alt="[Google+]" title="Google+" />
+          <img src="{{ MEDIA_URL }}images/google_plus.png" class="follow" alt="[Google+]" title="Google+">
         </a>
         <a href="http://dev.weechat.org/" target="_blank">
-          <img src="{{ MEDIA_URL }}images/dotclear.png" class="follow" alt="[{% trans "Devel blog" %}]" title="{% trans "Devel blog" %}" />
+          <img src="{{ MEDIA_URL }}images/dotclear.png" class="follow" alt="[{% trans "Devel blog" %}]" title="{% trans "Devel blog" %}">
         </a>
         <a href="{% url 'dev_roadmap' %}">
-          <img src="{{ MEDIA_URL }}images/favicon.png" class="follow" alt="[{% trans "Roadmap" %}]" title="{% trans "Roadmap" %}" />
+          <img src="{{ MEDIA_URL }}images/favicon.png" class="follow" alt="[{% trans "Roadmap" %}]" title="{% trans "Roadmap" %}">
         </a>
       </p>
 
@@ -92,7 +92,7 @@
         {% for info in info_list %}
           <h2><a href="{% url 'home_info_id_title' info.id info.date_title_url %}">{{ info.title_i18n }}</a> <span class="date">({{ info.date_l10n }})</span></h2>
           {% if info.text %}{% autoescape off %}{{ info.text_i18n|linebreaks }}{% endautoescape %}{% endif %}
-          <br />
+          <br>
         {% endfor %}
       {% endif %}
 
@@ -112,11 +112,11 @@
         {% for event in event_list %}
           <h2><a href="{% url 'home_event_id_title' event.id event.date_title_url %}">{{ event.title_i18n }}</a> <span class="date">({{ event.date_l10n }})</span></h2>
           {% if event.text %}{% autoescape off %}{{ event.text_i18n|linebreaks }}{% endautoescape %}{% endif %}
-          <br />
+          <br>
         {% endfor %}
       {% endif %}
       {% if not max_info and not max_event %}
-      <br />
+      <br>
       <div class="button">
         <a href="{% url 'home' %}" class="big" title="Back to home">&lsaquo;&lsaquo;&nbsp;{% trans "Back to home" %}</a>
       </div>

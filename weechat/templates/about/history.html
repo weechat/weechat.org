@@ -14,7 +14,7 @@
   <h2>{% trans "Why WeeChat?" %}</h2>
 
   {% blocktrans %}WeeChat stands for "Wee Enhanced Environment for Chat".{% endblocktrans %}
-  <br /><br />
+  <br><br>
   {% trans "In early 2003, I looked for an IRC client with following features:" %}
   <ul>
     <li>{% trans "free software" %}</li>
@@ -24,7 +24,7 @@
     <li>{% trans "extensible with scripts written in various languages" %}</li>
   </ul>
   {% trans "My search was unsuccessful!" %}
-  <br /><br />
+  <br><br>
   {% trans "And thus WeeChat was born, on June 2003." %}
   <div class="author">
   -- Sébastien Helleu (FlashCode)
@@ -54,9 +54,9 @@
   <div class="story">
   {% if releases %}
     {% for release in releases %}
-      <img src="{{ MEDIA_URL }}images/story/weechat-{{ release.0 }}.png" alt="WeeChat {{ release.0 }}" />
-      <br />{% trans "Version" %} <strong>{{ release.0 }}</strong>, {% trans "released on" %} {{ release.1|localdate }}
-      <br /><br /><br /><br />
+      <img src="{{ MEDIA_URL }}images/story/weechat-{{ release.0 }}.png" alt="WeeChat {{ release.0 }}">
+      <br>{% trans "Version" %} <strong>{{ release.0 }}</strong>, {% trans "released on" %} {{ release.1|localdate }}
+      <br><br><br><br>
     {% endfor %}
   {% endif %}
   </div>

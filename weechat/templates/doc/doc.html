@@ -3,7 +3,7 @@
 {% load i18n %}{% load localdate %}
 
 {% block title %}WeeChat :: {% trans "documentation" %}{% endblock %}
-{% block css %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/doc.css" media="screen" title="Normal" />{% endblock %}
+{% block css %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/doc.css" media="screen" title="Normal">{% endblock %}
 {% block menu %}doc{% endblock %}
 
 {% block content %}
@@ -25,7 +25,7 @@
     </div>
     <ul>
       {% for dir in doc_list %}
-      <li><a href="/files/doc/old/{{ dir }}" target="_blank">{% trans "Version" %} {{ dir }} <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt=">>" /></a></li>
+      <li><a href="/files/doc/old/{{ dir }}" target="_blank">{% trans "Version" %} {{ dir }} <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt=">>"></a></li>
       {% endfor %}
     </ul>
   </div>
@@ -38,7 +38,7 @@
       <tr>
         <th></th>
         {% for lang in languages %}
-        <th class="flag{%if lang.lang == bestlang %} bestlang{% if version == "devel" %}dev{% endif %}{% endif %}"><img src="{{ MEDIA_URL }}images/flag_{{ lang.lang }}.png" class="flagimg" alt="{{ lang.lang }}" /><br />{{ lang.lang_i18n }}</th>
+        <th class="flag{%if lang.lang == bestlang %} bestlang{% if version == "devel" %}dev{% endif %}{% endif %}"><img src="{{ MEDIA_URL }}images/flag_{{ lang.lang }}.png" class="flagimg" alt="{{ lang.lang }}"><br>{{ lang.lang_i18n }}</th>
         {% endfor %}
         <th></th>
       </tr>
@@ -48,7 +48,7 @@
         {% for file in doc.1 %}
           <td class="icons{% if file.2 == bestlang %} bestlang{% if version == "devel" %}dev{% endif %}{% endif %}">
           {% if file.0 %}
-            <a href="/files/doc/{{ file.0 }}" target="_blank"><img src="{{ MEDIA_URL }}images/doc{% if doc.0.devel %}_dev{% endif %}.png" alt="HTML" width="17" height="22" /></a>
+            <a href="/files/doc/{{ file.0 }}" target="_blank"><img src="{{ MEDIA_URL }}images/doc{% if doc.0.devel %}_dev{% endif %}.png" alt="HTML" width="17" height="22"></a>
           {% else %}
             -
           {% endif %}
@@ -78,7 +78,7 @@
   {% for item in i18n.langs %}
     <tr class="{% cycle 'row1' 'row2' %}">
       <td class="language">
-        <img src="{{ MEDIA_URL }}images/flag_{{ item.lang }}.png" class="flagimg" alt="{{ item.lang }}" />
+        <img src="{{ MEDIA_URL }}images/flag_{{ item.lang }}.png" class="flagimg" alt="{{ item.lang }}">
         {{ item.lang_i18n }}
       </td>
       <td class="po">
@@ -128,7 +128,7 @@
 
   <h3>{% trans "Missing language?" %}</h3>
   {% trans "Feel free to help us by translating WeeChat doc in your language!" %}
-  <br />
+  <br>
   {% trans "There is more information about WeeChat translations in the developer's guide." %}
 
 {% endif %}

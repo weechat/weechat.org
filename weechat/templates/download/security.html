@@ -18,10 +18,10 @@
 <div class="security">
 
   {% trans "This table contains a list of all known and fixed security vulnerabilities in WeeChat stable releases (the security vulnerabilities introduced during development of a version and fixed before stable release are not mentioned)." %}
-  <br /><br />
+  <br><br>
   {% trans "Note: you can be warned about security vulnerabilities by subscribing to this mailing list:" %}
   <a href="https://lists.nongnu.org/mailman/listinfo/weechat-security" target="_blank">
-    weechat-security <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt=">>" />
+    weechat-security <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt=">>">
   </a>
 
   <table class="large">
@@ -39,7 +39,7 @@
       <td class="small">
         {% if security.external or security.tracker %}
           {% autoescape off %}{{ security.external_links }}{% endautoescape %}
-          <br />{% autoescape off %}{{ security.url_tracker }}{% endautoescape %}
+          <br>{% autoescape off %}{{ security.url_tracker }}{% endautoescape %}
         {% else %}
           -
         {% endif %}
@@ -52,10 +52,10 @@
       <td class="description">
         {{ security.description_i18n }}
         <div class="workaround">
-          <img src="{{ MEDIA_URL }}images/arrow_right_green.png" width="10" height="10" alt="&gt;" />
+          <img src="{{ MEDIA_URL }}images/arrow_right_green.png" width="10" height="10" alt="&gt;">
           {% if security.workaround %}
             {% trans "Workaround" %}:
-            <br />
+            <br>
             {{ security.workaround_i18n }}
           {% else %}
             {% trans "There is no workaround." %}

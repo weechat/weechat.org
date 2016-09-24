@@ -8,11 +8,11 @@
 {% block extrahead %}
 <script>
 var deb_apt_cmds = [
-  "...<br />...",
+  "...<br>...",
 {% for repo in repositories %}
 {% if repo.visible %}
   "$ sudo bash -c \"echo '{{ repo.apt_url }}' >/etc/apt/sources.list.d/weechat.list\"" +
-  "<br />" +
+  "<br>" +
   "$ sudo bash -c \"echo '{{ repo.apt_url_src }}' >>/etc/apt/sources.list.d/weechat.list\"",
 {% endif %}
 {% endfor %}
@@ -94,7 +94,7 @@ var deb_apt_cmds = [
               {% for debpkg in debpkg_arch.list|dictsort:"basename" %}
                 <a href="{{ debpkg.repo.url }}/{{ debpkg.Filename }}">{{ debpkg.basename }}</a>
                 <span class="size">({{ debpkg.size|filesizeformat }})</span>
-                <br />
+                <br>
               {% endfor %}
             </td>
           </tr>
@@ -109,7 +109,7 @@ var deb_apt_cmds = [
 
 </div>
 
-<hr />
+<hr>
 
 <h3 id="instructions">{% trans "Instructions:" %}</h3>
 <div class="download">
@@ -117,7 +117,7 @@ var deb_apt_cmds = [
     <ul>
       <li>
         {% blocktrans %}You must use apt, apt-get or aptitude to install the packages (with sudo or as "root" user).{% endblocktrans %}
-        <br />{% trans "The following examples use sudo and apt-get." %}
+        <br>{% trans "The following examples use sudo and apt-get." %}
       </li>
       <li>
         {% trans "Install https transport for apt:" %}
@@ -144,7 +144,7 @@ var deb_apt_cmds = [
           {% endif %}
           {% endfor %}
         </select>
-        <kbd id="deb_apt_cmd">...<br />...</kbd>
+        <kbd id="deb_apt_cmd">...<br>...</kbd>
         {% trans "Note: the second command line is optional, it is used to download source packages." %}
       </li>
       <li>

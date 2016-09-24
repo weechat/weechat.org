@@ -114,7 +114,7 @@ class Plugin(models.Model):
         if self.popularity == 0:
             return '&nbsp;'
         return ('<img src="%simages/star.png" alt="*" title="%s" '
-                'width="10" height="10" />' %
+                'width="10" height="10">' %
                 (settings.MEDIA_URL,
                  gettext_lazy('Popular script')))
 

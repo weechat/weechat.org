@@ -67,7 +67,7 @@ def tracker_links(tracker):
     if not tracker:
         return ''
     items = [_replace_link(item) for item in tracker.split(',')]
-    return '<br />'.join(items)
+    return '<br>'.join(items)
 
 
 def commits_links(commits):
@@ -89,6 +89,6 @@ def commits_links(commits):
         images.append('<a href="https://github.com/weechat/weechat/%s/%s" '
                       'target="_blank">'
                       '<img src="%simages/%s" width="14" height="14" '
-                      'alt="*"%s /></a>'
+                      'alt="*"%s></a>'
                       % (objtype, commit, settings.MEDIA_URL, img, title))
     return ' '.join(images)

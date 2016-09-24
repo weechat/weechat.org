@@ -5,17 +5,17 @@
 <html lang="{{ LANGUAGE_CODE }}">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="author" content="Sébastien HELLEU FlashCode" />
-  <meta name="description" content="WeeChat, the extensible chat client" />
-  <meta name="keywords" content="weechat, free, fast, light, extensible, chat, client, irc, jabber, linux, bsd, gpl, console, terminal, curses" />
-  <meta name="robots" content="all" />
-  {% comment %}<meta name="viewport" content="width=device-width,initial-scale=1" />{% endcomment %}
+  <meta charset="utf-8">
+  <meta name="author" content="Sébastien HELLEU FlashCode">
+  <meta name="description" content="WeeChat, the extensible chat client">
+  <meta name="keywords" content="weechat, free, fast, light, extensible, chat, client, irc, jabber, linux, bsd, gpl, console, terminal, curses">
+  <meta name="robots" content="all">
+  {% comment %}<meta name="viewport" content="width=device-width,initial-scale=1">{% endcomment %}
   <title>{% block title %}{% trans "WeeChat, the extensible chat client" %}{% endblock %}{% block subtitle %}{% endblock %}</title>
-  <link rel="shortcut icon" type="image/png" href="{{ MEDIA_URL }}images/favicon.png" />
-  {% block css %}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/style.css" media="screen" title="Normal" />{% endblock %}
-  <link rel="alternate" type="application/rss+xml" href="{% url 'feeds_news' %}" title="WeeChat RSS feed" />
-  <link href="https://plus.google.com/+WeeChat" rel="publisher" />
+  <link rel="shortcut icon" type="image/png" href="{{ MEDIA_URL }}images/favicon.png">
+  {% block css %}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/style.css" media="screen" title="Normal">{% endblock %}
+  <link rel="alternate" type="application/rss+xml" href="{% url 'feeds_news' %}" title="WeeChat RSS feed">
+  <link href="https://plus.google.com/+WeeChat" rel="publisher">
   {% block extrahead %}{% endblock %}
 </head>
 
@@ -24,16 +24,16 @@
   <div id="header-and-main">
 
     <map id="weechatMap" name="weechatMap">
-      <area href="{% url 'home' %}" alt="Home" coords="0,0,160,70" shape="rect" />
+      <area href="{% url 'home' %}" alt="Home" coords="0,0,160,70" shape="rect">
     </map>
 
     <div id="header">
       <div class="content">
         <div class="logo">
-          <a href="{% url 'home' %}"><img src="{{ MEDIA_URL }}images/weechat_logo_small.png" alt="WeeChat" width="146" height="100" /></a>
+          <a href="{% url 'home' %}"><img src="{{ MEDIA_URL }}images/weechat_logo_small.png" alt="WeeChat" width="146" height="100"></a>
         </div>
         <div class="slogan">
-          <a href="{% url 'home' %}"><img src="{{MEDIA_URL}}images/weechat_text.png" width="201" height="55" alt="WeeChat" /></a>
+          <a href="{% url 'home' %}"><img src="{{MEDIA_URL}}images/weechat_text.png" width="201" height="55" alt="WeeChat"></a>
         </div>
         <div class="lang">
           <form name="lang" action="/i18n/setlang/" method="post">

@@ -22,7 +22,7 @@
   <div class="screenshots">
     {% for screenshot in screenshot_list %}
       <a href="{% url 'about_screenshot' app screenshot.filename %}">
-        <img src="{{ MEDIA_URL }}images/screenshots/{{ screenshot.app }}/small/{{ screenshot.filename }}" alt="{{ screenshot.filename }}" title="{{ screenshot.comment }}" />
+        <img src="{{ MEDIA_URL }}images/screenshots/{{ screenshot.app }}/small/{{ screenshot.filename }}" alt="{{ screenshot.filename }}" title="{{ screenshot.comment }}">
       </a>
     {% endfor %}
   </div>
@@ -31,9 +31,9 @@
     <div class="screenshot">
       <h3>{{ screenshot.comment }}</h3>
       <a href="{% url 'about_screenshots_app' app %}">
-        <img src="{{ MEDIA_URL }}images/screenshots/{{ screenshot.app }}/medium/{{ screenshot.filename }}" alt="{{ screenshot.filename }}" title="{{ screenshot.comment }}" />
+        <img src="{{ MEDIA_URL }}images/screenshots/{{ screenshot.app }}/medium/{{ screenshot.filename }}" alt="{{ screenshot.filename }}" title="{{ screenshot.comment }}">
       </a>
-      <br />{{ screenshot.filename }}
+      <br>{{ screenshot.filename }}
     </div>
   {% else %}
     <div class="errorbox">

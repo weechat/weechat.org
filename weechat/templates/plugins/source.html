@@ -2,7 +2,7 @@
 
 {% load i18n %}
 
-{% block css %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/pygments.css" media="screen" title="Normal" />{% endblock %}
+{% block css %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/pygments.css" media="screen" title="Normal">{% endblock %}
 {% block menu2_list %}selected{% endblock %}
 
 {% block content %}
@@ -14,7 +14,7 @@
 
   <div class="plugininfo">
     <div class="download">
-      <a href="{{ plugin.build_url }}" download><img src="{{ MEDIA_URL }}images/dl_src.png" alt="Download" /> {% trans "Download" %}</a>
+      <a href="{{ plugin.build_url }}" download><img src="{{ MEDIA_URL }}images/dl_src.png" alt="Download"> {% trans "Download" %}</a>
     </div>
     <strong>{{ plugin.desc_i18n }}</strong>
     <span class="requirements">
@@ -30,8 +30,8 @@
 {% else %}
   <div class="errorbox">
     {% trans "Script not found" %}
-    <br /><br />
-    <a href="{% url 'scripts' %}"><img src="{{ MEDIA_URL }}images/arrow_left_green.png" alt="&lt;&lt;" /> {% trans "Back to scripts" %}</a>
+    <br><br>
+    <a href="{% url 'scripts' %}"><img src="{{ MEDIA_URL }}images/arrow_left_green.png" alt="&lt;&lt;"> {% trans "Back to scripts" %}</a>
   </div>
 {% endif %}
 
