@@ -50,7 +50,8 @@ class Keydate(models.Model):
     text = models.TextField()
 
     def __unicode__(self):
-        return '%s - %s' % (self.date, self.text)
+        str_version = ('%s: ' % self.version) if self.version else ''
+        return '%s - %s%s' % (self.date, str_version, self.text)
 
     def text_i18n(self):
         """Return translated key date."""
