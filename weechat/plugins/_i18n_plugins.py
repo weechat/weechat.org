@@ -669,6 +669,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Simple remote control of multiplexer (screen or tmux), optionally set away status."),
     # Translators: description for script "shuffle.pl" (0.3.0+)
     gettext_lazy("Simple text shuffler."),
+    # Translators: description for script "slack.py" (1.3+)
+    gettext_lazy("Slack.com native client."),
     # Translators: description for script "rslap.pl" (0.3.0+)
     gettext_lazy("Slaps with random messages."),
     # Translators: description for script "snake.pl" (0.3.0+)

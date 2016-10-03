@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-24 22:20+0200\n"
+"POT-Creation-Date: 2016-10-03 09:51+0200\n"
 "PO-Revision-Date: 2016-09-24 22:20+0200\n"
 "Last-Translator: Alexandre Bolelli <semeion7@gmail.com>\n"
 "Language-Team: Portuguese <semeion7@gmail.com>\n"
@@ -203,7 +203,7 @@ msgid "German"
 msgstr "Alemão"
 
 #: doc/models.py:32 settings.py:60 templates/dev/support.html:26
-#: templates/menu.html:24 templates/menu.html:25
+#: templates/menu.html:24 templates/menu.html.py:25
 msgid "English"
 msgstr "Inglês"
 
@@ -2548,6 +2548,51 @@ msgstr ""
 "\">ChangeLog</a>."
 
 #: news/_i18n_info.py:102
+#, fuzzy
+msgid ""
+"Version 1.6 is available!\n"
+"\n"
+"Among the new features:\n"
+"\n"
+"- add optional argument \"lowest\", \"highest\" or level mask in command /"
+"input hotlist_clear\n"
+"- add option \"cycle\" in command /buffer\n"
+"- add \"extra\" argument to evaluate extra variables in function "
+"string_eval_expression()\n"
+"- add option relay.network.allow_empty_password\n"
+"- add support for one-time triggers\n"
+"- rename server options \"default_msg_{kick|part|quit}\" to \"msg_{kick|part|"
+"quit}\", evaluate them\n"
+"- allow escape of comma in command \"init\" (weechat relay protocol)\n"
+"- many bugs fixed.\n"
+"\n"
+"For complete list of new features and bugs fixed, please look at <a href="
+"\"http://dev.weechat.org/post/2016/10/02/Version-1.6\">development blog</a> "
+"or <a href=\"/files/changelog/ChangeLog-1.6.html\">ChangeLog</a>."
+msgstr ""
+"Versão 0.4.0 está disponível!\n"
+"\n"
+"Entre as novas características:\n"
+"- adição da opção \"diff\" para o comando /set, exibe valores padrão na "
+"saída de /set\n"
+"- adição de suporte à cores em opções de prefixo\n"
+"- adição do comando /eval, usa expressões em condições para barras\n"
+"- conecta-se por padrão com IPv6 em servidores com fallback para IPv4\n"
+"- adição de sugestões ortográficas\n"
+"- adição de suporte à tags em mensagens irc e capacidade de \"server-time\"\n"
+"- adição do comando IRC /quiet\n"
+"- adição de suporte à IPv6 no plugin de retransmissão\n"
+"- adição de backlog para protocolo irc no plugin de retransmissão\n"
+"- exibe endereço IP remoto para chat/arquivo DCC no plugin xfer\n"
+"- adição da versão git na compilação\n"
+"- muitos bugs corrigidos.\n"
+"\n"
+"Para uma lista completa de novas features e bugs corrigidos, olhe no <a href="
+"\"http://dev.weechat.org/post/2013/01/20/Version-0.4.0\">blog de "
+"desenvolvimento</a> ou <a href=\"/files/changelog/ChangeLog-0.4.0.html"
+"\">ChangeLog</a>."
+
+#: news/_i18n_info.py:103
 msgid ""
 "Version v0.1.2 is available!\n"
 "\n"
@@ -2579,11 +2624,11 @@ msgstr ""
 "Add-on, 2005/05/24: corrigido crash na inicialização e detecção Perl/Python, "
 "a versão agora é 0.1.2.1."
 
-#: news/_i18n_info.py:103
+#: news/_i18n_info.py:104
 msgid "WeeChat - Wee Enhanced Environment for Chat"
 msgstr "WeeChat - Wee Enhanced Environment for Chat"
 
-#: news/_i18n_info.py:104
+#: news/_i18n_info.py:105
 msgid ""
 "WeeChat has many new important features since some weeks:\n"
 "- multi-windows management (with horizontal and vertical window split)\n"
@@ -2608,12 +2653,12 @@ msgstr ""
 "Sinta-se livre para relatar qualquer problema ou sugestão para melhorar a "
 "navegação entre buffers/windows."
 
-#: news/_i18n_info.py:105
+#: news/_i18n_info.py:106
 #, fuzzy
 msgid "WeeChat in Cygwin"
 msgstr "WeeChat é:"
 
-#: news/_i18n_info.py:106
+#: news/_i18n_info.py:107
 msgid ""
 "WeeChat is now in Cygwin, and can be installed with setup.exe.\n"
 "Version 0.4.2 is available for 32 and 64-bit Cygwin.\n"
@@ -2622,7 +2667,7 @@ msgid ""
 "yet available in Cygwin."
 msgstr ""
 
-#: news/_i18n_info.py:107
+#: news/_i18n_info.py:108
 msgid ""
 "WeeChat project is started.\n"
 "\n"
@@ -2642,7 +2687,7 @@ msgstr ""
 "- rápida, leve e extensível com scripts\n"
 "- ..."
 
-#: news/_i18n_info.py:108
+#: news/_i18n_info.py:109
 msgid ""
 "WeeChat project now accepts donations via Paypal account, with secured "
 "payment."
@@ -2650,7 +2695,7 @@ msgstr ""
 "O projeto WeeChat agora aceita doações via conta Paypal, com pagamento "
 "seguro."
 
-#: news/_i18n_info.py:109
+#: news/_i18n_info.py:110
 msgid ""
 "WeeChat repositories (weechat, scripts, qweechat) have been moved to GitHub, "
 "in WeeChat organization: <a href=\"https://github.com/weechat\">https://"
@@ -2660,15 +2705,15 @@ msgid ""
 "post/2014/03/03/Git-repositories-moved-to-Github\">development blog</a>."
 msgstr ""
 
-#: news/_i18n_info.py:110
+#: news/_i18n_info.py:111
 msgid "WeeChat screenshot"
 msgstr "Screenshot WeeChat"
 
-#: news/_i18n_info.py:111
+#: news/_i18n_info.py:112
 msgid "WeeChat scripts page"
 msgstr "Página de scripts do WeeChat"
 
-#: news/_i18n_info.py:112
+#: news/_i18n_info.py:113
 msgid ""
 "WeeChat scripts page (today Perl scripts only) has been added.\n"
 "On this page you can submit your script (need to be approved by WeeChat "
@@ -2684,7 +2729,7 @@ msgstr ""
 "Nota: scripts Perl requerem a versão de WeeChat > 0.0.3, então hoje você "
 "deve baixar a versão de desenvolvimento."
 
-#: news/_i18n_info.py:113
+#: news/_i18n_info.py:114
 msgid ""
 "WeeChat story page is now available, as screenshots. You can see differences "
 "between all versions in one view!\n"
@@ -2694,15 +2739,15 @@ msgstr ""
 "as diferenças entre todas as versões em um só lugar!\n"
 "A versão de desenvolvimento é visível também, e atualizada com freqüência."
 
-#: news/_i18n_info.py:114
+#: news/_i18n_info.py:115
 msgid "WeeChat users map"
 msgstr "Mapa de usuários do WeeChat"
 
-#: news/_i18n_info.py:115
+#: news/_i18n_info.py:116
 msgid "WeeChat will merge with irssi"
 msgstr "WeeChat irá se fundir com o irssi"
 
-#: news/_i18n_info.py:116
+#: news/_i18n_info.py:117
 msgid ""
 "WeeChat, the fast, light and extensible IRC client, is released for the "
 "first time, version 0.0.1.\n"
@@ -4555,112 +4600,117 @@ msgstr ""
 msgid "Simple text shuffler."
 msgstr "Shuffler texto simples."
 
-#. Translators: description for script "rslap.pl" (0.3.0+)
+#. Translators: description for script "slack.py" (1.3+)
 #: plugins/_i18n_plugins.py:673
+msgid "Slack.com native client."
+msgstr ""
+
+#. Translators: description for script "rslap.pl" (0.3.0+)
+#: plugins/_i18n_plugins.py:675
 msgid "Slaps with random messages."
 msgstr "Bata (slaps) com mensagens aleatórias."
 
 #. Translators: description for script "snake.pl" (0.3.0+)
-#: plugins/_i18n_plugins.py:675
+#: plugins/_i18n_plugins.py:677
 msgid "Snake game."
 msgstr "Jogo snake."
 
 #. Translators: description for script "snarl_net_notify.pl" (0.3.0+)
-#: plugins/_i18n_plugins.py:677
+#: plugins/_i18n_plugins.py:679
 msgid "Snarl notifications for highlights."
 msgstr "Notificações Snarl (rosnar) para highlights."
 
 #. Translators: description for script "sort_servers.py" (0.3.9+)
-#: plugins/_i18n_plugins.py:679
+#: plugins/_i18n_plugins.py:681
 #, fuzzy
 msgid "Sort buffers by server and alphabetically."
 msgstr "Classificar buffers do irc em ordem alfabética."
 
 #. Translators: description for script "sort_arza.pl" (0.3.0+)
-#: plugins/_i18n_plugins.py:681
+#: plugins/_i18n_plugins.py:683
 msgid "Sort channels inside networks."
 msgstr ""
 
 #. Translators: description for script "sort_buffers.pl" (0.3.0+)
-#: plugins/_i18n_plugins.py:683
+#: plugins/_i18n_plugins.py:685
 msgid "Sort irc buffers alphabetically."
 msgstr "Classificar buffers do irc em ordem alfabética."
 
 #. Translators: description for script "listsort.pl" (0.3.4+)
-#: plugins/_i18n_plugins.py:685
+#: plugins/_i18n_plugins.py:687
 msgid "Sort the output of /list command by user count."
 msgstr "Ordenar a saída do comando /list pelo numero de usuários."
 
 #. Translators: description for script "autospurdo.js" (0.3.0+)
-#: plugins/_i18n_plugins.py:687
+#: plugins/_i18n_plugins.py:689
 msgid "Speak in spurdo."
 msgstr ""
 
 #. Translators: description for script "beep.pl" (0.0.1-0.2.6)
-#: plugins/_i18n_plugins.py:689
+#: plugins/_i18n_plugins.py:691
 msgid "Speaker beep on highlight/private message."
 msgstr "Beep no alto-falante ao receber mensagens privadas/highlights."
 
 #. Translators: description for script "jnotify.pl" (0.3.1+)
-#: plugins/_i18n_plugins.py:691
+#: plugins/_i18n_plugins.py:693
 msgid "Start command/program if a user joins a channel you are in."
 msgstr ""
 "Inicia comando/programa se um usuário junta-se à um canal onde você está."
 
 #. Translators: description for script "stick_buffer.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:693
+#: plugins/_i18n_plugins.py:695
 msgid "Stick buffer to a window."
 msgstr "Prende um buffer à uma janela."
 
 #. Translators: description for script "substitution.rb" (0.3.7+)
-#: plugins/_i18n_plugins.py:695
+#: plugins/_i18n_plugins.py:697
 msgid "Substitute strings in messages before they are sent."
 msgstr ""
 
 #. Translators: description for script "buffer_swap.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:697
+#: plugins/_i18n_plugins.py:699
 msgid "Swap two buffers."
 msgstr "Permutar dois buffers."
 
 #. Translators: description for script "sysinfo.pl" (0.3.0+)
-#: plugins/_i18n_plugins.py:699
+#: plugins/_i18n_plugins.py:701
 msgid "System info command."
 msgstr "Comando de informações do sistema."
 
 #. Translators: description for script "tailer.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:701
+#: plugins/_i18n_plugins.py:703
 msgid "Tail any number of files and run any command with line appended."
 msgstr ""
 "Ligue qualquer número de arquivos e execute qualquer comando com a linha "
 "anexada."
 
 #. Translators: description for script "weetris.pl" (0.3.0+)
-#: plugins/_i18n_plugins.py:703
+#: plugins/_i18n_plugins.py:705
 msgid "Tetris-like game."
 msgstr "Jogo tipo Tetris."
 
 #. Translators: description for script "theme.py" (0.0.1-0.2.6)
-#: plugins/_i18n_plugins.py:705
+#: plugins/_i18n_plugins.py:707
 msgid "Theme manager for WeeChat."
 msgstr "Gerenciador de temas para WeeChat."
 
 #. Translators: description for script "thinklight_blink.pl" (0.3.0+)
-#: plugins/_i18n_plugins.py:707
+#: plugins/_i18n_plugins.py:709
 msgid "Thinklight blink on highlight/private message."
 msgstr "Pisca o led (ThinkLight) ao receber mensagem privada ou highlight."
 
 #. Translators: description for script "cron.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:709
+#: plugins/_i18n_plugins.py:711
 msgid "Time-based scheduler, like cron and at."
 msgstr "Programador Time-based, semelhante ao cron e o at."
 
 #. Translators: description for script "toggle_highlight.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:711
+#: plugins/_i18n_plugins.py:713
 msgid "Toggle notifications of normal messages for current buffer."
 msgstr "Alterna notificações de mensagens normais para o buffer atual."
 
 #. Translators: description for script "uppercase.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:713
+#: plugins/_i18n_plugins.py:715
 msgid ""
 "Transform all your input to uppercase (useful for INTERNATIONAL CAPSLOCK "
 "DAY)."
@@ -4669,93 +4719,93 @@ msgstr ""
 "INTERNACIONAL DO CAPSLOCK)."
 
 #. Translators: description for script "translate.py" (0.3.7+)
-#: plugins/_i18n_plugins.py:715
+#: plugins/_i18n_plugins.py:717
 msgid "Translate string using Google translate API."
 msgstr "Converte uma string usando a Google Translate API."
 
 #. Translators: description for script "translate.pl" (0.0.1-0.2.6)
-#: plugins/_i18n_plugins.py:717
+#: plugins/_i18n_plugins.py:719
 msgid "Translate words from/to other languages."
 msgstr "Traduzir palavras de/para outras línguas."
 
 #. Translators: description for script "tray.rb" (0.0.1-0.2.6)
-#: plugins/_i18n_plugins.py:719
+#: plugins/_i18n_plugins.py:721
 msgid "Tray and notification."
 msgstr "Bandeja e notificação."
 
 #. Translators: description for script "ubus.pl" (0.3.0+)
-#: plugins/_i18n_plugins.py:721
+#: plugins/_i18n_plugins.py:723
 msgid "Ubus notification."
 msgstr "Notificação Ubus."
 
 #. Translators: description for script "undernet_totp.py" (0.4.2+)
-#: plugins/_i18n_plugins.py:723
+#: plugins/_i18n_plugins.py:725
 msgid "UnderNET's X OTP (OATH-TOTP) authentication."
 msgstr ""
 
 #. Translators: description for script "maildir.pl" (0.3.0+)
-#: plugins/_i18n_plugins.py:725
+#: plugins/_i18n_plugins.py:727
 msgid "Unread e-mail notification and count from a local Maildir directory."
 msgstr ""
 "Notificação e contagem de emails não lidos a partir de um diretório Maildir "
 "local."
 
 #. Translators: description for script "tmux_env.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:727
+#: plugins/_i18n_plugins.py:729
 #, fuzzy
 msgid "Update WeeChat environment from tmux."
 msgstr "WeeChat - Wee Enhanced Environment for Chat"
 
 #. Translators: description for script "mac-update-status.pl" (0.0.1-0.2.6)
-#: plugins/_i18n_plugins.py:729
+#: plugins/_i18n_plugins.py:731
 msgid "Update status messages in various Mac IM programs."
 msgstr "Atualizar as mensagens de status em diversos programas de Mac IM."
 
 #. Translators: description for script "colorize_nicks.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:731
+#: plugins/_i18n_plugins.py:733
 msgid "Use the weechat nick colors in the chat area and command line."
 msgstr ""
 "Use as cores dos apelidos do weechat na área de bate-papo e linha de comando."
 
 #. Translators: description for script "vimode.py" (1.0+)
-#: plugins/_i18n_plugins.py:733
+#: plugins/_i18n_plugins.py:735
 msgid "Vi-like key bindings/commands with normal and insert mode."
 msgstr ""
 "Comandos e atalhos de teclado parecidos com o do editor Vi, com modos normal "
 "e de inserção."
 
 #. Translators: description for script "pastebuf.lua" (0.4.3+)
-#: plugins/_i18n_plugins.py:735
+#: plugins/_i18n_plugins.py:737
 msgid "View content of pastebin site in a buffer."
 msgstr ""
 
 #. Translators: description for script "oldswarner.lua" (0.3.7+)
-#: plugins/_i18n_plugins.py:737
+#: plugins/_i18n_plugins.py:739
 msgid "Warn user if about to paste URL already existing in buffer."
 msgstr ""
 
 #. Translators: description for script "weatherbot.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:739
+#: plugins/_i18n_plugins.py:741
 msgid "Weather bot using the WeatherUnderground API."
 msgstr ""
 
 #. Translators: description for script "weetweet.py" (0.4.0+)
-#: plugins/_i18n_plugins.py:741
+#: plugins/_i18n_plugins.py:743
 msgid "WeeChat twitter client."
 msgstr "Cliente de twitter para WeeChat."
 
 #. Translators: description for script "wmiibar.pl" (0.3.3+)
-#: plugins/_i18n_plugins.py:743
+#: plugins/_i18n_plugins.py:745
 msgid "Wmii statusbar notification for highlights."
 msgstr "Notificação Wmii na barra de status para highlights."
 
 #. Translators: description for script "ichatts.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:745
+#: plugins/_i18n_plugins.py:747
 msgid "iChat-style timestamps."
 msgstr "Timestamps no estilo do iChat."
 
 #. Translators: description for script "itunes.rb" (0.3.0+)
-#: plugins/_i18n_plugins.py:747
+#: plugins/_i18n_plugins.py:749
 msgid "iTunes control and now playing script."
 msgstr "Script de controle e reproduzindo-agora para iTunes."
 
@@ -4781,13 +4831,13 @@ msgstr ""
 "script em conformidade)."
 
 #: plugins/models.py:252 templates/plugins/list.html:63
-#: templates/plugins/list.html:65 templates/plugins/pending.html:33
+#: templates/plugins/list.html.py:65 templates/plugins/pending.html:33
 msgctxt "programming language"
 msgid "Language"
 msgstr "Linguagem"
 
 #: plugins/models.py:256 templates/about/donate.html:58
-#: templates/plugins/list.html:57 templates/plugins/list.html:59
+#: templates/plugins/list.html:57 templates/plugins/list.html.py:59
 #: templates/plugins/pending.html:29
 msgid "Name"
 msgstr "Nome"
@@ -4797,7 +4847,7 @@ msgid "version of script (only digits or dots)"
 msgstr "versão do script (somente numeros ou pontos)"
 
 #: plugins/models.py:267 templates/plugins/list.html:72
-#: templates/plugins/list.html:74 templates/plugins/pending.html:34
+#: templates/plugins/list.html.py:74 templates/plugins/pending.html:34
 msgid "License"
 msgstr "Licença"
 
@@ -5113,7 +5163,7 @@ msgstr "API para linguagens de script"
 msgid "IRC proxy and remote interface"
 msgstr "Interface de proxy e retransmissor remotos"
 
-#: templates/about/features.html:54 templates/about/features.html:81
+#: templates/about/features.html:54 templates/about/features.html.py:81
 msgid "Scripts manager"
 msgstr "Gerenciador de scripts"
 
@@ -5171,7 +5221,7 @@ msgstr "Pipe FIFO"
 msgid "Spell checking"
 msgstr "Verificação ortográfica"
 
-#: templates/about/features.html:82 templates/about/features.html:121
+#: templates/about/features.html:82 templates/about/features.html.py:121
 #: templates/download/packages.html:117
 msgid "Remote interfaces"
 msgstr "Interface remota"
@@ -5426,7 +5476,8 @@ msgstr "Válido"
 msgid "dev"
 msgstr "dev"
 
-#: templates/dev/dev.html:13 templates/home/home.html:58 templates/menu.html:61
+#: templates/dev/dev.html:13 templates/home/home.html:58
+#: templates/menu.html:61
 msgid "Roadmap"
 msgstr "Roteiro"
 
@@ -5616,13 +5667,13 @@ msgstr ""
 msgid "<strong>weechat-security</strong> (security advisories about WeeChat):"
 msgstr ""
 
-#: templates/dev/support.html:60 templates/dev/support.html:67
+#: templates/dev/support.html:60 templates/dev/support.html.py:67
 #: templates/dev/support.html:74
 #, fuzzy
 msgid "subscribe:"
 msgstr "Inscreva-se:"
 
-#: templates/dev/support.html:61 templates/dev/support.html:68
+#: templates/dev/support.html:61 templates/dev/support.html.py:68
 #: templates/dev/support.html:75
 #, fuzzy
 msgid "send mail to:"
@@ -5649,7 +5700,7 @@ msgid "Devel"
 msgstr "Desenvolvimento"
 
 #: templates/doc/doc.html:15 templates/download/download.html:15
-#: templates/menu.html:23 templates/menu.html:33
+#: templates/menu.html:23 templates/menu.html.py:33
 msgid "Old versions"
 msgstr "Versões antigas"
 
@@ -5752,7 +5803,7 @@ msgid "There are no more package builds in this repository."
 msgstr ""
 
 #. Translators: purpose is to "translate" only quotes here
-#: templates/download/debian.html:67 templates/download/debian.html:141
+#: templates/download/debian.html:67 templates/download/debian.html.py:141
 #, python-format
 msgid "“%(codename)s”"
 msgstr ""
@@ -6202,7 +6253,7 @@ msgstr ""
 "<strong>doação</strong>: qualquer contribuição é apreciada e importante para "
 "motivação"
 
-#: templates/home/home.html:80 templates/home/home.html:100
+#: templates/home/home.html:80 templates/home/home.html.py:100
 msgid "More"
 msgstr "Mais"
 
@@ -6247,11 +6298,11 @@ msgstr "Página Inicial"
 msgid "About"
 msgstr "Sobre"
 
-#: templates/menu.html:21 templates/menu.html:31
+#: templates/menu.html:21 templates/menu.html.py:31
 msgid "Stable version"
 msgstr "Versão estável"
 
-#: templates/menu.html:22 templates/menu.html:32
+#: templates/menu.html:22 templates/menu.html.py:32
 #, fuzzy
 msgid "Dev version"
 msgstr "Nova versão"
@@ -6488,31 +6539,31 @@ msgstr "scripts"
 msgid "Search by tag:"
 msgstr "Busca por tag:"
 
-#: templates/plugins/list.html:46 templates/plugins/list.html:120
+#: templates/plugins/list.html:46 templates/plugins/list.html.py:120
 msgid "Tag:"
 msgstr "Tag:"
 
-#: templates/plugins/list.html:79 templates/plugins/list.html:81
+#: templates/plugins/list.html:79 templates/plugins/list.html.py:81
 #: templates/plugins/pending.html:35
 msgid "Min"
 msgstr "Min"
 
-#: templates/plugins/list.html:86 templates/plugins/list.html:88
+#: templates/plugins/list.html:86 templates/plugins/list.html.py:88
 #: templates/plugins/pending.html:36
 msgid "Max"
 msgstr "Max"
 
-#: templates/plugins/list.html:93 templates/plugins/list.html:95
+#: templates/plugins/list.html:93 templates/plugins/list.html.py:95
 #: templates/plugins/pending.html:37 templates/plugins/source.html:24
 msgid "Author"
 msgstr "Autor"
 
-#: templates/plugins/list.html:100 templates/plugins/list.html:102
+#: templates/plugins/list.html:100 templates/plugins/list.html.py:102
 #: templates/themes/list.html:28
 msgid "Added"
 msgstr "Adicionado"
 
-#: templates/plugins/list.html:107 templates/plugins/list.html:109
+#: templates/plugins/list.html:107 templates/plugins/list.html.py:109
 msgid "Updated"
 msgstr "Atualizado"
 
@@ -6634,7 +6685,7 @@ msgid "You'll be informed if there is a problem with your theme."
 msgstr "Você será informado se existir um problema com seu tema."
 
 #: templates/themes/add_ok.html:19 templates/themes/list.html:41
-#: templates/themes/source.html:15 templates/themes/source.html:22
+#: templates/themes/source.html:15 templates/themes/source.html.py:22
 #: templates/themes/update_ok.html:17
 msgid "Back to themes"
 msgstr "Voltar para temas"
