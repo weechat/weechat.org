@@ -22,6 +22,7 @@
 
 import re
 
+from django.http import HttpResponse
 from django.shortcuts import render
 
 from weechat.download.models import Release, Package, Security
@@ -88,6 +89,21 @@ def packages(request, version='stable'):
             'release_progress': get_release_progress(),
         },
     )
+
+
+def package_checksums(request, version, checksum_type):
+    """Page with checksums of packages in a version."""
+    package_list = Package.objects.filter(version=version) \
+        .order_by('type__priority')
+    checksums = []
+    for package in package_list:
+        checksum = package.checksum()
+        if checksum:
+            checksums.append('%s %s' % (checksum, package.filename))
+    response = HttpResponse('\n'.join(checksums), content_type='text/plain')
+    response['Content-disposition'] = ('inline; filename=weechat-%s-%s.txt' %
+                                       (version, checksum_type))
+    return response
 
 
 def release(request):

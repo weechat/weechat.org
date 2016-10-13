@@ -70,7 +70,7 @@
             {% if package.exists %}
               <a href="/files{{ package.type.htmldir }}/{{ package.filename }}">{{ package.filename }}</a>
               <span class="dlinfopackage">
-                ({{ package.filesize|filesizeformat }}{% if package.display_time %}, {{ package.filedate|localdate }} {{ package.filedate|date:"H:i" }}{% endif %}{% if package.sha512sum %}, sha512: {{ package.sha512sum }}{% else %}{% if package.sha1sum %}, sha1: {{ package.sha1sum }}{% endif %}{% endif %}{% if package.has_gpg_sig %}, <a href="/files{{ package.type.htmldir }}/{{ package.filename }}.asc" target="_blank">gpg sig</a>{% endif %})
+                ({{ package.filesize|filesizeformat }}{% if package.display_time %}, {{ package.filedate|localdate }} {{ package.filedate|date:"H:i" }}{% endif %}{% if package.has_checksum %}, <a href="{% url 'package_checksums' package.version.version package.checksum_type %}" target="_blank" title="{% trans "Checksum" %} ({{ package.checksum_type }}): {{ package.checksum }}">{{ package.checksum_type }}</</a>{% endif %}{% if package.has_gpg_sig %}, <a href="/files{{ package.type.htmldir }}/{{ package.filename }}.asc" target="_blank">gpg sig</a>{% endif %})
               </span>
             {% else %}
               <span class="notfound">{{ package.filename }}</span>

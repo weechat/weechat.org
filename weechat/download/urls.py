@@ -27,6 +27,7 @@ from django.conf.urls import url
 from weechat.debian.views import repos as view_repos
 from weechat.download.views import (
     packages as view_packages,
+    package_checksums as view_package_checksums,
     release as view_release,
     security as view_security,
 )
@@ -37,6 +38,9 @@ urlpatterns = [
     url(r'^debian/(?P<files>[a-zA-Z0-9.]*)/$', view_repos),
     url(r'^release/$', view_release, name='download_release'),
     url(r'^security/$', view_security, name='download_security'),
+    url(r'^checksums/weechat-(?P<version>[a-zA-Z0-9.]*)-'
+        r'(?P<checksum_type>[a-zA-Z0-9]*).txt/$',
+        view_package_checksums, name='package_checksums'),
     url(r'^(?P<version>[a-zA-Z0-9.]*)/$', view_packages,
         name='download_version'),
 ]

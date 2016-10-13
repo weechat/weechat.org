@@ -111,6 +111,26 @@ class Package(models.Model):
         """Return the path for the GPG signature."""
         return self.fullname() + '.asc'
 
+    def has_checksum(self):
+        """Checks if the package has a checksum."""
+        return any([self.sha512sum, self.sha1sum])
+
+    def checksum_type(self):
+        """Return the type of package checksum."""
+        if self.sha512sum:
+            return 'sha512'
+        if self.sha1sum:
+            return 'sha1'
+        return ''
+
+    def checksum(self):
+        """Return the package checksum."""
+        if self.sha512sum:
+            return self.sha512sum
+        if self.sha1sum:
+            return self.sha1sum
+        return ''
+
     def has_gpg_sig(self):
         """Checks if the package has a GPG signature."""
         return path.isfile(self.fullname_gpg_sig())
