@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-10-13 08:51+0200\n"
-"PO-Revision-Date: 2016-10-03 09:00+0900\n"
+"PO-Revision-Date: 2016-11-06 09:00+0900\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
 "translation/ja_JP>\n"
@@ -199,7 +199,7 @@ msgstr "次期安定版のリリース予定日"
 
 #: dev/views.py:75
 msgid "all infos (one info by line, format: \"info:value\")"
-msgstr "全ての情報 (1 行に 1 情報、フォーマット: \"info:value\")"
+msgstr "全ての情報 (1 行に 1 情報、書式: \"info:value\")"
 
 #: doc/models.py:30
 msgid "Czech"
@@ -260,7 +260,7 @@ msgstr "FAQ"
 
 #: doc/models.py:75
 msgid "User's guide"
-msgstr "ユーザーガイド"
+msgstr "ユーザーズガイド"
 
 #: doc/models.py:76
 msgid "Plugin API reference"
@@ -306,8 +306,8 @@ msgstr "IRC メッセージに特定の文字が含まれる際のクラッシ�
 msgid ""
 "Do not use command /notify with nicks containing formatting chars like \"%\"."
 msgstr ""
-"/notify コマンドは \"%\" などのフォーマット文字を含むニックネームと一緒に使わ"
-"ないでください。"
+"/notify コマンドは \"%\" などの書式文字を含むニックネームと一緒に使わないでく"
+"ださい。"
 
 #: download/_i18n_security.py:11
 msgid "Do not use irc protocol in relay plugin."
@@ -334,11 +334,11 @@ msgid ""
 "formatting chars like \"%\" when sending unknown commands to server."
 msgstr ""
 "オプション \"irc.network.send_unknown_commands\" をオフにするか、不明なコマン"
-"ドをサーバに送る際には \"%\" などのフォーマット文字を使わないでください。"
+"ドをサーバに送る際には \"%\" などの書式文字を使わないでください。"
 
 #: download/_i18n_security.py:15
 msgid "Uncontrolled format string in API function infobar_printf."
-msgstr "infobar_printf API 関数のフォーマット文字列攻撃。"
+msgstr "infobar_printf API 関数の書式文字列攻撃。"
 
 #: download/_i18n_security.py:16
 msgid ""
@@ -346,9 +346,9 @@ msgid ""
 "If the output or redirected command contains formatting chars like \"%\", "
 "this can lead to a crash of WeeChat."
 msgstr ""
-"リレープラグインが IRC コマンドをリダイレクトする際のフォーマット文字列攻撃。"
-"出力またはリダイレクトされたコマンドに \"%\" などの文字列が含まれる場合、"
-"WeeChat がクラッシュします。"
+"リレープラグインが IRC コマンドをリダイレクトする際の書式文字列攻撃。出力また"
+"はリダイレクトされたコマンドに \"%\" などの文字列が含まれる場合、WeeChat がク"
+"ラッシュします。"
 
 #: download/_i18n_security.py:17
 msgid ""
@@ -356,15 +356,15 @@ msgid ""
 "monitored with command /notify."
 msgstr ""
 "/notify コマンドで監視しているニックネームに対して IRC が \"ison\" コマンドを"
-"送信する際のフォーマット文字列攻撃。"
+"送信する際の書式文字列攻撃。"
 
 #: download/_i18n_security.py:18
 msgid ""
 "Uncontrolled format string when sending unknown IRC command to server (if "
 "option \"irc.network.send_unknown_commands\" is on)."
 msgstr ""
-"未知の IRC コマンドをサーバに送信する際のフォーマット文字列攻撃 (\"irc."
-"network.send_unknown_commands\" オプションが ON の場合)。"
+"未知の IRC コマンドをサーバに送信する際の書式文字列攻撃 (\"irc.network."
+"send_unknown_commands\" オプションが ON の場合)。"
 
 #: download/_i18n_security.py:19
 msgid ""
@@ -678,8 +678,8 @@ msgid ""
 "Note: this documentation is not finished and we're still looking for "
 "translators, feel free to contact us ;)"
 msgstr ""
-"WeeChat ユーザガイドの最初のバージョンをリリースします。PDF、html、text、"
-"texinfo (元文書) などの多くのフォーマットに対応しています。\n"
+"WeeChat ユーザーズガイドの最初のバージョンをリリースします。PDF、html、text、"
+"texinfo (元文書) などの多くの文書フォーマットに対応しています。\n"
 "\n"
 "注意: この文書はまだ完成していません。開発チームは翻訳者を募集しており、遠慮"
 "なく連絡をとってください ;)"
@@ -1835,10 +1835,10 @@ msgstr ""
 "- 自由コンテンツバッファの水平スクロール\n"
 "- 送信する IRC メッセージを分割\n"
 "- バーにおける \"多くの\" 文字用オプション\n"
-"- 基本色で太字を使用することを止めます (ターミナルが少なくとも 16 色表示に対"
-"応している場合)\n"
-"- ターミナルがウィンドウに対して非常に小さくなった場合に現在のウィンドウを自"
-"動的にズーム\n"
+"- 基本色で太字を使用することを止めます (端末が少なくとも 16 色表示に対応して"
+"いる場合)\n"
+"- 端末がウィンドウに対して非常に小さくなった場合に現在のウィンドウを自動的に"
+"ズーム\n"
 "- 新コマンド /repeat\n"
 "- バッファに対するローカル変数 \"highlight_regex\"\n"
 "\n"
@@ -1935,7 +1935,7 @@ msgstr ""
 "バージョン 0.3.8 をリリースしました!\n"
 "\n"
 "新しい機能:\n"
-"- ターミナルの \"括弧付きペーストモード\" を追加\n"
+"- 端末の \"括弧付きペーストモード\" を追加\n"
 "- IRC の \"外部\" SASL メカニズムを追加\n"
 "- IRC チャンネルモードの構文解析を改良 (余分な \"MODE\" コマンドをサーバに送"
 "信するのを止めた)\n"
@@ -2000,7 +2000,7 @@ msgstr ""
 "- ソケットを使う irc とリレープラグインにおけるフリーズを修正\n"
 "- FreeBSD における長い行の色を修正 (スクリーンの 1 行を超える行の表示)\n"
 "- hdata の一部の変数に対するアップデートを許可\n"
-"- 日本語のユーザガイド、スクリプト作成ガイド、テスターガイドを追加\n"
+"- 日本語のユーザーズガイド、スクリプト作成ガイド、テスターガイドを追加\n"
 "- 多くのバグを修正\n"
 "\n"
 "新機能と修正されたバグの完全なリストは<a href=\"http://dev.weechat.org/"
@@ -2184,8 +2184,8 @@ msgstr ""
 "secure、新しいファイル sec.conf\n"
 "- テキスト強調を含むバッファ、プレフィックスやメッセージの正規表現検索\n"
 "- コマンド /window に \"scroll_beyond_end\" オプションを追加\n"
-"- バーアイテムに任意のバッファコンテキストを追加 (例えばルートバーに bitlbee "
-"のニックネームリストを表示)\n"
+"- バー要素に任意のバッファコンテキストを追加 (例えばルートバーに bitlbee の"
+"ニックネームリストを表示)\n"
 "- 新しいオプション weechat.look.hotlist_{prefix|suffix}\n"
 "- ユーザがキー割り当てエラーにならないようにする新しいオプション weechat."
 "look.key_bind_safe\n"
@@ -2300,7 +2300,7 @@ msgstr ""
 "- 表示された IRC メッセージに含まれるホスト名に対するタグ\n"
 "- \"away-notify\" IRC 機能のサポート\n"
 "- IRC コマンド: /allpv、/remove、/unquiet\n"
-"- バーアイテム: buffer_short_name、irc_nick_modes\n"
+"- バー要素: buffer_short_name、irc_nick_modes\n"
 "- 単体テスト\n"
 "- 多くのバグを修正。\n"
 "\n"
@@ -2360,7 +2360,7 @@ msgstr ""
 "- 入力されたコマンドの修正候補が明らかな場合にその不完全なコマンドを受け付け"
 "る\n"
 "- 補完速度を改善\n"
-"- マウス状態に関するバーアイテムとシグナルを追加\n"
+"- マウス状態に関するバー要素とシグナルを追加\n"
 "- ルートバーでバー状態を使用\n"
 "- /server コマンドに \"reorder\" オプションを追加\n"
 "- サーバから参加メッセージを受信する前に irc チャンネルバッファを開く\n"
@@ -2371,8 +2371,7 @@ msgstr ""
 "- /relay コマンドに \"stop\" と \"start\" オプションを追加\n"
 "- script プラグインがダウンロードを行う際に HTTPS をデフォルトで使用\n"
 "- /trigger コマンドに \"restore\" オプションを追加\n"
-"- トリガで正規表現グループの評価と置換を同時に行う (新規、非互換フォーマッ"
-"ト)\n"
+"- トリガで正規表現グループの評価と置換を同時に行う (新規、非互換書式)\n"
 "- 多くのバグを修正。\n"
 "\n"
 "新機能と修正されたバグの完全なリストは<a href=\"http://dev.weechat.org/"
@@ -2541,7 +2540,7 @@ msgstr ""
 "\n"
 "- API 関数 \"hook_process\" に関数呼び出し機能を追加\n"
 "- ニックネーム色付けオプションを irc プラグインからコアに移動\n"
-"- irc バーアイテム \"away\" をコアに移動\n"
+"- irc バー要素 \"away\" をコアに移動\n"
 "- スクリプト API で使われるコールバックにポインタを追加\n"
 "- オプション irc.network.sasl_fail_unavailable を追加\n"
 "- ポルトガル語翻訳を追加\n"
@@ -2863,12 +2862,12 @@ msgstr "友達のオンライン/離席/オフライン状態を表示する簡�
 #. Translators: description for script "gweather.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:27
 msgid "Add a bar item with Google weather."
-msgstr "Google weather を使うバーアイテムを追加。"
+msgstr "Google weather を使うバー要素を追加。"
 
 #. Translators: description for script "beat.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:29
 msgid "Add a bar item with the Beat-Internet-Time."
-msgstr "スウォッチインターネットタイムを表示するバーアイテムを追加。"
+msgstr "スウォッチインターネットタイムを表示するバー要素を追加。"
 
 #. Translators: description for script "spacer.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:31
@@ -2883,17 +2882,17 @@ msgstr "Ubuntu のメッセージメニューにアラートを追加。"
 #. Translators: description for script "alternatetz.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:35
 msgid "Add an alternate timezone item."
-msgstr "代替タイムゾーンアイテムを追加。"
+msgstr "代替タイムゾーン要素を追加。"
 
 #. Translators: description for script "hlpvitem.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:37
 msgid "Add bar item with highlight/private messages."
-msgstr "ハイライトおよびプライベートメッセージをバーアイテムに追加。"
+msgstr "ハイライトおよびプライベートメッセージをバー要素に追加。"
 
 #. Translators: description for script "text_item.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:39
 msgid "Add bar items with plain text."
-msgstr "プレーンテキストのバーアイテムを追加。"
+msgstr "プレーンテキストのバー要素を追加。"
 
 #. Translators: description for script "bitlbee_completion.py" (0.4.3+)
 #: plugins/_i18n_plugins.py:41
@@ -2925,7 +2924,7 @@ msgstr "チャンネルモニタバッファを追加。"
 #: plugins/_i18n_plugins.py:51
 msgid ""
 "Adds a command and bar item for displaying the current time in kiloseconds."
-msgstr "現在の時間をキロ秒で表示するコマンドとバーアイテムを追加。"
+msgstr "現在の時間をキロ秒で表示するコマンドとバー要素を追加。"
 
 #. Translators: description for script "highmon.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:53
@@ -3094,40 +3093,39 @@ msgstr "自動応答スクリプト。"
 #. Translators: description for script "unwanted_msg.py" (0.3.6+)
 #: plugins/_i18n_plugins.py:113
 msgid "Avoid sending misformatted commands as messages."
-msgstr "フォーマットが不正なコマンドをメッセージとして送信することを避ける。"
+msgstr "不正な書式のコマンドをメッセージとして送信することを避ける。"
 
 #. Translators: description for script "typing_counter.py" (0.3.2+)
 #: plugins/_i18n_plugins.py:115
 msgid "Bar item showing typing count and cursor position."
-msgstr "タイプ回数とカーソル位置を表示するバーアイテム。"
+msgstr "タイプ回数とカーソル位置を表示するバー要素。"
 
 #. Translators: description for script "http_item.lua" (0.3.7+)
 #: plugins/_i18n_plugins.py:117
 msgid "Bar item with HTTP source."
-msgstr "HTTP ソースを表示するバーアイテム。"
+msgstr "HTTP ソースを表示するバー要素。"
 
 #. Translators: description for script "chatters.pl" (0.3.6+)
 #: plugins/_i18n_plugins.py:119
 msgid "Bar item with chatters (non idle people)."
-msgstr "チャットしている人 (アイドル状態でない人) をバーアイテムに表示。"
+msgstr "チャットしている人 (アイドル状態でない人) をバー要素に表示。"
 
 #. Translators: description for script "bufsize.py" (0.3.6+)
 #: plugins/_i18n_plugins.py:121
 msgid ""
 "Bar item with scroll indicator and info about number of lines in buffer."
-msgstr "スクロールインジケータとバッファの行数に関する情報を持つバーアイテム。"
+msgstr "スクロールインジケータとバッファの行数に関する情報を持つバー要素。"
 
 #. Translators: description for script "imap_status.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:123
 msgid "Bar item with unread imap messages count."
-msgstr "未読状態の imap メッセージの数を表示するバーアイテム。"
+msgstr "未読状態の imap メッセージの数を表示するバー要素。"
 
 #. Translators: description for script "stats_bar.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:125
 msgid "Bar items with stats about network interface, load, and free memory."
 msgstr ""
-"ネットワークインターフェイス、負荷、空きメモリの統計情報に関するバーアイテ"
-"ム。"
+"ネットワークインターフェイス、負荷、空きメモリの統計情報に関するバー要素。"
 
 #. Translators: description for script "menu.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:127
@@ -3375,7 +3373,7 @@ msgstr "外部 IP アドレスを表示。"
 #. Translators: description for script "infolist.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:221
 msgid "Display infolist in a buffer, useful for script developers."
-msgstr "バッファの情報リストを表示、スクリプト開発者に有用。"
+msgstr "バッファのインフォリストを表示、スクリプト開発者に有用。"
 
 #. Translators: description for script "kernel.pl" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:223
@@ -3395,7 +3393,7 @@ msgstr "マシンの連続稼働時間を表示。"
 #. Translators: description for script "nameday.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:229
 msgid "Display name days in bar item and buffer (only french calendar)."
-msgstr "バーアイテムとバッファに聖名祝日を表示 (フランスのカレンダーのみ)。"
+msgstr "バー要素とバッファに聖名祝日を表示 (フランスのカレンダーのみ)。"
 
 #. Translators: description for script "oldtopic.pl" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:231
@@ -3410,7 +3408,7 @@ msgstr "fribidi を使って右から左に書くテキストをチャットエ�
 #. Translators: description for script "logsize.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:235
 msgid "Display size of current log file in a bar item."
-msgstr "現在のログファイルのサイズをバーアイテム内に表示。"
+msgstr "現在のログファイルのサイズをバー要素内に表示。"
 
 #. Translators: description for script "whoissource.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:237
@@ -3671,8 +3669,8 @@ msgid ""
 "Interpret mirc formatting codes in the command line and show a color popup "
 "when needed."
 msgstr ""
-"コマンドラインに入力された mirc フォーマットコードを解釈し、必要ならカラー"
-"ポップアップを表示。"
+"コマンドラインに入力された mirc 書式のコードを解釈し、必要なら色ポップアップ"
+"を表示。"
 
 #. Translators: description for script "irssinotifier.py" (0.3.7+)
 #: plugins/_i18n_plugins.py:337
@@ -3789,7 +3787,7 @@ msgstr "プライベートメッセージ、ハイライト、DCC などをメ�
 #. Translators: description for script "xterm_paste.pl" (0.3.9+)
 #: plugins/_i18n_plugins.py:381
 msgid "Make xterm clipboard paste available as command."
-msgstr "コマンドで xterm のクリップボード貼り付けを可能にする。"
+msgstr "コマンドで xterm のクリップボードからのペーストを可能にする。"
 
 #. Translators: description for script "fete.pl" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:383
@@ -3827,7 +3825,7 @@ msgstr "音声や OSD 通知を使ってハイライト/タグ/バッファ/ニ�
 #. Translators: description for script "multiline.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:395
 msgid "Multi-line edit box, also supports editing of multi-line pastes."
-msgstr "複数行のエディットボックス、複数行を貼付けて編集することも可能。"
+msgstr "複数行のエディットボックス、複数行をペーストして編集することも可能。"
 
 #. Translators: description for script "weenetsoul.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:397
@@ -3928,7 +3926,7 @@ msgstr "マウスを使わずに URL を開く。"
 #. Translators: description for script "xclip.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:435
 msgid "Paste content from X11 clipboard."
-msgstr "X11 クリップボードから内容を貼り付ける。"
+msgstr "X11 クリップボードから内容をペースト。"
 
 #. Translators: description for script "autoauth.py" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:437
@@ -3979,8 +3977,8 @@ msgid ""
 "Print currently playing track (format is configurable) in xmms2 to a channel "
 "or private buffer."
 msgstr ""
-"xmms2 で現在再生中のトラックをチャンネルまたはプライベートバッファに表示 "
-"(フォーマットは変更可能)。"
+"xmms2 で現在再生中のトラックをチャンネルまたはプライベートバッファに表示 (書"
+"式は変更可能)。"
 
 #. Translators: description for script "newsbar.pl" (0.3.1+)
 #: plugins/_i18n_plugins.py:455
@@ -4312,8 +4310,8 @@ msgid ""
 "Send notice when typing message on bitlbee, display if user is writing in a "
 "bar item."
 msgstr ""
-"bitlbee にメッセージをタイプする際に通知を送信、ユーザが書いているかをバーア"
-"イテムに表示。"
+"bitlbee にメッセージをタイプする際に通知を送信、ユーザが書いているかをバー要"
+"素に表示。"
 
 #. Translators: description for script "minbif_typing_notice.rb" (0.3.2+)
 #: plugins/_i18n_plugins.py:581
@@ -4321,8 +4319,8 @@ msgid ""
 "Send notice when typing message on minbif, display if user is writing in a "
 "bar item."
 msgstr ""
-"minbif にメッセージをタイプする際に通知を送信、ユーザが書いているかをバーアイ"
-"テムに表示。"
+"minbif にメッセージをタイプする際に通知を送信、ユーザが書いているかをバー要素"
+"に表示。"
 
 #. Translators: description for script "zmq_notify.rb" (0.3.0+)
 #: plugins/_i18n_plugins.py:583
@@ -4452,7 +4450,7 @@ msgstr "チャンネルの優先度を設定。"
 #. Translators: description for script "title.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:627
 msgid "Set terminal title to active buffer name and hotlist items."
-msgstr "端末のタイトルをアクティブバッファ名とホットリストアイテムに設定。"
+msgstr "端末のタイトルをアクティブバッファ名とホットリスト要素に設定。"
 
 #. Translators: description for script "xfer_setip.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:629
@@ -4507,7 +4505,7 @@ msgstr "新旧トピックの違いを表示。"
 #. Translators: description for script "hatwidget.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:649
 msgid "Show hats (user modes like \"@\" or \"+\") in a bar item."
-msgstr "肩書 (\"@\" や \"+\" などのユーザモード) をバーアイテムに表示。"
+msgstr "肩書 (\"@\" や \"+\" などのユーザモード) をバー要素に表示。"
 
 #. Translators: description for script "xosdnotify.tcl" (0.3.0+)
 #: plugins/_i18n_plugins.py:651
@@ -4739,7 +4737,7 @@ msgstr "バッファ内で pastebin サイトの内容を見る。"
 #. Translators: description for script "oldswarner.lua" (0.3.7+)
 #: plugins/_i18n_plugins.py:739
 msgid "Warn user if about to paste URL already existing in buffer."
-msgstr "貼り付けた URL がバッファ内にある場合にユーザに警告を出す。"
+msgstr "ペーストした URL がバッファ内にある場合にユーザに警告を出す。"
 
 #. Translators: description for script "weatherbot.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:741
@@ -5424,7 +5422,8 @@ msgstr "有効"
 msgid "dev"
 msgstr "開発"
 
-#: templates/dev/dev.html:13 templates/home/home.html:58 templates/menu.html:61
+#: templates/dev/dev.html:13 templates/home/home.html:58
+#: templates/menu.html:61
 msgid "Roadmap"
 msgstr "ロードマップ"
 
@@ -5907,7 +5906,7 @@ msgstr "パッケージ"
 
 #: templates/download/packages.html:73
 msgid "Checksum"
-msgstr ""
+msgstr "チェックサム"
 
 #: templates/download/packages.html:99
 msgid "About release"
