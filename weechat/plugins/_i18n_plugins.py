@@ -247,8 +247,6 @@ _i18n_plugins_plugins = [
     gettext_lazy("Display size of current log file in a bar item."),
     # Translators: description for script "whoissource.py" (0.3.0+)
     gettext_lazy("Display source of \"End of WHOIS\" numerics."),
-    # Translators: description for script "twitch.py" (0.3.7+)
-    gettext_lazy("Display twitch stream status in title bar of buffer."),
     # Translators: description for script "weather.py" (0.3.0+)
     gettext_lazy("Display weather from Google."),
     # Translators: description for script "url_olde.py" (0.4.0+)
@@ -641,6 +639,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Set Bitlbee's status message with current MPD track."),
     # Translators: description for script "iset.pl" (0.3.0+)
     gettext_lazy("Set WeeChat and plugins options interactively."),
+    # Translators: description for script "gnome_screensaver_away.py" (0.3.0+)
+    gettext_lazy("Set away status based on Gnome screen saver."),
     # Translators: description for script "fileaway.py" (0.3.0+)
     gettext_lazy("Set away status based on presence of a file."),
     # Translators: description for script "slock_away.py" (0.3.0+)
@@ -751,6 +751,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Translate words from/to other languages."),
     # Translators: description for script "tray.rb" (0.0.1-0.2.6)
     gettext_lazy("Tray and notification."),
+    # Translators: description for script "twitch.py" (0.3.7+)
+    gettext_lazy("Twitch.tv chat integration."),
     # Translators: description for script "ubus.pl" (0.3.0+)
     gettext_lazy("Ubus notification."),
     # Translators: description for script "undernet_totp.py" (0.4.2+)
