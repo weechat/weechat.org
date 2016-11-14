@@ -161,7 +161,7 @@ def handler_package_saved(sender, **kwargs):
     """Compute SHA-1 and SHA-512 of file."""
     try:
         package = kwargs['instance']
-        if package.filename:
+        if package.filename and package.version.version != 'devel':
             with open(package.fullname(), 'rb') as _file:
                 package.sha1sum = sha1(_file.read()).hexdigest()
             with open(package.fullname(), 'rb') as _file:
