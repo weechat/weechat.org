@@ -69,6 +69,7 @@ def handler_keydate_saved(sender, **kwargs):
         strings.append(keydate.text)
     i18n_autogen('about', 'keydates', strings)
 
+
 post_save.connect(handler_keydate_saved, sender=Keydate)
 
 

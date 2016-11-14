@@ -169,6 +169,7 @@ def handler_package_saved(sender, **kwargs):
     except:
         pass
 
+
 pre_save.connect(handler_package_saved, sender=Package)
 
 SECURITY_SEVERITIES = (
@@ -261,6 +262,7 @@ def handler_security_saved(sender, **kwargs):
         if security.workaround:
             strings.append(security.workaround)
     i18n_autogen('download', 'security', strings)
+
 
 post_save.connect(handler_security_saved, sender=Security)
 

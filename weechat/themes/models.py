@@ -365,5 +365,6 @@ def handler_theme_changed(sender, **kwargs):
             tar.add('themes/%s' % name)
     tar.close()
 
+
 post_save.connect(handler_theme_changed, sender=Theme)
 post_delete.connect(handler_theme_changed, sender=Theme)

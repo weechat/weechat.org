@@ -29,4 +29,5 @@ class ThemeAdmin(admin.ModelAdmin):
     """Display all themes on the same page."""
     list_per_page = 10000
 
+
 admin.site.register(Theme, ThemeAdmin)

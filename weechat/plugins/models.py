@@ -476,5 +476,6 @@ def handler_plugin_changed(sender, **kwargs):
     # create _i18n_plugins.py
     i18n_autogen('plugins', 'plugins', strings)
 
+
 post_save.connect(handler_plugin_changed, sender=Plugin)
 post_delete.connect(handler_plugin_changed, sender=Plugin)

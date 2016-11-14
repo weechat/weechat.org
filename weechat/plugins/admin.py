@@ -30,4 +30,5 @@ class PluginAdmin(admin.ModelAdmin):
     """Display all scripts on the same page."""
     list_per_page = 10000
 
+
 admin.site.register(Plugin, PluginAdmin)

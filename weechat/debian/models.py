@@ -101,4 +101,5 @@ def handler_repo_saved(sender, **kwargs):
             strings.append(repo.message)
     i18n_autogen('debian', 'repo', strings)
 
+
 post_save.connect(handler_repo_saved, sender=Repo)

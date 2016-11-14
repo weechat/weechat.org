@@ -87,4 +87,5 @@ def handler_info_saved(sender, **kwargs):
             strings.append(info.text)
     i18n_autogen('news', 'info', strings)
 
+
 post_save.connect(handler_info_saved, sender=Info)
