@@ -147,7 +147,7 @@
       </div>
     {% endif %}
 
-    {% if version == "stable" %}
+    {% if version != "devel" and version != "old" %}
       <h2>{% trans "Checking the signatures" %}</h2>
       <div class="dlsign">
         <ul>
