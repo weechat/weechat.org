@@ -112,7 +112,7 @@
       </div>
     {% endfor %}
 
-    {% if version == "stable" or version == "devel" %}
+    {% if version != "old" %}
       <div class="dlsub">
         <div class="dlsubtitle">{% trans "Remote interfaces" %}</div>
         <div class="dlitem">
