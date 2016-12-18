@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-12-18 19:17+0100\n"
-"PO-Revision-Date: 2016-12-18 19:19+0100\n"
+"PO-Revision-Date: 2016-12-18 22:02+0100\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <weechatter@arcor.de>\n"
 "Language: de\n"
@@ -29,7 +29,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 1.8.9\n"
 
 #: about/_i18n_keydates.py:6
 msgid "256 colors, irc proxy, rmodifier, redirection of irc commands."
@@ -518,6 +518,11 @@ msgid ""
 "\n"
 "The xz packages are smaller than gzip (~2x) and bzip2 (~1.4x)."
 msgstr ""
+"Alle Quellpakete sind nun auch als xz Pakete verfügbar (als Ergänzung zu "
+"gzip und bzip2): stabile/Entwicklerversion, alte  Versionen, Skripten, "
+"QWeeChat.\n"
+"\n"
+"Die xz Pakete sind kleiner gegenüber gzip (~2x) und bzip2 (~1.4x)."
 
 #: news/_i18n_info.py:14
 msgid ""
@@ -2682,6 +2687,27 @@ msgid ""
 "\"http://dev.weechat.org/post/2016/10/02/Version-1.6\">development blog</a> "
 "or <a href=\"/files/changelog/ChangeLog-1.6.html\">ChangeLog</a>."
 msgstr ""
+"Version 1.6 ist verfügbar!\n"
+"\n"
+"Überblick, der neuen Funktionen:\n"
+"\n"
+"- neu: optionales Argument \"lowest\", \"highest\" oder Levelmaske für "
+"Befehl /input hotlist_clear\n"
+"- neu: Option \"cycle\" für den /buffer Befehl\n"
+"- neu: \"extra\" Argument um zusätzliche Variablen in der Funktion "
+"string_eval_expression() zu evaluieren\n"
+"- neu: Option relay.network.allow_empty_password\n"
+"- Unterstützung von einmaligen Triggern\n"
+"- Umbenennung der Serveroptionen \"default_msg_{kick|part|quit}\" nach "
+"\"msg_{kick|part|quit}\" und Optionen sind evaluierbar\n"
+"- es ist möglich das Kommazeichen im \"init\" Befehl zu nutzen (weechat "
+"relay Protokoll)\n"
+"- sowie Fehlerbereinigungen.\n"
+"\n"
+"Eine vollständige Liste der neuen Funktionen und Fehlerbereinigungen findet "
+"man unter folgenden Links: <a href=\"http://dev.weechat.org/post/2016/10/02/"
+"Version-1.6\">Entwickler-Blog</a> oder <a href=\"/files/changelog/"
+"ChangeLog-1.6.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:104
 msgid ""
@@ -2902,10 +2928,8 @@ msgstr ""
 "finden Sie auf der WeeChat Support Seite."
 
 #: news/_i18n_info.py:119
-#, fuzzy
-#| msgid "Packages"
 msgid "XZ packages"
-msgstr "Pakete"
+msgstr "XZ Pakete"
 
 #. Translators: description for script "weerock.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:7
@@ -2957,10 +2981,8 @@ msgstr "zeigt, für mplayer, an was gerade abgespielt wird."
 
 #. Translators: description for script "mpv.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:23
-#, fuzzy
-#| msgid "A now watching script for mplayer."
 msgid "A now watching script for mpv."
-msgstr "zeigt, für mplayer, an was gerade abgespielt wird."
+msgstr "zeigt an was mit mpv abgespielt wird."
 
 #. Translators: description for script "auto_away.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:25
@@ -3012,7 +3034,7 @@ msgstr "erstellt Items zum Anzeigen von reinem Text."
 #. Translators: description for script "zncplayback.py" (0.3.2+)
 #: plugins/_i18n_plugins.py:43
 msgid "Add support for the ZNC Playback module."
-msgstr ""
+msgstr "fügt eine Unterstützung des ZNC Playback Moduls hinzu."
 
 #. Translators: description for script "bitlbee_completion.py" (0.4.3+)
 #: plugins/_i18n_plugins.py:45
@@ -3076,6 +3098,8 @@ msgstr "sammelt Nick-Highlight Nachrichten intern, um sie später anzuzeigen."
 #: plugins/_i18n_plugins.py:65
 msgid "Allow per-buffer specification of a regex that prevents highlights."
 msgstr ""
+"erlaubt es für jeden Buffer eine regex anzulegen um ein Highlight zu "
+"unterdrücken."
 
 #. Translators: description for script "amarok2.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:67
@@ -3386,7 +3410,7 @@ msgstr "Fernbedienung für moc."
 #. Translators: description for script "zncnotice.py" (1.5+)
 #: plugins/_i18n_plugins.py:173
 msgid "Convert ZNC status PRIVMSGs to NOTICEs."
-msgstr ""
+msgstr "konvertiert ZNC Status PRIVMSG zu NOTICE."
 
 #. Translators: description for script "weemoticons.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:175
@@ -3401,7 +3425,7 @@ msgstr "konvertiert emoji Emoticon in Unicode Emoticon."
 #. Translators: description for script "emoji2alias.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:179
 msgid "Convert emoji back to their :aliases:."
-msgstr ""
+msgstr "konvertiert emoji zum entsprechenden :alias:."
 
 #. Translators: description for script "fullwidth.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:181
@@ -3418,11 +3442,13 @@ msgstr "wandelt einen Text nach Leetspeek."
 #: plugins/_i18n_plugins.py:185
 msgid "Convert usernames of gateway connections to their real names."
 msgstr ""
+"konvertiert Usernamen die über ein Gateway laufen in den entsprechenden "
+"Realnamen."
 
 #. Translators: description for script "buffzilla.rb" (0.3.0+)
 #: plugins/_i18n_plugins.py:187
 msgid "Copy everything into one buffer."
-msgstr ""
+msgstr "kopiert alles in einen Buffer."
 
 #. Translators: description for script "xfer_scp.py" (0.4.3+)
 #: plugins/_i18n_plugins.py:189
@@ -3604,7 +3630,7 @@ msgstr "fügt der Bar-Item Wetterinformation vom Google Wetterdienst hinzu."
 #. Translators: description for script "url_olde.py" (0.4.0+)
 #: plugins/_i18n_plugins.py:253
 msgid "Display when and where a URI was first posted."
-msgstr ""
+msgstr "zeigt an wann und wo eine URI das erste mal gepostet wurde."
 
 #. Translators: description for script "audacious.pl" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:255
@@ -3827,10 +3853,8 @@ msgstr ""
 
 #. Translators: description for script "mop.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:335
-#, fuzzy
-#| msgid "Sends greetings in the current channel."
 msgid "Give operator status to everyone in the current channel."
-msgstr "verschickt einen Gruß an den aktiven Channel."
+msgstr "gibt jedem im aktuellen Channel den Operator-Status."
 
 #. Translators: description for script "growl-notify.pl" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:337
@@ -4279,6 +4303,8 @@ msgid ""
 "Query JiSho's API to fetch translations for kanji to english or the other "
 "way round."
 msgstr ""
+"JiSho's API wird zum Übersetzen von kanji nach englisch und umgekehrt "
+"genutzt."
 
 #. Translators: description for script "go.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:493
@@ -4364,7 +4390,7 @@ msgstr ""
 #. Translators: description for script "latex_unicode.py" (1.3+)
 #: plugins/_i18n_plugins.py:521
 msgid "Replace LaTeX with unicode representations."
-msgstr ""
+msgstr "Ersetzt LaTeX durch eine Unicode Darstellung."
 
 #. Translators: description for script "emote.scm" (0.4.1+)
 #: plugins/_i18n_plugins.py:523
@@ -4415,7 +4441,7 @@ msgstr "starte Python Code direkt von WeeChat."
 #. Translators: description for script "xfer_run_command.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:541
 msgid "Run a command on end of xfer."
-msgstr ""
+msgstr "führt einen Befehl am Ende eines xfer-Transfers aus."
 
 #. Translators: description for script "msg_command.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:543
@@ -4604,10 +4630,8 @@ msgstr "schickt Highlights zu einem Remote-Client mittels ssh und libnotify."
 
 #. Translators: description for script "mqtt_notify.py" (1.0+)
 #: plugins/_i18n_plugins.py:609
-#, fuzzy
-#| msgid "Send notifications to a ZMQ socket."
 msgid "Send notifications using the MQTT protocol."
-msgstr "sendet eine Benachrichtigung an ein ZMQ Socket."
+msgstr "sendet eine Benachrichtigung mittels MQTT Protokoll."
 
 #. Translators: description for script "notifo.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:611
@@ -4705,10 +4729,9 @@ msgstr "interaktiver WeeChat- und Erweiterungen-Editor."
 
 #. Translators: description for script "gnome_screensaver_away.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:643
-#, fuzzy
-#| msgid "Set away status based on presence of a file."
 msgid "Set away status based on Gnome screen saver."
-msgstr "die Abwesenheit wird durch das Vorhandensein einer Datei gesteuert."
+msgstr ""
+"der Abwesenheit-Status wird abhängig vom Gnom Bildschirmschoner gesetzt."
 
 #. Translators: description for script "fileaway.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:645
@@ -4859,7 +4882,7 @@ msgstr "einfacher Textmischer."
 #. Translators: description for script "slack.py" (1.3+)
 #: plugins/_i18n_plugins.py:699
 msgid "Slack.com native client."
-msgstr ""
+msgstr "Slack.com Nativer Client."
 
 #. Translators: description for script "rslap.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:701
@@ -4936,7 +4959,7 @@ msgstr "Befehl um Systeminformationen anzeigen zu lassen."
 #. Translators: description for script "atcomplete.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:729
 msgid "Tab complete nicks when prefixed with \"@\"."
-msgstr ""
+msgstr "fügt \"@\" Präfix bei der Nick Tab-Vervollständigung hinzu."
 
 #. Translators: description for script "tailer.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:731
@@ -4961,7 +4984,7 @@ msgstr "Thinklight blinkt bei einer Hightlight- oder privaten Nachricht."
 #. Translators: description for script "tictactoe.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:739
 msgid "Tic-tac-toe game."
-msgstr ""
+msgstr "Tic-Tac-Toe Spiel."
 
 #. Translators: description for script "cron.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:741
@@ -4987,7 +5010,7 @@ msgstr ""
 #. Translators: description for script "emoji.lua" (1.0+)
 #: plugins/_i18n_plugins.py:747
 msgid "Translate :shortcode: to proper emoji."
-msgstr ""
+msgstr "Übersetzt :shortcode: nach emoji."
 
 #. Translators: description for script "translate.py" (0.3.7+)
 #: plugins/_i18n_plugins.py:749
@@ -5007,7 +5030,7 @@ msgstr "Tray und Benachrichtigung."
 #. Translators: description for script "twitch.py" (0.3.7+)
 #: plugins/_i18n_plugins.py:755
 msgid "Twitch.tv chat integration."
-msgstr ""
+msgstr "Twitch.tv Chat-Integration."
 
 #. Translators: description for script "ubus.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:757
@@ -5079,6 +5102,8 @@ msgstr "Wmii Benachrichtigung bei Highlight-Nachrichten."
 #: plugins/_i18n_plugins.py:781
 msgid "Wrap nick completion with custom prefix and/or suffix."
 msgstr ""
+"bei einer Nick-Vervollständigung wird ein benutzerdefinierter Präfix und/"
+"oder Suffix gesetzt."
 
 #. Translators: description for script "ichatts.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:783
@@ -6253,7 +6278,7 @@ msgstr "Pakete"
 
 #: templates/download/packages.html:73
 msgid "Checksum"
-msgstr ""
+msgstr "Prüfsumme"
 
 #: templates/download/packages.html:99
 msgid "About release"
