@@ -21,8 +21,8 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-12-18 19:17+0100\n"
-"PO-Revision-Date: 2016-12-18 19:20+0100\n"
-"Last-Translator: Krzysztof Korościk <soltys1@gmail.com>\n"
+"PO-Revision-Date: 2016-12-23 09:12+0100\n"
+"Last-Translator: Krzysztof Korościk <soltys@soltys.info>\n"
 "Language-Team: Polish <soltys1@gmail.com>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -500,6 +500,10 @@ msgid ""
 "\n"
 "The xz packages are smaller than gzip (~2x) and bzip2 (~1.4x)."
 msgstr ""
+"Wszytkie pakiety źródłowe są teraz dostępne jako archiwa xz (dodatkowo, poza"
+"gzip i bzip2): wersja stabilna/developerskia, stare wersjie, skrypty, QWeeChat.\n"
+"\n"
+"Archiwa xz są mniejsze niż gzpi (~2x) oraz bzip2 (~1.4x)."
 
 #: news/_i18n_info.py:14
 msgid ""
@@ -2604,27 +2608,6 @@ msgstr ""
 "a>."
 
 #: news/_i18n_info.py:103
-#, fuzzy
-#| msgid ""
-#| "Version 1.2 is available!\n"
-#| "\n"
-#| "Among the new features:\n"
-#| "\n"
-#| "- add options to customize word chars (for detecting word boundaries)\n"
-#| "- add a welcome message on first WeeChat run\n"
-#| "- add options to customize quoted messages (in cursor mode)\n"
-#| "- add support of environment variables in evaluated expressions\n"
-#| "- add IRC SASL mechanism \"ecdsa-nist256p-challenge\"\n"
-#| "- add support of SHA-256 and SHA-512 algorithms in IRC server option "
-#| "\"ssl_fingerprint\"\n"
-#| "- add support of IRC capability \"account-notify\"\n"
-#| "- remove \"freenode\" server from default config\n"
-#| "- new script plugin for javascript\n"
-#| "- many bugs fixed.\n"
-#| "\n"
-#| "For complete list of new features and bugs fixed, please look at <a href="
-#| "\"http://dev.weechat.org/post/2015/05/10/Version-1.2\">development blog</"
-#| "a> or <a href=\"/files/changelog/ChangeLog-1.2.html\">ChangeLog</a>."
 msgid ""
 "Version 1.6 is available!\n"
 "\n"
@@ -2646,27 +2629,25 @@ msgid ""
 "\"http://dev.weechat.org/post/2016/10/02/Version-1.6\">development blog</a> "
 "or <a href=\"/files/changelog/ChangeLog-1.6.html\">ChangeLog</a>."
 msgstr ""
-"Wersja 1.2 jest dostępna!\n"
+"Wersja 1.6 jest dostępna!\n"
 "\n"
 "Nowe funkcje:\n"
 "\n"
-"- dodano opcję pozwalająca dostosować znaki zawarte w słowach (dla "
-"wykrywania granic słów)\n"
-"- dodano wiadomość powialną dla pierwszego uruchomieina WeeChat\n"
-"- dodano opcję pozwalająca dostosować cytowane wiadomości (w trybie "
-"kursora)\n"
-"- dodano wsparcie dla zmiennych środowiskowych w przetwarzanych wyrażeniach\n"
-"- dodano mechanizm IRC SASL \"ecdsa-nist256p-challenge\"\n"
-"- dodano wsparcie dla algorytmów SHA-256 i SHA-512 w opcji serwera IRC "
-"\"ssl_fingerprint\"\n"
-"- dodano wsparcie dla funkcji IRC \"account-notify\"\n"
-"- usunięto serwer \"freenode\" z domyślnej konfiguracji\n"
-"- plugin dla skryptów napisanych za pomocą javascript\n"
+"- dodano opcjonalny argument \"lowest\", \"highest\" lub maske poziomu w komendzie"
+" /input hotlist_clear\n"
+"- dodano opcję \"cycle\" w komendzie /buffer\n"
+"- dodano argument \"extra\" do przetwarzania dodatkowych argumentóe w funkcji"
+"string_eval_expression()\n"
+"- dodano opcję relay.network.allow_empty_password\n"
+"- dodano wsparcie dla jednorazowych triggerów\n"
+"- zmiana nazw opcji serwera z \"default_msg_{kick|part|quit}\" na \"msg_{kick|part|"
+"quit}\", są one przetwarzane\n"
+"- zezwolono na escapowanie przecinka w komendzie \"init\" (protokół pośrednika WeeChat)\n"
 "- poprawiono wiele błędów.\n"
 "\n"
 "Pełną listę nowych funkcji i poprawionych błędów można znaleźć na <a href="
-"\"http://dev.weechat.org/post/2015/05/10/Version-1.2\">blogu developerskim</"
-"a> oraz w pliku <a href=\"/files/changelog/ChangeLog-1.2.html\">ChangeLog</"
+"\"http://dev.weechat.org/post/2016/10/02/Version-1.6\">blogu developerskim</"
+"a> oraz w pliku <a href=\"/files/changelog/ChangeLog-1.6.html\">ChangeLog</"
 "a>."
 
 #: news/_i18n_info.py:104
@@ -2883,10 +2864,8 @@ msgstr ""
 "wsparcia WeeChat w celu skontaktowania się z nami."
 
 #: news/_i18n_info.py:119
-#, fuzzy
-#| msgid "Packages"
 msgid "XZ packages"
-msgstr "Pakiety"
+msgstr "Archiwa XZ"
 
 #. Translators: description for script "weerock.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:7
@@ -2932,10 +2911,8 @@ msgstr "Skrypt pokazujący aktualnie odtwarzany film w mplayerze."
 
 #. Translators: description for script "mpv.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:23
-#, fuzzy
-#| msgid "A now watching script for mplayer."
 msgid "A now watching script for mpv."
-msgstr "Skrypt pokazujący aktualnie odtwarzany film w mplayerze."
+msgstr "Skrypt pokazujący aktualnie odtwarzany film w mpv."
 
 #. Translators: description for script "auto_away.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:25
@@ -2987,7 +2964,7 @@ msgstr "Dodaje element paska z czystym tekstem."
 #. Translators: description for script "zncplayback.py" (0.3.2+)
 #: plugins/_i18n_plugins.py:43
 msgid "Add support for the ZNC Playback module."
-msgstr ""
+msgstr "Dodaje wsparcie dla modułu ZNC Playback."
 
 #. Translators: description for script "bitlbee_completion.py" (0.4.3+)
 #: plugins/_i18n_plugins.py:45
@@ -3047,7 +3024,7 @@ msgstr ""
 #. Translators: description for script "unhighlight.py" (1.0+)
 #: plugins/_i18n_plugins.py:65
 msgid "Allow per-buffer specification of a regex that prevents highlights."
-msgstr ""
+msgstr "Zezwala na zdefiniowanie wyrażenia zapobiegającemu podświetlenią dla buforów."
 
 #. Translators: description for script "amarok2.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:67
@@ -3348,7 +3325,7 @@ msgstr ""
 #. Translators: description for script "zncnotice.py" (1.5+)
 #: plugins/_i18n_plugins.py:173
 msgid "Convert ZNC status PRIVMSGs to NOTICEs."
-msgstr ""
+msgstr "Konwertuje status PRIVMSG w ZNC na NOTICE."
 
 #. Translators: description for script "weemoticons.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:175
@@ -3363,7 +3340,7 @@ msgstr "Konwersja aliasów emotek w ascii na emotikony unicode."
 #. Translators: description for script "emoji2alias.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:179
 msgid "Convert emoji back to their :aliases:."
-msgstr ""
+msgstr "Konwertuje emotikony spowrotem na ich :aliasy:."
 
 #. Translators: description for script "fullwidth.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:181
@@ -3378,12 +3355,12 @@ msgstr "Konwertuje tekst do leet."
 #. Translators: description for script "gateway_rename.scm" (0.3.0+)
 #: plugins/_i18n_plugins.py:185
 msgid "Convert usernames of gateway connections to their real names."
-msgstr ""
+msgstr "Konwertuje nazwy użytkowników połączonych przez bramk na ich prawdziwe nazwy."
 
 #. Translators: description for script "buffzilla.rb" (0.3.0+)
 #: plugins/_i18n_plugins.py:187
 msgid "Copy everything into one buffer."
-msgstr ""
+msgstr "Kopiuje wszytko do jednego bufora."
 
 #. Translators: description for script "xfer_scp.py" (0.4.3+)
 #: plugins/_i18n_plugins.py:189
@@ -3558,7 +3535,7 @@ msgstr "Wyświetla pogodę z Google."
 #. Translators: description for script "url_olde.py" (0.4.0+)
 #: plugins/_i18n_plugins.py:253
 msgid "Display when and where a URI was first posted."
-msgstr ""
+msgstr "Wyświetla kiedy i gdzie adres URL został wysłany jako pierwszy."
 
 #. Translators: description for script "audacious.pl" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:255
@@ -3771,10 +3748,8 @@ msgstr "Przekazuje hotliste do zewnętrznego pliku/programu."
 
 #. Translators: description for script "mop.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:335
-#, fuzzy
-#| msgid "Sends greetings in the current channel."
 msgid "Give operator status to everyone in the current channel."
-msgstr "Wysyła powitanie na obecny kanał."
+msgstr "Nadaje status operatora wszystkim na obecnym kanale."
 
 #. Translators: description for script "growl-notify.pl" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:337
@@ -4209,7 +4184,7 @@ msgstr "Przesyłanie powiadomień do im.kayac.com."
 msgid ""
 "Query JiSho's API to fetch translations for kanji to english or the other "
 "way round."
-msgstr ""
+msgstr "Odpytuje API JiSho i pobiera tłumaczenia z kanju na angielski albo odwrotnie."
 
 #. Translators: description for script "go.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:493
@@ -4289,7 +4264,7 @@ msgstr "Otwiera kanały i serwery otwarte przed ostatnim zamknięciem WeeChat."
 #. Translators: description for script "latex_unicode.py" (1.3+)
 #: plugins/_i18n_plugins.py:521
 msgid "Replace LaTeX with unicode representations."
-msgstr ""
+msgstr "Zamienia LaTeX odpowiednikami unikodowymi."
 
 #. Translators: description for script "emote.scm" (0.4.1+)
 #: plugins/_i18n_plugins.py:523
@@ -4340,7 +4315,7 @@ msgstr "Uruchamia kod Pythona bezpośrednio z WeeChat."
 #. Translators: description for script "xfer_run_command.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:541
 msgid "Run a command on end of xfer."
-msgstr ""
+msgstr "Wykonuje komende na koniec xfer."
 
 #. Translators: description for script "msg_command.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:543
@@ -4527,10 +4502,8 @@ msgstr "Wysyła powiadomienia do zdalnego klienta używając ssh i libnotify."
 
 #. Translators: description for script "mqtt_notify.py" (1.0+)
 #: plugins/_i18n_plugins.py:609
-#, fuzzy
-#| msgid "Send notifications to a ZMQ socket."
 msgid "Send notifications using the MQTT protocol."
-msgstr "Wysyła powiadomienia do gniazda ZMQ."
+msgstr "Wysyła powiadomienia używając protokołu MQTT."
 
 #. Translators: description for script "notifo.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:611
@@ -4628,10 +4601,8 @@ msgstr "Ustawia interaktywnie opcje WeeChat oraz wtyczek."
 
 #. Translators: description for script "gnome_screensaver_away.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:643
-#, fuzzy
-#| msgid "Set away status based on presence of a file."
 msgid "Set away status based on Gnome screen saver."
-msgstr "Ustawia stan nieobecności w zależności od obecności pliku."
+msgstr "Ustawia stan nieobecności bazując na Gnome screen saver."
 
 #. Translators: description for script "fileaway.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:645
@@ -4779,7 +4750,7 @@ msgstr "Proste przestawianie liter w wyrazach."
 #. Translators: description for script "slack.py" (1.3+)
 #: plugins/_i18n_plugins.py:699
 msgid "Slack.com native client."
-msgstr ""
+msgstr "Natywny klient Slack.com."
 
 #. Translators: description for script "rslap.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:701
@@ -4856,7 +4827,7 @@ msgstr "Komenda z informacjami o systemie."
 #. Translators: description for script "atcomplete.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:729
 msgid "Tab complete nicks when prefixed with \"@\"."
-msgstr ""
+msgstr "Dopełnianie tabem dla nicków poprzedzonych \"@\"."
 
 #. Translators: description for script "tailer.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:731
@@ -4882,7 +4853,7 @@ msgstr ""
 #. Translators: description for script "tictactoe.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:739
 msgid "Tic-tac-toe game."
-msgstr ""
+msgstr "Gra w kółko i krzyżyk."
 
 #. Translators: description for script "cron.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:741
@@ -4906,7 +4877,7 @@ msgstr ""
 #. Translators: description for script "emoji.lua" (1.0+)
 #: plugins/_i18n_plugins.py:747
 msgid "Translate :shortcode: to proper emoji."
-msgstr ""
+msgstr "Tłumaczy :shortcode: na właściwą emotkę."
 
 #. Translators: description for script "translate.py" (0.3.7+)
 #: plugins/_i18n_plugins.py:749
@@ -4926,7 +4897,7 @@ msgstr "Chowa Weechat do traya i wyświetla powiadomienia."
 #. Translators: description for script "twitch.py" (0.3.7+)
 #: plugins/_i18n_plugins.py:755
 msgid "Twitch.tv chat integration."
-msgstr ""
+msgstr "Integracja chatu z Twitch.tv."
 
 #. Translators: description for script "ubus.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:757
@@ -4994,7 +4965,7 @@ msgstr ".Pasek powiadomień Wmii dla higlightów."
 #. Translators: description for script "nick_complete_wrapper.lua" (0.3.8+)
 #: plugins/_i18n_plugins.py:781
 msgid "Wrap nick completion with custom prefix and/or suffix."
-msgstr ""
+msgstr "Dopełnianie nicków z niestandardowym prrefiksem i/lub sufiksem."
 
 #. Translators: description for script "ichatts.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:783
@@ -5908,7 +5879,7 @@ msgstr "Dokumentacja dla wersji"
 
 #: templates/doc/doc.html:64
 msgid "Internationalization stats"
-msgstr "Statystyki internacjonalizacji"
+msgstr "Statystyki tłumaczeń"
 
 #: templates/doc/doc.html:68
 msgctxt "translated language"
@@ -6139,11 +6110,11 @@ msgstr ""
 
 #: templates/download/packages.html:62
 msgid "Packages"
-msgstr "Pakiety"
+msgstr "Archiwa"
 
 #: templates/download/packages.html:73
 msgid "Checksum"
-msgstr ""
+msgstr "Suma kontrolna"
 
 #: templates/download/packages.html:99
 msgid "About release"
