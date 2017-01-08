@@ -349,6 +349,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Interactively select URL with keyboard and perform some commands on it."),
     # Translators: description for script "color_popup.pl" (0.3.0+)
     gettext_lazy("Interpret mirc formatting codes in the command line and show a color popup when needed."),
+    # Translators: description for script "inverter.tcl" (0.3.0+)
+    gettext_lazy("Invert all letters of your text."),
     # Translators: description for script "irssinotifier.py" (0.3.7+)
     gettext_lazy("IrssiNotifier push notifications with end-to-end encryption."),
     # Translators: description for script "highlight_jabber_notify.rb" (0.0.1-0.2.6)
