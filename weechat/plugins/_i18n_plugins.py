@@ -313,6 +313,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Filter buffers automatically while searching them."),
     # Translators: description for script "floodit.py" (0.3.0+)
     gettext_lazy("Flood'it game."),
+    # Translators: description for script "force_nick.py" (0.3.0+)
+    gettext_lazy("Force nick change on channels which disallow it."),
     # Translators: description for script "forcenick.rb" (0.0.1-0.2.6)
     gettext_lazy("Forces original nickname and wipes out ghosts and nick stealers."),
     # Translators: description for script "identica.py" (0.3.0+)
@@ -614,7 +616,7 @@ _i18n_plugins_plugins = [
     # Translators: description for script "amqp_notify.rb" (0.3.3+)
     gettext_lazy("Send private messages and highlights to an AMQP exchange."),
     # Translators: description for script "pushover.pl" (0.3.7+)
-    gettext_lazy("Send push notifications to your mobile devices using Pushover, NMA or Pushbullet."),
+    gettext_lazy("Send push notifications to your mobile devices using Pushover."),
     # Translators: description for script "ragefaces.pl" (0.3.0+)
     gettext_lazy("Send ragefac.es URLs."),
     # Translators: description for script "remnotify.pl" (0.0.1-0.2.6)
@@ -765,6 +767,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Update WeeChat environment from tmux."),
     # Translators: description for script "mac-update-status.pl" (0.0.1-0.2.6)
     gettext_lazy("Update status messages in various Mac IM programs."),
+    # Translators: description for script "tts.py" (0.3.0+)
+    gettext_lazy("Use a TTS engine to pronounce messages."),
     # Translators: description for script "colorize_nicks.py" (0.3.0+)
     gettext_lazy("Use the weechat nick colors in the chat area and command line."),
     # Translators: description for script "vimode.py" (1.0+)
