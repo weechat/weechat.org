@@ -377,8 +377,6 @@ _i18n_plugins_plugins = [
     gettext_lazy("List multiple occurences of the same nick(s) in a set of channels."),
     # Translators: description for script "chancomp.py" (1.3+)
     gettext_lazy("List shared channels with user on command or WHOIS."),
-    # Translators: description for script "weestreamer.py" (0.3.0+)
-    gettext_lazy("Livestreamer companion for WeeChat."),
     # Translators: description for script "input_lock.rb" (0.3.0+)
     gettext_lazy("Lock input (authorize only commands)."),
     # Translators: description for script "logurlsql.pl" (0.0.1-0.2.6)
@@ -723,6 +721,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Start command/program if a user joins a channel you are in."),
     # Translators: description for script "stick_buffer.py" (0.3.0+)
     gettext_lazy("Stick buffer to a window."),
+    # Translators: description for script "weestreamer.py" (0.3.0+)
+    gettext_lazy("Streamlink companion for WeeChat."),
     # Translators: description for script "substitution.rb" (0.3.7+)
     gettext_lazy("Substitute strings in messages before they are sent."),
     # Translators: description for script "buffer_swap.py" (0.3.0+)
