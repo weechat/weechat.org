@@ -28,7 +28,7 @@ if [ ! -f ./weechat/settings_local.py ]; then
     cp -v ./weechat/settings_local.template ./weechat/settings_local.py
 
     echo ""
-    read -p "--- Change settings in settings_local.py (like databse)? (Y/n) " answer
+    read -p "--- Change settings in settings_local.py (like database)? (Y/n) " answer
     answer=${answer:-y}
     case $answer in
         y|Y) $EDITOR ./weechat/settings_local.py ;;
