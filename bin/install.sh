@@ -37,15 +37,15 @@ fi
 
 echo ""
 echo "--- Compiling messages"
-./manage.py compilemessages
+./manage.py compilemessages || exit 1
 
 echo ""
 echo "--- Creating database"
-./manage.py syncdb
+./manage.py syncdb || exit 1
 
 echo ""
 echo "--- Loading fixtures in database"
-./manage.py loaddata ./weechat/fixtures/*.json
+./manage.py loaddata ./weechat/fixtures/*.json || exit 1
 
 echo ""
 echo "--- Install OK!"
