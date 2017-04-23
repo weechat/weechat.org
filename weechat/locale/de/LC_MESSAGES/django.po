@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-23 12:29+0200\n"
-"PO-Revision-Date: 2017-03-20 20:02+0100\n"
+"PO-Revision-Date: 2017-04-23 13:23+0200\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <weechatter@arcor.de>\n"
 "Language: de\n"
@@ -29,7 +29,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.9\n"
+"X-Generator: Poedit 2.0.1\n"
 
 #: about/_i18n_keydates.py:6
 msgid "256 colors, irc proxy, rmodifier, redirection of irc commands."
@@ -299,10 +299,8 @@ msgid "Buffer overflow when decoding IRC colors in strings."
 msgstr "Bufferüberlauf beim Dekodieren von IRC Farbecodes, in Nachrichten."
 
 #: download/_i18n_security.py:9
-#, fuzzy
-#| msgid "Buffer overflow when decoding IRC colors in strings."
 msgid "Buffer overflow when removing quotes in DCC filename."
-msgstr "Bufferüberlauf beim Dekodieren von IRC Farbecodes, in Nachrichten."
+msgstr "Bufferüberlauf beim Entfernen von Anführungszeichen im DCC Dateinamen."
 
 #: download/_i18n_security.py:10
 msgid "Buffer overflows in build of strings."
@@ -319,6 +317,9 @@ msgid ""
 "\"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND ${\\x22} \" "
 "\"/.*//\""
 msgstr ""
+"folgenden Trigger erstellen (ab WeeChat >= 1.1): /trigger add irc_dcc_quotes "
+"modifier \"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND "
+"${\\x22} \" \"/.*//\""
 
 #: download/_i18n_security.py:13
 msgid ""
@@ -2762,14 +2763,6 @@ msgstr ""
 "ChangeLog-1.7.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:105
-#, fuzzy
-#| msgid ""
-#| "Version 0.3.9.1 is available, it fixes a security problem (buffer "
-#| "overflow when decoding IRC colors in strings).\n"
-#| "Upgrade is recommended for all users.\n"
-#| "\n"
-#| "More information on the <a href=\"/security\">page with security issues</"
-#| "a>."
 msgid ""
 "Version 1.7.1 is available, it fixes a security problem: a crash can happen "
 "in IRC plugin when parsing the filename received via DCC.\n"
@@ -2777,8 +2770,8 @@ msgid ""
 "\n"
 "More information on the <a href=\"/security\">page with security issues</a>."
 msgstr ""
-"Version 0.3.9.1 ist sofort verfügbar. Diese Zwischenversion behebt ein "
-"Sicherheitsproblem, beim Dekodieren von IRC Farbcodes in Nachrichten.\n"
+"Version 1.7.1 ist verfügbar. Diese Version behebt ein Sicherheitsproblem: "
+"bei der Analyse von DCC-Dateinamen kann es zum Absturz kommen.\n"
 "Es wird allen Anwendern empfohlen diese Version zu installieren.\n"
 "\n"
 "Weitere Informationen findet man auf der <a href=\"/security\">Seite zu "
@@ -5872,8 +5865,7 @@ msgstr "Valid"
 msgid "dev"
 msgstr "Entwicklung"
 
-#: templates/dev/dev.html:13 templates/home/home.html:58
-#: templates/menu.html:61
+#: templates/dev/dev.html:13 templates/home/home.html:58 templates/menu.html:61
 msgid "Roadmap"
 msgstr "Meilensteinplan"
 
@@ -6026,7 +6018,7 @@ msgstr "keine offiziellen Channel:"
 
 #: templates/dev/support.html:34
 msgid "Finnish"
-msgstr ""
+msgstr "Finnisch"
 
 #: templates/dev/support.html:39
 msgid "Bugs / Feature requests"
