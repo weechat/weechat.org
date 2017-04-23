@@ -49,7 +49,8 @@ def i18n_autogen(app, name, strings):
             if translators:
                 content.append('    # Translators: %s' % translators)
             content.append('    gettext_lazy("%s"),' %
-                           message.replace('"', '\\"').replace('\r\n', '\\n'))
+                           (message.replace('\\', '\\\\').replace('"', '\\"')
+                            .replace('\r\n', '\\n')))
             done.add(message)
     content.append(']')
     content.append('')
