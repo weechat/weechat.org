@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-23 12:29+0200\n"
+"POT-Creation-Date: 2017-04-30 17:31+0200\n"
 "PO-Revision-Date: 2017-03-20 09:00+0900\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
@@ -210,7 +210,7 @@ msgid "German"
 msgstr "ドイツ語"
 
 #: doc/models.py:32 settings.py:60 templates/dev/support.html:26
-#: templates/menu.html:24 templates/menu.html.py:25
+#: templates/menu.html:24 templates/menu.html:25
 msgid "English"
 msgstr "英語"
 
@@ -4985,13 +4985,13 @@ msgstr ""
 "デートすることになります)。"
 
 #: plugins/models.py:252 templates/plugins/list.html:63
-#: templates/plugins/list.html.py:65 templates/plugins/pending.html:33
+#: templates/plugins/list.html:65 templates/plugins/pending.html:33
 msgctxt "programming language"
 msgid "Language"
 msgstr "プログラミング言語"
 
 #: plugins/models.py:256 templates/about/donate.html:58
-#: templates/plugins/list.html:57 templates/plugins/list.html.py:59
+#: templates/plugins/list.html:57 templates/plugins/list.html:59
 #: templates/plugins/pending.html:29
 msgid "Name"
 msgstr "名称"
@@ -5001,7 +5001,7 @@ msgid "version of script (only digits or dots)"
 msgstr "スクリプトのバージョン (数字とドットのみ使用可)"
 
 #: plugins/models.py:267 templates/plugins/list.html:72
-#: templates/plugins/list.html.py:74 templates/plugins/pending.html:34
+#: templates/plugins/list.html:74 templates/plugins/pending.html:34
 msgid "License"
 msgstr "ライセンス"
 
@@ -5312,7 +5312,7 @@ msgstr "スクリプト用の API"
 msgid "IRC proxy and remote interface"
 msgstr "IRC プロキシとリモートインターフェイス"
 
-#: templates/about/features.html:54 templates/about/features.html.py:81
+#: templates/about/features.html:54 templates/about/features.html:81
 msgid "Scripts manager"
 msgstr "スクリプトマネージャ"
 
@@ -5368,7 +5368,7 @@ msgstr "FIFO パイプ"
 msgid "Spell checking"
 msgstr "スペルチェック"
 
-#: templates/about/features.html:82 templates/about/features.html.py:121
+#: templates/about/features.html:82 templates/about/features.html:121
 #: templates/download/packages.html:117
 msgid "Remote interfaces"
 msgstr "リモートインターフェイス"
@@ -5621,8 +5621,7 @@ msgstr "有効"
 msgid "dev"
 msgstr "開発"
 
-#: templates/dev/dev.html:13 templates/home/home.html:58
-#: templates/menu.html:61
+#: templates/dev/dev.html:13 templates/home/home.html:58 templates/menu.html:61
 msgid "Roadmap"
 msgstr "ロードマップ"
 
@@ -5822,12 +5821,12 @@ msgstr ""
 msgid "<strong>weechat-security</strong> (security advisories about WeeChat):"
 msgstr "<strong>weechat-security</strong> (WeeChat に関するセキュリティ勧告):"
 
-#: templates/dev/support.html:61 templates/dev/support.html.py:68
+#: templates/dev/support.html:61 templates/dev/support.html:68
 #: templates/dev/support.html:75
 msgid "subscribe:"
 msgstr "登録:"
 
-#: templates/dev/support.html:62 templates/dev/support.html.py:69
+#: templates/dev/support.html:62 templates/dev/support.html:69
 #: templates/dev/support.html:76
 msgid "send mail to:"
 msgstr "メールの送信先:"
@@ -5853,7 +5852,7 @@ msgid "Devel"
 msgstr "開発版"
 
 #: templates/doc/doc.html:15 templates/download/download.html:15
-#: templates/menu.html:23 templates/menu.html.py:33
+#: templates/menu.html:23 templates/menu.html:33
 msgid "Old versions"
 msgstr "古いバージョン"
 
@@ -5921,7 +5920,19 @@ msgid ""
 "guide."
 msgstr "開発者ガイドには WeeChat の翻訳に関する詳しい情報が載せられています。"
 
-#: templates/download/debian.html:28
+#: templates/download/debian.html:29
+#, fuzzy
+#| msgid "Repositories"
+msgid "Active repositories"
+msgstr "リポジトリ"
+
+#: templates/download/debian.html:30
+#, fuzzy
+#| msgid "Repositories"
+msgid "All repositories"
+msgstr "リポジトリ"
+
+#: templates/download/debian.html:35
 msgid ""
 "<strong>Important:</strong> these packages are not Debian official packages; "
 "please <a href=\"#instructions\"><strong>read instructions</strong></a> "
@@ -5931,41 +5942,41 @@ msgstr ""
 "ん。リポジトリを使う前に<a href=\"#instructions\"><strong>説明を読んでくださ"
 "い</strong></a>。"
 
-#: templates/download/debian.html:43
+#: templates/download/debian.html:50
 msgid "Important"
 msgstr "重要"
 
-#: templates/download/debian.html:49
+#: templates/download/debian.html:56
 msgid "Builds by"
 msgstr "ビルドした人"
 
-#: templates/download/debian.html:53
+#: templates/download/debian.html:60
 msgid "Latest build:"
 msgstr "最新ビルド:"
 
-#: templates/download/debian.html:63
+#: templates/download/debian.html:70
 msgid "There are no more package builds in this repository."
 msgstr "もはやこのリポジトリをビルドしたパッケージは存在しません。"
 
 #. Translators: purpose is to "translate" only quotes here
-#: templates/download/debian.html:67 templates/download/debian.html.py:141
+#: templates/download/debian.html:74 templates/download/debian.html:148
 #, python-format
 msgid "“%(codename)s”"
 msgstr "「%(codename)s」"
 
-#: templates/download/debian.html:82
+#: templates/download/debian.html:89
 msgid "Architecture"
 msgstr "アーキテクチャ"
 
-#: templates/download/debian.html:85
+#: templates/download/debian.html:92
 msgid "files"
 msgstr "ファイル"
 
-#: templates/download/debian.html:114
+#: templates/download/debian.html:121
 msgid "Instructions:"
 msgstr "説明:"
 
-#: templates/download/debian.html:119
+#: templates/download/debian.html:126
 msgid ""
 "You must use apt, apt-get or aptitude to install the packages (with sudo or "
 "as \"root\" user)."
@@ -5973,26 +5984,26 @@ msgstr ""
 "パッケージをインストールするには、apt、apt-get または aptitude を (sudo と組"
 "合わせるか \"root\" ユーザになってから) 使ってください。"
 
-#: templates/download/debian.html:120
+#: templates/download/debian.html:127
 msgid "The following examples use sudo and apt-get."
 msgstr "以下の例では sudo と apt-get を使っています。"
 
-#: templates/download/debian.html:123
+#: templates/download/debian.html:130
 msgid "Install https transport for apt:"
 msgstr "apt で https 転送を使うためのパッケージをインストール:"
 
-#: templates/download/debian.html:125
+#: templates/download/debian.html:132
 msgid ""
 "Otherwise you can replace \"https://\" by \"http://\" in URLs (less secure)."
 msgstr ""
 "こうすると URL で (安全性の低い) http:// の代わりに https:// を使うことができ"
 "ます。"
 
-#: templates/download/debian.html:128
+#: templates/download/debian.html:135
 msgid "Import the gpg key used to sign the repository:"
 msgstr "このリポジトリに署名するために使われた gpg 鍵をインポートしてください:"
 
-#: templates/download/debian.html:132
+#: templates/download/debian.html:139
 msgid ""
 "Create a weechat.list file with the repository, according to your "
 "distribution/version:"
@@ -6000,11 +6011,11 @@ msgstr ""
 "お使いのディストリビューション/バージョンに対応するリポジトリを含む weechat."
 "list ファイルを作成してください:"
 
-#: templates/download/debian.html:135
+#: templates/download/debian.html:142
 msgid "Choose your distribution/version"
 msgstr "ディストリビューション/バージョンを選んでください"
 
-#: templates/download/debian.html:148
+#: templates/download/debian.html:155
 msgid ""
 "Note: the second command line is optional, it is used to download source "
 "packages."
@@ -6012,11 +6023,11 @@ msgstr ""
 "注意: コマンドラインの 2 行目は任意です。これはソースパッケージをダウンロード"
 "するためのものです。"
 
-#: templates/download/debian.html:151
+#: templates/download/debian.html:158
 msgid "Resynchronize your package index files:"
 msgstr "パッケージインデックスファイルを再同期:"
 
-#: templates/download/debian.html:155
+#: templates/download/debian.html:162
 msgid ""
 "Install the binary packages; the \"plugins\" package is highly recommended "
 "but not mandatory."
@@ -6024,15 +6035,15 @@ msgstr ""
 "バイナリパッケージをインストール; \"plugins\" パッケージは必須ではありません"
 "が、インストールを強くお勧めします。"
 
-#: templates/download/debian.html:158
+#: templates/download/debian.html:165
 msgid "For the stable version:"
 msgstr "安定版向け:"
 
-#: templates/download/debian.html:162
+#: templates/download/debian.html:169
 msgid "For the development version:"
 msgstr "開発版向け:"
 
-#: templates/download/debian.html:168
+#: templates/download/debian.html:175
 msgid ""
 "If needed, you can download the source package in order to rebuild binary "
 "packages:"
@@ -6040,7 +6051,7 @@ msgstr ""
 "必要ならば、バイナリパッケージを再ビルドするためにソースパッケージをダウン"
 "ロードすることが可能です:"
 
-#: templates/download/debian.html:178
+#: templates/download/debian.html:185
 msgid "No debian repository."
 msgstr "Debian リポジトリがありません。"
 
@@ -6393,7 +6404,7 @@ msgstr ""
 "<strong>寄付</strong>: どんな寄付でも歓迎します。寄付はモチベーションの維持に"
 "重要です"
 
-#: templates/home/home.html:80 templates/home/home.html.py:100
+#: templates/home/home.html:80 templates/home/home.html:100
 msgid "More"
 msgstr "その他"
 
@@ -6435,11 +6446,11 @@ msgstr "ホーム"
 msgid "About"
 msgstr "概要"
 
-#: templates/menu.html:21 templates/menu.html.py:31
+#: templates/menu.html:21 templates/menu.html:31
 msgid "Stable version"
 msgstr "安定版"
 
-#: templates/menu.html:22 templates/menu.html.py:32
+#: templates/menu.html:22 templates/menu.html:32
 msgid "Dev version"
 msgstr "開発版"
 
@@ -6660,31 +6671,31 @@ msgstr "スクリプト"
 msgid "Search by tag:"
 msgstr "タグで検索:"
 
-#: templates/plugins/list.html:46 templates/plugins/list.html.py:120
+#: templates/plugins/list.html:46 templates/plugins/list.html:120
 msgid "Tag:"
 msgstr "タグ:"
 
-#: templates/plugins/list.html:79 templates/plugins/list.html.py:81
+#: templates/plugins/list.html:79 templates/plugins/list.html:81
 #: templates/plugins/pending.html:35
 msgid "Min"
 msgstr "以上"
 
-#: templates/plugins/list.html:86 templates/plugins/list.html.py:88
+#: templates/plugins/list.html:86 templates/plugins/list.html:88
 #: templates/plugins/pending.html:36
 msgid "Max"
 msgstr "以下"
 
-#: templates/plugins/list.html:93 templates/plugins/list.html.py:95
+#: templates/plugins/list.html:93 templates/plugins/list.html:95
 #: templates/plugins/pending.html:37 templates/plugins/source.html:24
 msgid "Author"
 msgstr "作者"
 
-#: templates/plugins/list.html:100 templates/plugins/list.html.py:102
+#: templates/plugins/list.html:100 templates/plugins/list.html:102
 #: templates/themes/list.html:28
 msgid "Added"
 msgstr "追加日"
 
-#: templates/plugins/list.html:107 templates/plugins/list.html.py:109
+#: templates/plugins/list.html:107 templates/plugins/list.html:109
 msgid "Updated"
 msgstr "アップデート日"
 
@@ -6805,7 +6816,7 @@ msgid "You'll be informed if there is a problem with your theme."
 msgstr "テーマに問題があった場合には連絡があります。"
 
 #: templates/themes/add_ok.html:19 templates/themes/list.html:41
-#: templates/themes/source.html:15 templates/themes/source.html.py:22
+#: templates/themes/source.html:15 templates/themes/source.html:22
 #: templates/themes/update_ok.html:17
 msgid "Back to themes"
 msgstr "テーマに戻る"

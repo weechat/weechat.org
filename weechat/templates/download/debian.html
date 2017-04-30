@@ -24,6 +24,13 @@ var deb_apt_cmds = [
 
 {{ block.super }}
 
+<div class="navbt" style="border-bottom: none">
+  <ul>
+    <li><a href="{% url 'download_debian_active' active='active' %}"{% if active == "active" %} class="selected"{% endif %}>{% trans "Active repositories" %}</a></li>
+    <li><a href="{% url 'download_debian_active' active='all'  %}"{% if active == "all" %} class="selected"{% endif %}>{% trans "All repositories" %}</a></li>
+  </ul>
+</div>
+
 <div class="infobox">
   {% blocktrans %}<strong>Important:</strong> these packages are not Debian official packages; please <a href="#instructions"><strong>read instructions</strong></a> before using these repositories.{% endblocktrans %}
 </div>
@@ -82,7 +89,7 @@ var deb_apt_cmds = [
               <span title="{% trans "Architecture" %}">{{ debpkg_arch.list.0.arch }}</span>
             </td>
             <td>
-              <a href="{% url 'download_debian' %}{% if not allfiles %}files/#{{ debpkg_arch.list.0.anchor }}{% endif %}" id="{{ debpkg_arch.list.0.anchor }}">{{ debpkg_arch.list|length }} {% trans "files" %}</a>
+              <a href="{% url 'download_debian_active' active=active %}{% if not allfiles %}files/#{{ debpkg_arch.list.0.anchor }}{% endif %}" id="{{ debpkg_arch.list.0.anchor }}">{{ debpkg_arch.list|length }} {% trans "files" %}</a>
             </td>
             <td class="date">
               ({{ debpkg_arch.list.0.builddate|localstrdate }}<span class="time">{{ debpkg_arch.list.0.buildtime }})</span>

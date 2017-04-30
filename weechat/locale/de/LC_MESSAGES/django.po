@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-23 12:29+0200\n"
+"POT-Creation-Date: 2017-04-30 17:31+0200\n"
 "PO-Revision-Date: 2017-04-23 13:23+0200\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <weechatter@arcor.de>\n"
@@ -214,7 +214,7 @@ msgid "German"
 msgstr "Deutsch"
 
 #: doc/models.py:32 settings.py:60 templates/dev/support.html:26
-#: templates/menu.html:24 templates/menu.html.py:25
+#: templates/menu.html:24 templates/menu.html:25
 msgid "English"
 msgstr "Englisch"
 
@@ -5217,13 +5217,13 @@ msgid ""
 msgstr "Dieser Name existiert bereits. Bitte wähle einen anderen Namen."
 
 #: plugins/models.py:252 templates/plugins/list.html:63
-#: templates/plugins/list.html.py:65 templates/plugins/pending.html:33
+#: templates/plugins/list.html:65 templates/plugins/pending.html:33
 msgctxt "programming language"
 msgid "Language"
 msgstr "Sprache"
 
 #: plugins/models.py:256 templates/about/donate.html:58
-#: templates/plugins/list.html:57 templates/plugins/list.html.py:59
+#: templates/plugins/list.html:57 templates/plugins/list.html:59
 #: templates/plugins/pending.html:29
 msgid "Name"
 msgstr "Name"
@@ -5233,7 +5233,7 @@ msgid "version of script (only digits or dots)"
 msgstr "Version des Skripts (nur Ziffern oder Punkte)"
 
 #: plugins/models.py:267 templates/plugins/list.html:72
-#: templates/plugins/list.html.py:74 templates/plugins/pending.html:34
+#: templates/plugins/list.html:74 templates/plugins/pending.html:34
 msgid "License"
 msgstr "Lizenz"
 
@@ -5552,7 +5552,7 @@ msgstr "API für Skriptsprachen"
 msgid "IRC proxy and remote interface"
 msgstr "IRC Proxy und Remote-Oberfläche"
 
-#: templates/about/features.html:54 templates/about/features.html.py:81
+#: templates/about/features.html:54 templates/about/features.html:81
 msgid "Scripts manager"
 msgstr "Skripten-Manager"
 
@@ -5609,7 +5609,7 @@ msgstr "FIFO Pipe"
 msgid "Spell checking"
 msgstr "Rechtschreibprüfung"
 
-#: templates/about/features.html:82 templates/about/features.html.py:121
+#: templates/about/features.html:82 templates/about/features.html:121
 #: templates/download/packages.html:117
 msgid "Remote interfaces"
 msgstr "Remote-Oberfläche"
@@ -6065,12 +6065,12 @@ msgstr ""
 "<strong>weechat-security</strong> (Sicherheitsankündigungen, die WeeChat "
 "betreffen):"
 
-#: templates/dev/support.html:61 templates/dev/support.html.py:68
+#: templates/dev/support.html:61 templates/dev/support.html:68
 #: templates/dev/support.html:75
 msgid "subscribe:"
 msgstr "abonnieren:"
 
-#: templates/dev/support.html:62 templates/dev/support.html.py:69
+#: templates/dev/support.html:62 templates/dev/support.html:69
 #: templates/dev/support.html:76
 msgid "send mail to:"
 msgstr "sende eine Mail an:"
@@ -6098,7 +6098,7 @@ msgid "Devel"
 msgstr "Instabil"
 
 #: templates/doc/doc.html:15 templates/download/download.html:15
-#: templates/menu.html:23 templates/menu.html.py:33
+#: templates/menu.html:23 templates/menu.html:33
 msgid "Old versions"
 msgstr "alte Versionen"
 
@@ -6172,7 +6172,19 @@ msgstr ""
 "Zusätzliche Informationen zu den einzelnen Übersetzungen von WeeChat findet "
 "man im Entwicklerhandbuch."
 
-#: templates/download/debian.html:28
+#: templates/download/debian.html:29
+#, fuzzy
+#| msgid "Repositories"
+msgid "Active repositories"
+msgstr "Repositorien"
+
+#: templates/download/debian.html:30
+#, fuzzy
+#| msgid "Repositories"
+msgid "All repositories"
+msgstr "Repositorien"
+
+#: templates/download/debian.html:35
 msgid ""
 "<strong>Important:</strong> these packages are not Debian official packages; "
 "please <a href=\"#instructions\"><strong>read instructions</strong></a> "
@@ -6183,41 +6195,41 @@ msgstr ""
 "\"><strong>Anleitung zu lesen</strong></a> bevor diese Repositorien genutzt "
 "werden."
 
-#: templates/download/debian.html:43
+#: templates/download/debian.html:50
 msgid "Important"
 msgstr "Wichtig"
 
-#: templates/download/debian.html:49
+#: templates/download/debian.html:56
 msgid "Builds by"
 msgstr "Erstellt von"
 
-#: templates/download/debian.html:53
+#: templates/download/debian.html:60
 msgid "Latest build:"
 msgstr "zuletzt Erstellt am:"
 
-#: templates/download/debian.html:63
+#: templates/download/debian.html:70
 msgid "There are no more package builds in this repository."
 msgstr "Es existieren keine weiteren Pakete in diesem repository."
 
 #. Translators: purpose is to "translate" only quotes here
-#: templates/download/debian.html:67 templates/download/debian.html.py:141
+#: templates/download/debian.html:74 templates/download/debian.html:148
 #, python-format
 msgid "“%(codename)s”"
 msgstr "“%(codename)s”"
 
-#: templates/download/debian.html:82
+#: templates/download/debian.html:89
 msgid "Architecture"
 msgstr "Architektur"
 
-#: templates/download/debian.html:85
+#: templates/download/debian.html:92
 msgid "files"
 msgstr "Dateien"
 
-#: templates/download/debian.html:114
+#: templates/download/debian.html:121
 msgid "Instructions:"
 msgstr "Anleitung:"
 
-#: templates/download/debian.html:119
+#: templates/download/debian.html:126
 msgid ""
 "You must use apt, apt-get or aptitude to install the packages (with sudo or "
 "as \"root\" user)."
@@ -6225,26 +6237,26 @@ msgstr ""
 "Um mittels apt, apt-get oder aptitude die Pakete installieren zu können, "
 "muss man \"root\" sein oder den \"sudo\" Befehl verwenden."
 
-#: templates/download/debian.html:120
+#: templates/download/debian.html:127
 msgid "The following examples use sudo and apt-get."
 msgstr "In die nachfolgenden Beispielen wird mit sudo und apt-get gearbeitet."
 
-#: templates/download/debian.html:123
+#: templates/download/debian.html:130
 msgid "Install https transport for apt:"
 msgstr "Installation von https Transport für apt:"
 
-#: templates/download/debian.html:125
+#: templates/download/debian.html:132
 msgid ""
 "Otherwise you can replace \"https://\" by \"http://\" in URLs (less secure)."
 msgstr ""
 "\"https://\" kann auch durch \"http://\" ersetzt werden (weniger Sicherheit)."
 
-#: templates/download/debian.html:128
+#: templates/download/debian.html:135
 msgid "Import the gpg key used to sign the repository:"
 msgstr ""
 "Importieren des gpg Schlüssel mit welchem die Repositorien signiert sind:"
 
-#: templates/download/debian.html:132
+#: templates/download/debian.html:139
 msgid ""
 "Create a weechat.list file with the repository, according to your "
 "distribution/version:"
@@ -6252,11 +6264,11 @@ msgstr ""
 "Erstelle eine weechat.list Datei für Dein Repository, entsprechend der "
 "Distribution/Version:"
 
-#: templates/download/debian.html:135
+#: templates/download/debian.html:142
 msgid "Choose your distribution/version"
 msgstr "Wähle Deine Distribution/Version"
 
-#: templates/download/debian.html:148
+#: templates/download/debian.html:155
 msgid ""
 "Note: the second command line is optional, it is used to download source "
 "packages."
@@ -6264,11 +6276,11 @@ msgstr ""
 "Hinweis: die zweite Befehlszeile ist optional, sie dient dazu die "
 "Quellpakete herunterzuladen."
 
-#: templates/download/debian.html:151
+#: templates/download/debian.html:158
 msgid "Resynchronize your package index files:"
 msgstr "Indexdateien für Pakete neu einlesen:"
 
-#: templates/download/debian.html:155
+#: templates/download/debian.html:162
 msgid ""
 "Install the binary packages; the \"plugins\" package is highly recommended "
 "but not mandatory."
@@ -6276,15 +6288,15 @@ msgstr ""
 "Binärpakete installieren; das Paket \"plugins\" wird ausdrücklich empfohlen, "
 "ist aber nicht zwingend notwendig."
 
-#: templates/download/debian.html:158
+#: templates/download/debian.html:165
 msgid "For the stable version:"
 msgstr "für stabile Version:"
 
-#: templates/download/debian.html:162
+#: templates/download/debian.html:169
 msgid "For the development version:"
 msgstr "für die Entwicklerversion:"
 
-#: templates/download/debian.html:168
+#: templates/download/debian.html:175
 msgid ""
 "If needed, you can download the source package in order to rebuild binary "
 "packages:"
@@ -6292,7 +6304,7 @@ msgstr ""
 "Falls notwendig können die Quellpakete heruntergeladen werden um die "
 "Binärdateien neu zu erstellen:"
 
-#: templates/download/debian.html:178
+#: templates/download/debian.html:185
 msgid "No debian repository."
 msgstr "Kein Debian Repository."
 
@@ -6656,7 +6668,7 @@ msgstr ""
 "<strong>Spende</strong>: jeder Beitrag ist willkommen und fördert die "
 "Motivation"
 
-#: templates/home/home.html:80 templates/home/home.html.py:100
+#: templates/home/home.html:80 templates/home/home.html:100
 msgid "More"
 msgstr "Mehr"
 
@@ -6698,11 +6710,11 @@ msgstr "Hauptseite"
 msgid "About"
 msgstr "Über"
 
-#: templates/menu.html:21 templates/menu.html.py:31
+#: templates/menu.html:21 templates/menu.html:31
 msgid "Stable version"
 msgstr "stabile Version"
 
-#: templates/menu.html:22 templates/menu.html.py:32
+#: templates/menu.html:22 templates/menu.html:32
 msgid "Dev version"
 msgstr "Entwicklerversion"
 
@@ -6938,31 +6950,31 @@ msgstr "Skripten"
 msgid "Search by tag:"
 msgstr "Schlagwortsuche:"
 
-#: templates/plugins/list.html:46 templates/plugins/list.html.py:120
+#: templates/plugins/list.html:46 templates/plugins/list.html:120
 msgid "Tag:"
 msgstr "Schlagwort:"
 
-#: templates/plugins/list.html:79 templates/plugins/list.html.py:81
+#: templates/plugins/list.html:79 templates/plugins/list.html:81
 #: templates/plugins/pending.html:35
 msgid "Min"
 msgstr "Min"
 
-#: templates/plugins/list.html:86 templates/plugins/list.html.py:88
+#: templates/plugins/list.html:86 templates/plugins/list.html:88
 #: templates/plugins/pending.html:36
 msgid "Max"
 msgstr "Max"
 
-#: templates/plugins/list.html:93 templates/plugins/list.html.py:95
+#: templates/plugins/list.html:93 templates/plugins/list.html:95
 #: templates/plugins/pending.html:37 templates/plugins/source.html:24
 msgid "Author"
 msgstr "Autor"
 
-#: templates/plugins/list.html:100 templates/plugins/list.html.py:102
+#: templates/plugins/list.html:100 templates/plugins/list.html:102
 #: templates/themes/list.html:28
 msgid "Added"
 msgstr "hinzugefügt"
 
-#: templates/plugins/list.html:107 templates/plugins/list.html.py:109
+#: templates/plugins/list.html:107 templates/plugins/list.html:109
 msgid "Updated"
 msgstr "aktualisiert"
 
@@ -7092,7 +7104,7 @@ msgstr ""
 "Sollte ein Problem mit Deinem Theme auftreten wirst Du darüber informiert."
 
 #: templates/themes/add_ok.html:19 templates/themes/list.html:41
-#: templates/themes/source.html:15 templates/themes/source.html.py:22
+#: templates/themes/source.html:15 templates/themes/source.html:22
 #: templates/themes/update_ok.html:17
 msgid "Back to themes"
 msgstr "Zurück zu Themes"

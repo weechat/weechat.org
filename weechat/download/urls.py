@@ -34,8 +34,12 @@ from weechat.download.views import (
 
 urlpatterns = [
     url(r'^$', view_packages, name='download'),
-    url(r'^debian/$', view_repos, name='download_debian'),
-    url(r'^debian/(?P<files>[a-zA-Z0-9.]*)/$', view_repos),
+    url(r'^debian/$', view_repos, {'active': 'active'},
+        name='download_debian'),
+    url(r'^debian/(?P<active>(active|all))/$', view_repos,
+        name='download_debian_active'),
+    url(r'^debian/(?P<active>(active|all))/(?P<files>[a-zA-Z0-9.]*)/$',
+        view_repos),
     url(r'^release/$', view_release, name='download_release'),
     url(r'^security/$', view_security, name='download_security'),
     url(r'^checksums/weechat-(?P<version>[a-zA-Z0-9.]*)-'

@@ -31,11 +31,16 @@ from weechat.common.path import repo_path_join
 from weechat.debian.models import Repo
 
 
-def repos(request, files=''):
+def repos(request, active='active', files=''):
     """Page with debian repositories."""
     repositories = []
     debpkgs = []
-    repositories = (Repo.objects.all().filter(visible=1).order_by('priority'))
+    if active == 'active':
+        repositories = (Repo.objects.all().filter(active=1).filter(visible=1)
+                        .order_by('priority'))
+    else:
+        repositories = (Repo.objects.all().filter(visible=1)
+                        .order_by('priority'))
     for repo in repositories:
         try:
             repopkgs = []
@@ -93,6 +98,7 @@ def repos(request, files=''):
         'download/debian.html',
         {
             'debpkgs': debpkgs,
+            'active': active,
             'allfiles': files == 'files',
             'repositories': repositories,
         },
