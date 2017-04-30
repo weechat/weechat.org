@@ -28,8 +28,13 @@
   </div>
 {% else %}
   <h3>{% trans "No release in progress." %}</h3>
-  {% trans "We are working hard on the next version:" %}
-  <strong>{{ release_progress.version }}</strong> (&asymp; {{ release_progress.date|localdate }}).
+  <p>
+    {% trans "This page is updated only a few hours during the build of a new version." %}
+  </p>
+  <p>
+    {% trans "We are working hard on the next version:" %}
+    <strong>{{ release_progress.version }}</strong> (&asymp; {{ release_progress.date|localdate }}).
+  </p>
 {% endif %}
 
 {% endblock content %}
