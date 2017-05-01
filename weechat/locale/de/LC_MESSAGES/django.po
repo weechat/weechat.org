@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-01 15:04+0200\n"
+"POT-Creation-Date: 2017-05-01 15:30+0200\n"
 "PO-Revision-Date: 2017-04-30 21:42+0200\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <weechatter@arcor.de>\n"
@@ -402,22 +402,22 @@ msgstr ""
 "von WeeChat)."
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:182 templates/download/security.html:71
+#: download/models.py:186 templates/download/security.html:71
 msgid "low"
 msgstr "niedrig"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:184 templates/download/security.html:72
+#: download/models.py:188 templates/download/security.html:72
 msgid "medium"
 msgstr "mittel"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:186 templates/download/security.html:73
+#: download/models.py:190 templates/download/security.html:73
 msgid "high"
 msgstr "hoch"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:188 templates/download/security.html:74
+#: download/models.py:192 templates/download/security.html:74
 msgid "critical"
 msgstr "kritisch"
 
@@ -5610,7 +5610,7 @@ msgid "Spell checking"
 msgstr "Rechtschreibprüfung"
 
 #: templates/about/features.html:82 templates/about/features.html:121
-#: templates/download/packages.html:128
+#: templates/download/packages.html:127
 msgid "Remote interfaces"
 msgstr "Remote-Oberfläche"
 
@@ -6350,16 +6350,20 @@ msgstr ""
 "auftreten sollten, die durch die Entwickler nicht behoben werden können!"
 
 #: templates/download/packages.html:57
-#, python-format
+#, fuzzy, python-format
+#| msgid ""
+#| "<strong>Warning:</strong> this version has a <a href="
+#| "\"%(download_security_url)s\">vulnerability</a> which is fixed in version"
 msgid ""
-"<strong>Warning:</strong> this version has a <a href="
-"\"%(download_security_url)s\">vulnerability</a> which is fixed in version"
+"<strong>Warning:</strong> this version has one or more <a href="
+"\"%(download_security_url)s\">vulnerabilities</a>, it is not recommended to "
+"use it (fixed in version %(fixed_versions)s)."
 msgstr ""
 "<strong>Warnung:</strong> diese Version enthält eine <a href="
 "\"%(download_security_url)s\">Schwachstelle</a> welche behoben wurde mit "
 "Version"
 
-#: templates/download/packages.html:65 templates/home/home.html:41
+#: templates/download/packages.html:64 templates/home/home.html:41
 #, fuzzy, python-format
 #| msgid ""
 #| "<strong>Warning:</strong> this version has a <a href="
@@ -6372,7 +6376,7 @@ msgstr ""
 "\"%(download_security_url)s\">Schwachstelle</a> welche behoben wurde mit "
 "Version"
 
-#: templates/download/packages.html:67 templates/home/home.html:43
+#: templates/download/packages.html:66 templates/home/home.html:43
 #, fuzzy, python-format
 #| msgid ""
 #| "<strong>Warning:</strong> this version has a <a href="
@@ -6385,43 +6389,43 @@ msgstr ""
 "\"%(download_security_url)s\">Schwachstelle</a> welche behoben wurde mit "
 "Version"
 
-#: templates/download/packages.html:73
+#: templates/download/packages.html:72
 msgid "Packages"
 msgstr "Pakete"
 
-#: templates/download/packages.html:84
+#: templates/download/packages.html:83
 msgid "Checksum"
 msgstr "Prüfsumme"
 
-#: templates/download/packages.html:110
+#: templates/download/packages.html:109
 msgid "About release"
 msgstr "Über Release"
 
-#: templates/download/packages.html:112
+#: templates/download/packages.html:111
 msgid "ChangeLog"
 msgstr "Change-Log"
 
-#: templates/download/packages.html:118
+#: templates/download/packages.html:117
 msgid "Release notes"
 msgstr "Release notes"
 
-#: templates/download/packages.html:138
+#: templates/download/packages.html:137
 msgid "(see above)"
 msgstr "(siehe oben)"
 
-#: templates/download/packages.html:162
+#: templates/download/packages.html:161
 msgid "Checking the signatures"
 msgstr "Verifizieren der Signaturen"
 
-#: templates/download/packages.html:166
+#: templates/download/packages.html:165
 msgid "Import the gpg key:"
 msgstr "GPG Schlüssel importieren:"
 
-#: templates/download/packages.html:170
+#: templates/download/packages.html:169
 msgid "Display the fingerprint:"
 msgstr "Fingerabdruck anzeigen:"
 
-#: templates/download/packages.html:174
+#: templates/download/packages.html:173
 msgid ""
 "Check that the fingerprint is correct by asking to a developer on #weechat "
 "(chat.freenode.net)."
@@ -6429,39 +6433,39 @@ msgstr ""
 "Um die Echtheit des Fingerabdruckes zu verifizieren kann ein Entwickler im "
 "#weechat Channel (irc.freenode.net) angesprochen werden."
 
-#: templates/download/packages.html:177
+#: templates/download/packages.html:176
 msgid "Trust the key:"
 msgstr "Schlüssel vertrauen:"
 
-#: templates/download/packages.html:186
+#: templates/download/packages.html:185
 msgid "In directory with package + signature:"
 msgstr "Im Verzeichnis mit den Paketen und Signaturen:"
 
-#: templates/download/packages.html:190
+#: templates/download/packages.html:189
 msgid "If the signature is OK you should see a message like this one:"
 msgstr "Wird die Signatur als korrekt erkannt, wird eine Nachricht angezeigt:"
 
-#: templates/download/packages.html:203
+#: templates/download/packages.html:202
 msgid "Links"
 msgstr "Links"
 
-#: templates/download/packages.html:205
+#: templates/download/packages.html:204
 msgid "Savannah page"
 msgstr "Savannah Seite"
 
-#: templates/download/packages.html:211
+#: templates/download/packages.html:210
 msgid "Git - sources"
 msgstr "Git - Quelltext"
 
-#: templates/download/packages.html:217
+#: templates/download/packages.html:216
 msgid "Git - scripts"
 msgstr "Git - Skripten"
 
-#: templates/download/packages.html:223
+#: templates/download/packages.html:222
 msgid "Git - clone"
 msgstr "Git - Clone"
 
-#: templates/download/packages.html:233
+#: templates/download/packages.html:232
 msgid "Error: there is no version called"
 msgstr "Fehler: Es wurde keine Version ausgewählt"
 

@@ -54,8 +54,7 @@
       {% if package_version.grouper.securityfix %}
         <div class="warningbox">
           {% url 'download_security' as download_security_url %}
-          {% blocktrans %}<strong>Warning:</strong> this version has a <a href="{{ download_security_url }}">vulnerability</a> which is fixed in version{% endblocktrans %}
-          {{ package_version.grouper.securityfix }}.
+          {% blocktrans with package_version.grouper.security_fixed_versions|join:", " as fixed_versions %}<strong>Warning:</strong> this version has one or more <a href="{{ download_security_url }}">vulnerabilities</a>, it is not recommended to use it (fixed in version {{ fixed_versions }}).{% endblocktrans %}
         </div>
       {% else %}
         {% if version == "stable" and package_version.grouper.security_issues_fixed > 0 %}

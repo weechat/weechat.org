@@ -43,7 +43,7 @@ class Release(models.Model):
     description = models.CharField(max_length=64, blank=True)
     date = models.DateField(blank=True, null=True)
     security_issues_fixed = models.IntegerField(default=0)
-    securityfix = models.CharField(max_length=64, blank=True)
+    securityfix = models.CharField(max_length=256, blank=True)
 
     def __unicode__(self):
         return '%s (%s)%s' % (
@@ -55,6 +55,10 @@ class Release(models.Model):
     def date_l10n(self):
         """Return the release date formatted with localized date format."""
         return localdate(self.date)
+
+    def security_fixed_versions(self):
+        """Return the list of versions fixing security issue in this version."""
+        return self.securityfix.split(',')
 
     class Meta:
         ordering = ['-date']

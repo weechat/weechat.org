@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-01 15:04+0200\n"
+"POT-Creation-Date: 2017-05-01 15:30+0200\n"
 "PO-Revision-Date: 2017-03-20 09:00+0900\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
@@ -390,22 +390,22 @@ msgstr ""
 "です)。"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:182 templates/download/security.html:71
+#: download/models.py:186 templates/download/security.html:71
 msgid "low"
 msgstr "低"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:184 templates/download/security.html:72
+#: download/models.py:188 templates/download/security.html:72
 msgid "medium"
 msgstr "中"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:186 templates/download/security.html:73
+#: download/models.py:190 templates/download/security.html:73
 msgid "high"
 msgstr "高"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:188 templates/download/security.html:74
+#: download/models.py:192 templates/download/security.html:74
 msgid "critical"
 msgstr "重大"
 
@@ -5369,7 +5369,7 @@ msgid "Spell checking"
 msgstr "スペルチェック"
 
 #: templates/about/features.html:82 templates/about/features.html:121
-#: templates/download/packages.html:128
+#: templates/download/packages.html:127
 msgid "Remote interfaces"
 msgstr "リモートインターフェイス"
 
@@ -6102,15 +6102,19 @@ msgstr ""
 "ジョンを使ってください!"
 
 #: templates/download/packages.html:57
-#, python-format
+#, fuzzy, python-format
+#| msgid ""
+#| "<strong>Warning:</strong> this version has a <a href="
+#| "\"%(download_security_url)s\">vulnerability</a> which is fixed in version"
 msgid ""
-"<strong>Warning:</strong> this version has a <a href="
-"\"%(download_security_url)s\">vulnerability</a> which is fixed in version"
+"<strong>Warning:</strong> this version has one or more <a href="
+"\"%(download_security_url)s\">vulnerabilities</a>, it is not recommended to "
+"use it (fixed in version %(fixed_versions)s)."
 msgstr ""
 "<strong>警告:</strong> このバージョンには<a href=\"%(download_security_url)s"
 "\">脆弱性</a>があります。脆弱性を修正したバージョンは"
 
-#: templates/download/packages.html:65 templates/home/home.html:41
+#: templates/download/packages.html:64 templates/home/home.html:41
 #, fuzzy, python-format
 #| msgid ""
 #| "<strong>Warning:</strong> this version has a <a href="
@@ -6122,7 +6126,7 @@ msgstr ""
 "<strong>警告:</strong> このバージョンには<a href=\"%(download_security_url)s"
 "\">脆弱性</a>があります。脆弱性を修正したバージョンは"
 
-#: templates/download/packages.html:67 templates/home/home.html:43
+#: templates/download/packages.html:66 templates/home/home.html:43
 #, fuzzy, python-format
 #| msgid ""
 #| "<strong>Warning:</strong> this version has a <a href="
@@ -6134,43 +6138,43 @@ msgstr ""
 "<strong>警告:</strong> このバージョンには<a href=\"%(download_security_url)s"
 "\">脆弱性</a>があります。脆弱性を修正したバージョンは"
 
-#: templates/download/packages.html:73
+#: templates/download/packages.html:72
 msgid "Packages"
 msgstr "パッケージ"
 
-#: templates/download/packages.html:84
+#: templates/download/packages.html:83
 msgid "Checksum"
 msgstr "チェックサム"
 
-#: templates/download/packages.html:110
+#: templates/download/packages.html:109
 msgid "About release"
 msgstr "リリースについて"
 
-#: templates/download/packages.html:112
+#: templates/download/packages.html:111
 msgid "ChangeLog"
 msgstr "ChangeLog"
 
-#: templates/download/packages.html:118
+#: templates/download/packages.html:117
 msgid "Release notes"
 msgstr "リリースノート"
 
-#: templates/download/packages.html:138
+#: templates/download/packages.html:137
 msgid "(see above)"
 msgstr "(上記の通り)"
 
-#: templates/download/packages.html:162
+#: templates/download/packages.html:161
 msgid "Checking the signatures"
 msgstr "署名の確認方法"
 
-#: templates/download/packages.html:166
+#: templates/download/packages.html:165
 msgid "Import the gpg key:"
 msgstr "gpg キーをインポート:"
 
-#: templates/download/packages.html:170
+#: templates/download/packages.html:169
 msgid "Display the fingerprint:"
 msgstr "指紋を表示:"
 
-#: templates/download/packages.html:174
+#: templates/download/packages.html:173
 msgid ""
 "Check that the fingerprint is correct by asking to a developer on #weechat "
 "(chat.freenode.net)."
@@ -6178,39 +6182,39 @@ msgstr ""
 "#weechat (chat.freenode.net) の開発者に尋ねて指紋が正しいことを確認してくださ"
 "い。"
 
-#: templates/download/packages.html:177
+#: templates/download/packages.html:176
 msgid "Trust the key:"
 msgstr "キーを信用する:"
 
-#: templates/download/packages.html:186
+#: templates/download/packages.html:185
 msgid "In directory with package + signature:"
 msgstr "パッケージと署名ファイルがあるディレクトリ内で:"
 
-#: templates/download/packages.html:190
+#: templates/download/packages.html:189
 msgid "If the signature is OK you should see a message like this one:"
 msgstr "署名が正しいなら、以下の様なメッセージが表示されれるはずです:"
 
-#: templates/download/packages.html:203
+#: templates/download/packages.html:202
 msgid "Links"
 msgstr "リンク"
 
-#: templates/download/packages.html:205
+#: templates/download/packages.html:204
 msgid "Savannah page"
 msgstr "Savannah ページ"
 
-#: templates/download/packages.html:211
+#: templates/download/packages.html:210
 msgid "Git - sources"
 msgstr "Git - ソース"
 
-#: templates/download/packages.html:217
+#: templates/download/packages.html:216
 msgid "Git - scripts"
 msgstr "Git - スクリプト"
 
-#: templates/download/packages.html:223
+#: templates/download/packages.html:222
 msgid "Git - clone"
 msgstr "Git - クローン"
 
-#: templates/download/packages.html:233
+#: templates/download/packages.html:232
 msgid "Error: there is no version called"
 msgstr "エラー: そのバージョンは存在しません"
 

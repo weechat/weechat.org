@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-01 15:04+0200\n"
-"PO-Revision-Date: 2017-05-01 14:58+0200\n"
+"POT-Creation-Date: 2017-05-01 15:30+0200\n"
+"PO-Revision-Date: 2017-05-01 15:31+0200\n"
 "Last-Translator: Sébastien Helleu <flashcode@flashtux.org>\n"
 "Language-Team: French <flashcode@flashtux.org>\n"
 "Language: fr\n"
@@ -399,22 +399,22 @@ msgstr ""
 "est causé seulement par certains scripts, pas par WeeChat lui-même)."
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:182 templates/download/security.html:71
+#: download/models.py:186 templates/download/security.html:71
 msgid "low"
 msgstr "faible"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:184 templates/download/security.html:72
+#: download/models.py:188 templates/download/security.html:72
 msgid "medium"
 msgstr "moyenne"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:186 templates/download/security.html:73
+#: download/models.py:190 templates/download/security.html:73
 msgid "high"
 msgstr "haute"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:188 templates/download/security.html:74
+#: download/models.py:192 templates/download/security.html:74
 msgid "critical"
 msgstr "critique"
 
@@ -5542,7 +5542,7 @@ msgid "Spell checking"
 msgstr "Vérification d'orthographe"
 
 #: templates/about/features.html:82 templates/about/features.html:121
-#: templates/download/packages.html:128
+#: templates/download/packages.html:127
 msgid "Remote interfaces"
 msgstr "Interfaces distantes"
 
@@ -6273,14 +6273,15 @@ msgstr ""
 #: templates/download/packages.html:57
 #, python-format
 msgid ""
-"<strong>Warning:</strong> this version has a <a href="
-"\"%(download_security_url)s\">vulnerability</a> which is fixed in version"
+"<strong>Warning:</strong> this version has one or more <a href="
+"\"%(download_security_url)s\">vulnerabilities</a>, it is not recommended to "
+"use it (fixed in version %(fixed_versions)s)."
 msgstr ""
-"<strong>Attention :</strong> cette version a une <a href="
-"\"%(download_security_url)s\">vulnérabilité</a> qui est corrigée dans la "
-"version"
+"<strong>Attention :</strong> cette version a une ou plusieurs <a href="
+"\"%(download_security_url)s\">vulnérabilités</a>, il n'est pas recommandé de "
+"l'utiliser (corrigé dans la version %(fixed_versions)s)."
 
-#: templates/download/packages.html:65 templates/home/home.html:41
+#: templates/download/packages.html:64 templates/home/home.html:41
 #, python-format
 msgid ""
 "<strong>Important:</strong> this release fixes a <a href="
@@ -6289,7 +6290,7 @@ msgstr ""
 "<strong>Important :</strong> cette version corrige une <a href="
 "\"%(download_security_url)s\">vulnérabilité</a>."
 
-#: templates/download/packages.html:67 templates/home/home.html:43
+#: templates/download/packages.html:66 templates/home/home.html:43
 #, python-format
 msgid ""
 "<strong>Important:</strong> this release fixes <a href="
@@ -6298,43 +6299,43 @@ msgstr ""
 "<strong>Important :</strong> cette version corrige <a href="
 "\"%(download_security_url)s\">%(count_issues_fixed)s vulnérabilités</a>."
 
-#: templates/download/packages.html:73
+#: templates/download/packages.html:72
 msgid "Packages"
 msgstr "Paquets"
 
-#: templates/download/packages.html:84
+#: templates/download/packages.html:83
 msgid "Checksum"
 msgstr "Somme ce contrôle"
 
-#: templates/download/packages.html:110
+#: templates/download/packages.html:109
 msgid "About release"
 msgstr "À propos de la version"
 
-#: templates/download/packages.html:112
+#: templates/download/packages.html:111
 msgid "ChangeLog"
 msgstr "ChangeLog"
 
-#: templates/download/packages.html:118
+#: templates/download/packages.html:117
 msgid "Release notes"
 msgstr "Notes de version"
 
-#: templates/download/packages.html:138
+#: templates/download/packages.html:137
 msgid "(see above)"
 msgstr "(voir ci-dessus)"
 
-#: templates/download/packages.html:162
+#: templates/download/packages.html:161
 msgid "Checking the signatures"
 msgstr "Vérification des signatures"
 
-#: templates/download/packages.html:166
+#: templates/download/packages.html:165
 msgid "Import the gpg key:"
 msgstr "Importer la clé gpg :"
 
-#: templates/download/packages.html:170
+#: templates/download/packages.html:169
 msgid "Display the fingerprint:"
 msgstr "Afficher l'empreinte :"
 
-#: templates/download/packages.html:174
+#: templates/download/packages.html:173
 msgid ""
 "Check that the fingerprint is correct by asking to a developer on #weechat "
 "(chat.freenode.net)."
@@ -6342,39 +6343,39 @@ msgstr ""
 "Vérifier que l'empreinte est correcte en demandant à un développeur sur "
 "#weechat (chat.freenode.net)."
 
-#: templates/download/packages.html:177
+#: templates/download/packages.html:176
 msgid "Trust the key:"
 msgstr "Donner confiance à la clé :"
 
-#: templates/download/packages.html:186
+#: templates/download/packages.html:185
 msgid "In directory with package + signature:"
 msgstr "Dans le répertoire avec le paquet + signature :"
 
-#: templates/download/packages.html:190
+#: templates/download/packages.html:189
 msgid "If the signature is OK you should see a message like this one:"
 msgstr "Si la signature est OK vous devriez voir un message comme celui-ci :"
 
-#: templates/download/packages.html:203
+#: templates/download/packages.html:202
 msgid "Links"
 msgstr "Liens"
 
-#: templates/download/packages.html:205
+#: templates/download/packages.html:204
 msgid "Savannah page"
 msgstr "Page Savannah"
 
-#: templates/download/packages.html:211
+#: templates/download/packages.html:210
 msgid "Git - sources"
 msgstr "Git - sources"
 
-#: templates/download/packages.html:217
+#: templates/download/packages.html:216
 msgid "Git - scripts"
 msgstr "Git - scripts"
 
-#: templates/download/packages.html:223
+#: templates/download/packages.html:222
 msgid "Git - clone"
 msgstr "Git - clone"
 
-#: templates/download/packages.html:233
+#: templates/download/packages.html:232
 msgid "Error: there is no version called"
 msgstr "Erreur : il n'a pas de version nommée"
 
