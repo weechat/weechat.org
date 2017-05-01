@@ -57,7 +57,7 @@ class Release(models.Model):
         return localdate(self.date)
 
     def security_fixed_versions(self):
-        """Return the list of versions fixing security issue in this version."""
+        """Return the list of versions fixing security issues."""
         return self.securityfix.split(',')
 
     class Meta:
