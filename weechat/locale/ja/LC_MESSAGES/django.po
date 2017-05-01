@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-30 22:05+0200\n"
+"POT-Creation-Date: 2017-05-01 15:04+0200\n"
 "PO-Revision-Date: 2017-03-20 09:00+0900\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
@@ -390,22 +390,22 @@ msgstr ""
 "です)。"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:177 templates/download/security.html:71
+#: download/models.py:182 templates/download/security.html:71
 msgid "low"
 msgstr "低"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:179 templates/download/security.html:72
+#: download/models.py:184 templates/download/security.html:72
 msgid "medium"
 msgstr "中"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:181 templates/download/security.html:73
+#: download/models.py:186 templates/download/security.html:73
 msgid "high"
 msgstr "高"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:183 templates/download/security.html:74
+#: download/models.py:188 templates/download/security.html:74
 msgid "critical"
 msgstr "重大"
 
@@ -656,7 +656,7 @@ msgstr "Debian/Raspbian リポジトリ"
 msgid "Dennis Ritchie has left #world"
 msgstr "Dennis Ritchie さんが亡くなりました"
 
-#: news/_i18n_info.py:23 templates/home/home.html:55 templates/menu.html:65
+#: news/_i18n_info.py:23 templates/home/home.html:66 templates/menu.html:65
 msgid "Devel blog"
 msgstr "開発ブログ"
 
@@ -5142,7 +5142,7 @@ msgid "about"
 msgstr "概要"
 
 #: templates/about/about.html:13 templates/about/history.html:39
-#: templates/home/home.html:39 templates/menu.html:11
+#: templates/home/home.html:50 templates/menu.html:11
 msgid "Features"
 msgstr "機能"
 
@@ -5154,7 +5154,7 @@ msgstr "スクリーンショット"
 msgid "History"
 msgstr "歴史"
 
-#: templates/about/about.html:16 templates/home/home.html:70
+#: templates/about/about.html:16 templates/home/home.html:81
 #: templates/menu.html:14
 msgid "Make a donation"
 msgstr "寄付する"
@@ -5369,7 +5369,7 @@ msgid "Spell checking"
 msgstr "スペルチェック"
 
 #: templates/about/features.html:82 templates/about/features.html:121
-#: templates/download/packages.html:117
+#: templates/download/packages.html:128
 msgid "Remote interfaces"
 msgstr "リモートインターフェイス"
 
@@ -5621,7 +5621,7 @@ msgstr "有効"
 msgid "dev"
 msgstr "開発"
 
-#: templates/dev/dev.html:13 templates/home/home.html:58 templates/menu.html:61
+#: templates/dev/dev.html:13 templates/home/home.html:69 templates/menu.html:61
 msgid "Roadmap"
 msgstr "ロードマップ"
 
@@ -6110,43 +6110,67 @@ msgstr ""
 "<strong>警告:</strong> このバージョンには<a href=\"%(download_security_url)s"
 "\">脆弱性</a>があります。脆弱性を修正したバージョンは"
 
-#: templates/download/packages.html:62
+#: templates/download/packages.html:65 templates/home/home.html:41
+#, fuzzy, python-format
+#| msgid ""
+#| "<strong>Warning:</strong> this version has a <a href="
+#| "\"%(download_security_url)s\">vulnerability</a> which is fixed in version"
+msgid ""
+"<strong>Important:</strong> this release fixes a <a href="
+"\"%(download_security_url)s\">vulnerability</a>."
+msgstr ""
+"<strong>警告:</strong> このバージョンには<a href=\"%(download_security_url)s"
+"\">脆弱性</a>があります。脆弱性を修正したバージョンは"
+
+#: templates/download/packages.html:67 templates/home/home.html:43
+#, fuzzy, python-format
+#| msgid ""
+#| "<strong>Warning:</strong> this version has a <a href="
+#| "\"%(download_security_url)s\">vulnerability</a> which is fixed in version"
+msgid ""
+"<strong>Important:</strong> this release fixes <a href="
+"\"%(download_security_url)s\">%(count_issues_fixed)s vulnerabilities</a>."
+msgstr ""
+"<strong>警告:</strong> このバージョンには<a href=\"%(download_security_url)s"
+"\">脆弱性</a>があります。脆弱性を修正したバージョンは"
+
+#: templates/download/packages.html:73
 msgid "Packages"
 msgstr "パッケージ"
 
-#: templates/download/packages.html:73
+#: templates/download/packages.html:84
 msgid "Checksum"
 msgstr "チェックサム"
 
-#: templates/download/packages.html:99
+#: templates/download/packages.html:110
 msgid "About release"
 msgstr "リリースについて"
 
-#: templates/download/packages.html:101
+#: templates/download/packages.html:112
 msgid "ChangeLog"
 msgstr "ChangeLog"
 
-#: templates/download/packages.html:107
+#: templates/download/packages.html:118
 msgid "Release notes"
 msgstr "リリースノート"
 
-#: templates/download/packages.html:127
+#: templates/download/packages.html:138
 msgid "(see above)"
 msgstr "(上記の通り)"
 
-#: templates/download/packages.html:151
+#: templates/download/packages.html:162
 msgid "Checking the signatures"
 msgstr "署名の確認方法"
 
-#: templates/download/packages.html:155
+#: templates/download/packages.html:166
 msgid "Import the gpg key:"
 msgstr "gpg キーをインポート:"
 
-#: templates/download/packages.html:159
+#: templates/download/packages.html:170
 msgid "Display the fingerprint:"
 msgstr "指紋を表示:"
 
-#: templates/download/packages.html:163
+#: templates/download/packages.html:174
 msgid ""
 "Check that the fingerprint is correct by asking to a developer on #weechat "
 "(chat.freenode.net)."
@@ -6154,39 +6178,39 @@ msgstr ""
 "#weechat (chat.freenode.net) の開発者に尋ねて指紋が正しいことを確認してくださ"
 "い。"
 
-#: templates/download/packages.html:166
+#: templates/download/packages.html:177
 msgid "Trust the key:"
 msgstr "キーを信用する:"
 
-#: templates/download/packages.html:175
+#: templates/download/packages.html:186
 msgid "In directory with package + signature:"
 msgstr "パッケージと署名ファイルがあるディレクトリ内で:"
 
-#: templates/download/packages.html:179
+#: templates/download/packages.html:190
 msgid "If the signature is OK you should see a message like this one:"
 msgstr "署名が正しいなら、以下の様なメッセージが表示されれるはずです:"
 
-#: templates/download/packages.html:192
+#: templates/download/packages.html:203
 msgid "Links"
 msgstr "リンク"
 
-#: templates/download/packages.html:194
+#: templates/download/packages.html:205
 msgid "Savannah page"
 msgstr "Savannah ページ"
 
-#: templates/download/packages.html:200
+#: templates/download/packages.html:211
 msgid "Git - sources"
 msgstr "Git - ソース"
 
-#: templates/download/packages.html:206
+#: templates/download/packages.html:217
 msgid "Git - scripts"
 msgstr "Git - スクリプト"
 
-#: templates/download/packages.html:212
+#: templates/download/packages.html:223
 msgid "Git - clone"
 msgstr "Git - クローン"
 
-#: templates/download/packages.html:222
+#: templates/download/packages.html:233
 msgid "Error: there is no version called"
 msgstr "エラー: そのバージョンは存在しません"
 
@@ -6307,7 +6331,7 @@ msgstr ""
 "システムを破壊する危険性のある重大な問題。<strong>今すぐアップグレードしてく"
 "ださい!</strong>"
 
-#: templates/error.html:11 templates/home/home.html:121
+#: templates/error.html:11 templates/home/home.html:132
 msgid "Back to home"
 msgstr "ホームに戻る"
 
@@ -6370,34 +6394,38 @@ msgstr "WeeChat の最新の安定版は"
 msgid "released on"
 msgstr "リリース日"
 
-#: templates/home/home.html:40 templates/menu.html:29
+#: templates/home/home.html:45
+msgid "It is recommenended to upgrade from any older version to this one."
+msgstr ""
+
+#: templates/home/home.html:51 templates/menu.html:29
 #: templates/plugins/source.html:17 templates/themes/source.html:16
 msgid "Download"
 msgstr "ダウンロード"
 
-#: templates/home/home.html:43
+#: templates/home/home.html:54
 msgid "Follow and get involved!"
 msgstr "フォローしたり仲間になりませんか!"
 
-#: templates/home/home.html:46
+#: templates/home/home.html:57
 msgid "You can follow latest WeeChat developments on:"
 msgstr "以下のサービスで WeeChat の最新開発を追いかけることができます:"
 
-#: templates/home/home.html:62
+#: templates/home/home.html:73
 msgid "You can help the WeeChat project in many ways:"
 msgstr "WeeChat プロジェクトを支援する方法は様々です:"
 
-#: templates/home/home.html:64
+#: templates/home/home.html:75
 msgid "<strong>translation</strong>: software, documentation and this web site"
 msgstr "<strong>翻訳</strong>: ソフトウェア、文書、ウェブサイト"
 
-#: templates/home/home.html:65
+#: templates/home/home.html:76
 msgid ""
 "<strong>code</strong>: tests, bug reports, ideas for new features and patches"
 msgstr ""
 "<strong>コード</strong>: テスト、バグレポート、新機能のアイディア、パッチ"
 
-#: templates/home/home.html:66
+#: templates/home/home.html:77
 msgid ""
 "<strong>donation</strong>: any contribution is appreciated and important for "
 "motivation"
@@ -6405,15 +6433,15 @@ msgstr ""
 "<strong>寄付</strong>: どんな寄付でも歓迎します。寄付はモチベーションの維持に"
 "重要です"
 
-#: templates/home/home.html:80 templates/home/home.html:100
+#: templates/home/home.html:91 templates/home/home.html:111
 msgid "More"
 msgstr "その他"
 
-#: templates/home/home.html:80 templates/menu.html:4
+#: templates/home/home.html:91 templates/menu.html:4
 msgid "Latest news"
 msgstr "最新のニュース"
 
-#: templates/home/home.html:100 templates/menu.html:5
+#: templates/home/home.html:111 templates/menu.html:5
 msgid "Upcoming events"
 msgstr "今後のイベント"
 

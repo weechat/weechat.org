@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-30 22:05+0200\n"
-"PO-Revision-Date: 2017-04-30 22:06+0200\n"
+"POT-Creation-Date: 2017-05-01 15:04+0200\n"
+"PO-Revision-Date: 2017-05-01 14:58+0200\n"
 "Last-Translator: Sébastien Helleu <flashcode@flashtux.org>\n"
 "Language-Team: French <flashcode@flashtux.org>\n"
 "Language: fr\n"
@@ -399,22 +399,22 @@ msgstr ""
 "est causé seulement par certains scripts, pas par WeeChat lui-même)."
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:177 templates/download/security.html:71
+#: download/models.py:182 templates/download/security.html:71
 msgid "low"
 msgstr "faible"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:179 templates/download/security.html:72
+#: download/models.py:184 templates/download/security.html:72
 msgid "medium"
 msgstr "moyenne"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:181 templates/download/security.html:73
+#: download/models.py:186 templates/download/security.html:73
 msgid "high"
 msgstr "haute"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:183 templates/download/security.html:74
+#: download/models.py:188 templates/download/security.html:74
 msgid "critical"
 msgstr "critique"
 
@@ -672,7 +672,7 @@ msgstr "Dépôts Debian/Raspbian"
 msgid "Dennis Ritchie has left #world"
 msgstr "Dennis Ritchie a quitté #monde"
 
-#: news/_i18n_info.py:23 templates/home/home.html:55 templates/menu.html:65
+#: news/_i18n_info.py:23 templates/home/home.html:66 templates/menu.html:65
 msgid "Devel blog"
 msgstr "Blog devel"
 
@@ -5311,7 +5311,7 @@ msgid "about"
 msgstr "à propos"
 
 #: templates/about/about.html:13 templates/about/history.html:39
-#: templates/home/home.html:39 templates/menu.html:11
+#: templates/home/home.html:50 templates/menu.html:11
 msgid "Features"
 msgstr "Fonctionnalités"
 
@@ -5323,7 +5323,7 @@ msgstr "Captures d'écran"
 msgid "History"
 msgstr "Histoire"
 
-#: templates/about/about.html:16 templates/home/home.html:70
+#: templates/about/about.html:16 templates/home/home.html:81
 #: templates/menu.html:14
 msgid "Make a donation"
 msgstr "Faire un don"
@@ -5542,7 +5542,7 @@ msgid "Spell checking"
 msgstr "Vérification d'orthographe"
 
 #: templates/about/features.html:82 templates/about/features.html:121
-#: templates/download/packages.html:117
+#: templates/download/packages.html:128
 msgid "Remote interfaces"
 msgstr "Interfaces distantes"
 
@@ -5793,7 +5793,7 @@ msgstr "Valide"
 msgid "dev"
 msgstr "dev"
 
-#: templates/dev/dev.html:13 templates/home/home.html:58 templates/menu.html:61
+#: templates/dev/dev.html:13 templates/home/home.html:69 templates/menu.html:61
 msgid "Roadmap"
 msgstr "Feuille de route"
 
@@ -6280,43 +6280,61 @@ msgstr ""
 "\"%(download_security_url)s\">vulnérabilité</a> qui est corrigée dans la "
 "version"
 
-#: templates/download/packages.html:62
+#: templates/download/packages.html:65 templates/home/home.html:41
+#, python-format
+msgid ""
+"<strong>Important:</strong> this release fixes a <a href="
+"\"%(download_security_url)s\">vulnerability</a>."
+msgstr ""
+"<strong>Important :</strong> cette version corrige une <a href="
+"\"%(download_security_url)s\">vulnérabilité</a>."
+
+#: templates/download/packages.html:67 templates/home/home.html:43
+#, python-format
+msgid ""
+"<strong>Important:</strong> this release fixes <a href="
+"\"%(download_security_url)s\">%(count_issues_fixed)s vulnerabilities</a>."
+msgstr ""
+"<strong>Important :</strong> cette version corrige <a href="
+"\"%(download_security_url)s\">%(count_issues_fixed)s vulnérabilités</a>."
+
+#: templates/download/packages.html:73
 msgid "Packages"
 msgstr "Paquets"
 
-#: templates/download/packages.html:73
+#: templates/download/packages.html:84
 msgid "Checksum"
 msgstr "Somme ce contrôle"
 
-#: templates/download/packages.html:99
+#: templates/download/packages.html:110
 msgid "About release"
 msgstr "À propos de la version"
 
-#: templates/download/packages.html:101
+#: templates/download/packages.html:112
 msgid "ChangeLog"
 msgstr "ChangeLog"
 
-#: templates/download/packages.html:107
+#: templates/download/packages.html:118
 msgid "Release notes"
 msgstr "Notes de version"
 
-#: templates/download/packages.html:127
+#: templates/download/packages.html:138
 msgid "(see above)"
 msgstr "(voir ci-dessus)"
 
-#: templates/download/packages.html:151
+#: templates/download/packages.html:162
 msgid "Checking the signatures"
 msgstr "Vérification des signatures"
 
-#: templates/download/packages.html:155
+#: templates/download/packages.html:166
 msgid "Import the gpg key:"
 msgstr "Importer la clé gpg :"
 
-#: templates/download/packages.html:159
+#: templates/download/packages.html:170
 msgid "Display the fingerprint:"
 msgstr "Afficher l'empreinte :"
 
-#: templates/download/packages.html:163
+#: templates/download/packages.html:174
 msgid ""
 "Check that the fingerprint is correct by asking to a developer on #weechat "
 "(chat.freenode.net)."
@@ -6324,39 +6342,39 @@ msgstr ""
 "Vérifier que l'empreinte est correcte en demandant à un développeur sur "
 "#weechat (chat.freenode.net)."
 
-#: templates/download/packages.html:166
+#: templates/download/packages.html:177
 msgid "Trust the key:"
 msgstr "Donner confiance à la clé :"
 
-#: templates/download/packages.html:175
+#: templates/download/packages.html:186
 msgid "In directory with package + signature:"
 msgstr "Dans le répertoire avec le paquet + signature :"
 
-#: templates/download/packages.html:179
+#: templates/download/packages.html:190
 msgid "If the signature is OK you should see a message like this one:"
 msgstr "Si la signature est OK vous devriez voir un message comme celui-ci :"
 
-#: templates/download/packages.html:192
+#: templates/download/packages.html:203
 msgid "Links"
 msgstr "Liens"
 
-#: templates/download/packages.html:194
+#: templates/download/packages.html:205
 msgid "Savannah page"
 msgstr "Page Savannah"
 
-#: templates/download/packages.html:200
+#: templates/download/packages.html:211
 msgid "Git - sources"
 msgstr "Git - sources"
 
-#: templates/download/packages.html:206
+#: templates/download/packages.html:217
 msgid "Git - scripts"
 msgstr "Git - scripts"
 
-#: templates/download/packages.html:212
+#: templates/download/packages.html:223
 msgid "Git - clone"
 msgstr "Git - clone"
 
-#: templates/download/packages.html:222
+#: templates/download/packages.html:233
 msgid "Error: there is no version called"
 msgstr "Erreur : il n'a pas de version nommée"
 
@@ -6482,7 +6500,7 @@ msgstr ""
 "problème critique, risque de dégâts sur votre système. <strong>Vous DEVEZ "
 "mettre à jour immédiatement !</strong>"
 
-#: templates/error.html:11 templates/home/home.html:121
+#: templates/error.html:11 templates/home/home.html:132
 msgid "Back to home"
 msgstr "Retour à l'accueil"
 
@@ -6544,35 +6562,41 @@ msgstr "La dernière version stable de WeeChat est la"
 msgid "released on"
 msgstr "publiée le"
 
-#: templates/home/home.html:40 templates/menu.html:29
+#: templates/home/home.html:45
+msgid "It is recommenended to upgrade from any older version to this one."
+msgstr ""
+"Il est recommandé de mettre à jour depuis n'importe quelle version plus "
+"ancienne vers celle-ci."
+
+#: templates/home/home.html:51 templates/menu.html:29
 #: templates/plugins/source.html:17 templates/themes/source.html:16
 msgid "Download"
 msgstr "Téléchargement"
 
-#: templates/home/home.html:43
+#: templates/home/home.html:54
 msgid "Follow and get involved!"
 msgstr "Suivez et participez !"
 
-#: templates/home/home.html:46
+#: templates/home/home.html:57
 msgid "You can follow latest WeeChat developments on:"
 msgstr "Vous pouvez suivre les derniers développements de WeeChat sur :"
 
-#: templates/home/home.html:62
+#: templates/home/home.html:73
 msgid "You can help the WeeChat project in many ways:"
 msgstr "Vous pouvez aider le projet WeeChat de plusieurs façons :"
 
-#: templates/home/home.html:64
+#: templates/home/home.html:75
 msgid "<strong>translation</strong>: software, documentation and this web site"
 msgstr "<strong>traduction</strong> : logiciel, documentation et ce site web"
 
-#: templates/home/home.html:65
+#: templates/home/home.html:76
 msgid ""
 "<strong>code</strong>: tests, bug reports, ideas for new features and patches"
 msgstr ""
 "<strong>code</strong> : tests, rapports de bugs, idées de nouvelles "
 "fonctionnalités et patchs"
 
-#: templates/home/home.html:66
+#: templates/home/home.html:77
 msgid ""
 "<strong>donation</strong>: any contribution is appreciated and important for "
 "motivation"
@@ -6580,15 +6604,15 @@ msgstr ""
 "<strong>don</strong> : toute contribution est appréciée et importante pour "
 "la motivation"
 
-#: templates/home/home.html:80 templates/home/home.html:100
+#: templates/home/home.html:91 templates/home/home.html:111
 msgid "More"
 msgstr "Plus"
 
-#: templates/home/home.html:80 templates/menu.html:4
+#: templates/home/home.html:91 templates/menu.html:4
 msgid "Latest news"
 msgstr "Dernières nouveautés"
 
-#: templates/home/home.html:100 templates/menu.html:5
+#: templates/home/home.html:111 templates/menu.html:5
 msgid "Upcoming events"
 msgstr "Évènements à venir"
 

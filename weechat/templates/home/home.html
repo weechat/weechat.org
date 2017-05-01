@@ -31,9 +31,20 @@
       </ul>
 
       <p>
-        {% trans "Latest stable version of WeeChat is" %} <span class="stable">{{ release_stable.description }}</span>,
+        {% trans "Latest stable version of WeeChat is" %} <span class="stable">{{ release_stable.version }}</span>,
         {% trans "released on" %} <span class="dateversion">{{ release_stable.date_l10n }}</span>.
       </p>
+      {% if release_stable.security_issues_fixed > 0 %}
+      <p>
+        {% url 'download_security' as download_security_url %}
+        {% if release_stable.security_issues_fixed == 1 %}
+          {% blocktrans %}<strong>Important:</strong> this release fixes a <a href="{{ download_security_url }}">vulnerability</a>.{% endblocktrans %}
+        {% else %}
+          {% blocktrans with release_stable.security_issues_fixed as count_issues_fixed %}<strong>Important:</strong> this release fixes <a href="{{ download_security_url }}">{{ count_issues_fixed }} vulnerabilities</a>.{% endblocktrans %}
+        {% endif %}
+        {% trans "It is recommenended to upgrade from any older version to this one." %}
+      </p>
+      {% endif %}
 
       <div class="button">
         <a href="{% url 'about_features' %}">{% trans "Features" %}&nbsp;&rsaquo;&rsaquo; </a>

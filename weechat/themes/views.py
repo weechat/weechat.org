@@ -140,11 +140,13 @@ def form_add(request):
             return HttpResponseRedirect('/themes/addok/')
     else:
         form = ThemeFormAdd()
+    stable_version = Release.objects.get(version='stable').description
+    release_stable = Release.objects.get(version=stable_version)
     return render(
         request,
         'themes/add.html',
         {
-            'release_stable': Release.objects.get(version='stable'),
+            'release_stable': release_stable,
             'form': form,
         },
     )

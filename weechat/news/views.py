@@ -30,11 +30,13 @@ from weechat.news.models import Info
 
 def render_homepage(request, info_list, max_info, event_list, max_event):
     """Render homepage."""
+    stable_version = Release.objects.get(version='stable').description
+    release_stable = Release.objects.get(version=stable_version)
     return render(
         request,
         'home/home.html',
         {
-            'release_stable': Release.objects.get(version='stable'),
+            'release_stable': release_stable,
             'info_list': info_list,
             'max_info': max_info,
             'event_list': event_list,

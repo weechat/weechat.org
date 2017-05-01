@@ -42,10 +42,15 @@ class Release(models.Model):
     version = models.CharField(max_length=64, primary_key=True)
     description = models.CharField(max_length=64, blank=True)
     date = models.DateField(blank=True, null=True)
+    security_issues_fixed = models.IntegerField(default=0)
     securityfix = models.CharField(max_length=64, blank=True)
 
     def __unicode__(self):
-        return '%s (%s)' % (self.version, self.date)
+        return '%s (%s)%s' % (
+            self.version,
+            self.date,
+            ' (SECURITY)' if self.security else '',
+        )
 
     def date_l10n(self):
         """Return the release date formatted with localized date format."""
