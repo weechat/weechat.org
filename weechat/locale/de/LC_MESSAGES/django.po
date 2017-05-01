@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-01 16:16+0200\n"
-"PO-Revision-Date: 2017-04-30 21:42+0200\n"
+"PO-Revision-Date: 2017-05-01 17:37+0200\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <weechatter@arcor.de>\n"
 "Language: de\n"
@@ -63,7 +63,7 @@ msgstr "erste Version."
 
 #: about/_i18n_keydates.py:13
 msgid "Full UTF-8 support."
-msgstr "vollständige Unterstützung von utf-8."
+msgstr "vollständige Unterstützung von UTF-8."
 
 #: about/_i18n_keydates.py:14
 msgid "Gaps in buffers numbers, IPv6 for DCC file/chat, command /print."
@@ -81,11 +81,11 @@ msgstr ""
 
 #: about/_i18n_keydates.py:16
 msgid "Incremental text search in buffers."
-msgstr "schrittweise Textsuche in Buffers."
+msgstr "schrittweise Textsuche im Buffer."
 
 #: about/_i18n_keydates.py:17
 msgid "Inherited values in options."
-msgstr "Vererbte Werte für nicht gesetzte Optionen."
+msgstr "vererbte Werte bei nicht gesetzten Optionen."
 
 #: about/_i18n_keydates.py:18
 msgid "Javascript plugin, IRC SASL mechanism \"ecdsa-nist256p-challenge\"."
@@ -6350,54 +6350,43 @@ msgstr ""
 "auftreten sollten, die durch die Entwickler nicht behoben werden können!"
 
 #: templates/download/packages.html:57
-#, fuzzy, python-format
-#| msgid ""
-#| "<strong>Warning:</strong> this version has a <a href="
-#| "\"%(download_security_url)s\">vulnerability</a> which is fixed in version"
+#, python-format
 msgid ""
 "<strong>Warning:</strong> this version has one or more <a href="
 "\"%(download_security_url)s\">vulnerabilities</a>, it is not recommended to "
 "use it."
 msgstr ""
-"<strong>Warnung:</strong> diese Version enthält eine <a href="
-"\"%(download_security_url)s\">Schwachstelle</a> welche behoben wurde mit "
-"Version"
+"<strong>Warnung:</strong> diese Version enthält eine oder mehrere <a href="
+"\"%(download_security_url)s\">Schwachstellen</a>. Es wird dringend empfohlen "
+"diese Version nicht mehr zu verwenden."
 
 #: templates/download/packages.html:58
-#, fuzzy
-#| msgid "Fixed in version"
 msgid "Vulnerabilities fixed in versions:"
-msgstr "Behoben durch Version"
+msgstr "Schwachstellen behoben in Version:"
 
 #: templates/download/packages.html:66 templates/home/home.html:41
-#, fuzzy, python-format
-#| msgid ""
-#| "<strong>Warning:</strong> this version has a <a href="
-#| "\"%(download_security_url)s\">vulnerability</a> which is fixed in version"
+#, python-format
 msgid ""
 "<strong>Important:</strong> this release fixes a <a href="
 "\"%(download_security_url)s\">vulnerability</a>."
 msgstr ""
-"<strong>Warnung:</strong> diese Version enthält eine <a href="
-"\"%(download_security_url)s\">Schwachstelle</a> welche behoben wurde mit "
-"Version"
+"<strong>Warnung:</strong> diese Version behebt eine <a href="
+"\"%(download_security_url)s\">Sicherheitslücke</a> ."
 
 #: templates/download/packages.html:68 templates/home/home.html:43
-#, fuzzy, python-format
-#| msgid ""
-#| "<strong>Warning:</strong> this version has a <a href="
-#| "\"%(download_security_url)s\">vulnerability</a> which is fixed in version"
+#, python-format
 msgid ""
 "<strong>Important:</strong> this release fixes <a href="
 "\"%(download_security_url)s\">%(count_issues_fixed)s vulnerabilities</a>."
 msgstr ""
-"<strong>Warnung:</strong> diese Version enthält eine <a href="
-"\"%(download_security_url)s\">Schwachstelle</a> welche behoben wurde mit "
-"Version"
+"<strong>Warnung:</strong> diese Version behebt <a href="
+"\"%(download_security_url)s\">%(count_issues_fixed)s Sicherheitslücken</a>."
 
 #: templates/download/packages.html:70 templates/home/home.html:45
 msgid "It is recommenended to upgrade from any older version to this one."
 msgstr ""
+"Es wird empfohlen von jeder älteren Version auf diese Version zu "
+"aktualisieren."
 
 #: templates/download/packages.html:75
 msgid "Packages"
@@ -6492,6 +6481,8 @@ msgstr "keine Veröffentlichung im Gange."
 msgid ""
 "This page is updated only a few hours during the build of a new version."
 msgstr ""
+"Diese Seite wird für ein paar Stunden überarbeitet, während eine neue "
+"Version erstellt wird."
 
 #: templates/download/release.html:35
 msgid "We are working hard on the next version:"
