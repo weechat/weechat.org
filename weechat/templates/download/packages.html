@@ -57,7 +57,7 @@
           {% blocktrans with package_version.grouper.security_fixed_versions|join:", " as fixed_versions %}<strong>Warning:</strong> this version has one or more <a href="{{ download_security_url }}">vulnerabilities</a>, it is not recommended to use it (fixed in version {{ fixed_versions }}).{% endblocktrans %}
         </div>
       {% else %}
-        {% if version == "stable" and package_version.grouper.security_issues_fixed > 0 %}
+        {% if version != "devel" and version != "old" and package_version.grouper.security_issues_fixed > 0 %}
         <div class="infobox">
           {% url 'download_security' as download_security_url %}
           {% if package_version.grouper.security_issues_fixed == 1 %}
