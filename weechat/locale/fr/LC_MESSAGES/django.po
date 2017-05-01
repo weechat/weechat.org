@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-01 15:30+0200\n"
-"PO-Revision-Date: 2017-05-01 15:31+0200\n"
+"POT-Creation-Date: 2017-05-01 16:16+0200\n"
+"PO-Revision-Date: 2017-05-01 16:10+0200\n"
 "Last-Translator: Sébastien Helleu <flashcode@flashtux.org>\n"
 "Language-Team: French <flashcode@flashtux.org>\n"
 "Language: fr\n"
@@ -5542,7 +5542,7 @@ msgid "Spell checking"
 msgstr "Vérification d'orthographe"
 
 #: templates/about/features.html:82 templates/about/features.html:121
-#: templates/download/packages.html:127
+#: templates/download/packages.html:130
 msgid "Remote interfaces"
 msgstr "Interfaces distantes"
 
@@ -6275,13 +6275,17 @@ msgstr ""
 msgid ""
 "<strong>Warning:</strong> this version has one or more <a href="
 "\"%(download_security_url)s\">vulnerabilities</a>, it is not recommended to "
-"use it (fixed in version %(fixed_versions)s)."
+"use it."
 msgstr ""
 "<strong>Attention :</strong> cette version a une ou plusieurs <a href="
 "\"%(download_security_url)s\">vulnérabilités</a>, il n'est pas recommandé de "
-"l'utiliser (corrigé dans la version %(fixed_versions)s)."
+"l'utiliser."
 
-#: templates/download/packages.html:64 templates/home/home.html:41
+#: templates/download/packages.html:58
+msgid "Vulnerabilities fixed in versions:"
+msgstr "Vulnérabilités corrigées dans les versions :"
+
+#: templates/download/packages.html:66 templates/home/home.html:41
 #, python-format
 msgid ""
 "<strong>Important:</strong> this release fixes a <a href="
@@ -6290,7 +6294,7 @@ msgstr ""
 "<strong>Important :</strong> cette version corrige une <a href="
 "\"%(download_security_url)s\">vulnérabilité</a>."
 
-#: templates/download/packages.html:66 templates/home/home.html:43
+#: templates/download/packages.html:68 templates/home/home.html:43
 #, python-format
 msgid ""
 "<strong>Important:</strong> this release fixes <a href="
@@ -6299,43 +6303,49 @@ msgstr ""
 "<strong>Important :</strong> cette version corrige <a href="
 "\"%(download_security_url)s\">%(count_issues_fixed)s vulnérabilités</a>."
 
-#: templates/download/packages.html:72
+#: templates/download/packages.html:70 templates/home/home.html:45
+msgid "It is recommenended to upgrade from any older version to this one."
+msgstr ""
+"Il est recommandé de mettre à jour depuis n'importe quelle version plus "
+"ancienne vers celle-ci."
+
+#: templates/download/packages.html:75
 msgid "Packages"
 msgstr "Paquets"
 
-#: templates/download/packages.html:83
+#: templates/download/packages.html:86
 msgid "Checksum"
 msgstr "Somme ce contrôle"
 
-#: templates/download/packages.html:109
+#: templates/download/packages.html:112
 msgid "About release"
 msgstr "À propos de la version"
 
-#: templates/download/packages.html:111
+#: templates/download/packages.html:114
 msgid "ChangeLog"
 msgstr "ChangeLog"
 
-#: templates/download/packages.html:117
+#: templates/download/packages.html:120
 msgid "Release notes"
 msgstr "Notes de version"
 
-#: templates/download/packages.html:137
+#: templates/download/packages.html:140
 msgid "(see above)"
 msgstr "(voir ci-dessus)"
 
-#: templates/download/packages.html:161
+#: templates/download/packages.html:164
 msgid "Checking the signatures"
 msgstr "Vérification des signatures"
 
-#: templates/download/packages.html:165
+#: templates/download/packages.html:168
 msgid "Import the gpg key:"
 msgstr "Importer la clé gpg :"
 
-#: templates/download/packages.html:169
+#: templates/download/packages.html:172
 msgid "Display the fingerprint:"
 msgstr "Afficher l'empreinte :"
 
-#: templates/download/packages.html:173
+#: templates/download/packages.html:176
 msgid ""
 "Check that the fingerprint is correct by asking to a developer on #weechat "
 "(chat.freenode.net)."
@@ -6343,39 +6353,39 @@ msgstr ""
 "Vérifier que l'empreinte est correcte en demandant à un développeur sur "
 "#weechat (chat.freenode.net)."
 
-#: templates/download/packages.html:176
+#: templates/download/packages.html:179
 msgid "Trust the key:"
 msgstr "Donner confiance à la clé :"
 
-#: templates/download/packages.html:185
+#: templates/download/packages.html:188
 msgid "In directory with package + signature:"
 msgstr "Dans le répertoire avec le paquet + signature :"
 
-#: templates/download/packages.html:189
+#: templates/download/packages.html:192
 msgid "If the signature is OK you should see a message like this one:"
 msgstr "Si la signature est OK vous devriez voir un message comme celui-ci :"
 
-#: templates/download/packages.html:202
+#: templates/download/packages.html:205
 msgid "Links"
 msgstr "Liens"
 
-#: templates/download/packages.html:204
+#: templates/download/packages.html:207
 msgid "Savannah page"
 msgstr "Page Savannah"
 
-#: templates/download/packages.html:210
+#: templates/download/packages.html:213
 msgid "Git - sources"
 msgstr "Git - sources"
 
-#: templates/download/packages.html:216
+#: templates/download/packages.html:219
 msgid "Git - scripts"
 msgstr "Git - scripts"
 
-#: templates/download/packages.html:222
+#: templates/download/packages.html:225
 msgid "Git - clone"
 msgstr "Git - clone"
 
-#: templates/download/packages.html:232
+#: templates/download/packages.html:235
 msgid "Error: there is no version called"
 msgstr "Erreur : il n'a pas de version nommée"
 
@@ -6562,12 +6572,6 @@ msgstr "La dernière version stable de WeeChat est la"
 #: templates/home/home.html:35
 msgid "released on"
 msgstr "publiée le"
-
-#: templates/home/home.html:45
-msgid "It is recommenended to upgrade from any older version to this one."
-msgstr ""
-"Il est recommandé de mettre à jour depuis n'importe quelle version plus "
-"ancienne vers celle-ci."
 
 #: templates/home/home.html:51 templates/menu.html:29
 #: templates/plugins/source.html:17 templates/themes/source.html:16
@@ -7112,6 +7116,9 @@ msgstr "Erreur interne."
 #: themes/models.py:268
 msgid "Invalid name: different from theme."
 msgstr "Nom invalide : différent du thème."
+
+#~ msgid "Fixed versions:"
+#~ msgstr "Versions corrigées :"
 
 #~ msgid "Release"
 #~ msgstr "Version"
