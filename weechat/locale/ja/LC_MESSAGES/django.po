@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-01 20:14+0200\n"
-"PO-Revision-Date: 2017-03-20 09:00+0900\n"
+"PO-Revision-Date: 2017-05-03 09:00+0900\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
 "translation/ja_JP>\n"
@@ -292,21 +292,19 @@ msgstr "/set irc.network.colors_receive off"
 
 #: download/_i18n_security.py:8
 msgid "Buffer overflow when decoding IRC colors in strings."
-msgstr "文字列中の IRC 色をデコードする際のバッファオーバーフロー。"
+msgstr "文字列中の IRC 色をデコードする際にバッファオーバーフロー。"
 
 #: download/_i18n_security.py:9
-#, fuzzy
-#| msgid "Buffer overflow when decoding IRC colors in strings."
 msgid "Buffer overflow when removing quotes in DCC filename."
-msgstr "文字列中の IRC 色をデコードする際のバッファオーバーフロー。"
+msgstr "DCC ファイル名内の引用符を削除する際にバッファオーバーフロー。"
 
 #: download/_i18n_security.py:10
 msgid "Buffer overflows in build of strings."
-msgstr "文字列を作る際のバッファオーバーフロー。"
+msgstr "文字列を作る際にバッファオーバーフロー。"
 
 #: download/_i18n_security.py:11
 msgid "Crash when receiving special chars in IRC messages."
-msgstr "IRC メッセージに特定の文字が含まれる際のクラッシュ。"
+msgstr "IRC メッセージに特定の文字が含まれる際にクラッシュ。"
 
 #: download/_i18n_security.py:12
 msgid ""
@@ -314,6 +312,9 @@ msgid ""
 "\"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND ${\\x22} \" "
 "\"/.*//\""
 msgstr ""
+"トリガを作成してください (WeeChat バージョン 1.1 以上): /trigger add "
+"irc_dcc_quotes modifier \"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}"
+"DCC SEND ${\\x22} \" \"/.*//\""
 
 #: download/_i18n_security.py:13
 msgid ""
@@ -338,8 +339,8 @@ msgstr ""
 msgid ""
 "Remove/unload all scripts calling function hook_process (for maximum safety)."
 msgstr ""
-"hook_process 関数を使っている全てのスクリプトを削除/アンロードする (最大限の"
-"安全を確保するために)。"
+"hook_process 関数を使っている全てのスクリプトを削除/アンロードしてください "
+"(最大限の安全を確保するために)。"
 
 #: download/_i18n_security.py:17
 msgid ""
@@ -1585,7 +1586,7 @@ msgstr ""
 
 #: news/_i18n_info.py:76
 msgid "Version 0.2.6.1 (security release)"
-msgstr ""
+msgstr "バージョン 0.2.6.1 (セキュリティ修正リリース)"
 
 #: news/_i18n_info.py:77
 msgid ""
@@ -2040,7 +2041,7 @@ msgstr ""
 
 #: news/_i18n_info.py:91
 msgid "Version 0.3.9.1 (security release)"
-msgstr ""
+msgstr "バージョン 0.3.9.1 (セキュリティ修正リリース)"
 
 #: news/_i18n_info.py:92
 msgid ""
@@ -2060,7 +2061,7 @@ msgstr ""
 
 #: news/_i18n_info.py:93
 msgid "Version 0.3.9.2 (security release)"
-msgstr ""
+msgstr "バージョン 0.3.9.2 (セキュリティ修正リリース)"
 
 #: news/_i18n_info.py:94
 msgid ""
@@ -2671,17 +2672,9 @@ msgstr ""
 
 #: news/_i18n_info.py:109
 msgid "Version 1.7.1 (security release)"
-msgstr ""
+msgstr "バージョン 1.7.1 (セキュリティ修正リリース)"
 
 #: news/_i18n_info.py:110
-#, fuzzy
-#| msgid ""
-#| "Version 0.3.9.1 is available, it fixes a security problem (buffer "
-#| "overflow when decoding IRC colors in strings).\n"
-#| "Upgrade is recommended for all users.\n"
-#| "\n"
-#| "More information on the <a href=\"/security\">page with security issues</"
-#| "a>."
 msgid ""
 "Version 1.7.1 is available, it fixes a security problem: a crash can happen "
 "in IRC plugin when parsing the filename received via DCC.\n"
@@ -2689,9 +2682,9 @@ msgid ""
 "\n"
 "More information on the <a href=\"/security\">page with security issues</a>."
 msgstr ""
-"バージョン 0.3.9.1 をリリースしました。このリリースではセキュリティ問題 (文字"
-"列中の IRC 用の色をデコードする際のバッファオーバーフロー) が修正されていま"
-"す。\n"
+"バージョン 1.7.1 をリリースしました。このリリースではセキュリティ問題 (DCC 経"
+"由で受信したフィル名を読み取る際に IRC プラグインがクラッシュする問題) が修正"
+"されています。\n"
 "全てのユーザにアップグレードを推奨します。\n"
 "\n"
 "詳しい情報は<a href=\"/security\">セキュリティ問題のページ</a>をご覧くださ"
@@ -5792,7 +5785,7 @@ msgstr "非公式チャンネル:"
 
 #: templates/dev/support.html:34
 msgid "Finnish"
-msgstr ""
+msgstr "フィンランド語"
 
 #: templates/dev/support.html:39
 msgid "Bugs / Feature requests"
@@ -5938,16 +5931,12 @@ msgid ""
 msgstr "開発者ガイドには WeeChat の翻訳に関する詳しい情報が載せられています。"
 
 #: templates/download/debian.html:29
-#, fuzzy
-#| msgid "Repositories"
 msgid "Active repositories"
-msgstr "リポジトリ"
+msgstr "現在稼働中のリポジトリ"
 
 #: templates/download/debian.html:30
-#, fuzzy
-#| msgid "Repositories"
 msgid "All repositories"
-msgstr "リポジトリ"
+msgstr "全てのリポジトリ"
 
 #: templates/download/debian.html:35
 msgid ""
@@ -6119,51 +6108,42 @@ msgstr ""
 "ジョンを使ってください!"
 
 #: templates/download/packages.html:57
-#, fuzzy, python-format
-#| msgid ""
-#| "<strong>Warning:</strong> this version has a <a href="
-#| "\"%(download_security_url)s\">vulnerability</a> which is fixed in version"
+#, python-format
 msgid ""
 "<strong>Warning:</strong> this version has one or more <a href="
 "\"%(download_security_url)s\">vulnerabilities</a>, it is not recommended to "
 "use it."
 msgstr ""
 "<strong>警告:</strong> このバージョンには<a href=\"%(download_security_url)s"
-"\">脆弱性</a>があります。脆弱性を修正したバージョンは"
+"\">脆弱性</a>があります。これを使用することはおすすめできません。"
 
 #: templates/download/packages.html:58
-#, fuzzy
-#| msgid "Fixed in version"
 msgid "Vulnerabilities fixed in versions:"
-msgstr "修正済みバージョン"
+msgstr "脆弱性が修正されているバージョン:"
 
 #: templates/download/packages.html:66 templates/home/home.html:41
-#, fuzzy, python-format
-#| msgid ""
-#| "<strong>Warning:</strong> this version has a <a href="
-#| "\"%(download_security_url)s\">vulnerability</a> which is fixed in version"
+#, python-format
 msgid ""
 "<strong>Important:</strong> this release fixes a <a href="
 "\"%(download_security_url)s\">vulnerability</a>."
 msgstr ""
-"<strong>警告:</strong> このバージョンには<a href=\"%(download_security_url)s"
-"\">脆弱性</a>があります。脆弱性を修正したバージョンは"
+"<strong>重要:</strong> このリリースでは<a href=\"%(download_security_url)s\">"
+"脆弱性</a>が修正されています。"
 
 #: templates/download/packages.html:68 templates/home/home.html:43
-#, fuzzy, python-format
-#| msgid ""
-#| "<strong>Warning:</strong> this version has a <a href="
-#| "\"%(download_security_url)s\">vulnerability</a> which is fixed in version"
+#, python-format
 msgid ""
 "<strong>Important:</strong> this release fixes <a href="
 "\"%(download_security_url)s\">%(count_issues_fixed)s vulnerabilities</a>."
 msgstr ""
-"<strong>警告:</strong> このバージョンには<a href=\"%(download_security_url)s"
-"\">脆弱性</a>があります。脆弱性を修正したバージョンは"
+"<strong>重要:</strong> このリリースでは <a href=\"%(download_security_url)s"
+"\">%(count_issues_fixed)s 個の脆弱性</a>が修正されています。"
 
 #: templates/download/packages.html:70 templates/home/home.html:45
 msgid "It is recommenended to upgrade from any older version to this one."
 msgstr ""
+"古いバージョンをお使いの方には、このバージョンにアップグレードすることを推奨"
+"します。"
 
 #: templates/download/packages.html:75
 msgid "Packages"
@@ -6256,7 +6236,7 @@ msgstr "進行中のリリースはありません。"
 #: templates/download/release.html:32
 msgid ""
 "This page is updated only a few hours during the build of a new version."
-msgstr ""
+msgstr "このページは新しいバージョンをビルドする数時間に限り更新されます。"
 
 #: templates/download/release.html:35
 msgid "We are working hard on the next version:"
@@ -6324,11 +6304,11 @@ msgstr "リリース日"
 
 #: templates/download/security.html:35 templates/download/security.html:57
 msgid "Workaround"
-msgstr "ワークアラウンド"
+msgstr "一時的措置"
 
 #: templates/download/security.html:61
 msgid "There is no workaround."
-msgstr "ワークアラウンドはありません。"
+msgstr "一時的措置はありません。"
 
 #: templates/download/security.html:69
 msgid "Security vulnerabilities are classified using 4 severity levels:"
