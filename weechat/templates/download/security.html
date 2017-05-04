@@ -24,7 +24,7 @@
     weechat-security <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt=">>">
   </a>
 
-  <table class="large">
+  <table>
     <tr>
       <th>{% trans "External link" %} / {% trans "Tracker" %}</th>
       <th>{% trans "Severity" %}</th>
@@ -36,7 +36,7 @@
     </tr>
     {% for security in security_list %}
     <tr class="linesev{{ security.severity }}">
-      <td class="small">
+      <td class="tracker">
         {% if security.external or security.tracker %}
           {% autoescape off %}{{ security.external_links }}{% endautoescape %}
           <br>{% autoescape off %}{{ security.url_tracker }}{% endautoescape %}
@@ -44,11 +44,11 @@
           -
         {% endif %}
       </td>
-      <td class="small sev{{ security.severity }}">{{ security.severity_i18n }}</td>
-      <td class="small affected">{% autoescape off %}{{ security.affected_html }}{% endautoescape %}</td>
-      <td class="small fixed">{{ security.fixed }}</td>
-      <td class="small">{% if security.release_date %}{{ security.release_date_l10n }}{% else %}-{% endif %}</td>
-      <td class="small">{% autoescape off %}{{ security.url_commits }}{% endautoescape %}</td>
+      <td class="sev{{ security.severity }}">{{ security.severity_i18n }}</td>
+      <td class="affected">{% autoescape off %}{{ security.affected_html }}{% endautoescape %}</td>
+      <td class="fixed">{{ security.fixed }}</td>
+      <td class="date">{% if security.release_date %}{{ security.release_date_l10n }}{% else %}-{% endif %}</td>
+      <td class="commits">{% autoescape off %}{{ security.url_commits }}{% endautoescape %}</td>
       <td class="description">
         {{ security.description_i18n }}
         <div class="workaround">

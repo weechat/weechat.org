@@ -112,10 +112,10 @@
       </tr>
     {% for plugin in plugin_list %}
       <tr class="{% cycle 'row1' 'row2' %}">
-        <td class="small name">
+        <td class="name">
           <div class="popular">{{ plugin.popularity_img|safe }}</div><a href="{% if api == 'legacy' %}{% url 'scripts_source_api_name_html' api plugin.name_with_extension %}{% else %}{% url 'scripts_source_name_html' plugin.name_with_extension %}{% endif %}">{{ plugin.name }}<span class="ext">.{{ plugin.extension }}</span></a>
         </td>
-        <td class="small">
+        <td class="description">
           <div class="tags">
           [{% for tag in plugin.tagslist %}<a href="{% url 'scripts_api_filter' api 'tag' tag %}" title="{% trans "Tag:" %} {{ tag }}">{{ tag }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}]
           </div>
@@ -124,11 +124,11 @@
             <span class="requirements"> ({% trans "requires" %}: {{ plugin.requirements }})</span>
           {% endif %}
         </td>
-        <td class="center tiny">{{ plugin.version }}</td>
-        <td class="center tiny">{{ plugin.license }}</td>
-        <td class="center tiny">{{ plugin.min_weechat }}</td>
-        <td class="center tiny">{{ plugin.max_weechat }}</td>
-        <td class="center tiny"><a href="{% url 'scripts_api_filter' api 'author' plugin.author %}" title="{% trans "Author:" %} {{ plugin.author }}">{{ plugin.author }}</a></td>
+        <td class="version">{{ plugin.version }}</td>
+        <td class="license">{{ plugin.license }}</td>
+        <td class="min_max">{{ plugin.min_weechat }}</td>
+        <td class="min_max">{{ plugin.max_weechat }}</td>
+        <td class="author"><a href="{% url 'scripts_api_filter' api 'author' plugin.author %}" title="{% trans "Author:" %} {{ plugin.author }}">{{ plugin.author }}</a></td>
         <td class="date">{% if plugin.added %}{{ plugin.added|date:"Y-m-d" }}{% endif %}</td>
         <td class="date">{% if plugin.updated %}{% if plugin.added != plugin.updated %}{{ plugin.updated|date:"Y-m-d" }}{% endif %}{% endif %}</td>
       </tr>

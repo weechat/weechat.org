@@ -39,26 +39,26 @@
       </tr>
     {% for plugin in plugin_list %}
       <tr class="{% cycle 'row1' 'row2' %}">
-        <td class="small name">
+        <td class="name">
           {% if plugin.file_exists %}
           <a href="{{ plugin.build_url }}">{{ plugin.name }}<span class="ext">.{{ plugin.extension }}</span></a>
           {% else %}
           {{ plugin.name }}<span class="ext">.{{ plugin.extension }}</span>
           {% endif %}
         </td>
-        <td class="small">
+        <td class="description">
           {{ plugin.desc_i18n }}
           {% if plugin.requirements %}
             <span class="requirements"> ({% trans "requires" %}: {{ plugin.requirements }})</span>
           {% endif %}
         </td>
-        <td class="small">{{ plugin.approval }}</td>
-        <td class="center tiny">{{ plugin.version }}</td>
-        <td class="center tiny">{{ plugin.language_display }}</td>
-        <td class="center tiny">{{ plugin.license }}</td>
-        <td class="center tiny">{{ plugin.min_weechat }}</td>
-        <td class="center tiny">{{ plugin.max_weechat }}</td>
-        <td class="center tiny">{{ plugin.author }}</td>
+        <td class="approval">{{ plugin.approval }}</td>
+        <td class="version">{{ plugin.version }}</td>
+        <td class="language">{{ plugin.language_display }}</td>
+        <td class="license">{{ plugin.license }}</td>
+        <td class="min_max">{{ plugin.min_weechat }}</td>
+        <td class="min_max">{{ plugin.max_weechat }}</td>
+        <td class="author">{{ plugin.author }}</td>
         <td class="date">{% if plugin.added %}{{ plugin.added|date:"Y-m-d" }}{% endif %}</td>
       </tr>
     {% endfor %}

@@ -31,7 +31,6 @@ img {
 
 ul {
   margin: .3em 0 1em 0;
-  padding-top: .4em;
 }
 
 li {
@@ -94,8 +93,8 @@ hr {
   position: absolute;
   top: 4px;
   right: 4px;
-  width: 20em;
-  font-size: .7em;
+  width: 22em;
+  font-size: .8em;
   text-align: right;
 }
 
@@ -105,19 +104,22 @@ hr {
 
 #header .lang a {
   display: inline-block;
-  margin-left: 1em;
-  color: #f4f4ff;
+  padding: 0 .5em;
+  color: #246;
   white-space: nowrap;
 }
 
 #header .lang a:hover {
-  color: yellow;
+  background: #68a;
+  color: #fff;
   cursor: pointer;
+  text-shadow: none;
 }
 
 #header .lang .selected {
-  color: #fcfcff;
+  color: #012;
   font-weight: bold;
+  text-shadow: 1px 1px 1px #cef;
 }
 
 #header .gradient {
@@ -173,7 +175,7 @@ hr {
   margin: 0;
   padding: 0 .9em;
   color: #fff;
-  font-size: .9em;
+  font-size: .94em;
   line-height: 2em;
   -webkit-transition-property: background-color;
   -webkit-transition-duration: .3s;
@@ -290,7 +292,6 @@ hr {
   margin: 0;
   padding: 0 1em;
   color: #555;
-  font-size: 1.1em;
   line-height: 2em;
 }
 
@@ -331,7 +332,7 @@ hr {
 .main {
   position: relative;
   padding: 2.5em 2.2% 255px 2.2%;
-  font-size: .75em;
+  font-size: .875em;
 }
 
 .main p {
@@ -372,14 +373,16 @@ hr {
 
 .button {
   margin: .75em 0;
-  font-size: 1.1em;
+  font-family: sans-serif;
+  font-size: 1.2em;
   font-weight: bold;
+  letter-spacing: .01em;
   line-height: 2em;
   text-shadow: 1px 1px #fafafa;
 }
 
 .button a {
-  padding: .25em .9em;
+  padding: .4em 1.1em;
   border: 1px solid #dadada;
   border-radius: 8px;
   box-shadow: 1px 1px 3px #dadada;
@@ -457,7 +460,7 @@ hr {
   text-align: left;
 }
 
-.warningbox li, ul {
+.warningbox li, .warningbox ul {
   margin: 0;
 }
 
@@ -471,7 +474,7 @@ hr {
   text-align: left;
 }
 
-.infobox li, ul {
+.infobox li, .infobox ul {
   margin: 0;
 }
 
@@ -508,14 +511,14 @@ hr {
 
 #footer {
   position: relative;
-  height: 220px;
-  min-height: 220px;
+  height: 245px;
+  min-height: 245px;
   text-align: center;
   vertical-align: bottom;
 }
 
 .nav2 {
-  height: 205px;
+  height: 230px;
   overflow: auto;
   padding: 0;
   border-top: 1px solid #e4e4e4;
@@ -524,7 +527,7 @@ hr {
   background: -moz-linear-gradient(#fafaff, #e2e2e7);
   background: -webkit-linear-gradient(#fafaff, #e2e2e7);
   background: linear-gradient(#fafaff, #e2e2e7);
-  font-size: .75em;
+  font-size: .875em;
 }
 
 #nav2 {
@@ -537,7 +540,7 @@ hr {
 #nav2 li {
   float: left;
   padding: 0;
-  margin: .5em 0 0 2em;
+  margin: .5em 0 0 1.8em;
   font-weight: bold;
   text-align: left;
   text-transform: uppercase;
@@ -548,7 +551,7 @@ hr {
 }
 
 #nav2 a {
-  line-height: 2.3em;
+  line-height: 2em;
   white-space: nowrap;
 }
 
@@ -578,7 +581,7 @@ hr {
   background: -moz-linear-gradient(#789, #234);
   background: -webkit-linear-gradient(#789, #234);
   background: linear-gradient(#789, #234);
-  font-size: .75em;
+  font-size: .9em;
   line-height: 35px;
 }
 
