@@ -31,8 +31,8 @@ var deb_apt_cmds = [
   </ul>
 </div>
 
-<div class="infobox">
-  {% blocktrans %}<strong>Important:</strong> these packages are not Debian official packages; please <a href="#instructions"><strong>read instructions</strong></a> before using these repositories.{% endblocktrans %}
+<div class="successbox">
+  {% blocktrans %}<strong>Note:</strong> these packages are not Debian official packages; please <a href="#instructions"><strong>read instructions</strong></a> before using these repositories.{% endblocktrans %}
 </div>
 
 {% if debpkgs %}
@@ -181,7 +181,7 @@ var deb_apt_cmds = [
 
 {% else %}
 
-<div class="errorbox">
+<div class="infobox">
   {% trans "No debian repository." %}
 </div>
 

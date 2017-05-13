@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-13 13:41+0200\n"
-"PO-Revision-Date: 2017-05-07 12:43+0200\n"
+"POT-Creation-Date: 2017-05-13 15:37+0200\n"
+"PO-Revision-Date: 2017-05-13 15:37+0200\n"
 "Last-Translator: Alexandre Bolelli <semeion7@gmail.com>\n"
 "Language-Team: Portuguese <semeion7@gmail.com>\n"
 "Language: pt_BR\n"
@@ -5615,7 +5615,7 @@ msgid "Spell checking"
 msgstr "Verificação ortográfica"
 
 #: templates/about/features.html:82 templates/about/features.html:121
-#: templates/download/packages.html:128
+#: templates/download/packages.html:130
 msgid "Remote interfaces"
 msgstr "Interface remota"
 
@@ -5999,9 +5999,13 @@ msgid "support"
 msgstr "suporte"
 
 #: templates/dev/support.html:15
-#, python-format
+#, fuzzy, python-format
+#| msgid ""
+#| "<strong>Warning:</strong> before asking for help, please read carefully "
+#| "<a href=\"%(doc_url)s\">documentation</a> and <a href=\"%(faq_url)s"
+#| "\">FAQ</a>."
 msgid ""
-"<strong>Warning:</strong> before asking for help, please read carefully <a "
+"<strong>Important:</strong> before asking for help, please read carefully <a "
 "href=\"%(doc_url)s\">documentation</a> and <a href=\"%(faq_url)s\">FAQ</a>."
 msgstr ""
 "<strong>Aviso:</strong> antes de pedir ajuda, leia atentamente a <a href="
@@ -6105,8 +6109,12 @@ msgid "Docs for old versions"
 msgstr "Docs para versões antigas"
 
 #: templates/doc/doc.html:24
+#, fuzzy
+#| msgid ""
+#| "<strong>Warning:</strong> these old versions are <strong>not supported</"
+#| "strong> any more!"
 msgid ""
-"<strong>Warning:</strong> these old versions are <strong>not supported</"
+"<strong>Important:</strong> these old versions are <strong>not supported</"
 "strong> any more!"
 msgstr ""
 "<strong>Atenção:</strong> estas versões antigas <strong>não são mais "
@@ -6187,7 +6195,7 @@ msgstr "Repositórios Debian"
 
 #: templates/download/debian.html:35
 msgid ""
-"<strong>Important:</strong> these packages are not Debian official packages; "
+"<strong>Note:</strong> these packages are not Debian official packages; "
 "please <a href=\"#instructions\"><strong>read instructions</strong></a> "
 "before using these repositories."
 msgstr ""
@@ -6321,8 +6329,12 @@ msgstr ""
 "href=\"%(download_release_url)s\">nesta página</a>."
 
 #: templates/download/packages.html:28
+#, fuzzy
+#| msgid ""
+#| "<strong>Warning:</strong> this version may be unstable or it may not "
+#| "compile, you're warned!"
 msgid ""
-"<strong>Warning:</strong> this version may be unstable or it may not "
+"<strong>Important:</strong> this version may be unstable or it may not "
 "compile, you're warned!"
 msgstr ""
 "<strong>Aviso:</strong> esta versão pode ser instável ou pode não compilar, "
@@ -6334,20 +6346,20 @@ msgstr ""
 #| "<strong>Warning:</strong> it is not recommended to download any old "
 #| "version, because they are less stable."
 msgid ""
-"<strong>Warning:</strong> it is not recommended to download or use any of "
+"<strong>Important:</strong> it is not recommended to download or use any of "
 "these old versions: they are less stable than the latest released version, "
 "and may contain security vulnerabilities fixed in later versions."
 msgstr ""
 "<strong>Aviso:</strong> não é recomendado baixar qualquer versão antiga, "
 "porque eles são menos estáveis."
 
-#: templates/download/packages.html:55
+#: templates/download/packages.html:56
 #, fuzzy, python-format
 #| msgid ""
 #| "<strong>Warning:</strong> this version has a <a href="
 #| "\"%(download_security_url)s\">vulnerability</a> which is fixed in version"
 msgid ""
-"<strong>Warning:</strong> this version has one or more <a href="
+"<strong>Warning:</strong> the version %(version)s has one or more <a href="
 "\"%(download_security_url)s\">vulnerabilities</a>, it is not recommended to "
 "use it."
 msgstr ""
@@ -6355,13 +6367,13 @@ msgstr ""
 "\"%(download_security_url)s\">vulnerabilidade</a> a qual foi consertada na "
 "versão"
 
-#: templates/download/packages.html:56
+#: templates/download/packages.html:58
 #, fuzzy
 #| msgid "Fixed in version"
 msgid "Vulnerabilities fixed in versions:"
 msgstr "Corrigido na versão"
 
-#: templates/download/packages.html:64 templates/home/home.html:41
+#: templates/download/packages.html:66 templates/home/home.html:41
 #, fuzzy, python-format
 #| msgid ""
 #| "<strong>Warning:</strong> this version has a <a href="
@@ -6374,7 +6386,7 @@ msgstr ""
 "\"%(download_security_url)s\">vulnerabilidade</a> a qual foi consertada na "
 "versão"
 
-#: templates/download/packages.html:66 templates/home/home.html:43
+#: templates/download/packages.html:68 templates/home/home.html:43
 #, fuzzy, python-format
 #| msgid ""
 #| "<strong>Warning:</strong> this version has a <a href="
@@ -6387,47 +6399,47 @@ msgstr ""
 "\"%(download_security_url)s\">vulnerabilidade</a> a qual foi consertada na "
 "versão"
 
-#: templates/download/packages.html:68 templates/home/home.html:45
+#: templates/download/packages.html:70 templates/home/home.html:45
 msgid "It is recommended to upgrade from any older version to this one."
 msgstr ""
 
-#: templates/download/packages.html:73
+#: templates/download/packages.html:75
 msgid "Packages"
 msgstr "Pacotes"
 
-#: templates/download/packages.html:84
+#: templates/download/packages.html:86
 msgid "Checksum"
 msgstr ""
 
-#: templates/download/packages.html:110
+#: templates/download/packages.html:112
 msgid "About release"
 msgstr "Sobre o lançamento"
 
-#: templates/download/packages.html:112
+#: templates/download/packages.html:114
 msgid "ChangeLog"
 msgstr "ChangeLog"
 
-#: templates/download/packages.html:118
+#: templates/download/packages.html:120
 msgid "Release notes"
 msgstr "Notas de lançamento"
 
-#: templates/download/packages.html:138
+#: templates/download/packages.html:140
 msgid "(see above)"
 msgstr "(veja acima)"
 
-#: templates/download/packages.html:162
+#: templates/download/packages.html:164
 msgid "Checking the signatures"
 msgstr "Verificando as assinaturas"
 
-#: templates/download/packages.html:166
+#: templates/download/packages.html:168
 msgid "Import the gpg key:"
 msgstr "Importando a chave gpg:"
 
-#: templates/download/packages.html:170
+#: templates/download/packages.html:172
 msgid "Display the fingerprint:"
 msgstr "Mostrando o fingerprint:"
 
-#: templates/download/packages.html:174
+#: templates/download/packages.html:176
 msgid ""
 "Check that the fingerprint is correct by asking to a developer on #weechat "
 "(chat.freenode.net)."
@@ -6435,39 +6447,39 @@ msgstr ""
 "Verifique que o fingerprint é correto perguntando à um desenvolvedor em "
 "#weechat (chat.freenode.net)."
 
-#: templates/download/packages.html:177
+#: templates/download/packages.html:179
 msgid "Trust the key:"
 msgstr "Confie na chave:"
 
-#: templates/download/packages.html:186
+#: templates/download/packages.html:188
 msgid "In directory with package + signature:"
 msgstr "No diretório com o pacote + assinatura:"
 
-#: templates/download/packages.html:190
+#: templates/download/packages.html:192
 msgid "If the signature is OK you should see a message like this one:"
 msgstr "Se a assinatura está OK você deve ser uma mensagem como esta:"
 
-#: templates/download/packages.html:203
+#: templates/download/packages.html:205
 msgid "Links"
 msgstr "Links"
 
-#: templates/download/packages.html:205
+#: templates/download/packages.html:207
 msgid "Savannah page"
 msgstr "Página Savannah"
 
-#: templates/download/packages.html:211
+#: templates/download/packages.html:213
 msgid "Git - sources"
 msgstr "Git - sources"
 
-#: templates/download/packages.html:217
+#: templates/download/packages.html:219
 msgid "Git - scripts"
 msgstr "Git - scripts"
 
-#: templates/download/packages.html:223
+#: templates/download/packages.html:225
 msgid "Git - clone"
 msgstr "Git - clone"
 
-#: templates/download/packages.html:233
+#: templates/download/packages.html:235
 msgid "Error: there is no version called"
 msgstr "Erro: não existe uma versão chamada"
 
@@ -6796,8 +6808,12 @@ msgid "Repositories"
 msgstr "Repositórios Debian"
 
 #: templates/plugins/add.html:15 templates/plugins/update.html:16
+#, fuzzy
+#| msgid ""
+#| "<strong>Warning:</strong> please follow <strong>all</strong> these rules, "
+#| "otherwise your script will be rejected:"
 msgid ""
-"<strong>Warning:</strong> please follow <strong>all</strong> these rules, "
+"<strong>Important:</strong> please follow <strong>all</strong> these rules, "
 "otherwise your script will be rejected:"
 msgstr ""
 "<strong>Aviso:</strong> por favor siga <strong>todas</strong> essas regras, "
@@ -6924,8 +6940,13 @@ msgid "Back to scripts"
 msgstr "Voltar para scripts"
 
 #: templates/plugins/list.html:13
+#, fuzzy
+#| msgid ""
+#| "<strong>Warning:</strong> these scripts are written by external "
+#| "contributors, therefore WeeChat developers are <strong>NOT RESPONSIBLE</"
+#| "strong> for problems caused by one of these scripts."
 msgid ""
-"<strong>Warning:</strong> these scripts are written by external "
+"<strong>Important:</strong> these scripts are written by external "
 "contributors, therefore WeeChat developers are <strong>NOT RESPONSIBLE</"
 "strong> for problems caused by one of these scripts."
 msgstr ""
@@ -7146,8 +7167,12 @@ msgid "Back to themes"
 msgstr "Voltar para temas"
 
 #: templates/themes/list.html:13
+#, fuzzy
+#| msgid ""
+#| "<strong>Warning:</strong> alpha version of themes! Alpha version of "
+#| "script is available here:"
 msgid ""
-"<strong>Warning:</strong> alpha version of themes! Alpha version of script "
+"<strong>Important:</strong> alpha version of themes! Alpha version of script "
 "is available here:"
 msgstr ""
 "<strong>Aviso:</strong> versão alfa dos temas! A versão alfa do script está "

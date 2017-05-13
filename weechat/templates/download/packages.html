@@ -16,7 +16,7 @@
 
     {% if version == "stable" %}
       {% if release_progress.done >= 0 and release_progress.pct < 100 %}
-        <div class="infobox">
+        <div class="successbox">
           {% url 'download_release' as download_release_url %}
           {% blocktrans %}<strong>A new release is under construction!</strong> Follow the progress on <a href="{{ download_release_url }}">this page</a>.{% endblocktrans %}
         </div>
@@ -24,14 +24,14 @@
     {% endif %}
 
     {% if version == "devel" %}
-      <div class="warningbox">
-        {% trans "<strong>Warning:</strong> this version may be unstable or it may not compile, you're warned!" %}
+      <div class="infobox">
+        {% trans "<strong>Important:</strong> this version may be unstable or it may not compile, you're warned!" %}
       </div>
     {% endif %}
 
     {% if version == "old" %}
       <div class="warningbox">
-        {% trans "<strong>Warning:</strong> it is not recommended to download or use any of these old versions: they are less stable than the latest released version, and may contain security vulnerabilities fixed in later versions." %}
+        {% trans "<strong>Important:</strong> it is not recommended to download or use any of these old versions: they are less stable than the latest released version, and may contain security vulnerabilities fixed in later versions." %}
       </div>
     {% endif %}
 
@@ -50,15 +50,17 @@
         </span>
       </div>
       {% if package_version.grouper.securityfix %}
-        <div class="warningbox">
+        <div class="errorbox">
           {% url 'download_security' as download_security_url %}
-          {% blocktrans %}<strong>Warning:</strong> this version has one or more <a href="{{ download_security_url }}">vulnerabilities</a>, it is not recommended to use it.{% endblocktrans %}
+          {% with version=package_version.grouper.version %}
+            {% blocktrans %}<strong>Warning:</strong> the version {{ version }} has one or more <a href="{{ download_security_url }}">vulnerabilities</a>, it is not recommended to use it.{% endblocktrans %}
+          {% endwith %}
           {% trans "Vulnerabilities fixed in versions:" %}
           {% for fixed_version in package_version.grouper.security_fixed_versions %}{% if not forloop.first %}, {% endif %}<a href="{% url 'download_version' version=fixed_version %}">{{ fixed_version }}</a>{% endfor %}.
         </div>
       {% else %}
         {% if version != "devel" and version != "old" and package_version.grouper.security_issues_fixed > 0 %}
-        <div class="infobox">
+        <div class="successbox">
           {% url 'download_security' as download_security_url %}
           {% if package_version.grouper.security_issues_fixed == 1 %}
             {% blocktrans %}<strong>Important:</strong> this release fixes a <a href="{{ download_security_url }}">vulnerability</a>.{% endblocktrans %}

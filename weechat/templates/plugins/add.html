@@ -11,8 +11,8 @@
 
 <div class="form">
 
-  <div class="warningbox">
-    {% trans "<strong>Warning:</strong> please follow <strong>all</strong> these rules, otherwise your script will be rejected:" %}
+  <div class="infobox">
+    {% trans "<strong>Important:</strong> please follow <strong>all</strong> these rules, otherwise your script will be rejected:" %}
     <ul>
       {% url 'scripts_pending' as scripts_pending_url %}
       <li>{% blocktrans %}check that no script (or <a href="{{ scripts_pending_url }}">pending script</a>) does exactly same thing as your script{% endblocktrans %}</li>

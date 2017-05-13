@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-13 13:41+0200\n"
-"PO-Revision-Date: 2017-05-07 12:43+0200\n"
+"POT-Creation-Date: 2017-05-13 15:37+0200\n"
+"PO-Revision-Date: 2017-05-13 15:37+0200\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
 "translation/ja_JP>\n"
@@ -5547,7 +5547,7 @@ msgid "Spell checking"
 msgstr "スペルチェック"
 
 #: templates/about/features.html:82 templates/about/features.html:121
-#: templates/download/packages.html:128
+#: templates/download/packages.html:130
 msgid "Remote interfaces"
 msgstr "リモートインターフェイス"
 
@@ -5931,9 +5931,13 @@ msgid "support"
 msgstr "サポート"
 
 #: templates/dev/support.html:15
-#, python-format
+#, fuzzy, python-format
+#| msgid ""
+#| "<strong>Warning:</strong> before asking for help, please read carefully "
+#| "<a href=\"%(doc_url)s\">documentation</a> and <a href=\"%(faq_url)s"
+#| "\">FAQ</a>."
 msgid ""
-"<strong>Warning:</strong> before asking for help, please read carefully <a "
+"<strong>Important:</strong> before asking for help, please read carefully <a "
 "href=\"%(doc_url)s\">documentation</a> and <a href=\"%(faq_url)s\">FAQ</a>."
 msgstr ""
 "<strong>警告:</strong> 助けを求める前に、<a href=\"%(doc_url)s\">文書</a>と "
@@ -6039,8 +6043,12 @@ msgid "Docs for old versions"
 msgstr "古いバージョン向けの文書"
 
 #: templates/doc/doc.html:24
+#, fuzzy
+#| msgid ""
+#| "<strong>Warning:</strong> these old versions are <strong>not supported</"
+#| "strong> any more!"
 msgid ""
-"<strong>Warning:</strong> these old versions are <strong>not supported</"
+"<strong>Important:</strong> these old versions are <strong>not supported</"
 "strong> any more!"
 msgstr ""
 "<strong>警告:</strong> 古いバージョンはもはや<strong>サポートされません</"
@@ -6107,8 +6115,13 @@ msgid "All repositories"
 msgstr "全てのリポジトリ"
 
 #: templates/download/debian.html:35
+#, fuzzy
+#| msgid ""
+#| "<strong>Important:</strong> these packages are not Debian official "
+#| "packages; please <a href=\"#instructions\"><strong>read instructions</"
+#| "strong></a> before using these repositories."
 msgid ""
-"<strong>Important:</strong> these packages are not Debian official packages; "
+"<strong>Note:</strong> these packages are not Debian official packages; "
 "please <a href=\"#instructions\"><strong>read instructions</strong></a> "
 "before using these repositories."
 msgstr ""
@@ -6252,8 +6265,12 @@ msgstr ""
 "さい。"
 
 #: templates/download/packages.html:28
+#, fuzzy
+#| msgid ""
+#| "<strong>Warning:</strong> this version may be unstable or it may not "
+#| "compile, you're warned!"
 msgid ""
-"<strong>Warning:</strong> this version may be unstable or it may not "
+"<strong>Important:</strong> this version may be unstable or it may not "
 "compile, you're warned!"
 msgstr ""
 "<strong>警告:</strong> このバージョンは不安定であり、コンパイルできないかもし"
@@ -6265,28 +6282,32 @@ msgstr ""
 #| "<strong>Warning:</strong> it is not recommended to download any old "
 #| "version, because they are less stable."
 msgid ""
-"<strong>Warning:</strong> it is not recommended to download or use any of "
+"<strong>Important:</strong> it is not recommended to download or use any of "
 "these old versions: they are less stable than the latest released version, "
 "and may contain security vulnerabilities fixed in later versions."
 msgstr ""
 "<strong>警告:</strong> 古いバージョンは比較的安定でないため、ダウンロードはお"
 "すすめしません。"
 
-#: templates/download/packages.html:55
-#, python-format
+#: templates/download/packages.html:56
+#, fuzzy, python-format
+#| msgid ""
+#| "<strong>Warning:</strong> this version has one or more <a href="
+#| "\"%(download_security_url)s\">vulnerabilities</a>, it is not recommended "
+#| "to use it."
 msgid ""
-"<strong>Warning:</strong> this version has one or more <a href="
+"<strong>Warning:</strong> the version %(version)s has one or more <a href="
 "\"%(download_security_url)s\">vulnerabilities</a>, it is not recommended to "
 "use it."
 msgstr ""
 "<strong>警告:</strong> このバージョンには<a href=\"%(download_security_url)s"
 "\">脆弱性</a>があります。これを使用することはおすすめできません。"
 
-#: templates/download/packages.html:56
+#: templates/download/packages.html:58
 msgid "Vulnerabilities fixed in versions:"
 msgstr "脆弱性が修正されているバージョン:"
 
-#: templates/download/packages.html:64 templates/home/home.html:41
+#: templates/download/packages.html:66 templates/home/home.html:41
 #, python-format
 msgid ""
 "<strong>Important:</strong> this release fixes a <a href="
@@ -6295,7 +6316,7 @@ msgstr ""
 "<strong>重要:</strong> このリリースでは<a href=\"%(download_security_url)s\">"
 "脆弱性</a>が修正されています。"
 
-#: templates/download/packages.html:66 templates/home/home.html:43
+#: templates/download/packages.html:68 templates/home/home.html:43
 #, python-format
 msgid ""
 "<strong>Important:</strong> this release fixes <a href="
@@ -6304,49 +6325,49 @@ msgstr ""
 "<strong>重要:</strong> このリリースでは <a href=\"%(download_security_url)s"
 "\">%(count_issues_fixed)s 個の脆弱性</a>が修正されています。"
 
-#: templates/download/packages.html:68 templates/home/home.html:45
+#: templates/download/packages.html:70 templates/home/home.html:45
 msgid "It is recommended to upgrade from any older version to this one."
 msgstr ""
 "古いバージョンをお使いの方には、このバージョンにアップグレードすることを推奨"
 "します。"
 
-#: templates/download/packages.html:73
+#: templates/download/packages.html:75
 msgid "Packages"
 msgstr "パッケージ"
 
-#: templates/download/packages.html:84
+#: templates/download/packages.html:86
 msgid "Checksum"
 msgstr "チェックサム"
 
-#: templates/download/packages.html:110
+#: templates/download/packages.html:112
 msgid "About release"
 msgstr "リリースについて"
 
-#: templates/download/packages.html:112
+#: templates/download/packages.html:114
 msgid "ChangeLog"
 msgstr "ChangeLog"
 
-#: templates/download/packages.html:118
+#: templates/download/packages.html:120
 msgid "Release notes"
 msgstr "リリースノート"
 
-#: templates/download/packages.html:138
+#: templates/download/packages.html:140
 msgid "(see above)"
 msgstr "(上記の通り)"
 
-#: templates/download/packages.html:162
+#: templates/download/packages.html:164
 msgid "Checking the signatures"
 msgstr "署名の確認方法"
 
-#: templates/download/packages.html:166
+#: templates/download/packages.html:168
 msgid "Import the gpg key:"
 msgstr "gpg キーをインポート:"
 
-#: templates/download/packages.html:170
+#: templates/download/packages.html:172
 msgid "Display the fingerprint:"
 msgstr "指紋を表示:"
 
-#: templates/download/packages.html:174
+#: templates/download/packages.html:176
 msgid ""
 "Check that the fingerprint is correct by asking to a developer on #weechat "
 "(chat.freenode.net)."
@@ -6354,39 +6375,39 @@ msgstr ""
 "#weechat (chat.freenode.net) の開発者に尋ねて指紋が正しいことを確認してくださ"
 "い。"
 
-#: templates/download/packages.html:177
+#: templates/download/packages.html:179
 msgid "Trust the key:"
 msgstr "キーを信用する:"
 
-#: templates/download/packages.html:186
+#: templates/download/packages.html:188
 msgid "In directory with package + signature:"
 msgstr "パッケージと署名ファイルがあるディレクトリ内で:"
 
-#: templates/download/packages.html:190
+#: templates/download/packages.html:192
 msgid "If the signature is OK you should see a message like this one:"
 msgstr "署名が正しいなら、以下の様なメッセージが表示されれるはずです:"
 
-#: templates/download/packages.html:203
+#: templates/download/packages.html:205
 msgid "Links"
 msgstr "リンク"
 
-#: templates/download/packages.html:205
+#: templates/download/packages.html:207
 msgid "Savannah page"
 msgstr "Savannah ページ"
 
-#: templates/download/packages.html:211
+#: templates/download/packages.html:213
 msgid "Git - sources"
 msgstr "Git - ソース"
 
-#: templates/download/packages.html:217
+#: templates/download/packages.html:219
 msgid "Git - scripts"
 msgstr "Git - スクリプト"
 
-#: templates/download/packages.html:223
+#: templates/download/packages.html:225
 msgid "Git - clone"
 msgstr "Git - クローン"
 
-#: templates/download/packages.html:233
+#: templates/download/packages.html:235
 msgid "Error: there is no version called"
 msgstr "エラー: そのバージョンは存在しません"
 
@@ -6695,8 +6716,12 @@ msgid "Repositories"
 msgstr "リポジトリ"
 
 #: templates/plugins/add.html:15 templates/plugins/update.html:16
+#, fuzzy
+#| msgid ""
+#| "<strong>Warning:</strong> please follow <strong>all</strong> these rules, "
+#| "otherwise your script will be rejected:"
 msgid ""
-"<strong>Warning:</strong> please follow <strong>all</strong> these rules, "
+"<strong>Important:</strong> please follow <strong>all</strong> these rules, "
 "otherwise your script will be rejected:"
 msgstr ""
 "<strong>警告:</strong> 以下のルールの<strong>全て</strong>を守ってください。"
@@ -6816,8 +6841,13 @@ msgid "Back to scripts"
 msgstr "スクリプトに戻る"
 
 #: templates/plugins/list.html:13
+#, fuzzy
+#| msgid ""
+#| "<strong>Warning:</strong> these scripts are written by external "
+#| "contributors, therefore WeeChat developers are <strong>NOT RESPONSIBLE</"
+#| "strong> for problems caused by one of these scripts."
 msgid ""
-"<strong>Warning:</strong> these scripts are written by external "
+"<strong>Important:</strong> these scripts are written by external "
 "contributors, therefore WeeChat developers are <strong>NOT RESPONSIBLE</"
 "strong> for problems caused by one of these scripts."
 msgstr ""
@@ -7030,8 +7060,12 @@ msgid "Back to themes"
 msgstr "テーマに戻る"
 
 #: templates/themes/list.html:13
+#, fuzzy
+#| msgid ""
+#| "<strong>Warning:</strong> alpha version of themes! Alpha version of "
+#| "script is available here:"
 msgid ""
-"<strong>Warning:</strong> alpha version of themes! Alpha version of script "
+"<strong>Important:</strong> alpha version of themes! Alpha version of script "
 "is available here:"
 msgstr ""
 "<strong>警告:</strong> アルファ版のテーマです! アルファ版のスクリプトはここか"

@@ -9,8 +9,8 @@
 {{ block.super }}
 
 {% if theme_list %}
-  <div class="warningbox">
-    {% trans "<strong>Warning:</strong> alpha version of themes! Alpha version of script is available here:" %}
+  <div class="infobox">
+    {% trans "<strong>Important:</strong> alpha version of themes! Alpha version of script is available here:" %}
     <a href="/files/temp/theme/theme.py">theme.py</a>
   </div>
 
@@ -34,7 +34,7 @@
   </div>
 {% else %}
   <br>
-  <div class="warningbox">
+  <div class="infobox">
     <strong>{% trans "No theme found." %}</strong>
   </div>
   <br>

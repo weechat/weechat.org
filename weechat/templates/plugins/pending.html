@@ -8,7 +8,7 @@
 
 {{ block.super }}
 
-<div class="infobox">
+<div class="successbox">
   {% trans "Following scripts are waiting for approval, possible future is:" %}
   <ul>
     <li>{% trans "if script is OK, it is moved to official scripts and git repository." %}</li>
@@ -65,7 +65,7 @@
     </table>
   </div>
 {% else %}
-  <div class="warningbox">
+  <div class="infobox">
     {% trans "No script pending approval at this time." %}
   </div>
 {% endif %}

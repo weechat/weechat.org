@@ -442,20 +442,25 @@ hr {
 /* boxes */
 
 .errorbox {
-  padding: 1.1em .7em;
-  border: 1px solid #f0d3d3;
+  padding: .7em;
+  border: 1px solid #f0cdcd;
   border-radius: 4px;
   margin: 1.5em 0;
-  background: #ffeaea;
-  font-weight: bold;
+  background: #ffecec;
+  color: #700;
+  text-align: left;
+}
+
+.errorbox li, .errorbox ul {
+  margin: 0;
 }
 
 .warningbox {
   padding: .7em;
-  border: 1px solid #f0dbdb;
+  border: 1px solid #f0d9d4;
   border-radius: 4px;
   margin: 1.5em 0;
-  background: #fff0f0;
+  background: #fff4e0;
   color: #700;
   text-align: left;
 }
@@ -466,6 +471,20 @@ hr {
 
 .infobox {
   padding: .7em;
+  border: 1px solid #d2daf7;
+  border-radius: 4px;
+  margin: 1.5em 0;
+  background: #eaf2ff;
+  color: #050;
+  text-align: left;
+}
+
+.infobox li, .infobox ul {
+  margin: 0;
+}
+
+.successbox {
+  padding: .7em;
   border: 1px solid #c8e3c8;
   border-radius: 4px;
   margin: 1.5em 0;
@@ -474,7 +493,7 @@ hr {
   text-align: left;
 }
 
-.infobox li, .infobox ul {
+.successbox li, .successbox ul {
   margin: 0;
 }
 
