@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # This file is auto-generated after changes in database, DO NOT EDIT!
 
 from django.utils.translation import gettext_lazy
@@ -22,6 +23,7 @@ _i18n_about_keydates = [
     gettext_lazy("Multiple layouts, auto-unmask IRC joins, WebSocket support in relay."),
     gettext_lazy("New site weechat.org, major rewrite of WeeChat with new plugin API, tcl plugin."),
     gettext_lazy("Perl plugin."),
+    gettext_lazy("Plugin \"buflist\" (list of buffers)."),
     gettext_lazy("Plugin \"script\" (scripts manager), SSL in relay."),
     gettext_lazy("Proxy support, IPv6, SSL."),
     gettext_lazy("Python plugin."),
