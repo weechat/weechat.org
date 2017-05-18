@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-17 06:57+0200\n"
-"PO-Revision-Date: 2017-05-17 06:58+0200\n"
+"PO-Revision-Date: 2017-05-18 21:48+0200\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <weechatter@arcor.de>\n"
 "Language: de\n"
@@ -123,10 +123,8 @@ msgid "Perl plugin."
 msgstr "Perl Erweiterung."
 
 #: about/_i18n_keydates.py:26
-#, fuzzy
-#| msgid "Sidebar with list of buffers."
 msgid "Plugin \"buflist\" (list of buffers)."
-msgstr "zeigt alle Buffer in einem separaten Seitenfenster an."
+msgstr "Erweiterung \"buflist\" (zeigt Buffer in einer separaten Bar an)."
 
 #: about/_i18n_keydates.py:27
 msgid "Plugin \"script\" (scripts manager), SSL in relay."
@@ -2809,25 +2807,6 @@ msgstr ""
 "\">Seite zu Sicherheitsfragen</a>."
 
 #: news/_i18n_info.py:111
-#, fuzzy
-#| msgid ""
-#| "Version 1.7 is available!\n"
-#| "\n"
-#| "Among the new features:\n"
-#| "\n"
-#| "- add option weechat.look.align_multiline_words\n"
-#| "- add option \"time\" in command /debug\n"
-#| "- add infos \"uptime\" and \"pid\"\n"
-#| "- add optional arguments in completion template\n"
-#| "- add irc server option \"usermode\"\n"
-#| "- add tag \"self_msg\" on self messages\n"
-#| "- add configuration file fifo.conf for fifo plugin\n"
-#| "- add option \"-oc\" in command /exec\n"
-#| "- many bugs fixed.\n"
-#| "\n"
-#| "For complete list of new features and bugs fixed, please look at <a href="
-#| "\"http://dev.weechat.org/post/2017/01/15/Version-1.7\">development blog</"
-#| "a> or <a href=\"/files/changelog/ChangeLog-1.7.html\">ChangeLog</a>."
 msgid ""
 "Version 1.8 is available!\n"
 "\n"
@@ -2850,24 +2829,27 @@ msgid ""
 "\"http://dev.weechat.org/post/2017/05/13/Version-1.8\">development blog</a> "
 "or <a href=\"/files/changelog/ChangeLog-1.8.html\">ChangeLog</a>."
 msgstr ""
-"Version 1.7 ist verfügbar!\n"
+"Version 1.8 ist verfügbar!\n"
 "\n"
 "Überblick, der neuen Funktionen:\n"
 "\n"
-"- neu: Option weechat.look.align_multiline_words\n"
-"- neu: Option \"time\" für Befehl /debug\n"
-"- neu: Info \"uptime\" und \"pid\"\n"
-"- neu: optional Argumente für Vorlage bei Vervollständigung\n"
-"- neu: Option \"usermode\" für IRC Server\n"
-"- neu: tag \"self_msg\" für eigene Nachrichten\n"
-"- neu: Konfigurationsdatei fifo.conf für fifo Erweiterung\n"
-"- neu: Option \"-oc\" für Befehl /exec\n"
+"- neu: Option weechat.completion.nick_case_sensitive\n"
+"- neu: Unterstützung von Platzhaltern, Begrenzung von Zeichenketten und "
+"Unterstützung eines Dreifachoperand bei der Evaluation von Ausdrücken\n"
+"- neu: Größenanpassung des Stammfenster mittels /window resize [h/v]Größe\n"
+"- neu: Erweiterung \"buflist\" (zeigt Buffer in einer separaten Bar an)\n"
+"- neu: Arraylisten und dynamische Stringfunktionen in API\n"
+"- neu: Option \"open\" für Befehl /server\n"
+"- neu: Signal \"irc_server_lag_changed\", der Lag wird im Server-Buffer "
+"gesichert (lokale Variable)\n"
+"- neu: Aspell-Optionen um Trennzeichen für die Aspell Vorschläge zu nutzen\n"
+"- neu: Option \"-include\" für die Befehle /allchan, /allpv und /allserv\n"
 "- viele Fehlerbereinigungen\n"
 "\n"
 "Eine vollständige Liste der neuen Funktionen und Fehlerbereinigungen findet "
-"man unter folgenden Links: <a href=\"http://dev.weechat.org/post/2017/01/15/"
-"Version-1.7\">development blog</a> oder <a href=\"/files/changelog/"
-"ChangeLog-1.7.html\">ChangeLog</a>."
+"man unter folgenden Links: <a href=\"http://dev.weechat.org/post/2017/05/13/"
+"Version-1.8\">development blog</a> oder <a href=\"/files/changelog/"
+"ChangeLog-1.8.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:112
 msgid ""
@@ -3267,6 +3249,8 @@ msgid ""
 "Alternate text formatting, useful for relays without formatting features "
 "(glowing-bear, weechat-android, ...)."
 msgstr ""
+"alternative Textformatierung, nützlich für Relays ohne eine "
+"Formatierungsfunktion (glowing-bear, weechat-android, ...)."
 
 #. Translators: description for script "amarok2.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:70
@@ -3324,7 +3308,7 @@ msgstr ""
 #. Translators: description for script "autoconf.py" (1.4+)
 #: plugins/_i18n_plugins.py:88
 msgid "Auto save/load changed options in a .weerc file."
-msgstr ""
+msgstr "automatisches speichern/laden von Optionen in einer .weerc Datei."
 
 #. Translators: description for script "toggle_nicklist.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:90
@@ -3402,10 +3386,8 @@ msgstr ""
 
 #. Translators: description for script "automerge.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:116
-#, fuzzy
-#| msgid "Automatically apply layouts according to terminal size."
 msgid "Automatically merge new buffers according to defined rules."
-msgstr "automatische Anpassung der Layouts nach Größe des Terminals."
+msgstr "automatische Zusammenführung neuer Buffer nach definierten Regeln."
 
 #. Translators: description for script "auto_op.py" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:118
@@ -3421,6 +3403,8 @@ msgstr "schickt eine automatisierte Antwort auf einen festgelegten Auslöser."
 #: plugins/_i18n_plugins.py:122
 msgid "Automatically set away message based on number of relays connected."
 msgstr ""
+"automatische Abwesenheitsnachricht setzen in Abhängigkeit der Anzahl von "
+"verbundenen Relays."
 
 #. Translators: description for script "response.py" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:124
@@ -3489,10 +3473,8 @@ msgstr ""
 
 #. Translators: description for script "buffer_bind.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:146
-#, fuzzy
-#| msgid "Send latest tweet to the current buffer."
 msgid "Bind meta-<key> to the current buffer."
-msgstr "sendet den aktuellen Tweet in den aktuellen Buffer."
+msgstr "ordnet eine meta-<Taste> dem aktuellen Buffer zu."
 
 #. Translators: description for script "mass_hl_blocker.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:148
@@ -3527,7 +3509,7 @@ msgstr ""
 #. Translators: description for script "cleanbuffer.rb" (0.3.0+)
 #: plugins/_i18n_plugins.py:158
 msgid "Clear a buffer, on znc / locally or both."
-msgstr ""
+msgstr "leert einen Buffer, sowohl bei znc/lokal oder für beide."
 
 #. Translators: description for script "urlgrab.py" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:160
@@ -3821,7 +3803,7 @@ msgstr "zeigt die Quelle der \"End of WHOIS\" Ziffern."
 #. Translators: description for script "terminal_title.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:264
 msgid "Display user defined information in the terminal title."
-msgstr ""
+msgstr "zeigt Anwender definierte Informationen im Titel vom Terminal an."
 
 #. Translators: description for script "weather.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:266
@@ -4092,6 +4074,8 @@ msgstr "Channels werden, bei jeder Nachricht, auf highlight gesetzt."
 msgid ""
 "Highly configurable send-notify script for user, channel and server messages."
 msgstr ""
+"sehr konfigurierbares \"verschicke Benachrichtigung\" Skript für User-, "
+"Channel- und Servernachrichten."
 
 #. Translators: description for script "giphy.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:366
@@ -4099,6 +4083,8 @@ msgid ""
 "Insert a giphy URL based on a command and search; use giphy's random, search "
 "and translate from WeeChat."
 msgstr ""
+"fügt eine giphy URL ein anhand des Befehls und der Suchfunktion; nutze "
+"giphy's Zufallsfunktion, Suche und Übersetzung von WeeChat aus."
 
 #. Translators: description for script "weestats.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:368
@@ -4186,6 +4172,8 @@ msgstr ""
 #: plugins/_i18n_plugins.py:396
 msgid "List buffers in dmenu or rofi, change active window to selected buffer."
 msgstr ""
+"zeigt die Buffer in dmenu oder rofi an, im Fenster wird dann zum "
+"ausgewählten Buffer gesprungen."
 
 #. Translators: description for script "samechannel.rb" (0.4.1+)
 #: plugins/_i18n_plugins.py:398
@@ -4374,6 +4362,8 @@ msgstr "informiert dzen falls eine private Nachricht empfangen wurde."
 msgid ""
 "Notify events through desktop notifications and an optional status icon."
 msgstr ""
+"mittels Desktop Benachrichtigung und einem optionalem Statuspiktogramm "
+"werden ausgewählte Ereignisse angezeigt."
 
 #. Translators: description for script "weenotify.py" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:464
@@ -4624,10 +4614,8 @@ msgstr "Ersetzt LaTeX durch eine Unicode Darstellung."
 
 #. Translators: description for script "weechataboo.scm" (0.3.0+)
 #: plugins/_i18n_plugins.py:548
-#, fuzzy
-#| msgid "Replace keywords with emoticons."
 msgid "Replace emotion-tags with random emoticons."
-msgstr "ersetzt Stichwörter durch emoticons."
+msgstr "ersetzt Emoticon-Tags durch zufällige emoticons."
 
 #. Translators: description for script "emote.scm" (0.4.1+)
 #: plugins/_i18n_plugins.py:550
@@ -4824,10 +4812,8 @@ msgstr "schickt eine farbige \"kikoo\" in den aktuellen Channel."
 
 #. Translators: description for script "pushjet.py" (1.0+)
 #: plugins/_i18n_plugins.py:622
-#, fuzzy
-#| msgid "Send highlights and private messages to a unix socket."
 msgid "Send highlights and mentions through Pushjet.io."
-msgstr "sendet Highlight- oder private Nachrichten an eine unix socket."
+msgstr "sendet Highlight- oder Erwähnungen mittels Pushjet.io."
 
 #. Translators: description for script "socket_notify.rb" (0.3.0+)
 #: plugins/_i18n_plugins.py:624
@@ -4897,6 +4883,8 @@ msgid ""
 "Send private/highlight messages to Android, iOS and Windows 10 devices via "
 "Pushsafer."
 msgstr ""
+"sendet private/highlight Nachrichten an Android, iOS und Windows 10 Geräte "
+"mittels Pushsafer."
 
 #. Translators: description for script "pushover.pl" (0.3.7+)
 #: plugins/_i18n_plugins.py:646
@@ -5352,10 +5340,8 @@ msgstr "WeeChat Twitter Client."
 
 #. Translators: description for script "whatsapp.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:814
-#, fuzzy
-#| msgid "Netsoul protocol."
 msgid "WhatsApp protocol."
-msgstr "Netsoul Protokoll."
+msgstr "WhatsApp Protokoll."
 
 #. Translators: description for script "wmiibar.pl" (0.3.3+)
 #: plugins/_i18n_plugins.py:816
@@ -6180,16 +6166,12 @@ msgid "support"
 msgstr "Support"
 
 #: templates/dev/support.html:15
-#, fuzzy, python-format
-#| msgid ""
-#| "<strong>Warning:</strong> before asking for help, please read carefully "
-#| "<a href=\"%(doc_url)s\">documentation</a> and <a href=\"%(faq_url)s"
-#| "\">FAQ</a>."
+#, python-format
 msgid ""
 "<strong>Important:</strong> before asking for help, please read carefully <a "
 "href=\"%(doc_url)s\">documentation</a> and <a href=\"%(faq_url)s\">FAQ</a>."
 msgstr ""
-"<strong>Hinweis:</strong> Bevor man eine Frage stellt, sollte vorher die <a "
+"<strong>Wichtig:</strong> Bevor man eine Frage stellt, sollte vorher die <a "
 "href=\"%(doc_url)s\">Anleitung</a> und die <a href=\"%(faq_url)s\">FAQ</a> "
 "gelesen werden."
 
@@ -6296,16 +6278,12 @@ msgid "Docs for old versions"
 msgstr "Dokumentation über alte Versionen"
 
 #: templates/doc/doc.html:24
-#, fuzzy
-#| msgid ""
-#| "<strong>Warning:</strong> these old versions are <strong>not supported</"
-#| "strong> any more!"
 msgid ""
 "<strong>Important:</strong> these old versions are <strong>not supported</"
 "strong> any more!"
 msgstr ""
-"<strong>Warnung:</strong> veraltete Versionen erhalten <strong>keinerlei "
-"Unterstützung</strong> mehr!"
+"<strong>Wichtig:</strong> diese veralteten Versionen erhalten "
+"<strong>keinerlei Unterstützung</strong> mehr!"
 
 #: templates/doc/doc.html:35
 msgid "Docs for version"
@@ -6374,17 +6352,12 @@ msgid "All repositories"
 msgstr "alle Repositorien"
 
 #: templates/download/debian.html:35
-#, fuzzy
-#| msgid ""
-#| "<strong>Important:</strong> these packages are not Debian official "
-#| "packages; please <a href=\"#instructions\"><strong>read instructions</"
-#| "strong></a> before using these repositories."
 msgid ""
 "<strong>Note:</strong> these packages are not Debian official packages; "
 "please <a href=\"#instructions\"><strong>read instructions</strong></a> "
 "before using these repositories."
 msgstr ""
-"<strong>Wichtig:</strong> Es handelt sich bei diesen Paketen um keine "
+"<strong>Hinweis:</strong> Es handelt sich bei diesen Paketen um keine "
 "offiziellen Debian-Pakete. Es wird empfohlen die <a href=\"#instructions"
 "\"><strong>Anleitung zu lesen</strong></a> bevor diese Repositorien genutzt "
 "werden."
@@ -6518,44 +6491,34 @@ msgstr ""
 "Fortschritt auf <a href=\"%(download_release_url)s\">dieser Seite</a>."
 
 #: templates/download/packages.html:28
-#, fuzzy
-#| msgid ""
-#| "<strong>Warning:</strong> this version may be unstable or it may not "
-#| "compile, you're warned!"
 msgid ""
 "<strong>Important:</strong> this version may be unstable or it may not "
 "compile, you're warned!"
 msgstr ""
-"<strong>Achtung:</strong> Diese Version könnte instabil sein oder sich nicht "
+"<strong>Wichtig:</strong> Diese Version könnte instabil sein oder sich nicht "
 "kompilieren lassen!"
 
 #: templates/download/packages.html:34
-#, fuzzy
-#| msgid ""
-#| "<strong>Warning:</strong> it is not recommended to download any old "
-#| "version, because they are less stable."
 msgid ""
 "<strong>Important:</strong> it is not recommended to download or use any of "
 "these old versions: they are less stable than the latest released version, "
 "and may contain security vulnerabilities fixed in later versions."
 msgstr ""
-"<strong>Warnung:</strong> Es ist nicht empfehlenswert ältere Versionen "
-"herunter zu laden, da diese weniger stabil laufen."
+"<strong>Wichtig:</strong> Es wird davon abgeraten diese älteren Versionen "
+"herunter zu laden und zu nutzen, diese Versionen laufen weniger stabil als "
+"eine aktuelle Version und beinhalten möglicherweise Sicherheitslücken die in "
+"nachfolgenden Versionen behoben wurden."
 
 #: templates/download/packages.html:56
-#, fuzzy, python-format
-#| msgid ""
-#| "<strong>Warning:</strong> this version has one or more <a href="
-#| "\"%(download_security_url)s\">vulnerabilities</a>, it is not recommended "
-#| "to use it."
+#, python-format
 msgid ""
 "<strong>Warning:</strong> the version %(version)s has one or more <a href="
 "\"%(download_security_url)s\">vulnerabilities</a>, it is not recommended to "
 "use it."
 msgstr ""
-"<strong>Warnung:</strong> diese Version enthält eine oder mehrere <a href="
-"\"%(download_security_url)s\">Schwachstellen</a>. Es wird dringend empfohlen "
-"diese Version nicht mehr zu verwenden."
+"<strong>Warnung:</strong> diese Version %(version)s enthält eine oder "
+"mehrere <a href=\"%(download_security_url)s\">Schwachstellen</a>. Es wird "
+"dringend empfohlen diese Version nicht mehr zu verwenden."
 
 #: templates/download/packages.html:58
 msgid "Vulnerabilities fixed in versions:"
@@ -6709,20 +6672,14 @@ msgid "Security vulnerabilities"
 msgstr "Sicherheitsfragen"
 
 #: templates/download/security.html:20
-#, fuzzy
-#| msgid ""
-#| "This table contains a list of all known and fixed security "
-#| "vulnerabilities in WeeChat stable releases (the security vulnerabilities "
-#| "introduced during development of a version and fixed before stable "
-#| "release are not mentioned)."
 msgid ""
 "This table contains a list of all known and fixed security vulnerabilities "
 "in WeeChat stable releases (the security vulnerabilities introduced during "
 "development of a version and fixed before a stable release are not "
 "mentioned)."
 msgstr ""
-"Diese Seite enthält alle, bekannten und behobenen sicherheitsrelevanten, "
-"Schwachstellen in einer stabilen Version von WeeChat (sicherheitsrelevante "
+"Diese Tabelle enthält alle bekannten und behobenen sicherheitsrelevanten "
+"Schwachstellen, in einer stabilen Version von WeeChat (sicherheitsrelevante "
 "Schwachstellen die während der Entwicklung entdeckt wurden und nicht in eine "
 "stabile Version eingeflossen sind, werden nicht aufgeführt)."
 
@@ -6983,16 +6940,12 @@ msgid "Repositories"
 msgstr "Repositorien"
 
 #: templates/plugins/add.html:15 templates/plugins/update.html:16
-#, fuzzy
-#| msgid ""
-#| "<strong>Warning:</strong> please follow <strong>all</strong> these rules, "
-#| "otherwise your script will be rejected:"
 msgid ""
 "<strong>Important:</strong> please follow <strong>all</strong> these rules, "
 "otherwise your script will be rejected:"
 msgstr ""
-"<strong>Hinweis:</strong> Es müssen <strong>alle</strong> nachfolgenden "
-"Regeln beachtet werden, anderenfalls wird das Skript nicht angenommen:"
+"<strong>Wichtig:</strong> Es müssen <strong>alle</strong> nachfolgenden "
+"Regeln beachtet werden, anderenfalls wird das Skript nicht akzeptiert:"
 
 #: templates/plugins/add.html:18
 #, python-format
@@ -7120,17 +7073,12 @@ msgid "Back to scripts"
 msgstr "Zurück zu den Skripten"
 
 #: templates/plugins/list.html:13
-#, fuzzy
-#| msgid ""
-#| "<strong>Warning:</strong> these scripts are written by external "
-#| "contributors, therefore WeeChat developers are <strong>NOT RESPONSIBLE</"
-#| "strong> for problems caused by one of these scripts."
 msgid ""
 "<strong>Important:</strong> these scripts are written by external "
 "contributors, therefore WeeChat developers are <strong>NOT RESPONSIBLE</"
 "strong> for problems caused by one of these scripts."
 msgstr ""
-"<strong>Warnung:</strong> Die Skripten auf dieser Seite werden überwiegend "
+"<strong>Wichtig:</strong> Die Skripten auf dieser Seite werden überwiegend "
 "durch Drittentwicklern bereitgestellt. Aus diesem Grund sind die WeeChat "
 "Autoren <strong>NICHT VERANTWORTLICH</strong> falls Probleme durch diese "
 "Skripten auftreten sollten."
@@ -7351,16 +7299,12 @@ msgid "Back to themes"
 msgstr "Zurück zu Themes"
 
 #: templates/themes/list.html:13
-#, fuzzy
-#| msgid ""
-#| "<strong>Warning:</strong> alpha version of themes! Alpha version of "
-#| "script is available here:"
 msgid ""
 "<strong>Important:</strong> alpha version of themes! Alpha version of script "
 "is available here:"
 msgstr ""
-"<strong>Hinweis:</strong> Alpha Version von Themes! Die Alpha Version des "
-"Skriptes bekommt man hier:"
+"<strong>Wichtig:</strong> Dies ist eine alpha Version von themes! Die alpha "
+"Version des Skriptes bekommt man hier:"
 
 #: templates/themes/list.html:24
 msgid "submitted by"
