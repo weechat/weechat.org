@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-04 16:40+0200\n"
+"POT-Creation-Date: 2017-07-08 18:19+0200\n"
 "PO-Revision-Date: 2017-06-15 09:00+0900\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
@@ -2749,6 +2749,63 @@ msgstr ""
 "changelog/ChangeLog-1.8.html\">ChangeLog</a> を御覧ください。"
 
 #: news/_i18n_info.py:112
+#, fuzzy, python-brace-format
+#| msgid ""
+#| "Version 1.7 is available!\n"
+#| "\n"
+#| "Among the new features:\n"
+#| "\n"
+#| "- add option weechat.look.align_multiline_words\n"
+#| "- add option \"time\" in command /debug\n"
+#| "- add infos \"uptime\" and \"pid\"\n"
+#| "- add optional arguments in completion template\n"
+#| "- add irc server option \"usermode\"\n"
+#| "- add tag \"self_msg\" on self messages\n"
+#| "- add configuration file fifo.conf for fifo plugin\n"
+#| "- add option \"-oc\" in command /exec\n"
+#| "- many bugs fixed.\n"
+#| "\n"
+#| "For complete list of new features and bugs fixed, please look at <a href="
+#| "\"http://dev.weechat.org/post/2017/01/15/Version-1.7\">development blog</"
+#| "a> or <a href=\"/files/changelog/ChangeLog-1.7.html\">ChangeLog</a>."
+msgid ""
+"Version 1.9 is available!\n"
+"\n"
+"Among the new features:\n"
+"\n"
+"- improve speed of nicklist bar item callback\n"
+"- add auto scroll of buflist bar with new option buflist.look.auto_scroll\n"
+"- add option buflist.format.name\n"
+"- add variables ${format_name}, ${current_buffer} and ${merged} in buflist\n"
+"- display a warning in buflist when the script buffers.pl is loaded\n"
+"- add server/channel pointers in trigger IRC callbacks\n"
+"- add API functions config_option_get_string and hdata_compare\n"
+"- fix bind of Space key\n"
+"- many bugs fixed.\n"
+"\n"
+"For complete list of new features and bugs fixed, please look at <a href="
+"\"https://weechat.org/blog/post/2017/06/25/Version-1.9\">development blog</"
+"a> or <a href=\"/files/changelog/ChangeLog-1.9.html\">ChangeLog</a>."
+msgstr ""
+"バージョン 1.7 をリリースしました!\n"
+"\n"
+"新しい機能:\n"
+"\n"
+"- オプション weechat.look.align_multiline_words を追加\n"
+"- コマンド /debug にオプション \"time\" を追加\n"
+"- インフォ \"uptime\" と \"pid\" を追加\n"
+"- 補完テンプレートに任意引数を追加\n"
+"- irc サーバオプション \"usermode\" を追加\n"
+"- 自分のメッセージを意味するタグ \"self_msg\" を追加\n"
+"- fifo プラグイン用の設定ファイル fifo.conf を追加\n"
+"- コマンド /exec にオプション \"-oc\" を追加\n"
+"- 多くのバグを修正。\n"
+"\n"
+"新機能と修正されたバグの完全なリストは<a href=\"http://dev.weechat.org/"
+"post/2017/01/15/Version-1.7\">開発ブログ</a>または <a href=\"/files/"
+"changelog/ChangeLog-1.7.html\">ChangeLog</a> を御覧ください。"
+
+#: news/_i18n_info.py:113
 msgid ""
 "Version v0.1.2 is available!\n"
 "\n"
@@ -2782,11 +2839,11 @@ msgstr ""
 "2005-05-24 追記: 起動時と Perl/Python の検出時のクラッシュを修正、現在のバー"
 "ジョンは 0.1.2.1 です。"
 
-#: news/_i18n_info.py:113
+#: news/_i18n_info.py:114
 msgid "WeeChat - Wee Enhanced Environment for Chat"
 msgstr "WeeChat - 小さくて強力なチャット環境"
 
-#: news/_i18n_info.py:114
+#: news/_i18n_info.py:115
 msgid ""
 "WeeChat has many new important features since some weeks:\n"
 "- multi-windows management (with horizontal and vertical window split)\n"
@@ -2809,11 +2866,11 @@ msgstr ""
 "まだ開発中です。\n"
 "問題やバッファ/ウィンドウ間の操作を改良するための提案を募集しています。"
 
-#: news/_i18n_info.py:115
+#: news/_i18n_info.py:116
 msgid "WeeChat in Cygwin"
 msgstr "WeeChat の Cygwin 版"
 
-#: news/_i18n_info.py:116
+#: news/_i18n_info.py:117
 msgid ""
 "WeeChat is now in Cygwin, and can be installed with setup.exe.\n"
 "Version 0.4.2 is available for 32 and 64-bit Cygwin.\n"
@@ -2828,7 +2885,7 @@ msgstr ""
 "注意: Guile プラグインは Cygwin ではまだ利用できない guile >= 2.0 が必要なの"
 "で、削除されています。"
 
-#: news/_i18n_info.py:117
+#: news/_i18n_info.py:118
 msgid ""
 "WeeChat project is started.\n"
 "\n"
@@ -2848,7 +2905,7 @@ msgstr ""
 "- 高速、軽量、スクリプトで拡張可能\n"
 "- ..."
 
-#: news/_i18n_info.py:118
+#: news/_i18n_info.py:119
 msgid ""
 "WeeChat project now accepts donations via Paypal account, with secured "
 "payment."
@@ -2856,7 +2913,7 @@ msgstr ""
 "WeeChat プロジェクトは secured payment を用いた Paypal アカウント経由の寄付を"
 "受け付けるようになりました。"
 
-#: news/_i18n_info.py:119
+#: news/_i18n_info.py:120
 msgid ""
 "WeeChat repositories (weechat, scripts, qweechat) have been moved to GitHub, "
 "in WeeChat organization: <a href=\"https://github.com/weechat\">https://"
@@ -2872,15 +2929,15 @@ msgstr ""
 "より詳しい情報は、<a href=\"http://dev.weechat.org/post/2014/03/03/Git-"
 "repositories-moved-to-Github\">開発ブログ</a>をご覧ください。"
 
-#: news/_i18n_info.py:120
+#: news/_i18n_info.py:121
 msgid "WeeChat screenshot"
 msgstr "WeeChat のスクリーンショット"
 
-#: news/_i18n_info.py:121
+#: news/_i18n_info.py:122
 msgid "WeeChat scripts page"
 msgstr "WeeChat スクリプトページ"
 
-#: news/_i18n_info.py:122
+#: news/_i18n_info.py:123
 msgid ""
 "WeeChat scripts page (today Perl scripts only) has been added.\n"
 "On this page you can submit your script (need to be approved by WeeChat "
@@ -2897,7 +2954,7 @@ msgstr ""
 "注意: Perl スクリプトを使うには WeeChat 0.0.3 より高いバージョンが必要です。"
 "今のところ開発版を使う以外に方法はありません。"
 
-#: news/_i18n_info.py:123
+#: news/_i18n_info.py:124
 msgid ""
 "WeeChat story page is now available, as screenshots. You can see differences "
 "between all versions in one view!\n"
@@ -2907,15 +2964,15 @@ msgstr ""
 "ジョンが一覧表示できます!\n"
 "開発版も載っており、頻繁に更新されています。"
 
-#: news/_i18n_info.py:124
+#: news/_i18n_info.py:125
 msgid "WeeChat users map"
 msgstr "WeeChat ユーザマップ"
 
-#: news/_i18n_info.py:125
+#: news/_i18n_info.py:126
 msgid "WeeChat will merge with irssi"
 msgstr "WeeChat は irssi と統合される予定です"
 
-#: news/_i18n_info.py:126
+#: news/_i18n_info.py:127
 msgid ""
 "WeeChat, the fast, light and extensible IRC client, is released for the "
 "first time, version 0.0.1.\n"
@@ -2963,7 +3020,7 @@ msgstr ""
 "どんな提案やバグ報告も歓迎です。開発チームと連絡を取るには WeeChat のサポート"
 "ページを御覧ください。"
 
-#: news/_i18n_info.py:127
+#: news/_i18n_info.py:128
 msgid "XZ packages"
 msgstr "XZ パッケージ"
 
@@ -4756,129 +4813,137 @@ msgstr "Gnome スクリーンセーバーを基準に離席状態を設定。"
 msgid "Set away status based on presence of a file."
 msgstr "ファイルの有無を基準に離席状態を設定。"
 
-#. Translators: description for script "slock_away.py" (0.3.0+)
+#. Translators: description for script "i3lock_away.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:680
+#, fuzzy
+#| msgid "Set away status if slock (X display locker) is running."
+msgid "Set away status if i3lock (X display locker) is running."
+msgstr ""
+"slock (X ディスプレイロックソフト) が実行されていたら、離席状態を設定。"
+
+#. Translators: description for script "slock_away.py" (0.3.0+)
+#: plugins/_i18n_plugins.py:682
 msgid "Set away status if slock (X display locker) is running."
 msgstr ""
 "slock (X ディスプレイロックソフト) が実行されていたら、離席状態を設定。"
 
 #. Translators: description for script "screen_away.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:682
+#: plugins/_i18n_plugins.py:684
 msgid "Set away status when detaching and attaching from screen or tmux."
 msgstr "screen や tmux へのデタッチとアタッチに応じて離席状態を切り替える。"
 
 #. Translators: description for script "chanpriority.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:684
+#: plugins/_i18n_plugins.py:686
 msgid "Set channel priority."
 msgstr "チャンネルの優先度を設定。"
 
 #. Translators: description for script "title.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:686
+#: plugins/_i18n_plugins.py:688
 msgid "Set terminal title to active buffer name and hotlist items."
 msgstr "端末のタイトルをアクティブバッファ名とホットリスト要素に設定。"
 
 #. Translators: description for script "xfer_setip.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:688
+#: plugins/_i18n_plugins.py:690
 msgid "Set xfer own ip with external ip."
 msgstr "xfer の本人 IP を 外部 IP に設定。"
 
 #. Translators: description for script "autoaway.py" (0.0.1-0.2.6)
-#: plugins/_i18n_plugins.py:690
+#: plugins/_i18n_plugins.py:692
 msgid "Sets away after a period of inactivity."
 msgstr "ある時間何もしなければ離席状態にする。"
 
 #. Translators: description for script "isgd.pl" (0.3.7+)
-#: plugins/_i18n_plugins.py:692
+#: plugins/_i18n_plugins.py:694
 msgid "Shorten URLs with is.gd."
 msgstr "is.gd で URL を短縮化。"
 
 #. Translators: description for script "url_shorten.rb" (0.3.0+)
-#: plugins/_i18n_plugins.py:694
+#: plugins/_i18n_plugins.py:696
 msgid "Shorten URLs with many shortening services."
 msgstr "様々な短縮化サービスを使って URL を短縮化。"
 
 #. Translators: description for script "urlserver.py" (0.3.4+)
-#: plugins/_i18n_plugins.py:696
+#: plugins/_i18n_plugins.py:698
 msgid "Shorten URLs with own HTTP server."
 msgstr "自前の HTTP サーバを使って URL を短縮化。"
 
 #. Translators: description for script "url_arza.pl" (0.3.6+)
-#: plugins/_i18n_plugins.py:698
+#: plugins/_i18n_plugins.py:700
 msgid "Shorten long URLs in buffers and input line."
 msgstr "バッファと入力行に含まれる長い URL を短縮化。"
 
 #. Translators: description for script "url_shorten.rb" (0.0.1-0.2.6)
-#: plugins/_i18n_plugins.py:700
+#: plugins/_i18n_plugins.py:702
 msgid "Shorten long urls in channels."
 msgstr "チャンネルの長い URL を短縮化。"
 
 #. Translators: description for script "shortenurl.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:702
+#: plugins/_i18n_plugins.py:704
 msgid "Shorten long urls using isgd or tinyurl."
 msgstr "isgd または tinyurl で長い URL を短縮化。"
 
 #. Translators: description for script "listbuffer.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:704
+#: plugins/_i18n_plugins.py:706
 msgid "Show /list results in a common buffer and interact with them."
 msgstr "/list の結果を共通バッファに表示し、使いやすくする。"
 
 #. Translators: description for script "topicdiff.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:706
+#: plugins/_i18n_plugins.py:708
 msgid "Show differences between old and new topics."
 msgstr "新旧トピックの違いを表示。"
 
 #. Translators: description for script "hatwidget.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:708
+#: plugins/_i18n_plugins.py:710
 msgid "Show hats (user modes like \"@\" or \"+\") in a bar item."
 msgstr "肩書 (\"@\" や \"+\" などのユーザモード) をバー要素に表示。"
 
 #. Translators: description for script "xosdnotify.tcl" (0.3.0+)
-#: plugins/_i18n_plugins.py:710
+#: plugins/_i18n_plugins.py:712
 msgid "Show highlights and private messages with OSD."
 msgstr "OSD でハイライトとプライベートメッセージを表示。"
 
 #. Translators: description for script "hl_here.pl" (0.3.0+)
-#: plugins/_i18n_plugins.py:712
+#: plugins/_i18n_plugins.py:714
 msgid "Show highlights in the active buffer."
 msgstr "アクティブバッファにハイライトを表示。"
 
 #. Translators: description for script "foo_spam.pl" (0.3.0+)
-#: plugins/_i18n_plugins.py:714
+#: plugins/_i18n_plugins.py:716
 msgid "Show info about current song in foobar2000."
 msgstr "foobar2000 で再生中の曲の情報を表示。"
 
 #. Translators: description for script "moc.pl" (0.0.1-0.2.6)
-#: plugins/_i18n_plugins.py:716
+#: plugins/_i18n_plugins.py:718
 msgid "Show info about current song in moc."
 msgstr "moc で再生中の曲に関する情報を表示。"
 
 #. Translators: description for script "volumeter.pl" (0.3.0+)
-#: plugins/_i18n_plugins.py:718
+#: plugins/_i18n_plugins.py:720
 msgid "Show volume of data on network interface in a bar."
 msgstr "バーにネットワークインターフェイスを通過するデータの大きさを表示。"
 
 #. Translators: description for script "weesonata.py" (0.0.1-0.2.6)
-#: plugins/_i18n_plugins.py:720
+#: plugins/_i18n_plugins.py:722
 msgid "Show what's playing on your sonata player."
 msgstr "sonata player で再生中の曲を表示。"
 
 #. Translators: description for script "buffers.pl" (0.3.0+)
-#: plugins/_i18n_plugins.py:722
+#: plugins/_i18n_plugins.py:724
 msgid "Sidebar with list of buffers."
 msgstr "バッファリストをサイドバーに表示。"
 
 #. Translators: description for script "arespond.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:724
+#: plugins/_i18n_plugins.py:726
 msgid "Simple autoresponder."
 msgstr "単純な自動応答。"
 
 #. Translators: description for script "query_blocker.pl" (0.3.1+)
-#: plugins/_i18n_plugins.py:726
+#: plugins/_i18n_plugins.py:728
 msgid "Simple blocker for private message (i.e. spam)."
 msgstr "プライベートメッセージの簡単なブロッカー (例えばスパム)。"
 
 #. Translators: description for script "mplex.pl" (0.3.0+)
-#: plugins/_i18n_plugins.py:728
+#: plugins/_i18n_plugins.py:730
 msgid ""
 "Simple remote control of multiplexer (screen or tmux), optionally set away "
 "status."
@@ -4887,245 +4952,245 @@ msgstr ""
 "設定。"
 
 #. Translators: description for script "shuffle.pl" (0.3.0+)
-#: plugins/_i18n_plugins.py:730
+#: plugins/_i18n_plugins.py:732
 msgid "Simple text shuffler."
 msgstr "単純なテキストシャッフル。"
 
 #. Translators: description for script "slack.py" (1.3+)
-#: plugins/_i18n_plugins.py:732
+#: plugins/_i18n_plugins.py:734
 msgid "Slack.com native client."
 msgstr "Slack.com のネイティブクライアント。"
 
 #. Translators: description for script "rslap.pl" (0.3.0+)
-#: plugins/_i18n_plugins.py:734
+#: plugins/_i18n_plugins.py:736
 msgid "Slaps with random messages."
 msgstr "ランダムメッセージで侮辱する。"
 
 #. Translators: description for script "snake.pl" (0.3.0+)
-#: plugins/_i18n_plugins.py:736
+#: plugins/_i18n_plugins.py:738
 msgid "Snake game."
 msgstr "スネークゲーム。"
 
 #. Translators: description for script "snarl_net_notify.pl" (0.3.0+)
-#: plugins/_i18n_plugins.py:738
+#: plugins/_i18n_plugins.py:740
 msgid "Snarl notifications for highlights."
 msgstr "ハイライト用の Snarl 通知。"
 
 #. Translators: description for script "sort_servers.py" (0.3.9+)
-#: plugins/_i18n_plugins.py:740
+#: plugins/_i18n_plugins.py:742
 msgid "Sort buffers by server and alphabetically."
 msgstr "バッファをサーバ順およびアルファベット順にソート。"
 
 #. Translators: description for script "sort_arza.pl" (0.3.0+)
-#: plugins/_i18n_plugins.py:742
+#: plugins/_i18n_plugins.py:744
 msgid "Sort channels inside networks."
 msgstr "ネットワーク毎にチャンネルをソート。"
 
 #. Translators: description for script "sort_buffers.pl" (0.3.0+)
-#: plugins/_i18n_plugins.py:744
+#: plugins/_i18n_plugins.py:746
 msgid "Sort irc buffers alphabetically."
 msgstr "irc バッファをアルファベット順にソート。"
 
 #. Translators: description for script "listsort.pl" (0.3.4+)
-#: plugins/_i18n_plugins.py:746
+#: plugins/_i18n_plugins.py:748
 msgid "Sort the output of /list command by user count."
 msgstr "/list コマンドの出力をユーザ数でソート。"
 
 #. Translators: description for script "autospurdo.js" (0.3.0+)
-#: plugins/_i18n_plugins.py:748
+#: plugins/_i18n_plugins.py:750
 msgid "Speak in spurdo."
 msgstr "spurdo 変換。"
 
 #. Translators: description for script "beep.pl" (0.0.1-0.2.6)
-#: plugins/_i18n_plugins.py:750
+#: plugins/_i18n_plugins.py:752
 msgid "Speaker beep on highlight/private message."
 msgstr "ハイライトおよびプライベートメッセージでスピーカのビープを鳴らす。"
 
 #. Translators: description for script "jnotify.pl" (0.3.1+)
-#: plugins/_i18n_plugins.py:752
+#: plugins/_i18n_plugins.py:754
 msgid "Start command/program if a user joins a channel you are in."
 msgstr "参加中のチャンネルにユーザが参加したらコマンド/プログラムを開始。"
 
 #. Translators: description for script "stick_buffer.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:754
+#: plugins/_i18n_plugins.py:756
 msgid "Stick buffer to a window."
 msgstr "バッファをウィンドウから離れないようにする。"
 
 #. Translators: description for script "weestreamer.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:756
+#: plugins/_i18n_plugins.py:758
 msgid "Streamlink companion for WeeChat."
 msgstr "WeeChat 用の Streamlink コンパニオン。"
 
 #. Translators: description for script "substitution.rb" (0.3.7+)
-#: plugins/_i18n_plugins.py:758
+#: plugins/_i18n_plugins.py:760
 msgid "Substitute strings in messages before they are sent."
 msgstr "メッセージの送信前に文字列を置換。"
 
 #. Translators: description for script "buffer_swap.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:760
+#: plugins/_i18n_plugins.py:762
 msgid "Swap two buffers."
 msgstr "2 つのバッファを入れ替え。"
 
 #. Translators: description for script "sysinfo.pl" (0.3.0+)
-#: plugins/_i18n_plugins.py:762
+#: plugins/_i18n_plugins.py:764
 msgid "System info command."
 msgstr "システム情報コマンド。"
 
 #. Translators: description for script "atcomplete.pl" (0.3.0+)
-#: plugins/_i18n_plugins.py:764
+#: plugins/_i18n_plugins.py:766
 msgid "Tab complete nicks when prefixed with \"@\"."
 msgstr "\"@\" 文字の後でニックネームのタブ補完。"
 
 #. Translators: description for script "tailer.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:766
+#: plugins/_i18n_plugins.py:768
 msgid "Tail any number of files and run any command with line appended."
 msgstr "任意のファイルを監視してファイルに追加された行をコマンドとして実行。"
 
 #. Translators: description for script "weetris.pl" (0.3.0+)
-#: plugins/_i18n_plugins.py:768
+#: plugins/_i18n_plugins.py:770
 msgid "Tetris-like game."
 msgstr "テトリス的ゲーム。"
 
 #. Translators: description for script "theme.py" (0.0.1-0.2.6)
-#: plugins/_i18n_plugins.py:770
+#: plugins/_i18n_plugins.py:772
 msgid "Theme manager for WeeChat."
 msgstr "WeeChat 用のテーママネージャ。"
 
 #. Translators: description for script "thinklight_blink.pl" (0.3.0+)
-#: plugins/_i18n_plugins.py:772
+#: plugins/_i18n_plugins.py:774
 msgid "Thinklight blink on highlight/private message."
 msgstr "ハイライトとプライベートメッセージで Thinklight を点滅させる。"
 
 #. Translators: description for script "tictactoe.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:774
+#: plugins/_i18n_plugins.py:776
 msgid "Tic-tac-toe game."
 msgstr "三目並べゲーム。"
 
 #. Translators: description for script "cron.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:776
+#: plugins/_i18n_plugins.py:778
 msgid "Time-based scheduler, like cron and at."
 msgstr "cron や at のような時間ベースのスケジューラ。"
 
 #. Translators: description for script "toggle_highlight.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:778
+#: plugins/_i18n_plugins.py:780
 msgid "Toggle notifications of normal messages for current buffer."
 msgstr "現在のバッファ宛の通常のメッセージの通知をトグル。"
 
 #. Translators: description for script "uppercase.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:780
+#: plugins/_i18n_plugins.py:782
 msgid ""
 "Transform all your input to uppercase (useful for INTERNATIONAL CAPSLOCK "
 "DAY)."
 msgstr "全ての入力を大文字に変換 (INTERNATIONAL CAPSLOCK DAY に有用)。"
 
 #. Translators: description for script "emoji.lua" (1.0+)
-#: plugins/_i18n_plugins.py:782
+#: plugins/_i18n_plugins.py:784
 msgid "Translate :shortcode: to proper emoji."
 msgstr ":shortcode: 書式の短縮文字列をを適切な絵文字に変換。"
 
 #. Translators: description for script "translate.py" (0.3.7+)
-#: plugins/_i18n_plugins.py:784
+#: plugins/_i18n_plugins.py:786
 msgid "Translate string using Google translate API."
 msgstr "Google 翻訳 API を使って文字列を翻訳。"
 
 #. Translators: description for script "translate.pl" (0.0.1-0.2.6)
-#: plugins/_i18n_plugins.py:786
+#: plugins/_i18n_plugins.py:788
 msgid "Translate words from/to other languages."
 msgstr "他の言語と相互に単語を翻訳。"
 
 #. Translators: description for script "tray.rb" (0.0.1-0.2.6)
-#: plugins/_i18n_plugins.py:788
+#: plugins/_i18n_plugins.py:790
 msgid "Tray and notification."
 msgstr "トレイと通知。"
 
 #. Translators: description for script "twitch.py" (0.3.7+)
-#: plugins/_i18n_plugins.py:790
+#: plugins/_i18n_plugins.py:792
 msgid "Twitch.tv chat integration."
 msgstr "Twitch.tv チャット機能の統合。"
 
 #. Translators: description for script "ubus.pl" (0.3.0+)
-#: plugins/_i18n_plugins.py:792
+#: plugins/_i18n_plugins.py:794
 msgid "Ubus notification."
 msgstr "Ubus 通知。"
 
 #. Translators: description for script "undernet_totp.py" (0.4.2+)
-#: plugins/_i18n_plugins.py:794
+#: plugins/_i18n_plugins.py:796
 msgid "UnderNET's X OTP (OATH-TOTP) authentication."
 msgstr "UnderNET の X OTP (OATH-TOTP) 認証。"
 
 #. Translators: description for script "maildir.pl" (0.3.0+)
-#: plugins/_i18n_plugins.py:796
+#: plugins/_i18n_plugins.py:798
 msgid "Unread e-mail notification and count from a local Maildir directory."
 msgstr ""
 "未読の電子メールを通知し、ローカルの Maildir ディレクトリから未読数を数える。"
 
 #. Translators: description for script "tmux_env.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:798
+#: plugins/_i18n_plugins.py:800
 msgid "Update WeeChat environment from tmux."
 msgstr "tmux から WeeChat 環境をアップデート。"
 
 #. Translators: description for script "mac-update-status.pl" (0.0.1-0.2.6)
-#: plugins/_i18n_plugins.py:800
+#: plugins/_i18n_plugins.py:802
 msgid "Update status messages in various Mac IM programs."
 msgstr "様々な Mac IM プログラムで状態メッセージを更新する。"
 
 #. Translators: description for script "tts.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:802
+#: plugins/_i18n_plugins.py:804
 msgid "Use a TTS engine to pronounce messages."
 msgstr "TTS エンジンを使ってメッセージを読み上げる。"
 
 #. Translators: description for script "colorize_nicks.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:804
+#: plugins/_i18n_plugins.py:806
 msgid "Use the weechat nick colors in the chat area and command line."
 msgstr "チャットエリアとコマンドラインで weechat ニックネーム色を使う。"
 
 #. Translators: description for script "vimode.py" (1.0+)
-#: plugins/_i18n_plugins.py:806
+#: plugins/_i18n_plugins.py:808
 msgid "Vi-like key bindings/commands with normal and insert mode."
 msgstr "ノーマルと挿入モードを持つ Vi ライクなキー割り当ておよびコマンド。"
 
 #. Translators: description for script "pastebuf.lua" (0.4.3+)
-#: plugins/_i18n_plugins.py:808
+#: plugins/_i18n_plugins.py:810
 msgid "View content of pastebin site in a buffer."
 msgstr "バッファ内で pastebin サイトの内容を見る。"
 
 #. Translators: description for script "oldswarner.lua" (0.3.7+)
-#: plugins/_i18n_plugins.py:810
+#: plugins/_i18n_plugins.py:812
 msgid "Warn user if about to paste URL already existing in buffer."
 msgstr "ペーストした URL がバッファ内にある場合にユーザに警告を出す。"
 
 #. Translators: description for script "weatherbot.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:812
+#: plugins/_i18n_plugins.py:814
 msgid "Weather bot using the WeatherUnderground API."
 msgstr "WeatherUnderground API を使うお天気ボット。"
 
 #. Translators: description for script "weetweet.py" (0.4.0+)
-#: plugins/_i18n_plugins.py:814
+#: plugins/_i18n_plugins.py:816
 msgid "WeeChat twitter client."
 msgstr "WeeChat 用の twitter クライアント。"
 
 #. Translators: description for script "whatsapp.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:816
+#: plugins/_i18n_plugins.py:818
 msgid "WhatsApp protocol."
 msgstr "WhatsApp プロトコル。"
 
 #. Translators: description for script "wmiibar.pl" (0.3.3+)
-#: plugins/_i18n_plugins.py:818
+#: plugins/_i18n_plugins.py:820
 msgid "Wmii statusbar notification for highlights."
 msgstr "ハイライト用の Wmii ステータスバー通知。"
 
 #. Translators: description for script "nick_complete_wrapper.lua" (0.3.8+)
-#: plugins/_i18n_plugins.py:820
+#: plugins/_i18n_plugins.py:822
 msgid "Wrap nick completion with custom prefix and/or suffix."
 msgstr "ニックネーム補完時に設定したプレフィックスとサフィックスを付ける。"
 
 #. Translators: description for script "ichatts.py" (0.3.0+)
-#: plugins/_i18n_plugins.py:822
+#: plugins/_i18n_plugins.py:824
 msgid "iChat-style timestamps."
 msgstr "iChat スタイルのタイムスタンプ。"
 
 #. Translators: description for script "itunes.rb" (0.3.0+)
-#: plugins/_i18n_plugins.py:824
+#: plugins/_i18n_plugins.py:826
 msgid "iTunes control and now playing script."
 msgstr "iTunes の操作と現在再生中曲に関する情報を得るスクリプト。"
 

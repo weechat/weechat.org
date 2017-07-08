@@ -676,6 +676,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Set away status based on Gnome screen saver."),
     # Translators: description for script "fileaway.py" (0.3.0+)
     gettext_lazy("Set away status based on presence of a file."),
+    # Translators: description for script "i3lock_away.py" (0.3.0+)
+    gettext_lazy("Set away status if i3lock (X display locker) is running."),
     # Translators: description for script "slock_away.py" (0.3.0+)
     gettext_lazy("Set away status if slock (X display locker) is running."),
     # Translators: description for script "screen_away.py" (0.3.0+)
