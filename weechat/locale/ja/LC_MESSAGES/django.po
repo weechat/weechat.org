@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2009-2016 AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>
+# Copyright (C) 2009-2017 AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>
 #
 # This file is part of WeeChat.org.
 #
@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-08 18:19+0200\n"
-"PO-Revision-Date: 2017-06-15 09:00+0900\n"
+"PO-Revision-Date: 2017-07-09 09:00+0900\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
 "translation/ja_JP>\n"
@@ -2749,25 +2749,7 @@ msgstr ""
 "changelog/ChangeLog-1.8.html\">ChangeLog</a> を御覧ください。"
 
 #: news/_i18n_info.py:112
-#, fuzzy, python-brace-format
-#| msgid ""
-#| "Version 1.7 is available!\n"
-#| "\n"
-#| "Among the new features:\n"
-#| "\n"
-#| "- add option weechat.look.align_multiline_words\n"
-#| "- add option \"time\" in command /debug\n"
-#| "- add infos \"uptime\" and \"pid\"\n"
-#| "- add optional arguments in completion template\n"
-#| "- add irc server option \"usermode\"\n"
-#| "- add tag \"self_msg\" on self messages\n"
-#| "- add configuration file fifo.conf for fifo plugin\n"
-#| "- add option \"-oc\" in command /exec\n"
-#| "- many bugs fixed.\n"
-#| "\n"
-#| "For complete list of new features and bugs fixed, please look at <a href="
-#| "\"http://dev.weechat.org/post/2017/01/15/Version-1.7\">development blog</"
-#| "a> or <a href=\"/files/changelog/ChangeLog-1.7.html\">ChangeLog</a>."
+#, python-brace-format
 msgid ""
 "Version 1.9 is available!\n"
 "\n"
@@ -2787,23 +2769,24 @@ msgid ""
 "\"https://weechat.org/blog/post/2017/06/25/Version-1.9\">development blog</"
 "a> or <a href=\"/files/changelog/ChangeLog-1.9.html\">ChangeLog</a>."
 msgstr ""
-"バージョン 1.7 をリリースしました!\n"
+"バージョン 1.9 をリリースしました!\n"
 "\n"
 "新しい機能:\n"
 "\n"
-"- オプション weechat.look.align_multiline_words を追加\n"
-"- コマンド /debug にオプション \"time\" を追加\n"
-"- インフォ \"uptime\" と \"pid\" を追加\n"
-"- 補完テンプレートに任意引数を追加\n"
-"- irc サーバオプション \"usermode\" を追加\n"
-"- 自分のメッセージを意味するタグ \"self_msg\" を追加\n"
-"- fifo プラグイン用の設定ファイル fifo.conf を追加\n"
-"- コマンド /exec にオプション \"-oc\" を追加\n"
+"- ニックネームリストバー要素コールバックの速度を改善\n"
+"- 新しいオプション buflist.look.auto_scroll を用いたバッファリストバーの自動"
+"スクロール機能を追加\n"
+"- オプション buflist.format.name を追加\n"
+"- バッファリストに変数 ${format_name}、${current_buffer}、${merged} を追加\n"
+"- buffers.pl がロード済みの場合に buflist 内で警告を表示\n"
+"- IRC コールバックトリガでサーバ/チャンネルポインタを追加\n"
+"- API 関数 config_option_get_string と hdata_compare を追加\n"
+"- Space キーの割り当てを修正\n"
 "- 多くのバグを修正。\n"
 "\n"
-"新機能と修正されたバグの完全なリストは<a href=\"http://dev.weechat.org/"
-"post/2017/01/15/Version-1.7\">開発ブログ</a>または <a href=\"/files/"
-"changelog/ChangeLog-1.7.html\">ChangeLog</a> を御覧ください。"
+"新機能と修正されたバグの完全なリストは<a href=\"https://weechat.org/blog/"
+"post/2017/06/25/Version-1.9\">開発ブログ</a>または <a href=\"/files/"
+"changelog/ChangeLog-1.9.html\">ChangeLog</a> を御覧ください。"
 
 #: news/_i18n_info.py:113
 msgid ""
@@ -4815,11 +4798,9 @@ msgstr "ファイルの有無を基準に離席状態を設定。"
 
 #. Translators: description for script "i3lock_away.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:680
-#, fuzzy
-#| msgid "Set away status if slock (X display locker) is running."
 msgid "Set away status if i3lock (X display locker) is running."
 msgstr ""
-"slock (X ディスプレイロックソフト) が実行されていたら、離席状態を設定。"
+"i3lock (X ディスプレイロックソフト) が実行されていたら、離席状態を設定。"
 
 #. Translators: description for script "slock_away.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:682
@@ -5852,8 +5833,7 @@ msgstr "有効"
 msgid "dev"
 msgstr "開発"
 
-#: templates/dev/dev.html:13 templates/home/home.html:75
-#: templates/menu.html:61
+#: templates/dev/dev.html:13 templates/home/home.html:75 templates/menu.html:61
 msgid "Roadmap"
 msgstr "ロードマップ"
 
