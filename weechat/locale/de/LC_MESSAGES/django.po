@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-08-04 20:10+0200\n"
-"PO-Revision-Date: 2017-06-15 09:38+0200\n"
+"PO-Revision-Date: 2017-08-04 21:24+0200\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <weechatter@arcor.de>\n"
 "Language: de\n"
@@ -2852,25 +2852,7 @@ msgstr ""
 "ChangeLog-1.8.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:112
-#, fuzzy, python-brace-format
-#| msgid ""
-#| "Version 1.7 is available!\n"
-#| "\n"
-#| "Among the new features:\n"
-#| "\n"
-#| "- add option weechat.look.align_multiline_words\n"
-#| "- add option \"time\" in command /debug\n"
-#| "- add infos \"uptime\" and \"pid\"\n"
-#| "- add optional arguments in completion template\n"
-#| "- add irc server option \"usermode\"\n"
-#| "- add tag \"self_msg\" on self messages\n"
-#| "- add configuration file fifo.conf for fifo plugin\n"
-#| "- add option \"-oc\" in command /exec\n"
-#| "- many bugs fixed.\n"
-#| "\n"
-#| "For complete list of new features and bugs fixed, please look at <a href="
-#| "\"http://dev.weechat.org/post/2017/01/15/Version-1.7\">development blog</"
-#| "a> or <a href=\"/files/changelog/ChangeLog-1.7.html\">ChangeLog</a>."
+#, python-brace-format
 msgid ""
 "Version 1.9 is available!\n"
 "\n"
@@ -2890,24 +2872,27 @@ msgid ""
 "\"https://weechat.org/blog/post/2017/06/25/Version-1.9\">development blog</"
 "a> or <a href=\"/files/changelog/ChangeLog-1.9.html\">ChangeLog</a>."
 msgstr ""
-"Version 1.7 ist verfügbar!\n"
+"Version 1.9 ist verfügbar!\n"
 "\n"
 "Überblick, der neuen Funktionen:\n"
 "\n"
-"- neu: Option weechat.look.align_multiline_words\n"
-"- neu: Option \"time\" für Befehl /debug\n"
-"- neu: Info \"uptime\" und \"pid\"\n"
-"- neu: optional Argumente für Vorlage bei Vervollständigung\n"
-"- neu: Option \"usermode\" für IRC Server\n"
-"- neu: tag \"self_msg\" für eigene Nachrichten\n"
-"- neu: Konfigurationsdatei fifo.conf für fifo Erweiterung\n"
-"- neu: Option \"-oc\" für Befehl /exec\n"
+"- Geschwindigkeit des Nicklist-Bar-Items erhöht\n"
+"- neu: automatisches scrollen der buflist-Bar mittels der neuen Option "
+"buflist.look.auto_scroll\n"
+"- neu: Option buflist.format.name\n"
+"- neu: Variablen ${format_name}, ${current_buffer} und ${merged} für "
+"buflist\n"
+"- ein Hinweis wird angezeigt wenn buflist und Skript buffers.pl installiert "
+"sind\n"
+"- neu: Server/Channel Pointer in trigger IRC Callbacks\n"
+"- neu: API Funktion config_option_get_string und hdata_compare\n"
+"- Belegung der Leertaste behoben\n"
 "- viele Fehlerbereinigungen\n"
 "\n"
 "Eine vollständige Liste der neuen Funktionen und Fehlerbereinigungen findet "
-"man unter folgenden Links: <a href=\"http://dev.weechat.org/post/2017/01/15/"
-"Version-1.7\">development blog</a> oder <a href=\"/files/changelog/"
-"ChangeLog-1.7.html\">ChangeLog</a>."
+"man unter folgenden Links: <a href=\"https://weechat.org/blog/"
+"post/2017/06/25/Version-1.9\">development blog</a> oder <a href=\"/files/"
+"changelog/ChangeLog-1.9.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:113
 msgid ""
@@ -5038,15 +5023,13 @@ msgstr "die Abwesenheit wird durch das Vorhandensein einer Datei gesteuert."
 
 #. Translators: description for script "i3lock_away.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:680
-#, fuzzy
-#| msgid "Set away status if slock (X display locker) is running."
 msgid "Set away status if i3lock (X display locker) is running."
-msgstr "setzt den Abwesenheitsstatus falls slock (X Bildschirmlocker) läuft."
+msgstr "setzt den Abwesenheitsstatus falls i3lock (X Bildschirmsperre) läuft."
 
 #. Translators: description for script "slock_away.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:682
 msgid "Set away status if slock (X display locker) is running."
-msgstr "setzt den Abwesenheitsstatus falls slock (X Bildschirmlocker) läuft."
+msgstr "setzt den Abwesenheitsstatus falls slock (X Bildschirmsperre) läuft."
 
 #. Translators: description for script "screen_away.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:684
@@ -6446,7 +6429,7 @@ msgstr "zuletzt Erstellt am:"
 
 #: templates/download/debian.html:70
 msgid "There are no more package builds in this repository."
-msgstr "Es existieren keine weiteren Pakete in diesem repository."
+msgstr "Es existieren keine weiteren Pakete in diesem Repository."
 
 #. Translators: purpose is to "translate" only quotes here
 #: templates/download/debian.html:74 templates/download/debian.html:148
@@ -6488,10 +6471,8 @@ msgstr ""
 "Importieren des gpg Schlüssel mit welchem die Repositorien signiert sind:"
 
 #: templates/download/debian.html:136
-#, fuzzy
-#| msgid "No debian repository."
 msgid "Important: the Raspbian repositories are NOT signed."
-msgstr "Kein Debian Repository."
+msgstr "Wichtig: das Raspbian Repository ist NICHT unterschrieben."
 
 #: templates/download/debian.html:139
 msgid ""
