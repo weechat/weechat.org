@@ -51,7 +51,8 @@ class Release(models.Model):
             self.date,
             (', %d SECURITY FIX' % self.security_issues_fixed
              if self.security_issues_fixed > 0 else ''),
-            (', fix in: %s' % self.securityfix) if self.securityfix else '',
+            (', fix in: %s' % ', '.join(self.securityfix.split(','))
+             if self.securityfix else ''),
         )
 
     def date_l10n(self):
