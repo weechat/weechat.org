@@ -49,8 +49,9 @@ class Release(models.Model):
         return '%s (%s)%s%s' % (
             self.version,
             self.date,
-            ' (SECURITY)' if self.security_issues_fixed > 0 else '',
-            (' (fix in: %s)' % self.securityfix) if self.securityfix else '',
+            (', %d SECURITY FIX' % self.security_issues_fixed
+             if self.security_issues_fixed > 0 else ''),
+            (', fix in: %s' % self.securityfix) if self.securityfix else '',
         )
 
     def date_l10n(self):
