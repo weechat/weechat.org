@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-04 20:10+0200\n"
+"POT-Creation-Date: 2017-09-23 15:38+0200\n"
 "PO-Revision-Date: 2017-05-17 06:58+0200\n"
 "Last-Translator: Krzysztof Korościk <soltys@soltys.info>\n"
 "Language-Team: Polish <soltys1@gmail.com>\n"
@@ -211,7 +211,7 @@ msgid "German"
 msgstr "Niemiecki"
 
 #: doc/models.py:32 settings.py:60 templates/dev/support.html:26
-#: templates/menu.html:24 templates/menu.html:25
+#: templates/menu.html:24 templates/menu.html.py:25
 msgid "English"
 msgstr "Angielski"
 
@@ -318,14 +318,21 @@ msgstr ""
 
 #: download/_i18n_security.py:13
 msgid ""
+"Date/time conversion specifiers are expanded after replacing buffer local "
+"variables in name of log files. In some cases, this can lead to an error in "
+"function strftime and a crash caused by the use of an uninitialized buffer."
+msgstr ""
+
+#: download/_i18n_security.py:14
+msgid ""
 "Do not use command /notify with nicks containing formatting chars like \"%\"."
 msgstr "Nie używaj komendy /notify z nickami zawierającymi znaki jak \"%\"."
 
-#: download/_i18n_security.py:14
+#: download/_i18n_security.py:15
 msgid "Do not use irc protocol in relay plugin."
 msgstr "Nie używaj protokołu irc we wtyczce pośrednika."
 
-#: download/_i18n_security.py:15
+#: download/_i18n_security.py:16
 msgid ""
 "Missing verifications in SSL certificate, which allows man-in-the-middle "
 "attackers to spoof an SSL chat server via an arbitrary certificate."
@@ -333,14 +340,14 @@ msgstr ""
 "Brak weryfikacji certyfikatów SSL, co może prowadzić do podmiany certyfikatu "
 "poprzez atak man-in-the-middle."
 
-#: download/_i18n_security.py:16
+#: download/_i18n_security.py:17
 msgid ""
 "Remove/unload all scripts calling function hook_process (for maximum safety)."
 msgstr ""
 "Usunięcie/wyładowanie wszystkich skryptów wywołujących funkcję hook_process "
 "(dla maksymalnego bezpieczeństwa)."
 
-#: download/_i18n_security.py:17
+#: download/_i18n_security.py:18
 msgid ""
 "Turn off option \"irc.network.send_unknown_commands\" or do not use "
 "formatting chars like \"%\" when sending unknown commands to server."
@@ -348,11 +355,11 @@ msgstr ""
 "Wyłącz opcję \"irc.network.send_unknown_commands\" lub nie używaj znaków "
 "formatujących jak \"%\" podczas wysyłania nieznanych komend do serwera."
 
-#: download/_i18n_security.py:18
+#: download/_i18n_security.py:19
 msgid "Uncontrolled format string in API function infobar_printf."
 msgstr "Niekontrolowane formatowanie ciągów w funkcji API infobar_printf."
 
-#: download/_i18n_security.py:19
+#: download/_i18n_security.py:20
 msgid ""
 "Uncontrolled format string when IRC commands are redirected by relay plugin. "
 "If the output or redirected command contains formatting chars like \"%\", "
@@ -362,7 +369,7 @@ msgstr ""
 "wtyczki pośrednika. Jeśli wyjście lub przekierowana komenda zawiera znaki "
 "formatujące jak \"%\" może to prowadzić do awarii WeeChat."
 
-#: download/_i18n_security.py:20
+#: download/_i18n_security.py:21
 msgid ""
 "Uncontrolled format string when sending IRC \"ison\" command for nicks "
 "monitored with command /notify."
@@ -370,7 +377,7 @@ msgstr ""
 "Niekontrolowany ciąg formatujący podczas przesyłania komendy IRC \"ison\" "
 "dla nicków monitorowanych poprzez komendę /notify."
 
-#: download/_i18n_security.py:21
+#: download/_i18n_security.py:22
 msgid ""
 "Uncontrolled format string when sending unknown IRC command to server (if "
 "option \"irc.network.send_unknown_commands\" is on)."
@@ -378,7 +385,11 @@ msgstr ""
 "Niekontrolowany ciąg formatujący podczas wysyłania nieznanych komend IRC do "
 "serwera (jeśli opcja \"irc.network.send_unknown_commands\" jest włączona)."
 
-#: download/_i18n_security.py:22
+#: download/_i18n_security.py:23
+msgid "Unload the logger plugin: /plugin unload logger"
+msgstr ""
+
+#: download/_i18n_security.py:24
 msgid ""
 "Untrusted command for function hook_process could lead to execution of "
 "commands, because of shell expansions (so the problem is only caused by some "
@@ -389,22 +400,22 @@ msgstr ""
 "skrypty, nie przez samego WeeChat)."
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:186 templates/download/security.html:71
+#: download/models.py:189 templates/download/security.html:71
 msgid "low"
 msgstr "niska"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:188 templates/download/security.html:72
+#: download/models.py:191 templates/download/security.html:72
 msgid "medium"
 msgstr "średnia"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:190 templates/download/security.html:73
+#: download/models.py:193 templates/download/security.html:73
 msgid "high"
 msgstr "wysoka"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:192 templates/download/security.html:74
+#: download/models.py:195 templates/download/security.html:74
 msgid "critical"
 msgstr "krytyczna"
 
@@ -2894,6 +2905,35 @@ msgstr ""
 "a>."
 
 #: news/_i18n_info.py:113
+msgid "Version 1.9.1 (security release)"
+msgstr ""
+
+#: news/_i18n_info.py:114
+#, fuzzy
+#| msgid ""
+#| "Version 0.3.9.1 is available, it fixes a security problem (buffer "
+#| "overflow when decoding IRC colors in strings).\n"
+#| "Upgrade is recommended for all users.\n"
+#| "\n"
+#| "More information on the <a href=\"/security\">page with security issues</"
+#| "a>."
+msgid ""
+"Version 1.9.1 is available, it fixes a security problem: a crash can happen "
+"in logger plugin when converting date/time specifiers in file mask. Two "
+"other bugs are fixed as well in buflist and relay plugins.\n"
+"Upgrade is recommended for all users.\n"
+"\n"
+"More information on the <a href=\"/download/security/\">page with security "
+"issues</a>."
+msgstr ""
+"Wersja 0.3.9.1 jest dostępna, poprawia ona problem bezpieczeństwa "
+"(przepełnienie bufora podczas dekodowania kolorów IRC w ciągach).\n"
+"Aktualizacja jest zalecana dla wszystkich użytkowników.\n"
+"\n"
+"Więcej informacji można znaleźć na <a href=\"/security\">stronie z "
+"problemami bezpieczeństwa</a>."
+
+#: news/_i18n_info.py:115
 msgid ""
 "Version v0.1.2 is available!\n"
 "\n"
@@ -2926,11 +2966,11 @@ msgstr ""
 "Dodano, 2005-05-24 : naprawiono awarię podczas uruchamiania oraz wykrywanie "
 "Perla/Pythona , obecny numer wersji to 0.1.2.1."
 
-#: news/_i18n_info.py:114
+#: news/_i18n_info.py:116
 msgid "WeeChat - Wee Enhanced Environment for Chat"
 msgstr "WeeChat - Małe  Udoskonalone Środowisko do rozmów"
 
-#: news/_i18n_info.py:115
+#: news/_i18n_info.py:117
 msgid ""
 "WeeChat has many new important features since some weeks:\n"
 "- multi-windows management (with horizontal and vertical window split)\n"
@@ -2954,11 +2994,11 @@ msgstr ""
 "Śmiało możesz zgłaszać dowolny problem lub sugestie jak usprawnić nawigację "
 "między buforami/oknami."
 
-#: news/_i18n_info.py:116
+#: news/_i18n_info.py:118
 msgid "WeeChat in Cygwin"
 msgstr "WeeChat w Cygwinie"
 
-#: news/_i18n_info.py:117
+#: news/_i18n_info.py:119
 msgid ""
 "WeeChat is now in Cygwin, and can be installed with setup.exe.\n"
 "Version 0.4.2 is available for 32 and 64-bit Cygwin.\n"
@@ -2972,7 +3012,7 @@ msgstr ""
 "Uwaga: wtyczka Guile nie jest dostępna, ponieważ wymaga guile w wersji >= "
 "2.0, która nie jest dostępna w Cygwinie."
 
-#: news/_i18n_info.py:118
+#: news/_i18n_info.py:120
 msgid ""
 "WeeChat project is started.\n"
 "\n"
@@ -2992,7 +3032,7 @@ msgstr ""
 "- szybki, lekki oraz rozszerzalny za pomocą skryptów.\n"
 "- ..."
 
-#: news/_i18n_info.py:119
+#: news/_i18n_info.py:121
 msgid ""
 "WeeChat project now accepts donations via Paypal account, with secured "
 "payment."
@@ -3000,7 +3040,7 @@ msgstr ""
 "Projekt WeeChat od teraz przyjmuje dotacje za pomocą konta Paypal, z "
 "zabezpieczoną płatnością."
 
-#: news/_i18n_info.py:120
+#: news/_i18n_info.py:122
 msgid ""
 "WeeChat repositories (weechat, scripts, qweechat) have been moved to GitHub, "
 "in WeeChat organization: <a href=\"https://github.com/weechat\">https://"
@@ -3016,15 +3056,15 @@ msgstr ""
 "Więcej informacji można znaleźć na <a href=\"http://dev.weechat.org/"
 "post/2014/03/03/Git-repositories-moved-to-Github\">blogu deweloperskim</a>."
 
-#: news/_i18n_info.py:121
+#: news/_i18n_info.py:123
 msgid "WeeChat screenshot"
 msgstr "Zrzut ekranu WeeChat"
 
-#: news/_i18n_info.py:122
+#: news/_i18n_info.py:124
 msgid "WeeChat scripts page"
 msgstr "Skrypty WeeChat"
 
-#: news/_i18n_info.py:123
+#: news/_i18n_info.py:125
 msgid ""
 "WeeChat scripts page (today Perl scripts only) has been added.\n"
 "On this page you can submit your script (need to be approved by WeeChat "
@@ -3040,7 +3080,7 @@ msgstr ""
 "Uwaga: skrypty w Perlu wymagają wersji WeeChat > 0.0.3, dlatego obecnie "
 "należy pobrać wersję rozwojową."
 
-#: news/_i18n_info.py:124
+#: news/_i18n_info.py:126
 msgid ""
 "WeeChat story page is now available, as screenshots. You can see differences "
 "between all versions in one view!\n"
@@ -3050,15 +3090,15 @@ msgstr ""
 "zobaczyć różnice pomiędzy wersjami!\n"
 "Wersje rozwojowe są również widoczne, oraz często uaktualniane."
 
-#: news/_i18n_info.py:125
+#: news/_i18n_info.py:127
 msgid "WeeChat users map"
 msgstr "Mapa użytkowników WeeChat"
 
-#: news/_i18n_info.py:126
+#: news/_i18n_info.py:128
 msgid "WeeChat will merge with irssi"
 msgstr "WeeChat połączy się z irssi"
 
-#: news/_i18n_info.py:127
+#: news/_i18n_info.py:129
 msgid ""
 "WeeChat, the fast, light and extensible IRC client, is released for the "
 "first time, version 0.0.1.\n"
@@ -3106,7 +3146,7 @@ msgstr ""
 "Wszystkie sugestie i zgłoszenia błędów mile widziane, zajrzyj na stronę "
 "wsparcia WeeChat w celu skontaktowania się z nami."
 
-#: news/_i18n_info.py:128
+#: news/_i18n_info.py:130
 msgid "XZ packages"
 msgstr "Archiwa XZ"
 
@@ -5376,13 +5416,13 @@ msgstr ""
 "nią)."
 
 #: plugins/models.py:252 templates/plugins/list.html:63
-#: templates/plugins/list.html:65 templates/plugins/pending.html:33
+#: templates/plugins/list.html.py:65 templates/plugins/pending.html:33
 msgctxt "programming language"
 msgid "Language"
 msgstr "Język"
 
 #: plugins/models.py:256 templates/about/donate.html:58
-#: templates/plugins/list.html:57 templates/plugins/list.html:59
+#: templates/plugins/list.html:57 templates/plugins/list.html.py:59
 #: templates/plugins/pending.html:29
 msgid "Name"
 msgstr "Nazwa"
@@ -5392,7 +5432,7 @@ msgid "version of script (only digits or dots)"
 msgstr "wersja skryptu (tylko cyfry lub kropki)"
 
 #: plugins/models.py:267 templates/plugins/list.html:72
-#: templates/plugins/list.html:74 templates/plugins/pending.html:34
+#: templates/plugins/list.html.py:74 templates/plugins/pending.html:34
 msgid "License"
 msgstr "Licencja"
 
@@ -5705,7 +5745,7 @@ msgstr "API dla języków skryptowych"
 msgid "IRC proxy and remote interface"
 msgstr "Pośrednik IRC i zdalne interfejsy"
 
-#: templates/about/features.html:54 templates/about/features.html:81
+#: templates/about/features.html:54 templates/about/features.html.py:81
 msgid "Scripts manager"
 msgstr "Menadżer skryptów"
 
@@ -5761,7 +5801,7 @@ msgstr "Strumienie FIFO"
 msgid "Spell checking"
 msgstr "Sprawdzanie pisowni"
 
-#: templates/about/features.html:82 templates/about/features.html:121
+#: templates/about/features.html:82 templates/about/features.html.py:121
 #: templates/download/packages.html:130
 msgid "Remote interfaces"
 msgstr "Zdalne interfejsy"
@@ -6009,7 +6049,8 @@ msgstr "Prawidłowy"
 msgid "dev"
 msgstr "rozwojowa"
 
-#: templates/dev/dev.html:13 templates/home/home.html:75 templates/menu.html:61
+#: templates/dev/dev.html:13 templates/home/home.html:75
+#: templates/menu.html:61
 msgid "Roadmap"
 msgstr "Plan wydań"
 
@@ -6210,12 +6251,12 @@ msgid "<strong>weechat-security</strong> (security advisories about WeeChat):"
 msgstr ""
 "<strong>weechat-security</strong> (ostrzeżenia bezpieczeństwa dla WeeChat):"
 
-#: templates/dev/support.html:61 templates/dev/support.html:68
+#: templates/dev/support.html:61 templates/dev/support.html.py:68
 #: templates/dev/support.html:75
 msgid "subscribe:"
 msgstr "zapisz się:"
 
-#: templates/dev/support.html:62 templates/dev/support.html:69
+#: templates/dev/support.html:62 templates/dev/support.html.py:69
 #: templates/dev/support.html:76
 msgid "send mail to:"
 msgstr "wyślij wiadomości do:"
@@ -6242,7 +6283,7 @@ msgid "Devel"
 msgstr "Rozwojowa"
 
 #: templates/doc/doc.html:15 templates/download/download.html:15
-#: templates/menu.html:23 templates/menu.html:33
+#: templates/menu.html:23 templates/menu.html.py:33
 msgid "Old versions"
 msgstr "Poprzednie wersje"
 
@@ -6362,7 +6403,7 @@ msgid "There are no more package builds in this repository."
 msgstr "Brak nowych pakietów binarnych w tym repozytorium."
 
 #. Translators: purpose is to "translate" only quotes here
-#: templates/download/debian.html:74 templates/download/debian.html:148
+#: templates/download/debian.html:74 templates/download/debian.html.py:148
 #, python-format
 msgid "“%(codename)s”"
 msgstr "“%(codename)s”"
@@ -6850,7 +6891,7 @@ msgid ""
 msgstr ""
 "<strong>dotacje</strong>: każdy wkład jest doceniany i ważny dla motywacji"
 
-#: templates/home/home.html:97 templates/home/home.html:117
+#: templates/home/home.html:97 templates/home/home.html.py:117
 msgid "More"
 msgstr "Więcej"
 
@@ -6892,11 +6933,11 @@ msgstr "Strona główna"
 msgid "About"
 msgstr "O WeeChat"
 
-#: templates/menu.html:21 templates/menu.html:31
+#: templates/menu.html:21 templates/menu.html.py:31
 msgid "Stable version"
 msgstr "Wersja stabilna"
 
-#: templates/menu.html:22 templates/menu.html:32
+#: templates/menu.html:22 templates/menu.html.py:32
 msgid "Dev version"
 msgstr "Wersja rozwojowa"
 
@@ -7127,31 +7168,31 @@ msgstr "skrypty"
 msgid "Search by tag:"
 msgstr "Szukaj po oznaczeniu:"
 
-#: templates/plugins/list.html:46 templates/plugins/list.html:120
+#: templates/plugins/list.html:46 templates/plugins/list.html.py:120
 msgid "Tag:"
 msgstr "Tag:"
 
-#: templates/plugins/list.html:79 templates/plugins/list.html:81
+#: templates/plugins/list.html:79 templates/plugins/list.html.py:81
 #: templates/plugins/pending.html:35
 msgid "Min"
 msgstr "Min"
 
-#: templates/plugins/list.html:86 templates/plugins/list.html:88
+#: templates/plugins/list.html:86 templates/plugins/list.html.py:88
 #: templates/plugins/pending.html:36
 msgid "Max"
 msgstr "Max"
 
-#: templates/plugins/list.html:93 templates/plugins/list.html:95
+#: templates/plugins/list.html:93 templates/plugins/list.html.py:95
 #: templates/plugins/pending.html:37 templates/plugins/source.html:24
 msgid "Author"
 msgstr "Autor"
 
-#: templates/plugins/list.html:100 templates/plugins/list.html:102
+#: templates/plugins/list.html:100 templates/plugins/list.html.py:102
 #: templates/themes/list.html:28
 msgid "Added"
 msgstr "Dodano"
 
-#: templates/plugins/list.html:107 templates/plugins/list.html:109
+#: templates/plugins/list.html:107 templates/plugins/list.html.py:109
 msgid "Updated"
 msgstr "Uaktualniono"
 
@@ -7274,7 +7315,7 @@ msgid "You'll be informed if there is a problem with your theme."
 msgstr "Zostaniesz poinformowany, jeśli wystąpią problemy z Twoim motywem."
 
 #: templates/themes/add_ok.html:19 templates/themes/list.html:41
-#: templates/themes/source.html:15 templates/themes/source.html:22
+#: templates/themes/source.html:15 templates/themes/source.html.py:22
 #: templates/themes/update_ok.html:17
 msgid "Back to themes"
 msgstr "Powrót do motywów"

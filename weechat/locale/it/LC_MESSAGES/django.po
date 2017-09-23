@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-04 20:10+0200\n"
+"POT-Creation-Date: 2017-09-23 15:38+0200\n"
 "PO-Revision-Date: 2017-05-13 15:37+0200\n"
 "Last-Translator: Marco Paolone <marcopaolone@gmail.com>\n"
 "Language-Team: Italian <marcopaolone@gmail.com>\n"
@@ -222,7 +222,7 @@ msgid "German"
 msgstr "Tedesco"
 
 #: doc/models.py:32 settings.py:60 templates/dev/support.html:26
-#: templates/menu.html:24 templates/menu.html:25
+#: templates/menu.html:24 templates/menu.html.py:25
 msgid "English"
 msgstr "Inglese"
 
@@ -329,14 +329,21 @@ msgstr ""
 
 #: download/_i18n_security.py:13
 msgid ""
-"Do not use command /notify with nicks containing formatting chars like \"%\"."
+"Date/time conversion specifiers are expanded after replacing buffer local "
+"variables in name of log files. In some cases, this can lead to an error in "
+"function strftime and a crash caused by the use of an uninitialized buffer."
 msgstr ""
 
 #: download/_i18n_security.py:14
-msgid "Do not use irc protocol in relay plugin."
+msgid ""
+"Do not use command /notify with nicks containing formatting chars like \"%\"."
 msgstr ""
 
 #: download/_i18n_security.py:15
+msgid "Do not use irc protocol in relay plugin."
+msgstr ""
+
+#: download/_i18n_security.py:16
 msgid ""
 "Missing verifications in SSL certificate, which allows man-in-the-middle "
 "attackers to spoof an SSL chat server via an arbitrary certificate."
@@ -345,30 +352,30 @@ msgstr ""
 "the-middle di falsificare un server di chat SSL tramite certificato "
 "arbitrario."
 
-#: download/_i18n_security.py:16
+#: download/_i18n_security.py:17
 msgid ""
 "Remove/unload all scripts calling function hook_process (for maximum safety)."
 msgstr ""
 
-#: download/_i18n_security.py:17
+#: download/_i18n_security.py:18
 msgid ""
 "Turn off option \"irc.network.send_unknown_commands\" or do not use "
 "formatting chars like \"%\" when sending unknown commands to server."
 msgstr ""
 
-#: download/_i18n_security.py:18
+#: download/_i18n_security.py:19
 msgid "Uncontrolled format string in API function infobar_printf."
 msgstr ""
 "Formato della stringa non verificato nella funzione API infobar_printf."
 
-#: download/_i18n_security.py:19
+#: download/_i18n_security.py:20
 msgid ""
 "Uncontrolled format string when IRC commands are redirected by relay plugin. "
 "If the output or redirected command contains formatting chars like \"%\", "
 "this can lead to a crash of WeeChat."
 msgstr ""
 
-#: download/_i18n_security.py:20
+#: download/_i18n_security.py:21
 #, fuzzy
 msgid ""
 "Uncontrolled format string when sending IRC \"ison\" command for nicks "
@@ -376,13 +383,17 @@ msgid ""
 msgstr ""
 "Formato della stringa non verificato nella funzione API infobar_printf."
 
-#: download/_i18n_security.py:21
+#: download/_i18n_security.py:22
 msgid ""
 "Uncontrolled format string when sending unknown IRC command to server (if "
 "option \"irc.network.send_unknown_commands\" is on)."
 msgstr ""
 
-#: download/_i18n_security.py:22
+#: download/_i18n_security.py:23
+msgid "Unload the logger plugin: /plugin unload logger"
+msgstr ""
+
+#: download/_i18n_security.py:24
 msgid ""
 "Untrusted command for function hook_process could lead to execution of "
 "commands, because of shell expansions (so the problem is only caused by some "
@@ -390,22 +401,22 @@ msgid ""
 msgstr ""
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:186 templates/download/security.html:71
+#: download/models.py:189 templates/download/security.html:71
 msgid "low"
 msgstr ""
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:188 templates/download/security.html:72
+#: download/models.py:191 templates/download/security.html:72
 msgid "medium"
 msgstr ""
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:190 templates/download/security.html:73
+#: download/models.py:193 templates/download/security.html:73
 msgid "high"
 msgstr ""
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:192 templates/download/security.html:74
+#: download/models.py:195 templates/download/security.html:74
 msgid "critical"
 msgstr ""
 
@@ -2743,6 +2754,34 @@ msgstr ""
 "ChangeLog-0.3.8.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:113
+msgid "Version 1.9.1 (security release)"
+msgstr ""
+
+#: news/_i18n_info.py:114
+#, fuzzy
+#| msgid ""
+#| "Version 0.2.6.1 is available. This release fixes a crash when receiving "
+#| "some special chars in IRC messages.\n"
+#| "\n"
+#| "It is strongly recommended to upgrade to this version for all users of "
+#| "version 0.2.6 (versions 0.2.5 or older are not affected by this bug)."
+msgid ""
+"Version 1.9.1 is available, it fixes a security problem: a crash can happen "
+"in logger plugin when converting date/time specifiers in file mask. Two "
+"other bugs are fixed as well in buflist and relay plugins.\n"
+"Upgrade is recommended for all users.\n"
+"\n"
+"More information on the <a href=\"/download/security/\">page with security "
+"issues</a>."
+msgstr ""
+"È disponibile la versione 0.2.6.1. Questo rilascio corregge un crash con la "
+"ricezione di alcuni caratteri speciali nei messaggi IRC.\n"
+"\n"
+"Si raccomanda vivamente l'aggiornamento a questa versione per tutti gli "
+"utenti della versione 0.2.6 (le versioni 0.2.5 e precedenti non sono affette "
+"da questo bug)."
+
+#: news/_i18n_info.py:115
 msgid ""
 "Version v0.1.2 is available!\n"
 "\n"
@@ -2776,11 +2815,11 @@ msgstr ""
 "Aggiunta, 24-05-2005 : corretto crash all'avvio e rilevamento Perl/Python, "
 "ora la versione è 0.1.2.1."
 
-#: news/_i18n_info.py:114
+#: news/_i18n_info.py:116
 msgid "WeeChat - Wee Enhanced Environment for Chat"
 msgstr "WeeChat - Wee Enhanced Environment for Chat"
 
-#: news/_i18n_info.py:115
+#: news/_i18n_info.py:117
 msgid ""
 "WeeChat has many new important features since some weeks:\n"
 "- multi-windows management (with horizontal and vertical window split)\n"
@@ -2803,12 +2842,12 @@ msgstr ""
 "Sentitevi liberi di notificare qualunque problema o suggerimento per "
 "migliorare la navigazione tra buffer/finestre."
 
-#: news/_i18n_info.py:116
+#: news/_i18n_info.py:118
 #, fuzzy
 msgid "WeeChat in Cygwin"
 msgstr "WeeChat è:"
 
-#: news/_i18n_info.py:117
+#: news/_i18n_info.py:119
 msgid ""
 "WeeChat is now in Cygwin, and can be installed with setup.exe.\n"
 "Version 0.4.2 is available for 32 and 64-bit Cygwin.\n"
@@ -2817,7 +2856,7 @@ msgid ""
 "yet available in Cygwin."
 msgstr ""
 
-#: news/_i18n_info.py:118
+#: news/_i18n_info.py:120
 msgid ""
 "WeeChat project is started.\n"
 "\n"
@@ -2837,7 +2876,7 @@ msgstr ""
 "- veloce, leggero ed estensibile con script.\n"
 "-..."
 
-#: news/_i18n_info.py:119
+#: news/_i18n_info.py:121
 msgid ""
 "WeeChat project now accepts donations via Paypal account, with secured "
 "payment."
@@ -2845,7 +2884,7 @@ msgstr ""
 "Il progetto WeeChat ora accetta donazioni tramite account Paypal, con "
 "pagamento sicuro."
 
-#: news/_i18n_info.py:120
+#: news/_i18n_info.py:122
 msgid ""
 "WeeChat repositories (weechat, scripts, qweechat) have been moved to GitHub, "
 "in WeeChat organization: <a href=\"https://github.com/weechat\">https://"
@@ -2855,15 +2894,15 @@ msgid ""
 "post/2014/03/03/Git-repositories-moved-to-Github\">development blog</a>."
 msgstr ""
 
-#: news/_i18n_info.py:121
+#: news/_i18n_info.py:123
 msgid "WeeChat screenshot"
 msgstr "Schermata di WeeChat"
 
-#: news/_i18n_info.py:122
+#: news/_i18n_info.py:124
 msgid "WeeChat scripts page"
 msgstr "Pagina degli script di WeeChat"
 
-#: news/_i18n_info.py:123
+#: news/_i18n_info.py:125
 msgid ""
 "WeeChat scripts page (today Perl scripts only) has been added.\n"
 "On this page you can submit your script (need to be approved by WeeChat "
@@ -2879,7 +2918,7 @@ msgstr ""
 "Nota: gli script Perl richiedono una versione di WeeChat > 0.0.3, per cui "
 "bisogna scaricare la versione di sviluppo."
 
-#: news/_i18n_info.py:124
+#: news/_i18n_info.py:126
 msgid ""
 "WeeChat story page is now available, as screenshots. You can see differences "
 "between all versions in one view!\n"
@@ -2889,15 +2928,15 @@ msgstr ""
 "notare la differenza tra tutte le versioni in un colpo solo!\n"
 "È visibile anche la versione di sviluppo ed è aggiornata di frequente."
 
-#: news/_i18n_info.py:125
+#: news/_i18n_info.py:127
 msgid "WeeChat users map"
 msgstr "Mappa utenti WeeChat"
 
-#: news/_i18n_info.py:126
+#: news/_i18n_info.py:128
 msgid "WeeChat will merge with irssi"
 msgstr "WeeChat si unirà ad irssi"
 
-#: news/_i18n_info.py:127
+#: news/_i18n_info.py:129
 msgid ""
 "WeeChat, the fast, light and extensible IRC client, is released for the "
 "first time, version 0.0.1.\n"
@@ -2945,7 +2984,7 @@ msgstr ""
 "Tutti i suggerimenti e le notifiche di bug sono benvenuti, sulla pagina di "
 "supporto di WeeChat troverete il modo per contattarci."
 
-#: news/_i18n_info.py:128
+#: news/_i18n_info.py:130
 #, fuzzy
 #| msgid "Packages"
 msgid "XZ packages"
@@ -5211,14 +5250,14 @@ msgstr ""
 "contenuto dello script di conseguenza)."
 
 #: plugins/models.py:252 templates/plugins/list.html:63
-#: templates/plugins/list.html:65 templates/plugins/pending.html:33
+#: templates/plugins/list.html.py:65 templates/plugins/pending.html:33
 #, fuzzy
 msgctxt "programming language"
 msgid "Language"
 msgstr "Linguaggio"
 
 #: plugins/models.py:256 templates/about/donate.html:58
-#: templates/plugins/list.html:57 templates/plugins/list.html:59
+#: templates/plugins/list.html:57 templates/plugins/list.html.py:59
 #: templates/plugins/pending.html:29
 msgid "Name"
 msgstr "Nome"
@@ -5228,7 +5267,7 @@ msgid "version of script (only digits or dots)"
 msgstr "versione dello script (solo cifre o punti)"
 
 #: plugins/models.py:267 templates/plugins/list.html:72
-#: templates/plugins/list.html:74 templates/plugins/pending.html:34
+#: templates/plugins/list.html.py:74 templates/plugins/pending.html:34
 msgid "License"
 msgstr "Licenza"
 
@@ -5541,7 +5580,7 @@ msgstr ""
 msgid "IRC proxy and remote interface"
 msgstr "interfaccia testuale"
 
-#: templates/about/features.html:54 templates/about/features.html:81
+#: templates/about/features.html:54 templates/about/features.html.py:81
 #, fuzzy
 msgid "Scripts manager"
 msgstr "Gestore script."
@@ -5603,7 +5642,7 @@ msgstr ""
 msgid "Spell checking"
 msgstr ""
 
-#: templates/about/features.html:82 templates/about/features.html:121
+#: templates/about/features.html:82 templates/about/features.html.py:121
 #: templates/download/packages.html:130
 #, fuzzy
 msgid "Remote interfaces"
@@ -5857,7 +5896,8 @@ msgstr "Valido"
 msgid "dev"
 msgstr "sviluppo"
 
-#: templates/dev/dev.html:13 templates/home/home.html:75 templates/menu.html:61
+#: templates/dev/dev.html:13 templates/home/home.html:75
+#: templates/menu.html:61
 msgid "Roadmap"
 msgstr "Roadmap"
 
@@ -6056,13 +6096,13 @@ msgstr ""
 msgid "<strong>weechat-security</strong> (security advisories about WeeChat):"
 msgstr ""
 
-#: templates/dev/support.html:61 templates/dev/support.html:68
+#: templates/dev/support.html:61 templates/dev/support.html.py:68
 #: templates/dev/support.html:75
 #, fuzzy
 msgid "subscribe:"
 msgstr "Sottoscrivi:"
 
-#: templates/dev/support.html:62 templates/dev/support.html:69
+#: templates/dev/support.html:62 templates/dev/support.html.py:69
 #: templates/dev/support.html:76
 #, fuzzy
 msgid "send mail to:"
@@ -6089,7 +6129,7 @@ msgid "Devel"
 msgstr "Sviluppo"
 
 #: templates/doc/doc.html:15 templates/download/download.html:15
-#: templates/menu.html:23 templates/menu.html:33
+#: templates/menu.html:23 templates/menu.html.py:33
 msgid "Old versions"
 msgstr "Versioni precedenti"
 
@@ -6199,7 +6239,7 @@ msgid "There are no more package builds in this repository."
 msgstr ""
 
 #. Translators: purpose is to "translate" only quotes here
-#: templates/download/debian.html:74 templates/download/debian.html:148
+#: templates/download/debian.html:74 templates/download/debian.html.py:148
 #, python-format
 msgid "“%(codename)s”"
 msgstr ""
@@ -6662,7 +6702,7 @@ msgid ""
 "motivation"
 msgstr ""
 
-#: templates/home/home.html:97 templates/home/home.html:117
+#: templates/home/home.html:97 templates/home/home.html.py:117
 #, fuzzy
 msgid "More"
 msgstr "Altre notizie"
@@ -6706,12 +6746,12 @@ msgstr "Home"
 msgid "About"
 msgstr "Informazioni"
 
-#: templates/menu.html:21 templates/menu.html:31
+#: templates/menu.html:21 templates/menu.html.py:31
 #, fuzzy
 msgid "Stable version"
 msgstr "versione stabile"
 
-#: templates/menu.html:22 templates/menu.html:32
+#: templates/menu.html:22 templates/menu.html.py:32
 #, fuzzy
 msgid "Dev version"
 msgstr "Nuova versione"
@@ -6955,31 +6995,31 @@ msgstr "script"
 msgid "Search by tag:"
 msgstr "Ricerca per tag:"
 
-#: templates/plugins/list.html:46 templates/plugins/list.html:120
+#: templates/plugins/list.html:46 templates/plugins/list.html.py:120
 msgid "Tag:"
 msgstr "Tag:"
 
-#: templates/plugins/list.html:79 templates/plugins/list.html:81
+#: templates/plugins/list.html:79 templates/plugins/list.html.py:81
 #: templates/plugins/pending.html:35
 msgid "Min"
 msgstr "Minimo"
 
-#: templates/plugins/list.html:86 templates/plugins/list.html:88
+#: templates/plugins/list.html:86 templates/plugins/list.html.py:88
 #: templates/plugins/pending.html:36
 msgid "Max"
 msgstr "Massimo"
 
-#: templates/plugins/list.html:93 templates/plugins/list.html:95
+#: templates/plugins/list.html:93 templates/plugins/list.html.py:95
 #: templates/plugins/pending.html:37 templates/plugins/source.html:24
 msgid "Author"
 msgstr "Autore"
 
-#: templates/plugins/list.html:100 templates/plugins/list.html:102
+#: templates/plugins/list.html:100 templates/plugins/list.html.py:102
 #: templates/themes/list.html:28
 msgid "Added"
 msgstr "Aggiunto"
 
-#: templates/plugins/list.html:107 templates/plugins/list.html:109
+#: templates/plugins/list.html:107 templates/plugins/list.html.py:109
 msgid "Updated"
 msgstr "Aggiornato"
 
@@ -7104,7 +7144,7 @@ msgid "You'll be informed if there is a problem with your theme."
 msgstr "Sarete informati se c'è un problema con il tema."
 
 #: templates/themes/add_ok.html:19 templates/themes/list.html:41
-#: templates/themes/source.html:15 templates/themes/source.html:22
+#: templates/themes/source.html:15 templates/themes/source.html.py:22
 #: templates/themes/update_ok.html:17
 msgid "Back to themes"
 msgstr "Torna ai temi"
