@@ -46,10 +46,11 @@ class Release(models.Model):
     securityfix = models.CharField(max_length=256, blank=True)
 
     def __unicode__(self):
-        return '%s (%s)%s' % (
+        return '%s (%s)%s%s' % (
             self.version,
             self.date,
             ' (SECURITY)' if self.security_issues_fixed > 0 else '',
+            (' (fix in: %s)' % self.securityfix) if self.securityfix else '',
         )
 
     def date_l10n(self):
