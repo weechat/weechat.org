@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-23 15:38+0200\n"
-"PO-Revision-Date: 2017-08-04 21:24+0200\n"
+"PO-Revision-Date: 2017-10-02 23:15+0200\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <weechatter@arcor.de>\n"
 "Language: de\n"
@@ -331,6 +331,10 @@ msgid ""
 "variables in name of log files. In some cases, this can lead to an error in "
 "function strftime and a crash caused by the use of an uninitialized buffer."
 msgstr ""
+"Eine Datum/Zeit-Spezifikationen wird umgewandelt und erweitert, nachdem "
+"lokalen Buffervariablen im Dateinamen ersetzt wurden. In Einzelfällen kann "
+"dies zu einem Fehler in der strftime Funktionen führen und einen Absturz "
+"verursachen, der durch einen uninitialisierten Buffer hervorgerufen wird."
 
 #: download/_i18n_security.py:14
 msgid ""
@@ -403,7 +407,7 @@ msgstr ""
 
 #: download/_i18n_security.py:23
 msgid "Unload the logger plugin: /plugin unload logger"
-msgstr ""
+msgstr "die Logger-Erweiterung beenden: /plugin unload logger"
 
 #: download/_i18n_security.py:24
 msgid ""
@@ -2906,20 +2910,10 @@ msgstr ""
 "changelog/ChangeLog-1.9.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:113
-#, fuzzy
-#| msgid "Version 1.7.1 (security release)"
 msgid "Version 1.9.1 (security release)"
-msgstr "Version 1.7.1 (Sicherheitsupdate)"
+msgstr "Version 1.9.1 (Sicherheitsupdate)"
 
 #: news/_i18n_info.py:114
-#, fuzzy
-#| msgid ""
-#| "Version 1.7.1 is available, it fixes a security problem: a crash can "
-#| "happen in IRC plugin when parsing the filename received via DCC.\n"
-#| "Upgrade is recommended for all users.\n"
-#| "\n"
-#| "More information on the <a href=\"/download/security/\">page with "
-#| "security issues</a>."
 msgid ""
 "Version 1.9.1 is available, it fixes a security problem: a crash can happen "
 "in logger plugin when converting date/time specifiers in file mask. Two "
@@ -2929,8 +2923,10 @@ msgid ""
 "More information on the <a href=\"/download/security/\">page with security "
 "issues</a>."
 msgstr ""
-"Version 1.7.1 ist verfügbar. Diese Version behebt ein Sicherheitsproblem: "
-"bei der Analyse von DCC-Dateinamen kann es zum Absturz kommen.\n"
+"Version 1.9.1 ist verfügbar. Diese Version behebt ein Sicherheitsproblem: es "
+"kann zu einem Absturz in der Logger-Erweiterung kommen wenn Datum/Zeit "
+"spezifische Dateimasken umgewandelt werden. Des Weiteren sind noch zwei "
+"weitere Fehler in den Erweiterungen buflist und relay behoben worden\n"
 "Es wird allen Anwendern empfohlen diese Version zu installieren.\n"
 "\n"
 "Weitere Informationen findet man auf der <a href=\"/download/security/"
@@ -6131,8 +6127,7 @@ msgstr "Valid"
 msgid "dev"
 msgstr "Entwicklung"
 
-#: templates/dev/dev.html:13 templates/home/home.html:75
-#: templates/menu.html:61
+#: templates/dev/dev.html:13 templates/home/home.html:75 templates/menu.html:61
 msgid "Roadmap"
 msgstr "Meilensteinplan"
 
