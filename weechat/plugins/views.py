@@ -90,20 +90,15 @@ def scripts(request, api='stable', sort_key='popularity', filter_name='',
         plugin_list = plugin_list.filter(license=filter_value)
     elif filter_name == 'author':
         plugin_list = plugin_list.filter(author=filter_value)
-    tags = []
-    tags_count = {}
+    languages = {}
+    licenses = {}
+    tags = {}
     for plugin in plugin_list:
-        for tag in plugin.tagslist():
-            if tag:
-                if tag not in tags:
-                    tags.append(tag)
-                    tags_count[tag] = 1
-                else:
-                    tags_count[tag] = tags_count[tag] + 1
-    tags.sort()
-    tags2 = []
-    for tag in tags:
-        tags2.append((tag, tags_count[tag]))
+        languages[plugin.language] = languages.get(plugin.language, 0) + 1
+        licenses[plugin.license] = licenses.get(plugin.license, 0) + 1
+        if plugin.tags:
+            for tag in plugin.tagslist():
+                tags[tag] = tags.get(tag, 0) + 1
     return render(
         request,
         'plugins/list.html',
@@ -113,8 +108,9 @@ def scripts(request, api='stable', sort_key='popularity', filter_name='',
             'sort_key': sort_key,
             'filter_name': filter_name,
             'filter_value': filter_value,
-            'tags': tags2,
-            'tags_count': tags_count,
+            'languages': sorted(languages.items()),
+            'licenses': sorted(licenses.items()),
+            'tags': sorted(tags.items()),
         },
     )
 

@@ -40,8 +40,24 @@
       <strong>{{ plugin_list|length }}</strong> {% trans "scripts" %}.
     </div>
     <div class="search">
+      {% if languages %}
+        {% trans "Language:" %}
+        {% for language in languages %}
+          <a href="{% url 'scripts_api_filter' api 'language' language.0 %}" title="{% trans "Language:" %} {{ language.0 }}">{{ language.0 }}<small>&nbsp;({{ language.1 }})</small></a>{% if not forloop.last %}&nbsp;&middot;{% endif %}
+        {% endfor %}
+      {% endif %}
+    </div>
+    <div class="search">
+      {% if licenses %}
+        {% trans "License:" %}
+        {% for license in licenses %}
+          <a href="{% url 'scripts_api_filter' api 'license' license.0 %}" title="{% trans "License:" %} {{ license.0 }}">{{ license.0 }}<small>&nbsp;({{ license.1 }})</small></a>{% if not forloop.last %}&nbsp;&middot;{% endif %}
+        {% endfor %}
+      {% endif %}
+    </div>
+    <div class="search">
       {% if tags %}
-        {% trans "Search by tag:" %}
+        {% trans "Tag:" %}
         {% for tag in tags %}
           <a href="{% url 'scripts_api_filter' api 'tag' tag.0 %}" title="{% trans "Tag:" %} {{ tag.0 }}">{{ tag.0 }}<small>&nbsp;({{ tag.1 }})</small></a>{% if not forloop.last %}&nbsp;&middot;{% endif %}
         {% endfor %}
@@ -125,7 +141,7 @@
           {% endif %}
         </td>
         <td class="version">{{ plugin.version }}</td>
-        <td class="license">{{ plugin.license }}</td>
+        <td class="license"><a href="{% url 'scripts_api_filter' api 'license' plugin.license %}" title="{% trans "License:" %} {{ plugin.license }}">{{ plugin.license }}</a></td>
         <td class="min_max">{{ plugin.min_weechat }}</td>
         <td class="min_max">{{ plugin.max_weechat }}</td>
         <td class="author"><a href="{% url 'scripts_api_filter' api 'author' plugin.author %}" title="{% trans "Author:" %} {{ plugin.author }}">{{ plugin.author }}</a></td>
