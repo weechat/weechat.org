@@ -20,16 +20,27 @@
   border-right: 1px solid #eaeaea;
   margin: 0 1em;
   background: #fbfbfb;
+  font-size: 1.03em;
   color: #555;
 }
 
+.form textarea {
+  font-family: sans-serif;
+}
+
+.form input[type="text"], .form input[type="email"], .form textarea, .form select {
+  padding: .3em;
+  border-radius: 4px;
+}
+
+.form input[type="file"] {
+  border-radius: 4px;
+}
+
 .form input:focus, .form textarea:focus, .form select:focus {
-  border-top: 1px solid #bbb;
-  border-left: 1px solid #bbb;
-  border-bottom: 1px solid #dadada;
-  border-right: 1px solid #dadada;
   outline: none;
-  background: #eaeaff;
+  border-color: rgba(125, 175, 255, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(125, 175, 255, 0.6)
 }
 
 .form .submit {
@@ -56,6 +67,12 @@
   transition-property: background-color;
   transition-duration: .5s;
   transition-timing-function: ease-out;
+}
+
+.form .submit input:focus {
+  outline: none;
+  border-color: rgba(125, 175, 255, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(125, 175, 255, 0.6)
 }
 
 .form .submit input:hover {
