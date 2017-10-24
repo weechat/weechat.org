@@ -249,67 +249,68 @@ class PluginFormAdd(forms.Form):
     required_css_class = 'required'
     language = forms.ChoiceField(
         choices=languages,
-        label=pgettext_lazy(u'programming language', u'Language')
+        label=pgettext_lazy(u'programming language', u'Language'),
+        widget=forms.Select(attrs={'autofocus': True}),
     )
     name = NameField(
         max_length=MAX_LENGTH_NAME,
         label=gettext_lazy('Name'),
-        widget=forms.TextInput(attrs={'size': str(MAX_LENGTH_NAME)})
+        widget=forms.TextInput(attrs={'size': str(MAX_LENGTH_NAME)}),
     )
     version = forms.CharField(
         max_length=MAX_LENGTH_VERSION,
         label=gettext_lazy('Version'),
         help_text=gettext_lazy('version of script (only digits or dots)'),
-        widget=forms.TextInput(attrs={'size': '7'})
+        widget=forms.TextInput(attrs={'size': '7'}),
     )
     license = forms.CharField(
         max_length=MAX_LENGTH_LICENSE,
         label=gettext_lazy('License'),
         help_text=gettext_lazy('license (for example: GPL3, BSD, ...)'),
-        widget=forms.TextInput(attrs={'size': '7'})
+        widget=forms.TextInput(attrs={'size': '7'}),
     )
     file = forms.FileField(
         label=gettext_lazy('File'),
-        help_text=gettext_lazy('the script')
+        help_text=gettext_lazy('the script'),
     )
     description = forms.CharField(
         max_length=MAX_LENGTH_DESC,
         label=gettext_lazy('Description'),
-        widget=forms.TextInput(attrs={'size': '75'})
+        widget=forms.TextInput(attrs={'size': '75'}),
     )
     requirements = forms.CharField(
         required=False,
         max_length=MAX_LENGTH_REQUIRE,
         label=gettext_lazy('Requirements'),
         help_text=gettext_lazy('optional'),
-        widget=forms.TextInput(attrs={'size': '30'})
+        widget=forms.TextInput(attrs={'size': '30'}),
     )
     min_max = forms.ChoiceField(
         choices=[],
-        label=gettext_lazy('Min/max WeeChat')
+        label=gettext_lazy('Min/max WeeChat'),
     )
     author = forms.CharField(
         max_length=MAX_LENGTH_AUTHOR, label=gettext_lazy('Your name or nick'),
-        help_text=gettext_lazy('used for scripts page and git commit')
+        help_text=gettext_lazy('used for scripts page and git commit'),
     )
     mail = forms.EmailField(
         max_length=MAX_LENGTH_MAIL,
         label=gettext_lazy('Your e-mail'),
         help_text=gettext_lazy('used for scripts page and git commit'),
-        widget=Html5EmailInput(attrs={'size': '40'})
+        widget=Html5EmailInput(attrs={'size': '40'}),
     )
     comment = forms.CharField(
         required=False,
         max_length=1024,
         label=gettext_lazy('Comments'),
         help_text=gettext_lazy('optional, not displayed'),
-        widget=forms.Textarea(attrs={'rows': '3'})
+        widget=forms.Textarea(attrs={'rows': '3'}),
     )
     test = TestField(
         max_length=64,
         label=gettext_lazy('Are you a spammer?'),
         help_text=gettext_lazy('enter "no" if you are not a spammer'),
-        widget=forms.TextInput(attrs={'size': '10'})
+        widget=forms.TextInput(attrs={'size': '10'}),
     )
 
     def __init__(self, *args, **kwargs):
@@ -342,39 +343,40 @@ class PluginFormUpdate(forms.Form):
     required_css_class = 'required'
     plugin = forms.ChoiceField(
         choices=[],
-        label=gettext_lazy('Script')
+        label=gettext_lazy('Script'),
+        widget=forms.Select(attrs={'autofocus': True}),
     )
     version = forms.CharField(
         max_length=MAX_LENGTH_VERSION,
         label=gettext_lazy('New version'),
-        widget=forms.TextInput(attrs={'size': '10'})
+        widget=forms.TextInput(attrs={'size': '10'}),
     )
     file = forms.FileField(
         label=gettext_lazy('File'),
-        help_text=gettext_lazy('the script')
+        help_text=gettext_lazy('the script'),
     )
     author = forms.CharField(
         max_length=MAX_LENGTH_AUTHOR,
         label=gettext_lazy('Your name or nick'),
-        help_text=gettext_lazy('used for git commit')
+        help_text=gettext_lazy('used for git commit'),
     )
     mail = forms.EmailField(
         max_length=MAX_LENGTH_MAIL,
         label=gettext_lazy('Your e-mail'),
         help_text=gettext_lazy('used for git commit'),
-        widget=Html5EmailInput(attrs={'size': '40'})
+        widget=Html5EmailInput(attrs={'size': '40'}),
     )
     comment = forms.CharField(
         max_length=1024,
         label=gettext_lazy('Comments'),
         help_text=gettext_lazy('changes in this release'),
-        widget=forms.Textarea(attrs={'rows': '3'})
+        widget=forms.Textarea(attrs={'rows': '3'}),
     )
     test = TestField(
         max_length=64,
         label=gettext_lazy('Are you a spammer?'),
         help_text=gettext_lazy('enter "no" if you are not a spammer'),
-        widget=forms.TextInput(attrs={'size': '10'})
+        widget=forms.TextInput(attrs={'size': '10'}),
     )
 
     def __init__(self, *args, **kwargs):

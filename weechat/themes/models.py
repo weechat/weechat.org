@@ -135,37 +135,37 @@ class ThemeFormAdd(forms.Form):
     themefile = forms.FileField(
         label=gettext_lazy('File'),
         help_text=gettext_lazy('the theme'),
-        widget=forms.FileInput(attrs={'size': '50'})
+        widget=forms.FileInput(attrs={'size': '50', 'autofocus': True}),
     )
     description = forms.CharField(
         required=False,
         max_length=MAX_LENGTH_DESC,
         label=gettext_lazy('Description'),
         help_text=gettext_lazy('optional'),
-        widget=forms.TextInput(attrs={'size': '60'})
+        widget=forms.TextInput(attrs={'size': '60'}),
     )
     author = forms.CharField(
         max_length=MAX_LENGTH_AUTHOR,
-        label=gettext_lazy('Your name or nick')
+        label=gettext_lazy('Your name or nick'),
     )
     mail = forms.EmailField(
         max_length=MAX_LENGTH_MAIL,
         label=gettext_lazy('Your e-mail'),
         help_text=gettext_lazy('no spam, never displayed on site'),
-        widget=forms.TextInput(attrs={'size': '40'})
+        widget=forms.TextInput(attrs={'size': '40'}),
     )
     comment = forms.CharField(
         required=False,
         max_length=1024,
         label=gettext_lazy('Comments'),
         help_text=gettext_lazy('optional, not displayed'),
-        widget=forms.Textarea(attrs={'rows': '3'})
+        widget=forms.Textarea(attrs={'rows': '3'}),
     )
     test = TestField(
         max_length=64,
         label=gettext_lazy('Are you a spammer?'),
         help_text=gettext_lazy('enter "no" if you are not a spammer'),
-        widget=forms.TextInput(attrs={'size': '10'})
+        widget=forms.TextInput(attrs={'size': '10'}),
     )
 
     def clean_themefile(self):
@@ -217,35 +217,36 @@ class ThemeFormUpdate(forms.Form):
     required_css_class = 'required'
     theme = forms.ChoiceField(
         choices=[],
-        label=gettext_lazy('Theme')
+        label=gettext_lazy('Theme'),
+        widget=forms.Select(attrs={'autofocus': True}),
     )
     themefile = forms.FileField(
         label=gettext_lazy('File'),
         help_text=gettext_lazy('the theme'),
-        widget=forms.FileInput(attrs={'size': '50'})
+        widget=forms.FileInput(attrs={'size': '50'}),
     )
     author = forms.CharField(
         max_length=MAX_LENGTH_AUTHOR,
-        label=gettext_lazy('Your name or nick')
+        label=gettext_lazy('Your name or nick'),
     )
     mail = forms.EmailField(
         max_length=MAX_LENGTH_MAIL,
         label=gettext_lazy('Your e-mail'),
         help_text=gettext_lazy('no spam, never displayed on site'),
-        widget=forms.TextInput(attrs={'size': '40'})
+        widget=forms.TextInput(attrs={'size': '40'}),
     )
     comment = forms.CharField(
         required=False,
         max_length=1024,
         label=gettext_lazy('Comments'),
         help_text=gettext_lazy('optional, not displayed'),
-        widget=forms.Textarea(attrs={'rows': '3'})
+        widget=forms.Textarea(attrs={'rows': '3'}),
     )
     test = TestField(
         max_length=64,
         label=gettext_lazy('Are you a spammer?'),
         help_text=gettext_lazy('enter "no" if you are not a spammer'),
-        widget=forms.TextInput(attrs={'size': '10'})
+        widget=forms.TextInput(attrs={'size': '10'}),
     )
 
     def __init__(self, *args, **kwargs):
