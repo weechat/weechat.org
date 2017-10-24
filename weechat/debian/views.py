@@ -91,7 +91,7 @@ def repos(request, active='active', files=''):
                     _file.close()
             debpkgs.extend(sorted(repopkgs, key=lambda p: p['builddatetime'],
                                   reverse=True))
-        except:
+        except:  # noqa: E722
             pass
     return render(
         request,

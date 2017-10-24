@@ -174,7 +174,7 @@ class Plugin(models.Model):
                 filemd5 = md5()
                 filemd5.update(_file.read())
                 return filemd5.hexdigest()
-        except:
+        except:  # noqa: E722
             return ''
 
     class Meta:
@@ -231,7 +231,7 @@ def get_min_max_choices():
                     '≥ %s'.decode('utf-8') % rel.version,
                     ))
         return version_min_max
-    except:
+    except:  # noqa: E722
         return []
 
 
@@ -334,7 +334,7 @@ def get_plugin_choices():
                                       plugin.version, plugin.version_weechat())
             plugin_choices.append((plugin.id, name))
         return plugin_choices
-    except:
+    except:  # noqa: E722
         return []
 
 

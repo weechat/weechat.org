@@ -37,7 +37,7 @@ def localdate(value):
     try:
         fmt = ugettext(settings.DATE_FORMAT)
         return dateformat.format(value, fmt)
-    except:
+    except:  # noqa: E722
         return ''
 
 
@@ -48,5 +48,5 @@ def localstrdate(value):
         fmt = ugettext(settings.DATE_FORMAT)
         date_time = datetime.strptime(value, '%Y-%m-%d')
         return dateformat.format(date_time, fmt)
-    except:
+    except:  # noqa: E722
         return ''

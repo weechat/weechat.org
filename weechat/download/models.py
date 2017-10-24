@@ -155,14 +155,14 @@ class Package(models.Model):
         """Return the size of package, in bytes (as string)."""
         try:
             return str(path.getsize(self.fullname()))
-        except:
+        except:  # noqa: E722
             return ''
 
     def filedate(self):
         """Return the package date/time."""
         try:
             return datetime.fromtimestamp(path.getmtime(self.fullname()))
-        except:
+        except:  # noqa: E722
             return ''
 
     class Meta:
@@ -178,7 +178,7 @@ def handler_package_saved(sender, **kwargs):
                 package.sha1sum = sha1(_file.read()).hexdigest()
             with open(package.fullname(), 'rb') as _file:
                 package.sha512sum = sha512(_file.read()).hexdigest()
-    except:
+    except:  # noqa: E722
         pass
 
 

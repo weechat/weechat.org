@@ -100,7 +100,7 @@ def get_i18n_stats():
                             'total': int(total),
                         })
         return {'date': date, 'langs': langs}
-    except:
+    except:  # noqa: E722
         return None
 
 
@@ -126,7 +126,7 @@ def documentation(request, version='stable'):
         try:
             doc_list = sorted(listdir(files_path_join('doc', 'old')),
                               reverse=True)
-        except:
+        except:  # noqa: E722
             pass
         return render(
             request,

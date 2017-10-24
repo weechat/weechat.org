@@ -111,7 +111,7 @@ def stats_repo(request, stats='weechat'):
         with open(files_path_join('stats',
                                   'git_%s_commits.txt' % stats), 'r') as _file:
             git_commits = _file.read().split(',')
-    except:
+    except:  # noqa: E722
         pass
 
     if stats in ('weechat', 'qweechat'):
@@ -119,7 +119,7 @@ def stats_repo(request, stats='weechat'):
             with open(files_path_join('stats',
                                       'sloc_%s.txt' % stats), 'r') as _file:
                 sloc = _file.read()
-        except:
+        except:  # noqa: E722
             pass
 
     if stats == 'weechat':
@@ -133,7 +133,7 @@ def stats_repo(request, stats='weechat'):
             with open(files_path_join('stats',
                                       'scripts_downloads.txt'), 'r') as _file:
                 scripts_downloads = _file.read()
-        except:
+        except:  # noqa: E722
             pass
     elif stats == 'qweechat':
         repository = ('https://github.com/weechat/qweechat')
@@ -173,7 +173,7 @@ def get_info(name, version):
         try:
             with open(files_path_join('git_sources_head.txt'), 'r') as _file:
                 git = _file.read().strip()
-        except:
+        except:  # noqa: E722
             pass
         return git
     elif name == 'git_scripts':
@@ -181,7 +181,7 @@ def get_info(name, version):
         try:
             with open(files_path_join('git_scripts_head.txt'), 'r') as _file:
                 git = _file.read().strip()
-        except:
+        except:  # noqa: E722
             pass
         return git
     elif name == 'next_stable':

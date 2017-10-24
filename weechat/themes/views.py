@@ -70,7 +70,7 @@ def theme_source(request, themeid=None, themename=None):
                                                      encoding='utf-8'),
                                    HtmlFormatter(cssclass='pygments',
                                                  linenos='table'))
-    except:
+    except:  # noqa: E722
         htmlsource = ''
     return render(
         request,
@@ -131,7 +131,7 @@ def form_add(request):
                                      settings.THEMES_MAILTO)
                 email.attach_file(filename)
                 email.send()
-            except:
+            except:  # noqa: E722
                 return HttpResponseRedirect('/themes/adderror/')
 
             # save theme in database
@@ -186,7 +186,7 @@ def form_update(request):
                                      settings.THEMES_MAILTO)
                 email.attach(theme.name, content, 'text/plain')
                 email.send()
-            except:
+            except:  # noqa: E722
                 return HttpResponseRedirect('/themes/updateerror/')
 
             return HttpResponseRedirect('/themes/updateok/')

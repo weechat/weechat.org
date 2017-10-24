@@ -126,7 +126,7 @@ def script_source(request, api='stable', scriptid='', scriptname=''):
                       'rb') as _file:
                 htmlsource = get_highlighted_source(_file.read(),
                                                     plugin.language)
-        except:
+        except:  # noqa: E722
             htmlsource = ''
     else:
         sname = scriptname
@@ -151,7 +151,7 @@ def script_source(request, api='stable', scriptid='', scriptname=''):
                       'rb') as _file:
                 htmlsource = get_highlighted_source(_file.read(),
                                                     PYGMENTS_LEXER[sext])
-        except:
+        except:  # noqa: E722
             htmlsource = ''
     return render(
         request,
@@ -232,7 +232,7 @@ def form_add(request):
                                      settings.SCRIPTS_MAILTO)
                 email.attach_file(filename)
                 email.send()
-            except:
+            except:  # noqa: E722
                 return HttpResponseRedirect('/scripts/adderror/')
 
             # save script in database
@@ -282,7 +282,7 @@ def form_update(request):
                              scriptfile.read().replace('\r\n', '\n'),
                              'text/plain')
                 email.send()
-            except:
+            except:  # noqa: E722
                 return HttpResponseRedirect('/scripts/updateerror/')
 
             return HttpResponseRedirect('/scripts/updateok/')

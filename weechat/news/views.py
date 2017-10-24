@@ -67,7 +67,7 @@ def news(request, info_id=None):
         else:
             info_list = Info.objects.all().filter(visible=1) \
                 .filter(date__lte=datetime.now()).order_by('-date')
-    except:
+    except:  # noqa: E722
         info_list = None
     return render_homepage(request, info_list, None, None, None)
 
@@ -80,6 +80,6 @@ def events(request, event_id=None):
         else:
             event_list = Info.objects.all().filter(visible=1) \
                 .filter(date__gt=datetime.now()).order_by('date')
-    except:
+    except:  # noqa: E722
         event_list = None
     return render_homepage(request, None, None, event_list, None)

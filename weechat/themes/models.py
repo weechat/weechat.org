@@ -208,7 +208,7 @@ def get_theme_choices():
             theme_choices.append((theme.id, '%s (%s)' % (theme.name,
                                                          theme.version)))
         return theme_choices
-    except:
+    except:  # noqa: E722
         return []
 
 
@@ -317,7 +317,7 @@ def handler_theme_changed(sender, **kwargs):
                                     filemd5 = md5()
                                     filemd5.update(_file.read())
                                     value = filemd5.hexdigest()
-                            except:
+                            except:  # noqa: E722
                                 value = ''
                         elif key.startswith('desc'):
                             value = escape(value)

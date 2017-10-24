@@ -63,7 +63,7 @@ class Task(models.Model):
             if release_date > date.today():
                 return '&asymp; %s' % localdate(release_date)
             return localdate(release_date)
-        except:
+        except:  # noqa: E722
             return ''
 
     def url_tracker(self):
