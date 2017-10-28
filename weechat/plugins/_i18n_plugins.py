@@ -110,6 +110,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Automatically change IRC modes of other users when they join."),
     # Translators: description for script "buffer_autoclose.py" (0.3.0+)
     gettext_lazy("Automatically close inactive private message buffers."),
+    # Translators: description for script "buffer_autohide.py" (1.0+)
+    gettext_lazy("Automatically hide/unhide buffers according to IRC activity."),
     # Translators: description for script "join2fast.pl" (0.3.2+)
     gettext_lazy("Automatically join channels on UnderNET that get throttled due to \"Target change too fast\"."),
     # Translators: description for script "autosort.py" (0.3.0+)
@@ -368,6 +370,8 @@ _i18n_plugins_plugins = [
     gettext_lazy("Insert a giphy URL based on a command and search; use giphy's random, search and translate from WeeChat."),
     # Translators: description for script "weestats.py" (0.3.0+)
     gettext_lazy("Insert some statistics about buffers/windows on command line."),
+    # Translators: description for script "teknik.py" (1.5+)
+    gettext_lazy("Interact with the Teknik services, including file uploads, pastes, and URL shortening."),
     # Translators: description for script "urlselect.lua" (1.0+)
     gettext_lazy("Interactively select URL with keyboard and perform some commands on it."),
     # Translators: description for script "color_popup.pl" (0.3.0+)
@@ -602,7 +606,7 @@ _i18n_plugins_plugins = [
     gettext_lazy("Scripts manager."),
     # Translators: description for script "win_scroll_screen.py" (0.3.0+)
     gettext_lazy("Scroll by fractional screens."),
-    # Translators: description for script "grep.py" (0.3.0+)
+    # Translators: description for script "grep.py" (1.5+)
     gettext_lazy("Search regular expression in buffers or log files."),
     # Translators: description for script "seeks.pl" (0.3.6+)
     gettext_lazy("Search terms on seeks node and display results."),
