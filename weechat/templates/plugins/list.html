@@ -27,10 +27,11 @@
         {% else %}
           <a href="{% url 'scripts_api' 'legacy' %}">{% trans "Display scripts for legacy API (&le; 0.2.6)" %}</a>
         {% endif %}
-        &nbsp; | &nbsp;
-        <a href="/files/plugins.xml">{% trans "XML list" %}</a> (<a href="/files/plugins.xml.gz">gz</a>)
+          &nbsp; | &nbsp;
+          {% trans "List:" %}
+        <a href="/files/plugins.xml">XML</a> (<a href="/files/plugins.xml.gz">gz</a>),
+        <a href="/files/plugins.json">JSON</a> (<a href="/files/plugins.json.gz">gz</a>)
       </span>
-
       {% trans "Version:" %} <strong>{{ api }}</strong>,
       {% if filter_name %}
         {% trans "filter:" %} {{ filter_name }} = {{ filter_value }} (<a href="{% url 'scripts_api' api %}">{% trans "remove" %}</a>),
