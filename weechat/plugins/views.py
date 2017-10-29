@@ -74,6 +74,13 @@ def get_highlighted_source(source, language):
 def scripts(request, api='stable', sort_key='popularity', filter_name='',
             filter_value=''):
     """Page with list of scripts."""
+
+    def sort_by_popularity(item):
+        return (-1 * item[1], item[0].lower())
+
+    def sort_by_name(item):
+        return item[0].lower()
+
     if api == 'legacy':
         plugin_list = Plugin.objects.filter(visible=1) \
             .filter(max_weechat=API_OLD).order_by(*get_sort_key(sort_key))
@@ -99,6 +106,12 @@ def scripts(request, api='stable', sort_key='popularity', filter_name='',
         if plugin.tags:
             for tag in plugin.tagslist():
                 tags[tag] = tags.get(tag, 0) + 1
+    if request.COOKIES.get('script_filters_sort', '') == 'popularity':
+        sort_function = sort_by_popularity
+    else:
+        sort_function = sort_by_name
+    script_filters_displayed, script_filters_sort = (
+        request.COOKIES.get('script_filters', '0_name').split('_'))
     return render(
         request,
         'plugins/list.html',
@@ -108,9 +121,11 @@ def scripts(request, api='stable', sort_key='popularity', filter_name='',
             'sort_key': sort_key,
             'filter_name': filter_name,
             'filter_value': filter_value,
-            'languages': sorted(languages.items()),
-            'licenses': sorted(licenses.items()),
-            'tags': sorted(tags.items()),
+            'script_filters_displayed': int(script_filters_displayed),
+            'script_filters_sort': script_filters_sort,
+            'languages': sorted(languages.items(), key=sort_function),
+            'licenses': sorted(licenses.items(), key=sort_function),
+            'tags': sorted(tags.items(), key=sort_function),
         },
     )
 

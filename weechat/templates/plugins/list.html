@@ -2,6 +2,8 @@
 
 {% load i18n %}
 
+{% block extrahead %}{{ block.super }}<script src="{{ MEDIA_URL }}js/weechat.js" type="text/javascript"></script>{% endblock %}
+
 {% block menu2_list %}selected{% endblock %}
 
 {% block content %}
@@ -20,7 +22,7 @@
     </div>
   {% endif %}
   <div class="pluginsearch">
-    <div class="filters">
+    <div class="search">
       <span class="links">
         {% if api == "legacy" %}
           <a href="{% url 'scripts_api' 'stable' %}">{% trans "Display scripts for stable API (&ge; 0.3.0)" %}</a>
@@ -40,29 +42,37 @@
       {% endif %}
       <strong>{{ plugin_list|length }}</strong> {% trans "scripts" %}.
     </div>
-    <div class="search">
-      {% if languages %}
-        {% trans "Language:" %}
-        {% for language in languages %}
-          <a href="{% url 'scripts_api_filter' api 'language' language.0 %}" title="{% trans "Language:" %} {{ language.0 }}">{{ language.0 }}<small>&nbsp;({{ language.1 }})</small></a>{% if not forloop.last %}&nbsp;&middot;{% endif %}
-        {% endfor %}
-      {% endif %}
+    <div id="script_filters_0" class="filters" style="{% if script_filters_displayed %}display: none{% endif %}">
+      <a href="#" onclick="toggle('script_filters_0', 'none'); toggle('script_filters_1', 'block'); set_cookie('script_filters', '1_{{ script_filters_sort }}', '/scripts', 30)">&#9654; {% if script_filters_sort == "popularity" %}{% trans "Filters by popularity" %}{% else %}{% trans "Filters by name" %}{% endif %}</a>
+      &nbsp; ({% if script_filters_sort == "popularity" %}<a href="{% url 'scripts_api' api %}" onclick="set_cookie('script_filters', '1_name', '/scripts', 30)">{% trans "sort by name" %}</a>{% else %}<a href="{% url 'scripts_api' api %}" onclick="set_cookie('script_filters', '1_popularity', '/scripts', 30)">{% trans "sort by popularity" %}</a>{% endif %})
     </div>
-    <div class="search">
-      {% if licenses %}
-        {% trans "License:" %}
-        {% for license in licenses %}
-          <a href="{% url 'scripts_api_filter' api 'license' license.0 %}" title="{% trans "License:" %} {{ license.0 }}">{{ license.0 }}<small>&nbsp;({{ license.1 }})</small></a>{% if not forloop.last %}&nbsp;&middot;{% endif %}
-        {% endfor %}
-      {% endif %}
-    </div>
-    <div class="search">
-      {% if tags %}
-        {% trans "Tag:" %}
-        {% for tag in tags %}
-          <a href="{% url 'scripts_api_filter' api 'tag' tag.0 %}" title="{% trans "Tag:" %} {{ tag.0 }}">{{ tag.0 }}<small>&nbsp;({{ tag.1 }})</small></a>{% if not forloop.last %}&nbsp;&middot;{% endif %}
-        {% endfor %}
-      {% endif %}
+    <div id="script_filters_1" class="filters" style="{% if not script_filters_displayed %}display: none{% endif %}">
+      <a href="#" onclick="toggle('script_filters_1', 'none'); toggle('script_filters_0', 'block'); set_cookie('script_filters', '0_{{ script_filters_sort }}', '/scripts', 30)">&#9660; {% if script_filters_sort == "popularity" %}{% trans "Filters by popularity" %}{% else %}{% trans "Filters by name" %}{% endif %}</a>
+      &nbsp; ({% if script_filters_sort == "popularity" %}<a href="{% url 'scripts_api' api %}" onclick="set_cookie('script_filters', '1_name', '/scripts', 30)">{% trans "sort by name" %}</a>{% else %}<a href="{% url 'scripts_api' api %}" onclick="set_cookie('script_filters', '1_popularity', '/scripts', 30)">{% trans "sort by popularity" %}</a>{% endif %})
+      <div class="one_filter">
+        {% if languages %}
+          {% trans "Language:" %}
+          {% for language in languages %}
+            <a href="{% url 'scripts_api_filter' api 'language' language.0 %}" title="{% trans "Language:" %} {{ language.0.capitalize }}">{{ language.0.capitalize }}<small>&nbsp;({{ language.1 }})</small></a>{% if not forloop.last %}&nbsp;&middot;{% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+      <div class="one_filter">
+        {% if licenses %}
+          {% trans "License:" %}
+          {% for license in licenses %}
+            <a href="{% url 'scripts_api_filter' api 'license' license.0 %}" title="{% trans "License:" %} {{ license.0 }}">{{ license.0 }}<small>&nbsp;({{ license.1 }})</small></a>{% if not forloop.last %}&nbsp;&middot;{% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+      <div class="one_filter">
+        {% if tags %}
+          {% trans "Tag:" %}
+          {% for tag in tags %}
+            <a href="{% url 'scripts_api_filter' api 'tag' tag.0 %}" title="{% trans "Tag:" %} {{ tag.0 }}">{{ tag.0 }}<small>&nbsp;({{ tag.1 }})</small></a>{% if not forloop.last %}&nbsp;&middot;{% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
     </div>
   </div>
 

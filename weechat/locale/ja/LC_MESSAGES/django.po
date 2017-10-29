@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-28 10:44+0200\n"
-"PO-Revision-Date: 2017-10-27 09:00+0900\n"
+"POT-Creation-Date: 2017-10-29 11:08+0100\n"
+"PO-Revision-Date: 2017-10-29 10:03+0100\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
 "translation/ja_JP>\n"
@@ -879,7 +879,7 @@ msgstr ""
 
 #: news/_i18n_info.py:51 plugins/models.py:262 templates/about/history.html:38
 #: templates/doc/doc.html:28 templates/download/packages.html:42
-#: templates/plugins/list.html:85 templates/plugins/pending.html:32
+#: templates/plugins/list.html:96 templates/plugins/pending.html:32
 msgid "Version"
 msgstr "バージョン"
 
@@ -5247,14 +5247,14 @@ msgstr ""
 "この名前はすでに存在しています。他の名前を選んでください (スクリプトをアップ"
 "デートすることになります)。"
 
-#: plugins/models.py:252 templates/plugins/list.html:79
-#: templates/plugins/list.html:81 templates/plugins/pending.html:33
+#: plugins/models.py:252 templates/plugins/list.html:90
+#: templates/plugins/list.html:92 templates/plugins/pending.html:33
 msgctxt "programming language"
 msgid "Language"
 msgstr "プログラミング言語"
 
 #: plugins/models.py:257 templates/about/donate.html:58
-#: templates/plugins/list.html:73 templates/plugins/list.html:75
+#: templates/plugins/list.html:84 templates/plugins/list.html:86
 #: templates/plugins/pending.html:29
 msgid "Name"
 msgstr "名称"
@@ -5263,8 +5263,8 @@ msgstr "名称"
 msgid "version of script (only digits or dots)"
 msgstr "スクリプトのバージョン (数字とドットのみ使用可)"
 
-#: plugins/models.py:268 templates/plugins/list.html:88
-#: templates/plugins/list.html:90 templates/plugins/pending.html:34
+#: plugins/models.py:268 templates/plugins/list.html:99
+#: templates/plugins/list.html:101 templates/plugins/pending.html:34
 msgid "License"
 msgstr "ライセンス"
 
@@ -5283,7 +5283,7 @@ msgstr "スクリプト"
 
 #: plugins/models.py:278 templates/dev/info_list.html:19
 #: templates/dev/roadmap.html:46 templates/download/security.html:35
-#: templates/plugins/list.html:84 templates/plugins/pending.html:30
+#: templates/plugins/list.html:95 templates/plugins/pending.html:30
 #: themes/models.py:143
 msgid "Description"
 msgstr "説明"
@@ -6889,7 +6889,7 @@ msgstr "スクリプトに問題があった場合にはお知らせします。
 msgid "Back to scripts"
 msgstr "スクリプトに戻る"
 
-#: templates/plugins/list.html:13
+#: templates/plugins/list.html:15
 msgid ""
 "<strong>Important:</strong> these scripts are written by external "
 "contributors, therefore WeeChat developers are <strong>NOT RESPONSIBLE</"
@@ -6899,7 +6899,7 @@ msgstr ""
 "す。このため、WeeChat 開発者はこれらのスクリプトを使っておきたいかなる問題に"
 "対しても<strong>責任を負いません</strong>。"
 
-#: templates/plugins/list.html:15
+#: templates/plugins/list.html:17
 msgid ""
 "You could experience problems like memory leaks, slowdowns, or even "
 "<strong>security problems</strong>. You are warned!"
@@ -6907,7 +6907,7 @@ msgstr ""
 "メモリリーク、速度低下、<strong>セキュリティ問題</strong>があるかもしれませ"
 "ん。警告しましたよ!"
 
-#: templates/plugins/list.html:19
+#: templates/plugins/list.html:21
 msgid ""
 "WARNING: the legacy API is deprecated and these scripts runs only on WeeChat "
 "0.2.x, which is OBSOLETE. You MUST NOT load these scripts with latest stable "
@@ -6917,86 +6917,104 @@ msgstr ""
 "外で動きませんし、サポートもありません。これらのスクリプトを最新の安定版 "
 "WeeChat でロードしてはいけません!"
 
-#: templates/plugins/list.html:26
+#: templates/plugins/list.html:28
 msgid "Display scripts for stable API (&ge; 0.3.0)"
 msgstr "安定版 API (&ge; 0.3.0) で書かれたスクリプトを表示"
 
-#: templates/plugins/list.html:28
+#: templates/plugins/list.html:30
 msgid "Display scripts for legacy API (&le; 0.2.6)"
 msgstr "旧来の API (&le; 0.2.6) で書かれたスクリプトを表示"
 
-#: templates/plugins/list.html:31
-msgid "XML list"
-msgstr "XML リスト"
+#: templates/plugins/list.html:33
+msgid "List:"
+msgstr ""
 
-#: templates/plugins/list.html:34
+#: templates/plugins/list.html:37
 msgid "Version:"
 msgstr "バージョン:"
 
-#: templates/plugins/list.html:36
+#: templates/plugins/list.html:39
 msgid "filter:"
 msgstr "フィルタ:"
 
-#: templates/plugins/list.html:36
+#: templates/plugins/list.html:39
 msgid "remove"
 msgstr "削除"
 
-#: templates/plugins/list.html:38
+#: templates/plugins/list.html:41
 msgid "no filter"
 msgstr "フィルタがありません"
 
-#: templates/plugins/list.html:40 templates/plugins/plugins.html:5
+#: templates/plugins/list.html:43 templates/plugins/plugins.html:5
 msgid "scripts"
 msgstr "スクリプト"
 
-#: templates/plugins/list.html:44 templates/plugins/list.html:46
+#: templates/plugins/list.html:46 templates/plugins/list.html:50
+msgid "Filters by popularity"
+msgstr ""
+
+#: templates/plugins/list.html:46 templates/plugins/list.html:50
+msgid "Filters by name"
+msgstr ""
+
+#: templates/plugins/list.html:47 templates/plugins/list.html:51
+#, fuzzy
+#| msgid "script name"
+msgid "sort by name"
+msgstr "スクリプト名"
+
+#: templates/plugins/list.html:47 templates/plugins/list.html:51
+msgid "sort by popularity"
+msgstr ""
+
+#: templates/plugins/list.html:54 templates/plugins/list.html:56
 msgid "Language:"
 msgstr "プログラミング言語:"
 
-#: templates/plugins/list.html:52 templates/plugins/list.html:54
-#: templates/plugins/list.html:144
+#: templates/plugins/list.html:62 templates/plugins/list.html:64
+#: templates/plugins/list.html:155
 msgid "License:"
 msgstr "ライセンス:"
 
-#: templates/plugins/list.html:60 templates/plugins/list.html:62
-#: templates/plugins/list.html:136
+#: templates/plugins/list.html:70 templates/plugins/list.html:72
+#: templates/plugins/list.html:147
 msgid "Tag:"
 msgstr "タグ:"
 
-#: templates/plugins/list.html:95 templates/plugins/list.html:97
+#: templates/plugins/list.html:106 templates/plugins/list.html:108
 #: templates/plugins/pending.html:35
 msgid "Min"
 msgstr "以上"
 
-#: templates/plugins/list.html:102 templates/plugins/list.html:104
+#: templates/plugins/list.html:113 templates/plugins/list.html:115
 #: templates/plugins/pending.html:36
 msgid "Max"
 msgstr "以下"
 
-#: templates/plugins/list.html:109 templates/plugins/list.html:111
+#: templates/plugins/list.html:120 templates/plugins/list.html:122
 #: templates/plugins/pending.html:37 templates/plugins/source.html:24
 msgid "Author"
 msgstr "作者"
 
-#: templates/plugins/list.html:116 templates/plugins/list.html:118
+#: templates/plugins/list.html:127 templates/plugins/list.html:129
 #: templates/themes/list.html:28
 msgid "Added"
 msgstr "追加日"
 
-#: templates/plugins/list.html:123 templates/plugins/list.html:125
+#: templates/plugins/list.html:134 templates/plugins/list.html:136
 msgid "Updated"
 msgstr "アップデート日"
 
-#: templates/plugins/list.html:140 templates/plugins/pending.html:52
+#: templates/plugins/list.html:151 templates/plugins/pending.html:52
 #: templates/plugins/source.html:21
 msgid "requires"
 msgstr "必要なもの"
 
-#: templates/plugins/list.html:147 templates/themes/list.html:24
+#: templates/plugins/list.html:158 templates/themes/list.html:24
 msgid "Author:"
 msgstr "作者:"
 
-#: templates/plugins/list.html:156 templates/plugins/update.html:32
+#: templates/plugins/list.html:167 templates/plugins/update.html:32
 msgid "No script found."
 msgstr "スクリプトが見つかりません。"
 

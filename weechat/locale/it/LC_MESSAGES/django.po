@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-28 10:44+0200\n"
-"PO-Revision-Date: 2017-10-22 13:49+0200\n"
+"POT-Creation-Date: 2017-10-29 11:08+0100\n"
+"PO-Revision-Date: 2017-10-29 10:03+0100\n"
 "Last-Translator: Marco Paolone <marcopaolone@gmail.com>\n"
 "Language-Team: Italian <marcopaolone@gmail.com>\n"
 "Language: it\n"
@@ -835,7 +835,7 @@ msgstr ""
 
 #: news/_i18n_info.py:51 plugins/models.py:262 templates/about/history.html:38
 #: templates/doc/doc.html:28 templates/download/packages.html:42
-#: templates/plugins/list.html:85 templates/plugins/pending.html:32
+#: templates/plugins/list.html:96 templates/plugins/pending.html:32
 msgid "Version"
 msgstr "Versione"
 
@@ -5261,15 +5261,15 @@ msgstr ""
 "Esiste già questo nome, per favore sceglierne un altro (aggiornare il "
 "contenuto dello script di conseguenza)."
 
-#: plugins/models.py:252 templates/plugins/list.html:79
-#: templates/plugins/list.html:81 templates/plugins/pending.html:33
+#: plugins/models.py:252 templates/plugins/list.html:90
+#: templates/plugins/list.html:92 templates/plugins/pending.html:33
 #, fuzzy
 msgctxt "programming language"
 msgid "Language"
 msgstr "Linguaggio"
 
 #: plugins/models.py:257 templates/about/donate.html:58
-#: templates/plugins/list.html:73 templates/plugins/list.html:75
+#: templates/plugins/list.html:84 templates/plugins/list.html:86
 #: templates/plugins/pending.html:29
 msgid "Name"
 msgstr "Nome"
@@ -5278,8 +5278,8 @@ msgstr "Nome"
 msgid "version of script (only digits or dots)"
 msgstr "versione dello script (solo cifre o punti)"
 
-#: plugins/models.py:268 templates/plugins/list.html:88
-#: templates/plugins/list.html:90 templates/plugins/pending.html:34
+#: plugins/models.py:268 templates/plugins/list.html:99
+#: templates/plugins/list.html:101 templates/plugins/pending.html:34
 msgid "License"
 msgstr "Licenza"
 
@@ -5298,7 +5298,7 @@ msgstr "lo script"
 
 #: plugins/models.py:278 templates/dev/info_list.html:19
 #: templates/dev/roadmap.html:46 templates/download/security.html:35
-#: templates/plugins/list.html:84 templates/plugins/pending.html:30
+#: templates/plugins/list.html:95 templates/plugins/pending.html:30
 #: themes/models.py:143
 msgid "Description"
 msgstr "Descrizione"
@@ -6930,7 +6930,7 @@ msgstr "Sarete informati se c'è un problema con lo script."
 msgid "Back to scripts"
 msgstr "Torna agli script"
 
-#: templates/plugins/list.html:13
+#: templates/plugins/list.html:15
 #, fuzzy
 #| msgid ""
 #| "<strong>Warning:</strong> these scripts are written by external "
@@ -6945,7 +6945,7 @@ msgstr ""
 "esterni, per cui gli sviluppatori WeeChat <strong>NON SONO RESPONSABILI</"
 "strong> per problemi causati da uno di questi script."
 
-#: templates/plugins/list.html:15
+#: templates/plugins/list.html:17
 msgid ""
 "You could experience problems like memory leaks, slowdowns, or even "
 "<strong>security problems</strong>. You are warned!"
@@ -6953,7 +6953,7 @@ msgstr ""
 "Potrebbero verificarsi problemi come errori di memoria, rallentamenti o "
 "anche <strong>problemi di sicurezza</strong>. Attenzione!"
 
-#: templates/plugins/list.html:19
+#: templates/plugins/list.html:21
 #, fuzzy
 #| msgid ""
 #| "WARNING: the old API is deprecated and these scripts runs only on WeeChat "
@@ -6968,91 +6968,108 @@ msgstr ""
 "in WeeChat 0.2.6, il quale è OBSOLETO. Questi script NON DEVONO essere "
 "caricati con l'ultima versione stabile di WeeChat!"
 
-#: templates/plugins/list.html:26
+#: templates/plugins/list.html:28
 msgid "Display scripts for stable API (&ge; 0.3.0)"
 msgstr "Visualizza script per la API stabile (&ge; 0.3.0)"
 
-#: templates/plugins/list.html:28
+#: templates/plugins/list.html:30
 #, fuzzy
 #| msgid "Display scripts for old API (&le; 0.2.6)"
 msgid "Display scripts for legacy API (&le; 0.2.6)"
 msgstr "Visualizza script per la vecchia API (&le; 0.2.6)"
 
-#: templates/plugins/list.html:31
-msgid "XML list"
-msgstr "Elenco XML"
+#: templates/plugins/list.html:33
+msgid "List:"
+msgstr ""
 
-#: templates/plugins/list.html:34
+#: templates/plugins/list.html:37
 msgid "Version:"
 msgstr "Versione:"
 
-#: templates/plugins/list.html:36
+#: templates/plugins/list.html:39
 msgid "filter:"
 msgstr "filtro:"
 
-#: templates/plugins/list.html:36
+#: templates/plugins/list.html:39
 msgid "remove"
 msgstr "rimuovi"
 
-#: templates/plugins/list.html:38
+#: templates/plugins/list.html:41
 msgid "no filter"
 msgstr "nessun filtro"
 
-#: templates/plugins/list.html:40 templates/plugins/plugins.html:5
+#: templates/plugins/list.html:43 templates/plugins/plugins.html:5
 msgid "scripts"
 msgstr "script"
 
-#: templates/plugins/list.html:44 templates/plugins/list.html:46
+#: templates/plugins/list.html:46 templates/plugins/list.html:50
+msgid "Filters by popularity"
+msgstr ""
+
+#: templates/plugins/list.html:46 templates/plugins/list.html:50
+msgid "Filters by name"
+msgstr ""
+
+#: templates/plugins/list.html:47 templates/plugins/list.html:51
+#, fuzzy
+msgid "sort by name"
+msgstr "Gestore script."
+
+#: templates/plugins/list.html:47 templates/plugins/list.html:51
+msgid "sort by popularity"
+msgstr ""
+
+#: templates/plugins/list.html:54 templates/plugins/list.html:56
 #, fuzzy
 msgid "Language:"
 msgstr "Linguaggio"
 
-#: templates/plugins/list.html:52 templates/plugins/list.html:54
-#: templates/plugins/list.html:144
+#: templates/plugins/list.html:62 templates/plugins/list.html:64
+#: templates/plugins/list.html:155
 #, fuzzy
 #| msgid "License"
 msgid "License:"
 msgstr "Licenza"
 
-#: templates/plugins/list.html:60 templates/plugins/list.html:62
-#: templates/plugins/list.html:136
+#: templates/plugins/list.html:70 templates/plugins/list.html:72
+#: templates/plugins/list.html:147
 msgid "Tag:"
 msgstr "Tag:"
 
-#: templates/plugins/list.html:95 templates/plugins/list.html:97
+#: templates/plugins/list.html:106 templates/plugins/list.html:108
 #: templates/plugins/pending.html:35
 msgid "Min"
 msgstr "Minimo"
 
-#: templates/plugins/list.html:102 templates/plugins/list.html:104
+#: templates/plugins/list.html:113 templates/plugins/list.html:115
 #: templates/plugins/pending.html:36
 msgid "Max"
 msgstr "Massimo"
 
-#: templates/plugins/list.html:109 templates/plugins/list.html:111
+#: templates/plugins/list.html:120 templates/plugins/list.html:122
 #: templates/plugins/pending.html:37 templates/plugins/source.html:24
 msgid "Author"
 msgstr "Autore"
 
-#: templates/plugins/list.html:116 templates/plugins/list.html:118
+#: templates/plugins/list.html:127 templates/plugins/list.html:129
 #: templates/themes/list.html:28
 msgid "Added"
 msgstr "Aggiunto"
 
-#: templates/plugins/list.html:123 templates/plugins/list.html:125
+#: templates/plugins/list.html:134 templates/plugins/list.html:136
 msgid "Updated"
 msgstr "Aggiornato"
 
-#: templates/plugins/list.html:140 templates/plugins/pending.html:52
+#: templates/plugins/list.html:151 templates/plugins/pending.html:52
 #: templates/plugins/source.html:21
 msgid "requires"
 msgstr "richiede"
 
-#: templates/plugins/list.html:147 templates/themes/list.html:24
+#: templates/plugins/list.html:158 templates/themes/list.html:24
 msgid "Author:"
 msgstr "Autore:"
 
-#: templates/plugins/list.html:156 templates/plugins/update.html:32
+#: templates/plugins/list.html:167 templates/plugins/update.html:32
 msgid "No script found."
 msgstr "Nessuno script trovato."
 
