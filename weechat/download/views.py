@@ -99,7 +99,7 @@ def package_checksums(request, version, checksum_type):
     for package in package_list:
         checksum = package.checksum()
         if checksum:
-            checksums.append('%s %s' % (checksum, package.filename))
+            checksums.append('%s  %s' % (checksum, package.filename))
     response = HttpResponse('\n'.join(checksums), content_type='text/plain')
     response['Content-disposition'] = ('inline; filename=weechat-%s-%s.txt' %
                                        (version, checksum_type))
