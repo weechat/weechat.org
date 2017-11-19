@@ -117,10 +117,9 @@ msgid "Perl plugin."
 msgstr "Wtyczka perl."
 
 #: about/_i18n_keydates.py:26
-#, fuzzy
 #| msgid "Sidebar with list of buffers."
 msgid "Plugin \"buflist\" (list of buffers)."
-msgstr "Boczny pasek z listą kanałów."
+msgstr "Wtyczka \"buflist\" (lita buforów)."
 
 #: about/_i18n_keydates.py:27
 msgid "Plugin \"script\" (scripts manager), SSL in relay."
@@ -296,10 +295,9 @@ msgid "Buffer overflow when decoding IRC colors in strings."
 msgstr "Przepełnienie bufora podczas dekodowania kolorów IRC w ciągach."
 
 #: download/_i18n_security.py:9
-#, fuzzy
 #| msgid "Buffer overflow when decoding IRC colors in strings."
 msgid "Buffer overflow when removing quotes in DCC filename."
-msgstr "Przepełnienie bufora podczas dekodowania kolorów IRC w ciągach."
+msgstr "Przepełnienie bufora podczas usówania cudzysłowów w nazwach plików DCC."
 
 #: download/_i18n_security.py:10
 msgid "Buffer overflows in build of strings."
@@ -314,7 +312,11 @@ msgid ""
 "Create a trigger (with WeeChat >= 1.1): /trigger add irc_dcc_quotes modifier "
 "\"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND ${\\x22} \" "
 "\"/.*//\""
+
 msgstr ""
+"Stwórz trigger (wersja WeeChat >= 1.1): /trigger add irc_dcc_quotes modifier "
+"\"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND ${\\x22} \" "
+"\"/.*//\""
 
 #: download/_i18n_security.py:13
 msgid ""
@@ -322,6 +324,9 @@ msgid ""
 "variables in name of log files. In some cases, this can lead to an error in "
 "function strftime and a crash caused by the use of an uninitialized buffer."
 msgstr ""
+"Specyfikatory konwersji daty/czasu są rozwijane po zamienieniu zmiennych lokalnych "
+"w nazwie plików z logami. W niektórych przypadkach może to prowadzić do błędu "
+"w funkcji strftime i spowodować crash spowodowany użyciem niezainicjowanego buforu."
 
 #: download/_i18n_security.py:14
 msgid ""
@@ -387,7 +392,7 @@ msgstr ""
 
 #: download/_i18n_security.py:23
 msgid "Unload the logger plugin: /plugin unload logger"
-msgstr ""
+msgstr "Wyładować wtyczkę logger: /plugin unload logger"
 
 #: download/_i18n_security.py:24
 msgid ""
@@ -1617,10 +1622,9 @@ msgstr ""
 
 #: news/_i18n_info.py:76
 msgid "Version 0.2.6.1 (security release)"
-msgstr ""
+msgstr "Wersja 0.2.6.1 (poprawki bezpieczeństwa)"
 
 #: news/_i18n_info.py:77
-#, fuzzy
 #| msgid ""
 #| "Version 0.2.6.1 is available. This release fixes a crash when receiving "
 #| "some special chars in IRC messages.\n"
@@ -1641,7 +1645,9 @@ msgstr ""
 "otrzymywania niektórych specjalnych znaków w wiadomościach IRC.\n"
 "\n"
 "Wszystkim użytkownikom wersji 0.2.6 zaleca się aktualizacje (w wersjach "
-"0.2.5 oraz starszych ten błąd nie występuje)."
+"0.2.5 oraz starszych ten błąd nie występuje).\n"
+"\n"
+"Więcej informacji można znaleźć na <a href=\"/download/security/\">stronie z prolemami bezpieczeństwa</a>."
 
 #: news/_i18n_info.py:78
 msgid ""
@@ -2096,10 +2102,9 @@ msgstr ""
 
 #: news/_i18n_info.py:91
 msgid "Version 0.3.9.1 (security release)"
-msgstr ""
+msgstr "Wersja 0.3.9.1 (poprawki bezpieczeństwa)"
 
 #: news/_i18n_info.py:92
-#, fuzzy
 #| msgid ""
 #| "Version 0.3.9.1 is available, it fixes a security problem (buffer "
 #| "overflow when decoding IRC colors in strings).\n"
@@ -2124,10 +2129,9 @@ msgstr ""
 
 #: news/_i18n_info.py:93
 msgid "Version 0.3.9.2 (security release)"
-msgstr ""
+msgstr "Wersja 0.3.9.2 (poprawki bezpieczeństwa)"
 
 #: news/_i18n_info.py:94
-#, fuzzy
 #| msgid ""
 #| "Version 0.3.9.2 is available, it fixes a security problem: untrusted "
 #| "command for function hook_process could lead to execution of commands, "
@@ -2724,7 +2728,6 @@ msgstr ""
 "a>."
 
 #: news/_i18n_info.py:108
-#, fuzzy
 #| msgid ""
 #| "Version 1.3 is available!\n"
 #| "\n"
@@ -2758,27 +2761,30 @@ msgid ""
 "\"http://dev.weechat.org/post/2017/01/15/Version-1.7\">development blog</a> "
 "or <a href=\"/files/changelog/ChangeLog-1.7.html\">ChangeLog</a>."
 msgstr ""
-"Wersja 1.3 jest dostępna!\n"
+"Wersja 1.7 jest dostępna!\n"
 "\n"
-"Nowe funkcje:\n"
+"Najważniejsze zmiany:\n"
 "\n"
-"- pozycja w buforze jest zachowana po użyciu interaktywnego wyszukiwania\n"
-"- dodano opcjonalne potwierdzenie dla komendy /upgrade\n"
-"- dodano sygnał \"signal_sighup\"\n"
-"- dodano opcje IRC irc.color.topic_current, irc.network.channel_encode\n"
+"- nowa opcja weechat.look.align_multiline_words\n"
+"- dodano opcje \"time\" do komendy /debug\n"
+"- dodano infrmacje \"uptime\" oraz \"pid\"\n"
+"- dodano opcjonalne argumenty do szablonów dopełnień\n"
+"- dodano opcję serwera irc \"usermode\"\n"
+"- dodano tag \"self_msg\" dla włanych wiadomości\n"
+"- dodano plik konfiguracyjny fifo.conf dla wtyczki fifo\n"
+"- dodano opcję \"-oc\" dla komendy /exec\n"
 "- poprawiono wiele błędów.\n"
 "\n"
 "Pełną listę nowych funkcji i poprawionych błędów można znaleźć na <a href="
-"\"http://dev.weechat.org/post/2015/08/16/Version-1.3\">blogu developerskim</"
-"a> oraz w pliku <a href=\"/files/changelog/ChangeLog-1.3.html\">ChangeLog</"
+"\"http://dev.weechat.org/post/2017/01/15/Version-1.7\">blogu developerskim</"
+"a> oraz w pliku <a href=\"/files/changelog/ChangeLog-1.7.html\">ChangeLog</"
 "a>."
 
 #: news/_i18n_info.py:109
 msgid "Version 1.7.1 (security release)"
-msgstr ""
+msgstr "Wersja 1.7.1 (poprawki bezpieczeństwa)"
 
 #: news/_i18n_info.py:110
-#, fuzzy
 #| msgid ""
 #| "Version 0.3.9.1 is available, it fixes a security problem (buffer "
 #| "overflow when decoding IRC colors in strings).\n"
@@ -2794,15 +2800,15 @@ msgid ""
 "More information on the <a href=\"/download/security/\">page with security "
 "issues</a>."
 msgstr ""
-"Wersja 0.3.9.1 jest dostępna, poprawia ona problem bezpieczeństwa "
-"(przepełnienie bufora podczas dekodowania kolorów IRC w ciągach).\n"
+"Wersja 1.7.1 jest dostępna, poprawia ona problem bezpieczeństwa: "
+"nieprawidłowe działanie wtyczki IRC podczas przetwarzania nazw plików "
+"odebranchych przez DCC.\n"
 "Aktualizacja jest zalecana dla wszystkich użytkowników.\n"
 "\n"
 "Więcej informacji można znaleźć na <a href=\"/security\">stronie z "
 "problemami bezpieczeństwa</a>."
 
 #: news/_i18n_info.py:111
-#, fuzzy
 #| msgid ""
 #| "Version 1.3 is available!\n"
 #| "\n"
@@ -2839,23 +2845,30 @@ msgid ""
 "\"http://dev.weechat.org/post/2017/05/13/Version-1.8\">development blog</a> "
 "or <a href=\"/files/changelog/ChangeLog-1.8.html\">ChangeLog</a>."
 msgstr ""
-"Wersja 1.3 jest dostępna!\n"
+"Wersja 1.8 jest dostępna!\n"
 "\n"
-"Nowe funkcje:\n"
+"Najważniejsze zmiany:\n"
 "\n"
-"- pozycja w buforze jest zachowana po użyciu interaktywnego wyszukiwania\n"
-"- dodano opcjonalne potwierdzenie dla komendy /upgrade\n"
-"- dodano sygnał \"signal_sighup\"\n"
-"- dodano opcje IRC irc.color.topic_current, irc.network.channel_encode\n"
+"- dodano opcję weechat.completion.nick_case_sensitive\n"
+"- dodano wilcard matching operator, cut of string and ternary operator in "
+"evaluation of expressions\n"
+"- dodano możliwość zmiany rozmiaru okna nadrzędnego za pomocą /window resize [h/v]rozmiar\n"
+"- dodano wtyczkę \"buflist\" (pasek z listą buforów)\n"
+"- dodano funkcje w API dla arraylist i dynamicznych ciągów\n"
+"- dodano opcję \"open\" dla komendy /server\n"
+"- dodano sygnał \"irc_server_lag_changed\" i zapisywanie opóźnienia w buforze "
+"serwera (zmienna lokalna)\n"
+"- dodano opcję aspell do kontroli separatora w podpowiedziach\n"
+"- dodano opcję \"-include\" w komendach /allchan, /allpv i /allserv\n"
 "- poprawiono wiele błędów.\n"
 "\n"
 "Pełną listę nowych funkcji i poprawionych błędów można znaleźć na <a href="
-"\"http://dev.weechat.org/post/2015/08/16/Version-1.3\">blogu developerskim</"
-"a> oraz w pliku <a href=\"/files/changelog/ChangeLog-1.3.html\">ChangeLog</"
+"\"http://dev.weechat.org/post/2017/05/13/Version-1.8\">blogu developerskim</"
+"a> oraz w pliku <a href=\"/files/changelog/ChangeLog-1.8.html\">ChangeLog</"
 "a>."
 
 #: news/_i18n_info.py:112
-#, fuzzy, python-brace-format
+#, python-brace-format
 #| msgid ""
 #| "Version 1.3 is available!\n"
 #| "\n"
@@ -2889,27 +2902,30 @@ msgid ""
 "\"https://weechat.org/blog/post/2017/06/25/Version-1.9\">development blog</"
 "a> or <a href=\"/files/changelog/ChangeLog-1.9.html\">ChangeLog</a>."
 msgstr ""
-"Wersja 1.3 jest dostępna!\n"
+"Wersja 1.9 jest dostępna!\n"
 "\n"
-"Nowe funkcje:\n"
+"Najważniejsze zmiany:\n"
 "\n"
-"- pozycja w buforze jest zachowana po użyciu interaktywnego wyszukiwania\n"
-"- dodano opcjonalne potwierdzenie dla komendy /upgrade\n"
-"- dodano sygnał \"signal_sighup\"\n"
-"- dodano opcje IRC irc.color.topic_current, irc.network.channel_encode\n"
+"- przyspieszono callback elementów paska nicklist\n"
+"- dodano automatyczne przewijanie paska z listą buforów za pomocą opcji buflist.look.auto_scroll\n"
+"- dodano opcję buflist.format.name\n"
+"- dodano zmienne ${format_name}, ${current_buffer} i ${merged} w liście buforów\n"
+"- wyświetla ostrzeżenie w liście buforów jeśli skrypt buffers.pl jest załadowany\n"
+"- dodano wskaźniki dla serwerów/kanałów w triggerach IRC\n"
+"- dodano funkcje API config_option_get_string i hdata_compare\n"
+"- naprawiono bindowanie klawisza spacji\n"
 "- poprawiono wiele błędów.\n"
 "\n"
 "Pełną listę nowych funkcji i poprawionych błędów można znaleźć na <a href="
-"\"http://dev.weechat.org/post/2015/08/16/Version-1.3\">blogu developerskim</"
-"a> oraz w pliku <a href=\"/files/changelog/ChangeLog-1.3.html\">ChangeLog</"
+"\"http://dev.weechat.org/post/2017/06/25/Version-1.9\">blogu developerskim</"
+"a> oraz w pliku <a href=\"/files/changelog/ChangeLog-1.9.html\">ChangeLog</"
 "a>."
 
 #: news/_i18n_info.py:113
 msgid "Version 1.9.1 (security release)"
-msgstr ""
+msgstr "Wersja 1.9.1 (poprawki bezpieczeństwa)"
 
 #: news/_i18n_info.py:114
-#, fuzzy
 #| msgid ""
 #| "Version 0.3.9.1 is available, it fixes a security problem (buffer "
 #| "overflow when decoding IRC colors in strings).\n"
@@ -2926,8 +2942,9 @@ msgid ""
 "More information on the <a href=\"/download/security/\">page with security "
 "issues</a>."
 msgstr ""
-"Wersja 0.3.9.1 jest dostępna, poprawia ona problem bezpieczeństwa "
-"(przepełnienie bufora podczas dekodowania kolorów IRC w ciągach).\n"
+"Wersja 1.9.1 jest dostępna, poprawia ona problem bezpieczeństwa: nieprawidłowe "
+"działanie wtyczki logger podczas konwersji specyfikatorów daty/czasu w nazwie pliku. "
+"Dwa dodatkowe błędy zostały także naprawione we wtyczkach buflist i relay\n"
 "Aktualizacja jest zalecana dla wszystkich użytkowników.\n"
 "\n"
 "Więcej informacji można znaleźć na <a href=\"/security\">stronie z "
@@ -3316,6 +3333,8 @@ msgid ""
 "Alternate text formatting, useful for relays without formatting features "
 "(glowing-bear, weechat-android, ...)."
 msgstr ""
+"Alternatywne formatowanie tekstu, przydatne dla pośredników bez funkcji formatujących "
+"(glowing-bear, weechat-android, ...)."
 
 #. Translators: description for script "amarok2.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:70
@@ -3370,7 +3389,7 @@ msgstr ""
 #. Translators: description for script "autoconf.py" (1.4+)
 #: plugins/_i18n_plugins.py:88
 msgid "Auto save/load changed options in a .weerc file."
-msgstr ""
+msgstr "Automatyczne zapisywanie/ładowanie zapisanych opcji w pliku .weerc."
 
 #. Translators: description for script "toggle_nicklist.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:90
@@ -3415,13 +3434,10 @@ msgstr "Próbuje automatycznie odzyskać podstawowy nick na IRC."
 
 #. Translators: description for script "gribble.py" (1.0+)
 #: plugins/_i18n_plugins.py:106
-#, fuzzy
 #| msgid ""
 #| "Automatically authenticate with NickServ using SASL username/password."
 msgid "Automatically authenticate to gribble for Bitcoin OTC exchange."
-msgstr ""
-"Automatyczne uwierzytelnianie w NickServ za pomocą nazwy użytkownika/hasła "
-"SASL."
+msgstr "Automatyczne uwierzytelnianie do gribble dla wymiany Bitcoin OTC."
 
 #. Translators: description for script "auth.rb" (0.3.0+)
 #: plugins/_i18n_plugins.py:108
@@ -3443,10 +3459,9 @@ msgstr "Automatycznie zamyka nieaktywne bufory rozmów prywatnych."
 
 #. Translators: description for script "buffer_autohide.py" (1.0+)
 #: plugins/_i18n_plugins.py:114
-#, fuzzy
 #| msgid "Automatically apply layouts according to terminal size."
 msgid "Automatically hide/unhide buffers according to IRC activity."
-msgstr "Automatyczna zmiana układów w zależności od rozmiaru terminala."
+msgstr "Automatyczna ukrywanie/pokazywanie buforów w zależności od aktywności IRC."
 
 #. Translators: description for script "join2fast.pl" (0.3.2+)
 #: plugins/_i18n_plugins.py:116
@@ -3465,10 +3480,9 @@ msgstr ""
 
 #. Translators: description for script "automerge.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:120
-#, fuzzy
 #| msgid "Automatically apply layouts according to terminal size."
 msgid "Automatically merge new buffers according to defined rules."
-msgstr "Automatyczna zmiana układów w zależności od rozmiaru terminala."
+msgstr "Automatyczna łączenie nowych buforów zgodnie ze zdefiniowanymi regułami."
 
 #. Translators: description for script "auto_op.py" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:122
@@ -3483,7 +3497,8 @@ msgstr "Auomatyczne odpowiedzi za pomocą określonych triggerów."
 #. Translators: description for script "detach_away.py" (1.5+)
 #: plugins/_i18n_plugins.py:126
 msgid "Automatically set away message based on number of relays connected."
-msgstr ""
+msgstr "Automatyczne ustawianie wiadomości o nieobecności na podstawie "
+"numeru podłączonych pośredników."
 
 #. Translators: description for script "response.py" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:128
@@ -3549,10 +3564,9 @@ msgstr ""
 
 #. Translators: description for script "buffer_bind.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:150
-#, fuzzy
 #| msgid "Send latest tweet to the current buffer."
 msgid "Bind meta-<key> to the current buffer."
-msgstr "Wysyła Twój ostatni tweet do obecnego bufora."
+msgstr "Przypisz meta-<klawisz> do obecnego bufora."
 
 #. Translators: description for script "mass_hl_blocker.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:152
@@ -3584,7 +3598,7 @@ msgstr ""
 #. Translators: description for script "cleanbuffer.rb" (0.3.0+)
 #: plugins/_i18n_plugins.py:162
 msgid "Clear a buffer, on znc / locally or both."
-msgstr ""
+msgstr "Czyści bufor na znc / lokalnie albo oba."
 
 #. Translators: description for script "urlgrab.py" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:164
@@ -3868,7 +3882,7 @@ msgstr "Wyświetla źródło \"End of WHOIS\"."
 #. Translators: description for script "terminal_title.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:268
 msgid "Display user defined information in the terminal title."
-msgstr ""
+msgstr "Wyświetla zdefiniowaną przez użytkownika informację w tytule terminala."
 
 #. Translators: description for script "weather.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:270
@@ -4043,7 +4057,7 @@ msgstr "Gra flood'it."
 #. Translators: description for script "force_nick.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:336
 msgid "Force nick change on channels which disallow it."
-msgstr ""
+msgstr "Wymusza zmianę nicka na kanałach, które na to nie pozwalają."
 
 #. Translators: description for script "forcenick.rb" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:338
@@ -4129,6 +4143,8 @@ msgstr "Podświetla niektóre kanały przy każdej wiadomości."
 msgid ""
 "Highly configurable send-notify script for user, channel and server messages."
 msgstr ""
+"Mocno konfigurowalny skrypt wysyłający powiadomienia dla użytkownika, kanału "
+"i wiadomości serwera."
 
 #. Translators: description for script "giphy.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:370
@@ -4136,6 +4152,8 @@ msgid ""
 "Insert a giphy URL based on a command and search; use giphy's random, search "
 "and translate from WeeChat."
 msgstr ""
+"Wrzuca URL z giphy bazując na komendzie i wyszukiwaniu; używa giphy's random, "
+"wyszukiwania i tłumaczenia z WeeChat."
 
 #. Translators: description for script "weestats.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:372
@@ -4148,6 +4166,7 @@ msgid ""
 "Interact with the Teknik services, including file uploads, pastes, and URL "
 "shortening."
 msgstr ""
+"Interakcje z serwisem Teknik, włączając dodawanie plików, tekstów i skracanie URLi."
 
 #. Translators: description for script "urlselect.lua" (1.0+)
 #: plugins/_i18n_plugins.py:376
@@ -4168,7 +4187,7 @@ msgstr ""
 #. Translators: description for script "inverter.tcl" (0.3.0+)
 #: plugins/_i18n_plugins.py:380
 msgid "Invert all letters of your text."
-msgstr ""
+msgstr "Odwraca wszystkie litery we wprowadzanym tekście."
 
 #. Translators: description for script "irssinotifier.py" (0.3.7+)
 #: plugins/_i18n_plugins.py:382
@@ -4225,7 +4244,7 @@ msgstr "Pozwala przydzielać zadania, które zostaną umieszczone w pliku."
 #. Translators: description for script "buffer_dmenu.py" (0.3.7+)
 #: plugins/_i18n_plugins.py:402
 msgid "List buffers in dmenu or rofi, change active window to selected buffer."
-msgstr ""
+msgstr "Lista buforów w dmenu albo rofi, zmiana aktywnego okna na wybrany bufor."
 
 #. Translators: description for script "samechannel.rb" (0.4.1+)
 #: plugins/_i18n_plugins.py:404
@@ -4408,7 +4427,8 @@ msgstr "Powiadomia dzen, kiedy otrzymana zostanie wiadomość prywatna."
 #: plugins/_i18n_plugins.py:468
 msgid ""
 "Notify events through desktop notifications and an optional status icon."
-msgstr ""
+msgstr "Powiadomienia o zdarzeniach poprzez powiadomienia na pulpicie i opcjonalną "
+"ikonę statusu."
 
 #. Translators: description for script "weenotify.py" (0.0.1-0.2.6)
 #: plugins/_i18n_plugins.py:470
@@ -4648,10 +4668,9 @@ msgstr "Zamienia LaTeX odpowiednikami unikodowymi."
 
 #. Translators: description for script "weechataboo.scm" (0.3.0+)
 #: plugins/_i18n_plugins.py:554
-#, fuzzy
 #| msgid "Replace keywords with emoticons."
 msgid "Replace emotion-tags with random emoticons."
-msgstr "Zastępuje słowa kluczowe emotikonami."
+msgstr "Zastępuje tagi emotikon losowymi emotikonami."
 
 #. Translators: description for script "emote.scm" (0.4.1+)
 #: plugins/_i18n_plugins.py:556
@@ -4844,10 +4863,9 @@ msgstr "Wysyła kolorowe \"kikoo\" na obecny kanał."
 
 #. Translators: description for script "pushjet.py" (1.0+)
 #: plugins/_i18n_plugins.py:628
-#, fuzzy
 #| msgid "Send highlights and private messages to a unix socket."
 msgid "Send highlights and mentions through Pushjet.io."
-msgstr "Przekazuje higlighty i prywatne wiadomości do gniazda unixowego."
+msgstr "Przekazuje higlighty poprzez Pushjet.io."
 
 #. Translators: description for script "socket_notify.rb" (0.3.0+)
 #: plugins/_i18n_plugins.py:630
@@ -4919,17 +4937,16 @@ msgid ""
 "Send private/highlight messages to Android, iOS and Windows 10 devices via "
 "Pushsafer."
 msgstr ""
+"Wysyła wiadomości prywatne/podświetlenia na urządzenia z Androidem, iOS oraz "
+"Windows 10 za pomocą Pushsafer."
 
 #. Translators: description for script "pushover.pl" (0.3.7+)
 #: plugins/_i18n_plugins.py:652
-#, fuzzy
 #| msgid ""
 #| "Send push notifications to your mobile devices using Pushover, NMA or "
 #| "Pushbullet."
 msgid "Send push notifications to your mobile devices using Pushover."
-msgstr ""
-"Wysyła powiadomienia do urządzeń mobilnych używając Pushover, NMA lub "
-"Pushbullet."
+msgstr "Wysyła powiadomienia push do urządzeń mobilnych używając Pushover."
 
 #. Translators: description for script "ragefaces.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:654
@@ -5014,11 +5031,9 @@ msgstr "Ustawia stan nieobecności w zależności od obecności pliku."
 
 #. Translators: description for script "i3lock_away.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:684
-#, fuzzy
 #| msgid "Set away status if slock (X display locker) is running."
 msgid "Set away status if i3lock (X display locker) is running."
-msgstr ""
-"Ustawia status nieobecności jeśli slock (program blokujący Xy) jest "
+msgstr "Ustawia status nieobecności jeśli i3lock (program blokujący Xy) jest "
 "uruchomiony."
 
 #. Translators: description for script "slock_away.py" (0.3.0+)
@@ -5223,10 +5238,9 @@ msgstr "Przykleja bufor do okna."
 
 #. Translators: description for script "weestreamer.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:762
-#, fuzzy
 #| msgid "Livestreamer companion for WeeChat."
 msgid "Streamlink companion for WeeChat."
-msgstr "Livestreamer dla WeeChat."
+msgstr "Wsparcie dla Streamlink w WeeChat."
 
 #. Translators: description for script "substitution.rb" (0.3.7+)
 #: plugins/_i18n_plugins.py:764
@@ -5348,7 +5362,7 @@ msgstr "Uaktualnia informacje o statusie w różnych komunikatorach na Macach."
 #. Translators: description for script "tts.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:808
 msgid "Use a TTS engine to pronounce messages."
-msgstr ""
+msgstr "Używa silnika TTS do wymawiania wiadomości."
 
 #. Translators: description for script "colorize_nicks.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:810
@@ -5383,10 +5397,9 @@ msgstr "Klient Twitttera dla Weechat."
 
 #. Translators: description for script "whatsapp.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:822
-#, fuzzy
 #| msgid "Netsoul protocol."
 msgid "WhatsApp protocol."
-msgstr "Protokół  Netsoul."
+msgstr "Protokół  WhatsApp."
 
 #. Translators: description for script "wmiibar.pl" (0.3.3+)
 #: plugins/_i18n_plugins.py:824
@@ -6192,7 +6205,7 @@ msgid "support"
 msgstr "wsparcie"
 
 #: templates/dev/support.html:15
-#, fuzzy, python-format
+#, python-format
 #| msgid ""
 #| "<strong>Warning:</strong> before asking for help, please read carefully "
 #| "<a href=\"%(doc_url)s\">documentation</a> and <a href=\"%(faq_url)s"
@@ -6218,7 +6231,7 @@ msgstr "nieoficjalne kanały:"
 
 #: templates/dev/support.html:34
 msgid "Finnish"
-msgstr ""
+msgstr "Fiński"
 
 #: templates/dev/support.html:39
 msgid "Bugs / Feature requests"
@@ -6305,7 +6318,6 @@ msgid "Docs for old versions"
 msgstr "Dokumentacje dla starych wersji"
 
 #: templates/doc/doc.html:24
-#, fuzzy
 #| msgid ""
 #| "<strong>Warning:</strong> these old versions are <strong>not supported</"
 #| "strong> any more!"
@@ -6373,19 +6385,16 @@ msgstr ""
 "developerkim."
 
 #: templates/download/debian.html:29
-#, fuzzy
 #| msgid "Repositories"
 msgid "Active repositories"
-msgstr "Repozytoria"
+msgstr "Aktywne repozytoria"
 
 #: templates/download/debian.html:30
-#, fuzzy
 #| msgid "Repositories"
 msgid "All repositories"
-msgstr "Repozytoria"
+msgstr "Wszystkie repozytoria"
 
 #: templates/download/debian.html:35
-#, fuzzy
 #| msgid ""
 #| "<strong>Important:</strong> these packages are not Debian official "
 #| "packages; please <a href=\"#instructions\"><strong>read instructions</"
@@ -6454,10 +6463,9 @@ msgid "Import the gpg key used to sign the repository:"
 msgstr "Zaimportuj klucz pgp użyty do podpisania repozytorium:"
 
 #: templates/download/debian.html:136
-#, fuzzy
 #| msgid "No debian repository."
 msgid "Important: the Raspbian repositories are NOT signed."
-msgstr "Brak repozytorium Debiana."
+msgstr "Ważne: repozytoria Raspbiana NIE są podpisane."
 
 #: templates/download/debian.html:139
 msgid ""
@@ -6531,7 +6539,6 @@ msgstr ""
 "href=\"%(download_release_url)s\">tej stronie</a>."
 
 #: templates/download/packages.html:28
-#, fuzzy
 #| msgid ""
 #| "<strong>Warning:</strong> this version may be unstable or it may not "
 #| "compile, you're warned!"
@@ -6543,7 +6550,6 @@ msgstr ""
 "nie kompilować, zostałeś ostrzeżony!"
 
 #: templates/download/packages.html:34
-#, fuzzy
 #| msgid ""
 #| "<strong>Warning:</strong> it is not recommended to download any old "
 #| "version, because they are less stable."
@@ -6552,11 +6558,12 @@ msgid ""
 "these old versions: they are less stable than the latest released version, "
 "and may contain security vulnerabilities fixed in later versions."
 msgstr ""
-"<strong>Ostrzeżenie</strong> nie zaleca się pobieranie starszych wersji, "
-"ponieważ są one mniej stabilne."
+"<strong>Ostrzeżenie</strong> nie zaleca się pobierania i używania żadnej ze "
+"starszych wersji: są one mniej stabilne niż najnowsze wypuszczone wersje, i mogą "
+"zawierać błędy bezpieczeństwa naprawione w późniejszych wersjach."
 
 #: templates/download/packages.html:56
-#, fuzzy, python-format
+#, python-format
 #| msgid ""
 #| "<strong>Warning:</strong> this version has a <a href="
 #| "\"%(download_security_url)s\">vulnerability</a> which is fixed in version"
@@ -6565,17 +6572,16 @@ msgid ""
 "\"%(download_security_url)s\">vulnerabilities</a>, it is not recommended to "
 "use it."
 msgstr ""
-"<strong>Uwaga:</strong> ta wersja posiada <a href=\"%(download_security_url)s"
-"\">podatność</a>, która została naprawiona w wersji"
+"<strong>Uwaga:</strong> wersja %(version)s zawiera jeden lub więcej<a href="
+"\"%(download_security_url)s\">podatności</a>, nie zaleca się jej używać."
 
 #: templates/download/packages.html:58
-#, fuzzy
 #| msgid "Fixed in version"
 msgid "Vulnerabilities fixed in versions:"
-msgstr "Naprawiono w wersji"
+msgstr "Podatności naprawione w wersjach:"
 
 #: templates/download/packages.html:66 templates/home/home.html:41
-#, fuzzy, python-format
+#, python-format
 #| msgid ""
 #| "<strong>Warning:</strong> this version has a <a href="
 #| "\"%(download_security_url)s\">vulnerability</a> which is fixed in version"
@@ -6583,11 +6589,11 @@ msgid ""
 "<strong>Important:</strong> this release fixes a <a href="
 "\"%(download_security_url)s\">vulnerability</a>."
 msgstr ""
-"<strong>Uwaga:</strong> ta wersja posiada <a href=\"%(download_security_url)s"
-"\">podatność</a>, która została naprawiona w wersji"
+"<strong>Uwaga:</strong> ta wersja posiada poprawki na <a href="
+"\"%(download_security_url)s\">podatności</a>."
 
 #: templates/download/packages.html:68 templates/home/home.html:43
-#, fuzzy, python-format
+#, python-format
 #| msgid ""
 #| "<strong>Warning:</strong> this version has a <a href="
 #| "\"%(download_security_url)s\">vulnerability</a> which is fixed in version"
@@ -6595,12 +6601,12 @@ msgid ""
 "<strong>Important:</strong> this release fixes <a href="
 "\"%(download_security_url)s\">%(count_issues_fixed)s vulnerabilities</a>."
 msgstr ""
-"<strong>Uwaga:</strong> ta wersja posiada <a href=\"%(download_security_url)s"
-"\">podatność</a>, która została naprawiona w wersji"
+"<strong>Uwaga:</strong> ta wersja naprawia <a href=\"%(download_security_url)s"
+"\">%(count_issues_fixed)s podatności</a>."
 
 #: templates/download/packages.html:70 templates/home/home.html:45
 msgid "It is recommended to upgrade from any older version to this one."
-msgstr ""
+msgstr "Zaleca się aktualizacje z każdej starszej wersji do tej."
 
 #: templates/download/packages.html:75
 msgid "Packages"
@@ -6694,6 +6700,7 @@ msgstr "Brak wydania w toku."
 msgid ""
 "This page is updated only a few hours during the build of a new version."
 msgstr ""
+"Ta strona aktualizowana jest tylko przez kilka godzin podczas budowania nowej wersji."
 
 #: templates/download/release.html:35
 msgid "We are working hard on the next version:"
@@ -6722,7 +6729,6 @@ msgid "Security vulnerabilities"
 msgstr "Podatności bezpieczeństwa"
 
 #: templates/download/security.html:20
-#, fuzzy
 #| msgid ""
 #| "This table contains a list of all known and fixed security "
 #| "vulnerabilities in WeeChat stable releases (the security vulnerabilities "
@@ -6736,7 +6742,7 @@ msgid ""
 msgstr ""
 "Ta tabela zawiera listę wszystkich znanych i poprawionych podatności w "
 "wersjach stabilnych WeeChat (podatności bezpieczeństwa wprowadzone do wersji "
-"rozwojowych nie są podawane)."
+"rozwojowych i poprawionych przed ich wydaniem nie są podawane)."
 
 #: templates/download/security.html:22
 msgid ""
@@ -6987,7 +6993,6 @@ msgid "Repositories"
 msgstr "Repozytoria"
 
 #: templates/plugins/add.html:15 templates/plugins/update.html:16
-#, fuzzy
 #| msgid ""
 #| "<strong>Warning:</strong> please follow <strong>all</strong> these rules, "
 #| "otherwise your script will be rejected:"
@@ -7113,7 +7118,6 @@ msgid "Back to scripts"
 msgstr "Powrót do skryptów"
 
 #: templates/plugins/list.html:15
-#, fuzzy
 #| msgid ""
 #| "<strong>Warning:</strong> these scripts are written by external "
 #| "contributors, therefore WeeChat developers are <strong>NOT RESPONSIBLE</"
@@ -7155,7 +7159,7 @@ msgstr "Wyświetl skrypty dla starego API (&le; 0.2.6)"
 
 #: templates/plugins/list.html:33
 msgid "List:"
-msgstr ""
+msgstr "Lista:"
 
 #: templates/plugins/list.html:37
 msgid "Version:"
@@ -7179,35 +7183,32 @@ msgstr "skrypty"
 
 #: templates/plugins/list.html:46 templates/plugins/list.html:50
 msgid "Filters by popularity"
-msgstr ""
+msgstr "Filtry według popularności"
 
 #: templates/plugins/list.html:46 templates/plugins/list.html:50
 msgid "Filters by name"
-msgstr ""
+msgstr "Filtry według nazwy"
 
 #: templates/plugins/list.html:47 templates/plugins/list.html:51
-#, fuzzy
 #| msgid "script name"
 msgid "sort by name"
-msgstr "nazwa skryptu"
+msgstr "sortój po nazwie"
 
 #: templates/plugins/list.html:47 templates/plugins/list.html:51
 msgid "sort by popularity"
-msgstr ""
+msgstr "sortój po popularości"
 
 #: templates/plugins/list.html:54 templates/plugins/list.html:56
-#, fuzzy
 #| msgctxt "programming language"
 #| msgid "Language"
 msgid "Language:"
-msgstr "Język"
+msgstr "Język:"
 
 #: templates/plugins/list.html:62 templates/plugins/list.html:64
 #: templates/plugins/list.html:155
-#, fuzzy
 #| msgid "License"
 msgid "License:"
-msgstr "Licencja"
+msgstr "Licencja:"
 
 #: templates/plugins/list.html:70 templates/plugins/list.html:72
 #: templates/plugins/list.html:147
@@ -7363,7 +7364,6 @@ msgid "Back to themes"
 msgstr "Powrót do motywów"
 
 #: templates/themes/list.html:13
-#, fuzzy
 #| msgid ""
 #| "<strong>Warning:</strong> alpha version of themes! Alpha version of "
 #| "script is available here:"
