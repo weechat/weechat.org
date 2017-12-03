@@ -11,6 +11,7 @@ _i18n_about_keydates = [
     gettext_lazy("Dynamic allocation and attributes for colors."),
     gettext_lazy("First line of code."),
     gettext_lazy("First version."),
+    gettext_lazy("Fset plugin (fast set of WeeChat and plugins options), PHP plugin."),
     gettext_lazy("Full UTF-8 support."),
     gettext_lazy("Gaps in buffers numbers, IPv6 for DCC file/chat, command /print."),
     gettext_lazy("Guile plugin, support of python 3.x, weechat protocol in relay (remote interfaces), URL transfer in API."),
