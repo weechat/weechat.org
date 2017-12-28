@@ -46,6 +46,7 @@ SCRIPT_LANGUAGE = {
     'tcl': ('tcl', 'tcl'),
     'guile': ('scm', 'scheme'),
     'javascript': ('js', 'javascript'),
+    'php': ('php', 'php'),
 }
 
 MAX_LENGTH_NAME = 32
@@ -245,6 +246,7 @@ class PluginFormAdd(forms.Form):
         ('tcl', 'Tcl (.tcl)'),
         ('guile', 'Scheme (.scm)'),
         ('javascript', 'Javascript (.js)'),
+        ('php', 'PHP (.php)'),
     )
     required_css_class = 'required'
     language = forms.ChoiceField(

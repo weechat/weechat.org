@@ -49,6 +49,7 @@ PYGMENTS_LEXER = {
     'tcl': 'tcl',
     'scm': 'scheme',
     'js': 'javascript',
+    'php': 'php',
 }
 
 
