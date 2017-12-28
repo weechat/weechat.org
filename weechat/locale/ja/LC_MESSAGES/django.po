@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-28 21:39+0100\n"
+"POT-Creation-Date: 2017-12-28 22:36+0100\n"
 "PO-Revision-Date: 2017-12-10 09:00+0900\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
@@ -5334,7 +5334,7 @@ msgctxt "programming language"
 msgid "Language"
 msgstr "プログラミング言語"
 
-#: plugins/models.py:259 templates/about/donate.html:58
+#: plugins/models.py:259 templates/about/donate.html:76
 #: templates/plugins/list.html:84 templates/plugins/list.html:86
 #: templates/plugins/pending.html:29
 msgid "Name"
@@ -5525,25 +5525,41 @@ msgid "How is your money used?"
 msgstr "寄付金の使い道とは?"
 
 #: templates/about/donate.html:21
+#, fuzzy
+#| msgid ""
+#| "It is used to pay the <strong>dedicated server</strong>, used for "
+#| "developments, build of packages and hosting of weechat.org."
 msgid ""
-"It is used to pay the <strong>dedicated server</strong>, used for "
+"Your money helps to pay the <strong>dedicated server</strong>, used for "
 "developments, build of packages and hosting of weechat.org."
 msgstr ""
 "<strong>専用サーバ</strong> の維持費に使われます。このサーバは開発、パッケー"
 "ジのビルド、weechat.org のホスティングに使われます。"
 
 #: templates/about/donate.html:26
-msgid "Click on the Paypal icon below this text and follow instructions."
+#, fuzzy
+#| msgid "Click on the Paypal icon below this text and follow instructions."
+msgid "Click on one of the buttons below and follow the instructions:"
 msgstr ""
 "このテキストの下にある Paypal アイコンをクリックして、指示に従ってください。"
 
+#: templates/about/donate.html:28
+msgid ""
+"<strong>Liberapay</strong>: recurring donation with very low fees "
+"(<strong>best choice</strong>)"
+msgstr ""
+
 #: templates/about/donate.html:29
+msgid "<strong>Paypal</strong>: one-time donation."
+msgstr ""
+
+#: templates/about/donate.html:33
 msgid "You can leave name and comment, they will be displayed on this page."
 msgstr ""
 "名前とコメントを残すこともできます。名前とコメントはこのページに掲載されま"
 "す。"
 
-#: templates/about/donate.html:30
+#: templates/about/donate.html:34
 msgid ""
 "Please note that there is <strong>no advertising</strong> on weechat.org, "
 "therefore URLs are not displayed."
@@ -5551,44 +5567,60 @@ msgstr ""
 "weechat.org には<strong>広告が無い</strong>ということに注意してください。この"
 "ため URL は表示されません。"
 
-#: templates/about/donate.html:42
-msgid "They support WeeChat"
+#: templates/about/donate.html:38
+msgid "Donate using Liberapay"
+msgstr ""
+
+#: templates/about/donate.html:51
+#, fuzzy
+#| msgid "They support WeeChat"
+msgid "They support WeeChat with Liberapay"
 msgstr "WeeChat をサポートしてくれた人々"
 
-#: templates/about/donate.html:43
+#: templates/about/donate.html:56
+msgid "For more information:"
+msgstr ""
+
+#: templates/about/donate.html:60
+#, fuzzy
+#| msgid "They support WeeChat"
+msgid "They support WeeChat with Paypal"
+msgstr "WeeChat をサポートしてくれた人々"
+
+#: templates/about/donate.html:61
 msgid "Whole list:"
 msgstr "完全なリスト:"
 
-#: templates/about/donate.html:43
+#: templates/about/donate.html:61
 msgid "Top 10, ordered by total amount donated:"
 msgstr "上位 10 名、寄付の総額順:"
 
-#: templates/about/donate.html:46
+#: templates/about/donate.html:64
 msgid "show the top 10, ordered by total amount donated"
 msgstr "上位 10 名を表示、寄付の総額順"
 
-#: templates/about/donate.html:48
+#: templates/about/donate.html:66
 msgid "show the whole list"
 msgstr "完全なリストを表示"
 
-#: templates/about/donate.html:54 templates/about/history.html:37
+#: templates/about/donate.html:72 templates/about/history.html:37
 #: templates/plugins/pending.html:38
 msgid "Date"
 msgstr "日付"
 
-#: templates/about/donate.html:56
+#: templates/about/donate.html:74
 msgid "Rank"
 msgstr "順位"
 
-#: templates/about/donate.html:59
+#: templates/about/donate.html:77
 msgid "Amount"
 msgstr "寄付金額"
 
-#: templates/about/donate.html:61
+#: templates/about/donate.html:79
 msgid "Comment"
 msgstr "コメント"
 
-#: templates/about/donate.html:88 templates/doc/doc.html:73
+#: templates/about/donate.html:106 templates/doc/doc.html:73
 msgid "Total"
 msgstr "合計"
 

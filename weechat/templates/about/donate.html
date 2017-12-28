@@ -18,28 +18,46 @@
     </p>
     <h4>{% trans "How is your money used?" %}</h4>
     <p>
-      {% trans "It is used to pay the <strong>dedicated server</strong>, used for developments, build of packages and hosting of weechat.org." %}
+      {% trans "Your money helps to pay the <strong>dedicated server</strong>, used for developments, build of packages and hosting of weechat.org." %}
     </p>
   </div>
 
   <p>
-    {% trans "Click on the Paypal icon below this text and follow instructions." %}
+    {% trans "Click on one of the buttons below and follow the instructions:" %}
+    <ul>
+      <li>{% trans "<strong>Liberapay</strong>: recurring donation with very low fees (<strong>best choice</strong>)" %}</li>
+      <li>{% trans "<strong>Paypal</strong>: one-time donation." %}</li>
+    </ul>
   </p>
   <p>
     {% trans "You can leave name and comment, they will be displayed on this page." %}
     {% trans "Please note that there is <strong>no advertising</strong> on weechat.org, therefore URLs are not displayed." %}
   </p>
 
-  <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-    <p>
-      <input type="image" src="{{ MEDIA_URL }}images/paypal.png" width="100" height="35" alt="Donate" name="submit">
-      <input type="hidden" name="cmd" value="_s-xclick">
-      <input type="hidden" name="hosted_button_id" value="4LSMSNLUAJWNS">
-    </p>
-  </form>
+  <div class="donate">
+    <a href="https://liberapay.com/weechat/donate" target="_blank"><img alt="{% trans "Donate using Liberapay" %}" src="https://liberapay.com/assets/widgets/donate.svg"></a>
+  </div>
+
+  <div class="donate">
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+      <p>
+        <input type="image" src="{{ MEDIA_URL }}images/paypal.png" width="100" height="35" alt="Donate" name="submit">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="hosted_button_id" value="4LSMSNLUAJWNS">
+      </p>
+    </form>
+  </div>
+
+  <h3>{% trans "They support WeeChat with Liberapay" %}</h3>
+
+  <script src="https://liberapay.com/weechat/widgets/receiving.js"></script>
+
+  <p>
+    {% trans "For more information:" %} <a href="https://liberapay.com/weechat" target="_blank">https://liberapay.com/weechat <img src="{{ MEDIA_URL }}images/link.png" alt=">>"></a>
+  </p>
 
   {% if sponsor_list %}
-  <h3>{% trans "They support WeeChat" %}</h3>
+  <h3>{% trans "They support WeeChat with Paypal" %}</h3>
   {% if sort_key == "date" %}{% trans "Whole list:" %}{% else %}{% trans "Top 10, ordered by total amount donated:" %}{% endif %}
   <span class="sort">
   {% if sort_key == "date" %}
