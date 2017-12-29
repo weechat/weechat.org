@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-28 23:55+0100\n"
-"PO-Revision-Date: 2017-12-28 23:56+0100\n"
+"PO-Revision-Date: 2017-12-29 18:56+0100\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <weechatter@arcor.de>\n"
 "Language: de\n"
@@ -722,11 +722,11 @@ msgstr "Dokumentation"
 
 #: news/_i18n_info.py:27
 msgid "Donations via Liberapay"
-msgstr ""
+msgstr "Spenden mittels Liberapay"
 
 #: news/_i18n_info.py:28
 msgid "Donations via Paypal"
-msgstr ""
+msgstr "Spenden mittels PayPal"
 
 #: news/_i18n_info.py:29
 msgid ""
@@ -3023,14 +3023,6 @@ msgstr ""
 "changelog/ChangeLog-2.0.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:117
-#, fuzzy
-#| msgid ""
-#| "Version 1.0.1 is available!\n"
-#| "\n"
-#| "This is a bug fix and maintenance release.\n"
-#| "\n"
-#| "For complete list of bugs fixed, please look at <a href=\"/files/"
-#| "changelog/ChangeLog-1.0.1.html\">ChangeLog</a>."
 msgid ""
 "Version 2.0.1 is available!\n"
 "\n"
@@ -3039,13 +3031,13 @@ msgid ""
 "For complete list of bugs fixed, please look at <a href=\"/files/changelog/"
 "ChangeLog-2.0.1.html\">ChangeLog</a>."
 msgstr ""
-"Version 1.0.1 ist verfügbar!\n"
+"Version 2.0.1 ist verfügbar!\n"
 "\n"
 "Diese Version behebt lediglich Fehler und ist als Korrekturversion zu "
 "verstehen.\n"
 "\n"
 "Eine Liste der Fehlerbereinigungen findet man unter <a href=\"/files/"
-"changelog/ChangeLog-1.0.1.html\">ChangeLog</a>."
+"changelog/ChangeLog-2.0.1.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:118
 msgid ""
@@ -3163,6 +3155,10 @@ msgid ""
 "\">the differences between Liberapay and other recurrent crowdfunding "
 "platforms</a>)."
 msgstr ""
+"Das WeeChat Projekt akzeptiert nun auch turnusmäßige Spenden mittels "
+"Liberapay, dass nur sehr geringe Gebühren erhebt (siehe <a href=\"https://"
+"liberapay.com/about/faq#differences\">die Unterschiede zwischen Liberapay "
+"und anderen wiederkehrenden Crowdfunding-Plattformen</a>)."
 
 #: news/_i18n_info.py:126
 msgid ""
@@ -5812,36 +5808,32 @@ msgstr ""
 
 #: templates/about/donate.html:19
 msgid "How is your money used?"
-msgstr "Wozu wird das Geld verwendet?"
+msgstr "Wofür wird das Geld verwendet?"
 
 #: templates/about/donate.html:21
-#, fuzzy
-#| msgid ""
-#| "It is used to pay the <strong>dedicated server</strong>, used for "
-#| "developments, build of packages and hosting of weechat.org."
 msgid ""
 "Your donations help to pay the <strong>dedicated server</strong>, used for "
 "developments, build of packages and hosting of weechat.org."
 msgstr ""
-"Damit wird unter anderem der <strong>benötigte Server</strong> finanziert, "
-"es dient der Weiterentwicklung, zum erstellen der Pakete und zum hosten auf "
-"weechat.org."
+"Die Spenden helfen uns den  <strong>benötigten Server</strong> zu "
+"finanzieren, es dient der Weiterentwicklung, zum Erstellen der Pakete um zum "
+"Hosten von weechat.org."
 
 #: templates/about/donate.html:26
-#, fuzzy
-#| msgid "Click on the Paypal icon below this text and follow instructions."
 msgid "Click on one of the buttons below and follow the instructions:"
-msgstr "Klicke unten auf die PayPal Grafik und folge der Beschreibung."
+msgstr "Klicke auf eine der beiden Buttons und folge der Beschreibung:"
 
 #: templates/about/donate.html:28
 msgid ""
 "<strong>Liberapay</strong>: recurring donation with very low fees "
 "(<strong>best choice</strong>)"
 msgstr ""
+"<strong>Liberapay</strong>: turnusmäßige Spenden mit sehr geringen Gebühren "
+"(<strong>beste Wahl</strong>)"
 
 #: templates/about/donate.html:29
 msgid "<strong>Paypal</strong>: one-time donation."
-msgstr ""
+msgstr "<strong>Paypal</strong>: einmalige Spende."
 
 #: templates/about/donate.html:33
 msgid "You can leave name and comment, they will be displayed on this page."
@@ -5859,23 +5851,19 @@ msgstr ""
 
 #: templates/about/donate.html:38
 msgid "Donate using Liberapay"
-msgstr ""
+msgstr "Spende mittels Liberapay"
 
 #: templates/about/donate.html:51
-#, fuzzy
-#| msgid "They support WeeChat"
 msgid "They support WeeChat with Liberapay"
-msgstr "WeeChat wird unterstützt durch"
+msgstr "WeeChat wurde via Liberapay unterstützt durch"
 
 #: templates/about/donate.html:53
 msgid "See the weechat page on Liberapay:"
-msgstr ""
+msgstr "siehe die WeeChat-Seite auf Liberapay:"
 
 #: templates/about/donate.html:56
-#, fuzzy
-#| msgid "They support WeeChat"
 msgid "They support WeeChat with Paypal"
-msgstr "WeeChat wird unterstützt durch"
+msgstr "WeeChat wurde via PayPal unterstützt durch"
 
 #: templates/about/donate.html:57
 msgid "Whole list:"
@@ -7053,16 +7041,12 @@ msgid "<strong>multi-protocols architecture</strong> (mainly IRC)"
 msgstr "<strong>Multi-Protokoll fähig</strong> (hauptsächlich IRC)"
 
 #: templates/home/home.html:27
-#, fuzzy
-#| msgid ""
-#| "<strong>extensible</strong> with C, Python, Perl, Ruby, Lua, Tcl, Scheme "
-#| "and Javascript"
 msgid ""
 "<strong>extensible</strong> with C, Python, Perl, Ruby, Lua, Tcl, Scheme, "
 "Javascript and PHP"
 msgstr ""
-"<strong>erweiterbar</strong> mittels C, Python, Perl, Ruby, Lua, Tcl, Scheme "
-"und Javascript"
+"<strong>erweiterbar</strong> mittels C, Python, Perl, Ruby, Lua, Tcl, "
+"Scheme, Javascript und PHP"
 
 #: templates/home/home.html:28
 msgid "<strong>fully documented</strong> and translated into several languages"
