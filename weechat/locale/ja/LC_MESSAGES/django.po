@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-28 23:55+0100\n"
-"PO-Revision-Date: 2017-12-28 23:56+0100\n"
+"PO-Revision-Date: 2017-12-30 09:00+0900\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
 "translation/ja_JP>\n"
@@ -703,11 +703,11 @@ msgstr "文書"
 
 #: news/_i18n_info.py:27
 msgid "Donations via Liberapay"
-msgstr ""
+msgstr "Liberapay 経由の寄付"
 
 #: news/_i18n_info.py:28
 msgid "Donations via Paypal"
-msgstr ""
+msgstr "Paypal 経由の寄付"
 
 #: news/_i18n_info.py:29
 msgid ""
@@ -2911,14 +2911,6 @@ msgstr ""
 "changelog/ChangeLog-2.0.html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:117
-#, fuzzy
-#| msgid ""
-#| "Version 1.0.1 is available!\n"
-#| "\n"
-#| "This is a bug fix and maintenance release.\n"
-#| "\n"
-#| "For complete list of bugs fixed, please look at <a href=\"/files/"
-#| "changelog/ChangeLog-1.0.1.html\">ChangeLog</a>."
 msgid ""
 "Version 2.0.1 is available!\n"
 "\n"
@@ -2927,11 +2919,11 @@ msgid ""
 "For complete list of bugs fixed, please look at <a href=\"/files/changelog/"
 "ChangeLog-2.0.1.html\">ChangeLog</a>."
 msgstr ""
-"バージョン 1.0.1 をリリースしました!\n"
+"バージョン 2.0.1 をリリースしました!\n"
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.0.1."
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-2.0.1."
 "html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:118
@@ -3049,6 +3041,10 @@ msgid ""
 "\">the differences between Liberapay and other recurrent crowdfunding "
 "platforms</a>)."
 msgstr ""
+"WeeChat プロジェクトは Liberapay 経由の定期的な寄付を受け入れるようになりまし"
+"た。この寄付にかかる手数料はとても安価です (<a href=\"https://liberapay.com/"
+"about/faq#differences\">Liberapay とその他のクラウドファンディングサービスの"
+"比較</a>を参照してください)。"
 
 #: news/_i18n_info.py:126
 msgid ""
@@ -5561,33 +5557,28 @@ msgid "How is your money used?"
 msgstr "寄付金の使い道とは?"
 
 #: templates/about/donate.html:21
-#, fuzzy
-#| msgid ""
-#| "It is used to pay the <strong>dedicated server</strong>, used for "
-#| "developments, build of packages and hosting of weechat.org."
 msgid ""
 "Your donations help to pay the <strong>dedicated server</strong>, used for "
 "developments, build of packages and hosting of weechat.org."
 msgstr ""
-"<strong>専用サーバ</strong> の維持費に使われます。このサーバは開発、パッケー"
-"ジのビルド、weechat.org のホスティングに使われます。"
+"皆様からの寄付は<strong>専用サーバ</strong>の維持費に役立てられます。このサー"
+"バは開発、パッケージのビルド、weechat.org のホスティングに使われます。"
 
 #: templates/about/donate.html:26
-#, fuzzy
-#| msgid "Click on the Paypal icon below this text and follow instructions."
 msgid "Click on one of the buttons below and follow the instructions:"
-msgstr ""
-"このテキストの下にある Paypal アイコンをクリックして、指示に従ってください。"
+msgstr "以下のボタンのどれか一つをクリックして、指示に従ってください:"
 
 #: templates/about/donate.html:28
 msgid ""
 "<strong>Liberapay</strong>: recurring donation with very low fees "
 "(<strong>best choice</strong>)"
 msgstr ""
+"<strong>Liberapay</strong>: 安価な手数料で定期的に寄付する (<strong>おすすめ"
+"</strong>)"
 
 #: templates/about/donate.html:29
 msgid "<strong>Paypal</strong>: one-time donation."
-msgstr ""
+msgstr "<strong>Paypal</strong>: 一度だけ寄付する。"
 
 #: templates/about/donate.html:33
 msgid "You can leave name and comment, they will be displayed on this page."
@@ -5605,23 +5596,19 @@ msgstr ""
 
 #: templates/about/donate.html:38
 msgid "Donate using Liberapay"
-msgstr ""
+msgstr "Liberapay 経由の寄付"
 
 #: templates/about/donate.html:51
-#, fuzzy
-#| msgid "They support WeeChat"
 msgid "They support WeeChat with Liberapay"
-msgstr "WeeChat をサポートしてくれた人々"
+msgstr "Liberapay 経由で WeeChat をサポートしてくれた人々"
 
 #: templates/about/donate.html:53
 msgid "See the weechat page on Liberapay:"
-msgstr ""
+msgstr "Liberapay 上の WeeChat のページを参照してください:"
 
 #: templates/about/donate.html:56
-#, fuzzy
-#| msgid "They support WeeChat"
 msgid "They support WeeChat with Paypal"
-msgstr "WeeChat をサポートしてくれた人々"
+msgstr "Paypal 経由でWeeChat をサポートしてくれた人々"
 
 #: templates/about/donate.html:57
 msgid "Whole list:"
@@ -6770,16 +6757,12 @@ msgid "<strong>multi-protocols architecture</strong> (mainly IRC)"
 msgstr "<strong>マルチプロトコルアーキテクチャ</strong> (主に IRC)"
 
 #: templates/home/home.html:27
-#, fuzzy
-#| msgid ""
-#| "<strong>extensible</strong> with C, Python, Perl, Ruby, Lua, Tcl, Scheme "
-#| "and Javascript"
 msgid ""
 "<strong>extensible</strong> with C, Python, Perl, Ruby, Lua, Tcl, Scheme, "
 "Javascript and PHP"
 msgstr ""
-"C 言語、Python、Perl、Ruby、Lua、Tcl、Scheme、Javascript による<strong>拡張が"
-"可能</strong>"
+"C 言語、Python、Perl、Ruby、Lua、Tcl、Scheme、Javascript、PHP による<strong>"
+"拡張が可能</strong>"
 
 #: templates/home/home.html:28
 msgid "<strong>fully documented</strong> and translated into several languages"
