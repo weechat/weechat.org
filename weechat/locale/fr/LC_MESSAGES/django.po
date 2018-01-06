@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-05 01:01+0100\n"
-"PO-Revision-Date: 2018-01-05 01:04+0100\n"
+"POT-Creation-Date: 2018-01-06 15:33+0100\n"
+"PO-Revision-Date: 2018-01-06 15:33+0100\n"
 "Last-Translator: Sébastien Helleu <flashcode@flashtux.org>\n"
 "Language-Team: French <flashcode@flashtux.org>\n"
 "Language: fr\n"
@@ -7122,7 +7122,7 @@ msgstr "Statistiques"
 msgid "Repositories"
 msgstr "Dépôts"
 
-#: templates/plugins/add.html:15 templates/plugins/update.html:16
+#: templates/plugins/add.html:15
 msgid ""
 "<strong>Important:</strong> please follow <strong>all</strong> these rules, "
 "otherwise your script will be rejected:"
@@ -7206,7 +7206,7 @@ msgstr ""
 "d'URL), vous devez utiliser la fonction hook_process (ou "
 "hook_process_hashtable) pour ne pas bloquer WeeChat"
 
-#: templates/plugins/add.html:43 templates/plugins/update.html:25
+#: templates/plugins/add.html:43 templates/plugins/update.html:27
 #: templates/themes/add.html:25 templates/themes/update.html:17
 msgid "Submit"
 msgstr "Soumettre"
@@ -7371,7 +7371,7 @@ msgstr "requiert"
 msgid "Author:"
 msgstr "Auteur :"
 
-#: templates/plugins/list.html:167 templates/plugins/update.html:32
+#: templates/plugins/list.html:167 templates/plugins/update.html:34
 msgid "No script found."
 msgstr "Pas de script trouvé."
 
@@ -7437,7 +7437,30 @@ msgstr "mise à jour"
 msgid "Script not found"
 msgstr "Script non trouvé"
 
+#: templates/plugins/update.html:16
+msgid ""
+"<strong>Important:</strong> the recommended way to update a script is to "
+"send a pull request on <a href=\"https://github.com/weechat/scripts/"
+"\">Github scripts repository</a>: your changes will be public and people "
+"could comment them before they are merged in the repository. If this is not "
+"possible, then you can use this form."
+msgstr ""
+"<strong>Important :</strong> pour mettre à jour un script il est recommandé "
+"d'envoyer une « pull request » sur le <a href=\"https://github.com/weechat/"
+"scripts/\">dépôt scripts Github</a> : vos changements seront publics et "
+"d'autres personnes pourront les commenter avant qu'ils ne soient fusionnés "
+"dans le dépôt. Si cela n'est pas possible, alors vous pouvez utiliser ce "
+"formulaire."
+
 #: templates/plugins/update.html:18
+msgid ""
+"Please follow <strong>all</strong> these rules, otherwise your script will "
+"be rejected:"
+msgstr ""
+"Merci de suivre <strong>toutes</strong> ces règles, sinon votre script sera "
+"rejeté :"
+
+#: templates/plugins/update.html:20
 msgid ""
 "for a Python script with tag \"py3k-ok\", please ensure your new version is "
 "compatible with Python 2.x and 3.x"

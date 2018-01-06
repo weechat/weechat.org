@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-05 01:01+0100\n"
+"POT-Creation-Date: 2018-01-06 15:33+0100\n"
 "PO-Revision-Date: 2017-12-28 23:56+0100\n"
 "Last-Translator: Krzysztof Korościk <soltys@soltys.info>\n"
 "Language-Team: Polish <soltys1@gmail.com>\n"
@@ -7013,7 +7013,7 @@ msgstr "Statystyki"
 msgid "Repositories"
 msgstr "Repozytoria"
 
-#: templates/plugins/add.html:15 templates/plugins/update.html:16
+#: templates/plugins/add.html:15
 msgid ""
 "<strong>Important:</strong> please follow <strong>all</strong> these rules, "
 "otherwise your script will be rejected:"
@@ -7095,7 +7095,7 @@ msgstr ""
 "jeśli Twój skrypt robi coś blokującego (jak pobieranie URL), musisz użyć "
 "funkcji hook_process (lub hook_process_hashtable), aby nie zablokować WeeChat"
 
-#: templates/plugins/add.html:43 templates/plugins/update.html:25
+#: templates/plugins/add.html:43 templates/plugins/update.html:27
 #: templates/themes/add.html:25 templates/themes/update.html:17
 msgid "Submit"
 msgstr "Wyślij"
@@ -7258,7 +7258,7 @@ msgstr "wymaga"
 msgid "Author:"
 msgstr "Autor:"
 
-#: templates/plugins/list.html:167 templates/plugins/update.html:32
+#: templates/plugins/list.html:167 templates/plugins/update.html:34
 msgid "No script found."
 msgstr "Nie znaleziono skryptu."
 
@@ -7323,7 +7323,28 @@ msgstr "uaktualniono"
 msgid "Script not found"
 msgstr "Nie znaleziono skryptu"
 
+#: templates/plugins/update.html:16
+msgid ""
+"<strong>Important:</strong> the recommended way to update a script is to "
+"send a pull request on <a href=\"https://github.com/weechat/scripts/"
+"\">Github scripts repository</a>: your changes will be public and people "
+"could comment them before they are merged in the repository. If this is not "
+"possible, then you can use this form."
+msgstr ""
+
 #: templates/plugins/update.html:18
+#, fuzzy
+#| msgid ""
+#| "<strong>Important:</strong> please follow <strong>all</strong> these "
+#| "rules, otherwise your script will be rejected:"
+msgid ""
+"Please follow <strong>all</strong> these rules, otherwise your script will "
+"be rejected:"
+msgstr ""
+"<strong>Uwaga:</strong> zastosuj się do <strong>wszystkich</strong> "
+"poniższych zasad, w przeciwnym wypadku Twój skrypt zostanie odrzucony:"
+
+#: templates/plugins/update.html:20
 msgid ""
 "for a Python script with tag \"py3k-ok\", please ensure your new version is "
 "compatible with Python 2.x and 3.x"

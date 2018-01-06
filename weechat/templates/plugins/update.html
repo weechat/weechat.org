@@ -13,7 +13,9 @@
 <div class="form">
 
   <div class="infobox">
-    {% trans "<strong>Important:</strong> please follow <strong>all</strong> these rules, otherwise your script will be rejected:" %}
+    {% blocktrans %}<strong>Important:</strong> the recommended way to update a script is to send a pull request on <a href="https://github.com/weechat/scripts/">Github scripts repository</a>: your changes will be public and people could comment them before they are merged in the repository. If this is not possible, then you can use this form.{% endblocktrans %}
+    <br><br>
+    {% trans "Please follow <strong>all</strong> these rules, otherwise your script will be rejected:" %}
     <ul>
       <li>{% blocktrans %}for a Python script with tag "py3k-ok", please ensure your new version is compatible with Python 2.x and 3.x{% endblocktrans %}</li>
     </ul>

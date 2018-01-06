@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-05 01:01+0100\n"
+"POT-Creation-Date: 2018-01-06 15:33+0100\n"
 "PO-Revision-Date: 2017-12-28 23:56+0100\n"
 "Last-Translator: Alexandre Bolelli <semeion7@gmail.com>\n"
 "Language-Team: Portuguese <semeion7@gmail.com>\n"
@@ -7028,7 +7028,7 @@ msgstr "Estatísticas"
 msgid "Repositories"
 msgstr "Repositórios Debian"
 
-#: templates/plugins/add.html:15 templates/plugins/update.html:16
+#: templates/plugins/add.html:15
 #, fuzzy
 #| msgid ""
 #| "<strong>Warning:</strong> please follow <strong>all</strong> these rules, "
@@ -7116,7 +7116,7 @@ msgstr ""
 "se o seu script está bloqueando algo (como buscar URL), você deve usar a "
 "função hook_process (ou hook_process_hashtable) para não bloquear o WeeChat"
 
-#: templates/plugins/add.html:43 templates/plugins/update.html:25
+#: templates/plugins/add.html:43 templates/plugins/update.html:27
 #: templates/themes/add.html:25 templates/themes/update.html:17
 msgid "Submit"
 msgstr "Entregar"
@@ -7301,7 +7301,7 @@ msgstr "requer"
 msgid "Author:"
 msgstr "Autor:"
 
-#: templates/plugins/list.html:167 templates/plugins/update.html:32
+#: templates/plugins/list.html:167 templates/plugins/update.html:34
 msgid "No script found."
 msgstr "Nenhum script encontrado."
 
@@ -7365,7 +7365,28 @@ msgstr "atualizado"
 msgid "Script not found"
 msgstr "Script não encontrado"
 
+#: templates/plugins/update.html:16
+msgid ""
+"<strong>Important:</strong> the recommended way to update a script is to "
+"send a pull request on <a href=\"https://github.com/weechat/scripts/"
+"\">Github scripts repository</a>: your changes will be public and people "
+"could comment them before they are merged in the repository. If this is not "
+"possible, then you can use this form."
+msgstr ""
+
 #: templates/plugins/update.html:18
+#, fuzzy
+#| msgid ""
+#| "<strong>Warning:</strong> please follow <strong>all</strong> these rules, "
+#| "otherwise your script will be rejected:"
+msgid ""
+"Please follow <strong>all</strong> these rules, otherwise your script will "
+"be rejected:"
+msgstr ""
+"<strong>Aviso:</strong> por favor siga <strong>todas</strong> essas regras, "
+"caso contrário, seu script será rejeitado:"
+
+#: templates/plugins/update.html:20
 msgid ""
 "for a Python script with tag \"py3k-ok\", please ensure your new version is "
 "compatible with Python 2.x and 3.x"
