@@ -443,7 +443,7 @@ def handler_plugin_changed(sender, **kwargs):
                         xml += getxmlline(field, value_i18n[field])
                         json += getjsonline(field, value_i18n[field])
             xml += '  </plugin>\n'
-            json += '  },\n'
+            json = json[:-2] + '\n  },\n'
             strings.append(
                 (
                     plugin.desc_en,
@@ -452,8 +452,7 @@ def handler_plugin_changed(sender, **kwargs):
                         plugin.version_weechat()),
                 ))
     xml += '</plugins>\n'
-    json = json[:-2]
-    json += '\n]\n'
+    json = json[:-2] + '\n]\n'
 
     # create plugins.xml
     filename = files_path_join('plugins.xml')
