@@ -330,10 +330,9 @@ def handler_theme_changed(sender, **kwargs):
             xml += '    %s\n' % xml_value('url', strvalue)
             json += '    %s\n' % json_value('url', strvalue)
             xml += '  </theme>\n'
-            json += '  },\n'
+            json = json[:-2] + '\n  },\n'
     xml += '</themes>\n'
-    json = json[:-2]
-    json += '\n]\n'
+    json = json[:-2] + '\n]\n'
 
     # create themes.xml
     filename = files_path_join('themes.xml')
