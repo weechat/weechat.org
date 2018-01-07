@@ -675,7 +675,7 @@ _i18n_plugins_plugins = [
     # Translators: description for script "mpdbitl.lua" (0.3.5+)
     gettext_lazy("Set Bitlbee's status message with current MPD track."),
     # Translators: description for script "iset.pl" (0.3.0+)
-    gettext_lazy("Set WeeChat and plugins options interactively."),
+    gettext_lazy("Set WeeChat and plugins options interactively (deprecated: replaced by fset plugin since WeeChat 2.0)."),
     # Translators: description for script "gnome_screensaver_away.py" (0.3.0+)
     gettext_lazy("Set away status based on Gnome screen saver."),
     # Translators: description for script "fileaway.py" (0.3.0+)
@@ -725,7 +725,7 @@ _i18n_plugins_plugins = [
     # Translators: description for script "weesonata.py" (0.0.1-0.2.6)
     gettext_lazy("Show what's playing on your sonata player."),
     # Translators: description for script "buffers.pl" (0.3.0+)
-    gettext_lazy("Sidebar with list of buffers."),
+    gettext_lazy("Sidebar with list of buffers (deprecated: replaced by buflist plugin since WeeChat 1.8)."),
     # Translators: description for script "arespond.py" (0.3.0+)
     gettext_lazy("Simple autoresponder."),
     # Translators: description for script "query_blocker.pl" (0.3.1+)
