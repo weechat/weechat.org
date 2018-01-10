@@ -159,15 +159,15 @@ var deb_apt_cmds = [
         <kbd>$ sudo apt-get update</kbd>
       </li>
       <li>
-        {% blocktrans %}Install the binary packages; the "plugins" package is highly recommended but not mandatory.{% endblocktrans %}
+        {% blocktrans %}Install the binary packages; the "plugins" package is highly recommended but not mandatory, scripting API packages are optional (popular languages are python and perl).{% endblocktrans %}
         <ul>
           <li>
-            {% trans "For the stable version:" %}
-            <kbd>$ sudo apt-get install weechat-curses weechat-plugins</kbd>
+            {% trans "Example for the stable version:" %}
+            <kbd>$ sudo apt-get install weechat-curses weechat-plugins weechat-python weechat-perl</kbd>
           </li>
           <li>
-            {% trans "For the development version:" %}
-            <kbd>$ sudo apt-get install weechat-devel-curses weechat-devel-plugins</kbd>
+            {% trans "Example for the development version:" %}
+            <kbd>$ sudo apt-get install weechat-devel-curses weechat-devel-plugins weechat-devel-python weechat-devel-perl</kbd>
           </li>
         </ul>
       </li>
