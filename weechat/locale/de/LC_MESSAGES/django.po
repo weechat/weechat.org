@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-11 00:57+0100\n"
-"PO-Revision-Date: 2018-01-07 13:40+0100\n"
+"PO-Revision-Date: 2018-01-14 21:20+0100\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <weechatter@arcor.de>\n"
 "Language: de\n"
@@ -337,9 +337,9 @@ msgid ""
 "variables in name of log files. In some cases, this can lead to an error in "
 "function strftime and a crash caused by the use of an uninitialized buffer."
 msgstr ""
-"Eine Datum/Zeit-Spezifikationen wird umgewandelt und erweitert, nachdem "
-"lokalen Buffervariablen im Dateinamen ersetzt wurden. In Einzelfällen kann "
-"dies zu einem Fehler in der strftime Funktionen führen und einen Absturz "
+"Eine Datum/Zeit-Spezifikation wird umgewandelt und erweitert, nachdem lokale "
+"Buffervariablen im Dateinamen ersetzt wurden. In Einzelfällen kann dies zu "
+"einem Fehler in der strftime Funktionen führen und einen Absturz "
 "verursachen, der durch einen uninitialisierten Buffer hervorgerufen wird."
 
 #: download/_i18n_security.py:14
@@ -5178,12 +5178,12 @@ msgstr "setzt den Bitlbee's Nachrichtenstatus mittels MPD track."
 
 #. Translators: description for script "iset.pl" (0.3.0+)
 #: plugins/_i18n_plugins.py:678
-#, fuzzy
-#| msgid "Set WeeChat and plugins options interactively."
 msgid ""
 "Set WeeChat and plugins options interactively (deprecated: replaced by fset "
 "plugin since WeeChat 2.0)."
-msgstr "interaktiver WeeChat- und Erweiterungen-Editor."
+msgstr ""
+"interaktiver WeeChat- und Erweiterungen-Editor (veraltet: seit WeeChat 2.0 "
+"sollte die fset-Erweiterung genutzt werden)."
 
 #. Translators: description for script "gnome_screensaver_away.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:680
@@ -5319,6 +5319,8 @@ msgid ""
 "Sidebar with list of buffers (deprecated: replaced by buflist plugin since "
 "WeeChat 1.8)."
 msgstr ""
+"seitliche Bar mit einer Auflistung der Buffer (veraltet: seit WeeChat 1.8 "
+"sollte die buflist-Erweiterung genutzt werden)."
 
 #. Translators: description for script "arespond.py" (0.3.0+)
 #: plugins/_i18n_plugins.py:730
@@ -6710,29 +6712,22 @@ msgid "Resynchronize your package index files:"
 msgstr "Indexdateien für Pakete neu einlesen:"
 
 #: templates/download/debian.html:162
-#, fuzzy
-#| msgid ""
-#| "Install the binary packages; the \"plugins\" package is highly "
-#| "recommended but not mandatory."
 msgid ""
 "Install the binary packages; the \"plugins\" package is highly recommended "
 "but not mandatory, scripting API packages are optional (popular languages "
 "are python and perl)."
 msgstr ""
 "Binärpakete installieren; das Paket \"plugins\" wird ausdrücklich empfohlen, "
-"ist aber nicht zwingend notwendig."
+"ist aber nicht zwingend notwendig. Skripten API-Pakete sind optional "
+"(populäre Sprachen sind python und perl)."
 
 #: templates/download/debian.html:165
-#, fuzzy
-#| msgid "For the stable version:"
 msgid "Example for the stable version:"
-msgstr "für stabile Version:"
+msgstr "Beispiel für stabile Version:"
 
 #: templates/download/debian.html:169
-#, fuzzy
-#| msgid "For the development version:"
 msgid "Example for the development version:"
-msgstr "für die Entwicklerversion:"
+msgstr "Beispiel für die Entwicklerversion:"
 
 #: templates/download/debian.html:175
 msgid ""
