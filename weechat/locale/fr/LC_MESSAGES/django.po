@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-18 18:39+0100\n"
-"PO-Revision-Date: 2018-01-11 00:57+0100\n"
+"POT-Creation-Date: 2018-01-18 18:42+0100\n"
+"PO-Revision-Date: 2018-01-18 18:42+0100\n"
 "Last-Translator: Sébastien Helleu <flashcode@flashtux.org>\n"
 "Language-Team: French <flashcode@flashtux.org>\n"
 "Language: fr\n"
@@ -910,7 +910,7 @@ msgstr ""
 
 #: news/_i18n_info.py:52 scripts/models.py:264 templates/about/history.html:38
 #: templates/doc/doc.html:28 templates/download/packages.html:42
-#: templates/scripts/list.html:96 templates/scripts/pending.html:32
+#: templates/scripts/list.html:90 templates/scripts/pending.html:32
 msgid "Version"
 msgstr "Version"
 
@@ -5563,14 +5563,14 @@ msgstr ""
 "Ce nom existe déjà, merci de choisir un autre nom (modifier le contenu du "
 "script en conséquence)."
 
-#: scripts/models.py:254 templates/scripts/list.html:90
-#: templates/scripts/list.html:92 templates/scripts/pending.html:33
+#: scripts/models.py:254 templates/scripts/list.html:84
+#: templates/scripts/list.html:86 templates/scripts/pending.html:33
 msgctxt "programming language"
 msgid "Language"
 msgstr "Langage"
 
 #: scripts/models.py:259 templates/about/donate.html:75
-#: templates/scripts/list.html:84 templates/scripts/list.html:86
+#: templates/scripts/list.html:78 templates/scripts/list.html:80
 #: templates/scripts/pending.html:29
 msgid "Name"
 msgstr "Nom"
@@ -5579,8 +5579,8 @@ msgstr "Nom"
 msgid "version of script (only digits or dots)"
 msgstr "version du script (seulement des chiffres ou des points)"
 
-#: scripts/models.py:270 templates/scripts/list.html:99
-#: templates/scripts/list.html:101 templates/scripts/pending.html:34
+#: scripts/models.py:270 templates/scripts/list.html:93
+#: templates/scripts/list.html:95 templates/scripts/pending.html:34
 msgid "License"
 msgstr "Licence"
 
@@ -5599,7 +5599,7 @@ msgstr "le script"
 
 #: scripts/models.py:280 templates/dev/info_list.html:19
 #: templates/dev/roadmap.html:46 templates/download/security.html:35
-#: templates/scripts/list.html:95 templates/scripts/pending.html:30
+#: templates/scripts/list.html:89 templates/scripts/pending.html:30
 #: themes/models.py:143
 msgid "Description"
 msgstr "Description"
@@ -7285,102 +7285,94 @@ msgstr ""
 "sur WeeChat 0.2.x, qui est OBSOLÈTE. Vous ne DEVEZ PAS charger ces scripts "
 "avec la dernière version stable de WeeChat !"
 
-#: templates/scripts/list.html:28
-msgid "Display scripts for stable API (&ge; 0.3.0)"
-msgstr "Afficher les scripts pour l'API stable (&ge; 0.3.0)"
-
-#: templates/scripts/list.html:30
-msgid "Display scripts for legacy API (&le; 0.2.6)"
-msgstr "Afficher les scripts pour l'ancienne API (&le; 0.2.6)"
-
-#: templates/scripts/list.html:33
+#: templates/scripts/list.html:27
 msgid "List:"
 msgstr "Liste :"
 
-#: templates/scripts/list.html:37
+#: templates/scripts/list.html:31
 msgid "Version:"
 msgstr "Version :"
 
-#: templates/scripts/list.html:39
+#: templates/scripts/list.html:33
 msgid "filter:"
 msgstr "filtre :"
 
-#: templates/scripts/list.html:39
+#: templates/scripts/list.html:33
 msgid "remove"
 msgstr "supprimer"
 
-#: templates/scripts/list.html:41
+#: templates/scripts/list.html:35
 msgid "no filter"
 msgstr "pas de filtre"
 
-#: templates/scripts/list.html:43 templates/scripts/scripts.html:5
+#: templates/scripts/list.html:37 templates/scripts/scripts.html:5
 msgid "scripts"
 msgstr "scripts"
 
-#: templates/scripts/list.html:46 templates/scripts/list.html:50
+#: templates/scripts/list.html:40 templates/scripts/list.html:44
 msgid "Filters by popularity"
 msgstr "Filtres par popularité"
 
-#: templates/scripts/list.html:46 templates/scripts/list.html:50
+#: templates/scripts/list.html:40 templates/scripts/list.html:44
 msgid "Filters by name"
 msgstr "Filtres par nom"
 
-#: templates/scripts/list.html:47 templates/scripts/list.html:51
-msgid "sort by name"
-msgstr "trier par nom"
+#: templates/scripts/list.html:41 templates/scripts/list.html:45
+msgid "sort filters by name"
+msgstr "trier les filtres par nom"
 
-#: templates/scripts/list.html:47 templates/scripts/list.html:51
-msgid "sort by popularity"
-msgstr "trier par popularité"
+#: templates/scripts/list.html:41 templates/scripts/list.html:45
+msgid "sort filters by popularity"
+msgstr "trier les filtres par popularité"
 
-#: templates/scripts/list.html:54 templates/scripts/list.html:56
+#: templates/scripts/list.html:48 templates/scripts/list.html:50
 msgid "Language:"
 msgstr "Langage :"
 
-#: templates/scripts/list.html:62 templates/scripts/list.html:64
-#: templates/scripts/list.html:155
+#: templates/scripts/list.html:56 templates/scripts/list.html:58
+#: templates/scripts/list.html:149
 msgid "License:"
 msgstr "Licence :"
 
-#: templates/scripts/list.html:70 templates/scripts/list.html:72
-#: templates/scripts/list.html:147
+#: templates/scripts/list.html:64 templates/scripts/list.html:66
+#: templates/scripts/list.html:141
 msgid "Tag:"
 msgstr "Étiquette :"
 
-#: templates/scripts/list.html:106 templates/scripts/list.html:108
+#: templates/scripts/list.html:100 templates/scripts/list.html:102
 #: templates/scripts/pending.html:35
 msgid "Min"
 msgstr "Min"
 
-#: templates/scripts/list.html:113 templates/scripts/list.html:115
+#: templates/scripts/list.html:107 templates/scripts/list.html:109
 #: templates/scripts/pending.html:36
 msgid "Max"
 msgstr "Max"
 
-#: templates/scripts/list.html:120 templates/scripts/list.html:122
+#: templates/scripts/list.html:114 templates/scripts/list.html:116
 #: templates/scripts/pending.html:37 templates/scripts/source.html:24
 msgid "Author"
 msgstr "Auteur"
 
-#: templates/scripts/list.html:127 templates/scripts/list.html:129
+#: templates/scripts/list.html:121 templates/scripts/list.html:123
 #: templates/themes/list.html:28
 msgid "Added"
 msgstr "Ajouté"
 
-#: templates/scripts/list.html:134 templates/scripts/list.html:136
+#: templates/scripts/list.html:128 templates/scripts/list.html:130
 msgid "Updated"
 msgstr "Mis à jour"
 
-#: templates/scripts/list.html:151 templates/scripts/pending.html:52
+#: templates/scripts/list.html:145 templates/scripts/pending.html:52
 #: templates/scripts/source.html:21
 msgid "requires"
 msgstr "requiert"
 
-#: templates/scripts/list.html:158 templates/themes/list.html:24
+#: templates/scripts/list.html:152 templates/themes/list.html:24
 msgid "Author:"
 msgstr "Auteur :"
 
-#: templates/scripts/list.html:167 templates/scripts/update.html:34
+#: templates/scripts/list.html:161 templates/scripts/update.html:34
 msgid "No script found."
 msgstr "Pas de script trouvé."
 
@@ -7601,6 +7593,18 @@ msgstr "Erreur interne."
 #: themes/models.py:269
 msgid "Invalid name: different from theme."
 msgstr "Nom invalide : différent du thème."
+
+#~ msgid "Display scripts for stable API (&ge; 0.3.0)"
+#~ msgstr "Afficher les scripts pour l'API stable (&ge; 0.3.0)"
+
+#~ msgid "Display scripts for legacy API (&le; 0.2.6)"
+#~ msgstr "Afficher les scripts pour l'ancienne API (&le; 0.2.6)"
+
+#~ msgid "sort by name"
+#~ msgstr "trier par nom"
+
+#~ msgid "sort by popularity"
+#~ msgstr "trier par popularité"
 
 #~ msgid "Sidebar with list of buffers."
 #~ msgstr "Barre latérale avec la liste des tampons."

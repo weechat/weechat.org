@@ -38,11 +38,11 @@
     </div>
     <div id="script_filters_0" class="filters" style="{% if script_filters_displayed %}display: none{% endif %}">
       <a href="#" onclick="toggle('script_filters_0', 'none'); toggle('script_filters_1', 'block'); set_cookie('script_filters', '1_{{ script_filters_sort }}', '/scripts', 30)">&#9654; {% if script_filters_sort == "popularity" %}{% trans "Filters by popularity" %}{% else %}{% trans "Filters by name" %}{% endif %}</a>
-      &nbsp; ({% if script_filters_sort == "popularity" %}<a href="{% url 'scripts_api' api %}" onclick="set_cookie('script_filters', '1_name', '/scripts', 30)">{% trans "sort by name" %}</a>{% else %}<a href="{% url 'scripts_api' api %}" onclick="set_cookie('script_filters', '1_popularity', '/scripts', 30)">{% trans "sort by popularity" %}</a>{% endif %})
+      &nbsp; ({% if script_filters_sort == "popularity" %}<a href="{% url 'scripts_api' api %}" onclick="set_cookie('script_filters', '1_name', '/scripts', 30)">{% trans "sort filters by name" %}</a>{% else %}<a href="{% url 'scripts_api' api %}" onclick="set_cookie('script_filters', '1_popularity', '/scripts', 30)">{% trans "sort filters by popularity" %}</a>{% endif %})
     </div>
     <div id="script_filters_1" class="filters" style="{% if not script_filters_displayed %}display: none{% endif %}">
       <a href="#" onclick="toggle('script_filters_1', 'none'); toggle('script_filters_0', 'block'); set_cookie('script_filters', '0_{{ script_filters_sort }}', '/scripts', 30)">&#9660; {% if script_filters_sort == "popularity" %}{% trans "Filters by popularity" %}{% else %}{% trans "Filters by name" %}{% endif %}</a>
-      &nbsp; ({% if script_filters_sort == "popularity" %}<a href="{% url 'scripts_api' api %}" onclick="set_cookie('script_filters', '1_name', '/scripts', 30)">{% trans "sort by name" %}</a>{% else %}<a href="{% url 'scripts_api' api %}" onclick="set_cookie('script_filters', '1_popularity', '/scripts', 30)">{% trans "sort by popularity" %}</a>{% endif %})
+      &nbsp; ({% if script_filters_sort == "popularity" %}<a href="{% url 'scripts_api' api %}" onclick="set_cookie('script_filters', '1_name', '/scripts', 30)">{% trans "sort filters by name" %}</a>{% else %}<a href="{% url 'scripts_api' api %}" onclick="set_cookie('script_filters', '1_popularity', '/scripts', 30)">{% trans "sort filters by popularity" %}</a>{% endif %})
       <div class="one_filter">
         {% if languages %}
           {% trans "Language:" %}
