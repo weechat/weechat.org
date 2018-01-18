@@ -68,7 +68,7 @@ def get_language_from_extension(ext):
                  if value[0] == ext), None)
 
 
-class Plugin(models.Model):
+class Script(models.Model):
     """A WeeChat script."""
     visible = models.BooleanField(default=False)
     popularity = models.IntegerField()
@@ -191,9 +191,9 @@ class NameField(forms.CharField):
         if not re.search('^[a-z0-9_]+$', value):
             raise forms.ValidationError(
                 gettext_lazy('This name is invalid.'))
-        plugins = Plugin.objects.exclude(max_weechat='0.2.6') \
+        scripts = Script.objects.exclude(max_weechat='0.2.6') \
             .filter(name=value)
-        if plugins:
+        if scripts:
             raise forms.ValidationError(
                 gettext_lazy('This name already exists, please choose another '
                              'name (update script content accordingly).'))
@@ -236,7 +236,7 @@ def get_min_max_choices():
         return []
 
 
-class PluginFormAdd(forms.Form):
+class ScriptFormAdd(forms.Form):
     """Form to add a script."""
     languages = (
         ('python', 'Python (.py)'),
@@ -316,7 +316,7 @@ class PluginFormAdd(forms.Form):
     )
 
     def __init__(self, *args, **kwargs):
-        super(PluginFormAdd, self).__init__(*args, **kwargs)
+        super(ScriptFormAdd, self).__init__(*args, **kwargs)
         self.fields['min_max'].choices = get_min_max_choices()
         self.fields['name'].help_text = gettext_lazy(
             'short name of script (max {max_chars} chars, '
@@ -324,26 +324,26 @@ class PluginFormAdd(forms.Form):
                 max_chars=MAX_LENGTH_NAME)
 
 
-def get_plugin_choices():
+def get_script_choices():
     """Get list of scripts for update form."""
     try:
-        plugin_list = Plugin.objects.exclude(max_weechat='0.2.6') \
+        script_list = Script.objects.exclude(max_weechat='0.2.6') \
             .filter(visible=1).order_by('name')
-        plugin_choices = []
-        plugin_choices.append(('', gettext_lazy('Choose...')))
-        for plugin in plugin_list:
-            name = '%s - v%s (%s)' % (plugin.name_with_extension(),
-                                      plugin.version, plugin.version_weechat())
-            plugin_choices.append((plugin.id, name))
-        return plugin_choices
+        script_choices = []
+        script_choices.append(('', gettext_lazy('Choose...')))
+        for script in script_list:
+            name = '%s - v%s (%s)' % (script.name_with_extension(),
+                                      script.version, script.version_weechat())
+            script_choices.append((script.id, name))
+        return script_choices
     except:  # noqa: E722
         return []
 
 
-class PluginFormUpdate(forms.Form):
+class ScriptFormUpdate(forms.Form):
     """Form to update a script."""
     required_css_class = 'required'
-    plugin = forms.ChoiceField(
+    script = forms.ChoiceField(
         choices=[],
         label=gettext_lazy('Script'),
         widget=forms.Select(attrs={'autofocus': True}),
@@ -382,8 +382,8 @@ class PluginFormUpdate(forms.Form):
     )
 
     def __init__(self, *args, **kwargs):
-        super(PluginFormUpdate, self).__init__(*args, **kwargs)
-        self.fields['plugin'].choices = get_plugin_choices()
+        super(ScriptFormUpdate, self).__init__(*args, **kwargs)
+        self.fields['script'].choices = get_script_choices()
 
 
 def getxmlline(key, value):
@@ -400,18 +400,18 @@ def getjsonline(key, value):
         key, strvalue.replace('"', '\\"').replace("'", "\\'"))
 
 
-def handler_plugin_changed(sender, **kwargs):
+def handler_script_changed(sender, **kwargs):
     """Build files plugins.{xml,json}(.gz) after update/delete of a script."""
     xml = '<?xml version="1.0" encoding="utf-8"?>\n'
     xml += '<plugins>\n'
     json = '[\n'
     strings = []
-    for plugin in Plugin.objects.filter(visible=1).order_by('id'):
-        if plugin.visible:
-            xml += '  <plugin id="%s">\n' % plugin.id
+    for script in Script.objects.filter(visible=1).order_by('id'):
+        if script.visible:
+            xml += '  <plugin id="%s">\n' % script.id
             json += '  {\n'
-            json += '    "id": "%s",\n' % plugin.id
-            for key, value in plugin.__dict__.items():
+            json += '    "id": "%s",\n' % script.id
+            for key, value in script.__dict__.items():
                 value_i18n = {}
                 if key not in ['_state', 'id', 'visible', 'approval']:
                     if value is None:
@@ -421,12 +421,12 @@ def handler_plugin_changed(sender, **kwargs):
                             # FIXME: use the "Host" from request, but...
                             # request is not available in this handler!
                             value = ('https://weechat.org/%s' %
-                                     plugin.build_url()[1:])
+                                     script.build_url()[1:])
                         elif key == 'mail':
                             value = value.replace('@', ' [at] ')
                             value = value.replace('.', ' [dot] ')
                         elif key == 'md5sum':
-                            value = plugin.md5()
+                            value = script.md5()
                         elif key.startswith('desc'):
                             if key == 'desc_en':
                                 for lang, locale in \
@@ -446,10 +446,10 @@ def handler_plugin_changed(sender, **kwargs):
             json = json[:-2] + '\n  },\n'
             strings.append(
                 (
-                    plugin.desc_en,
+                    script.desc_en,
                     'description for script "%s" (%s)' % (
-                        plugin.name_with_extension(),
-                        plugin.version_weechat()),
+                        script.name_with_extension(),
+                        script.version_weechat()),
                 ))
     xml += '</plugins>\n'
     json = json[:-2] + '\n]\n'
@@ -476,9 +476,9 @@ def handler_plugin_changed(sender, **kwargs):
         _f_out.writelines(_f_in)
         _f_out.close()
 
-    # create _i18n_plugins.py
-    i18n_autogen('plugins', 'plugins', strings)
+    # create _i18n_scripts.py
+    i18n_autogen('scripts', 'scripts', strings)
 
 
-post_save.connect(handler_plugin_changed, sender=Plugin)
-post_delete.connect(handler_plugin_changed, sender=Plugin)
+post_save.connect(handler_script_changed, sender=Script)
+post_delete.connect(handler_script_changed, sender=Script)

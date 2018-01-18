@@ -167,7 +167,7 @@ INSTALLED_APPS = (
     'weechat.doc',
     'weechat.download',
     'weechat.debian',
-    'weechat.plugins',
+    'weechat.scripts',
     'weechat.themes',
     'weechat.dev',
 )

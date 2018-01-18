@@ -25,7 +25,7 @@
 from django.conf.urls import url
 from django.views.generic.base import TemplateView
 
-from weechat.plugins.views import (
+from weechat.scripts.views import (
     scripts as view_scripts,
     script_source as view_script_source,
     form_add as view_form_add,
@@ -59,11 +59,11 @@ urlpatterns = [
     url(r'^update/$', view_form_update, name='scripts_update'),
     url(r'^pending/$', view_pending, name='scripts_pending'),
     url(r'^addok/$',
-        TemplateView.as_view(template_name='plugins/add_ok.html')),
+        TemplateView.as_view(template_name='scripts/add_ok.html')),
     url(r'^adderror/$',
-        TemplateView.as_view(template_name='plugins/add_error.html')),
+        TemplateView.as_view(template_name='scripts/add_error.html')),
     url(r'^updateok/$',
-        TemplateView.as_view(template_name='plugins/update_ok.html')),
+        TemplateView.as_view(template_name='scripts/update_ok.html')),
     url(r'^updateerror/$',
-        TemplateView.as_view(template_name='plugins/update_error.html')),
+        TemplateView.as_view(template_name='scripts/update_error.html')),
 ]

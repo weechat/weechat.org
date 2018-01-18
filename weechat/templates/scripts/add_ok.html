@@ -1,15 +1,17 @@
-{% extends "plugins/plugins.html" %}
+{% extends "scripts/scripts.html" %}
 
 {% load i18n %}
 
-{% block menu2_update %}selected{% endblock %}
+{% block menu2_add %}selected{% endblock %}
 
 {% block content %}
 
 {{ block.super }}
 
 <div class="successbox">
-  {% trans "New release has been submitted for review." %}
+  {% trans "Your script was submitted for review, it usually takes some weeks (several months if many scripts are pending)." %}
+  <br><br>
+  {% trans "You'll be informed if there is a problem with your script." %}
   <br><br>
   {% trans "Thank you for your patience." %}
 </div>

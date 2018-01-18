@@ -22,13 +22,13 @@
 
 from django.contrib import admin
 
-from weechat.plugins.models import Plugin
+from weechat.scripts.models import Script
 
 
 # pylint: disable=too-many-public-methods
-class PluginAdmin(admin.ModelAdmin):
+class ScriptAdmin(admin.ModelAdmin):
     """Display all scripts on the same page."""
     list_per_page = 10000
 
 
-admin.site.register(Plugin, PluginAdmin)
+admin.site.register(Script, ScriptAdmin)

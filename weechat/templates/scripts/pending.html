@@ -1,4 +1,4 @@
-{% extends "plugins/plugins.html" %}
+{% extends "scripts/scripts.html" %}
 
 {% load i18n %}{% load txt2html %}
 
@@ -22,8 +22,8 @@
   <a href="mailto:{% txt2html "flashcode@flashtux.org" %}" title="FlashCode">Sébastien Helleu</a>.
 </div>
 
-{% if plugin_list %}
-  <div class="pluginlist">
+{% if script_list %}
+  <div class="scriptlist">
     <table class="table">
       <tr class="header">
         <th class="name">{% trans "Name" %}</th>
@@ -37,29 +37,29 @@
         <th>{% trans "Author" %}</th>
         <th>{% trans "Date" %}</th>
       </tr>
-    {% for plugin in plugin_list %}
+    {% for script in script_list %}
       <tr class="{% cycle 'row1' 'row2' %}">
         <td class="name">
-          {% if plugin.file_exists %}
-          <a href="{{ plugin.build_url }}">{{ plugin.name }}<span class="ext">.{{ plugin.extension }}</span></a>
+          {% if script.file_exists %}
+          <a href="{{ script.build_url }}">{{ script.name }}<span class="ext">.{{ script.extension }}</span></a>
           {% else %}
-          {{ plugin.name }}<span class="ext">.{{ plugin.extension }}</span>
+          {{ script.name }}<span class="ext">.{{ script.extension }}</span>
           {% endif %}
         </td>
         <td class="description">
-          {{ plugin.desc_i18n }}
-          {% if plugin.requirements %}
-            <span class="requirements"> ({% trans "requires" %}: {{ plugin.requirements }})</span>
+          {{ script.desc_i18n }}
+          {% if script.requirements %}
+            <span class="requirements"> ({% trans "requires" %}: {{ script.requirements }})</span>
           {% endif %}
         </td>
-        <td class="approval">{{ plugin.approval }}</td>
-        <td class="version">{{ plugin.version }}</td>
-        <td class="language">{{ plugin.language_display }}</td>
-        <td class="license">{{ plugin.license }}</td>
-        <td class="min_max">{{ plugin.min_weechat }}</td>
-        <td class="min_max">{{ plugin.max_weechat }}</td>
-        <td class="author">{{ plugin.author }}</td>
-        <td class="date">{% if plugin.added %}{{ plugin.added|date:"Y-m-d" }}{% endif %}</td>
+        <td class="approval">{{ script.approval }}</td>
+        <td class="version">{{ script.version }}</td>
+        <td class="language">{{ script.language_display }}</td>
+        <td class="license">{{ script.license }}</td>
+        <td class="min_max">{{ script.min_weechat }}</td>
+        <td class="min_max">{{ script.max_weechat }}</td>
+        <td class="author">{{ script.author }}</td>
+        <td class="date">{% if script.added %}{{ script.added|date:"Y-m-d" }}{% endif %}</td>
       </tr>
     {% endfor %}
     </table>

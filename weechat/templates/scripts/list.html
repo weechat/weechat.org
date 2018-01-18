@@ -1,4 +1,4 @@
-{% extends "plugins/plugins.html" %}
+{% extends "scripts/scripts.html" %}
 
 {% load i18n %}
 
@@ -10,7 +10,7 @@
 
 {{ block.super }}
 
-{% if plugin_list %}
+{% if script_list %}
   <div class="infobox">
     {% trans "<strong>Important:</strong> these scripts are written by external contributors, therefore WeeChat developers are <strong>NOT RESPONSIBLE</strong> for problems caused by one of these scripts." %}
     <br>
@@ -21,7 +21,7 @@
       {% trans "WARNING: the legacy API is deprecated and these scripts runs only on WeeChat 0.2.x, which is OBSOLETE. You MUST NOT load these scripts with latest stable version of WeeChat!" %}
     </div>
   {% endif %}
-  <div class="pluginsearch">
+  <div class="scriptsearch">
     <div class="search">
       <span class="links">
         {% if api == "legacy" %}
@@ -40,7 +40,7 @@
       {% else %}
         {% trans "no filter" %},
       {% endif %}
-      <strong>{{ plugin_list|length }}</strong> {% trans "scripts" %}.
+      <strong>{{ script_list|length }}</strong> {% trans "scripts" %}.
     </div>
     <div id="script_filters_0" class="filters" style="{% if script_filters_displayed %}display: none{% endif %}">
       <a href="#" onclick="toggle('script_filters_0', 'none'); toggle('script_filters_1', 'block'); set_cookie('script_filters', '1_{{ script_filters_sort }}', '/scripts', 30)">&#9654; {% if script_filters_sort == "popularity" %}{% trans "Filters by popularity" %}{% else %}{% trans "Filters by name" %}{% endif %}</a>
@@ -76,7 +76,7 @@
     </div>
   </div>
 
-  <div class="pluginlist">
+  <div class="scriptlist">
     <table class="table">
       <tr>
         <th class="name">
@@ -137,27 +137,27 @@
           {% endif %}
         </th>
       </tr>
-    {% for plugin in plugin_list %}
+    {% for script in script_list %}
       <tr class="{% cycle 'row1' 'row2' %}">
         <td class="name">
-          <div class="popular">{{ plugin.popularity_img|safe }}</div><a href="{% if api == 'legacy' %}{% url 'scripts_source_api_name_html' api plugin.name_with_extension %}{% else %}{% url 'scripts_source_name_html' plugin.name_with_extension %}{% endif %}">{{ plugin.name }}<span class="ext">.{{ plugin.extension }}</span></a>
+          <div class="popular">{{ script.popularity_img|safe }}</div><a href="{% if api == 'legacy' %}{% url 'scripts_source_api_name_html' api script.name_with_extension %}{% else %}{% url 'scripts_source_name_html' script.name_with_extension %}{% endif %}">{{ script.name }}<span class="ext">.{{ script.extension }}</span></a>
         </td>
         <td class="description">
           <div class="tags">
-          [{% for tag in plugin.tagslist %}<a href="{% url 'scripts_api_filter' api 'tag' tag %}" title="{% trans "Tag:" %} {{ tag }}">{{ tag }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}]
+          [{% for tag in script.tagslist %}<a href="{% url 'scripts_api_filter' api 'tag' tag %}" title="{% trans "Tag:" %} {{ tag }}">{{ tag }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}]
           </div>
-          {{ plugin.desc_i18n }}
-          {% if plugin.requirements %}
-            <span class="requirements"> ({% trans "requires" %}: {{ plugin.requirements }})</span>
+          {{ script.desc_i18n }}
+          {% if script.requirements %}
+            <span class="requirements"> ({% trans "requires" %}: {{ script.requirements }})</span>
           {% endif %}
         </td>
-        <td class="version">{{ plugin.version }}</td>
-        <td class="license"><a href="{% url 'scripts_api_filter' api 'license' plugin.license %}" title="{% trans "License:" %} {{ plugin.license }}">{{ plugin.license }}</a></td>
-        <td class="min_max">{{ plugin.min_weechat }}</td>
-        <td class="min_max">{{ plugin.max_weechat }}</td>
-        <td class="author"><a href="{% url 'scripts_api_filter' api 'author' plugin.author %}" title="{% trans "Author:" %} {{ plugin.author }}">{{ plugin.author }}</a></td>
-        <td class="date">{% if plugin.added %}{{ plugin.added|date:"Y-m-d" }}{% endif %}</td>
-        <td class="date">{% if plugin.updated %}{% if plugin.added != plugin.updated %}{{ plugin.updated|date:"Y-m-d" }}{% endif %}{% endif %}</td>
+        <td class="version">{{ script.version }}</td>
+        <td class="license"><a href="{% url 'scripts_api_filter' api 'license' script.license %}" title="{% trans "License:" %} {{ script.license }}">{{ script.license }}</a></td>
+        <td class="min_max">{{ script.min_weechat }}</td>
+        <td class="min_max">{{ script.max_weechat }}</td>
+        <td class="author"><a href="{% url 'scripts_api_filter' api 'author' script.author %}" title="{% trans "Author:" %} {{ script.author }}">{{ script.author }}</a></td>
+        <td class="date">{% if script.added %}{{ script.added|date:"Y-m-d" }}{% endif %}</td>
+        <td class="date">{% if script.updated %}{% if script.added != script.updated %}{{ script.updated|date:"Y-m-d" }}{% endif %}{% endif %}</td>
       </tr>
     {% endfor %}
     </table>

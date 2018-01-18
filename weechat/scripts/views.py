@@ -31,7 +31,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 from weechat.common.path import files_path_join
-from weechat.plugins.models import Plugin, PluginFormAdd, PluginFormUpdate, \
+from weechat.scripts.models import Script, ScriptFormAdd, ScriptFormUpdate, \
     get_language_from_extension
 
 API_OLD = '0.2.6'
@@ -83,29 +83,29 @@ def scripts(request, api='stable', sort_key='popularity', filter_name='',
         return item[0].lower()
 
     if api == 'legacy':
-        plugin_list = Plugin.objects.filter(visible=1) \
+        script_list = Script.objects.filter(visible=1) \
             .filter(max_weechat=API_OLD).order_by(*get_sort_key(sort_key))
     else:
-        plugin_list = Plugin.objects.filter(visible=1) \
+        script_list = Script.objects.filter(visible=1) \
             .filter(min_weechat__gte=API_STABLE) \
             .order_by(*get_sort_key(sort_key))
     if filter_name == 'tag':
-        plugin_list = plugin_list \
+        script_list = script_list \
             .filter(tags__regex=r'(^|,)%s($|,)' % filter_value)
     elif filter_name == 'language':
-        plugin_list = plugin_list.filter(language=filter_value)
+        script_list = script_list.filter(language=filter_value)
     elif filter_name == 'license':
-        plugin_list = plugin_list.filter(license=filter_value)
+        script_list = script_list.filter(license=filter_value)
     elif filter_name == 'author':
-        plugin_list = plugin_list.filter(author=filter_value)
+        script_list = script_list.filter(author=filter_value)
     languages = {}
     licenses = {}
     tags = {}
-    for plugin in plugin_list:
-        languages[plugin.language] = languages.get(plugin.language, 0) + 1
-        licenses[plugin.license] = licenses.get(plugin.license, 0) + 1
-        if plugin.tags:
-            for tag in plugin.tagslist():
+    for script in script_list:
+        languages[script.language] = languages.get(script.language, 0) + 1
+        licenses[script.license] = licenses.get(script.license, 0) + 1
+        if script.tags:
+            for tag in script.tagslist():
                 tags[tag] = tags.get(tag, 0) + 1
     if request.COOKIES.get('script_filters_sort', '') == 'popularity':
         sort_function = sort_by_popularity
@@ -115,9 +115,9 @@ def scripts(request, api='stable', sort_key='popularity', filter_name='',
         request.COOKIES.get('script_filters', '0_name').split('_'))
     return render(
         request,
-        'plugins/list.html',
+        'scripts/list.html',
         {
-            'plugin_list': plugin_list,
+            'script_list': script_list,
             'api': api,
             'sort_key': sort_key,
             'filter_name': filter_name,
@@ -133,15 +133,15 @@ def scripts(request, api='stable', sort_key='popularity', filter_name='',
 
 def script_source(request, api='stable', scriptid='', scriptname=''):
     """Page with source of a script."""
-    plugin = ''
+    script = ''
     if scriptid:
         try:
-            plugin = Plugin.objects.get(id=scriptid)
-            with open(files_path_join(plugin.path(),
-                                      plugin.name_with_extension()),
+            script = Script.objects.get(id=scriptid)
+            with open(files_path_join(script.path(),
+                                      script.name_with_extension()),
                       'rb') as _file:
                 htmlsource = get_highlighted_source(_file.read(),
-                                                    plugin.language)
+                                                    script.language)
         except:  # noqa: E722
             htmlsource = ''
     else:
@@ -153,17 +153,17 @@ def script_source(request, api='stable', scriptid='', scriptname=''):
             sname = sname[0:pos]
         try:
             if api == 'legacy':
-                plugin = Plugin.objects.get(
+                script = Script.objects.get(
                     name=sname,
                     language=get_language_from_extension(sext),
                     max_weechat=API_OLD)
             else:
-                plugin = Plugin.objects.get(
+                script = Script.objects.get(
                     name=sname,
                     language=get_language_from_extension(sext),
                     min_weechat__gte=API_STABLE)
-            with open(files_path_join(plugin.path(),
-                                      plugin.name_with_extension()),
+            with open(files_path_join(script.path(),
+                                      script.name_with_extension()),
                       'rb') as _file:
                 htmlsource = get_highlighted_source(_file.read(),
                                                     PYGMENTS_LEXER[sext])
@@ -171,9 +171,9 @@ def script_source(request, api='stable', scriptid='', scriptname=''):
             htmlsource = ''
     return render(
         request,
-        'plugins/source.html',
+        'scripts/source.html',
         {
-            'plugin': plugin,
+            'script': script,
             'htmlsource': htmlsource,
         },
     )
@@ -182,7 +182,7 @@ def script_source(request, api='stable', scriptid='', scriptname=''):
 def form_add(request):
     """Page with form to add a script."""
     if request.method == 'POST':
-        form = PluginFormAdd(request.POST, request.FILES)
+        form = ScriptFormAdd(request.POST, request.FILES)
         if form.is_valid():
             scriptfile = request.FILES['file']
             min_max = form.cleaned_data['min_max'].split(':')
@@ -193,7 +193,7 @@ def form_add(request):
 
             # add script in database
             now = datetime.now()
-            plugin = Plugin(visible=False,
+            script = Script(visible=False,
                             popularity=0,
                             name=form.cleaned_data['name'],
                             version=form.cleaned_data['version'],
@@ -211,14 +211,14 @@ def form_add(request):
 
             # write script in pending directory
             filename = files_path_join('scripts', 'pending1',
-                                       plugin.name_with_extension())
+                                       script.name_with_extension())
             with open(filename, 'w') as _file:
                 _file.write(scriptfile.read().replace('\r\n', '\n'))
 
             # send e-mail
             try:
                 subject = ('WeeChat: new script %s' %
-                           plugin.name_with_extension())
+                           script.name_with_extension())
                 body = (''
                         'Script      : %s\n'
                         'Version     : %s\n'
@@ -252,14 +252,14 @@ def form_add(request):
                 return HttpResponseRedirect('/scripts/adderror/')
 
             # save script in database
-            plugin.save()
+            script.save()
 
             return HttpResponseRedirect('/scripts/addok/')
     else:
-        form = PluginFormAdd()
+        form = ScriptFormAdd()
     return render(
         request,
-        'plugins/add.html',
+        'scripts/add.html',
         {
             'form': form,
         },
@@ -269,23 +269,23 @@ def form_add(request):
 def form_update(request):
     """Page with form to update a script."""
     if request.method == 'POST':
-        form = PluginFormUpdate(request.POST, request.FILES)
+        form = ScriptFormUpdate(request.POST, request.FILES)
         if form.is_valid():
             scriptfile = request.FILES['file']
-            plugin = Plugin.objects.get(id=form.cleaned_data['plugin'])
+            script = Script.objects.get(id=form.cleaned_data['script'])
 
             # send e-mail
             try:
                 subject = ('WeeChat: new release for script %s' %
-                           plugin.name_with_extension())
+                           script.name_with_extension())
                 body = (''
                         'Script     : %s (%s)\n'
                         'New version: %s\n'
                         'Author     : %s <%s>\n'
                         '\n'
                         'Comment:\n%s\n' %
-                        (plugin.name_with_extension(),
-                         plugin.version_weechat(),
+                        (script.name_with_extension(),
+                         script.version_weechat(),
                          form.cleaned_data['version'],
                          form.cleaned_data['author'],
                          form.cleaned_data['mail'],
@@ -294,7 +294,7 @@ def form_update(request):
                                       form.cleaned_data['mail'])
                 email = EmailMessage(subject, body, sender,
                                      settings.SCRIPTS_MAILTO)
-                email.attach(plugin.name_with_extension(),
+                email.attach(script.name_with_extension(),
                              scriptfile.read().replace('\r\n', '\n'),
                              'text/plain')
                 email.send()
@@ -303,10 +303,10 @@ def form_update(request):
 
             return HttpResponseRedirect('/scripts/updateok/')
     else:
-        form = PluginFormUpdate()
+        form = ScriptFormUpdate()
     return render(
         request,
-        'plugins/update.html',
+        'scripts/update.html',
         {
             'form': form,
         },
@@ -315,12 +315,12 @@ def form_update(request):
 
 def pending(request):
     """Page with scripts pending for approval."""
-    plugin_list = Plugin.objects.filter(visible=0) \
+    script_list = Script.objects.filter(visible=0) \
         .filter(min_weechat__gte=API_STABLE).order_by('-added')
     return render(
         request,
-        'plugins/pending.html',
+        'scripts/pending.html',
         {
-            'plugin_list': plugin_list,
+            'script_list': script_list,
         },
     )

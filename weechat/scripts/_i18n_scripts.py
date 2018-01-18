@@ -3,7 +3,7 @@
 
 from django.utils.translation import gettext_lazy
 
-_i18n_plugins_plugins = [
+_i18n_scripts_scripts = [
     # Translators: description for script "weerock.pl" (0.3.0+)
     gettext_lazy("A \"now playing\" script for several music players."),
     # Translators: description for script "urlbuf.py" (0.3.0+)
