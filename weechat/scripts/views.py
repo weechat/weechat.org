@@ -107,12 +107,12 @@ def scripts(request, api='stable', sort_key='popularity', filter_name='',
         if script.tags:
             for tag in script.tagslist():
                 tags[tag] = tags.get(tag, 0) + 1
-    if request.COOKIES.get('script_filters_sort', '') == 'popularity':
+    script_filters_displayed, script_filters_sort = (
+        request.COOKIES.get('script_filters', '0_name').split('_'))
+    if script_filters_sort == 'popularity':
         sort_function = sort_by_popularity
     else:
         sort_function = sort_by_name
-    script_filters_displayed, script_filters_sort = (
-        request.COOKIES.get('script_filters', '0_name').split('_'))
     return render(
         request,
         'scripts/list.html',
