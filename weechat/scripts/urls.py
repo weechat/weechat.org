@@ -35,20 +35,20 @@ from weechat.scripts.views import (
 
 urlpatterns = [
     url(r'^$', view_scripts, name='scripts'),
-    url(r'^(?P<api>(legacy|stable))/$', view_scripts, name='scripts_api'),
-    url(r'^(?P<api>(legacy|stable))/'
+    url(r'^(?P<api>(stable))/$', view_scripts, name='scripts_api'),
+    url(r'^(?P<api>(stable))/'
         r'(?P<filter_name>(tag|language|license|author))/'
         r'(?P<filter_value>(.*))/$',
         view_scripts, name='scripts_api_filter'),
-    url(r'^(?P<api>(legacy|stable))/sort/(?P<sort_key>(name|language|license|'
+    url(r'^(?P<api>(stable))/sort/(?P<sort_key>(name|language|license|'
         r'min_weechat|max_weechat|author|added|updated))/$',
         view_scripts, name='scripts_api_sort'),
     url(r'^source/(?P<scriptid>\d+)/$', view_script_source,
         name='scripts_source_id'),
-    url(r'^source/(?P<api>(legacy|stable))/(?P<scriptname>[a-zA-Z0-9_.-]+)'
+    url(r'^source/(?P<api>(stable))/(?P<scriptname>[a-zA-Z0-9_.-]+)'
         r'\.html/$',
         view_script_source, name='scripts_source_api_name_html'),
-    url(r'^source/(?P<api>(legacy|stable))/(?P<scriptname>[a-zA-Z0-9_.-]+)/$',
+    url(r'^source/(?P<api>(stable))/(?P<scriptname>[a-zA-Z0-9_.-]+)/$',
         view_script_source, name='scripts_source_api_name'),
     url(r'^source/(?P<scriptname>[a-zA-Z0-9_.-]+)\.html/$',
         view_script_source, {'api': 'stable'},

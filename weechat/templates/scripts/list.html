@@ -24,13 +24,7 @@
   <div class="scriptsearch">
     <div class="search">
       <span class="links">
-        {% if api == "legacy" %}
-          <a href="{% url 'scripts_api' 'stable' %}">{% trans "Display scripts for stable API (&ge; 0.3.0)" %}</a>
-        {% else %}
-          <a href="{% url 'scripts_api' 'legacy' %}">{% trans "Display scripts for legacy API (&le; 0.2.6)" %}</a>
-        {% endif %}
-          &nbsp; | &nbsp;
-          {% trans "List:" %}
+        {% trans "List:" %}
         <a href="/files/plugins.xml">XML</a> (<a href="/files/plugins.xml.gz">gz</a>),
         <a href="/files/plugins.json">JSON</a> (<a href="/files/plugins.json.gz">gz</a>)
       </span>
