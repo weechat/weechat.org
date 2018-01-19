@@ -83,7 +83,7 @@
             {% if package.exists %}
               <a href="/files{{ package.type.htmldir }}/{{ package.filename }}">{{ package.filename }}</a>
               <span class="dlinfopackage">
-                ({{ package.filesize|filesizeformat }}{% if package.display_time %}, {{ package.filedate|localdate }} {{ package.filedate|date:"H:i" }}{% endif %}{% if package.has_checksum %}, <a href="{% url 'package_checksums' package.version.version package.checksum_type %}" target="_blank" title="{% trans "Checksum" %} ({{ package.checksum_type }}): {{ package.checksum }}">{{ package.checksum_type }}</a>{% endif %}{% if package.has_gpg_sig %}, <a href="/files{{ package.type.htmldir }}/{{ package.filename }}.asc" target="_blank">gpg sig</a>{% endif %})
+                ({{ package.filesize|filesizeformat }}{% if package.display_time %}, {{ package.filedate|localdate }} {{ package.filedate|date:"H:i" }}{% endif %}{% if package.has_checksum %}, <a href="{% url 'package_checksums' package.version.version package.checksum_type %}" target="_blank" rel="noopener" title="{% trans "Checksum" %} ({{ package.checksum_type }}): {{ package.checksum }}">{{ package.checksum_type }}</a>{% endif %}{% if package.has_gpg_sig %}, <a href="/files{{ package.type.htmldir }}/{{ package.filename }}.asc" target="_blank" rel="noopener">gpg sig</a>{% endif %})
               </span>
             {% else %}
               <span class="notfound">{{ package.filename }}</span>
@@ -91,14 +91,14 @@
           {% else %}
             {% if package.directory %}
               {% if package.exists %}
-                <a href="/files/{{ package.directory }}" target="_blank"{% if not package.exists %} class="notfound"{% endif %}>{{ package.directory }}</a>
+                <a href="/files/{{ package.directory }}" target="_blank" rel="noopener"{% if not package.exists %} class="notfound"{% endif %}>{{ package.directory }}</a>
                 <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>">
               {% else %}
                 <span class="notfound">{{ package.directory }}</span>
               {% endif %}
             {% else %}
               {% if package.url %}
-                <a href="{{ package.url }}" target="_blank">{{ package.url }}</a>
+                <a href="{{ package.url }}" target="_blank" rel="noopener">{{ package.url }}</a>
                 <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>">
               {% else %}
                 {{ package.text }}
@@ -113,13 +113,13 @@
         <div class="dlitem">
           <span class="dltype">{% trans "ChangeLog" %}</span>
           <img src="{{ MEDIA_URL }}images/dl_doc.png" class="dlicon" alt="doc">
-          <a href="/files/changelog/ChangeLog-{{ package_version.grouper.version }}.html" target="_blank">ChangeLog-{{ package_version.grouper.version }}.html</a>
+          <a href="/files/changelog/ChangeLog-{{ package_version.grouper.version }}.html" target="_blank" rel="noopener">ChangeLog-{{ package_version.grouper.version }}.html</a>
           <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>">
         </div>
         <div class="dlitem">
           <span class="dltype">{% trans "Release notes" %}</span>
           <img src="{{ MEDIA_URL }}images/dl_doc.png" class="dlicon" alt="doc">
-          <a href="/files/releasenotes/ReleaseNotes-{{ package_version.grouper.version }}.html" target="_blank">ReleaseNotes-{{ package_version.grouper.version }}.html</a>
+          <a href="/files/releasenotes/ReleaseNotes-{{ package_version.grouper.version }}.html" target="_blank" rel="noopener">ReleaseNotes-{{ package_version.grouper.version }}.html</a>
           <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>">
         </div>
       </div>
@@ -131,7 +131,7 @@
         <div class="dlitem">
           <span class="dltype">HTML5</span>
           <img src="{{ MEDIA_URL }}images/dl_html5.png" class="dlicon" alt="html5">
-          <a href="https://www.glowing-bear.org" target="_blank">https://www.glowing-bear.org/</a>
+          <a href="https://www.glowing-bear.org" target="_blank" rel="noopener">https://www.glowing-bear.org/</a>
           <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>">
         </div>
         <div class="dlitem">
@@ -142,19 +142,19 @@
         <div class="dlitem">
           <span class="dltype">Android</span>
           <img src="{{ MEDIA_URL }}images/dl_android.png" class="dlicon" alt="android">
-          <a href="https://github.com/ubergeek42/weechat-android" target="_blank">https://github.com/ubergeek42/weechat-android</a>
+          <a href="https://github.com/ubergeek42/weechat-android" target="_blank" rel="noopener">https://github.com/ubergeek42/weechat-android</a>
           <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>">
         </div>
         <div class="dlitem">
           <span class="dltype">Emacs</span>
           <img src="{{ MEDIA_URL }}images/dl_emacs.png" class="dlicon" alt="emacs">
-          <a href="https://github.com/the-kenny/weechat.el" target="_blank">https://github.com/the-kenny/weechat.el</a>
+          <a href="https://github.com/the-kenny/weechat.el" target="_blank" rel="noopener">https://github.com/the-kenny/weechat.el</a>
           <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>">
         </div>
         <div class="dlitem">
           <span class="dltype">JavaScript</span>
           <img src="{{ MEDIA_URL }}images/dl_web.png" class="dlicon" alt="web-js">
-          <a href="https://github.com/eirikb/weecloud" target="_blank">https://github.com/eirikb/weecloud</a>
+          <a href="https://github.com/eirikb/weecloud" target="_blank" rel="noopener">https://github.com/eirikb/weecloud</a>
           <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>">
         </div>
       </div>
@@ -206,19 +206,19 @@
         <div class="dlitem">
           <span class="dltype">{% trans "Savannah page" %}</span>
           <img src="{{ MEDIA_URL }}images/dl_savannah.png" class="dlicon" alt="savannah">
-          <a href="http://savannah.nongnu.org/projects/weechat" target="_blank">http://savannah.nongnu.org/projects/weechat</a>
+          <a href="http://savannah.nongnu.org/projects/weechat" target="_blank" rel="noopener">http://savannah.nongnu.org/projects/weechat</a>
           <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>">
         </div>
         <div class="dlitem">
           <span class="dltype">{% trans "Git - sources" %}</span>
           <img src="{{ MEDIA_URL }}images/dl_github.png" class="dlicon" alt="git">
-          <a href="https://github.com/weechat/weechat" target="_blank">https://github.com/weechat/weechat</a>
+          <a href="https://github.com/weechat/weechat" target="_blank" rel="noopener">https://github.com/weechat/weechat</a>
           <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>">
         </div>
         <div class="dlitem">
           <span class="dltype">{% trans "Git - scripts" %}</span>
           <img src="{{ MEDIA_URL }}images/dl_github.png" class="dlicon" alt="git">
-          <a href="https://github.com/weechat/scripts" target="_blank">https://github.com/weechat/scripts</a>
+          <a href="https://github.com/weechat/scripts" target="_blank" rel="noopener">https://github.com/weechat/scripts</a>
           <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>">
         </div>
         <div class="dlitem">

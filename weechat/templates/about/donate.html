@@ -38,11 +38,11 @@
   </p>
 
   <div class="donate">
-    <a href="https://liberapay.com/weechat/donate" target="_blank"><img alt="{% trans "Donate using Liberapay" %}" src="https://liberapay.com/assets/widgets/donate.svg"></a>
+    <a href="https://liberapay.com/weechat/donate" target="_blank" rel="noopener"><img alt="{% trans "Donate using Liberapay" %}" src="https://liberapay.com/assets/widgets/donate.svg"></a>
   </div>
 
   <div class="donate">
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" rel="noopener">
       <p>
         <input type="image" src="{{ MEDIA_URL }}images/paypal.png" width="100" height="35" alt="Donate" name="submit">
         <input type="hidden" name="cmd" value="_s-xclick">
@@ -53,7 +53,7 @@
 
   <h3>{% trans "They support WeeChat with Liberapay" %}</h3>
 
-  {% trans "See the weechat page on Liberapay:" %} <a href="https://liberapay.com/weechat" target="_blank">https://liberapay.com/weechat <img src="{{ MEDIA_URL }}images/link.png" alt=">>"></a>
+  {% trans "See the weechat page on Liberapay:" %} <a href="https://liberapay.com/weechat" target="_blank" rel="noopener">https://liberapay.com/weechat <img src="{{ MEDIA_URL }}images/link.png" alt=">>"></a>
 
   {% if sponsor_list %}
   <h3>{% trans "They support WeeChat with Paypal" %}</h3>

@@ -38,7 +38,7 @@ SAVANNAH_PATTERN = re.compile(r'(bug|task|patch) #([0-9]+)')
 
 def _replace_github_link(match):
     """Replace a match of GitHub keyword (like "closes #123") by URL."""
-    return '<a href="%s" target="_blank">%s</a>' % (
+    return '<a href="%s" target="_blank" rel="noopener">%s</a>' % (
         GITHUB_LINK % match.group(2),
         match.group(0))
 
@@ -47,7 +47,7 @@ def _replace_savannah_link(match):
     """Replace a match of Savannah keyword (like "bug #12345") by URL."""
     if match.group(1) not in SAVANNAH_LINKS:
         return match.group(0)
-    return '<a href="%s" target="_blank">%s</a>' % (
+    return '<a href="%s" target="_blank" rel="noopener">%s</a>' % (
         SAVANNAH_LINKS[match.group(1)] % match.group(2),
         match.group(0))
 
@@ -87,7 +87,7 @@ def commits_links(commits):
             img = 'link_twin.png'
             title = ' title="branch: %s"' % commit
         images.append('<a href="https://github.com/weechat/weechat/%s/%s" '
-                      'target="_blank">'
+                      'target="_blank" rel="noopener">'
                       '<img src="%simages/%s" width="14" height="14" '
                       'alt="*"%s></a>'
                       % (objtype, commit, settings.MEDIA_URL, img, title))

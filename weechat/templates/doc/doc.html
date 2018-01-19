@@ -25,7 +25,7 @@
     </div>
     <ul>
       {% for dir in doc_list %}
-      <li><a href="/files/doc/old/{{ dir }}" target="_blank">{% trans "Version" %} {{ dir }} <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt=">>"></a></li>
+      <li><a href="/files/doc/old/{{ dir }}" target="_blank" rel="noopener">{% trans "Version" %} {{ dir }} <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt=">>"></a></li>
       {% endfor %}
     </ul>
   </div>
@@ -48,7 +48,7 @@
         {% for file in doc.1 %}
           <td class="icons{% if file.2 == bestlang %} bestlang{% if version == "devel" %}dev{% endif %}{% endif %}">
           {% if file.0 %}
-            <a href="/files/doc/{{ file.0 }}" target="_blank"><img src="{{ MEDIA_URL }}images/doc{% if doc.0.devel %}_dev{% endif %}.png" alt="HTML" width="17" height="22"></a>
+            <a href="/files/doc/{{ file.0 }}" target="_blank" rel="noopener"><img src="{{ MEDIA_URL }}images/doc{% if doc.0.devel %}_dev{% endif %}.png" alt="HTML" width="17" height="22"></a>
           {% else %}
             -
           {% endif %}

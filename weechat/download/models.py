@@ -34,7 +34,7 @@ from weechat.common.tracker import commits_links, tracker_links
 from weechat.common.templatetags.localdate import localdate
 
 CVE_URL = ('<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=%(cve)s" '
-           'target="_blank">%(cve)s</a>')
+           'target="_blank" rel="noopener">%(cve)s</a>')
 
 
 class Release(models.Model):
