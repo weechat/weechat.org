@@ -59,10 +59,9 @@ msgid "First version."
 msgstr "Pierwsza wersja."
 
 #: about/_i18n_keydates.py:14
-#, fuzzy
 #| msgid "Set WeeChat and plugins options interactively."
 msgid "Fset plugin (fast set of WeeChat and plugins options), PHP plugin."
-msgstr "Ustawia interaktywnie opcje WeeChat oraz wtyczek."
+msgstr "Wtyczka fset (szybkie ustawianie opcji WeeChat i wtyczek), plugin PHP."
 
 #: about/_i18n_keydates.py:15
 msgid "Full UTF-8 support."
@@ -701,11 +700,11 @@ msgstr "Dokumentacja"
 
 #: news/_i18n_info.py:27
 msgid "Donations via Liberapay"
-msgstr ""
+msgstr "Dotacje przez Liberapay"
 
 #: news/_i18n_info.py:28
 msgid "Donations via Paypal"
-msgstr ""
+msgstr "Dotacje przez Paypal"
 
 #: news/_i18n_info.py:29
 msgid ""
@@ -2927,9 +2926,45 @@ msgid ""
 "\"https://weechat.org/blog/post/2017/12/03/Version-2.0\">development blog</"
 "a> or <a href=\"/files/changelog/ChangeLog-2.0.html\">ChangeLog</a>."
 msgstr ""
+"Wersja 2.0 jest dostępna!\n"
+"\n"
+"Najważniejsze zmiany:\n"
+"\n"
+"- nowa wtyczka \"fset\" (szybkie ustawianie opcji WeeChat i wtyczek)\n"
+"- nowa wtyczka \"php\" (wsparcie dla skryptów PHP)\n"
+"- dodano opcję buflist.look.add_newline\n"
+"- dodano dwa nowe elementy pasków\"buflist2\" i \"buflist3\" używające tego samego "
+"formatu opcji konfiguracyjnych\n"
+"- dodano flagę \"input_get_empty\" dla buforów\n"
+"- dodano sygnały \"buffer_filters_enabled\" i \"buffer_filters_disabled\"\n"
+"- wsparcie dla ładowania wtyczek ze zmiennej środowiskowej "
+"\"WEECHAT_EXTRA_LIBDIR\"\n"
+"- dodano infolistę \"alias_default\" (lista do myślnych aliasów)\n"
+"- wartość dla komendy /buffer set jest opcjonalna\n"
+"- wsparcie dla liczb zmiennoprzecinkowych i szestnastkowych przy porówywaniu przetworzonych "
+"wartości\n"
+"- dodano opcję weechat.look.save_config_with_fsync\n"
+"- dodano wsparcie dla prefiksu \"quiet:\" w funkcji key_unbind() do cichego "
+"usuwania skrótów klawiszowych\n"
+"- dodano argument \"recurse_subdirs\" w funkcji exec_on_files()\n"
+"- dodano zmienną lokalną \"filter\" w buforze skryptów\n"
+"- usunięto rekursywne ocenianie dodatkowych zmiennych w liście buforów\n"
+"- zmieniono typ argumentów status/gnutls_rc/sock w callbacku hook_connect() "
+"z ciągu na liczbę (w API skryptowym)\n"
+"- zmieniono typ argumentu fd w callbacku hook_fd() z ciągu na liczbę "
+"(w API skryptowym)\n"
+"- poprawiono błędy wyświetlania z filtrowanymi liniami\n"
+"- poprawiono wyświetlanie nicków na nickliście kiedy są w grupach z podgrupami\n"
+"- wywoływany jest hook konfiguracyjny kiedy opcje zmienią nazę lub zostaną usunięte\n"
+"- naprawiono parsowanie komendy CAP we wtyczkach relay/irc\n"
+"- poprawiono wiele błędów.\n"
+"\n"
+"Pełną listę nowych funkcji i poprawionych błędów można znaleźć na <a href="
+"\"http://dev.weechat.org/post/2017/12/03/Version-2.0\">blogu developerskim</"
+"a> oraz w pliku <a href=\"/files/changelog/ChangeLog-2.0.html\">ChangeLog</"
+"a>."
 
 #: news/_i18n_info.py:117
-#, fuzzy
 #| msgid ""
 #| "Version 1.0.1 is available!\n"
 #| "\n"
@@ -2945,12 +2980,12 @@ msgid ""
 "For complete list of bugs fixed, please look at <a href=\"/files/changelog/"
 "ChangeLog-2.0.1.html\">ChangeLog</a>."
 msgstr ""
-"Wersja 1.0.1 jest dostępna!\n"
+"Wersja 2.0.1 jest dostępna!\n"
 "\n"
 "Jest to wersja poprawiająca znalezione błędy.\n"
 "\n"
 "Kompletna lista poprawionych błędów znajduje się w pliku <a href=\"/files/"
-"changelog/ChangeLog-1.0.1.html\">ChangeLog</a>."
+"changelog/ChangeLog-2.0.1.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:118
 msgid ""
@@ -3066,6 +3101,9 @@ msgid ""
 "\">the differences between Liberapay and other recurrent crowdfunding "
 "platforms</a>)."
 msgstr ""
+"Projekt WeeChat akceptuje teraz powtarzające się dotacje poprzez Liberapay, "
+"które pobiera bardzo niskie oplaty (zobacz <a href=\"https://liberapay.com/about/faq#differences"
+"\">różnice pomiędzy Liberapay a innymi platformami crowdfundingowymi</a>)."
 
 #: news/_i18n_info.py:126
 msgid ""
@@ -5023,12 +5061,13 @@ msgstr "Ustawia status Bitlbee na aktualnie odtwarzany utwór w MPD."
 
 #. Translators: description for script "iset.pl" (0.3.0+)
 #: scripts/_i18n_scripts.py:678
-#, fuzzy
 #| msgid "Set WeeChat and plugins options interactively."
 msgid ""
 "Set WeeChat and plugins options interactively (deprecated: replaced by fset "
 "plugin since WeeChat 2.0)."
-msgstr "Ustawia interaktywnie opcje WeeChat oraz wtyczek."
+msgstr ""
+"Ustawia interaktywnie opcje WeeChat oraz wtyczek (przetarzałe: zastąpione "
+"wtyczką fset od wersji 2.0 WeeChat)."
 
 #. Translators: description for script "gnome_screensaver_away.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:680
@@ -5162,6 +5201,8 @@ msgid ""
 "Sidebar with list of buffers (deprecated: replaced by buflist plugin since "
 "WeeChat 1.8)."
 msgstr ""
+"Boczny pasek z listą buforów (przestarzałe: zatąpione przez wtyczką buflist "
+"od wersji 1.8 WeeChat)."
 
 #. Translators: description for script "arespond.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:730
@@ -5653,7 +5694,6 @@ msgid "How is your money used?"
 msgstr "Na co zużywamy twoje pieniądze?"
 
 #: templates/about/donate.html:21
-#, fuzzy
 #| msgid ""
 #| "It is used to pay the <strong>dedicated server</strong>, used for "
 #| "developments, build of packages and hosting of weechat.org."
@@ -5661,41 +5701,44 @@ msgid ""
 "Your donations help to pay the <strong>dedicated server</strong>, used for "
 "developments, build of packages and hosting of weechat.org."
 msgstr ""
-"Są używane do opłacenia <strong>serwera dedykowanego</strong>, używanego do "
+"Twoje dotacje pomagają w opłaceniu <strong>serwera dedykowanego</strong>, używanego do "
 "rozwoju, budowania pakietów i hostowania weechat.org."
 
 #: templates/about/donate.html:26
-#, fuzzy
 #| msgid "Click on the Paypal icon below this text and follow instructions."
 msgid "Click on one of the buttons below and follow the instructions:"
-msgstr "Kliknij na poniższą ikonę Paypal i postępuj wedle instrukcji."
+msgstr "Kliknij jeden z poniższych przycisków i postępuj zgodnie z instrukcjami:"
 
 #: templates/about/donate.html:28
 msgid ""
 "<strong>Liberapay</strong>: recurring donation with very low fees "
 "(<strong>best choice</strong>)"
 msgstr ""
+"<strong>Liberapay</strong>: powtarzalne dotacje z bardzo niskimi oplatami "
+"(<strong>najlepszy wybór</strong>)"
 
 #: templates/about/donate.html:29
 msgid "<strong>Paypal</strong>: one-time donation."
-msgstr ""
+msgstr "<strong>Paypal</strong>: jednorazowe dotacje."
 
 #: templates/about/donate.html:33
-#, fuzzy
 #| msgid "You can leave name and comment, they will be displayed on this page."
 msgid ""
 "You can leave name and comment, they will be displayed on this page, "
 "providing that the following conditions are met:"
-msgstr "Możesz podać nazwę i komentarz, zostaną wyświetlone na tej stronie."
+msgstr ""
+"Możesz podać nazwę i komentarz, zostaną wyświetlone na tej stronie, "
+"zakładając, że poniższe warunki zostaną spełnione:"
 
 #: templates/about/donate.html:35
 msgid ""
 "the comment must be only about the donation and WeeChat (for example this is "
 "not the place to ask for new features)"
 msgstr ""
+"komentarz musi dotyczyć dotacji i WeeChat (na przykład nie jest to miejsce na "
+"proźby o nowe funkcje)"
 
 #: templates/about/donate.html:36
-#, fuzzy
 #| msgid ""
 #| "Please note that there is <strong>no advertising</strong> on weechat.org, "
 #| "therefore URLs are not displayed."
@@ -5703,28 +5746,26 @@ msgid ""
 "URLs are not allowed because there is <strong>no advertising</strong> on "
 "this site."
 msgstr ""
-"Zauważ, że na weechat.org jest <strong>brak reklam</strong>, dlatego URLe "
-"nie są wyświetlane."
+"URLe nie są dozwolone ponieważ obowiązje <strong>zakaz reklamowania</strong> na "
+"tej stronie."
 
 #: templates/about/donate.html:41
 msgid "Donate using Liberapay"
-msgstr ""
+msgstr "Wspomóż używając Liberapay"
 
 #: templates/about/donate.html:54
-#, fuzzy
 #| msgid "They support WeeChat"
 msgid "They support WeeChat with Liberapay"
-msgstr "Oni wsparli WeeChat"
+msgstr "Oni wsparli WeeChat za pomocą Liberapay"
 
 #: templates/about/donate.html:56
 msgid "See the weechat page on Liberapay:"
-msgstr ""
+msgstr "Zobacz stronę WeeChat na Liberapay:"
 
 #: templates/about/donate.html:59
-#, fuzzy
 #| msgid "They support WeeChat"
 msgid "They support WeeChat with Paypal"
-msgstr "Oni wsparli WeeChat"
+msgstr "Oni wsparli WeeChat poprzez Paypal"
 
 #: templates/about/donate.html:60
 msgid "Whole list:"
@@ -6533,7 +6574,6 @@ msgid "Resynchronize your package index files:"
 msgstr "Zsynchronizuj informacje o dostępnych pakietach:"
 
 #: templates/download/debian.html:162
-#, fuzzy
 #| msgid ""
 #| "Install the binary packages; the \"plugins\" package is highly "
 #| "recommended but not mandatory."
@@ -6543,19 +6583,18 @@ msgid ""
 "are python and perl)."
 msgstr ""
 "Zainstaluj następujące pakiety; pakiet \"plugins\" jest zalecany ale nie "
-"obowiązkowy."
+"obowiązkowy, pakiety z API skryptowym są opcjonalne (popularnymi językami "
+"są python i perl)."
 
 #: templates/download/debian.html:165
-#, fuzzy
 #| msgid "For the stable version:"
 msgid "Example for the stable version:"
-msgstr "Dla wersji stabilnej:"
+msgstr "Przykład dla wersji stabilnej:"
 
 #: templates/download/debian.html:169
-#, fuzzy
 #| msgid "For the development version:"
 msgid "Example for the development version:"
-msgstr "Dla wersji rozwojowej:"
+msgstr "Przykład dla wersji rozwojowej:"
 
 #: templates/download/debian.html:175
 msgid ""
@@ -6878,7 +6917,6 @@ msgid "<strong>multi-protocols architecture</strong> (mainly IRC)"
 msgstr "<strong>wieloprotokołowa architektura</strong> (głównie IRC)"
 
 #: templates/home/home.html:27
-#, fuzzy
 #| msgid ""
 #| "<strong>extensible</strong> with C, Python, Perl, Ruby, Lua, Tcl, Scheme "
 #| "and Javascript"
@@ -6887,7 +6925,7 @@ msgid ""
 "Javascript and PHP"
 msgstr ""
 "<strong>rozszerzalny</strong> za pomocą języków C, Python, Perl, Ruby, Lua, "
-"Tcl, Scheme oraz Javascript"
+"Tcl, Scheme, Javascript oraz PHP"
 
 #: templates/home/home.html:28
 msgid "<strong>fully documented</strong> and translated into several languages"
@@ -7211,16 +7249,14 @@ msgid "Filters by name"
 msgstr "Filtry według nazwy"
 
 #: templates/scripts/list.html:41 templates/scripts/list.html:45
-#, fuzzy
 #| msgid "Filters by name"
 msgid "sort filters by name"
-msgstr "Filtry według nazwy"
+msgstr "posortuj filtry według nazwy"
 
 #: templates/scripts/list.html:41 templates/scripts/list.html:45
-#, fuzzy
 #| msgid "Filters by popularity"
 msgid "sort filters by popularity"
-msgstr "Filtry według popularności"
+msgstr "posortuj filtry według popularności"
 
 #: templates/scripts/list.html:48 templates/scripts/list.html:50
 msgid "Language:"
@@ -7342,9 +7378,13 @@ msgid ""
 "could comment them before they are merged in the repository. If this is not "
 "possible, then you can use this form."
 msgstr ""
+"<strong>Ważne:</strong> zalecanym sposobem aktualizacji skryptów jest "
+"wysłanie pull requestu do <a href=\"https://github.com/weechat/scripts/"
+"\">repozytorium ze skryptami na Githubie</a>: twoje zmiany będą publiczne i inni "
+"będą mogli je skomentować zanim zostaną przyjęte do repozytorium. Jeśli nie jest to "
+"możliwe, możesz dalej używać tego formularza."
 
 #: templates/scripts/update.html:18
-#, fuzzy
 #| msgid ""
 #| "<strong>Important:</strong> please follow <strong>all</strong> these "
 #| "rules, otherwise your script will be rejected:"
@@ -7352,8 +7392,8 @@ msgid ""
 "Please follow <strong>all</strong> these rules, otherwise your script will "
 "be rejected:"
 msgstr ""
-"<strong>Uwaga:</strong> zastosuj się do <strong>wszystkich</strong> "
-"poniższych zasad, w przeciwnym wypadku Twój skrypt zostanie odrzucony:"
+"Należy przestrzegać <strong>wszystkich</strong> poniższych zasad, w "
+"przeciwnym wypadku Twój skrypt zostanie odrzucony:"
 
 #: templates/scripts/update.html:20
 msgid ""
