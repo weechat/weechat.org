@@ -41,14 +41,7 @@ echo "--- Compiling messages"
 
 echo ""
 echo "--- Creating database"
-DJANGO_19=$(python -c "from __future__ import print_function; import django; print(django.VERSION >= (1, 9))")
-if [ "$DJANGO_19" = "True" ]; then
-    # Django >= 1.9
-    ./manage.py migrate --run-syncdb || exit 1
-else
-    # Django <= 1.8
-    ./manage.py syncdb || exit 1
-fi
+./manage.py migrate --run-syncdb || exit 1
 
 echo ""
 echo "--- Loading fixtures in database"
