@@ -6,90 +6,190 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Sébastien HELLEU FlashCode">
   <meta name="description" content="WeeChat, the extensible chat client">
   <meta name="keywords" content="weechat, free, fast, light, extensible, chat, client, irc, jabber, linux, bsd, gpl, console, terminal, curses">
   <meta name="robots" content="all">
-  {% comment %}<meta name="viewport" content="width=device-width,initial-scale=1">{% endcomment %}
-  <title>{% block title %}{% trans "WeeChat, the extensible chat client" %}{% endblock %}{% block subtitle %}{% endblock %}</title>
   <link rel="shortcut icon" type="image/png" href="{{ MEDIA_URL }}images/favicon.png">
-  {% block css %}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/style.css" media="screen" title="Normal">{% endblock %}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  {% block css %}{% endblock %}
+  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/style.css" media="screen" title="Normal">
   <link rel="alternate" type="application/rss+xml" href="{% url 'feeds_news' %}" title="WeeChat RSS feed">
   <link href="https://plus.google.com/+WeeChat" rel="publisher">
+  <title>{% block title %}{% trans "WeeChat, the extensible chat client" %}{% endblock %}{% block subtitle %}{% endblock %}</title>
   {% block extrahead %}{% endblock %}
 </head>
 
 <body>
 
-  <div id="header-and-main">
-
-    <map id="weechatMap" name="weechatMap">
-      <area href="{% url 'home' %}" alt="Home" coords="0,0,160,70" shape="rect">
-    </map>
-
-    <div id="header">
-      <div class="content">
-        <div class="logo">
-          <a href="{% url 'home' %}"><img src="{{ MEDIA_URL }}images/weechat_logo_small.png" alt="WeeChat" width="146" height="100"></a>
-        </div>
-        <div class="slogan">
-          <a href="{% url 'home' %}"><img src="{{MEDIA_URL}}images/weechat_text.png" width="201" height="55" alt="WeeChat"></a>
-        </div>
-        <div class="lang">
-          <form name="lang" action="/i18n/setlang/" method="post">
-            <input type="hidden" name="language" value="{{ LANGUAGE_CODE }}">
-            {% for lang in LANGUAGES %}
-            <a href="#" {% if lang.0 == LANGUAGE_CODE %} class="selected"{% endif %} onclick="javascript:document.forms['lang'].elements['language'].value = '{{ lang.0 }}'; document.forms['lang'].submit();">
-              {% trans lang.1 %}
-            </a>
-            {% endfor %}
-          </form>
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="{% url "home" %}">
+      <img src="{{ MEDIA_URL }}images/weechat_logo_small.png" class="navbar-weechat-logo" alt="WeeChat">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarToggler">
+      <div class="navbar-nav mr-auto mt-2 mt-lg-0" id="nav1-{% block menu %}{% endblock %}">
+        <a class="nav-item nav-link nav-home" href="{% url "home" %}">{% trans "Home" %}</a>
+        <a class="nav-item nav-link nav-about" href="{% url "about" %}">{% trans "About" %}</a>
+        <a class="nav-item nav-link nav-doc" href="{% url "doc" %}">{% trans "Documentation" %}</a>
+        <a class="nav-item nav-link nav-download" href="{% url "download" %}">{% trans "Download" %}</a>
+        <a class="nav-item nav-link nav-scripts" href="{% url "scripts" %}">{% trans "Scripts" %}</a>
+        <a class="nav-item nav-link nav-dev" href="{% url "dev" %}">{% trans "Dev" %}</a>
       </div>
-      <div class="gradient"></div>
 
-    </div> <!-- header -->
+      <div class="nav-icons">
+        <a href="https://github.com/weechat" target="_blank" rel="noopener" title="GitHub"><svg width="20px" height="20px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill="#000000"><path d="M8,0 C3.58,0 0,3.58 0,8 C0,11.54 2.29,14.53 5.47,15.59 C5.87,15.66 6.02,15.42 6.02,15.21 C6.02,15.02 6.01,14.39 6.01,13.72 C4,14.09 3.48,13.23 3.32,12.78 C3.23,12.55 2.84,11.84 2.5,11.65 C2.22,11.5 1.82,11.13 2.49,11.12 C3.12,11.11 3.57,11.7 3.72,11.94 C4.44,13.15 5.59,12.81 6.05,12.6 C6.12,12.08 6.33,11.73 6.56,11.53 C4.78,11.33 2.92,10.64 2.92,7.58 C2.92,6.71 3.23,5.99 3.74,5.43 C3.66,5.23 3.38,4.41 3.82,3.31 C3.82,3.31 4.49,3.1 6.02,4.13 C6.66,3.95 7.34,3.86 8.02,3.86 C8.7,3.86 9.38,3.95 10.02,4.13 C11.55,3.09 12.22,3.31 12.22,3.31 C12.66,4.41 12.38,5.23 12.3,5.43 C12.81,5.99 13.12,6.7 13.12,7.58 C13.12,10.65 11.25,11.33 9.47,11.53 C9.76,11.78 10.01,12.26 10.01,13.01 C10.01,14.08 10,14.94 10,15.21 C10,15.42 10.15,15.67 10.55,15.59 C13.71,14.53 16,11.53 16,8 C16,3.58 12.42,0 8,0 L8,0 Z"/></g></g></svg></a>
+        <a href="https://diasp.eu/u/weechat" target="_blank" rel="noopener" title="Diaspora"><svg role="img" width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.26 21.896l-2.332-3.256c-.622-.87-1.127-1.547-1.154-1.547s-1.006 1.314-2.316 3.113C8.21 21.92 7.178 23.32 7.163 23.32c-.033 0-4.498-3.144-4.51-3.177-.006-.016 1.005-1.498 2.242-3.293 1.24-1.795 2.254-3.29 2.254-3.326 0-.055-.408-.193-3.557-1.245L0 11.08c-.03-.018.156-.64.793-2.65.46-1.446.844-2.64.855-2.655.014-.016 1.71.524 3.772 1.205 2.063.68 3.765 1.234 3.788 1.234.022 0 .046-.03.053-.07.01-.03.03-1.786.04-3.9.02-2.1.04-3.84.05-3.87.02-.03.6-.03 2.73-.03 1.484 0 2.713.015 2.733.03.025.016.065 1.186.136 3.78.11 4.275.11 4.335.18 4.335.025 0 1.66-.54 3.63-1.22 1.973-.66 3.592-1.2 3.605-1.186.03.044 1.65 5.31 1.635 5.325-.017.016-1.667.585-3.66 1.26-2.76.93-3.647 1.245-3.647 1.29-.014.03.93 1.455 2.146 3.21 1.184 1.74 2.143 3.165 2.143 3.18-.015.046-4.44 3.302-4.483 3.302-.015 0-.585-.766-1.245-1.695l.005-.067z"/></svg></a>
+        <a href="https://hostux.social/@weechat" target="_blank" rel="noopener" title="Mastodon"><svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 94.023018 100.80365"><path d="M72.57077 49.00625c-3.9125 0-7.085-3.1825-7.085-7.095 0-3.91125 3.1725-7.09375 7.085-7.09375 3.92125 0 7.09375 3.1825 7.09375 7.09375 0 3.9125-3.1725 7.095-7.09375 7.095m-25.55875 0c-3.9225 0-7.095-3.1825-7.095-7.095 0-3.91125 3.1725-7.09375 7.095-7.09375 3.91125 0 7.09375 3.1825 7.09375 7.09375 0 3.9125-3.1825 7.095-7.09375 7.095m-25.57 0c-3.91125 0-7.08375-3.1825-7.08375-7.095 0-3.91125 3.1725-7.09375 7.08375-7.09375 3.92125 0 7.09375 3.1825 7.09375 7.09375 0 3.9125-3.1725 7.095-7.09375 7.095m72.5775-15.905c0-21.86625-14.32375-28.27375-14.32375-28.27375-7.23-3.31875-19.63-4.7125-32.5175-4.8275h-.3125c-12.88875.115-25.28875 1.50875-32.5075 4.8275 0 0-14.32375 6.4075-14.32375 28.27375 0 5.00375-.105 10.995.05125 17.34C.60577 71.83 4.00702 92.905 23.78327 98.1375c9.1125 2.4125 16.945 2.9125 23.24875 2.56875 11.4225-.63375 17.84-4.07625 17.84-4.07625l-.37375-8.3025s-8.16625 2.58-17.34125 2.2675c-9.09125-.3125-18.6825-.9775-20.16-12.13875-.135-.97875-.1975-2.02875-.1975-3.13125 0 0 8.915 2.185 20.2325 2.69375 6.9075.3225 13.39875-.39375 19.98375-1.185 12.6275-1.50875 23.62375-9.29 25.0075-16.405 2.17375-11.1925 1.99625-27.3275 1.99625-27.3275" fill="#000"/></svg></a>
+        <a href="https://twitter.com/WeeChatClient" target="_blank" rel="noopener" title="Twitter"><svg viewbox="0 0 2000 1625.36" width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"><path d="m 1999.9999,192.4 c -73.58,32.64 -152.67,54.69 -235.66,64.61 84.7,-50.78 149.77,-131.19 180.41,-227.01 -79.29,47.03 -167.1,81.17 -260.57,99.57 C 1609.3399,49.82 1502.6999,0 1384.6799,0 c -226.6,0 -410.328,183.71 -410.328,410.31 0,32.16 3.628,63.48 10.625,93.51 -341.016,-17.11 -643.368,-180.47 -845.739,-428.72 -35.324,60.6 -55.5583,131.09 -55.5583,206.29 0,142.36 72.4373,267.95 182.5433,341.53 -67.262,-2.13 -130.535,-20.59 -185.8519,-51.32 -0.039,1.71 -0.039,3.42 -0.039,5.16 0,198.803 141.441,364.635 329.145,402.342 -34.426,9.375 -70.676,14.395 -108.098,14.395 -26.441,0 -52.145,-2.578 -77.203,-7.364 52.215,163.008 203.75,281.649 383.304,284.946 -140.429,110.062 -317.351,175.66 -509.5972,175.66 -33.1211,0 -65.7851,-1.949 -97.8828,-5.738 181.586,116.4176 397.27,184.359 628.988,184.359 754.732,0 1167.462,-625.238 1167.462,-1167.47 0,-17.79 -0.41,-35.48 -1.2,-53.08 80.1799,-57.86 149.7399,-130.12 204.7499,-212.41"/></svg></a>
+        <a href="{% url 'about_donate' %}" title="{% trans "Make a donation" %}"><svg width="20px" height="20px" viewBox="0 0 12 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill="#000000"><path d="M11.2,3 C10.68,2.37 9.95,2.05 9,2 C8.03,2 7.31,2.42 6.8,3 C6.29,3.58 6.02,3.92 6,4 C5.98,3.92 5.72,3.58 5.2,3 C4.68,2.42 4.03,2 3,2 C2.05,2.05 1.31,2.38 0.8,3 C0.28,3.61 0.02,4.28 0,5 C0,5.52 0.09,6.52 0.67,7.67 C1.25,8.82 3.01,10.61 6,13 C8.98,10.61 10.77,8.83 11.34,7.67 C11.91,6.51 12,5.5 12,5 C11.98,4.28 11.72,3.61 11.2,2.98 L11.2,3 Z"/></g></g></svg></a>
+      </div>
 
-    <!-- menu -->
-    <div id="nav1-{% block menu %}{% endblock %}" class="center">
-      <ul id="nav">
-{% include "menu.html" %}
-      </ul>
+      <div class="nav-languages">
+        <form name="lang" action="/i18n/setlang/" method="post">
+          <div class="form-group my-0">
+            <input type="hidden" name="language" value="{{ LANGUAGE_CODE }}">
+            <select class="form-control form-control-sm" onchange="javascript:document.forms['lang'].elements['language'].value = this.value; document.forms['lang'].submit();">
+              {% for lang in LANGUAGES %}
+              <option value="{{ lang.0 }}" onclick="javascript:document.forms['lang'].elements['language'].value = '{{ lang.0 }}'; document.forms['lang'].submit();" {% if lang.0 == LANGUAGE_CODE %} selected{% endif %} title="{% trans lang.1 %}">{% trans lang.1 %}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </form>
+      </div>
+
     </div>
-    <!-- end of menu -->
+  </nav>
+  <div class="navbar-gradient"></div>
 
-    <div class="main">
-
-<!-- page content -->
+  <div class="container-fluid px-4 py-3">
 {% block content %}{% endblock %}
-<!-- end of page content -->
+  </div>
 
-    </div> <!-- main -->
+  <div class="footer pt-4 pb-2">
 
-  </div> <!-- header-and-main -->
-
-  <div id="footer">
-
-    <!-- menu items -->
-    <div class="nav2">
-      <ul id="nav2">
-{% include "menu.html" %}
-      </ul>
+    <div class="row justify-content-start justify-content-lg-center mx-0 px-0">
+      <div class="col-12 col-md-6 col-xl-auto">
+        <ul>
+          <li><a class="main" href="{% url 'home' %}">{% trans "Home" %}</a></li>
+          <li><a href="{% url 'home_news' %}">{% trans "Latest news" %}</a></li>
+          <li><a href="{% url 'home_events' %}">{% trans "Upcoming events" %}</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-6 col-xl-auto">
+        <ul>
+          <li><a class="main" href="{% url 'about' %}">{% trans "About" %}</a></li>
+          <li><a href="{% url 'about_features' %}">{% trans "Features" %}</a></li>
+          <li><a href="{% url 'about_screenshots' %}">{% trans "Screenshots" %}</a></li>
+          <li><a href="{% url 'about_history' %}">{% trans "History" %}</a></li>
+          <li><a href="{% url 'about_donate' %}">{% trans "Make a donation" %}</a></li>
+          <li><a href="{% url 'about_weechat.org' %}">WeeChat.org</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-6 col-xl-auto">
+        <ul>
+          <li><a class="main" href="{% url 'doc' %}">{% trans "Documentation" %}</a></li>
+          <li><a href="{% url 'doc_version' 'stable' %}">{% trans "Stable version" %}</a></li>
+          <li><a href="{% url 'doc_version' 'devel' %}">{% trans "Dev version" %}</a></li>
+          <li><a href="{% url 'doc_version' 'old' %}">{% trans "Old versions" %}</a></li>
+          <li><a href="/files/doc/weechat_faq.en.html" target="_blank" rel="noopener">{% trans "FAQ" %} ({% trans "English" %}) <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;"></a></li>
+          <li><a href="/files/doc/devel/weechat_plugin_api.en.html" target="_blank" rel="noopener">API ({% trans "English" %}) <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;"></a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-6 col-xl-auto">
+        <ul>
+          <li><a class="main" href="{% url 'download' %}">{% trans "Download" %}</a></li>
+          <li><a href="{% url 'download_version' 'stable' %}">{% trans "Stable version" %}</a></li>
+          <li><a href="{% url 'download_version' 'devel' %}">{% trans "Dev version" %}</a></li>
+          <li><a href="{% url 'download_version' 'old' %}">{% trans "Old versions" %}</a></li>
+          <li><a href="{% url 'download_interfaces' %}">{% trans "Interfaces" %}</a></li>
+          <li><a href="{% url 'download_debian' %}">{% trans "Debian/Ubuntu repositories" %}</a></li>
+          <li><a href="{% url 'download_security' %}">{% trans "Security issues" %}</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-6 col-xl-auto">
+        <ul>
+          <li><a class="main" href="{% url 'scripts' %}">{% trans "Scripts" %}</a></li>
+          <li><a href="{% url 'scripts' %}">{% trans "Browse scripts" %}</a></li>
+          <li><a href="{% url 'scripts_add' %}">{% trans "Add script" %}</a></li>
+          <li><a href="{% url 'scripts_update' %}">{% trans "Update script" %}</a></li>
+          <li><a href="{% url 'scripts_pending' %}">{% trans "Pending scripts" %}</a></li>
+          <li><a href="/files/scripts/unofficial/">{% trans "Unofficial scripts" %}</a></li>
+        </ul>
+      </div>
+{% comment %}
+      <div class="col-12 col-md-6 col-xl-auto">
+        <ul>
+          <li><a class="main" href="{% url 'themes' %}">{% trans "Themes" %}</a></li>
+          <li><a href="{% url 'themes' %}">{% trans "Browse themes" %}</a></li>
+          <li><a href="{% url 'themes_add' %}">{% trans "Add theme" %}</a></li>
+          <li><a href="{% url 'themes_update' %}">{% trans "Update theme" %}</a></li>
+        </ul>
+      </div>
+{% endcomment %}
+      <div class="col-12 col-md-6 col-xl-auto">
+        <ul>
+          <li><a class="main" href="{% url 'dev' %}">Dev</a></li>
+          <li><a href="{% url 'dev_roadmap' %}">{% trans "Roadmap" %}</a></li>
+          <li><a href="{% url 'dev_stats' %}">{% trans "Statistics" %}</a></li>
+          <li><a href="{% url 'dev_info' %}">{% trans "Info" %}</a></li>
+          <li><a href="{% url 'dev_support' %}">{% trans "Support" %}</a></li>
+          <li><a href="https://weechat.org/blog/" target="_blank" rel="noopener">{% trans "Devel blog" %} <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;"></a></li>
+          <li><a href="https://github.com/weechat" target="_blank" rel="noopener">{% trans "Repositories" %} <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;"></a></li>
+        </ul>
+      </div>
     </div>
-    <!-- end of menu items -->
 
-    <div id="copyright">
-      Copyright &#169; 2003-{% now "Y" %} <a href="mailto:{% txt2html "flashcode@flashtux.org" %}" title="email webmaster">Sébastien Helleu</a>
-      &mdash;
-      <a href="{% url 'about_weechat.org' %}">{% trans "About WeeChat.org" %}</a>
-      &mdash;
-      {% trans "Valid" %}:
-      <a href="http://validator.w3.org/check?uri={{ request.build_absolute_uri|urlencode }}" target="_blank">HTML5</a> |
-      <a href="https://jigsaw.w3.org/css-validator/validator?uri={{ request.build_absolute_uri|urlencode }}" target="_blank">CSS</a> |
-      <a href="http://www.w3.org/TR/WCAG20/" target="_blank" rel="noopener">WCAG 2.0<!-- AAA --></a>
+    <div class="text-center mt-4 mb-2">
+
+        Copyright &#169; 2003-{% now "Y" %} <a href="mailto:{% txt2html "flashcode@flashtux.org" %}" title="email webmaster">Sébastien Helleu</a>
+        &mdash;
+        <a href="{% url 'about_weechat.org' %}">{% trans "About WeeChat.org" %}</a>
+        &mdash;
+        {% trans "Valid" %}:
+        <a href="http://validator.w3.org/check?uri={{ request.build_absolute_uri|urlencode }}" target="_blank" rel="noopener">HTML5</a> |
+        <a href="https://jigsaw.w3.org/css-validator/validator?uri={{ request.build_absolute_uri|urlencode }}" target="_blank" rel="noopener">CSS</a> |
+        <a href="http://www.w3.org/TR/WCAG20/" target="_blank" rel="noopener">WCAG 2.0<!-- AAA --></a>
+
     </div>
 
   </div> <!-- footer -->
+
+  <div class="d-none d-lg-block">
+    <a id="js-scroll-top" href="#" class="btn btn-secondary btn-lg scroll-top"><strong>&#9650;</strong></a>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <script>
+    $(document).ready(function() {
+        $('.js-scroll').click(function() {
+            $('html, body').animate({
+                scrollTop: $($(this).attr('href')).offset().top
+            }, 400);
+            return false;
+        });
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                $('#js-scroll-top').fadeIn();
+            } else {
+                $('#js-scroll-top').fadeOut();
+            }
+        });
+        $('#js-scroll-top').click(function() {
+            $('#js-scroll-top').tooltip('hide');
+            $('html, body').animate({
+                scrollTop: 0
+            }, 150);
+            return false;
+        });
+    });
+  </script>
 
 </body>
 

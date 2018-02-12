@@ -3,93 +3,90 @@
 {% load i18n %}{% load localdate %}
 
 {% block subtitle %} :: {% trans "roadmap" %}{% endblock %}
-{% block menu2_roadmap %}selected{% endblock %}
+{% block menu2_roadmap %}active{% endblock %}
 
 {% block content %}
 
 {{ block.super }}
 
-<div class="roadmap">
+<ul class="nav nav-tabs mt-4">
+  <li class="nav-item"><a class="nav-link{% if not allversions %} active{% endif %}" href="{% url 'dev_roadmap' %}">{% trans "Next versions" %}</a></li>
+  <li class="nav-item"><a class="nav-link{% if allversions %} active{% endif %}" href="{% url 'dev_roadmap_all' %}">{% trans "All versions" %}</a></li>
+</ul>
 
-  <div class="legend">
-    {% trans "Legend:" %}
-    <br><img src="{{ MEDIA_URL }}images/link.png" width="14" height="14" alt="*"> = {% trans "one commit in 'master'" %}
-    <br><img src="{{ MEDIA_URL }}images/link_twin.png" width="14" height="14" alt="*"> = {% trans "log of a separate branch" %}
-  </div>
+<p>
+  {% trans "This page lists major features done or planned." %}
+  <br>
+  {% trans "Dive in the <strong>future</strong> of WeeChat!" %}
+</p>
 
-  <div class="navbt" style="border-bottom: none">
-    <ul>
-      <li><a href="{% url 'dev_roadmap' %}"{% if not allversions %} class="selected"{% endif %}>{% trans "Next versions" %}</a></li>
-      <li><a href="{% url 'dev_roadmap_all' %}"{% if allversions %} class="selected"{% endif %}>{% trans "All versions" %}</a></li>
-    </ul>
-  </div>
+<br>
 
-  <p>
-    {% trans "This page lists major features done or planned." %}
-    {% trans "Dive in the <strong>future</strong> of WeeChat!" %}
-  </p>
+{% if task_list %}
 
-  {% if task_list %}
-
-  {% regroup task_list by version as task_list_by_version %}
-  {% for tasks_version in task_list_by_version %}
-  <h2>
-    Version {{ tasks_version.grouper }}
-    <span class="date">({% autoescape off %}{{ tasks_version.list.0.version_date }}{% endautoescape %})</span>
-  </h2>
-  <table class="table">
-    <tr>
-      <th class="tracker">{% trans "Tracker" %}</th>
-      <th class="status">{% trans "Status" %}</th>
-      <th class="git">Git</th>
-      <th class="plugin">{% trans "Plugin" %}</th>
-      <th class="desc">{% trans "Description" %}</th>
-    </tr>
-    {% for task in tasks_version.list %}
-    <tr class="{% cycle 'row1' 'row2' %}">
-      <td class="tracker">
-        {% autoescape off %}
+{% regroup task_list by version as task_list_by_version %}
+{% for tasks_version in task_list_by_version %}
+<h3>
+  Version {{ tasks_version.grouper }}
+  <small class="ml-2 text-muted">({% autoescape off %}{{ tasks_version.list.0.version_date }}{% endautoescape %})</small>
+</h3>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>{% trans "Tracker" %}</th>
+        <th class="text-center">{% trans "Status" %}</th>
+        <th class="text-center">Git</th>
+        <th class="text-center">{% trans "Plugin" %}</th>
+        <th>{% trans "Description" %}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for task in tasks_version.list %}
+      <tr>
+        <td class="text-nowrap">
+          {% autoescape off %}
           {{ task.url_tracker }}
-        {% endautoescape %}
-      </td>
-      <td class="status">
-        {% if task.status == 0 %}
-          <span class="planned">{% trans "Planned" %}</span>
-        {% else %}
-        {% if task.status == 100 %}
-          <span class="done">{% trans "Done" %}</span>
-        {% else %}
-        <table class="bar" title="{{ task.status }}%">
-          <tr>
-          {% if task.status != 0 %}
-            <td class="done" style="width: {{ task.status }}%">&nbsp;</td>
+          {% endautoescape %}
+        </td>
+        <td class="text-center text-nowrap">
+          <strong>
+          {% if task.status == 0 %}
+          <span class="text-danger">{% trans "Planned" %}</span>
+          {% else %}
+          {% if task.status == 100 %}
+          <span class="text-success">{% trans "Done" %}</span>
+          {% else %}
+          <div class="progress" style="height: 20px; width: 6rem;">
+            {% if task.status != 0 %}
+            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: {{ task.status }}%" aria-valuenow="{{ task.status }}" aria-valuemin="0" aria-valuemax="100"></div>
+            {% endif %}
+            {% if task.status_remaining != 0 %}
+            <div class="progress-bar bg-secondary" role="progressbar" style="width: {{ task.status_remaining }}%" aria-valuenow="{{ task.status_remaining }}" aria-valuemin="0" aria-valuemax="100"></div>
+            {% endif %}
+          </div>
           {% endif %}
-          {% if task.status_remaining != 0 %}
-            <td style="width: {{ task.status_remaining }}%">&nbsp;</td>
           {% endif %}
-          </tr>
-        </table>
-        {% endif %}
-        {% endif %}
-      </td>
-      <td class="git">
-        {% autoescape off %}
-        {{ task.url_commits }}
-        {% endautoescape %}
-      </td>
-      <td class="plugin">
-        {{ task.component }}
-      </td>
-      <td class="desc">
-        {{ task.description }}
-      </td>
-    </tr>
-    {% endfor %}
-    </table>
-  {% endfor %}
-
-  {% endif %}
-
+          </strong>
+        </td>
+        <td class="text-center text-nowrap">
+          {% autoescape off %}
+          {{ task.url_commits }}
+          {% endautoescape %}
+        </td>
+        <td class="text-center text-nowrap">
+          {{ task.component }}
+        </td>
+        <td>
+          {{ task.description }}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
+{% endfor %}
+
+{% endif %}
 
 {% endblock content %}

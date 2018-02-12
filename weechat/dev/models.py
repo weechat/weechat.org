@@ -41,8 +41,9 @@ class Task(models.Model):
     priority = models.IntegerField(default=0)
 
     def __unicode__(self):
-        desc = self.description if len(self.description) < 100 \
-            else '%s...' % self.description[0:100]
+        desc = (self.description
+                if len(self.description) < 100
+                else '%s...' % self.description[0:100])
         return '%s%s%s, %s, %d%%, %s: %s (%d)' % (
             '' if self.visible else '(',
             self.version,

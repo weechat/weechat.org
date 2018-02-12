@@ -28,8 +28,17 @@ from weechat.download.models import Release
 from weechat.news.models import Info
 
 
-def render_homepage(request, info_list, max_info, event_list, max_event):
-    """Render homepage."""
+def home(request, max_info=None, max_event=None):
+    """Homepage."""
+    now = datetime.now()
+    info_list = (Info.objects.all().filter(visible=1).filter(date__lte=now)
+                 .order_by('-date'))
+    if max_info:
+        info_list = info_list[:max_info]
+    event_list = (Info.objects.all().filter(visible=1).filter(date__gt=now)
+                  .order_by('date'))
+    if max_event:
+        event_list = event_list[:max_event]
     stable_version = Release.objects.get(version='stable').description
     release_stable = Release.objects.get(version=stable_version)
     return render(
@@ -38,48 +47,36 @@ def render_homepage(request, info_list, max_info, event_list, max_event):
         {
             'release_stable': release_stable,
             'info_list': info_list,
-            'max_info': max_info,
             'event_list': event_list,
-            'max_event': max_event,
         },
     )
 
 
-def home(request, max_info=None, max_event=None):
-    """Homepage."""
-    now = datetime.now()
-    info_list = Info.objects.all().filter(visible=1).filter(date__lte=now) \
-        .order_by('-date')
-    if max_info:
-        info_list = info_list[:max_info]
-    event_list = Info.objects.all().filter(visible=1).filter(date__gt=now) \
-        .order_by('date')
-    if max_event:
-        event_list = event_list[:max_event]
-    return render_homepage(request, info_list, max_info, event_list, max_event)
-
-
 def news(request, info_id=None):
-    """Homepage with only news."""
+    """List of news."""
     try:
         if info_id:
             info_list = [Info.objects.get(id=info_id, visible=1)]
         else:
-            info_list = Info.objects.all().filter(visible=1) \
-                .filter(date__lte=datetime.now()).order_by('-date')
+            info_list = (Info.objects.all().filter(visible=1)
+                         .filter(date__lte=datetime.now()).order_by('-date'))
     except:  # noqa: E722
         info_list = None
-    return render_homepage(request, info_list, None, None, None)
+    return render(request, 'home/news.html', {
+        'info_list': info_list,
+        'single_info': bool(info_id),
+        'page': 'news',
+    })
 
 
-def events(request, event_id=None):
-    """Homepage with only upcoming events."""
+def events(request):
+    """List of upcoming events."""
     try:
-        if event_id:
-            event_list = [Info.objects.get(id=event_id, visible=1)]
-        else:
-            event_list = Info.objects.all().filter(visible=1) \
-                .filter(date__gt=datetime.now()).order_by('date')
+        event_list = (Info.objects.all().filter(visible=1)
+                      .filter(date__gt=datetime.now()).order_by('date'))
     except:  # noqa: E722
         event_list = None
-    return render_homepage(request, None, None, event_list, None)
+    return render(request, 'home/news.html', {
+        'info_list': event_list,
+        'page': 'events',
+    })

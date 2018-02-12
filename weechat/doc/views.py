@@ -78,8 +78,8 @@ def get_i18n_stats():
                     total = translated + fuzzy + untranslated
                     if total != 0:
                         pct_fuzzy = int(ceil((fuzzy * 100) / total))
-                        pct_untranslated = \
-                            int(ceil((untranslated * 100) / total))
+                        pct_untranslated = int(
+                            ceil((untranslated * 100) / total))
                         pct_translated = 100 - pct_fuzzy - pct_untranslated
                         if pct_translated < 0:
                             pct_translated = 0
@@ -157,11 +157,12 @@ def documentation(request, version='stable'):
                 full_name = files_path_join('doc', name)
                 if path.exists(full_name):
                     files.append(
-                        [
+                        (
                             path.normpath(name),
                             datetime.fromtimestamp(path.getmtime(full_name)),
-                            lang.lang
-                        ])
+                            lang,
+                        )
+                    )
                 else:
                     files.append(['', '', lang.lang])
             if docv == '-':

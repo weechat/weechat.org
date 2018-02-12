@@ -10,31 +10,28 @@
 {{ block.super }}
 
 {% if release_progress.done >= 0 %}
-<h2>WeeChat: {{ release_progress.version }}</h2>
-{% endif %}
+<h3>WeeChat: {{ release_progress.version }}</h3>
 
-{% if release_progress.done >= 0 %}
-  <div class="release">
-    <div class="bar">
-      <div class="pct">{{ release_progress.pct }}%{% if release_progress.pct == 100 %} &mdash; {% trans "YEAH! You can download and install it!" %}{% endif %}</div>
-      <div class="done" style="width: {{ release_progress.pct }}%">&nbsp;</div>
-      &nbsp;
-    </div>
-    <ul>
+<div class="progress my-4" style="height: 30px;">
+  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: {{ release_progress.pct }}%" aria-valuenow="{{ item.pct_translated }}" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+
+<div class="release">
+  <ul class="list-unstyled">
     {% for todo in release_progress.todo %}
-      <!--{{ forloop.counter }}--><li class="{% if forloop.counter <= release_progress.done %}done{% else %}{% if forloop.counter0 == release_progress.done %}progress{% endif %}{% endif %}"><em>&nbsp;</em>{{ forloop.counter }}. {{ todo.description }}</li>
+    <li class="{% if forloop.counter <= release_progress.done %}done{% else %}{% if forloop.counter0 == release_progress.done %}in-progress{% endif %}{% endif %}"><em>&nbsp;</em>{{ forloop.counter }}. {{ todo.description }}</li>
     {% endfor %}
-    </ul>
-  </div>
+  </ul>
+</div>
 {% else %}
-  <h3>{% trans "No release in progress." %}</h3>
-  <p>
-    {% trans "This page is updated only a few hours during the build of a new version." %}
-  </p>
-  <p>
-    {% trans "We are working hard on the next version:" %}
-    <strong>{{ release_progress.version }}</strong> (&asymp; {{ release_progress.date|localdate }}).
-  </p>
+<h3>{% trans "No release in progress." %}</h3>
+<p>
+  {% trans "This page is updated only a few hours during the build of a new version." %}
+</p>
+<p>
+  {% trans "We are working hard on the next version:" %}
+  <strong>{{ release_progress.version }}</strong> (&asymp; {{ release_progress.date|localdate }}).
+</p>
 {% endif %}
 
 {% endblock content %}

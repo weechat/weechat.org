@@ -237,6 +237,16 @@ class Security(models.Model):
             return ugettext(text)
         return ''
 
+    def css_class(self):
+        """Return the CSS class for the severity."""
+        css_class = {
+            0: 'light',
+            1: 'secondary',
+            2: 'warning',
+            3: 'danger',
+        }
+        return css_class[self.severity]
+
     def affected_html(self):
         """Return affected versions for display in HTML."""
         return self.affected.replace(',', ' &rarr; ')

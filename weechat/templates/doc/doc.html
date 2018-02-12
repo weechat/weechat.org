@@ -3,133 +3,139 @@
 {% load i18n %}{% load localdate %}
 
 {% block title %}WeeChat :: {% trans "documentation" %}{% endblock %}
-{% block css %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/doc.css" media="screen" title="Normal">{% endblock %}
 {% block menu %}doc{% endblock %}
 
 {% block content %}
 
-<div class="navbt">
-  <ul>
-    <li><a href="{% url 'doc_version' 'stable' %}"{% if version == "stable" %} class="selected"{% endif %}>{% trans "Stable" %}</a></li>
-    <li><a href="{% url 'doc_version' 'devel' %}"{% if version == "devel" %} class="selected"{% endif %}>{% trans "Devel" %}</a></li>
-    <li><a href="{% url 'doc_version' 'old' %}"{% if version == "old" %} class="selected"{% endif %}>{% trans "Old versions" %}</a></li>
-  </ul>
-</div>
+<ul class="nav nav-tabs">
+  <li class="nav-item"><a class="nav-link{% if version == "stable" %} active{% endif %}" href="{% url 'doc_version' 'stable' %}">{% trans "Stable" %}</a></li>
+  <li class="nav-item"><a class="nav-link{% if version == "devel" %} active{% endif %}" href="{% url 'doc_version' 'devel' %}">{% trans "Devel" %}</a></li>
+  <li class="nav-item"><a class="nav-link{% if version == "old" %} active{% endif %}" href="{% url 'doc_version' 'old' %}">{% trans "Old versions" %}</a></li>
+</ul>
 
 {% if version == "old" %}
 
   <h3>{% trans "Docs for old versions" %}</h3>
-  <div class="doc">
-    <div class="infobox">
-      {% trans "<strong>Important:</strong> these old versions are <strong>not supported</strong> any more!" %}
-    </div>
+
+  <p class="alert alert-primary">
+    {% trans "<strong>Important:</strong> these old versions are <strong>not supported</strong> any more!" %}
+  </p>
+
+  <p>
     <ul>
       {% for dir in doc_list %}
-      <li><a href="/files/doc/old/{{ dir }}" target="_blank" rel="noopener">{% trans "Version" %} {{ dir }} <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt=">>"></a></li>
+      <li><a href="/files/doc/old/{{ dir }}" target="_blank" rel="noopener">{% trans "Version" %} {{ dir }} <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;"></a></li>
       {% endfor %}
     </ul>
-  </div>
+  </p>
 
 {% else %}
 
-  <h3>{% trans "Docs for version" %} {{ doc_version }}</h3>
-  <div class="doc">
-    <table class="table">
-      <tr>
-        <th></th>
-        {% for lang in languages %}
-        <th class="flag{%if lang.lang == bestlang %} bestlang{% if version == "devel" %}dev{% endif %}{% endif %}"><img src="{{ MEDIA_URL }}images/flag_{{ lang.lang }}.png" class="flagimg" alt="{{ lang.lang }}"><br>{{ lang.lang_i18n }}</th>
-        {% endfor %}
-        <th></th>
-      </tr>
-      {% for doc in doc_list %}
-      <tr class="{% if version == "devel" %}{% cycle 'row1alt' 'row2alt' %}{% else %}{% cycle 'row1' 'row2' %}{% endif %}">
-        <th class="name">{{ doc.0.name_i18n }}</th>
-        {% for file in doc.1 %}
-          <td class="icons{% if file.2 == bestlang %} bestlang{% if version == "devel" %}dev{% endif %}{% endif %}">
-          {% if file.0 %}
-            <a href="/files/doc/{{ file.0 }}" target="_blank" rel="noopener"><img src="{{ MEDIA_URL }}images/doc{% if doc.0.devel %}_dev{% endif %}.png" alt="HTML" width="17" height="22"></a>
-          {% else %}
-            -
-          {% endif %}
-          </td>
-        {% endfor %}
-        <th class="date">{{ doc.1.0.1|localdate }}</th>
-      </tr>
-      {% endfor %}
-    </table>
-  </div>
+  <h3>{% trans "Docs for version" %} {{ doc_version }} <small class="text-muted">({{ doc_list.0.1.0.1|localdate }})</small></h3>
+
+  <p class="row">
+    <div class="table-responsive col-lg-10 col-xl-8 px-0">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th></th>
+            {% for lang in languages %}
+            <th class="text-center{%if lang.lang == bestlang %} table-info{% endif %}" title="{{ lang.lang_i18n }}"><img src="{{ MEDIA_URL }}images/flag_{{ lang.lang }}.png" width="28" height="16" class="border" alt="{{ lang.lang }}"><br>{{ lang.lang }}</th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for doc, files in doc_list %}
+          <tr>
+            <td>{{ doc.name_i18n }}</td>
+            {% for name, date, lang in files %}
+            <td class="text-center{% if lang.lang == bestlang %} table-info{% endif %}">
+              {% if name %}
+              <a href="/files/doc/{{ name }}" target="_blank" rel="noopener"><img src="{{ MEDIA_URL }}images/doc{% if doc.devel %}_dev{% endif %}.png" alt="HTML" width="17" height="22"></a>
+              {% else %}
+              -
+              {% endif %}
+            </td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </p>
 
   {% if version == "devel" and i18n %}
   <h3>{% trans "Internationalization stats" %}</h3>
-  <table class="table i18n">
-    <thead>
-    <tr>
-      <th class="language">{% trans "Language" context "translated language" %}</th>
-      <th class="po">{% trans "File" %}</th>
-      <th colspan="2" class="numbers">{% trans "Translated" %}</th>
-      <th colspan="2" class="numbers">{% trans "Fuzzy" %}</th>
-      <th colspan="2" class="numbers">{% trans "Untranslated" %}</th>
-      <th>{% trans "Total" %}</th>
-      <th>{% trans "Progress" %}</th>
-    </tr>
-    </thead>
-    <tbody>
-  {% for item in i18n.langs %}
-    <tr class="{% cycle 'row1' 'row2' %}">
-      <td class="language">
-        <img src="{{ MEDIA_URL }}images/flag_{{ item.lang }}.png" class="flagimg" alt="{{ item.lang }}">
-        {{ item.lang_i18n }}
-      </td>
-      <td class="po">
-        <span class="file">{% if item.lang == "en" %}-{% else %}{{ item.lang }}.po{% endif %}</span>
-        <span class="maintainer">
-        {% if item.nick and item.name %}
-          (<abbr title="{{ item.name }}">{{ item.nick }}</abbr>)
-        {% elif item.name %}
-          ({{ item.name }})
-        {% endif %}
-        </span>
-      </td>
-      {% if item.lang == "en" %}
-        <td class="baselang" colspan="6">({% trans "base language" %})</td>
-      {% else %}
-        <td class="cell1 translated1">{{ item.translated }}</td>
-        <td class="cell2 translated2">({{ item.pct_translated }}%)</td>
-        <td class="cell1 fuzzy1">{{ item.fuzzy }}</td>
-        <td class="cell2 fuzzy2">({{ item.pct_fuzzy }}%)</td>
-        <td class="cell1 untranslated1">{{ item.untranslated }}</td>
-        <td class="cell2 untranslated2">({{ item.pct_untranslated }}%)</td>
-      {% endif %}
-      <td class="center">{{ item.total }}</td>
-      <td>
-        <table class="i18n-bar">
-          <tr>
-          {% if item.pct_translated != 0 %}
-            <td class="translated" title="translated" style="width: {{ item.pct_translated }}%">&nbsp;</td>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>{% trans "Language" context "translated language" %}</th>
+          <th>{% trans "File" %}</th>
+          <th colspan="2">{% trans "Translated" %}</th>
+          <th colspan="2">{% trans "Fuzzy" %}</th>
+          <th colspan="2">{% trans "Untranslated" %}</th>
+          <th>{% trans "Total" %}</th>
+          <th>{% trans "Progress" %}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in i18n.langs %}
+        <tr>
+          <td class="text-nowrap" title="{{ item.lang_i18n }}">
+            <img src="{{ MEDIA_URL }}images/flag_{{ item.lang }}.png" width="28" height="16" class="border" alt="{{ item.lang }}"> {{ item.lang_i18n }}
+          </td>
+          <td>
+            {% if item.lang == "en" %}-{% else %}{{ item.lang }}.po{% endif %}
+            <small class="ml-1 text-muted">
+              {% if item.nick and item.name %}
+              (<abbr title="{{ item.name }}">{{ item.nick }}</abbr>)
+              {% elif item.name %}
+              ({{ item.name }})
+              {% endif %}
+            </small>
+          </td>
+          {% if item.lang == "en" %}
+          <td class="text-center text-muted" colspan="6">({% trans "base language" %})</td>
+          {% else %}
+          <td class="text-right text-success">{{ item.translated }}</td>
+          <td class="text-right text-success"><small>{{ item.pct_translated }}%<small></td>
+          <td class="text-right" style="color: #852;">{{ item.fuzzy }}</td>
+          <td class="text-right" style="color: #852;"><small>{{ item.pct_fuzzy }}%</small></td>
+          <td class="text-right text-danger">{{ item.untranslated }}</td>
+          <td class="text-right text-danger"><small>{{ item.pct_untranslated }}%</small></td>
           {% endif %}
-          {% if item.pct_fuzzy != 0 %}
-            <td class="fuzzy" title="fuzzy" style="width: {{ item.pct_fuzzy }}%">&nbsp;</td>
-          {% endif %}
-          {% if item.pct_untranslated != 0 %}
-            <td class="untranslated" title="untranslated" style="width: {{ item.pct_untranslated }}%">&nbsp;</td>
-          {% endif %}
-          </tr>
-        </table>
-      </td>
-    </tr>
-  {% endfor %}
-    </tbody>
-  </table>
-  <div class="i18n-legend">
-    ({% trans "statistics for gettext files (*.po), auto-built from development version on" %} {{ i18n.date|localdate }} {{ i18n.date|date:"H:i" }})
+          <td class="center">{{ item.total }}</td>
+          <td>
+            <div class="progress" style="height: 20px; width: 10rem;">
+              {% if item.pct_translated != 0 %}
+              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: {{ item.pct_translated }}%" aria-valuenow="{{ item.pct_translated }}" aria-valuemin="0" aria-valuemax="100"></div>
+              {% endif %}
+              {% if item.pct_fuzzy != 0 %}
+              <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: {{ item.pct_fuzzy }}%" aria-valuenow="{{ item.pct_fuzzy }}" aria-valuemin="0" aria-valuemax="100"></div>
+              {% endif %}
+              {% if item.pct_untranslated != 0 %}
+              <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: {{ item.pct_untranslated }}%" aria-valuenow="{{ item.pct_untranslated }}" aria-valuemin="0" aria-valuemax="100"></div>
+              {% endif %}
+            </div>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
+  <p class="text-muted font-italic">
+    ({% trans "statistics for gettext files (*.po), auto-built from development version on" %} {{ i18n.date|localdate }} {{ i18n.date|date:"H:i" }})
+  </p>
   {% endif %}
 
   <h3>{% trans "Missing language?" %}</h3>
-  {% trans "Feel free to help us by translating WeeChat doc in your language!" %}
-  <br>
-  {% trans "There is more information about WeeChat translations in the developer's guide." %}
+
+  <p>
+    {% trans "Feel free to help us by translating WeeChat doc in your language!" %}
+    <br>
+    {% trans "There is more information about WeeChat translations in the developer's guide." %}
+  </p>
 
 {% endif %}
 

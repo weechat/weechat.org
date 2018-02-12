@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block menu %}home{% endblock %}
+
+{% block content %}
+
+{% if not single_info %}
+<ul class="nav nav-tabs">
+  <li class="nav-item"><a class="nav-link{% if page == "news" %} active{% endif %}" href="{% url 'home_news' %}">{% trans "Latest news" %}</a></li>
+  <li class="nav-item"><a class="nav-link{% if page == "events" %} active{% endif %}" href="{% url 'home_events' %}">{% trans "Upcoming events" %}</a></li>
+</ul>
+{% endif %}
+
+{% for info in info_list %}
+<h4 class="mb-3">
+  <a href="{% url 'home_info_id_title' info.id info.date_title_url %}">{{ info.title_i18n }}</a>
+  <small class="text-muted">({{ info.date_l10n }})</small>
+</h4>
+
+<div class="pb-2 mb-2">
+  {% if info.text %}{% autoescape off %}{{ info.text_i18n|linebreaks }}{% endautoescape %}{% endif %}
+</div>
+{% if not forloop.last %}<hr>{% endif %}
+{% endfor %}
+
+<a href="{% url 'home' %}">{% trans "Back to home" %}</a>
+
+{% endblock content %}

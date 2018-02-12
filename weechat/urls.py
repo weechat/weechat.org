@@ -50,16 +50,13 @@ urlpatterns = [
     url(r'^i18n/', include('django.conf.urls.i18n')),
 
     # main WeeChat URLs
-    url(r'^$', view_home, {'max_info': 8, 'max_event': 4},
+    url(r'^$', view_home, {'max_info': 4, 'max_event': 4},
         name='home'),
     url(r'^news/$', view_news, name='home_news'),
     url(r'^news/(?P<info_id>\d+)/$', view_news, name='home_info_id'),
     url(r'^news/(?P<info_id>\d+)/(.*)/$', view_news,
         name='home_info_id_title'),
     url(r'^events/$', view_events, name='home_events'),
-    url(r'^events/(?P<event_id>\d+)/$', view_events, name='home_event_id'),
-    url(r'^events/(?P<event_id>\d+)/(.*)/$', view_events,
-        name='home_event_id_title'),
     url(r'^about/', include('weechat.about.urls')),
     url(r'^doc/', include('weechat.doc.urls')),
     url(r'^faq/$', RedirectView.as_view(url='/files/doc/weechat_faq.en.html'),

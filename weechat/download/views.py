@@ -64,22 +64,22 @@ def packages(request, version='stable'):
     package_list = None
     if version == 'stable':
         stable_desc = Release.objects.get(version='stable').description
-        package_list = Package.objects.all().filter(version=stable_desc) \
-            .order_by('type__priority')
+        package_list = (Package.objects.all().filter(version=stable_desc)
+                        .order_by('type__priority'))
     elif version == 'devel':
-        package_list = Package.objects.all().filter(version='devel') \
-            .order_by('type__priority')
+        package_list = (Package.objects.all().filter(version='devel')
+                        .order_by('type__priority'))
     elif version == 'all':
-        package_list = Package.objects.all().exclude(version='devel') \
-            .order_by('-version__date', 'type__priority')
+        package_list = (Package.objects.all().exclude(version='devel')
+                        .order_by('-version__date', 'type__priority'))
     elif version == 'old':
         stable_desc = Release.objects.get(version='stable').description
-        package_list = Package.objects.all().exclude(version='devel') \
-            .exclude(version=stable_desc) \
-            .order_by('-version__date', 'type__priority')
+        package_list = (Package.objects.all().exclude(version='devel')
+                        .exclude(version=stable_desc)
+                        .order_by('-version__date', 'type__priority'))
     else:
-        package_list = Package.objects.filter(version=version) \
-            .order_by('type__priority')
+        package_list = (Package.objects.filter(version=version)
+                        .order_by('type__priority'))
     return render(
         request,
         'download/packages.html',
@@ -93,8 +93,8 @@ def packages(request, version='stable'):
 
 def package_checksums(request, version, checksum_type):
     """Page with checksums of packages in a version."""
-    package_list = Package.objects.filter(version=version) \
-        .order_by('type__priority')
+    package_list = (Package.objects.filter(version=version)
+                    .order_by('type__priority'))
     checksums = []
     for package in package_list:
         checksum = package.checksum()

@@ -171,7 +171,7 @@ DATE_FORMAT = ugettext('M j, Y')
 
 # read settings_local.py
 try:
-    from settings_local import *
+    from weechat.settings_local import *
 except ImportError:
     from warnings import warn
     warn('File "settings_local.py" not found, using default settings')

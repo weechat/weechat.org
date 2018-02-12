@@ -2,35 +2,32 @@
 
 {% load i18n %}
 
-{% block css %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/form.css" media="screen" title="Normal">{% endblock %}
-{% block menu2_update %}selected{% endblock %}
+{% block menu2_update %}active{% endblock %}
 
 {% block content %}
 
 {{ block.super }}
 
 {% if form.fields.script.choices %}
-<div class="form">
+<div class="alert alert-primary">
+  {% blocktrans %}<strong>Important:</strong> the recommended way to update a script is to send a pull request on <a href="https://github.com/weechat/scripts/">Github scripts repository</a>: your changes will be public and people could comment them before they are merged in the repository. If this is not possible, then you can use this form.{% endblocktrans %}
+  <br><br>
+  {% trans "Please follow <strong>all</strong> these rules, otherwise your script will be rejected:" %}
+  <ul>
+    <li>{% blocktrans %}for a Python script with tag "py3k-ok", please ensure your new version is compatible with Python 2.x and 3.x{% endblocktrans %}</li>
+  </ul>
+</div>
 
-  <div class="infobox">
-    {% blocktrans %}<strong>Important:</strong> the recommended way to update a script is to send a pull request on <a href="https://github.com/weechat/scripts/">Github scripts repository</a>: your changes will be public and people could comment them before they are merged in the repository. If this is not possible, then you can use this form.{% endblocktrans %}
-    <br><br>
-    {% trans "Please follow <strong>all</strong> these rules, otherwise your script will be rejected:" %}
-    <ul>
-      <li>{% blocktrans %}for a Python script with tag "py3k-ok", please ensure your new version is compatible with Python 2.x and 3.x{% endblocktrans %}</li>
-    </ul>
+<div class="row justify-content-center">
+  <div class="col-12 col-md-8">
+    <form action="." method="post" enctype="multipart/form-data">
+      {{ form.as_div }}
+      <button type="submit" class="btn btn-primary btn-lg mt-3 px-5">{% trans "Submit" %}</button>
+    </form>
   </div>
-
-  <form action="." method="post"  enctype="multipart/form-data">
-  {{ form.as_p }}
-    <div class="submit">
-      <input type="submit" class="submitbutton" value="{% trans "Submit" %}">
-    </div>
-  </form>
-
 </div>
 {% else %}
-<div class="infobox">
+<div class="alert alert-success">
   {% trans "No script found." %}
 </div>
 {% endif %}

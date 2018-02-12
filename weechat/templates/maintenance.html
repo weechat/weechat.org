@@ -6,15 +6,15 @@
 
 {% block content %}
 
-<h1>{% trans "This page is under maintenance." %}</h1>
+<h2>{% trans "This page is under maintenance." %}</h2>
 
-<div class="center">
+<div class="text-center">
   <br>
   {% trans "Page will be back soon, please come back later." %}
   <br>
   {% trans "Thank you for your patience." %}
   <br><br><br>
-  <a href="javascript:history.back()"><img src="{{ MEDIA_URL }}images/arrow_left_green.png" alt="&lt;&lt;"> {% trans "Back" %}</a>
+  <a href="javascript:history.back()">{% trans "Back" %}</a>
 </div>
 
 {% endblock content %}

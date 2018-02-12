@@ -110,7 +110,7 @@ def stats_repo(request, stats='weechat'):
     try:
         with open(files_path_join('stats',
                                   'git_%s_commits.txt' % stats), 'r') as _file:
-            git_commits = _file.read().split(',')
+            git_commits = _file.read().strip().split(',')
     except:  # noqa: E722
         pass
 

@@ -2,146 +2,122 @@
 
 {% load i18n %}
 
-{% block css %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/home.css" media="screen" title="Normal">{% endblock %}
 {% block menu %}home{% endblock %}
 
 {% block content %}
 
-<table class="table-2col">
-  <tr>
+<div class="row justify-content-center mb-3 pb-3 my-lg-3 py-lg-3 home-bloc">
+  <div class="col-12 col-lg-auto text-center">
+    <img src="{{ MEDIA_URL }}images/weechat_logo_large.png" class="img-fluid" alt="WeeChat">
+  </div>
+  <div class="col-12 col-lg-6 text-center">
+    <h1>{% trans "WeeChat, the extensible chat client." %}</h1>
+    <h2>{% trans "Fast. &nbsp; Light. &nbsp; Free software." %}</h2>
+    <a href="{% url 'download' %}" class="btn btn-lg btn-primary mt-4 mb-1 ml-lg-3 px-3 px-lg-5" title="WeeChat {{ release_stable.version }} ({{ release_stable.date_l10n }})"><svg viewBox="0 0 16 16" version="1.1" width="24px" height="24px" aria-hidden="true"><path fill-rule="evenodd" d="M4 6h3V0h2v6h3l-4 4-4-4zm11-4h-4v1h4v8H1V3h4V2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1z"/></svg> {% trans "Download" %}</a>
+    <div class="text-muted">v{{ release_stable.version }}, {{ release_stable.date_l10n }}</div>
+  </div>
+</div>
 
-    {% if max_info or max_event %}
-    <td class="home-bloc col1">
+<div class="d-lg-none"><hr></div>
 
-      <h2>{% trans "About WeeChat" %}</h2>
+<div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-bloc">
+  <div class="col-12 col-lg-5">
+    <h2>Powerful, customizable.</h2>
+    <h5>
+      {% trans "Full-featured IRC plugin: multi-servers, proxy support, IPv6, SASL authentication, nicklist, DCC, and many other features." %}
+    </h5>
+    <a href="{% url 'about_features' %}" class="btn btn-lg btn-success mt-4 ml-lg-4 px-3 px-lg-5"><svg viewBox="0 0 16 16" version="1.1" width="24px" height="24px" aria-hidden="true"><path fill-rule="evenodd" d="M16 8.5l-6 6-3-3L8.5 10l1.5 1.5L14.5 7 16 8.5zM5.7 12.2l.8.8H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h7c.55 0 1 .45 1 1v6.5l-.8-.8c-.39-.39-1.03-.39-1.42 0L5.7 10.8a.996.996 0 0 0 0 1.41v-.01zM4 4h5V3H4v1zm0 2h5V5H4v1zm0 2h3V7H4v1zM3 9H2v1h1V9zm0-2H2v1h1V7zm0-2H2v1h1V5zm0-2H2v1h1V3z"/></svg> {% trans "Features" %}</a>
+    <a href="{% url 'about_screenshots' %}" class="btn btn-lg btn-info mt-4 ml-lg-4 px-3 px-lg-5"><svg viewBox="0 0 16 16" version="1.1" width="24px" height="24px" aria-hidden="true"><path fill-rule="evenodd" d="M15 3H7c0-.55-.45-1-1-1H2c-.55 0-1 .45-1 1-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h14c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1zM6 5H2V4h4v1zm4.5 7C8.56 12 7 10.44 7 8.5S8.56 5 10.5 5 14 6.56 14 8.5 12.44 12 10.5 12zM13 8.5c0 1.38-1.13 2.5-2.5 2.5S8 9.87 8 8.5 9.13 6 10.5 6 13 7.13 13 8.5z"/></svg> {% trans "Screenshots" %}</a>
+  </div>
+  <div class="col-12 col-lg-auto my-4 my-lg-0">
+    <img src="{{ MEDIA_URL }}images/ft_irc.png" class="img-fluid rounded shadow" alt="IRC">
+  </div>
+</div>
 
-      <p>
-        {% trans "WeeChat is a fast, light and extensible chat client." %}
-        {% trans "It runs on many platforms like Linux, Unix, BSD, GNU Hurd, Mac OS&nbsp;X and Windows (Bash/Ubuntu and Cygwin)." %}
-      </p>
+<div class="d-lg-none"><hr></div>
 
-      {% trans "WeeChat is:" %}
-      <ul class="list">
-        <li>{% trans "<strong>modular</strong>: a lightweight core with optional plugins" %}</li>
-        <li>{% trans "<strong>multi-protocols architecture</strong> (mainly IRC)" %}</li>
-        <li>{% trans "<strong>extensible</strong> with C, Python, Perl, Ruby, Lua, Tcl, Scheme, Javascript and PHP" %}</li>
-        <li>{% trans "<strong>fully documented</strong> and translated into several languages" %}</li>
-        <li>{% trans "<strong>a free program</strong> released under the GPLv3 license" %}</li>
-        <li>{% trans "<strong>an active project</strong> with a large community for scripts" %}.</li>
-      </ul>
+<div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-bloc">
+  <div class="col-12 col-lg-auto order-2 order-lg-1 my-4 my-lg-0">
+    <img src="{{ MEDIA_URL }}images/ft_scripts.png" class="img-fluid rounded shadow" alt="Scripts">
+  </div>
+  <div class="col-12 col-lg-5 order-1 order-lg-2">
+    <h2>{% trans "Innovating features." %}</h2>
+    <h5>
+      8 scripting languages supported with a built-in scripts manager.
+      <br><br>
+      256 colors, horizontal and vertical splits, smart filtering, customizable bars and much more!
+    </h5>
+    <a href="{% url 'scripts' %}" class="btn btn-lg btn-primary mt-4 ml-lg-4 px-3 px-lg-5"><svg viewBox="0 0 16 16" version="1.1" width="24px" height="24px" aria-hidden="true"><path fill-rule="evenodd" d="M1 4.27v7.47c0 .45.3.84.75.97l6.5 1.73c.16.05.34.05.5 0l6.5-1.73c.45-.13.75-.52.75-.97V4.27c0-.45-.3-.84-.75-.97l-6.5-1.74a1.4 1.4 0 0 0-.5 0L1.75 3.3c-.45.13-.75.52-.75.97zm7 9.09l-6-1.59V5l6 1.61v6.75zM2 4l2.5-.67L11 5.06l-2.5.67L2 4zm13 7.77l-6 1.59V6.61l2-.55V8.5l2-.53V5.53L15 5v6.77zm-2-7.24L6.5 2.8l2-.53L15 4l-2 .53z"/></svg> {% trans "Scripts" %}</a>
+    <a href="{% url 'themes' %}" class="btn btn-lg btn-secondary mt-4 ml-lg-4 px-3 px-lg-5"><svg viewBox="0 0 12 16" version="1.1" width="24px" height="24px" aria-hidden="true"><path fill-rule="evenodd" d="M6 0C2.69 0 0 2.69 0 6v1c0 .55.45 1 1 1v5c0 1.1 2.24 2 5 2s5-.9 5-2V8c.55 0 1-.45 1-1V6c0-3.31-2.69-6-6-6zm3 10v.5c0 .28-.22.5-.5.5s-.5-.22-.5-.5V10c0-.28-.22-.5-.5-.5s-.5.22-.5.5v2.5c0 .28-.22.5-.5.5s-.5-.22-.5-.5v-2c0-.28-.22-.5-.5-.5s-.5.22-.5.5v.5c0 .55-.45 1-1 1s-1-.45-1-1v-1c-.55 0-1-.45-1-1V7.2c.91.49 2.36.8 4 .8 1.64 0 3.09-.31 4-.8V9c0 .55-.45 1-1 1zM6 7c-1.68 0-3.12-.41-3.71-1C2.88 5.41 4.32 5 6 5c1.68 0 3.12.41 3.71 1-.59.59-2.03 1-3.71 1zm0-3c-2.76 0-5 .89-5 2 0-2.76 2.24-5 5-5s5 2.24 5 5c0-1.1-2.24-2-5-2z"/></svg> {% trans "Themes" %}</a>
+  </div>
+</div>
 
-      <p>
-        {% trans "Latest stable version of WeeChat is" %} <span class="stable">{{ release_stable.version }}</span>,
-        {% trans "released on" %} <span class="dateversion">{{ release_stable.date_l10n }}</span>.
-      </p>
-      {% if release_stable.security_issues_fixed > 0 %}
-      <p>
-        {% url 'download_security' as download_security_url %}
-        {% if release_stable.security_issues_fixed == 1 %}
-          {% blocktrans %}<strong>Important:</strong> this release fixes a <a href="{{ download_security_url }}">vulnerability</a>.{% endblocktrans %}
-        {% else %}
-          {% blocktrans with release_stable.security_issues_fixed as count_issues_fixed %}<strong>Important:</strong> this release fixes <a href="{{ download_security_url }}">{{ count_issues_fixed }} vulnerabilities</a>.{% endblocktrans %}
-        {% endif %}
-        {% trans "It is recommended to upgrade from any older version to this one." %}
-      </p>
-      {% endif %}
+<div class="d-lg-none"><hr></div>
 
-      <div class="button">
-        <a href="{% url 'about_features' %}">{% trans "Features" %}&nbsp;&rsaquo;&rsaquo; </a>
-        <a href="{% url 'download' %}" class="download">{% trans "Download" %}&nbsp;&rsaquo;&rsaquo; </a>
+<div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-bloc">
+  <div class="col-12 col-lg-5">
+    <h2>{% trans "Remote interfaces." %}</h2>
+    <h5>
+      {% trans "Tired of your terminal?" %}
+      <br><br>
+      {% trans "Connect to your WeeChat from your browser, Android, Qt or even Emacs!" %}
+    </h5>
+    <a href="{% url 'download_interfaces' %}" class="btn btn-lg btn-success mt-4 ml-lg-4 px-3 px-lg-5"><svg viewBox="0 0 16 16" version="1.1" width="24px" height="24px" aria-hidden="true"><path fill-rule="evenodd" d="M15 2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm0 9H1V3h14v8z"/></svg> {% trans "Interfaces" %}</a>
+  </div>
+  <div class="col-12 col-lg-auto my-4 my-lg-0">
+    <img src="{{ MEDIA_URL }}images/ft_android.png" class="img-fluid rounded shadow" alt="Android">
+  </div>
+</div>
+
+<div class="d-lg-none"><hr></div>
+
+<div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-bloc">
+  <div class="col-12 col-lg-auto order-2 order-lg-1 my-4 my-lg-0">
+    <img src="{{ MEDIA_URL }}images/ft_doc.png" class="img-fluid rounded" alt="Documentation">
+  </div>
+  <div class="col-12 col-lg-5 order-1 order-lg-2">
+    <h2>{% trans "Documentation and support." %}</h2>
+    <h5>
+      {% trans "Translations available in several languages, comprehensive documentation." %}
+      <br><br>
+      {% trans "Excellent support for users." %}
+    </h5>
+    <a href="{% url 'doc' %}" class="btn btn-lg btn-primary mt-4 ml-lg-4 px-3 px-lg-5"><svg viewBox="0 0 16 16" version="1.1" width="24px" height="24px" aria-hidden="true"><path fill-rule="evenodd" d="M3 5h4v1H3V5zm0 3h4V7H3v1zm0 2h4V9H3v1zm11-5h-4v1h4V5zm0 2h-4v1h4V7zm0 2h-4v1h4V9zm2-6v9c0 .55-.45 1-1 1H9.5l-1 1-1-1H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h5.5l1 1 1-1H15c.55 0 1 .45 1 1zm-8 .5L7.5 3H2v9h6V3.5zm7-.5H9.5l-.5.5V12h6V3z"/></svg> {% trans "Documentation" %}</a>
+    <a href="{% url 'dev_support' %}" class="btn btn-lg btn-secondary mt-4 ml-0 ml-lg-4 px-3 px-lg-5"><svg viewBox="0 0 16 16" version="1.1" width="24px" height="24px" aria-hidden="true"><path fill-rule="evenodd" d="M15 1H6c-.55 0-1 .45-1 1v2H1c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h1v3l3-3h4c.55 0 1-.45 1-1V9h1l3 3V9h1c.55 0 1-.45 1-1V2c0-.55-.45-1-1-1zM9 11H4.5L3 12.5V11H1V5h4v3c0 .55.45 1 1 1h3v2zm6-3h-2v1.5L11.5 8H6V2h9v6z"/></svg> {% trans "Support" %}</a>
+  </div>
+</div>
+
+<div class="d-lg-none"><hr></div>
+
+<div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-bloc">
+  <div class="col-12 col-lg-4 my-4 my-lg-0">
+    <h2 class="pb-2 border-bottom">{% trans "Latest news" %}</h2>
+    {% for info in info_list %}
+    <div class="row pt-2 pb-3">
+      <div class="col-12 col-md-3">
+        {{ info.date_l10n }}
       </div>
-
-      <h2>{% trans "Follow and get involved!" %}</h2>
-
-      <p>
-        {% trans "You can follow latest WeeChat developments on:" %}
-        <br>
-        <a href="https://diasp.eu/u/weechat" target="_blank" rel="noopener">
-          <img src="{{ MEDIA_URL }}images/diaspora.png" class="follow" alt="[Diaspora]" title="Diaspora">
-        </a>
-        <a href="https://plus.google.com/+WeeChat" target="_blank" rel="noopener">
-          <img src="{{ MEDIA_URL }}images/google_plus.png" class="follow" alt="[Google+]" title="Google+">
-        </a>
-        <a href="https://twitter.com/WeeChatClient" target="_blank" rel="noopener">
-          <img src="{{ MEDIA_URL }}images/twitter.png" class="follow" alt="Twitter" title="Twitter">
-        </a>
-        <a href="https://hostux.social/@weechat" target="_blank" rel="noopener">
-          <img src="{{ MEDIA_URL }}images/mastodon.png" class="follow" alt="Mastodon" title="Mastodon">
-        </a>
-        <a href="https://weechat.org/blog/" target="_blank" rel="noopener">
-          <img src="{{ MEDIA_URL }}images/dotclear.png" class="follow" alt="[{% trans "Devel blog" %}]" title="{% trans "Devel blog" %}">
-        </a>
-        <a href="{% url 'dev_roadmap' %}">
-          <img src="{{ MEDIA_URL }}images/favicon.png" class="follow" alt="[{% trans "Roadmap" %}]" title="{% trans "Roadmap" %}">
-        </a>
-      </p>
-
-      {% trans "You can help the WeeChat project in many ways:" %}
-      <ul class="list">
-        <li>{% trans "<strong>translation</strong>: software, documentation and this web site" %}</li>
-        <li>{% trans "<strong>code</strong>: tests, bug reports, ideas for new features and patches" %}</li>
-        <li>{% trans "<strong>donation</strong>: any contribution is appreciated and important for motivation" %}.</li>
-      </ul>
-
-      <div class="button">
-        <a href="{% url 'about_donate' %}" class="donation">{% trans "Make a donation" %}&nbsp;&rsaquo;&rsaquo; </a>
+      <div class="col-12 col-md-9">
+        <h5 class="my-0"><a href="{% url 'home_info_id_title' info.id info.date_title_url %}">{{ info.title_i18n }}</a></h5>
       </div>
-
-    </td>
-    <td class="home-bloc col2">&nbsp;</td>
-    {% endif %}
-
-    <td class="home-bloc{% if max_info or max_event %} col3{% endif %}">
-
-      {% if max_info %}
-        <h2>{% if max_info %}<a href="{% url 'home_news' %}" class="more">{% trans "More" %} &rsaquo;&rsaquo;</a>{% endif %}{% trans "Latest news" %}</h2>
-        <div class="news">
-          <table>
-            {% for info in info_list %}
-            <tr>
-              <th>{{ info.date_l10n }}</th>
-              <td><a href="{% url 'home_info_id_title' info.id info.date_title_url %}">{{ info.title_i18n }}</a></td>
-            </tr>
-            {% endfor %}
-          </table>
-        </div>
-      {% else %}
-        {% for info in info_list %}
-          <h2><a href="{% url 'home_info_id_title' info.id info.date_title_url %}">{{ info.title_i18n }}</a> <span class="date">({{ info.date_l10n }})</span></h2>
-          {% if info.text %}{% autoescape off %}{{ info.text_i18n|linebreaks }}{% endautoescape %}{% endif %}
-          <br>
-        {% endfor %}
-      {% endif %}
-
-      {% if max_event %}
-      <h2>{% if max_event %}<a href="{% url 'home_events' %}" class="more">{% trans "More" %} &rsaquo;&rsaquo;</a>{% endif %}{% trans "Upcoming events" %}</h2>
-      <div class="news">
-        <table>
-          {% for event in event_list %}
-          <tr>
-            <th>{{ event.date_l10n }}</th>
-            <td><a href="{% url 'home_event_id_title' event.id event.date_title_url %}">{{ event.title_i18n }}</a></td>
-          </tr>
-          {% endfor %}
-        </table>
+    </div>
+    {% endfor %}
+    <a href="{% url 'home_news' %}" class="btn btn-lg btn-primary mt-3 px-3 px-lg-5"><svg viewBox="0 0 14 16" version="1.1" width="24px" height="24px" aria-hidden="true"><path fill-rule="evenodd" d="M13 2h-1v1.5c0 .28-.22.5-.5.5h-2c-.28 0-.5-.22-.5-.5V2H6v1.5c0 .28-.22.5-.5.5h-2c-.28 0-.5-.22-.5-.5V2H2c-.55 0-1 .45-1 1v11c0 .55.45 1 1 1h11c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm0 12H2V5h11v9zM5 3H4V1h1v2zm6 0h-1V1h1v2zM6 7H5V6h1v1zm2 0H7V6h1v1zm2 0H9V6h1v1zm2 0h-1V6h1v1zM4 9H3V8h1v1zm2 0H5V8h1v1zm2 0H7V8h1v1zm2 0H9V8h1v1zm2 0h-1V8h1v1zm-8 2H3v-1h1v1zm2 0H5v-1h1v1zm2 0H7v-1h1v1zm2 0H9v-1h1v1zm2 0h-1v-1h1v1zm-8 2H3v-1h1v1zm2 0H5v-1h1v1zm2 0H7v-1h1v1zm2 0H9v-1h1v1z"/></svg> {% trans "All news" %}</a>
+  </div>
+  <div class="col-12 col-lg-4 my-4 my-lg-0">
+    <h2 class="pb-2 border-bottom">{% trans "Upcoming events" %}</h2>
+    {% for event in event_list %}
+    <div class="row pt-2 pb-3">
+      <div class="col-12 col-md-3">
+        {{ event.date_l10n }}
       </div>
-      {% else %}
-        {% for event in event_list %}
-          <h2><a href="{% url 'home_event_id_title' event.id event.date_title_url %}">{{ event.title_i18n }}</a> <span class="date">({{ event.date_l10n }})</span></h2>
-          {% if event.text %}{% autoescape off %}{{ event.text_i18n|linebreaks }}{% endautoescape %}{% endif %}
-          <br>
-        {% endfor %}
-      {% endif %}
-      {% if not max_info and not max_event %}
-      <br>
-      <div class="button">
-        <a href="{% url 'home' %}" class="big" title="Back to home">&lsaquo;&lsaquo;&nbsp;{% trans "Back to home" %}</a>
+      <div class="col-12 col-md-9">
+        <h5 class="my-0"><a href="{% url 'home_info_id_title' event.id event.date_title_url %}">{{ event.title_i18n }}</a></h5>
       </div>
-      {% endif %}
-
-    </td>
-
-  </tr>
-</table>
+    </div>
+    {% endfor %}
+    <a href="{% url 'home_events' %}" class="btn btn-lg btn-primary mt-3 px-3 px-lg-5"><svg viewBox="0 0 14 16" version="1.1" width="24px" height="24px" aria-hidden="true"><path fill-rule="evenodd" d="M13 2h-1v1.5c0 .28-.22.5-.5.5h-2c-.28 0-.5-.22-.5-.5V2H6v1.5c0 .28-.22.5-.5.5h-2c-.28 0-.5-.22-.5-.5V2H2c-.55 0-1 .45-1 1v11c0 .55.45 1 1 1h11c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm0 12H2V5h11v9zM5 3H4V1h1v2zm6 0h-1V1h1v2zM6 7H5V6h1v1zm2 0H7V6h1v1zm2 0H9V6h1v1zm2 0h-1V6h1v1zM4 9H3V8h1v1zm2 0H5V8h1v1zm2 0H7V8h1v1zm2 0H9V8h1v1zm2 0h-1V8h1v1zm-8 2H3v-1h1v1zm2 0H5v-1h1v1zm2 0H7v-1h1v1zm2 0H9v-1h1v1zm2 0h-1v-1h1v1zm-8 2H3v-1h1v1zm2 0H5v-1h1v1zm2 0H7v-1h1v1zm2 0H9v-1h1v1z"/></svg> {% trans "All events" %}</a>
+  </div>
+</div>
 
 {% endblock content %}

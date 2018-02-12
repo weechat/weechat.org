@@ -3,77 +3,95 @@
 {% load i18n %}
 
 {% block subtitle %} :: {% trans "security" %}{% endblock %}
-{% block menu2_security %}selected{% endblock %}
+{% block menu2_security %}active{% endblock %}
 
 {% block content %}
 
 {{ block.super }}
 
-<h2>{% trans "Report a security issue" %}</h2>
+<h3>{% trans "Report a security issue" %}</h3>
 
-{% blocktrans %}Please <strong>DO NOT</strong> file a GitHub issue for security related problems, but send an email to <a href="mailto:security@weechat.org">security@weechat.org</a> instead.{% endblocktrans %}
+<p>
+  {% blocktrans %}Please <strong>DO NOT</strong> file a GitHub issue for security related problems, but send an email to <a href="mailto:security@weechat.org">security@weechat.org</a> instead.{% endblocktrans %}
+</p>
 
-<h2>{% trans "Security vulnerabilities" %}</h2>
+<h3>{% trans "Security vulnerabilities" %}</h3>
 
-<div class="security">
-
+<p>
   {% trans "This table contains a list of all known and fixed security vulnerabilities in WeeChat stable releases (the security vulnerabilities introduced during development of a version and fixed before a stable release are not mentioned)." %}
   <br><br>
   {% trans "Note: you can be warned about security vulnerabilities by subscribing to this mailing list:" %}
   <a href="https://lists.nongnu.org/mailman/listinfo/weechat-security" target="_blank" rel="noopener">
-    weechat-security <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt=">>">
+    weechat-security <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;">
   </a>
+</p>
 
-  <table>
-    <tr>
-      <th>{% trans "External link" %} / {% trans "Tracker" %}</th>
-      <th>{% trans "Severity" %}</th>
-      <th>{% trans "Affected versions" %}</th>
-      <th>{% trans "Fixed in version" %}</th>
-      <th>{% trans "Release date" %}</th>
-      <th>Git</th>
-      <th>{% trans "Description" %} / {% trans "Workaround" %}</th>
-    </tr>
-    {% for security in security_list %}
-    <tr class="linesev{{ security.severity }}">
-      <td class="tracker">
-        {% if security.external or security.tracker %}
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th class="text-center">{% trans "External link" %} / {% trans "Tracker" %}</th>
+        <th class="text-center">{% trans "Severity" %}</th>
+        <th class="text-center">{% trans "Affected versions" %}</th>
+        <th class="text-center">{% trans "Fixed in version" %}</th>
+        <th class="text-center">{% trans "Release date" %}</th>
+        <th class="text-center">Git</th>
+        <th>{% trans "Description" %} / {% trans "Workaround" %}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for security in security_list %}
+      <tr class="table-{{ security.css_class }}">
+        <td class="text-center">
+          {% if security.external or security.tracker %}
           {% autoescape off %}{{ security.external_links }}{% endautoescape %}
           <br>{% autoescape off %}{{ security.url_tracker }}{% endautoescape %}
-        {% else %}
+          {% else %}
           -
-        {% endif %}
-      </td>
-      <td class="sev{{ security.severity }}">{{ security.severity_i18n }}</td>
-      <td class="affected">{% autoescape off %}{{ security.affected_html }}{% endautoescape %}</td>
-      <td class="fixed">{{ security.fixed }}</td>
-      <td class="date">{% if security.release_date %}{{ security.release_date_l10n }}{% else %}-{% endif %}</td>
-      <td class="commits">{% autoescape off %}{{ security.url_commits }}{% endautoescape %}</td>
-      <td class="description">
-        {{ security.description_i18n }}
-        <div class="workaround">
-          <img src="{{ MEDIA_URL }}images/arrow_right_green.png" width="10" height="10" alt="&gt;">
-          {% if security.workaround %}
+          {% endif %}
+        </td>
+        <td class="text-center">{{ security.severity_i18n }}</td>
+        <td class="text-center text-nowrap text-danger">{% autoescape off %}{{ security.affected_html }}{% endautoescape %}</td>
+        <td class="text-center text-nowrap text-success">{{ security.fixed }}</td>
+        <td class="text-center text-nowrap">{% if security.release_date %}{{ security.release_date_l10n }}{% else %}-{% endif %}</td>
+        <td class="text-center text-nowrap">{% autoescape off %}{{ security.url_commits }}{% endautoescape %}</td>
+        <td>
+          {{ security.description_i18n }}
+          <div class="mt-2">
+            <img src="{{ MEDIA_URL }}images/arrow_right_green.png" width="10" height="10" alt="&gt;">
+            {% if security.workaround %}
             {% trans "Workaround" %}:
             <br>
             {{ security.workaround_i18n }}
-          {% else %}
+            {% else %}
             {% trans "There is no workaround." %}
-          {% endif %}
-        </div>
-      </td>
-    </tr>
+            {% endif %}
+          </div>
+        </td>
+      </tr>
     {% endfor %}
+    </tbody>
   </table>
-
-  {% trans "Security vulnerabilities are classified using 4 severity levels:" %}
-  <ul>
-    <li><span class="sev0">{% trans "low" %}</span>: {% trans "local problem which occurs in very specific conditions, low impact. Upgrade is not mandatory." %}
-    <li><span class="sev1">{% trans "medium" %}</span>: {% trans "problem affecting a specific feature. Upgrade is <strong>recommended</strong> at least for people using the feature." %}
-    <li><span class="sev2">{% trans "high" %}</span>: {% trans "severe problem. Upgrade is <strong>highly recommended</strong>." %}
-    <li><span class="sev3">{% trans "critical" %}</span>: {% trans "critical problem, risk of damage on your system. <strong>You MUST upgrade immediately!</strong>" %}
-  </ul>
-
 </div>
+
+<p>
+  {% trans "Security vulnerabilities are classified using 4 severity levels:" %}
+
+  <div class="alert alert-light border">
+    <strong>{% trans "low" %}</strong>: {% trans "local problem which occurs in very specific conditions, low impact. Upgrade is not mandatory." %}
+  </div>
+
+  <div class="alert alert-secondary">
+    <strong>{% trans "medium" %}</strong>: {% trans "problem affecting a specific feature. Upgrade is <strong>recommended</strong> at least for people using the feature." %}
+  </div>
+
+  <div class="alert alert-warning">
+    <strong>{% trans "high" %}</strong>: {% trans "severe problem. Upgrade is <strong>highly recommended</strong>." %}
+  </div>
+
+  <div class="alert alert-danger">
+    <strong>{% trans "critical" %}</strong>: {% trans "critical problem, risk of damage on your system. <strong>You MUST upgrade immediately!</strong>" %}
+  </div>
+</p>
 
 {% endblock content %}

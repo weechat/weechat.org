@@ -1,0 +1,99 @@
+{% extends "download/download.html" %}
+
+{% load i18n %}{% load txt2html %}
+
+{% block subtitle %} :: {% trans "interfaces" %}{% endblock %}
+{% block menu2_interfaces %}active{% endblock %}
+
+{% block content %}
+
+{{ block.super }}
+
+<h3>{% trans "Remote interfaces" %}</h3>
+
+<p>
+  {% trans "Remote interfaces are external software connecting on your WeeChat via the network." %}
+  <br>
+  {% trans "Except for QWeeChat, the softwares listed on this page are NOT developed by WeeChat team. For support, please ask directly to the authors." %}
+</p>
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>{% trans "Name" %}</th>
+        <th>{% trans "Type" %}</th>
+        <th>{% trans "Site" %}</th>
+        <th>{% trans "Notes" %}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Glowing Bear</td>
+        <td>Web</td>
+        <td>
+          <a href="https://www.glowing-bear.org" target="_blank" rel="noopener">
+            https://www.glowing-bear.org
+            <img src="{{ MEDIA_URL }}images/link.png" alt="&gt;&gt;">
+          </a>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>weechat-android</td>
+        <td>Android</td>
+        <td>
+          <a href="https://github.com/ubergeek42/weechat-android" target="_blank" rel="noopener">
+            https://github.com/ubergeek42/weechat-android
+            <img src="{{ MEDIA_URL }}images/link.png" alt="&gt;&gt;">
+          </a>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>emacs.el</td>
+        <td>Emacs</td>
+        <td>
+          <a href="https://github.com/the-kenny/weechat.el" target="_blank" rel="noopener">
+            https://github.com/the-kenny/weechat.el
+            <img src="{{ MEDIA_URL }}images/link.png" alt="&gt;&gt;">
+          </a>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>QWeeChat</td>
+        <td>Qt</td>
+        <td>
+          <a href="{% url 'download_version' 'devel' %}">
+            {% trans "Download page" %}
+          </a>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>weecloud</td>
+        <td>Web</td>
+        <td>
+          <a href="https://github.com/eirikb/weecloud" target="_blank" rel="noopener">
+            https://github.com/eirikb/weecloud
+            <img src="{{ MEDIA_URL }}images/link.png" alt="&gt;&gt;">
+          </a>
+        </td>
+        <td>{% trans "Not maintained any more." %}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>{% trans "Something missing?" %}</h3>
+
+<p>
+  {% trans "You have developed another remote interface for WeeChat?" %}
+  <br>
+  <a href="mailto:{% txt2html "flashcode@flashtux.org" %}">
+    {% trans "Tell us more about your great software!" %}
+  </a>
+</p>
+
+{% endblock content %}

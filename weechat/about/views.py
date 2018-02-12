@@ -52,8 +52,8 @@ def screenshots(request, app='weechat', filename=''):
             },
         )
     else:
-        screenshot_list = \
-            Screenshot.objects.filter(app=app).order_by('priority')
+        screenshot_list = (Screenshot.objects.filter(app=app)
+                           .order_by('priority'))
         return render(
             request,
             'about/screenshots.html',
@@ -66,8 +66,8 @@ def screenshots(request, app='weechat', filename=''):
 
 def history(request):
     """Page with WeeChat history, including key dates."""
-    release_list = \
-        Release.objects.all().exclude(version='devel').order_by('-date')
+    release_list = (Release.objects.all().exclude(version='devel')
+                    .order_by('-date'))
     releases = []
     for release in release_list:
         name = 'weechat-%s.png' % release.version
@@ -86,8 +86,9 @@ def history(request):
 def donate(request, sort_key='date', view_key=''):
     """Page with link for donation and list of sponsors."""
     if sort_key == 'top10':
-        sponsor_list = Sponsor.objects.values('name').\
-            annotate(amount=Sum('amount')).order_by('-amount')[:10]
+        sponsor_list = (Sponsor.objects.values('name')
+                        .annotate(amount=Sum('amount'))
+                        .order_by('-amount')[:10])
         total = sum(sponsor['amount'] for sponsor in sponsor_list)
     else:
         # by default: sort by date

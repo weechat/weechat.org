@@ -3,19 +3,16 @@
 {% load i18n %}
 
 {% block title %}WeeChat :: {% trans "about" %}{% endblock %}
-{% block css %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/about.css" media="screen" title="Normal">{% endblock %}
 {% block menu %}about{% endblock %}
 
 {% block content %}
 
-<div class="navbt">
-  <ul>
-    <li><a href="{% url 'about_features' %}" class="{% block menu2_features %}{% endblock %}">{% trans "Features" %}</a></li>
-    <li><a href="{% url 'about_screenshots' %}" class="{% block menu2_screenshots %}{% endblock %}">{% trans "Screenshots" %}</a></li>
-    <li><a href="{% url 'about_history' %}" class="{% block menu2_history %}{% endblock %}">{% trans "History" %}</a></li>
-    <li><a href="{% url 'about_donate' %}" class="{% block menu2_donate %}{% endblock %}">{% trans "Make a donation" %}</a></li>
-    <li><a href="{% url 'about_weechat.org' %}" class="{% block menu2_weechatorg %}{% endblock %}">WeeChat.org</a></li>
-  </ul>
-</div>
+<ul class="nav nav-tabs">
+  <li class="nav-item"><a class="nav-link {% block menu2_features %}{% endblock %}" href="{% url 'about_features' %}">{% trans "Features" %}</a></li>
+  <li class="nav-item"><a class="nav-link {% block menu2_screenshots %}{% endblock %}" href="{% url 'about_screenshots' %}">{% trans "Screenshots" %}</a></li>
+  <li class="nav-item"><a class="nav-link {% block menu2_history %}{% endblock %}" href="{% url 'about_history' %}">{% trans "History" %}</a></li>
+  <li class="nav-item"><a class="nav-link {% block menu2_donate %}{% endblock %}" href="{% url 'about_donate' %}">{% trans "Make a donation" %}</a></li>
+  <li class="nav-item"><a class="nav-link {% block menu2_weechatorg %}{% endblock %}" href="{% url 'about_weechat.org' %}">WeeChat.org</a></li>
+</ul>
 
 {% endblock content %}

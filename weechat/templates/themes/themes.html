@@ -3,17 +3,14 @@
 {% load i18n %}
 
 {% block title %}WeeChat :: {% trans "themes" %}{% endblock %}
-{% block css %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/themes.css" media="screen" title="Normal">{% endblock %}
 {% block menu %}themes{% endblock %}
 
 {% block content %}
 
-<div class="navbt">
-  <ul>
-    <li><a href="{% url 'themes' %}" class="{% block menu2_list %}{% endblock %}">{% trans "Themes" %}</a></li>
-    <li><a href="{% url 'themes_add' %}" class="{% block menu2_add %}{% endblock %}">{% trans "Add theme" %}</a></li>
-    <li><a href="{% url 'themes_update' %}" class="{% block menu2_update %}{% endblock %}">{% trans "Update theme" %}</a></li>
-  </ul>
-</div>
+<ul class="nav nav-tabs">
+  <li class="nav-item"><a class="nav-link {% block menu2_list %}{% endblock %}" href="{% url 'themes' %}">{% trans "Themes" %}</a></li>
+  <li class="nav-item"><a class="nav-link {% block menu2_add %}{% endblock %}" href="{% url 'themes_add' %}">{% trans "Add theme" %}</a></li>
+  <li class="nav-item"><a class="nav-link {% block menu2_update %}{% endblock %}" href="{% url 'themes_update' %}">{% trans "Update theme" %}</a></li>
+</ul>
 
 {% endblock content %}
