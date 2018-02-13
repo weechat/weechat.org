@@ -22,6 +22,7 @@
 
 from datetime import datetime
 
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render
 
 from weechat.download.models import Release
@@ -52,6 +53,39 @@ def home(request, max_info=None, max_event=None):
     )
 
 
+def paginate_news(request, info_list, info_id, page_name):
+    """Paginate list of news."""
+    pagesize = request.GET.get('pagesize', 10)
+    try:
+        pagesize = max(int(pagesize), 1)
+    except ValueError:
+        pagesize = 10
+    paginator = Paginator(info_list, pagesize)
+    page = request.GET.get('page')
+    try:
+        infos = paginator.page(page)
+    except PageNotAnInteger:
+        infos = paginator.page(1)
+    except EmptyPage:
+        infos = paginator.page(paginator.num_pages)
+
+    first_page = max(infos.number - 2, 1)
+    last_page = min(infos.number + 2, paginator.num_pages)
+    if first_page == 3:
+        first_page = 1
+    if last_page == paginator.num_pages - 2:
+        last_page = paginator.num_pages
+    smart_page_range = range(first_page, last_page + 1)
+
+    return render(request, 'home/news.html', {
+        'infos': infos,
+        'info_id': info_id,
+        'page_name': page_name,
+        'smart_page_range': smart_page_range,
+        'pagesize': pagesize,
+    })
+
+
 def news(request, info_id=None):
     """List of news."""
     try:
@@ -61,22 +95,15 @@ def news(request, info_id=None):
             info_list = (Info.objects.all().filter(visible=1)
                          .filter(date__lte=datetime.now()).order_by('-date'))
     except:  # noqa: E722
-        info_list = None
-    return render(request, 'home/news.html', {
-        'info_list': info_list,
-        'single_info': bool(info_id),
-        'page': 'news',
-    })
+        infos = None
+    return paginate_news(request, info_list, info_id, 'news')
 
 
 def events(request):
     """List of upcoming events."""
     try:
-        event_list = (Info.objects.all().filter(visible=1)
-                      .filter(date__gt=datetime.now()).order_by('date'))
+        info_list = (Info.objects.all().filter(visible=1)
+                     .filter(date__gt=datetime.now()).order_by('date'))
     except:  # noqa: E722
-        event_list = None
-    return render(request, 'home/news.html', {
-        'info_list': event_list,
-        'page': 'events',
-    })
+        infos = None
+    return paginate_news(request, info_list, None, 'events')
