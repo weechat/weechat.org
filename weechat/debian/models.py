@@ -53,11 +53,11 @@ class Repo(models.Model):
     visible = models.BooleanField(default=True)
     active = models.BooleanField(default=True)
     name = models.CharField(max_length=64)
-    version = models.ForeignKey(Version)
+    version = models.ForeignKey(Version, on_delete=models.CASCADE)
     domain = models.CharField(max_length=128)
     url = models.CharField(max_length=512)
     arch = models.CharField(max_length=128)
-    builder = models.ForeignKey(Builder)
+    builder = models.ForeignKey(Builder, on_delete=models.CASCADE)
     message = models.CharField(max_length=1024, blank=True)
     priority = models.IntegerField(default=0)
 

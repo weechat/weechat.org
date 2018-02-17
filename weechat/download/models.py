@@ -90,8 +90,8 @@ class Type(models.Model):
 
 class Package(models.Model):
     """A WeeChat package."""
-    version = models.ForeignKey(Release)
-    type = models.ForeignKey(Type)
+    version = models.ForeignKey(Release, on_delete=models.CASCADE)
+    type = models.ForeignKey(Type, on_delete=models.CASCADE)
     filename = models.CharField(max_length=512, blank=True)
     sha1sum = models.CharField(max_length=128, blank=True)
     sha512sum = models.CharField(max_length=128, blank=True)
@@ -303,7 +303,8 @@ class ReleaseTodo(models.Model):
 
 class ReleaseProgress(models.Model):
     """The progress for the next release."""
-    version = models.ForeignKey(Release, primary_key=True)
+    version = models.ForeignKey(Release, primary_key=True,
+                                on_delete=models.CASCADE)
     done = models.IntegerField(default=0)
 
     def __unicode__(self):

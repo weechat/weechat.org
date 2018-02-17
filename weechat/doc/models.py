@@ -80,7 +80,7 @@ class Doc(models.Model):
         'dev': ugettext_noop('Developer\'s guide'),
         'relay_protocol': ugettext_noop('Relay protocol'),
     }
-    version = models.ForeignKey(Version)
+    version = models.ForeignKey(Version, on_delete=models.CASCADE)
     name = models.CharField(max_length=64)
     devel = models.BooleanField(default=False)
     priority = models.IntegerField(default=0)
