@@ -44,7 +44,7 @@ urlpatterns = [
     # admin
     url(r'^%s/doc/' % settings.ADMIN_PAGE,
         include('django.contrib.admindocs.urls')),
-    url(r'^%s/' % settings.ADMIN_PAGE, include(admin.site.urls)),
+    url(r'^%s/' % settings.ADMIN_PAGE, admin.site.urls),
 
     # set language
     url(r'^i18n/', include('django.conf.urls.i18n')),
