@@ -22,6 +22,7 @@
 
 import gzip
 from hashlib import md5
+from io import open
 from os import chdir, listdir, path
 import re
 import tarfile
@@ -69,9 +70,12 @@ class Theme(models.Model):
     added = models.DateTimeField()
     updated = models.DateTimeField()
 
-    def __unicode__(self):
+    def __str__(self):
         return '%s - %s (%s, %s)' % (self.name, self.author, self.version,
                                      self.added)
+
+    def __unicode__(self):  # python 2.x
+        return self.__str__()
 
     def short_name(self):
         """Return short name (without extension)."""
@@ -92,16 +96,14 @@ class Theme(models.Model):
         filename = files_path_join('themes', 'html',
                                    path.basename('%s.html' % self.name))
         if path.isfile(filename):
-            with open(filename, 'rb') as _file:
+            with open(filename, 'r', encoding='utf-8') as _file:
                 content = _file.read()
             return content
         return ''
 
     def desc_i18n(self):
         """Return translated description."""
-        if self.desc:
-            return gettext_lazy(self.desc.encode('utf-8'))
-        return ''
+        return gettext_lazy(self.desc) if self.desc else ''
 
     def build_url(self):
         """Return URL to the theme."""
@@ -336,8 +338,8 @@ def handler_theme_changed(sender, **kwargs):
 
     # create themes.xml
     filename = files_path_join('themes.xml')
-    with open(filename, 'w') as _file:
-        _file.write(xml.encode('utf-8'))
+    with open(filename, 'w', encoding='utf-8') as _file:
+        _file.write(xml)
 
     # create themes.xml.gz
     with open(filename, 'rb') as _f_in:
@@ -347,8 +349,8 @@ def handler_theme_changed(sender, **kwargs):
 
     # create themes.json
     filename = files_path_join('themes.json')
-    with open(filename, 'w') as _file:
-        _file.write(json.encode('utf-8'))
+    with open(filename, 'w', encoding='utf-8') as _file:
+        _file.write(json)
 
     # create themes.json.gz
     with open(filename, 'rb') as _f_in:

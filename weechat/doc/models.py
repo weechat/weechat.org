@@ -44,8 +44,11 @@ class Language(models.Model):
     lang = models.CharField(max_length=8, primary_key=True)
     priority = models.IntegerField(default=0)
 
-    def __unicode__(self):
+    def __str__(self):
         return '%s (%d)' % (self.lang, self.priority)
+
+    def __unicode__(self):  # python 2.x
+        return self.__str__()
 
     def lang_i18n(self):
         """Return the translated language."""
@@ -61,8 +64,11 @@ class Version(models.Model):
     priority = models.IntegerField(default=0)
     directory = models.CharField(max_length=256, blank=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.version
+
+    def __unicode__(self):  # python 2.x
+        return self.__str__()
 
     class Meta:
         ordering = ['priority']
@@ -85,8 +91,11 @@ class Doc(models.Model):
     devel = models.BooleanField(default=False)
     priority = models.IntegerField(default=0)
 
-    def __unicode__(self):
+    def __str__(self):
         return '%s (%s, %d)' % (self.name, self.version, self.priority)
+
+    def __unicode__(self):  # python 2.x
+        return self.__str__()
 
     def name_i18n(self):
         """Return the translated doc name."""

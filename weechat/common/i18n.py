@@ -20,6 +20,8 @@
 
 """Some i18n useful functions."""
 
+from io import open
+
 from weechat.common.path import project_path_join
 
 
@@ -56,5 +58,5 @@ def i18n_autogen(app, name, strings):
     content.append('')
     # write file
     filename = project_path_join(app, '_i18n_%s.py' % name)
-    with open(filename, 'w') as _file:
-        _file.write('\n'.join(content).encode('utf-8'))
+    with open(filename, 'w', encoding='utf-8') as _file:
+        _file.write('\n'.join(content))

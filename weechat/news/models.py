@@ -41,8 +41,11 @@ class Info(models.Model):
     mail = models.EmailField(max_length=256)
     text = models.TextField(blank=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
+
+    def __unicode__(self):  # python 2.x
+        return self.__str__()
 
     def date_l10n(self):
         """Return the info date formatted with localized date format."""
@@ -53,9 +56,7 @@ class Info(models.Model):
         match = PATTERN_TITLE_VERSION.match(self.title)
         if match:
             # if the title is "Version x.y.z", translate only "Version"
-            return ('%s %s' %
-                    (str(gettext_lazy(match.group(1))).decode('utf-8'),
-                     match.group(2)))
+            return '%s %s' % (gettext_lazy(match.group(1)), match.group(2))
         else:
             return gettext_lazy(self.title)
 

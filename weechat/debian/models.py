@@ -35,8 +35,11 @@ class Version(models.Model):
     codename = models.CharField(max_length=64, primary_key=True)
     version = models.CharField(max_length=64)
 
-    def __unicode__(self):
+    def __str__(self):
         return '%s (%s)' % (self.codename, self.version)
+
+    def __unicode__(self):  # python 2.x
+        return self.__str__()
 
 
 class Builder(models.Model):
@@ -44,8 +47,11 @@ class Builder(models.Model):
     nick = models.CharField(max_length=64, primary_key=True)
     name = models.CharField(max_length=128)
 
-    def __unicode__(self):
+    def __str__(self):
         return '%s (%s)' % (self.name, self.nick)
+
+    def __unicode__(self):  # python 2.x
+        return self.__str__()
 
 
 class Repo(models.Model):
@@ -61,7 +67,7 @@ class Repo(models.Model):
     message = models.CharField(max_length=1024, blank=True)
     priority = models.IntegerField(default=0)
 
-    def __unicode__(self):
+    def __str__(self):
         return '%s %s, %s, %s (%s) (%d)' % (
             self.name,
             self.version,
@@ -69,6 +75,9 @@ class Repo(models.Model):
             'active' if self.active else 'discontinued',
             self.arch,
             self.priority)
+
+    def __unicode__(self):  # python 2.x
+        return self.__str__()
 
     def path_packages_gz(self, arch):
         """Return path/name to the Packages.gz file of repository."""

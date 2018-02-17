@@ -60,7 +60,7 @@ def repos(request, active='active', files=''):
                 if _file:
                     pkg = {}
                     for line in _file.readlines():
-                        line = line.strip()
+                        line = line.strip().decode('utf-8')
                         if len(line) == 0:
                             if pkg:
                                 pkg['repoarch'] = '%s_%s' % (

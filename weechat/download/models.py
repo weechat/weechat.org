@@ -45,7 +45,7 @@ class Release(models.Model):
     security_issues_fixed = models.IntegerField(default=0)
     securityfix = models.CharField(max_length=256, blank=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return '%s (%s)%s%s' % (
             self.version,
             self.date,
@@ -54,6 +54,9 @@ class Release(models.Model):
             (', fix in: %s' % ', '.join(self.securityfix.split(','))
              if self.securityfix else ''),
         )
+
+    def __unicode__(self):  # python 2.x
+        return self.__str__()
 
     def date_l10n(self):
         """Return the release date formatted with localized date format."""
@@ -75,8 +78,11 @@ class Type(models.Model):
     icon = models.CharField(max_length=64, blank=True)
     directory = models.CharField(max_length=256, blank=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return '%s - %s (%d)' % (self.type, self.description, self.priority)
+
+    def __unicode__(self):  # python 2.x
+        return self.__str__()
 
     def htmldir(self):
         """Return the HTML directory for the type of package."""
@@ -100,7 +106,7 @@ class Package(models.Model):
     url = models.CharField(max_length=512, blank=True)
     text = models.CharField(max_length=512, blank=True)
 
-    def __unicode__(self):
+    def __str__(self):
         if self.filename != '':
             string = self.filename
         elif self.directory != '':
@@ -110,6 +116,9 @@ class Package(models.Model):
         else:
             string = self.text
         return '%s-%s, %s' % (self.version.version, self.type.type, string)
+
+    def __unicode__(self):  # python 2.x
+        return self.__str__()
 
     def fullname(self):
         """Return the path for package."""
@@ -210,11 +219,14 @@ class Security(models.Model):
     description = models.TextField()
     workaround = models.TextField(blank=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return '%s, %s, %s, %s / %s, %s, %s' % (
             self.external, self.tracker, self.severity,
             self.affected, self.fixed, self.release_date,
             self.description)
+
+    def __unicode__(self):  # python 2.x
+        return self.__str__()
 
     def date_l10n(self):
         """Return the date formatted with localized date format."""
@@ -294,8 +306,11 @@ class ReleaseTodo(models.Model):
     description = models.CharField(max_length=1024)
     priority = models.IntegerField(default=0)
 
-    def __unicode__(self):
+    def __str__(self):
         return '%s (%d)' % (self.description, self.priority)
+
+    def __unicode__(self):  # python 2.x
+        return self.__str__()
 
     class Meta:
         ordering = ['priority']
@@ -307,8 +322,11 @@ class ReleaseProgress(models.Model):
                                 on_delete=models.CASCADE)
     done = models.IntegerField(default=0)
 
-    def __unicode__(self):
+    def __str__(self):
         return '%s, %d' % (self.version, self.done)
+
+    def __unicode__(self):  # python 2.x
+        return self.__str__()
 
     class Meta:
         verbose_name_plural = 'release progress'

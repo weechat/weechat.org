@@ -92,7 +92,7 @@ def scripts(request, api='stable', sort_key='popularity', filter_name='',
                        .order_by(*get_sort_key(sort_key)))
     else:
         script_list = (Script.objects.filter(visible=1)
-                       .filter(min_weechat__gte=API_STABLE) \
+                       .filter(min_weechat__gte=API_STABLE)
                        .order_by(*get_sort_key(sort_key)))
     if filter_name == 'tag':
         script_list = (script_list

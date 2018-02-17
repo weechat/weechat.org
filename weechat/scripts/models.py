@@ -22,6 +22,7 @@
 
 import gzip
 from hashlib import md5
+from io import open
 from os import path
 import re
 from xml.sax.saxutils import escape
@@ -100,12 +101,18 @@ class Script(models.Model):
     added = models.DateTimeField()
     updated = models.DateTimeField()
 
-    def __unicode__(self):
-        api = ''
-        if self.max_weechat == '0.2.6':
-            api = '(legacy api) '
-        return '%s %s %s(%s, %s)' % (self.name, self.version, api,
-                                     self.author, self.added)
+    def __str__(self):
+        return '%s %s %s(%s, %s)%s' % (
+            self.name,
+            self.version,
+            '(legacy api) ' if self.max_weechat == '0.2.6' else '',
+            self.author,
+            self.added,
+            ' [pending]' if not self.visible else '',
+        )
+
+    def __unicode__(self):  # python 2.x
+        return self.__str__()
 
     def tagslist(self):
         """Return a list with script tags."""
@@ -144,7 +151,7 @@ class Script(models.Model):
 
     def desc_i18n(self):
         """Return translated description."""
-        return gettext_lazy(self.desc_en.encode('utf-8'))
+        return gettext_lazy(self.desc_en)
 
     def version_weechat(self):
         """Return the min/max WeeChat versions in a string."""
@@ -217,21 +224,18 @@ class NameField(forms.CharField):
 
 def get_min_max_choices():
     """Get min/max versions for add form."""
-    try:
-        version_min_max = []
-        devel_desc = Release.objects.get(version='devel').description
-        releases = Release.objects.filter(
-            version__gte='0.3.0',
-            version__lte=re.sub('-.*', '', devel_desc)).order_by('date')
-        for rel in releases:
-            version_min_max.append(
-                (
-                    '%s:-' % rel.version,
-                    '≥ %s'.decode('utf-8') % rel.version,
-                    ))
-        return version_min_max
-    except:  # noqa: E722
-        return []
+    version_min_max = []
+    devel_desc = Release.objects.get(version='devel').description
+    releases = Release.objects.filter(
+        version__gte='0.3.0',
+        version__lte=re.sub('-.*', '', devel_desc)).order_by('date')
+    for rel in releases:
+        version = (
+            '{}:-'.format(rel.version),
+            '≥ {}'.format(rel.version),
+        )
+        version_min_max.append(version)
+    return version_min_max
 
 
 class ScriptFormAdd(Form):
@@ -434,8 +438,8 @@ def handler_script_changed(sender, **kwargs):
 
     # create plugins.xml
     filename = files_path_join('plugins.xml')
-    with open(filename, 'w') as _file:
-        _file.write(xml.encode('utf-8'))
+    with open(filename, 'w', encoding='utf-8') as _file:
+        _file.write(xml)
 
     # create plugins.xml.gz
     with open(filename, 'rb') as _f_in:
@@ -445,8 +449,8 @@ def handler_script_changed(sender, **kwargs):
 
     # create plugins.json
     filename = files_path_join('plugins.json')
-    with open(filename, 'w') as _file:
-        _file.write(json.encode('utf-8'))
+    with open(filename, 'w', encoding='utf-8') as _file:
+        _file.write(json)
 
     # create plugins.json.gz
     with open(filename, 'rb') as _f_in:
