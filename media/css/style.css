@@ -3,6 +3,10 @@
  * Copyright (C) 2003-2018 Sébastien Helleu <flashcode@flashtux.org>
  */
 
+body {
+  background: #f4f4f4;
+}
+
 a:not(.btn), a:not(.btn):visited, a:not(.btn):hover, a:not(.btn):active {
   color: #2a6ea1;
 }
@@ -36,7 +40,6 @@ pre {
 
 .navbar-gradient {
   min-height: 5px;
-  margin-bottom: 1.5rem;
   background: #eee;
   background: linear-gradient(#cacada, #ffffff);
 }
@@ -85,6 +88,13 @@ pre {
 
 .nav-languages select {
   background: #e5f0ff;
+}
+
+/* ===== page content ===== */
+
+.content {
+  background: white;
+  padding: 2.5rem 1.5rem;
 }
 
 /* ===== forms ===== */
@@ -230,7 +240,6 @@ img.shadow {
 
 .footer {
   margin-top: 2rem;
-  background: #f4f4f4;
 }
 
 .footer .main {
