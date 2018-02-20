@@ -26,6 +26,8 @@
   </a>
 </p>
 
+{% if security_list %}
+
 <div class="table-responsive">
   <table class="table table-bordered">
     <thead>
@@ -93,5 +95,13 @@
     <strong>{% trans "critical" %}</strong>: {% trans "critical problem, risk of damage on your system. <strong>You MUST upgrade immediately!</strong>" %}
   </div>
 </p>
+
+{% else %}
+
+<div class="alert alert-success">
+  {% trans "No security vulnerability." %}
+</div>
+
+{% endif %}
 
 {% endblock content %}
