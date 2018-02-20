@@ -58,9 +58,9 @@
   {% trans "See the weechat page on Liberapay:" %} <a href="https://liberapay.com/weechat" target="_blank" rel="noopener">https://liberapay.com/weechat <img src="{{ MEDIA_URL }}images/link.png" alt="&gt;&gt;"></a>
 </p>
 
-<h4>{% trans "With Paypal" %}</h4>
-
 {% if sponsor_list %}
+
+<h4>{% trans "With Paypal" %}</h4>
 
 <p>
   {% if sort_key == "date" %}{% trans "Whole list:" %}{% else %}{% trans "Top 10, ordered by total amount donated:" %}{% endif %}
