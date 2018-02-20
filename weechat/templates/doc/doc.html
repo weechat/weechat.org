@@ -29,7 +29,7 @@
     </ul>
   </p>
 
-{% else %}
+{% elif doc_version %}
 
   <h3>{% trans "Docs for version" %} {{ doc_version }} <small class="text-muted">({{ doc_list.0.1.0.1|localdate }})</small></h3>
 
@@ -136,6 +136,12 @@
     <br>
     {% trans "There is more information about WeeChat translations in the developer's guide." %}
   </p>
+
+{% else %}
+
+<div class="alert alert-success">
+  {% trans "No documentation." %}
+</div>
 
 {% endif %}
 
