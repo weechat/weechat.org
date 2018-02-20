@@ -9,6 +9,8 @@
 
 {{ block.super }}
 
+{% if infos %}
+
 <p>
   {% trans "Following infos are available (click on info for the URL):" %}
 </p>
@@ -37,5 +39,13 @@
 <p>
   {% trans "You can fetch these URLs from scripts or other sites." %}
 </p>
+
+{% else %}
+
+<div class="alert alert-success">
+  {% trans "No info." %}
+</div>
+
+{% endif %}
 
 {% endblock content %}
