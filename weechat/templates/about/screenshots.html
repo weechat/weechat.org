@@ -15,6 +15,7 @@
 </ul>
 
 {% if screenshot_list %}
+
 <div class="text-center">
   {% for screenshot in screenshot_list %}
   <a href="{% url 'about_screenshot' app screenshot.filename %}">
@@ -32,10 +33,19 @@
     </figure>
   </a>
 </div>
+
 {% else %}
+
+{% if filename %}
 <div class="alert alert-danger">
-  {% if filename %}{% trans "Screenshot not found:" %} {{ filename }}{% else %}{% trans "No screenshot." %}{% endif %}
+  {% trans "Screenshot not found:" %} {{ filename }}
 </div>
+{% else %}
+<div class="alert alert-success">
+  {% trans "No screenshot." %}
+</div>
+{% endif %}
+
 {% endif %}
 
 </div>
