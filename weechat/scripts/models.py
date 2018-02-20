@@ -29,6 +29,7 @@ from xml.sax.saxutils import escape
 
 from django import forms
 from django.conf import settings
+from django.core.exceptions import ObjectDoesNotExist
 from django.db import models
 from django.db.models.signals import post_save, post_delete
 from django.utils import translation
@@ -225,16 +226,19 @@ class NameField(forms.CharField):
 def get_min_max_choices():
     """Get min/max versions for add form."""
     version_min_max = []
-    devel_desc = Release.objects.get(version='devel').description
-    releases = Release.objects.filter(
-        version__gte='0.3.0',
-        version__lte=re.sub('-.*', '', devel_desc)).order_by('date')
-    for rel in releases:
-        version = (
-            '{}:-'.format(rel.version),
-            '≥ {}'.format(rel.version),
-        )
-        version_min_max.append(version)
+    try:
+        devel_desc = Release.objects.get(version='devel').description
+        releases = Release.objects.filter(
+            version__gte='0.3.0',
+            version__lte=re.sub('-.*', '', devel_desc)).order_by('date')
+        for rel in releases:
+            version = (
+                '{}:-'.format(rel.version),
+                '≥ {}'.format(rel.version),
+            )
+            version_min_max.append(version)
+    except ObjectDoesNotExist:
+        version_min_max = []
     return version_min_max
 
 

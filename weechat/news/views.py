@@ -22,6 +22,7 @@
 
 from datetime import datetime
 
+from django.core.exceptions import ObjectDoesNotExist
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render
 
@@ -40,8 +41,11 @@ def home(request, max_info=None, max_event=None):
                   .order_by('date'))
     if max_event:
         event_list = event_list[:max_event]
-    stable_version = Release.objects.get(version='stable').description
-    release_stable = Release.objects.get(version=stable_version)
+    try:
+        stable_version = Release.objects.get(version='stable').description
+        release_stable = Release.objects.get(version=stable_version)
+    except ObjectDoesNotExist:
+        release_stable = None
     return render(
         request,
         'home/home.html',

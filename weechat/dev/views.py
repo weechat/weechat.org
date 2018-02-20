@@ -22,6 +22,7 @@
 
 import re
 
+from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render
 from django.utils.translation import gettext_lazy
 
@@ -79,13 +80,17 @@ INFO_KEYS = (
 
 def roadmap(request, allversions=False):
     """Page with roadmap for future or all versions."""
-    if allversions:
-        task_list = Task.objects.all().filter(visible=1).order_by('version',
-                                                                  'priority')
-    else:
-        task_list = Task.objects.all().filter(visible=1).filter(
-            version__gt=Release.objects.get(
-                version='stable').description).order_by('version', 'priority')
+    task_list = None
+    try:
+        if allversions:
+            task_list = Task.objects.all().filter(visible=1).order_by('version',
+                                                                      'priority')
+        else:
+            task_list = Task.objects.all().filter(visible=1).filter(
+                version__gt=Release.objects.get(
+                    version='stable').description).order_by('version', 'priority')
+    except ObjectDoesNotExist:
+        task_list = None
     return render(
         request,
         'dev/roadmap.html',
@@ -201,10 +206,19 @@ def get_info(name, version):
 
 def info(request, name=None):
     """Page with one or all available infos."""
-    version = {
-        'stable': Release.objects.get(version='stable'),
-        'devel': Release.objects.get(version='devel'),
-    }
+    try:
+        version = {
+            'stable': Release.objects.get(version='stable'),
+            'devel': Release.objects.get(version='devel'),
+        }
+    except ObjectDoesNotExist:
+        return render(
+            request,
+            'dev/info_list.html',
+            {
+                'infos': [],
+            },
+        )
     if name:
         return render(
             request,

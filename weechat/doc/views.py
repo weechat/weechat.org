@@ -24,6 +24,7 @@ from datetime import datetime
 from math import ceil
 from os import path, listdir
 
+from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render, redirect
 from django.utils.translation import ugettext
 
@@ -169,6 +170,10 @@ def documentation(request, version='stable'):
                 doc_list.append([doc, files])
             else:
                 doc_list2.append([doc, files])
+    try:
+        doc_version = Release.objects.get(version=version).description
+    except ObjectDoesNotExist:
+        doc_version = None
     return render(
         request,
         'doc/doc.html',
@@ -179,7 +184,7 @@ def documentation(request, version='stable'):
             'versions': versions,
             'doc_list': doc_list + doc_list2,
             'i18n': get_i18n_stats(),
-            'doc_version': Release.objects.get(version=version).description,
+            'doc_version': doc_version,
         },
     )
 

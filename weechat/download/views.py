@@ -22,6 +22,7 @@
 
 import re
 
+from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponse
 from django.shortcuts import render
 
@@ -62,31 +63,37 @@ def get_release_progress():
 def packages(request, version='stable'):
     """Page with packages for a version (stable, devel, all, old, or x.y.z)."""
     package_list = None
-    if version == 'stable':
-        stable_desc = Release.objects.get(version='stable').description
-        package_list = (Package.objects.all().filter(version=stable_desc)
-                        .order_by('type__priority'))
-    elif version == 'devel':
-        package_list = (Package.objects.all().filter(version='devel')
-                        .order_by('type__priority'))
-    elif version == 'all':
-        package_list = (Package.objects.all().exclude(version='devel')
-                        .order_by('-version__date', 'type__priority'))
-    elif version == 'old':
-        stable_desc = Release.objects.get(version='stable').description
-        package_list = (Package.objects.all().exclude(version='devel')
-                        .exclude(version=stable_desc)
-                        .order_by('-version__date', 'type__priority'))
-    else:
-        package_list = (Package.objects.filter(version=version)
-                        .order_by('type__priority'))
+    release_progress = None
+    try:
+        if version == 'stable':
+            stable_desc = Release.objects.get(version='stable').description
+            package_list = (Package.objects.all().filter(version=stable_desc)
+                            .order_by('type__priority'))
+        elif version == 'devel':
+            package_list = (Package.objects.all().filter(version='devel')
+                            .order_by('type__priority'))
+        elif version == 'all':
+            package_list = (Package.objects.all().exclude(version='devel')
+                            .order_by('-version__date', 'type__priority'))
+        elif version == 'old':
+            stable_desc = Release.objects.get(version='stable').description
+            package_list = (Package.objects.all().exclude(version='devel')
+                            .exclude(version=stable_desc)
+                            .order_by('-version__date', 'type__priority'))
+        else:
+            package_list = (Package.objects.filter(version=version)
+                            .order_by('type__priority'))
+        release_progress = get_release_progress()
+    except ObjectDoesNotExist:
+        package_list = None
+        release_progress = None
     return render(
         request,
         'download/packages.html',
         {
             'version': version,
             'package_list': package_list,
-            'release_progress': get_release_progress(),
+            'release_progress': release_progress,
         },
     )
 
