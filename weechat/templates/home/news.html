@@ -30,9 +30,9 @@
   <ul class="pagination justify-content-center">
 
     {% if infos.has_previous %}
-    <li class="page-item"><a class="page-link" href="?pagesize={{ pagesize }}&page={{ infos.previous_page_number }}">{% trans "Previous" %}</a></li>
+    <li class="page-item"><a class="page-link" href="?pagesize={{ pagesize }}&page={{ infos.previous_page_number }}">{% trans "Previous" context "Previous page" %}</a></li>
     {% else %}
-    <li class="page-item disabled"><span class="page-link">{% trans "Previous" %}</span></li>
+    <li class="page-item disabled"><span class="page-link">{% trans "Previous" context "Previous page" %}</span></li>
     {% endif %}
 
     {% if smart_page_range.0 > 1 %}
@@ -58,9 +58,9 @@
     {% endif %}
 
     {% if infos.has_next %}
-    <li class="page-item"><a class="page-link" href="?pagesize={{ pagesize }}&page={{ infos.next_page_number }}">{% trans "Next" %}</a></li>
+    <li class="page-item"><a class="page-link" href="?pagesize={{ pagesize }}&page={{ infos.next_page_number }}">{% trans "Next" context "Next page" %}</a></li>
     {% else %}
-    <li class="page-item disabled"><span class="page-link">{% trans "Next" %}</span></li>
+    <li class="page-item disabled"><span class="page-link">{% trans "Next" context "Next page" %}</span></li>
     {% endif %}
 
   </ul>
