@@ -20,7 +20,7 @@
 
 """URLs for weechat.org."""
 
-# pylint: disable=invalid-name, no-value-for-parameter
+# pylint: disable=invalid-name
 
 from django.conf import settings
 from django.conf.urls import include, url
