@@ -97,6 +97,12 @@ pre {
   padding: 2.5rem 1.5rem;
 }
 
+#nav1-home .content {
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+}
+
 /* ===== forms ===== */
 
 .required label:after {
@@ -111,18 +117,30 @@ pre {
 
 /* ===== home ===== */
 
-.home-bloc svg {
+.home-container {
+  margin: 0;
+}
+
+.home-container svg {
   margin-right: .3rem;
 }
 
-.home-bloc svg g, .home-bloc svg path {
+.home-container svg g, .home-container svg path {
   fill: #fff;
+}
+
+.container-bg {
+  background: #cef;
 }
 
 /* ===== pages ===== */
 
 img.shadow {
   box-shadow: -4px 16px 32px #999, 4px 16px 32px #999;
+}
+
+.container-bg img.shadow {
+  box-shadow: -4px 16px 32px #79b, 4px 16px 32px #79b;
 }
 
 .table-borderless th, .table-borderless td {

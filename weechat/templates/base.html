@@ -21,7 +21,7 @@
   {% block extrahead %}{% endblock %}
 </head>
 
-<body>
+<body id="nav1-{% block menu %}{% endblock %}">
 
   <nav class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" href="{% url "home" %}">
@@ -31,7 +31,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarToggler">
-      <div class="navbar-nav mr-auto mt-2 mt-lg-0" id="nav1-{% block menu %}{% endblock %}">
+      <div class="navbar-nav mr-auto mt-2 mt-lg-0">
         <a class="nav-item nav-link nav-home" href="{% url "home" %}">{% trans "Home" %}</a>
         <a class="nav-item nav-link nav-about" href="{% url "about" %}">{% trans "About" %}</a>
         <a class="nav-item nav-link nav-doc" href="{% url "doc" %}">{% trans "Documentation" %}</a>

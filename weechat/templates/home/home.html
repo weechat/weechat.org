@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<div class="row justify-content-center mb-3 pb-3 my-lg-3 py-lg-3 home-bloc">
+<div class="row justify-content-center mb-3 pb-3 mt-lg-4 mb-lg-5 py-lg-5 home-container">
   <div class="col-12 col-lg-auto text-center">
     <img src="{{ MEDIA_URL }}images/weechat_logo_large.png" class="img-fluid" alt="WeeChat">
   </div>
@@ -24,10 +24,8 @@
   </div>
 </div>
 
-<div class="d-lg-none"><hr></div>
-
-<div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-bloc">
-  <div class="col-12 col-lg-5">
+<div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-container container-bg">
+  <div class="col-12 col-lg-5 my-lg-5 mx-lg-4">
     <h2>Powerful, customizable.</h2>
     <h5>
       {% trans "Full-featured IRC plugin: multi-servers, proxy support, IPv6, SASL authentication, nicklist, DCC, and many other features." %}
@@ -35,18 +33,16 @@
     <a href="{% url 'about_features' %}" class="btn btn-lg btn-success mt-4 mr-3 px-3 px-lg-5"><svg viewBox="0 0 16 16" version="1.1" width="24px" height="24px" aria-hidden="true"><path fill-rule="evenodd" d="M16 8.5l-6 6-3-3L8.5 10l1.5 1.5L14.5 7 16 8.5zM5.7 12.2l.8.8H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h7c.55 0 1 .45 1 1v6.5l-.8-.8c-.39-.39-1.03-.39-1.42 0L5.7 10.8a.996.996 0 0 0 0 1.41v-.01zM4 4h5V3H4v1zm0 2h5V5H4v1zm0 2h3V7H4v1zM3 9H2v1h1V9zm0-2H2v1h1V7zm0-2H2v1h1V5zm0-2H2v1h1V3z"/></svg> {% trans "Features" %}</a>
     <a href="{% url 'about_screenshots' %}" class="btn btn-lg btn-info mt-4 mr-3 px-3 px-lg-5"><svg viewBox="0 0 16 16" version="1.1" width="24px" height="24px" aria-hidden="true"><path fill-rule="evenodd" d="M15 3H7c0-.55-.45-1-1-1H2c-.55 0-1 .45-1 1-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h14c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1zM6 5H2V4h4v1zm4.5 7C8.56 12 7 10.44 7 8.5S8.56 5 10.5 5 14 6.56 14 8.5 12.44 12 10.5 12zM13 8.5c0 1.38-1.13 2.5-2.5 2.5S8 9.87 8 8.5 9.13 6 10.5 6 13 7.13 13 8.5z"/></svg> {% trans "Screenshots" %}</a>
   </div>
-  <div class="col-12 col-lg-auto my-4 my-lg-0">
+  <div class="col-12 col-lg-auto my-4 my-lg-5 mx-lg-4">
     <img src="{{ MEDIA_URL }}images/ft_irc.png" class="img-fluid rounded shadow" alt="IRC">
   </div>
 </div>
 
-<div class="d-lg-none"><hr></div>
-
-<div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-bloc">
-  <div class="col-12 col-lg-auto order-2 order-lg-1 my-4 my-lg-0">
+<div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-container">
+  <div class="col-12 col-lg-auto order-2 order-lg-1 my-4 my-lg-5 mx-lg-4">
     <img src="{{ MEDIA_URL }}images/ft_scripts.png" class="img-fluid rounded shadow" alt="Scripts">
   </div>
-  <div class="col-12 col-lg-5 order-1 order-lg-2">
+  <div class="col-12 col-lg-5 order-1 order-lg-2 my-lg-5 mx-lg-4">
     <h2>{% trans "Innovating features." %}</h2>
     <h5>
       8 scripting languages supported with a built-in scripts manager.
@@ -58,10 +54,8 @@
   </div>
 </div>
 
-<div class="d-lg-none"><hr></div>
-
-<div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-bloc">
-  <div class="col-12 col-lg-5">
+<div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-container container-bg">
+  <div class="col-12 col-lg-5 my-lg-5 mx-lg-4">
     <h2>{% trans "Remote interfaces." %}</h2>
     <h5>
       {% trans "Tired of your terminal?" %}
@@ -70,18 +64,16 @@
     </h5>
     <a href="{% url 'download_interfaces' %}" class="btn btn-lg btn-success mt-4 mr-3 px-3 px-lg-5"><svg viewBox="0 0 16 16" version="1.1" width="24px" height="24px" aria-hidden="true"><path fill-rule="evenodd" d="M15 2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm0 9H1V3h14v8z"/></svg> {% trans "Interfaces" %}</a>
   </div>
-  <div class="col-12 col-lg-auto my-4 my-lg-0">
+  <div class="col-12 col-lg-auto my-4 my-lg-5 mx-lg-4">
     <img src="{{ MEDIA_URL }}images/ft_android.png" class="img-fluid rounded shadow" alt="Android">
   </div>
 </div>
 
-<div class="d-lg-none"><hr></div>
-
-<div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-bloc">
-  <div class="col-12 col-lg-auto order-2 order-lg-1 my-4 my-lg-0">
+<div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-container">
+  <div class="col-12 col-lg-auto order-2 order-lg-1 my-4 my-lg-5 mx-lg-4">
     <img src="{{ MEDIA_URL }}images/ft_doc.png" class="img-fluid rounded border" alt="Documentation">
   </div>
-  <div class="col-12 col-lg-5 order-1 order-lg-2">
+  <div class="col-12 col-lg-5 order-1 order-lg-2 my-lg-5 mx-lg-4">
     <h2>{% trans "Documentation and support." %}</h2>
     <h5>
       {% trans "Translations available in several languages, comprehensive documentation." %}
@@ -95,8 +87,8 @@
 
 <div class="d-lg-none"><hr></div>
 
-<div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-bloc">
-  <div class="col-12 col-lg-5">
+<div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-container">
+  <div class="col-12 col-lg-5 my-lg-5 mx-lg-4">
     <h2>{% trans "Help the project." %}</h2>
     <h5>
       {% trans "You can help the WeeChat project in many ways:" %}
@@ -108,7 +100,7 @@
     </h5>
     <a href="{% url 'about_donate' %}" class="btn btn-lg btn-success mt-4 mr-3 px-3 px-lg-5"><svg width="24px" height="24px" viewBox="0 0 12 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill="#000000"><path d="M11.2,3 C10.68,2.37 9.95,2.05 9,2 C8.03,2 7.31,2.42 6.8,3 C6.29,3.58 6.02,3.92 6,4 C5.98,3.92 5.72,3.58 5.2,3 C4.68,2.42 4.03,2 3,2 C2.05,2.05 1.31,2.38 0.8,3 C0.28,3.61 0.02,4.28 0,5 C0,5.52 0.09,6.52 0.67,7.67 C1.25,8.82 3.01,10.61 6,13 C8.98,10.61 10.77,8.83 11.34,7.67 C11.91,6.51 12,5.5 12,5 C11.98,4.28 11.72,3.61 11.2,2.98 L11.2,3 Z"/></g></g></svg> {% trans "Make a donation" %}</a>
   </div>
-  <div class="col-12 col-lg-auto my-4 my-lg-0">
+  <div class="col-12 col-lg-auto my-4 my-lg-0 mx-lg-4">
     <div style="width: 130px;">
       <svg height="32" viewBox="0 0 45 16" version="1.1" width="90" aria-hidden="true"><path fill-rule="evenodd" d="M18.53 12.03h-.02c.009 0 .015.01.024.011h.006l-.01-.01zm.004.011c-.093.001-.327.05-.574.05-.78 0-1.05-.36-1.05-.83V8.13h1.59c.09 0 .16-.08.16-.19v-1.7c0-.09-.08-.17-.16-.17h-1.59V3.96c0-.08-.05-.13-.14-.13h-2.16c-.09 0-.14.05-.14.13v2.17s-1.09.27-1.16.28c-.08.02-.13.09-.13.17v1.36c0 .11.08.19.17.19h1.11v3.28c0 2.44 1.7 2.69 2.86 2.69.53 0 1.17-.17 1.27-.22.06-.02.09-.09.09-.16v-1.5a.177.177 0 0 0-.146-.18zm23.696-2.2c0-1.81-.73-2.05-1.5-1.97-.6.04-1.08.34-1.08.34v3.52s.49.34 1.22.36c1.03.03 1.36-.34 1.36-2.25zm2.43-.16c0 3.43-1.11 4.41-3.05 4.41-1.64 0-2.52-.83-2.52-.83s-.04.46-.09.52c-.03.06-.08.08-.14.08h-1.48c-.1 0-.19-.08-.19-.17l.02-11.11c0-.09.08-.17.17-.17h2.13c.09 0 .17.08.17.17v3.77s.82-.53 2.02-.53l-.01-.02c1.2 0 2.97.45 2.97 3.88zm-8.72-3.61H33.84c-.11 0-.17.08-.17.19v5.44s-.55.39-1.3.39-.97-.34-.97-1.09V6.25c0-.09-.08-.17-.17-.17h-2.14c-.09 0-.17.08-.17.17v5.11c0 2.2 1.23 2.75 2.92 2.75 1.39 0 2.52-.77 2.52-.77s.05.39.08.45c.02.05.09.09.16.09h1.34c.11 0 .17-.08.17-.17l.02-7.47c0-.09-.08-.17-.19-.17zm-23.7-.01h-2.13c-.09 0-.17.09-.17.2v7.34c0 .2.13.27.3.27h1.92c.2 0 .25-.09.25-.27V6.23c0-.09-.08-.17-.17-.17zm-1.05-3.38c-.77 0-1.38.61-1.38 1.38 0 .77.61 1.38 1.38 1.38.75 0 1.36-.61 1.36-1.38 0-.77-.61-1.38-1.36-1.38zm16.49-.25h-2.11c-.09 0-.17.08-.17.17v4.09h-3.31V2.6c0-.09-.08-.17-.17-.17h-2.13c-.09 0-.17.08-.17.17v11.11c0 .09.09.17.17.17h2.13c.09 0 .17-.08.17-.17V8.96h3.31l-.02 4.75c0 .09.08.17.17.17h2.13c.09 0 .17-.08.17-.17V2.6c0-.09-.08-.17-.17-.17zM8.81 7.35v5.74c0 .04-.01.11-.06.13 0 0-1.25.89-3.31.89-2.49 0-5.44-.78-5.44-5.92S2.58 1.99 5.1 2c2.18 0 3.06.49 3.2.58.04.05.06.09.06.14L7.94 4.5c0 .09-.09.2-.2.17-.36-.11-.9-.33-2.17-.33-1.47 0-3.05.42-3.05 3.73s1.5 3.7 2.58 3.7c.92 0 1.25-.11 1.25-.11v-2.3H4.88c-.11 0-.19-.08-.19-.17V7.35c0-.09.08-.17.19-.17h3.74c.11 0 .19.08.19.17z"/></svg>
     </div>
@@ -118,7 +110,7 @@
 
 <div class="d-lg-none"><hr></div>
 
-<div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-bloc">
+<div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-container">
   <div class="col-12 col-lg-4 my-4 my-lg-0">
     <h2 class="pb-2 border-bottom">{% trans "Latest news" %}</h2>
     {% for info in info_list %}
