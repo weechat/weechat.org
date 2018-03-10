@@ -12,7 +12,7 @@
   <meta name="keywords" content="weechat, free, fast, light, extensible, chat, client, irc, jabber, linux, bsd, gpl, console, terminal, curses">
   <meta name="robots" content="all">
   <link rel="shortcut icon" type="image/png" href="{{ MEDIA_URL }}images/favicon.png">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ MEDIA_URL }}css/bootstrap.min.css">
   {% block css %}{% endblock %}
   <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/style.css" media="screen" title="Normal">
   <link rel="alternate" type="application/rss+xml" href="{% url 'feeds_news' %}" title="WeeChat RSS feed">
@@ -162,9 +162,9 @@
     <a id="js-scroll-top" href="#" class="btn btn-info btn-lg scroll-top"><strong>&#9650;</strong></a>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="{{ MEDIA_URL }}js/jquery-3.3.1.min.js"></script>
+  <script src="{{ MEDIA_URL }}js/popper.min.js"></script>
+  <script src="{{ MEDIA_URL }}js/bootstrap.min.js"></script>
 
   <script>
     $(document).ready(function() {
