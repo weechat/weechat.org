@@ -12,7 +12,6 @@
   <li class="nav-item"><a class="nav-link {% block menu2_devel %}{% endblock %}" href="{% url 'download_version' 'devel' %}">{% trans "Devel" %}</a></li>
   <li class="nav-item"><a class="nav-link {% block menu2_old %}{% endblock %}" href="{% url 'download_version' 'old' %}">{% trans "Old versions" %}</a></li>
   <li class="nav-item"><a class="nav-link {% block menu2_debian %}{% endblock %}" href="{% url 'download_debian' %}">{% trans "Debian/Ubuntu repositories" %}</a></li>
-  <li class="nav-item"><a class="nav-link {% block menu2_security %}{% endblock %}" href="{% url 'download_security' %}">{% trans "Security" %}</a></li>
 </ul>
 
 {% endblock content %}

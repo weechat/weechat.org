@@ -26,7 +26,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from weechat.download.models import Release, Package, Security
+from weechat.download.models import Release, Package
 from weechat.download.models import ReleaseTodo, ReleaseProgress
 
 
@@ -120,17 +120,5 @@ def release(request):
         'download/release.html',
         {
             'release_progress': get_release_progress(),
-        },
-    )
-
-
-def security(request):
-    """Page with security vulnerabilities."""
-    security_list = Security.objects.all().filter(visible=1).order_by('-date')
-    return render(
-        request,
-        'download/security.html',
-        {
-            'security_list': security_list,
         },
     )

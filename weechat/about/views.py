@@ -27,7 +27,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Sum
 from django.shortcuts import render
 
-from weechat.about.models import Screenshot, Keydate, Sponsor
+from weechat.about.models import Screenshot, Keydate, Security, Sponsor
 from weechat.common.path import media_path_join
 from weechat.download.models import Release
 
@@ -79,6 +79,18 @@ def history(request):
         {
             'releases': releases,
             'keydate_list': Keydate.objects.all().order_by('date'),
+        },
+    )
+
+
+def security(request):
+    """Page with security vulnerabilities."""
+    security_list = Security.objects.all().filter(visible=1).order_by('-date')
+    return render(
+        request,
+        'about/security.html',
+        {
+            'security_list': security_list,
         },
     )
 

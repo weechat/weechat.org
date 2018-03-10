@@ -49,6 +49,18 @@ urlpatterns = [
     # set language
     url(r'^i18n/', include('django.conf.urls.i18n')),
 
+    # legacy URLs (redirected to new pages)
+    url(r'^features/$', RedirectView.as_view(url='/about/features/')),
+    url(r'^screenshots/$', RedirectView.as_view(url='/about/screenshots/')),
+    url(r'^story/$', RedirectView.as_view(url='/about/history/')),
+    url(r'^donate/$', RedirectView.as_view(url='/about/donate/')),
+    url(r'^security/$', RedirectView.as_view(url='/about/security/')),
+    url(r'^download/security/$', RedirectView.as_view(url='/about/security/')),
+    url(r'^stats/$', RedirectView.as_view(url='/dev/stats/')),
+    url(r'^info/$', RedirectView.as_view(url='/dev/info/')),
+    url(r'^info/(?P<name>[a-zA-Z0-9-_]*)/$', view_info),
+    url(r'^support/$', RedirectView.as_view(url='/dev/support/')),
+
     # main WeeChat URLs
     url(r'^$', view_home, {'max_info': 4, 'max_event': 4},
         name='home'),
@@ -65,17 +77,6 @@ urlpatterns = [
     url(r'^scripts/', include('weechat.scripts.urls')),
     url(r'^themes/', include('weechat.themes.urls')),
     url(r'^dev/', include('weechat.dev.urls')),
-
-    # legacy URLs (redirected to new pages)
-    url(r'^features/$', RedirectView.as_view(url='/about/features/')),
-    url(r'^screenshots/$', RedirectView.as_view(url='/about/screenshots/')),
-    url(r'^story/$', RedirectView.as_view(url='/about/history/')),
-    url(r'^donate/$', RedirectView.as_view(url='/about/donate/')),
-    url(r'^security/$', RedirectView.as_view(url='/download/security/')),
-    url(r'^stats/$', RedirectView.as_view(url='/dev/stats/')),
-    url(r'^info/$', RedirectView.as_view(url='/dev/info/')),
-    url(r'^info/(?P<name>[a-zA-Z0-9-_]*)/$', view_info),
-    url(r'^support/$', RedirectView.as_view(url='/dev/support/')),
 
     # feeds
     url(r'^feeds/news/$', LatestNewsFeed(), name='feeds_news'),

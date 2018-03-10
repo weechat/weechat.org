@@ -50,20 +50,20 @@
     {% endif %}
     {% if package_version.grouper.securityfix %}
     <p class="text-danger">
-      {% url 'download_security' as download_security_url %}
+      {% url 'about_security' as security_url %}
       {% with version=package_version.grouper.version %}
-      {% blocktrans %}<strong>Warning:</strong> the version {{ version }} has one or more <a href="{{ download_security_url }}">vulnerabilities</a>, it is not recommended to use it.{% endblocktrans %}
+      {% blocktrans %}<strong>Warning:</strong> the version {{ version }} has one or more <a href="{{ security_url }}">vulnerabilities</a>, it is not recommended to use it.{% endblocktrans %}
       {% endwith %}
       {% trans "Vulnerabilities fixed in versions:" %}
       {% for fixed_version in package_version.grouper.security_fixed_versions %}{% if not forloop.first %}, {% endif %}<a href="{% url 'download_version' version=fixed_version %}">{{ fixed_version }}</a>{% endfor %}.
     </p>
     {% elif version != "devel" and version != "old" and package_version.grouper.security_issues_fixed > 0 %}
     <p class="text-success">
-      {% url 'download_security' as download_security_url %}
+      {% url 'about_security' as security_url %}
       {% if package_version.grouper.security_issues_fixed == 1 %}
-      {% blocktrans %}<strong>Important:</strong> this release fixes a <a href="{{ download_security_url }}">vulnerability</a>.{% endblocktrans %}
+      {% blocktrans %}<strong>Important:</strong> this release fixes a <a href="{{ security_url }}">vulnerability</a>.{% endblocktrans %}
     {% else %}
-      {% blocktrans with package_version.grouper.security_issues_fixed as count_issues_fixed %}<strong>Important:</strong> this release fixes <a href="{{ download_security_url }}">{{ count_issues_fixed }} vulnerabilities</a>.{% endblocktrans %}
+      {% blocktrans with package_version.grouper.security_issues_fixed as count_issues_fixed %}<strong>Important:</strong> this release fixes <a href="{{ security_url }}">{{ count_issues_fixed }} vulnerabilities</a>.{% endblocktrans %}
       {% endif %}
       {% trans "It is recommended to upgrade from any older version to this one." %}
     </p>

@@ -28,6 +28,7 @@ from django.views.generic.base import TemplateView
 from weechat.about.views import (
     screenshots as view_screenshots,
     history as view_history,
+    security as view_security,
     donate as view_donate,
 )
 
@@ -48,6 +49,7 @@ urlpatterns = [
         view_screenshots, name='about_screenshot'),
     url(r'^screenshots/(?P<filename>[a-zA-Z0-9_\-.]*)/$', view_screenshots),
     url(r'^history/$', view_history, name='about_history'),
+    url(r'^security/$', view_security, name='about_security'),
     url(r'^donate/$', view_donate, name='about_donate'),
     url(r'^donate/sort/(?P<sort_key>(date|top10))/$', view_donate,
         name='about_donate_sort'),

@@ -3,7 +3,7 @@
 
 from django.utils.translation import gettext_lazy
 
-_i18n_download_security = [
+_i18n_about_security = [
     gettext_lazy("/set irc.network.colors_receive off"),
     gettext_lazy("Buffer overflow when decoding IRC colors in strings."),
     gettext_lazy("Buffer overflow when removing quotes in DCC filename."),

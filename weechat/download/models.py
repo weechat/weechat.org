@@ -25,16 +25,10 @@ from hashlib import sha1, sha512
 from os import path
 
 from django.db import models
-from django.db.models.signals import pre_save, post_save
-from django.utils.translation import gettext_lazy, ugettext, ugettext_noop
+from django.db.models.signals import pre_save
 
-from weechat.common.i18n import i18n_autogen
 from weechat.common.path import files_path_join
-from weechat.common.tracker import commits_links, tracker_links
 from weechat.common.templatetags.localdate import localdate
-
-CVE_URL = ('<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=%(cve)s" '
-           'target="_blank" rel="noopener">%(cve)s</a>')
 
 
 class Release(models.Model):
@@ -192,113 +186,6 @@ def handler_package_saved(sender, **kwargs):
 
 
 pre_save.connect(handler_package_saved, sender=Package)
-
-SECURITY_SEVERITIES = (
-    # Translators: this is a severity level for a security vulnerability
-    (0, ugettext_noop('low')),
-    # Translators: this is a severity level for a security vulnerability
-    (1, ugettext_noop('medium')),
-    # Translators: this is a severity level for a security vulnerability
-    (2, ugettext_noop('high')),
-    # Translators: this is a severity level for a security vulnerability
-    (3, ugettext_noop('critical')),
-)
-
-
-class Security(models.Model):
-    """A security vulnerability in WeeChat."""
-    visible = models.BooleanField(default=True)
-    date = models.DateTimeField()
-    external = models.CharField(max_length=1024, blank=True)
-    tracker = models.CharField(max_length=64, blank=True)
-    severity = models.IntegerField(default=0, choices=SECURITY_SEVERITIES)
-    affected = models.CharField(max_length=64, blank=True)
-    fixed = models.CharField(max_length=32, blank=True)
-    release_date = models.DateField(blank=True, null=True)
-    commits = models.CharField(max_length=1024, blank=True)
-    description = models.TextField()
-    workaround = models.TextField(blank=True)
-
-    def __str__(self):
-        return '%s, %s, %s, %s / %s, %s, %s' % (
-            self.external, self.tracker, self.severity,
-            self.affected, self.fixed, self.release_date,
-            self.description)
-
-    def __unicode__(self):  # python 2.x
-        return self.__str__()
-
-    def date_l10n(self):
-        """Return the date formatted with localized date format."""
-        return localdate(self.date)
-
-    def external_links(self):
-        """Return URL to CVE (or "external" as-is if it's not a CVE)."""
-        if self.external.startswith('CVE'):
-            return CVE_URL % {'cve': self.external}
-        return self.external
-
-    def url_tracker(self):
-        """Return URL with links to tracker items."""
-        return tracker_links(self.tracker)
-
-    def severity_i18n(self):
-        """Return translated severity."""
-        text = dict(SECURITY_SEVERITIES).get(self.severity, '')
-        if text:
-            return ugettext(text)
-        return ''
-
-    def css_class(self):
-        """Return the CSS class for the severity."""
-        css_class = {
-            0: 'light',
-            1: 'secondary',
-            2: 'warning',
-            3: 'danger',
-        }
-        return css_class[self.severity]
-
-    def affected_html(self):
-        """Return affected versions for display in HTML."""
-        return self.affected.replace(',', ' &rarr; ')
-
-    def release_date_l10n(self):
-        """Return the release date formatted with localized date format."""
-        return localdate(self.release_date)
-
-    def url_commits(self):
-        """Return URL with links to commits."""
-        return commits_links(self.commits)
-
-    def description_i18n(self):
-        """Return the translated description."""
-        if self.description:
-            return gettext_lazy(self.description.replace('\r\n', '\n'))
-        return ''
-
-    def workaround_i18n(self):
-        """Return translated workaround."""
-        if self.workaround:
-            return gettext_lazy(self.workaround.replace('\r\n', '\n'))
-        return ''
-
-    class Meta:
-        ordering = ['-date']
-
-
-def handler_security_saved(sender, **kwargs):
-    """Write file _i18n_security.py with security issues to translate."""
-    strings = []
-    for security in Security.objects.filter(visible=1).order_by('-date'):
-        if security.description:
-            strings.append(security.description)
-        if security.workaround:
-            strings.append(security.workaround)
-    i18n_autogen('download', 'security', strings)
-
-
-post_save.connect(handler_security_saved, sender=Security)
 
 
 class ReleaseTodo(models.Model):
