@@ -98,8 +98,8 @@ def news(request, info_id=None):
         else:
             info_list = (Info.objects.all().filter(visible=1)
                          .filter(date__lte=datetime.now()).order_by('-date'))
-    except:  # noqa: E722
-        infos = None
+    except ObjectDoesNotExist:
+        info_list = []
     return paginate_news(request, info_list, info_id, 'news')
 
 
@@ -108,6 +108,6 @@ def events(request):
     try:
         info_list = (Info.objects.all().filter(visible=1)
                      .filter(date__gt=datetime.now()).order_by('date'))
-    except:  # noqa: E722
-        infos = None
+    except ObjectDoesNotExist:
+        info_list = []
     return paginate_news(request, info_list, None, 'events')
