@@ -44,12 +44,12 @@
     <tbody>
       {% for task in tasks_version.list %}
       <tr>
-        <td class="text-nowrap">
+        <td class="text-nowrap" style="width: 8rem;">
           {% autoescape off %}
           {{ task.url_tracker }}
           {% endautoescape %}
         </td>
-        <td class="text-center text-nowrap">
+        <td class="text-center text-nowrap" style="width: 10rem;">
           <strong>
           {% if task.status == 0 %}
           <span class="text-danger">{% trans "Planned" %}</span>
@@ -57,7 +57,7 @@
           {% if task.status == 100 %}
           <span class="text-success">{% trans "Done" %}</span>
           {% else %}
-          <div class="progress" style="height: 20px; width: 6rem;">
+          <div class="progress" style="height: 20px;">
             {% if task.status != 0 %}
             <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: {{ task.status }}%" aria-valuenow="{{ task.status }}" aria-valuemin="0" aria-valuemax="100"></div>
             {% endif %}
@@ -69,12 +69,12 @@
           {% endif %}
           </strong>
         </td>
-        <td class="text-center text-nowrap">
+        <td class="text-center text-nowrap" style="width: 6rem";>
           {% autoescape off %}
           {{ task.url_commits }}
           {% endautoescape %}
         </td>
-        <td class="text-center text-nowrap">
+        <td class="text-center text-nowrap" style="width: 10rem;">
           {{ task.component }}
         </td>
         <td>
