@@ -83,12 +83,13 @@ def roadmap(request, allversions=False):
     task_list = None
     try:
         if allversions:
-            task_list = Task.objects.all().filter(visible=1).order_by('version',
-                                                                      'priority')
+            task_list = (Task.objects.all().filter(visible=1)
+                         .order_by('version', 'priority'))
         else:
-            task_list = Task.objects.all().filter(visible=1).filter(
-                version__gt=Release.objects.get(
-                    version='stable').description).order_by('version', 'priority')
+            task_list = (Task.objects.all().filter(visible=1)
+                         .filter(version__gt=Release.objects.get(
+                             version='stable').description)
+                         .order_by('version', 'priority'))
     except ObjectDoesNotExist:
         task_list = None
     return render(
