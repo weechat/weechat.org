@@ -35,9 +35,6 @@ from weechat.download.views import (
 
 urlpatterns = [
     url(r'^$', view_packages, name='download'),
-    url(r'^interfaces/$',
-        TemplateView.as_view(template_name='download/interfaces.html'),
-        name='download_interfaces'),
     url(r'^debian/$', view_repos, {'active': 'active'},
         name='download_debian'),
     url(r'^debian/(?P<active>(active|all))/$', view_repos,
