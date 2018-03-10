@@ -23,7 +23,6 @@
 # pylint: disable=invalid-name, no-value-for-parameter
 
 from django.conf.urls import url
-from django.views.generic.base import TemplateView
 
 from weechat.debian.views import repos as view_repos
 from weechat.download.views import (
