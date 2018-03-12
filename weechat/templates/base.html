@@ -158,10 +158,6 @@
 
   </div> <!-- footer -->
 
-  <div class="d-none d-lg-block">
-    <a id="js-scroll-top" href="#" class="btn btn-info btn-lg scroll-top"><strong>&#9650;</strong></a>
-  </div>
-
   <script src="{{ MEDIA_URL }}js/jquery-3.3.1.min.js"></script>
   <script src="{{ MEDIA_URL }}js/popper.min.js"></script>
   <script src="{{ MEDIA_URL }}js/bootstrap.min.js"></script>
@@ -172,20 +168,6 @@
             $('html, body').animate({
                 scrollTop: $($(this).attr('href')).offset().top
             }, 400);
-            return false;
-        });
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > 200) {
-                $('#js-scroll-top').fadeIn();
-            } else {
-                $('#js-scroll-top').fadeOut();
-            }
-        });
-        $('#js-scroll-top').click(function() {
-            $('#js-scroll-top').tooltip('hide');
-            $('html, body').animate({
-                scrollTop: 0
-            }, 150);
             return false;
         });
     });
