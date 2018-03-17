@@ -59,7 +59,8 @@ urlpatterns = [
     url(r'^stats/$', RedirectView.as_view(url='/dev/stats/')),
     url(r'^info/$', RedirectView.as_view(url='/dev/info/')),
     url(r'^info/(?P<name>[a-zA-Z0-9-_]*)/$', view_info),
-    url(r'^support/$', RedirectView.as_view(url='/dev/support/')),
+    url(r'^support/$', RedirectView.as_view(url='/about/support/')),
+    url(r'^dev/support/$', RedirectView.as_view(url='/about/support/')),
 
     # main WeeChat URLs
     url(r'^$', view_home, {'max_info': 4, 'max_event': 4},
