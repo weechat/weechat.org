@@ -47,14 +47,14 @@
         <a href="https://diasp.eu/u/weechat" target="_blank" rel="noopener" title="Diaspora">
           {% include "svg/diaspora.html" %}
         </a>
-        <a href="https://plus.google.com/+WeeChat" target="_blank" rel="noopener" title="Google+">
-          {% include "svg/google_plus.html" %}
-        </a>
         <a href="https://hostux.social/@weechat" target="_blank" rel="noopener" title="Mastodon">
           {% include "svg/mastodon.html" %}
         </a>
         <a href="https://twitter.com/WeeChatClient" target="_blank" rel="noopener" title="Twitter">
           {% include "svg/twitter.html" %}
+        </a>
+        <a href="https://plus.google.com/+WeeChat" target="_blank" rel="noopener" title="Google+">
+          {% include "svg/google_plus.html" %}
         </a>
         <a href="{% url 'about_donate' %}" title="{% trans "Make a donation" %}">
           {% include "svg/donate.html" %}
@@ -105,13 +105,6 @@
             </a>
           </li>
           <li>
-            <a href="https://plus.google.com/+WeeChat" target="_blank" rel="noopener" title="Google+">
-              {% include "svg/google_plus.html" %}
-              Google+
-              <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;">
-            </a>
-          </li>
-          <li>
             <a href="https://hostux.social/@weechat" target="_blank" rel="noopener" title="Mastodon">
               {% include "svg/mastodon.html" %}
               Mastodon
@@ -122,6 +115,13 @@
             <a href="https://twitter.com/WeeChatClient" target="_blank" rel="noopener" title="Twitter">
               {% include "svg/twitter.html" %}
               Twitter
+              <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;">
+            </a>
+          </li>
+          <li>
+            <a href="https://plus.google.com/+WeeChat" target="_blank" rel="noopener" title="Google+">
+              {% include "svg/google_plus.html" %}
+              Google+
               <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;">
             </a>
           </li>
