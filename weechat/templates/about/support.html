@@ -45,14 +45,42 @@
   <a href="https://github.com/weechat" target="_blank" rel="noopener">https://github.com/weechat <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;"></a>
 </p>
 
-<h3>Google+</h3>
+<h3>{% trans "Social networks" %}</h3>
 
 <p>
-  {% blocktrans %}WeeChat is on <a href="https://plus.google.com/">Google+</a>:{% endblocktrans %}
-
-  <ul>
-    <li><a href="https://plus.google.com/+WeeChat" target="_blank" rel="noopener">{% trans "Page" %} <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;"></a></li>
-    <li><a href="https://plus.google.com/communities/104181302778416960107" target="_blank" rel="noopener">{% trans "Community" %} <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;"></a></li>
+  <ul class="social">
+    <li>
+      <a href="https://diasp.eu/u/weechat" target="_blank" rel="noopener" title="Diaspora">
+        {% include "svg/diaspora.html" %}
+        Diaspora
+        <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;">
+      </a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/+WeeChat" target="_blank" rel="noopener" title="{% trans "Google+ page" %}">
+        {% include "svg/google_plus.html" %}
+        {% trans "Google+ page" %}
+        <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;">
+      </a> /
+      <a href="https://plus.google.com/communities/104181302778416960107" target="_blank" rel="noopener" title="{% trans "Google+ community" %}">
+        {% trans "Google+ community" %}
+        <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;">
+      </a>
+    </li>
+    <li>
+      <a href="https://hostux.social/@weechat" target="_blank" rel="noopener" title="Mastodon">
+        {% include "svg/mastodon.html" %}
+        Mastodon
+        <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;">
+      </a>
+    </li>
+    <li>
+      <a href="https://twitter.com/WeeChatClient" target="_blank" rel="noopener" title="Twitter">
+        {% include "svg/twitter.html" %}
+        Twitter
+        <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;">
+      </a>
+    </li>
   </ul>
 </p>
 
