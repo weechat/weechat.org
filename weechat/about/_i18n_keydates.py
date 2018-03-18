@@ -15,7 +15,7 @@ _i18n_about_keydates = [
     gettext_lazy("Full UTF-8 support."),
     gettext_lazy("Gaps in buffers numbers, IPv6 for DCC file/chat, command /print."),
     gettext_lazy("Guile plugin, support of python 3.x, weechat protocol in relay (remote interfaces), URL transfer in API."),
-    gettext_lazy("Headless mode."),
+    gettext_lazy("Headless mode, creation of buffers with commands /buffer and /print."),
     gettext_lazy("Incremental text search in buffers."),
     gettext_lazy("Inherited values in options."),
     gettext_lazy("Javascript plugin, IRC SASL mechanism \"ecdsa-nist256p-challenge\"."),
