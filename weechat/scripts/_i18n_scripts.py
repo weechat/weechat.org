@@ -144,8 +144,6 @@ _i18n_scripts_scripts = [
     gettext_lazy("Bar with popup menu."),
     # Translators: description for script "mpd.py" (0.0.1-0.2.6)
     gettext_lazy("Basic MPD management."),
-    # Translators: description for script "beep.pl" (0.3.0+)
-    gettext_lazy("Beep (terminal bell) or run command on highlight/private message."),
     # Translators: description for script "buffer_bind.py" (0.3.0+)
     gettext_lazy("Bind meta-<key> to the current buffer."),
     # Translators: description for script "mass_hl_blocker.pl" (0.3.0+)
@@ -492,8 +490,6 @@ _i18n_scripts_scripts = [
     gettext_lazy("Popup menu to choose spell checker corrections."),
     # Translators: description for script "postpone.py" (0.3.0+)
     gettext_lazy("Postpone written messages for later dispatching if target nick is not on channel."),
-    # Translators: description for script "echo.pl" (0.3.0+)
-    gettext_lazy("Print a line and additionally set activity level."),
     # Translators: description for script "smile.py" (0.3.0+)
     gettext_lazy("Print a random ASCII smiley."),
     # Translators: description for script "xmms2.pl" (0.0.1-0.2.6)
