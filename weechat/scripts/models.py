@@ -91,10 +91,14 @@ class Script(models.Model):
 
     def __unicode__(self):
         api = ''
-        if self.max_weechat == '0.2.6':
+        if self.is_legacy():
             api = '(legacy api) '
         return '%s %s %s(%s, %s)' % (self.name, self.version, api,
                                      self.author, self.added)
+
+    def is_legacy(self):
+        """Return True if a script is legacy (for WeeChat <= 0.2.6)."""
+        return self.max_weechat == '0.2.6'
 
     def tagslist(self):
         """Return a list with script tags."""
@@ -105,7 +109,7 @@ class Script(models.Model):
         pending = ''
         if not self.visible:
             pending = '/pending'
-        if self.max_weechat == '0.2.6':
+        if self.is_legacy():
             return 'scripts/legacy%s' % pending
         else:
             return 'scripts%s' % pending
@@ -407,7 +411,7 @@ def handler_script_changed(sender, **kwargs):
     json = '[\n'
     strings = []
     for script in Script.objects.filter(visible=1).order_by('id'):
-        if script.visible:
+        if script.visible and not script.is_legacy():
             xml += '  <plugin id="%s">\n' % script.id
             json += '  {\n'
             json += '    "id": "%s",\n' % script.id
