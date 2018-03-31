@@ -42,7 +42,7 @@ class Info(models.Model):
     text = models.TextField(blank=True)
 
     def __str__(self):
-        return self.title
+        return '%s (%s)' % (self.title, self.date)
 
     def __unicode__(self):  # python 2.x
         return self.__str__()
