@@ -20,11 +20,13 @@
 
 """Views for Debian repositories."""
 
-from datetime import datetime
+from datetime import datetime, timedelta
 import gzip
 from os import path, stat
+import pytz
 import re
 
+from django.conf import settings
 from django.shortcuts import render
 
 from weechat.common.path import repo_path_join
@@ -42,6 +44,7 @@ def repos(request, active='active', files=''):
     else:
         repositories = (Repo.objects.all().filter(visible=1)
                         .order_by('priority'))
+    timezone = pytz.timezone(settings.TIME_ZONE)
     for repo in repositories:
         try:
             repopkgs = []
@@ -73,12 +76,15 @@ def repos(request, active='active', files=''):
                                 fstat = stat(pkgfilename)
                                 pkg['size'] = fstat.st_size
                                 date_time = datetime.fromtimestamp(
-                                    fstat.st_mtime)
+                                    fstat.st_mtime,
+                                    tz=timezone,
+                                )
                                 pkg['builddate'] = date_time.strftime(
                                     '%Y-%m-%d')
                                 pkg['buildtime'] = date_time.strftime('%H:%M')
-                                pkg['builddatetime'] = (pkg['builddate']
-                                                        + pkg['buildtime'])
+                                pkg['builddatetime'] = date_time
+                                pkg['nextbuilddatetime'] = (
+                                    date_time + timedelta(days=1))
                                 pkg['basename'] = path.basename(
                                     pkg['Filename'])
                                 pkg['anchor'] = '%s_%s_%s_%s' % (

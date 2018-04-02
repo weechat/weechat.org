@@ -20,11 +20,10 @@
 
 """Some useful tags for localized dates."""
 
-from datetime import datetime
-
 from django import template
 from django.conf import settings
 from django.utils import dateformat
+from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext
 
 # pylint: disable=invalid-name
@@ -32,21 +31,18 @@ register = template.Library()
 
 
 @register.filter()
-def localdate(value):
-    """Format date with localized date format."""
-    try:
+def localdate(value, fmt='date'):
+    """
+    Format date with localized date/time format.
+    If fmt == "date", the localized date format is used.
+    If fmt == "datetime", the localized date/fime format is used.
+    Another fmt it is used as-is.
+    """
+    if fmt == 'date':
         fmt = ugettext(settings.DATE_FORMAT)
-        return dateformat.format(value, fmt)
-    except:  # noqa: E722
-        return ''
-
-
-@register.filter()
-def localstrdate(value):
-    """Format string date with localized date format."""
-    try:
-        fmt = ugettext(settings.DATE_FORMAT)
-        date_time = datetime.strptime(value, '%Y-%m-%d')
-        return dateformat.format(date_time, fmt)
-    except:  # noqa: E722
-        return ''
+    elif fmt == 'datetime':
+        fmt = ugettext(settings.DATETIME_FORMAT)
+    return mark_safe('<time datetime="%s">%s</time>' % (
+        value.isoformat(),
+        dateformat.format(value, fmt),
+    ))

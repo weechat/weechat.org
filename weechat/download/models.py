@@ -23,7 +23,9 @@
 from datetime import datetime
 from hashlib import sha1, sha512
 from os import path
+import pytz
 
+from django.conf import settings
 from django.db import models
 from django.db.models.signals import pre_save
 
@@ -164,7 +166,9 @@ class Package(models.Model):
     def filedate(self):
         """Return the package date/time."""
         try:
-            return datetime.fromtimestamp(path.getmtime(self.fullname()))
+            timezone = pytz.timezone(settings.TIME_ZONE)
+            return datetime.fromtimestamp(path.getmtime(self.fullname()),
+                                          tz=timezone)
         except:  # noqa: E722
             return ''
 

@@ -1,6 +1,6 @@
 {% extends "download/download.html" %}
 
-{% load i18n %}{% load localdate %}
+{% load i18n %}{% load humanize %}{% load localdate %}
 
 {% block subtitle %} :: debian{% endblock %}
 {% block menu2_debian %}active{% endblock %}
@@ -194,7 +194,7 @@ var deb_apt_cmds = [
               <td>{{ debpkg_arch.list.0.Source }}</td>
               <td class="{% if "dev" in debpkg_arch.list.0.Version %}text-danger{% else %}text-success font-weight-bold{% endif %}" title="{% if "dev" in debpkg_arch.list.0.Version %}{% trans "Development version" %}{% else %}{% trans "Stable version" %}{% endif %}">{{ debpkg_arch.list.0.Version }}</td>
               <td title="{% trans "Architecture" %}">{{ debpkg_arch.list.0.arch }}</td>
-              <td>{{ debpkg_arch.list.0.builddate|localstrdate }} <span class="text-muted">{{ debpkg_arch.list.0.buildtime }}</span></td>
+              <td>{{ debpkg_arch.list.0.builddatetime|localdate:"datetime" }}</td>
               <td><a href="{% url 'download_debian_active' active=active %}{% if not allfiles %}files/#{{ debpkg_arch.list.0.anchor }}{% endif %}" id="{{ debpkg_arch.list.0.anchor }}">{{ debpkg_arch.list|length }} {% trans "files" %}</a></small></td>
             {% if allfiles %}
             <tr>
@@ -221,8 +221,8 @@ var deb_apt_cmds = [
         {% trans "Builds by" %} {{ debpkg_source.list.0.repo.builder.name }}
         <small class="text-muted">({{ debpkg_source.list.0.repo.builder.nick }})</small>,
         {% trans "latest build:" %}
-        <strong>{{ debpkgs_by_source.0.list.0.builddate|localstrdate }}</strong>
-        <span class="text-muted">{{ debpkgs_by_source.0.list.0.buildtime }}</span>
+        <strong>{{ debpkgs_by_source.0.list.0.builddatetime|localdate:"r" }}</strong>
+        ({% trans "next build:" %} &asymp; {{ debpkgs_by_source.0.list.0.nextbuilddatetime|naturaltime }})
         <br>
       </div>
     </div>

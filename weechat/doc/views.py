@@ -23,7 +23,9 @@
 from datetime import datetime
 from math import ceil
 from os import path, listdir
+import pytz
 
+from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render, redirect
 from django.utils.translation import ugettext
@@ -64,8 +66,9 @@ def get_i18n_stats():
     - langs: a dictionary with info about status of this language.
     """
     try:
+        timezone = pytz.timezone(settings.TIME_ZONE)
         filename = files_path_join('stats', 'i18n.txt')
-        date = datetime.fromtimestamp(path.getmtime(filename))
+        date = datetime.fromtimestamp(path.getmtime(filename), tz=timezone)
         with open(filename, 'r') as _file:
             langs = []
             for line in _file:
@@ -122,6 +125,7 @@ def get_bestlang(request, languages):
 
 def documentation(request, version='stable'):
     """Page with docs for stable or devel version."""
+    timezone = pytz.timezone(settings.TIME_ZONE)
     if version == 'old':
         doc_list = None
         try:
@@ -160,7 +164,8 @@ def documentation(request, version='stable'):
                     files.append(
                         (
                             path.normpath(name),
-                            datetime.fromtimestamp(path.getmtime(full_name)),
+                            datetime.fromtimestamp(path.getmtime(full_name),
+                                                   tz=timezone),
                             lang,
                         )
                     )
