@@ -33,81 +33,80 @@ from weechat.common.path import repo_path_join
 from weechat.debian.models import Repo
 
 
+def get_repository_packages(repository):
+    """Get list of packages for a repository."""
+    timezone = pytz.timezone(settings.TIME_ZONE)
+    now = datetime.now(tz=timezone)
+    repopkgs = []
+    for arch in repository.arch.split(','):
+        build = {
+            'id': '%s_%s' % (repository.name, repository.version.version),
+            'repo': repository,
+            'arch': arch,
+            'date': None,
+            'files': [],
+        }
+        filename = repository.path_packages_gz(arch)
+        build['date'] = stat(filename).st_mtime
+        with gzip.open(filename, 'rb') as _file:
+            pkg = {}
+            for line in _file.readlines():
+                line = line.strip().decode('utf-8')
+                if len(line) == 0:
+                    if pkg:
+                        pkg['repoarch'] = '%s_%s' % (
+                            repository.name,
+                            repository.version.codename,
+                        )
+                        pkg['repo'] = repository
+                        pkg['distro'] = repository.name
+                        pkg['arch'] = arch
+                        pkgfilename = repo_path_join(repository.domain,
+                                                     pkg['Filename'])
+                        fstat = stat(pkgfilename)
+                        pkg['size'] = fstat.st_size
+                        date_time = datetime.fromtimestamp(fstat.st_mtime,
+                                                           tz=timezone)
+                        pkg['builddatetime'] = date_time
+                        if repository.active:
+                            nextbuilddatetime = date_time + timedelta(days=1)
+                            if nextbuilddatetime > now:
+                                pkg['nextbuilddatetime'] = nextbuilddatetime
+                        pkg['basename'] = path.basename(pkg['Filename'])
+                        pkg['anchor'] = '%s_%s_%s_%s' % (
+                            repository.name,
+                            repository.version.codename,
+                            pkg['Version'],
+                            arch,
+                        )
+                        if 'Source' not in pkg:
+                            pkg['Source'] = pkg['Package']
+                        pkg['version_type'] = ('dev'
+                                               if 'dev' in pkg['Version']
+                                               else 'stable')
+                        repopkgs.append(pkg)
+                    pkg = {}
+                match = re.match('^([^ ]+): (.*)$', line)
+                if match:
+                    pkg[match.group(1)] = match.group(2)
+    return repopkgs
+
+
 def repos(request, active='active', files=''):
     """Page with debian repositories."""
-    repositories = []
-    debpkgs = []
-    debpkgs_weechat = []
     if active == 'active':
         repositories = (Repo.objects.all().filter(active=1).filter(visible=1)
                         .order_by('priority'))
     else:
         repositories = (Repo.objects.all().filter(visible=1)
                         .order_by('priority'))
-    timezone = pytz.timezone(settings.TIME_ZONE)
-    for repo in repositories:
+    debpkgs = []
+    for repository in repositories:
         try:
-            repopkgs = []
-            repopkgs_weechat = []
-            for arch in repo.arch.split(','):
-                build = {
-                    'id': '%s_%s' % (repo.name, repo.version.version),
-                    'repo': repo,
-                    'arch': arch,
-                    'date': None,
-                    'files': [],
-                }
-                filename = repo.path_packages_gz(arch)
-                build['date'] = stat(filename).st_mtime
-                _file = gzip.open(filename, 'rb')
-                if _file:
-                    pkg = {}
-                    for line in _file.readlines():
-                        line = line.strip().decode('utf-8')
-                        if len(line) == 0:
-                            if pkg:
-                                pkg['repoarch'] = '%s_%s' % (
-                                    repo.name, repo.version.codename)
-                                pkg['repo'] = repo
-                                pkg['distro'] = repo.name
-                                pkg['arch'] = arch
-                                pkgfilename = repo_path_join(repo.domain,
-                                                             pkg['Filename'])
-                                fstat = stat(pkgfilename)
-                                pkg['size'] = fstat.st_size
-                                date_time = datetime.fromtimestamp(
-                                    fstat.st_mtime,
-                                    tz=timezone,
-                                )
-                                pkg['builddatetime'] = date_time
-                                pkg['nextbuilddatetime'] = (
-                                    date_time + timedelta(days=1))
-                                pkg['basename'] = path.basename(
-                                    pkg['Filename'])
-                                pkg['anchor'] = '%s_%s_%s_%s' % (
-                                    repo.name, repo.version.codename,
-                                    pkg['Version'], arch)
-                                if 'Source' not in pkg:
-                                    pkg['Source'] = pkg['Package']
-                                pkg['version_type'] = (
-                                    'dev'
-                                    if 'dev' in pkg['Version']
-                                    else 'stable'
-                                )
-                                repopkgs.append(pkg)
-                                if 'weechat' in pkg['Source']:
-                                    repopkgs_weechat.append(pkg)
-                            pkg = {}
-                        match = re.match('^([^ ]+): (.*)$', line)
-                        if match:
-                            pkg[match.group(1)] = match.group(2)
-                    _file.close()
-            debpkgs.extend(sorted(repopkgs,
+            repo_packages = get_repository_packages(repository)
+            debpkgs.extend(sorted(repo_packages,
                                   key=lambda p: p['builddatetime'],
                                   reverse=True))
-            debpkgs_weechat.extend(sorted(repopkgs_weechat,
-                                          key=lambda p: p['builddatetime'],
-                                          reverse=True))
         except:  # noqa: E722
             pass
     return render(
@@ -115,7 +114,6 @@ def repos(request, active='active', files=''):
         'download/debian.html',
         {
             'debpkgs': debpkgs,
-            'debpkgs_weechat': debpkgs_weechat,
             'active': active,
             'allfiles': files == 'files',
             'repositories': repositories,

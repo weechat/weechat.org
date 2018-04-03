@@ -108,7 +108,7 @@ var deb_apt_cmds = [
 <h3>{% trans "Overview" %}</h3>
 
 <div class="row">
-  {% regroup debpkgs_weechat by distro as debpkgs_by_distro %}
+  {% regroup debpkgs by distro as debpkgs_by_distro %}
   {% for debpkg_distro in debpkgs_by_distro %}
   <div class="col-12 col-md-6 col-lg-4">
     <div class="card mt-2 mb-4">
@@ -139,7 +139,9 @@ var deb_apt_cmds = [
           <div class="col-7{% if not debpkg_repoarch.list.0.repo.active %} discontinued{% endif %}">
             {% regroup debpkg_repoarch.list|dictsortreversed:"version_type" by Version as debpkg_by_version %}
             {% for debpkg_version in debpkg_by_version %}
+            {% if "weechat" in debpkg_version.list.0.Source %}
             <span class="{% if debpkg_version.list.0.version_type == "dev" %}text-danger{% else %}text-success font-weight-bold{% endif %}">{{ debpkg_version.grouper }}</span>{% if not forloop.last %},{% endif %}
+            {% endif %}
             {% endfor %}
             {% if not forloop.last %}<br>{% endif %}
           </div>
@@ -222,7 +224,9 @@ var deb_apt_cmds = [
         <small class="text-muted">({{ debpkg_source.list.0.repo.builder.nick }})</small>,
         {% trans "latest build:" %}
         <strong>{{ debpkgs_by_source.0.list.0.builddatetime|localdate:"r" }}</strong>
-        ({% trans "next build:" %} &asymp; {{ debpkgs_by_source.0.list.0.nextbuilddatetime|naturaltime }})
+        {% if debpkgs_by_source.0.list.0.nextbuilddatetime %}
+        ({% trans "next build:" %} {{ debpkgs_by_source.0.list.0.nextbuilddatetime|naturaltime }})
+        {% endif %}
         <br>
       </div>
     </div>
