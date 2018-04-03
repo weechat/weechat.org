@@ -79,9 +79,6 @@ def repos(request, active='active', files=''):
                                     fstat.st_mtime,
                                     tz=timezone,
                                 )
-                                pkg['builddate'] = date_time.strftime(
-                                    '%Y-%m-%d')
-                                pkg['buildtime'] = date_time.strftime('%H:%M')
                                 pkg['builddatetime'] = date_time
                                 pkg['nextbuilddatetime'] = (
                                     date_time + timedelta(days=1))
