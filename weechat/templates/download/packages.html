@@ -140,7 +140,7 @@ gpg> trust</code></pre>
       </li>
       <li>
         {% trans "In directory with package + signature:" %}
-        <pre><code>$ gpg --verify weechat-X.Y.Z.tar.xz.asc weechat-X.Y.Z.tar.xz</code></pre>
+        <pre><code>$ gpg --verify weechat-{{ package_version.grouper.version }}.tar.xz.asc weechat-{{ package_version.grouper.version }}.tar.xz</code></pre>
       </li>
       <li>
         {% trans "If the signature is OK you should see a message like this one:" %}
