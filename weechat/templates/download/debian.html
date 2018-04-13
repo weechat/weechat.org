@@ -197,7 +197,7 @@ var deb_apt_cmds = [
               <td class="{% if "dev" in debpkg_arch.list.0.Version %}text-danger{% else %}text-success font-weight-bold{% endif %}" title="{% if "dev" in debpkg_arch.list.0.Version %}{% trans "Development version" %}{% else %}{% trans "Stable version" %}{% endif %}">{{ debpkg_arch.list.0.Version }}</td>
               <td title="{% trans "Architecture" %}">{{ debpkg_arch.list.0.arch }}</td>
               <td>{{ debpkg_arch.list.0.builddatetime|localdate:"datetime" }}</td>
-              <td><a href="{% url 'download_debian_active' active=active %}{% if not allfiles %}files/#{{ debpkg_arch.list.0.anchor }}{% endif %}" id="{{ debpkg_arch.list.0.anchor }}">{{ debpkg_arch.list|length }} {% trans "files" %}</a></small></td>
+              <td><a href="{% url 'download_debian_active' active=active %}{% if not allfiles %}files/#{{ debpkg_arch.list.0.anchor }}{% endif %}" id="{{ debpkg_arch.list.0.anchor }}">{{ debpkg_arch.list|length }} {% trans "files" %}</a></td>
             {% if allfiles %}
             <tr>
               <td colspan="5">
