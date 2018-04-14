@@ -221,7 +221,7 @@ var deb_apt_cmds = [
       </div>
       <div class="card-footer">
         {% trans "Builds by" %} {{ debpkg_source.list.0.repo.builder.name }}
-        <small class="text-muted">({{ debpkg_source.list.0.repo.builder.nick }})</small>,
+        <span class="text-muted">({{ debpkg_source.list.0.repo.builder.nick }})</span>,
         {% trans "latest build:" %}
         <strong>{{ debpkgs_by_source.0.list.0.builddatetime|localdate:"r" }}</strong>
         {% if debpkgs_by_source.0.list.0.nextbuilddatetime %}
