@@ -112,7 +112,7 @@
 
 <div class="d-lg-none"><hr></div>
 
-<div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-container">
+<div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-container container-bg">
   <div class="col-12 col-lg-5 my-lg-5 mx-lg-4">
     <h2>{% trans "Help the project." %}</h2>
     <h5>
@@ -127,11 +127,8 @@
       {% include "svg/heart.html" %} {% trans "Make a donation" %}
     </a>
   </div>
-  <div class="col-12 col-lg-auto my-4 my-lg-0 mx-lg-4">
-    <div style="width: 130px;">
-      {% include "svg/github-thumbsup.html" %}
-    </div>
-    <img src="{{ MEDIA_URL }}images/github_thumbsup.png" class="img-fluid rounded border shadow2" alt="github">
+  <div class="col-12 col-lg-auto my-4 my-lg-5 mx-lg-4">
+    <img src="{{ MEDIA_URL }}images/github_thumbsup.png" class="img-fluid rounded border shadow" alt="github">
   </div>
 </div>
 
