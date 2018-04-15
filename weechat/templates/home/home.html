@@ -12,9 +12,9 @@
   </div>
   <div class="col-12 col-lg-6 text-center">
     <h1>{% trans "WeeChat, the extensible chat client." %}</h1>
-    <h2>
+    <p class="h2 my-3">
       {% trans "Fast" %} &mdash; {% trans "Light" %} &mdash; {% trans "Free software" %}
-    </h2>
+    </p>
     <div class="row justify-content-center">
       <div class="col-auto ml-3 px-0">
         <a href="{% url 'download' %}" class="btn btn-lg btn-primary mt-4 mb-1 px-3 px-lg-5">
@@ -36,9 +36,9 @@
 <div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-container container-bg">
   <div class="col-12 col-lg-5 my-lg-5 mx-lg-4">
     <h2>Powerful, customizable.</h2>
-    <h5>
+    <p class="h5 my-3">
       {% trans "Full-featured IRC plugin: multi-servers, proxy support, IPv6, SASL authentication, nicklist, DCC, and many other features." %}
-    </h5>
+    </p>
     <a href="{% url 'about_features' %}" class="btn btn-lg btn-success mt-4 mr-3 px-3 px-lg-5">
       {% include "svg/checklist.html" %} {% trans "Features" %}
     </a>
@@ -57,11 +57,11 @@
   </div>
   <div class="col-12 col-lg-5 order-1 order-lg-2 my-lg-5 mx-lg-4">
     <h2>{% trans "Innovative features." %}</h2>
-    <h5>
+    <p class="h5 my-3">
       8 scripting languages supported with a built-in scripts manager.
       <br><br>
       256 colors, horizontal and vertical splits, smart filtering, customizable bars and much more!
-    </h5>
+    </p>
     <a href="{% url 'scripts' %}" class="btn btn-lg btn-primary mt-4 mr-3 px-3 px-lg-5">
       {% include "svg/package.html" %} {% trans "Scripts" %}
     </a>
@@ -76,11 +76,11 @@
 <div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-container container-bg">
   <div class="col-12 col-lg-5 my-lg-5 mx-lg-4">
     <h2>{% trans "Remote interfaces." %}</h2>
-    <h5>
+    <p class="h5 my-3">
       {% trans "Tired of your terminal?" %}
       <br><br>
       {% trans "Connect to your WeeChat from your browser, Android, Qt or even Emacs!" %}
-    </h5>
+    </p>
     <a href="{% url 'about_interfaces' %}" class="btn btn-lg btn-success mt-4 mr-3 px-3 px-lg-5">
       {% include "svg/desktop.html" %} {% trans "Interfaces" %}
     </a>
@@ -96,11 +96,11 @@
   </div>
   <div class="col-12 col-lg-5 order-1 order-lg-2 my-lg-5 mx-lg-4">
     <h2>{% trans "Documentation and support." %}</h2>
-    <h5>
+    <p class="h5 my-3">
       {% trans "Translations available in several languages, comprehensive documentation." %}
       <br><br>
       {% trans "Excellent support for users." %}
-    </h5>
+    </p>
     <a href="{% url 'doc' %}" class="btn btn-lg btn-primary mt-4 mr-3 px-3 px-lg-5">
       {% include "svg/book.html" %} {% trans "Documentation" %}
     </a>
@@ -115,14 +115,14 @@
 <div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-container container-bg">
   <div class="col-12 col-lg-5 my-lg-5 mx-lg-4">
     <h2>{% trans "Help the project." %}</h2>
-    <h5>
+    <p class="h5 my-3">
       {% trans "You can help the WeeChat project in many ways:" %}
       <ul>
         <li>{% trans "translation: software, documentation and this web site" %}</li>
         <li>{% trans "code: tests, bug reports, ideas for new features and patches" %}</li>
         <li>{% trans "donation: any contribution is appreciated and important for motivation." %}</li>
       </ul>
-    </h5>
+    </p>
     <a href="{% url 'about_donate' %}" class="btn btn-lg btn-success mt-4 mr-3 px-3 px-lg-5">
       {% include "svg/heart.html" %} {% trans "Make a donation" %}
     </a>
