@@ -11,8 +11,8 @@
     <img src="{{ MEDIA_URL }}images/weechat_logo_large.png" class="img-fluid" alt="WeeChat">
   </div>
   <div class="col-12 col-lg-6 text-center">
-    <h1>{% trans "WeeChat, the extensible chat client." %}</h1>
-    <p class="h2 my-3">
+    <h2>{% trans "WeeChat, the extensible chat client." %}</h2>
+    <p class="h3 my-3">
       {% trans "Fast" %} &mdash; {% trans "Light" %} &mdash; {% trans "Free software" %}
     </p>
     <div class="row justify-content-center">
@@ -35,7 +35,7 @@
 
 <div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-container container-bg">
   <div class="col-12 col-lg-5 my-lg-5 mx-lg-4">
-    <h2>Powerful, customizable.</h2>
+    <h3>Powerful, customizable.</h3>
     <p class="h5 my-3">
       {% trans "Full-featured IRC plugin: multi-servers, proxy support, IPv6, SASL authentication, nicklist, DCC, and many other features." %}
     </p>
@@ -56,7 +56,7 @@
     <img src="{{ MEDIA_URL }}images/ft_scripts.png" class="img-fluid rounded shadow" alt="Scripts">
   </div>
   <div class="col-12 col-lg-5 order-1 order-lg-2 my-lg-5 mx-lg-4">
-    <h2>{% trans "Innovative features." %}</h2>
+    <h3>{% trans "Innovative features." %}</h3>
     <p class="h5 my-3">
       8 scripting languages supported with a built-in scripts manager.
       <br><br>
@@ -75,7 +75,7 @@
 
 <div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-container container-bg">
   <div class="col-12 col-lg-5 my-lg-5 mx-lg-4">
-    <h2>{% trans "Remote interfaces." %}</h2>
+    <h3>{% trans "Remote interfaces." %}</h3>
     <p class="h5 my-3">
       {% trans "Tired of your terminal?" %}
       <br><br>
@@ -95,7 +95,7 @@
     <img src="{{ MEDIA_URL }}images/ft_doc.png" class="img-fluid rounded border shadow2" alt="Documentation">
   </div>
   <div class="col-12 col-lg-5 order-1 order-lg-2 my-lg-5 mx-lg-4">
-    <h2>{% trans "Documentation and support." %}</h2>
+    <h3>{% trans "Documentation and support." %}</h3>
     <p class="h5 my-3">
       {% trans "Translations available in several languages, comprehensive documentation." %}
       <br><br>
@@ -114,7 +114,7 @@
 
 <div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-container container-bg">
   <div class="col-12 col-lg-5 my-lg-5 mx-lg-4">
-    <h2>{% trans "Help the project." %}</h2>
+    <h3>{% trans "Help the project." %}</h3>
     <p class="h5 my-3">
       {% trans "You can help the WeeChat project in many ways:" %}
       <ul>
@@ -136,14 +136,16 @@
 
 <div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-container" id="news">
   <div class="col-12 col-lg-4 my-4 my-lg-0">
-    <h2 class="pb-2 border-bottom">{% trans "Latest news" %}</h2>
+    <h3 class="pb-2 border-bottom">{% trans "Latest news" %}</h3>
     {% for info in info_list %}
     <div class="row pt-2 pb-3">
       <div class="col-12 col-md-3">
         {{ info.date_l10n }}
       </div>
       <div class="col-12 col-md-9">
-        <h5 class="my-0"><a href="{% url 'home_info_id_title' info.id info.date_title_url %}">{{ info.title_i18n }}</a></h5>
+        <p class="h5 my-0">
+          <a href="{% url 'home_info_id_title' info.id info.date_title_url %}">{{ info.title_i18n }}</a>
+        </p>
       </div>
     </div>
     {% endfor %}
@@ -152,14 +154,16 @@
     </a>
   </div>
   <div class="col-12 col-lg-4 my-4 my-lg-0">
-    <h2 class="pb-2 border-bottom">{% trans "Upcoming events" %}</h2>
+    <h3 class="pb-2 border-bottom">{% trans "Upcoming events" %}</h3>
     {% for event in event_list %}
     <div class="row pt-2 pb-3">
       <div class="col-12 col-md-3">
         {{ event.date_l10n }}
       </div>
       <div class="col-12 col-md-9">
-        <h5 class="my-0"><a href="{% url 'home_info_id_title' event.id event.date_title_url %}">{{ event.title_i18n }}</a></h5>
+        <p class="h5 my-0">
+          <a href="{% url 'home_info_id_title' event.id event.date_title_url %}">{{ event.title_i18n }}</a>
+        </p>
       </div>
     </div>
     {% endfor %}
