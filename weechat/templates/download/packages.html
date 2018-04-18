@@ -50,7 +50,7 @@
     {% endif %}
     {% if package_version.grouper.securityfix %}
     <p class="text-danger">
-      {% url 'about_security' as security_url %}
+      {% url 'doc_security' as security_url %}
       {% with version=package_version.grouper.version %}
       {% blocktrans %}<strong>Warning:</strong> the version {{ version }} has one or more <a href="{{ security_url }}">vulnerabilities</a>, it is not recommended to use it.{% endblocktrans %}
       {% endwith %}
@@ -59,7 +59,7 @@
     </p>
     {% elif version != "devel" and version != "old" and package_version.grouper.security_issues_fixed > 0 %}
     <p class="text-success">
-      {% url 'about_security' as security_url %}
+      {% url 'doc_security' as security_url %}
       {% if package_version.grouper.security_issues_fixed == 1 %}
       {% blocktrans %}<strong>Important:</strong> this release fixes a <a href="{{ security_url }}">vulnerability</a>.{% endblocktrans %}
     {% else %}

@@ -22,7 +22,7 @@
 
 from django.contrib import admin
 
-from weechat.about.models import Screenshot, Keydate, Security, Sponsor
+from weechat.about.models import Screenshot, Keydate, Sponsor
 
 
 # pylint: disable=too-many-public-methods
@@ -33,5 +33,4 @@ class SponsorAdmin(admin.ModelAdmin):
 
 admin.site.register(Screenshot)
 admin.site.register(Keydate)
-admin.site.register(Security)
 admin.site.register(Sponsor, SponsorAdmin)

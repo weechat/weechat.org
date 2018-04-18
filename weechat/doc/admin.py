@@ -22,8 +22,9 @@
 
 from django.contrib import admin
 
-from weechat.doc.models import Language, Version, Doc
+from weechat.doc.models import Language, Version, Doc, Security
 
 admin.site.register(Language)
 admin.site.register(Version)
 admin.site.register(Doc)
+admin.site.register(Security)

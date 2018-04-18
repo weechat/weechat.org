@@ -31,7 +31,7 @@ from django.shortcuts import render, redirect
 from django.utils.translation import ugettext
 
 from weechat.common.path import files_path_join
-from weechat.doc.models import Language, Version, Doc
+from weechat.doc.models import Language, Version, Doc, Security
 from weechat.download.models import Release
 
 I18N_MAINTAINER = {
@@ -135,7 +135,7 @@ def documentation(request, version='stable'):
             pass
         return render(
             request,
-            'doc/doc.html',
+            'doc/doc_version.html',
             {
                 'version': version,
                 'doc_list': doc_list,
@@ -181,7 +181,7 @@ def documentation(request, version='stable'):
         doc_version = None
     return render(
         request,
-        'doc/doc.html',
+        'doc/doc_version.html',
         {
             'version': version,
             'languages': languages,
@@ -211,3 +211,15 @@ def documentation_link(request, version='devel', name=None, lang='en'):
         if path.exists(full_name):
             return redirect('/files/doc/%s/%s' % (version, filename))
     return redirect('doc')
+
+
+def security(request):
+    """Page with security vulnerabilities."""
+    security_list = Security.objects.all().filter(visible=1).order_by('-date')
+    return render(
+        request,
+        'doc/security.html',
+        {
+            'security_list': security_list,
+        },
+    )
