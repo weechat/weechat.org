@@ -37,7 +37,7 @@
         <a class="nav-item nav-link nav-doc" href="{% url "doc" %}">{% trans "Documentation" %}</a>
         <a class="nav-item nav-link nav-download" href="{% url "download" %}">{% trans "Download" %}</a>
         <a class="nav-item nav-link nav-scripts" href="{% url "scripts" %}">{% trans "Scripts" %}</a>
-        <a class="nav-item nav-link nav-dev" href="{% url "dev" %}">{% trans "Dev" %}</a>
+        <a class="nav-item nav-link nav-dev" href="{% url "dev" %}">{% trans "Development" %}</a>
       </div>
 
       <div class="nav-icons py-3 py-lg-0">
@@ -143,7 +143,7 @@
         <ul>
           <li><a class="main" href="{% url 'doc' %}">{% trans "Documentation" %}</a></li>
           <li><a href="{% url 'doc_version' 'stable' %}">{% trans "Stable version" %}</a></li>
-          <li><a href="{% url 'doc_version' 'devel' %}">{% trans "Dev version" %}</a></li>
+          <li><a href="{% url 'doc_version' 'devel' %}">{% trans "Development version" %}</a></li>
           <li><a href="{% url 'doc_version' 'old' %}">{% trans "Old versions" %}</a></li>
           <li><a href="{% url 'doc_security' %}">{% trans "Security issues" %}</a></li>
           <li><a href="/files/doc/weechat_faq.en.html" target="_blank" rel="noopener">{% trans "FAQ" %} ({% trans "English" %}) <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;"></a></li>
@@ -154,7 +154,7 @@
         <ul>
           <li><a class="main" href="{% url 'download' %}">{% trans "Download" %}</a></li>
           <li><a href="{% url 'download_version' 'stable' %}">{% trans "Stable version" %}</a></li>
-          <li><a href="{% url 'download_version' 'devel' %}">{% trans "Dev version" %}</a></li>
+          <li><a href="{% url 'download_version' 'devel' %}">{% trans "Development version" %}</a></li>
           <li><a href="{% url 'download_version' 'old' %}">{% trans "Old versions" %}</a></li>
           <li><a href="{% url 'download_debian' %}">{% trans "Debian/Ubuntu repositories" %}</a></li>
         </ul>
@@ -181,11 +181,11 @@
 {% endcomment %}
       <div class="col-12 col-md-6 col-xl-auto">
         <ul>
-          <li><a class="main" href="{% url 'dev' %}">Dev</a></li>
+          <li><a class="main" href="{% url 'dev' %}">{% trans "Development" %}</a></li>
           <li><a href="{% url 'dev_roadmap' %}">{% trans "Roadmap" %}</a></li>
           <li><a href="{% url 'dev_stats' %}">{% trans "Statistics" %}</a></li>
           <li><a href="{% url 'dev_info' %}">{% trans "Info" %}</a></li>
-          <li><a href="https://weechat.org/blog/" target="_blank" rel="noopener">{% trans "Devel blog" %} <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;"></a></li>
+          <li><a href="https://weechat.org/blog/" target="_blank" rel="noopener">{% trans "Development blog" %} <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;"></a></li>
         </ul>
       </div>
     </div>
