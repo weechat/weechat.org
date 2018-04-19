@@ -23,7 +23,7 @@
 
 <body id="nav1-{% block menu %}{% endblock %}">
 
-  <nav class="navbar navbar-expand-lg navbar-light">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <a class="navbar-brand" href="{% url "home" %}">
       <img src="{{ MEDIA_URL }}images/weechat_logo_small.png" width="48" height="33" alt="WeeChat">
     </a>
@@ -76,9 +76,8 @@
 
     </div>
   </nav>
-  <div class="navbar-gradient"></div>
 
-  <div class="container-fluid content">
+  <div class="container-fluid content" style="margin-top: 4rem;">
 {% block content %}{% endblock %}
   </div>
 
