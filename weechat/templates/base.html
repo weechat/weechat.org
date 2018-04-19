@@ -52,7 +52,7 @@
             <input type="hidden" name="language" value="{{ LANGUAGE_CODE }}">
             <select class="form-control form-control-sm" onchange="javascript:document.forms['lang'].elements['language'].value = this.value; document.forms['lang'].submit();">
               {% for lang in LANGUAGES %}
-              <option value="{{ lang.0 }}" onclick="javascript:document.forms['lang'].elements['language'].value = '{{ lang.0 }}'; document.forms['lang'].submit();" {% if lang.0 == LANGUAGE_CODE %} selected{% endif %} title="{% trans lang.1 %}">{% trans lang.1 %}</option>
+              <option value="{{ lang.0 }}" onclick="javascript:document.forms['lang'].elements['language'].value = '{{ lang.0 }}'; document.forms['lang'].submit();" {% if lang.0 == LANGUAGE_CODE %} selected{% endif %}>{% language lang.0 %}{% trans lang.1 %}{% endlanguage %}</option>
               {% endfor %}
             </select>
           </div>
