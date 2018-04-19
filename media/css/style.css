@@ -47,7 +47,7 @@ pre {
 }
 
 .nav-item {
-  white-space: pre;
+  white-space: nowrap;
 }
 
 #nav1-home .nav-home, #nav1-about .nav-about, #nav1-doc .nav-doc,
@@ -60,18 +60,17 @@ pre {
   margin-bottom: 1rem;
 }
 
-.nav-icons a {
+.nav-other-links a {
   text-decoration: none;
 }
 
-.nav-icons svg {
-  margin-right: .5rem;
+.nav-other-links svg {
   width: 20px;
   height: 20px;
   vertical-align: middle;
 }
 
-.nav-icons svg g, .nav-icons svg path {
+.nav-other-links svg g, .nav-other-links svg path {
   fill: #57b;
 }
 
@@ -288,11 +287,16 @@ img.shadow2 {
   line-height: 30px;
 }
 
-.footer li svg {
-  width: 20px;
-  height: 20px;
+.footer .icons a {
+  text-decoration: none;
 }
 
-.footer li svg g, .footer li svg path {
+.footer .icons svg {
+  width: 24px;
+  height: 24px;
+  margin: 0 .5rem;
+}
+
+.footer .icons svg g, .footer .icons svg path {
   fill: #2a6ea1;
 }

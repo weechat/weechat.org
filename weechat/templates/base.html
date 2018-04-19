@@ -40,24 +40,9 @@
         <a class="nav-item nav-link nav-dev" href="{% url "dev" %}">{% trans "Development" %}</a>
       </div>
 
-      <div class="nav-icons py-3 py-lg-0">
-        <a href="https://github.com/weechat" target="_blank" rel="noopener" title="GitHub">
-          {% include "svg/github.html" %}
-        </a>
-        <a href="https://diasp.eu/u/weechat" target="_blank" rel="noopener" title="Diaspora">
-          {% include "svg/diaspora.html" %}
-        </a>
-        <a href="https://hostux.social/@weechat" target="_blank" rel="noopener" title="Mastodon">
-          {% include "svg/mastodon.html" %}
-        </a>
-        <a href="https://twitter.com/WeeChatClient" target="_blank" rel="noopener" title="Twitter">
-          {% include "svg/twitter.html" %}
-        </a>
-        <a href="https://plus.google.com/+WeeChat" target="_blank" rel="noopener" title="Google+">
-          {% include "svg/google_plus.html" %}
-        </a>
-        <a href="{% url 'donate' %}" title="{% trans "Make a donation" %}">
-          {% include "svg/heart.html" %}
+      <div class="nav-other-links text-nowrap py-3 py-lg-0 px-3">
+        <a href="{% url 'donate' %}" title="{% trans "Donate" %}">
+          {% include "svg/heart.html" %} {% trans "Donate" %}
         </a>
       </div>
 
@@ -90,41 +75,6 @@
           <li><a href="{% url 'home_news' %}">{% trans "Latest news" %}</a></li>
           <li><a href="{% url 'home_events' %}">{% trans "Upcoming events" %}</a></li>
           <li><a href="{% url 'donate' %}">{% trans "Make a donation" %}</a></li>
-          <li>
-            <a href="https://github.com/weechat" target="_blank" rel="noopener" title="GitHub">
-              {% include "svg/github.html" %}
-              GitHub
-              <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;">
-            </a>
-          </li>
-          <li>
-            <a href="https://diasp.eu/u/weechat" target="_blank" rel="noopener" title="Diaspora">
-              {% include "svg/diaspora.html" %}
-              Diaspora
-              <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;">
-            </a>
-          </li>
-          <li>
-            <a href="https://hostux.social/@weechat" target="_blank" rel="noopener" title="Mastodon">
-              {% include "svg/mastodon.html" %}
-              Mastodon
-              <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;">
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/WeeChatClient" target="_blank" rel="noopener" title="Twitter">
-              {% include "svg/twitter.html" %}
-              Twitter
-              <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;">
-            </a>
-          </li>
-          <li>
-            <a href="https://plus.google.com/+WeeChat" target="_blank" rel="noopener" title="Google+">
-              {% include "svg/google_plus.html" %}
-              Google+
-              <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;">
-            </a>
-          </li>
         </ul>
       </div>
       <div class="col-12 col-md-6 col-xl-auto">
@@ -190,9 +140,28 @@
     </div>
 
     <div class="text-center mt-4 mb-2">
-      Copyright &#169; 2003-{% now "Y" %} <a href="mailto:{% txt2html "flashcode@flashtux.org" %}" title="email webmaster">Sébastien Helleu</a>
-      &mdash;
-      <a href="{% url 'about_weechat.org' %}">{% trans "About WeeChat.org" %}</a>
+      <p class="icons">
+        <a href="https://github.com/weechat" target="_blank" rel="noopener" title="GitHub">
+          {% include "svg/github.html" %}
+        </a>
+        <a href="https://diasp.eu/u/weechat" target="_blank" rel="noopener" title="Diaspora">
+          {% include "svg/diaspora.html" %}
+        </a>
+        <a href="https://hostux.social/@weechat" target="_blank" rel="noopener" title="Mastodon">
+          {% include "svg/mastodon.html" %}
+        </a>
+        <a href="https://twitter.com/WeeChatClient" target="_blank" rel="noopener" title="Twitter">
+          {% include "svg/twitter.html" %}
+        </a>
+        <a href="https://plus.google.com/+WeeChat" target="_blank" rel="noopener" title="Google+">
+          {% include "svg/google_plus.html" %}
+        </a>
+      </p>
+      <p>
+        Copyright &#169; 2003-{% now "Y" %} <a href="mailto:{% txt2html "flashcode@flashtux.org" %}" title="email webmaster">Sébastien Helleu</a>
+        &mdash;
+        <a href="{% url 'about_weechat.org' %}">{% trans "About WeeChat.org" %}</a>
+      </p>
     </div>
 
   </div> <!-- footer -->
