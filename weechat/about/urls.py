@@ -28,7 +28,6 @@ from django.views.generic.base import TemplateView
 from weechat.about.views import (
     screenshots as view_screenshots,
     history as view_history,
-    donate as view_donate,
 )
 
 urlpatterns = [
@@ -51,12 +50,6 @@ urlpatterns = [
     url(r'^support/$',
         TemplateView.as_view(template_name='about/support.html'),
         name='about_support'),
-    url(r'^donate/$', view_donate, name='about_donate'),
-    url(r'^donate/sort/(?P<sort_key>(date|top10))/$', view_donate,
-        name='about_donate_sort'),
-    url(r'^donate/sort/(?P<sort_key>(date|top10))/'
-        r'view/(?P<view_key>[a-zA-Z0-9_]*)/$',
-        view_donate),
     url(r'^weechat\.org/$',
         TemplateView.as_view(template_name='about/weechat.org.html'),
         name='about_weechat.org'),

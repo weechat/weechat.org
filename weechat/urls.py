@@ -36,6 +36,7 @@ from weechat.news.views import (
     news as view_news,
     events as view_events,
 )
+from weechat.about.views import donate as view_donate
 
 # admin
 admin.autodiscover()
@@ -53,7 +54,7 @@ urlpatterns = [
     url(r'^features/$', RedirectView.as_view(url='/about/features/')),
     url(r'^screenshots/$', RedirectView.as_view(url='/about/screenshots/')),
     url(r'^story/$', RedirectView.as_view(url='/about/history/')),
-    url(r'^donate/$', RedirectView.as_view(url='/about/donate/')),
+    url(r'^about/donate/$', RedirectView.as_view(url='/donate/')),
     url(r'^security/$', RedirectView.as_view(url='/doc/security/')),
     url(r'^download/security/$', RedirectView.as_view(url='/doc/security/')),
     url(r'^stats/$', RedirectView.as_view(url='/dev/stats/')),
@@ -70,6 +71,12 @@ urlpatterns = [
     url(r'^news/(?P<info_id>\d+)/(.*)/$', view_news,
         name='home_info_id_title'),
     url(r'^events/$', view_events, name='home_events'),
+    url(r'^donate/$', view_donate, name='donate'),
+    url(r'^donate/sort/(?P<sort_key>(date|top10))/$', view_donate,
+        name='donate_sort'),
+    url(r'^donate/sort/(?P<sort_key>(date|top10))/'
+        r'view/(?P<view_key>[a-zA-Z0-9_]*)/$',
+        view_donate),
     url(r'^about/', include('weechat.about.urls')),
     url(r'^doc/', include('weechat.doc.urls')),
     url(r'^faq/$', RedirectView.as_view(url='/files/doc/weechat_faq.en.html'),

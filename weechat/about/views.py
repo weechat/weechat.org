@@ -102,7 +102,7 @@ def donate(request, sort_key='date', view_key=''):
         pass
     return render(
         request,
-        'about/donate.html',
+        'donate.html',
         {
             'sponsor_list': sponsor_list,
             'sort_key': sort_key,
