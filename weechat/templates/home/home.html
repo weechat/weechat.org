@@ -36,7 +36,7 @@
 <div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-container container-bg">
   <div class="col-12 col-lg-5 my-lg-5 mx-lg-4">
     <h3>Powerful, customizable.</h3>
-    <p class="h5 my-3">
+    <p class="my-3">
       {% trans "Full-featured IRC plugin: multi-servers, proxy support, IPv6, SASL authentication, nicklist, DCC, and many other features." %}
     </p>
     <a href="{% url 'about_features' %}" class="btn btn-lg btn-success mt-4 mr-3 px-3 px-lg-5">
@@ -57,7 +57,7 @@
   </div>
   <div class="col-12 col-lg-5 order-1 order-lg-2 my-lg-5 mx-lg-4">
     <h3>{% trans "Innovative features." %}</h3>
-    <p class="h5 my-3">
+    <p class="my-3">
       8 scripting languages supported with a built-in scripts manager.
       <br><br>
       256 colors, horizontal and vertical splits, smart filtering, customizable bars and much more!
@@ -76,7 +76,7 @@
 <div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-container container-bg">
   <div class="col-12 col-lg-5 my-lg-5 mx-lg-4">
     <h3>{% trans "Remote interfaces." %}</h3>
-    <p class="h5 my-3">
+    <p class="my-3">
       {% trans "Tired of your terminal?" %}
       <br><br>
       {% trans "Connect to your WeeChat from your browser, Android, Qt or even Emacs!" %}
@@ -96,7 +96,7 @@
   </div>
   <div class="col-12 col-lg-5 order-1 order-lg-2 my-lg-5 mx-lg-4">
     <h3>{% trans "Documentation and support." %}</h3>
-    <p class="h5 my-3">
+    <p class="my-3">
       {% trans "Translations available in several languages, comprehensive documentation." %}
       <br><br>
       {% trans "Excellent support for users." %}
@@ -115,7 +115,7 @@
 <div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-container container-bg">
   <div class="col-12 col-lg-5 my-lg-5 mx-lg-4">
     <h3>{% trans "Help the project." %}</h3>
-    <p class="h5 my-3">
+    <p class="my-3">
       {% trans "You can help the WeeChat project in many ways:" %}
       <ul>
         <li>{% trans "translation: software, documentation and this web site" %}</li>
@@ -143,7 +143,7 @@
         {{ info.date_l10n }}
       </div>
       <div class="col-12 col-md-9">
-        <p class="h5 my-0">
+        <p class="my-0">
           <a href="{% url 'home_info_id_title' info.id info.date_title_url %}">{{ info.title_i18n }}</a>
         </p>
       </div>
@@ -161,7 +161,7 @@
         {{ event.date_l10n }}
       </div>
       <div class="col-12 col-md-9">
-        <p class="h5 my-0">
+        <p class="my-0">
           <a href="{% url 'home_info_id_title' event.id event.date_title_url %}">{{ event.title_i18n }}</a>
         </p>
       </div>
