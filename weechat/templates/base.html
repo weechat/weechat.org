@@ -172,7 +172,7 @@
     $(document).ready(function() {
         $('.js-scroll').click(function() {
             $('html, body').animate({
-                scrollTop: $($(this).attr('href')).offset().top
+                scrollTop: Math.max(0, $($(this).attr('href')).offset().top - 70)
             }, 400);
             return false;
         });
