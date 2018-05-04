@@ -84,6 +84,9 @@
     <a href="{% url 'about_interfaces' %}" class="btn btn-lg btn-success mt-4 mr-3 px-3 px-lg-5">
       {% include "svg/desktop.html" %} {% trans "Interfaces" %}
     </a>
+    <a href="{% url 'about_screenshots_app' app='relay' %}" class="btn btn-lg btn-info mt-4 mr-3 px-3 px-lg-5">
+      {% include "svg/camera.html" %} {% trans "Screenshots" %}
+    </a>
   </div>
   <div class="col-12 col-lg-auto my-4 my-lg-5 mx-lg-4">
     <img src="{{ MEDIA_URL }}images/ft_android.png" class="img-fluid rounded shadow" alt="Android">
