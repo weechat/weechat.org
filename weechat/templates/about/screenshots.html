@@ -25,7 +25,7 @@
 </div>
 {% elif screenshot %}
 <div class="text-center">
-  <h3>{{ screenshot.comment }}</h3>
+  <h4>{{ screenshot.comment }}</h4>
   <a href="{% url 'about_screenshots_app' app %}">
     <figure class="figure">
       <img src="{{ MEDIA_URL }}images/screenshots/{{ screenshot.app }}/medium/{{ screenshot.filename }}" class="rounded" alt="{{ screenshot.filename }}" title="{{ screenshot.comment }}">
