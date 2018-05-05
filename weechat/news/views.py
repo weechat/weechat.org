@@ -81,9 +81,12 @@ def paginate_news(request, info_list, info_id, page_name):
         last_page = paginator.num_pages
     smart_page_range = range(first_page, last_page + 1)
 
+    event = infos and infos[0].date > datetime.now()
+
     return render(request, 'home/news.html', {
         'infos': infos,
         'info_id': info_id,
+        'event': event,
         'page_name': page_name,
         'smart_page_range': smart_page_range,
         'pagesize': pagesize,

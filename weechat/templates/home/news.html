@@ -69,6 +69,14 @@
   </nav>
   {% endif %}
 
+  {% if info_id %}
+    {% if event %}
+    <a href="{% url 'home_events' %}" class="btn btn-outline-primary mt-3 mr-3">{% trans "Back to events" %}</a>
+    {% else %}
+    <a href="{% url 'home_news' %}" class="btn btn-outline-primary mt-3 mr-3">{% trans "Back to news" %}</a>
+    {% endif %}
+  {% endif %}
+
   <a href="{% url 'home' %}" class="btn btn-outline-primary mt-3">{% trans "Back to home" %}</a>
 
 </div>
