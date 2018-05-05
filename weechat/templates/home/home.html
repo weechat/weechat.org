@@ -25,7 +25,7 @@
         {% endif %}
       </div>
       <div class="col-auto ml-3 px-0">
-        <a href="#news" class="btn btn-lg btn-secondary mt-4 mb-1 px-3 px-lg-5 js-scroll">
+        <a href="{% url 'home_news' %}" class="btn btn-lg btn-secondary mt-4 mb-1 px-3 px-lg-5 js-scroll">
           {% include "svg/megaphone.html" %} {% trans "News" %}
         </a>
       </div>
