@@ -294,7 +294,7 @@ class ScriptFormAdd(Form):
     author = CharField(
         max_length=MAX_LENGTH_AUTHOR,
         label=gettext_lazy('Your name or nick'),
-        help_text=gettext_lazy('Used git commit and scripts page.'),
+        help_text=gettext_lazy('Used for git commit and scripts page.'),
     )
     mail = EmailField(
         max_length=MAX_LENGTH_MAIL,
