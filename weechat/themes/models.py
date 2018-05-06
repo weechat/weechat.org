@@ -234,7 +234,7 @@ class ThemeFormUpdate(Form):
     mail = EmailField(
         max_length=MAX_LENGTH_MAIL,
         label=gettext_lazy('Your e-mail'),
-        help_text=gettext_lazy('No spam, never displayed on site.'),
+        help_text=gettext_lazy('No spam, never displayed.'),
         widget=Html5EmailInput(),
     )
     comment = CharField(
