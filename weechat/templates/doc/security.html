@@ -32,7 +32,7 @@
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th class="text-center">{% trans "External link" %} / {% trans "Tracker" %}</th>
+        <th class="text-center text-nowrap">{% trans "External link" %} / {% trans "Tracker" %}</th>
         <th class="text-center">{% trans "Severity" %}</th>
         <th class="text-center">{% trans "Affected versions" %}</th>
         <th class="text-center">{% trans "Fixed in version" %}</th>
@@ -52,7 +52,7 @@
           -
           {% endif %}
         </td>
-        <td class="text-center">{{ security.severity_i18n }}</td>
+        <td class="text-center text-nowrap">{{ security.severity_i18n }}</td>
         <td class="text-center text-nowrap text-danger">{% autoescape off %}{{ security.affected_html }}{% endautoescape %}</td>
         <td class="text-center text-nowrap text-success">{{ security.fixed }}</td>
         <td class="text-center text-nowrap">{% if security.release_date %}{{ security.release_date_l10n }}{% else %}-{% endif %}</td>
