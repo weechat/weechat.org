@@ -3,64 +3,71 @@
 {% load i18n %}{% load txt2html %}
 
 {% block subtitle %} :: WeeChat.org{% endblock %}
-{% block menu2_weechatorg %}selected{% endblock %}
+{% block menu2_weechatorg %}active{% endblock %}
 
 {% block content %}
 
 {{ block.super }}
 
-<div class="about">
+<h3>{% trans "Authors" %}</h3>
 
-  <h2>{% trans "Authors" %}</h2>
-
+<p>
   {% trans "Developers:" %}
-
   <ul>
-    <li><a href="mailto:{% txt2html "flashcode@flashtux.org" %}" title="email webmaster">Sébastien Helleu</a> (FlashCode)</li>
+    <li><a href="https://github.com/flashcode" target="_blank" rel="noopener">Sébastien Helleu</a> (FlashCode)</li>
   </ul>
+</p>
 
-  <br>
+<p>
   {% trans "Translators:" %}
-
   <ul>
-    <li>Alexandre Bolelli</li>
-    <li>Krzysztof Korościk (soltys)</li>
-    <li>Marco Paolone</li>
-    <li>Nils Görs (nils_2)</li>
-    <li>Ryuunosuke Ayanokouzi</li>
+    <li>{% trans "German" %}: <a href="https://github.com/weechatter" target="_blank" rel="noopener">Nils Görs</a> (nils_2)</li>
+    <li>{% trans "Italian" %}: <a href="https://github.com/mapolone" target="_blank" rel="noopener">Marco Paolone</a></li>
+    <li>{% trans "Japanese" %}: <a href="https://github.com/l" target="_blank" rel="noopener">Ryuunosuke Ayanokouzi</a></li>
+    <li>{% trans "Polish" %}: <a href="https://github.com/soltysek" target="_blank" rel="noopener">Krzysztof Korościk</a> (soltys)</li>
+    <li>{% trans "Portuguese (Brazil)" %}: Alexandre Bolelli</li>
   </ul>
+</p>
 
-  <h2>{% trans "Source code" %}</h2>
+<h3>{% trans "Source code" %}</h3>
 
+<p>
   {% trans "Source code of WeeChat.org is available on GitHub:" %}
   <a href="https://github.com/weechat/weechat.org" target="_blank" rel="noopener">
     https://github.com/weechat/weechat.org
-    <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt=">>">
+    <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;">
   </a>
+</p>
 
-  <h2>{% trans "Hosting" %}</h2>
+<h3>{% trans "Hosting" %}</h3>
 
+<p>
   {% blocktrans %}WeeChat.org is hosted by <a href="https://www.hetzner.de/en/">Hetzner</a>.{% endblocktrans %}
+</p>
 
-  <h2>Copyright</h2>
+<h3>Copyright</h3>
 
-  <div class="copyright">
-WeeChat.org &mdash; Copyright &#169; 2003-{% now "Y" %} <a href="mailto:{% txt2html "flashcode@flashtux.org" %}" title="email webmaster">Sébastien Helleu</a>.
+<p>
+  WeeChat.org &mdash; Copyright &#169; 2003-{% now "Y" %} <a href="mailto:{% txt2html "flashcode@flashtux.org" %}" title="email webmaster">Sébastien Helleu</a>.
+</p>
 
-WeeChat.org is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 3 of the License, or
-(at your option) any later version.
+<p>
+  WeeChat.org is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 3 of the License, or
+  (at your option) any later version.
+</p>
 
-WeeChat.org is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+<p>
+  WeeChat.org is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+</p>
 
-You should have received a copy of the GNU General Public License
-along with WeeChat.org.  If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.
-  </div>
-
-</div>
+<p>
+  You should have received a copy of the GNU General Public License
+  along with WeeChat.org.  If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.
+</p>
 
 {% endblock content %}

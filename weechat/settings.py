@@ -126,7 +126,7 @@ TEMPLATES = [
     },
 ]
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
@@ -150,6 +150,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'weechat.common',
     'weechat.news',
     'weechat.about',
@@ -166,12 +167,14 @@ LOCALE_PATHS = (
 )
 
 ugettext = lambda s: s
-# Translators: this is a date format, see: http://uk3.php.net/manual/en/function.date.php (note: the result string must be short, use abbreviation for month if possible)
+# Translators: this is a date format, see: http://www.php.net/date (note: the result string must be short, use abbreviation for month if possible)
 DATE_FORMAT = ugettext('M j, Y')
+# Translators: this is a date/time format, see: http://www.php.net/date (note: the result string must be short, use abbreviation for month if possible)
+DATETIME_FORMAT = ugettext('M j, Y H:i')
 
 # read settings_local.py
 try:
-    from settings_local import *
+    from weechat.settings_local import *
 except ImportError:
     from warnings import warn
     warn('File "settings_local.py" not found, using default settings')

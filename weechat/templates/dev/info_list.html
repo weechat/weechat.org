@@ -3,32 +3,49 @@
 {% load i18n %}
 
 {% block subtitle %} :: {% trans "info" %}{% endblock %}
-{% block menu2_info %}selected{% endblock %}
+{% block menu2_info %}active{% endblock %}
 
 {% block content %}
 
 {{ block.super }}
 
-{% trans "Following infos are available (click on info for the URL):" %}
+{% if infos %}
 
-<div class="infolist">
-  <table>
-    <tr>
-      <th>{% trans "Info" %}</th>
-      <th>{% trans "Current value" %}</th>
-      <th>{% trans "Description" %}</th>
-    </tr>
+<p>
+  {% trans "Following infos are available (click on info for the URL):" %}
+</p>
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>{% trans "Info" %}</th>
+        <th>{% trans "Current value" %}</th>
+        <th>{% trans "Description" %}</th>
+      </tr>
+    </thead>
+    <tbody>
     {% for info in infos %}
-    <tr class="{% cycle 'row1' 'row2' %}">
+    <tr>
       <td><a href="{% url 'dev_info_name' info.0 %}" target="_blank" rel="noopener">{{ info.0 }}</a></td>
       <td>{{ info.1|linebreaksbr }}</td>
       <td>{{ info.2 }}</td>
     </tr>
     {% endfor %}
+    </tbody>
   </table>
 </div>
 
-<br>
-{% trans "You can fetch these URLs from scripts or other sites." %}
+<p>
+  {% trans "You can fetch these URLs from scripts or other sites." %}
+</p>
+
+{% else %}
+
+<div class="alert alert-success">
+  {% trans "No info." %}
+</div>
+
+{% endif %}
 
 {% endblock content %}

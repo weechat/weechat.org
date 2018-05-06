@@ -3,43 +3,49 @@
 {% load i18n %}
 
 {% block subtitle %} :: {% trans "screenshots" %}{% endblock %}
-{% block menu2_screenshots %}selected{% endblock %}
+{% block menu2_screenshots %}active{% endblock %}
 
 {% block content %}
 
 {{ block.super }}
 
-<div class="navbt" style="border-bottom: none">
-  <ul>
-    <li><a href="{% url 'about_screenshots_app' 'weechat' %}"{% if app == "weechat" %} class="selected"{% endif %}>WeeChat</a></li>
-    <li><a href="{% url 'about_screenshots_app' 'relay' %}"{% if app == "relay" %} class="selected"{% endif %}>{% trans "Relay clients" %}</a></li>
-  </ul>
-</div>
-
-<div class="about">
+<ul class="nav nav-tabs mt-4">
+  <li class="nav-item"><a class="nav-link{% if app == "weechat" %} active{% endif %}" href="{% url 'about_screenshots_app' 'weechat' %}">WeeChat</a></li>
+  <li class="nav-item"><a class="nav-link{% if app == "relay" %} active{% endif %}" href="{% url 'about_screenshots_app' 'relay' %}">{% trans "Relay clients" %}</a></li>
+</ul>
 
 {% if screenshot_list %}
-  <div class="screenshots">
-    {% for screenshot in screenshot_list %}
-      <a href="{% url 'about_screenshot' app screenshot.filename %}">
-        <img src="{{ MEDIA_URL }}images/screenshots/{{ screenshot.app }}/small/{{ screenshot.filename }}" alt="{{ screenshot.filename }}" title="{{ screenshot.comment }}">
-      </a>
-    {% endfor %}
-  </div>
+
+<div class="text-center">
+  {% for screenshot in screenshot_list %}
+  <a href="{% url 'about_screenshot' app screenshot.filename %}">
+    <img src="{{ MEDIA_URL }}images/screenshots/{{ screenshot.app }}/small/{{ screenshot.filename }}" class="m-2 rounded img-thumbnail" alt="{{ screenshot.filename }}" title="{{ screenshot.comment }}">
+  </a>
+  {% endfor %}
+</div>
+{% elif screenshot %}
+<div class="text-center">
+  <h4>{{ screenshot.comment }}</h4>
+  <a href="{% url 'about_screenshots_app' app %}">
+    <figure class="figure">
+      <img src="{{ MEDIA_URL }}images/screenshots/{{ screenshot.app }}/medium/{{ screenshot.filename }}" class="rounded" alt="{{ screenshot.filename }}" title="{{ screenshot.comment }}">
+      <figcaption class="figure-caption">{{ screenshot.filename }}</figcaption>
+    </figure>
+  </a>
+</div>
+
 {% else %}
-  {% if screenshot %}
-    <div class="screenshot">
-      <h3>{{ screenshot.comment }}</h3>
-      <a href="{% url 'about_screenshots_app' app %}">
-        <img src="{{ MEDIA_URL }}images/screenshots/{{ screenshot.app }}/medium/{{ screenshot.filename }}" alt="{{ screenshot.filename }}" title="{{ screenshot.comment }}">
-      </a>
-      <br>{{ screenshot.filename }}
-    </div>
-  {% else %}
-    <div class="errorbox">
-      {% if filename %}{% trans "Screenshot not found:" %} {{ filename }}{% else %}{% trans "No screenshot." %}{% endif %}
-    </div>
-  {% endif %}
+
+{% if filename %}
+<div class="alert alert-danger">
+  {% trans "Screenshot not found:" %} {{ filename }}
+</div>
+{% else %}
+<div class="alert alert-success">
+  {% trans "No screenshot." %}
+</div>
+{% endif %}
+
 {% endif %}
 
 </div>

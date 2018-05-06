@@ -2,19 +2,15 @@
 
 {% load i18n %}
 
-{% block title %}WeeChat :: {% trans "dev" %}{% endblock %}
-{% block css %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/dev.css" media="screen" title="Normal">{% endblock %}
+{% block title %}WeeChat :: {% trans "development" %}{% endblock %}
 {% block menu %}dev{% endblock %}
 
 {% block content %}
 
-<div class="navbt">
-  <ul>
-    <li><a href="{% url 'dev_roadmap' %}" class="{% block menu2_roadmap %}{% endblock %}">{% trans "Roadmap" %}</a></li>
-    <li><a href="{% url 'dev_stats' %}" class="{% block menu2_stats %}{% endblock %}">{% trans "Stats" %}</a></li>
-    <li><a href="{% url 'dev_info' %}" class="{% block menu2_info %}{% endblock %}">{% trans "Info" %}</a></li>
-    <li><a href="{% url 'dev_support' %}" class="{% block menu2_support %}{% endblock %}">{% trans "Support" %}</a></li>
-  </ul>
-</div>
+<ul class="nav nav-tabs">
+  <li class="nav-item"><a class="nav-link {% block menu2_roadmap %}{% endblock %}" href="{% url 'dev_roadmap' %}">{% trans "Roadmap" %}</a></li>
+  <li class="nav-item"><a class="nav-link {% block menu2_stats %}{% endblock %}" href="{% url 'dev_stats' %}">{% trans "Stats" %}</a></li>
+  <li class="nav-item"><a class="nav-link {% block menu2_info %}{% endblock %}" href="{% url 'dev_info' %}">{% trans "Info" %}</a></li>
+</ul>
 
 {% endblock content %}

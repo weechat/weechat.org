@@ -39,8 +39,8 @@ class LatestNewsFeed(Feed):
 
     def items(self):
         """Return items with date in the past."""
-        return Info.objects.filter(visible=1) \
-            .filter(date__lte=datetime.now()).order_by('-date')[:10]
+        return (Info.objects.filter(visible=1)
+                .filter(date__lte=datetime.now()).order_by('-date')[:10])
 
     def item_link(self, info):
         """Return link to item by using the domain sent in the request."""
@@ -64,8 +64,8 @@ class UpcomingEventsFeed(Feed):
 
     def items(self):
         """Return items with date in the future."""
-        return Info.objects.filter(visible=1) \
-            .filter(date__gt=datetime.now()).order_by('date')[:10]
+        return (Info.objects.filter(visible=1)
+                .filter(date__gt=datetime.now()).order_by('date')[:10])
 
     def item_link(self, info):
         """Return link to item by using the domain sent in the request."""

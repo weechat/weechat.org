@@ -6441,11 +6441,11 @@ msgstr ""
 #, python-format
 msgid ""
 "<strong>Warning:</strong> the version %(version)s has one or more <a href="
-"\"%(download_security_url)s\">vulnerabilities</a>, it is not recommended to "
+"\"%(security_url)s\">vulnerabilities</a>, it is not recommended to "
 "use it."
 msgstr ""
 "<strong>Warnung:</strong> diese Version %(version)s enthält eine oder "
-"mehrere <a href=\"%(download_security_url)s\">Schwachstellen</a>. Es wird "
+"mehrere <a href=\"%(security_url)s\">Schwachstellen</a>. Es wird "
 "dringend empfohlen diese Version nicht mehr zu verwenden."
 
 #: templates/download/packages.html:58
@@ -6456,19 +6456,19 @@ msgstr "Schwachstellen behoben in Version:"
 #, python-format
 msgid ""
 "<strong>Important:</strong> this release fixes a <a href="
-"\"%(download_security_url)s\">vulnerability</a>."
+"\"%(security_url)s\">vulnerability</a>."
 msgstr ""
 "<strong>Warnung:</strong> diese Version behebt eine <a href="
-"\"%(download_security_url)s\">Sicherheitslücke</a> ."
+"\"%(security_url)s\">Sicherheitslücke</a> ."
 
 #: templates/download/packages.html:68 templates/home/home.html:43
 #, python-format
 msgid ""
 "<strong>Important:</strong> this release fixes <a href="
-"\"%(download_security_url)s\">%(count_issues_fixed)s vulnerabilities</a>."
+"\"%(security_url)s\">%(count_issues_fixed)s vulnerabilities</a>."
 msgstr ""
 "<strong>Warnung:</strong> diese Version behebt <a href="
-"\"%(download_security_url)s\">%(count_issues_fixed)s Sicherheitslücken</a>."
+"\"%(security_url)s\">%(count_issues_fixed)s Sicherheitslücken</a>."
 
 #: templates/download/packages.html:70 templates/home/home.html:45
 msgid "It is recommended to upgrade from any older version to this one."

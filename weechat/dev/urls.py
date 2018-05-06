@@ -23,7 +23,6 @@
 # pylint: disable=invalid-name, no-value-for-parameter
 
 from django.conf.urls import url
-from django.views.generic.base import TemplateView
 
 from weechat.dev.views import (
     roadmap as view_roadmap,
@@ -41,6 +40,4 @@ urlpatterns = [
         view_stats_repo, name='dev_stats_git'),
     url(r'^info/$', view_info, name='dev_info'),
     url(r'^info/(?P<name>[a-zA-Z0-9_]*)/$', view_info, name='dev_info_name'),
-    url(r'^support/$', TemplateView.as_view(template_name='dev/support.html'),
-        name='dev_support'),
 ]

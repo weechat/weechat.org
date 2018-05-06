@@ -3,52 +3,48 @@
 {% load i18n %}
 
 {% block subtitle %} :: {% trans "statistics" %}{% endblock %}
-{% block menu2_stats %}selected{% endblock %}
+{% block menu2_stats %}active{% endblock %}
 
 {% block content %}
 
 {{ block.super }}
 
-<div class="navbt" style="border-bottom: none">
-  <ul>
-    <li><a href="{% url 'dev_stats_git' 'weechat' %}"{% if stats == "weechat" %} class="selected"{% endif %}>WeeChat</a></li>
-    <li><a href="{% url 'dev_stats_git' 'scripts' %}"{% if stats == "scripts" %} class="selected"{% endif %}>{% trans "Scripts" %}</a></li>
-    <li><a href="{% url 'dev_stats_git' 'qweechat' %}"{% if stats == "qweechat" %} class="selected"{% endif %}>QWeeChat</a></li>
-    <li><a href="{% url 'dev_stats_git' 'weechat.org' %}"{% if stats == "weechat.org" %} class="selected"{% endif %}>WeeChat.org</a></li>
-  </ul>
-</div>
+<ul class="nav nav-tabs mt-4">
+  <li class="nav-item"><a class="nav-link{% if stats == "weechat" %} active{% endif %}" href="{% url 'dev_stats_git' 'weechat' %}">WeeChat</a></li>
+  <li class="nav-item"><a class="nav-link{% if stats == "scripts" %} active{% endif %}" href="{% url 'dev_stats_git' 'scripts' %}">{% trans "Scripts" %}</a></li>
+  <li class="nav-item"><a class="nav-link{% if stats == "qweechat" %} active{% endif %}" href="{% url 'dev_stats_git' 'qweechat' %}">QWeeChat</a></li>
+  <li class="nav-item"><a class="nav-link{% if stats == "weechat.org" %} active{% endif %}" href="{% url 'dev_stats_git' 'weechat.org' %}">WeeChat.org</a></li>
+</ul>
 
-<div class="stats">
+{% trans "Git repository:" %}
+<a href="{{ repository }}" target="_blank" rel="noopener">{{ repository }} <img src={{ MEDIA_URL}}images/link.png width="16" height="16" alt="&gt;&gt;"></a>
+<br><br>
 
-  {% trans "Git repository:" %}
-  <a href="{{ repository }}" target="_blank" rel="noopener">{{ repository }} <img src={{ MEDIA_URL}}images/link.png width="16" height="16" alt=">>"></a>
-  <br><br>
+{% if sloc %}
+<strong>{{ sloc }}</strong> {% trans "lines of code" %} ({{ sloc_lang }}).
+<br><br>
+{% endif %}
 
-  {% if sloc %}
-  <strong>{{ sloc }}</strong> {% trans "lines of code" %} ({{ sloc_lang }}).
-  <br><br>
-  {% endif %}
+{% trans "Commits by range:" %}
+{% trans "month:" %} <strong>{{ git_commits_last_month }}</strong>,
+{% trans "year:" %} <strong>{{ git_commits_last_year }}</strong>,
+{% trans "total:" %} <strong>{{ git_commits_total }}</strong>.
 
-  {% trans "Commits by range:" %}
-  &nbsp;
-  {% trans "month:" %} <strong>{{ git_commits_last_month }}</strong>
-  {% trans "year:" %} <strong>{{ git_commits_last_year }}</strong>
-  {% trans "total:" %} <strong>{{ git_commits_total }}</strong>
-
-  {% for svg in svg_list %}
-  <div class="svg">
-    <a href="{{ MEDIA_URL }}images/stats/{{ stats }}_{{ svg }}.svg" target="_blank" rel="noopener">SVG <img src={{ MEDIA_URL}}images/link.png width="16" height="16" alt=">>"></a>
-    <object type="image/svg+xml" data="{{ MEDIA_URL }}images/stats/{{ stats }}_{{ svg }}.svg">{{ svg }}.svg</object>
+{% for svg in svg_list %}
+<div class="svg pb-2 mb-2">
+  <object type="image/svg+xml" data="{{ MEDIA_URL }}images/stats/{{ stats }}_{{ svg }}.svg">{{ svg }}.svg</object>
+  <div class="text-center">
+    <a href="{{ MEDIA_URL }}images/stats/{{ stats }}_{{ svg }}.svg" target="_blank" rel="noopener">SVG <img src={{ MEDIA_URL}}images/link.png width="16" height="16" alt="&gt;&gt;"></a>
   </div>
-  {% endfor %}
-
-  {% if stats == "scripts" %}
-  <pre>{{ scripts_downloads }}</pre>
-  {% endif %}
-
-  {% trans "Charts built with" %}
-  <a href="https://github.com/flashcode/gitchart" target="_blank" rel="noopener">gitchart <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt=">>"></a>.
-
+  <hr>
 </div>
+{% endfor %}
+
+{% if stats == "scripts" %}
+<pre>{{ scripts_downloads }}</pre>
+{% endif %}
+
+{% trans "Charts built with" %}
+<a href="https://github.com/flashcode/gitchart" target="_blank" rel="noopener">gitchart <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;"></a>.
 
 {% endblock content %}

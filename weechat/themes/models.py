@@ -22,6 +22,7 @@
 
 import gzip
 from hashlib import md5
+from io import open
 from os import chdir, listdir, path
 import re
 import tarfile
@@ -33,6 +34,17 @@ from django.db import models
 from django.db.models.signals import post_save, post_delete
 from django.utils.translation import gettext_lazy
 
+from weechat.common.forms import (
+    CharField,
+    ChoiceField,
+    EmailField,
+    FileField,
+    TestField,
+    Html5EmailInput,
+    Form,
+    getxmlline,
+    getjsonline,
+)
 from weechat.common.path import files_path_join
 from weechat.download.models import Release
 
@@ -58,9 +70,12 @@ class Theme(models.Model):
     added = models.DateTimeField()
     updated = models.DateTimeField()
 
-    def __unicode__(self):
+    def __str__(self):
         return '%s - %s (%s, %s)' % (self.name, self.author, self.version,
                                      self.added)
+
+    def __unicode__(self):  # python 2.x
+        return self.__str__()
 
     def short_name(self):
         """Return short name (without extension)."""
@@ -81,16 +96,14 @@ class Theme(models.Model):
         filename = files_path_join('themes', 'html',
                                    path.basename('%s.html' % self.name))
         if path.isfile(filename):
-            with open(filename, 'rb') as _file:
+            with open(filename, 'r', encoding='utf-8') as _file:
                 content = _file.read()
             return content
         return ''
 
     def desc_i18n(self):
         """Return translated description."""
-        if self.desc:
-            return gettext_lazy(self.desc.encode('utf-8'))
-        return ''
+        return gettext_lazy(self.desc) if self.desc else ''
 
     def build_url(self):
         """Return URL to the theme."""
@@ -117,56 +130,46 @@ class Theme(models.Model):
         ordering = ['-added']
 
 
-class TestField(forms.CharField):
-    """Anti-spam field in forms."""
-    def clean(self, value):
-        if not value:
-            raise forms.ValidationError(
-                gettext_lazy('This field is required.'))
-        if value.lower() != 'no':
-            raise forms.ValidationError(
-                gettext_lazy('This field is required.'))
-        return value
-
-
-class ThemeFormAdd(forms.Form):
+class ThemeFormAdd(Form):
     """Form to add a theme."""
     required_css_class = 'required'
-    themefile = forms.FileField(
+    themefile = FileField(
         label=gettext_lazy('File'),
-        help_text=gettext_lazy('the theme'),
-        widget=forms.FileInput(attrs={'size': '50', 'autofocus': True}),
+        help_text=gettext_lazy('The theme.'),
+        widget=forms.FileInput(attrs={'autofocus': True}),
     )
-    description = forms.CharField(
+    description = CharField(
         required=False,
         max_length=MAX_LENGTH_DESC,
         label=gettext_lazy('Description'),
-        help_text=gettext_lazy('optional'),
-        widget=forms.TextInput(attrs={'size': '60'}),
     )
-    author = forms.CharField(
+    author = CharField(
         max_length=MAX_LENGTH_AUTHOR,
         label=gettext_lazy('Your name or nick'),
+        help_text=gettext_lazy('Used for themes page.'),
     )
-    mail = forms.EmailField(
+    mail = EmailField(
         max_length=MAX_LENGTH_MAIL,
         label=gettext_lazy('Your e-mail'),
-        help_text=gettext_lazy('no spam, never displayed on site'),
-        widget=forms.TextInput(attrs={'size': '40'}),
+        help_text=gettext_lazy('No spam, never displayed.'),
+        widget=Html5EmailInput(),
     )
-    comment = forms.CharField(
+    comment = CharField(
         required=False,
         max_length=1024,
         label=gettext_lazy('Comments'),
-        help_text=gettext_lazy('optional, not displayed'),
+        help_text=gettext_lazy('Not displayed.'),
         widget=forms.Textarea(attrs={'rows': '3'}),
     )
     test = TestField(
         max_length=64,
         label=gettext_lazy('Are you a spammer?'),
-        help_text=gettext_lazy('enter "no" if you are not a spammer'),
-        widget=forms.TextInput(attrs={'size': '10'}),
+        help_text=gettext_lazy('Enter "no" if you are not a spammer.'),
     )
+
+    def __init__(self, *args, **kwargs):
+        super(ThemeFormAdd, self).__init__(*args, **kwargs)
+        self.label_suffix = ''
 
     def clean_themefile(self):
         """Check if theme file is valid."""
@@ -212,45 +215,44 @@ def get_theme_choices():
         return []
 
 
-class ThemeFormUpdate(forms.Form):
+class ThemeFormUpdate(Form):
     """Form to update a theme."""
     required_css_class = 'required'
-    theme = forms.ChoiceField(
+    theme = ChoiceField(
         choices=[],
         label=gettext_lazy('Theme'),
         widget=forms.Select(attrs={'autofocus': True}),
     )
-    themefile = forms.FileField(
+    themefile = FileField(
         label=gettext_lazy('File'),
-        help_text=gettext_lazy('the theme'),
-        widget=forms.FileInput(attrs={'size': '50'}),
+        help_text=gettext_lazy('The theme.'),
     )
-    author = forms.CharField(
+    author = CharField(
         max_length=MAX_LENGTH_AUTHOR,
         label=gettext_lazy('Your name or nick'),
     )
-    mail = forms.EmailField(
+    mail = EmailField(
         max_length=MAX_LENGTH_MAIL,
         label=gettext_lazy('Your e-mail'),
-        help_text=gettext_lazy('no spam, never displayed on site'),
-        widget=forms.TextInput(attrs={'size': '40'}),
+        help_text=gettext_lazy('No spam, never displayed on site.'),
+        widget=Html5EmailInput(),
     )
-    comment = forms.CharField(
+    comment = CharField(
         required=False,
         max_length=1024,
         label=gettext_lazy('Comments'),
-        help_text=gettext_lazy('optional, not displayed'),
+        help_text=gettext_lazy('Not displayed.'),
         widget=forms.Textarea(attrs={'rows': '3'}),
     )
     test = TestField(
         max_length=64,
         label=gettext_lazy('Are you a spammer?'),
-        help_text=gettext_lazy('enter "no" if you are not a spammer'),
-        widget=forms.TextInput(attrs={'size': '10'}),
+        help_text=gettext_lazy('Enter "no" if you are not a spammer.'),
     )
 
     def __init__(self, *args, **kwargs):
         super(ThemeFormUpdate, self).__init__(*args, **kwargs)
+        self.label_suffix = ''
         self.fields['theme'].choices = get_theme_choices()
 
     def clean_themefile(self):
@@ -322,8 +324,8 @@ def handler_theme_changed(sender, **kwargs):
                         elif key.startswith('desc'):
                             value = escape(value)
                     strvalue = '%s' % value
-                    xml += '    %s\n' % xml_value(key, strvalue)
-                    json += '    %s\n' % json_value(key, strvalue)
+                    xml += getxmlline(key, strvalue)
+                    json += getjsonline(key, strvalue)
             # FIXME: use the "Host" from request, but...
             # request is not available in this handler!
             strvalue = 'https://weechat.org/%s' % theme.build_url()[1:]
@@ -336,8 +338,8 @@ def handler_theme_changed(sender, **kwargs):
 
     # create themes.xml
     filename = files_path_join('themes.xml')
-    with open(filename, 'w') as _file:
-        _file.write(xml.encode('utf-8'))
+    with open(filename, 'w', encoding='utf-8') as _file:
+        _file.write(xml)
 
     # create themes.xml.gz
     with open(filename, 'rb') as _f_in:
@@ -347,8 +349,8 @@ def handler_theme_changed(sender, **kwargs):
 
     # create themes.json
     filename = files_path_join('themes.json')
-    with open(filename, 'w') as _file:
-        _file.write(json.encode('utf-8'))
+    with open(filename, 'w', encoding='utf-8') as _file:
+        _file.write(json)
 
     # create themes.json.gz
     with open(filename, 'rb') as _f_in:

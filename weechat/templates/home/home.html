@@ -2,146 +2,178 @@
 
 {% load i18n %}
 
-{% block css %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/home.css" media="screen" title="Normal">{% endblock %}
 {% block menu %}home{% endblock %}
 
 {% block content %}
 
-<table class="table-2col">
-  <tr>
-
-    {% if max_info or max_event %}
-    <td class="home-bloc col1">
-
-      <h2>{% trans "About WeeChat" %}</h2>
-
-      <p>
-        {% trans "WeeChat is a fast, light and extensible chat client." %}
-        {% trans "It runs on many platforms like Linux, Unix, BSD, GNU Hurd, Mac OS&nbsp;X and Windows (Bash/Ubuntu and Cygwin)." %}
-      </p>
-
-      {% trans "WeeChat is:" %}
-      <ul class="list">
-        <li>{% trans "<strong>modular</strong>: a lightweight core with optional plugins" %}</li>
-        <li>{% trans "<strong>multi-protocols architecture</strong> (mainly IRC)" %}</li>
-        <li>{% trans "<strong>extensible</strong> with C, Python, Perl, Ruby, Lua, Tcl, Scheme, Javascript and PHP" %}</li>
-        <li>{% trans "<strong>fully documented</strong> and translated into several languages" %}</li>
-        <li>{% trans "<strong>a free program</strong> released under the GPLv3 license" %}</li>
-        <li>{% trans "<strong>an active project</strong> with a large community for scripts" %}.</li>
-      </ul>
-
-      <p>
-        {% trans "Latest stable version of WeeChat is" %} <span class="stable">{{ release_stable.version }}</span>,
-        {% trans "released on" %} <span class="dateversion">{{ release_stable.date_l10n }}</span>.
-      </p>
-      {% if release_stable.security_issues_fixed > 0 %}
-      <p>
-        {% url 'download_security' as download_security_url %}
-        {% if release_stable.security_issues_fixed == 1 %}
-          {% blocktrans %}<strong>Important:</strong> this release fixes a <a href="{{ download_security_url }}">vulnerability</a>.{% endblocktrans %}
-        {% else %}
-          {% blocktrans with release_stable.security_issues_fixed as count_issues_fixed %}<strong>Important:</strong> this release fixes <a href="{{ download_security_url }}">{{ count_issues_fixed }} vulnerabilities</a>.{% endblocktrans %}
+<div class="row justify-content-center mb-3 pb-3 mt-lg-4 mb-lg-5 py-lg-5 home-container">
+  <div class="col-12 col-lg-auto text-center">
+    <img src="{{ MEDIA_URL }}images/weechat_logo_large.png" class="img-fluid" alt="WeeChat">
+  </div>
+  <div class="col-12 col-lg-6 text-center">
+    <h2>{% trans "WeeChat, the extensible chat client." %}</h2>
+    <p class="h3 my-3">
+      {% trans "Fast" %} &mdash; {% trans "Light" %} &mdash; {% trans "Free software" %}
+    </p>
+    <div class="row justify-content-center">
+      <div class="col-auto ml-3 px-0">
+        <a href="{% url 'download' %}" class="btn btn-lg btn-primary mt-4 mb-1 px-3 px-lg-5">
+          {% include "svg/download.html" %} {% trans "Download" %}
+        </a>
+        {% if release_stable %}
+        <div class="text-muted">v{{ release_stable.version }}, {{ release_stable.date_l10n }}</div>
         {% endif %}
-        {% trans "It is recommended to upgrade from any older version to this one." %}
-      </p>
-      {% endif %}
-
-      <div class="button">
-        <a href="{% url 'about_features' %}">{% trans "Features" %}&nbsp;&rsaquo;&rsaquo; </a>
-        <a href="{% url 'download' %}" class="download">{% trans "Download" %}&nbsp;&rsaquo;&rsaquo; </a>
       </div>
-
-      <h2>{% trans "Follow and get involved!" %}</h2>
-
-      <p>
-        {% trans "You can follow latest WeeChat developments on:" %}
-        <br>
-        <a href="https://diasp.eu/u/weechat" target="_blank" rel="noopener">
-          <img src="{{ MEDIA_URL }}images/diaspora.png" class="follow" alt="[Diaspora]" title="Diaspora">
+      <div class="col-auto ml-3 px-0">
+        <a href="{% url 'home_news' %}" class="btn btn-lg btn-secondary mt-4 mb-1 px-3 px-lg-5 js-scroll">
+          {% include "svg/megaphone.html" %} {% trans "News" %}
         </a>
-        <a href="https://plus.google.com/+WeeChat" target="_blank" rel="noopener">
-          <img src="{{ MEDIA_URL }}images/google_plus.png" class="follow" alt="[Google+]" title="Google+">
-        </a>
-        <a href="https://twitter.com/WeeChatClient" target="_blank" rel="noopener">
-          <img src="{{ MEDIA_URL }}images/twitter.png" class="follow" alt="Twitter" title="Twitter">
-        </a>
-        <a href="https://hostux.social/@weechat" target="_blank" rel="noopener">
-          <img src="{{ MEDIA_URL }}images/mastodon.png" class="follow" alt="Mastodon" title="Mastodon">
-        </a>
-        <a href="https://weechat.org/blog/" target="_blank" rel="noopener">
-          <img src="{{ MEDIA_URL }}images/dotclear.png" class="follow" alt="[{% trans "Devel blog" %}]" title="{% trans "Devel blog" %}">
-        </a>
-        <a href="{% url 'dev_roadmap' %}">
-          <img src="{{ MEDIA_URL }}images/favicon.png" class="follow" alt="[{% trans "Roadmap" %}]" title="{% trans "Roadmap" %}">
-        </a>
-      </p>
-
-      {% trans "You can help the WeeChat project in many ways:" %}
-      <ul class="list">
-        <li>{% trans "<strong>translation</strong>: software, documentation and this web site" %}</li>
-        <li>{% trans "<strong>code</strong>: tests, bug reports, ideas for new features and patches" %}</li>
-        <li>{% trans "<strong>donation</strong>: any contribution is appreciated and important for motivation" %}.</li>
-      </ul>
-
-      <div class="button">
-        <a href="{% url 'about_donate' %}" class="donation">{% trans "Make a donation" %}&nbsp;&rsaquo;&rsaquo; </a>
       </div>
+    </div>
+  </div>
+</div>
 
-    </td>
-    <td class="home-bloc col2">&nbsp;</td>
-    {% endif %}
+<div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-container container-bg">
+  <div class="col-12 col-lg-5 my-lg-5 mx-lg-4">
+    <h3>Powerful, customizable.</h3>
+    <p class="my-3">
+      {% trans "Full-featured IRC plugin: multi-servers, proxy support, IPv6, SASL authentication, nicklist, DCC, and many other features." %}
+    </p>
+    <a href="{% url 'about_features' %}" class="btn btn-lg btn-success mt-4 mr-3 px-3 px-lg-5">
+      {% include "svg/checklist.html" %} {% trans "Features" %}
+    </a>
+    <a href="{% url 'about_screenshots' %}" class="btn btn-lg btn-info mt-4 mr-3 px-3 px-lg-5">
+      {% include "svg/camera.html" %} {% trans "Screenshots" %}
+    </a>
+  </div>
+  <div class="col-12 col-lg-auto my-4 my-lg-5 mx-lg-4">
+    <img src="{{ MEDIA_URL }}images/ft_irc.png" class="img-fluid rounded shadow" alt="IRC">
+  </div>
+</div>
 
-    <td class="home-bloc{% if max_info or max_event %} col3{% endif %}">
+<div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-container">
+  <div class="col-12 col-lg-auto order-2 order-lg-1 my-4 my-lg-5 mx-lg-4">
+    <img src="{{ MEDIA_URL }}images/ft_scripts.png" class="img-fluid rounded shadow" alt="Scripts">
+  </div>
+  <div class="col-12 col-lg-5 order-1 order-lg-2 my-lg-5 mx-lg-4">
+    <h3>{% trans "Innovative features." %}</h3>
+    <p class="my-3">
+      {% trans "256 colors, horizontal and vertical splits, smart filtering, customizable bars and much more!" %}
+      <br><br>
+      {% trans "8 scripting languages supported with a built-in scripts manager." %}
+    </p>
+    <a href="{% url 'scripts' %}" class="btn btn-lg btn-primary mt-4 mr-3 px-3 px-lg-5">
+      {% include "svg/package.html" %} {% trans "Scripts" %}
+    </a>
+    {% comment %}
+    <a href="{% url 'themes' %}" class="btn btn-lg btn-secondary mt-4 mr-3 px-3 px-lg-5">
+      {% include "svg/paintcan.html" %} {% trans "Themes" %}
+    </a>
+    {% endcomment %}
+  </div>
+</div>
 
-      {% if max_info %}
-        <h2>{% if max_info %}<a href="{% url 'home_news' %}" class="more">{% trans "More" %} &rsaquo;&rsaquo;</a>{% endif %}{% trans "Latest news" %}</h2>
-        <div class="news">
-          <table>
-            {% for info in info_list %}
-            <tr>
-              <th>{{ info.date_l10n }}</th>
-              <td><a href="{% url 'home_info_id_title' info.id info.date_title_url %}">{{ info.title_i18n }}</a></td>
-            </tr>
-            {% endfor %}
-          </table>
-        </div>
-      {% else %}
-        {% for info in info_list %}
-          <h2><a href="{% url 'home_info_id_title' info.id info.date_title_url %}">{{ info.title_i18n }}</a> <span class="date">({{ info.date_l10n }})</span></h2>
-          {% if info.text %}{% autoescape off %}{{ info.text_i18n|linebreaks }}{% endautoescape %}{% endif %}
-          <br>
-        {% endfor %}
-      {% endif %}
-
-      {% if max_event %}
-      <h2>{% if max_event %}<a href="{% url 'home_events' %}" class="more">{% trans "More" %} &rsaquo;&rsaquo;</a>{% endif %}{% trans "Upcoming events" %}</h2>
-      <div class="news">
-        <table>
-          {% for event in event_list %}
-          <tr>
-            <th>{{ event.date_l10n }}</th>
-            <td><a href="{% url 'home_event_id_title' event.id event.date_title_url %}">{{ event.title_i18n }}</a></td>
-          </tr>
-          {% endfor %}
-        </table>
-      </div>
-      {% else %}
-        {% for event in event_list %}
-          <h2><a href="{% url 'home_event_id_title' event.id event.date_title_url %}">{{ event.title_i18n }}</a> <span class="date">({{ event.date_l10n }})</span></h2>
-          {% if event.text %}{% autoescape off %}{{ event.text_i18n|linebreaks }}{% endautoescape %}{% endif %}
-          <br>
-        {% endfor %}
-      {% endif %}
-      {% if not max_info and not max_event %}
+<div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-container container-bg">
+  <div class="col-12 col-lg-5 my-lg-5 mx-lg-4">
+    <h3>{% trans "Remote interfaces." %}</h3>
+    <p class="my-3">
+      {% trans "Tired of your terminal?" %}
       <br>
-      <div class="button">
-        <a href="{% url 'home' %}" class="big" title="Back to home">&lsaquo;&lsaquo;&nbsp;{% trans "Back to home" %}</a>
+      {% trans "Connect to your WeeChat from your browser, Android, Qt or even Emacs!" %}
+    </p>
+    <a href="{% url 'about_interfaces' %}" class="btn btn-lg btn-success mt-4 mr-3 px-3 px-lg-5">
+      {% include "svg/desktop.html" %} {% trans "Interfaces" %}
+    </a>
+    <a href="{% url 'about_screenshots_app' app='relay' %}" class="btn btn-lg btn-info mt-4 mr-3 px-3 px-lg-5">
+      {% include "svg/camera.html" %} {% trans "Screenshots" %}
+    </a>
+  </div>
+  <div class="col-12 col-lg-auto my-4 my-lg-5 mx-lg-4">
+    <img src="{{ MEDIA_URL }}images/ft_android.png" class="img-fluid rounded shadow" alt="Android">
+  </div>
+</div>
+
+<div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-container">
+  <div class="col-12 col-lg-auto order-2 order-lg-1 my-4 my-lg-5 mx-lg-4">
+    <img src="{{ MEDIA_URL }}images/ft_doc.png" class="img-fluid rounded border shadow2" alt="Documentation">
+  </div>
+  <div class="col-12 col-lg-5 order-1 order-lg-2 my-lg-5 mx-lg-4">
+    <h3>{% trans "Documentation and support." %}</h3>
+    <p class="my-3">
+      {% trans "Translations available in several languages, comprehensive documentation." %}
+      <br><br>
+      {% trans "Excellent support for users." %}
+    </p>
+    <a href="{% url 'doc' %}" class="btn btn-lg btn-primary mt-4 mr-3 px-3 px-lg-5">
+      {% include "svg/book.html" %} {% trans "Documentation" %}
+    </a>
+    <a href="{% url 'about_support' %}" class="btn btn-lg btn-secondary mt-4 ml-0 mr-3 px-3 px-lg-5">
+      {% include "svg/discussion.html" %} {% trans "Support" %}
+    </a>
+  </div>
+</div>
+
+<div class="d-lg-none"><hr></div>
+
+<div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-container container-bg">
+  <div class="col-12 col-lg-5 my-lg-5 mx-lg-4">
+    <h3>{% trans "Help the project." %}</h3>
+    <p class="my-3">
+      {% trans "You can help the WeeChat project in many ways:" %}
+      <ul>
+        <li>{% trans "translation: software, documentation and this web site" %}</li>
+        <li>{% trans "code: tests, bug reports, ideas for new features and patches" %}</li>
+        <li>{% trans "donation: any contribution is appreciated and important for motivation." %}</li>
+      </ul>
+    </p>
+    <a href="{% url 'donate' %}" class="btn btn-lg btn-success mt-4 mr-3 px-3 px-lg-5">
+      {% include "svg/heart.html" %} {% trans "Make a donation" %}
+    </a>
+  </div>
+  <div class="col-12 col-lg-auto my-4 my-lg-5 mx-lg-4">
+    <img src="{{ MEDIA_URL }}images/github_thumbsup.png" class="img-fluid rounded border shadow" alt="github">
+  </div>
+</div>
+
+<div class="d-lg-none"><hr></div>
+
+<div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-container" id="news">
+  <div class="col-12 col-lg-4 my-4 my-lg-0">
+    <h3 class="pb-2 border-bottom">{% trans "Latest news" %}</h3>
+    {% for info in info_list %}
+    <div class="row pt-2 pb-3">
+      <div class="col-12 col-md-3">
+        {{ info.date_l10n }}
       </div>
-      {% endif %}
-
-    </td>
-
-  </tr>
-</table>
+      <div class="col-12 col-md-9">
+        <p class="my-0">
+          <a href="{% url 'home_info_id_title' info.id info.date_title_url %}">{{ info.title_i18n }}</a>
+        </p>
+      </div>
+    </div>
+    {% endfor %}
+    <a href="{% url 'home_news' %}" class="btn btn-lg btn-primary mt-3 px-3 px-lg-5">
+      {% include "svg/megaphone.html" %} {% trans "All news" %}
+    </a>
+  </div>
+  <div class="col-12 col-lg-4 my-4 my-lg-0">
+    <h3 class="pb-2 border-bottom">{% trans "Upcoming events" %}</h3>
+    {% for event in event_list %}
+    <div class="row pt-2 pb-3">
+      <div class="col-12 col-md-3">
+        {{ event.date_l10n }}
+      </div>
+      <div class="col-12 col-md-9">
+        <p class="my-0">
+          <a href="{% url 'home_info_id_title' event.id event.date_title_url %}">{{ event.title_i18n }}</a>
+        </p>
+      </div>
+    </div>
+    {% endfor %}
+    <a href="{% url 'home_events' %}" class="btn btn-lg btn-primary mt-3 px-3 px-lg-5">
+      {% include "svg/calendar.html" %} {% trans "All events" %}
+    </a>
+  </div>
+</div>
 
 {% endblock content %}

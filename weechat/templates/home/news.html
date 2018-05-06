@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block menu %}home{% endblock %}
+
+{% block content %}
+
+<div class="mx-4">
+
+  {% if not info_id %}
+  <ul class="nav nav-tabs">
+    <li class="nav-item"><a class="nav-link{% if page_name == "news" %} active{% endif %}" href="{% url 'home_news' %}">{% trans "Latest news" %}</a></li>
+    <li class="nav-item"><a class="nav-link{% if page_name == "events" %} active{% endif %}" href="{% url 'home_events' %}">{% trans "Upcoming events" %}</a></li>
+  </ul>
+  {% endif %}
+
+  {% for info in infos %}
+  <h4 class="mb-3">
+    <a href="{% url 'home_info_id_title' info.id info.date_title_url %}">{{ info.title_i18n }}</a>
+    <small class="text-muted">({{ info.date_l10n }})</small>
+  </h4>
+
+  <div class="pb-2 mb-2">
+    {% if info.text %}{% autoescape off %}{{ info.text_i18n|linebreaks }}{% endautoescape %}{% endif %}
+  </div>
+  {% if not forloop.last %}<hr>{% endif %}
+  {% endfor %}
+
+  {% if not info_id %}
+  <nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+
+      {% if infos.has_previous %}
+      <li class="page-item"><a class="page-link" href="?pagesize={{ pagesize }}&page={{ infos.previous_page_number }}">{% trans "Previous" context "Previous page" %}</a></li>
+      {% else %}
+      <li class="page-item disabled"><span class="page-link">{% trans "Previous" context "Previous page" %}</span></li>
+      {% endif %}
+
+      {% if smart_page_range.0 > 1 %}
+      <li class="page-item"><a class="page-link" href="?pagesize={{ pagesize }}&page=1">1</a></li>
+      {% endif %}
+      {% if smart_page_range.0 > 2 %}
+      <li class="page-item disabled"><span class="page-link">...</span></li>
+      {% endif %}
+
+      {% for page in smart_page_range %}
+        {% if page == infos.number %}
+        <li class="page-item active"><span class="page-link">{{ page }}</span></li>
+        {% else %}
+        <li class="page-item"><a class="page-link" href="?pagesize={{ pagesize }}&page={{ page }}">{{ page }}</a></li>
+        {% endif %}
+      {% endfor %}
+
+      {% if smart_page_range|last < infos.paginator.num_pages|add:"-1" %}
+      <li class="page-item disabled"><span class="page-link">...</span></li>
+      {% endif %}
+      {% if smart_page_range|last < infos.paginator.num_pages %}
+      <li class="page-item"><a class="page-link" href="?pagesize={{ pagesize }}&page={{ infos.paginator.num_pages }}">{{ infos.paginator.num_pages }}</a></li>
+      {% endif %}
+
+      {% if infos.has_next %}
+      <li class="page-item"><a class="page-link" href="?pagesize={{ pagesize }}&page={{ infos.next_page_number }}">{% trans "Next" context "Next page" %}</a></li>
+      {% else %}
+      <li class="page-item disabled"><span class="page-link">{% trans "Next" context "Next page" %}</span></li>
+      {% endif %}
+
+    </ul>
+  </nav>
+  {% endif %}
+
+  {% if info_id %}
+    {% if event %}
+    <a href="{% url 'home_events' %}" class="btn btn-outline-primary mt-3 mr-3">{% trans "Back to events" %}</a>
+    {% else %}
+    <a href="{% url 'home_news' %}" class="btn btn-outline-primary mt-3 mr-3">{% trans "Back to news" %}</a>
+    {% endif %}
+  {% endif %}
+
+  <a href="{% url 'home' %}" class="btn btn-outline-primary mt-3">{% trans "Back to home" %}</a>
+
+</div>
+
+{% endblock content %}

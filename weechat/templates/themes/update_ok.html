@@ -2,7 +2,7 @@
 
 {% load i18n %}
 
-{% block menu2_update %}selected{% endblock %}
+{% block menu2_update %}active{% endblock %}
 
 {% block content %}
 
@@ -14,6 +14,6 @@
   {% trans "Thank you for your patience." %}
 </div>
 
-<a href="{% url 'themes' %}"><img src="{{ MEDIA_URL }}images/arrow_left_green.png" alt="&lt;&lt;"> {% trans "Back to themes" %}</a>
+<a href="{% url 'themes' %}">{% trans "Back to themes" %}</a>
 
 {% endblock content %}

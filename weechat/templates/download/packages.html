@@ -2,9 +2,9 @@
 
 {% load i18n %}{% load localdate %}
 
-{% block menu2_stable %}{% if version == "stable" %}selected{% endif %}{% endblock %}
-{% block menu2_devel %}{% if version == "devel" %}selected{% endif %}{% endblock %}
-{% block menu2_old %}{% if version == "old" %}selected{% endif %}{% endblock %}
+{% block menu2_stable %}{% if version == "stable" %}active{% endif %}{% endblock %}
+{% block menu2_devel %}{% if version == "devel" %}active{% endif %}{% endblock %}
+{% block menu2_old %}{% if version == "old" %}active{% endif %}{% endblock %}
 
 {% block content %}
 
@@ -12,228 +12,155 @@
 
 {% if package_list %}
 
-  <div class="download">
+{% if version == "stable" and release_progress.done >= 0 and release_progress.pct < 100 %}
+<div class="alert alert-success">
+  {% url 'download_release' as download_release_url %}
+  {% blocktrans %}<strong>A new release is under construction!</strong> Follow the progress on <a href="{{ download_release_url }}">this page</a>.{% endblocktrans %}
+</div>
+{% endif %}
 
-    {% if version == "stable" %}
-      {% if release_progress.done >= 0 and release_progress.pct < 100 %}
-        <div class="successbox">
-          {% url 'download_release' as download_release_url %}
-          {% blocktrans %}<strong>A new release is under construction!</strong> Follow the progress on <a href="{{ download_release_url }}">this page</a>.{% endblocktrans %}
-        </div>
-      {% endif %}
-    {% endif %}
+{% if version == "old" %}
+<div class="alert alert-warning">
+  {% trans "<strong>Important:</strong> it is not recommended to download or use any of these old versions: they are less stable than the latest released version, and may contain security vulnerabilities fixed in later versions." %}
+</div>
+{% endif %}
 
-    {% if version == "devel" %}
-      <div class="infobox">
-        {% trans "<strong>Important:</strong> this version may be unstable or it may not compile, you're warned!" %}
-      </div>
-    {% endif %}
+{% regroup package_list by version as packages_by_version %}
+{% for package_version in packages_by_version %}
 
-    {% if version == "old" %}
-      <div class="warningbox">
-        {% trans "<strong>Important:</strong> it is not recommended to download or use any of these old versions: they are less stable than the latest released version, and may contain security vulnerabilities fixed in later versions." %}
-      </div>
-    {% endif %}
-
-    {% regroup package_list by version as packages_by_version %}
-    {% for package_version in packages_by_version %}
-      {% if not forloop.first %}<div class="dlsep"></div>{% endif %}
-      <div class="dltitle">
-        {% trans "Version" %}
-        {% if package_version.grouper.description %}
-          {{ package_version.grouper.description }}
-        {% else %}
-          {{ package_version.grouper.version }}
-        {% endif %}
-        <span class="dldate">
-          ({% if version == "devel" %}{% trans "next stable version" %}: &asymp; {% endif %}{{ package_version.grouper.date_l10n }})
-        </span>
-      </div>
-      {% if package_version.grouper.securityfix %}
-        <div class="errorbox">
-          {% url 'download_security' as download_security_url %}
-          {% with version=package_version.grouper.version %}
-            {% blocktrans %}<strong>Warning:</strong> the version {{ version }} has one or more <a href="{{ download_security_url }}">vulnerabilities</a>, it is not recommended to use it.{% endblocktrans %}
-          {% endwith %}
-          {% trans "Vulnerabilities fixed in versions:" %}
-          {% for fixed_version in package_version.grouper.security_fixed_versions %}{% if not forloop.first %}, {% endif %}<a href="{% url 'download_version' version=fixed_version %}">{{ fixed_version }}</a>{% endfor %}.
-        </div>
+<div class="card mb-4">
+  <div class="card-header">
+    <h4 class="my-0">
+      {% trans "Version" %}
+      {% if package_version.grouper.description %}
+      {{ package_version.grouper.description }}
       {% else %}
-        {% if version != "devel" and version != "old" and package_version.grouper.security_issues_fixed > 0 %}
-        <div class="successbox">
-          {% url 'download_security' as download_security_url %}
-          {% if package_version.grouper.security_issues_fixed == 1 %}
-            {% blocktrans %}<strong>Important:</strong> this release fixes a <a href="{{ download_security_url }}">vulnerability</a>.{% endblocktrans %}
-          {% else %}
-            {% blocktrans with package_version.grouper.security_issues_fixed as count_issues_fixed %}<strong>Important:</strong> this release fixes <a href="{{ download_security_url }}">{{ count_issues_fixed }} vulnerabilities</a>.{% endblocktrans %}
-          {% endif %}
-          {% trans "It is recommended to upgrade from any older version to this one." %}
-        </div>
-        {% endif %}
+      {{ package_version.grouper.version }}
       {% endif %}
-      <div class="dlsub">
-        <div class="dlsubtitle">{% trans "Packages" %}</div>
-        {% for package in package_version.list %}
-        <div class="dlitem">
-          <span class="dltype">
-            {{ package.type.description }}{% if package.text %}({{ package.text }}){% endif %}
-          </span>
-          <img src="{{ MEDIA_URL }}images/dl_{{ package.type.icon }}.png" class="dlicon" alt="{{ package.type.icon }}">
-          {% if package.filename %}
-            {% if package.exists %}
-              <a href="/files{{ package.type.htmldir }}/{{ package.filename }}">{{ package.filename }}</a>
-              <span class="dlinfopackage">
-                ({{ package.filesize|filesizeformat }}{% if package.display_time %}, {{ package.filedate|localdate }} {{ package.filedate|date:"H:i" }}{% endif %}{% if package.has_checksum %}, <a href="{% url 'package_checksums' package.version.version package.checksum_type %}" target="_blank" rel="noopener" title="{% trans "Checksum" %} ({{ package.checksum_type }}): {{ package.checksum }}">{{ package.checksum_type }}</a>{% endif %}{% if package.has_gpg_sig %}, <a href="/files{{ package.type.htmldir }}/{{ package.filename }}.asc" target="_blank" rel="noopener">gpg sig</a>{% endif %})
-              </span>
-            {% else %}
-              <span class="notfound">{{ package.filename }}</span>
-            {% endif %}
-          {% else %}
-            {% if package.directory %}
-              {% if package.exists %}
-                <a href="/files/{{ package.directory }}" target="_blank" rel="noopener"{% if not package.exists %} class="notfound"{% endif %}>{{ package.directory }}</a>
-                <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>">
-              {% else %}
-                <span class="notfound">{{ package.directory }}</span>
-              {% endif %}
-            {% else %}
-              {% if package.url %}
-                <a href="{{ package.url }}" target="_blank" rel="noopener">{{ package.url }}</a>
-                <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>">
-              {% else %}
-                {{ package.text }}
-              {% endif %}
-            {% endif %}
-          {% endif %}
-        </div>
-        {% endfor %}
-      </div>
-      <div class="dlsub">
-        <div class="dlsubtitle">{% trans "About release" %}</div>
-        <div class="dlitem">
-          <span class="dltype">{% trans "ChangeLog" %}</span>
-          <img src="{{ MEDIA_URL }}images/dl_doc.png" class="dlicon" alt="doc">
-          <a href="/files/changelog/ChangeLog-{{ package_version.grouper.version }}.html" target="_blank" rel="noopener">ChangeLog-{{ package_version.grouper.version }}.html</a>
-          <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>">
-        </div>
-        <div class="dlitem">
-          <span class="dltype">{% trans "Release notes" %}</span>
-          <img src="{{ MEDIA_URL }}images/dl_doc.png" class="dlicon" alt="doc">
-          <a href="/files/releasenotes/ReleaseNotes-{{ package_version.grouper.version }}.html" target="_blank" rel="noopener">ReleaseNotes-{{ package_version.grouper.version }}.html</a>
-          <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>">
-        </div>
-      </div>
-    {% endfor %}
-
-    {% if version != "old" %}
-      <div class="dlsub">
-        <div class="dlsubtitle">{% trans "Remote interfaces" %}</div>
-        <div class="dlitem">
-          <span class="dltype">HTML5</span>
-          <img src="{{ MEDIA_URL }}images/dl_html5.png" class="dlicon" alt="html5">
-          <a href="https://www.glowing-bear.org" target="_blank" rel="noopener">https://www.glowing-bear.org/</a>
-          <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>">
-        </div>
-        <div class="dlitem">
-          <span class="dltype">Qt</span>
-          <img src="{{ MEDIA_URL }}images/dl_qt.png" class="dlicon" alt="android">
-          {% if version == "devel" %}QWeeChat {% trans "(see above)" %}{% else %}<a href="{% url 'download_version' 'devel' %}">QWeeChat</a>{% endif %}
-        </div>
-        <div class="dlitem">
-          <span class="dltype">Android</span>
-          <img src="{{ MEDIA_URL }}images/dl_android.png" class="dlicon" alt="android">
-          <a href="https://github.com/ubergeek42/weechat-android" target="_blank" rel="noopener">https://github.com/ubergeek42/weechat-android</a>
-          <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>">
-        </div>
-        <div class="dlitem">
-          <span class="dltype">Emacs</span>
-          <img src="{{ MEDIA_URL }}images/dl_emacs.png" class="dlicon" alt="emacs">
-          <a href="https://github.com/the-kenny/weechat.el" target="_blank" rel="noopener">https://github.com/the-kenny/weechat.el</a>
-          <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>">
-        </div>
-        <div class="dlitem">
-          <span class="dltype">JavaScript</span>
-          <img src="{{ MEDIA_URL }}images/dl_web.png" class="dlicon" alt="web-js">
-          <a href="https://github.com/eirikb/weecloud" target="_blank" rel="noopener">https://github.com/eirikb/weecloud</a>
-          <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>">
-        </div>
-      </div>
+      <small class="text-muted">
+        ({% if version == "devel" %}{% trans "next stable version" %}: &asymp; {% endif %}{{ package_version.grouper.date_l10n }})
+      </small>
+    </h4>
+  </div>
+  <div class="card-body pb-2">
+    {% if version == "devel" %}
+    <p>
+      {% trans "<strong>Important:</strong> this version may be unstable or it may not compile, you're warned!" %}
+    </p>
     {% endif %}
+    {% if package_version.grouper.securityfix %}
+    <p class="text-danger">
+      {% url 'doc_security' as security_url %}
+      {% with version=package_version.grouper.version %}
+      {% blocktrans %}<strong>Warning:</strong> the version {{ version }} has one or more <a href="{{ security_url }}">vulnerabilities</a>, it is not recommended to use it.{% endblocktrans %}
+      {% endwith %}
+      {% trans "Vulnerabilities fixed in versions:" %}
+      {% for fixed_version in package_version.grouper.security_fixed_versions %}{% if not forloop.first %}, {% endif %}<a href="{% url 'download_version' version=fixed_version %}">{{ fixed_version }}</a>{% endfor %}.
+    </p>
+    {% elif version != "devel" and version != "old" and package_version.grouper.security_issues_fixed > 0 %}
+    <p class="text-success">
+      {% url 'doc_security' as security_url %}
+      {% if package_version.grouper.security_issues_fixed == 1 %}
+      {% blocktrans %}<strong>Important:</strong> this release fixes a <a href="{{ security_url }}">vulnerability</a>.{% endblocktrans %}
+    {% else %}
+      {% blocktrans with package_version.grouper.security_issues_fixed as count_issues_fixed %}<strong>Important:</strong> this release fixes <a href="{{ security_url }}">{{ count_issues_fixed }} vulnerabilities</a>.{% endblocktrans %}
+      {% endif %}
+      {% trans "It is recommended to upgrade from any older version to this one." %}
+    </p>
+    {% endif %}
+
+    <div class="row">
+      <div class="col-auto">
+        <a href="/files/changelog/ChangeLog-{{ package_version.grouper.version }}.html" target="_blank" rel="noopener">
+          {% trans "ChangeLog" %}
+          <img src="{{ MEDIA_URL }}images/link.png" alt="&gt;&gt;">
+        </a>
+      </div>
+      <div class="col-auto">
+        <a href="/files/releasenotes/ReleaseNotes-{{ package_version.grouper.version }}.html" target="_blank" rel="noopener">
+          {% trans "Release notes" %}
+          <img src="{{ MEDIA_URL }}images/link.png" alt="&gt;&gt;">
+        </a>
+      </div>
+    </div>
+
+    <h6>{% trans "Packages:" %}</h6>
+
+    <ul>
+    {% for package in package_version.list %}
+      <li>
+        {% if package.filename %}
+          {% if package.exists %}
+            <a href="/files{{ package.type.htmldir }}/{{ package.filename }}" title="{{ package.type.description }}">{{ package.filename }}</a>
+            <small class="text-muted">
+              ({{ package.filesize|filesizeformat }}{% if package.display_time %}, {{ package.filedate|localdate:"datetime" }}{% endif %}{% if package.has_checksum %}, <a href="{% url 'package_checksums' package.version.version package.checksum_type %}" target="_blank" rel="noopener" title="{% trans "Checksum" %} ({{ package.checksum_type|upper }}): {{ package.checksum }}">{{ package.checksum_type|upper }}</a>{% endif %}{% if package.has_gpg_sig %}, <a href="/files{{ package.type.htmldir }}/{{ package.filename }}.asc" target="_blank" rel="noopener" title="{% trans "GPG signature" %}">GPG</a>{% endif %})
+            </small>
+          {% else %}
+            <span class="text-muted" title="{{ package.type.description }}">{{ package.filename }}</span>
+          {% endif %}
+        {% elif package.directory %}
+          {% if package.exists %}
+            <a href="/files/{{ package.directory }}" target="_blank" rel="noopener"{% if not package.exists %} class="text-muted"{% endif %} title="{{ package.type.description }}">
+              {{ package.directory }}
+              <img src="{{ MEDIA_URL }}images/link.png" alt="&gt;&gt;">
+            </a>
+          {% else %}
+            <span class="text-muted" title="{{ package.type.description }}">{{ package.directory }}</span>
+          {% endif %}
+        {% else %}
+          {% if package.url %}
+            <a href="{{ package.url }}" target="_blank" rel="noopener">{{ package.url }}
+              <img src="{{ MEDIA_URL }}images/link.png" alt="&gt;&gt;">
+            </a>
+          {% else %}
+            {{ package.text }}
+          {% endif %}
+        {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
 
     {% if version != "devel" and version != "old" %}
-      <h3>{% trans "Checking the signatures" %}</h3>
-      <div class="dlsign">
-        <ul>
-          <li>
-            {% trans "Import the gpg key:" %}
-            <br><kbd>$ gpg --keyserver ha.pool.sks-keyservers.net --recv-keys A9AB5AB778FA5C3522FD0378F82F4B16DEC408F8</kbd>
-          </li>
-          <li>
-            {% trans "Display the fingerprint:" %}
-            <br><kbd>$ gpg --fingerprint A9AB5AB778FA5C3522FD0378F82F4B16DEC408F8</kbd>
-          </li>
-          <li>
-            {% trans "Check that the fingerprint is correct by asking to a developer on #weechat (chat.freenode.net)." %}
-          </li>
-          <li>
-            {% trans "Trust the key:" %}
-            <br>
-            <kbd>
-              $ gpg --edit-key A9AB5AB778FA5C3522FD0378F82F4B16DEC408F8
-              <br>
-              $ trust
-            </kbd>
-          </li>
-          <li>
-            {% trans "In directory with package + signature:" %}
-            <br><kbd>$ gpg --verify weechat-X.Y.Z.tar.xz.asc weechat-X.Y.Z.tar.xz</kbd>
-          </li>
-          <li>
-            {% trans "If the signature is OK you should see a message like this one:" %}
-            <br>
-            <kbd>
-              gpg: Signature made Sat 20 Oct 2012 07:36:35 PM CEST using RSA key ID DEC408F8
-              <br>
-              gpg: Good signature from "WeeChat (signing key) &lt;webmaster@weechat.org&gt;"
-            </kbd>
-          </li>
-        </ul>
-      </div>
-    {% endif %}
-    {% if version == "devel" %}
-      <div class="dlsub">
-        <div class="dlsubtitle">{% trans "Links" %}</div>
-        <div class="dlitem">
-          <span class="dltype">{% trans "Savannah page" %}</span>
-          <img src="{{ MEDIA_URL }}images/dl_savannah.png" class="dlicon" alt="savannah">
-          <a href="http://savannah.nongnu.org/projects/weechat" target="_blank" rel="noopener">http://savannah.nongnu.org/projects/weechat</a>
-          <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>">
-        </div>
-        <div class="dlitem">
-          <span class="dltype">{% trans "Git - sources" %}</span>
-          <img src="{{ MEDIA_URL }}images/dl_github.png" class="dlicon" alt="git">
-          <a href="https://github.com/weechat/weechat" target="_blank" rel="noopener">https://github.com/weechat/weechat</a>
-          <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>">
-        </div>
-        <div class="dlitem">
-          <span class="dltype">{% trans "Git - scripts" %}</span>
-          <img src="{{ MEDIA_URL }}images/dl_github.png" class="dlicon" alt="git">
-          <a href="https://github.com/weechat/scripts" target="_blank" rel="noopener">https://github.com/weechat/scripts</a>
-          <img src="{{ MEDIA_URL }}images/link.png" class="dllink" alt=">>">
-        </div>
-        <div class="dlitem">
-          <span class="dltype">{% trans "Git - clone" %}</span>
-          <img src="{{ MEDIA_URL }}images/dl_git.png" class="dlicon" alt="git">
-          git clone https://github.com/weechat/weechat.git
-        </div>
-      </div>
+    <h6>{% trans "Checking the signatures:" %}</h6>
+    <ul class="signatures mt-2">
+      <li>
+        {% trans "Import the gpg key:" %}
+        <pre><code>$ gpg --keyserver ha.pool.sks-keyservers.net --recv-keys A9AB5AB778FA5C3522FD0378F82F4B16DEC408F8</code></pre></li>
+      <li>
+        {% trans "Display the fingerprint:" %}
+        <pre><code>$ gpg --fingerprint A9AB5AB778FA5C3522FD0378F82F4B16DEC408F8</code></pre>
+      </li>
+      <li>
+        {% trans "Check that the fingerprint is correct by asking to a developer on #weechat (chat.freenode.net)." %}
+      </li>
+      <li>
+        {% trans "Trust the key:" %}
+        <pre><code>$ gpg --edit-key A9AB5AB778FA5C3522FD0378F82F4B16DEC408F8
+gpg> trust</code></pre>
+      </li>
+      <li>
+        {% trans "In directory with package + signature:" %}
+        <pre><code>$ gpg --verify weechat-{{ package_version.grouper.version }}.tar.xz.asc weechat-{{ package_version.grouper.version }}.tar.xz</code></pre>
+      </li>
+      <li>
+        {% trans "If the signature is OK you should see a message like this one:" %}
+        <pre><code>gpg: Signature made Sat 20 Oct 2012 07:36:35 PM CEST using RSA key ID DEC408F8
+gpg: Good signature from "WeeChat (signing key) &lt;webmaster@weechat.org&gt;"</code></pre>
+      </li>
+    </ul>
     {% endif %}
 
   </div>
+</div>
+
+{% endfor %}
+
 {% else %}
-  <div class="errorbox">
-    {% trans "Error: there is no version called" %} "{{ version }}"
-  </div>
+
+<div class="alert alert-danger">
+  {% trans "Error: there is no version called" %} "{{ version }}".
+</div>
+
 {% endif %}
 
 {% endblock content %}

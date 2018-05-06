@@ -3,24 +3,34 @@
 {% load i18n %}
 
 {% block css %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/pygments.css" media="screen" title="Normal">{% endblock %}
-{% block menu2_list %}selected{% endblock %}
+{% block menu2_list %}active{% endblock %}
 
 {% block content %}
 
 {{ block.super }}
 
 {% if htmlsource %}
-  <h2>{% trans "Theme" %}: {{ theme.name }}</h2>
 
-  <a href="{% url 'themes' %}"><img src="{{ MEDIA_URL }}images/arrow_left_green.png" alt="&lt;&lt;"> {% trans "Back to themes" %}</a> &nbsp; | &nbsp;
-  <a href="{{ theme.build_url }}"><img src="{{ MEDIA_URL }}images/dl_src.png" alt="Download"> {% trans "Download" %}</a>
+<h3>{% trans "Theme" %}: {{ theme.name }}</h3>
+
+<p>
+  {% trans "Added" %}: {% if theme.added %}{{ theme.added|date:"Y-m-d" }}{% endif %}{% if theme.updated and theme.added != theme.updated %}, {% trans "updated" %}: {{ theme.updated|date:"Y-m-d" }}{% endif %}.
+  <br>
+  <a href="{{ theme.build_url }}" class="btn btn-success my-3" download>{% trans "Download" %}</a>
+</p>
+
+<p>
   {{ htmlsource|safe }}
+</p>
+
 {% else %}
-  <div class="errorbox">
-    {% trans "Theme not found" %}
-    <br><br>
-    <a href="{% url 'themes' %}"><img src="{{ MEDIA_URL }}images/arrow_left_green.png" alt="&lt;&lt;"> {% trans "Back to themes" %}</a>
-  </div>
+
+<div class="alert alert-danger">
+  {% trans "Theme not found" %}
+  <br><br>
+  <a href="{% url 'themes' %}">{% trans "Back to themes" %}</a>
+</div>
+
 {% endif %}
 
 {% endblock content %}

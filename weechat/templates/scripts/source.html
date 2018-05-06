@@ -3,36 +3,41 @@
 {% load i18n %}
 
 {% block css %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/pygments.css" media="screen" title="Normal">{% endblock %}
-{% block menu2_list %}selected{% endblock %}
+{% block menu2_list %}active{% endblock %}
 
 {% block content %}
 
 {{ block.super }}
 
 {% if htmlsource %}
-  <h3>{% trans "Script" %}: {{ script.name_with_extension }}</h3>
 
-  <div class="scriptinfo">
-    <div class="download">
-      <a href="{{ script.build_url }}" download><img src="{{ MEDIA_URL }}images/dl_src.png" alt="Download"> {% trans "Download" %}</a>
-    </div>
-    <strong>{{ script.desc_i18n }}</strong>
-    <span class="requirements">
-      ({% trans "for WeeChat" %} {{ script.version_weechat_html|safe }}{% if script.requirements %}, {% trans "requires" %}: {{ script.requirements }}{% endif %})
-    </span>
-    <div class="extra">
-      {% trans "Author" %}: {{ script.author }}, {% trans "version" %} {{ script.version }}, {{ script.license }} &mdash;
-      {% trans "added" %}: {% if script.added %}{{ script.added|date:"Y-m-d" }}{% endif %}{% if script.updated %}{% if script.added != script.updated %}, {% trans "updated" %}: {{ script.updated|date:"Y-m-d" }}{% endif %}{% endif %}
-    </div>
-  </div>
+<h3>{% trans "Script" %}: {{ script.name_with_extension }}</h3>
 
+<p>
+  <strong>{{ script.desc_i18n }}</strong>
+  <small>
+    ({% trans "for WeeChat" %} {{ script.version_weechat_html|safe }}{% if script.requirements %}, {% trans "requires" %}: {{ script.requirements }}{% endif %})
+  </small>
+  <br>
+  {% trans "Author" %}: {{ script.author }} &mdash; {% trans "Version" %}: {{ script.version }} &mdash; {% trans "License" %}: {{ script.license }}.
+  <br>
+  {% trans "Added" %}: {% if script.added %}{{ script.added|date:"Y-m-d" }}{% endif %}{% if script.updated and script.added != script.updated %}, {% trans "updated" %}: {{ script.updated|date:"Y-m-d" }}{% endif %}.
+  <br>
+  <a href="{{ script.build_url }}" class="btn btn-success my-3" download>{% trans "Download" %}</a>
+</p>
+
+<p>
   {{ htmlsource|safe }}
+</p>
+
 {% else %}
-  <div class="errorbox">
-    {% trans "Script not found" %}
-    <br><br>
-    <a href="{% url 'scripts' %}"><img src="{{ MEDIA_URL }}images/arrow_left_green.png" alt="&lt;&lt;"> {% trans "Back to scripts" %}</a>
-  </div>
+
+<div class="alert alert-danger">
+  {% trans "Script not found" %}
+  <br><br>
+  <a href="{% url 'scripts' %}">{% trans "Back to scripts" %}</a>
+</div>
+
 {% endif %}
 
 {% endblock content %}

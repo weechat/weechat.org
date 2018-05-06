@@ -1,9 +1,9 @@
 {% extends "download/download.html" %}
 
-{% load i18n %}{% load localdate %}
+{% load i18n %}{% load humanize %}{% load localdate %}
 
 {% block subtitle %} :: debian{% endblock %}
-{% block menu2_debian %}selected{% endblock %}
+{% block menu2_debian %}active{% endblock %}
 
 {% block extrahead %}
 <script>
@@ -24,164 +24,222 @@ var deb_apt_cmds = [
 
 {{ block.super }}
 
-<div class="navbt" style="border-bottom: none">
-  <ul>
-    <li><a href="{% url 'download_debian_active' active='active' %}"{% if active == "active" %} class="selected"{% endif %}>{% trans "Active repositories" %}</a></li>
-    <li><a href="{% url 'download_debian_active' active='all'  %}"{% if active == "all" %} class="selected"{% endif %}>{% trans "All repositories" %}</a></li>
-  </ul>
-</div>
+<ul class="nav nav-tabs mt-4">
+  <li class="nav-item"><a class="nav-link{% if active == "active" %} active{% endif %}" href="{% url 'download_debian_active' active='active' %}">{% trans "Active repositories" %}</a></li>
+  <li class="nav-item"><a class="nav-link{% if active == "all" %} active{% endif %}" href="{% url 'download_debian_active' active='all'  %}">{% trans "All repositories" %}</a></li>
+</ul>
 
-<div class="infobox">
-  {% blocktrans %}<strong>Note:</strong> these packages are not Debian official packages; please <a href="#instructions"><strong>read instructions</strong></a> before using these repositories.{% endblocktrans %}
+<div id="accordion" class="mb-3">
+  <div class="card">
+    <div class="card-header" id="instructions">
+      {% trans "<strong>Important:</strong> these packages are not Debian official packages; please click and read instructions below before using these repositories." %}
+      <br>
+      <button class="btn btn-link m-0 p-0" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        {% trans "Installation instructions" %}
+      </button>
+    </div>
+    <div id="collapseOne" class="collapse" aria-labelledby="instructions" data-parent="#accordion">
+      <div class="card-body">
+        <h5 class="mt-0">{% trans "GPG key" %}</h5>
+        <p>
+          {% trans "Import the gpg key used to sign the repository:" %}
+          <pre><code>$ sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 11E9DE8848F2B65222AA75B8D1820DB22A11534E</code></pre>
+          {% trans "Important: the Raspbian repositories are NOT signed." %}
+        </p>
+        <h5>{% trans "APT configuration" %}</h5>
+        <p>
+          {% blocktrans %}You must use apt, apt-get or aptitude to install the packages (with sudo or as "root" user).{% endblocktrans %}
+          <br>{% trans "The following examples use sudo and apt-get." %}
+        </p>
+        <p>
+          {% trans "Install https transport for apt:" %}
+          <pre><code>$ sudo apt-get install apt-transport-https</code></pre>
+        </p>
+        <p>
+          <form class="form-inline">
+            {% trans "Create a weechat.list file with the repository, according to your distribution/version:" %}
+            <select id="deb_apt" class="form-control form-control-sm ml-3"
+                    onchange="document.getElementById('deb_apt_cmd').innerHTML = deb_apt_cmds[document.getElementById('deb_apt').selectedIndex]">
+              <option selected="selected">{% trans "Choose your distribution/version" %}</option>
+              {% for repo in repositories %}
+              {% if repo.visible %}
+              <option>
+                {{ repo.name|capfirst }}
+                {% comment %}Translators: purpose is to "translate" only quotes here{% endcomment %}
+                {% blocktrans with codename=repo.version.codename %}“{{ codename }}”{% endblocktrans %}
+                ({{ repo.version.version }})
+              </option>
+              {% endif %}
+              {% endfor %}
+            </select>
+          </form>
+          <pre class="mt-1"><code id="deb_apt_cmd">...<br>...</code></pre>
+          {% trans "Note: the second command line is optional, it is used to download source packages." %}
+        </p>
+        <p>
+          {% trans "Resynchronize your package index files:" %}
+          <pre><code>$ sudo apt-get update</code></pre>
+        </p>
+        <h5>{% trans "Packages installation" %}</h5>
+        <p>
+          {% blocktrans %}Install the binary packages; the "plugins" package is highly recommended but not mandatory, scripting API packages are optional (popular languages are python and perl).{% endblocktrans %}
+          <ul>
+            <li>
+              {% trans "Example for the stable version:" %}
+              <pre><code>$ sudo apt-get install weechat-curses weechat-plugins weechat-python weechat-perl</code></pre>
+            </li>
+            <li>
+              {% trans "Example for the development version:" %}
+              <pre><code>$ sudo apt-get install weechat-devel-curses weechat-devel-plugins weechat-devel-python weechat-devel-perl</code></pre>
+            </li>
+          </ul>
+        </p>
+        <p>
+          {% trans "If needed, you can download the source package in order to rebuild binary packages:" %}
+          <pre><code>$ apt-get source weechat-devel</code></pre>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
 
 {% if debpkgs %}
 
-<div class="debian_repos">
+<h3>{% trans "Overview" %}</h3>
 
-{% regroup debpkgs by repoarch as debpkgs_by_repoarch %}
-{% for repoarch in debpkgs_by_repoarch %}
-  <div class="debian distro_{% if repoarch.list.0.repo.active %}{{ repoarch.list.0.repo.name }}{% else %}discontinued{% endif %}">
-    {% regroup repoarch.list|dictsortreversed:"builddatetime" by Source as debpkgs_by_source %}
-    {% for debpkg_source in debpkgs_by_source %}
-      {% if forloop.first %}
-        <div class="repoinfo">
-          {% if debpkg_source.list.0.repo.message %}
-          <div class="message"><strong>{% trans "Important" %}:</strong> {{ debpkg_source.list.0.repo.message }}</div>
-          {% endif %}
-          <div class="sources" title="Line to add in /etc/apt/sources.list">
-            {{ debpkg_source.list.0.repo.apt_url }}
-          </div>
-          <div class="builder">
-            {% trans "Builds by" %} {{ debpkg_source.list.0.repo.builder.name }}
-            <span class="nick">({{ debpkg_source.list.0.repo.builder.nick }})</span>
-          </div>
-          <div class="latestbuild">
-            {% trans "Latest build:" %}
-            <strong>
-              {{ debpkg_source.list.0.builddate|localstrdate }}<span class="time">{{ debpkg_source.list.0.buildtime }}</span>
-            </strong>
+<div class="row">
+  {% regroup debpkgs by distro as debpkgs_by_distro %}
+  {% for debpkg_distro in debpkgs_by_distro %}
+  <div class="col-12 col-md-6 col-lg-4">
+    <div class="card mt-2 mb-4">
+      <div class="card-header">
+        <div class="media">
+          <img src="{{ MEDIA_URL }}images/{{ debpkg_distro.grouper }}.png" class="mr-2" alt="Logo">
+          <div class="media-body">
+            <h5 class="my-0">
+              <strong>
+                {{ debpkg_distro.grouper|capfirst }}
+              </strong>
+            </h5>
           </div>
         </div>
-        <div
-           {% if debpkg_source.list.0.repo.active %}
-           class="name"
-           {% else %}
-           class="name discontinued" title="{% trans "There are no more package builds in this repository." %}"
-           {% endif %}>
-          {{ debpkg_source.list.0.repo.name|capfirst }}
-          {% comment %}Translators: purpose is to "translate" only quotes here{% endcomment %}
-          {% blocktrans with codename=debpkg_source.list.0.repo.version.codename %}“{{ codename }}”{% endblocktrans %}
-          ({{ debpkg_source.list.0.repo.version.version }})
+      </div>
+      <div class="card-body">
+        {% regroup debpkg_distro.list by repoarch as debpkg_by_repoarch %}
+        {% for debpkg_repoarch in debpkg_by_repoarch %}
+        <div class="row py-1"{% if not forloop.last %} style="border-bottom: solid 1px #eee;"{% endif %}>
+          <div class="col-5">
+            <span class="{% if not debpkg_repoarch.list.0.repo.active %}discontinued{% endif %}">
+              <a class="js-scroll" href="#{{ debpkg_repoarch.grouper }}">
+                {{ debpkg_repoarch.list.0.repo.version.codename }}
+                <small class="text-muted">({{ debpkg_repoarch.list.0.repo.version.version }})</small>
+              </a>
+            </span>
+          </div>
+          <div class="col-7{% if not debpkg_repoarch.list.0.repo.active %} discontinued{% endif %}">
+            {% regroup debpkg_repoarch.list|dictsortreversed:"version_type" by Version as debpkg_by_version %}
+            {% for debpkg_version in debpkg_by_version %}
+            {% if "weechat" in debpkg_version.list.0.Source %}
+            <span class="{% if debpkg_version.list.0.version_type == "dev" %}text-danger{% else %}text-success font-weight-bold{% endif %}">{{ debpkg_version.grouper }}</span>{% if not forloop.last %},{% endif %}
+            {% endif %}
+            {% endfor %}
+            {% if not forloop.last %}<br>{% endif %}
+          </div>
         </div>
-        <table>
-      {% endif %}
-        {% regroup debpkg_source.list|dictsort:"arch" by arch as debpkgs_by_arch %}
-        {% for debpkg_arch in debpkgs_by_arch %}
-          <tr>
-            <td>
-              {{ debpkg_arch.list.0.Source }}
-            </td>
-            <td class="version{% if "dev" in debpkg_arch.list.0.Version %} version_dev{% endif %}">
-              {{ debpkg_arch.list.0.Version }}
-            </td>
-            <td>
-              <span title="{% trans "Architecture" %}">{{ debpkg_arch.list.0.arch }}</span>
-            </td>
-            <td>
-              <a href="{% url 'download_debian_active' active=active %}{% if not allfiles %}files/#{{ debpkg_arch.list.0.anchor }}{% endif %}" id="{{ debpkg_arch.list.0.anchor }}">{{ debpkg_arch.list|length }} {% trans "files" %}</a>
-            </td>
-            <td class="date">
-              ({{ debpkg_arch.list.0.builddate|localstrdate }}<span class="time">{{ debpkg_arch.list.0.buildtime }})</span>
-            </td>
-          </tr>
-          {% if allfiles %}
-          <tr>
-            <td colspan="5" class="files">
-              {% for debpkg in debpkg_arch.list|dictsort:"basename" %}
-                <a href="{{ debpkg.repo.url }}/{{ debpkg.Filename }}">{{ debpkg.basename }}</a>
-                <span class="size">({{ debpkg.size|filesizeformat }})</span>
-                <br>
-              {% endfor %}
-            </td>
-          </tr>
-          <tr><td colspan="4">&nbsp;</td></tr>
-          {% endif %}
         {% endfor %}
-    {% endfor %}
-    </table>
-    <div class="end"></div>
+      </div>
+    </div>
   </div>
   {% endfor %}
-
 </div>
 
-<hr>
+<h3>{% trans "Detail" %}</h3>
 
-<h3 id="instructions">{% trans "Instructions:" %}</h3>
-<div class="download">
-  <div class="dlsign">
-    <ul>
-      <li>
-        {% blocktrans %}You must use apt, apt-get or aptitude to install the packages (with sudo or as "root" user).{% endblocktrans %}
-        <br>{% trans "The following examples use sudo and apt-get." %}
-      </li>
-      <li>
-        {% trans "Install https transport for apt:" %}
-        <kbd>$ sudo apt-get install apt-transport-https</kbd>
-      </li>
-      <li>
-        {% trans "Import the gpg key used to sign the repository:" %}
-        <kbd>$ sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 11E9DE8848F2B65222AA75B8D1820DB22A11534E</kbd>
-        {% trans "Important: the Raspbian repositories are NOT signed." %}
-      </li>
-      <li>
-        {% trans "Create a weechat.list file with the repository, according to your distribution/version:" %}
-        <select id="deb_apt"
-                onchange="document.getElementById('deb_apt_cmd').innerHTML = deb_apt_cmds[document.getElementById('deb_apt').selectedIndex]">
-          <option selected="selected">{% trans "Choose your distribution/version" %}</option>
-          {% for repo in repositories %}
-          {% if repo.visible %}
-          <option>
-            {{ repo.name|capfirst }}
-            {% comment %}Translators: purpose is to "translate" only quotes here{% endcomment %}
-            {% blocktrans with codename=repo.version.codename %}“{{ codename }}”{% endblocktrans %}
-            ({{ repo.version.version }})
-          </option>
-          {% endif %}
-          {% endfor %}
-        </select>
-        <kbd id="deb_apt_cmd">...<br>...</kbd>
-        {% trans "Note: the second command line is optional, it is used to download source packages." %}
-      </li>
-      <li>
-        {% trans "Resynchronize your package index files:" %}
-        <kbd>$ sudo apt-get update</kbd>
-      </li>
-      <li>
-        {% blocktrans %}Install the binary packages; the "plugins" package is highly recommended but not mandatory, scripting API packages are optional (popular languages are python and perl).{% endblocktrans %}
-        <ul>
-          <li>
-            {% trans "Example for the stable version:" %}
-            <kbd>$ sudo apt-get install weechat-curses weechat-plugins weechat-python weechat-perl</kbd>
-          </li>
-          <li>
-            {% trans "Example for the development version:" %}
-            <kbd>$ sudo apt-get install weechat-devel-curses weechat-devel-plugins weechat-devel-python weechat-devel-perl</kbd>
-          </li>
-        </ul>
-      </li>
-      <li>
-        {% trans "If needed, you can download the source package in order to rebuild binary packages:" %}
-        <kbd>$ apt-get source weechat-devel</kbd>
-      </li>
-    </ul>
+<div class="row">
+  {% regroup debpkgs by repoarch as debpkgs_by_repoarch %}
+  {% for repoarch in debpkgs_by_repoarch %}
+
+  {% regroup repoarch.list|dictsortreversed:"builddatetime" by Source as debpkgs_by_source %}
+  {% for debpkg_source in debpkgs_by_source %}
+  {% if forloop.first %}
+  <div class="col-12" id="{{ repoarch.grouper }}">
+    <div class="card mt-2 mb-4{% if not repoarch.list.0.repo.active %} discontinued{% endif %}">
+      <div class="card-header pl-2">
+        <div class="media">
+          <img src="{{ MEDIA_URL }}images/{{ repoarch.list.0.repo.name }}.png" class="mr-2" alt="Logo">
+          <div class="media-body">
+            <h5 class="my-0">
+              <strong>
+                {{ debpkg_source.list.0.repo.name|capfirst }}
+                {% comment %}Translators: purpose is to "translate" only quotes here{% endcomment %}
+                {% blocktrans with codename=debpkg_source.list.0.repo.version.codename %}“{{ codename }}”{% endblocktrans %}
+                <small class="text-muted">({{ debpkg_source.list.0.repo.version.version }})</small>
+              </strong>
+            </h5>
+            <small><samp>{{ debpkg_source.list.0.repo.apt_url }}</samp></small>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        {% if debpkg_source.list.0.repo.message %}
+        <p class="text-primary">
+          <strong>{% trans "Important" %}:</strong> {{ debpkg_source.list.0.repo.message }}
+        </p>
+        {% endif %}
+        <div class="table-responsive col-12 col-md-8 col-lg-6">
+          <table class="table table-sm table-borderless">
+  {% endif %}
+
+            {% regroup debpkg_source.list|dictsort:"arch" by arch as debpkgs_by_arch %}
+            {% for debpkg_arch in debpkgs_by_arch %}
+            <tr>
+              <td>{{ debpkg_arch.list.0.Source }}</td>
+              <td class="{% if "dev" in debpkg_arch.list.0.Version %}text-danger{% else %}text-success font-weight-bold{% endif %}" title="{% if "dev" in debpkg_arch.list.0.Version %}{% trans "Development version" %}{% else %}{% trans "Stable version" %}{% endif %}">{{ debpkg_arch.list.0.Version }}</td>
+              <td title="{% trans "Architecture" %}">{{ debpkg_arch.list.0.arch }}</td>
+              <td>{{ debpkg_arch.list.0.builddatetime|localdate:"datetime" }}</td>
+              <td><a href="{% url 'download_debian_active' active=active %}{% if not allfiles %}files/#{{ debpkg_arch.list.0.anchor }}{% endif %}" id="{{ debpkg_arch.list.0.anchor }}">{{ debpkg_arch.list|length }} {% trans "files" %}</a></td>
+            {% if allfiles %}
+            <tr>
+              <td colspan="5">
+                <ul>
+                  {% for debpkg in debpkg_arch.list|dictsort:"basename" %}
+                  <li>
+                    <a href="{{ debpkg.repo.url }}/{{ debpkg.Filename }}">{{ debpkg.basename }}</a>
+                    <small class="text-muted">({{ debpkg.size|filesizeformat }})</small>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </td>
+            </tr>
+            {% endif %}
+            </tr>
+            {% endfor %}
+
+  {% if forloop.last %}
+          </table>
+        </div>
+      </div>
+      <div class="card-footer">
+        {% trans "Builds by" %} {{ debpkg_source.list.0.repo.builder.name }}
+        <span class="text-muted">({{ debpkg_source.list.0.repo.builder.nick }})</span>,
+        {% trans "latest build:" %}
+        <strong>{{ debpkgs_by_source.0.list.0.builddatetime|localdate:"r" }}</strong>
+        {% if debpkgs_by_source.0.list.0.nextbuilddatetime %}
+        ({% trans "next build:" %} {{ debpkgs_by_source.0.list.0.nextbuilddatetime|naturaltime }})
+        {% endif %}
+        <br>
+      </div>
+    </div>
   </div>
+  {% endif %}
+
+  {% endfor %}
+  {% endfor %}
 </div>
 
 {% else %}
 
-<div class="infobox">
+<div class="alert alert-success">
   {% trans "No debian repository." %}
 </div>
 

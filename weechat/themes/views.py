@@ -26,6 +26,7 @@ from pygments.formatters import HtmlFormatter
 from pygments.lexers import get_lexer_by_name
 
 from django.conf import settings
+from django.core.exceptions import ObjectDoesNotExist
 from django.core.mail import EmailMessage
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
@@ -140,8 +141,11 @@ def form_add(request):
             return HttpResponseRedirect('/themes/addok/')
     else:
         form = ThemeFormAdd()
-    stable_version = Release.objects.get(version='stable').description
-    release_stable = Release.objects.get(version=stable_version)
+    try:
+        stable_version = Release.objects.get(version='stable').description
+        release_stable = Release.objects.get(version=stable_version)
+    except ObjectDoesNotExist:
+        release_stable = None
     return render(
         request,
         'themes/add.html',

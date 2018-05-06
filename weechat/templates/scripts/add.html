@@ -2,48 +2,45 @@
 
 {% load i18n %}
 
-{% block css %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/form.css" media="screen" title="Normal">{% endblock %}
-{% block menu2_add %}selected{% endblock %}
+{% block menu2_add %}active{% endblock %}
 
 {% block content %}
 
 {{ block.super }}
 
-<div class="form">
+<div class="alert alert-primary">
+  {% trans "<strong>Important:</strong> please follow <strong>all</strong> these rules, otherwise your script will be rejected:" %}
+  <ul>
+    {% url 'scripts_pending' as scripts_pending_url %}
+    <li>{% blocktrans %}check that no script (or <a href="{{ scripts_pending_url }}">pending script</a>) does exactly same thing as your script{% endblocktrans %}</li>
+    <li>
+      {% trans "script name" %}:
+      <ul>
+        <li>{% blocktrans %}unique name (not used by any other script, even in a different language){% endblocktrans %}</li>
+        <li>{% blocktrans %}the script name in register function must be exactly same name as script (without extension){% endblocktrans %}</li>
+        <li>{% blocktrans %}the word "weechat" is not needed in name: for example don't use "weechat_notify" but "notify" instead (the script is only for WeeChat){% endblocktrans %}</li>
+      </ul>
+    </li>
+    <li>
+      {% trans "script content" %}:
+      <ul>
+        <li>{% blocktrans %}a comment at beginning with your name (or pseudo), your e-mail, and the chosen license (the license must be free){% endblocktrans %}</li>
+        <li>{% blocktrans %}no shebang on first line (like "#!/usr/bin/perl"), it's not needed{% endblocktrans %}</li>
+        <li>{% blocktrans %}use only English for code and comments{% endblocktrans %}</li>
+        <li>{% blocktrans %}no use of extra API between WeeChat and your script (like Ruby gem "WeeChat"), you must use standard WeeChat API{% endblocktrans %}</li>
+        <li>{% blocktrans %}if your script is doing something blocking (like fetching URL), you must use function hook_process (or hook_process_hashtable) to not block WeeChat{% endblocktrans %}</li>
+      </ul>
+    </li>
+  </ul>
+</div>
 
-  <div class="infobox">
-    {% trans "<strong>Important:</strong> please follow <strong>all</strong> these rules, otherwise your script will be rejected:" %}
-    <ul>
-      {% url 'scripts_pending' as scripts_pending_url %}
-      <li>{% blocktrans %}check that no script (or <a href="{{ scripts_pending_url }}">pending script</a>) does exactly same thing as your script{% endblocktrans %}</li>
-      <li>
-        {% trans "script name" %}:
-        <ul>
-          <li>{% trans "unique name (not used by any other script, even in a different language)" %}</li>
-          <li>{% trans "the script name in register function must be exactly same name as script (without extension)" %}</li>
-          <li>{% trans "the word 'weechat' is not needed in name: for example don't use 'weechat_notify' but 'notify' instead (the script is only for WeeChat)" %}</li>
-        </ul>
-      </li>
-      <li>
-        {% trans "script content" %}:
-        <ul>
-          <li>{% trans "a comment at beginning with your name (or pseudo), your e-mail, and the chosen license (the license must be free)" %}</li>
-          <li>{% trans "no shebang on first line (like '#!/usr/bin/perl'), it's not needed" %}</li>
-          <li>{% trans "use only English for code and comments" %}</li>
-          <li>{% trans "no use of extra API between WeeChat and your script (like Ruby gem 'WeeChat'), you must use standard WeeChat API" %}</li>
-          <li>{% trans "if your script is doing something blocking (like fetching URL), you must use function hook_process (or hook_process_hashtable) to not block WeeChat" %}</li>
-        </ul>
-      </li>
-    </ul>
+<div class="row justify-content-center">
+  <div class="col-12 col-md-8">
+    <form action="." method="post" enctype="multipart/form-data">
+      {{ form.as_div }}
+      <button type="submit" class="btn btn-primary btn-lg mt-3 px-5">{% trans "Submit" %}</button>
+    </form>
   </div>
-
-  <form action="." method="post" enctype="multipart/form-data">
-  {{ form.as_p }}
-    <div class="submit">
-      <input type="submit" value="{% trans "Submit" %}">
-    </div>
-  </form>
-
 </div>
 
 {% endblock content %}

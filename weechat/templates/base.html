@@ -6,90 +6,178 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Sébastien HELLEU FlashCode">
   <meta name="description" content="WeeChat, the extensible chat client">
   <meta name="keywords" content="weechat, free, fast, light, extensible, chat, client, irc, jabber, linux, bsd, gpl, console, terminal, curses">
   <meta name="robots" content="all">
-  {% comment %}<meta name="viewport" content="width=device-width,initial-scale=1">{% endcomment %}
-  <title>{% block title %}{% trans "WeeChat, the extensible chat client" %}{% endblock %}{% block subtitle %}{% endblock %}</title>
   <link rel="shortcut icon" type="image/png" href="{{ MEDIA_URL }}images/favicon.png">
-  {% block css %}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/style.css" media="screen" title="Normal">{% endblock %}
+  <link rel="stylesheet" href="{{ MEDIA_URL }}css/bootstrap.min.css">
+  {% block css %}{% endblock %}
+  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/style.css" media="screen" title="Normal">
   <link rel="alternate" type="application/rss+xml" href="{% url 'feeds_news' %}" title="WeeChat RSS feed">
   <link href="https://plus.google.com/+WeeChat" rel="publisher">
+  <title>{% block title %}{% trans "WeeChat, the extensible chat client" %}{% endblock %}{% block subtitle %}{% endblock %}</title>
   {% block extrahead %}{% endblock %}
 </head>
 
-<body>
+<body id="nav1-{% block menu %}{% endblock %}">
 
-  <div id="header-and-main">
-
-    <map id="weechatMap" name="weechatMap">
-      <area href="{% url 'home' %}" alt="Home" coords="0,0,160,70" shape="rect">
-    </map>
-
-    <div id="header">
-      <div class="content">
-        <div class="logo">
-          <a href="{% url 'home' %}"><img src="{{ MEDIA_URL }}images/weechat_logo_small.png" alt="WeeChat" width="146" height="100"></a>
-        </div>
-        <div class="slogan">
-          <a href="{% url 'home' %}"><img src="{{MEDIA_URL}}images/weechat_text.png" width="201" height="55" alt="WeeChat"></a>
-        </div>
-        <div class="lang">
-          <form name="lang" action="/i18n/setlang/" method="post">
-            <input type="hidden" name="language" value="{{ LANGUAGE_CODE }}">
-            {% for lang in LANGUAGES %}
-            <a href="#" {% if lang.0 == LANGUAGE_CODE %} class="selected"{% endif %} onclick="javascript:document.forms['lang'].elements['language'].value = '{{ lang.0 }}'; document.forms['lang'].submit();">
-              {% trans lang.1 %}
-            </a>
-            {% endfor %}
-          </form>
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <a class="navbar-brand" href="{% url "home" %}">
+      <img src="{{ MEDIA_URL }}images/weechat_logo_small.png" width="48" height="33" alt="WeeChat">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarToggler">
+      <div class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <a class="nav-item nav-link nav-home" href="{% url "home" %}">{% trans "Home" %}</a>
+        <a class="nav-item nav-link nav-about" href="{% url "about" %}">{% trans "About" %}</a>
+        <a class="nav-item nav-link nav-doc" href="{% url "doc" %}">{% trans "Documentation" %}</a>
+        <a class="nav-item nav-link nav-download" href="{% url "download" %}">{% trans "Download" %}</a>
+        <a class="nav-item nav-link nav-scripts" href="{% url "scripts" %}">{% trans "Scripts" %}</a>
+        <a class="nav-item nav-link nav-dev" href="{% url "dev" %}">{% trans "Development" %}</a>
       </div>
-      <div class="gradient"></div>
 
-    </div> <!-- header -->
+      <div class="nav-other-links text-nowrap py-3 py-lg-0 px-3">
+        <a href="{% url 'donate' %}" title="{% trans "Donate" %}">
+          {% include "svg/heart.html" %} {% trans "Donate" %}
+        </a>
+      </div>
 
-    <!-- menu -->
-    <div id="nav1-{% block menu %}{% endblock %}" class="center">
-      <ul id="nav">
-{% include "menu.html" %}
-      </ul>
+      <div class="nav-languages">
+        <form name="lang" action="/i18n/setlang/" method="post">
+          <div class="form-group my-0">
+            <input type="hidden" name="language" value="{{ LANGUAGE_CODE }}">
+            <select class="form-control form-control-sm" onchange="javascript:document.forms['lang'].elements['language'].value = this.value; document.forms['lang'].submit();">
+              {% for lang in LANGUAGES %}
+              <option value="{{ lang.0 }}" onclick="javascript:document.forms['lang'].elements['language'].value = '{{ lang.0 }}'; document.forms['lang'].submit();" {% if lang.0 == LANGUAGE_CODE %} selected{% endif %}>{% language lang.0 %}{% trans lang.1 %}{% endlanguage %}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </form>
+      </div>
+
     </div>
-    <!-- end of menu -->
+  </nav>
 
-    <div class="main">
-
-<!-- page content -->
+  <div class="container-fluid content" style="padding-top: 6.5rem;">
 {% block content %}{% endblock %}
-<!-- end of page content -->
+  </div>
 
-    </div> <!-- main -->
+  <div class="footer pt-4 pb-2">
 
-  </div> <!-- header-and-main -->
-
-  <div id="footer">
-
-    <!-- menu items -->
-    <div class="nav2">
-      <ul id="nav2">
-{% include "menu.html" %}
-      </ul>
+    <div class="row justify-content-start justify-content-lg-center mx-0 px-0">
+      <div class="col-12 col-md-6 col-xl-auto">
+        <ul>
+          <li><a class="main" href="{% url 'home' %}">{% trans "Home" %}</a></li>
+          <li><a href="{% url 'home_news' %}">{% trans "Latest news" %}</a></li>
+          <li><a href="{% url 'home_events' %}">{% trans "Upcoming events" %}</a></li>
+          <li><a href="{% url 'donate' %}">{% trans "Make a donation" %}</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-6 col-xl-auto">
+        <ul>
+          <li><a class="main" href="{% url 'about' %}">{% trans "About" %}</a></li>
+          <li><a href="{% url 'about_features' %}">{% trans "Features" %}</a></li>
+          <li><a href="{% url 'about_interfaces' %}">{% trans "Interfaces" %}</a></li>
+          <li><a href="{% url 'about_screenshots' %}">{% trans "Screenshots" %}</a></li>
+          <li><a href="{% url 'about_history' %}">{% trans "History" %}</a></li>
+          <li><a href="{% url 'about_support' %}">{% trans "Support" %}</a></li>
+          <li><a href="{% url 'about_weechat.org' %}">WeeChat.org</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-6 col-xl-auto">
+        <ul>
+          <li><a class="main" href="{% url 'doc' %}">{% trans "Documentation" %}</a></li>
+          <li><a href="{% url 'doc_version' 'stable' %}">{% trans "Stable version" %}</a></li>
+          <li><a href="{% url 'doc_version' 'devel' %}">{% trans "Development version" %}</a></li>
+          <li><a href="{% url 'doc_version' 'old' %}">{% trans "Old versions" %}</a></li>
+          <li><a href="{% url 'doc_security' %}">{% trans "Security issues" %}</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-6 col-xl-auto">
+        <ul>
+          <li><a class="main" href="{% url 'download' %}">{% trans "Download" %}</a></li>
+          <li><a href="{% url 'download_version' 'stable' %}">{% trans "Stable version" %}</a></li>
+          <li><a href="{% url 'download_version' 'devel' %}">{% trans "Development version" %}</a></li>
+          <li><a href="{% url 'download_version' 'old' %}">{% trans "Old versions" %}</a></li>
+          <li><a href="{% url 'download_debian' %}">{% trans "Debian/Ubuntu repositories" %}</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-6 col-xl-auto">
+        <ul>
+          <li><a class="main" href="{% url 'scripts' %}">{% trans "Scripts" %}</a></li>
+          <li><a href="{% url 'scripts' %}">{% trans "Browse scripts" %}</a></li>
+          <li><a href="{% url 'scripts_add' %}">{% trans "Add script" %}</a></li>
+          <li><a href="{% url 'scripts_update' %}">{% trans "Update script" %}</a></li>
+          <li><a href="{% url 'scripts_pending' %}">{% trans "Pending scripts" %}</a></li>
+          <li><a href="/files/scripts/unofficial/">{% trans "Unofficial scripts" %}</a></li>
+        </ul>
+      </div>
+{% comment %}
+      <div class="col-12 col-md-6 col-xl-auto">
+        <ul>
+          <li><a class="main" href="{% url 'themes' %}">{% trans "Themes" %}</a></li>
+          <li><a href="{% url 'themes' %}">{% trans "Browse themes" %}</a></li>
+          <li><a href="{% url 'themes_add' %}">{% trans "Add theme" %}</a></li>
+          <li><a href="{% url 'themes_update' %}">{% trans "Update theme" %}</a></li>
+        </ul>
+      </div>
+{% endcomment %}
+      <div class="col-12 col-md-6 col-xl-auto">
+        <ul>
+          <li><a class="main" href="{% url 'dev' %}">{% trans "Development" %}</a></li>
+          <li><a href="{% url 'dev_roadmap' %}">{% trans "Roadmap" %}</a></li>
+          <li><a href="{% url 'dev_stats' %}">{% trans "Statistics" %}</a></li>
+          <li><a href="{% url 'dev_info' %}">{% trans "Info" %}</a></li>
+          <li><a href="https://weechat.org/blog/" target="_blank" rel="noopener">{% trans "Development blog" %} <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;"></a></li>
+        </ul>
+      </div>
     </div>
-    <!-- end of menu items -->
 
-    <div id="copyright">
-      Copyright &#169; 2003-{% now "Y" %} <a href="mailto:{% txt2html "flashcode@flashtux.org" %}" title="email webmaster">Sébastien Helleu</a>
-      &mdash;
-      <a href="{% url 'about_weechat.org' %}">{% trans "About WeeChat.org" %}</a>
-      &mdash;
-      {% trans "Valid" %}:
-      <a href="http://validator.w3.org/check?uri={{ request.build_absolute_uri|urlencode }}" target="_blank">HTML5</a> |
-      <a href="https://jigsaw.w3.org/css-validator/validator?uri={{ request.build_absolute_uri|urlencode }}" target="_blank">CSS</a> |
-      <a href="http://www.w3.org/TR/WCAG20/" target="_blank" rel="noopener">WCAG 2.0<!-- AAA --></a>
+    <div class="text-center mt-4 mb-2">
+      <p class="icons">
+        <a href="https://github.com/weechat" target="_blank" rel="noopener" title="GitHub">
+          {% include "svg/github.html" %}
+        </a>
+        <a href="https://diasp.eu/u/weechat" target="_blank" rel="noopener" title="Diaspora">
+          {% include "svg/diaspora.html" %}
+        </a>
+        <a href="https://hostux.social/@weechat" target="_blank" rel="noopener" title="Mastodon">
+          {% include "svg/mastodon.html" %}
+        </a>
+        <a href="https://twitter.com/WeeChatClient" target="_blank" rel="noopener" title="Twitter">
+          {% include "svg/twitter.html" %}
+        </a>
+        <a href="https://plus.google.com/+WeeChat" target="_blank" rel="noopener" title="Google+">
+          {% include "svg/google_plus.html" %}
+        </a>
+      </p>
+      <p>
+        Copyright &#169; 2003-{% now "Y" %} <a href="mailto:{% txt2html "flashcode@flashtux.org" %}" title="email webmaster">Sébastien Helleu</a>
+        &mdash;
+        <a href="{% url 'about_weechat.org' %}">{% trans "About WeeChat.org" %}</a>
+      </p>
     </div>
 
   </div> <!-- footer -->
+
+  <script src="{{ MEDIA_URL }}js/jquery-3.3.1.min.js"></script>
+  <script src="{{ MEDIA_URL }}js/popper.min.js"></script>
+  <script src="{{ MEDIA_URL }}js/bootstrap.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+        $('.js-scroll').click(function() {
+            $('html, body').animate({
+                scrollTop: Math.max(0, $($(this).attr('href')).offset().top - 70)
+            }, 400);
+            return false;
+        });
+    });
+  </script>
 
 </body>
 

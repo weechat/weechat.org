@@ -3,19 +3,15 @@
 {% load i18n %}
 
 {% block title %}WeeChat :: {% trans "download" %}{% endblock %}
-{% block css %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/download.css" media="screen" title="Normal">{% endblock %}
 {% block menu %}download{% endblock %}
 
 {% block content %}
 
-<div class="navbt">
-  <ul>
-    <li><a href="{% url 'download_version' 'stable' %}" class="{% block menu2_stable %}{% endblock %}">{% trans "Stable" %}</a></li>
-    <li><a href="{% url 'download_version' 'devel' %}" class="{% block menu2_devel %}{% endblock %}">{% trans "Devel" %}</a></li>
-    <li><a href="{% url 'download_version' 'old' %}" class="{% block menu2_old %}{% endblock %}">{% trans "Old versions" %}</a></li>
-    <li><a href="{% url 'download_debian' %}" class="{% block menu2_debian %}{% endblock %}">{% trans "Debian/Ubuntu repositories" %}</a></li>
-    <li><a href="{% url 'download_security' %}" class="{% block menu2_security %}{% endblock %}">{% trans "Security" %}</a></li>
-  </ul>
-</div>
+<ul class="nav nav-tabs">
+  <li class="nav-item"><a class="nav-link {% block menu2_stable %}{% endblock %}" href="{% url 'download_version' 'stable' %}">{% trans "Stable" %}</a></li>
+  <li class="nav-item"><a class="nav-link {% block menu2_devel %}{% endblock %}" href="{% url 'download_version' 'devel' %}">{% trans "Development" %}</a></li>
+  <li class="nav-item"><a class="nav-link {% block menu2_old %}{% endblock %}" href="{% url 'download_version' 'old' %}">{% trans "Old versions" %}</a></li>
+  <li class="nav-item"><a class="nav-link {% block menu2_debian %}{% endblock %}" href="{% url 'download_debian' %}">{% trans "Debian/Ubuntu repositories" %}</a></li>
+</ul>
 
 {% endblock content %}

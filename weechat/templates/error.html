@@ -4,11 +4,11 @@
 
 {% block content %}
 
-<div class="center">
-  <h1>{% block error_title %}{% endblock %}</h1>
+<div class="text-center">
+  <h2>{% block error_title %}{% endblock %}</h2>
   {% block error_message %}{% endblock %}
   <br><br>
-  <h2><a href="/">{% trans "Back to home" %}</a></h2>
+  <h3><a href="/">{% trans "Back to home" %}</a></h3>
 </div>
 
 {% endblock content %}

@@ -2,43 +2,40 @@
 
 {% load i18n %}
 
-{% block menu2_list %}selected{% endblock %}
+{% block menu2_list %}active{% endblock %}
 
 {% block content %}
 
 {{ block.super }}
 
 {% if theme_list %}
-  <div class="infobox">
-    {% trans "<strong>Important:</strong> alpha version of themes! Alpha version of script is available here:" %}
-    <a href="/files/temp/theme/theme.py">theme.py</a>
-  </div>
 
-  <div class="themelist">
-  {% for theme in theme_list %}
-    <div class="preview">
-    {{ theme.html_preview|safe }}
-    </div>
-    <div class="detail">
-      <span class="theme"><a href="{% url 'themes_source_name_html' theme.name %}">{{ theme.name }}</a></span> &mdash;
-      {% trans "submitted by" %} <a href="{% url 'themes_filter' 'author' theme.author %}" title="{% trans "Author:" %} {{ theme.author }}">{{ theme.author }}</a>
-      <span class="weechat">(v{{ theme.version }})</span>
-      {% if theme.desc %}<div class="description">“ {{ theme.desc_i18n }} ”</div>{% endif %}
-      <div class="date">
-        {% if theme.added %}{% trans "Added" %}: {{ theme.added|date:"Y-m-d" }}{% endif %}
-        {% if theme.updated %}{% if theme.added != theme.updated %} ({% trans "updated" %}: {{ theme.updated|date:"Y-m-d" }}){% endif %}{% endif %}
-      </div>
-    </div>
-    <div class="end"></div>
-  {% endfor %}
-  </div>
+<div class="alert alert-primary">
+  {% trans "<strong>Important:</strong> alpha version of themes! Alpha version of script is available here:" %}
+  <a href="/files/temp/theme/theme.py">theme.py</a>
+</div>
+
+{% for theme in theme_list %}
+<h3>
+  Theme: <a href="{% url 'themes_source_name_html' theme.name %}">{{ theme.short_name }}</a>
+</h3>
+{% trans "Submitted by" %} <a href="{% url 'themes_filter' 'author' theme.author %}" title="{% trans "Author:" %} {{ theme.author }}">{{ theme.author }}</a> <span class="text-muted">(v{{ theme.version }})</span>
+{% if theme.desc %}: <span class="quote">“ {{ theme.desc_i18n }} ”</span>{% endif %}
+<br>
+{% if theme.added %}{% trans "Added" %}: {{ theme.added|date:"Y-m-d" }}{% endif %}
+{% if theme.updated %}{% if theme.added != theme.updated %} ({% trans "updated" %}: {{ theme.updated|date:"Y-m-d" }}){% endif %}{% endif %}
+<div class="theme-preview">
+  {{ theme.html_preview|safe }}
+</div>
+<div class="end"></div>
+{% endfor %}
+
 {% else %}
-  <br>
-  <div class="infobox">
-    <strong>{% trans "No theme found." %}</strong>
-  </div>
-  <br>
-  <a href="{% url 'themes' %}"><img src="{{ MEDIA_URL }}images/arrow_left_green.png" alt="&lt;&lt;"> {% trans "Back to themes" %}</a>
+
+<div class="alert alert-success">
+  {% trans "No theme found." %}
+</div>
+
 {% endif %}
 
 {% endblock content %}

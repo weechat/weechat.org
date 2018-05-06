@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block menu %}home{% endblock %}
+
+{% block subtitle %} :: {% trans "donate" %}{% endblock %}
+
+{% block content %}
+
+{{ block.super }}
+
+<div class="mx-4">
+
+  <h3>{% trans "Donate to WeeChat" %}</h3>
+
+  <p>
+    {% trans "Click on one of the buttons below and follow the instructions:" %}
+    <ul>
+      <li>{% trans "<strong>Liberapay</strong>: recurring donation with very low fees (<strong>best choice</strong>)" %}</li>
+      <li>{% trans "<strong>Paypal</strong>: one-time donation." %}</li>
+    </ul>
+  </p>
+
+  <p>
+    {% trans "You can leave name and comment, they will be displayed on this page, providing that the following conditions are met:" %}
+    <ul>
+      <li>{% trans "the comment must be only about the donation and WeeChat (for example this is not the place to ask for new features)" %}</li>
+      <li>{% trans "URLs are not allowed because there is <strong>no advertising</strong> on this site." %}</li>
+    </ul>
+  </p>
+
+  <div class="row">
+    <div class="col-sm-6 col-md-3 my-1 text-center">
+      <a href="https://liberapay.com/weechat/donate" target="_blank" rel="noopener"><img alt="{% trans "Donate using Liberapay" %}" src="https://liberapay.com/assets/widgets/donate.svg"></a>
+    </div>
+    <div class="col-sm-6 col-md-3 my-1 text-center">
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" rel="noopener">
+        <p>
+          <input type="image" src="{{ MEDIA_URL }}images/paypal.png" width="100" height="35" alt="Donate" name="submit">
+          <input type="hidden" name="cmd" value="_s-xclick">
+          <input type="hidden" name="hosted_button_id" value="4LSMSNLUAJWNS">
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <h3>{% trans "Why your donation matters?" %}</h3>
+
+  <p>
+    {% trans "WeeChat is written by a small group of <strong>volunteers</strong>. Any contribution will show us that the project is appreciated and keep us motivated." %}
+    <br>
+    {% trans "Your donations help to pay the <strong>dedicated server</strong>, used for developments, build of packages and hosting of weechat.org." %}
+  </p>
+
+  <h3>{% trans "They support WeeChat" %}</h3>
+
+  <h4>{% trans "With liberapay" %}</h4>
+
+  <p>
+    {% trans "See the weechat page on Liberapay:" %} <a href="https://liberapay.com/weechat" target="_blank" rel="noopener">https://liberapay.com/weechat <img src="{{ MEDIA_URL }}images/link.png" alt="&gt;&gt;"></a>
+  </p>
+
+  {% if sponsor_list %}
+
+  <h4>{% trans "With Paypal" %}</h4>
+
+  <p>
+    {% if sort_key == "date" %}{% trans "Whole list:" %}{% else %}{% trans "Top 10, ordered by total amount donated:" %}{% endif %}
+    <span class="ml-4">
+      {% if sort_key == "date" %}
+      [<a href="{% url 'donate_sort' 'top10' %}">{% trans "show the top 10, ordered by total amount donated" %}</a>]
+      {% else %}
+      [<a href="{% url 'donate_sort' 'date' %}">{% trans "show the whole list" %}</a>]
+      {% endif %}
+    </span>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            {% if sort_key == "date" %}
+            <th>{% trans "Date" %}</th>
+            {% else %}
+            <th>{% trans "Rank" %}</th>
+            {% endif %}
+            <th>{% trans "Name" %}</th>
+            {% if view_amount %}<th class="text-right">{% trans "Amount" %}</th>{% endif %}
+            {% if sort_key == "date" %}
+            <th>{% trans "Comment" %}</th>
+            {% else %}
+            <th></th>
+            {% endif %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for sponsor in sponsor_list %}
+          <tr>
+            {% if sort_key == "date" %}
+            <td class="text-nowrap">{{ sponsor.date_l10n }}</td>
+            {% else %}
+            <td class="text-nowrap" style="width: 5rem;">{{ forloop.counter }}.</td>
+            {% endif %}
+            <td class="text-nowrap">
+              {{ sponsor.name }}
+              {% if sponsor.number > 1 %}<small class="ml-1 text-muted">(#{{ sponsor.number }})</small>{% endif %}
+            </td>
+            {% if view_amount %}<td class="text-right">{{ sponsor.amount|floatformat:"-2" }} &euro;</td>{% endif %}
+            {% if sort_key == "date" %}
+            <td class="quote">{% if sponsor.comment %}&ldquo; {{ sponsor.comment }} &rdquo;{% endif %}</td>
+            {% else %}
+            <td class="quote"></td>
+            {% endif %}
+          </tr>
+          {% endfor %}
+          {% if view_amount %}
+          <tr>
+            <td></td>
+            <td><strong>{% trans "Total" %}</strong></td>
+            <td class="text-right"><strong>{{ total|floatformat:"-2" }}</strong> €</td>
+            <td></td>
+          </tr>
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+  </p>
+  {% endif %}
+
+</div>
+
+{% endblock content %}

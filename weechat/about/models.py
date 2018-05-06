@@ -35,8 +35,11 @@ class Screenshot(models.Model):
     comment = models.TextField(blank=True)
     priority = models.IntegerField(default=0)
 
-    def __unicode__(self):
+    def __str__(self):
         return '%s: %s (%d)' % (self.app, self.filename, self.priority)
+
+    def __unicode__(self):  # python 2.x
+        return self.__str__()
 
     class Meta:
         """Meta class for ScreenShot."""
@@ -49,9 +52,12 @@ class Keydate(models.Model):
     version = models.TextField(max_length=32)
     text = models.TextField()
 
-    def __unicode__(self):
+    def __str__(self):
         str_version = ('%s: ' % self.version) if self.version else ''
         return '%s - %s%s' % (self.date, str_version, self.text)
+
+    def __unicode__(self):  # python 2.x
+        return self.__str__()
 
     def text_i18n(self):
         """Return translated key date."""
@@ -82,10 +88,13 @@ class Sponsor(models.Model):
     number = models.IntegerField(default=1)
     comment = models.CharField(max_length=1024, blank=True)
 
-    def __unicode__(self):
+    def __str__(self):
         str_num = ' (#%d)' % self.number if self.number > 1 else ''
         return '%s%s, %s, %.02f Eur' % (self.name, str_num, self.date,
                                         self.amount)
+
+    def __unicode__(self):  # python 2.x
+        return self.__str__()
 
     def date_l10n(self):
         """Return the sponsor date formatted with localized date format."""

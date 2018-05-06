@@ -22,18 +22,31 @@
 
 import gzip
 from hashlib import md5
+from io import open
 from os import path
 import re
 from xml.sax.saxutils import escape
 
 from django import forms
 from django.conf import settings
+from django.core.exceptions import ObjectDoesNotExist
 from django.db import models
 from django.db.models.signals import post_save, post_delete
-from django.forms.widgets import Input
 from django.utils import translation
 from django.utils.translation import ugettext, gettext_lazy, pgettext_lazy
 
+from weechat.common.forms import (
+    BootstrapBoundField,
+    CharField,
+    ChoiceField,
+    EmailField,
+    FileField,
+    TestField,
+    Html5EmailInput,
+    Form,
+    getxmlline,
+    getjsonline,
+)
 from weechat.common.i18n import i18n_autogen
 from weechat.common.path import files_path_join
 from weechat.download.models import Release
@@ -89,12 +102,18 @@ class Script(models.Model):
     added = models.DateTimeField()
     updated = models.DateTimeField()
 
-    def __unicode__(self):
-        api = ''
-        if self.is_legacy():
-            api = '(legacy api) '
-        return '%s %s %s(%s, %s)' % (self.name, self.version, api,
-                                     self.author, self.added)
+    def __str__(self):
+        return '%s %s %s(%s, %s)%s' % (
+            self.name,
+            self.version,
+            '(legacy api) ' if self.is_legacy() else '',
+            self.author,
+            self.added,
+            ' [pending]' if not self.visible else '',
+        )
+
+    def __unicode__(self):  # python 2.x
+        return self.__str__()
 
     def is_legacy(self):
         """Return True if a script is legacy (for WeeChat <= 0.2.6)."""
@@ -137,7 +156,7 @@ class Script(models.Model):
 
     def desc_i18n(self):
         """Return translated description."""
-        return gettext_lazy(self.desc_en.encode('utf-8'))
+        return gettext_lazy(self.desc_en)
 
     def version_weechat(self):
         """Return the min/max WeeChat versions in a string."""
@@ -188,6 +207,7 @@ class Script(models.Model):
 
 class NameField(forms.CharField):
     """Name field in new script form."""
+
     def clean(self, value):
         if not value:
             raise forms.ValidationError(
@@ -195,52 +215,38 @@ class NameField(forms.CharField):
         if not re.search('^[a-z0-9_]+$', value):
             raise forms.ValidationError(
                 gettext_lazy('This name is invalid.'))
-        scripts = Script.objects.exclude(max_weechat='0.2.6') \
-            .filter(name=value)
+        scripts = (Script.objects.exclude(max_weechat='0.2.6')
+                   .filter(name=value))
         if scripts:
             raise forms.ValidationError(
                 gettext_lazy('This name already exists, please choose another '
                              'name (update script content accordingly).'))
         return value
 
-
-class TestField(forms.CharField):
-    """Anti-spam field in forms."""
-    def clean(self, value):
-        if not value:
-            raise forms.ValidationError(
-                gettext_lazy('This field is required.'))
-        if value.lower() != 'no':
-            raise forms.ValidationError(
-                gettext_lazy('This field is required.'))
-        return value
-
-
-class Html5EmailInput(Input):
-    """E-mail field (with HTML5 validator)."""
-    input_type = 'email'
+    def get_bound_field(self, form, field_name):
+        return BootstrapBoundField(form, self, field_name)
 
 
 def get_min_max_choices():
     """Get min/max versions for add form."""
+    version_min_max = []
     try:
-        version_min_max = []
         devel_desc = Release.objects.get(version='devel').description
         releases = Release.objects.filter(
             version__gte='0.3.0',
             version__lte=re.sub('-.*', '', devel_desc)).order_by('date')
         for rel in releases:
-            version_min_max.append(
-                (
-                    '%s:-' % rel.version,
-                    '≥ %s'.decode('utf-8') % rel.version,
-                    ))
-        return version_min_max
-    except:  # noqa: E722
-        return []
+            version = (
+                '{}:-'.format(rel.version),
+                '≥ {}'.format(rel.version),
+            )
+            version_min_max.append(version)
+    except ObjectDoesNotExist:
+        version_min_max = []
+    return version_min_max
 
 
-class ScriptFormAdd(forms.Form):
+class ScriptFormAdd(Form):
     """Form to add a script."""
     languages = (
         ('python', 'Python (.py)'),
@@ -253,86 +259,81 @@ class ScriptFormAdd(forms.Form):
         ('php', 'PHP (.php)'),
     )
     required_css_class = 'required'
-    language = forms.ChoiceField(
+    language = ChoiceField(
         choices=languages,
-        label=pgettext_lazy(u'programming language', u'Language'),
+        label=pgettext_lazy(u'The programming language.', u'Language'),
         widget=forms.Select(attrs={'autofocus': True}),
     )
     name = NameField(
         max_length=MAX_LENGTH_NAME,
         label=gettext_lazy('Name'),
-        widget=forms.TextInput(attrs={'size': str(MAX_LENGTH_NAME)}),
     )
-    version = forms.CharField(
+    version = CharField(
         max_length=MAX_LENGTH_VERSION,
         label=gettext_lazy('Version'),
-        help_text=gettext_lazy('version of script (only digits or dots)'),
-        widget=forms.TextInput(attrs={'size': '7'}),
+        help_text=gettext_lazy('The version of script (only digits or dots).'),
     )
-    license = forms.CharField(
+    license = CharField(
         max_length=MAX_LENGTH_LICENSE,
         label=gettext_lazy('License'),
-        help_text=gettext_lazy('license (for example: GPL3, BSD, ...)'),
-        widget=forms.TextInput(attrs={'size': '7'}),
+        help_text=gettext_lazy('The license (for example: GPL3, BSD, ...).'),
     )
-    file = forms.FileField(
+    file = FileField(
         label=gettext_lazy('File'),
-        help_text=gettext_lazy('the script'),
+        help_text=gettext_lazy('The script.'),
     )
-    description = forms.CharField(
+    description = CharField(
         max_length=MAX_LENGTH_DESC,
         label=gettext_lazy('Description'),
-        widget=forms.TextInput(attrs={'size': '75'}),
     )
-    requirements = forms.CharField(
+    requirements = CharField(
         required=False,
         max_length=MAX_LENGTH_REQUIRE,
         label=gettext_lazy('Requirements'),
-        help_text=gettext_lazy('optional'),
-        widget=forms.TextInput(attrs={'size': '30'}),
     )
-    min_max = forms.ChoiceField(
+    min_max = ChoiceField(
         choices=[],
-        label=gettext_lazy('Min/max WeeChat'),
+        label=gettext_lazy('Min/max WeeChat version.'),
     )
-    author = forms.CharField(
-        max_length=MAX_LENGTH_AUTHOR, label=gettext_lazy('Your name or nick'),
-        help_text=gettext_lazy('used for scripts page and git commit'),
+    author = CharField(
+        max_length=MAX_LENGTH_AUTHOR,
+        label=gettext_lazy('Your name or nick'),
+        help_text=gettext_lazy('Used for git commit and scripts page.'),
     )
-    mail = forms.EmailField(
+    mail = EmailField(
         max_length=MAX_LENGTH_MAIL,
         label=gettext_lazy('Your e-mail'),
-        help_text=gettext_lazy('used for scripts page and git commit'),
-        widget=Html5EmailInput(attrs={'size': '40'}),
+        help_text=gettext_lazy('Used for git commit.'),
+        widget=Html5EmailInput(),
     )
-    comment = forms.CharField(
+    comment = CharField(
         required=False,
         max_length=1024,
         label=gettext_lazy('Comments'),
-        help_text=gettext_lazy('optional, not displayed'),
+        help_text=gettext_lazy('Not displayed.'),
         widget=forms.Textarea(attrs={'rows': '3'}),
     )
     test = TestField(
         max_length=64,
         label=gettext_lazy('Are you a spammer?'),
-        help_text=gettext_lazy('enter "no" if you are not a spammer'),
-        widget=forms.TextInput(attrs={'size': '10'}),
+        help_text=gettext_lazy('Enter "no" if you are not a spammer.'),
     )
 
     def __init__(self, *args, **kwargs):
         super(ScriptFormAdd, self).__init__(*args, **kwargs)
+        self.label_suffix = ''
         self.fields['min_max'].choices = get_min_max_choices()
         self.fields['name'].help_text = gettext_lazy(
-            'short name of script (max {max_chars} chars, '
-            'only lower case letters, digits or "_")').format(
+            'The short name of script (max {max_chars} chars, '
+            'only lower case letters, digits or "_").').format(
                 max_chars=MAX_LENGTH_NAME)
 
 
 def get_script_choices():
     """Get list of scripts for update form."""
     try:
-        script_list = Script.objects.exclude(max_weechat='0.2.6') \
-            .filter(visible=1).order_by('name')
+        script_list = (Script.objects.exclude(max_weechat='0.2.6')
+                       .filter(visible=1).order_by('name'))
         script_choices = []
         script_choices.append(('', gettext_lazy('Choose...')))
         for script in script_list:
@@ -344,64 +345,49 @@ def get_script_choices():
         return []
 
 
-class ScriptFormUpdate(forms.Form):
+class ScriptFormUpdate(Form):
     """Form to update a script."""
     required_css_class = 'required'
-    script = forms.ChoiceField(
+    script = ChoiceField(
         choices=[],
         label=gettext_lazy('Script'),
         widget=forms.Select(attrs={'autofocus': True}),
     )
-    version = forms.CharField(
+    version = CharField(
         max_length=MAX_LENGTH_VERSION,
         label=gettext_lazy('New version'),
-        widget=forms.TextInput(attrs={'size': '10'}),
     )
-    file = forms.FileField(
+    file = FileField(
         label=gettext_lazy('File'),
-        help_text=gettext_lazy('the script'),
+        help_text=gettext_lazy('The script.'),
     )
-    author = forms.CharField(
+    author = CharField(
         max_length=MAX_LENGTH_AUTHOR,
         label=gettext_lazy('Your name or nick'),
-        help_text=gettext_lazy('used for git commit'),
+        help_text=gettext_lazy('Used for git commit.'),
     )
-    mail = forms.EmailField(
+    mail = EmailField(
         max_length=MAX_LENGTH_MAIL,
         label=gettext_lazy('Your e-mail'),
-        help_text=gettext_lazy('used for git commit'),
-        widget=Html5EmailInput(attrs={'size': '40'}),
+        help_text=gettext_lazy('Used for git commit.'),
+        widget=Html5EmailInput(),
     )
-    comment = forms.CharField(
+    comment = CharField(
         max_length=1024,
         label=gettext_lazy('Comments'),
-        help_text=gettext_lazy('changes in this release'),
+        help_text=gettext_lazy('Changes in this release.'),
         widget=forms.Textarea(attrs={'rows': '3'}),
     )
     test = TestField(
         max_length=64,
         label=gettext_lazy('Are you a spammer?'),
-        help_text=gettext_lazy('enter "no" if you are not a spammer'),
-        widget=forms.TextInput(attrs={'size': '10'}),
+        help_text=gettext_lazy('Enter "no" if you are not a spammer.'),
     )
 
     def __init__(self, *args, **kwargs):
         super(ScriptFormUpdate, self).__init__(*args, **kwargs)
+        self.label_suffix = ''
         self.fields['script'].choices = get_script_choices()
-
-
-def getxmlline(key, value):
-    """Get a XML line for a key/value."""
-    strvalue = '%s' % value
-    return '    <%s>%s</%s>\n' % (
-        key, strvalue.replace('<', '&lt;').replace('>', '&gt;'), key)
-
-
-def getjsonline(key, value):
-    """Get a JSON line for a key/value."""
-    strvalue = '%s' % value
-    return '    "%s": "%s",\n' % (
-        key, strvalue.replace('"', '\\"').replace("'", "\\'"))
 
 
 def handler_script_changed(sender, **kwargs):
@@ -460,8 +446,8 @@ def handler_script_changed(sender, **kwargs):
 
     # create plugins.xml
     filename = files_path_join('plugins.xml')
-    with open(filename, 'w') as _file:
-        _file.write(xml.encode('utf-8'))
+    with open(filename, 'w', encoding='utf-8') as _file:
+        _file.write(xml)
 
     # create plugins.xml.gz
     with open(filename, 'rb') as _f_in:
@@ -471,8 +457,8 @@ def handler_script_changed(sender, **kwargs):
 
     # create plugins.json
     filename = files_path_join('plugins.json')
-    with open(filename, 'w') as _file:
-        _file.write(json.encode('utf-8'))
+    with open(filename, 'w', encoding='utf-8') as _file:
+        _file.write(json)
 
     # create plugins.json.gz
     with open(filename, 'rb') as _f_in:

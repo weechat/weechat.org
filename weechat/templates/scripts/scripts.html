@@ -3,19 +3,16 @@
 {% load i18n %}
 
 {% block title %}WeeChat :: {% trans "scripts" %}{% endblock %}
-{% block css %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/scripts.css" media="screen" title="Normal">{% endblock %}
 {% block menu %}scripts{% endblock %}
 
 {% block content %}
 
-<div class="navbt">
-  <ul>
-    <li><a href="{% url 'scripts' %}" class="{% block menu2_list %}{% endblock %}">{% trans "Scripts" %}</a></li>
-    <li><a href="{% url 'scripts_add' %}" class="{% block menu2_add %}{% endblock %}">{% trans "Add script" %}</a></li>
-    <li><a href="{% url 'scripts_update' %}" class="{% block menu2_update %}{% endblock %}">{% trans "Update script" %}</a></li>
-    <li><a href="{% url 'scripts_pending' %}" class="{% block menu2_pending %}{% endblock %}">{% trans "Pending scripts" %}</a></li>
-    <li><a href="/files/scripts/unofficial/" class="{% block menu2_unofficial %}{% endblock %}">{% trans "Unofficial scripts" %}</a></li>
-  </ul>
-</div>
+<ul class="nav nav-tabs">
+  <li class="nav-item"><a class="nav-link {% block menu2_list %}{% endblock %}" href="{% url 'scripts' %}">{% trans "Scripts" %}</a></li>
+  <li class="nav-item"><a class="nav-link {% block menu2_add %}{% endblock %}" href="{% url 'scripts_add' %}">{% trans "Add script" %}</a></li>
+  <li class="nav-item"><a class="nav-link {% block menu2_update %}{% endblock %}" href="{% url 'scripts_update' %}">{% trans "Update script" %}</a></li>
+  <li class="nav-item"><a class="nav-link {% block menu2_pending %}{% endblock %}" href="{% url 'scripts_pending' %}">{% trans "Pending scripts" %}</a></li>
+  <li class="nav-item"><a class="nav-link {% block menu2_unofficial %}{% endblock %}" href="/files/scripts/unofficial/">{% trans "Unofficial scripts" %}</a></li>
+</ul>
 
 {% endblock content %}

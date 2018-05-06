@@ -23,12 +23,15 @@
 from datetime import datetime
 from math import ceil
 from os import path, listdir
+import pytz
 
+from django.conf import settings
+from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render, redirect
 from django.utils.translation import ugettext
 
 from weechat.common.path import files_path_join
-from weechat.doc.models import Language, Version, Doc
+from weechat.doc.models import Language, Version, Doc, Security
 from weechat.download.models import Release
 
 I18N_MAINTAINER = {
@@ -63,8 +66,9 @@ def get_i18n_stats():
     - langs: a dictionary with info about status of this language.
     """
     try:
+        timezone = pytz.timezone(settings.TIME_ZONE)
         filename = files_path_join('stats', 'i18n.txt')
-        date = datetime.fromtimestamp(path.getmtime(filename))
+        date = datetime.fromtimestamp(path.getmtime(filename), tz=timezone)
         with open(filename, 'r') as _file:
             langs = []
             for line in _file:
@@ -78,8 +82,8 @@ def get_i18n_stats():
                     total = translated + fuzzy + untranslated
                     if total != 0:
                         pct_fuzzy = int(ceil((fuzzy * 100) / total))
-                        pct_untranslated = \
-                            int(ceil((untranslated * 100) / total))
+                        pct_untranslated = int(
+                            ceil((untranslated * 100) / total))
                         pct_translated = 100 - pct_fuzzy - pct_untranslated
                         if pct_translated < 0:
                             pct_translated = 0
@@ -121,6 +125,7 @@ def get_bestlang(request, languages):
 
 def documentation(request, version='stable'):
     """Page with docs for stable or devel version."""
+    timezone = pytz.timezone(settings.TIME_ZONE)
     if version == 'old':
         doc_list = None
         try:
@@ -130,7 +135,7 @@ def documentation(request, version='stable'):
             pass
         return render(
             request,
-            'doc/doc.html',
+            'doc/doc_version.html',
             {
                 'version': version,
                 'doc_list': doc_list,
@@ -157,20 +162,26 @@ def documentation(request, version='stable'):
                 full_name = files_path_join('doc', name)
                 if path.exists(full_name):
                     files.append(
-                        [
+                        (
                             path.normpath(name),
-                            datetime.fromtimestamp(path.getmtime(full_name)),
-                            lang.lang
-                        ])
+                            datetime.fromtimestamp(path.getmtime(full_name),
+                                                   tz=timezone),
+                            lang,
+                        )
+                    )
                 else:
                     files.append(['', '', lang.lang])
             if docv == '-':
                 doc_list.append([doc, files])
             else:
                 doc_list2.append([doc, files])
+    try:
+        doc_version = Release.objects.get(version=version).description
+    except ObjectDoesNotExist:
+        doc_version = None
     return render(
         request,
-        'doc/doc.html',
+        'doc/doc_version.html',
         {
             'version': version,
             'languages': languages,
@@ -178,7 +189,7 @@ def documentation(request, version='stable'):
             'versions': versions,
             'doc_list': doc_list + doc_list2,
             'i18n': get_i18n_stats(),
-            'doc_version': Release.objects.get(version=version).description,
+            'doc_version': doc_version,
         },
     )
 
@@ -200,3 +211,15 @@ def documentation_link(request, version='devel', name=None, lang='en'):
         if path.exists(full_name):
             return redirect('/files/doc/%s/%s' % (version, filename))
     return redirect('doc')
+
+
+def security(request):
+    """Page with security vulnerabilities."""
+    security_list = Security.objects.all().filter(visible=1).order_by('-date')
+    return render(
+        request,
+        'doc/security.html',
+        {
+            'security_list': security_list,
+        },
+    )

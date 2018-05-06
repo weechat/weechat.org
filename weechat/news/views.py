@@ -22,64 +22,95 @@
 
 from datetime import datetime
 
+from django.core.exceptions import ObjectDoesNotExist
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render
 
 from weechat.download.models import Release
 from weechat.news.models import Info
 
 
-def render_homepage(request, info_list, max_info, event_list, max_event):
-    """Render homepage."""
-    stable_version = Release.objects.get(version='stable').description
-    release_stable = Release.objects.get(version=stable_version)
+def home(request, max_info=None, max_event=None):
+    """Homepage."""
+    now = datetime.now()
+    info_list = (Info.objects.all().filter(visible=1).filter(date__lte=now)
+                 .order_by('-date'))
+    if max_info:
+        info_list = info_list[:max_info]
+    event_list = (Info.objects.all().filter(visible=1).filter(date__gt=now)
+                  .order_by('date'))
+    if max_event:
+        event_list = event_list[:max_event]
+    try:
+        stable_version = Release.objects.get(version='stable').description
+        release_stable = Release.objects.get(version=stable_version)
+    except ObjectDoesNotExist:
+        release_stable = None
     return render(
         request,
         'home/home.html',
         {
             'release_stable': release_stable,
             'info_list': info_list,
-            'max_info': max_info,
             'event_list': event_list,
-            'max_event': max_event,
         },
     )
 
 
-def home(request, max_info=None, max_event=None):
-    """Homepage."""
-    now = datetime.now()
-    info_list = Info.objects.all().filter(visible=1).filter(date__lte=now) \
-        .order_by('-date')
-    if max_info:
-        info_list = info_list[:max_info]
-    event_list = Info.objects.all().filter(visible=1).filter(date__gt=now) \
-        .order_by('date')
-    if max_event:
-        event_list = event_list[:max_event]
-    return render_homepage(request, info_list, max_info, event_list, max_event)
+def paginate_news(request, info_list, info_id, page_name):
+    """Paginate list of news."""
+    pagesize = request.GET.get('pagesize', 10)
+    try:
+        pagesize = max(int(pagesize), 1)
+    except ValueError:
+        pagesize = 10
+    paginator = Paginator(info_list, pagesize)
+    page = request.GET.get('page')
+    try:
+        infos = paginator.page(page)
+    except PageNotAnInteger:
+        infos = paginator.page(1)
+    except EmptyPage:
+        infos = paginator.page(paginator.num_pages)
+
+    first_page = max(infos.number - 2, 1)
+    last_page = min(infos.number + 2, paginator.num_pages)
+    if first_page == 3:
+        first_page = 1
+    if last_page == paginator.num_pages - 2:
+        last_page = paginator.num_pages
+    smart_page_range = range(first_page, last_page + 1)
+
+    event = infos and infos[0].date > datetime.now()
+
+    return render(request, 'home/news.html', {
+        'infos': infos,
+        'info_id': info_id,
+        'event': event,
+        'page_name': page_name,
+        'smart_page_range': smart_page_range,
+        'pagesize': pagesize,
+    })
 
 
 def news(request, info_id=None):
-    """Homepage with only news."""
+    """List of news."""
     try:
         if info_id:
             info_list = [Info.objects.get(id=info_id, visible=1)]
         else:
-            info_list = Info.objects.all().filter(visible=1) \
-                .filter(date__lte=datetime.now()).order_by('-date')
-    except:  # noqa: E722
-        info_list = None
-    return render_homepage(request, info_list, None, None, None)
+            info_list = (Info.objects.all().filter(visible=1)
+                         .filter(date__lte=datetime.now()).order_by('-date'))
+    except ObjectDoesNotExist:
+        info_list = []
+    return paginate_news(request, info_list, info_id, 'news')
 
 
-def events(request, event_id=None):
-    """Homepage with only upcoming events."""
+def events(request):
+    """List of upcoming events."""
     try:
-        if event_id:
-            event_list = [Info.objects.get(id=event_id, visible=1)]
-        else:
-            event_list = Info.objects.all().filter(visible=1) \
-                .filter(date__gt=datetime.now()).order_by('date')
-    except:  # noqa: E722
-        event_list = None
-    return render_homepage(request, None, None, event_list, None)
+        info_list = (Info.objects.all().filter(visible=1)
+                     .filter(date__gt=datetime.now()).order_by('date'))
+    except ObjectDoesNotExist:
+        info_list = []
+    return paginate_news(request, info_list, None, 'events')

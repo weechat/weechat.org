@@ -31,8 +31,12 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 from weechat.common.path import files_path_join
-from weechat.scripts.models import Script, ScriptFormAdd, ScriptFormUpdate, \
-    get_language_from_extension
+from weechat.scripts.models import (
+    Script,
+    ScriptFormAdd,
+    ScriptFormUpdate,
+    get_language_from_extension,
+)
 
 API_OLD = '0.2.6'
 API_STABLE = '0.3.0'
@@ -83,15 +87,16 @@ def scripts(request, api='stable', sort_key='popularity', filter_name='',
         return item[0].lower()
 
     if api == 'legacy':
-        script_list = Script.objects.filter(visible=1) \
-            .filter(max_weechat=API_OLD).order_by(*get_sort_key(sort_key))
+        script_list = (Script.objects.filter(visible=1)
+                       .filter(max_weechat=API_OLD)
+                       .order_by(*get_sort_key(sort_key)))
     else:
-        script_list = Script.objects.filter(visible=1) \
-            .filter(min_weechat__gte=API_STABLE) \
-            .order_by(*get_sort_key(sort_key))
+        script_list = (Script.objects.filter(visible=1)
+                       .filter(min_weechat__gte=API_STABLE)
+                       .order_by(*get_sort_key(sort_key)))
     if filter_name == 'tag':
-        script_list = script_list \
-            .filter(tags__regex=r'(^|,)%s($|,)' % filter_value)
+        script_list = (script_list
+                       .filter(tags__regex=r'(^|,)%s($|,)' % filter_value))
     elif filter_name == 'language':
         script_list = script_list.filter(language=filter_value)
     elif filter_name == 'license':
@@ -315,8 +320,8 @@ def form_update(request):
 
 def pending(request):
     """Page with scripts pending for approval."""
-    script_list = Script.objects.filter(visible=0) \
-        .filter(min_weechat__gte=API_STABLE).order_by('-added')
+    script_list = (Script.objects.filter(visible=0)
+                   .filter(min_weechat__gte=API_STABLE).order_by('-added'))
     return render(
         request,
         'scripts/pending.html',

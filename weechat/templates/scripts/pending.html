@@ -2,20 +2,19 @@
 
 {% load i18n %}{% load txt2html %}
 
-{% block menu2_pending %}selected{% endblock %}
+{% block menu2_pending %}active{% endblock %}
 
 {% block content %}
 
 {{ block.super }}
 
-<div class="infobox">
+<div class="alert alert-primary">
   {% trans "Following scripts are waiting for approval, possible future is:" %}
   <ul>
     <li>{% trans "if script is OK, it is moved to official scripts and git repository." %}</li>
     <li>{% trans "if script does not meet all requirements, it is moved to unofficial scripts." %}</li>
     <li>{% trans "if script is rejected, it is deleted." %}</li>
   </ul>
-  <br>
   <strong>{% trans "We need your help!" %}</strong>
   <br>
   {% trans "You can help us by testing these scripts. Please report bugs to author of script and to" %}
@@ -23,51 +22,55 @@
 </div>
 
 {% if script_list %}
-  <div class="scriptlist">
-    <table class="table">
-      <tr class="header">
-        <th class="name">{% trans "Name" %}</th>
-        <th class="desc">{% trans "Description" %}</th>
-        <th class="approval">{% trans "Approval notes" %}</th>
-        <th><abbr title="{% trans "Version" %}">V.</abbr></th>
-        <th>{% trans "Language" context "programming language" %}</th>
-        <th>{% trans "License" %}</th>
-        <th>{% trans "Min" %}</th>
-        <th>{% trans "Max" %}</th>
-        <th>{% trans "Author" %}</th>
-        <th>{% trans "Date" %}</th>
+<div class="table-responsive">
+  <table class="table table-sm table-striped">
+    <thead>
+      <tr>
+        <th>{% trans "Name" %}</th>
+        <th>{% trans "Description" %}</th>
+        <th>{% trans "Approval notes" %}</th>
+        <th class="text-center"><abbr title="{% trans "Version" %}">V.</abbr></th>
+        <th class="text-center">{% trans "Language" context "programming language" %}</th>
+        <th class="text-center">{% trans "License" %}</th>
+        <th class="text-center">{% trans "Min" %}</th>
+        <th class="text-center">{% trans "Max" %}</th>
+        <th class="text-center">{% trans "Author" %}</th>
+        <th class="text-center">{% trans "Date" %}</th>
       </tr>
-    {% for script in script_list %}
-      <tr class="{% cycle 'row1' 'row2' %}">
-        <td class="name">
+    </thead>
+    <tbody>
+      {% for script in script_list %}
+      <tr>
+        <td>
           {% if script.file_exists %}
           <a href="{{ script.build_url }}">{{ script.name }}<span class="ext">.{{ script.extension }}</span></a>
           {% else %}
           {{ script.name }}<span class="ext">.{{ script.extension }}</span>
           {% endif %}
         </td>
-        <td class="description">
+        <td>
           {{ script.desc_i18n }}
           {% if script.requirements %}
-            <span class="requirements"> ({% trans "requires" %}: {{ script.requirements }})</span>
+          <span class="requirements"> ({% trans "requires" %}: {{ script.requirements }})</span>
           {% endif %}
         </td>
-        <td class="approval">{{ script.approval }}</td>
-        <td class="version">{{ script.version }}</td>
-        <td class="language">{{ script.language_display }}</td>
-        <td class="license">{{ script.license }}</td>
-        <td class="min_max">{{ script.min_weechat }}</td>
-        <td class="min_max">{{ script.max_weechat }}</td>
-        <td class="author">{{ script.author }}</td>
-        <td class="date">{% if script.added %}{{ script.added|date:"Y-m-d" }}{% endif %}</td>
+        <td>{{ script.approval }}</td>
+        <td class="text-center">{{ script.version }}</td>
+        <td class="text-center">{{ script.language_display }}</td>
+        <td class="text-center">{{ script.license }}</td>
+        <td class="text-center">{{ script.min_weechat }}</td>
+        <td class="text-center">{{ script.max_weechat }}</td>
+        <td class="text-center">{{ script.author }}</td>
+        <td class="text-center">{% if script.added %}{{ script.added|date:"Y-m-d" }}{% endif %}</td>
       </tr>
-    {% endfor %}
-    </table>
-  </div>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
 {% else %}
-  <div class="infobox">
-    {% trans "No script pending approval at this time." %}
-  </div>
+<div class="alert alert-success">
+  {% trans "No script pending approval at this time." %}
+</div>
 {% endif %}
 
 {% endblock content %}

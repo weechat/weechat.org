@@ -40,9 +40,10 @@ class Task(models.Model):
     description = models.CharField(max_length=512)
     priority = models.IntegerField(default=0)
 
-    def __unicode__(self):
-        desc = self.description if len(self.description) < 100 \
-            else '%s...' % self.description[0:100]
+    def __str__(self):
+        desc = (self.description
+                if len(self.description) < 100
+                else '%s...' % self.description[0:100])
         return '%s%s%s, %s, %d%%, %s: %s (%d)' % (
             '' if self.visible else '(',
             self.version,
@@ -52,6 +53,9 @@ class Task(models.Model):
             self.component,
             desc,
             self.priority)
+
+    def __unicode__(self):  # python 2.x
+        return self.__str__()
 
     def version_date(self):
         """Return the date of version.

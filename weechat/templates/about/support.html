@@ -1,0 +1,117 @@
+{% extends "about/about.html" %}
+
+{% load i18n %}{% load txt2html %}
+
+{% block subtitle %} :: {% trans "support" %}{% endblock %}
+{% block menu2_support %}active{% endblock %}
+
+{% block content %}
+
+{{ block.super }}
+
+<div class="alert alert-primary">
+  {% url 'doc' as doc_url %}
+  {% url 'faq' as faq_url %}
+  {% blocktrans %}<strong>Important:</strong> before asking for help, please read carefully <a href="{{ doc_url }}">documentation</a> and <a href="{{ faq_url }}">FAQ</a>.{% endblocktrans %}
+</div>
+
+<h3>IRC</h3>
+
+<p>
+  {% trans "On server chat.freenode.net:" %}
+
+  <ul>
+    <li>
+      {% trans "official channels (with developers):" %}
+      <ul>
+        <li><strong><a href="irc://chat.freenode.net/weechat">#weechat</a></strong> ({% trans "English" %})</li>
+        <li><strong><a href="irc://chat.freenode.net/weechat-fr">#weechat-fr</a></strong> ({% trans "French" %})</li>
+      </ul>
+    </li>
+    <li>
+      {% trans "non-official channels:" %}
+      <ul>
+        <li><a href="irc://chat.freenode.net/weechat-de">#weechat-de</a> ({% trans "German" %})</li>
+        <li><a href="irc://chat.freenode.net/weechat-fi">#weechat-fi</a> ({% trans "Finnish" %})</li>
+      </ul>
+    </li>
+  </ul>
+</p>
+
+<h3>{% trans "Bugs / Feature requests" %}</h3>
+
+<p>
+  {% trans "Bugs and feature requests for WeeChat, QWeeChat and scripts can be submitted on GitHub:" %}
+  <a href="https://github.com/weechat" target="_blank" rel="noopener">https://github.com/weechat <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;"></a>
+</p>
+
+<h3>{% trans "Social networks" %}</h3>
+
+<p>
+  <ul class="social">
+    <li>
+      <a href="https://diasp.eu/u/weechat" target="_blank" rel="noopener" title="Diaspora">
+        {% include "svg/diaspora.html" %}
+        Diaspora
+        <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;">
+      </a>
+    </li>
+    <li>
+      <a href="https://hostux.social/@weechat" target="_blank" rel="noopener" title="Mastodon">
+        {% include "svg/mastodon.html" %}
+        Mastodon
+        <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;">
+      </a>
+    </li>
+    <li>
+      <a href="https://twitter.com/WeeChatClient" target="_blank" rel="noopener" title="Twitter">
+        {% include "svg/twitter.html" %}
+        Twitter
+        <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;">
+      </a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/+WeeChat" target="_blank" rel="noopener" title="{% trans "Google+ page" %}">
+        {% include "svg/google_plus.html" %}
+        {% trans "Google+ page" %}
+        <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;">
+      </a> /
+      <a href="https://plus.google.com/communities/104181302778416960107" target="_blank" rel="noopener" title="{% trans "Google+ community" %}">
+        {% trans "Google+ community" %}
+        <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;">
+      </a>
+    </li>
+  </ul>
+</p>
+
+<h3>{% trans "Mailing lists" %}</h3>
+
+<p>
+  {% blocktrans %}There are <a href="https://savannah.nongnu.org/mail/?group=weechat" target="_blank" rel="noopener">3 mailing lists <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;"></a>:{% endblocktrans %}
+
+  <ul>
+    <li>
+      {% trans "<strong>weechat-security</strong> (security advisories about WeeChat):" %}
+      <ul>
+        <li><a href="https://lists.nongnu.org/mailman/listinfo/weechat-security" target="_blank" rel="noopener">{% trans "subscribe" %} <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;"></a></li>
+        <li><a href="mailto:{% txt2html "weechat-security@nongnu.org" %}">{% trans "send a mail to the list" %}</a></li>
+      </ul>
+    </li>
+    <li>
+      {% trans "<strong>weechat-support</strong> (installation, usage, bugs, ...):" %}
+      <ul>
+        <li><a href="https://lists.nongnu.org/mailman/listinfo/weechat-support" target="_blank" rel="noopener">{% trans "subscribe" %} <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;"></a></li>
+        <li><a href="mailto:{% txt2html "weechat-support@nongnu.org" %}">{% trans "send a mail to the list" %}</a></li>
+      </ul>
+    </li>
+    <li>
+      {% trans "<strong>weechat-dev</strong> (everything related to the development):" %}
+      <ul>
+        <li><a href="https://lists.nongnu.org/mailman/listinfo/weechat-dev" target="_blank" rel="noopener">{% trans "subscribe" %} <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;"></a></li>
+        <li><a href="mailto:{% txt2html "weechat-dev@nongnu.org" %}">{% trans "send a mail to the list" %}</a></li>
+      </ul>
+    </li>
+  </ul>
+</p>
+
+{% endblock content %}
