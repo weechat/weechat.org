@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-06 17:41+0200\n"
+"POT-Creation-Date: 2018-05-06 17:46+0200\n"
 "PO-Revision-Date: 2018-05-06 17:42+0200\n"
 "Last-Translator: Krzysztof Korościk <soltys@soltys.info>\n"
 "Language-Team: Polish <soltys1@gmail.com>\n"
@@ -167,49 +167,73 @@ msgid "This field is required."
 msgstr "To pole jest wymagane."
 
 #: dev/views.py:37
-msgid "stable version"
-msgstr "wersja stabilna"
+#, fuzzy
+#| msgid "Stable version"
+msgid "Stable version."
+msgstr "Wersja stabilna"
 
 #: dev/views.py:41
+#, fuzzy
+#| msgid ""
+#| "stable version, as number, like plugin API: info_get(\"version_number\")"
 msgid ""
-"stable version, as number, like plugin API: info_get(\"version_number\")"
+"Stable version, as number, like plugin API: info_get(\"version_number\")."
 msgstr ""
 "wersja stabilna, jako liczba, jak w API wtyczek:  info_get(\"version_number"
 "\")"
 
 #: dev/views.py:46
-msgid "date of stable version"
+#, fuzzy
+#| msgid "date of stable version"
+msgid "Date of stable version (format: \"YYYY-MM-DD\")."
 msgstr "data wydania stabilnej wersji"
 
 #: dev/views.py:50
-msgid "development version"
+#, fuzzy
+#| msgid "development version"
+msgid "Development version."
 msgstr "wersja rozwojowa"
 
 #: dev/views.py:54
-msgid "output of \"git rev-parse HEAD\" for sources repository"
+#, fuzzy
+#| msgid "output of \"git rev-parse HEAD\" for sources repository"
+msgid "Output of \"git rev-parse HEAD\" for sources repository."
 msgstr "wynik \"git rev-parse HEAD\" dla repozytorium ze źródłami"
 
 #: dev/views.py:58
-msgid "output of \"git rev-parse HEAD\" for scripts repository"
+#, fuzzy
+#| msgid "output of \"git rev-parse HEAD\" for scripts repository"
+msgid "Output of \"git rev-parse HEAD\" for scripts repository."
 msgstr "wynik \"git rev-parse HEAD\" dla repozytorium skryptów"
 
-#: dev/views.py:62 templates/download/packages.html:41
-msgid "next stable version"
+#: dev/views.py:62
+#, fuzzy
+#| msgid "next stable version"
+msgid "Next stable version."
 msgstr "następna stabilna wersja"
 
 #: dev/views.py:66
+#, fuzzy
+#| msgid ""
+#| "next stable version, as number, like plugin API: info_get(\"version_number"
+#| "\")"
 msgid ""
-"next stable version, as number, like plugin API: info_get(\"version_number\")"
+"Next stable version, as number, like plugin API: info_get(\"version_number"
+"\")."
 msgstr ""
 "następna stabilna wersja, jako numer, jak w API wtyczek: "
 "info_get(\"version_number\")"
 
 #: dev/views.py:71
-msgid "approximate date of next stable version"
+#, fuzzy
+#| msgid "approximate date of next stable version"
+msgid "Approximate date of next stable version (format: \"YYYY-MM-DD\")."
 msgstr "przybliżona data wydania kolejnej stabilnej wersji"
 
 #: dev/views.py:76
-msgid "all infos (one info by line, format: \"info:value\")"
+#, fuzzy
+#| msgid "all infos (one info by line, format: \"info:value\")"
+msgid "All infos (one info by line, format: \"info:value\")."
 msgstr "wszystkie informacje (jedna na linie, format \"info:wartość\")"
 
 #: doc/_i18n_security.py:7
@@ -6657,6 +6681,10 @@ msgstr ""
 "starszych wersji: są one mniej stabilne niż najnowsze wypuszczone wersje, i "
 "mogą zawierać błędy bezpieczeństwa naprawione w późniejszych wersjach."
 
+#: templates/download/packages.html:41
+msgid "next stable version"
+msgstr "następna stabilna wersja"
+
 #: templates/download/packages.html:48
 msgid ""
 "<strong>Important:</strong> this version may be unstable or it may not "
@@ -7426,3 +7454,9 @@ msgstr "Wewnętrzny błąd."
 #: themes/models.py:271
 msgid "Invalid name: different from theme."
 msgstr "Niewłaściwa nazwa: różni się od motywu."
+
+#~ msgid "stable version"
+#~ msgstr "wersja stabilna"
+
+#~ msgid "development version"
+#~ msgstr "wersja rozwojowa"

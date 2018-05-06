@@ -34,46 +34,46 @@ from weechat.download.models import Release
 INFO_KEYS = (
     (
         'stable',
-        gettext_lazy('stable version'),
+        gettext_lazy('Stable version.'),
     ),
     (
         'stable_number',
-        gettext_lazy('stable version, as number, like plugin API: '
-                     'info_get("version_number")'),
+        gettext_lazy('Stable version, as number, like plugin API: '
+                     'info_get("version_number").'),
     ),
     (
         'stable_date',
-        '%s %s' % (gettext_lazy('date of stable version'), '(YYYY-MM-DD)'),
+        gettext_lazy('Date of stable version (format: "YYYY-MM-DD").'),
     ),
     (
         'devel',
-        gettext_lazy('development version'),
+        gettext_lazy('Development version.'),
     ),
     (
         'git',
-        gettext_lazy('output of "git rev-parse HEAD" for sources repository'),
+        gettext_lazy('Output of "git rev-parse HEAD" for sources repository.'),
     ),
     (
         'git_scripts',
-        gettext_lazy('output of "git rev-parse HEAD" for scripts repository'),
+        gettext_lazy('Output of "git rev-parse HEAD" for scripts repository.'),
     ),
     (
         'next_stable',
-        gettext_lazy('next stable version'),
+        gettext_lazy('Next stable version.'),
     ),
     (
         'next_stable_number',
-        gettext_lazy('next stable version, as number, like plugin API: '
-                     'info_get("version_number")'),
+        gettext_lazy('Next stable version, as number, like plugin API: '
+                     'info_get("version_number").'),
     ),
     (
         'next_stable_date',
-        '%s (YYYY-MM-DD)' % gettext_lazy('approximate date of next '
-                                         'stable version'),
+        gettext_lazy('Approximate date of next stable version '
+                     '(format: "YYYY-MM-DD").'),
     ),
     (
         'all',
-        gettext_lazy('all infos (one info by line, format: "info:value")'),
+        gettext_lazy('All infos (one info by line, format: "info:value").'),
     ),
 )
 

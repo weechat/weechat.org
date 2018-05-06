@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-06 17:41+0200\n"
-"PO-Revision-Date: 2018-05-06 17:41+0200\n"
+"POT-Creation-Date: 2018-05-06 17:46+0200\n"
+"PO-Revision-Date: 2018-05-06 17:46+0200\n"
 "Last-Translator: Sébastien Helleu <flashcode@flashtux.org>\n"
 "Language-Team: French <flashcode@flashtux.org>\n"
 "Language: fr\n"
@@ -173,50 +173,52 @@ msgid "This field is required."
 msgstr "Ce champ est obligatoire."
 
 #: dev/views.py:37
-msgid "stable version"
-msgstr "version stable"
+msgid "Stable version."
+msgstr "Version stable."
 
 #: dev/views.py:41
 msgid ""
-"stable version, as number, like plugin API: info_get(\"version_number\")"
+"Stable version, as number, like plugin API: info_get(\"version_number\")."
 msgstr ""
-"version stable, sous forme de nombre, comme l'API extension : "
-"info_get(\"version_number\")"
+"Version stable, sous forme de nombre, comme l'API extension : "
+"info_get(\"version_number\")."
 
 #: dev/views.py:46
-msgid "date of stable version"
-msgstr "date de la version stable"
+msgid "Date of stable version (format: \"YYYY-MM-DD\")."
+msgstr "Date de la version stable (format : \"YYYY-MM-DD\")."
 
 #: dev/views.py:50
-msgid "development version"
-msgstr "version de développement"
+msgid "Development version."
+msgstr "Version de développement."
 
 #: dev/views.py:54
-msgid "output of \"git rev-parse HEAD\" for sources repository"
-msgstr "sortie de \"git rev-parse HEAD\" pour le dépôt des sources"
+msgid "Output of \"git rev-parse HEAD\" for sources repository."
+msgstr "Sortie de \"git rev-parse HEAD\" pour le dépôt des sources."
 
 #: dev/views.py:58
-msgid "output of \"git rev-parse HEAD\" for scripts repository"
-msgstr "sortie de \"git rev-parse HEAD\" pour le dépôt des scripts"
+msgid "Output of \"git rev-parse HEAD\" for scripts repository."
+msgstr "Sortie de \"git rev-parse HEAD\" pour le dépôt des scripts."
 
-#: dev/views.py:62 templates/download/packages.html:41
-msgid "next stable version"
-msgstr "prochaine version stable"
+#: dev/views.py:62
+msgid "Next stable version."
+msgstr "Prochaine version stable."
 
 #: dev/views.py:66
 msgid ""
-"next stable version, as number, like plugin API: info_get(\"version_number\")"
+"Next stable version, as number, like plugin API: info_get(\"version_number"
+"\")."
 msgstr ""
-"prochaine version stable, sous forme de nombre, comme l'API extension : "
-"info_get(\"version_number\")"
+"Prochaine version stable, sous forme de nombre, comme l'API extension : "
+"info_get(\"version_number\")."
 
 #: dev/views.py:71
-msgid "approximate date of next stable version"
-msgstr "date approximative de la prochaine version stable"
+msgid "Approximate date of next stable version (format: \"YYYY-MM-DD\")."
+msgstr ""
+"Date approximative de la prochaine version stable (format : \"YYYY-MM-DD\")."
 
 #: dev/views.py:76
-msgid "all infos (one info by line, format: \"info:value\")"
-msgstr "toutes les infos (une info par ligne, format : \"info:valeur\")"
+msgid "All infos (one info by line, format: \"info:value\")."
+msgstr "Toutes les infos (une info par ligne, format : \"info:valeur\")."
 
 #: doc/_i18n_security.py:7
 msgid "/set irc.network.colors_receive off"
@@ -6654,6 +6656,10 @@ msgstr ""
 "version distribuée et peuvent contenir des failles de sécurité qui sont "
 "corrigées dans les versions ultérieures."
 
+#: templates/download/packages.html:41
+msgid "next stable version"
+msgstr "prochaine version stable"
+
 #: templates/download/packages.html:48
 msgid ""
 "<strong>Important:</strong> this version may be unstable or it may not "
@@ -7385,3 +7391,9 @@ msgstr "Erreur interne."
 #: themes/models.py:271
 msgid "Invalid name: different from theme."
 msgstr "Nom invalide : différent du thème."
+
+#~ msgid "stable version"
+#~ msgstr "version stable"
+
+#~ msgid "development version"
+#~ msgstr "version de développement"
