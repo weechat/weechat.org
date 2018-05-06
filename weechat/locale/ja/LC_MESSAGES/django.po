@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-30 21:53+0200\n"
-"PO-Revision-Date: 2018-03-30 21:54+0200\n"
+"POT-Creation-Date: 2018-05-06 15:24+0200\n"
+"PO-Revision-Date: 2018-05-06 15:25+0200\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
 "translation/ja_JP>\n"
@@ -169,158 +169,77 @@ msgid "Trigger and Exec plugins, bare display, hidden buffers, unit tests."
 msgstr ""
 "トリガプラグインと実行プラグイン、最小限表示、隠しバッファ、単体テスト。"
 
-#: dev/views.py:36
+#: common/forms.py:89 common/forms.py:92 scripts/models.py:214
+msgid "This field is required."
+msgstr "このフィールドは必須です。"
+
+#: dev/views.py:37
 msgid "stable version"
 msgstr "安定版のバージョン番号"
 
-#: dev/views.py:40
+#: dev/views.py:41
 msgid ""
 "stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
 "安定版のバージョン番号 (数表記)、プラグイン API における "
 "info_get(\"version_number\") と同様"
 
-#: dev/views.py:45
+#: dev/views.py:46
 msgid "date of stable version"
 msgstr "安定版のリリース日"
 
-#: dev/views.py:49
+#: dev/views.py:50
 msgid "development version"
 msgstr "開発版のバージョン番号"
 
-#: dev/views.py:53
+#: dev/views.py:54
 msgid "output of \"git rev-parse HEAD\" for sources repository"
 msgstr "ソースリポジトリにおける \"git rev-parse HEAD\" の出力"
 
-#: dev/views.py:57
+#: dev/views.py:58
 msgid "output of \"git rev-parse HEAD\" for scripts repository"
 msgstr "スクリプトリポジトリにおける \"git rev-parse HEAD\" の出力"
 
-#: dev/views.py:61 templates/download/packages.html:49
+#: dev/views.py:62 templates/download/packages.html:41
 msgid "next stable version"
 msgstr "次期安定版のバージョン番号"
 
-#: dev/views.py:65
+#: dev/views.py:66
 msgid ""
 "next stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
 "次期安定版のバージョン番号 (数表記)、プラグイン API における "
 "info_get(\"version_number\") と同様<"
 
-#: dev/views.py:70
+#: dev/views.py:71
 msgid "approximate date of next stable version"
 msgstr "次期安定版のリリース予定日"
 
-#: dev/views.py:75
+#: dev/views.py:76
 msgid "all infos (one info by line, format: \"info:value\")"
 msgstr "全ての情報 (1 行に 1 情報、書式: \"info:value\")"
 
-#: doc/models.py:30
-msgid "Czech"
-msgstr "チェコ語"
-
-#: doc/models.py:31 settings.py:62 templates/dev/support.html:33
-msgid "German"
-msgstr "ドイツ語"
-
-#: doc/models.py:32 settings.py:60 templates/dev/support.html:26
-#: templates/menu.html:24 templates/menu.html:25
-msgid "English"
-msgstr "英語"
-
-#: doc/models.py:33
-msgid "Spanish"
-msgstr "スペイン語"
-
-#: doc/models.py:34 settings.py:61 templates/dev/support.html:27
-msgid "French"
-msgstr "フランス語"
-
-#: doc/models.py:35
-msgid "Hungarian"
-msgstr "ハンガリー語"
-
-#: doc/models.py:36 settings.py:63
-msgid "Italian"
-msgstr "イタリア語"
-
-#: doc/models.py:37 settings.py:66
-msgid "Japanese"
-msgstr "日本語"
-
-#: doc/models.py:38 settings.py:64
-msgid "Polish"
-msgstr "ポーランド語"
-
-#: doc/models.py:39
-msgid "Portuguese"
-msgstr "ポルトガル語"
-
-#: doc/models.py:40 settings.py:65
-msgid "Portuguese (Brazil)"
-msgstr "ポルトガル語 (ブラジル)"
-
-#: doc/models.py:41
-msgid "Russian"
-msgstr "ロシア語"
-
-#: doc/models.py:42
-msgid "Turkish"
-msgstr "トルコ語"
-
-#: doc/models.py:74 templates/menu.html:24
-msgid "FAQ"
-msgstr "FAQ"
-
-#: doc/models.py:75
-msgid "User's guide"
-msgstr "ユーザーズガイド"
-
-#: doc/models.py:76
-msgid "Plugin API reference"
-msgstr "プラグイン API リファレンス"
-
-#: doc/models.py:77
-msgid "Scripting guide"
-msgstr "スクリプト作成ガイド"
-
-#: doc/models.py:78
-msgid "Quick Start guide"
-msgstr "クイックスタートガイド"
-
-#: doc/models.py:79
-msgid "Tester's guide"
-msgstr "テスターガイド"
-
-#: doc/models.py:80
-msgid "Developer's guide"
-msgstr "開発者ガイド"
-
-#: doc/models.py:81
-msgid "Relay protocol"
-msgstr "リレープロトコル"
-
-#: download/_i18n_security.py:7
+#: doc/_i18n_security.py:7
 msgid "/set irc.network.colors_receive off"
 msgstr "/set irc.network.colors_receive off"
 
-#: download/_i18n_security.py:8
+#: doc/_i18n_security.py:8
 msgid "Buffer overflow when decoding IRC colors in strings."
 msgstr "文字列中の IRC 色をデコードする際にバッファオーバーフロー。"
 
-#: download/_i18n_security.py:9
+#: doc/_i18n_security.py:9
 msgid "Buffer overflow when removing quotes in DCC filename."
 msgstr "DCC ファイル名内の引用符を削除する際にバッファオーバーフロー。"
 
-#: download/_i18n_security.py:10
+#: doc/_i18n_security.py:10
 msgid "Buffer overflows in build of strings."
 msgstr "文字列を作る際にバッファオーバーフロー。"
 
-#: download/_i18n_security.py:11
+#: doc/_i18n_security.py:11
 msgid "Crash when receiving special chars in IRC messages."
 msgstr "IRC メッセージに特定の文字が含まれる際にクラッシュ。"
 
-#: download/_i18n_security.py:12
+#: doc/_i18n_security.py:12
 msgid ""
 "Create a trigger (with WeeChat >= 1.1): /trigger add irc_dcc_quotes modifier "
 "\"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND ${\\x22} \" "
@@ -330,7 +249,7 @@ msgstr ""
 "irc_dcc_quotes modifier \"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}"
 "DCC SEND ${\\x22} \" \"/.*//\""
 
-#: download/_i18n_security.py:13
+#: doc/_i18n_security.py:13
 msgid ""
 "Date/time conversion specifiers are expanded after replacing buffer local "
 "variables in name of log files. In some cases, this can lead to an error in "
@@ -340,18 +259,18 @@ msgstr ""
 "しばしば、strftime 関数が失敗して初期化されていないバッファを利用することでク"
 "ラッシュが引き起こされる事があります。"
 
-#: download/_i18n_security.py:14
+#: doc/_i18n_security.py:14
 msgid ""
 "Do not use command /notify with nicks containing formatting chars like \"%\"."
 msgstr ""
 "/notify コマンドは \"%\" などの書式文字を含むニックネームと一緒に使わないでく"
 "ださい。"
 
-#: download/_i18n_security.py:15
+#: doc/_i18n_security.py:15
 msgid "Do not use irc protocol in relay plugin."
 msgstr "リレープラグインで irc プロトコルを使わないでください。"
 
-#: download/_i18n_security.py:16
+#: doc/_i18n_security.py:16
 msgid ""
 "Missing verifications in SSL certificate, which allows man-in-the-middle "
 "attackers to spoof an SSL chat server via an arbitrary certificate."
@@ -359,14 +278,14 @@ msgstr ""
 "SSL 証明書にある欠陥の見落とし。これにより任意の証明書を経由して SSL チャット"
 "サーバになりすました中間者攻撃を受けることになります。"
 
-#: download/_i18n_security.py:17
+#: doc/_i18n_security.py:17
 msgid ""
 "Remove/unload all scripts calling function hook_process (for maximum safety)."
 msgstr ""
 "hook_process 関数を使っている全てのスクリプトを削除/アンロードしてください "
 "(最大限の安全を確保するために)。"
 
-#: download/_i18n_security.py:18
+#: doc/_i18n_security.py:18
 msgid ""
 "Turn off option \"irc.network.send_unknown_commands\" or do not use "
 "formatting chars like \"%\" when sending unknown commands to server."
@@ -374,11 +293,11 @@ msgstr ""
 "オプション \"irc.network.send_unknown_commands\" をオフにするか、不明なコマン"
 "ドをサーバに送る際には \"%\" などの書式文字を使わないでください。"
 
-#: download/_i18n_security.py:19
+#: doc/_i18n_security.py:19
 msgid "Uncontrolled format string in API function infobar_printf."
 msgstr "infobar_printf API 関数の書式文字列攻撃。"
 
-#: download/_i18n_security.py:20
+#: doc/_i18n_security.py:20
 msgid ""
 "Uncontrolled format string when IRC commands are redirected by relay plugin. "
 "If the output or redirected command contains formatting chars like \"%\", "
@@ -388,7 +307,7 @@ msgstr ""
 "はリダイレクトされたコマンドに \"%\" などの文字列が含まれる場合、WeeChat がク"
 "ラッシュします。"
 
-#: download/_i18n_security.py:21
+#: doc/_i18n_security.py:21
 msgid ""
 "Uncontrolled format string when sending IRC \"ison\" command for nicks "
 "monitored with command /notify."
@@ -396,7 +315,7 @@ msgstr ""
 "/notify コマンドで監視しているニックネームに対して IRC が \"ison\" コマンドを"
 "送信する際の書式文字列攻撃。"
 
-#: download/_i18n_security.py:22
+#: doc/_i18n_security.py:22
 msgid ""
 "Uncontrolled format string when sending unknown IRC command to server (if "
 "option \"irc.network.send_unknown_commands\" is on)."
@@ -404,11 +323,11 @@ msgstr ""
 "未知の IRC コマンドをサーバに送信する際の書式文字列攻撃 (\"irc.network."
 "send_unknown_commands\" オプションが ON の場合)。"
 
-#: download/_i18n_security.py:23
+#: doc/_i18n_security.py:23
 msgid "Unload the logger plugin: /plugin unload logger"
 msgstr "logger プラグインのアンロード: /plugin unload logger"
 
-#: download/_i18n_security.py:24
+#: doc/_i18n_security.py:24
 msgid ""
 "Untrusted command for function hook_process could lead to execution of "
 "commands, because of shell expansions (so the problem is only caused by some "
@@ -419,24 +338,109 @@ msgstr ""
 "です)。"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:189 templates/download/security.html:71
+#: doc/models.py:37 templates/doc/security.html:83
 msgid "low"
 msgstr "低"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:191 templates/download/security.html:72
+#: doc/models.py:39 templates/doc/security.html:87
 msgid "medium"
 msgstr "中"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:193 templates/download/security.html:73
+#: doc/models.py:41 templates/doc/security.html:91
 msgid "high"
 msgstr "高"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:195 templates/download/security.html:74
+#: doc/models.py:43 templates/doc/security.html:95
 msgid "critical"
 msgstr "重大"
+
+#: doc/models.py:50
+msgid "Czech"
+msgstr "チェコ語"
+
+#: doc/models.py:51 settings.py:62 templates/about/support.html:34
+#: templates/about/weechat.org.html:24
+msgid "German"
+msgstr "ドイツ語"
+
+#: doc/models.py:52 settings.py:60 templates/about/support.html:27
+msgid "English"
+msgstr "英語"
+
+#: doc/models.py:53
+msgid "Spanish"
+msgstr "スペイン語"
+
+#: doc/models.py:54 settings.py:61 templates/about/support.html:28
+msgid "French"
+msgstr "フランス語"
+
+#: doc/models.py:55
+msgid "Hungarian"
+msgstr "ハンガリー語"
+
+#: doc/models.py:56 settings.py:63 templates/about/weechat.org.html:25
+msgid "Italian"
+msgstr "イタリア語"
+
+#: doc/models.py:57 settings.py:66 templates/about/weechat.org.html:26
+msgid "Japanese"
+msgstr "日本語"
+
+#: doc/models.py:58 settings.py:64 templates/about/weechat.org.html:27
+msgid "Polish"
+msgstr "ポーランド語"
+
+#: doc/models.py:59
+msgid "Portuguese"
+msgstr "ポルトガル語"
+
+#: doc/models.py:60 settings.py:65 templates/about/weechat.org.html:28
+msgid "Portuguese (Brazil)"
+msgstr "ポルトガル語 (ブラジル)"
+
+#: doc/models.py:61
+msgid "Russian"
+msgstr "ロシア語"
+
+#: doc/models.py:62
+msgid "Turkish"
+msgstr "トルコ語"
+
+#: doc/models.py:100
+msgid "FAQ"
+msgstr "FAQ"
+
+#: doc/models.py:101
+msgid "User's guide"
+msgstr "ユーザーズガイド"
+
+#: doc/models.py:102
+msgid "Plugin API reference"
+msgstr "プラグイン API リファレンス"
+
+#: doc/models.py:103
+msgid "Scripting guide"
+msgstr "スクリプト作成ガイド"
+
+#: doc/models.py:104
+msgid "Quick Start guide"
+msgstr "クイックスタートガイド"
+
+#: doc/models.py:105
+msgid "Tester's guide"
+msgstr "テスターガイド"
+
+#: doc/models.py:106
+msgid "Developer's guide"
+msgstr "開発者ガイド"
+
+#: doc/models.py:107
+msgid "Relay protocol"
+msgstr "リレープロトコル"
 
 #: news/_i18n_info.py:7
 msgid ""
@@ -685,7 +689,7 @@ msgstr "Debian/Raspbian リポジトリ"
 msgid "Dennis Ritchie has left #world"
 msgstr "Dennis Ritchie さんが亡くなりました"
 
-#: news/_i18n_info.py:24 templates/home/home.html:72 templates/menu.html:65
+#: news/_i18n_info.py:24
 msgid "Devel blog"
 msgstr "開発ブログ"
 
@@ -701,7 +705,8 @@ msgstr ""
 "注意: TLS 接続、バディリスト管理、在席情報、MUC、転送などの多くの機能が実装さ"
 "れていません。"
 
-#: news/_i18n_info.py:26 templates/menu.html:19
+#: news/_i18n_info.py:26 templates/base.html:37 templates/base.html:93
+#: templates/home/home.html:109
 msgid "Documentation"
 msgstr "文書"
 
@@ -891,9 +896,10 @@ msgstr ""
 "次期バージョン 0.3.0 をリリースするための 3 番目のリリース候補版 (バージョン "
 "0.3.0-rc3) です。"
 
-#: news/_i18n_info.py:52 scripts/models.py:268 templates/about/history.html:38
-#: templates/doc/doc.html:28 templates/download/packages.html:42
-#: templates/scripts/list.html:90 templates/scripts/pending.html:32
+#: news/_i18n_info.py:52 scripts/models.py:273 templates/about/history.html:44
+#: templates/doc/doc_version.html:20 templates/download/packages.html:34
+#: templates/scripts/list.html:94 templates/scripts/pending.html:32
+#: templates/scripts/source.html:22
 msgid "Version"
 msgstr "バージョン"
 
@@ -5010,20 +5016,15 @@ msgstr "iChat スタイルのタイムスタンプ。"
 msgid "iTunes control and now playing script."
 msgstr "iTunes の操作と現在再生中曲に関する情報を得るスクリプト。"
 
-#: scripts/models.py:124
+#: scripts/models.py:143
 msgid "Popular script"
 msgstr "人気のスクリプト"
 
-#: scripts/models.py:194 scripts/models.py:212 scripts/models.py:215
-#: themes/models.py:125 themes/models.py:128
-msgid "This field is required."
-msgstr "このフィールドは必須です。"
-
-#: scripts/models.py:197
+#: scripts/models.py:217
 msgid "This name is invalid."
 msgstr "名前が不正です。"
 
-#: scripts/models.py:202
+#: scripts/models.py:222
 msgid ""
 "This name already exists, please choose another name (update script content "
 "accordingly)."
@@ -5031,123 +5032,150 @@ msgstr ""
 "この名前はすでに存在しています。他の名前を選んでください (スクリプトをアップ"
 "デートすることになります)。"
 
-#: scripts/models.py:258 templates/scripts/list.html:84
-#: templates/scripts/list.html:86 templates/scripts/pending.html:33
-msgctxt "programming language"
+#: scripts/models.py:264
+#, fuzzy
+#| msgctxt "programming language"
+#| msgid "Language"
+msgctxt "The programming language."
 msgid "Language"
 msgstr "プログラミング言語"
 
-#: scripts/models.py:263 templates/about/donate.html:75
-#: templates/scripts/list.html:78 templates/scripts/list.html:80
-#: templates/scripts/pending.html:29
+#: scripts/models.py:269 templates/about/interfaces.html:24
+#: templates/donate.html:86 templates/scripts/list.html:82
+#: templates/scripts/list.html:84 templates/scripts/pending.html:29
 msgid "Name"
 msgstr "名称"
 
-#: scripts/models.py:269
-msgid "version of script (only digits or dots)"
+#: scripts/models.py:274
+#, fuzzy
+#| msgid "version of script (only digits or dots)"
+msgid "The version of script (only digits or dots)."
 msgstr "スクリプトのバージョン (数字とドットのみ使用可)"
 
-#: scripts/models.py:274 templates/scripts/list.html:93
-#: templates/scripts/list.html:95 templates/scripts/pending.html:34
+#: scripts/models.py:278 templates/scripts/list.html:97
+#: templates/scripts/list.html:99 templates/scripts/pending.html:34
+#: templates/scripts/source.html:22
 msgid "License"
 msgstr "ライセンス"
 
-#: scripts/models.py:275
-msgid "license (for example: GPL3, BSD, ...)"
+#: scripts/models.py:279
+#, fuzzy
+#| msgid "license (for example: GPL3, BSD, ...)"
+msgid "The license (for example: GPL3, BSD, ...)."
 msgstr "ライセンス (例: GPL3、BSD、...)"
 
-#: scripts/models.py:279 scripts/models.py:361 templates/doc/doc.html:69
-#: themes/models.py:136 themes/models.py:224
+#: scripts/models.py:282 scripts/models.py:361
+#: templates/doc/doc_version.html:67 themes/models.py:137 themes/models.py:227
 msgid "File"
 msgstr "ファイル"
 
-#: scripts/models.py:280 scripts/models.py:362
-msgid "the script"
+#: scripts/models.py:283 scripts/models.py:362
+#, fuzzy
+#| msgid "the script"
+msgid "The script."
 msgstr "スクリプト"
 
-#: scripts/models.py:284 templates/dev/info_list.html:19
-#: templates/dev/roadmap.html:46 templates/download/security.html:35
-#: templates/scripts/list.html:89 templates/scripts/pending.html:30
-#: themes/models.py:143
+#: scripts/models.py:287 templates/dev/info_list.html:24
+#: templates/dev/roadmap.html:41 templates/doc/security.html:41
+#: templates/scripts/list.html:93 templates/scripts/pending.html:30
+#: themes/models.py:144
 msgid "Description"
 msgstr "説明"
 
-#: scripts/models.py:290
+#: scripts/models.py:292
 msgid "Requirements"
 msgstr "実行に必要なもの"
 
-#: scripts/models.py:291 themes/models.py:144
-msgid "optional"
-msgstr "任意"
-
 #: scripts/models.py:296
-msgid "Min/max WeeChat"
+#, fuzzy
+#| msgid "Min/max WeeChat"
+msgid "Min/max WeeChat version."
 msgstr "WeeChat のバージョン"
 
-#: scripts/models.py:299 scripts/models.py:366 themes/models.py:149
-#: themes/models.py:230
+#: scripts/models.py:300 scripts/models.py:366 themes/models.py:148
+#: themes/models.py:232
 msgid "Your name or nick"
 msgstr "名前またはニックネーム"
 
-#: scripts/models.py:300 scripts/models.py:305
-msgid "used for scripts page and git commit"
-msgstr "スクリプトページと git コミットに利用"
+#: scripts/models.py:301
+#, fuzzy
+#| msgid "used for git commit"
+msgid "Used for git commit and scripts page."
+msgstr "git コミットに利用"
 
-#: scripts/models.py:304 scripts/models.py:371 themes/models.py:153
-#: themes/models.py:234
+#: scripts/models.py:305 scripts/models.py:371 themes/models.py:153
+#: themes/models.py:236
 msgid "Your e-mail"
 msgstr "電子メールアドレス"
 
-#: scripts/models.py:311 scripts/models.py:377 themes/models.py:160
-#: themes/models.py:241
+#: scripts/models.py:306 scripts/models.py:367 scripts/models.py:372
+#, fuzzy
+#| msgid "used for git commit"
+msgid "Used for git commit."
+msgstr "git コミットに利用"
+
+#: scripts/models.py:312 scripts/models.py:377 themes/models.py:160
+#: themes/models.py:243
 msgid "Comments"
 msgstr "コメント"
 
-#: scripts/models.py:312 themes/models.py:161 themes/models.py:242
-msgid "optional, not displayed"
+#: scripts/models.py:313 themes/models.py:161 themes/models.py:244
+#, fuzzy
+#| msgid "optional, not displayed"
+msgid "Not displayed."
 msgstr "任意、表示されません"
 
-#: scripts/models.py:317 scripts/models.py:383 themes/models.py:166
-#: themes/models.py:247
+#: scripts/models.py:318 scripts/models.py:383 themes/models.py:166
+#: themes/models.py:249
 msgid "Are you a spammer?"
 msgstr "スパマーですか?"
 
-#: scripts/models.py:318 scripts/models.py:384 themes/models.py:167
-#: themes/models.py:248
-msgid "enter \"no\" if you are not a spammer"
+#: scripts/models.py:319 scripts/models.py:384 themes/models.py:167
+#: themes/models.py:250
+#, fuzzy
+#| msgid "enter \"no\" if you are not a spammer"
+msgid "Enter \"no\" if you are not a spammer."
 msgstr "スパマーでないなら \"no\" と入力"
 
-#: scripts/models.py:326
-#, python-brace-format
+#: scripts/models.py:327
+#, fuzzy, python-brace-format
+#| msgid ""
+#| "short name of script (max {max_chars} chars, only lower case letters, "
+#| "digits or \"_\")"
 msgid ""
-"short name of script (max {max_chars} chars, only lower case letters, digits "
-"or \"_\")"
+"The short name of script (max {max_chars} chars, only lower case letters, "
+"digits or \"_\")."
 msgstr ""
 "スクリプトの短縮名 (最大で {max_chars} 文字、小文字、数字、\"_\" のみ使用可)"
 
-#: scripts/models.py:337 themes/models.py:206
+#: scripts/models.py:338 themes/models.py:209
 msgid "Choose..."
 msgstr "選択..."
 
-#: scripts/models.py:352 templates/scripts/source.html:13
+#: scripts/models.py:353 templates/scripts/source.html:14
 msgid "Script"
 msgstr "スクリプト"
 
-#: scripts/models.py:357
+#: scripts/models.py:358
 msgid "New version"
 msgstr "新しいバージョン"
 
-#: scripts/models.py:367 scripts/models.py:372
-msgid "used for git commit"
-msgstr "git コミットに利用"
-
 #: scripts/models.py:378
-msgid "changes in this release"
+#, fuzzy
+#| msgid "changes in this release"
+msgid "Changes in this release."
 msgstr "このリリースの変更内容"
 
-#. Translators: this is a date format, see: http://uk3.php.net/manual/en/function.date.php (note: the result string must be short, use abbreviation for month if possible)
-#: settings.py:170
+#. Translators: this is a date format, see: http://www.php.net/date (note: the result string must be short, use abbreviation for month if possible)
+#: settings.py:171
 msgid "M j, Y"
+msgstr "Y 年 m 月 j 日"
+
+#. Translators: this is a date/time format, see: http://www.php.net/date (note: the result string must be short, use abbreviation for month if possible)
+#: settings.py:173
+#, fuzzy
+#| msgid "M j, Y"
+msgid "M j, Y H:i"
 msgstr "Y 年 m 月 j 日"
 
 #: templates/403.html:5
@@ -5188,182 +5216,104 @@ msgstr ""
 msgid "about"
 msgstr "概要"
 
-#: templates/about/about.html:13 templates/about/history.html:39
-#: templates/home/home.html:50 templates/menu.html:11
+#: templates/about/about.html:11 templates/about/history.html:45
+#: templates/base.html:83 templates/home/home.html:43
 msgid "Features"
 msgstr "機能"
 
-#: templates/about/about.html:14 templates/menu.html:12
+#: templates/about/about.html:12 templates/base.html:84
+#: templates/home/home.html:86
+#, fuzzy
+#| msgid "Qt interface"
+msgid "Interfaces"
+msgstr "Qt インターフェイス"
+
+#: templates/about/about.html:13 templates/base.html:85
+#: templates/home/home.html:46 templates/home/home.html:89
 msgid "Screenshots"
 msgstr "スクリーンショット"
 
-#: templates/about/about.html:15 templates/menu.html:13
+#: templates/about/about.html:14 templates/base.html:86
 msgid "History"
 msgstr "歴史"
 
-#: templates/about/about.html:16 templates/home/home.html:87
-#: templates/menu.html:14
-msgid "Make a donation"
-msgstr "寄付する"
-
-#: templates/about/donate.html:5
-msgid "donate"
-msgstr "寄付"
-
-#: templates/about/donate.html:15
-msgid "Why your donation matters?"
-msgstr "寄付が大切な理由とは?"
-
-#: templates/about/donate.html:17
-msgid ""
-"WeeChat is written by a small group of <strong>volunteers</strong>. Any "
-"contribution will show us that the project is appreciated and keep us "
-"motivated."
-msgstr ""
-"WeeChat を開発しているのは小さな<strong>ボランティア</strong>団体です。このプ"
-"ロジェクトはどんな寄付でも歓迎しますし、寄付のお陰でやる気が維持されます。"
-
-#: templates/about/donate.html:19
-msgid "How is your money used?"
-msgstr "寄付金の使い道とは?"
-
-#: templates/about/donate.html:21
-msgid ""
-"Your donations help to pay the <strong>dedicated server</strong>, used for "
-"developments, build of packages and hosting of weechat.org."
-msgstr ""
-"皆様からの寄付は<strong>専用サーバ</strong>の維持費に役立てられます。このサー"
-"バは開発、パッケージのビルド、weechat.org のホスティングに使われます。"
-
-#: templates/about/donate.html:26
-msgid "Click on one of the buttons below and follow the instructions:"
-msgstr "以下のボタンのどれか一つをクリックして、指示に従ってください:"
-
-#: templates/about/donate.html:28
-msgid ""
-"<strong>Liberapay</strong>: recurring donation with very low fees "
-"(<strong>best choice</strong>)"
-msgstr ""
-"<strong>Liberapay</strong>: 安価な手数料で定期的に寄付する (<strong>おすすめ"
-"</strong>)"
-
-#: templates/about/donate.html:29
-msgid "<strong>Paypal</strong>: one-time donation."
-msgstr "<strong>Paypal</strong>: 一度だけ寄付する。"
-
-#: templates/about/donate.html:33
-msgid ""
-"You can leave name and comment, they will be displayed on this page, "
-"providing that the following conditions are met:"
-msgstr ""
-"名前とコメントを残すこともできます。以下の条件が満たされれば、名前とコメント"
-"はこのページに掲載されます:"
-
-#: templates/about/donate.html:35
-msgid ""
-"the comment must be only about the donation and WeeChat (for example this is "
-"not the place to ask for new features)"
-msgstr ""
-"コメントは寄付および WeeChat に関するものに限ります (例えば、ここで新機能を要"
-"求することは適切ではありません)"
-
-#: templates/about/donate.html:36
-msgid ""
-"URLs are not allowed because there is <strong>no advertising</strong> on "
-"this site."
-msgstr ""
-"このサイトには<strong>広告を載せない</strong>ので、URL は禁止されます。"
-
-#: templates/about/donate.html:41
-msgid "Donate using Liberapay"
-msgstr "Liberapay 経由の寄付"
-
-#: templates/about/donate.html:54
-msgid "They support WeeChat with Liberapay"
-msgstr "Liberapay 経由で WeeChat をサポートしてくれた人々"
-
-#: templates/about/donate.html:56
-msgid "See the weechat page on Liberapay:"
-msgstr "Liberapay 上の WeeChat のページを参照してください:"
-
-#: templates/about/donate.html:59
-msgid "They support WeeChat with Paypal"
-msgstr "Paypal 経由でWeeChat をサポートしてくれた人々"
-
-#: templates/about/donate.html:60
-msgid "Whole list:"
-msgstr "完全なリスト:"
-
-#: templates/about/donate.html:60
-msgid "Top 10, ordered by total amount donated:"
-msgstr "上位 10 名、寄付の総額順:"
-
-#: templates/about/donate.html:63
-msgid "show the top 10, ordered by total amount donated"
-msgstr "上位 10 名を表示、寄付の総額順"
-
-#: templates/about/donate.html:65
-msgid "show the whole list"
-msgstr "完全なリストを表示"
-
-#: templates/about/donate.html:71 templates/about/history.html:37
-#: templates/scripts/pending.html:38
-msgid "Date"
-msgstr "日付"
-
-#: templates/about/donate.html:73
-msgid "Rank"
-msgstr "順位"
-
-#: templates/about/donate.html:76
-msgid "Amount"
-msgstr "寄付金額"
-
-#: templates/about/donate.html:78
-msgid "Comment"
-msgstr "コメント"
-
-#: templates/about/donate.html:105 templates/doc/doc.html:73
-msgid "Total"
-msgstr "合計"
+#: templates/about/about.html:15 templates/base.html:87
+#: templates/home/home.html:112
+msgid "Support"
+msgstr "サポート"
 
 #: templates/about/features.html:5
 msgid "features"
 msgstr "機能"
 
-#: templates/about/features.html:16
+#: templates/about/features.html:17
 msgid "Free software, multi-platform"
 msgstr "フリーソフトウェア、マルチプラットフォーム"
 
-#: templates/about/features.html:18
-msgid ""
-"WeeChat is a fast, light and extensible chat client, released under the "
-"terms of the GNU General Public License version 3."
-msgstr ""
-"WeeChat は高速で軽量で拡張可能なチャットクライアントで、GNU 一般公衆利用許諾"
-"書バージョン 3 に基づく条件でリリースされています。"
-
 #: templates/about/features.html:19
+#, fuzzy
+#| msgid "WeeChat is a fast, light and extensible chat client."
 msgid ""
-"It was written from scratch, and is <strong>actively developed</strong>."
-msgstr "ゼロから書かれ、<strong>活発に開発</strong>されています。"
+"WeeChat is a fast, light and extensible chat client, with a text-based user "
+"interface."
+msgstr "WeeChat は高速、軽量、拡張可能なチャットクライアントです。"
 
 #: templates/about/features.html:22
+msgid "WeeChat is:"
+msgstr "WeeChat とは:"
+
+#: templates/about/features.html:24
+msgid "<strong>modular</strong>: a lightweight core with optional plugins"
+msgstr "<strong>モジュール式</strong>: 軽量のコアと選べるプラグイン"
+
+#: templates/about/features.html:25
+msgid "<strong>multi-protocols architecture</strong> (mainly IRC)"
+msgstr "<strong>マルチプロトコルアーキテクチャ</strong> (主に IRC)"
+
+#: templates/about/features.html:26
+#, fuzzy
+#| msgid ""
+#| "It runs on many platforms like Linux, Unix, BSD, GNU Hurd, Mac OS&nbsp;X "
+#| "and Windows (Bash/Ubuntu and Cygwin)."
 msgid ""
-"WeeChat has a text interface and runs on many operating systems, such as:"
+"<strong>multi-platforms</strong>: Linux, Unix, BSD, GNU Hurd, Mac OS X and "
+"Windows (Bash/Ubuntu and Cygwin)."
 msgstr ""
-"WeeChat にはテキストインターフェイスがあり、以下に挙げる多くのオペレーション"
-"システムで実行出来ます:"
+"Linux、Unix、BSD、GNU Hurd、Mac OS&nbsp;X、Windows (Bash/Ubuntu と Cygwin) な"
+"どの多くのプラットフォームで動きます。"
 
-#: templates/about/features.html:33
-msgid "Windows (bash/ubuntu and cygwin)"
-msgstr "Windows (bash/ubuntu と cygwin)"
+#: templates/about/features.html:27
+msgid ""
+"<strong>extensible</strong> with C, Python, Perl, Ruby, Lua, Tcl, Scheme, "
+"Javascript and PHP"
+msgstr ""
+"C 言語、Python、Perl、Ruby、Lua、Tcl、Scheme、Javascript、PHP による<strong>"
+"拡張が可能</strong>"
 
-#: templates/about/features.html:42
+#: templates/about/features.html:28
+msgid "<strong>fully documented</strong> and translated into several languages"
+msgstr "<strong>詳しく文書化され</strong>、数種類の言語に翻訳されている"
+
+#: templates/about/features.html:29
+#, fuzzy
+#| msgid "<strong>a free program</strong> released under the GPLv3 license"
+msgid ""
+"<strong>a free program</strong> released under the terms of the GNU General "
+"Public License version 3"
+msgstr ""
+"GPLv3 ライセンスのもとにリリースされる<strong>自由なプログラム</strong>"
+
+#: templates/about/features.html:30
+msgid "<strong>an active project</strong> with a large community for scripts"
+msgstr ""
+"スクリプトを作成する大きなコミュニティを持つ<strong>活発なプロジェクト</"
+"strong>"
+
+#: templates/about/features.html:40
 msgid "Light and extensible"
 msgstr "軽量で拡張可能"
 
-#: templates/about/features.html:44
+#: templates/about/features.html:42
 msgid ""
 "WeeChat is designed to be light and extensible: a <strong>lightweight core</"
 "strong> with optional <strong>plugins</strong>."
@@ -5371,174 +5321,187 @@ msgstr ""
 "WeeChat は軽量で拡張可能です: <strong>コアは軽量</strong>で<strong>プラグイン"
 "</strong>が追加できます。"
 
-#: templates/about/features.html:45
+#: templates/about/features.html:43
 msgid "Plugins and scripts can be dynamically loaded and unloaded at any time."
 msgstr "プラグインとスクリプトはいつでも動的にロード、アンロードが可能です。"
 
-#: templates/about/features.html:48
+#: templates/about/features.html:46
 msgid "Almost everything is a plugin, for example:"
 msgstr "ほぼ全てがプラグインです、例えば:"
 
-#: templates/about/features.html:51
+#: templates/about/features.html:48
 msgid "Internet Relay Chat (IRC) protocol"
 msgstr "インターネットリレーチャット (IRC) プロトコル"
 
-#: templates/about/features.html:52
+#: templates/about/features.html:49
 msgid "API for script languages"
 msgstr "スクリプト用の API"
 
-#: templates/about/features.html:53
+#: templates/about/features.html:50
 msgid "IRC proxy and remote interface"
 msgstr "IRC プロキシとリモートインターフェイス"
 
-#: templates/about/features.html:54 templates/about/features.html:81
+#: templates/about/features.html:51 templates/about/features.html:84
 msgid "Scripts manager"
 msgstr "スクリプトマネージャ"
 
-#: templates/about/features.html:63
+#: templates/about/features.html:68
 msgid "The future is now!"
 msgstr "未来はすぐそこ!"
 
-#: templates/about/features.html:65
+#: templates/about/features.html:70
+#, fuzzy
+#| msgid ""
+#| "WeeChat brings a lot of <strong>innovating features</strong>, which makes "
+#| "it different from other console/terminal based chat clients."
 msgid ""
-"WeeChat brings a lot of <strong>innovating features</strong>, which makes it "
+"WeeChat brings a lot of <strong>innovative features</strong>, which makes it "
 "different from other console/terminal based chat clients."
 msgstr ""
 "WeeChat は<strong>革新的な機能</strong>を多く備えています。これらの機能は他の"
 "コンソール/端末型のチャットクライアントとは一線を画しています。"
 
-#: templates/about/features.html:68
+#: templates/about/features.html:73
 msgid "Look by yourself (the list is not exhaustive):"
 msgstr "ご自分でお確かめください (このリストは完璧ではありません):"
 
-#: templates/about/features.html:72
+#: templates/about/features.html:75
 msgid "256 colors"
 msgstr "256 色"
 
-#: templates/about/features.html:73
+#: templates/about/features.html:76
 msgid "Mouse support"
 msgstr "マウスサポート"
 
-#: templates/about/features.html:74
+#: templates/about/features.html:77
 msgid "Customizable bars"
 msgstr "カスタマイズ可能なバー"
 
-#: templates/about/features.html:75
-msgid "7 script languages"
+#: templates/about/features.html:78
+#, fuzzy
+#| msgid "7 script languages"
+msgid "8 script languages"
 msgstr "7 種類のスクリプト言語"
 
-#: templates/about/features.html:76
+#: templates/about/features.html:79
 msgid "Horizontal/vertical split"
 msgstr "水平/垂直方向の分割"
 
-#: templates/about/features.html:77
+#: templates/about/features.html:80
 msgid "Dynamic filtering of lines"
 msgstr "行を動的にフィルタ"
 
-#: templates/about/features.html:78
+#: templates/about/features.html:81
 msgid "Incremental text search"
 msgstr "テキストのインクリメント検索"
 
-#: templates/about/features.html:79
+#: templates/about/features.html:82
 msgid "FIFO pipe"
 msgstr "FIFO パイプ"
 
-#: templates/about/features.html:80
+#: templates/about/features.html:83
 msgid "Spell checking"
 msgstr "スペルチェック"
 
-#: templates/about/features.html:82 templates/about/features.html:121
-#: templates/download/packages.html:130
+#: templates/about/features.html:85 templates/about/features.html:130
+#: templates/about/interfaces.html:12
 msgid "Remote interfaces"
 msgstr "リモートインターフェイス"
 
-#: templates/about/features.html:83
+#: templates/about/features.html:86
 msgid "Upgrade without quitting"
 msgstr "終了せずにアップグレードが可能"
 
-#: templates/about/features.html:92
+#: templates/about/features.html:96
 msgid "Full-featured IRC plugin"
 msgstr "完全に実装された IRC プラグイン"
 
-#: templates/about/features.html:94
+#: templates/about/features.html:98
 msgid ""
 "IRC plugin implements the protocol as described in the RFCs 1459 and 2812."
 msgstr ""
 "IRC プラグインには RFC 1459 と 2812 で定義されているプロトコルが実装されてい"
 "ます。"
 
-#: templates/about/features.html:97
+#: templates/about/features.html:101
 msgid "It comes with many <strong>built-in features</strong>, such as:"
 msgstr "多くの<strong>組み込み機能</strong>を備えています、例えば:"
 
-#: templates/about/features.html:101
+#: templates/about/features.html:103
 msgid "Multi-servers"
 msgstr "マルチサーバ"
 
-#: templates/about/features.html:102
+#: templates/about/features.html:104
 msgid "IPv6, SSL, proxy"
 msgstr "IPv6、SSL、プロキシ"
 
-#: templates/about/features.html:103
+#: templates/about/features.html:105
 msgid "SASL authentication"
 msgstr "SASL 認証"
 
-#: templates/about/features.html:104
+#: templates/about/features.html:106
 msgid "Nicklist"
 msgstr "ニックネームリスト"
 
-#: templates/about/features.html:105
+#: templates/about/features.html:107
 msgid "Color for nicks"
 msgstr "ニックネームに色付け"
 
-#: templates/about/features.html:106
+#: templates/about/features.html:108
 msgid "Color for away nicks"
 msgstr "離席状態のニックネーム用の色"
 
-#: templates/about/features.html:107
+#: templates/about/features.html:109
 msgid "Smart filter"
 msgstr "スマートフィルタ"
 
-#: templates/about/features.html:108
+#: templates/about/features.html:110
 msgid "Anti-flood"
 msgstr "フラッド対策"
 
-#: templates/about/features.html:109
+#: templates/about/features.html:111
 msgid "Commands redirection"
 msgstr "コマンドのリダイレクト"
 
-#: templates/about/features.html:110
+#: templates/about/features.html:112
 msgid "Custom CTCP replies"
 msgstr "CTCP 応答をカスタマイズ可能"
 
-#: templates/about/features.html:111
+#: templates/about/features.html:113
 msgid "Lag indicator"
 msgstr "遅延インジケータ"
 
-#: templates/about/features.html:112
+#: templates/about/features.html:114
 msgid "DCC (file/chat)"
 msgstr "DCC (ファイル転送/チャット)"
 
-#: templates/about/features.html:123
+#: templates/about/features.html:132
 msgid ""
 "External interfaces (graphical or text) can connect to a running WeeChat."
 msgstr ""
 "外部インターフェイス (グラフィカルおよびテキスト) は実行中の WeeChat に接続出"
 "来ます。"
 
-#: templates/about/features.html:126
-msgid "Here is a list of available interfaces:"
-msgstr "以下は利用可能なインターフェイスです:"
+#: templates/about/features.html:135
+#, python-format
+msgctxt "They == The remote interfaces"
+msgid ""
+"They communicate with WeeChat using the <a href=\"%(doc)s\">relay protocol</"
+"a>."
+msgstr ""
 
-#: templates/about/features.html:136
-msgid "Qt interface"
-msgstr "Qt インターフェイス"
+#: templates/about/features.html:139
+#, python-format
+msgid ""
+"A list of interfaces is available on <a href=\"%(interfaces)s\">this page</"
+"a>."
+msgstr ""
 
-#: templates/about/features.html:158
+#: templates/about/features.html:148
 msgid "Documentation and support"
 msgstr "文書とサポート"
 
-#: templates/about/features.html:161
+#: templates/about/features.html:151
 #, python-format
 msgid ""
 "WeeChat is translated into several languages and has a <a href=\"%(doc_url)s"
@@ -5547,7 +5510,7 @@ msgstr ""
 "WeeChat はいくつかの言語に翻訳されており、<a href=\"%(doc_url)s\">様々な文書"
 "</a>も翻訳されています。"
 
-#: templates/about/features.html:164
+#: templates/about/features.html:153
 msgid ""
 "You are new to WeeChat? Read the <strong>quickstart</strong> and "
 "<strong>user's</strong> guide."
@@ -5555,13 +5518,13 @@ msgstr ""
 "さて WeeChat を使ってみませんか? まずは<strong>クイックスタートガイド</"
 "strong>と<strong>ユーザーズガイド</strong>を読むことをお勧めします。"
 
-#: templates/about/features.html:165
+#: templates/about/features.html:154
 msgid "Got a trivial question? The <strong>FAQ</strong> is waiting for you!"
 msgstr ""
 "ちょっとした疑問がありますか? そんなあなたには <strong>FAQ</strong> を読むこ"
 "とをお勧めします!"
 
-#: templates/about/features.html:166
+#: templates/about/features.html:155
 msgid ""
 "You want to write a script for WeeChat? Look at <strong>scripting</strong> "
 "guide and <strong>plugin API</strong> reference."
@@ -5570,7 +5533,7 @@ msgstr ""
 "ト作成ガイド</strong>と<strong>プラグイン API リファレンス</strong>を読むこと"
 "をお勧めします。"
 
-#: templates/about/features.html:167
+#: templates/about/features.html:156
 msgid ""
 "Your native tongue is C? Then take a look at the <strong>developer's</"
 "strong> guide and contribute!"
@@ -5578,7 +5541,7 @@ msgstr ""
 "C に精通していますか? そんなあなたは<strong>開発者ガイド</strong>を読み、貢献"
 "することをお勧めします!"
 
-#: templates/about/features.html:171
+#: templates/about/features.html:161
 #, python-format
 msgid ""
 "There is an <a href=\"%(support_url)s\"><strong>excellent support</strong></"
@@ -5591,247 +5554,130 @@ msgstr ""
 msgid "history"
 msgstr "歴史"
 
-#: templates/about/history.html:14
+#: templates/about/history.html:12
 msgid "Why WeeChat?"
 msgstr "WeeChat とは?"
 
-#: templates/about/history.html:16
+#: templates/about/history.html:15
 msgid "WeeChat stands for \"Wee Enhanced Environment for Chat\"."
 msgstr ""
 "WeeChat とは \"Wee Enhanced Environment for Chat (小さくて強力なチャット環"
 "境)\" の略です。"
 
-#: templates/about/history.html:18
+#: templates/about/history.html:20
 msgid "In early 2003, I looked for an IRC client with following features:"
 msgstr "2003 年の初め頃、以下の機能を持つ IRC クライアントを探していました:"
 
-#: templates/about/history.html:20
+#: templates/about/history.html:22
 msgid "free software"
 msgstr "フリーソフトウェア"
 
-#: templates/about/history.html:21
+#: templates/about/history.html:23
 msgid "running on Linux"
 msgstr "Linux 上で動く"
 
-#: templates/about/history.html:22
+#: templates/about/history.html:24
 msgid "text interface"
 msgstr "テキストインターフェイス"
 
-#: templates/about/history.html:23
+#: templates/about/history.html:25
 msgid "real nicklist"
 msgstr "本物のニックネームリスト"
 
-#: templates/about/history.html:24
+#: templates/about/history.html:26
 msgid "extensible with scripts written in various languages"
 msgstr "様々なスクリプト言語で拡張可能"
 
-#: templates/about/history.html:26
+#: templates/about/history.html:28
 msgid "My search was unsuccessful!"
 msgstr "そんなものは見つかりませんでした!"
 
-#: templates/about/history.html:28
+#: templates/about/history.html:32
 msgid "And thus WeeChat was born, on June 2003."
 msgstr "そして WeeChat が誕生しました。2003 年 6 月のことです。"
 
-#: templates/about/history.html:34
+#: templates/about/history.html:38
 msgid "Key dates"
 msgstr "重要な日"
+
+#: templates/about/history.html:43 templates/donate.html:82
+#: templates/scripts/pending.html:38
+msgid "Date"
+msgstr "日付"
+
+#: templates/about/interfaces.html:5
+#, fuzzy
+#| msgid "Qt interface"
+msgid "interfaces"
+msgstr "Qt インターフェイス"
+
+#: templates/about/interfaces.html:15
+msgid ""
+"Remote interfaces are external software connecting on your WeeChat via the "
+"network."
+msgstr ""
+
+#: templates/about/interfaces.html:17
+msgid ""
+"Except for QWeeChat, the softwares listed on this page are NOT developed by "
+"WeeChat team. For support, please ask directly to the authors."
+msgstr ""
+
+#: templates/about/interfaces.html:25
+msgid "Type"
+msgstr ""
+
+#: templates/about/interfaces.html:26
+msgid "Site"
+msgstr ""
+
+#: templates/about/interfaces.html:27
+msgid "Notes"
+msgstr ""
+
+#: templates/about/interfaces.html:69
+#, fuzzy
+#| msgid "Download"
+msgid "Download page"
+msgstr "ダウンロード"
+
+#: templates/about/interfaces.html:83
+msgid "Not maintained any more."
+msgstr ""
+
+#: templates/about/interfaces.html:89
+msgid "Something missing?"
+msgstr ""
+
+#: templates/about/interfaces.html:92
+msgid "You have developed another remote interface for WeeChat?"
+msgstr ""
+
+#: templates/about/interfaces.html:95
+msgid "Tell us more about your great software!"
+msgstr ""
 
 #: templates/about/screenshots.html:5
 msgid "screenshots"
 msgstr "スクリーンショット"
 
-#: templates/about/screenshots.html:15
+#: templates/about/screenshots.html:14
 msgid "Relay clients"
 msgstr "リレークライアント"
 
-#: templates/about/screenshots.html:40
+#: templates/about/screenshots.html:41
 msgid "Screenshot not found:"
 msgstr "スクリーンショットは見つかりません:"
 
-#: templates/about/screenshots.html:40
+#: templates/about/screenshots.html:45
 msgid "No screenshot."
 msgstr "スクリーンショットがありません。"
 
-#: templates/about/weechat.org.html:14
-msgid "Authors"
-msgstr "作者"
-
-#: templates/about/weechat.org.html:16
-msgid "Developers:"
-msgstr "開発者:"
-
-#: templates/about/weechat.org.html:23
-msgid "Translators:"
-msgstr "翻訳者:"
-
-#: templates/about/weechat.org.html:33
-msgid "Source code"
-msgstr "ソースコード"
-
-#: templates/about/weechat.org.html:35
-msgid "Source code of WeeChat.org is available on GitHub:"
-msgstr "WeeChat.org のソースコードは GitHub で利用可能です:"
-
-#: templates/about/weechat.org.html:41
-msgid "Hosting"
-msgstr "ホスティング"
-
-#: templates/about/weechat.org.html:43
-msgid ""
-"WeeChat.org is hosted by <a href=\"https://www.hetzner.de/en/\">Hetzner</a>."
-msgstr ""
-"WeeChat.org は <a href=\"https://www.hetzner.de/en/\">Hetzner</a> によってホ"
-"ストされています。"
-
-#: templates/base.html:15
-msgid "WeeChat, the extensible chat client"
-msgstr "WeeChat、拡張可能なチャットクライアント"
-
-#: templates/base.html:85
-msgid "About WeeChat.org"
-msgstr "WeeChat.org について"
-
-#: templates/base.html:87
-msgid "Valid"
-msgstr "有効"
-
-#: templates/dev/dev.html:5
-msgid "dev"
-msgstr "開発"
-
-#: templates/dev/dev.html:13 templates/home/home.html:75 templates/menu.html:61
-msgid "Roadmap"
-msgstr "ロードマップ"
-
-#: templates/dev/dev.html:14
-msgid "Stats"
-msgstr "状態"
-
-#: templates/dev/dev.html:15 templates/dev/info_list.html:17
-#: templates/menu.html:63
-msgid "Info"
-msgstr "情報"
-
-#: templates/dev/dev.html:16 templates/menu.html:64
-msgid "Support"
-msgstr "サポート"
-
-#: templates/dev/info_list.html:5
-msgid "info"
-msgstr "情報"
-
-#: templates/dev/info_list.html:12
-msgid "Following infos are available (click on info for the URL):"
-msgstr ""
-"以下の情報が入手可能です (各情報を入手するにはリンクをクリックしてください):"
-
-#: templates/dev/info_list.html:18
-msgid "Current value"
-msgstr "現在の値"
-
-#: templates/dev/info_list.html:32
-msgid "You can fetch these URLs from scripts or other sites."
-msgstr ""
-"スクリプトや他のサイトから URL を参照すればこれらの値を取得することができま"
-"す。"
-
-#: templates/dev/roadmap.html:5
-msgid "roadmap"
-msgstr "ロードマップ"
-
-#: templates/dev/roadmap.html:15
-msgid "Legend:"
-msgstr "説明:"
-
-#: templates/dev/roadmap.html:16
-msgid "one commit in 'master'"
-msgstr "'master' へのコミット"
-
-#: templates/dev/roadmap.html:17
-msgid "log of a separate branch"
-msgstr "ブランチ分岐のログ"
-
-#: templates/dev/roadmap.html:22
-msgid "Next versions"
-msgstr "次期バージョン"
-
-#: templates/dev/roadmap.html:23
-msgid "All versions"
-msgstr "全てのバージョン"
-
-#: templates/dev/roadmap.html:28
-msgid "This page lists major features done or planned."
-msgstr ""
-"このページは開発が終わったか開発が予定されている主な機能をリストアップしてい"
-"ます。"
-
-#: templates/dev/roadmap.html:29
-msgid "Dive in the <strong>future</strong> of WeeChat!"
-msgstr "WeeChat の<strong>機能</strong>をどうぞ!"
-
-#: templates/dev/roadmap.html:42 templates/download/security.html:29
-msgid "Tracker"
-msgstr "トラッカー"
-
-#: templates/dev/roadmap.html:43
-msgid "Status"
-msgstr "状態"
-
-#: templates/dev/roadmap.html:45
-msgid "Plugin"
-msgstr "プラグイン"
-
-#: templates/dev/roadmap.html:57
-msgid "Planned"
-msgstr "計画中"
-
-#: templates/dev/roadmap.html:60
-msgid "Done"
-msgstr "完了"
-
-#: templates/dev/stats.html:5
-msgid "statistics"
-msgstr "統計"
-
-#: templates/dev/stats.html:15 templates/menu.html:39
-#: templates/scripts/scripts.html:13
-msgid "Scripts"
-msgstr "スクリプト"
-
-#: templates/dev/stats.html:23
-msgid "Git repository:"
-msgstr "Git リポジトリ:"
-
-#: templates/dev/stats.html:28
-msgid "lines of code"
-msgstr "コードの行数"
-
-#: templates/dev/stats.html:32
-msgid "Commits by range:"
-msgstr "コミットの範囲:"
-
-#: templates/dev/stats.html:34
-msgid "month:"
-msgstr "月:"
-
-#: templates/dev/stats.html:35
-msgid "year:"
-msgstr "年:"
-
-#: templates/dev/stats.html:36
-msgid "total:"
-msgstr "合計:"
-
-#: templates/dev/stats.html:49
-msgid "Charts built with"
-msgstr "図表の作成は"
-
-#: templates/dev/support.html:5
+#: templates/about/support.html:5
 msgid "support"
 msgstr "サポート"
 
-#: templates/dev/support.html:15
+#: templates/about/support.html:15
 #, python-format
 msgid ""
 "<strong>Important:</strong> before asking for help, please read carefully <a "
@@ -5840,27 +5686,27 @@ msgstr ""
 "<strong>重要:</strong> 助けを求める前に、<a href=\"%(doc_url)s\">文書</a>と "
 "<a href=\"%(faq_url)s\">FAQ</a> を注意深く読んでください。"
 
-#: templates/dev/support.html:20
+#: templates/about/support.html:21
 msgid "On server chat.freenode.net:"
 msgstr "サーバ chat.freenode.net 上:"
 
-#: templates/dev/support.html:24
+#: templates/about/support.html:25
 msgid "official channels (with developers):"
 msgstr "公式チャンネル (開発者が参加しています):"
 
-#: templates/dev/support.html:31
+#: templates/about/support.html:32
 msgid "non-official channels:"
 msgstr "非公式チャンネル:"
 
-#: templates/dev/support.html:34
+#: templates/about/support.html:35
 msgid "Finnish"
 msgstr "フィンランド語"
 
-#: templates/dev/support.html:39
+#: templates/about/support.html:41
 msgid "Bugs / Feature requests"
 msgstr "バグ / 機能リクエスト"
 
-#: templates/dev/support.html:41
+#: templates/about/support.html:44
 msgid ""
 "Bugs and feature requests for WeeChat, QWeeChat and scripts can be submitted "
 "on GitHub:"
@@ -5868,78 +5714,344 @@ msgstr ""
 "WeeChat、QWeeChat、スクリプトのバグと機能リクエストは GitHub から投稿してくだ"
 "さい:"
 
-#: templates/dev/support.html:46
-msgid "WeeChat is on <a href=\"https://plus.google.com/\">Google+</a>:"
+#: templates/about/support.html:48
+#, fuzzy
+#| msgid "Sort channels inside networks."
+msgid "Social networks"
+msgstr "ネットワーク毎にチャンネルをソート。"
+
+#: templates/about/support.html:74 templates/about/support.html:76
+msgid "Google+ page"
 msgstr ""
-"WeeChat は <a href=\"https://plus.google.com/\">Google+</a> にあります:"
 
-#: templates/dev/support.html:49
-msgid "Page"
-msgstr "ページ"
-
-#: templates/dev/support.html:50
-msgid "Community"
+#: templates/about/support.html:79 templates/about/support.html:80
+#, fuzzy
+#| msgid "Community"
+msgid "Google+ community"
 msgstr "コミュニティ"
 
-#: templates/dev/support.html:53
-msgid "Mailing list"
+#: templates/about/support.html:87
+#, fuzzy
+#| msgid "Mailing list"
+msgid "Mailing lists"
 msgstr "メーリングリスト"
 
-#: templates/dev/support.html:55
-#, python-format
+#: templates/about/support.html:90
+#, fuzzy, python-format
+#| msgid ""
+#| "There are <a href=\"https://savannah.nongnu.org/mail/?group=weechat\" "
+#| "target=\"_blank\" rel=\"noopener\">3 mailing lists <img src="
+#| "\"%(MEDIA_URL)simages/link.png\" width=\"16\" height=\"16\" alt=\">>\"></"
+#| "a>:"
 msgid ""
 "There are <a href=\"https://savannah.nongnu.org/mail/?group=weechat\" target="
 "\"_blank\" rel=\"noopener\">3 mailing lists <img src=\"%(MEDIA_URL)simages/"
-"link.png\" width=\"16\" height=\"16\" alt=\">>\"></a>:"
+"link.png\" width=\"16\" height=\"16\" alt=\"&gt;&gt;\"></a>:"
 msgstr ""
 "<a href=\"https://savannah.nongnu.org/mail/?group=weechat\" target=\"_blank"
 "\" rel=\"noopener\">3 つのメーリングリスト<img src=\"%(MEDIA_URL)simages/"
 "link.png\" width=\"16\" height=\"16\" alt=\">>\"></a>があります:"
 
-#: templates/dev/support.html:59
+#: templates/about/support.html:94
 msgid "<strong>weechat-security</strong> (security advisories about WeeChat):"
 msgstr "<strong>weechat-security</strong> (WeeChat に関するセキュリティ勧告):"
 
-#: templates/dev/support.html:61 templates/dev/support.html:68
-#: templates/dev/support.html:75
-msgid "subscribe:"
+#: templates/about/support.html:96 templates/about/support.html:103
+#: templates/about/support.html:110
+#, fuzzy
+#| msgid "subscribe:"
+msgid "subscribe"
 msgstr "登録:"
 
-#: templates/dev/support.html:62 templates/dev/support.html:69
-#: templates/dev/support.html:76
-msgid "send mail to:"
+#: templates/about/support.html:97 templates/about/support.html:104
+#: templates/about/support.html:111
+#, fuzzy
+#| msgid "send mail to:"
+msgid "send a mail to the list"
 msgstr "メールの送信先:"
 
-#: templates/dev/support.html:66
+#: templates/about/support.html:101
 msgid "<strong>weechat-support</strong> (installation, usage, bugs, ...):"
 msgstr "<strong>weechat-support</strong> (インストール、使い方、バグ、...):"
 
-#: templates/dev/support.html:73
+#: templates/about/support.html:108
 msgid "<strong>weechat-dev</strong> (everything related to the development):"
 msgstr "<strong>weechat-dev</strong> (開発に関する内容すべて):"
+
+#: templates/about/weechat.org.html:12
+msgid "Authors"
+msgstr "作者"
+
+#: templates/about/weechat.org.html:15
+msgid "Developers:"
+msgstr "開発者:"
+
+#: templates/about/weechat.org.html:22
+msgid "Translators:"
+msgstr "翻訳者:"
+
+#: templates/about/weechat.org.html:32
+msgid "Source code"
+msgstr "ソースコード"
+
+#: templates/about/weechat.org.html:35
+msgid "Source code of WeeChat.org is available on GitHub:"
+msgstr "WeeChat.org のソースコードは GitHub で利用可能です:"
+
+#: templates/about/weechat.org.html:42
+msgid "Hosting"
+msgstr "ホスティング"
+
+#: templates/about/weechat.org.html:45
+msgid ""
+"WeeChat.org is hosted by <a href=\"https://www.hetzner.de/en/\">Hetzner</a>."
+msgstr ""
+"WeeChat.org は <a href=\"https://www.hetzner.de/en/\">Hetzner</a> によってホ"
+"ストされています。"
+
+#: templates/base.html:20
+msgid "WeeChat, the extensible chat client"
+msgstr "WeeChat、拡張可能なチャットクライアント"
+
+#: templates/base.html:35 templates/base.html:74
+msgid "Home"
+msgstr "ホーム"
+
+#: templates/base.html:36 templates/base.html:82
+msgid "About"
+msgstr "概要"
+
+#: templates/base.html:38 templates/base.html:102 templates/home/home.html:21
+#: templates/scripts/source.html:26 templates/themes/source.html:19
+msgid "Download"
+msgstr "ダウンロード"
+
+#: templates/base.html:39 templates/base.html:111 templates/dev/stats.html:14
+#: templates/home/home.html:66 templates/scripts/scripts.html:11
+msgid "Scripts"
+msgstr "スクリプト"
+
+#: templates/base.html:40 templates/base.html:131 templates/doc/doc.html:12
+#: templates/download/download.html:12
+#, fuzzy
+#| msgid "Developers:"
+msgid "Development"
+msgstr "開発者:"
+
+#: templates/base.html:44 templates/base.html:45
+#, fuzzy
+#| msgid "donate"
+msgid "Donate"
+msgstr "寄付"
+
+#: templates/base.html:75 templates/home/home.html:143
+#: templates/home/news.html:13
+msgid "Latest news"
+msgstr "最新のニュース"
+
+#: templates/base.html:76 templates/home/home.html:161
+#: templates/home/news.html:14
+msgid "Upcoming events"
+msgstr "今後のイベント"
+
+#: templates/base.html:77 templates/home/home.html:131
+msgid "Make a donation"
+msgstr "寄付する"
+
+#: templates/base.html:94 templates/base.html:103
+#: templates/download/debian.html:197
+msgid "Stable version"
+msgstr "安定版"
+
+#: templates/base.html:95 templates/base.html:104
+#: templates/download/debian.html:197
+#, fuzzy
+#| msgid "development version"
+msgid "Development version"
+msgstr "開発版のバージョン番号"
+
+#: templates/base.html:96 templates/base.html:105 templates/doc/doc.html:13
+#: templates/download/download.html:13
+msgid "Old versions"
+msgstr "古いバージョン"
+
+#: templates/base.html:97
+msgid "Security issues"
+msgstr "セキュリティ問題"
+
+#: templates/base.html:106 templates/download/download.html:14
+msgid "Debian/Ubuntu repositories"
+msgstr "Debian/Ubuntu リポジトリ"
+
+#: templates/base.html:112
+msgid "Browse scripts"
+msgstr "スクリプトを閲覧"
+
+#: templates/base.html:113 templates/scripts/scripts.html:12
+msgid "Add script"
+msgstr "スクリプトを追加"
+
+#: templates/base.html:114 templates/scripts/scripts.html:13
+msgid "Update script"
+msgstr "スクリプトをアップデート"
+
+#: templates/base.html:115 templates/scripts/scripts.html:14
+msgid "Pending scripts"
+msgstr "承認待ちスクリプト"
+
+#: templates/base.html:116 templates/scripts/scripts.html:15
+msgid "Unofficial scripts"
+msgstr "非公式スクリプト"
+
+#: templates/base.html:132 templates/dev/dev.html:11
+msgid "Roadmap"
+msgstr "ロードマップ"
+
+#: templates/base.html:133
+msgid "Statistics"
+msgstr "統計"
+
+#: templates/base.html:134 templates/dev/dev.html:13
+#: templates/dev/info_list.html:22
+msgid "Info"
+msgstr "情報"
+
+#: templates/base.html:135
+#, fuzzy
+#| msgid "Devel blog"
+msgid "Development blog"
+msgstr "開発ブログ"
+
+#: templates/base.html:161
+msgid "About WeeChat.org"
+msgstr "WeeChat.org について"
+
+#: templates/dev/dev.html:5
+#, fuzzy
+#| msgid "development version"
+msgid "development"
+msgstr "開発版のバージョン番号"
+
+#: templates/dev/dev.html:12
+msgid "Stats"
+msgstr "状態"
+
+#: templates/dev/info_list.html:5
+msgid "info"
+msgstr "情報"
+
+#: templates/dev/info_list.html:15
+msgid "Following infos are available (click on info for the URL):"
+msgstr ""
+"以下の情報が入手可能です (各情報を入手するにはリンクをクリックしてください):"
+
+#: templates/dev/info_list.html:23
+msgid "Current value"
+msgstr "現在の値"
+
+#: templates/dev/info_list.html:40
+msgid "You can fetch these URLs from scripts or other sites."
+msgstr ""
+"スクリプトや他のサイトから URL を参照すればこれらの値を取得することができま"
+"す。"
+
+#: templates/dev/info_list.html:46
+#, fuzzy
+#| msgid "info"
+msgid "No info."
+msgstr "情報"
+
+#: templates/dev/roadmap.html:5
+msgid "roadmap"
+msgstr "ロードマップ"
+
+#: templates/dev/roadmap.html:13
+msgid "Next versions"
+msgstr "次期バージョン"
+
+#: templates/dev/roadmap.html:14
+msgid "All versions"
+msgstr "全てのバージョン"
+
+#: templates/dev/roadmap.html:18
+msgid "This page lists major features done or planned."
+msgstr ""
+"このページは開発が終わったか開発が予定されている主な機能をリストアップしてい"
+"ます。"
+
+#: templates/dev/roadmap.html:20
+msgid "Dive in the <strong>future</strong> of WeeChat!"
+msgstr "WeeChat の<strong>機能</strong>をどうぞ!"
+
+#: templates/dev/roadmap.html:37 templates/doc/security.html:35
+msgid "Tracker"
+msgstr "トラッカー"
+
+#: templates/dev/roadmap.html:38
+msgid "Status"
+msgstr "状態"
+
+#: templates/dev/roadmap.html:40
+msgid "Plugin"
+msgstr "プラグイン"
+
+#: templates/dev/roadmap.html:55
+msgid "Planned"
+msgstr "計画中"
+
+#: templates/dev/roadmap.html:58
+msgid "Done"
+msgstr "完了"
+
+#: templates/dev/stats.html:5
+msgid "statistics"
+msgstr "統計"
+
+#: templates/dev/stats.html:19
+msgid "Git repository:"
+msgstr "Git リポジトリ:"
+
+#: templates/dev/stats.html:24
+msgid "lines of code"
+msgstr "コードの行数"
+
+#: templates/dev/stats.html:28
+msgid "Commits by range:"
+msgstr "コミットの範囲:"
+
+#: templates/dev/stats.html:29
+msgid "month:"
+msgstr "月:"
+
+#: templates/dev/stats.html:30
+msgid "year:"
+msgstr "年:"
+
+#: templates/dev/stats.html:31
+msgid "total:"
+msgstr "合計:"
+
+#: templates/dev/stats.html:47
+msgid "Charts built with"
+msgstr "図表の作成は"
 
 #: templates/doc/doc.html:5
 msgid "documentation"
 msgstr "文書"
 
-#: templates/doc/doc.html:13 templates/download/download.html:13
+#: templates/doc/doc.html:11 templates/download/download.html:11
 msgid "Stable"
 msgstr "安定版"
 
-#: templates/doc/doc.html:14 templates/download/download.html:14
-msgid "Devel"
-msgstr "開発版"
+#: templates/doc/doc.html:14
+msgid "Security"
+msgstr "セキュリティ"
 
-#: templates/doc/doc.html:15 templates/download/download.html:15
-#: templates/menu.html:23 templates/menu.html:33
-msgid "Old versions"
-msgstr "古いバージョン"
-
-#: templates/doc/doc.html:21
+#: templates/doc/doc_version.html:11
 msgid "Docs for old versions"
 msgstr "古いバージョン向けの文書"
 
-#: templates/doc/doc.html:24
+#: templates/doc/doc_version.html:14
 msgid ""
 "<strong>Important:</strong> these old versions are <strong>not supported</"
 "strong> any more!"
@@ -5947,373 +6059,77 @@ msgstr ""
 "<strong>重要:</strong> 古いバージョンはもはや<strong>サポートされません</"
 "strong>!"
 
-#: templates/doc/doc.html:35
+#: templates/doc/doc_version.html:27
 msgid "Docs for version"
 msgstr "バージョンごとの文書"
 
-#: templates/doc/doc.html:64
+#: templates/doc/doc_version.html:61
 msgid "Internationalization stats"
 msgstr "国際化の状況"
 
-#: templates/doc/doc.html:68
+#: templates/doc/doc_version.html:66
 msgctxt "translated language"
 msgid "Language"
 msgstr "翻訳言語"
 
-#: templates/doc/doc.html:70
+#: templates/doc/doc_version.html:68
 msgid "Translated"
 msgstr "翻訳済み"
 
-#: templates/doc/doc.html:71
+#: templates/doc/doc_version.html:69
 msgid "Fuzzy"
 msgstr "曖昧"
 
-#: templates/doc/doc.html:72
+#: templates/doc/doc_version.html:70
 msgid "Untranslated"
 msgstr "未翻訳"
 
-#: templates/doc/doc.html:74
+#: templates/doc/doc_version.html:71 templates/donate.html:118
+msgid "Total"
+msgstr "合計"
+
+#: templates/doc/doc_version.html:72
 msgid "Progress"
 msgstr "進捗"
 
-#: templates/doc/doc.html:95
+#: templates/doc/doc_version.html:92
 msgid "base language"
 msgstr "翻訳元言語"
 
-#: templates/doc/doc.html:125
+#: templates/doc/doc_version.html:121
 msgid ""
 "statistics for gettext files (*.po), auto-built from development version on"
 msgstr "gettext ファイル (*.po) の状況、開発版からの自動ビルド日時は"
 
-#: templates/doc/doc.html:129
+#: templates/doc/doc_version.html:125
 msgid "Missing language?"
 msgstr "欠けている言語?"
 
-#: templates/doc/doc.html:130
+#: templates/doc/doc_version.html:128
 msgid "Feel free to help us by translating WeeChat doc in your language!"
 msgstr "WeeChat の文書をあなたの言語に翻訳して、ぜひ開発チームを助けて下さい!"
 
-#: templates/doc/doc.html:132
+#: templates/doc/doc_version.html:130
 msgid ""
 "There is more information about WeeChat translations in the developer's "
 "guide."
 msgstr "開発者ガイドには WeeChat の翻訳に関する詳しい情報が載せられています。"
 
-#: templates/download/debian.html:29
-msgid "Active repositories"
-msgstr "現在稼働中のリポジトリ"
+#: templates/doc/doc_version.html:136
+#, fuzzy
+#| msgid "documentation"
+msgid "No documentation."
+msgstr "文書"
 
-#: templates/download/debian.html:30
-msgid "All repositories"
-msgstr "全てのリポジトリ"
-
-#: templates/download/debian.html:35
-msgid ""
-"<strong>Note:</strong> these packages are not Debian official packages; "
-"please <a href=\"#instructions\"><strong>read instructions</strong></a> "
-"before using these repositories."
-msgstr ""
-"<strong>注意:</strong> 以下のパッケージは Debian の公式パッケージではありませ"
-"ん。リポジトリを使う前に<a href=\"#instructions\"><strong>説明を読んでくださ"
-"い</strong></a>。"
-
-#: templates/download/debian.html:50
-msgid "Important"
-msgstr "重要"
-
-#: templates/download/debian.html:56
-msgid "Builds by"
-msgstr "ビルドした人"
-
-#: templates/download/debian.html:60
-msgid "Latest build:"
-msgstr "最新ビルド:"
-
-#: templates/download/debian.html:70
-msgid "There are no more package builds in this repository."
-msgstr "もはやこのリポジトリをビルドしたパッケージは存在しません。"
-
-#. Translators: purpose is to "translate" only quotes here
-#: templates/download/debian.html:74 templates/download/debian.html:148
-#, python-format
-msgid "“%(codename)s”"
-msgstr "「%(codename)s」"
-
-#: templates/download/debian.html:89
-msgid "Architecture"
-msgstr "アーキテクチャ"
-
-#: templates/download/debian.html:92
-msgid "files"
-msgstr "ファイル"
-
-#: templates/download/debian.html:121
-msgid "Instructions:"
-msgstr "説明:"
-
-#: templates/download/debian.html:126
-msgid ""
-"You must use apt, apt-get or aptitude to install the packages (with sudo or "
-"as \"root\" user)."
-msgstr ""
-"パッケージをインストールするには、apt、apt-get または aptitude を (sudo と組"
-"合わせるか \"root\" ユーザになってから) 使ってください。"
-
-#: templates/download/debian.html:127
-msgid "The following examples use sudo and apt-get."
-msgstr "以下の例では sudo と apt-get を使っています。"
-
-#: templates/download/debian.html:130
-msgid "Install https transport for apt:"
-msgstr "apt で https 転送を使うためのパッケージをインストール:"
-
-#: templates/download/debian.html:134
-msgid "Import the gpg key used to sign the repository:"
-msgstr "このリポジトリに署名するために使われた gpg 鍵をインポートしてください:"
-
-#: templates/download/debian.html:136
-msgid "Important: the Raspbian repositories are NOT signed."
-msgstr "重要: Raspbian リポジトリは署名されていません。"
-
-#: templates/download/debian.html:139
-msgid ""
-"Create a weechat.list file with the repository, according to your "
-"distribution/version:"
-msgstr ""
-"お使いのディストリビューション/バージョンに対応するリポジトリを含む weechat."
-"list ファイルを作成してください:"
-
-#: templates/download/debian.html:142
-msgid "Choose your distribution/version"
-msgstr "ディストリビューション/バージョンを選んでください"
-
-#: templates/download/debian.html:155
-msgid ""
-"Note: the second command line is optional, it is used to download source "
-"packages."
-msgstr ""
-"注意: コマンドラインの 2 行目は任意です。これはソースパッケージをダウンロード"
-"するためのものです。"
-
-#: templates/download/debian.html:158
-msgid "Resynchronize your package index files:"
-msgstr "パッケージインデックスファイルを再同期:"
-
-#: templates/download/debian.html:162
-msgid ""
-"Install the binary packages; the \"plugins\" package is highly recommended "
-"but not mandatory, scripting API packages are optional (popular languages "
-"are python and perl)."
-msgstr ""
-"バイナリパッケージをインストール; \"plugins\" パッケージは必須ではありません"
-"が、インストールを強くお勧めします。スクリプト作成 API パッケージは任意です "
-"(人気の言語は python と perl です)。"
-
-#: templates/download/debian.html:165
-msgid "Example for the stable version:"
-msgstr "安定版の導入例:"
-
-#: templates/download/debian.html:169
-msgid "Example for the development version:"
-msgstr "開発版の導入例:"
-
-#: templates/download/debian.html:175
-msgid ""
-"If needed, you can download the source package in order to rebuild binary "
-"packages:"
-msgstr ""
-"必要ならば、バイナリパッケージを再ビルドするためにソースパッケージをダウン"
-"ロードすることが可能です:"
-
-#: templates/download/debian.html:185
-msgid "No debian repository."
-msgstr "Debian リポジトリがありません。"
-
-#: templates/download/download.html:5
-msgid "download"
-msgstr "ダウンロード"
-
-#: templates/download/download.html:16 templates/menu.html:34
-msgid "Debian/Ubuntu repositories"
-msgstr "Debian/Ubuntu リポジトリ"
-
-#: templates/download/download.html:17
-msgid "Security"
-msgstr "セキュリティ"
-
-#: templates/download/packages.html:21
-#, python-format
-msgid ""
-"<strong>A new release is under construction!</strong> Follow the progress on "
-"<a href=\"%(download_release_url)s\">this page</a>."
-msgstr ""
-"<strong>新しいバージョンを開発中です!</strong> <a href="
-"\"%(download_release_url)s\">このページ</a>を参照して開発状況をご確認くださ"
-"い。"
-
-#: templates/download/packages.html:28
-msgid ""
-"<strong>Important:</strong> this version may be unstable or it may not "
-"compile, you're warned!"
-msgstr ""
-"<strong>重要:</strong> このバージョンは不安定であり、コンパイルできないかもし"
-"れません。警告しましたよ!"
-
-#: templates/download/packages.html:34
-msgid ""
-"<strong>Important:</strong> it is not recommended to download or use any of "
-"these old versions: they are less stable than the latest released version, "
-"and may contain security vulnerabilities fixed in later versions."
-msgstr ""
-"<strong>重要:</strong> 古いバージョンのダウンロードおよび利用はおすすめしませ"
-"ん: 古いバージョンは最新版に比べて不安定であり、最新版で修正されたセキュリ"
-"ティ脆弱性を含む可能性があるからです。"
-
-#: templates/download/packages.html:56
-#, python-format
-msgid ""
-"<strong>Warning:</strong> the version %(version)s has one or more <a href="
-"\"%(security_url)s\">vulnerabilities</a>, it is not recommended to "
-"use it."
-msgstr ""
-"<strong>警告:</strong> バージョン %(version)s には<a href="
-"\"%(security_url)s\">脆弱性</a>があります。これを使用することはおす"
-"すめできません。"
-
-#: templates/download/packages.html:58
-msgid "Vulnerabilities fixed in versions:"
-msgstr "脆弱性が修正されているバージョン:"
-
-#: templates/download/packages.html:66 templates/home/home.html:41
-#, python-format
-msgid ""
-"<strong>Important:</strong> this release fixes a <a href="
-"\"%(security_url)s\">vulnerability</a>."
-msgstr ""
-"<strong>重要:</strong> このリリースでは<a href=\"%(security_url)s\">"
-"脆弱性</a>が修正されています。"
-
-#: templates/download/packages.html:68 templates/home/home.html:43
-#, python-format
-msgid ""
-"<strong>Important:</strong> this release fixes <a href="
-"\"%(security_url)s\">%(count_issues_fixed)s vulnerabilities</a>."
-msgstr ""
-"<strong>重要:</strong> このリリースでは <a href=\"%(security_url)s"
-"\">%(count_issues_fixed)s 個の脆弱性</a>が修正されています。"
-
-#: templates/download/packages.html:70 templates/home/home.html:45
-msgid "It is recommended to upgrade from any older version to this one."
-msgstr ""
-"古いバージョンをお使いの方には、このバージョンにアップグレードすることを推奨"
-"します。"
-
-#: templates/download/packages.html:75
-msgid "Packages"
-msgstr "パッケージ"
-
-#: templates/download/packages.html:86
-msgid "Checksum"
-msgstr "チェックサム"
-
-#: templates/download/packages.html:112
-msgid "About release"
-msgstr "リリースについて"
-
-#: templates/download/packages.html:114
-msgid "ChangeLog"
-msgstr "ChangeLog"
-
-#: templates/download/packages.html:120
-msgid "Release notes"
-msgstr "リリースノート"
-
-#: templates/download/packages.html:140
-msgid "(see above)"
-msgstr "(上記の通り)"
-
-#: templates/download/packages.html:164
-msgid "Checking the signatures"
-msgstr "署名の確認方法"
-
-#: templates/download/packages.html:168
-msgid "Import the gpg key:"
-msgstr "gpg キーをインポート:"
-
-#: templates/download/packages.html:172
-msgid "Display the fingerprint:"
-msgstr "指紋を表示:"
-
-#: templates/download/packages.html:176
-msgid ""
-"Check that the fingerprint is correct by asking to a developer on #weechat "
-"(chat.freenode.net)."
-msgstr ""
-"#weechat (chat.freenode.net) の開発者に尋ねて指紋が正しいことを確認してくださ"
-"い。"
-
-#: templates/download/packages.html:179
-msgid "Trust the key:"
-msgstr "キーを信用する:"
-
-#: templates/download/packages.html:188
-msgid "In directory with package + signature:"
-msgstr "パッケージと署名ファイルがあるディレクトリ内で:"
-
-#: templates/download/packages.html:192
-msgid "If the signature is OK you should see a message like this one:"
-msgstr "署名が正しいなら、以下の様なメッセージが表示されれるはずです:"
-
-#: templates/download/packages.html:205
-msgid "Links"
-msgstr "リンク"
-
-#: templates/download/packages.html:207
-msgid "Savannah page"
-msgstr "Savannah ページ"
-
-#: templates/download/packages.html:213
-msgid "Git - sources"
-msgstr "Git - ソース"
-
-#: templates/download/packages.html:219
-msgid "Git - scripts"
-msgstr "Git - スクリプト"
-
-#: templates/download/packages.html:225
-msgid "Git - clone"
-msgstr "Git - クローン"
-
-#: templates/download/packages.html:235
-msgid "Error: there is no version called"
-msgstr "エラー: そのバージョンは存在しません"
-
-#: templates/download/release.html:19
-msgid "YEAH! You can download and install it!"
-msgstr "ええ!ダウンロードとインストールが可能ですよ!"
-
-#: templates/download/release.html:30
-msgid "No release in progress."
-msgstr "進行中のリリースはありません。"
-
-#: templates/download/release.html:32
-msgid ""
-"This page is updated only a few hours during the build of a new version."
-msgstr "このページは新しいバージョンをビルドする数時間に限り更新されます。"
-
-#: templates/download/release.html:35
-msgid "We are working hard on the next version:"
-msgstr "次期バージョンに向けて一生懸命作業しています:"
-
-#: templates/download/security.html:5
+#: templates/doc/security.html:5
 msgid "security"
 msgstr "セキュリティ"
 
-#: templates/download/security.html:12
+#: templates/doc/security.html:12
 msgid "Report a security issue"
 msgstr "セキュリティ問題を報告"
 
-#: templates/download/security.html:14
+#: templates/doc/security.html:15
 msgid ""
 "Please <strong>DO NOT</strong> file a GitHub issue for security related "
 "problems, but send an email to <a href=\"mailto:security@weechat.org"
@@ -6323,11 +6139,11 @@ msgstr ""
 "い。その代わり、セキュリティ関連の問題を報告する場合は <a href=\"mailto:"
 "security@weechat.org\">security@weechat.org</a> にメールを送信してください。"
 
-#: templates/download/security.html:16
+#: templates/doc/security.html:18
 msgid "Security vulnerabilities"
 msgstr "セキュリティの脆弱性"
 
-#: templates/download/security.html:20
+#: templates/doc/security.html:21
 msgid ""
 "This table contains a list of all known and fixed security vulnerabilities "
 "in WeeChat stable releases (the security vulnerabilities introduced during "
@@ -6338,7 +6154,7 @@ msgstr ""
 "脆弱性はそのバージョンを開発する際に生じるもので、リリース前にあった脆弱性は"
 "記載されていません)。"
 
-#: templates/download/security.html:22
+#: templates/doc/security.html:23
 msgid ""
 "Note: you can be warned about security vulnerabilities by subscribing to "
 "this mailing list:"
@@ -6346,39 +6162,39 @@ msgstr ""
 "注意: セキュリティの脆弱性に関する警告を得るには以下のメーリングリストを購読"
 "してください:"
 
-#: templates/download/security.html:29
+#: templates/doc/security.html:35
 msgid "External link"
 msgstr "外部リンク"
 
-#: templates/download/security.html:30
+#: templates/doc/security.html:36
 msgid "Severity"
 msgstr "重度"
 
-#: templates/download/security.html:31
+#: templates/doc/security.html:37
 msgid "Affected versions"
 msgstr "影響を受けるバージョン"
 
-#: templates/download/security.html:32
+#: templates/doc/security.html:38
 msgid "Fixed in version"
 msgstr "修正済みバージョン"
 
-#: templates/download/security.html:33
+#: templates/doc/security.html:39
 msgid "Release date"
 msgstr "リリース日"
 
-#: templates/download/security.html:35 templates/download/security.html:57
+#: templates/doc/security.html:41 templates/doc/security.html:65
 msgid "Workaround"
 msgstr "一時的措置"
 
-#: templates/download/security.html:61
+#: templates/doc/security.html:69
 msgid "There is no workaround."
 msgstr "一時的措置はありません。"
 
-#: templates/download/security.html:69
+#: templates/doc/security.html:80
 msgid "Security vulnerabilities are classified using 4 severity levels:"
 msgstr "セキュリティの脆弱性はその重度により 4 種類に分類されています:"
 
-#: templates/download/security.html:71
+#: templates/doc/security.html:83
 msgid ""
 "local problem which occurs in very specific conditions, low impact. Upgrade "
 "is not mandatory."
@@ -6386,7 +6202,7 @@ msgstr ""
 "非常に限られた状況で起きる局地的な問題、影響力は小さい。アップグレードは必須"
 "でない。"
 
-#: templates/download/security.html:72
+#: templates/doc/security.html:87
 msgid ""
 "problem affecting a specific feature. Upgrade is <strong>recommended</"
 "strong> at least for people using the feature."
@@ -6394,11 +6210,11 @@ msgstr ""
 "特定の機能に影響する問題。少なくともこの機能を使っている人はアップグレードを"
 "<strong>推奨</strong>。"
 
-#: templates/download/security.html:73
+#: templates/doc/security.html:91
 msgid "severe problem. Upgrade is <strong>highly recommended</strong>."
 msgstr "深刻な問題。アップグレード<strong>強く推奨</strong>。"
 
-#: templates/download/security.html:74
+#: templates/doc/security.html:95
 msgid ""
 "critical problem, risk of damage on your system. <strong>You MUST upgrade "
 "immediately!</strong>"
@@ -6406,115 +6222,589 @@ msgstr ""
 "システムを破壊する危険性のある重大な問題。<strong>今すぐアップグレードしてく"
 "ださい!</strong>"
 
-#: templates/error.html:11 templates/home/home.html:138
+#: templates/doc/security.html:102
+#, fuzzy
+#| msgid "Security vulnerabilities"
+msgid "No security vulnerability."
+msgstr "セキュリティの脆弱性"
+
+#: templates/donate.html:7
+msgid "donate"
+msgstr "寄付"
+
+#: templates/donate.html:15
+#, fuzzy
+#| msgid "About WeeChat"
+msgid "Donate to WeeChat"
+msgstr "WeeChat について"
+
+#: templates/donate.html:18
+msgid "Click on one of the buttons below and follow the instructions:"
+msgstr "以下のボタンのどれか一つをクリックして、指示に従ってください:"
+
+#: templates/donate.html:20
+msgid ""
+"<strong>Liberapay</strong>: recurring donation with very low fees "
+"(<strong>best choice</strong>)"
+msgstr ""
+"<strong>Liberapay</strong>: 安価な手数料で定期的に寄付する (<strong>おすすめ"
+"</strong>)"
+
+#: templates/donate.html:21
+msgid "<strong>Paypal</strong>: one-time donation."
+msgstr "<strong>Paypal</strong>: 一度だけ寄付する。"
+
+#: templates/donate.html:26
+msgid ""
+"You can leave name and comment, they will be displayed on this page, "
+"providing that the following conditions are met:"
+msgstr ""
+"名前とコメントを残すこともできます。以下の条件が満たされれば、名前とコメント"
+"はこのページに掲載されます:"
+
+#: templates/donate.html:28
+msgid ""
+"the comment must be only about the donation and WeeChat (for example this is "
+"not the place to ask for new features)"
+msgstr ""
+"コメントは寄付および WeeChat に関するものに限ります (例えば、ここで新機能を要"
+"求することは適切ではありません)"
+
+#: templates/donate.html:29
+msgid ""
+"URLs are not allowed because there is <strong>no advertising</strong> on "
+"this site."
+msgstr ""
+"このサイトには<strong>広告を載せない</strong>ので、URL は禁止されます。"
+
+#: templates/donate.html:35
+msgid "Donate using Liberapay"
+msgstr "Liberapay 経由の寄付"
+
+#: templates/donate.html:48
+msgid "Why your donation matters?"
+msgstr "寄付が大切な理由とは?"
+
+#: templates/donate.html:51
+msgid ""
+"WeeChat is written by a small group of <strong>volunteers</strong>. Any "
+"contribution will show us that the project is appreciated and keep us "
+"motivated."
+msgstr ""
+"WeeChat を開発しているのは小さな<strong>ボランティア</strong>団体です。このプ"
+"ロジェクトはどんな寄付でも歓迎しますし、寄付のお陰でやる気が維持されます。"
+
+#: templates/donate.html:53
+msgid ""
+"Your donations help to pay the <strong>dedicated server</strong>, used for "
+"developments, build of packages and hosting of weechat.org."
+msgstr ""
+"皆様からの寄付は<strong>専用サーバ</strong>の維持費に役立てられます。このサー"
+"バは開発、パッケージのビルド、weechat.org のホスティングに使われます。"
+
+#: templates/donate.html:56
+#, fuzzy
+#| msgid "They support WeeChat with Paypal"
+msgid "They support WeeChat"
+msgstr "Paypal 経由でWeeChat をサポートしてくれた人々"
+
+#: templates/donate.html:58
+#, fuzzy
+#| msgid "Donate using Liberapay"
+msgid "With Liberapay"
+msgstr "Liberapay 経由の寄付"
+
+#: templates/donate.html:61
+msgid "See the weechat page on Liberapay:"
+msgstr "Liberapay 上の WeeChat のページを参照してください:"
+
+#: templates/donate.html:66
+msgid "With Paypal"
+msgstr ""
+
+#: templates/donate.html:69
+msgid "Whole list:"
+msgstr "完全なリスト:"
+
+#: templates/donate.html:69
+msgid "Top 10, ordered by total amount donated:"
+msgstr "上位 10 名、寄付の総額順:"
+
+#: templates/donate.html:72
+msgid "show the top 10, ordered by total amount donated"
+msgstr "上位 10 名を表示、寄付の総額順"
+
+#: templates/donate.html:74
+msgid "show the whole list"
+msgstr "完全なリストを表示"
+
+#: templates/donate.html:84
+msgid "Rank"
+msgstr "順位"
+
+#: templates/donate.html:87
+msgid "Amount"
+msgstr "寄付金額"
+
+#: templates/donate.html:89
+msgid "Comment"
+msgstr "コメント"
+
+#: templates/download/debian.html:28
+msgid "Active repositories"
+msgstr "現在稼働中のリポジトリ"
+
+#: templates/download/debian.html:29
+msgid "All repositories"
+msgstr "全てのリポジトリ"
+
+#: templates/download/debian.html:35
+#, fuzzy
+#| msgid ""
+#| "<strong>Note:</strong> these packages are not Debian official packages; "
+#| "please <a href=\"#instructions\"><strong>read instructions</strong></a> "
+#| "before using these repositories."
+msgid ""
+"<strong>Important:</strong> these packages are not Debian official packages; "
+"please click and read instructions below before using these repositories."
+msgstr ""
+"<strong>注意:</strong> 以下のパッケージは Debian の公式パッケージではありませ"
+"ん。リポジトリを使う前に<a href=\"#instructions\"><strong>説明を読んでくださ"
+"い</strong></a>。"
+
+#: templates/download/debian.html:38
+#, fuzzy
+#| msgid "Instructions:"
+msgid "Installation instructions"
+msgstr "説明:"
+
+#: templates/download/debian.html:43
+msgid "GPG key"
+msgstr ""
+
+#: templates/download/debian.html:45
+msgid "Import the gpg key used to sign the repository:"
+msgstr "このリポジトリに署名するために使われた gpg 鍵をインポートしてください:"
+
+#: templates/download/debian.html:47
+msgid "Important: the Raspbian repositories are NOT signed."
+msgstr "重要: Raspbian リポジトリは署名されていません。"
+
+#: templates/download/debian.html:49
+msgid "APT configuration"
+msgstr ""
+
+#: templates/download/debian.html:51
+msgid ""
+"You must use apt, apt-get or aptitude to install the packages (with sudo or "
+"as \"root\" user)."
+msgstr ""
+"パッケージをインストールするには、apt、apt-get または aptitude を (sudo と組"
+"合わせるか \"root\" ユーザになってから) 使ってください。"
+
+#: templates/download/debian.html:52
+msgid "The following examples use sudo and apt-get."
+msgstr "以下の例では sudo と apt-get を使っています。"
+
+#: templates/download/debian.html:55
+msgid "Install https transport for apt:"
+msgstr "apt で https 転送を使うためのパッケージをインストール:"
+
+#: templates/download/debian.html:60
+msgid ""
+"Create a weechat.list file with the repository, according to your "
+"distribution/version:"
+msgstr ""
+"お使いのディストリビューション/バージョンに対応するリポジトリを含む weechat."
+"list ファイルを作成してください:"
+
+#: templates/download/debian.html:63
+msgid "Choose your distribution/version"
+msgstr "ディストリビューション/バージョンを選んでください"
+
+#. Translators: purpose is to "translate" only quotes here
+#: templates/download/debian.html:69 templates/download/debian.html:175
+#, python-format
+msgid "“%(codename)s”"
+msgstr "「%(codename)s」"
+
+#: templates/download/debian.html:77
+msgid ""
+"Note: the second command line is optional, it is used to download source "
+"packages."
+msgstr ""
+"注意: コマンドラインの 2 行目は任意です。これはソースパッケージをダウンロード"
+"するためのものです。"
+
+#: templates/download/debian.html:80
+msgid "Resynchronize your package index files:"
+msgstr "パッケージインデックスファイルを再同期:"
+
+#: templates/download/debian.html:83
+msgid "Packages installation"
+msgstr ""
+
+#: templates/download/debian.html:85
+msgid ""
+"Install the binary packages; the \"plugins\" package is highly recommended "
+"but not mandatory, scripting API packages are optional (popular languages "
+"are python and perl)."
+msgstr ""
+"バイナリパッケージをインストール; \"plugins\" パッケージは必須ではありません"
+"が、インストールを強くお勧めします。スクリプト作成 API パッケージは任意です "
+"(人気の言語は python と perl です)。"
+
+#: templates/download/debian.html:88
+msgid "Example for the stable version:"
+msgstr "安定版の導入例:"
+
+#: templates/download/debian.html:92
+msgid "Example for the development version:"
+msgstr "開発版の導入例:"
+
+#: templates/download/debian.html:98
+msgid ""
+"If needed, you can download the source package in order to rebuild binary "
+"packages:"
+msgstr ""
+"必要ならば、バイナリパッケージを再ビルドするためにソースパッケージをダウン"
+"ロードすることが可能です:"
+
+#: templates/download/debian.html:108
+msgid "Overview"
+msgstr ""
+
+#: templates/download/debian.html:156
+msgid "Detail"
+msgstr ""
+
+#: templates/download/debian.html:186
+msgid "Important"
+msgstr "重要"
+
+#: templates/download/debian.html:198
+msgid "Architecture"
+msgstr "アーキテクチャ"
+
+#: templates/download/debian.html:200
+msgid "files"
+msgstr "ファイル"
+
+#: templates/download/debian.html:223
+msgid "Builds by"
+msgstr "ビルドした人"
+
+#: templates/download/debian.html:225
+#, fuzzy
+#| msgid "Latest build:"
+msgid "latest build:"
+msgstr "最新ビルド:"
+
+#: templates/download/debian.html:228
+#, fuzzy
+#| msgid "Latest build:"
+msgid "next build:"
+msgstr "最新ビルド:"
+
+#: templates/download/debian.html:243
+msgid "No debian repository."
+msgstr "Debian リポジトリがありません。"
+
+#: templates/download/download.html:5
+msgid "download"
+msgstr "ダウンロード"
+
+#: templates/download/packages.html:18
+#, python-format
+msgid ""
+"<strong>A new release is under construction!</strong> Follow the progress on "
+"<a href=\"%(download_release_url)s\">this page</a>."
+msgstr ""
+"<strong>新しいバージョンを開発中です!</strong> <a href="
+"\"%(download_release_url)s\">このページ</a>を参照して開発状況をご確認くださ"
+"い。"
+
+#: templates/download/packages.html:24
+msgid ""
+"<strong>Important:</strong> it is not recommended to download or use any of "
+"these old versions: they are less stable than the latest released version, "
+"and may contain security vulnerabilities fixed in later versions."
+msgstr ""
+"<strong>重要:</strong> 古いバージョンのダウンロードおよび利用はおすすめしませ"
+"ん: 古いバージョンは最新版に比べて不安定であり、最新版で修正されたセキュリ"
+"ティ脆弱性を含む可能性があるからです。"
+
+#: templates/download/packages.html:48
+msgid ""
+"<strong>Important:</strong> this version may be unstable or it may not "
+"compile, you're warned!"
+msgstr ""
+"<strong>重要:</strong> このバージョンは不安定であり、コンパイルできないかもし"
+"れません。警告しましたよ!"
+
+#: templates/download/packages.html:55
+#, python-format
+msgid ""
+"<strong>Warning:</strong> the version %(version)s has one or more <a href="
+"\"%(security_url)s\">vulnerabilities</a>, it is not recommended to use it."
+msgstr ""
+"<strong>警告:</strong> バージョン %(version)s には<a href=\"%(security_url)s"
+"\">脆弱性</a>があります。これを使用することはおすすめできません。"
+
+#: templates/download/packages.html:57
+msgid "Vulnerabilities fixed in versions:"
+msgstr "脆弱性が修正されているバージョン:"
+
+#: templates/download/packages.html:64
+#, python-format
+msgid ""
+"<strong>Important:</strong> this release fixes a <a href=\"%(security_url)s"
+"\">vulnerability</a>."
+msgstr ""
+"<strong>重要:</strong> このリリースでは<a href=\"%(security_url)s\">脆弱性</"
+"a>が修正されています。"
+
+#: templates/download/packages.html:66
+#, python-format
+msgid ""
+"<strong>Important:</strong> this release fixes <a href=\"%(security_url)s\">"
+"%(count_issues_fixed)s vulnerabilities</a>."
+msgstr ""
+"<strong>重要:</strong> このリリースでは <a href=\"%(security_url)s\">"
+"%(count_issues_fixed)s 個の脆弱性</a>が修正されています。"
+
+#: templates/download/packages.html:68
+msgid "It is recommended to upgrade from any older version to this one."
+msgstr ""
+"古いバージョンをお使いの方には、このバージョンにアップグレードすることを推奨"
+"します。"
+
+#: templates/download/packages.html:75
+msgid "ChangeLog"
+msgstr "ChangeLog"
+
+#: templates/download/packages.html:81
+msgid "Release notes"
+msgstr "リリースノート"
+
+#: templates/download/packages.html:87
+#, fuzzy
+#| msgid "Packages"
+msgid "Packages:"
+msgstr "パッケージ"
+
+#: templates/download/packages.html:96
+msgid "Checksum"
+msgstr "チェックサム"
+
+#: templates/download/packages.html:96
+#, fuzzy
+#| msgid "Checksum and GPG signature"
+msgid "GPG signature"
+msgstr "チェックサムと GPG 署名"
+
+#: templates/download/packages.html:124
+#, fuzzy
+#| msgid "Checking the signatures"
+msgid "Checking the signatures:"
+msgstr "署名の確認方法"
+
+#: templates/download/packages.html:127
+msgid "Import the gpg key:"
+msgstr "gpg キーをインポート:"
+
+#: templates/download/packages.html:130
+msgid "Display the fingerprint:"
+msgstr "指紋を表示:"
+
+#: templates/download/packages.html:134
+msgid ""
+"Check that the fingerprint is correct by asking to a developer on #weechat "
+"(chat.freenode.net)."
+msgstr ""
+"#weechat (chat.freenode.net) の開発者に尋ねて指紋が正しいことを確認してくださ"
+"い。"
+
+#: templates/download/packages.html:137
+msgid "Trust the key:"
+msgstr "キーを信用する:"
+
+#: templates/download/packages.html:142
+msgid "In directory with package + signature:"
+msgstr "パッケージと署名ファイルがあるディレクトリ内で:"
+
+#: templates/download/packages.html:146
+msgid "If the signature is OK you should see a message like this one:"
+msgstr "署名が正しいなら、以下の様なメッセージが表示されれるはずです:"
+
+#: templates/download/packages.html:161
+msgid "Error: there is no version called"
+msgstr "エラー: そのバージョンは存在しません"
+
+#: templates/download/release.html:27
+msgid "No release in progress."
+msgstr "進行中のリリースはありません。"
+
+#: templates/download/release.html:29
+msgid ""
+"This page is updated only a few hours during the build of a new version."
+msgstr "このページは新しいバージョンをビルドする数時間に限り更新されます。"
+
+#: templates/download/release.html:32
+msgid "We are working hard on the next version:"
+msgstr "次期バージョンに向けて一生懸命作業しています:"
+
+#: templates/error.html:11 templates/home/news.html:80
 msgid "Back to home"
 msgstr "ホームに戻る"
 
+#: templates/home/home.html:14
+#, fuzzy
+#| msgid "WeeChat, the extensible chat client"
+msgid "WeeChat, the extensible chat client."
+msgstr "WeeChat、拡張可能なチャットクライアント"
+
 #: templates/home/home.html:16
-msgid "About WeeChat"
-msgstr "WeeChat について"
-
-#: templates/home/home.html:19
-msgid "WeeChat is a fast, light and extensible chat client."
-msgstr "WeeChat は高速、軽量、拡張可能なチャットクライアントです。"
-
-#: templates/home/home.html:20
-msgid ""
-"It runs on many platforms like Linux, Unix, BSD, GNU Hurd, Mac OS&nbsp;X and "
-"Windows (Bash/Ubuntu and Cygwin)."
+msgid "Fast"
 msgstr ""
-"Linux、Unix、BSD、GNU Hurd、Mac OS&nbsp;X、Windows (Bash/Ubuntu と Cygwin) な"
-"どの多くのプラットフォームで動きます。"
 
-#: templates/home/home.html:23
-msgid "WeeChat is:"
-msgstr "WeeChat とは:"
-
-#: templates/home/home.html:25
-msgid "<strong>modular</strong>: a lightweight core with optional plugins"
-msgstr "<strong>モジュール式</strong>: 軽量のコアと選べるプラグイン"
-
-#: templates/home/home.html:26
-msgid "<strong>multi-protocols architecture</strong> (mainly IRC)"
-msgstr "<strong>マルチプロトコルアーキテクチャ</strong> (主に IRC)"
-
-#: templates/home/home.html:27
-msgid ""
-"<strong>extensible</strong> with C, Python, Perl, Ruby, Lua, Tcl, Scheme, "
-"Javascript and PHP"
+#: templates/home/home.html:16
+msgid "Light"
 msgstr ""
-"C 言語、Python、Perl、Ruby、Lua、Tcl、Scheme、Javascript、PHP による<strong>"
-"拡張が可能</strong>"
 
-#: templates/home/home.html:28
-msgid "<strong>fully documented</strong> and translated into several languages"
-msgstr "<strong>詳しく文書化され</strong>、数種類の言語に翻訳されている"
+#: templates/home/home.html:16
+#, fuzzy
+#| msgid "free software"
+msgid "Free software"
+msgstr "フリーソフトウェア"
 
 #: templates/home/home.html:29
-msgid "<strong>a free program</strong> released under the GPLv3 license"
+msgid "News"
 msgstr ""
-"GPLv3 ライセンスのもとにリリースされる<strong>自由なプログラム</strong>"
 
-#: templates/home/home.html:30
-msgid "<strong>an active project</strong> with a large community for scripts"
+#: templates/home/home.html:40
+msgid ""
+"Full-featured IRC plugin: multi-servers, proxy support, IPv6, SASL "
+"authentication, nicklist, DCC, and many other features."
 msgstr ""
-"スクリプトを作成する大きなコミュニティを持つ<strong>活発なプロジェクト</"
-"strong>"
 
-#: templates/home/home.html:34
-msgid "Latest stable version of WeeChat is"
-msgstr "WeeChat の最新の安定版は"
+#: templates/home/home.html:59
+msgid "Innovative features."
+msgstr ""
 
-#: templates/home/home.html:35
-msgid "released on"
-msgstr "リリース日"
+#: templates/home/home.html:61
+msgid ""
+"256 colors, horizontal and vertical splits, smart filtering, customizable "
+"bars and much more!"
+msgstr ""
 
-#: templates/home/home.html:51 templates/menu.html:29
-#: templates/scripts/source.html:17 templates/themes/source.html:16
-msgid "Download"
-msgstr "ダウンロード"
-
-#: templates/home/home.html:54
-msgid "Follow and get involved!"
-msgstr "フォローしたり仲間になりませんか!"
-
-#: templates/home/home.html:57
-msgid "You can follow latest WeeChat developments on:"
-msgstr "以下のサービスで WeeChat の最新開発を追いかけることができます:"
+#: templates/home/home.html:63
+msgid "8 scripting languages supported with a built-in scripts manager."
+msgstr ""
 
 #: templates/home/home.html:79
+#, fuzzy
+#| msgid "Remote interfaces"
+msgid "Remote interfaces."
+msgstr "リモートインターフェイス"
+
+#: templates/home/home.html:81
+msgid "Tired of your terminal?"
+msgstr ""
+
+#: templates/home/home.html:83
+msgid "Connect to your WeeChat from your browser, Android, Qt or even Emacs!"
+msgstr ""
+
+#: templates/home/home.html:102
+#, fuzzy
+#| msgid "Documentation and support"
+msgid "Documentation and support."
+msgstr "文書とサポート"
+
+#: templates/home/home.html:104
+#, fuzzy
+#| msgid ""
+#| "WeeChat is translated into several languages and has a <a href="
+#| "\"%(doc_url)s\">comprehensive documentation</a>, also translated."
+msgid ""
+"WeeChat is translated into several languages and has a comprehensive "
+"documentation."
+msgstr ""
+"WeeChat はいくつかの言語に翻訳されており、<a href=\"%(doc_url)s\">様々な文書"
+"</a>も翻訳されています。"
+
+#: templates/home/home.html:106
+msgid "Excellent support for users."
+msgstr ""
+
+#: templates/home/home.html:121
+msgid "Help the project."
+msgstr ""
+
+#: templates/home/home.html:123
 msgid "You can help the WeeChat project in many ways:"
 msgstr "WeeChat プロジェクトを支援する方法は様々です:"
 
-#: templates/home/home.html:81
-msgid "<strong>translation</strong>: software, documentation and this web site"
+#: templates/home/home.html:125
+#, fuzzy
+#| msgid ""
+#| "<strong>translation</strong>: software, documentation and this web site"
+msgid "translation: software, documentation and this web site"
 msgstr "<strong>翻訳</strong>: ソフトウェア、文書、ウェブサイト"
 
-#: templates/home/home.html:82
-msgid ""
-"<strong>code</strong>: tests, bug reports, ideas for new features and patches"
+#: templates/home/home.html:126
+#, fuzzy
+#| msgid ""
+#| "<strong>code</strong>: tests, bug reports, ideas for new features and "
+#| "patches"
+msgid "code: tests, bug reports, ideas for new features and patches"
 msgstr ""
 "<strong>コード</strong>: テスト、バグレポート、新機能のアイディア、パッチ"
 
-#: templates/home/home.html:83
-msgid ""
-"<strong>donation</strong>: any contribution is appreciated and important for "
-"motivation"
+#: templates/home/home.html:127
+#, fuzzy
+#| msgid ""
+#| "<strong>donation</strong>: any contribution is appreciated and important "
+#| "for motivation"
+msgid "donation: any contribution is appreciated and important for motivation."
 msgstr ""
 "<strong>寄付</strong>: どんな寄付でも歓迎します。寄付はモチベーションの維持に"
 "重要です"
 
-#: templates/home/home.html:97 templates/home/home.html:117
-msgid "More"
-msgstr "その他"
+#: templates/home/home.html:157
+#, fuzzy
+#| msgid "All versions"
+msgid "All news"
+msgstr "全てのバージョン"
 
-#: templates/home/home.html:97 templates/menu.html:4
-msgid "Latest news"
-msgstr "最新のニュース"
+#: templates/home/home.html:175
+#, fuzzy
+#| msgid "All versions"
+msgid "All events"
+msgstr "全てのバージョン"
 
-#: templates/home/home.html:117 templates/menu.html:5
-msgid "Upcoming events"
-msgstr "今後のイベント"
+#: templates/home/news.html:35 templates/home/news.html:37
+msgctxt "Previous page"
+msgid "Previous"
+msgstr ""
+
+#: templates/home/news.html:63 templates/home/news.html:65
+msgctxt "Next page"
+msgid "Next"
+msgstr ""
+
+#: templates/home/news.html:74
+#, fuzzy
+#| msgid "Back to themes"
+msgid "Back to events"
+msgstr "テーマに戻る"
+
+#: templates/home/news.html:76
+#, fuzzy
+#| msgid "Back to themes"
+msgid "Back to news"
+msgstr "テーマに戻る"
 
 #: templates/maintenance.html:5
 msgid "temporarily unavailable"
@@ -6538,55 +6828,7 @@ msgstr "ご辛抱に感謝いたします。"
 msgid "Back"
 msgstr "戻る"
 
-#: templates/menu.html:2
-msgid "Home"
-msgstr "ホーム"
-
-#: templates/menu.html:9
-msgid "About"
-msgstr "概要"
-
-#: templates/menu.html:21 templates/menu.html:31
-msgid "Stable version"
-msgstr "安定版"
-
-#: templates/menu.html:22 templates/menu.html:32
-msgid "Dev version"
-msgstr "開発版"
-
-#: templates/menu.html:35
-msgid "Security issues"
-msgstr "セキュリティ問題"
-
-#: templates/menu.html:41
-msgid "Browse scripts"
-msgstr "スクリプトを閲覧"
-
-#: templates/menu.html:42 templates/scripts/scripts.html:14
-msgid "Add script"
-msgstr "スクリプトを追加"
-
-#: templates/menu.html:43 templates/scripts/scripts.html:15
-msgid "Update script"
-msgstr "スクリプトをアップデート"
-
-#: templates/menu.html:44 templates/scripts/scripts.html:16
-msgid "Pending scripts"
-msgstr "承認待ちスクリプト"
-
-#: templates/menu.html:45 templates/scripts/scripts.html:17
-msgid "Unofficial scripts"
-msgstr "非公式スクリプト"
-
-#: templates/menu.html:62
-msgid "Statistics"
-msgstr "統計"
-
-#: templates/menu.html:66
-msgid "Repositories"
-msgstr "リポジトリ"
-
-#: templates/scripts/add.html:15
+#: templates/scripts/add.html:12
 msgid ""
 "<strong>Important:</strong> please follow <strong>all</strong> these rules, "
 "otherwise your script will be rejected:"
@@ -6594,7 +6836,7 @@ msgstr ""
 "<strong>重要:</strong> 以下のルールの<strong>全て</strong>を守ってください。"
 "守られていないルールのあるスクリプトは承認されません:"
 
-#: templates/scripts/add.html:18
+#: templates/scripts/add.html:15
 #, python-format
 msgid ""
 "check that no script (or <a href=\"%(scripts_pending_url)s\">pending script</"
@@ -6604,18 +6846,18 @@ msgstr ""
 "\"%(scripts_pending_url)s\">承認待ちスクリプト</a>) が無いことを確認してくだ"
 "さい"
 
-#: templates/scripts/add.html:20
+#: templates/scripts/add.html:17
 msgid "script name"
 msgstr "スクリプト名"
 
-#: templates/scripts/add.html:22
+#: templates/scripts/add.html:19
 msgid ""
 "unique name (not used by any other script, even in a different language)"
 msgstr ""
 "ユニークな名前 (他のスクリプトで使われていない名前、異なるプログラミング言語"
 "で書かれていても同じ名前は使えません)"
 
-#: templates/scripts/add.html:23
+#: templates/scripts/add.html:20
 msgid ""
 "the script name in register function must be exactly same name as script "
 "(without extension)"
@@ -6623,20 +6865,24 @@ msgstr ""
 "register 関数の引数に使うスクリプト名は (拡張子を除いて) スクリプトと全く同じ"
 "名前でなければいけません"
 
-#: templates/scripts/add.html:24
+#: templates/scripts/add.html:21
+#, fuzzy
+#| msgid ""
+#| "the word 'weechat' is not needed in name: for example don't use "
+#| "'weechat_notify' but 'notify' instead (the script is only for WeeChat)"
 msgid ""
-"the word 'weechat' is not needed in name: for example don't use "
-"'weechat_notify' but 'notify' instead (the script is only for WeeChat)"
+"the word \"weechat\" is not needed in name: for example don't use "
+"\"weechat_notify\" but \"notify\" instead (the script is only for WeeChat)"
 msgstr ""
 "'weechat' という単語を名前に含める必要はありません: 例えば 'weechat_notify' "
 "を使う代わりに 'notify' を使ってください (WeeChat 用のスクリプトしかありませ"
 "ん)"
 
-#: templates/scripts/add.html:28
+#: templates/scripts/add.html:25
 msgid "script content"
 msgstr "スクリプトの内容"
 
-#: templates/scripts/add.html:30
+#: templates/scripts/add.html:27
 msgid ""
 "a comment at beginning with your name (or pseudo), your e-mail, and the "
 "chosen license (the license must be free)"
@@ -6644,23 +6890,29 @@ msgstr ""
 "最初のコメントにはあなたの名前 (偽名も可)、電子メールアドレス、ライセンスを含"
 "めてください (必ず自由ライセンスにしてください)"
 
-#: templates/scripts/add.html:31
-msgid "no shebang on first line (like '#!/usr/bin/perl'), it's not needed"
+#: templates/scripts/add.html:28
+#, fuzzy
+#| msgid "no shebang on first line (like '#!/usr/bin/perl'), it's not needed"
+msgid "no shebang on first line (like \"#!/usr/bin/perl\"), it's not needed"
 msgstr "1 行目のシェバン行 ('#!/usr/bin/perl' など) は不要"
 
-#: templates/scripts/add.html:32
+#: templates/scripts/add.html:29
 msgid "use only English for code and comments"
 msgstr "英語以外でコードとコメントを書かないでください"
 
-#: templates/scripts/add.html:33
+#: templates/scripts/add.html:30
+#, fuzzy
+#| msgid ""
+#| "no use of extra API between WeeChat and your script (like Ruby gem "
+#| "'WeeChat'), you must use standard WeeChat API"
 msgid ""
-"no use of extra API between WeeChat and your script (like Ruby gem "
-"'WeeChat'), you must use standard WeeChat API"
+"no use of extra API between WeeChat and your script (like Ruby gem \"WeeChat"
+"\"), you must use standard WeeChat API"
 msgstr ""
 "スクリプトから利用してもよい WeeChat に対する API は WeeChat 標準 API だけで"
 "す。その他の API (例えば Ruby gem 'WeeChat' など) を使わないでください"
 
-#: templates/scripts/add.html:34
+#: templates/scripts/add.html:31
 msgid ""
 "if your script is doing something blocking (like fetching URL), you must use "
 "function hook_process (or hook_process_hashtable) to not block WeeChat"
@@ -6669,8 +6921,8 @@ msgstr ""
 "ど) では、hook_process (または hook_process_hashtable) を使って WeeChat の実"
 "行を中断させないようにしてください"
 
-#: templates/scripts/add.html:43 templates/scripts/update.html:27
-#: templates/themes/add.html:25 templates/themes/update.html:17
+#: templates/scripts/add.html:41 templates/scripts/update.html:25
+#: templates/themes/add.html:23 templates/themes/update.html:15
 msgid "Submit"
 msgstr "投稿"
 
@@ -6702,12 +6954,12 @@ msgstr ""
 msgid "You'll be informed if there is a problem with your script."
 msgstr "スクリプトに問題があった場合にはお知らせします。"
 
-#: templates/scripts/add_ok.html:19 templates/scripts/source.html:34
+#: templates/scripts/add_ok.html:19 templates/scripts/source.html:38
 #: templates/scripts/update_ok.html:17
 msgid "Back to scripts"
 msgstr "スクリプトに戻る"
 
-#: templates/scripts/list.html:15
+#: templates/scripts/list.html:16
 msgid ""
 "<strong>Important:</strong> these scripts are written by external "
 "contributors, therefore WeeChat developers are <strong>NOT RESPONSIBLE</"
@@ -6717,7 +6969,7 @@ msgstr ""
 "す。このため、WeeChat 開発者はこれらのスクリプトを使っておきたいかなる問題に"
 "対しても<strong>責任を負いません</strong>。"
 
-#: templates/scripts/list.html:17
+#: templates/scripts/list.html:18
 msgid ""
 "You could experience problems like memory leaks, slowdowns, or even "
 "<strong>security problems</strong>. You are warned!"
@@ -6725,7 +6977,7 @@ msgstr ""
 "メモリリーク、速度低下、<strong>セキュリティ問題</strong>があるかもしれませ"
 "ん。警告しましたよ!"
 
-#: templates/scripts/list.html:21
+#: templates/scripts/list.html:23
 msgid ""
 "WARNING: the legacy API is deprecated and these scripts runs only on WeeChat "
 "0.2.x, which is OBSOLETE. You MUST NOT load these scripts with latest stable "
@@ -6735,94 +6987,101 @@ msgstr ""
 "外で動きませんし、サポートもありません。これらのスクリプトを最新の安定版 "
 "WeeChat でロードしてはいけません!"
 
-#: templates/scripts/list.html:27
+#: templates/scripts/list.html:30
 msgid "List:"
 msgstr "リスト:"
 
-#: templates/scripts/list.html:31
+#: templates/scripts/list.html:34
 msgid "Version:"
 msgstr "バージョン:"
 
-#: templates/scripts/list.html:33
+#: templates/scripts/list.html:36
 msgid "filter:"
 msgstr "フィルタ:"
 
-#: templates/scripts/list.html:33
+#: templates/scripts/list.html:36
 msgid "remove"
 msgstr "削除"
 
-#: templates/scripts/list.html:35
+#: templates/scripts/list.html:38
 msgid "no filter"
 msgstr "フィルタがありません"
 
-#: templates/scripts/list.html:37 templates/scripts/scripts.html:5
+#: templates/scripts/list.html:40 templates/scripts/scripts.html:5
 msgid "scripts"
 msgstr "スクリプト"
 
-#: templates/scripts/list.html:40 templates/scripts/list.html:44
+#: templates/scripts/list.html:43 templates/scripts/list.html:47
 msgid "Filters by popularity"
 msgstr "フィルタを人気順に表示中"
 
-#: templates/scripts/list.html:40 templates/scripts/list.html:44
+#: templates/scripts/list.html:43 templates/scripts/list.html:47
 msgid "Filters by name"
 msgstr "フィルタを人気順に表示中"
 
-#: templates/scripts/list.html:41 templates/scripts/list.html:45
+#: templates/scripts/list.html:44 templates/scripts/list.html:48
 msgid "sort filters by name"
 msgstr "フィルタを名前順にソート"
 
-#: templates/scripts/list.html:41 templates/scripts/list.html:45
+#: templates/scripts/list.html:44 templates/scripts/list.html:48
 msgid "sort filters by popularity"
 msgstr "フィルタを人気順にソート"
 
-#: templates/scripts/list.html:48 templates/scripts/list.html:50
+#: templates/scripts/list.html:51 templates/scripts/list.html:53
 msgid "Language:"
 msgstr "プログラミング言語:"
 
-#: templates/scripts/list.html:56 templates/scripts/list.html:58
-#: templates/scripts/list.html:149
+#: templates/scripts/list.html:59 templates/scripts/list.html:61
+#: templates/scripts/list.html:155
 msgid "License:"
 msgstr "ライセンス:"
 
-#: templates/scripts/list.html:64 templates/scripts/list.html:66
-#: templates/scripts/list.html:141
+#: templates/scripts/list.html:67 templates/scripts/list.html:69
+#: templates/scripts/list.html:147
 msgid "Tag:"
 msgstr "タグ:"
 
-#: templates/scripts/list.html:100 templates/scripts/list.html:102
+#: templates/scripts/list.html:88 templates/scripts/list.html:90
+#: templates/scripts/pending.html:33
+msgctxt "programming language"
+msgid "Language"
+msgstr "プログラミング言語"
+
+#: templates/scripts/list.html:104 templates/scripts/list.html:106
 #: templates/scripts/pending.html:35
 msgid "Min"
 msgstr "以上"
 
-#: templates/scripts/list.html:107 templates/scripts/list.html:109
+#: templates/scripts/list.html:111 templates/scripts/list.html:113
 #: templates/scripts/pending.html:36
 msgid "Max"
 msgstr "以下"
 
-#: templates/scripts/list.html:114 templates/scripts/list.html:116
-#: templates/scripts/pending.html:37 templates/scripts/source.html:24
+#: templates/scripts/list.html:118 templates/scripts/list.html:120
+#: templates/scripts/pending.html:37 templates/scripts/source.html:22
 msgid "Author"
 msgstr "作者"
 
-#: templates/scripts/list.html:121 templates/scripts/list.html:123
-#: templates/themes/list.html:28
+#: templates/scripts/list.html:125 templates/scripts/list.html:127
+#: templates/scripts/source.html:24 templates/themes/list.html:25
+#: templates/themes/source.html:17
 msgid "Added"
 msgstr "追加日"
 
-#: templates/scripts/list.html:128 templates/scripts/list.html:130
+#: templates/scripts/list.html:132 templates/scripts/list.html:134
 msgid "Updated"
 msgstr "アップデート日"
 
-#: templates/scripts/list.html:145 templates/scripts/pending.html:52
-#: templates/scripts/source.html:21
+#: templates/scripts/list.html:151 templates/scripts/pending.html:54
+#: templates/scripts/source.html:19
 msgid "requires"
 msgstr "必要なもの"
 
-#: templates/scripts/list.html:152 templates/themes/list.html:24
+#: templates/scripts/list.html:158 templates/themes/list.html:22
 msgid "Author:"
 msgstr "作者:"
 
-#: templates/scripts/list.html:161 templates/scripts/update.html:34
+#: templates/scripts/list.html:170 templates/scripts/update.html:31
 msgid "No script found."
 msgstr "スクリプトが見つかりません。"
 
@@ -6845,11 +7104,11 @@ msgstr "スクリプトが要求仕様を満たさない場合、非公式スク
 msgid "if script is rejected, it is deleted."
 msgstr "スクリプトが却下された場合、削除されます。"
 
-#: templates/scripts/pending.html:19
+#: templates/scripts/pending.html:18
 msgid "We need your help!"
 msgstr "あなたの助けが必要です!"
 
-#: templates/scripts/pending.html:21
+#: templates/scripts/pending.html:20
 msgid ""
 "You can help us by testing these scripts. Please report bugs to author of "
 "script and to"
@@ -6861,31 +7120,24 @@ msgstr ""
 msgid "Approval notes"
 msgstr "承認コメント"
 
-#: templates/scripts/pending.html:69
+#: templates/scripts/pending.html:72
 msgid "No script pending approval at this time."
 msgstr "現在のところ承認待ち状態のスクリプトはありません。"
 
-#: templates/scripts/source.html:21
+#: templates/scripts/source.html:19
 msgid "for WeeChat"
 msgstr "WeeChat 用"
 
-#: templates/scripts/source.html:24
-msgid "version"
-msgstr "バージョン"
-
-#: templates/scripts/source.html:25
-msgid "added"
-msgstr "追加日"
-
-#: templates/scripts/source.html:25 templates/themes/list.html:29
+#: templates/scripts/source.html:24 templates/themes/list.html:26
+#: templates/themes/source.html:17
 msgid "updated"
 msgstr "アップデート日"
 
-#: templates/scripts/source.html:32
+#: templates/scripts/source.html:36
 msgid "Script not found"
 msgstr "スクリプトが見つかりません"
 
-#: templates/scripts/update.html:16
+#: templates/scripts/update.html:13
 msgid ""
 "<strong>Important:</strong> the recommended way to update a script is to "
 "send a pull request on <a href=\"https://github.com/weechat/scripts/"
@@ -6899,7 +7151,7 @@ msgstr ""
 "容に対してコメントが付くかもしれません。これが不可能な場合、このフォームを"
 "使ってください。"
 
-#: templates/scripts/update.html:18
+#: templates/scripts/update.html:15
 msgid ""
 "Please follow <strong>all</strong> these rules, otherwise your script will "
 "be rejected:"
@@ -6907,7 +7159,7 @@ msgstr ""
 "以下のルールの<strong>全て</strong>を守ってください。守られていないルールのあ"
 "るスクリプトは承認されません:"
 
-#: templates/scripts/update.html:20
+#: templates/scripts/update.html:17
 msgid ""
 "for a Python script with tag \"py3k-ok\", please ensure your new version is "
 "compatible with Python 2.x and 3.x"
@@ -6919,7 +7171,7 @@ msgstr ""
 msgid "New release has been submitted for review."
 msgstr "新しいバージョンが投稿され、レビュー待ち状態です。"
 
-#: templates/themes/add.html:15
+#: templates/themes/add.html:12
 msgid ""
 "<strong>Warning:</strong> please follow <strong>all</strong> these rules, "
 "otherwise your theme will be rejected:"
@@ -6927,17 +7179,19 @@ msgstr ""
 "<strong>警告:</strong> 以下のルールの<strong>全て</strong>を守ってください。"
 "守られていないルールのあるテーマは承認されません:"
 
-#: templates/themes/add.html:17
-msgid "unique name, ending with '.theme' (only letters, digits or '_')"
+#: templates/themes/add.html:14
+#, fuzzy
+#| msgid "unique name, ending with '.theme' (only letters, digits or '_')"
+msgid "unique name, ending with \".theme\" (only letters, digits or \"_\")"
 msgstr "'.theme' で終わるユニークな名前 (英文字、数字、'_' のみ使用可)"
 
-#: templates/themes/add.html:18
-msgid "theme must be built with latest stable version of WeeChat"
+#: templates/themes/add.html:15
+#, fuzzy, python-format
+#| msgid "theme must be built with latest stable version of WeeChat"
+msgid ""
+"theme must be built with latest stable version of WeeChat (%(version)s) or "
+"development version"
 msgstr "テーマは最新の安定版 WeeChat"
-
-#: templates/themes/add.html:18
-msgid "or development version"
-msgstr "または開発版でビルドできなければいけません"
 
 #: templates/themes/add_ok.html:12
 msgid ""
@@ -6951,13 +7205,12 @@ msgstr ""
 msgid "You'll be informed if there is a problem with your theme."
 msgstr "テーマに問題があった場合には連絡があります。"
 
-#: templates/themes/add_ok.html:19 templates/themes/list.html:41
-#: templates/themes/source.html:15 templates/themes/source.html:22
+#: templates/themes/add_ok.html:19 templates/themes/source.html:31
 #: templates/themes/update_ok.html:17
 msgid "Back to themes"
 msgstr "テーマに戻る"
 
-#: templates/themes/list.html:13
+#: templates/themes/list.html:14
 msgid ""
 "<strong>Important:</strong> alpha version of themes! Alpha version of script "
 "is available here:"
@@ -6965,19 +7218,21 @@ msgstr ""
 "<strong>重要:</strong> アルファ版のテーマです! アルファ版のスクリプトはここか"
 "ら入手出来ます:"
 
-#: templates/themes/list.html:24
-msgid "submitted by"
+#: templates/themes/list.html:22
+#, fuzzy
+#| msgid "submitted by"
+msgid "Submitted by"
 msgstr "投稿者"
 
-#: templates/themes/list.html:38
+#: templates/themes/list.html:36
 msgid "No theme found."
 msgstr "テーマが見つかりません。"
 
-#: templates/themes/source.html:13 themes/models.py:220
+#: templates/themes/source.html:14 themes/models.py:223
 msgid "Theme"
 msgstr "テーマ"
 
-#: templates/themes/source.html:20
+#: templates/themes/source.html:29
 msgid "Theme not found"
 msgstr "テーマが見つかりません"
 
@@ -6985,15 +7240,15 @@ msgstr "テーマが見つかりません"
 msgid "themes"
 msgstr "テーマ"
 
-#: templates/themes/themes.html:13
+#: templates/themes/themes.html:11
 msgid "Themes"
 msgstr "テーマ"
 
-#: templates/themes/themes.html:14
+#: templates/themes/themes.html:12
 msgid "Add theme"
 msgstr "テーマを追加"
 
-#: templates/themes/themes.html:15
+#: templates/themes/themes.html:13
 msgid "Update theme"
 msgstr "テーマをアップデート"
 
@@ -7001,38 +7256,46 @@ msgstr "テーマをアップデート"
 msgid "Updated theme has been submitted for review."
 msgstr "アップデートされたテーマが投稿され、レビュー待ち状態になりました。"
 
-#: themes/models.py:137 themes/models.py:225
-msgid "the theme"
+#: themes/models.py:138 themes/models.py:228
+#, fuzzy
+#| msgid "the theme"
+msgid "The theme."
 msgstr "テーマ"
 
-#: themes/models.py:154 themes/models.py:235
-msgid "no spam, never displayed on site"
+#: themes/models.py:149
+msgid "Used for themes page."
+msgstr ""
+
+#: themes/models.py:154 themes/models.py:237
+#, fuzzy
+#| msgid "no spam, never displayed on site"
+msgid "No spam, never displayed."
 msgstr "スパムの心配はありません、サイトには掲載されません"
 
-#: themes/models.py:175 themes/models.py:260
+#: themes/models.py:178 themes/models.py:262
 msgid "Theme file too big."
 msgstr "テーマファイルが大きすぎます。"
 
-#: themes/models.py:178 themes/models.py:263
+#: themes/models.py:181 themes/models.py:265
 msgid "Invalid theme file."
 msgstr "不正なテーマファイルです。"
 
-#: themes/models.py:182
+#: themes/models.py:185
 msgid "This name already exists."
 msgstr "その名前はすでに使われています。"
 
-#: themes/models.py:185 themes/models.py:189
+#: themes/models.py:188 themes/models.py:192
 msgid "Invalid name inside theme file."
 msgstr "テーマファイルの中の名前が不正です。"
 
-#: themes/models.py:196 themes/models.py:276
+#: themes/models.py:199 themes/models.py:278
 msgid "Invalid WeeChat version, too old!"
 msgstr "不正な WeeChat バージョンです。古過ぎます!"
 
-#: themes/models.py:266
+#: themes/models.py:268
 msgid "Internal error."
 msgstr "内部エラー。"
 
-#: themes/models.py:269
+#: themes/models.py:271
 msgid "Invalid name: different from theme."
 msgstr "不正な名前: テーマとは異なります。"

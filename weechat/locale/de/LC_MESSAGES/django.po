@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-30 21:53+0200\n"
-"PO-Revision-Date: 2018-03-30 21:54+0200\n"
+"POT-Creation-Date: 2018-05-06 15:24+0200\n"
+"PO-Revision-Date: 2018-05-06 15:25+0200\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <weechatter@arcor.de>\n"
 "Language: de\n"
@@ -175,159 +175,78 @@ msgstr ""
 "Trigger- und Exec-Erweiterung, vereinfachter Anzeigemodus, versteckte "
 "Buffer, Unit-Tests."
 
-#: dev/views.py:36
+#: common/forms.py:89 common/forms.py:92 scripts/models.py:214
+msgid "This field is required."
+msgstr "Dieser Eintrag ist notwendig."
+
+#: dev/views.py:37
 msgid "stable version"
 msgstr "stabile Version"
 
-#: dev/views.py:40
+#: dev/views.py:41
 msgid ""
 "stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
 "stabile Version, als Nummer, siehe Erweiterung-API: info_get(\"version_number"
 "\")"
 
-#: dev/views.py:45
+#: dev/views.py:46
 msgid "date of stable version"
 msgstr "Datum der stabilen Version"
 
-#: dev/views.py:49
+#: dev/views.py:50
 msgid "development version"
 msgstr "Entwicklerversion"
 
-#: dev/views.py:53
+#: dev/views.py:54
 msgid "output of \"git rev-parse HEAD\" for sources repository"
 msgstr "Ausgabe von \"git rev-parse HEAD\" für Quelltext Repository"
 
-#: dev/views.py:57
+#: dev/views.py:58
 msgid "output of \"git rev-parse HEAD\" for scripts repository"
 msgstr "Ausgabe von \"git rev-parse HEAD\" für Skripten Repository"
 
-#: dev/views.py:61 templates/download/packages.html:49
+#: dev/views.py:62 templates/download/packages.html:41
 msgid "next stable version"
 msgstr "kommende stabile Version"
 
-#: dev/views.py:65
+#: dev/views.py:66
 msgid ""
 "next stable version, as number, like plugin API: info_get(\"version_number\")"
 msgstr ""
 "kommende stabile Version, als Nummer, siehe Erweiterung-API: "
 "info_get(\"version_number\")"
 
-#: dev/views.py:70
+#: dev/views.py:71
 msgid "approximate date of next stable version"
 msgstr "voraussichtliches Datum der kommenden stabilen Version"
 
-#: dev/views.py:75
+#: dev/views.py:76
 msgid "all infos (one info by line, format: \"info:value\")"
 msgstr "alle Informationen (eine Information pro Zeile, Format: \"Info:Wert\")"
 
-#: doc/models.py:30
-msgid "Czech"
-msgstr "Tschechisch"
-
-#: doc/models.py:31 settings.py:62 templates/dev/support.html:33
-msgid "German"
-msgstr "Deutsch"
-
-#: doc/models.py:32 settings.py:60 templates/dev/support.html:26
-#: templates/menu.html:24 templates/menu.html:25
-msgid "English"
-msgstr "Englisch"
-
-#: doc/models.py:33
-msgid "Spanish"
-msgstr "Spanisch"
-
-#: doc/models.py:34 settings.py:61 templates/dev/support.html:27
-msgid "French"
-msgstr "Französisch"
-
-#: doc/models.py:35
-msgid "Hungarian"
-msgstr "Ungarisch"
-
-#: doc/models.py:36 settings.py:63
-msgid "Italian"
-msgstr "Italienisch"
-
-#: doc/models.py:37 settings.py:66
-msgid "Japanese"
-msgstr "Japanisch"
-
-#: doc/models.py:38 settings.py:64
-msgid "Polish"
-msgstr "Polnisch"
-
-#: doc/models.py:39
-msgid "Portuguese"
-msgstr "Portugiesisch"
-
-#: doc/models.py:40 settings.py:65
-msgid "Portuguese (Brazil)"
-msgstr "Portugiesisch (Brasilien)"
-
-#: doc/models.py:41
-msgid "Russian"
-msgstr "Russisch"
-
-#: doc/models.py:42
-msgid "Turkish"
-msgstr "türkisch"
-
-#: doc/models.py:74 templates/menu.html:24
-msgid "FAQ"
-msgstr "FAQ"
-
-#: doc/models.py:75
-msgid "User's guide"
-msgstr "Benutzeranleitung"
-
-#: doc/models.py:76
-msgid "Plugin API reference"
-msgstr "Anleitung für API Erweiterung"
-
-#: doc/models.py:77
-msgid "Scripting guide"
-msgstr "Skript Anleitung"
-
-#: doc/models.py:78
-msgid "Quick Start guide"
-msgstr "Quickstart-Anleitung"
-
-#: doc/models.py:79
-msgid "Tester's guide"
-msgstr "Anleitung für Testpersonen"
-
-#: doc/models.py:80
-msgid "Developer's guide"
-msgstr "Entwicklerhandbuch"
-
-#: doc/models.py:81
-msgid "Relay protocol"
-msgstr "Relay Protokoll"
-
-#: download/_i18n_security.py:7
+#: doc/_i18n_security.py:7
 msgid "/set irc.network.colors_receive off"
 msgstr "/set irc.network.colors_receive off"
 
-#: download/_i18n_security.py:8
+#: doc/_i18n_security.py:8
 msgid "Buffer overflow when decoding IRC colors in strings."
 msgstr "Bufferüberlauf beim Dekodieren von IRC Farbecodes, in Nachrichten."
 
-#: download/_i18n_security.py:9
+#: doc/_i18n_security.py:9
 msgid "Buffer overflow when removing quotes in DCC filename."
 msgstr "Bufferüberlauf beim Entfernen von Anführungszeichen im DCC Dateinamen."
 
-#: download/_i18n_security.py:10
+#: doc/_i18n_security.py:10
 msgid "Buffer overflows in build of strings."
 msgstr "Bufferüberlauf beim Erstellen von Strings."
 
-#: download/_i18n_security.py:11
+#: doc/_i18n_security.py:11
 msgid "Crash when receiving special chars in IRC messages."
 msgstr ""
 "Absturz beim Empfang von speziellen Zeichen innerhalb einer IRC Nachricht."
 
-#: download/_i18n_security.py:12
+#: doc/_i18n_security.py:12
 msgid ""
 "Create a trigger (with WeeChat >= 1.1): /trigger add irc_dcc_quotes modifier "
 "\"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND ${\\x22} \" "
@@ -337,7 +256,7 @@ msgstr ""
 "modifier \"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND "
 "${\\x22} \" \"/.*//\""
 
-#: download/_i18n_security.py:13
+#: doc/_i18n_security.py:13
 msgid ""
 "Date/time conversion specifiers are expanded after replacing buffer local "
 "variables in name of log files. In some cases, this can lead to an error in "
@@ -348,19 +267,19 @@ msgstr ""
 "einem Fehler in der strftime Funktionen führen und einen Absturz "
 "verursachen, der durch einen uninitialisierten Buffer hervorgerufen wird."
 
-#: download/_i18n_security.py:14
+#: doc/_i18n_security.py:14
 msgid ""
 "Do not use command /notify with nicks containing formatting chars like \"%\"."
 msgstr ""
 "Der Befehl /notify sollte nicht mit Nicks verwendet werden die ein "
 "Formatierungszeichen \"%\" beinhalten."
 
-#: download/_i18n_security.py:15
+#: doc/_i18n_security.py:15
 msgid "Do not use irc protocol in relay plugin."
 msgstr ""
 "Das IRC Protokoll sollte nicht mit der Relay-Erweiterung genutzt werden."
 
-#: download/_i18n_security.py:16
+#: doc/_i18n_security.py:16
 msgid ""
 "Missing verifications in SSL certificate, which allows man-in-the-middle "
 "attackers to spoof an SSL chat server via an arbitrary certificate."
@@ -369,14 +288,14 @@ msgstr ""
 "the-middle Attacke möglich sich als SSL Chat Server auszugeben, mittels "
 "willkürlichen Zertifikaten."
 
-#: download/_i18n_security.py:17
+#: doc/_i18n_security.py:17
 msgid ""
 "Remove/unload all scripts calling function hook_process (for maximum safety)."
 msgstr ""
 "entferne/beende alle Skripten, die die Funktion hook_process nutzen (dient "
 "der maximalen Sicherheit)."
 
-#: download/_i18n_security.py:18
+#: doc/_i18n_security.py:18
 msgid ""
 "Turn off option \"irc.network.send_unknown_commands\" or do not use "
 "formatting chars like \"%\" when sending unknown commands to server."
@@ -385,11 +304,11 @@ msgstr ""
 "oder beim Senden von unbekannten Befehlen, zum Server, sollte die Nutzung "
 "von Formatierungszeichen z.B.\"%\" vermieden werden."
 
-#: download/_i18n_security.py:19
+#: doc/_i18n_security.py:19
 msgid "Uncontrolled format string in API function infobar_printf."
 msgstr "unkontrollierte Stringformatierung in der API Funktion infobar_printf."
 
-#: download/_i18n_security.py:20
+#: doc/_i18n_security.py:20
 msgid ""
 "Uncontrolled format string when IRC commands are redirected by relay plugin. "
 "If the output or redirected command contains formatting chars like \"%\", "
@@ -400,7 +319,7 @@ msgstr ""
 "Formatierungen der Form \"%\" enthält, kann dies zum Absturz von WeeChat "
 "führen."
 
-#: download/_i18n_security.py:21
+#: doc/_i18n_security.py:21
 msgid ""
 "Uncontrolled format string when sending IRC \"ison\" command for nicks "
 "monitored with command /notify."
@@ -408,7 +327,7 @@ msgstr ""
 "unbeschränkte Stringformatierung falls der IRC Befehl \"ison\" zum "
 "überwachen von Nicks, mittels Befehl /notify, genutzt wird."
 
-#: download/_i18n_security.py:22
+#: doc/_i18n_security.py:22
 msgid ""
 "Uncontrolled format string when sending unknown IRC command to server (if "
 "option \"irc.network.send_unknown_commands\" is on)."
@@ -417,11 +336,11 @@ msgstr ""
 "Server gesendet wird (falls Option \"irc.network.send_unknown_commands\" "
 "genutzt wird)."
 
-#: download/_i18n_security.py:23
+#: doc/_i18n_security.py:23
 msgid "Unload the logger plugin: /plugin unload logger"
 msgstr "die Logger-Erweiterung beenden: /plugin unload logger"
 
-#: download/_i18n_security.py:24
+#: doc/_i18n_security.py:24
 msgid ""
 "Untrusted command for function hook_process could lead to execution of "
 "commands, because of shell expansions (so the problem is only caused by some "
@@ -433,24 +352,109 @@ msgstr ""
 "von WeeChat)."
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:189 templates/download/security.html:71
+#: doc/models.py:37 templates/doc/security.html:83
 msgid "low"
 msgstr "niedrig"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:191 templates/download/security.html:72
+#: doc/models.py:39 templates/doc/security.html:87
 msgid "medium"
 msgstr "mittel"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:193 templates/download/security.html:73
+#: doc/models.py:41 templates/doc/security.html:91
 msgid "high"
 msgstr "hoch"
 
 #. Translators: this is a severity level for a security vulnerability
-#: download/models.py:195 templates/download/security.html:74
+#: doc/models.py:43 templates/doc/security.html:95
 msgid "critical"
 msgstr "kritisch"
+
+#: doc/models.py:50
+msgid "Czech"
+msgstr "Tschechisch"
+
+#: doc/models.py:51 settings.py:62 templates/about/support.html:34
+#: templates/about/weechat.org.html:24
+msgid "German"
+msgstr "Deutsch"
+
+#: doc/models.py:52 settings.py:60 templates/about/support.html:27
+msgid "English"
+msgstr "Englisch"
+
+#: doc/models.py:53
+msgid "Spanish"
+msgstr "Spanisch"
+
+#: doc/models.py:54 settings.py:61 templates/about/support.html:28
+msgid "French"
+msgstr "Französisch"
+
+#: doc/models.py:55
+msgid "Hungarian"
+msgstr "Ungarisch"
+
+#: doc/models.py:56 settings.py:63 templates/about/weechat.org.html:25
+msgid "Italian"
+msgstr "Italienisch"
+
+#: doc/models.py:57 settings.py:66 templates/about/weechat.org.html:26
+msgid "Japanese"
+msgstr "Japanisch"
+
+#: doc/models.py:58 settings.py:64 templates/about/weechat.org.html:27
+msgid "Polish"
+msgstr "Polnisch"
+
+#: doc/models.py:59
+msgid "Portuguese"
+msgstr "Portugiesisch"
+
+#: doc/models.py:60 settings.py:65 templates/about/weechat.org.html:28
+msgid "Portuguese (Brazil)"
+msgstr "Portugiesisch (Brasilien)"
+
+#: doc/models.py:61
+msgid "Russian"
+msgstr "Russisch"
+
+#: doc/models.py:62
+msgid "Turkish"
+msgstr "türkisch"
+
+#: doc/models.py:100
+msgid "FAQ"
+msgstr "FAQ"
+
+#: doc/models.py:101
+msgid "User's guide"
+msgstr "Benutzeranleitung"
+
+#: doc/models.py:102
+msgid "Plugin API reference"
+msgstr "Anleitung für API Erweiterung"
+
+#: doc/models.py:103
+msgid "Scripting guide"
+msgstr "Skript Anleitung"
+
+#: doc/models.py:104
+msgid "Quick Start guide"
+msgstr "Quickstart-Anleitung"
+
+#: doc/models.py:105
+msgid "Tester's guide"
+msgstr "Anleitung für Testpersonen"
+
+#: doc/models.py:106
+msgid "Developer's guide"
+msgstr "Entwicklerhandbuch"
+
+#: doc/models.py:107
+msgid "Relay protocol"
+msgstr "Relay Protokoll"
 
 #: news/_i18n_info.py:7
 msgid ""
@@ -705,7 +709,7 @@ msgstr "Debian/Raspbian Repositorien"
 msgid "Dennis Ritchie has left #world"
 msgstr "Dennis Ritchie ist verstorben"
 
-#: news/_i18n_info.py:24 templates/home/home.html:72 templates/menu.html:65
+#: news/_i18n_info.py:24
 msgid "Devel blog"
 msgstr "Devel Blog"
 
@@ -722,7 +726,8 @@ msgstr ""
 "Verbindungen, buddy list management, presence information, MUC und "
 "transports."
 
-#: news/_i18n_info.py:26 templates/menu.html:19
+#: news/_i18n_info.py:26 templates/base.html:37 templates/base.html:93
+#: templates/home/home.html:109
 msgid "Documentation"
 msgstr "Dokumentation"
 
@@ -919,9 +924,10 @@ msgstr ""
 "Dritte Vorabveröffentlichung (Version 0.3.0-rc3), der neuen Version 0.3.0, "
 "ist verfügbar."
 
-#: news/_i18n_info.py:52 scripts/models.py:268 templates/about/history.html:38
-#: templates/doc/doc.html:28 templates/download/packages.html:42
-#: templates/scripts/list.html:90 templates/scripts/pending.html:32
+#: news/_i18n_info.py:52 scripts/models.py:273 templates/about/history.html:44
+#: templates/doc/doc_version.html:20 templates/download/packages.html:34
+#: templates/scripts/list.html:94 templates/scripts/pending.html:32
+#: templates/scripts/source.html:22
 msgid "Version"
 msgstr "Version"
 
@@ -5256,143 +5262,165 @@ msgstr ""
 "Fernbedienung für iTunes und zum anzeigen welches Musikstück gerade gespielt "
 "wird."
 
-#: scripts/models.py:124
+#: scripts/models.py:143
 msgid "Popular script"
 msgstr "Skript wird empfohlen"
 
-#: scripts/models.py:194 scripts/models.py:212 scripts/models.py:215
-#: themes/models.py:125 themes/models.py:128
-msgid "This field is required."
-msgstr "Dieser Eintrag ist notwendig."
-
-#: scripts/models.py:197
+#: scripts/models.py:217
 msgid "This name is invalid."
 msgstr "Dieser Name ist ungültig."
 
-#: scripts/models.py:202
+#: scripts/models.py:222
 msgid ""
 "This name already exists, please choose another name (update script content "
 "accordingly)."
 msgstr "Dieser Name existiert bereits. Bitte wähle einen anderen Namen."
 
-#: scripts/models.py:258 templates/scripts/list.html:84
-#: templates/scripts/list.html:86 templates/scripts/pending.html:33
-msgctxt "programming language"
+#: scripts/models.py:264
+#, fuzzy
+#| msgctxt "programming language"
+#| msgid "Language"
+msgctxt "The programming language."
 msgid "Language"
 msgstr "Sprache"
 
-#: scripts/models.py:263 templates/about/donate.html:75
-#: templates/scripts/list.html:78 templates/scripts/list.html:80
-#: templates/scripts/pending.html:29
+#: scripts/models.py:269 templates/about/interfaces.html:24
+#: templates/donate.html:86 templates/scripts/list.html:82
+#: templates/scripts/list.html:84 templates/scripts/pending.html:29
 msgid "Name"
 msgstr "Name"
 
-#: scripts/models.py:269
-msgid "version of script (only digits or dots)"
+#: scripts/models.py:274
+#, fuzzy
+#| msgid "version of script (only digits or dots)"
+msgid "The version of script (only digits or dots)."
 msgstr "Version des Skripts (nur Ziffern oder Punkte)"
 
-#: scripts/models.py:274 templates/scripts/list.html:93
-#: templates/scripts/list.html:95 templates/scripts/pending.html:34
+#: scripts/models.py:278 templates/scripts/list.html:97
+#: templates/scripts/list.html:99 templates/scripts/pending.html:34
+#: templates/scripts/source.html:22
 msgid "License"
 msgstr "Lizenz"
 
-#: scripts/models.py:275
-msgid "license (for example: GPL3, BSD, ...)"
+#: scripts/models.py:279
+#, fuzzy
+#| msgid "license (for example: GPL3, BSD, ...)"
+msgid "The license (for example: GPL3, BSD, ...)."
 msgstr "Lizenzen (zum Beispiel: GPL3, BSD, ...)"
 
-#: scripts/models.py:279 scripts/models.py:361 templates/doc/doc.html:69
-#: themes/models.py:136 themes/models.py:224
+#: scripts/models.py:282 scripts/models.py:361
+#: templates/doc/doc_version.html:67 themes/models.py:137 themes/models.py:227
 msgid "File"
 msgstr "Datei"
 
-#: scripts/models.py:280 scripts/models.py:362
-msgid "the script"
+#: scripts/models.py:283 scripts/models.py:362
+#, fuzzy
+#| msgid "the script"
+msgid "The script."
 msgstr "nach Skript"
 
-#: scripts/models.py:284 templates/dev/info_list.html:19
-#: templates/dev/roadmap.html:46 templates/download/security.html:35
-#: templates/scripts/list.html:89 templates/scripts/pending.html:30
-#: themes/models.py:143
+#: scripts/models.py:287 templates/dev/info_list.html:24
+#: templates/dev/roadmap.html:41 templates/doc/security.html:41
+#: templates/scripts/list.html:93 templates/scripts/pending.html:30
+#: themes/models.py:144
 msgid "Description"
 msgstr "Beschreibung"
 
-#: scripts/models.py:290
+#: scripts/models.py:292
 msgid "Requirements"
 msgstr "zusätzliche Anforderungen"
 
-#: scripts/models.py:291 themes/models.py:144
-msgid "optional"
-msgstr "optional"
-
 #: scripts/models.py:296
-msgid "Min/max WeeChat"
+#, fuzzy
+#| msgid "Min/max WeeChat"
+msgid "Min/max WeeChat version."
 msgstr "Min/Max WeeChat"
 
-#: scripts/models.py:299 scripts/models.py:366 themes/models.py:149
-#: themes/models.py:230
+#: scripts/models.py:300 scripts/models.py:366 themes/models.py:148
+#: themes/models.py:232
 msgid "Your name or nick"
 msgstr "Dein Name oder Nick"
 
-#: scripts/models.py:300 scripts/models.py:305
-msgid "used for scripts page and git commit"
-msgstr "wird für die Skripten Seite und Git Commits benötigt"
+#: scripts/models.py:301
+#, fuzzy
+#| msgid "used for git commit"
+msgid "Used for git commit and scripts page."
+msgstr "wird für Git Commit benötigt"
 
-#: scripts/models.py:304 scripts/models.py:371 themes/models.py:153
-#: themes/models.py:234
+#: scripts/models.py:305 scripts/models.py:371 themes/models.py:153
+#: themes/models.py:236
 msgid "Your e-mail"
 msgstr "Deine email"
 
-#: scripts/models.py:311 scripts/models.py:377 themes/models.py:160
-#: themes/models.py:241
+#: scripts/models.py:306 scripts/models.py:367 scripts/models.py:372
+#, fuzzy
+#| msgid "used for git commit"
+msgid "Used for git commit."
+msgstr "wird für Git Commit benötigt"
+
+#: scripts/models.py:312 scripts/models.py:377 themes/models.py:160
+#: themes/models.py:243
 msgid "Comments"
 msgstr "zusätzliche Informationen"
 
-#: scripts/models.py:312 themes/models.py:161 themes/models.py:242
-msgid "optional, not displayed"
+#: scripts/models.py:313 themes/models.py:161 themes/models.py:244
+#, fuzzy
+#| msgid "optional, not displayed"
+msgid "Not displayed."
 msgstr "optional, wird nicht dargestellt"
 
-#: scripts/models.py:317 scripts/models.py:383 themes/models.py:166
-#: themes/models.py:247
+#: scripts/models.py:318 scripts/models.py:383 themes/models.py:166
+#: themes/models.py:249
 msgid "Are you a spammer?"
 msgstr "Bist Du ein Spammer?"
 
-#: scripts/models.py:318 scripts/models.py:384 themes/models.py:167
-#: themes/models.py:248
-msgid "enter \"no\" if you are not a spammer"
+#: scripts/models.py:319 scripts/models.py:384 themes/models.py:167
+#: themes/models.py:250
+#, fuzzy
+#| msgid "enter \"no\" if you are not a spammer"
+msgid "Enter \"no\" if you are not a spammer."
 msgstr "Gebe \"no\" ein, sofern Du kein Spammer bist"
 
-#: scripts/models.py:326
-#, python-brace-format
+#: scripts/models.py:327
+#, fuzzy, python-brace-format
+#| msgid ""
+#| "short name of script (max {max_chars} chars, only lower case letters, "
+#| "digits or \"_\")"
 msgid ""
-"short name of script (max {max_chars} chars, only lower case letters, digits "
-"or \"_\")"
+"The short name of script (max {max_chars} chars, only lower case letters, "
+"digits or \"_\")."
 msgstr ""
 "Kurzname des Skripts (maximal {max_chars} Zeichen und nur Kleinbuchstaben, "
 "Ziffern oder \"_\")"
 
-#: scripts/models.py:337 themes/models.py:206
+#: scripts/models.py:338 themes/models.py:209
 msgid "Choose..."
 msgstr "Auswählen..."
 
-#: scripts/models.py:352 templates/scripts/source.html:13
+#: scripts/models.py:353 templates/scripts/source.html:14
 msgid "Script"
 msgstr "Skript"
 
-#: scripts/models.py:357
+#: scripts/models.py:358
 msgid "New version"
 msgstr "Neue Version"
 
-#: scripts/models.py:367 scripts/models.py:372
-msgid "used for git commit"
-msgstr "wird für Git Commit benötigt"
-
 #: scripts/models.py:378
-msgid "changes in this release"
+#, fuzzy
+#| msgid "changes in this release"
+msgid "Changes in this release."
 msgstr "Änderungen dieser Version"
 
-#. Translators: this is a date format, see: http://uk3.php.net/manual/en/function.date.php (note: the result string must be short, use abbreviation for month if possible)
-#: settings.py:170
+#. Translators: this is a date format, see: http://www.php.net/date (note: the result string must be short, use abbreviation for month if possible)
+#: settings.py:171
 msgid "M j, Y"
+msgstr "d.m.Y"
+
+#. Translators: this is a date/time format, see: http://www.php.net/date (note: the result string must be short, use abbreviation for month if possible)
+#: settings.py:173
+#, fuzzy
+#| msgid "M j, Y"
+msgid "M j, Y H:i"
 msgstr "d.m.Y"
 
 #: templates/403.html:5
@@ -5434,187 +5462,105 @@ msgstr ""
 msgid "about"
 msgstr "Über"
 
-#: templates/about/about.html:13 templates/about/history.html:39
-#: templates/home/home.html:50 templates/menu.html:11
+#: templates/about/about.html:11 templates/about/history.html:45
+#: templates/base.html:83 templates/home/home.html:43
 msgid "Features"
 msgstr "Funktionen"
 
-#: templates/about/about.html:14 templates/menu.html:12
+#: templates/about/about.html:12 templates/base.html:84
+#: templates/home/home.html:86
+#, fuzzy
+#| msgid "Qt interface"
+msgid "Interfaces"
+msgstr "Qt Oberfläche"
+
+#: templates/about/about.html:13 templates/base.html:85
+#: templates/home/home.html:46 templates/home/home.html:89
 msgid "Screenshots"
 msgstr "Bilder"
 
-#: templates/about/about.html:15 templates/menu.html:13
+#: templates/about/about.html:14 templates/base.html:86
 msgid "History"
 msgstr "Geschichte"
 
-#: templates/about/about.html:16 templates/home/home.html:87
-#: templates/menu.html:14
-msgid "Make a donation"
-msgstr "etwas Spenden"
-
-#: templates/about/donate.html:5
-msgid "donate"
-msgstr "Spenden"
-
-#: templates/about/donate.html:15
-msgid "Why your donation matters?"
-msgstr "Weshalb ist Deine Spende wichtig?"
-
-#: templates/about/donate.html:17
-msgid ""
-"WeeChat is written by a small group of <strong>volunteers</strong>. Any "
-"contribution will show us that the project is appreciated and keep us "
-"motivated."
-msgstr ""
-"WeeChat wird durch eine kleine Gruppe von <strong>freiwilligen</strong> "
-"entwickelt. Jeder Beitrag zeigt uns, dass das Projekt gewürdigt wird und "
-"fördert dadurch unsere Motivation."
-
-#: templates/about/donate.html:19
-msgid "How is your money used?"
-msgstr "Wofür wird das Geld verwendet?"
-
-#: templates/about/donate.html:21
-msgid ""
-"Your donations help to pay the <strong>dedicated server</strong>, used for "
-"developments, build of packages and hosting of weechat.org."
-msgstr ""
-"Die Spenden helfen uns den  <strong>benötigten Server</strong> zu "
-"finanzieren, es fließt in die Weiterentwicklung, sowie zum Erstellen der "
-"Pakete und zum Hosten von weechat.org."
-
-#: templates/about/donate.html:26
-msgid "Click on one of the buttons below and follow the instructions:"
-msgstr "Wähle einen der beiden Spendenknöpfe aus und folge der Beschreibung:"
-
-#: templates/about/donate.html:28
-msgid ""
-"<strong>Liberapay</strong>: recurring donation with very low fees "
-"(<strong>best choice</strong>)"
-msgstr ""
-"<strong>Liberapay</strong>: turnusmäßige Spenden mit sehr geringen Gebühren "
-"(<strong>beste Wahl</strong>)"
-
-#: templates/about/donate.html:29
-msgid "<strong>Paypal</strong>: one-time donation."
-msgstr "<strong>Paypal</strong>: einmalige Spende."
-
-#: templates/about/donate.html:33
-msgid ""
-"You can leave name and comment, they will be displayed on this page, "
-"providing that the following conditions are met:"
-msgstr ""
-"Man kann einen Namen und einen Kommentar hinterlassen, diese werden auf "
-"dieser Seite veröffentlicht. Dazu müssen aber folgende Bedingungen erfüllt "
-"werden:"
-
-#: templates/about/donate.html:35
-msgid ""
-"the comment must be only about the donation and WeeChat (for example this is "
-"not the place to ask for new features)"
-msgstr ""
-"der Kommentar muss sich auf die Spende und WeeChat beziehen (zum Beispiel "
-"ist dies nicht der Ort um nach neuen Funktionen zu fragen)"
-
-#: templates/about/donate.html:36
-msgid ""
-"URLs are not allowed because there is <strong>no advertising</strong> on "
-"this site."
-msgstr ""
-"URLs sind nicht erlaubt, da diese Seite <strong>werbefrei</strong> ist."
-
-#: templates/about/donate.html:41
-msgid "Donate using Liberapay"
-msgstr "Spende mittels Liberapay"
-
-#: templates/about/donate.html:54
-msgid "They support WeeChat with Liberapay"
-msgstr "WeeChat wurde via Liberapay unterstützt von"
-
-#: templates/about/donate.html:56
-msgid "See the weechat page on Liberapay:"
-msgstr "siehe die WeeChat-Seite auf Liberapay:"
-
-#: templates/about/donate.html:59
-msgid "They support WeeChat with Paypal"
-msgstr "WeeChat wurde via PayPal unterstützt von"
-
-#: templates/about/donate.html:60
-msgid "Whole list:"
-msgstr "vollständige Liste:"
-
-#: templates/about/donate.html:60
-msgid "Top 10, ordered by total amount donated:"
-msgstr "Top 10, geordnet nach der Höhe der Spendensumme insgesamt:"
-
-#: templates/about/donate.html:63
-msgid "show the top 10, ordered by total amount donated"
-msgstr "zeigt Top 10, geordnet nach der Höhe der Spendensumme insgesamt"
-
-#: templates/about/donate.html:65
-msgid "show the whole list"
-msgstr "zeigt vollständige Liste an"
-
-#: templates/about/donate.html:71 templates/about/history.html:37
-#: templates/scripts/pending.html:38
-msgid "Date"
-msgstr "Datum"
-
-#: templates/about/donate.html:73
-msgid "Rank"
-msgstr "Rang"
-
-#: templates/about/donate.html:76
-msgid "Amount"
-msgstr "Betrag"
-
-#: templates/about/donate.html:78
-msgid "Comment"
-msgstr "Kommentar"
-
-#: templates/about/donate.html:105 templates/doc/doc.html:73
-msgid "Total"
-msgstr "Total"
+#: templates/about/about.html:15 templates/base.html:87
+#: templates/home/home.html:112
+msgid "Support"
+msgstr "Support"
 
 #: templates/about/features.html:5
 msgid "features"
 msgstr "Funktionen"
 
-#: templates/about/features.html:16
+#: templates/about/features.html:17
 msgid "Free software, multi-platform"
 msgstr "freie Software, plattformunabhängig"
 
-#: templates/about/features.html:18
-msgid ""
-"WeeChat is a fast, light and extensible chat client, released under the "
-"terms of the GNU General Public License version 3."
-msgstr ""
-"WeeChat ist ein schneller, schlanker und erweiterbarer Chat Client, "
-"veröffentlicht unter der GNU General Public License version 3."
-
 #: templates/about/features.html:19
+#, fuzzy
+#| msgid "WeeChat is a fast, light and extensible chat client."
 msgid ""
-"It was written from scratch, and is <strong>actively developed</strong>."
-msgstr ""
-"WeeChat wurde von Grund auf neu programmiert und wird <strong>aktiv "
-"weiterentwickelt</strong>."
+"WeeChat is a fast, light and extensible chat client, with a text-based user "
+"interface."
+msgstr "WeeChat ist ein schneller, schlanker und erweiterbarer Chat Client."
 
 #: templates/about/features.html:22
-msgid ""
-"WeeChat has a text interface and runs on many operating systems, such as:"
+msgid "WeeChat is:"
+msgstr "WeeChat ist:"
+
+#: templates/about/features.html:24
+msgid "<strong>modular</strong>: a lightweight core with optional plugins"
 msgstr ""
-"WeeChat nutzt eine Textoberfläche und läuft auf vielen Betriebssystemen, zum "
-"Beispiel:"
+"<strong>modular</strong>: ein schlanker Kern mit optionalen Erweiterungen"
 
-#: templates/about/features.html:33
-msgid "Windows (bash/ubuntu and cygwin)"
-msgstr "Windows (bash/ubuntu und cygwin)"
+#: templates/about/features.html:25
+msgid "<strong>multi-protocols architecture</strong> (mainly IRC)"
+msgstr "<strong>Multi-Protokoll fähig</strong> (hauptsächlich IRC)"
 
-#: templates/about/features.html:42
+#: templates/about/features.html:26
+#, fuzzy
+#| msgid ""
+#| "It runs on many platforms like Linux, Unix, BSD, GNU Hurd, Mac OS&nbsp;X "
+#| "and Windows (Bash/Ubuntu and Cygwin)."
+msgid ""
+"<strong>multi-platforms</strong>: Linux, Unix, BSD, GNU Hurd, Mac OS X and "
+"Windows (Bash/Ubuntu and Cygwin)."
+msgstr ""
+"Er ist auf vielen Plattformen lauffähig, z.B. Linux, Unix, BSD, GNU Hurd, "
+"Mac OS&nbsp;X und Windows (Bash/Ubuntu und Cygwin)."
+
+#: templates/about/features.html:27
+msgid ""
+"<strong>extensible</strong> with C, Python, Perl, Ruby, Lua, Tcl, Scheme, "
+"Javascript and PHP"
+msgstr ""
+"<strong>erweiterbar</strong> mittels C, Python, Perl, Ruby, Lua, Tcl, "
+"Scheme, Javascript und PHP"
+
+#: templates/about/features.html:28
+msgid "<strong>fully documented</strong> and translated into several languages"
+msgstr ""
+"<strong>vollständig dokumentiert</strong> und übersetzt in mehrere Sprachen"
+
+#: templates/about/features.html:29
+#, fuzzy
+#| msgid "<strong>a free program</strong> released under the GPLv3 license"
+msgid ""
+"<strong>a free program</strong> released under the terms of the GNU General "
+"Public License version 3"
+msgstr "<strong>freie Software</strong> veröffentlicht unter GPLv3 Lizenz"
+
+#: templates/about/features.html:30
+msgid "<strong>an active project</strong> with a large community for scripts"
+msgstr ""
+"<strong>ein aktives Projekt</strong>, mit einer großen Skripten-"
+"Anhängerschaft"
+
+#: templates/about/features.html:40
 msgid "Light and extensible"
 msgstr "Leicht und Erweiterbar"
 
-#: templates/about/features.html:44
+#: templates/about/features.html:42
 msgid ""
 "WeeChat is designed to be light and extensible: a <strong>lightweight core</"
 "strong> with optional <strong>plugins</strong>."
@@ -5623,179 +5569,192 @@ msgstr ""
 "<strong>leichtgewichtiger Kern</strong> mit optionalen "
 "<strong>Erweiterungen</strong>."
 
-#: templates/about/features.html:45
+#: templates/about/features.html:43
 msgid "Plugins and scripts can be dynamically loaded and unloaded at any time."
 msgstr ""
 "Erweiterungen und Skripten können, während der Benutzung, geladen und "
 "entfernt werden."
 
-#: templates/about/features.html:48
+#: templates/about/features.html:46
 msgid "Almost everything is a plugin, for example:"
 msgstr "Fast alles wird durch Erweiterungen bereitgestellt, zum Beispiel:"
 
-#: templates/about/features.html:51
+#: templates/about/features.html:48
 msgid "Internet Relay Chat (IRC) protocol"
 msgstr "Internet Relay Chat (IRC) Protokoll"
 
-#: templates/about/features.html:52
+#: templates/about/features.html:49
 msgid "API for script languages"
 msgstr "API für Skriptsprachen"
 
-#: templates/about/features.html:53
+#: templates/about/features.html:50
 msgid "IRC proxy and remote interface"
 msgstr "IRC Proxy und Remote-Oberfläche"
 
-#: templates/about/features.html:54 templates/about/features.html:81
+#: templates/about/features.html:51 templates/about/features.html:84
 msgid "Scripts manager"
 msgstr "Skripten-Manager"
 
-#: templates/about/features.html:63
+#: templates/about/features.html:68
 msgid "The future is now!"
 msgstr "Die Zukunft ist da!"
 
-#: templates/about/features.html:65
+#: templates/about/features.html:70
+#, fuzzy
+#| msgid ""
+#| "WeeChat brings a lot of <strong>innovating features</strong>, which makes "
+#| "it different from other console/terminal based chat clients."
 msgid ""
-"WeeChat brings a lot of <strong>innovating features</strong>, which makes it "
+"WeeChat brings a lot of <strong>innovative features</strong>, which makes it "
 "different from other console/terminal based chat clients."
 msgstr ""
 "WeeChat überzeugt durch eine Vielzahl von <strong>innovativen Funktionen</"
 "strong>, wodurch es sich von anderen zeichenorientierten Clients "
 "unterscheidet."
 
-#: templates/about/features.html:68
+#: templates/about/features.html:73
 msgid "Look by yourself (the list is not exhaustive):"
 msgstr "Sehen Sie selber (diese Aufzählung ist nicht vollständig):"
 
-#: templates/about/features.html:72
+#: templates/about/features.html:75
 msgid "256 colors"
 msgstr "256 Farben"
 
-#: templates/about/features.html:73
+#: templates/about/features.html:76
 msgid "Mouse support"
 msgstr "Mausunterstützung"
 
-#: templates/about/features.html:74
+#: templates/about/features.html:77
 msgid "Customizable bars"
 msgstr "Bars können individuell anpasst werden"
 
-#: templates/about/features.html:75
-msgid "7 script languages"
+#: templates/about/features.html:78
+#, fuzzy
+#| msgid "7 script languages"
+msgid "8 script languages"
 msgstr "sieben Skriptsprachen"
 
-#: templates/about/features.html:76
+#: templates/about/features.html:79
 msgid "Horizontal/vertical split"
 msgstr "freie Fenstereinteilung horizontal/vertikal"
 
-#: templates/about/features.html:77
+#: templates/about/features.html:80
 msgid "Dynamic filtering of lines"
 msgstr "dynamische Filterung von Zeilen"
 
-#: templates/about/features.html:78
+#: templates/about/features.html:81
 msgid "Incremental text search"
 msgstr "schrittweise Textsuche"
 
-#: templates/about/features.html:79
+#: templates/about/features.html:82
 msgid "FIFO pipe"
 msgstr "FIFO Pipe"
 
-#: templates/about/features.html:80
+#: templates/about/features.html:83
 msgid "Spell checking"
 msgstr "Rechtschreibprüfung"
 
-#: templates/about/features.html:82 templates/about/features.html:121
-#: templates/download/packages.html:130
+#: templates/about/features.html:85 templates/about/features.html:130
+#: templates/about/interfaces.html:12
 msgid "Remote interfaces"
 msgstr "Remote-Oberfläche"
 
-#: templates/about/features.html:83
+#: templates/about/features.html:86
 msgid "Upgrade without quitting"
 msgstr "Upgrade ohne Neustart"
 
-#: templates/about/features.html:92
+#: templates/about/features.html:96
 msgid "Full-featured IRC plugin"
 msgstr "vollständige IRC Erweiterung"
 
-#: templates/about/features.html:94
+#: templates/about/features.html:98
 msgid ""
 "IRC plugin implements the protocol as described in the RFCs 1459 and 2812."
 msgstr ""
 "Die IRC Erweiterung unterstützt das Protokoll, wie es in RFCs 1459 und 2812 "
 "beschrieben ist."
 
-#: templates/about/features.html:97
+#: templates/about/features.html:101
 msgid "It comes with many <strong>built-in features</strong>, such as:"
 msgstr ""
 "Des weiteren werden folgende <strong>eingebaute Funktionen</strong> "
 "bereitgestellt:"
 
-#: templates/about/features.html:101
+#: templates/about/features.html:103
 msgid "Multi-servers"
 msgstr "Multi-Server"
 
-#: templates/about/features.html:102
+#: templates/about/features.html:104
 msgid "IPv6, SSL, proxy"
 msgstr "IPv6, SSL, Proxy"
 
-#: templates/about/features.html:103
+#: templates/about/features.html:105
 msgid "SASL authentication"
 msgstr "SASL Authentifizierung"
 
-#: templates/about/features.html:104
+#: templates/about/features.html:106
 msgid "Nicklist"
 msgstr "Nickliste"
 
-#: templates/about/features.html:105
+#: templates/about/features.html:107
 msgid "Color for nicks"
 msgstr "Nickfarbe"
 
-#: templates/about/features.html:106
+#: templates/about/features.html:108
 msgid "Color for away nicks"
 msgstr "Farbe für abwesende Nicks"
 
-#: templates/about/features.html:107
+#: templates/about/features.html:109
 msgid "Smart filter"
 msgstr "intelligente Filterung"
 
-#: templates/about/features.html:108
+#: templates/about/features.html:110
 msgid "Anti-flood"
 msgstr "Anti-Flood"
 
-#: templates/about/features.html:109
+#: templates/about/features.html:111
 msgid "Commands redirection"
 msgstr "Umleitung von Befehlen"
 
-#: templates/about/features.html:110
+#: templates/about/features.html:112
 msgid "Custom CTCP replies"
 msgstr "benutzerdefinierte CTCP Antworten"
 
-#: templates/about/features.html:111
+#: templates/about/features.html:113
 msgid "Lag indicator"
 msgstr "Wartezeit Indikator"
 
-#: templates/about/features.html:112
+#: templates/about/features.html:114
 msgid "DCC (file/chat)"
 msgstr "DCC (Datentransfer/Chat)"
 
-#: templates/about/features.html:123
+#: templates/about/features.html:132
 msgid ""
 "External interfaces (graphical or text) can connect to a running WeeChat."
 msgstr ""
 "externe Benutzeroberflächen (grafisch oder auf Textbasis) können mit WeeChat "
 "genutzt werden."
 
-#: templates/about/features.html:126
-msgid "Here is a list of available interfaces:"
-msgstr "Eine Auswahl von verfügbaren Benutzeroberflächen:"
+#: templates/about/features.html:135
+#, python-format
+msgctxt "They == The remote interfaces"
+msgid ""
+"They communicate with WeeChat using the <a href=\"%(doc)s\">relay protocol</"
+"a>."
+msgstr ""
 
-#: templates/about/features.html:136
-msgid "Qt interface"
-msgstr "Qt Oberfläche"
+#: templates/about/features.html:139
+#, python-format
+msgid ""
+"A list of interfaces is available on <a href=\"%(interfaces)s\">this page</"
+"a>."
+msgstr ""
 
-#: templates/about/features.html:158
+#: templates/about/features.html:148
 msgid "Documentation and support"
 msgstr "Dokumentation und Unterstützung"
 
-#: templates/about/features.html:161
+#: templates/about/features.html:151
 #, python-format
 msgid ""
 "WeeChat is translated into several languages and has a <a href=\"%(doc_url)s"
@@ -5805,7 +5764,7 @@ msgstr ""
 "\"%(doc_url)s\">umfassende Dokumentation</a>, die ebenfalls in verschiedenen "
 "Sprachen verfügbar ist."
 
-#: templates/about/features.html:164
+#: templates/about/features.html:153
 msgid ""
 "You are new to WeeChat? Read the <strong>quickstart</strong> and "
 "<strong>user's</strong> guide."
@@ -5813,13 +5772,13 @@ msgstr ""
 "Du nutzt WeeChat erst seit kurzem? Dann lies die <strong>Quickstart-</"
 "strong> und die <strong>Benutzer</strong>anleitung."
 
-#: templates/about/features.html:165
+#: templates/about/features.html:154
 msgid "Got a trivial question? The <strong>FAQ</strong> is waiting for you!"
 msgstr ""
 "Du hast alltägliche Fragen? Die <strong>FAQ</strong> kann Dir sicherlich "
 "helfen!"
 
-#: templates/about/features.html:166
+#: templates/about/features.html:155
 msgid ""
 "You want to write a script for WeeChat? Look at <strong>scripting</strong> "
 "guide and <strong>plugin API</strong> reference."
@@ -5828,7 +5787,7 @@ msgstr ""
 "<strong>Skript-</strong> und die Anleitung für die <strong>API Erweiterung</"
 "strong> an."
 
-#: templates/about/features.html:167
+#: templates/about/features.html:156
 msgid ""
 "Your native tongue is C? Then take a look at the <strong>developer's</"
 "strong> guide and contribute!"
@@ -5836,7 +5795,7 @@ msgstr ""
 "Deine Muttersprache ist C? Dann wirf einen Blick in das "
 "<strong>Entwicklerhandbuch</strong> und bringe Dich ein!"
 
-#: templates/about/features.html:171
+#: templates/about/features.html:161
 #, python-format
 msgid ""
 "There is an <a href=\"%(support_url)s\"><strong>excellent support</strong></"
@@ -5849,245 +5808,130 @@ msgstr ""
 msgid "history"
 msgstr "Geschichte"
 
-#: templates/about/history.html:14
+#: templates/about/history.html:12
 msgid "Why WeeChat?"
 msgstr "Weshalb WeeChat?"
 
-#: templates/about/history.html:16
+#: templates/about/history.html:15
 msgid "WeeChat stands for \"Wee Enhanced Environment for Chat\"."
 msgstr "WeeChat bedeutet \"Wee Enhanced Environment for Chat\"."
 
-#: templates/about/history.html:18
+#: templates/about/history.html:20
 msgid "In early 2003, I looked for an IRC client with following features:"
 msgstr ""
 "Anfang 2003 suchte ich einen IRC Client der folgende Funktionalität bieten "
 "sollte:"
 
-#: templates/about/history.html:20
+#: templates/about/history.html:22
 msgid "free software"
 msgstr "freie Software"
 
-#: templates/about/history.html:21
+#: templates/about/history.html:23
 msgid "running on Linux"
 msgstr "lauffähig unter Linux"
 
-#: templates/about/history.html:22
+#: templates/about/history.html:24
 msgid "text interface"
 msgstr "textbasierte Oberfläche"
 
-#: templates/about/history.html:23
+#: templates/about/history.html:25
 msgid "real nicklist"
 msgstr "echte Nicklist"
 
-#: templates/about/history.html:24
+#: templates/about/history.html:26
 msgid "extensible with scripts written in various languages"
 msgstr "erweiterbar durch Skripten für verschiedenen Sprachen"
 
-#: templates/about/history.html:26
+#: templates/about/history.html:28
 msgid "My search was unsuccessful!"
 msgstr "Meine Suche war nicht erfolgreich!"
 
-#: templates/about/history.html:28
+#: templates/about/history.html:32
 msgid "And thus WeeChat was born, on June 2003."
 msgstr "und deshalb wurde WeeChat im Juni 2003 geboren."
 
-#: templates/about/history.html:34
+#: templates/about/history.html:38
 msgid "Key dates"
 msgstr "Meilensteine"
+
+#: templates/about/history.html:43 templates/donate.html:82
+#: templates/scripts/pending.html:38
+msgid "Date"
+msgstr "Datum"
+
+#: templates/about/interfaces.html:5
+#, fuzzy
+#| msgid "Qt interface"
+msgid "interfaces"
+msgstr "Qt Oberfläche"
+
+#: templates/about/interfaces.html:15
+msgid ""
+"Remote interfaces are external software connecting on your WeeChat via the "
+"network."
+msgstr ""
+
+#: templates/about/interfaces.html:17
+msgid ""
+"Except for QWeeChat, the softwares listed on this page are NOT developed by "
+"WeeChat team. For support, please ask directly to the authors."
+msgstr ""
+
+#: templates/about/interfaces.html:25
+msgid "Type"
+msgstr ""
+
+#: templates/about/interfaces.html:26
+msgid "Site"
+msgstr ""
+
+#: templates/about/interfaces.html:27
+msgid "Notes"
+msgstr ""
+
+#: templates/about/interfaces.html:69
+#, fuzzy
+#| msgid "Download"
+msgid "Download page"
+msgstr "Download"
+
+#: templates/about/interfaces.html:83
+msgid "Not maintained any more."
+msgstr ""
+
+#: templates/about/interfaces.html:89
+msgid "Something missing?"
+msgstr ""
+
+#: templates/about/interfaces.html:92
+msgid "You have developed another remote interface for WeeChat?"
+msgstr ""
+
+#: templates/about/interfaces.html:95
+msgid "Tell us more about your great software!"
+msgstr ""
 
 #: templates/about/screenshots.html:5
 msgid "screenshots"
 msgstr "Screenshots"
 
-#: templates/about/screenshots.html:15
+#: templates/about/screenshots.html:14
 msgid "Relay clients"
 msgstr "Relay Clients"
 
-#: templates/about/screenshots.html:40
+#: templates/about/screenshots.html:41
 msgid "Screenshot not found:"
 msgstr "Bildschirmfoto nicht gefunden:"
 
-#: templates/about/screenshots.html:40
+#: templates/about/screenshots.html:45
 msgid "No screenshot."
 msgstr "kein Bildschirmfoto."
 
-#: templates/about/weechat.org.html:14
-msgid "Authors"
-msgstr "Autoren"
-
-#: templates/about/weechat.org.html:16
-msgid "Developers:"
-msgstr "Entwickler:"
-
-#: templates/about/weechat.org.html:23
-msgid "Translators:"
-msgstr "übersetzter:"
-
-#: templates/about/weechat.org.html:33
-msgid "Source code"
-msgstr "Quellprogramm"
-
-#: templates/about/weechat.org.html:35
-msgid "Source code of WeeChat.org is available on GitHub:"
-msgstr "Quellcode von WeeChat.org ist auf GitHub veröffentlicht:"
-
-#: templates/about/weechat.org.html:41
-msgid "Hosting"
-msgstr "Hosting"
-
-#: templates/about/weechat.org.html:43
-msgid ""
-"WeeChat.org is hosted by <a href=\"https://www.hetzner.de/en/\">Hetzner</a>."
-msgstr ""
-"WeeChat.org wird auf <a href=\"https://www.hetzner.de/en/\">Hetzner</a> "
-"gehostet."
-
-#: templates/base.html:15
-msgid "WeeChat, the extensible chat client"
-msgstr "WeeChat, der erweiterbare Chat Client"
-
-#: templates/base.html:85
-msgid "About WeeChat.org"
-msgstr "Über WeeChat.org"
-
-#: templates/base.html:87
-msgid "Valid"
-msgstr "Valid"
-
-#: templates/dev/dev.html:5
-msgid "dev"
-msgstr "Entwicklung"
-
-#: templates/dev/dev.html:13 templates/home/home.html:75 templates/menu.html:61
-msgid "Roadmap"
-msgstr "Meilensteinplan"
-
-#: templates/dev/dev.html:14
-msgid "Stats"
-msgstr "Statistiken"
-
-#: templates/dev/dev.html:15 templates/dev/info_list.html:17
-#: templates/menu.html:63
-msgid "Info"
-msgstr "Info"
-
-#: templates/dev/dev.html:16 templates/menu.html:64
-msgid "Support"
-msgstr "Support"
-
-#: templates/dev/info_list.html:5
-msgid "info"
-msgstr "Info"
-
-#: templates/dev/info_list.html:12
-msgid "Following infos are available (click on info for the URL):"
-msgstr "Folgende Informationen sind verfügbar (wähle eine Info für die URL):"
-
-#: templates/dev/info_list.html:18
-msgid "Current value"
-msgstr "aktueller Wert"
-
-#: templates/dev/info_list.html:32
-msgid "You can fetch these URLs from scripts or other sites."
-msgstr ""
-"Diese URLs können durch ein Skript oder eine andere Seite abgefragt werden."
-
-#: templates/dev/roadmap.html:5
-msgid "roadmap"
-msgstr "Meilensteinplan"
-
-#: templates/dev/roadmap.html:15
-msgid "Legend:"
-msgstr "Legende:"
-
-#: templates/dev/roadmap.html:16
-msgid "one commit in 'master'"
-msgstr "Ein Commit in 'master'"
-
-#: templates/dev/roadmap.html:17
-msgid "log of a separate branch"
-msgstr "Log eines separaten Branch"
-
-#: templates/dev/roadmap.html:22
-msgid "Next versions"
-msgstr "kommende Versionen"
-
-#: templates/dev/roadmap.html:23
-msgid "All versions"
-msgstr "alle Versionen"
-
-#: templates/dev/roadmap.html:28
-msgid "This page lists major features done or planned."
-msgstr ""
-"Diese Seite führt bedeutende Funktionen auf, die geplant sind oder umgesetzt "
-"wurden."
-
-#: templates/dev/roadmap.html:29
-msgid "Dive in the <strong>future</strong> of WeeChat!"
-msgstr "Lass Dich in die <strong>Zukunft</strong> von WeeChat entführen!"
-
-#: templates/dev/roadmap.html:42 templates/download/security.html:29
-msgid "Tracker"
-msgstr "Tracker"
-
-#: templates/dev/roadmap.html:43
-msgid "Status"
-msgstr "Status"
-
-#: templates/dev/roadmap.html:45
-msgid "Plugin"
-msgstr "Erweiterung"
-
-#: templates/dev/roadmap.html:57
-msgid "Planned"
-msgstr "geplant"
-
-#: templates/dev/roadmap.html:60
-msgid "Done"
-msgstr "erledigt"
-
-#: templates/dev/stats.html:5
-msgid "statistics"
-msgstr "Statistiken"
-
-#: templates/dev/stats.html:15 templates/menu.html:39
-#: templates/scripts/scripts.html:13
-msgid "Scripts"
-msgstr "Skripten"
-
-#: templates/dev/stats.html:23
-msgid "Git repository:"
-msgstr "Git-Repository:"
-
-#: templates/dev/stats.html:28
-msgid "lines of code"
-msgstr "Anzahl an Programmzeilen"
-
-#: templates/dev/stats.html:32
-msgid "Commits by range:"
-msgstr "Commits im vergangenen:"
-
-#: templates/dev/stats.html:34
-msgid "month:"
-msgstr "Monat:"
-
-#: templates/dev/stats.html:35
-msgid "year:"
-msgstr "Jahr:"
-
-#: templates/dev/stats.html:36
-msgid "total:"
-msgstr "Total:"
-
-#: templates/dev/stats.html:49
-msgid "Charts built with"
-msgstr "Tabellen erstellt mittels"
-
-#: templates/dev/support.html:5
+#: templates/about/support.html:5
 msgid "support"
 msgstr "Support"
 
-#: templates/dev/support.html:15
+#: templates/about/support.html:15
 #, python-format
 msgid ""
 "<strong>Important:</strong> before asking for help, please read carefully <a "
@@ -6097,27 +5941,27 @@ msgstr ""
 "href=\"%(doc_url)s\">Anleitung</a> und die <a href=\"%(faq_url)s\">FAQ</a> "
 "gelesen werden."
 
-#: templates/dev/support.html:20
+#: templates/about/support.html:21
 msgid "On server chat.freenode.net:"
 msgstr "auf Server chat.freenode.net:"
 
-#: templates/dev/support.html:24
+#: templates/about/support.html:25
 msgid "official channels (with developers):"
 msgstr "offizielle Channel (mit Entwicklern):"
 
-#: templates/dev/support.html:31
+#: templates/about/support.html:32
 msgid "non-official channels:"
 msgstr "keine offiziellen Channel:"
 
-#: templates/dev/support.html:34
+#: templates/about/support.html:35
 msgid "Finnish"
 msgstr "Finnisch"
 
-#: templates/dev/support.html:39
+#: templates/about/support.html:41
 msgid "Bugs / Feature requests"
 msgstr "Fehler / Funktionswünsche"
 
-#: templates/dev/support.html:41
+#: templates/about/support.html:44
 msgid ""
 "Bugs and feature requests for WeeChat, QWeeChat and scripts can be submitted "
 "on GitHub:"
@@ -6125,81 +5969,346 @@ msgstr ""
 "Fehlermeldungen und Funktionswünsche für WeeChat, QWeeChat und Skripten "
 "können auf GitHub mitgeteilt werden:"
 
-#: templates/dev/support.html:46
-msgid "WeeChat is on <a href=\"https://plus.google.com/\">Google+</a>:"
-msgstr "WeeChat ist auf <a href=\"https://plus.google.com/\">Google+</a>:"
+#: templates/about/support.html:48
+#, fuzzy
+#| msgid "Sort channels inside networks."
+msgid "Social networks"
+msgstr "sortiert Channels innerhalb des Netzwerkes."
 
-#: templates/dev/support.html:49
-msgid "Page"
-msgstr "Seite"
+#: templates/about/support.html:74 templates/about/support.html:76
+msgid "Google+ page"
+msgstr ""
 
-#: templates/dev/support.html:50
-msgid "Community"
+#: templates/about/support.html:79 templates/about/support.html:80
+#, fuzzy
+#| msgid "Community"
+msgid "Google+ community"
 msgstr "Community"
 
-#: templates/dev/support.html:53
-msgid "Mailing list"
+#: templates/about/support.html:87
+#, fuzzy
+#| msgid "Mailing list"
+msgid "Mailing lists"
 msgstr "Mailingliste"
 
-#: templates/dev/support.html:55
-#, python-format
+#: templates/about/support.html:90
+#, fuzzy, python-format
+#| msgid ""
+#| "There are <a href=\"https://savannah.nongnu.org/mail/?group=weechat\" "
+#| "target=\"_blank\" rel=\"noopener\">3 mailing lists <img src="
+#| "\"%(MEDIA_URL)simages/link.png\" width=\"16\" height=\"16\" alt=\">>\"></"
+#| "a>:"
 msgid ""
 "There are <a href=\"https://savannah.nongnu.org/mail/?group=weechat\" target="
 "\"_blank\" rel=\"noopener\">3 mailing lists <img src=\"%(MEDIA_URL)simages/"
-"link.png\" width=\"16\" height=\"16\" alt=\">>\"></a>:"
+"link.png\" width=\"16\" height=\"16\" alt=\"&gt;&gt;\"></a>:"
 msgstr ""
 "Es existieren <a href=\"https://savannah.nongnu.org/mail/?group=weechat\" "
 "target=\"_blank\" rel=\"noopener\">drei Mailinglisten <img src="
 "\"%(MEDIA_URL)simages/link.png\" width=\"16\" height=\"16\" alt=\">>\"></a>:"
 
-#: templates/dev/support.html:59
+#: templates/about/support.html:94
 msgid "<strong>weechat-security</strong> (security advisories about WeeChat):"
 msgstr ""
 "<strong>weechat-security</strong> (Sicherheitsankündigungen, die WeeChat "
 "betreffen):"
 
-#: templates/dev/support.html:61 templates/dev/support.html:68
-#: templates/dev/support.html:75
-msgid "subscribe:"
+#: templates/about/support.html:96 templates/about/support.html:103
+#: templates/about/support.html:110
+#, fuzzy
+#| msgid "subscribe:"
+msgid "subscribe"
 msgstr "abonnieren:"
 
-#: templates/dev/support.html:62 templates/dev/support.html:69
-#: templates/dev/support.html:76
-msgid "send mail to:"
+#: templates/about/support.html:97 templates/about/support.html:104
+#: templates/about/support.html:111
+#, fuzzy
+#| msgid "send mail to:"
+msgid "send a mail to the list"
 msgstr "sende eine Mail an:"
 
-#: templates/dev/support.html:66
+#: templates/about/support.html:101
 msgid "<strong>weechat-support</strong> (installation, usage, bugs, ...):"
 msgstr ""
 "<strong>weechat-support</strong> (Installation, Anwendung, Fehler, ...):"
 
-#: templates/dev/support.html:73
+#: templates/about/support.html:108
 msgid "<strong>weechat-dev</strong> (everything related to the development):"
 msgstr ""
 "<strong>weechat-dev</strong> (alles was mit der Entwicklung zu tun hat):"
+
+#: templates/about/weechat.org.html:12
+msgid "Authors"
+msgstr "Autoren"
+
+#: templates/about/weechat.org.html:15
+msgid "Developers:"
+msgstr "Entwickler:"
+
+#: templates/about/weechat.org.html:22
+msgid "Translators:"
+msgstr "übersetzter:"
+
+#: templates/about/weechat.org.html:32
+msgid "Source code"
+msgstr "Quellprogramm"
+
+#: templates/about/weechat.org.html:35
+msgid "Source code of WeeChat.org is available on GitHub:"
+msgstr "Quellcode von WeeChat.org ist auf GitHub veröffentlicht:"
+
+#: templates/about/weechat.org.html:42
+msgid "Hosting"
+msgstr "Hosting"
+
+#: templates/about/weechat.org.html:45
+msgid ""
+"WeeChat.org is hosted by <a href=\"https://www.hetzner.de/en/\">Hetzner</a>."
+msgstr ""
+"WeeChat.org wird auf <a href=\"https://www.hetzner.de/en/\">Hetzner</a> "
+"gehostet."
+
+#: templates/base.html:20
+msgid "WeeChat, the extensible chat client"
+msgstr "WeeChat, der erweiterbare Chat Client"
+
+#: templates/base.html:35 templates/base.html:74
+msgid "Home"
+msgstr "Hauptseite"
+
+#: templates/base.html:36 templates/base.html:82
+msgid "About"
+msgstr "Über"
+
+#: templates/base.html:38 templates/base.html:102 templates/home/home.html:21
+#: templates/scripts/source.html:26 templates/themes/source.html:19
+msgid "Download"
+msgstr "Download"
+
+#: templates/base.html:39 templates/base.html:111 templates/dev/stats.html:14
+#: templates/home/home.html:66 templates/scripts/scripts.html:11
+msgid "Scripts"
+msgstr "Skripten"
+
+#: templates/base.html:40 templates/base.html:131 templates/doc/doc.html:12
+#: templates/download/download.html:12
+#, fuzzy
+#| msgid "Developers:"
+msgid "Development"
+msgstr "Entwickler:"
+
+#: templates/base.html:44 templates/base.html:45
+#, fuzzy
+#| msgid "donate"
+msgid "Donate"
+msgstr "Spenden"
+
+#: templates/base.html:75 templates/home/home.html:143
+#: templates/home/news.html:13
+msgid "Latest news"
+msgstr "aktuelle Neuerungen"
+
+#: templates/base.html:76 templates/home/home.html:161
+#: templates/home/news.html:14
+msgid "Upcoming events"
+msgstr "bevorstehende Ereignisse"
+
+#: templates/base.html:77 templates/home/home.html:131
+msgid "Make a donation"
+msgstr "etwas Spenden"
+
+#: templates/base.html:94 templates/base.html:103
+#: templates/download/debian.html:197
+msgid "Stable version"
+msgstr "stabile Version"
+
+#: templates/base.html:95 templates/base.html:104
+#: templates/download/debian.html:197
+#, fuzzy
+#| msgid "development version"
+msgid "Development version"
+msgstr "Entwicklerversion"
+
+#: templates/base.html:96 templates/base.html:105 templates/doc/doc.html:13
+#: templates/download/download.html:13
+msgid "Old versions"
+msgstr "alte Versionen"
+
+#: templates/base.html:97
+msgid "Security issues"
+msgstr "Sicherheitsfragen"
+
+#: templates/base.html:106 templates/download/download.html:14
+msgid "Debian/Ubuntu repositories"
+msgstr "Debian/Ubuntu Repositorien"
+
+#: templates/base.html:112
+msgid "Browse scripts"
+msgstr "Skripten durchstöbern"
+
+#: templates/base.html:113 templates/scripts/scripts.html:12
+msgid "Add script"
+msgstr "Neues Skript"
+
+#: templates/base.html:114 templates/scripts/scripts.html:13
+msgid "Update script"
+msgstr "aktualisiere Skript"
+
+#: templates/base.html:115 templates/scripts/scripts.html:14
+msgid "Pending scripts"
+msgstr "eingereichte Skripten"
+
+#: templates/base.html:116 templates/scripts/scripts.html:15
+msgid "Unofficial scripts"
+msgstr "nicht veröffentlichte Skripten"
+
+#: templates/base.html:132 templates/dev/dev.html:11
+msgid "Roadmap"
+msgstr "Meilensteinplan"
+
+#: templates/base.html:133
+msgid "Statistics"
+msgstr "Statistik"
+
+#: templates/base.html:134 templates/dev/dev.html:13
+#: templates/dev/info_list.html:22
+msgid "Info"
+msgstr "Info"
+
+#: templates/base.html:135
+#, fuzzy
+#| msgid "Devel blog"
+msgid "Development blog"
+msgstr "Devel Blog"
+
+#: templates/base.html:161
+msgid "About WeeChat.org"
+msgstr "Über WeeChat.org"
+
+#: templates/dev/dev.html:5
+#, fuzzy
+#| msgid "development version"
+msgid "development"
+msgstr "Entwicklerversion"
+
+#: templates/dev/dev.html:12
+msgid "Stats"
+msgstr "Statistiken"
+
+#: templates/dev/info_list.html:5
+msgid "info"
+msgstr "Info"
+
+#: templates/dev/info_list.html:15
+msgid "Following infos are available (click on info for the URL):"
+msgstr "Folgende Informationen sind verfügbar (wähle eine Info für die URL):"
+
+#: templates/dev/info_list.html:23
+msgid "Current value"
+msgstr "aktueller Wert"
+
+#: templates/dev/info_list.html:40
+msgid "You can fetch these URLs from scripts or other sites."
+msgstr ""
+"Diese URLs können durch ein Skript oder eine andere Seite abgefragt werden."
+
+#: templates/dev/info_list.html:46
+#, fuzzy
+#| msgid "info"
+msgid "No info."
+msgstr "Info"
+
+#: templates/dev/roadmap.html:5
+msgid "roadmap"
+msgstr "Meilensteinplan"
+
+#: templates/dev/roadmap.html:13
+msgid "Next versions"
+msgstr "kommende Versionen"
+
+#: templates/dev/roadmap.html:14
+msgid "All versions"
+msgstr "alle Versionen"
+
+#: templates/dev/roadmap.html:18
+msgid "This page lists major features done or planned."
+msgstr ""
+"Diese Seite führt bedeutende Funktionen auf, die geplant sind oder umgesetzt "
+"wurden."
+
+#: templates/dev/roadmap.html:20
+msgid "Dive in the <strong>future</strong> of WeeChat!"
+msgstr "Lass Dich in die <strong>Zukunft</strong> von WeeChat entführen!"
+
+#: templates/dev/roadmap.html:37 templates/doc/security.html:35
+msgid "Tracker"
+msgstr "Tracker"
+
+#: templates/dev/roadmap.html:38
+msgid "Status"
+msgstr "Status"
+
+#: templates/dev/roadmap.html:40
+msgid "Plugin"
+msgstr "Erweiterung"
+
+#: templates/dev/roadmap.html:55
+msgid "Planned"
+msgstr "geplant"
+
+#: templates/dev/roadmap.html:58
+msgid "Done"
+msgstr "erledigt"
+
+#: templates/dev/stats.html:5
+msgid "statistics"
+msgstr "Statistiken"
+
+#: templates/dev/stats.html:19
+msgid "Git repository:"
+msgstr "Git-Repository:"
+
+#: templates/dev/stats.html:24
+msgid "lines of code"
+msgstr "Anzahl an Programmzeilen"
+
+#: templates/dev/stats.html:28
+msgid "Commits by range:"
+msgstr "Commits im vergangenen:"
+
+#: templates/dev/stats.html:29
+msgid "month:"
+msgstr "Monat:"
+
+#: templates/dev/stats.html:30
+msgid "year:"
+msgstr "Jahr:"
+
+#: templates/dev/stats.html:31
+msgid "total:"
+msgstr "Total:"
+
+#: templates/dev/stats.html:47
+msgid "Charts built with"
+msgstr "Tabellen erstellt mittels"
 
 #: templates/doc/doc.html:5
 msgid "documentation"
 msgstr "Dokumentation"
 
-#: templates/doc/doc.html:13 templates/download/download.html:13
+#: templates/doc/doc.html:11 templates/download/download.html:11
 msgid "Stable"
 msgstr "Stabil"
 
-#: templates/doc/doc.html:14 templates/download/download.html:14
-msgid "Devel"
-msgstr "Instabil"
+#: templates/doc/doc.html:14
+msgid "Security"
+msgstr "Sicherheit"
 
-#: templates/doc/doc.html:15 templates/download/download.html:15
-#: templates/menu.html:23 templates/menu.html:33
-msgid "Old versions"
-msgstr "alte Versionen"
-
-#: templates/doc/doc.html:21
+#: templates/doc/doc_version.html:11
 msgid "Docs for old versions"
 msgstr "Dokumentation über alte Versionen"
 
-#: templates/doc/doc.html:24
+#: templates/doc/doc_version.html:14
 msgid ""
 "<strong>Important:</strong> these old versions are <strong>not supported</"
 "strong> any more!"
@@ -6207,57 +6316,61 @@ msgstr ""
 "<strong>Wichtig:</strong> diese veralteten Versionen erhalten "
 "<strong>keinerlei Unterstützung</strong> mehr!"
 
-#: templates/doc/doc.html:35
+#: templates/doc/doc_version.html:27
 msgid "Docs for version"
 msgstr "Dokumentation für Version"
 
-#: templates/doc/doc.html:64
+#: templates/doc/doc_version.html:61
 msgid "Internationalization stats"
 msgstr "Statistik über den Fortschritt der Übersetzungen"
 
-#: templates/doc/doc.html:68
+#: templates/doc/doc_version.html:66
 msgctxt "translated language"
 msgid "Language"
 msgstr "Sprache [ übersetzte Sprache ]"
 
-#: templates/doc/doc.html:70
+#: templates/doc/doc_version.html:68
 msgid "Translated"
 msgstr "übersetzt"
 
-#: templates/doc/doc.html:71
+#: templates/doc/doc_version.html:69
 msgid "Fuzzy"
 msgstr "zu überarbeiten"
 
-#: templates/doc/doc.html:72
+#: templates/doc/doc_version.html:70
 msgid "Untranslated"
 msgstr "nicht übersetzt"
 
-#: templates/doc/doc.html:74
+#: templates/doc/doc_version.html:71 templates/donate.html:118
+msgid "Total"
+msgstr "Total"
+
+#: templates/doc/doc_version.html:72
 msgid "Progress"
 msgstr "Fortschrittsanzeige"
 
-#: templates/doc/doc.html:95
+#: templates/doc/doc_version.html:92
 msgid "base language"
 msgstr "eingebaute Sprache"
 
-#: templates/doc/doc.html:125
+#: templates/doc/doc_version.html:121
 msgid ""
 "statistics for gettext files (*.po), auto-built from development version on"
 msgstr ""
 "statistische Auswertung der gettext-Dateien (*.po), automatisch generiert "
 "mittels der Entwicklerversion am"
 
-#: templates/doc/doc.html:129
+#: templates/doc/doc_version.html:125
 msgid "Missing language?"
 msgstr "fehlende Sprachunterstützung?"
 
-#: templates/doc/doc.html:130
+#: templates/doc/doc_version.html:128
 msgid "Feel free to help us by translating WeeChat doc in your language!"
 msgstr ""
 "Jeder kann dabei helfen die WeeChat Anleitung in seine Muttersprache zu "
 "übersetzen!"
 
-#: templates/doc/doc.html:132
+#: templates/doc/doc_version.html:130
 msgid ""
 "There is more information about WeeChat translations in the developer's "
 "guide."
@@ -6265,326 +6378,21 @@ msgstr ""
 "Zusätzliche Informationen zu den einzelnen Übersetzungen von WeeChat findet "
 "man im Entwicklerhandbuch."
 
-#: templates/download/debian.html:29
-msgid "Active repositories"
-msgstr "aktive Repositorien"
+#: templates/doc/doc_version.html:136
+#, fuzzy
+#| msgid "documentation"
+msgid "No documentation."
+msgstr "Dokumentation"
 
-#: templates/download/debian.html:30
-msgid "All repositories"
-msgstr "alle Repositorien"
-
-#: templates/download/debian.html:35
-msgid ""
-"<strong>Note:</strong> these packages are not Debian official packages; "
-"please <a href=\"#instructions\"><strong>read instructions</strong></a> "
-"before using these repositories."
-msgstr ""
-"<strong>Hinweis:</strong> Es handelt sich bei diesen Paketen um keine "
-"offiziellen Debian-Pakete. Es wird empfohlen die <a href=\"#instructions"
-"\"><strong>Anleitung zu lesen</strong></a> bevor diese Repositorien genutzt "
-"werden."
-
-#: templates/download/debian.html:50
-msgid "Important"
-msgstr "Wichtig"
-
-#: templates/download/debian.html:56
-msgid "Builds by"
-msgstr "Erstellt von"
-
-#: templates/download/debian.html:60
-msgid "Latest build:"
-msgstr "zuletzt Erstellt am:"
-
-#: templates/download/debian.html:70
-msgid "There are no more package builds in this repository."
-msgstr "Es existieren keine weiteren Pakete in diesem Repository."
-
-#. Translators: purpose is to "translate" only quotes here
-#: templates/download/debian.html:74 templates/download/debian.html:148
-#, python-format
-msgid "“%(codename)s”"
-msgstr "“%(codename)s”"
-
-#: templates/download/debian.html:89
-msgid "Architecture"
-msgstr "Architektur"
-
-#: templates/download/debian.html:92
-msgid "files"
-msgstr "Dateien"
-
-#: templates/download/debian.html:121
-msgid "Instructions:"
-msgstr "Anleitung:"
-
-#: templates/download/debian.html:126
-msgid ""
-"You must use apt, apt-get or aptitude to install the packages (with sudo or "
-"as \"root\" user)."
-msgstr ""
-"Um mittels apt, apt-get oder aptitude die Pakete installieren zu können, "
-"muss man \"root\" sein oder den \"sudo\" Befehl verwenden."
-
-#: templates/download/debian.html:127
-msgid "The following examples use sudo and apt-get."
-msgstr "In die nachfolgenden Beispielen wird mit sudo und apt-get gearbeitet."
-
-#: templates/download/debian.html:130
-msgid "Install https transport for apt:"
-msgstr "Installation von https Transport für apt:"
-
-#: templates/download/debian.html:134
-msgid "Import the gpg key used to sign the repository:"
-msgstr ""
-"Importieren des gpg Schlüssel mit welchem die Repositorien signiert sind:"
-
-#: templates/download/debian.html:136
-msgid "Important: the Raspbian repositories are NOT signed."
-msgstr "Wichtig: das Raspbian Repository ist NICHT unterschrieben."
-
-#: templates/download/debian.html:139
-msgid ""
-"Create a weechat.list file with the repository, according to your "
-"distribution/version:"
-msgstr ""
-"Erstelle eine weechat.list Datei für Dein Repository, entsprechend der "
-"Distribution/Version:"
-
-#: templates/download/debian.html:142
-msgid "Choose your distribution/version"
-msgstr "Wähle Deine Distribution/Version"
-
-#: templates/download/debian.html:155
-msgid ""
-"Note: the second command line is optional, it is used to download source "
-"packages."
-msgstr ""
-"Hinweis: die zweite Befehlszeile ist optional, sie dient dazu die "
-"Quellpakete herunterzuladen."
-
-#: templates/download/debian.html:158
-msgid "Resynchronize your package index files:"
-msgstr "Indexdateien für Pakete neu einlesen:"
-
-#: templates/download/debian.html:162
-msgid ""
-"Install the binary packages; the \"plugins\" package is highly recommended "
-"but not mandatory, scripting API packages are optional (popular languages "
-"are python and perl)."
-msgstr ""
-"Binärpakete installieren; das Paket \"plugins\" wird ausdrücklich empfohlen, "
-"ist aber nicht zwingend notwendig. Skripten API-Pakete sind optional "
-"(populäre Sprachen sind python und perl)."
-
-#: templates/download/debian.html:165
-msgid "Example for the stable version:"
-msgstr "Beispiel für stabile Version:"
-
-#: templates/download/debian.html:169
-msgid "Example for the development version:"
-msgstr "Beispiel für die Entwicklerversion:"
-
-#: templates/download/debian.html:175
-msgid ""
-"If needed, you can download the source package in order to rebuild binary "
-"packages:"
-msgstr ""
-"Falls notwendig können die Quellpakete heruntergeladen werden um die "
-"Binärdateien neu zu erstellen:"
-
-#: templates/download/debian.html:185
-msgid "No debian repository."
-msgstr "Kein Debian Repository."
-
-#: templates/download/download.html:5
-msgid "download"
-msgstr "Download"
-
-#: templates/download/download.html:16 templates/menu.html:34
-msgid "Debian/Ubuntu repositories"
-msgstr "Debian/Ubuntu Repositorien"
-
-#: templates/download/download.html:17
-msgid "Security"
-msgstr "Sicherheit"
-
-#: templates/download/packages.html:21
-#, python-format
-msgid ""
-"<strong>A new release is under construction!</strong> Follow the progress on "
-"<a href=\"%(download_release_url)s\">this page</a>."
-msgstr ""
-"<strong>Eine neue Version ist in Vorbereitung!</strong> Verfolge den "
-"Fortschritt auf <a href=\"%(download_release_url)s\">dieser Seite</a>."
-
-#: templates/download/packages.html:28
-msgid ""
-"<strong>Important:</strong> this version may be unstable or it may not "
-"compile, you're warned!"
-msgstr ""
-"<strong>Wichtig:</strong> Diese Version könnte instabil sein oder sich nicht "
-"kompilieren lassen!"
-
-#: templates/download/packages.html:34
-msgid ""
-"<strong>Important:</strong> it is not recommended to download or use any of "
-"these old versions: they are less stable than the latest released version, "
-"and may contain security vulnerabilities fixed in later versions."
-msgstr ""
-"<strong>Wichtig:</strong> Es wird davon abgeraten diese älteren Versionen "
-"herunter zu laden und zu nutzen, diese Versionen laufen weniger stabil als "
-"eine aktuelle Version und beinhalten möglicherweise Sicherheitslücken die in "
-"nachfolgenden Versionen behoben wurden."
-
-#: templates/download/packages.html:56
-#, python-format
-msgid ""
-"<strong>Warning:</strong> the version %(version)s has one or more <a href="
-"\"%(security_url)s\">vulnerabilities</a>, it is not recommended to "
-"use it."
-msgstr ""
-"<strong>Warnung:</strong> diese Version %(version)s enthält eine oder "
-"mehrere <a href=\"%(security_url)s\">Schwachstellen</a>. Es wird "
-"dringend empfohlen diese Version nicht mehr zu verwenden."
-
-#: templates/download/packages.html:58
-msgid "Vulnerabilities fixed in versions:"
-msgstr "Schwachstellen behoben in Version:"
-
-#: templates/download/packages.html:66 templates/home/home.html:41
-#, python-format
-msgid ""
-"<strong>Important:</strong> this release fixes a <a href="
-"\"%(security_url)s\">vulnerability</a>."
-msgstr ""
-"<strong>Warnung:</strong> diese Version behebt eine <a href="
-"\"%(security_url)s\">Sicherheitslücke</a> ."
-
-#: templates/download/packages.html:68 templates/home/home.html:43
-#, python-format
-msgid ""
-"<strong>Important:</strong> this release fixes <a href="
-"\"%(security_url)s\">%(count_issues_fixed)s vulnerabilities</a>."
-msgstr ""
-"<strong>Warnung:</strong> diese Version behebt <a href="
-"\"%(security_url)s\">%(count_issues_fixed)s Sicherheitslücken</a>."
-
-#: templates/download/packages.html:70 templates/home/home.html:45
-msgid "It is recommended to upgrade from any older version to this one."
-msgstr ""
-"Es wird empfohlen von jeder älteren Version auf diese Version zu "
-"aktualisieren."
-
-#: templates/download/packages.html:75
-msgid "Packages"
-msgstr "Pakete"
-
-#: templates/download/packages.html:86
-msgid "Checksum"
-msgstr "Prüfsumme"
-
-#: templates/download/packages.html:112
-msgid "About release"
-msgstr "Über Release"
-
-#: templates/download/packages.html:114
-msgid "ChangeLog"
-msgstr "Change-Log"
-
-#: templates/download/packages.html:120
-msgid "Release notes"
-msgstr "Release notes"
-
-#: templates/download/packages.html:140
-msgid "(see above)"
-msgstr "(siehe oben)"
-
-#: templates/download/packages.html:164
-msgid "Checking the signatures"
-msgstr "Verifizieren der Signaturen"
-
-#: templates/download/packages.html:168
-msgid "Import the gpg key:"
-msgstr "GPG Schlüssel importieren:"
-
-#: templates/download/packages.html:172
-msgid "Display the fingerprint:"
-msgstr "Fingerabdruck anzeigen:"
-
-#: templates/download/packages.html:176
-msgid ""
-"Check that the fingerprint is correct by asking to a developer on #weechat "
-"(chat.freenode.net)."
-msgstr ""
-"Um die Echtheit des Fingerabdruckes zu verifizieren kann ein Entwickler im "
-"#weechat Channel (irc.freenode.net) angesprochen werden."
-
-#: templates/download/packages.html:179
-msgid "Trust the key:"
-msgstr "Schlüssel vertrauen:"
-
-#: templates/download/packages.html:188
-msgid "In directory with package + signature:"
-msgstr "Im Verzeichnis mit den Paketen und Signaturen:"
-
-#: templates/download/packages.html:192
-msgid "If the signature is OK you should see a message like this one:"
-msgstr "Wird die Signatur als korrekt erkannt, wird eine Nachricht angezeigt:"
-
-#: templates/download/packages.html:205
-msgid "Links"
-msgstr "Links"
-
-#: templates/download/packages.html:207
-msgid "Savannah page"
-msgstr "Savannah Seite"
-
-#: templates/download/packages.html:213
-msgid "Git - sources"
-msgstr "Git - Quelltext"
-
-#: templates/download/packages.html:219
-msgid "Git - scripts"
-msgstr "Git - Skripten"
-
-#: templates/download/packages.html:225
-msgid "Git - clone"
-msgstr "Git - Clone"
-
-#: templates/download/packages.html:235
-msgid "Error: there is no version called"
-msgstr "Fehler: Es wurde keine Version ausgewählt"
-
-#: templates/download/release.html:19
-msgid "YEAH! You can download and install it!"
-msgstr ""
-"FERTIG! Die neue Version kann nun heruntergeladen und installiert werden!"
-
-#: templates/download/release.html:30
-msgid "No release in progress."
-msgstr "keine Veröffentlichung im Gange."
-
-#: templates/download/release.html:32
-msgid ""
-"This page is updated only a few hours during the build of a new version."
-msgstr ""
-"Diese Seite wird für ein paar Stunden überarbeitet, während eine neue "
-"Version erstellt wird."
-
-#: templates/download/release.html:35
-msgid "We are working hard on the next version:"
-msgstr "Es wird intensiv an der nächsten Version gearbeitet:"
-
-#: templates/download/security.html:5
+#: templates/doc/security.html:5
 msgid "security"
 msgstr "Sicherheit"
 
-#: templates/download/security.html:12
+#: templates/doc/security.html:12
 msgid "Report a security issue"
 msgstr "Sicherheitsproblem melden"
 
-#: templates/download/security.html:14
+#: templates/doc/security.html:15
 msgid ""
 "Please <strong>DO NOT</strong> file a GitHub issue for security related "
 "problems, but send an email to <a href=\"mailto:security@weechat.org"
@@ -6595,11 +6403,11 @@ msgstr ""
 "Entwickler zu nutzen:<a href=\"mailto:security@weechat.org"
 "\">security@weechat.org</a>."
 
-#: templates/download/security.html:16
+#: templates/doc/security.html:18
 msgid "Security vulnerabilities"
 msgstr "Sicherheitsfragen"
 
-#: templates/download/security.html:20
+#: templates/doc/security.html:21
 msgid ""
 "This table contains a list of all known and fixed security vulnerabilities "
 "in WeeChat stable releases (the security vulnerabilities introduced during "
@@ -6611,7 +6419,7 @@ msgstr ""
 "Schwachstellen die während der Entwicklung entdeckt wurden und nicht in eine "
 "stabile Version eingeflossen sind, werden nicht aufgeführt)."
 
-#: templates/download/security.html:22
+#: templates/doc/security.html:23
 msgid ""
 "Note: you can be warned about security vulnerabilities by subscribing to "
 "this mailing list:"
@@ -6619,41 +6427,41 @@ msgstr ""
 "Hinweis: man kann sich über sicherheitsrelevante Schwachstellen informieren "
 "lassen, indem man diese Mailingliste abonniert:"
 
-#: templates/download/security.html:29
+#: templates/doc/security.html:35
 msgid "External link"
 msgstr "externer Link"
 
-#: templates/download/security.html:30
+#: templates/doc/security.html:36
 msgid "Severity"
 msgstr "Schweregrad"
 
-#: templates/download/security.html:31
+#: templates/doc/security.html:37
 msgid "Affected versions"
 msgstr "betroffene Versionen"
 
-#: templates/download/security.html:32
+#: templates/doc/security.html:38
 msgid "Fixed in version"
 msgstr "Behoben durch Version"
 
-#: templates/download/security.html:33
+#: templates/doc/security.html:39
 msgid "Release date"
 msgstr "Datum der Veröffentlichung"
 
-#: templates/download/security.html:35 templates/download/security.html:57
+#: templates/doc/security.html:41 templates/doc/security.html:65
 msgid "Workaround"
 msgstr "Übergangslösung"
 
-#: templates/download/security.html:61
+#: templates/doc/security.html:69
 msgid "There is no workaround."
 msgstr "Es gibt eine Übergangslösung."
 
-#: templates/download/security.html:69
+#: templates/doc/security.html:80
 msgid "Security vulnerabilities are classified using 4 severity levels:"
 msgstr ""
 "Sicherheitsrelevante Probleme sind in in folgende vier Sicherheitsstufen "
 "unterteilt:"
 
-#: templates/download/security.html:71
+#: templates/doc/security.html:83
 msgid ""
 "local problem which occurs in very specific conditions, low impact. Upgrade "
 "is not mandatory."
@@ -6661,7 +6469,7 @@ msgstr ""
 "lokales Problem, welches nur unter bestimmten Voraussetzungen auftritt und "
 "eine geringe Wirkung erzielt. Upgrade ist nicht zwingend notwendig."
 
-#: templates/download/security.html:72
+#: templates/doc/security.html:87
 msgid ""
 "problem affecting a specific feature. Upgrade is <strong>recommended</"
 "strong> at least for people using the feature."
@@ -6669,13 +6477,13 @@ msgstr ""
 "Problem mit einer einzelnen Funktion. Ein Upgrade wird <strong>empfohlen</"
 "strong>, zumindest für Personen die diese fehlerbehaftete Funktion nutzen."
 
-#: templates/download/security.html:73
+#: templates/doc/security.html:91
 msgid "severe problem. Upgrade is <strong>highly recommended</strong>."
 msgstr ""
 "schwerwiegendes Problem. Ein Upgrade wird <strong>dringend Empfohlen</"
 "strong>."
 
-#: templates/download/security.html:74
+#: templates/doc/security.html:95
 msgid ""
 "critical problem, risk of damage on your system. <strong>You MUST upgrade "
 "immediately!</strong>"
@@ -6683,119 +6491,601 @@ msgstr ""
 "kritisches Problem, welches Schäden am System verursachen kann. <strong>Es "
 "sollte UMGEHEND ein Upgrade erfolgen!</strong>"
 
-#: templates/error.html:11 templates/home/home.html:138
+#: templates/doc/security.html:102
+#, fuzzy
+#| msgid "Security vulnerabilities"
+msgid "No security vulnerability."
+msgstr "Sicherheitsfragen"
+
+#: templates/donate.html:7
+msgid "donate"
+msgstr "Spenden"
+
+#: templates/donate.html:15
+#, fuzzy
+#| msgid "About WeeChat"
+msgid "Donate to WeeChat"
+msgstr "Über WeeChat"
+
+#: templates/donate.html:18
+msgid "Click on one of the buttons below and follow the instructions:"
+msgstr "Wähle einen der beiden Spendenknöpfe aus und folge der Beschreibung:"
+
+#: templates/donate.html:20
+msgid ""
+"<strong>Liberapay</strong>: recurring donation with very low fees "
+"(<strong>best choice</strong>)"
+msgstr ""
+"<strong>Liberapay</strong>: turnusmäßige Spenden mit sehr geringen Gebühren "
+"(<strong>beste Wahl</strong>)"
+
+#: templates/donate.html:21
+msgid "<strong>Paypal</strong>: one-time donation."
+msgstr "<strong>Paypal</strong>: einmalige Spende."
+
+#: templates/donate.html:26
+msgid ""
+"You can leave name and comment, they will be displayed on this page, "
+"providing that the following conditions are met:"
+msgstr ""
+"Man kann einen Namen und einen Kommentar hinterlassen, diese werden auf "
+"dieser Seite veröffentlicht. Dazu müssen aber folgende Bedingungen erfüllt "
+"werden:"
+
+#: templates/donate.html:28
+msgid ""
+"the comment must be only about the donation and WeeChat (for example this is "
+"not the place to ask for new features)"
+msgstr ""
+"der Kommentar muss sich auf die Spende und WeeChat beziehen (zum Beispiel "
+"ist dies nicht der Ort um nach neuen Funktionen zu fragen)"
+
+#: templates/donate.html:29
+msgid ""
+"URLs are not allowed because there is <strong>no advertising</strong> on "
+"this site."
+msgstr ""
+"URLs sind nicht erlaubt, da diese Seite <strong>werbefrei</strong> ist."
+
+#: templates/donate.html:35
+msgid "Donate using Liberapay"
+msgstr "Spende mittels Liberapay"
+
+#: templates/donate.html:48
+msgid "Why your donation matters?"
+msgstr "Weshalb ist Deine Spende wichtig?"
+
+#: templates/donate.html:51
+msgid ""
+"WeeChat is written by a small group of <strong>volunteers</strong>. Any "
+"contribution will show us that the project is appreciated and keep us "
+"motivated."
+msgstr ""
+"WeeChat wird durch eine kleine Gruppe von <strong>freiwilligen</strong> "
+"entwickelt. Jeder Beitrag zeigt uns, dass das Projekt gewürdigt wird und "
+"fördert dadurch unsere Motivation."
+
+#: templates/donate.html:53
+msgid ""
+"Your donations help to pay the <strong>dedicated server</strong>, used for "
+"developments, build of packages and hosting of weechat.org."
+msgstr ""
+"Die Spenden helfen uns den  <strong>benötigten Server</strong> zu "
+"finanzieren, es fließt in die Weiterentwicklung, sowie zum Erstellen der "
+"Pakete und zum Hosten von weechat.org."
+
+#: templates/donate.html:56
+#, fuzzy
+#| msgid "They support WeeChat with Paypal"
+msgid "They support WeeChat"
+msgstr "WeeChat wurde via PayPal unterstützt von"
+
+#: templates/donate.html:58
+#, fuzzy
+#| msgid "Donate using Liberapay"
+msgid "With Liberapay"
+msgstr "Spende mittels Liberapay"
+
+#: templates/donate.html:61
+msgid "See the weechat page on Liberapay:"
+msgstr "siehe die WeeChat-Seite auf Liberapay:"
+
+#: templates/donate.html:66
+msgid "With Paypal"
+msgstr ""
+
+#: templates/donate.html:69
+msgid "Whole list:"
+msgstr "vollständige Liste:"
+
+#: templates/donate.html:69
+msgid "Top 10, ordered by total amount donated:"
+msgstr "Top 10, geordnet nach der Höhe der Spendensumme insgesamt:"
+
+#: templates/donate.html:72
+msgid "show the top 10, ordered by total amount donated"
+msgstr "zeigt Top 10, geordnet nach der Höhe der Spendensumme insgesamt"
+
+#: templates/donate.html:74
+msgid "show the whole list"
+msgstr "zeigt vollständige Liste an"
+
+#: templates/donate.html:84
+msgid "Rank"
+msgstr "Rang"
+
+#: templates/donate.html:87
+msgid "Amount"
+msgstr "Betrag"
+
+#: templates/donate.html:89
+msgid "Comment"
+msgstr "Kommentar"
+
+#: templates/download/debian.html:28
+msgid "Active repositories"
+msgstr "aktive Repositorien"
+
+#: templates/download/debian.html:29
+msgid "All repositories"
+msgstr "alle Repositorien"
+
+#: templates/download/debian.html:35
+#, fuzzy
+#| msgid ""
+#| "<strong>Note:</strong> these packages are not Debian official packages; "
+#| "please <a href=\"#instructions\"><strong>read instructions</strong></a> "
+#| "before using these repositories."
+msgid ""
+"<strong>Important:</strong> these packages are not Debian official packages; "
+"please click and read instructions below before using these repositories."
+msgstr ""
+"<strong>Hinweis:</strong> Es handelt sich bei diesen Paketen um keine "
+"offiziellen Debian-Pakete. Es wird empfohlen die <a href=\"#instructions"
+"\"><strong>Anleitung zu lesen</strong></a> bevor diese Repositorien genutzt "
+"werden."
+
+#: templates/download/debian.html:38
+#, fuzzy
+#| msgid "Instructions:"
+msgid "Installation instructions"
+msgstr "Anleitung:"
+
+#: templates/download/debian.html:43
+msgid "GPG key"
+msgstr ""
+
+#: templates/download/debian.html:45
+msgid "Import the gpg key used to sign the repository:"
+msgstr ""
+"Importieren des gpg Schlüssel mit welchem die Repositorien signiert sind:"
+
+#: templates/download/debian.html:47
+msgid "Important: the Raspbian repositories are NOT signed."
+msgstr "Wichtig: das Raspbian Repository ist NICHT unterschrieben."
+
+#: templates/download/debian.html:49
+msgid "APT configuration"
+msgstr ""
+
+#: templates/download/debian.html:51
+msgid ""
+"You must use apt, apt-get or aptitude to install the packages (with sudo or "
+"as \"root\" user)."
+msgstr ""
+"Um mittels apt, apt-get oder aptitude die Pakete installieren zu können, "
+"muss man \"root\" sein oder den \"sudo\" Befehl verwenden."
+
+#: templates/download/debian.html:52
+msgid "The following examples use sudo and apt-get."
+msgstr "In die nachfolgenden Beispielen wird mit sudo und apt-get gearbeitet."
+
+#: templates/download/debian.html:55
+msgid "Install https transport for apt:"
+msgstr "Installation von https Transport für apt:"
+
+#: templates/download/debian.html:60
+msgid ""
+"Create a weechat.list file with the repository, according to your "
+"distribution/version:"
+msgstr ""
+"Erstelle eine weechat.list Datei für Dein Repository, entsprechend der "
+"Distribution/Version:"
+
+#: templates/download/debian.html:63
+msgid "Choose your distribution/version"
+msgstr "Wähle Deine Distribution/Version"
+
+#. Translators: purpose is to "translate" only quotes here
+#: templates/download/debian.html:69 templates/download/debian.html:175
+#, python-format
+msgid "“%(codename)s”"
+msgstr "“%(codename)s”"
+
+#: templates/download/debian.html:77
+msgid ""
+"Note: the second command line is optional, it is used to download source "
+"packages."
+msgstr ""
+"Hinweis: die zweite Befehlszeile ist optional, sie dient dazu die "
+"Quellpakete herunterzuladen."
+
+#: templates/download/debian.html:80
+msgid "Resynchronize your package index files:"
+msgstr "Indexdateien für Pakete neu einlesen:"
+
+#: templates/download/debian.html:83
+msgid "Packages installation"
+msgstr ""
+
+#: templates/download/debian.html:85
+msgid ""
+"Install the binary packages; the \"plugins\" package is highly recommended "
+"but not mandatory, scripting API packages are optional (popular languages "
+"are python and perl)."
+msgstr ""
+"Binärpakete installieren; das Paket \"plugins\" wird ausdrücklich empfohlen, "
+"ist aber nicht zwingend notwendig. Skripten API-Pakete sind optional "
+"(populäre Sprachen sind python und perl)."
+
+#: templates/download/debian.html:88
+msgid "Example for the stable version:"
+msgstr "Beispiel für stabile Version:"
+
+#: templates/download/debian.html:92
+msgid "Example for the development version:"
+msgstr "Beispiel für die Entwicklerversion:"
+
+#: templates/download/debian.html:98
+msgid ""
+"If needed, you can download the source package in order to rebuild binary "
+"packages:"
+msgstr ""
+"Falls notwendig können die Quellpakete heruntergeladen werden um die "
+"Binärdateien neu zu erstellen:"
+
+#: templates/download/debian.html:108
+msgid "Overview"
+msgstr ""
+
+#: templates/download/debian.html:156
+msgid "Detail"
+msgstr ""
+
+#: templates/download/debian.html:186
+msgid "Important"
+msgstr "Wichtig"
+
+#: templates/download/debian.html:198
+msgid "Architecture"
+msgstr "Architektur"
+
+#: templates/download/debian.html:200
+msgid "files"
+msgstr "Dateien"
+
+#: templates/download/debian.html:223
+msgid "Builds by"
+msgstr "Erstellt von"
+
+#: templates/download/debian.html:225
+#, fuzzy
+#| msgid "Latest build:"
+msgid "latest build:"
+msgstr "zuletzt Erstellt am:"
+
+#: templates/download/debian.html:228
+#, fuzzy
+#| msgid "Latest build:"
+msgid "next build:"
+msgstr "zuletzt Erstellt am:"
+
+#: templates/download/debian.html:243
+msgid "No debian repository."
+msgstr "Kein Debian Repository."
+
+#: templates/download/download.html:5
+msgid "download"
+msgstr "Download"
+
+#: templates/download/packages.html:18
+#, python-format
+msgid ""
+"<strong>A new release is under construction!</strong> Follow the progress on "
+"<a href=\"%(download_release_url)s\">this page</a>."
+msgstr ""
+"<strong>Eine neue Version ist in Vorbereitung!</strong> Verfolge den "
+"Fortschritt auf <a href=\"%(download_release_url)s\">dieser Seite</a>."
+
+#: templates/download/packages.html:24
+msgid ""
+"<strong>Important:</strong> it is not recommended to download or use any of "
+"these old versions: they are less stable than the latest released version, "
+"and may contain security vulnerabilities fixed in later versions."
+msgstr ""
+"<strong>Wichtig:</strong> Es wird davon abgeraten diese älteren Versionen "
+"herunter zu laden und zu nutzen, diese Versionen laufen weniger stabil als "
+"eine aktuelle Version und beinhalten möglicherweise Sicherheitslücken die in "
+"nachfolgenden Versionen behoben wurden."
+
+#: templates/download/packages.html:48
+msgid ""
+"<strong>Important:</strong> this version may be unstable or it may not "
+"compile, you're warned!"
+msgstr ""
+"<strong>Wichtig:</strong> Diese Version könnte instabil sein oder sich nicht "
+"kompilieren lassen!"
+
+#: templates/download/packages.html:55
+#, python-format
+msgid ""
+"<strong>Warning:</strong> the version %(version)s has one or more <a href="
+"\"%(security_url)s\">vulnerabilities</a>, it is not recommended to use it."
+msgstr ""
+"<strong>Warnung:</strong> diese Version %(version)s enthält eine oder "
+"mehrere <a href=\"%(security_url)s\">Schwachstellen</a>. Es wird dringend "
+"empfohlen diese Version nicht mehr zu verwenden."
+
+#: templates/download/packages.html:57
+msgid "Vulnerabilities fixed in versions:"
+msgstr "Schwachstellen behoben in Version:"
+
+#: templates/download/packages.html:64
+#, python-format
+msgid ""
+"<strong>Important:</strong> this release fixes a <a href=\"%(security_url)s"
+"\">vulnerability</a>."
+msgstr ""
+"<strong>Warnung:</strong> diese Version behebt eine <a href="
+"\"%(security_url)s\">Sicherheitslücke</a> ."
+
+#: templates/download/packages.html:66
+#, python-format
+msgid ""
+"<strong>Important:</strong> this release fixes <a href=\"%(security_url)s\">"
+"%(count_issues_fixed)s vulnerabilities</a>."
+msgstr ""
+"<strong>Warnung:</strong> diese Version behebt <a href=\"%(security_url)s\">"
+"%(count_issues_fixed)s Sicherheitslücken</a>."
+
+#: templates/download/packages.html:68
+msgid "It is recommended to upgrade from any older version to this one."
+msgstr ""
+"Es wird empfohlen von jeder älteren Version auf diese Version zu "
+"aktualisieren."
+
+#: templates/download/packages.html:75
+msgid "ChangeLog"
+msgstr "Change-Log"
+
+#: templates/download/packages.html:81
+msgid "Release notes"
+msgstr "Release notes"
+
+#: templates/download/packages.html:87
+#, fuzzy
+#| msgid "Packages"
+msgid "Packages:"
+msgstr "Pakete"
+
+#: templates/download/packages.html:96
+msgid "Checksum"
+msgstr "Prüfsumme"
+
+#: templates/download/packages.html:96
+#, fuzzy
+#| msgid "Checksum and GPG signature"
+msgid "GPG signature"
+msgstr "Checksumme und GPG Signatur"
+
+#: templates/download/packages.html:124
+#, fuzzy
+#| msgid "Checking the signatures"
+msgid "Checking the signatures:"
+msgstr "Verifizieren der Signaturen"
+
+#: templates/download/packages.html:127
+msgid "Import the gpg key:"
+msgstr "GPG Schlüssel importieren:"
+
+#: templates/download/packages.html:130
+msgid "Display the fingerprint:"
+msgstr "Fingerabdruck anzeigen:"
+
+#: templates/download/packages.html:134
+msgid ""
+"Check that the fingerprint is correct by asking to a developer on #weechat "
+"(chat.freenode.net)."
+msgstr ""
+"Um die Echtheit des Fingerabdruckes zu verifizieren kann ein Entwickler im "
+"#weechat Channel (irc.freenode.net) angesprochen werden."
+
+#: templates/download/packages.html:137
+msgid "Trust the key:"
+msgstr "Schlüssel vertrauen:"
+
+#: templates/download/packages.html:142
+msgid "In directory with package + signature:"
+msgstr "Im Verzeichnis mit den Paketen und Signaturen:"
+
+#: templates/download/packages.html:146
+msgid "If the signature is OK you should see a message like this one:"
+msgstr "Wird die Signatur als korrekt erkannt, wird eine Nachricht angezeigt:"
+
+#: templates/download/packages.html:161
+msgid "Error: there is no version called"
+msgstr "Fehler: Es wurde keine Version ausgewählt"
+
+#: templates/download/release.html:27
+msgid "No release in progress."
+msgstr "keine Veröffentlichung im Gange."
+
+#: templates/download/release.html:29
+msgid ""
+"This page is updated only a few hours during the build of a new version."
+msgstr ""
+"Diese Seite wird für ein paar Stunden überarbeitet, während eine neue "
+"Version erstellt wird."
+
+#: templates/download/release.html:32
+msgid "We are working hard on the next version:"
+msgstr "Es wird intensiv an der nächsten Version gearbeitet:"
+
+#: templates/error.html:11 templates/home/news.html:80
 msgid "Back to home"
 msgstr "Zurück zur Hauptseite"
 
+#: templates/home/home.html:14
+#, fuzzy
+#| msgid "WeeChat, the extensible chat client"
+msgid "WeeChat, the extensible chat client."
+msgstr "WeeChat, der erweiterbare Chat Client"
+
 #: templates/home/home.html:16
-msgid "About WeeChat"
-msgstr "Über WeeChat"
-
-#: templates/home/home.html:19
-msgid "WeeChat is a fast, light and extensible chat client."
-msgstr "WeeChat ist ein schneller, schlanker und erweiterbarer Chat Client."
-
-#: templates/home/home.html:20
-msgid ""
-"It runs on many platforms like Linux, Unix, BSD, GNU Hurd, Mac OS&nbsp;X and "
-"Windows (Bash/Ubuntu and Cygwin)."
+msgid "Fast"
 msgstr ""
-"Er ist auf vielen Plattformen lauffähig, z.B. Linux, Unix, BSD, GNU Hurd, "
-"Mac OS&nbsp;X und Windows (Bash/Ubuntu und Cygwin)."
 
-#: templates/home/home.html:23
-msgid "WeeChat is:"
-msgstr "WeeChat ist:"
-
-#: templates/home/home.html:25
-msgid "<strong>modular</strong>: a lightweight core with optional plugins"
+#: templates/home/home.html:16
+msgid "Light"
 msgstr ""
-"<strong>modular</strong>: ein schlanker Kern mit optionalen Erweiterungen"
 
-#: templates/home/home.html:26
-msgid "<strong>multi-protocols architecture</strong> (mainly IRC)"
-msgstr "<strong>Multi-Protokoll fähig</strong> (hauptsächlich IRC)"
-
-#: templates/home/home.html:27
-msgid ""
-"<strong>extensible</strong> with C, Python, Perl, Ruby, Lua, Tcl, Scheme, "
-"Javascript and PHP"
-msgstr ""
-"<strong>erweiterbar</strong> mittels C, Python, Perl, Ruby, Lua, Tcl, "
-"Scheme, Javascript und PHP"
-
-#: templates/home/home.html:28
-msgid "<strong>fully documented</strong> and translated into several languages"
-msgstr ""
-"<strong>vollständig dokumentiert</strong> und übersetzt in mehrere Sprachen"
+#: templates/home/home.html:16
+#, fuzzy
+#| msgid "free software"
+msgid "Free software"
+msgstr "freie Software"
 
 #: templates/home/home.html:29
-msgid "<strong>a free program</strong> released under the GPLv3 license"
-msgstr "<strong>freie Software</strong> veröffentlicht unter GPLv3 Lizenz"
-
-#: templates/home/home.html:30
-msgid "<strong>an active project</strong> with a large community for scripts"
+msgid "News"
 msgstr ""
-"<strong>ein aktives Projekt</strong>, mit einer großen Skripten-"
-"Anhängerschaft"
 
-#: templates/home/home.html:34
-msgid "Latest stable version of WeeChat is"
-msgstr "aktuelle stabile Version von WeeChat ist"
+#: templates/home/home.html:40
+msgid ""
+"Full-featured IRC plugin: multi-servers, proxy support, IPv6, SASL "
+"authentication, nicklist, DCC, and many other features."
+msgstr ""
 
-#: templates/home/home.html:35
-msgid "released on"
-msgstr "veröffentlicht am"
+#: templates/home/home.html:59
+msgid "Innovative features."
+msgstr ""
 
-#: templates/home/home.html:51 templates/menu.html:29
-#: templates/scripts/source.html:17 templates/themes/source.html:16
-msgid "Download"
-msgstr "Download"
+#: templates/home/home.html:61
+msgid ""
+"256 colors, horizontal and vertical splits, smart filtering, customizable "
+"bars and much more!"
+msgstr ""
 
-#: templates/home/home.html:54
-msgid "Follow and get involved!"
-msgstr "Folge und Engagiere Dich!"
-
-#: templates/home/home.html:57
-msgid "You can follow latest WeeChat developments on:"
-msgstr "Du kannst der aktuellen Entwicklung von WeeChat ganz einfach folgen:"
+#: templates/home/home.html:63
+msgid "8 scripting languages supported with a built-in scripts manager."
+msgstr ""
 
 #: templates/home/home.html:79
+#, fuzzy
+#| msgid "Remote interfaces"
+msgid "Remote interfaces."
+msgstr "Remote-Oberfläche"
+
+#: templates/home/home.html:81
+msgid "Tired of your terminal?"
+msgstr ""
+
+#: templates/home/home.html:83
+msgid "Connect to your WeeChat from your browser, Android, Qt or even Emacs!"
+msgstr ""
+
+#: templates/home/home.html:102
+#, fuzzy
+#| msgid "Documentation and support"
+msgid "Documentation and support."
+msgstr "Dokumentation und Unterstützung"
+
+#: templates/home/home.html:104
+#, fuzzy
+#| msgid ""
+#| "WeeChat is translated into several languages and has a <a href="
+#| "\"%(doc_url)s\">comprehensive documentation</a>, also translated."
+msgid ""
+"WeeChat is translated into several languages and has a comprehensive "
+"documentation."
+msgstr ""
+"WeeChat liegt in mehreren Sprachen übersetzt vor und besitzt eine <a href="
+"\"%(doc_url)s\">umfassende Dokumentation</a>, die ebenfalls in verschiedenen "
+"Sprachen verfügbar ist."
+
+#: templates/home/home.html:106
+msgid "Excellent support for users."
+msgstr ""
+
+#: templates/home/home.html:121
+msgid "Help the project."
+msgstr ""
+
+#: templates/home/home.html:123
 msgid "You can help the WeeChat project in many ways:"
 msgstr ""
 "Du kannst das WeeChat Projekt auf verschiedene Art und Weise unterstützen:"
 
-#: templates/home/home.html:81
-msgid "<strong>translation</strong>: software, documentation and this web site"
+#: templates/home/home.html:125
+#, fuzzy
+#| msgid ""
+#| "<strong>translation</strong>: software, documentation and this web site"
+msgid "translation: software, documentation and this web site"
 msgstr ""
 "<strong>Übersetzung</strong>: Software, Dokumentation und diese Webseite"
 
-#: templates/home/home.html:82
-msgid ""
-"<strong>code</strong>: tests, bug reports, ideas for new features and patches"
+#: templates/home/home.html:126
+#, fuzzy
+#| msgid ""
+#| "<strong>code</strong>: tests, bug reports, ideas for new features and "
+#| "patches"
+msgid "code: tests, bug reports, ideas for new features and patches"
 msgstr ""
 "<strong>Programmcode</strong>: Tests, Fehlermeldungen, Ideen für neue "
 "Funktionen und Patches"
 
-#: templates/home/home.html:83
-msgid ""
-"<strong>donation</strong>: any contribution is appreciated and important for "
-"motivation"
+#: templates/home/home.html:127
+#, fuzzy
+#| msgid ""
+#| "<strong>donation</strong>: any contribution is appreciated and important "
+#| "for motivation"
+msgid "donation: any contribution is appreciated and important for motivation."
 msgstr ""
 "<strong>Spende</strong>: jeder Beitrag ist willkommen und fördert die "
 "Motivation"
 
-#: templates/home/home.html:97 templates/home/home.html:117
-msgid "More"
-msgstr "Mehr"
+#: templates/home/home.html:157
+#, fuzzy
+#| msgid "All versions"
+msgid "All news"
+msgstr "alle Versionen"
 
-#: templates/home/home.html:97 templates/menu.html:4
-msgid "Latest news"
-msgstr "aktuelle Neuerungen"
+#: templates/home/home.html:175
+#, fuzzy
+#| msgid "All versions"
+msgid "All events"
+msgstr "alle Versionen"
 
-#: templates/home/home.html:117 templates/menu.html:5
-msgid "Upcoming events"
-msgstr "bevorstehende Ereignisse"
+#: templates/home/news.html:35 templates/home/news.html:37
+msgctxt "Previous page"
+msgid "Previous"
+msgstr ""
+
+#: templates/home/news.html:63 templates/home/news.html:65
+msgctxt "Next page"
+msgid "Next"
+msgstr ""
+
+#: templates/home/news.html:74
+#, fuzzy
+#| msgid "Back to themes"
+msgid "Back to events"
+msgstr "Zurück zu Themes"
+
+#: templates/home/news.html:76
+#, fuzzy
+#| msgid "Back to themes"
+msgid "Back to news"
+msgstr "Zurück zu Themes"
 
 #: templates/maintenance.html:5
 msgid "temporarily unavailable"
@@ -6819,55 +7109,7 @@ msgstr "Danke für Deine Geduld."
 msgid "Back"
 msgstr "Zurück"
 
-#: templates/menu.html:2
-msgid "Home"
-msgstr "Hauptseite"
-
-#: templates/menu.html:9
-msgid "About"
-msgstr "Über"
-
-#: templates/menu.html:21 templates/menu.html:31
-msgid "Stable version"
-msgstr "stabile Version"
-
-#: templates/menu.html:22 templates/menu.html:32
-msgid "Dev version"
-msgstr "Entwicklerversion"
-
-#: templates/menu.html:35
-msgid "Security issues"
-msgstr "Sicherheitsfragen"
-
-#: templates/menu.html:41
-msgid "Browse scripts"
-msgstr "Skripten durchstöbern"
-
-#: templates/menu.html:42 templates/scripts/scripts.html:14
-msgid "Add script"
-msgstr "Neues Skript"
-
-#: templates/menu.html:43 templates/scripts/scripts.html:15
-msgid "Update script"
-msgstr "aktualisiere Skript"
-
-#: templates/menu.html:44 templates/scripts/scripts.html:16
-msgid "Pending scripts"
-msgstr "eingereichte Skripten"
-
-#: templates/menu.html:45 templates/scripts/scripts.html:17
-msgid "Unofficial scripts"
-msgstr "nicht veröffentlichte Skripten"
-
-#: templates/menu.html:62
-msgid "Statistics"
-msgstr "Statistik"
-
-#: templates/menu.html:66
-msgid "Repositories"
-msgstr "Repositorien"
-
-#: templates/scripts/add.html:15
+#: templates/scripts/add.html:12
 msgid ""
 "<strong>Important:</strong> please follow <strong>all</strong> these rules, "
 "otherwise your script will be rejected:"
@@ -6875,7 +7117,7 @@ msgstr ""
 "<strong>Wichtig:</strong> Es müssen <strong>alle</strong> nachfolgenden "
 "Regeln beachtet werden, anderenfalls wird das Skript nicht akzeptiert:"
 
-#: templates/scripts/add.html:18
+#: templates/scripts/add.html:15
 #, python-format
 msgid ""
 "check that no script (or <a href=\"%(scripts_pending_url)s\">pending script</"
@@ -6885,18 +7127,18 @@ msgstr ""
 "\"%(scripts_pending_url)s\"\">eingereichtes Skript</a>) die gleiche "
 "Funktionalität abdeckt wie Dein Skript"
 
-#: templates/scripts/add.html:20
+#: templates/scripts/add.html:17
 msgid "script name"
 msgstr "Regeln für den Skriptnamen"
 
-#: templates/scripts/add.html:22
+#: templates/scripts/add.html:19
 msgid ""
 "unique name (not used by any other script, even in a different language)"
 msgstr ""
 "für das Skript muss ein Name gewählt werden der nicht durch ein anderes "
 "Skript genutzt wird"
 
-#: templates/scripts/add.html:23
+#: templates/scripts/add.html:20
 msgid ""
 "the script name in register function must be exactly same name as script "
 "(without extension)"
@@ -6904,20 +7146,24 @@ msgstr ""
 "der Programmname in der register() Funktion muss exakt mit dem Dateinamen "
 "des Skriptes (ohne Dateierweiterung) übereinstimmen"
 
-#: templates/scripts/add.html:24
+#: templates/scripts/add.html:21
+#, fuzzy
+#| msgid ""
+#| "the word 'weechat' is not needed in name: for example don't use "
+#| "'weechat_notify' but 'notify' instead (the script is only for WeeChat)"
 msgid ""
-"the word 'weechat' is not needed in name: for example don't use "
-"'weechat_notify' but 'notify' instead (the script is only for WeeChat)"
+"the word \"weechat\" is not needed in name: for example don't use "
+"\"weechat_notify\" but \"notify\" instead (the script is only for WeeChat)"
 msgstr ""
 "der Namenszusatz 'weechat' ist nicht notwendig: Es sollte zum Beispiel nur "
 "'notify' als Name gewählt werden und nicht 'weechat_notify' (das Skript ist "
 "ausschließlich für WeeChat)"
 
-#: templates/scripts/add.html:28
+#: templates/scripts/add.html:25
 msgid "script content"
 msgstr "Regeln für den Skriptaufbau"
 
-#: templates/scripts/add.html:30
+#: templates/scripts/add.html:27
 msgid ""
 "a comment at beginning with your name (or pseudo), your e-mail, and the "
 "chosen license (the license must be free)"
@@ -6925,28 +7171,34 @@ msgstr ""
 "das Skript muss mit einem Kommentar eingeleitet werden, welches Deinen Namen "
 "(oder ein Pseudonym), Deine e-mail Adresse und eine freie Lizenz beinhaltet"
 
-#: templates/scripts/add.html:31
-msgid "no shebang on first line (like '#!/usr/bin/perl'), it's not needed"
+#: templates/scripts/add.html:28
+#, fuzzy
+#| msgid "no shebang on first line (like '#!/usr/bin/perl'), it's not needed"
+msgid "no shebang on first line (like \"#!/usr/bin/perl\"), it's not needed"
 msgstr ""
 "ein Skript benötigt in der ersten Zeile keine \"Magic Line\" ('#!/usr/bin/"
 "perl')"
 
-#: templates/scripts/add.html:32
+#: templates/scripts/add.html:29
 msgid "use only English for code and comments"
 msgstr ""
 "für den Programmcode und die Kommentare darf nur die englische Sprache "
 "verwendet werden"
 
-#: templates/scripts/add.html:33
+#: templates/scripts/add.html:30
+#, fuzzy
+#| msgid ""
+#| "no use of extra API between WeeChat and your script (like Ruby gem "
+#| "'WeeChat'), you must use standard WeeChat API"
 msgid ""
-"no use of extra API between WeeChat and your script (like Ruby gem "
-"'WeeChat'), you must use standard WeeChat API"
+"no use of extra API between WeeChat and your script (like Ruby gem \"WeeChat"
+"\"), you must use standard WeeChat API"
 msgstr ""
 "Es darf nur die standardisierte WeeChat API genutzt werden. Es ist nicht "
 "gestattet, dass zwischen WeeChat und Deinem Skript eine zusätzliche API "
 "genutzt wird (z.B. Ruby gem 'WeeChat')"
 
-#: templates/scripts/add.html:34
+#: templates/scripts/add.html:31
 msgid ""
 "if your script is doing something blocking (like fetching URL), you must use "
 "function hook_process (or hook_process_hashtable) to not block WeeChat"
@@ -6956,8 +7208,8 @@ msgstr ""
 "oder hook_process_hashtable() genutzt werden um ein Blockieren von WeeChat "
 "zu verhindern"
 
-#: templates/scripts/add.html:43 templates/scripts/update.html:27
-#: templates/themes/add.html:25 templates/themes/update.html:17
+#: templates/scripts/add.html:41 templates/scripts/update.html:25
+#: templates/themes/add.html:23 templates/themes/update.html:15
 msgid "Submit"
 msgstr "Versenden"
 
@@ -6995,12 +7247,12 @@ msgid "You'll be informed if there is a problem with your script."
 msgstr ""
 "Sollte ein Problem mit dem Skript auftreten wirst Du darüber informiert."
 
-#: templates/scripts/add_ok.html:19 templates/scripts/source.html:34
+#: templates/scripts/add_ok.html:19 templates/scripts/source.html:38
 #: templates/scripts/update_ok.html:17
 msgid "Back to scripts"
 msgstr "Zurück zu den Skripten"
 
-#: templates/scripts/list.html:15
+#: templates/scripts/list.html:16
 msgid ""
 "<strong>Important:</strong> these scripts are written by external "
 "contributors, therefore WeeChat developers are <strong>NOT RESPONSIBLE</"
@@ -7011,7 +7263,7 @@ msgstr ""
 "Autoren <strong>NICHT VERANTWORTLICH</strong> falls Probleme durch diese "
 "Skripten auftreten sollten."
 
-#: templates/scripts/list.html:17
+#: templates/scripts/list.html:18
 msgid ""
 "You could experience problems like memory leaks, slowdowns, or even "
 "<strong>security problems</strong>. You are warned!"
@@ -7020,7 +7272,7 @@ msgstr ""
 "werden oder sogar <strong>Sicherheitsprobleme</strong> durch Skripten "
 "entstehen. Sie sind gewarnt!"
 
-#: templates/scripts/list.html:21
+#: templates/scripts/list.html:23
 msgid ""
 "WARNING: the legacy API is deprecated and these scripts runs only on WeeChat "
 "0.2.x, which is OBSOLETE. You MUST NOT load these scripts with latest stable "
@@ -7031,94 +7283,101 @@ msgstr ""
 "Skripten können NICHT mit einer aktuellen Version von WeeChat verwendet "
 "werden!"
 
-#: templates/scripts/list.html:27
+#: templates/scripts/list.html:30
 msgid "List:"
 msgstr "Liste:"
 
-#: templates/scripts/list.html:31
+#: templates/scripts/list.html:34
 msgid "Version:"
 msgstr "Version:"
 
-#: templates/scripts/list.html:33
+#: templates/scripts/list.html:36
 msgid "filter:"
 msgstr "Filter:"
 
-#: templates/scripts/list.html:33
+#: templates/scripts/list.html:36
 msgid "remove"
 msgstr "entfernen"
 
-#: templates/scripts/list.html:35
+#: templates/scripts/list.html:38
 msgid "no filter"
 msgstr "keine Filterung"
 
-#: templates/scripts/list.html:37 templates/scripts/scripts.html:5
+#: templates/scripts/list.html:40 templates/scripts/scripts.html:5
 msgid "scripts"
 msgstr "Skripten"
 
-#: templates/scripts/list.html:40 templates/scripts/list.html:44
+#: templates/scripts/list.html:43 templates/scripts/list.html:47
 msgid "Filters by popularity"
 msgstr "Filtert nach Beliebtheit"
 
-#: templates/scripts/list.html:40 templates/scripts/list.html:44
+#: templates/scripts/list.html:43 templates/scripts/list.html:47
 msgid "Filters by name"
 msgstr "Filtert nach Name"
 
-#: templates/scripts/list.html:41 templates/scripts/list.html:45
+#: templates/scripts/list.html:44 templates/scripts/list.html:48
 msgid "sort filters by name"
 msgstr "sortiert Filter nach Name"
 
-#: templates/scripts/list.html:41 templates/scripts/list.html:45
+#: templates/scripts/list.html:44 templates/scripts/list.html:48
 msgid "sort filters by popularity"
 msgstr "sortiert Filter nach Beliebtheit"
 
-#: templates/scripts/list.html:48 templates/scripts/list.html:50
+#: templates/scripts/list.html:51 templates/scripts/list.html:53
 msgid "Language:"
 msgstr "Sprache:"
 
-#: templates/scripts/list.html:56 templates/scripts/list.html:58
-#: templates/scripts/list.html:149
+#: templates/scripts/list.html:59 templates/scripts/list.html:61
+#: templates/scripts/list.html:155
 msgid "License:"
 msgstr "Lizenz:"
 
-#: templates/scripts/list.html:64 templates/scripts/list.html:66
-#: templates/scripts/list.html:141
+#: templates/scripts/list.html:67 templates/scripts/list.html:69
+#: templates/scripts/list.html:147
 msgid "Tag:"
 msgstr "Schlagwort:"
 
-#: templates/scripts/list.html:100 templates/scripts/list.html:102
+#: templates/scripts/list.html:88 templates/scripts/list.html:90
+#: templates/scripts/pending.html:33
+msgctxt "programming language"
+msgid "Language"
+msgstr "Sprache"
+
+#: templates/scripts/list.html:104 templates/scripts/list.html:106
 #: templates/scripts/pending.html:35
 msgid "Min"
 msgstr "Min"
 
-#: templates/scripts/list.html:107 templates/scripts/list.html:109
+#: templates/scripts/list.html:111 templates/scripts/list.html:113
 #: templates/scripts/pending.html:36
 msgid "Max"
 msgstr "Max"
 
-#: templates/scripts/list.html:114 templates/scripts/list.html:116
-#: templates/scripts/pending.html:37 templates/scripts/source.html:24
+#: templates/scripts/list.html:118 templates/scripts/list.html:120
+#: templates/scripts/pending.html:37 templates/scripts/source.html:22
 msgid "Author"
 msgstr "Autor"
 
-#: templates/scripts/list.html:121 templates/scripts/list.html:123
-#: templates/themes/list.html:28
+#: templates/scripts/list.html:125 templates/scripts/list.html:127
+#: templates/scripts/source.html:24 templates/themes/list.html:25
+#: templates/themes/source.html:17
 msgid "Added"
 msgstr "hinzugefügt"
 
-#: templates/scripts/list.html:128 templates/scripts/list.html:130
+#: templates/scripts/list.html:132 templates/scripts/list.html:134
 msgid "Updated"
 msgstr "aktualisiert"
 
-#: templates/scripts/list.html:145 templates/scripts/pending.html:52
-#: templates/scripts/source.html:21
+#: templates/scripts/list.html:151 templates/scripts/pending.html:54
+#: templates/scripts/source.html:19
 msgid "requires"
 msgstr "benötigt"
 
-#: templates/scripts/list.html:152 templates/themes/list.html:24
+#: templates/scripts/list.html:158 templates/themes/list.html:22
 msgid "Author:"
 msgstr "Autor:"
 
-#: templates/scripts/list.html:161 templates/scripts/update.html:34
+#: templates/scripts/list.html:170 templates/scripts/update.html:31
 msgid "No script found."
 msgstr "Kein Skript gefunden."
 
@@ -7144,11 +7403,11 @@ msgstr ""
 msgid "if script is rejected, it is deleted."
 msgstr "wird ein Skript abgelehnt, dann wird es gelöscht."
 
-#: templates/scripts/pending.html:19
+#: templates/scripts/pending.html:18
 msgid "We need your help!"
 msgstr "Wir benötigen Deine Hilfe!"
 
-#: templates/scripts/pending.html:21
+#: templates/scripts/pending.html:20
 msgid ""
 "You can help us by testing these scripts. Please report bugs to author of "
 "script and to"
@@ -7160,31 +7419,24 @@ msgstr ""
 msgid "Approval notes"
 msgstr "Hinweis zur Freigabe"
 
-#: templates/scripts/pending.html:69
+#: templates/scripts/pending.html:72
 msgid "No script pending approval at this time."
 msgstr "Zur Zeit liegen keine Skripten vor, die auf eine Freigabe warten."
 
-#: templates/scripts/source.html:21
+#: templates/scripts/source.html:19
 msgid "for WeeChat"
 msgstr "für WeeChat"
 
-#: templates/scripts/source.html:24
-msgid "version"
-msgstr "Version"
-
-#: templates/scripts/source.html:25
-msgid "added"
-msgstr "hinzugefügt"
-
-#: templates/scripts/source.html:25 templates/themes/list.html:29
+#: templates/scripts/source.html:24 templates/themes/list.html:26
+#: templates/themes/source.html:17
 msgid "updated"
 msgstr "aktualisiert"
 
-#: templates/scripts/source.html:32
+#: templates/scripts/source.html:36
 msgid "Script not found"
 msgstr "Skript wurde nicht gefunden"
 
-#: templates/scripts/update.html:16
+#: templates/scripts/update.html:13
 msgid ""
 "<strong>Important:</strong> the recommended way to update a script is to "
 "send a pull request on <a href=\"https://github.com/weechat/scripts/"
@@ -7199,7 +7451,7 @@ msgstr ""
 "das Repositorium übernommen wird. Sollte das nicht möglich sein, kann das "
 "Formular auf dieser Seite verwendet werden."
 
-#: templates/scripts/update.html:18
+#: templates/scripts/update.html:15
 msgid ""
 "Please follow <strong>all</strong> these rules, otherwise your script will "
 "be rejected:"
@@ -7207,7 +7459,7 @@ msgstr ""
 "Es müssen <strong>alle</strong> nachfolgenden Regeln beachtet werden, "
 "anderenfalls wird das Skript nicht akzeptiert:"
 
-#: templates/scripts/update.html:20
+#: templates/scripts/update.html:17
 msgid ""
 "for a Python script with tag \"py3k-ok\", please ensure your new version is "
 "compatible with Python 2.x and 3.x"
@@ -7219,7 +7471,7 @@ msgstr ""
 msgid "New release has been submitted for review."
 msgstr "Neues Release wurde zur Überprüfung übertragen."
 
-#: templates/themes/add.html:15
+#: templates/themes/add.html:12
 msgid ""
 "<strong>Warning:</strong> please follow <strong>all</strong> these rules, "
 "otherwise your theme will be rejected:"
@@ -7227,21 +7479,23 @@ msgstr ""
 "<strong>Hinweis:</strong> Es müssen <strong>alle</strong> nachfolgenden "
 "Regeln beachtet werden, anderenfalls wird das Theme nicht angenommen:"
 
-#: templates/themes/add.html:17
-msgid "unique name, ending with '.theme' (only letters, digits or '_')"
+#: templates/themes/add.html:14
+#, fuzzy
+#| msgid "unique name, ending with '.theme' (only letters, digits or '_')"
+msgid "unique name, ending with \".theme\" (only letters, digits or \"_\")"
 msgstr ""
 "für das Theme muss ein Name gewählt werden der nicht durch ein anderes Theme "
 "genutzt wird und die Datei muss auf '.theme' enden (nur Kleinbuchstaben, "
 "Ziffern oder \"_\" sind im Dateinamen erlaubt)"
 
-#: templates/themes/add.html:18
-msgid "theme must be built with latest stable version of WeeChat"
+#: templates/themes/add.html:15
+#, fuzzy, python-format
+#| msgid "theme must be built with latest stable version of WeeChat"
+msgid ""
+"theme must be built with latest stable version of WeeChat (%(version)s) or "
+"development version"
 msgstr ""
 "Theme muss mit der letzten stabilen Version von WeeChat erstellt werden"
-
-#: templates/themes/add.html:18
-msgid "or development version"
-msgstr "oder mit einer Entwicklerversion"
 
 #: templates/themes/add_ok.html:12
 msgid ""
@@ -7257,13 +7511,12 @@ msgid "You'll be informed if there is a problem with your theme."
 msgstr ""
 "Sollte ein Problem mit Deinem Theme auftreten wirst Du darüber informiert."
 
-#: templates/themes/add_ok.html:19 templates/themes/list.html:41
-#: templates/themes/source.html:15 templates/themes/source.html:22
+#: templates/themes/add_ok.html:19 templates/themes/source.html:31
 #: templates/themes/update_ok.html:17
 msgid "Back to themes"
 msgstr "Zurück zu Themes"
 
-#: templates/themes/list.html:13
+#: templates/themes/list.html:14
 msgid ""
 "<strong>Important:</strong> alpha version of themes! Alpha version of script "
 "is available here:"
@@ -7271,19 +7524,21 @@ msgstr ""
 "<strong>Wichtig:</strong> Dies ist eine alpha Version von themes! Die alpha "
 "Version des Skriptes bekommt man hier:"
 
-#: templates/themes/list.html:24
-msgid "submitted by"
+#: templates/themes/list.html:22
+#, fuzzy
+#| msgid "submitted by"
+msgid "Submitted by"
 msgstr "gesendet von"
 
-#: templates/themes/list.html:38
+#: templates/themes/list.html:36
 msgid "No theme found."
 msgstr "Kein Theme gefunden."
 
-#: templates/themes/source.html:13 themes/models.py:220
+#: templates/themes/source.html:14 themes/models.py:223
 msgid "Theme"
 msgstr "Theme"
 
-#: templates/themes/source.html:20
+#: templates/themes/source.html:29
 msgid "Theme not found"
 msgstr "Theme wurde nicht gefunden"
 
@@ -7291,15 +7546,15 @@ msgstr "Theme wurde nicht gefunden"
 msgid "themes"
 msgstr "Themes"
 
-#: templates/themes/themes.html:13
+#: templates/themes/themes.html:11
 msgid "Themes"
 msgstr "Themes"
 
-#: templates/themes/themes.html:14
+#: templates/themes/themes.html:12
 msgid "Add theme"
 msgstr "Neues Theme"
 
-#: templates/themes/themes.html:15
+#: templates/themes/themes.html:13
 msgid "Update theme"
 msgstr "überarbeites Theme"
 
@@ -7307,38 +7562,46 @@ msgstr "überarbeites Theme"
 msgid "Updated theme has been submitted for review."
 msgstr "Neues Theme wurde zur Überprüfung übertragen."
 
-#: themes/models.py:137 themes/models.py:225
-msgid "the theme"
+#: themes/models.py:138 themes/models.py:228
+#, fuzzy
+#| msgid "the theme"
+msgid "The theme."
 msgstr "Das Theme"
 
-#: themes/models.py:154 themes/models.py:235
-msgid "no spam, never displayed on site"
+#: themes/models.py:149
+msgid "Used for themes page."
+msgstr ""
+
+#: themes/models.py:154 themes/models.py:237
+#, fuzzy
+#| msgid "no spam, never displayed on site"
+msgid "No spam, never displayed."
 msgstr "kein Spam, Adresse wird nicht auf der Seite angezeigt"
 
-#: themes/models.py:175 themes/models.py:260
+#: themes/models.py:178 themes/models.py:262
 msgid "Theme file too big."
 msgstr "Theme Datei ist zu groß."
 
-#: themes/models.py:178 themes/models.py:263
+#: themes/models.py:181 themes/models.py:265
 msgid "Invalid theme file."
 msgstr "ungültige Theme-Datei."
 
-#: themes/models.py:182
+#: themes/models.py:185
 msgid "This name already exists."
 msgstr "Dieser Name wird schon verwendet."
 
-#: themes/models.py:185 themes/models.py:189
+#: themes/models.py:188 themes/models.py:192
 msgid "Invalid name inside theme file."
 msgstr "ungültiger Name in der Theme-Datei."
 
-#: themes/models.py:196 themes/models.py:276
+#: themes/models.py:199 themes/models.py:278
 msgid "Invalid WeeChat version, too old!"
 msgstr "ungültige WeeChat Version, da zu alt!"
 
-#: themes/models.py:266
+#: themes/models.py:268
 msgid "Internal error."
 msgstr "interner Fehler."
 
-#: themes/models.py:269
+#: themes/models.py:271
 msgid "Invalid name: different from theme."
 msgstr "ungültiger Name: unterscheidet sich vom Theme."
