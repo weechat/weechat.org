@@ -132,7 +132,7 @@
       {% trans "External interfaces (graphical or text) can connect to a running WeeChat." %}
       <br>
       {% url 'doc' as doc %}
-      {% blocktrans %}They communicate with WeeChat using the <a href="{{ doc }}">relay protocol</a>.{% endblocktrans %}
+      {% blocktrans context "They == The remote interfaces" %}They communicate with WeeChat using the <a href="{{ doc }}">relay protocol</a>.{% endblocktrans %}
     </p>
     <p>
       {% url 'about_interfaces' as interfaces %}
