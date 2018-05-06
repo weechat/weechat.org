@@ -11,9 +11,9 @@ var deb_apt_cmds = [
   "...<br>...",
 {% for repo in repositories %}
 {% if repo.visible %}
-  "$ sudo bash -c \"echo '{{ repo.apt_url }}' >/etc/apt/sources.list.d/weechat.list\"" +
+  "$ echo \"{{ repo.apt_url }}\" | sudo tee /etc/apt/sources.list.d/weechat.list" +
   "<br>" +
-  "$ sudo bash -c \"echo '{{ repo.apt_url_src }}' >>/etc/apt/sources.list.d/weechat.list\"",
+  "$ echo \"{{ repo.apt_url_src }}\" | sudo tee -a /etc/apt/sources.list.d/weechat.list",
 {% endif %}
 {% endfor %}
 ]
