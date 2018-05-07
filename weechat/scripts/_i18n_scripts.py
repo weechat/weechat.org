@@ -502,6 +502,8 @@ _i18n_scripts_scripts = [
     gettext_lazy("Send Growl notifications upon events."),
     # Translators: description for script "kikoo.pl" (0.3.0+)
     gettext_lazy("Send a colored \"kikoo\" on current channel."),
+    # Translators: description for script "emojis.py" (0.3.0+)
+    gettext_lazy("Send a random emoji to the current buffer."),
     # Translators: description for script "pushjet.py" (1.0+)
     gettext_lazy("Send highlights and mentions through Pushjet.io."),
     # Translators: description for script "socket_notify.rb" (0.3.0+)
@@ -624,8 +626,6 @@ _i18n_scripts_scripts = [
     gettext_lazy("Streamlink companion for WeeChat."),
     # Translators: description for script "substitution.rb" (0.3.7+)
     gettext_lazy("Substitute strings in messages before they are sent."),
-    # Translators: description for script "buffer_swap.py" (0.3.0+)
-    gettext_lazy("Swap two buffers."),
     # Translators: description for script "sysinfo.pl" (0.3.0+)
     gettext_lazy("System info command."),
     # Translators: description for script "atcomplete.pl" (0.3.0+)
