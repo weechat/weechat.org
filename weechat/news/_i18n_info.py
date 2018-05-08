@@ -46,7 +46,7 @@ _i18n_news_info = [
     gettext_lazy("Site weechat.org and all subdomains are now accessible via IPv6."),
     gettext_lazy("Source code of weechat.org"),
     gettext_lazy("Story... with screenshots"),
-    gettext_lazy("The WeeChat site weechat.org has been improved with many changes. It is now fully responsive, using Bootstrap toolkit.\n\nHope you enjoy the new version :)"),
+    gettext_lazy("The WeeChat site weechat.org has been improved with many changes. It is now fully responsive, using Bootstrap toolkit.\n\nHope you enjoy the new version :)\n\nThere is more info in the <a href=\"https://weechat.org/blog/post/2018/05/06/New-design-for-weechat.org\">development blog</a>."),
     gettext_lazy("The source code of weechat.org is now available on GitHub: <a href=\"https://github.com/weechat/weechat.org\">https://github.com/weechat/weechat.org</a>.\nIt is written in Python and uses Django, and gettext for translations."),
     gettext_lazy("The version is expected on this date. More info in the <a href=\"/dev/roadmap/\">roadmap</a>."),
     gettext_lazy("Third release candidate (version 0.3.0-rc3) for future version 0.3.0 is available."),
