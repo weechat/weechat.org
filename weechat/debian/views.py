@@ -68,8 +68,10 @@ def get_repository_packages(repository):
                         date_time = datetime.fromtimestamp(fstat.st_mtime,
                                                            tz=timezone)
                         pkg['builddatetime'] = date_time
-                        if repository.active:
-                            nextbuilddatetime = date_time + timedelta(days=1)
+                        add_hours = repository.build_frequency
+                        if repository.active and add_hours > 0:
+                            nextbuilddatetime = (date_time +
+                                                 timedelta(hours=add_hours))
                             if nextbuilddatetime > now:
                                 pkg['nextbuilddatetime'] = nextbuilddatetime
                         pkg['basename'] = path.basename(pkg['Filename'])

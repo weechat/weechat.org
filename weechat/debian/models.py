@@ -64,6 +64,8 @@ class Repo(models.Model):
     url = models.CharField(max_length=512)
     arch = models.CharField(max_length=128)
     builder = models.ForeignKey(Builder, on_delete=models.CASCADE)
+    # in hours, 0 = unknown frequency (next build date is not displayed)
+    build_frequency = models.IntegerField(default=24)
     message = models.CharField(max_length=1024, blank=True)
     priority = models.IntegerField(default=0)
 
