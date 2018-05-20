@@ -59,7 +59,7 @@
           {% else %}
           <div class="progress" style="height: 20px; background-color: #e7e7e7;" title="{{ task.status }}%">
             {% if task.status != 0 %}
-            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: {{ task.status }}%" aria-valuenow="{{ task.status }}" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: {{ task.status }}%" aria-valuenow="{{ task.status }}" aria-valuemin="0" aria-valuemax="100"></div>
             {% endif %}
             {% if task.status_remaining != 0 %}
             <div class="progress-bar" style="" role="progressbar" style="width: {{ task.status_remaining }}%" aria-valuenow="{{ task.status_remaining }}" aria-valuemin="0" aria-valuemax="100"></div>
