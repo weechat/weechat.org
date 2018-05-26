@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-20 17:45+0200\n"
-"PO-Revision-Date: 2018-05-06 17:42+0200\n"
+"PO-Revision-Date: 2018-05-26 09:00+0900\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
 "translation/ja_JP>\n"
@@ -82,7 +82,7 @@ msgid ""
 "interfaces), URL transfer in API."
 msgstr ""
 "guile プラグイン、python 3.x のサポート、リレー機能で weechat プロトコル (リ"
-"モートインターフェイス) が利用可能に、API による URL 転送。"
+"モートインターフェース) が利用可能に、API による URL 転送。"
 
 #: about/_i18n_keydates.py:18
 msgid "Headless mode, creation of buffers with commands /buffer and /print."
@@ -174,74 +174,51 @@ msgid "This field is required."
 msgstr "このフィールドは必須です。"
 
 #: dev/views.py:37
-#, fuzzy
-#| msgid "Stable version"
 msgid "Stable version."
-msgstr "安定版"
+msgstr "安定版。"
 
 #: dev/views.py:41
-#, fuzzy
-#| msgid ""
-#| "stable version, as number, like plugin API: info_get(\"version_number\")"
 msgid ""
 "Stable version, as number, like plugin API: info_get(\"version_number\")."
 msgstr ""
 "安定版のバージョン番号 (数表記)、プラグイン API における "
-"info_get(\"version_number\") と同様"
+"info_get(\"version_number\") と同様。"
 
 #: dev/views.py:46
-#, fuzzy
-#| msgid "date of stable version"
 msgid "Date of stable version (format: \"YYYY-MM-DD\")."
-msgstr "安定版のリリース日"
+msgstr "安定版のリリース日 (書式: \"YYYY-MM-DD\")。"
 
 #: dev/views.py:50
-#, fuzzy
-#| msgid "development version"
 msgid "Development version."
-msgstr "開発版のバージョン番号"
+msgstr "開発版。"
 
 #: dev/views.py:54
-#, fuzzy
-#| msgid "output of \"git rev-parse HEAD\" for sources repository"
 msgid "Output of \"git rev-parse HEAD\" for sources repository."
-msgstr "ソースリポジトリにおける \"git rev-parse HEAD\" の出力"
+msgstr "ソースリポジトリにおける \"git rev-parse HEAD\" の出力。"
 
 #: dev/views.py:58
-#, fuzzy
-#| msgid "output of \"git rev-parse HEAD\" for scripts repository"
 msgid "Output of \"git rev-parse HEAD\" for scripts repository."
-msgstr "スクリプトリポジトリにおける \"git rev-parse HEAD\" の出力"
+msgstr "スクリプトリポジトリにおける \"git rev-parse HEAD\" の出力。"
 
 #: dev/views.py:62
-#, fuzzy
-#| msgid "next stable version"
 msgid "Next stable version."
-msgstr "次期安定版のバージョン番号"
+msgstr "次期安定版のバージョン番号。"
 
 #: dev/views.py:66
-#, fuzzy
-#| msgid ""
-#| "next stable version, as number, like plugin API: info_get(\"version_number"
-#| "\")"
 msgid ""
 "Next stable version, as number, like plugin API: info_get(\"version_number"
 "\")."
 msgstr ""
 "次期安定版のバージョン番号 (数表記)、プラグイン API における "
-"info_get(\"version_number\") と同様<"
+"info_get(\"version_number\") と同様。"
 
 #: dev/views.py:71
-#, fuzzy
-#| msgid "approximate date of next stable version"
 msgid "Approximate date of next stable version (format: \"YYYY-MM-DD\")."
-msgstr "次期安定版のリリース予定日"
+msgstr "次期安定版のリリース予定日 (書式: \"YYYY-MM-DD\")。"
 
 #: dev/views.py:76
-#, fuzzy
-#| msgid "all infos (one info by line, format: \"info:value\")"
 msgid "All infos (one info by line, format: \"info:value\")."
-msgstr "全ての情報 (1 行に 1 情報、書式: \"info:value\")"
+msgstr "全ての情報 (1 行に 1 情報、書式: \"info:value\")。"
 
 #: doc/_i18n_security.py:7
 msgid "/set irc.network.colors_receive off"
@@ -694,7 +671,7 @@ msgid ""
 "Merry Christmas and happy new year 2012 with WeeChat and QWeeChat!"
 msgstr ""
 "クリスマスプレゼント: <a href=\"/download/devel\">QWeeChat</a>、WeeChat 用の"
-"初めてのリモートインターフェイス。これは Qt ツールキットを使い Python で書か"
+"初めてのリモートインターフェース。これは Qt ツールキットを使い Python で書か"
 "れています。\n"
 "\n"
 "これはアルファ版であることに注意してください、多くの機能はまだ実装されていま"
@@ -749,7 +726,7 @@ msgid ""
 "available soon. Thanks for your patience..."
 msgstr ""
 "初めての WeeChat のスクリーンショットを見ることができます (ncurses インター"
-"フェイス版)。\n"
+"フェース版)。\n"
 "このチャットクライアントは開発中で、もうすぐ最初の安定版をリリースする予定で"
 "す。もうしばらくお待ちください..."
 
@@ -902,6 +879,13 @@ msgid ""
 "There is more info in the <a href=\"https://weechat.org/blog/post/2018/05/06/"
 "New-design-for-weechat.org\">development blog</a>."
 msgstr ""
+"WeeChat サイト weechat.org に多くの変更が加えられ、改善されました。Bootstrap "
+"ツールキットを用いて完全にレスポンシブなものになりました。\n"
+"\n"
+"新しいデザインをお楽しみください :)\n"
+"\n"
+"詳しい情報は<a href=\"https://weechat.org/blog/post/2018/05/06/New-design-"
+"for-weechat.org\">開発ブログ</a>を参照してください。"
 
 #: news/_i18n_info.py:50
 msgid ""
@@ -1436,7 +1420,7 @@ msgstr ""
 "query を使ってください)\n"
 "- グローバル履歴を使う際 (古いエントリを削除する際) のクラッシュを修正\n"
 "- /upgrade とサーババッファに関するバグを修正\n"
-"- \"get_dcc_info\" プラグインインターフェイス関数に関するバグを修正\n"
+"- \"get_dcc_info\" プラグインインターフェース関数に関するバグを修正\n"
 "- 多くのバグを修正。"
 
 #: news/_i18n_info.py:70
@@ -1998,7 +1982,7 @@ msgstr ""
 "- Scheme スクリプトをサポート (新プラグイン \"guile\")\n"
 "- Python 3.x をサポート (まだバージョン 2.x を推奨)\n"
 "- リレープラグインに <a href=\"http://dev.weechat.org/post/2011/12/25/"
-"QWeeChat-Python-Qt-GUI\">QWeeChat</a> などのリモートインターフェイス向けに "
+"QWeeChat-Python-Qt-GUI\">QWeeChat</a> などのリモートインターフェース向けに "
 "\"weechat\" プロトコルを追加\n"
 "- irc メッセージの色を置換する新オプション irc.color.mirc_remap\n"
 "- デフォルトのニックネームハイライトをカスタマイズおよび無効化する新オプショ"
@@ -3046,7 +3030,7 @@ msgstr ""
 "バージョン 0.1.2 をリリースします!\n"
 "\n"
 "以前のバージョン以降のニュース:\n"
-"- Python プラグインをサポート、Perl インターフェイスを改良\n"
+"- Python プラグインをサポート、Perl インターフェースを改良\n"
 "- ニックネームリストをスクロールするキー (Alt+{home/end/pgup/pgdn} または "
 "F11/F12)\n"
 "- DCC ファイル転送率\n"
@@ -3291,7 +3275,7 @@ msgstr "mpd で現在再生中の曲を表示、操作するスクリプト。"
 #: scripts/_i18n_scripts.py:20
 msgid "A now playing script for players supporting the mpris dbus interface."
 msgstr ""
-"mpris の dbus インターフェイスをサポートするプレイヤー用の now playing スクリ"
+"mpris の dbus インターフェースをサポートするプレイヤー用の now playing スクリ"
 "プト。"
 
 #. Translators: description for script "mplayer.py" (0.3.0+)
@@ -3561,7 +3545,7 @@ msgstr "未読状態の imap メッセージの数を表示するバー要素。
 #: scripts/_i18n_scripts.py:120
 msgid "Bar items with stats about network interface, load, and free memory."
 msgstr ""
-"ネットワークインターフェイス、負荷、空きメモリの統計情報に関するバー要素。"
+"ネットワークインターフェース、負荷、空きメモリの統計情報に関するバー要素。"
 
 #. Translators: description for script "menu.pl" (0.3.0+)
 #: scripts/_i18n_scripts.py:122
@@ -3895,7 +3879,7 @@ msgstr "チャンネルの最高、最低、平均ユーザ数を表示。"
 #. Translators: description for script "bandwidth.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:252
 msgid "Displays network interface bandwidth on a bar."
-msgstr "バーにネットワークインターフェイスの帯域を表示。"
+msgstr "バーにネットワークインターフェースの帯域を表示。"
 
 #. Translators: description for script "sensors.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:254
@@ -4570,10 +4554,8 @@ msgstr "色付けした \"kikoo\" を現在のチャンネルに送信。"
 
 #. Translators: description for script "emojis.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:506
-#, fuzzy
-#| msgid "Send latest tweet to the current buffer."
 msgid "Send a random emoji to the current buffer."
-msgstr "最新のツイートを現在のバッファに送信。"
+msgstr "ランダムな絵文字を現在のバッファに送信。"
 
 #. Translators: description for script "pushjet.py" (1.0+)
 #: scripts/_i18n_scripts.py:508
@@ -4810,7 +4792,7 @@ msgstr "moc で再生中の曲に関する情報を表示。"
 #. Translators: description for script "volumeter.pl" (0.3.0+)
 #: scripts/_i18n_scripts.py:592
 msgid "Show volume of data on network interface in a bar."
-msgstr "バーにネットワークインターフェイスを通過するデータの大きさを表示。"
+msgstr "バーにネットワークインターフェースを通過するデータの大きさを表示。"
 
 #. Translators: description for script "buffers.pl" (0.3.0+)
 #: scripts/_i18n_scripts.py:594
@@ -5070,9 +5052,6 @@ msgstr ""
 "デートすることになります)。"
 
 #: scripts/models.py:264
-#, fuzzy
-#| msgctxt "programming language"
-#| msgid "Language"
 msgctxt "The programming language."
 msgid "Language"
 msgstr "プログラミング言語"
@@ -5084,10 +5063,8 @@ msgid "Name"
 msgstr "名称"
 
 #: scripts/models.py:274
-#, fuzzy
-#| msgid "version of script (only digits or dots)"
 msgid "The version of script (only digits or dots)."
-msgstr "スクリプトのバージョン (数字とドットのみ使用可)"
+msgstr "スクリプトのバージョン (数字とドットのみ使用可)。"
 
 #: scripts/models.py:278 templates/scripts/list.html:97
 #: templates/scripts/list.html:99 templates/scripts/pending.html:34
@@ -5096,10 +5073,8 @@ msgid "License"
 msgstr "ライセンス"
 
 #: scripts/models.py:279
-#, fuzzy
-#| msgid "license (for example: GPL3, BSD, ...)"
 msgid "The license (for example: GPL3, BSD, ...)."
-msgstr "ライセンス (例: GPL3、BSD、...)"
+msgstr "ライセンス (例: GPL3、BSD、...)。"
 
 #: scripts/models.py:282 scripts/models.py:361
 #: templates/doc/doc_version.html:67 themes/models.py:137 themes/models.py:227
@@ -5107,10 +5082,8 @@ msgid "File"
 msgstr "ファイル"
 
 #: scripts/models.py:283 scripts/models.py:362
-#, fuzzy
-#| msgid "the script"
 msgid "The script."
-msgstr "スクリプト"
+msgstr "スクリプト。"
 
 #: scripts/models.py:287 templates/dev/info_list.html:24
 #: templates/dev/roadmap.html:41 templates/doc/security.html:41
@@ -5124,10 +5097,8 @@ msgid "Requirements"
 msgstr "実行に必要なもの"
 
 #: scripts/models.py:296
-#, fuzzy
-#| msgid "Min/max WeeChat"
 msgid "Min/max WeeChat version."
-msgstr "WeeChat のバージョン"
+msgstr "WeeChat の最小および最大バージョン。"
 
 #: scripts/models.py:300 scripts/models.py:366 themes/models.py:148
 #: themes/models.py:232
@@ -5135,10 +5106,8 @@ msgid "Your name or nick"
 msgstr "名前またはニックネーム"
 
 #: scripts/models.py:301
-#, fuzzy
-#| msgid "used for git commit"
 msgid "Used for git commit and scripts page."
-msgstr "git コミットに利用"
+msgstr "git コミットおよびスクリプトページで利用。"
 
 #: scripts/models.py:305 scripts/models.py:371 themes/models.py:153
 #: themes/models.py:236
@@ -5146,10 +5115,8 @@ msgid "Your e-mail"
 msgstr "電子メールアドレス"
 
 #: scripts/models.py:306 scripts/models.py:367 scripts/models.py:372
-#, fuzzy
-#| msgid "used for git commit"
 msgid "Used for git commit."
-msgstr "git コミットに利用"
+msgstr "git コミットに利用。"
 
 #: scripts/models.py:312 scripts/models.py:377 themes/models.py:160
 #: themes/models.py:243
@@ -5157,10 +5124,8 @@ msgid "Comments"
 msgstr "コメント"
 
 #: scripts/models.py:313 themes/models.py:161 themes/models.py:244
-#, fuzzy
-#| msgid "optional, not displayed"
 msgid "Not displayed."
-msgstr "任意、表示されません"
+msgstr "表示されません。"
 
 #: scripts/models.py:318 scripts/models.py:383 themes/models.py:166
 #: themes/models.py:249
@@ -5169,21 +5134,17 @@ msgstr "スパマーですか?"
 
 #: scripts/models.py:319 scripts/models.py:384 themes/models.py:167
 #: themes/models.py:250
-#, fuzzy
-#| msgid "enter \"no\" if you are not a spammer"
 msgid "Enter \"no\" if you are not a spammer."
-msgstr "スパマーでないなら \"no\" と入力"
+msgstr "スパマーでないなら \"no\" と入力してください。"
 
 #: scripts/models.py:327
-#, fuzzy, python-brace-format
-#| msgid ""
-#| "short name of script (max {max_chars} chars, only lower case letters, "
-#| "digits or \"_\")"
+#, python-brace-format
 msgid ""
 "The short name of script (max {max_chars} chars, only lower case letters, "
 "digits or \"_\")."
 msgstr ""
-"スクリプトの短縮名 (最大で {max_chars} 文字、小文字、数字、\"_\" のみ使用可)"
+"スクリプトの短縮名 (最大で {max_chars} 文字、小文字、数字、\"_\" のみ使用"
+"可)。"
 
 #: scripts/models.py:338 themes/models.py:209
 msgid "Choose..."
@@ -5198,10 +5159,8 @@ msgid "New version"
 msgstr "新しいバージョン"
 
 #: scripts/models.py:378
-#, fuzzy
-#| msgid "changes in this release"
 msgid "Changes in this release."
-msgstr "このリリースの変更内容"
+msgstr "このリリースの変更内容。"
 
 #. Translators: this is a date format, see: http://www.php.net/date (note: the result string must be short, use abbreviation for month if possible)
 #: settings.py:171
@@ -5210,10 +5169,8 @@ msgstr "Y 年 m 月 j 日"
 
 #. Translators: this is a date/time format, see: http://www.php.net/date (note: the result string must be short, use abbreviation for month if possible)
 #: settings.py:173
-#, fuzzy
-#| msgid "M j, Y"
 msgid "M j, Y H:i"
-msgstr "Y 年 m 月 j 日"
+msgstr "Y 年 m 月 j 日 H 時 i 分"
 
 #: templates/403.html:5
 msgid "Error 403: forbidden"
@@ -5260,10 +5217,8 @@ msgstr "機能"
 
 #: templates/about/about.html:12 templates/base.html:84
 #: templates/home/home.html:86
-#, fuzzy
-#| msgid "Qt interface"
 msgid "Interfaces"
-msgstr "Qt インターフェイス"
+msgstr "インターフェース"
 
 #: templates/about/about.html:13 templates/base.html:85
 #: templates/home/home.html:46 templates/home/home.html:89
@@ -5288,12 +5243,12 @@ msgid "Free software, multi-platform"
 msgstr "フリーソフトウェア、マルチプラットフォーム"
 
 #: templates/about/features.html:19
-#, fuzzy
-#| msgid "WeeChat is a fast, light and extensible chat client."
 msgid ""
 "WeeChat is a fast, light and extensible chat client, with a text-based user "
 "interface."
-msgstr "WeeChat は高速、軽量、拡張可能なチャットクライアントです。"
+msgstr ""
+"WeeChat は高速、軽量、拡張可能なチャットクライアントです (テキストベースの"
+"ユーザインターフェース)。"
 
 #: templates/about/features.html:22
 msgid "WeeChat is:"
@@ -5308,16 +5263,12 @@ msgid "<strong>multi-protocols architecture</strong> (mainly IRC)"
 msgstr "<strong>マルチプロトコルアーキテクチャ</strong> (主に IRC)"
 
 #: templates/about/features.html:26
-#, fuzzy
-#| msgid ""
-#| "It runs on many platforms like Linux, Unix, BSD, GNU Hurd, Mac OS&nbsp;X "
-#| "and Windows (Bash/Ubuntu and Cygwin)."
 msgid ""
 "<strong>multi-platforms</strong>: Linux, Unix, BSD, GNU Hurd, Mac OS X and "
 "Windows (Bash/Ubuntu and Cygwin)."
 msgstr ""
-"Linux、Unix、BSD、GNU Hurd、Mac OS&nbsp;X、Windows (Bash/Ubuntu と Cygwin) な"
-"どの多くのプラットフォームで動きます。"
+"<strong>マルチプラットフォーム</strong>: Linux、Unix、BSD、GNU Hurd、Mac "
+"OS&nbsp;X、Windows (Bash/Ubuntu と Cygwin)。"
 
 #: templates/about/features.html:27
 msgid ""
@@ -5332,13 +5283,12 @@ msgid "<strong>fully documented</strong> and translated into several languages"
 msgstr "<strong>詳しく文書化され</strong>、数種類の言語に翻訳されている"
 
 #: templates/about/features.html:29
-#, fuzzy
-#| msgid "<strong>a free program</strong> released under the GPLv3 license"
 msgid ""
 "<strong>a free program</strong> released under the terms of the GNU General "
 "Public License version 3"
 msgstr ""
-"GPLv3 ライセンスのもとにリリースされる<strong>自由なプログラム</strong>"
+"GNU 一般公衆利用許諾書バージョン 3 に基づいてリリースされる<strong>自由なプロ"
+"グラム</strong>"
 
 #: templates/about/features.html:30
 msgid "<strong>an active project</strong> with a large community for scripts"
@@ -5376,7 +5326,7 @@ msgstr "スクリプト用の API"
 
 #: templates/about/features.html:50
 msgid "IRC proxy and remote interface"
-msgstr "IRC プロキシとリモートインターフェイス"
+msgstr "IRC プロキシとリモートインターフェース"
 
 #: templates/about/features.html:51 templates/about/features.html:84
 msgid "Scripts manager"
@@ -5387,16 +5337,12 @@ msgid "The future is now!"
 msgstr "未来はすぐそこ!"
 
 #: templates/about/features.html:70
-#, fuzzy
-#| msgid ""
-#| "WeeChat brings a lot of <strong>innovating features</strong>, which makes "
-#| "it different from other console/terminal based chat clients."
 msgid ""
 "WeeChat brings a lot of <strong>innovative features</strong>, which makes it "
 "different from other console/terminal based chat clients."
 msgstr ""
-"WeeChat は<strong>革新的な機能</strong>を多く備えています。これらの機能は他の"
-"コンソール/端末型のチャットクライアントとは一線を画しています。"
+"WeeChat は<strong>革新的機能</strong>を多く備えています。これらの機能により、"
+"WeeChat は他のコンソール/端末型のチャットクライアントと一線を画しています。"
 
 #: templates/about/features.html:73
 msgid "Look by yourself (the list is not exhaustive):"
@@ -5415,10 +5361,8 @@ msgid "Customizable bars"
 msgstr "カスタマイズ可能なバー"
 
 #: templates/about/features.html:78
-#, fuzzy
-#| msgid "7 script languages"
 msgid "8 script languages"
-msgstr "7 種類のスクリプト言語"
+msgstr "8 種類のスクリプト言語"
 
 #: templates/about/features.html:79
 msgid "Horizontal/vertical split"
@@ -5443,7 +5387,7 @@ msgstr "スペルチェック"
 #: templates/about/features.html:85 templates/about/features.html:130
 #: templates/about/interfaces.html:12
 msgid "Remote interfaces"
-msgstr "リモートインターフェイス"
+msgstr "リモートインターフェース"
 
 #: templates/about/features.html:86
 msgid "Upgrade without quitting"
@@ -5516,7 +5460,7 @@ msgstr "DCC (ファイル転送/チャット)"
 msgid ""
 "External interfaces (graphical or text) can connect to a running WeeChat."
 msgstr ""
-"外部インターフェイス (グラフィカルおよびテキスト) は実行中の WeeChat に接続出"
+"外部インターフェース (グラフィカルおよびテキスト) は実行中の WeeChat に接続出"
 "来ます。"
 
 #: templates/about/features.html:135
@@ -5526,6 +5470,8 @@ msgid ""
 "They communicate with WeeChat using the <a href=\"%(doc)s\">relay protocol</"
 "a>."
 msgstr ""
+"リモートインターフェースは<a href=\"%(doc)s\">リレープロトコル</a>を使って "
+"WeeChat と通信します。"
 
 #: templates/about/features.html:139
 #, python-format
@@ -5533,6 +5479,8 @@ msgid ""
 "A list of interfaces is available on <a href=\"%(interfaces)s\">this page</"
 "a>."
 msgstr ""
+"インターフェースのリストは<a href=\"%(interfaces)s\">このページ</a>を参照して"
+"ください。"
 
 #: templates/about/features.html:148
 msgid "Documentation and support"
@@ -5615,7 +5563,7 @@ msgstr "Linux 上で動く"
 
 #: templates/about/history.html:24
 msgid "text interface"
-msgstr "テキストインターフェイス"
+msgstr "テキストインターフェース"
 
 #: templates/about/history.html:25
 msgid "real nicklist"
@@ -5643,56 +5591,59 @@ msgid "Date"
 msgstr "日付"
 
 #: templates/about/interfaces.html:5
-#, fuzzy
-#| msgid "Qt interface"
 msgid "interfaces"
-msgstr "Qt インターフェイス"
+msgstr "インターフェース"
 
 #: templates/about/interfaces.html:15
 msgid ""
 "Remote interfaces are external software connecting on your WeeChat via the "
 "network."
 msgstr ""
+"リモートインターフェースとはネットワークを介して自分の WeeChat に接続する外部"
+"ソフトウェアです。"
 
 #: templates/about/interfaces.html:17
 msgid ""
 "Except for QWeeChat, the softwares listed on this page are NOT developed by "
 "WeeChat team. For support, please ask directly to the authors."
 msgstr ""
+"このページに掲載されてれているリモートインターフェースソフトウェアは "
+"QWeeChat を除いて WeeChat チーム以外によって開発されています。サポートが必要"
+"な場合にはそれぞれの作者に直接お問い合わせください。"
 
 #: templates/about/interfaces.html:25
 msgid "Type"
-msgstr ""
+msgstr "形式"
 
 #: templates/about/interfaces.html:26
 msgid "Site"
-msgstr ""
+msgstr "サイト"
 
 #: templates/about/interfaces.html:27
 msgid "Notes"
-msgstr ""
+msgstr "備考"
 
 #: templates/about/interfaces.html:69
-#, fuzzy
-#| msgid "Download"
 msgid "Download page"
-msgstr "ダウンロード"
+msgstr "ダウンロードページ"
 
 #: templates/about/interfaces.html:83
 msgid "Not maintained any more."
-msgstr ""
+msgstr "メンテナンスされていません。"
 
 #: templates/about/interfaces.html:89
 msgid "Something missing?"
-msgstr ""
+msgstr "未掲載のソフトウェア?"
 
 #: templates/about/interfaces.html:92
 msgid "You have developed another remote interface for WeeChat?"
 msgstr ""
+"もし WeeChat のリモートインターフェースを新たに開発したらどうすればいいです"
+"か?"
 
 #: templates/about/interfaces.html:95
 msgid "Tell us more about your great software!"
-msgstr ""
+msgstr "開発されたソフトウェアについて詳細を教えてくださいね!"
 
 #: templates/about/screenshots.html:5
 msgid "screenshots"
@@ -5752,34 +5703,23 @@ msgstr ""
 "さい:"
 
 #: templates/about/support.html:48
-#, fuzzy
-#| msgid "Sort channels inside networks."
 msgid "Social networks"
-msgstr "ネットワーク毎にチャンネルをソート。"
+msgstr "ソーシャルネットワーク"
 
 #: templates/about/support.html:74 templates/about/support.html:76
 msgid "Google+ page"
-msgstr ""
+msgstr "Google+ ページ"
 
 #: templates/about/support.html:79 templates/about/support.html:80
-#, fuzzy
-#| msgid "Community"
 msgid "Google+ community"
-msgstr "コミュニティ"
+msgstr "Google+ コミュニティ"
 
 #: templates/about/support.html:87
-#, fuzzy
-#| msgid "Mailing list"
 msgid "Mailing lists"
 msgstr "メーリングリスト"
 
 #: templates/about/support.html:90
-#, fuzzy, python-format
-#| msgid ""
-#| "There are <a href=\"https://savannah.nongnu.org/mail/?group=weechat\" "
-#| "target=\"_blank\" rel=\"noopener\">3 mailing lists <img src="
-#| "\"%(MEDIA_URL)simages/link.png\" width=\"16\" height=\"16\" alt=\">>\"></"
-#| "a>:"
+#, python-format
 msgid ""
 "There are <a href=\"https://savannah.nongnu.org/mail/?group=weechat\" target="
 "\"_blank\" rel=\"noopener\">3 mailing lists <img src=\"%(MEDIA_URL)simages/"
@@ -5787,7 +5727,7 @@ msgid ""
 msgstr ""
 "<a href=\"https://savannah.nongnu.org/mail/?group=weechat\" target=\"_blank"
 "\" rel=\"noopener\">3 つのメーリングリスト<img src=\"%(MEDIA_URL)simages/"
-"link.png\" width=\"16\" height=\"16\" alt=\">>\"></a>があります:"
+"link.png\" width=\"16\" height=\"16\" alt=\"&gt;&gt;\"></a>があります:"
 
 #: templates/about/support.html:94
 msgid "<strong>weechat-security</strong> (security advisories about WeeChat):"
@@ -5795,17 +5735,13 @@ msgstr "<strong>weechat-security</strong> (WeeChat に関するセキュリテ�
 
 #: templates/about/support.html:96 templates/about/support.html:103
 #: templates/about/support.html:110
-#, fuzzy
-#| msgid "subscribe:"
 msgid "subscribe"
-msgstr "登録:"
+msgstr "登録"
 
 #: templates/about/support.html:97 templates/about/support.html:104
 #: templates/about/support.html:111
-#, fuzzy
-#| msgid "send mail to:"
 msgid "send a mail to the list"
-msgstr "メールの送信先:"
+msgstr "メーリングリストにメールを送信"
 
 #: templates/about/support.html:101
 msgid "<strong>weechat-support</strong> (installation, usage, bugs, ...):"
@@ -5870,14 +5806,10 @@ msgstr "スクリプト"
 
 #: templates/base.html:40 templates/base.html:131 templates/doc/doc.html:12
 #: templates/download/download.html:12
-#, fuzzy
-#| msgid "Developers:"
 msgid "Development"
-msgstr "開発者:"
+msgstr "開発"
 
 #: templates/base.html:44 templates/base.html:45
-#, fuzzy
-#| msgid "donate"
 msgid "Donate"
 msgstr "寄付"
 
@@ -5902,10 +5834,8 @@ msgstr "安定版"
 
 #: templates/base.html:95 templates/base.html:104
 #: templates/download/debian.html:197
-#, fuzzy
-#| msgid "development version"
 msgid "Development version"
-msgstr "開発版のバージョン番号"
+msgstr "開発版"
 
 #: templates/base.html:96 templates/base.html:105 templates/doc/doc.html:13
 #: templates/download/download.html:13
@@ -5954,8 +5884,6 @@ msgid "Info"
 msgstr "情報"
 
 #: templates/base.html:135
-#, fuzzy
-#| msgid "Devel blog"
 msgid "Development blog"
 msgstr "開発ブログ"
 
@@ -5964,10 +5892,8 @@ msgid "About WeeChat.org"
 msgstr "WeeChat.org について"
 
 #: templates/dev/dev.html:5
-#, fuzzy
-#| msgid "development version"
 msgid "development"
-msgstr "開発版のバージョン番号"
+msgstr "開発"
 
 #: templates/dev/info_list.html:5
 msgid "info"
@@ -5989,10 +5915,8 @@ msgstr ""
 "す。"
 
 #: templates/dev/info_list.html:46
-#, fuzzy
-#| msgid "info"
 msgid "No info."
-msgstr "情報"
+msgstr "情報がありません。"
 
 #: templates/dev/roadmap.html:5
 msgid "roadmap"
@@ -6038,10 +5962,8 @@ msgstr "完了"
 
 #. Translators: "Done" is followed by the % of task which is implemented, for example: "Done: 75%"
 #: templates/dev/roadmap.html:61
-#, fuzzy
-#| msgid "Done"
 msgid "Done:"
-msgstr "完了"
+msgstr "完了:"
 
 #: templates/dev/stats.html:5
 msgid "statistics"
@@ -6156,10 +6078,8 @@ msgid ""
 msgstr "開発者ガイドには WeeChat の翻訳に関する詳しい情報が載せられています。"
 
 #: templates/doc/doc_version.html:136
-#, fuzzy
-#| msgid "documentation"
 msgid "No documentation."
-msgstr "文書"
+msgstr "文書がありません。"
 
 #: templates/doc/security.html:5
 msgid "security"
@@ -6263,20 +6183,16 @@ msgstr ""
 "ださい!</strong>"
 
 #: templates/doc/security.html:102
-#, fuzzy
-#| msgid "Security vulnerabilities"
 msgid "No security vulnerability."
-msgstr "セキュリティの脆弱性"
+msgstr "セキュリティ脆弱性はありません。"
 
 #: templates/donate.html:7
 msgid "donate"
 msgstr "寄付"
 
 #: templates/donate.html:15
-#, fuzzy
-#| msgid "About WeeChat"
 msgid "Donate to WeeChat"
-msgstr "WeeChat について"
+msgstr "WeeChat に寄付"
 
 #: templates/donate.html:18
 msgid "Click on one of the buttons below and follow the instructions:"
@@ -6343,14 +6259,10 @@ msgstr ""
 "バは開発、パッケージのビルド、weechat.org のホスティングに使われます。"
 
 #: templates/donate.html:56
-#, fuzzy
-#| msgid "They support WeeChat with Paypal"
 msgid "They support WeeChat"
-msgstr "Paypal 経由でWeeChat をサポートしてくれた人々"
+msgstr "WeeChat 支援者"
 
 #: templates/donate.html:58
-#, fuzzy
-#| msgid "Donate using Liberapay"
 msgid "With Liberapay"
 msgstr "Liberapay 経由の寄付"
 
@@ -6360,7 +6272,7 @@ msgstr "Liberapay 上の WeeChat のページを参照してください:"
 
 #: templates/donate.html:66
 msgid "With Paypal"
-msgstr ""
+msgstr "Paypal 経由の寄付"
 
 #: templates/donate.html:69
 msgid "Whole list:"
@@ -6399,28 +6311,20 @@ msgid "All repositories"
 msgstr "全てのリポジトリ"
 
 #: templates/download/debian.html:35
-#, fuzzy
-#| msgid ""
-#| "<strong>Note:</strong> these packages are not Debian official packages; "
-#| "please <a href=\"#instructions\"><strong>read instructions</strong></a> "
-#| "before using these repositories."
 msgid ""
 "<strong>Important:</strong> these packages are not Debian official packages; "
 "please click and read instructions below before using these repositories."
 msgstr ""
-"<strong>注意:</strong> 以下のパッケージは Debian の公式パッケージではありませ"
-"ん。リポジトリを使う前に<a href=\"#instructions\"><strong>説明を読んでくださ"
-"い</strong></a>。"
+"<strong>重要:</strong> 以下のパッケージは Debian の公式パッケージではありませ"
+"ん。リポジトリを使う前に以下の説明を読んでください。"
 
 #: templates/download/debian.html:38
-#, fuzzy
-#| msgid "Instructions:"
 msgid "Installation instructions"
-msgstr "説明:"
+msgstr "インストール説明"
 
 #: templates/download/debian.html:43
 msgid "GPG key"
-msgstr ""
+msgstr "GPG 鍵"
 
 #: templates/download/debian.html:45
 msgid "Import the gpg key used to sign the repository:"
@@ -6432,7 +6336,7 @@ msgstr "重要: Raspbian リポジトリは署名されていません。"
 
 #: templates/download/debian.html:49
 msgid "APT configuration"
-msgstr ""
+msgstr "APT 設定"
 
 #: templates/download/debian.html:51
 msgid ""
@@ -6482,7 +6386,7 @@ msgstr "パッケージインデックスファイルを再同期:"
 
 #: templates/download/debian.html:83
 msgid "Packages installation"
-msgstr ""
+msgstr "パッケージ説明"
 
 #: templates/download/debian.html:85
 msgid ""
@@ -6512,11 +6416,11 @@ msgstr ""
 
 #: templates/download/debian.html:108
 msgid "Overview"
-msgstr ""
+msgstr "概要"
 
 #: templates/download/debian.html:156
 msgid "Detail"
-msgstr ""
+msgstr "詳細"
 
 #: templates/download/debian.html:186
 msgid "Important"
@@ -6535,16 +6439,12 @@ msgid "Builds by"
 msgstr "ビルドした人"
 
 #: templates/download/debian.html:225
-#, fuzzy
-#| msgid "Latest build:"
 msgid "latest build:"
 msgstr "最新ビルド:"
 
 #: templates/download/debian.html:228
-#, fuzzy
-#| msgid "Latest build:"
 msgid "next build:"
-msgstr "最新ビルド:"
+msgstr "次回ビルド:"
 
 #: templates/download/debian.html:243
 msgid "No debian repository."
@@ -6632,26 +6532,20 @@ msgid "Release notes"
 msgstr "リリースノート"
 
 #: templates/download/packages.html:87
-#, fuzzy
-#| msgid "Packages"
 msgid "Packages:"
-msgstr "パッケージ"
+msgstr "パッケージ:"
 
 #: templates/download/packages.html:96
 msgid "Checksum"
 msgstr "チェックサム"
 
 #: templates/download/packages.html:96
-#, fuzzy
-#| msgid "Checksum and GPG signature"
 msgid "GPG signature"
-msgstr "チェックサムと GPG 署名"
+msgstr "GPG 署名"
 
 #: templates/download/packages.html:124
-#, fuzzy
-#| msgid "Checking the signatures"
 msgid "Checking the signatures:"
-msgstr "署名の確認方法"
+msgstr "署名の確認方法:"
 
 #: templates/download/packages.html:127
 msgid "Import the gpg key:"
@@ -6703,152 +6597,120 @@ msgid "Back to home"
 msgstr "ホームに戻る"
 
 #: templates/home/home.html:14
-#, fuzzy
-#| msgid "WeeChat, the extensible chat client"
 msgid "WeeChat, the extensible chat client."
-msgstr "WeeChat、拡張可能なチャットクライアント"
+msgstr "WeeChat、拡張可能なチャットクライアント。"
 
 #: templates/home/home.html:16
 msgid "Fast"
-msgstr ""
+msgstr "高速"
 
 #: templates/home/home.html:16
 msgid "Light"
-msgstr ""
+msgstr "軽量"
 
 #: templates/home/home.html:16
-#, fuzzy
-#| msgid "free software"
 msgid "Free software"
 msgstr "フリーソフトウェア"
 
 #: templates/home/home.html:29
 msgid "News"
-msgstr ""
+msgstr "ニュース"
 
 #: templates/home/home.html:40
 msgid ""
 "Full-featured IRC plugin: multi-servers, proxy support, IPv6, SASL "
 "authentication, nicklist, DCC, and many other features."
 msgstr ""
+"IRC の全機能を備えた IRC プラグイン: multi-servers、proxy support、IPv6、"
+"SASL authentication、nicklist、DCC、その他の数多くの機能。"
 
 #: templates/home/home.html:59
 msgid "Innovative features."
-msgstr ""
+msgstr "革新的機能。"
 
 #: templates/home/home.html:61
 msgid ""
 "256 colors, horizontal and vertical splits, smart filtering, customizable "
 "bars and much more!"
 msgstr ""
+"256 色、水平垂直分割、スマートフィルタ、カスタマイズ可能なバー、などなど!"
 
 #: templates/home/home.html:63
 msgid "8 scripting languages supported with a built-in scripts manager."
-msgstr ""
+msgstr "ビルトインスクリプトマネージャで 8 つのスクリプト言語をサポート。"
 
 #: templates/home/home.html:79
-#, fuzzy
-#| msgid "Remote interfaces"
 msgid "Remote interfaces."
-msgstr "リモートインターフェイス"
+msgstr "リモートインターフェース。"
 
 #: templates/home/home.html:81
 msgid "Tired of your terminal?"
-msgstr ""
+msgstr "端末に嫌気が差したら?"
 
 #: templates/home/home.html:83
 msgid "Connect to your WeeChat from your browser, Android, Qt or even Emacs!"
-msgstr ""
+msgstr "ブラウザ、Android、Qt、Emacsから WeeChat に接続!"
 
 #: templates/home/home.html:102
-#, fuzzy
-#| msgid "Documentation and support"
 msgid "Documentation and support."
-msgstr "文書とサポート"
+msgstr "文書とサポート。"
 
 #: templates/home/home.html:104
-#, fuzzy
-#| msgid ""
-#| "WeeChat is translated into several languages and has a <a href="
-#| "\"%(doc_url)s\">comprehensive documentation</a>, also translated."
 msgid ""
 "WeeChat is translated into several languages and has a comprehensive "
 "documentation."
 msgstr ""
-"WeeChat はいくつかの言語に翻訳されており、<a href=\"%(doc_url)s\">様々な文書"
-"</a>も翻訳されています。"
+"WeeChat はいくつかの言語に翻訳されており、様々な文書も用意されています。"
 
 #: templates/home/home.html:106
 msgid "Excellent support for users."
-msgstr ""
+msgstr "ユーザ向けの素晴らしいサポート。"
 
 #: templates/home/home.html:121
 msgid "Help the project."
-msgstr ""
+msgstr "プロジェクトを支援。"
 
 #: templates/home/home.html:123
 msgid "You can help the WeeChat project in many ways:"
 msgstr "WeeChat プロジェクトを支援する方法は様々です:"
 
 #: templates/home/home.html:125
-#, fuzzy
-#| msgid ""
-#| "<strong>translation</strong>: software, documentation and this web site"
 msgid "translation: software, documentation and this web site"
-msgstr "<strong>翻訳</strong>: ソフトウェア、文書、ウェブサイト"
+msgstr "翻訳: ソフトウェア、文書、ウェブサイト"
 
 #: templates/home/home.html:126
-#, fuzzy
-#| msgid ""
-#| "<strong>code</strong>: tests, bug reports, ideas for new features and "
-#| "patches"
 msgid "code: tests, bug reports, ideas for new features and patches"
-msgstr ""
-"<strong>コード</strong>: テスト、バグレポート、新機能のアイディア、パッチ"
+msgstr "コード: テスト、バグレポート、新機能のアイディア、パッチ"
 
 #: templates/home/home.html:127
-#, fuzzy
-#| msgid ""
-#| "<strong>donation</strong>: any contribution is appreciated and important "
-#| "for motivation"
 msgid "donation: any contribution is appreciated and important for motivation."
-msgstr ""
-"<strong>寄付</strong>: どんな寄付でも歓迎します。寄付はモチベーションの維持に"
-"重要です"
+msgstr "寄付: どんな寄付でも歓迎します。寄付はモチベーションの維持に重要です。"
 
 #: templates/home/home.html:157
-#, fuzzy
-#| msgid "All versions"
 msgid "All news"
-msgstr "全てのバージョン"
+msgstr "全てのニュース"
 
 #: templates/home/home.html:175
-#, fuzzy
-#| msgid "All versions"
 msgid "All events"
-msgstr "全てのバージョン"
+msgstr "全てのイベント"
 
 #: templates/home/news.html:35 templates/home/news.html:37
 msgctxt "Previous page"
 msgid "Previous"
-msgstr ""
+msgstr "前のページ"
 
 #: templates/home/news.html:63 templates/home/news.html:65
 msgctxt "Next page"
 msgid "Next"
-msgstr ""
+msgstr "次のページ"
 
 #: templates/home/news.html:74
-#, fuzzy
-#| msgid "Back to themes"
 msgid "Back to events"
-msgstr "テーマに戻る"
+msgstr "イベントに戻る"
 
 #: templates/home/news.html:76
-#, fuzzy
-#| msgid "Back to themes"
 msgid "Back to news"
-msgstr "テーマに戻る"
+msgstr "ニュースに戻る"
 
 #: templates/maintenance.html:5
 msgid "temporarily unavailable"
@@ -6910,17 +6772,13 @@ msgstr ""
 "名前でなければいけません"
 
 #: templates/scripts/add.html:21
-#, fuzzy
-#| msgid ""
-#| "the word 'weechat' is not needed in name: for example don't use "
-#| "'weechat_notify' but 'notify' instead (the script is only for WeeChat)"
 msgid ""
 "the word \"weechat\" is not needed in name: for example don't use "
 "\"weechat_notify\" but \"notify\" instead (the script is only for WeeChat)"
 msgstr ""
-"'weechat' という単語を名前に含める必要はありません: 例えば 'weechat_notify' "
-"を使う代わりに 'notify' を使ってください (WeeChat 用のスクリプトしかありませ"
-"ん)"
+"\"weechat\" という単語を名前に含める必要はありません: 例えば \"weechat_notify"
+"\" を使う代わりに \"notify\" を使ってください (スクリプトは WeeChat 専用なの"
+"で)"
 
 #: templates/scripts/add.html:25
 msgid "script content"
@@ -6935,26 +6793,20 @@ msgstr ""
 "めてください (必ず自由ライセンスにしてください)"
 
 #: templates/scripts/add.html:28
-#, fuzzy
-#| msgid "no shebang on first line (like '#!/usr/bin/perl'), it's not needed"
 msgid "no shebang on first line (like \"#!/usr/bin/perl\"), it's not needed"
-msgstr "1 行目のシェバン行 ('#!/usr/bin/perl' など) は不要"
+msgstr "1 行目のシェバン行 (\"#!/usr/bin/perl\" など) は不要です"
 
 #: templates/scripts/add.html:29
 msgid "use only English for code and comments"
 msgstr "英語以外でコードとコメントを書かないでください"
 
 #: templates/scripts/add.html:30
-#, fuzzy
-#| msgid ""
-#| "no use of extra API between WeeChat and your script (like Ruby gem "
-#| "'WeeChat'), you must use standard WeeChat API"
 msgid ""
 "no use of extra API between WeeChat and your script (like Ruby gem \"WeeChat"
 "\"), you must use standard WeeChat API"
 msgstr ""
 "スクリプトから利用してもよい WeeChat に対する API は WeeChat 標準 API だけで"
-"す。その他の API (例えば Ruby gem 'WeeChat' など) を使わないでください"
+"す。その他の API (例えば Ruby gem \"WeeChat\" など) を使わないでください"
 
 #: templates/scripts/add.html:31
 msgid ""
@@ -7224,18 +7076,17 @@ msgstr ""
 "守られていないルールのあるテーマは承認されません:"
 
 #: templates/themes/add.html:14
-#, fuzzy
-#| msgid "unique name, ending with '.theme' (only letters, digits or '_')"
 msgid "unique name, ending with \".theme\" (only letters, digits or \"_\")"
-msgstr "'.theme' で終わるユニークな名前 (英文字、数字、'_' のみ使用可)"
+msgstr "\".theme\" で終わるユニークな名前 (英文字、数字、\"_\" のみ使用可)"
 
 #: templates/themes/add.html:15
-#, fuzzy, python-format
-#| msgid "theme must be built with latest stable version of WeeChat"
+#, python-format
 msgid ""
 "theme must be built with latest stable version of WeeChat (%(version)s) or "
 "development version"
-msgstr "テーマは最新の安定版 WeeChat"
+msgstr ""
+"テーマをビルドする際には WeeChat の最新安定版 (%(version)s) または開発版を"
+"使ってください"
 
 #: templates/themes/add_ok.html:12
 msgid ""
@@ -7263,8 +7114,6 @@ msgstr ""
 "ら入手出来ます:"
 
 #: templates/themes/list.html:22
-#, fuzzy
-#| msgid "submitted by"
 msgid "Submitted by"
 msgstr "投稿者"
 
@@ -7301,20 +7150,16 @@ msgid "Updated theme has been submitted for review."
 msgstr "アップデートされたテーマが投稿され、レビュー待ち状態になりました。"
 
 #: themes/models.py:138 themes/models.py:228
-#, fuzzy
-#| msgid "the theme"
 msgid "The theme."
-msgstr "テーマ"
+msgstr "テーマ。"
 
 #: themes/models.py:149
 msgid "Used for themes page."
-msgstr ""
+msgstr "テーマページで使われます。"
 
 #: themes/models.py:154 themes/models.py:237
-#, fuzzy
-#| msgid "no spam, never displayed on site"
 msgid "No spam, never displayed."
-msgstr "スパムの心配はありません、サイトには掲載されません"
+msgstr "メールアドレスは掲載されないので、スパムの心配はありません。"
 
 #: themes/models.py:178 themes/models.py:262
 msgid "Theme file too big."
