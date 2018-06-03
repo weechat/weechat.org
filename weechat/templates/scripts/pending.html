@@ -61,7 +61,7 @@
         <td class="text-center">{{ script.min_weechat }}</td>
         <td class="text-center">{{ script.max_weechat }}</td>
         <td class="text-center">{{ script.author }}</td>
-        <td class="text-center">{% if script.added %}{{ script.added|date:"Y-m-d" }}{% endif %}</td>
+        <td class="text-center text-nowrap">{% if script.added %}{{ script.added|date:"Y-m-d" }}{% endif %}</td>
       </tr>
       {% endfor %}
     </tbody>
