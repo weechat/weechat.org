@@ -52,7 +52,7 @@ MAX_LENGTH_NAME = 64
 MAX_LENGTH_VERSION = 32
 MAX_LENGTH_MD5SUM = 256
 MAX_LENGTH_DESC = 1024
-MAX_LENGTH_APPROVAL = 1024
+MAX_LENGTH_COMMENT = 1024
 MAX_LENGTH_AUTHOR = 256
 MAX_LENGTH_MAIL = 256
 
@@ -64,7 +64,7 @@ class Theme(models.Model):
     version = models.CharField(max_length=MAX_LENGTH_VERSION)
     md5sum = models.CharField(max_length=MAX_LENGTH_MD5SUM, blank=True)
     desc = models.CharField(max_length=MAX_LENGTH_DESC, blank=True)
-    approval = models.CharField(max_length=MAX_LENGTH_APPROVAL, blank=True)
+    comment = models.CharField(max_length=MAX_LENGTH_COMMENT, blank=True)
     author = models.CharField(max_length=MAX_LENGTH_AUTHOR)
     mail = models.CharField(max_length=MAX_LENGTH_MAIL)
     added = models.DateTimeField()
@@ -304,7 +304,7 @@ def handler_theme_changed(sender, **kwargs):
             json += '  {\n'
             json += '    "id": "%s",\n' % theme.id
             for key, value in theme.__dict__.items():
-                if key not in ['_state', 'id', 'visible', 'approval']:
+                if key not in ['_state', 'id', 'visible', 'comment']:
                     if value is None:
                         value = ''
                     else:

@@ -70,7 +70,7 @@ MAX_LENGTH_LICENSE = 32
 MAX_LENGTH_MD5SUM = 256
 MAX_LENGTH_TAGS = 512
 MAX_LENGTH_DESC = 1024
-MAX_LENGTH_APPROVAL = 1024
+MAX_LENGTH_COMMENT = 1024
 MAX_LENGTH_REQUIRE = 512
 MAX_LENGTH_AUTHOR = 256
 MAX_LENGTH_MAIL = 256
@@ -93,7 +93,7 @@ class Script(models.Model):
     md5sum = models.CharField(max_length=MAX_LENGTH_MD5SUM, blank=True)
     tags = models.CharField(max_length=MAX_LENGTH_TAGS, blank=True)
     desc_en = models.CharField(max_length=MAX_LENGTH_DESC)
-    approval = models.CharField(max_length=MAX_LENGTH_APPROVAL, blank=True)
+    comment = models.CharField(max_length=MAX_LENGTH_COMMENT, blank=True)
     requirements = models.CharField(max_length=MAX_LENGTH_REQUIRE, blank=True)
     min_weechat = models.CharField(max_length=MAX_LENGTH_VERSION, blank=True)
     max_weechat = models.CharField(max_length=MAX_LENGTH_VERSION, blank=True)
@@ -403,7 +403,7 @@ def handler_script_changed(sender, **kwargs):
             json += '    "id": "%s",\n' % script.id
             for key, value in script.__dict__.items():
                 value_i18n = {}
-                if key not in ['_state', 'id', 'visible', 'approval']:
+                if key not in ['_state', 'id', 'visible', 'comment']:
                     if value is None:
                         value = ''
                     else:
