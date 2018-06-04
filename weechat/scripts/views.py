@@ -31,6 +31,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 from weechat.common.path import files_path_join
+from weechat.download.models import Release
 from weechat.scripts.models import (
     Script,
     ScriptFormAdd,
@@ -98,7 +99,16 @@ def scripts(request, api='stable', sort_key='popularity', filter_name='',
         script_list = (script_list
                        .filter(tags__regex=r'(^|,)%s($|,)' % filter_value))
     elif filter_name == 'language':
-        script_list = script_list.filter(language=filter_value)
+        if filter_value == 'python2-only':
+            script_list = (script_list
+                           .filter(language='python')
+                           .exclude(tags__regex=r'(^|,)py3k-ok($|,)'))
+        elif filter_value == 'python3-compatible':
+            script_list = (script_list
+                           .filter(language='python')
+                           .filter(tags__regex=r'(^|,)py3k-ok($|,)'))
+        else:
+            script_list = script_list.filter(language=filter_value)
     elif filter_name == 'license':
         script_list = script_list.filter(license=filter_value)
     elif filter_name == 'author':
@@ -108,6 +118,10 @@ def scripts(request, api='stable', sort_key='popularity', filter_name='',
     tags = {}
     for script in script_list:
         languages[script.language] = languages.get(script.language, 0) + 1
+        if script.language == 'python':
+            language = ('python3-compatible' if script.is_py3k_ok()
+                        else 'python2-only')
+            languages[language] = languages.get(language, 0) + 1
         licenses[script.license] = licenses.get(script.license, 0) + 1
         if script.tags:
             for tag in script.tagslist():
@@ -327,5 +341,82 @@ def pending(request):
         'scripts/pending.html',
         {
             'script_list': script_list,
+        },
+    )
+
+
+def python3(request):
+    """Page with Python 3 transition."""
+    v037_date = Release.objects.get(version='0.3.7').date
+    v037_date = datetime(
+        year=v037_date.year,
+        month=v037_date.month,
+        day=v037_date.day,
+    )
+    status_list = []
+    # status when the transition started
+    status_list.append({
+        'date': datetime(2018, 6, 3),
+        'scripts': 347,
+        'python_scripts': 216,
+        'scripts_ok': 43,
+        'scripts_remaining': 173,
+    })
+    # status today
+    scripts = (Script.objects.filter(visible=1)
+               .filter(min_weechat__gte=API_STABLE)
+               .count())
+    python_scripts = (Script.objects.filter(visible=1)
+                      .filter(min_weechat__gte=API_STABLE)
+                      .filter(language='python')
+                      .count())
+    scripts_ok = (Script.objects.filter(visible=1)
+                  .filter(min_weechat__gte=API_STABLE)
+                  .filter(language='python')
+                  .filter(tags__regex=r'(^|,)py3k-ok($|,)')
+                  .count())
+    scripts_remaining = python_scripts - scripts_ok
+    status_list.append({
+        'date': datetime.now(),
+        'today': True,
+        'scripts': scripts,
+        'python_scripts': python_scripts,
+        'scripts_ok': scripts_ok,
+        'scripts_remaining': scripts_remaining,
+    })
+    # status at the end of transition (estimates)
+    status_list.append({
+        'date': datetime(2019, 12, 31),
+        'scripts': 395,
+        'python_scripts': 246,
+        'scripts_ok': 246,
+        'scripts_remaining': 0,
+    })
+    # compute percentages and flag "future"
+    now = datetime.now()
+    for status in status_list:
+        status['python_scripts_percent'] = (
+            (status['python_scripts'] * 100) // status['scripts']
+        )
+        status['scripts_ok_percent'] = (
+            (status['scripts_ok'] * 100) // status['python_scripts']
+        )
+        status['scripts_remaining_percent'] = (
+            100 - status['scripts_ok_percent']
+        )
+        status['future'] = status['date'] > now
+    return render(
+        request,
+        'scripts/python3.html',
+        {
+            'python3_date': datetime(2008, 12, 3),
+            'v037_date': v037_date,
+            'roadmap_start': datetime(2018, 6, 3),
+            'roadmap_email': datetime(2018, 6, 15),
+            'roadmap_new_py3k': datetime(2018, 7, 1),
+            'roadmap_all_py3k': datetime(2018, 9, 1),
+            'roadmap_weechat_py3k': datetime(2019, 7, 1),
+            'roadmap_end': datetime(2020, 1, 1),
+            'status_list': status_list,
         },
     )

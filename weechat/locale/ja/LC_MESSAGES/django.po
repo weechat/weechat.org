@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-02 21:31+0200\n"
+"POT-Creation-Date: 2018-06-04 23:06+0200\n"
 "PO-Revision-Date: 2018-05-26 09:00+0900\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
@@ -169,7 +169,7 @@ msgid "Trigger and Exec plugins, bare display, hidden buffers, unit tests."
 msgstr ""
 "トリガプラグインと実行プラグイン、最小限表示、隠しバッファ、単体テスト。"
 
-#: common/forms.py:89 common/forms.py:92 scripts/models.py:214
+#: common/forms.py:89 common/forms.py:92 scripts/models.py:220
 msgid "This field is required."
 msgstr "このフィールドは必須です。"
 
@@ -915,7 +915,7 @@ msgstr ""
 "次期バージョン 0.3.0 をリリースするための 3 番目のリリース候補版 (バージョン "
 "0.3.0-rc3) です。"
 
-#: news/_i18n_info.py:53 scripts/models.py:273 templates/about/history.html:44
+#: news/_i18n_info.py:53 scripts/models.py:279 templates/about/history.html:44
 #: templates/doc/doc_version.html:20 templates/download/packages.html:34
 #: templates/scripts/list.html:94 templates/scripts/pending.html:32
 #: templates/scripts/source.html:22
@@ -5035,15 +5035,15 @@ msgstr "iChat スタイルのタイムスタンプ。"
 msgid "iTunes control and now playing script."
 msgstr "iTunes の操作と現在再生中曲に関する情報を得るスクリプト。"
 
-#: scripts/models.py:143
+#: scripts/models.py:149
 msgid "Popular script"
 msgstr "人気のスクリプト"
 
-#: scripts/models.py:217
+#: scripts/models.py:223
 msgid "This name is invalid."
 msgstr "名前が不正です。"
 
-#: scripts/models.py:222
+#: scripts/models.py:228
 msgid ""
 "This name already exists, please choose another name (update script content "
 "accordingly)."
@@ -5051,93 +5051,93 @@ msgstr ""
 "この名前はすでに存在しています。他の名前を選んでください (スクリプトをアップ"
 "デートすることになります)。"
 
-#: scripts/models.py:264
+#: scripts/models.py:270
 msgctxt "The programming language."
 msgid "Language"
 msgstr "プログラミング言語"
 
-#: scripts/models.py:269 templates/about/interfaces.html:24
+#: scripts/models.py:275 templates/about/interfaces.html:24
 #: templates/donate.html:86 templates/scripts/list.html:82
 #: templates/scripts/list.html:84 templates/scripts/pending.html:29
 msgid "Name"
 msgstr "名称"
 
-#: scripts/models.py:274
+#: scripts/models.py:280
 msgid "The version of script (only digits or dots)."
 msgstr "スクリプトのバージョン (数字とドットのみ使用可)。"
 
-#: scripts/models.py:278 templates/scripts/list.html:97
+#: scripts/models.py:284 templates/scripts/list.html:97
 #: templates/scripts/list.html:99 templates/scripts/pending.html:34
 #: templates/scripts/source.html:22
 msgid "License"
 msgstr "ライセンス"
 
-#: scripts/models.py:279
+#: scripts/models.py:285
 msgid "The license (for example: GPL3, BSD, ...)."
 msgstr "ライセンス (例: GPL3、BSD、...)。"
 
-#: scripts/models.py:282 scripts/models.py:361
+#: scripts/models.py:288 scripts/models.py:367
 #: templates/doc/doc_version.html:67 themes/models.py:137 themes/models.py:227
 msgid "File"
 msgstr "ファイル"
 
-#: scripts/models.py:283 scripts/models.py:362
+#: scripts/models.py:289 scripts/models.py:368
 msgid "The script."
 msgstr "スクリプト。"
 
-#: scripts/models.py:287 templates/dev/info_list.html:24
+#: scripts/models.py:293 templates/dev/info_list.html:24
 #: templates/dev/roadmap.html:41 templates/doc/security.html:41
 #: templates/scripts/list.html:93 templates/scripts/pending.html:30
-#: themes/models.py:144
+#: templates/scripts/python3.html:58 themes/models.py:144
 msgid "Description"
 msgstr "説明"
 
-#: scripts/models.py:292
+#: scripts/models.py:298
 msgid "Requirements"
 msgstr "実行に必要なもの"
 
-#: scripts/models.py:296
+#: scripts/models.py:302
 msgid "Min/max WeeChat version."
 msgstr "WeeChat の最小および最大バージョン。"
 
-#: scripts/models.py:300 scripts/models.py:366 themes/models.py:148
+#: scripts/models.py:306 scripts/models.py:372 themes/models.py:148
 #: themes/models.py:232
 msgid "Your name or nick"
 msgstr "名前またはニックネーム"
 
-#: scripts/models.py:301
+#: scripts/models.py:307
 msgid "Used for git commit and scripts page."
 msgstr "git コミットおよびスクリプトページで利用。"
 
-#: scripts/models.py:305 scripts/models.py:371 themes/models.py:153
+#: scripts/models.py:311 scripts/models.py:377 themes/models.py:153
 #: themes/models.py:236
 msgid "Your e-mail"
 msgstr "電子メールアドレス"
 
-#: scripts/models.py:306 scripts/models.py:367 scripts/models.py:372
+#: scripts/models.py:312 scripts/models.py:373 scripts/models.py:378
 msgid "Used for git commit."
 msgstr "git コミットに利用。"
 
-#: scripts/models.py:312 scripts/models.py:377 themes/models.py:160
+#: scripts/models.py:318 scripts/models.py:383 themes/models.py:160
 #: themes/models.py:243
 msgid "Comments"
 msgstr "コメント"
 
-#: scripts/models.py:313 themes/models.py:161 themes/models.py:244
+#: scripts/models.py:319 themes/models.py:161 themes/models.py:244
 msgid "Not displayed."
 msgstr "表示されません。"
 
-#: scripts/models.py:318 scripts/models.py:383 themes/models.py:166
+#: scripts/models.py:324 scripts/models.py:389 themes/models.py:166
 #: themes/models.py:249
 msgid "Are you a spammer?"
 msgstr "スパマーですか?"
 
-#: scripts/models.py:319 scripts/models.py:384 themes/models.py:167
+#: scripts/models.py:325 scripts/models.py:390 themes/models.py:167
 #: themes/models.py:250
 msgid "Enter \"no\" if you are not a spammer."
 msgstr "スパマーでないなら \"no\" と入力してください。"
 
-#: scripts/models.py:327
+#: scripts/models.py:333
 #, python-brace-format
 msgid ""
 "The short name of script (max {max_chars} chars, only lower case letters, "
@@ -5146,19 +5146,19 @@ msgstr ""
 "スクリプトの短縮名 (最大で {max_chars} 文字、小文字、数字、\"_\" のみ使用"
 "可)。"
 
-#: scripts/models.py:338 themes/models.py:209
+#: scripts/models.py:344 themes/models.py:209
 msgid "Choose..."
 msgstr "選択..."
 
-#: scripts/models.py:353 templates/scripts/source.html:14
+#: scripts/models.py:359 templates/scripts/source.html:14
 msgid "Script"
 msgstr "スクリプト"
 
-#: scripts/models.py:358
+#: scripts/models.py:364
 msgid "New version"
 msgstr "新しいバージョン"
 
-#: scripts/models.py:378
+#: scripts/models.py:384
 msgid "Changes in this release."
 msgstr "このリリースの変更内容。"
 
@@ -5586,7 +5586,8 @@ msgid "Key dates"
 msgstr "重要な日"
 
 #: templates/about/history.html:43 templates/donate.html:82
-#: templates/scripts/pending.html:38
+#: templates/scripts/pending.html:38 templates/scripts/python3.html:57
+#: templates/scripts/python3.html:132
 msgid "Date"
 msgstr "日付"
 
@@ -5619,7 +5620,7 @@ msgstr "形式"
 msgid "Site"
 msgstr "サイト"
 
-#: templates/about/interfaces.html:27
+#: templates/about/interfaces.html:27 templates/scripts/python3.html:137
 msgid "Notes"
 msgstr "備考"
 
@@ -5800,7 +5801,8 @@ msgid "Download"
 msgstr "ダウンロード"
 
 #: templates/base.html:39 templates/base.html:111 templates/dev/stats.html:14
-#: templates/home/home.html:66 templates/scripts/scripts.html:11
+#: templates/home/home.html:66 templates/scripts/python3.html:133
+#: templates/scripts/scripts.html:11
 msgid "Scripts"
 msgstr "スクリプト"
 
@@ -6817,13 +6819,20 @@ msgstr ""
 "ど) では、hook_process (または hook_process_hashtable) を使って WeeChat の実"
 "行を中断させないようにしてください"
 
-#: templates/scripts/add.html:32
+#: templates/scripts/add.html:33 templates/scripts/update.html:19
+#, python-format
+msgid ""
+"for a Python script, there's a transition to Python 3 in progress, please "
+"read the <a href=\"%(url_python3)s\">transition page</a>"
+msgstr ""
+
+#: templates/scripts/add.html:34
 msgid ""
 "if you mention the WeeChat site in your script, the official URL is https://"
 "weechat.org (https and no \"www.\")"
 msgstr ""
 
-#: templates/scripts/add.html:42 templates/scripts/update.html:25
+#: templates/scripts/add.html:44 templates/scripts/update.html:27
 #: templates/themes/add.html:23 templates/themes/update.html:15
 msgid "Submit"
 msgstr "投稿"
@@ -6983,7 +6992,7 @@ msgstr "必要なもの"
 msgid "Author:"
 msgstr "作者:"
 
-#: templates/scripts/list.html:170 templates/scripts/update.html:31
+#: templates/scripts/list.html:170 templates/scripts/update.html:33
 msgid "No script found."
 msgstr "スクリプトが見つかりません。"
 
@@ -7026,6 +7035,223 @@ msgstr "承認コメント"
 msgid "No script pending approval at this time."
 msgstr "現在のところ承認待ち状態のスクリプトはありません。"
 
+#: templates/scripts/python3.html:11
+msgid "Why a transition to Python 3?"
+msgstr ""
+
+#: templates/scripts/python3.html:14
+msgid "Python 2.x is legacy; it has an end-of-life set for 2020."
+msgstr ""
+
+#: templates/scripts/python3.html:16
+#, python-format
+msgid ""
+"Python 3.x is the present and future of the language. Version 3.0 was "
+"released on %(date)s (%(date_ago)s)."
+msgstr ""
+
+#: templates/scripts/python3.html:20
+msgid "Python 3 has many new exciting features, for example:"
+msgstr ""
+
+#: templates/scripts/python3.html:22
+msgid "unicode by default"
+msgstr ""
+
+#: templates/scripts/python3.html:25
+msgid "function annotations"
+msgstr ""
+
+#: templates/scripts/python3.html:26
+msgid "\"breakpoint\" function"
+msgstr ""
+
+#: templates/scripts/python3.html:31
+msgid "Support of Python 3 in WeeChat"
+msgstr ""
+
+#: templates/scripts/python3.html:34
+#, python-format
+msgid ""
+"WeeChat supports Python 3 since version 0.3.7, which was released on "
+"%(date)s (%(date_ago)s)."
+msgstr ""
+
+#: templates/scripts/python3.html:38
+msgid ""
+"The support of Python 3 is optional: the WeeChat python plugin can be "
+"compiled with Python 2.7 or Python 3.x, but not both at same time."
+msgstr ""
+
+#: templates/scripts/python3.html:40
+#, python-format
+msgid ""
+"As of %(date)s, it is recommended to compile with Python 2.7 because many "
+"scripts won't work at all with Python 3.x, while all scripts should run fine "
+"with Python 2.7."
+msgstr ""
+
+#: templates/scripts/python3.html:45
+#, python-format
+msgid ""
+"To compile with Python 3 support, you must enable this CMake flag: <bkd>-"
+"DENABLE_PYTHON3=ON</kbd> (see the <a href=\"%(doc_url)s\">User's guide</a> "
+"for more information)."
+msgstr ""
+
+#: templates/scripts/python3.html:48
+msgid "Transition roadmap"
+msgstr ""
+
+#: templates/scripts/python3.html:51
+msgid "Here is the roadmap for the transition to Python 3 in WeeChat:"
+msgstr ""
+
+#: templates/scripts/python3.html:65
+#, fuzzy
+#| msgid "Internationalization stats"
+msgid "Transition to Python 3 starts."
+msgstr "国際化の状況"
+
+#: templates/scripts/python3.html:67
+msgid ""
+"All scripts that are not yet compatible with both Python 2.7 and Python 3.x "
+"can be updated to support both versions (see the status below)."
+msgstr ""
+
+#: templates/scripts/python3.html:69
+msgid "You can help by converting existing scripts (see how to help below)."
+msgstr ""
+
+#: templates/scripts/python3.html:75
+msgid ""
+"An e-mail is sent to the authors of Python scripts which are not compatible "
+"with Python 3 (at least they are not marked as compatible in database)."
+msgstr ""
+
+#: templates/scripts/python3.html:77
+msgid ""
+"All authors are encouraged to make their scripts compatible with Python 3.x "
+"as soon as possible. Help from other people is welcome as well."
+msgstr ""
+
+#: templates/scripts/python3.html:83
+msgid "All new scripts must be compatible with both Python 2.7 and Python 3.x."
+msgstr ""
+
+#: templates/scripts/python3.html:85
+msgid "Script updates are still allowed to be compatible with Python 2.7 only."
+msgstr ""
+
+#: templates/scripts/python3.html:91
+msgid ""
+"All new scripts as well as script updates must be compatible with both "
+"Python 2.7 and Python 3.x."
+msgstr ""
+
+#: templates/scripts/python3.html:93
+msgid ""
+"Scripts must be properly tested with Python 2.7 and a Python 3.x version (if "
+"possible the latest stable)."
+msgstr ""
+
+#: templates/scripts/python3.html:99
+msgid ""
+"New versions of WeeChat are be compiled with Python 3 by default, which "
+"becomes the recommended Python version to use in WeeChat."
+msgstr ""
+
+#: templates/scripts/python3.html:101
+msgid ""
+"All new scripts as well as script updates must still be compatible with "
+"Python 2.7 and Python 3.x, time for the users to upgrade to the latest "
+"version of WeeChat which is Python 3 only."
+msgstr ""
+
+#: templates/scripts/python3.html:103
+msgid ""
+"Hopefully, at this date, most scripts should be compatible with Python 3."
+msgstr ""
+
+#: templates/scripts/python3.html:109
+msgid ""
+"All new scripts as well as script updates must be compatible with Python 3."
+"x. Extra support of Python 2.x is optional."
+msgstr ""
+
+#: templates/scripts/python3.html:111
+msgid ""
+"Hopefully, at this date, all scripts should be compatible with Python 3."
+msgstr ""
+
+#: templates/scripts/python3.html:113
+msgid ""
+"<strong>Important</strong>: at this date, all scripts that are not "
+"compatible with Python 3 are removed from repository and moved to unofficial "
+"scripts."
+msgstr ""
+
+#: templates/scripts/python3.html:121
+#, fuzzy
+#| msgid "Internationalization stats"
+msgid "Transition status"
+msgstr "国際化の状況"
+
+#: templates/scripts/python3.html:124
+msgid ""
+"The scripts which are compatible with Python 3 have tag \"py3k-ok\"</a>."
+msgstr ""
+
+#: templates/scripts/python3.html:126
+#, fuzzy
+#| msgid "Internationalization stats"
+msgid "Transition status at various dates:"
+msgstr "国際化の状況"
+
+#: templates/scripts/python3.html:134
+#, fuzzy
+#| msgid "Pending scripts"
+msgid "Python scripts"
+msgstr "承認待ちスクリプト"
+
+#: templates/scripts/python3.html:135
+msgid "Compatible with Python 3"
+msgstr ""
+
+#: templates/scripts/python3.html:136
+msgid "Not yet compatible"
+msgstr ""
+
+#: templates/scripts/python3.html:145
+msgid "today"
+msgstr ""
+
+#: templates/scripts/python3.html:153 templates/scripts/python3.html:163
+#: templates/scripts/python3.html:175 templates/scripts/python3.html:187
+#, fuzzy
+#| msgid "Nicklist"
+msgid "list"
+msgstr "ニックネームリスト"
+
+#: templates/scripts/python3.html:191
+msgid "Estimates"
+msgstr ""
+
+#: templates/scripts/python3.html:199
+msgid "How to help"
+msgstr ""
+
+#: templates/scripts/python3.html:202
+msgid ""
+"If possible, the author of script should make the necessary changes to make "
+"the script compatible with both Python 2.7 and 3.x."
+msgstr ""
+
+#: templates/scripts/python3.html:206
+msgid ""
+"Here's a list of some resources that can help to port scripts to Python 3:"
+msgstr ""
+
 #: templates/scripts/source.html:19
 msgid "for WeeChat"
 msgstr "WeeChat 用"
@@ -7062,9 +7288,13 @@ msgstr ""
 "るスクリプトは承認されません:"
 
 #: templates/scripts/update.html:17
+#, fuzzy
+#| msgid ""
+#| "for a Python script with tag \"py3k-ok\", please ensure your new version "
+#| "is compatible with Python 2.x and 3.x"
 msgid ""
 "for a Python script with tag \"py3k-ok\", please ensure your new version is "
-"compatible with Python 2.x and 3.x"
+"compatible with Python 2.7 and 3.x"
 msgstr ""
 "\"py3k-ok\" タグを付けられた Python スクリプトは、新しいバージョンが Python "
 "2.x と 3.x で互換性があることを確認してください"

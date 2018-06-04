@@ -31,6 +31,7 @@ from weechat.scripts.views import (
     form_add as view_form_add,
     form_update as view_form_update,
     pending as view_pending,
+    python3 as view_python3,
 )
 
 urlpatterns = [
@@ -58,6 +59,7 @@ urlpatterns = [
     url(r'^add/$', view_form_add, name='scripts_add'),
     url(r'^update/$', view_form_update, name='scripts_update'),
     url(r'^pending/$', view_pending, name='scripts_pending'),
+    url(r'^python3/$', view_python3, name='scripts_python3'),
     url(r'^addok/$',
         TemplateView.as_view(template_name='scripts/add_ok.html')),
     url(r'^adderror/$',

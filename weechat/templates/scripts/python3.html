@@ -1,0 +1,218 @@
+{% extends "scripts/scripts.html" %}
+
+{% load i18n %}{% load humanize %}{% load localdate %}
+
+{% block menu2_python3 %}active{% endblock %}
+
+{% block content %}
+
+{{ block.super }}
+
+<h3>{% trans "Why a transition to Python 3?" %}</h3>
+
+<p>
+  {% trans "Python 2.x is legacy; it has an end-of-life set for 2020." %}
+  <br>
+  {% blocktrans with date=python3_date|localdate date_ago=python3_date|naturaltime %}Python 3.x is the present and future of the language. Version 3.0 was released on {{ date }} ({{ date_ago }}).{% endblocktrans %}
+</p>
+
+<p>
+  {% trans "Python 3 has many new exciting features, for example:" %}
+  <ul>
+    <li>{% trans "unicode by default" %}</li>
+    <li>asyncio</li>
+    <li>f-strings</li>
+    <li>{% trans "function annotations" %}</li>
+    <li>{% blocktrans %}"breakpoint" function{% endblocktrans %}</li>
+    <li>…</li>
+  </ul>
+</p>
+
+<h3>{% trans "Support of Python 3 in WeeChat" %}</h3>
+
+<p>
+  {% blocktrans with date=v037_date|localdate date_ago=v037_date|naturaltime %}WeeChat supports Python 3 since version 0.3.7, which was released on {{ date }} ({{ date_ago }}).{% endblocktrans %}
+</p>
+
+<p>
+  {% trans "The support of Python 3 is optional: the WeeChat python plugin can be compiled with Python 2.7 or Python 3.x, but not both at same time." %}
+  <br>
+  {% blocktrans with date=roadmap_start|localdate %}As of {{ date }}, it is recommended to compile with Python 2.7 because many scripts won't work at all with Python 3.x, while all scripts should run fine with Python 2.7.{% endblocktrans %}
+</p>
+
+<p>
+  {% url 'doc' as doc_url %}
+  {% blocktrans %}To compile with Python 3 support, you must enable this CMake flag: <bkd>-DENABLE_PYTHON3=ON</kbd> (see the <a href="{{ doc_url }}">User's guide</a> for more information).{% endblocktrans %}
+</p>
+
+<h3>{% trans "Transition roadmap" %}</h3>
+
+<p>
+  {% trans "Here is the roadmap for the transition to Python 3 in WeeChat:" %}
+
+  <div class="table-responsive">
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th>{% trans "Date" %}</th>
+          <th>{% trans "Description" %}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-nowrap">{{ roadmap_start|localdate }}</td>
+          <td>
+            {% trans "Transition to Python 3 starts." %}
+            <br>
+            {% trans "All scripts that are not yet compatible with both Python 2.7 and Python 3.x can be updated to support both versions (see the status below)." %}
+            <br>
+            {% trans "You can help by converting existing scripts (see how to help below)." %}
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap">{{ roadmap_email|localdate }}</td>
+          <td>
+            {% trans "An e-mail is sent to the authors of Python scripts which are not compatible with Python 3 (at least they are not marked as compatible in database)." %}
+            <br>
+            {% trans "All authors are encouraged to make their scripts compatible with Python 3.x as soon as possible. Help from other people is welcome as well." %}
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap">{{ roadmap_new_py3k|localdate }}</td>
+          <td>
+            {% trans "All new scripts must be compatible with both Python 2.7 and Python 3.x." %}
+            <br>
+            {% trans "Script updates are still allowed to be compatible with Python 2.7 only." %}
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap">{{ roadmap_all_py3k|localdate }}</td>
+          <td>
+            {% trans "All new scripts as well as script updates must be compatible with both Python 2.7 and Python 3.x." %}
+            <br>
+            {% trans "Scripts must be properly tested with Python 2.7 and a Python 3.x version (if possible the latest stable)." %}
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap">{{ roadmap_weechat_py3k|localdate }}</td>
+          <td>
+            {% trans "New versions of WeeChat are be compiled with Python 3 by default, which becomes the recommended Python version to use in WeeChat." %}
+            <br>
+            {% trans "All new scripts as well as script updates must still be compatible with Python 2.7 and Python 3.x, time for the users to upgrade to the latest version of WeeChat which is Python 3 only." %}
+            <br>
+            {% trans "Hopefully, at this date, most scripts should be compatible with Python 3." %}
+          </td>
+        </tr>
+        <tr>
+          <td class="text-nowrap">{{ roadmap_end|localdate }}</td>
+          <td>
+            {% trans "All new scripts as well as script updates must be compatible with Python 3.x. Extra support of Python 2.x is optional." %}
+            <br>
+            {% trans "Hopefully, at this date, all scripts should be compatible with Python 3." %}
+            <br>
+            {% trans "<strong>Important</strong>: at this date, all scripts that are not compatible with Python 3 are removed from repository and moved to unofficial scripts." %}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</p>
+
+<h3>{% trans "Transition status" %}</h3>
+
+<p>
+  {% blocktrans %}The scripts which are compatible with Python 3 have tag "py3k-ok"</a>.{% endblocktrans %}
+  <br>
+  {% trans "Transition status at various dates:" %}
+
+  <div class="table-responsive col-lg-10 col-xl-8 px-0">
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th>{% trans "Date" %}</th>
+          <th>{% trans "Scripts" %}</th>
+          <th>{% trans "Python scripts" %}</th>
+          <th>{% trans "Compatible with Python 3" %}</th>
+          <th>{% trans "Not yet compatible" %}</th>
+          <th>{% trans "Notes" %}</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for status in status_list %}
+        <tr class="{% if status.today %}table-info font-weight-bold{% endif %}{% if status.future %}text-muted{% endif %}">
+          <td class="text-nowrap">
+            {{ status.date|localdate }}
+            {% if status.today %}<span class="font-weight-normal">({% trans "today" %})</span>{% endif %}
+          </td>
+          <td>
+            {{ status.scripts }}
+            {% if status.future %} <sup>*</sup>{% endif %}
+            {% if status.today %}
+            <span class="text-muted font-weight-normal">
+              &nbsp;
+              [ <a href="{% url 'scripts' %}">{% trans "list" %}</a> ]
+            </span>
+            {% endif %}
+          </td>
+          <td>
+            {{ status.python_scripts }} ({{ status.python_scripts_percent }}%)
+            {% if status.future %} <sup>*</sup>{% endif %}
+            {% if status.today %}
+            <span class="text-muted font-weight-normal">
+              &nbsp;
+              [ <a href="{% url 'scripts_api_filter' api='stable' filter_name='language' filter_value='python' %}">{% trans "list" %}</a> ]
+            </span>
+            {% endif %}
+          </td>
+          <td>
+            <span class="text-success">
+              {{ status.scripts_ok }} ({{ status.scripts_ok_percent }}%)
+              {% if status.future %} <sup>*</sup>{% endif %}
+            </span>
+            {% if status.today %}
+            <span class="text-muted font-weight-normal">
+              &nbsp;
+              [ <a href="{% url 'scripts_api_filter' api='stable' filter_name='language' filter_value='python3-compatible' %}">{% trans "list" %}</a> ]
+            </span>
+            {% endif %}
+          </td>
+          <td>
+            <span class="text-danger">
+              {{ status.scripts_remaining }} ({{ status.scripts_remaining_percent }}%)
+              {% if status.future %} <sup>*</sup>{% endif %}
+            </span>
+            {% if status.today %}
+            <span class="text-muted font-weight-normal">
+              &nbsp;
+              [ <a href="{% url 'scripts_api_filter' api='stable' filter_name='language' filter_value='python2-only' %}">{% trans "list" %}</a> ]
+            </span>
+            {% endif %}
+          </td>
+          <td>{% if status.future %}<sup>*</sup> {% trans "Estimates" %}{% endif %}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</p>
+
+<h3>{% trans "How to help" %}</h3>
+
+<p>
+  {% trans "If possible, the author of script should make the necessary changes to make the script compatible with both Python 2.7 and 3.x." %}
+</p>
+
+<p>
+  {% trans "Here's a list of some resources that can help to port scripts to Python 3:" %}
+
+  <ul>
+    <li>
+      <a href="https://docs.python.org/3/howto/pyporting.html" target="_blank" rel="noopener">
+        https://docs.python.org/3/howto/pyporting.html
+        <img src="{{ MEDIA_URL }}images/link.png" alt="&gt;&gt;">
+      </a>
+    </li>
+  </ul>
+</p>
+
+{% endblock content %}
