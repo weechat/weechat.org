@@ -125,7 +125,8 @@ class Script(models.Model):
 
     def is_py3k_ok(self):
         """
-        Return True if the script is a Python script compatible with Python 3.x.
+        Return True if the script is a Python script compatible with
+        Python 3.x.
         """
         return 'py3k-ok' in self.tagslist()
 
