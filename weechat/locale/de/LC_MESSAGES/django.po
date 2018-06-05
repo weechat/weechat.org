@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-04 23:06+0200\n"
+"POT-Creation-Date: 2018-06-05 21:44+0200\n"
 "PO-Revision-Date: 2018-05-20 20:01+0200\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -176,7 +176,7 @@ msgstr ""
 "Trigger- und Exec-Erweiterung, vereinfachter Anzeigemodus, versteckte "
 "Buffer, Unit-Tests."
 
-#: common/forms.py:89 common/forms.py:92 scripts/models.py:220
+#: common/forms.py:89 common/forms.py:92 scripts/models.py:221
 msgid "This field is required."
 msgstr "Dieser Eintrag ist notwendig."
 
@@ -901,6 +901,18 @@ msgstr "Geschichte.... mit Screenshots"
 
 #: news/_i18n_info.py:49
 msgid ""
+"The Python 3 porting party for WeeChat scripts started!\n"
+"\n"
+"There are 173 scripts to port to Python 3 (for now compatibility with Python "
+"2.7 must be preserved).\n"
+"You can help us to reach the goal of 100% Python3-compatible scripts at the "
+"beginning of 2020!\n"
+"\n"
+"More info on the <a href=\"/scripts/python3\">transition page</a>."
+msgstr ""
+
+#: news/_i18n_info.py:50
+msgid ""
 "The WeeChat site weechat.org has been improved with many changes. It is now "
 "fully responsive, using Bootstrap toolkit.\n"
 "\n"
@@ -917,7 +929,7 @@ msgstr ""
 "Weitere Informationen findet man im <a href=\"https://weechat.org/blog/"
 "post/2018/05/06/New-design-for-weechat.org\">Entwickler blog</a>."
 
-#: news/_i18n_info.py:50
+#: news/_i18n_info.py:51
 msgid ""
 "The source code of weechat.org is now available on GitHub: <a href=\"https://"
 "github.com/weechat/weechat.org\">https://github.com/weechat/weechat.org</"
@@ -930,7 +942,7 @@ msgstr ""
 "Geschrieben ist der Quelltext in Python, dabei wird Django verwendet. Für "
 "die Lokalisierung wird gettext genutzt."
 
-#: news/_i18n_info.py:51
+#: news/_i18n_info.py:52
 msgid ""
 "The version is expected on this date. More info in the <a href=\"/dev/"
 "roadmap/\">roadmap</a>."
@@ -939,7 +951,7 @@ msgstr ""
 "Weitergehende Informationen findet man in der <a href=\"/dev/roadmap/"
 "\">Meilensteinplanung</a>."
 
-#: news/_i18n_info.py:52
+#: news/_i18n_info.py:53
 msgid ""
 "Third release candidate (version 0.3.0-rc3) for future version 0.3.0 is "
 "available."
@@ -947,14 +959,20 @@ msgstr ""
 "Dritte Vorabveröffentlichung (Version 0.3.0-rc3), der neuen Version 0.3.0, "
 "ist verfügbar."
 
-#: news/_i18n_info.py:53 scripts/models.py:279 templates/about/history.html:44
+#: news/_i18n_info.py:54
+#, fuzzy
+#| msgid "Internationalization stats"
+msgid "Transition to Python 3 for scripts"
+msgstr "Statistik über den Fortschritt der Übersetzungen"
+
+#: news/_i18n_info.py:55 scripts/models.py:280 templates/about/history.html:44
 #: templates/doc/doc_version.html:20 templates/download/packages.html:34
 #: templates/scripts/list.html:94 templates/scripts/pending.html:32
 #: templates/scripts/source.html:22
 msgid "Version"
 msgstr "Version"
 
-#: news/_i18n_info.py:54
+#: news/_i18n_info.py:56
 msgid ""
 "Version 0.0.2 is available!\n"
 "\n"
@@ -988,7 +1006,7 @@ msgstr ""
 "- CTCP Version gibt mehr Informationen zurück (über OS)\n"
 "- weitere Fehlerbereinigungen (zum Beispiel Nicklist-Darstellungsfehler)."
 
-#: news/_i18n_info.py:55
+#: news/_i18n_info.py:57
 msgid ""
 "Version 0.0.3 is available!\n"
 "\n"
@@ -1010,7 +1028,7 @@ msgstr ""
 "userhost, ison, ctcp ping\n"
 "- Fehlerbereinigungen."
 
-#: news/_i18n_info.py:56
+#: news/_i18n_info.py:58
 msgid ""
 "Version 0.0.4 is available!\n"
 "\n"
@@ -1031,7 +1049,7 @@ msgstr ""
 "debug option\n"
 "- Fehlerbereinigungen."
 
-#: news/_i18n_info.py:57
+#: news/_i18n_info.py:59
 msgid ""
 "Version 0.0.5 is available!\n"
 "\n"
@@ -1056,7 +1074,7 @@ msgstr ""
 "- abgesicherter Code um einen Buffer-Overflow zu vermeiden\n"
 "- Fehlerbereinigungen."
 
-#: news/_i18n_info.py:58
+#: news/_i18n_info.py:60
 msgid ""
 "Version 0.0.6 is available!\n"
 "\n"
@@ -1084,7 +1102,7 @@ msgstr ""
 "- CTCP Version Antwort ist nun in englisch und zeigt nicht mehr den Host "
 "(Sicherheitsaspekt)."
 
-#: news/_i18n_info.py:59
+#: news/_i18n_info.py:61
 msgid ""
 "Version 0.0.7 is available!\n"
 "\n"
@@ -1106,7 +1124,7 @@ msgstr ""
 "- eindeutige Farbzuordnung für jeden Nick (basierend auf dem Nicknamen),\n"
 "- History-Beschränkung (schont den Speicher)."
 
-#: news/_i18n_info.py:60
+#: news/_i18n_info.py:62
 msgid ""
 "Version 0.0.8 is available!\n"
 "\n"
@@ -1132,7 +1150,7 @@ msgstr ""
 "- verbesserte oder überarbeitete Befehle: /buffer, /query, /kick,\n"
 "- Fehlerbereinigungen."
 
-#: news/_i18n_info.py:61
+#: news/_i18n_info.py:63
 msgid ""
 "Version 0.0.9 is available!\n"
 "\n"
@@ -1161,7 +1179,7 @@ msgstr ""
 "- neue Einstellungsoptionen: server_autoreconnect, "
 "server_autoreconnect_delay, server_command_delay."
 
-#: news/_i18n_info.py:62
+#: news/_i18n_info.py:64
 msgid ""
 "Version 0.1.0 is available!\n"
 "\n"
@@ -1203,7 +1221,7 @@ msgstr ""
 "away\n"
 "- Fehlerbereinigungen."
 
-#: news/_i18n_info.py:63
+#: news/_i18n_info.py:65
 msgid ""
 "Version 0.1.1 is available!\n"
 "\n"
@@ -1236,7 +1254,7 @@ msgstr ""
 "- spanische Übersetzung\n"
 "- Fehlerbereinigung (Darstellung und Befehle)."
 
-#: news/_i18n_info.py:64
+#: news/_i18n_info.py:66
 msgid ""
 "Version 0.1.3 is available!\n"
 "\n"
@@ -1258,7 +1276,7 @@ msgstr ""
 "- Channel-Benachrichtigung wird nun in der Konfigurationsdatei gesichert\n"
 "- Fehlerbereinigungen."
 
-#: news/_i18n_info.py:65
+#: news/_i18n_info.py:67
 msgid ""
 "Version 0.1.4 is available!\n"
 "\n"
@@ -1286,7 +1304,7 @@ msgstr ""
 "- hinzugefügt: Uhrzeit wird nun auch mit Sekunden in Infobar angezeigt\n"
 "- Fehlerbereinigungen."
 
-#: news/_i18n_info.py:66
+#: news/_i18n_info.py:68
 msgid ""
 "Version 0.1.5 is available!\n"
 "\n"
@@ -1318,7 +1336,7 @@ msgstr ""
 "der globalen Historie aufzurufen,\n"
 "- mehrere größere Fehlerbereinigungen."
 
-#: news/_i18n_info.py:67
+#: news/_i18n_info.py:69
 msgid ""
 "Version 0.1.6 is available!\n"
 "\n"
@@ -1353,7 +1371,7 @@ msgstr ""
 "- partiell Highlights\n"
 "- automatische Vervollständigung verbessert und einstellbar."
 
-#: news/_i18n_info.py:68
+#: news/_i18n_info.py:70
 msgid ""
 "Version 0.1.7 is available!\n"
 "\n"
@@ -1409,7 +1427,7 @@ msgstr ""
 "- Fehler behoben: Erweiterung autoload und unload, sowie einige "
 "Darstellungsfehler."
 
-#: news/_i18n_info.py:69
+#: news/_i18n_info.py:71
 msgid ""
 "Version 0.1.8 is available!\n"
 "\n"
@@ -1478,7 +1496,7 @@ msgstr ""
 "- Fehler in der API Erweiterung \"get_dcc_info\" behoben\n"
 "- weitere Fehlerbereinigungen."
 
-#: news/_i18n_info.py:70
+#: news/_i18n_info.py:72
 msgid ""
 "Version 0.1.9 is available!\n"
 "\n"
@@ -1506,7 +1524,7 @@ msgstr ""
 "selben Namen, in einigen Befehlen, langen IRC Nachrichten (> 512 bytes), "
 "terminal refresh, nicklist."
 
-#: news/_i18n_info.py:71
+#: news/_i18n_info.py:73
 msgid ""
 "Version 0.2.0 is available!\n"
 "\n"
@@ -1537,7 +1555,7 @@ msgstr ""
 "- behoben: Abstürze mit DCC\n"
 "- weitere Fehlerbereinigungen."
 
-#: news/_i18n_info.py:72
+#: news/_i18n_info.py:74
 msgid ""
 "Version 0.2.1 is available!\n"
 "\n"
@@ -1569,7 +1587,7 @@ msgstr ""
 "- Fehler mit auto-rejoin behoben.\n"
 "- Fehler mit chan owner und chan admin nicks behoben."
 
-#: news/_i18n_info.py:73
+#: news/_i18n_info.py:75
 msgid ""
 "Version 0.2.2 is available!\n"
 "\n"
@@ -1604,7 +1622,7 @@ msgstr ""
 "- Fehlerbereinigungen bei: Portabilität, Speicherverbrauch der "
 "Tastatureingabe, ignore und alias Befehle, in der Darstellung."
 
-#: news/_i18n_info.py:74
+#: news/_i18n_info.py:76
 msgid ""
 "Version 0.2.3 is available!\n"
 "This version fixes major bugs of version 0.2.2. All users of version 0.2.2 "
@@ -1629,7 +1647,7 @@ msgstr ""
 "kann\n"
 "- Probleme beim kompilieren mit iconv unter FreeBSD behoben."
 
-#: news/_i18n_info.py:75
+#: news/_i18n_info.py:77
 msgid ""
 "Version 0.2.4 is available!\n"
 "\n"
@@ -1647,7 +1665,7 @@ msgstr ""
 "- hinzugefügt: \"event handler\" zur API Erweiterung\n"
 "- viele Fehlerbereinigungen."
 
-#: news/_i18n_info.py:76
+#: news/_i18n_info.py:78
 msgid ""
 "Version 0.2.5 is available!\n"
 "\n"
@@ -1667,7 +1685,7 @@ msgstr ""
 "- hinzugefügt: Farbe für nicht gefundenen Text in Buffer-Verlauf\n"
 "- viele Fehler entfernt."
 
-#: news/_i18n_info.py:77
+#: news/_i18n_info.py:79
 msgid ""
 "Version 0.2.6 is available!\n"
 "\n"
@@ -1697,11 +1715,11 @@ msgstr ""
 "ohne ihn vorher mit /server zu erstellen\n"
 "- viele Fehlerbehebungen und neue Funktionen."
 
-#: news/_i18n_info.py:78
+#: news/_i18n_info.py:80
 msgid "Version 0.2.6.1 (security release)"
 msgstr "Version 0.2.6.1 (Sicherheitsupdate)"
 
-#: news/_i18n_info.py:79
+#: news/_i18n_info.py:81
 msgid ""
 "Version 0.2.6.1 is available. This release fixes a crash when receiving some "
 "special chars in IRC messages.\n"
@@ -1722,7 +1740,7 @@ msgstr ""
 "Weitere Informationen findet man auf der <a href=\"/download/security/"
 "\">Seite zu Sicherheitsfragen</a>."
 
-#: news/_i18n_info.py:80
+#: news/_i18n_info.py:82
 msgid ""
 "Version 0.2.6.2 is available. This release fixes a charset decoding problem "
 "of version 0.2.6.1."
@@ -1730,7 +1748,7 @@ msgstr ""
 "Version 0.2.6.2 ist verfügbar. Diese Version behebt einen Fehler in der "
 "Zeichensatz Dekodierung, von V 0.2.6.1."
 
-#: news/_i18n_info.py:81
+#: news/_i18n_info.py:83
 msgid ""
 "Version 0.2.6.3 is available. This release fixes a bug with detection of "
 "gnutls."
@@ -1738,7 +1756,7 @@ msgstr ""
 "Version 0.2.6.3 ist verfügbar. Diese Version behebt einen Fehler mit der "
 "gnutls Erkennung."
 
-#: news/_i18n_info.py:82
+#: news/_i18n_info.py:84
 msgid ""
 "Version 0.3.0 is released, after 2 years of work and more than 1000 "
 "commits!\n"
@@ -1757,7 +1775,7 @@ msgstr ""
 "den vorherigen Versionen nicht mehr kompatibel.\n"
 "Viel Spaß mit WeeChat!"
 
-#: news/_i18n_info.py:83
+#: news/_i18n_info.py:85
 msgid ""
 "Version 0.3.1 is available!\n"
 "\n"
@@ -1786,7 +1804,7 @@ msgstr ""
 "unterstützt,\n"
 "- umfangreiche Fehlerbehebungen."
 
-#: news/_i18n_info.py:84
+#: news/_i18n_info.py:86
 msgid ""
 "Version 0.3.1.1 is available!\n"
 "\n"
@@ -1801,7 +1819,7 @@ msgstr ""
 "DCC Chats. Es wird allen Anwendern empfohlen von 0.3.1 auf v0.3.1.1 "
 "upzugraden."
 
-#: news/_i18n_info.py:85
+#: news/_i18n_info.py:87
 msgid ""
 "Version 0.3.2 is available!\n"
 "\n"
@@ -1828,7 +1846,7 @@ msgstr ""
 "- die Protokolldatei kann im Dateinamen das Datum enthalten,\n"
 "- viele Fehlerbereinigungen."
 
-#: news/_i18n_info.py:86
+#: news/_i18n_info.py:88
 msgid ""
 "Version 0.3.3 is available!\n"
 "\n"
@@ -1860,7 +1878,7 @@ msgstr ""
 "- Hashtables in Erweiterungs-API,\n"
 "- viele Fehlerbeseitigungen."
 
-#: news/_i18n_info.py:87
+#: news/_i18n_info.py:89
 msgid ""
 "Version 0.3.4 is available!\n"
 "\n"
@@ -1902,7 +1920,7 @@ msgstr ""
 "Version-0.3.4\">Entwickler-Blog</a> oder die <a href=\"/files/changelog/"
 "ChangeLog-0.3.4.html\">ChangeLog</a> ansehen."
 
-#: news/_i18n_info.py:88
+#: news/_i18n_info.py:90
 msgid ""
 "Version 0.3.5 is available!\n"
 "\n"
@@ -1955,7 +1973,7 @@ msgstr ""
 "Version-0.3.5\">development blog</a> oder <a href=\"/files/changelog/"
 "ChangeLog-0.3.5.html\">ChangeLog</a>."
 
-#: news/_i18n_info.py:89
+#: news/_i18n_info.py:91
 msgid ""
 "Version 0.3.6 is available!\n"
 "\n"
@@ -2014,7 +2032,7 @@ msgstr ""
 "Version-0.3.6\">development blog</a> oder <a href=\"/files/changelog/"
 "ChangeLog-0.3.6.html\">ChangeLog</a>."
 
-#: news/_i18n_info.py:90
+#: news/_i18n_info.py:92
 msgid ""
 "Version 0.3.7 is available!\n"
 "\n"
@@ -2080,7 +2098,7 @@ msgstr ""
 "Version-0.3.7\">development blog</a> oder <a href=\"/files/changelog/"
 "ChangeLog-0.3.7.html\">ChangeLog</a>."
 
-#: news/_i18n_info.py:91
+#: news/_i18n_info.py:93
 msgid ""
 "Version 0.3.8 is available!\n"
 "\n"
@@ -2130,7 +2148,7 @@ msgstr ""
 "Version-0.3.8\">development blog</a> oder <a href=\"/files/changelog/"
 "ChangeLog-0.3.8.html\">ChangeLog</a>."
 
-#: news/_i18n_info.py:92
+#: news/_i18n_info.py:94
 msgid ""
 "Version 0.3.9 is available!\n"
 "\n"
@@ -2187,11 +2205,11 @@ msgstr ""
 "Version-0.3.9\">development blog</a> oder <a href=\"/files/changelog/"
 "ChangeLog-0.3.9.html\">ChangeLog</a>."
 
-#: news/_i18n_info.py:93
+#: news/_i18n_info.py:95
 msgid "Version 0.3.9.1 (security release)"
 msgstr "Version 0.3.9.1 (Sicherheitsupdate)"
 
-#: news/_i18n_info.py:94
+#: news/_i18n_info.py:96
 msgid ""
 "Version 0.3.9.1 is available, it fixes a security problem (buffer overflow "
 "when decoding IRC colors in strings).\n"
@@ -2207,11 +2225,11 @@ msgstr ""
 "Weitere Informationen findet man auf der <a href=\"/download/security/"
 "\">Seite zu Sicherheitsfragen</a>."
 
-#: news/_i18n_info.py:95
+#: news/_i18n_info.py:97
 msgid "Version 0.3.9.2 (security release)"
 msgstr "Version 0.3.9.2 (Sicherheitsupdate)"
 
-#: news/_i18n_info.py:96
+#: news/_i18n_info.py:98
 msgid ""
 "Version 0.3.9.2 is available, it fixes a security problem: untrusted command "
 "for function hook_process could lead to execution of commands, because of "
@@ -2228,7 +2246,7 @@ msgstr ""
 "Weitere Informationen findet man auf der <a href=\"/download/security/"
 "\">Seite zu Sicherheitsfragen</a>."
 
-#: news/_i18n_info.py:97
+#: news/_i18n_info.py:99
 msgid ""
 "Version 0.4.0 is available!\n"
 "\n"
@@ -2277,7 +2295,7 @@ msgstr ""
 "Version-0.4.0\">development blog</a> oder <a href=\"/files/changelog/"
 "ChangeLog-0.4.0.html\">ChangeLog</a>."
 
-#: news/_i18n_info.py:98
+#: news/_i18n_info.py:100
 msgid ""
 "Version 0.4.1 is available!\n"
 "\n"
@@ -2331,7 +2349,7 @@ msgstr ""
 "Version-0.4.1\">development blog</a> oder <a href=\"/files/changelog/"
 "ChangeLog-0.4.1.html\">ChangeLog</a>."
 
-#: news/_i18n_info.py:99
+#: news/_i18n_info.py:101
 msgid ""
 "Version 0.4.2 is available!\n"
 "\n"
@@ -2401,7 +2419,7 @@ msgstr ""
 "Version-0.4.2\">development blog</a> oder <a href=\"/files/changelog/"
 "ChangeLog-0.4.2.html\">ChangeLog</a>."
 
-#: news/_i18n_info.py:100
+#: news/_i18n_info.py:102
 msgid ""
 "Version 0.4.3 is available!\n"
 "\n"
@@ -2448,7 +2466,7 @@ msgstr ""
 "Version-0.4.3\">development blog</a> oder <a href=\"/files/changelog/"
 "ChangeLog-0.4.3.html\">ChangeLog</a>."
 
-#: news/_i18n_info.py:101
+#: news/_i18n_info.py:103
 msgid ""
 "Version 1.0 is available!\n"
 "\n"
@@ -2508,7 +2526,7 @@ msgstr ""
 "post/2014/08/15/Version-1.0\">development blog</a> oder <a href=\"/files/"
 "changelog/ChangeLog-1.0.html\">ChangeLog</a>."
 
-#: news/_i18n_info.py:102
+#: news/_i18n_info.py:104
 msgid ""
 "Version 1.0.1 is available!\n"
 "\n"
@@ -2525,7 +2543,7 @@ msgstr ""
 "Eine Liste der Fehlerbereinigungen findet man unter <a href=\"/files/"
 "changelog/ChangeLog-1.0.1.html\">ChangeLog</a>."
 
-#: news/_i18n_info.py:103
+#: news/_i18n_info.py:105
 msgid ""
 "Version 1.1 is available!\n"
 "\n"
@@ -2582,7 +2600,7 @@ msgstr ""
 "Version-1.1\">development blog</a> or <a href=\"/files/changelog/"
 "ChangeLog-1.1.html\">ChangeLog</a>."
 
-#: news/_i18n_info.py:104
+#: news/_i18n_info.py:106
 msgid ""
 "Version 1.1.1 is available!\n"
 "\n"
@@ -2599,7 +2617,7 @@ msgstr ""
 "Eine Liste der Fehlerbereinigungen findet man unter <a href=\"/files/"
 "changelog/ChangeLog-1.1.1.html\">ChangeLog</a>."
 
-#: news/_i18n_info.py:105
+#: news/_i18n_info.py:107
 msgid ""
 "Version 1.2 is available!\n"
 "\n"
@@ -2643,7 +2661,7 @@ msgstr ""
 "Version-1.2\">development blog</a> oder <a href=\"/files/changelog/"
 "ChangeLog-1.2.html\">ChangeLog</a>."
 
-#: news/_i18n_info.py:106
+#: news/_i18n_info.py:108
 msgid ""
 "Version 1.3 is available!\n"
 "\n"
@@ -2675,7 +2693,7 @@ msgstr ""
 "Version-1.3\">development blog</a> oder <a href=\"/files/changelog/"
 "ChangeLog-1.3.html\">ChangeLog</a>."
 
-#: news/_i18n_info.py:107
+#: news/_i18n_info.py:109
 msgid ""
 "Version 1.4 is available!\n"
 "\n"
@@ -2726,7 +2744,7 @@ msgstr ""
 "Version-1.4\">development blog</a> oder <a href=\"/files/changelog/"
 "ChangeLog-1.4.html\">ChangeLog</a>."
 
-#: news/_i18n_info.py:108
+#: news/_i18n_info.py:110
 msgid ""
 "Version 1.5 is available!\n"
 "\n"
@@ -2763,7 +2781,7 @@ msgstr ""
 "Version-1.5\">development blog</a> oder <a href=\"/files/changelog/"
 "ChangeLog-1.5.html\">ChangeLog</a>."
 
-#: news/_i18n_info.py:109
+#: news/_i18n_info.py:111
 msgid ""
 "Version 1.6 is available!\n"
 "\n"
@@ -2807,7 +2825,7 @@ msgstr ""
 "Version-1.6\">Entwickler-Blog</a> oder <a href=\"/files/changelog/"
 "ChangeLog-1.6.html\">ChangeLog</a>."
 
-#: news/_i18n_info.py:110
+#: news/_i18n_info.py:112
 msgid ""
 "Version 1.7 is available!\n"
 "\n"
@@ -2846,11 +2864,11 @@ msgstr ""
 "Version-1.7\">development blog</a> oder <a href=\"/files/changelog/"
 "ChangeLog-1.7.html\">ChangeLog</a>."
 
-#: news/_i18n_info.py:111
+#: news/_i18n_info.py:113
 msgid "Version 1.7.1 (security release)"
 msgstr "Version 1.7.1 (Sicherheitsupdate)"
 
-#: news/_i18n_info.py:112
+#: news/_i18n_info.py:114
 msgid ""
 "Version 1.7.1 is available, it fixes a security problem: a crash can happen "
 "in IRC plugin when parsing the filename received via DCC.\n"
@@ -2866,7 +2884,7 @@ msgstr ""
 "Weitere Informationen findet man auf der <a href=\"/download/security/"
 "\">Seite zu Sicherheitsfragen</a>."
 
-#: news/_i18n_info.py:113
+#: news/_i18n_info.py:115
 msgid ""
 "Version 1.8 is available!\n"
 "\n"
@@ -2911,7 +2929,7 @@ msgstr ""
 "Version-1.8\">development blog</a> oder <a href=\"/files/changelog/"
 "ChangeLog-1.8.html\">ChangeLog</a>."
 
-#: news/_i18n_info.py:114
+#: news/_i18n_info.py:116
 #, python-brace-format
 msgid ""
 "Version 1.9 is available!\n"
@@ -2954,11 +2972,11 @@ msgstr ""
 "post/2017/06/25/Version-1.9\">development blog</a> oder <a href=\"/files/"
 "changelog/ChangeLog-1.9.html\">ChangeLog</a>."
 
-#: news/_i18n_info.py:115
+#: news/_i18n_info.py:117
 msgid "Version 1.9.1 (security release)"
 msgstr "Version 1.9.1 (Sicherheitsupdate)"
 
-#: news/_i18n_info.py:116
+#: news/_i18n_info.py:118
 msgid ""
 "Version 1.9.1 is available, it fixes a security problem: a crash can happen "
 "in logger plugin when converting date/time specifiers in file mask. Two "
@@ -2977,7 +2995,7 @@ msgstr ""
 "Weitere Informationen findet man auf der <a href=\"/download/security/"
 "\">Seite zu Sicherheitsfragen</a>."
 
-#: news/_i18n_info.py:117
+#: news/_i18n_info.py:119
 msgid ""
 "Version 2.0 is available!\n"
 "\n"
@@ -3057,7 +3075,7 @@ msgstr ""
 "post/2017/12/03/Version-2.0\">development blog</a> oder <a href=\"/files/"
 "changelog/ChangeLog-2.0.html\">ChangeLog</a>."
 
-#: news/_i18n_info.py:118
+#: news/_i18n_info.py:120
 msgid ""
 "Version 2.0.1 is available!\n"
 "\n"
@@ -3074,7 +3092,7 @@ msgstr ""
 "Eine Liste der Fehlerbereinigungen findet man unter <a href=\"/files/"
 "changelog/ChangeLog-2.0.1.html\">ChangeLog</a>."
 
-#: news/_i18n_info.py:119
+#: news/_i18n_info.py:121
 msgid ""
 "Version 2.1 is available!\n"
 "\n"
@@ -3131,7 +3149,7 @@ msgstr ""
 "post/2018/03/18/Version-2.1\">development blog</a> oder <a href=\"/files/"
 "changelog/ChangeLog-2.1.html\">ChangeLog</a>."
 
-#: news/_i18n_info.py:120
+#: news/_i18n_info.py:122
 msgid ""
 "Version v0.1.2 is available!\n"
 "\n"
@@ -3164,11 +3182,11 @@ msgstr ""
 "Add-on, 24.05.2005: Absturz beim Programmstart und Perl/Python Erkennung "
 "behoben, Version ist nun 0.1.2.1."
 
-#: news/_i18n_info.py:121
+#: news/_i18n_info.py:123
 msgid "WeeChat - Wee Enhanced Environment for Chat"
 msgstr "WeeChat - Wee Enhanced Environment for Chat"
 
-#: news/_i18n_info.py:122
+#: news/_i18n_info.py:124
 msgid ""
 "WeeChat has many new important features since some weeks:\n"
 "- multi-windows management (with horizontal and vertical window split)\n"
@@ -3193,11 +3211,11 @@ msgstr ""
 "in der Testphase. Wenn Sie Fehler finden oder Anmerkungen haben um die "
 "Funktionalität der buffer/window/nzu erhöhen, dann melden Sie sich."
 
-#: news/_i18n_info.py:123
+#: news/_i18n_info.py:125
 msgid "WeeChat in Cygwin"
 msgstr "WeeChat mit Cygwin"
 
-#: news/_i18n_info.py:124
+#: news/_i18n_info.py:126
 msgid ""
 "WeeChat is now in Cygwin, and can be installed with setup.exe.\n"
 "Version 0.4.2 is available for 32 and 64-bit Cygwin.\n"
@@ -3212,7 +3230,7 @@ msgstr ""
 "Hinweis: Guile Erweiterung ist nicht verfügbar, da guile >= 2.0 benötigt "
 "wird und diese nicht von Cygwin zur Verfügung gestellt wird."
 
-#: news/_i18n_info.py:125
+#: news/_i18n_info.py:127
 msgid ""
 "WeeChat project is started.\n"
 "\n"
@@ -3232,7 +3250,7 @@ msgstr ""
 "- schnell, schlank und erweiterbar durch Skripten.\n"
 "- ..."
 
-#: news/_i18n_info.py:126
+#: news/_i18n_info.py:128
 msgid ""
 "WeeChat project now accepts donations via Paypal account, with secured "
 "payment."
@@ -3240,7 +3258,7 @@ msgstr ""
 "Das WeeChat Projekt kann nun durch das sichere Paypal Verfahren direkt "
 "unterstützt werden."
 
-#: news/_i18n_info.py:127
+#: news/_i18n_info.py:129
 msgid ""
 "WeeChat project now accepts recurring donations via Liberapay, which has "
 "very low fees (see <a href=\"https://liberapay.com/about/faq#differences"
@@ -3252,7 +3270,7 @@ msgstr ""
 "liberapay.com/about/faq#differences\">die Unterschiede zwischen Liberapay "
 "und anderen wiederkehrenden Crowdfunding-Plattformen</a>)."
 
-#: news/_i18n_info.py:128
+#: news/_i18n_info.py:130
 msgid ""
 "WeeChat repositories (weechat, scripts, qweechat) have been moved to GitHub, "
 "in WeeChat organization: <a href=\"https://github.com/weechat\">https://"
@@ -3268,15 +3286,15 @@ msgstr ""
 "Für weitere Informationen, siehe <a href=\"http://dev.weechat.org/"
 "post/2014/03/03/Git-repositories-moved-to-Github\">Entwickler Blog</a>."
 
-#: news/_i18n_info.py:129
+#: news/_i18n_info.py:131
 msgid "WeeChat screenshot"
 msgstr "WeeChat Screenshot"
 
-#: news/_i18n_info.py:130
+#: news/_i18n_info.py:132
 msgid "WeeChat scripts page"
 msgstr "WeeChat Skriptenseite"
 
-#: news/_i18n_info.py:131
+#: news/_i18n_info.py:133
 msgid ""
 "WeeChat scripts page (today Perl scripts only) has been added.\n"
 "On this page you can submit your script (need to be approved by WeeChat "
@@ -3292,7 +3310,7 @@ msgstr ""
 "Hinweis: Perl-Skripten benötigen mindestens Version > 0.0.3 von WeeChat. Zur "
 "Zeit muss somit die Entwicklerversion genutzt werden."
 
-#: news/_i18n_info.py:132
+#: news/_i18n_info.py:134
 msgid ""
 "WeeChat story page is now available, as screenshots. You can see differences "
 "between all versions in one view!\n"
@@ -3303,15 +3321,15 @@ msgstr ""
 "Entwicklungsversionen sind ebenso aufgeführt und es findet ein regelmäßiges "
 "Update statt."
 
-#: news/_i18n_info.py:133
+#: news/_i18n_info.py:135
 msgid "WeeChat users map"
 msgstr "Karte der WeeChat Anwender"
 
-#: news/_i18n_info.py:134
+#: news/_i18n_info.py:136
 msgid "WeeChat will merge with irssi"
 msgstr "WeeChat verschmilzt mit irssi"
 
-#: news/_i18n_info.py:135
+#: news/_i18n_info.py:137
 msgid ""
 "WeeChat, the fast, light and extensible IRC client, is released for the "
 "first time, version 0.0.1.\n"
@@ -3361,7 +3379,7 @@ msgstr ""
 "Alle Vorschläge und Fehlermeldungen sind willkommen. Unsere Kontaktdaten "
 "finden Sie auf der WeeChat Support Seite."
 
-#: news/_i18n_info.py:136
+#: news/_i18n_info.py:138
 msgid "XZ packages"
 msgstr "XZ Pakete"
 
@@ -5285,107 +5303,107 @@ msgstr ""
 "Fernbedienung für iTunes und zum anzeigen welches Musikstück gerade gespielt "
 "wird."
 
-#: scripts/models.py:149
+#: scripts/models.py:150
 msgid "Popular script"
 msgstr "Skript wird empfohlen"
 
-#: scripts/models.py:223
+#: scripts/models.py:224
 msgid "This name is invalid."
 msgstr "Dieser Name ist ungültig."
 
-#: scripts/models.py:228
+#: scripts/models.py:229
 msgid ""
 "This name already exists, please choose another name (update script content "
 "accordingly)."
 msgstr "Dieser Name existiert bereits. Bitte wähle einen anderen Namen."
 
-#: scripts/models.py:270
+#: scripts/models.py:271
 msgctxt "The programming language."
 msgid "Language"
 msgstr "Sprache"
 
-#: scripts/models.py:275 templates/about/interfaces.html:24
+#: scripts/models.py:276 templates/about/interfaces.html:24
 #: templates/donate.html:86 templates/scripts/list.html:82
 #: templates/scripts/list.html:84 templates/scripts/pending.html:29
 msgid "Name"
 msgstr "Name"
 
-#: scripts/models.py:280
+#: scripts/models.py:281
 msgid "The version of script (only digits or dots)."
 msgstr "Version des Skripts (nur Ziffern oder Punkte)."
 
-#: scripts/models.py:284 templates/scripts/list.html:97
+#: scripts/models.py:285 templates/scripts/list.html:97
 #: templates/scripts/list.html:99 templates/scripts/pending.html:34
 #: templates/scripts/source.html:22
 msgid "License"
 msgstr "Lizenz"
 
-#: scripts/models.py:285
+#: scripts/models.py:286
 msgid "The license (for example: GPL3, BSD, ...)."
 msgstr "Lizenzen (zum Beispiel: GPL3, BSD, ...)."
 
-#: scripts/models.py:288 scripts/models.py:367
+#: scripts/models.py:289 scripts/models.py:368
 #: templates/doc/doc_version.html:67 themes/models.py:137 themes/models.py:227
 msgid "File"
 msgstr "Datei"
 
-#: scripts/models.py:289 scripts/models.py:368
+#: scripts/models.py:290 scripts/models.py:369
 msgid "The script."
 msgstr "nach Skript."
 
-#: scripts/models.py:293 templates/dev/info_list.html:24
+#: scripts/models.py:294 templates/dev/info_list.html:24
 #: templates/dev/roadmap.html:41 templates/doc/security.html:41
 #: templates/scripts/list.html:93 templates/scripts/pending.html:30
 #: templates/scripts/python3.html:58 themes/models.py:144
 msgid "Description"
 msgstr "Beschreibung"
 
-#: scripts/models.py:298
+#: scripts/models.py:299
 msgid "Requirements"
 msgstr "zusätzliche Anforderungen"
 
-#: scripts/models.py:302
+#: scripts/models.py:303
 msgid "Min/max WeeChat version."
 msgstr "Min/Max WeeChat."
 
-#: scripts/models.py:306 scripts/models.py:372 themes/models.py:148
+#: scripts/models.py:307 scripts/models.py:373 themes/models.py:148
 #: themes/models.py:232
 msgid "Your name or nick"
 msgstr "Dein Name oder Nick"
 
-#: scripts/models.py:307
+#: scripts/models.py:308
 msgid "Used for git commit and scripts page."
 msgstr "wird für Git Commit und Skriptseite benötigt."
 
-#: scripts/models.py:311 scripts/models.py:377 themes/models.py:153
+#: scripts/models.py:312 scripts/models.py:378 themes/models.py:153
 #: themes/models.py:236
 msgid "Your e-mail"
 msgstr "Deine email"
 
-#: scripts/models.py:312 scripts/models.py:373 scripts/models.py:378
+#: scripts/models.py:313 scripts/models.py:374 scripts/models.py:379
 msgid "Used for git commit."
 msgstr "wird für Git Commit benötigt."
 
-#: scripts/models.py:318 scripts/models.py:383 themes/models.py:160
+#: scripts/models.py:319 scripts/models.py:384 themes/models.py:160
 #: themes/models.py:243
 msgid "Comments"
 msgstr "zusätzliche Informationen"
 
-#: scripts/models.py:319 themes/models.py:161 themes/models.py:244
+#: scripts/models.py:320 themes/models.py:161 themes/models.py:244
 msgid "Not displayed."
 msgstr "wird nicht dargestellt."
 
-#: scripts/models.py:324 scripts/models.py:389 themes/models.py:166
+#: scripts/models.py:325 scripts/models.py:390 themes/models.py:166
 #: themes/models.py:249
 msgid "Are you a spammer?"
 msgstr "Bist Du ein Spammer?"
 
-#: scripts/models.py:325 scripts/models.py:390 themes/models.py:167
+#: scripts/models.py:326 scripts/models.py:391 themes/models.py:167
 #: themes/models.py:250
 msgid "Enter \"no\" if you are not a spammer."
 msgstr "Gebe \"no\" ein, sofern Du kein Spammer bist."
 
-#: scripts/models.py:333
+#: scripts/models.py:334
 #, python-brace-format
 msgid ""
 "The short name of script (max {max_chars} chars, only lower case letters, "
@@ -5394,19 +5412,19 @@ msgstr ""
 "Kurzname des Skripts (maximal {max_chars} Zeichen und nur Kleinbuchstaben, "
 "Ziffern oder \"_\")."
 
-#: scripts/models.py:344 themes/models.py:209
+#: scripts/models.py:345 themes/models.py:209
 msgid "Choose..."
 msgstr "Auswählen..."
 
-#: scripts/models.py:359 templates/scripts/source.html:14
+#: scripts/models.py:360 templates/scripts/source.html:14
 msgid "Script"
 msgstr "Skript"
 
-#: scripts/models.py:364
+#: scripts/models.py:365
 msgid "New version"
 msgstr "Neue Version"
 
-#: scripts/models.py:384
+#: scripts/models.py:385
 msgid "Changes in this release."
 msgstr "Änderungen dieser Version."
 
@@ -6066,7 +6084,7 @@ msgstr "Download"
 msgid "Scripts"
 msgstr "Skripten"
 
-#: templates/base.html:40 templates/base.html:131 templates/doc/doc.html:12
+#: templates/base.html:40 templates/base.html:132 templates/doc/doc.html:12
 #: templates/download/download.html:12
 msgid "Development"
 msgstr "Entwicklung"
@@ -6132,24 +6150,24 @@ msgstr "eingereichte Skripten"
 msgid "Unofficial scripts"
 msgstr "nicht veröffentlichte Skripten"
 
-#: templates/base.html:132 templates/dev/dev.html:11
+#: templates/base.html:133 templates/dev/dev.html:11
 msgid "Roadmap"
 msgstr "Meilensteinplan"
 
-#: templates/base.html:133 templates/dev/dev.html:12
+#: templates/base.html:134 templates/dev/dev.html:12
 msgid "Statistics"
 msgstr "Statistik"
 
-#: templates/base.html:134 templates/dev/dev.html:13
+#: templates/base.html:135 templates/dev/dev.html:13
 #: templates/dev/info_list.html:22
 msgid "Info"
 msgstr "Info"
 
-#: templates/base.html:135
+#: templates/base.html:136
 msgid "Development blog"
 msgstr "Entwicklerblog"
 
-#: templates/base.html:161
+#: templates/base.html:162
 msgid "About WeeChat.org"
 msgstr "Über WeeChat.org"
 
