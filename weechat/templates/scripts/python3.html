@@ -148,8 +148,8 @@
             {{ status.scripts }}
             {% if status.future %} <sup>*</sup>{% endif %}
             {% if status.today %}
-            <span class="text-muted font-weight-normal">
-              &nbsp;
+            &nbsp;
+            <span class="text-nowrap text-muted font-weight-normal">
               [ <a href="{% url 'scripts' %}">{% trans "list" %}</a> ]
             </span>
             {% endif %}
@@ -158,8 +158,8 @@
             {{ status.python_scripts }} ({{ status.python_scripts_percent }}%)
             {% if status.future %} <sup>*</sup>{% endif %}
             {% if status.today %}
-            <span class="text-muted font-weight-normal">
-              &nbsp;
+            &nbsp;
+            <span class="text-nowrap text-muted font-weight-normal">
               [ <a href="{% url 'scripts_api_filter' api='stable' filter_name='language' filter_value='python' %}">{% trans "list" %}</a> ]
             </span>
             {% endif %}
@@ -170,8 +170,8 @@
               {% if status.future %} <sup>*</sup>{% endif %}
             </span>
             {% if status.today %}
-            <span class="text-muted font-weight-normal">
-              &nbsp;
+            &nbsp;
+            <span class="text-nowrap text-muted font-weight-normal">
               [ <a href="{% url 'scripts_api_filter' api='stable' filter_name='language' filter_value='python3-compatible' %}">{% trans "list" %}</a> ]
             </span>
             {% endif %}
