@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-05 21:44+0200\n"
-"PO-Revision-Date: 2018-05-20 20:01+0200\n"
+"PO-Revision-Date: 2018-06-06 21:44+0200\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -910,6 +910,15 @@ msgid ""
 "\n"
 "More info on the <a href=\"/scripts/python3\">transition page</a>."
 msgstr ""
+"Die Python 3 Portierungs-Party für WeeChat Skripten hat begonnen!\n"
+"\n"
+"Es gibt 173 Skripten welche welche auf Python 3 portiert werden müssen (zur "
+"Zeit muss dabei aber die Kompatibilität mit Python 2.7 erhalten bleiben).\n"
+"Du kannst uns dabei helfen unser Ziel zu erreichen, dass zu Beginn des "
+"Jahres 2020 alle Skripten Python3-kompatibel sind!\n"
+"\n"
+"Weitere Information findest Du auf der <a href=\"/scripts/"
+"python3\">Umstellungsseite</a>."
 
 #: news/_i18n_info.py:50
 msgid ""
@@ -960,10 +969,8 @@ msgstr ""
 "ist verfügbar."
 
 #: news/_i18n_info.py:54
-#, fuzzy
-#| msgid "Internationalization stats"
 msgid "Transition to Python 3 for scripts"
-msgstr "Statistik über den Fortschritt der Übersetzungen"
+msgstr "Umstellung für Skripten, auf Python 3"
 
 #: news/_i18n_info.py:55 scripts/models.py:280 templates/about/history.html:44
 #: templates/doc/doc_version.html:20 templates/download/packages.html:34
@@ -7132,12 +7139,17 @@ msgid ""
 "for a Python script, there's a transition to Python 3 in progress, please "
 "read the <a href=\"%(url_python3)s\">transition page</a>"
 msgstr ""
+"für ein Python Skript ist eine Umstellung auf Python 3 in Planung. Bitte "
+"lese dazu die Informationen auf der <a href=\"%(url_python3)s"
+"\">Umstellungsseite</a>"
 
 #: templates/scripts/add.html:34
 msgid ""
 "if you mention the WeeChat site in your script, the official URL is https://"
 "weechat.org (https and no \"www.\")"
 msgstr ""
+"Wenn Du in Deinem Skript auf die WeeChat Seite verweist dann nutze bitte die "
+"offizielle URL https://weechat.org (https und nicht \"www.\")"
 
 #: templates/scripts/add.html:44 templates/scripts/update.html:27
 #: templates/themes/add.html:23 templates/themes/update.html:15
@@ -7356,11 +7368,11 @@ msgstr "Zur Zeit liegen keine Skripten vor, die auf eine Freigabe warten."
 
 #: templates/scripts/python3.html:11
 msgid "Why a transition to Python 3?"
-msgstr ""
+msgstr "Weshalb finde eine Umstellung auf Python 3 statt?"
 
 #: templates/scripts/python3.html:14
 msgid "Python 2.x is legacy; it has an end-of-life set for 2020."
-msgstr ""
+msgstr "Python 2.x ist veraltet und wird sein Lebensende 2020 erreichen."
 
 #: templates/scripts/python3.html:16
 #, python-format
@@ -7368,26 +7380,28 @@ msgid ""
 "Python 3.x is the present and future of the language. Version 3.0 was "
 "released on %(date)s (%(date_ago)s)."
 msgstr ""
+"Python 3.x ist aktuell und die Zukunft der Sprache  . Version 3.0 wurde am "
+"%(date)s (%(date_ago)s) veröffentlicht."
 
 #: templates/scripts/python3.html:20
 msgid "Python 3 has many new exciting features, for example:"
-msgstr ""
+msgstr "Python 3 hat viele neue aufregende Funktionen, zum Beispiel:"
 
 #: templates/scripts/python3.html:22
 msgid "unicode by default"
-msgstr ""
+msgstr "Unicode wird standardmäßig verwendet"
 
 #: templates/scripts/python3.html:25
 msgid "function annotations"
-msgstr ""
+msgstr "Funktionsanmerkungen"
 
 #: templates/scripts/python3.html:26
 msgid "\"breakpoint\" function"
-msgstr ""
+msgstr "\"breakpoint\" Funktionen"
 
 #: templates/scripts/python3.html:31
 msgid "Support of Python 3 in WeeChat"
-msgstr ""
+msgstr "Unterstützung von Python 3 in WeeChat"
 
 #: templates/scripts/python3.html:34
 #, python-format
@@ -7395,12 +7409,17 @@ msgid ""
 "WeeChat supports Python 3 since version 0.3.7, which was released on "
 "%(date)s (%(date_ago)s)."
 msgstr ""
+"WeeChat unterstützt Python 3 seit der Version 0.3.7, welche am %(date)s "
+"(%(date_ago)s) veröffentlicht wurde."
 
 #: templates/scripts/python3.html:38
 msgid ""
 "The support of Python 3 is optional: the WeeChat python plugin can be "
 "compiled with Python 2.7 or Python 3.x, but not both at same time."
 msgstr ""
+"Die Unterstützung von Python 3 ist optional: Die WeeChat Python-Erweiterung "
+"kann entweder mit Python 2.7 oder Python 3.x kompiliert werden, eine "
+"Unterstützung beider Versionen zur gleichen Zeit ist nicht möglich."
 
 #: templates/scripts/python3.html:40
 #, python-format
@@ -7409,6 +7428,9 @@ msgid ""
 "scripts won't work at all with Python 3.x, while all scripts should run fine "
 "with Python 2.7."
 msgstr ""
+"Zum aktuellen Zeitpunkt %(date)s wird empfohlen WeeChat mit Python 2.7 zu "
+"kompilieren, da viele Skripten nicht mit Python 3.x funktionieren, wobei "
+"alle Skripten unter Python 2.7 lauffähig sein sollten."
 
 #: templates/scripts/python3.html:45
 #, python-format
@@ -7417,68 +7439,89 @@ msgid ""
 "DENABLE_PYTHON3=ON</kbd> (see the <a href=\"%(doc_url)s\">User's guide</a> "
 "for more information)."
 msgstr ""
+"Um Python 3 Unterstützung zu erhalten muss beim kompilieren das CMake Flag "
+"gesetzt werden: <bkd>-DENABLE_PYTHON3=ON</kbd> (siehe <a href=\"%(doc_url)s"
+"\">Benutzeranleitung</a> für weitere Informationen)."
 
 #: templates/scripts/python3.html:48
 msgid "Transition roadmap"
-msgstr ""
+msgstr "Zeitplan der Umstellung"
 
 #: templates/scripts/python3.html:51
 msgid "Here is the roadmap for the transition to Python 3 in WeeChat:"
-msgstr ""
+msgstr "Nachfolgend der Zeitplan für die Umstellung auf Python 3 in WeeChat:"
 
 #: templates/scripts/python3.html:65
-#, fuzzy
-#| msgid "Internationalization stats"
 msgid "Transition to Python 3 starts."
-msgstr "Statistik über den Fortschritt der Übersetzungen"
+msgstr "Umstellung auf Python 3 beginnt."
 
 #: templates/scripts/python3.html:67
 msgid ""
 "All scripts that are not yet compatible with both Python 2.7 and Python 3.x "
 "can be updated to support both versions (see the status below)."
 msgstr ""
+"Alle Skripten die zur Zeit noch nicht mit Python 2.7 und Python 3.x "
+"kompatibel sind sollten aktualisiert werden um beide Versionen zu "
+"unterstützen (siehe Status weiter unten)."
 
 #: templates/scripts/python3.html:69
 msgid "You can help by converting existing scripts (see how to help below)."
 msgstr ""
+"Du kannst bei der Konvertierung der Skripten gerne helfen (wie Du helfen "
+"kannst, steht weiter unten)."
 
 #: templates/scripts/python3.html:75
 msgid ""
 "An e-mail is sent to the authors of Python scripts which are not compatible "
 "with Python 3 (at least they are not marked as compatible in database)."
 msgstr ""
+"Eine e-mail wurde an die Autoren von Python-Skripten versendet, welche noch "
+"nicht kompatibel mit Python 3 sind (oder noch nicht in der Datenbank als "
+"kompatibel aufgeführt werden)."
 
 #: templates/scripts/python3.html:77
 msgid ""
 "All authors are encouraged to make their scripts compatible with Python 3.x "
 "as soon as possible. Help from other people is welcome as well."
 msgstr ""
+"Alle Autoren werden angehalten ihre Skripten so zu erstellen, das diese "
+"baldmöglichst zu Python 3.x kompatibel sind. Unterstützen durch Dritte wird "
+"natürlich gerne angenommen."
 
 #: templates/scripts/python3.html:83
 msgid "All new scripts must be compatible with both Python 2.7 and Python 3.x."
 msgstr ""
+"Alle neuen Skripten müssen sowohl mit Python 2.7 als auch mit Python 3.x "
+"kompatibel sein."
 
 #: templates/scripts/python3.html:85
 msgid "Script updates are still allowed to be compatible with Python 2.7 only."
 msgstr ""
+"Skripten die aktualisiert werden brauchen nur Python 2.7 zu unterstützen."
 
 #: templates/scripts/python3.html:91
 msgid ""
 "All new scripts as well as script updates must be compatible with both "
 "Python 2.7 and Python 3.x."
 msgstr ""
+"Alle neuen Skripten sowie alle Skripten die aktualisiert werden, müssen mit "
+"Python 2.7 und Python 3.x kompatibel sein."
 
 #: templates/scripts/python3.html:93
 msgid ""
 "Scripts must be properly tested with Python 2.7 and a Python 3.x version (if "
 "possible the latest stable)."
 msgstr ""
+"Skripten müssen gründlich mit Python 2.7 und einer Python 3.x getestet "
+"werden (wenn möglich mit der aktuellen stabilen Version)."
 
 #: templates/scripts/python3.html:99
 msgid ""
 "New versions of WeeChat are be compiled with Python 3 by default, which "
 "becomes the recommended Python version to use in WeeChat."
 msgstr ""
+"Neue Versionen von WeeChat werden ab diesem Tag standardmäßig mit Python 3 "
+"kompiliert, da es die empfohlene Python Version für WeeChat ist."
 
 #: templates/scripts/python3.html:101
 msgid ""
@@ -7486,22 +7529,29 @@ msgid ""
 "Python 2.7 and Python 3.x, time for the users to upgrade to the latest "
 "version of WeeChat which is Python 3 only."
 msgstr ""
+"Alle neuen Skripten sowie alle Skripten die aktualisiert werden, müssen "
+"Python 2.7 und Python 3.x unterstützen. Es wird Zeit das die Anwender auf "
+"die aktuelle Version von WeeChat upgraden, die dann nur noch Python 3 "
+"unterstützt."
 
 #: templates/scripts/python3.html:103
 msgid ""
 "Hopefully, at this date, most scripts should be compatible with Python 3."
-msgstr ""
+msgstr "Hoffentlich unterstützen an diesem Tag die meisten Skripten Python 3."
 
 #: templates/scripts/python3.html:109
 msgid ""
 "All new scripts as well as script updates must be compatible with Python 3."
 "x. Extra support of Python 2.x is optional."
 msgstr ""
+"Alle neuen Skripten sowie alle Skripten die aktualisiert werden, müssen "
+"Python 3.x unterstützen. Eine zusätzliche Unterstützung von Python 2.x ist "
+"freiwillig."
 
 #: templates/scripts/python3.html:111
 msgid ""
 "Hopefully, at this date, all scripts should be compatible with Python 3."
-msgstr ""
+msgstr "Hoffentlich unterstützen an diesem Tag alle Skripten Python 3."
 
 #: templates/scripts/python3.html:113
 msgid ""
@@ -7509,67 +7559,67 @@ msgid ""
 "compatible with Python 3 are removed from repository and moved to unofficial "
 "scripts."
 msgstr ""
+"<strong>Wichtig</strong>: Skripten die an diesem Tag noch nicht mit Python 3 "
+"kompatibel sind werden aus dem Repositorium entfernt und zu den "
+"inoffiziellen Skripten verschoben."
 
 #: templates/scripts/python3.html:121
-#, fuzzy
-#| msgid "Internationalization stats"
 msgid "Transition status"
-msgstr "Statistik über den Fortschritt der Übersetzungen"
+msgstr "Status der Umstellung"
 
 #: templates/scripts/python3.html:124
 msgid ""
 "The scripts which are compatible with Python 3 have tag \"py3k-ok\"</a>."
 msgstr ""
+"Skripten die Python 3 kompatibel sind, erhalten das Tag \"py3k-ok\"</a>."
 
 #: templates/scripts/python3.html:126
-#, fuzzy
-#| msgid "Internationalization stats"
 msgid "Transition status at various dates:"
-msgstr "Statistik über den Fortschritt der Übersetzungen"
+msgstr "Status der Umstellung zu verschiedenen Zeitpunkten:"
 
 #: templates/scripts/python3.html:134
-#, fuzzy
-#| msgid "Pending scripts"
 msgid "Python scripts"
-msgstr "eingereichte Skripten"
+msgstr "Python Skripten"
 
 #: templates/scripts/python3.html:135
 msgid "Compatible with Python 3"
-msgstr ""
+msgstr "Kompatibel mit Python 3"
 
 #: templates/scripts/python3.html:136
 msgid "Not yet compatible"
-msgstr ""
+msgstr "noch nicht kompatibel"
 
 #: templates/scripts/python3.html:145
 msgid "today"
-msgstr ""
+msgstr "Heute"
 
 #: templates/scripts/python3.html:153 templates/scripts/python3.html:163
 #: templates/scripts/python3.html:175 templates/scripts/python3.html:187
-#, fuzzy
-#| msgid "Nicklist"
 msgid "list"
-msgstr "Nickliste"
+msgstr "Liste"
 
 #: templates/scripts/python3.html:191
 msgid "Estimates"
-msgstr ""
+msgstr "geschätzt"
 
 #: templates/scripts/python3.html:199
 msgid "How to help"
-msgstr ""
+msgstr "Wie kann ich helfen"
 
 #: templates/scripts/python3.html:202
 msgid ""
 "If possible, the author of script should make the necessary changes to make "
 "the script compatible with both Python 2.7 and 3.x."
 msgstr ""
+"Soweit möglich sollte der Skriptautor die notwendigen Veränderungen "
+"durchführen um sein Skript kompatibel zu Python 2.7 und 3.x zu machen."
 
 #: templates/scripts/python3.html:206
 msgid ""
 "Here's a list of some resources that can help to port scripts to Python 3:"
 msgstr ""
+"Nachfolgend eine Liste von Ressourcen die bei der Umstellung auf Python 3 "
+"helfen können:"
 
 #: templates/scripts/source.html:19
 msgid "for WeeChat"
@@ -7608,16 +7658,12 @@ msgstr ""
 "anderenfalls wird das Skript nicht akzeptiert:"
 
 #: templates/scripts/update.html:17
-#, fuzzy
-#| msgid ""
-#| "for a Python script with tag \"py3k-ok\", please ensure your new version "
-#| "is compatible with Python 2.x and 3.x"
 msgid ""
 "for a Python script with tag \"py3k-ok\", please ensure your new version is "
 "compatible with Python 2.7 and 3.x"
 msgstr ""
 "für ein Python Skript mit dem Tag \"py3k-ok\" muss sichergestellt werden, "
-"dass die neue Version kompatibel mit Python 2.x und 3.x ist"
+"dass die neue Version kompatibel mit Python 2.7 und 3.x ist"
 
 #: templates/scripts/update_ok.html:12
 msgid "New release has been submitted for review."
