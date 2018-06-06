@@ -144,51 +144,51 @@
             {{ status.date|localdate }}
             {% if status.today %}<span class="font-weight-normal">({% trans "today" %})</span>{% endif %}
           </td>
-          <td>
+          <td class="text-nowrap">
             {{ status.scripts }}
             {% if status.future %} <sup>*</sup>{% endif %}
             {% if status.today %}
             &nbsp;
-            <span class="text-nowrap text-muted font-weight-normal">
+            <span class="text-muted font-weight-normal">
               [ <a href="{% url 'scripts' %}">{% trans "list" %}</a> ]
             </span>
             {% endif %}
           </td>
-          <td>
+          <td class="text-nowrap">
             {{ status.python_scripts }} ({{ status.python_scripts_percent }}%)
             {% if status.future %} <sup>*</sup>{% endif %}
             {% if status.today %}
             &nbsp;
-            <span class="text-nowrap text-muted font-weight-normal">
+            <span class="text-muted font-weight-normal">
               [ <a href="{% url 'scripts_api_filter' api='stable' filter_name='language' filter_value='python' %}">{% trans "list" %}</a> ]
             </span>
             {% endif %}
           </td>
-          <td>
+          <td class="text-nowrap">
             <span class="text-success">
               {{ status.scripts_ok }} ({{ status.scripts_ok_percent }}%)
               {% if status.future %} <sup>*</sup>{% endif %}
             </span>
             {% if status.today %}
             &nbsp;
-            <span class="text-nowrap text-muted font-weight-normal">
+            <span class="text-muted font-weight-normal">
               [ <a href="{% url 'scripts_api_filter' api='stable' filter_name='language' filter_value='python3-compatible' %}">{% trans "list" %}</a> ]
             </span>
             {% endif %}
           </td>
-          <td>
+          <td class="text-nowrap">
             <span class="text-danger">
               {{ status.scripts_remaining }} ({{ status.scripts_remaining_percent }}%)
               {% if status.future %} <sup>*</sup>{% endif %}
             </span>
             {% if status.today %}
+            &nbsp;
             <span class="text-muted font-weight-normal">
-              &nbsp;
               [ <a href="{% url 'scripts_api_filter' api='stable' filter_name='language' filter_value='python2-only' %}">{% trans "list" %}</a> ]
             </span>
             {% endif %}
           </td>
-          <td>{% if status.future %}<sup>*</sup> {% trans "Estimates" %}{% endif %}</td>
+          <td class="text-nowrap">{% if status.future %}<sup>*</sup> {% trans "Estimates" %}{% endif %}</td>
         </tr>
         {% endfor %}
       </tbody>
