@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-06 21:56+0200\n"
-"PO-Revision-Date: 2018-05-26 09:00+0900\n"
+"PO-Revision-Date: 2018-06-11 09:00+0900\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
 "translation/ja_JP>\n"
@@ -880,6 +880,15 @@ msgid ""
 "\n"
 "More info on the <a href=\"/scripts/python3\">transition page</a>."
 msgstr ""
+"WeeChat スクリプトの Python 3 移植パーティが始まりました!\n"
+"\n"
+"173 個のスクリプトが Python 3 へ移植を完了しています  (現時点では Python 2.7 "
+"との互換性も保証しなければいけません)。\n"
+"2020 年初頭にすべてのスクリプトを Python 3 互換にするという目標を達成する手助"
+"けをお願いします!\n"
+"\n"
+"より詳しい情報は <a href=\"/scripts/python3\">Python 3 への移行ページ</a>を確"
+"認してください。"
 
 #: news/_i18n_info.py:50
 msgid ""
@@ -928,10 +937,8 @@ msgstr ""
 "0.3.0-rc3) です。"
 
 #: news/_i18n_info.py:54
-#, fuzzy
-#| msgid "Internationalization stats"
 msgid "Transition to Python 3 for scripts"
-msgstr "国際化の状況"
+msgstr "スクリプトの Python 3 への移行"
 
 #: news/_i18n_info.py:55 scripts/models.py:280 templates/about/history.html:44
 #: templates/doc/doc_version.html:20 templates/download/packages.html:34
@@ -6638,7 +6645,7 @@ msgstr "ニュース"
 
 #: templates/home/home.html:38
 msgid "Powerful, customizable."
-msgstr ""
+msgstr "高性能、カスタマイズ可能。"
 
 #: templates/home/home.html:40
 msgid ""
@@ -6847,12 +6854,16 @@ msgid ""
 "for a Python script, there's a transition to Python 3 in progress, please "
 "read the <a href=\"%(url_python3)s\">transition page</a>"
 msgstr ""
+"Python スクリプトについては、Python 3 への移行を進めています。<a href="
+"\"%(url_python3)s\">Python 3 移行ページ</a>を確認してください"
 
 #: templates/scripts/add.html:34
 msgid ""
 "if you mention the WeeChat site in your script, the official URL is https://"
 "weechat.org (https and no \"www.\")"
 msgstr ""
+"WeeChat サイトをスクリプト中で参照する際には、公式の URL である https://"
+"weechat.org (https で、\"www.\" は不要) を使ってください"
 
 #: templates/scripts/add.html:44 templates/scripts/update.html:27
 #: templates/themes/add.html:23 templates/themes/update.html:15
@@ -7059,11 +7070,12 @@ msgstr "現在のところ承認待ち状態のスクリプトはありません
 
 #: templates/scripts/python3.html:11
 msgid "Why a transition to Python 3?"
-msgstr ""
+msgstr "Python 3 へ移行する理由とは?"
 
 #: templates/scripts/python3.html:14
 msgid "Python 2.x is legacy; it has an end-of-life set for 2020."
 msgstr ""
+"Python 2.x は古くなっています; 2020 年にサポートが打ち切られる予定です。"
 
 #: templates/scripts/python3.html:16
 #, python-format
@@ -7071,26 +7083,28 @@ msgid ""
 "Python 3.x is the present and future of the language. Version 3.0 was "
 "released on %(date)s (%(date_ago)s)."
 msgstr ""
+"Python は現在および将来に渡って バージョン 3.x の開発を進めています。バージョ"
+"ン 3.0 は %(date)s (%(date_ago)s) にリリースされました。"
 
 #: templates/scripts/python3.html:20
 msgid "Python 3 has many new exciting features, for example:"
-msgstr ""
+msgstr "Python 3 は魅力的な新機能を備えています。例:"
 
 #: templates/scripts/python3.html:22
 msgid "unicode by default"
-msgstr ""
+msgstr "デフォルトの unicode サポート"
 
 #: templates/scripts/python3.html:25
 msgid "function annotations"
-msgstr ""
+msgstr "関数アノテーション"
 
 #: templates/scripts/python3.html:26
 msgid "\"breakpoint\" function"
-msgstr ""
+msgstr "\"breakpoint\" 関数"
 
 #: templates/scripts/python3.html:31
 msgid "Support of Python 3 in WeeChat"
-msgstr ""
+msgstr "WeeChat における Python 3 のサポート"
 
 #: templates/scripts/python3.html:34
 #, python-format
@@ -7098,12 +7112,17 @@ msgid ""
 "WeeChat supports Python 3 since version 0.3.7, which was released on "
 "%(date)s (%(date_ago)s)."
 msgstr ""
+"WeeChat はバージョン 0.3.7 から Python 3 をサポートしています。バージョン "
+"0.3.7 は %(date)s (%(date_ago)s) にリリースされました。"
 
 #: templates/scripts/python3.html:38
 msgid ""
 "The support of Python 3 is optional: the WeeChat python plugin can be "
 "compiled with Python 2.7 or Python 3.x, but not both at same time."
 msgstr ""
+"Python 3 のサポートは任意です: WeeChat python プラグインは Python 2.7 または "
+"Python 3.x のどちらか一方でコンパイルされます。両方で同時にコンパイルすること"
+"は不可能です。"
 
 #: templates/scripts/python3.html:40
 #, python-format
@@ -7112,6 +7131,9 @@ msgid ""
 "scripts won't work at all with Python 3.x, while all scripts should run fine "
 "with Python 2.7."
 msgstr ""
+"%(date)s までは、WeeChat python プラグインを Python 2.7 でコンパイルすること"
+"が推奨されていました。なぜなら、多くのスクリプトが Python 3.x では全く動作し"
+"なかったのに対して、Python 2.7 ではまともに動作するはずだったからです。"
 
 #: templates/scripts/python3.html:45
 #, python-format
@@ -7120,68 +7142,86 @@ msgid ""
 "DENABLE_PYTHON3=ON</kbd> (see the <a href=\"%(doc_url)s\">User's guide</a> "
 "for more information)."
 msgstr ""
+"Python 3 をサポートしてコンパイルするには、CMake の <bkd>-"
+"DENABLE_PYTHON3=ON</kbd> フラグを有効化してください (より詳しい情報は<a href="
+"\"%(doc_url)s\">ユーザーズガイド</a>を参照してください)。"
 
 #: templates/scripts/python3.html:48
 msgid "Transition roadmap"
-msgstr ""
+msgstr "移行計画"
 
 #: templates/scripts/python3.html:51
 msgid "Here is the roadmap for the transition to Python 3 in WeeChat:"
-msgstr ""
+msgstr "WeeChat の Python 3 移行計画は次のとおりです:"
 
 #: templates/scripts/python3.html:65
-#, fuzzy
-#| msgid "Internationalization stats"
 msgid "Transition to Python 3 starts."
-msgstr "国際化の状況"
+msgstr "Python 3 への移行を開始。"
 
 #: templates/scripts/python3.html:67
 msgid ""
 "All scripts that are not yet compatible with both Python 2.7 and Python 3.x "
 "can be updated to support both versions (see the status below)."
 msgstr ""
+"まだ Python 2.7 および Python 3.x と互換性のないすべてのスクリプトについて両"
+"方をサポートするように更新してください (以下の状況を確認してください)。"
 
 #: templates/scripts/python3.html:69
 msgid "You can help by converting existing scripts (see how to help below)."
 msgstr ""
+"既存のスクリプトを変換することで Python 2.7 および Python 3.x との互換性確保"
+"を手助けしてください (手助けの方法については以下を参照してください)。"
 
 #: templates/scripts/python3.html:75
 msgid ""
 "An e-mail is sent to the authors of Python scripts which are not compatible "
 "with Python 3 (at least they are not marked as compatible in database)."
 msgstr ""
+"Python 3 と互換性のない Python スクリプト (データベースで互換性があると目印を"
+"つけられていないスクリプト) の作者にメールを送信します。"
 
 #: templates/scripts/python3.html:77
 msgid ""
 "All authors are encouraged to make their scripts compatible with Python 3.x "
 "as soon as possible. Help from other people is welcome as well."
 msgstr ""
+"すべてのスクリプト作者に向けて、速やかに Python 3.x との互換性を確保すること"
+"を推奨します。また、誰かの手助けも歓迎します。"
 
 #: templates/scripts/python3.html:83
 msgid "All new scripts must be compatible with both Python 2.7 and Python 3.x."
 msgstr ""
+"すべての新しいスクリプトに対して Python 2.7 および Python 3.x との互換性を持"
+"つことが求められます。"
 
 #: templates/scripts/python3.html:85
 msgid "Script updates are still allowed to be compatible with Python 2.7 only."
 msgstr ""
+"Python 2.7 のみの互換性を確保してスクリプトを更新することはまだ許可されます。"
 
 #: templates/scripts/python3.html:91
 msgid ""
 "All new scripts as well as script updates must be compatible with both "
 "Python 2.7 and Python 3.x."
 msgstr ""
+"すべての新しいスクリプトおよびスクリプト更新に対して Python 2.7 および "
+"Python 3.x との互換性を持つことが求められます。"
 
 #: templates/scripts/python3.html:93
 msgid ""
 "Scripts must be properly tested with Python 2.7 and a Python 3.x version (if "
 "possible the latest stable)."
 msgstr ""
+"スクリプトに対して Python 2.7 と Python 3.x (可能ならば最新安定版) バージョン"
+"の両方でテストされることが求められます。"
 
 #: templates/scripts/python3.html:99
 msgid ""
 "New versions of WeeChat are be compiled with Python 3 by default, which "
 "becomes the recommended Python version to use in WeeChat."
 msgstr ""
+"WeeChat の最新版はデフォルトとして Python 3 でコンパイルされます。この "
+"Python 3 のバージョンが WeeChat で推奨される Python バージョンとなります。"
 
 #: templates/scripts/python3.html:101
 msgid ""
@@ -7189,22 +7229,31 @@ msgid ""
 "Python 2.7 and Python 3.x, time for the users to upgrade to the latest "
 "version of WeeChat which is Python 3 only."
 msgstr ""
+"すべての新しいスクリプトおよびスクリプト更新に対して Python 2.7 および "
+"Python 3.x との互換性を持つことが求められます。ユーザに向けて Python 3 のみを"
+"サポートする WeeChat 最新版へアップグレードすることを求めます。"
 
 #: templates/scripts/python3.html:103
 msgid ""
 "Hopefully, at this date, most scripts should be compatible with Python 3."
 msgstr ""
+"このときまでに、ほとんどのスクリプトが Python 3 との互換性を持つことを期待し"
+"ています。"
 
 #: templates/scripts/python3.html:109
 msgid ""
 "All new scripts as well as script updates must be compatible with Python 3."
 "x. Extra support of Python 2.x is optional."
 msgstr ""
+"すべての新しいスクリプトおよびスクリプト更新に対して Python 3.x との互換性を"
+"持つことが求められます。Python 2.x との互換性継続は任意です。"
 
 #: templates/scripts/python3.html:111
 msgid ""
 "Hopefully, at this date, all scripts should be compatible with Python 3."
 msgstr ""
+"このときまでに、すべてのスクリプトが Python 3 との互換性を持つことを期待して"
+"います。"
 
 #: templates/scripts/python3.html:113
 msgid ""
@@ -7212,67 +7261,64 @@ msgid ""
 "compatible with Python 3 are removed from repository and moved to unofficial "
 "scripts."
 msgstr ""
+"<strong>重要</strong>: Python 3 との互換性を持たないすべてのスクリプトはリポ"
+"ジトリから削除され、非公式スクリプトに移動されます。"
 
 #: templates/scripts/python3.html:121
-#, fuzzy
-#| msgid "Internationalization stats"
 msgid "Transition status"
-msgstr "国際化の状況"
+msgstr "移行状況"
 
 #: templates/scripts/python3.html:124
 msgid ""
 "The scripts which are compatible with Python 3 have tag \"py3k-ok\"</a>."
 msgstr ""
+"Python 3 との互換性を持つスクリプトは \"py3k-ok\" とタグ付けされています。"
 
 #: templates/scripts/python3.html:126
-#, fuzzy
-#| msgid "Internationalization stats"
 msgid "Transition status at various dates:"
-msgstr "国際化の状況"
+msgstr "移行状況の履歴:"
 
 #: templates/scripts/python3.html:134
-#, fuzzy
-#| msgid "Pending scripts"
 msgid "Python scripts"
-msgstr "承認待ちスクリプト"
+msgstr "Python スクリプトの総数"
 
 #: templates/scripts/python3.html:135
 msgid "Compatible with Python 3"
-msgstr ""
+msgstr "Python 3 と互換性を持つスクリプトの数"
 
 #: templates/scripts/python3.html:136
 msgid "Not yet compatible"
-msgstr ""
+msgstr "互換性を持たないスクリプトの数"
 
 #: templates/scripts/python3.html:145
 msgid "today"
-msgstr ""
+msgstr "今日"
 
 #: templates/scripts/python3.html:153 templates/scripts/python3.html:163
 #: templates/scripts/python3.html:175 templates/scripts/python3.html:187
-#, fuzzy
-#| msgid "Nicklist"
 msgid "list"
-msgstr "ニックネームリスト"
+msgstr "リスト"
 
 #: templates/scripts/python3.html:191
 msgid "Estimates"
-msgstr ""
+msgstr "予測"
 
 #: templates/scripts/python3.html:199
 msgid "How to help"
-msgstr ""
+msgstr "手助けの方法"
 
 #: templates/scripts/python3.html:202
 msgid ""
 "If possible, the author of script should make the necessary changes to make "
 "the script compatible with both Python 2.7 and 3.x."
 msgstr ""
+"可能ならばスクリプト作者はスクリプトを変更し、Python 2.7 および 3.x との互換"
+"性を持つようにするべきです。"
 
 #: templates/scripts/python3.html:206
 msgid ""
 "Here's a list of some resources that can help to port scripts to Python 3:"
-msgstr ""
+msgstr "スクリプトの Python 3 への移行を手助けする資料のリスト:"
 
 #: templates/scripts/source.html:19
 msgid "for WeeChat"
@@ -7310,16 +7356,12 @@ msgstr ""
 "るスクリプトは承認されません:"
 
 #: templates/scripts/update.html:17
-#, fuzzy
-#| msgid ""
-#| "for a Python script with tag \"py3k-ok\", please ensure your new version "
-#| "is compatible with Python 2.x and 3.x"
 msgid ""
 "for a Python script with tag \"py3k-ok\", please ensure your new version is "
 "compatible with Python 2.7 and 3.x"
 msgstr ""
 "\"py3k-ok\" タグを付けられた Python スクリプトは、新しいバージョンが Python "
-"2.x と 3.x で互換性があることを確認してください"
+"2.7 と 3.x で互換性があることを確認してください"
 
 #: templates/scripts/update_ok.html:12
 msgid "New release has been submitted for review."
