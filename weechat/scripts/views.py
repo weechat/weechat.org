@@ -412,7 +412,7 @@ def python3(request):
             'python3_date': datetime(2008, 12, 3),
             'v037_date': v037_date,
             'roadmap_start': datetime(2018, 6, 3),
-            'roadmap_email': datetime(2018, 6, 15),
+            'roadmap_email': datetime(2018, 6, 16),
             'roadmap_new_py3k': datetime(2018, 7, 1),
             'roadmap_all_py3k': datetime(2018, 9, 1),
             'roadmap_weechat_py3k': datetime(2019, 7, 1),
