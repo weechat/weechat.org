@@ -143,7 +143,8 @@ class Script(models.Model):
     def popularity_img(self):
         """Return HTML code with image for popular script."""
         if self.popularity == 0:
-            return '&nbsp;'
+            return ('<img src="%simages/empty.png" alt="" '
+                    'width="10" height="10">' % settings.MEDIA_URL)
         return ('<img src="%simages/star.png" alt="*" title="%s" '
                 'width="10" height="10">' %
                 (settings.MEDIA_URL,

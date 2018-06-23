@@ -139,8 +139,8 @@
     <tbody>
       {% for script in script_list %}
       <tr>
-        <td>
-          <div class="mr-1 float-left script-popular">{{ script.popularity_img|safe }}</div><a href="{% if api == 'legacy' %}{% url 'scripts_source_api_name_html' api script.name_with_extension %}{% else %}{% url 'scripts_source_name_html' script.name_with_extension %}{% endif %}">{{ script.name }}<small>.{{ script.extension }}</small></a>
+        <td class="text-nowrap">
+          <span class="mr-1 script-popular">{{ script.popularity_img|safe }}</span><a href="{% if api == 'legacy' %}{% url 'scripts_source_api_name_html' api script.name_with_extension %}{% else %}{% url 'scripts_source_name_html' script.name_with_extension %}{% endif %}">{{ script.name }}<small>.{{ script.extension }}</small></a>
         </td>
         <td>
           <div class="ml-3 float-right text-muted">
