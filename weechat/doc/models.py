@@ -215,7 +215,7 @@ def handler_security_saved(sender, **kwargs):
             strings.append(security.description)
         if security.workaround:
             strings.append(security.workaround)
-    i18n_autogen('about', 'security', strings)
+    i18n_autogen('doc', 'security', strings)
 
 
 post_save.connect(handler_security_saved, sender=Security)
