@@ -5,6 +5,7 @@ from django.utils.translation import gettext_lazy
 
 _i18n_news_info = [
     gettext_lazy("10th birthday for WeeChat!\n\nHappy birthday!"),
+    gettext_lazy("15th birthday for WeeChat!\n\nHappy birthday!"),
     gettext_lazy("<a href=\"http://en.wikipedia.org/wiki/Dennis_Ritchie\">Dennis Ritchie</a>, creator of the C programming language, and key developer of the Unix operating system has died.\nWeeChat is written in C, and runs on derivatives of Unix.\nSo we just say a big thank you to you, Dennis, for your wonderful job."),
     gettext_lazy("A Raspbian repository has been added for Raspberry Pi (thanks to Nils G. for building the packages every night).\n\nThe existing Debian repositories have been moved from flashtux.org to weechat.org, like the new Raspbian one.\n\nA new section has been added on download page with a summary of all repositories: <a href=\"/download/debian/\">Debian/Raspbian repositories</a>."),
     gettext_lazy("A map of developers, contributors and users is now available. Everybody is invited to add nick/location to this map."),
@@ -31,6 +32,7 @@ _i18n_news_info = [
     gettext_lazy("First version of WeeChat users guide is available. Many formats: PDF, html, text and texinfo (source document).\n\nNote: this documentation is not finished and we're still looking for translators, feel free to contact us ;)"),
     gettext_lazy("Git repositories moved to GitHub"),
     gettext_lazy("Happy birthday WeeChat, 10 years old!"),
+    gettext_lazy("Happy birthday WeeChat, 15 years old!"),
     gettext_lazy("Happy colorful Christmas with WeeChat!"),
     gettext_lazy("IPv6 for weechat.org"),
     gettext_lazy("IRC Client WeeChat is under development, a new screenshot is available: nick list and window for each channel.\nThis version is still unstable and doesn't implement all IRC commands.\nCurrent developments are:\n- IRC protocol,\n- configuration file management,\n- ncurses front-end (color display, window management),\n- Gtk+ and Qt front-ends."),
