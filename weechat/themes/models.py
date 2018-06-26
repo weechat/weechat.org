@@ -34,6 +34,7 @@ from django.db import models
 from django.db.models.signals import post_save, post_delete
 from django.utils.translation import gettext_lazy
 
+from weechat.common.decorators import disable_for_loaddata
 from weechat.common.forms import (
     CharField,
     ChoiceField,
@@ -292,6 +293,7 @@ def json_value(key, value):
         key, value.replace('"', '\\"').replace("'", "\\'"))
 
 
+@disable_for_loaddata
 def handler_theme_changed(sender, **kwargs):
     """Build files themes.{xml,json}(.gz) after update/delete of a theme."""
     theme_list = Theme.objects.filter(visible=1).order_by('id')

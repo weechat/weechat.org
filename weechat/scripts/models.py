@@ -35,6 +35,7 @@ from django.db.models.signals import post_save, post_delete
 from django.utils import translation
 from django.utils.translation import ugettext, gettext_lazy, pgettext_lazy
 
+from weechat.common.decorators import disable_for_loaddata
 from weechat.common.forms import (
     BootstrapBoundField,
     CharField,
@@ -398,6 +399,7 @@ class ScriptFormUpdate(Form):
         self.fields['script'].choices = get_script_choices()
 
 
+@disable_for_loaddata
 def handler_script_changed(sender, **kwargs):
     """Build files plugins.{xml,json}(.gz) after update/delete of a script."""
     xml = '<?xml version="1.0" encoding="utf-8"?>\n'
