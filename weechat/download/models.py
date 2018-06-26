@@ -209,8 +209,8 @@ class ReleaseTodo(models.Model):
 
 class ReleaseProgress(models.Model):
     """The progress for the next release."""
-    version = models.ForeignKey(Release, primary_key=True,
-                                on_delete=models.CASCADE)
+    version = models.OneToOneField(Release, primary_key=True,
+                                   on_delete=models.CASCADE)
     done = models.IntegerField(default=0)
 
     def __str__(self):
