@@ -68,7 +68,7 @@ class Theme(models.Model):
     author = models.CharField(max_length=MAX_LENGTH_AUTHOR)
     mail = models.CharField(max_length=MAX_LENGTH_MAIL)
     added = models.DateTimeField()
-    updated = models.DateTimeField()
+    updated = models.DateTimeField(null=True)
 
     def __str__(self):
         return '%s - %s (%s, %s)' % (self.name, self.author, self.version,
