@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 22:50+0200\n"
+"POT-Creation-Date: 2018-07-14 14:43+0200\n"
 "PO-Revision-Date: 2018-06-27 21:43+0200\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -97,33 +97,39 @@ msgid "Incremental text search in buffers."
 msgstr "schrittweise Textsuche im Buffer."
 
 #: about/_i18n_keydates.py:20
+msgid ""
+"Indexed ban list in IRC plugin, support of IRCv3.2 Client Capability "
+"Negotiation, invite-notify and chghost."
+msgstr ""
+
+#: about/_i18n_keydates.py:21
 msgid "Inherited values in options."
 msgstr "vererbte Werte bei nicht gesetzten Optionen."
 
-#: about/_i18n_keydates.py:21
+#: about/_i18n_keydates.py:22
 msgid "Javascript plugin, IRC SASL mechanism \"ecdsa-nist256p-challenge\"."
 msgstr ""
 "Javascript Erweiterung, IRC SASL Mechanismus \"ecdsa-nist256p-challenge\"."
 
-#: about/_i18n_keydates.py:22
+#: about/_i18n_keydates.py:23
 msgid "Last version before a major rewrite of WeeChat."
 msgstr "letzte Version, bevor WeeChat neu geschrieben wurde."
 
-#: about/_i18n_keydates.py:23
+#: about/_i18n_keydates.py:24
 msgid "Lua plugin."
 msgstr "Lua Erweiterung."
 
-#: about/_i18n_keydates.py:24
+#: about/_i18n_keydates.py:25
 msgid "Mouse support, cursor mode."
 msgstr "Unterstützung von Maus- und Cursormodus."
 
-#: about/_i18n_keydates.py:25
+#: about/_i18n_keydates.py:26
 msgid "Multiple layouts, auto-unmask IRC joins, WebSocket support in relay."
 msgstr ""
 "unterschiedliche Layouts, auto-unmask IRC Joins, WebSocket Unterstützung in "
 "Relay."
 
-#: about/_i18n_keydates.py:26
+#: about/_i18n_keydates.py:27
 msgid ""
 "New site weechat.org, major rewrite of WeeChat with new plugin API, tcl "
 "plugin."
@@ -131,37 +137,37 @@ msgstr ""
 "neue Internetpräsenz (weechat.org), WeeChat wurde neu entwickelt, mit neuer "
 "API Schnittstelle, tcl Erweiterung."
 
-#: about/_i18n_keydates.py:27
+#: about/_i18n_keydates.py:28
 msgid "Perl plugin."
 msgstr "Perl Erweiterung."
 
-#: about/_i18n_keydates.py:28
+#: about/_i18n_keydates.py:29
 msgid "Plugin \"buflist\" (list of buffers)."
 msgstr "Erweiterung \"buflist\" (zeigt Buffer in einer separaten Bar an)."
 
-#: about/_i18n_keydates.py:29
+#: about/_i18n_keydates.py:30
 msgid "Plugin \"script\" (scripts manager), SSL in relay."
 msgstr ""
 "\"script\" Erweiterung (Skripten-Manager, ala APT), SSL Unterstützung für "
 "Relay."
 
-#: about/_i18n_keydates.py:30
+#: about/_i18n_keydates.py:31
 msgid "Proxy support, IPv6, SSL."
 msgstr "Proxy Unterstützung, IPv6, SSL."
 
-#: about/_i18n_keydates.py:31
+#: about/_i18n_keydates.py:32
 msgid "Python plugin."
 msgstr "Python Erweiterung."
 
-#: about/_i18n_keydates.py:32
+#: about/_i18n_keydates.py:33
 msgid "Ruby plugin."
 msgstr "Ruby Erweiterung."
 
-#: about/_i18n_keydates.py:33
+#: about/_i18n_keydates.py:34
 msgid "SASL authentication."
 msgstr "SASL Authentifizierung."
 
-#: about/_i18n_keydates.py:34
+#: about/_i18n_keydates.py:35
 msgid ""
 "Secured data, search of regular expression in buffer with text emphasis, "
 "dynamic day change message."
@@ -170,7 +176,7 @@ msgstr ""
 "mit textlicher Hervorhebung der Suchergebnisse, dynamische Nachricht bei "
 "Datumswechsel."
 
-#: about/_i18n_keydates.py:35
+#: about/_i18n_keydates.py:36
 msgid "Trigger and Exec plugins, bare display, hidden buffers, unit tests."
 msgstr ""
 "Trigger- und Exec-Erweiterung, vereinfachter Anzeigemodus, versteckte "
@@ -3171,6 +3177,65 @@ msgstr ""
 "changelog/ChangeLog-2.1.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:124
+#, fuzzy
+#| msgid ""
+#| "Version 1.5 is available!\n"
+#| "\n"
+#| "Among the new features:\n"
+#| "\n"
+#| "- add support of functions in API function \"hook_process\"\n"
+#| "- move of nick coloring options from irc plugin to core\n"
+#| "- move irc bar item \"away\" to core\n"
+#| "- add pointer in callbacks used in scripting API\n"
+#| "- add option irc.network.sasl_fail_unavailable\n"
+#| "- add Portuguese translations\n"
+#| "- many bugs fixed.\n"
+#| "\n"
+#| "For complete list of new features and bugs fixed, please look at <a href="
+#| "\"http://dev.weechat.org/post/2016/05/01/Version-1.5\">development blog</"
+#| "a> or <a href=\"/files/changelog/ChangeLog-1.5.html\">ChangeLog</a>."
+msgid ""
+"Version 2.2 is available!\n"
+"\n"
+"Among the new features:\n"
+"\n"
+"- add support of list options in curl\n"
+"- allow merge of buffers by name in command /buffer\n"
+"- add reverse of string in evaluation of expressions with \"rev:\"\n"
+"- add indexed ban list and completion for /unban and /unquiet (IRC plugin)\n"
+"- add support for IRCv3.2 Client Capability Negotiation\n"
+"- add support for IRCv3.2 invite-notify\n"
+"- add support for IRCv3.2 chghost, add options irc.look.smart_filter_chghost "
+"and irc.color.message_chghost\n"
+"- add option xfer.network.send_ack\n"
+"- add support of Python 3.7\n"
+"- fix memory leaks scripting plugins\n"
+"- many bugs fixed.\n"
+"\n"
+"For complete list of new features and bugs fixed, please look at <a href="
+"\"https://weechat.org/blog/post/2018/07/14/Version-2.2\">development blog</"
+"a> or <a href=\"/files/changelog/ChangeLog-2.2.html\">ChangeLog</a>."
+msgstr ""
+"Version 1.5 ist verfügbar!\n"
+"\n"
+"Überblick, der neuen Funktionen:\n"
+"\n"
+"- neu: Unterstützung von internen Funktionen in API Funktion \"hook_process"
+"\"\n"
+"- die Optionen für Nickfarben sind nun Bestandteil der Kernoptionen von "
+"WeeChat\n"
+"- IRC-Bar-Item \"away\" ist Bestandteil der Kernoptionen geworden\n"
+"- neu: Pointer werden bei callbacks verwendet für die Skript-API\n"
+"- neu: Option irc.network.sasl_fail_unavailable\n"
+"- neu: portugiesische Übersetzung\n"
+"- viele Fehlerbereinigungen\n"
+"\n"
+"Eine vollständige Liste der neuen Funktionen und Fehlerbereinigungen findet "
+"man unter folgenden Links: <a href=\"http://dev.weechat.org/post/2016/05/01/"
+"Version-1.5\">development blog</a> oder <a href=\"/files/changelog/"
+"ChangeLog-1.5.html\">ChangeLog</a>."
+
+#: news/_i18n_info.py:125
 msgid ""
 "Version v0.1.2 is available!\n"
 "\n"
@@ -3203,11 +3268,11 @@ msgstr ""
 "Add-on, 24.05.2005: Absturz beim Programmstart und Perl/Python Erkennung "
 "behoben, Version ist nun 0.1.2.1."
 
-#: news/_i18n_info.py:125
+#: news/_i18n_info.py:126
 msgid "WeeChat - Wee Enhanced Environment for Chat"
 msgstr "WeeChat - Wee Enhanced Environment for Chat"
 
-#: news/_i18n_info.py:126
+#: news/_i18n_info.py:127
 msgid ""
 "WeeChat has many new important features since some weeks:\n"
 "- multi-windows management (with horizontal and vertical window split)\n"
@@ -3232,11 +3297,11 @@ msgstr ""
 "in der Testphase. Wenn Sie Fehler finden oder Anmerkungen haben um die "
 "Funktionalität der buffer/window/nzu erhöhen, dann melden Sie sich."
 
-#: news/_i18n_info.py:127
+#: news/_i18n_info.py:128
 msgid "WeeChat in Cygwin"
 msgstr "WeeChat mit Cygwin"
 
-#: news/_i18n_info.py:128
+#: news/_i18n_info.py:129
 msgid ""
 "WeeChat is now in Cygwin, and can be installed with setup.exe.\n"
 "Version 0.4.2 is available for 32 and 64-bit Cygwin.\n"
@@ -3251,7 +3316,7 @@ msgstr ""
 "Hinweis: Guile Erweiterung ist nicht verfügbar, da guile >= 2.0 benötigt "
 "wird und diese nicht von Cygwin zur Verfügung gestellt wird."
 
-#: news/_i18n_info.py:129
+#: news/_i18n_info.py:130
 msgid ""
 "WeeChat project is started.\n"
 "\n"
@@ -3271,7 +3336,7 @@ msgstr ""
 "- schnell, schlank und erweiterbar durch Skripten.\n"
 "- ..."
 
-#: news/_i18n_info.py:130
+#: news/_i18n_info.py:131
 msgid ""
 "WeeChat project now accepts donations via Paypal account, with secured "
 "payment."
@@ -3279,7 +3344,7 @@ msgstr ""
 "Das WeeChat Projekt kann nun durch das sichere Paypal Verfahren direkt "
 "unterstützt werden."
 
-#: news/_i18n_info.py:131
+#: news/_i18n_info.py:132
 msgid ""
 "WeeChat project now accepts recurring donations via Liberapay, which has "
 "very low fees (see <a href=\"https://liberapay.com/about/faq#differences"
@@ -3291,7 +3356,7 @@ msgstr ""
 "liberapay.com/about/faq#differences\">die Unterschiede zwischen Liberapay "
 "und anderen wiederkehrenden Crowdfunding-Plattformen</a>)."
 
-#: news/_i18n_info.py:132
+#: news/_i18n_info.py:133
 msgid ""
 "WeeChat repositories (weechat, scripts, qweechat) have been moved to GitHub, "
 "in WeeChat organization: <a href=\"https://github.com/weechat\">https://"
@@ -3307,15 +3372,15 @@ msgstr ""
 "Für weitere Informationen, siehe <a href=\"http://dev.weechat.org/"
 "post/2014/03/03/Git-repositories-moved-to-Github\">Entwickler Blog</a>."
 
-#: news/_i18n_info.py:133
+#: news/_i18n_info.py:134
 msgid "WeeChat screenshot"
 msgstr "WeeChat Screenshot"
 
-#: news/_i18n_info.py:134
+#: news/_i18n_info.py:135
 msgid "WeeChat scripts page"
 msgstr "WeeChat Skriptenseite"
 
-#: news/_i18n_info.py:135
+#: news/_i18n_info.py:136
 msgid ""
 "WeeChat scripts page (today Perl scripts only) has been added.\n"
 "On this page you can submit your script (need to be approved by WeeChat "
@@ -3331,7 +3396,7 @@ msgstr ""
 "Hinweis: Perl-Skripten benötigen mindestens Version > 0.0.3 von WeeChat. Zur "
 "Zeit muss somit die Entwicklerversion genutzt werden."
 
-#: news/_i18n_info.py:136
+#: news/_i18n_info.py:137
 msgid ""
 "WeeChat story page is now available, as screenshots. You can see differences "
 "between all versions in one view!\n"
@@ -3342,15 +3407,15 @@ msgstr ""
 "Entwicklungsversionen sind ebenso aufgeführt und es findet ein regelmäßiges "
 "Update statt."
 
-#: news/_i18n_info.py:137
+#: news/_i18n_info.py:138
 msgid "WeeChat users map"
 msgstr "Karte der WeeChat Anwender"
 
-#: news/_i18n_info.py:138
+#: news/_i18n_info.py:139
 msgid "WeeChat will merge with irssi"
 msgstr "WeeChat verschmilzt mit irssi"
 
-#: news/_i18n_info.py:139
+#: news/_i18n_info.py:140
 msgid ""
 "WeeChat, the fast, light and extensible IRC client, is released for the "
 "first time, version 0.0.1.\n"
@@ -3400,7 +3465,7 @@ msgstr ""
 "Alle Vorschläge und Fehlermeldungen sind willkommen. Unsere Kontaktdaten "
 "finden Sie auf der WeeChat Support Seite."
 
-#: news/_i18n_info.py:140
+#: news/_i18n_info.py:141
 msgid "XZ packages"
 msgstr "XZ Pakete"
 
@@ -4292,7 +4357,7 @@ msgstr ""
 msgid "Jabber/XMPP protocol."
 msgstr "Jabber/XMPP Protokoll."
 
-#. Translators: description for script "jump_smart_higher.pl" (0.3.0+)
+#. Translators: description for script "jump_smart_closest.pl" (0.3.0+)
 #: scripts/_i18n_scripts.py:320
 msgid "Jump to a higher buffer with activity."
 msgstr "springt zum nächst höheren Buffer mit Aktivität."

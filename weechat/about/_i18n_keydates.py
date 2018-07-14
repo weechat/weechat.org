@@ -17,6 +17,7 @@ _i18n_about_keydates = [
     gettext_lazy("Guile plugin, support of python 3.x, weechat protocol in relay (remote interfaces), URL transfer in API."),
     gettext_lazy("Headless mode, creation of buffers with commands /buffer and /print."),
     gettext_lazy("Incremental text search in buffers."),
+    gettext_lazy("Indexed ban list in IRC plugin, support of IRCv3.2 Client Capability Negotiation, invite-notify and chghost."),
     gettext_lazy("Inherited values in options."),
     gettext_lazy("Javascript plugin, IRC SASL mechanism \"ecdsa-nist256p-challenge\"."),
     gettext_lazy("Last version before a major rewrite of WeeChat."),

@@ -316,7 +316,7 @@ _i18n_scripts_scripts = [
     gettext_lazy("IrssiNotifier push notifications with end-to-end encryption."),
     # Translators: description for script "jabber.py" (0.3.0+)
     gettext_lazy("Jabber/XMPP protocol."),
-    # Translators: description for script "jump_smart_higher.pl" (0.3.0+)
+    # Translators: description for script "jump_smart_closest.pl" (0.3.0+)
     gettext_lazy("Jump to a higher buffer with activity."),
     # Translators: description for script "karmastorm.scm" (0.4.1+)
     gettext_lazy("Karma votes."),
