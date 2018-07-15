@@ -194,15 +194,15 @@ def documentation(request, version='stable'):
     )
 
 
-def documentation_link(request, version='devel', name=None, lang='en'):
+def documentation_link(request, version='stable', name=None, lang='en'):
     """
-    Shortcuts to docs, with English and devel version as default.
+    Shortcuts to docs, with English and stable version as default.
 
     For example:
-      /doc/api           => /files/doc/devel/weechat_plugin_api.en.html
-      /doc/api/fr        => /files/doc/devel/weechat_plugin_api.fr.html
-      /doc/stable/api/fr => /files/doc/stable/weechat_plugin_api.fr.html
-      /doc/user          => /files/doc/devel/weechat_user.en.html
+      /doc/api          => /files/doc/stable/weechat_plugin_api.en.html
+      /doc/api/fr       => /files/doc/stable/weechat_plugin_api.fr.html
+      /doc/devel/api/fr => /files/doc/devel/weechat_plugin_api.fr.html
+      /doc/user         => /files/doc/stable/weechat_user.en.html
     """
     if version and name and lang:
         doc_name = DOC_SHORTCUT_ALIAS.get(name, name)
