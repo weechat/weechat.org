@@ -17,9 +17,19 @@
   <p>
     {% trans "Click on one of the buttons below and follow the instructions:" %}
     <ul>
-      <li>{% trans "<strong>Liberapay</strong>: recurring donation with very low fees (<strong>best choice</strong>)" %}</li>
+      <li><s>{% trans "<strong>Liberapay</strong>: recurring donation with very low fees (<strong>best choice</strong>)" %}</s></li>
       <li>{% trans "<strong>Paypal</strong>: one-time donation." %}</li>
     </ul>
+  </p>
+
+  <p>
+    {% trans "<strong>Important</strong>: Liberapay is currently in trouble, so the donations are temporarily disabled." %}
+    <br>
+    {% trans "More information on their blog:" %}
+    <a href="https://medium.com/liberapay-blog/liberapay-is-in-trouble-b58b40714d82" target="_blank" rel="noopener">
+      https://medium.com/liberapay-blog/liberapay-is-in-trouble-b58b40714d82
+      <img src="{{ MEDIA_URL }}images/link.png" alt="&gt;&gt;">
+    </a>
   </p>
 
   <p>
@@ -31,9 +41,11 @@
   </p>
 
   <div class="row">
+    {% comment %}
     <div class="col-sm-6 col-md-3 my-1 text-center">
       <a href="https://liberapay.com/weechat/donate" target="_blank" rel="noopener"><img alt="{% trans "Donate using Liberapay" %}" src="https://liberapay.com/assets/widgets/donate.svg"></a>
     </div>
+    {% endcomment %}
     <div class="col-sm-6 col-md-3 my-1 text-center">
       <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" rel="noopener">
         <p>

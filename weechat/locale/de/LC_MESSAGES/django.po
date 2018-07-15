@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-14 14:43+0200\n"
+"POT-Creation-Date: 2018-07-15 15:43+0200\n"
 "PO-Revision-Date: 2018-07-15 15:03+0200\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -5399,7 +5399,7 @@ msgid "Language"
 msgstr "Sprache"
 
 #: scripts/models.py:278 templates/about/interfaces.html:24
-#: templates/donate.html:86 templates/scripts/list.html:82
+#: templates/donate.html:99 templates/scripts/list.html:82
 #: templates/scripts/list.html:84 templates/scripts/pending.html:29
 msgid "Name"
 msgstr "Name"
@@ -5936,7 +5936,7 @@ msgstr "und deshalb wurde WeeChat im Juni 2003 geboren."
 msgid "Key dates"
 msgstr "Meilensteine"
 
-#: templates/about/history.html:43 templates/donate.html:82
+#: templates/about/history.html:43 templates/donate.html:95
 #: templates/scripts/pending.html:38 templates/scripts/python3.html:57
 #: templates/scripts/python3.html:132
 msgid "Date"
@@ -6400,7 +6400,7 @@ msgstr "zu überarbeiten"
 msgid "Untranslated"
 msgstr "nicht übersetzt"
 
-#: templates/doc/doc_version.html:71 templates/donate.html:118
+#: templates/doc/doc_version.html:71 templates/donate.html:131
 msgid "Total"
 msgstr "Total"
 
@@ -6578,6 +6578,16 @@ msgstr "<strong>Paypal</strong>: einmalige Spende."
 
 #: templates/donate.html:26
 msgid ""
+"<strong>Important</strong>: Liberapay is currently in trouble, so the "
+"donations are temporarily disabled."
+msgstr ""
+
+#: templates/donate.html:28
+msgid "More information on their blog:"
+msgstr ""
+
+#: templates/donate.html:36
+msgid ""
 "You can leave name and comment, they will be displayed on this page, "
 "providing that the following conditions are met:"
 msgstr ""
@@ -6585,7 +6595,7 @@ msgstr ""
 "dieser Seite veröffentlicht. Dazu müssen aber folgende Bedingungen erfüllt "
 "werden:"
 
-#: templates/donate.html:28
+#: templates/donate.html:38
 msgid ""
 "the comment must be only about the donation and WeeChat (for example this is "
 "not the place to ask for new features)"
@@ -6593,22 +6603,18 @@ msgstr ""
 "der Kommentar muss sich auf die Spende und WeeChat beziehen (zum Beispiel "
 "ist dies nicht der Ort um nach neuen Funktionen zu fragen)"
 
-#: templates/donate.html:29
+#: templates/donate.html:39
 msgid ""
 "URLs are not allowed because there is <strong>no advertising</strong> on "
 "this site."
 msgstr ""
 "URLs sind nicht erlaubt, da diese Seite <strong>werbefrei</strong> ist."
 
-#: templates/donate.html:35
-msgid "Donate using Liberapay"
-msgstr "Spende mittels Liberapay"
-
-#: templates/donate.html:48
+#: templates/donate.html:61
 msgid "Why your donation matters?"
 msgstr "Weshalb ist Deine Spende wichtig?"
 
-#: templates/donate.html:51
+#: templates/donate.html:64
 msgid ""
 "WeeChat is written by a small group of <strong>volunteers</strong>. Any "
 "contribution will show us that the project is appreciated and keep us "
@@ -6618,7 +6624,7 @@ msgstr ""
 "entwickelt. Jeder Beitrag zeigt uns, dass das Projekt gewürdigt wird und "
 "fördert dadurch unsere Motivation."
 
-#: templates/donate.html:53
+#: templates/donate.html:66
 msgid ""
 "Your donations help to pay the <strong>dedicated server</strong>, used for "
 "developments, build of packages and hosting of weechat.org."
@@ -6627,47 +6633,47 @@ msgstr ""
 "finanzieren, es fließt in die Weiterentwicklung, sowie zum Erstellen der "
 "Pakete und zum Hosten von weechat.org."
 
-#: templates/donate.html:56
+#: templates/donate.html:69
 msgid "They support WeeChat"
 msgstr "WeeChat wird unterstützt"
 
-#: templates/donate.html:58
+#: templates/donate.html:71
 msgid "With Liberapay"
 msgstr "über Liberapay"
 
-#: templates/donate.html:61
+#: templates/donate.html:74
 msgid "See the weechat page on Liberapay:"
 msgstr "siehe die WeeChat-Seite auf Liberapay:"
 
-#: templates/donate.html:66
+#: templates/donate.html:79
 msgid "With Paypal"
 msgstr "über Paypal"
 
-#: templates/donate.html:69
+#: templates/donate.html:82
 msgid "Whole list:"
 msgstr "vollständige Liste:"
 
-#: templates/donate.html:69
+#: templates/donate.html:82
 msgid "Top 10, ordered by total amount donated:"
 msgstr "Top 10, geordnet nach der Höhe der Spendensumme insgesamt:"
 
-#: templates/donate.html:72
+#: templates/donate.html:85
 msgid "show the top 10, ordered by total amount donated"
 msgstr "zeigt Top 10, geordnet nach der Höhe der Spendensumme insgesamt"
 
-#: templates/donate.html:74
+#: templates/donate.html:87
 msgid "show the whole list"
 msgstr "zeigt vollständige Liste an"
 
-#: templates/donate.html:84
+#: templates/donate.html:97
 msgid "Rank"
 msgstr "Rang"
 
-#: templates/donate.html:87
+#: templates/donate.html:100
 msgid "Amount"
 msgstr "Betrag"
 
-#: templates/donate.html:89
+#: templates/donate.html:102
 msgid "Comment"
 msgstr "Kommentar"
 
@@ -7867,3 +7873,6 @@ msgstr "interner Fehler."
 #: themes/models.py:272
 msgid "Invalid name: different from theme."
 msgstr "ungültiger Name: unterscheidet sich vom Theme."
+
+#~ msgid "Donate using Liberapay"
+#~ msgstr "Spende mittels Liberapay"

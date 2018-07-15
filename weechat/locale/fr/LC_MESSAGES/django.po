@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-14 14:43+0200\n"
-"PO-Revision-Date: 2018-07-14 14:49+0200\n"
+"POT-Creation-Date: 2018-07-15 15:43+0200\n"
+"PO-Revision-Date: 2018-07-15 15:44+0200\n"
 "Last-Translator: Sébastien Helleu <flashcode@flashtux.org>\n"
 "Language-Team: French <flashcode@flashtux.org>\n"
 "Language: fr\n"
@@ -5347,7 +5347,7 @@ msgid "Language"
 msgstr "Langage"
 
 #: scripts/models.py:278 templates/about/interfaces.html:24
-#: templates/donate.html:86 templates/scripts/list.html:82
+#: templates/donate.html:99 templates/scripts/list.html:82
 #: templates/scripts/list.html:84 templates/scripts/pending.html:29
 msgid "Name"
 msgstr "Nom"
@@ -5878,7 +5878,7 @@ msgstr "Et donc WeeChat est né, en Juin 2003."
 msgid "Key dates"
 msgstr "Dates clés"
 
-#: templates/about/history.html:43 templates/donate.html:82
+#: templates/about/history.html:43 templates/donate.html:95
 #: templates/scripts/pending.html:38 templates/scripts/python3.html:57
 #: templates/scripts/python3.html:132
 msgid "Date"
@@ -6339,7 +6339,7 @@ msgstr "Approximatif"
 msgid "Untranslated"
 msgstr "Non traduit"
 
-#: templates/doc/doc_version.html:71 templates/donate.html:118
+#: templates/doc/doc_version.html:71 templates/donate.html:131
 msgid "Total"
 msgstr "Total"
 
@@ -6512,13 +6512,25 @@ msgstr "<strong>Paypal</strong> : don unique."
 
 #: templates/donate.html:26
 msgid ""
+"<strong>Important</strong>: Liberapay is currently in trouble, so the "
+"donations are temporarily disabled."
+msgstr ""
+"<strong>Important</strong> : Liberapay est actuellement en difficulté, par "
+"conséquent les dons sont temporairement désactivés."
+
+#: templates/donate.html:28
+msgid "More information on their blog:"
+msgstr "Plus d'informations sur leur blog :"
+
+#: templates/donate.html:36
+msgid ""
 "You can leave name and comment, they will be displayed on this page, "
 "providing that the following conditions are met:"
 msgstr ""
 "Vous pouvez laisser un nom et un commentaire, ils seront affichés sur cette "
 "page, à condition que les conditions suivantes soient respectées :"
 
-#: templates/donate.html:28
+#: templates/donate.html:38
 msgid ""
 "the comment must be only about the donation and WeeChat (for example this is "
 "not the place to ask for new features)"
@@ -6526,7 +6538,7 @@ msgstr ""
 "le commentaire doit concerner seulement le don et WeeChat (par exemple ce "
 "n'est pas l'endroit pour demander des nouvelles fonctionnalités)"
 
-#: templates/donate.html:29
+#: templates/donate.html:39
 msgid ""
 "URLs are not allowed because there is <strong>no advertising</strong> on "
 "this site."
@@ -6534,15 +6546,11 @@ msgstr ""
 "les URLs ne sont pas affichées car il n'y a <strong>pas de publicité</"
 "strong> sur ce site."
 
-#: templates/donate.html:35
-msgid "Donate using Liberapay"
-msgstr "Donner avec Liberapay"
-
-#: templates/donate.html:48
+#: templates/donate.html:61
 msgid "Why your donation matters?"
 msgstr "Pourquoi votre don est important ?"
 
-#: templates/donate.html:51
+#: templates/donate.html:64
 msgid ""
 "WeeChat is written by a small group of <strong>volunteers</strong>. Any "
 "contribution will show us that the project is appreciated and keep us "
@@ -6551,7 +6559,7 @@ msgstr ""
 "WeeChat est écrit par un petit groupe de <strong>bénévoles</strong>. Toute "
 "contribution nous montrera que le projet est apprécié et nous motivera."
 
-#: templates/donate.html:53
+#: templates/donate.html:66
 msgid ""
 "Your donations help to pay the <strong>dedicated server</strong>, used for "
 "developments, build of packages and hosting of weechat.org."
@@ -6559,47 +6567,47 @@ msgstr ""
 "Vos dons aident à payer le <strong>serveur dédié</strong>, utilisé pour les "
 "développements, la construction des paquets, et l'hébergement de weechat.org."
 
-#: templates/donate.html:56
+#: templates/donate.html:69
 msgid "They support WeeChat"
 msgstr "Ils soutiennent WeeChat"
 
-#: templates/donate.html:58
+#: templates/donate.html:71
 msgid "With Liberapay"
 msgstr "Avec Liberapay"
 
-#: templates/donate.html:61
+#: templates/donate.html:74
 msgid "See the weechat page on Liberapay:"
 msgstr "Voir la page weechat sur Liberapay :"
 
-#: templates/donate.html:66
+#: templates/donate.html:79
 msgid "With Paypal"
 msgstr "Avec Paypal"
 
-#: templates/donate.html:69
+#: templates/donate.html:82
 msgid "Whole list:"
 msgstr "Liste entière :"
 
-#: templates/donate.html:69
+#: templates/donate.html:82
 msgid "Top 10, ordered by total amount donated:"
 msgstr "Top 10, trié par montant total des dons :"
 
-#: templates/donate.html:72
+#: templates/donate.html:85
 msgid "show the top 10, ordered by total amount donated"
 msgstr "voir le top 10, trié par montant total des dons"
 
-#: templates/donate.html:74
+#: templates/donate.html:87
 msgid "show the whole list"
 msgstr "voir la liste entière"
 
-#: templates/donate.html:84
+#: templates/donate.html:97
 msgid "Rank"
 msgstr "Rang"
 
-#: templates/donate.html:87
+#: templates/donate.html:100
 msgid "Amount"
 msgstr "Montant"
 
-#: templates/donate.html:89
+#: templates/donate.html:102
 msgid "Comment"
 msgstr "Commentaire"
 
@@ -7794,6 +7802,9 @@ msgstr "Erreur interne."
 #: themes/models.py:272
 msgid "Invalid name: different from theme."
 msgstr "Nom invalide : différent du thème."
+
+#~ msgid "Donate using Liberapay"
+#~ msgstr "Donner avec Liberapay"
 
 #~ msgid ""
 #~ "Here is the transition status at some dates since the beginning of "

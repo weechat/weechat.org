@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-14 14:43+0200\n"
+"POT-Creation-Date: 2018-07-15 15:43+0200\n"
 "PO-Revision-Date: 2018-07-12 09:00+0900\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
@@ -5158,7 +5158,7 @@ msgid "Language"
 msgstr "プログラミング言語"
 
 #: scripts/models.py:278 templates/about/interfaces.html:24
-#: templates/donate.html:86 templates/scripts/list.html:82
+#: templates/donate.html:99 templates/scripts/list.html:82
 #: templates/scripts/list.html:84 templates/scripts/pending.html:29
 msgid "Name"
 msgstr "名称"
@@ -5686,7 +5686,7 @@ msgstr "そして WeeChat が誕生しました。2003 年 6 月のことです�
 msgid "Key dates"
 msgstr "重要な日"
 
-#: templates/about/history.html:43 templates/donate.html:82
+#: templates/about/history.html:43 templates/donate.html:95
 #: templates/scripts/pending.html:38 templates/scripts/python3.html:57
 #: templates/scripts/python3.html:132
 msgid "Date"
@@ -6149,7 +6149,7 @@ msgstr "曖昧"
 msgid "Untranslated"
 msgstr "未翻訳"
 
-#: templates/doc/doc_version.html:71 templates/donate.html:118
+#: templates/doc/doc_version.html:71 templates/donate.html:131
 msgid "Total"
 msgstr "合計"
 
@@ -6315,13 +6315,23 @@ msgstr "<strong>Paypal</strong>: 一度だけ寄付する。"
 
 #: templates/donate.html:26
 msgid ""
+"<strong>Important</strong>: Liberapay is currently in trouble, so the "
+"donations are temporarily disabled."
+msgstr ""
+
+#: templates/donate.html:28
+msgid "More information on their blog:"
+msgstr ""
+
+#: templates/donate.html:36
+msgid ""
 "You can leave name and comment, they will be displayed on this page, "
 "providing that the following conditions are met:"
 msgstr ""
 "名前とコメントを残すこともできます。以下の条件が満たされれば、名前とコメント"
 "はこのページに掲載されます:"
 
-#: templates/donate.html:28
+#: templates/donate.html:38
 msgid ""
 "the comment must be only about the donation and WeeChat (for example this is "
 "not the place to ask for new features)"
@@ -6329,22 +6339,18 @@ msgstr ""
 "コメントは寄付および WeeChat に関するものに限ります (例えば、ここで新機能を要"
 "求することは適切ではありません)"
 
-#: templates/donate.html:29
+#: templates/donate.html:39
 msgid ""
 "URLs are not allowed because there is <strong>no advertising</strong> on "
 "this site."
 msgstr ""
 "このサイトには<strong>広告を載せない</strong>ので、URL は禁止されます。"
 
-#: templates/donate.html:35
-msgid "Donate using Liberapay"
-msgstr "Liberapay 経由の寄付"
-
-#: templates/donate.html:48
+#: templates/donate.html:61
 msgid "Why your donation matters?"
 msgstr "寄付が大切な理由とは?"
 
-#: templates/donate.html:51
+#: templates/donate.html:64
 msgid ""
 "WeeChat is written by a small group of <strong>volunteers</strong>. Any "
 "contribution will show us that the project is appreciated and keep us "
@@ -6353,7 +6359,7 @@ msgstr ""
 "WeeChat を開発しているのは小さな<strong>ボランティア</strong>団体です。このプ"
 "ロジェクトはどんな寄付でも歓迎しますし、寄付のお陰でやる気が維持されます。"
 
-#: templates/donate.html:53
+#: templates/donate.html:66
 msgid ""
 "Your donations help to pay the <strong>dedicated server</strong>, used for "
 "developments, build of packages and hosting of weechat.org."
@@ -6361,47 +6367,47 @@ msgstr ""
 "皆様からの寄付は<strong>専用サーバ</strong>の維持費に役立てられます。このサー"
 "バは開発、パッケージのビルド、weechat.org のホスティングに使われます。"
 
-#: templates/donate.html:56
+#: templates/donate.html:69
 msgid "They support WeeChat"
 msgstr "WeeChat 支援者"
 
-#: templates/donate.html:58
+#: templates/donate.html:71
 msgid "With Liberapay"
 msgstr "Liberapay 経由の寄付"
 
-#: templates/donate.html:61
+#: templates/donate.html:74
 msgid "See the weechat page on Liberapay:"
 msgstr "Liberapay 上の WeeChat のページを参照してください:"
 
-#: templates/donate.html:66
+#: templates/donate.html:79
 msgid "With Paypal"
 msgstr "Paypal 経由の寄付"
 
-#: templates/donate.html:69
+#: templates/donate.html:82
 msgid "Whole list:"
 msgstr "完全なリスト:"
 
-#: templates/donate.html:69
+#: templates/donate.html:82
 msgid "Top 10, ordered by total amount donated:"
 msgstr "上位 10 名、寄付の総額順:"
 
-#: templates/donate.html:72
+#: templates/donate.html:85
 msgid "show the top 10, ordered by total amount donated"
 msgstr "上位 10 名を表示、寄付の総額順"
 
-#: templates/donate.html:74
+#: templates/donate.html:87
 msgid "show the whole list"
 msgstr "完全なリストを表示"
 
-#: templates/donate.html:84
+#: templates/donate.html:97
 msgid "Rank"
 msgstr "順位"
 
-#: templates/donate.html:87
+#: templates/donate.html:100
 msgid "Amount"
 msgstr "寄付金額"
 
-#: templates/donate.html:89
+#: templates/donate.html:102
 msgid "Comment"
 msgstr "コメント"
 
@@ -7564,6 +7570,9 @@ msgstr "内部エラー。"
 #: themes/models.py:272
 msgid "Invalid name: different from theme."
 msgstr "不正な名前: テーマとは異なります。"
+
+#~ msgid "Donate using Liberapay"
+#~ msgstr "Liberapay 経由の寄付"
 
 #~ msgid "Swap two buffers."
 #~ msgstr "2 つのバッファを入れ替え。"
