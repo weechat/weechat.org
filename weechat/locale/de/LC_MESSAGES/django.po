@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-15 15:43+0200\n"
+"POT-Creation-Date: 2018-07-28 23:35+0200\n"
 "PO-Revision-Date: 2018-07-19 21:00+0200\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -6184,12 +6184,12 @@ msgid "Make a donation"
 msgstr "etwas Spenden"
 
 #: templates/base.html:94 templates/base.html:103
-#: templates/download/debian.html:197
+#: templates/download/debian.html:203
 msgid "Stable version"
 msgstr "stabile Version"
 
 #: templates/base.html:95 templates/base.html:104
-#: templates/download/debian.html:197
+#: templates/download/debian.html:203
 msgid "Development version"
 msgstr "Entwicklerversion"
 
@@ -6687,7 +6687,13 @@ msgstr "aktive Repositorien"
 msgid "All repositories"
 msgstr "alle Repositorien"
 
-#: templates/download/debian.html:35
+#: templates/download/debian.html:34
+#, fuzzy
+#| msgid "No debian repository."
+msgid "Error reading repositories:"
+msgstr "Kein Debian Repository."
+
+#: templates/download/debian.html:41
 msgid ""
 "<strong>Important:</strong> these packages are not Debian official packages; "
 "please click and read instructions below before using these repositories."
@@ -6696,28 +6702,28 @@ msgstr ""
 "offiziellen Debian-Pakete. Es wird empfohlen die nachfolgende Anleitung zu "
 "lesen, bevor diese Repositorien genutzt werden."
 
-#: templates/download/debian.html:38
+#: templates/download/debian.html:44
 msgid "Installation instructions"
 msgstr "Installationsanleitung"
 
-#: templates/download/debian.html:43
+#: templates/download/debian.html:49
 msgid "GPG key"
 msgstr "GPG Schlüssel"
 
-#: templates/download/debian.html:45
+#: templates/download/debian.html:51
 msgid "Import the gpg key used to sign the repository:"
 msgstr ""
 "Importieren des gpg Schlüssel mit welchem die Repositorien signiert sind:"
 
-#: templates/download/debian.html:47
+#: templates/download/debian.html:53
 msgid "Important: the Raspbian repositories are NOT signed."
 msgstr "Wichtig: das Raspbian Repository ist NICHT unterschrieben."
 
-#: templates/download/debian.html:49
+#: templates/download/debian.html:55
 msgid "APT configuration"
 msgstr "APT Konfiguration"
 
-#: templates/download/debian.html:51
+#: templates/download/debian.html:57
 msgid ""
 "You must use apt, apt-get or aptitude to install the packages (with sudo or "
 "as \"root\" user)."
@@ -6725,15 +6731,15 @@ msgstr ""
 "Um mittels apt, apt-get oder aptitude die Pakete installieren zu können, "
 "muss man \"root\" sein oder den \"sudo\" Befehl verwenden."
 
-#: templates/download/debian.html:52
+#: templates/download/debian.html:58
 msgid "The following examples use sudo and apt-get."
 msgstr "In die nachfolgenden Beispielen wird mit sudo und apt-get gearbeitet."
 
-#: templates/download/debian.html:55
+#: templates/download/debian.html:61
 msgid "Install https transport for apt:"
 msgstr "Installation von https Transport für apt:"
 
-#: templates/download/debian.html:60
+#: templates/download/debian.html:66
 msgid ""
 "Create a weechat.list file with the repository, according to your "
 "distribution/version:"
@@ -6741,17 +6747,17 @@ msgstr ""
 "Erstelle eine weechat.list Datei für Dein Repository, entsprechend der "
 "Distribution/Version:"
 
-#: templates/download/debian.html:63
+#: templates/download/debian.html:69
 msgid "Choose your distribution/version"
 msgstr "Wähle Deine Distribution/Version"
 
 #. Translators: purpose is to "translate" only quotes here
-#: templates/download/debian.html:69 templates/download/debian.html:175
+#: templates/download/debian.html:75 templates/download/debian.html:181
 #, python-format
 msgid "“%(codename)s”"
 msgstr "“%(codename)s”"
 
-#: templates/download/debian.html:77
+#: templates/download/debian.html:83
 msgid ""
 "Note: the second command line is optional, it is used to download source "
 "packages."
@@ -6759,15 +6765,15 @@ msgstr ""
 "Hinweis: die zweite Befehlszeile ist optional, sie dient dazu die "
 "Quellpakete herunterzuladen."
 
-#: templates/download/debian.html:80
+#: templates/download/debian.html:86
 msgid "Resynchronize your package index files:"
 msgstr "Indexdateien für Pakete neu einlesen:"
 
-#: templates/download/debian.html:83
+#: templates/download/debian.html:89
 msgid "Packages installation"
 msgstr "Installation von Paketen"
 
-#: templates/download/debian.html:85
+#: templates/download/debian.html:91
 msgid ""
 "Install the binary packages; the \"plugins\" package is highly recommended "
 "but not mandatory, scripting API packages are optional (popular languages "
@@ -6777,15 +6783,15 @@ msgstr ""
 "ist aber nicht zwingend notwendig. Skripten API-Pakete sind optional "
 "(populäre Sprachen sind python und perl)."
 
-#: templates/download/debian.html:88
+#: templates/download/debian.html:94
 msgid "Example for the stable version:"
 msgstr "Beispiel für stabile Version:"
 
-#: templates/download/debian.html:92
+#: templates/download/debian.html:98
 msgid "Example for the development version:"
 msgstr "Beispiel für die Entwicklerversion:"
 
-#: templates/download/debian.html:98
+#: templates/download/debian.html:104
 msgid ""
 "If needed, you can download the source package in order to rebuild binary "
 "packages:"
@@ -6793,39 +6799,39 @@ msgstr ""
 "Falls notwendig können die Quellpakete heruntergeladen werden um die "
 "Binärdateien neu zu erstellen:"
 
-#: templates/download/debian.html:108
+#: templates/download/debian.html:114
 msgid "Overview"
 msgstr "Überblick"
 
-#: templates/download/debian.html:156
+#: templates/download/debian.html:162
 msgid "Detail"
 msgstr "Details"
 
-#: templates/download/debian.html:186
+#: templates/download/debian.html:192
 msgid "Important"
 msgstr "Wichtig"
 
-#: templates/download/debian.html:198
+#: templates/download/debian.html:204
 msgid "Architecture"
 msgstr "Architektur"
 
-#: templates/download/debian.html:200
+#: templates/download/debian.html:206
 msgid "files"
 msgstr "Dateien"
 
-#: templates/download/debian.html:223
+#: templates/download/debian.html:229
 msgid "Builds by"
 msgstr "Erstellt von"
 
-#: templates/download/debian.html:225
+#: templates/download/debian.html:231
 msgid "latest build:"
 msgstr "zuletzt Erstellt am:"
 
-#: templates/download/debian.html:228
+#: templates/download/debian.html:234
 msgid "next build:"
 msgstr "nächste Build:"
 
-#: templates/download/debian.html:243
+#: templates/download/debian.html:249
 msgid "No debian repository."
 msgstr "Kein Debian Repository."
 
