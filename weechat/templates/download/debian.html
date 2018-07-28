@@ -29,6 +29,12 @@ var deb_apt_cmds = [
   <li class="nav-item"><a class="nav-link{% if active == "all" %} active{% endif %}" href="{% url 'download_debian_active' active='all'  %}">{% trans "All repositories" %}</a></li>
 </ul>
 
+{% if errors %}
+<div class="alert alert-danger">
+  {% trans "Error reading repositories:" %} {{ errors|join:", " }}
+</div>
+{% endif %}
+
 <div id="accordion" class="mb-3">
   <div class="card">
     <div class="card-header" id="instructions">

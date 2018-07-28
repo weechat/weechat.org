@@ -103,6 +103,7 @@ def repos(request, active='active', files=''):
         repositories = (Repo.objects.all().filter(visible=1)
                         .order_by('priority'))
     debpkgs = []
+    errors = []
     for repository in repositories:
         try:
             repo_packages = get_repository_packages(repository)
@@ -110,7 +111,7 @@ def repos(request, active='active', files=''):
                                   key=lambda p: p['builddatetime'],
                                   reverse=True))
         except:  # noqa: E722
-            pass
+            errors.append('%s %s' % (repository.name, repository.version))
     return render(
         request,
         'download/debian.html',
@@ -119,5 +120,6 @@ def repos(request, active='active', files=''):
             'active': active,
             'allfiles': files == 'files',
             'repositories': repositories,
+            'errors': errors,
         },
     )
