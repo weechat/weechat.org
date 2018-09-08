@@ -140,36 +140,40 @@
 <div class="row justify-content-center my-3 py-3 my-lg-5 py-lg-5 home-container" id="news">
   <div class="col-12 col-lg-4 my-4 my-lg-0">
     <h3 class="pb-2 border-bottom">{% trans "Latest news" %}</h3>
-    {% for info in info_list %}
-    <div class="row pt-2 pb-3">
-      <div class="col-12 col-md-3">
-        {{ info.date_l10n }}
-      </div>
-      <div class="col-12 col-md-9">
-        <p class="my-0">
-          <a href="{% url 'home_info_id_title' info.id info.date_title_url %}">{{ info.title_i18n }}</a>
-        </p>
-      </div>
-    </div>
-    {% endfor %}
+    <table class="table table-responsive table-borderless">
+      <tbody>
+        {% for info in info_list %}
+        <tr>
+          <td class="pl-0 text-nowrap" style="width: 20%">
+            {{ info.date_l10n }}
+          </td>
+          <td>
+            <a href="{% url 'home_info_id_title' info.id info.date_title_url %}">{{ info.title_i18n }}</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
     <a href="{% url 'home_news' %}" class="btn btn-lg btn-primary mt-3 px-3 px-lg-5">
       {% include "svg/megaphone.html" %} {% trans "All news" %}
     </a>
   </div>
   <div class="col-12 col-lg-4 my-4 my-lg-0">
     <h3 class="pb-2 border-bottom">{% trans "Upcoming events" %}</h3>
-    {% for event in event_list %}
-    <div class="row pt-2 pb-3">
-      <div class="col-12 col-md-3">
-        {{ event.date_l10n }}
-      </div>
-      <div class="col-12 col-md-9">
-        <p class="my-0">
-          <a href="{% url 'home_info_id_title' event.id event.date_title_url %}">{{ event.title_i18n }}</a>
-        </p>
-      </div>
-    </div>
-    {% endfor %}
+    <table class="table table-responsive table-borderless">
+      <tbody>
+        {% for event in event_list %}
+        <tr>
+          <td class="pl-0 text-nowrap" style="width: 20%">
+            {{ event.date_l10n }}
+          </td>
+          <td>
+            <a href="{% url 'home_info_id_title' event.id event.date_title_url %}">{{ event.title_i18n }}</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
     <a href="{% url 'home_events' %}" class="btn btn-lg btn-primary mt-3 px-3 px-lg-5">
       {% include "svg/calendar.html" %} {% trans "All events" %}
     </a>
