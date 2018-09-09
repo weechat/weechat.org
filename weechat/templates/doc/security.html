@@ -33,7 +33,8 @@
     <thead>
       <tr>
         <th class="text-center">{% trans "Severity" %}</th>
-        <th class="text-center text-nowrap">{% trans "External link" %} / {% trans "Tracker" %}</th>
+        <th class="text-center text-nowrap">CVE</th>
+        <th class="text-center text-nowrap">{% trans "Tracker" %}</th>
         <th class="text-center">{% trans "Affected versions" %}</th>
         <th class="text-center">{% trans "Fixed in version" %}</th>
         <th class="text-center">{% trans "Release date" %}</th>
@@ -44,15 +45,21 @@
     <tbody>
       {% for security in security_list %}
       <tr>
-        <td class="text-center text-nowrap">
+        <td class="text-center">
           <a href="#severities" title="{% trans "Severity:" %} {{ security.severity_i18n }}">
             {% include security.severity_svg %}
           </span>
         </td>
-        <td class="text-center">
-          {% if security.external or security.tracker %}
+        <td class="text-center text-nowrap">
+          {% if security.external %}
           {% autoescape off %}{{ security.external_links }}{% endautoescape %}
-          <br>{% autoescape off %}{{ security.url_tracker }}{% endautoescape %}
+          {% else %}
+          -
+          {% endif %}
+        </td>
+        <td class="text-center text-nowrap">
+          {% if security.tracker %}
+          {% autoescape off %}{{ security.url_tracker }}{% endautoescape %}
           {% else %}
           -
           {% endif %}
