@@ -165,6 +165,9 @@ class Script(models.Model):
 
     def desc_i18n(self):
         """Return translated description."""
+        if not isinstance(self.desc_en, str):
+            # python 2.x
+            return gettext_lazy(self.desc_en.encode('utf-8'))
         return gettext_lazy(self.desc_en)
 
     def version_weechat(self):
