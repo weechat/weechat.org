@@ -60,6 +60,6 @@ def i18n_autogen(app, name, strings):
     filename = project_path_join(app, '_i18n_%s.py' % name)
     with open(filename, 'w', encoding='utf-8') as _file:
         data = '\n'.join(content)
-        if hasattr(data, 'decode'):
+        if hasattr(data, 'decode') and isinstance(data, str):
             data = data.decode('utf-8')
         _file.write(data)
