@@ -32,8 +32,8 @@
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th class="text-center text-nowrap">{% trans "External link" %} / {% trans "Tracker" %}</th>
         <th class="text-center">{% trans "Severity" %}</th>
+        <th class="text-center text-nowrap">{% trans "External link" %} / {% trans "Tracker" %}</th>
         <th class="text-center">{% trans "Affected versions" %}</th>
         <th class="text-center">{% trans "Fixed in version" %}</th>
         <th class="text-center">{% trans "Release date" %}</th>
@@ -43,7 +43,12 @@
     </thead>
     <tbody>
       {% for security in security_list %}
-      <tr class="table-{{ security.css_class }}">
+      <tr>
+        <td class="text-center text-nowrap">
+          <a href="#severities" title="{% trans "Severity:" %} {{ security.severity_i18n }}">
+            {% include security.severity_svg %}
+          </span>
+        </td>
         <td class="text-center">
           {% if security.external or security.tracker %}
           {% autoescape off %}{{ security.external_links }}{% endautoescape %}
@@ -52,7 +57,6 @@
           -
           {% endif %}
         </td>
-        <td class="text-center text-nowrap">{{ security.severity_i18n }}</td>
         <td class="text-center text-nowrap text-danger">{% autoescape off %}{{ security.affected_html }}{% endautoescape %}</td>
         <td class="text-center text-nowrap text-success">{{ security.fixed }}</td>
         <td class="text-center text-nowrap">{% if security.release_date %}{{ security.release_date_l10n }}{% else %}-{% endif %}</td>
@@ -76,24 +80,36 @@
   </table>
 </div>
 
-<p>
+<p id="severities">
   {% trans "Security vulnerabilities are classified using 4 severity levels:" %}
 
-  <div class="alert alert-light border">
-    <strong>{% trans "low" %}</strong>: {% trans "local problem which occurs in very specific conditions, low impact. Upgrade is not mandatory." %}
-  </div>
+  <ul class="list-group">
 
-  <div class="alert alert-secondary">
-    <strong>{% trans "medium" %}</strong>: {% trans "problem affecting a specific feature. Upgrade is <strong>recommended</strong> at least for people using the feature." %}
-  </div>
+    <li class="list-group-item">
+      {% include "svg/severity_0.html" %}
+      <strong>{% trans "low" %}:</strong>
+      {% trans "local problem which occurs in very specific conditions, low impact. Upgrade is not mandatory." %}
+    </li>
 
-  <div class="alert alert-warning">
-    <strong>{% trans "high" %}</strong>: {% trans "severe problem. Upgrade is <strong>highly recommended</strong>." %}
-  </div>
+    <li class="list-group-item">
+      {% include "svg/severity_1.html" %}
+      <strong>{% trans "medium" %}:</strong>
+      {% trans "problem affecting a specific feature. Upgrade is <strong>recommended</strong> at least for people using the feature." %}
+    </li>
 
-  <div class="alert alert-danger">
-    <strong>{% trans "critical" %}</strong>: {% trans "critical problem, risk of damage on your system. <strong>You MUST upgrade immediately!</strong>" %}
-  </div>
+    <li class="list-group-item">
+      {% include "svg/severity_2.html" %}
+      <strong>{% trans "high" %}:</strong>
+      {% trans "severe problem. Upgrade is <strong>highly recommended</strong>." %}
+    </li>
+
+    <li class="list-group-item">
+      {% include "svg/severity_3.html" %}
+      <strong>{% trans "critical" %}:</strong>
+      {% trans "critical problem, risk of damage on your system. <strong>You MUST upgrade immediately!</strong>" %}
+    </li>
+
+  </ul>
 </p>
 
 {% else %}

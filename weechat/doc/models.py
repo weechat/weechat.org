@@ -148,6 +148,10 @@ class Security(models.Model):
     def __unicode__(self):  # python 2.x
         return self.__str__()
 
+    def severity_svg(self):
+        """Return the path to SVG for the severity."""
+        return 'svg/severity_%d.html' % self.severity
+
     def date_l10n(self):
         """Return the date formatted with localized date format."""
         return localdate(self.date)
