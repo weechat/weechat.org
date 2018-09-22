@@ -26,8 +26,8 @@ _i18n_scripts_scripts = [
     gettext_lazy("A simple auto-away script."),
     # Translators: description for script "buddylist.pl" (0.3.0+)
     gettext_lazy("A simple buddylist to show if your buddies are online/away/offline."),
-    # Translators: description for script "gweather.py" (0.3.0+)
-    gettext_lazy("Add a bar item with Google weather."),
+    # Translators: description for script "pv_info.pl" (0.4.0+)
+    gettext_lazy("Add a bar in query buffers with whois information."),
     # Translators: description for script "beat.pl" (0.3.0+)
     gettext_lazy("Add a bar item with the Beat-Internet-Time."),
     # Translators: description for script "spacer.pl" (0.3.0+)
@@ -124,8 +124,14 @@ _i18n_scripts_scripts = [
     gettext_lazy("Bind meta-<key> to the current buffer."),
     # Translators: description for script "mass_hl_blocker.pl" (0.3.0+)
     gettext_lazy("Block mass highlights."),
+    # Translators: description for script "autobump.py" (0.4.3+)
+    gettext_lazy("Bump buffers upon activity."),
+    # Translators: description for script "autonickprefix.pl" (0.3.0+)
+    gettext_lazy("Change \"nick:\" prefix if the nick is changed while you're still editing."),
     # Translators: description for script "mnick.pl" (0.3.0+)
     gettext_lazy("Change nick on multiple servers using custom masks."),
+    # Translators: description for script "ctrl_w.pl" (0.3.0+)
+    gettext_lazy("Change the key ctrl-W to use the readline behavior."),
     # Translators: description for script "luanma.pl" (0.3.9+)
     gettext_lazy("Charset replacement for IRC, recode past message."),
     # Translators: description for script "pop3_mail.pl" (0.3.0+)
@@ -212,6 +218,8 @@ _i18n_scripts_scripts = [
     gettext_lazy("Display corrected text when user sends s/typo/replacement."),
     # Translators: description for script "whatismyip.py" (0.3.7+)
     gettext_lazy("Display external ip address."),
+    # Translators: description for script "url_hint.py" (0.4.0+)
+    gettext_lazy("Display hints for URLs and open them with keyboard shortcuts."),
     # Translators: description for script "infolist.py" (0.3.0+)
     gettext_lazy("Display infolist in a buffer, useful for script developers."),
     # Translators: description for script "kernel.pl" (0.3.0+)
@@ -224,6 +232,8 @@ _i18n_scripts_scripts = [
     gettext_lazy("Display size of current log file in a bar item."),
     # Translators: description for script "whoissource.py" (0.3.0+)
     gettext_lazy("Display source of \"End of WHOIS\" numerics."),
+    # Translators: description for script "topicdiff_alt.py" (0.3.0+)
+    gettext_lazy("Display topic with changes highlighted."),
     # Translators: description for script "terminal_title.py" (0.3.0+)
     gettext_lazy("Display user defined information in the terminal title."),
     # Translators: description for script "weather.py" (0.3.0+)
@@ -462,6 +472,8 @@ _i18n_scripts_scripts = [
     gettext_lazy("Respond to undernet challenge when there's no identd."),
     # Translators: description for script "bashorg.pl" (0.3.0+)
     gettext_lazy("Retrieve quotes from bash.org."),
+    # Translators: description for script "foo.pl" (0.3.0+)
+    gettext_lazy("Rot n+i encryption and decryption."),
     # Translators: description for script "xfer_run_command.py" (0.3.0+)
     gettext_lazy("Run a command on end of xfer."),
     # Translators: description for script "msg_command.py" (0.3.0+)
@@ -496,6 +508,8 @@ _i18n_scripts_scripts = [
     gettext_lazy("Securely authenticate with QuakeNet by using CHALLENGEAUTH."),
     # Translators: description for script "coords.pl" (0.4.2+)
     gettext_lazy("Select text, nicks or URLs on screen with mouse or keyboard."),
+    # Translators: description for script "selfcensor.py" (0.3.0+)
+    gettext_lazy("Self-censor stuff you were going to say."),
     # Translators: description for script "whois_on_query.py" (0.3.2+)
     gettext_lazy("Send \"whois\" on nick when receiving new IRC query."),
     # Translators: description for script "growl.py" (0.3.0+)
