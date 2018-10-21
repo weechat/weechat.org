@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-21 15:14+0200\n"
-"PO-Revision-Date: 2018-10-14 14:28+0200\n"
+"PO-Revision-Date: 2018-10-21 16:23+0200\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -38,7 +38,7 @@ msgstr "256 Farben, IRC Proxy, rmodifier, Umlenkung von IRC Befehlen."
 
 #: about/_i18n_keydates.py:8
 msgid "Add hook \"line\"."
-msgstr ""
+msgstr "hinzugefügt hook \"line\"."
 
 #: about/_i18n_keydates.py:9
 msgid "Aspell plugin."
@@ -3230,25 +3230,6 @@ msgstr ""
 "changelog/ChangeLog-2.2.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:125
-#, fuzzy
-#| msgid ""
-#| "Version 1.7 is available!\n"
-#| "\n"
-#| "Among the new features:\n"
-#| "\n"
-#| "- add option weechat.look.align_multiline_words\n"
-#| "- add option \"time\" in command /debug\n"
-#| "- add infos \"uptime\" and \"pid\"\n"
-#| "- add optional arguments in completion template\n"
-#| "- add irc server option \"usermode\"\n"
-#| "- add tag \"self_msg\" on self messages\n"
-#| "- add configuration file fifo.conf for fifo plugin\n"
-#| "- add option \"-oc\" in command /exec\n"
-#| "- many bugs fixed.\n"
-#| "\n"
-#| "For complete list of new features and bugs fixed, please look at <a href="
-#| "\"http://dev.weechat.org/post/2017/01/15/Version-1.7\">development blog</"
-#| "a> or <a href=\"/files/changelog/ChangeLog-1.7.html\">ChangeLog</a>."
 msgid ""
 "Version 2.3 is available!\n"
 "\n"
@@ -3272,24 +3253,29 @@ msgid ""
 "\"https://weechat.org/blog/post/2018/10/21/Version-2.3\">development blog</"
 "a> or <a href=\"/files/changelog/ChangeLog-2.3.html\">ChangeLog</a>."
 msgstr ""
-"Version 1.7 ist verfügbar!\n"
+"Version 2.3 ist verfügbar!\n"
 "\n"
 "Überblick, der neuen Funktionen:\n"
 "\n"
-"- neu: Option weechat.look.align_multiline_words\n"
-"- neu: Option \"time\" für Befehl /debug\n"
-"- neu: Info \"uptime\" und \"pid\"\n"
-"- neu: optional Argumente für Vorlage bei Vervollständigung\n"
-"- neu: Option \"usermode\" für IRC Server\n"
-"- neu: tag \"self_msg\" für eigene Nachrichten\n"
-"- neu: Konfigurationsdatei fifo.conf für fifo Erweiterung\n"
-"- neu: Option \"-oc\" für Befehl /exec\n"
-"- viele Fehlerbereinigungen\n"
+"- neu: hook \"line\"\n"
+"- neu: Option \"-P\" (oder \"--plugins\") um zu bestimmen welche "
+"Erweiterungen beim Start geladen werden sollen\n"
+"- neu: \"-r\" (\"--run-command\")  Option kann mehrfach genutzt werden, in "
+"der Befehlszeile\n"
+"- neu: /buffer close unterstützt nun unvollständige Buffernamen und es "
+"können mehrere Argumente angegeben werden\n"
+"- neu: /buffer localvar unterstützt Buffernummer/-name\n"
+"- neu: temporäre Variablen können mittels regex in der Trigger-Erweiterung "
+"erstellt werden\n"
+"- neu: reale IP wird in relay-Erweiterung angezeigt\n"
+"- neu: Wiederholung von Zeichenketten in regulären Ausdrücken mittels "
+"\"repeat:Anzahl,Zeichenkette\"\n"
+"- viele Fehler behoben\n"
 "\n"
 "Eine vollständige Liste der neuen Funktionen und Fehlerbereinigungen findet "
-"man unter folgenden Links: <a href=\"http://dev.weechat.org/post/2017/01/15/"
-"Version-1.7\">development blog</a> oder <a href=\"/files/changelog/"
-"ChangeLog-1.7.html\">ChangeLog</a>."
+"man unter folgenden Links: <a href=\"https://weechat.org/blog/"
+"post/2018/10/21/Version-2.3\">development blog</a> oder <a href=\"/files/"
+"changelog/ChangeLog-2.3.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:126
 msgid ""
@@ -4745,7 +4731,7 @@ msgstr ""
 #. Translators: description for script "xdccq.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:432
 msgid "Queue XDCC messages to bots."
-msgstr ""
+msgstr "Warteschlange für XDCC Nachrichten an bots."
 
 #. Translators: description for script "go.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:434
@@ -4893,11 +4879,8 @@ msgstr ""
 
 #. Translators: description for script "execbot.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:486
-#, fuzzy
-#| msgid "Avoid sending misformatted commands as messages."
 msgid "Run remote commands via IRC messages."
-msgstr ""
-"verhindert das Versenden von falsch formatierten Befehlen als Nachricht."
+msgstr "führt entfernte Befehle mittels IRC Nachrichten aus."
 
 #. Translators: description for script "weetext.py" (0.4.3+)
 #: scripts/_i18n_scripts.py:488
