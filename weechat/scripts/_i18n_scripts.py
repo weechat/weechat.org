@@ -428,6 +428,8 @@ _i18n_scripts_scripts = [
     gettext_lazy("Push notification to im.kayac.com."),
     # Translators: description for script "jisearch.py" (0.3.5+)
     gettext_lazy("Query JiSho's API to fetch translations for kanji to english or the other way round."),
+    # Translators: description for script "xdccq.py" (0.3.0+)
+    gettext_lazy("Queue XDCC messages to bots."),
     # Translators: description for script "go.py" (0.3.0+)
     gettext_lazy("Quick jump to buffers."),
     # Translators: description for script "histsearch.py" (0.3.0+)
@@ -480,6 +482,8 @@ _i18n_scripts_scripts = [
     gettext_lazy("Run chat received in a buffer as commands."),
     # Translators: description for script "away_action.py" (0.3.0+)
     gettext_lazy("Run command on highlight and privmsg when away."),
+    # Translators: description for script "execbot.py" (0.3.0+)
+    gettext_lazy("Run remote commands via IRC messages."),
     # Translators: description for script "weetext.py" (0.4.3+)
     gettext_lazy("SMS Text Messaging using Google Voice."),
     # Translators: description for script "samegame.py" (0.3.6+)

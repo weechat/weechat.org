@@ -5,6 +5,7 @@ from django.utils.translation import gettext_lazy
 
 _i18n_about_keydates = [
     gettext_lazy("256 colors, irc proxy, rmodifier, redirection of irc commands."),
+    gettext_lazy("Add hook \"line\"."),
     gettext_lazy("Aspell plugin."),
     gettext_lazy("Command /eval, aspell suggestions, IPv6 in relay, irc backlog in relay."),
     gettext_lazy("Dcc chat and file, fifo plugin."),
