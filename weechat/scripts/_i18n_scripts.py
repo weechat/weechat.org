@@ -126,6 +126,8 @@ _i18n_scripts_scripts = [
     gettext_lazy("Block mass highlights."),
     # Translators: description for script "autobump.py" (0.4.3+)
     gettext_lazy("Bump buffers upon activity."),
+    # Translators: description for script "chanotify.py" (0.3.0+)
+    gettext_lazy("Call notify-send when a message is received."),
     # Translators: description for script "autonickprefix.pl" (0.3.0+)
     gettext_lazy("Change \"nick:\" prefix if the nick is changed while you're still editing."),
     # Translators: description for script "mnick.pl" (0.3.0+)
@@ -230,8 +232,6 @@ _i18n_scripts_scripts = [
     gettext_lazy("Display right-to-left text in chat with fribidi."),
     # Translators: description for script "logsize.py" (0.3.0+)
     gettext_lazy("Display size of current log file in a bar item."),
-    # Translators: description for script "whoissource.py" (0.3.0+)
-    gettext_lazy("Display source of \"End of WHOIS\" numerics."),
     # Translators: description for script "topicdiff_alt.py" (0.3.0+)
     gettext_lazy("Display topic with changes highlighted."),
     # Translators: description for script "terminal_title.py" (0.3.0+)
@@ -684,6 +684,8 @@ _i18n_scripts_scripts = [
     gettext_lazy("Vi-like key bindings/commands with normal and insert mode."),
     # Translators: description for script "pastebuf.lua" (0.4.3+)
     gettext_lazy("View content of pastebin site in a buffer."),
+    # Translators: description for script "pushbullet.rb" (0.3.0+)
+    gettext_lazy("View/send SMS via pushbullet."),
     # Translators: description for script "oldswarner.lua" (0.3.7+)
     gettext_lazy("Warn user if about to paste URL already existing in buffer."),
     # Translators: description for script "weatherbot.py" (0.3.0+)

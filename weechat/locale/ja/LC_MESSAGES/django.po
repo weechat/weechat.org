@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-21 15:14+0200\n"
-"PO-Revision-Date: 2018-10-14 14:29+0200\n"
+"POT-Creation-Date: 2018-11-11 16:19+0100\n"
+"PO-Revision-Date: 2018-11-11 16:20+0100\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
 "translation/ja_JP>\n"
@@ -3724,273 +3724,275 @@ msgstr "多すぎるハイライトをブロック。"
 msgid "Bump buffers upon activity."
 msgstr "バッファの活発さに応じて並び替える。"
 
-#. Translators: description for script "autonickprefix.pl" (0.3.0+)
+#. Translators: description for script "chanotify.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:130
+#, fuzzy
+#| msgid "Notify dzen when a private message is received."
+msgid "Call notify-send when a message is received."
+msgstr "プライベートメッセージを受信したら dzen に通知。"
+
+#. Translators: description for script "autonickprefix.pl" (0.3.0+)
+#: scripts/_i18n_scripts.py:132
 msgid ""
 "Change \"nick:\" prefix if the nick is changed while you're still editing."
 msgstr "編集中にニックネームが変わった場合に \"nick:\" プレフィックスを変更。"
 
 #. Translators: description for script "mnick.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:132
+#: scripts/_i18n_scripts.py:134
 msgid "Change nick on multiple servers using custom masks."
 msgstr "カスタムマスクを使って複数サーバのニックネームを変更。"
 
 #. Translators: description for script "ctrl_w.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:134
+#: scripts/_i18n_scripts.py:136
 msgid "Change the key ctrl-W to use the readline behavior."
 msgstr "ctrl-W キーを readline の挙動にする。"
 
 #. Translators: description for script "luanma.pl" (0.3.9+)
-#: scripts/_i18n_scripts.py:136
+#: scripts/_i18n_scripts.py:138
 msgid "Charset replacement for IRC, recode past message."
 msgstr "IRC 用の文字セットを置換、過去のメッセージを記録。"
 
 #. Translators: description for script "pop3_mail.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:138
+#: scripts/_i18n_scripts.py:140
 msgid "Check POP3 server for mails and display mail headers."
 msgstr "メールの POP3 サーバを確認し、メールヘッダを表示。"
 
 #. Translators: description for script "cleanbuffer.rb" (0.3.0+)
-#: scripts/_i18n_scripts.py:140
+#: scripts/_i18n_scripts.py:142
 msgid "Clear a buffer, on znc / locally or both."
 msgstr "znc およびローカルまたはその両方のバッファをクリア。"
 
 #. Translators: description for script "colorize_lines.pl" (0.3.4+)
-#: scripts/_i18n_scripts.py:142
+#: scripts/_i18n_scripts.py:144
 msgid "Color the channel text with nick color."
 msgstr "ニックネーム色でチャンネルテキストを色付け。"
 
 #. Translators: description for script "colorizer.rb" (0.3.0+)
-#: scripts/_i18n_scripts.py:144
+#: scripts/_i18n_scripts.py:146
 msgid "Colorize parts of text in certain buffers based on rules."
 msgstr "ルールに基づき特定のバッファでテキストの一部に色を付ける。"
 
 #. Translators: description for script "cmdind.pl" (0.4.2+)
-#: scripts/_i18n_scripts.py:146
+#: scripts/_i18n_scripts.py:148
 msgid "Command line indicator: command or text."
 msgstr "コマンドラインインジケータ: コマンドまたはテキスト。"
 
 #. Translators: description for script "queue.py" (0.3.3+)
-#: scripts/_i18n_scripts.py:148
+#: scripts/_i18n_scripts.py:150
 msgid "Command queuing."
 msgstr "コマンドキューイング。"
 
 #. Translators: description for script "zerotab.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:150
+#: scripts/_i18n_scripts.py:152
 msgid "Complete empty input line with latest speaker nick in channel."
 msgstr "最後に発言したニックネームだけを表示して入力行を空にする。"
 
 #. Translators: description for script "autojoin.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:152
+#: scripts/_i18n_scripts.py:154
 msgid ""
 "Configure autojoin for all servers according to currently joined channels."
 msgstr "現在参加中のチャンネルを元に、全てのサーバに対して自動参加を設定。"
 
 #. Translators: description for script "cmd_help.py" (0.3.5+)
-#: scripts/_i18n_scripts.py:154
+#: scripts/_i18n_scripts.py:156
 msgid "Contextual command line help."
 msgstr "コマンドラインヘルプを入力行に表示。"
 
 #. Translators: description for script "clemy.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:156
+#: scripts/_i18n_scripts.py:158
 msgid "Control Clementine from WeeChat."
 msgstr "WeeChat から Clementine を操作。"
 
 #. Translators: description for script "rhythmbus.pl" (0.3.6+)
-#: scripts/_i18n_scripts.py:158
+#: scripts/_i18n_scripts.py:160
 msgid "Control Rhythmbox through qdbus."
 msgstr "qdbus を使って Rhythmbox を操作。"
 
 #. Translators: description for script "ncmpcpp.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:160
+#: scripts/_i18n_scripts.py:162
 msgid "Control and now playing script for ncmpcpp."
 msgstr "ncmpcpp 用の操作と現在再生中の曲を表示するスクリプト。"
 
 #. Translators: description for script "cmus.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:162
+#: scripts/_i18n_scripts.py:164
 msgid "Control and now-playing script for cmus."
 msgstr "cmus 用の現在再生中の曲の情報を得るスクリプト。"
 
 #. Translators: description for script "moc_control.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:164
+#: scripts/_i18n_scripts.py:166
 msgid "Control and now-playing script for moc."
 msgstr "moc 用の操作と現在再生中の曲の情報を得るスクリプト。"
 
 #. Translators: description for script "zncnotice.py" (1.5+)
-#: scripts/_i18n_scripts.py:166
+#: scripts/_i18n_scripts.py:168
 msgid "Convert ZNC status PRIVMSGs to NOTICEs."
 msgstr "ZNC 状態メッセージを PRIVMSG から NOTICE に変換。"
 
 #. Translators: description for script "weemoticons.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:168
+#: scripts/_i18n_scripts.py:170
 msgid "Convert ascii emotes to the unicode emoticon."
 msgstr "ascii 顔文字を unicode 顔文字に変換。"
 
 #. Translators: description for script "emoji_aliases.py" (1.0.1+)
-#: scripts/_i18n_scripts.py:170
+#: scripts/_i18n_scripts.py:172
 msgid "Convert emoji aliases to unicode emoji."
 msgstr "別名定義された絵文字を unicode 絵文字に変換。"
 
 #. Translators: description for script "emoji2alias.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:172
+#: scripts/_i18n_scripts.py:174
 msgid "Convert emoji back to their :aliases:."
 msgstr "絵文字を対応する :aliases: 書式の別名に変換。"
 
 #. Translators: description for script "fullwidth.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:174
+#: scripts/_i18n_scripts.py:176
 msgid "Convert text to its full width equivalent and send it to buffer."
 msgstr "テキストを全形等価に変換しバッファに送信する。"
 
 #. Translators: description for script "leet.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:176
+#: scripts/_i18n_scripts.py:178
 msgid "Convert text to leet."
 msgstr "テキストを leet 変換。"
 
 #. Translators: description for script "gateway_rename.scm" (0.3.0+)
-#: scripts/_i18n_scripts.py:178
+#: scripts/_i18n_scripts.py:180
 msgid "Convert usernames of gateway connections to their real names."
 msgstr "ゲートウェイ接続のユーザ名を本名に変換。"
 
 #. Translators: description for script "buffzilla.rb" (0.3.0+)
-#: scripts/_i18n_scripts.py:180
+#: scripts/_i18n_scripts.py:182
 msgid "Copy everything into one buffer."
 msgstr "1 つのバッファにすべてをコピー。"
 
 #. Translators: description for script "xfer_scp.py" (0.4.3+)
-#: scripts/_i18n_scripts.py:182
+#: scripts/_i18n_scripts.py:184
 msgid "Copy files by scp after xfer."
 msgstr "xfer の後に scp でファイルをコピー。"
 
 #. Translators: description for script "spell_correction.py" (0.4.0+)
-#: scripts/_i18n_scripts.py:184
+#: scripts/_i18n_scripts.py:186
 msgid "Correction for misspelled words in command line."
 msgstr "コマンドライン内のスペルミス単語を修正。"
 
 #. Translators: description for script "spotify_nowplaying.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:186
+#: scripts/_i18n_scripts.py:188
 msgid "Current song script for Spotify on OS X."
 msgstr "OS X 上の Spotify 用の現在再生中の曲を表示するスクリプト。"
 
 #. Translators: description for script "completion.py" (0.3.1+)
-#: scripts/_i18n_scripts.py:188
+#: scripts/_i18n_scripts.py:190
 msgid "Custom word completions."
 msgstr "カスタム単語補完。"
 
 #. Translators: description for script "kickban.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:190
+#: scripts/_i18n_scripts.py:192
 msgid "Customizable kickban command with unban timer and mask resolver."
 msgstr "unban タイマーとマスクリゾルバで kickban コマンドをカスタマイズ。"
 
 #. Translators: description for script "customize_bar.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:192
+#: scripts/_i18n_scripts.py:194
 msgid "Customize bars by buffer."
 msgstr "バッファでバーをカスタマイズ。"
 
 #. Translators: description for script "server_autoswitch.py" (0.3.6+)
-#: scripts/_i18n_scripts.py:194
+#: scripts/_i18n_scripts.py:196
 msgid "Cycle to currently used server (for merged buffers)."
 msgstr "現在利用中のサーバに移動 (マージバッファ用)。"
 
 #. Translators: description for script "pybuffer.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:196
+#: scripts/_i18n_scripts.py:198
 msgid "Debugging tool for python scripts or test WeeChat's API functions."
 msgstr ""
 "python スクリプト用のデバッグツール、WeeChat の API 関数をテストするツール。"
 
 #. Translators: description for script "dellog.pl" (0.3.2+)
-#: scripts/_i18n_scripts.py:198
+#: scripts/_i18n_scripts.py:200
 msgid "Delete log file of current buffer."
 msgstr "現在のバッファに対するログファイルを削除。"
 
 #. Translators: description for script "purgelogs.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:200
+#: scripts/_i18n_scripts.py:202
 msgid "Delete log files by age or size."
 msgstr "時間かサイズを基準にログファイルを削除。"
 
 #. Translators: description for script "clone_scanner.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:202
+#: scripts/_i18n_scripts.py:204
 msgid "Detect multiple nicknames from the same host on irc channels."
 msgstr "チャンネル内でホストが同じニックネームを検出。"
 
 #. Translators: description for script "btc_ticker.py" (0.3.7+)
-#: scripts/_i18n_scripts.py:204
+#: scripts/_i18n_scripts.py:206
 msgid "Display Bitcoin or other crypto currency spot exchange value."
 msgstr "Bitcoin やその他の暗号通貨の交換レートを表示。"
 
 #. Translators: description for script "infos.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:206
+#: scripts/_i18n_scripts.py:208
 msgid "Display WeeChats infos, useful for script developers."
 msgstr "WeeChats 情報を表示、スクリプト開発者に有益。"
 
 #. Translators: description for script "hilites.rb" (0.3.0+)
-#: scripts/_i18n_scripts.py:208
+#: scripts/_i18n_scripts.py:210
 msgid "Display Weechat highlights in dzen (and beep)."
 msgstr "dzen (とビープ音) で Weechat のハイライトを表示。"
 
 #. Translators: description for script "countdown.rb" (0.3.0+)
-#: scripts/_i18n_scripts.py:210
+#: scripts/_i18n_scripts.py:212
 msgid "Display a countdown on current buffer."
 msgstr "現在のバッファにカウントダウンを表示。"
 
 #. Translators: description for script "whowas_timeago.py" (1.3+)
-#: scripts/_i18n_scripts.py:212
+#: scripts/_i18n_scripts.py:214
 msgid "Display a human-readable time string for WHOWAS data."
 msgstr "WHOWAS データの時間をわかりやすく表示する。"
 
 #. Translators: description for script "urlbar.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:214
+#: scripts/_i18n_scripts.py:216
 msgid "Display a url bar for easy clicking or selecting."
 msgstr "URL を簡単にクリックまたは選択できる URL バーを表示。"
 
 #. Translators: description for script "vdm.py" (0.3.7+)
-#: scripts/_i18n_scripts.py:216
+#: scripts/_i18n_scripts.py:218
 msgid "Display content of viedemerde.fr/fmylife.com website."
 msgstr "viedemerde.fr/fmylife.com ウェブサイトの内容を表示。"
 
 #. Translators: description for script "apply_corrections.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:218
+#: scripts/_i18n_scripts.py:220
 msgid "Display corrected text when user sends s/typo/replacement."
 msgstr "ユーザが s/誤/正 を送信したらテキストを修正して表示。"
 
 #. Translators: description for script "whatismyip.py" (0.3.7+)
-#: scripts/_i18n_scripts.py:220
+#: scripts/_i18n_scripts.py:222
 msgid "Display external ip address."
 msgstr "外部 IP アドレスを表示。"
 
 #. Translators: description for script "url_hint.py" (0.4.0+)
-#: scripts/_i18n_scripts.py:222
+#: scripts/_i18n_scripts.py:224
 msgid "Display hints for URLs and open them with keyboard shortcuts."
 msgstr "URL のヒントを表示し、キーボードショートカットでそれを開く。"
 
 #. Translators: description for script "infolist.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:224
+#: scripts/_i18n_scripts.py:226
 msgid "Display infolist in a buffer, useful for script developers."
 msgstr "バッファのインフォリストを表示、スクリプト開発者に有用。"
 
 #. Translators: description for script "kernel.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:226
+#: scripts/_i18n_scripts.py:228
 msgid "Display latest available kernel on kernel.org."
 msgstr "kernel.org から利用できる最新のカーネルを表示。"
 
 #. Translators: description for script "nameday.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:228
+#: scripts/_i18n_scripts.py:230
 msgid "Display name days in bar item and buffer (only french calendar)."
 msgstr "バー要素とバッファに聖名祝日を表示 (フランスのカレンダーのみ)。"
 
 #. Translators: description for script "biditext.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:230
+#: scripts/_i18n_scripts.py:232
 msgid "Display right-to-left text in chat with fribidi."
 msgstr "fribidi を使って右から左に書くテキストをチャットエリアに表示。"
 
 #. Translators: description for script "logsize.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:232
+#: scripts/_i18n_scripts.py:234
 msgid "Display size of current log file in a bar item."
 msgstr "現在のログファイルのサイズをバー要素内に表示。"
-
-#. Translators: description for script "whoissource.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:234
-msgid "Display source of \"End of WHOIS\" numerics."
-msgstr "\"End of WHOIS\" の送信元を表示。"
 
 #. Translators: description for script "topicdiff_alt.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:236
@@ -5200,43 +5202,48 @@ msgstr "ノーマルと挿入モードを持つ Vi ライクなキー割り当�
 msgid "View content of pastebin site in a buffer."
 msgstr "バッファ内で pastebin サイトの内容を見る。"
 
-#. Translators: description for script "oldswarner.lua" (0.3.7+)
+#. Translators: description for script "pushbullet.rb" (0.3.0+)
 #: scripts/_i18n_scripts.py:688
+msgid "View/send SMS via pushbullet."
+msgstr ""
+
+#. Translators: description for script "oldswarner.lua" (0.3.7+)
+#: scripts/_i18n_scripts.py:690
 msgid "Warn user if about to paste URL already existing in buffer."
 msgstr "ペーストした URL がバッファ内にある場合にユーザに警告を出す。"
 
 #. Translators: description for script "weatherbot.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:690
+#: scripts/_i18n_scripts.py:692
 msgid "Weather bot using the WeatherUnderground API."
 msgstr "WeatherUnderground API を使うお天気ボット。"
 
 #. Translators: description for script "weetweet.py" (0.4.0+)
-#: scripts/_i18n_scripts.py:692
+#: scripts/_i18n_scripts.py:694
 msgid "WeeChat twitter client."
 msgstr "WeeChat 用の twitter クライアント。"
 
 #. Translators: description for script "whatsapp.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:694
+#: scripts/_i18n_scripts.py:696
 msgid "WhatsApp protocol."
 msgstr "WhatsApp プロトコル。"
 
 #. Translators: description for script "wmiibar.pl" (0.3.3+)
-#: scripts/_i18n_scripts.py:696
+#: scripts/_i18n_scripts.py:698
 msgid "Wmii statusbar notification for highlights."
 msgstr "ハイライト用の Wmii ステータスバー通知。"
 
 #. Translators: description for script "nick_complete_wrapper.lua" (0.3.8+)
-#: scripts/_i18n_scripts.py:698
+#: scripts/_i18n_scripts.py:700
 msgid "Wrap nick completion with custom prefix and/or suffix."
 msgstr "ニックネーム補完時に設定したプレフィックスとサフィックスを付ける。"
 
 #. Translators: description for script "ichatts.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:700
+#: scripts/_i18n_scripts.py:702
 msgid "iChat-style timestamps."
 msgstr "iChat スタイルのタイムスタンプ。"
 
 #. Translators: description for script "itunes.rb" (0.3.0+)
-#: scripts/_i18n_scripts.py:702
+#: scripts/_i18n_scripts.py:704
 msgid "iTunes control and now playing script."
 msgstr "iTunes の操作と現在再生中曲に関する情報を得るスクリプト。"
 
