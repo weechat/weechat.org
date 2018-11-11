@@ -140,6 +140,8 @@ _i18n_scripts_scripts = [
     gettext_lazy("Check POP3 server for mails and display mail headers."),
     # Translators: description for script "cleanbuffer.rb" (0.3.0+)
     gettext_lazy("Clear a buffer, on znc / locally or both."),
+    # Translators: description for script "weenotify.py" (2.0+)
+    gettext_lazy("Client/server to send/receive notifications and display them."),
     # Translators: description for script "colorize_lines.pl" (0.3.4+)
     gettext_lazy("Color the channel text with nick color."),
     # Translators: description for script "colorizer.rb" (0.3.0+)
