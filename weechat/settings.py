@@ -20,7 +20,6 @@
 
 # Django settings for weechat project.
 
-from django import VERSION as DJANGO_VERSION
 from os import path
 
 DEBUG = False
