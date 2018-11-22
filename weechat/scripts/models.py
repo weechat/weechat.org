@@ -23,7 +23,7 @@
 import gzip
 from hashlib import md5
 from io import open
-from os import path
+import os
 import re
 from xml.sax.saxutils import escape
 
@@ -197,11 +197,11 @@ class Script(models.Model):
     def filename(self):
         """Return script filename (on disk)."""
         return files_path_join(self.path(),
-                               path.basename(self.name_with_extension()))
+                               os.path.basename(self.name_with_extension()))
 
     def file_exists(self):
         """Check if script exists (on disk)."""
-        return path.isfile(self.filename())
+        return os.path.isfile(self.filename())
 
     def md5(self):
         """Return MD5 checksum of script."""

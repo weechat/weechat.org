@@ -22,7 +22,7 @@
 
 from datetime import datetime
 from hashlib import sha1, sha512
-from os import path
+import os
 import pytz
 
 from django.conf import settings
@@ -150,16 +150,16 @@ class Package(models.Model):
 
     def has_gpg_sig(self):
         """Checks if the package has a GPG signature."""
-        return path.isfile(self.fullname_gpg_sig())
+        return os.path.isfile(self.fullname_gpg_sig())
 
     def exists(self):
         """Checks if the package exists (on disk)."""
-        return path.exists(self.fullname())
+        return os.path.exists(self.fullname())
 
     def filesize(self):
         """Return the size of package, in bytes (as string)."""
         try:
-            return str(path.getsize(self.fullname()))
+            return str(os.path.getsize(self.fullname()))
         except:  # noqa: E722
             return ''
 
@@ -167,7 +167,7 @@ class Package(models.Model):
         """Return the package date/time."""
         try:
             timezone = pytz.timezone(settings.TIME_ZONE)
-            return datetime.fromtimestamp(path.getmtime(self.fullname()),
+            return datetime.fromtimestamp(os.path.getmtime(self.fullname()),
                                           tz=timezone)
         except:  # noqa: E722
             return ''

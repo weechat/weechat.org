@@ -20,11 +20,11 @@
 
 # Django settings for weechat project.
 
-from os import path
+import os
 
 DEBUG = False
 
-BASE_DIR = path.dirname(path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 ADMINS = ()  # set it in settings_local.py
 MANAGERS = ADMINS
@@ -76,7 +76,7 @@ LANGUAGES_LOCALES = {
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = path.normpath(path.join(BASE_DIR, '..', 'media'))
+MEDIA_ROOT = os.path.normpath(os.path.join(BASE_DIR, '..', 'media'))
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
@@ -96,9 +96,9 @@ ADMIN_PAGE = 'admin'
 STATIC_URL = '/static/'
 
 FILES_URL = '/files/'
-FILES_ROOT = path.normpath(path.join(BASE_DIR, '..', 'files'))
+FILES_ROOT = os.path.normpath(os.path.join(BASE_DIR, '..', 'files'))
 
-REPO_DIR = path.normpath(path.join(BASE_DIR, '..', 'repo'))
+REPO_DIR = os.path.normpath(os.path.join(BASE_DIR, '..', 'repo'))
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = ''  # set it in settings_local.py
@@ -107,7 +107,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -137,7 +137,7 @@ MIDDLEWARE = (
 ROOT_URLCONF = 'weechat.urls'
 
 FIXTURE_DIRS = (
-    path.join(BASE_DIR, 'fixtures'),
+    os.path.join(BASE_DIR, 'fixtures'),
 )
 
 INSTALLED_APPS = (
@@ -162,7 +162,7 @@ INSTALLED_APPS = (
 )
 
 LOCALE_PATHS = (
-    path.join(BASE_DIR, 'locale'),
+    os.path.join(BASE_DIR, 'locale'),
 )
 
 ugettext = lambda s: s

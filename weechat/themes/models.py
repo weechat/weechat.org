@@ -23,7 +23,7 @@
 import gzip
 from hashlib import md5
 from io import open
-from os import chdir, listdir, path
+import os
 import re
 import tarfile
 from xml.sax.saxutils import escape
@@ -95,8 +95,8 @@ class Theme(models.Model):
     def html_preview(self):
         """Return HTML with theme preview."""
         filename = files_path_join('themes', 'html',
-                                   path.basename('%s.html' % self.name))
-        if path.isfile(filename):
+                                   os.path.basename('%s.html' % self.name))
+        if os.path.isfile(filename):
             with open(filename, 'r', encoding='utf-8') as _file:
                 content = _file.read()
             return content
@@ -112,8 +112,8 @@ class Theme(models.Model):
 
     def file_exists(self):
         """Checks if the theme exists (on disk)."""
-        return path.isfile(files_path_join(self.path(),
-                                           path.basename(self.name)))
+        return os.path.isfile(files_path_join(self.path(),
+                                              os.path.basename(self.name)))
 
     @staticmethod
     def get_props(themestring):
@@ -361,10 +361,10 @@ def handler_theme_changed(sender, **kwargs):
         _f_out.close()
 
     # create themes.tar.bz2 (with theme.xml + 'themes' directory)
-    chdir(settings.FILES_ROOT)
+    os.chdir(settings.FILES_ROOT)
     tar = tarfile.open(files_path_join('themes.tar.bz2'), 'w:bz2')
     tar.add('themes.xml')
-    for name in listdir(files_path_join('themes')):
+    for name in os.listdir(files_path_join('themes')):
         if name.endswith('.theme'):
             tar.add('themes/%s' % name)
     tar.close()

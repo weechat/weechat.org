@@ -20,7 +20,7 @@
 
 """Some useful path functions."""
 
-from os import path
+import os
 
 from django.conf import settings
 
@@ -30,8 +30,8 @@ def __path_join(base, *args):
     Join multiple paths after 'base' and ensure the result is still
     under 'base'.
     """
-    base = path.normpath(base)
-    directory = path.normpath(path.join(base, *args))
+    base = os.path.normpath(base)
+    directory = os.path.normpath(os.path.join(base, *args))
     if directory.startswith(base):
         return directory
     return ''

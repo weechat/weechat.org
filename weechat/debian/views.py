@@ -22,7 +22,7 @@
 
 from datetime import datetime, timedelta
 import gzip
-from os import path, stat
+import os
 import pytz
 import re
 
@@ -47,7 +47,7 @@ def get_repository_packages(repository):
             'files': [],
         }
         filename = repository.path_packages_gz(arch)
-        build['date'] = stat(filename).st_mtime
+        build['date'] = os.stat(filename).st_mtime
         with gzip.open(filename, 'rb') as _file:
             pkg = {}
             for line in _file.readlines():
@@ -63,7 +63,7 @@ def get_repository_packages(repository):
                         pkg['arch'] = arch
                         pkgfilename = repo_path_join(repository.domain,
                                                      pkg['Filename'])
-                        fstat = stat(pkgfilename)
+                        fstat = os.stat(pkgfilename)
                         pkg['size'] = fstat.st_size
                         date_time = datetime.fromtimestamp(fstat.st_mtime,
                                                            tz=timezone)
@@ -74,7 +74,7 @@ def get_repository_packages(repository):
                                                  timedelta(hours=add_hours))
                             if nextbuilddatetime > now:
                                 pkg['nextbuilddatetime'] = nextbuilddatetime
-                        pkg['basename'] = path.basename(pkg['Filename'])
+                        pkg['basename'] = os.path.basename(pkg['Filename'])
                         pkg['anchor'] = '%s_%s_%s_%s' % (
                             repository.name,
                             repository.version.codename,

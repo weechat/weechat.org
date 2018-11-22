@@ -20,7 +20,7 @@
 
 """Views for "about" menu."""
 
-from os import path
+import os
 
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
@@ -71,7 +71,7 @@ def history(request):
     releases = []
     for release in release_list:
         name = 'weechat-%s.png' % release.version
-        if path.exists(media_path_join('images', 'story', name)):
+        if os.path.exists(media_path_join('images', 'story', name)):
             releases.append((release.version, release.date))
     return render(
         request,

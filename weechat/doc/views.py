@@ -22,7 +22,7 @@
 
 from datetime import datetime
 from math import ceil
-from os import path, listdir
+import os
 import pytz
 
 from django.conf import settings
@@ -68,7 +68,7 @@ def get_i18n_stats():
     try:
         timezone = pytz.timezone(settings.TIME_ZONE)
         filename = files_path_join('stats', 'i18n.txt')
-        date = datetime.fromtimestamp(path.getmtime(filename), tz=timezone)
+        date = datetime.fromtimestamp(os.path.getmtime(filename), tz=timezone)
         with open(filename, 'r') as _file:
             langs = []
             for line in _file:
@@ -129,7 +129,7 @@ def documentation(request, version='stable'):
     if version == 'old':
         doc_list = None
         try:
-            doc_list = sorted(listdir(files_path_join('doc', 'old')),
+            doc_list = sorted(os.listdir(files_path_join('doc', 'old')),
                               reverse=True)
         except:  # noqa: E722
             pass
@@ -160,11 +160,11 @@ def documentation(request, version='stable'):
                 name = '%s/weechat_%s.%s.html' % (
                     doc.version.directory, doc.name, lang.lang)
                 full_name = files_path_join('doc', name)
-                if path.exists(full_name):
+                if os.path.exists(full_name):
                     files.append(
                         (
-                            path.normpath(name),
-                            datetime.fromtimestamp(path.getmtime(full_name),
+                            os.path.normpath(name),
+                            datetime.fromtimestamp(os.path.getmtime(full_name),
                                                    tz=timezone),
                             lang,
                         )
@@ -208,7 +208,7 @@ def documentation_link(request, version='stable', name=None, lang='en'):
         doc_name = DOC_SHORTCUT_ALIAS.get(name, name)
         filename = 'weechat_%s.%s.html' % (doc_name, lang)
         full_name = files_path_join('doc', version, filename)
-        if path.exists(full_name):
+        if os.path.exists(full_name):
             return redirect('/files/doc/%s/%s' % (version, filename))
     return redirect('doc')
 
