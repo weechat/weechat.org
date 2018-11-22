@@ -22,36 +22,17 @@
 
 import os
 
-DEBUG = False
-
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-ADMINS = ()  # set it in settings_local.py
-MANAGERS = ADMINS
-
-DATABASES = {}  # set it in settings_local.py
-
-# Local time zone for this installation. Choices can be found here:
-# http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
-# although not all choices may be available on all operating systems.
-# On Unix systems, a value of None will cause Django to use the same
-# timezone as the operating system.
-# If running in a Windows environment this must be set to the same as your
-# system time zone.
-TIME_ZONE = 'Europe/Paris'
-
-# Language code for this installation. All choices can be found here:
-# http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-US'
+DEBUG = False
 
 SITE_ID = 1
 
-# If you set this to False, Django will make some optimizations so as not
-# to load the internationalization machinery.
-USE_I18N = True
+TIME_ZONE = 'Europe/Paris'
 
-# If you set this to False, Django will not format dates, numbers and
-# calendars according to the current locale
+LANGUAGE_CODE = 'en-us'
+
+USE_I18N = True
 USE_L10N = False
 
 ugettext = lambda s: s
@@ -74,34 +55,60 @@ LANGUAGES_LOCALES = {
     'ja': 'ja_JP',
 }
 
-# Absolute path to the directory that holds media.
-# Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = os.path.normpath(os.path.join(BASE_DIR, '..', 'media'))
+# Translators: this is a date format, see: http://www.php.net/date (note: the result string must be short, use abbreviation for month if possible)
+DATE_FORMAT = ugettext('M j, Y')
+# Translators: this is a date/time format, see: http://www.php.net/date (note: the result string must be short, use abbreviation for month if possible)
+DATETIME_FORMAT = ugettext('M j, Y H:i')
 
-# URL that handles the media served from MEDIA_ROOT. Make sure to use a
-# trailing slash if there is a path component (optional in other cases).
-# Examples: "http://media.lawrence.com", "http://example.com/media/"
+MEDIA_ROOT = os.path.normpath(os.path.join(BASE_DIR, '..', 'media'))
 MEDIA_URL = '/media/'
 
-# Page for admin (can be overriden in settings_local.py)
-ADMIN_PAGE = 'admin'
-
-# URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
-# trailing slash.
-# Examples: "http://foo.com/media/", "/media/".
-#ADMIN_MEDIA_PREFIX = '/media_admin/'  # for Django <= 1.3
-
-# URL prefix for static files.
-# Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/static/'
-
-FILES_URL = '/files/'
 FILES_ROOT = os.path.normpath(os.path.join(BASE_DIR, '..', 'files'))
+FILES_URL = '/files/'
+
+STATIC_URL = '/static/'
 
 REPO_DIR = os.path.normpath(os.path.join(BASE_DIR, '..', 'repo'))
 
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = ''  # set it in settings_local.py
+FIXTURE_DIRS = [
+    os.path.join(BASE_DIR, 'fixtures'),
+]
+
+INSTALLED_APPS = [
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.sites',
+    'django.contrib.messages',
+    'django.contrib.admin',
+    'django.contrib.admindocs',
+    'django.contrib.staticfiles',
+    'django.contrib.humanize',
+    'weechat.common',
+    'weechat.news',
+    'weechat.about',
+    'weechat.doc',
+    'weechat.download',
+    'weechat.debian',
+    'weechat.scripts',
+    'weechat.themes',
+    'weechat.dev',
+]
+
+ROOT_URLCONF = 'weechat.urls'
+
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale'),
+]
+
+MIDDLEWARE = [
+    'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+]
 
 TEMPLATES = [
     {
@@ -124,52 +131,6 @@ TEMPLATES = [
         },
     },
 ]
-
-MIDDLEWARE = (
-    'django.middleware.common.CommonMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
-    #'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-)
-
-ROOT_URLCONF = 'weechat.urls'
-
-FIXTURE_DIRS = (
-    os.path.join(BASE_DIR, 'fixtures'),
-)
-
-INSTALLED_APPS = (
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.sites',
-    'django.contrib.messages',
-    'django.contrib.admin',
-    'django.contrib.admindocs',
-    'django.contrib.staticfiles',
-    'django.contrib.humanize',
-    'weechat.common',
-    'weechat.news',
-    'weechat.about',
-    'weechat.doc',
-    'weechat.download',
-    'weechat.debian',
-    'weechat.scripts',
-    'weechat.themes',
-    'weechat.dev',
-)
-
-LOCALE_PATHS = (
-    os.path.join(BASE_DIR, 'locale'),
-)
-
-ugettext = lambda s: s
-# Translators: this is a date format, see: http://www.php.net/date (note: the result string must be short, use abbreviation for month if possible)
-DATE_FORMAT = ugettext('M j, Y')
-# Translators: this is a date/time format, see: http://www.php.net/date (note: the result string must be short, use abbreviation for month if possible)
-DATETIME_FORMAT = ugettext('M j, Y H:i')
 
 # read settings_local.py
 try:
