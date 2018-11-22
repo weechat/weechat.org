@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-11 16:36+0100\n"
+"POT-Creation-Date: 2018-11-22 22:32+0100\n"
 "PO-Revision-Date: 2018-09-22 09:04+0200\n"
 "Last-Translator: Alexandre Bolelli <semeion7@gmail.com>\n"
 "Language-Team: Portuguese <semeion7@gmail.com>\n"
@@ -389,12 +389,12 @@ msgstr "crítico"
 msgid "Czech"
 msgstr "Tcheco"
 
-#: doc/models.py:51 settings.py:62 templates/about/support.html:34
+#: doc/models.py:51 settings.py:42 templates/about/support.html:34
 #: templates/about/weechat.org.html:24
 msgid "German"
 msgstr "Alemão"
 
-#: doc/models.py:52 settings.py:60 templates/about/support.html:27
+#: doc/models.py:52 settings.py:40 templates/about/support.html:27
 msgid "English"
 msgstr "Inglês"
 
@@ -402,7 +402,7 @@ msgstr "Inglês"
 msgid "Spanish"
 msgstr "Espanhol"
 
-#: doc/models.py:54 settings.py:61 templates/about/support.html:28
+#: doc/models.py:54 settings.py:41 templates/about/support.html:28
 msgid "French"
 msgstr "Francês"
 
@@ -410,15 +410,15 @@ msgstr "Francês"
 msgid "Hungarian"
 msgstr "Húngaro"
 
-#: doc/models.py:56 settings.py:63 templates/about/weechat.org.html:25
+#: doc/models.py:56 settings.py:43 templates/about/weechat.org.html:25
 msgid "Italian"
 msgstr "Italiano"
 
-#: doc/models.py:57 settings.py:66 templates/about/weechat.org.html:26
+#: doc/models.py:57 settings.py:46 templates/about/weechat.org.html:26
 msgid "Japanese"
 msgstr "Japonês"
 
-#: doc/models.py:58 settings.py:64 templates/about/weechat.org.html:27
+#: doc/models.py:58 settings.py:44 templates/about/weechat.org.html:27
 msgid "Polish"
 msgstr "Polonês"
 
@@ -428,7 +428,7 @@ msgstr "Polonês"
 msgid "Portuguese"
 msgstr "Portugues (Brasil)"
 
-#: doc/models.py:60 settings.py:65 templates/about/weechat.org.html:28
+#: doc/models.py:60 settings.py:45 templates/about/weechat.org.html:28
 msgid "Portuguese (Brazil)"
 msgstr "Portugues (Brasil)"
 
@@ -5308,7 +5308,7 @@ msgid "Language"
 msgstr "Linguagem"
 
 #: scripts/models.py:281 templates/about/interfaces.html:24
-#: templates/donate.html:89 templates/scripts/list.html:82
+#: templates/donate.html:86 templates/scripts/list.html:82
 #: templates/scripts/list.html:84 templates/scripts/pending.html:29
 msgid "Name"
 msgstr "Nome"
@@ -5430,12 +5430,12 @@ msgid "Changes in this release."
 msgstr "mudanças nesta versão"
 
 #. Translators: this is a date format, see: http://www.php.net/date (note: the result string must be short, use abbreviation for month if possible)
-#: settings.py:171
+#: settings.py:59
 msgid "M j, Y"
 msgstr "d/m/Y"
 
 #. Translators: this is a date/time format, see: http://www.php.net/date (note: the result string must be short, use abbreviation for month if possible)
-#: settings.py:173
+#: settings.py:61
 #, fuzzy
 #| msgid "M j, Y"
 msgid "M j, Y H:i"
@@ -5870,7 +5870,7 @@ msgstr "E então o WeeChat nasceu, em junho de 2003."
 msgid "Key dates"
 msgstr "Datas-chave"
 
-#: templates/about/history.html:43 templates/donate.html:85
+#: templates/about/history.html:43 templates/donate.html:82
 #: templates/scripts/pending.html:38 templates/scripts/python3.html:57
 #: templates/scripts/python3.html:132
 msgid "Date"
@@ -6363,7 +6363,7 @@ msgstr "Fuzzy"
 msgid "Untranslated"
 msgstr "Não traduzidas"
 
-#: templates/doc/doc_version.html:71 templates/donate.html:121
+#: templates/doc/doc_version.html:71 templates/donate.html:118
 msgid "Total"
 msgstr "Total"
 
@@ -6577,11 +6577,15 @@ msgstr ""
 "Por favor note que <strong>não há publicidade</strong> no weechat.org, logo "
 "URLs não são exibidas."
 
-#: templates/donate.html:51
+#: templates/donate.html:35
+msgid "Donate using Liberapay"
+msgstr ""
+
+#: templates/donate.html:48
 msgid "Why your donation matters?"
 msgstr "Por quê sua doação importa?"
 
-#: templates/donate.html:54
+#: templates/donate.html:51
 msgid ""
 "WeeChat is written by a small group of <strong>volunteers</strong>. Any "
 "contribution will show us that the project is appreciated and keep us "
@@ -6591,7 +6595,7 @@ msgstr ""
 "Qualquer contribuição mostra que o projeto é apreciado e nos mantém "
 "motivados."
 
-#: templates/donate.html:56
+#: templates/donate.html:53
 #, fuzzy
 #| msgid ""
 #| "It is used to pay the <strong>dedicated server</strong>, used for "
@@ -6603,49 +6607,49 @@ msgstr ""
 "É usado para pagar pelo <strong>servidor dedicado</strong>, usado para "
 "desenvolvimentos, construção de pacotes e hospedagem do weechat.org."
 
-#: templates/donate.html:59
+#: templates/donate.html:56
 #, fuzzy
 #| msgid "They support WeeChat:"
 msgid "They support WeeChat"
 msgstr "Eles suportam o WeeChat:"
 
-#: templates/donate.html:61
+#: templates/donate.html:58
 msgid "With Liberapay"
 msgstr ""
 
-#: templates/donate.html:64
+#: templates/donate.html:61
 msgid "See the weechat page on Liberapay:"
 msgstr ""
 
-#: templates/donate.html:69
+#: templates/donate.html:66
 msgid "With Paypal"
 msgstr ""
 
-#: templates/donate.html:72
+#: templates/donate.html:69
 msgid "Whole list:"
 msgstr ""
 
-#: templates/donate.html:72
+#: templates/donate.html:69
 msgid "Top 10, ordered by total amount donated:"
 msgstr ""
 
-#: templates/donate.html:75
+#: templates/donate.html:72
 msgid "show the top 10, ordered by total amount donated"
 msgstr ""
 
-#: templates/donate.html:77
+#: templates/donate.html:74
 msgid "show the whole list"
 msgstr ""
 
-#: templates/donate.html:87
+#: templates/donate.html:84
 msgid "Rank"
 msgstr ""
 
-#: templates/donate.html:90
+#: templates/donate.html:87
 msgid "Amount"
 msgstr "Quantia"
 
-#: templates/donate.html:92
+#: templates/donate.html:89
 msgid "Comment"
 msgstr "Comentário"
 

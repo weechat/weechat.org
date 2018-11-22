@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-11 16:36+0100\n"
+"POT-Creation-Date: 2018-11-22 22:32+0100\n"
 "PO-Revision-Date: 2018-11-11 16:20+0100\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
@@ -374,12 +374,12 @@ msgstr "重大"
 msgid "Czech"
 msgstr "チェコ語"
 
-#: doc/models.py:51 settings.py:62 templates/about/support.html:34
+#: doc/models.py:51 settings.py:42 templates/about/support.html:34
 #: templates/about/weechat.org.html:24
 msgid "German"
 msgstr "ドイツ語"
 
-#: doc/models.py:52 settings.py:60 templates/about/support.html:27
+#: doc/models.py:52 settings.py:40 templates/about/support.html:27
 msgid "English"
 msgstr "英語"
 
@@ -387,7 +387,7 @@ msgstr "英語"
 msgid "Spanish"
 msgstr "スペイン語"
 
-#: doc/models.py:54 settings.py:61 templates/about/support.html:28
+#: doc/models.py:54 settings.py:41 templates/about/support.html:28
 msgid "French"
 msgstr "フランス語"
 
@@ -395,15 +395,15 @@ msgstr "フランス語"
 msgid "Hungarian"
 msgstr "ハンガリー語"
 
-#: doc/models.py:56 settings.py:63 templates/about/weechat.org.html:25
+#: doc/models.py:56 settings.py:43 templates/about/weechat.org.html:25
 msgid "Italian"
 msgstr "イタリア語"
 
-#: doc/models.py:57 settings.py:66 templates/about/weechat.org.html:26
+#: doc/models.py:57 settings.py:46 templates/about/weechat.org.html:26
 msgid "Japanese"
 msgstr "日本語"
 
-#: doc/models.py:58 settings.py:64 templates/about/weechat.org.html:27
+#: doc/models.py:58 settings.py:44 templates/about/weechat.org.html:27
 msgid "Polish"
 msgstr "ポーランド語"
 
@@ -411,7 +411,7 @@ msgstr "ポーランド語"
 msgid "Portuguese"
 msgstr "ポルトガル語"
 
-#: doc/models.py:60 settings.py:65 templates/about/weechat.org.html:28
+#: doc/models.py:60 settings.py:45 templates/about/weechat.org.html:28
 msgid "Portuguese (Brazil)"
 msgstr "ポルトガル語 (ブラジル)"
 
@@ -5274,7 +5274,7 @@ msgid "Language"
 msgstr "プログラミング言語"
 
 #: scripts/models.py:281 templates/about/interfaces.html:24
-#: templates/donate.html:89 templates/scripts/list.html:82
+#: templates/donate.html:86 templates/scripts/list.html:82
 #: templates/scripts/list.html:84 templates/scripts/pending.html:29
 msgid "Name"
 msgstr "名称"
@@ -5380,12 +5380,12 @@ msgid "Changes in this release."
 msgstr "このリリースの変更内容。"
 
 #. Translators: this is a date format, see: http://www.php.net/date (note: the result string must be short, use abbreviation for month if possible)
-#: settings.py:171
+#: settings.py:59
 msgid "M j, Y"
 msgstr "Y 年 m 月 j 日"
 
 #. Translators: this is a date/time format, see: http://www.php.net/date (note: the result string must be short, use abbreviation for month if possible)
-#: settings.py:173
+#: settings.py:61
 msgid "M j, Y H:i"
 msgstr "Y 年 m 月 j 日 H 時 i 分"
 
@@ -5802,7 +5802,7 @@ msgstr "そして WeeChat が誕生しました。2003 年 6 月のことです�
 msgid "Key dates"
 msgstr "重要な日"
 
-#: templates/about/history.html:43 templates/donate.html:85
+#: templates/about/history.html:43 templates/donate.html:82
 #: templates/scripts/pending.html:38 templates/scripts/python3.html:57
 #: templates/scripts/python3.html:132
 msgid "Date"
@@ -6265,7 +6265,7 @@ msgstr "曖昧"
 msgid "Untranslated"
 msgstr "未翻訳"
 
-#: templates/doc/doc_version.html:71 templates/donate.html:121
+#: templates/doc/doc_version.html:71 templates/donate.html:118
 msgid "Total"
 msgstr "合計"
 
@@ -6452,11 +6452,17 @@ msgid ""
 msgstr ""
 "このサイトには<strong>広告を載せない</strong>ので、URL は禁止されます。"
 
-#: templates/donate.html:51
+#: templates/donate.html:35
+#, fuzzy
+#| msgid "Donations via Liberapay"
+msgid "Donate using Liberapay"
+msgstr "Liberapay 経由の寄付"
+
+#: templates/donate.html:48
 msgid "Why your donation matters?"
 msgstr "寄付が大切な理由とは?"
 
-#: templates/donate.html:54
+#: templates/donate.html:51
 msgid ""
 "WeeChat is written by a small group of <strong>volunteers</strong>. Any "
 "contribution will show us that the project is appreciated and keep us "
@@ -6465,7 +6471,7 @@ msgstr ""
 "WeeChat を開発しているのは小さな<strong>ボランティア</strong>団体です。このプ"
 "ロジェクトはどんな寄付でも歓迎しますし、寄付のお陰でやる気が維持されます。"
 
-#: templates/donate.html:56
+#: templates/donate.html:53
 msgid ""
 "Your donations help to pay the <strong>dedicated server</strong>, used for "
 "developments, build of packages and hosting of weechat.org."
@@ -6473,47 +6479,47 @@ msgstr ""
 "皆様からの寄付は<strong>専用サーバ</strong>の維持費に役立てられます。このサー"
 "バは開発、パッケージのビルド、weechat.org のホスティングに使われます。"
 
-#: templates/donate.html:59
+#: templates/donate.html:56
 msgid "They support WeeChat"
 msgstr "WeeChat 支援者"
 
-#: templates/donate.html:61
+#: templates/donate.html:58
 msgid "With Liberapay"
 msgstr "Liberapay 経由の寄付"
 
-#: templates/donate.html:64
+#: templates/donate.html:61
 msgid "See the weechat page on Liberapay:"
 msgstr "Liberapay 上の WeeChat のページを参照してください:"
 
-#: templates/donate.html:69
+#: templates/donate.html:66
 msgid "With Paypal"
 msgstr "Paypal 経由の寄付"
 
-#: templates/donate.html:72
+#: templates/donate.html:69
 msgid "Whole list:"
 msgstr "完全なリスト:"
 
-#: templates/donate.html:72
+#: templates/donate.html:69
 msgid "Top 10, ordered by total amount donated:"
 msgstr "上位 10 名、寄付の総額順:"
 
-#: templates/donate.html:75
+#: templates/donate.html:72
 msgid "show the top 10, ordered by total amount donated"
 msgstr "上位 10 名を表示、寄付の総額順"
 
-#: templates/donate.html:77
+#: templates/donate.html:74
 msgid "show the whole list"
 msgstr "完全なリストを表示"
 
-#: templates/donate.html:87
+#: templates/donate.html:84
 msgid "Rank"
 msgstr "順位"
 
-#: templates/donate.html:90
+#: templates/donate.html:87
 msgid "Amount"
 msgstr "寄付金額"
 
-#: templates/donate.html:92
+#: templates/donate.html:89
 msgid "Comment"
 msgstr "コメント"
 
