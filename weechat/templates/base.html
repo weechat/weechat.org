@@ -48,6 +48,7 @@
 
       <div class="nav-languages">
         <form name="lang" action="/i18n/setlang/" method="post">
+          {% csrf_token %}
           <div class="form-group my-0">
             <input type="hidden" name="language" value="{{ LANGUAGE_CODE }}">
             <select class="form-control form-control-sm" onchange="javascript:document.forms['lang'].elements['language'].value = this.value; document.forms['lang'].submit();">
