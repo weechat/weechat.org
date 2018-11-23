@@ -132,8 +132,14 @@
           <th>{% trans "Date" %}</th>
           <th>{% trans "Scripts" %}</th>
           <th>{% trans "Python scripts" %}</th>
-          <th>{% trans "Compatible with Python 3" %}</th>
-          <th>{% trans "Not yet compatible" %}</th>
+          <th>
+            {% comment %}Translators: use plural form for "compatible", if needed{% endcomment %}
+            {% trans "Compatible with Python 3" %}
+          </th>
+          <th>
+            {% comment %}Translators: use plural form for "compatible", if needed{% endcomment %}
+            {% trans "Not yet compatible" %}
+          </th>
           <th>{% trans "Notes" %}</td>
         </tr>
       </thead>
