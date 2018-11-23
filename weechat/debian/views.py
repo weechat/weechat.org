@@ -61,7 +61,7 @@ def get_repository_packages(repository):
                         pkg['repo'] = repository
                         pkg['distro'] = repository.name
                         pkg['arch'] = arch
-                        pkgfilename = repo_path_join(repository.domain,
+                        pkgfilename = repo_path_join(repository.name,
                                                      pkg['Filename'])
                         fstat = os.stat(pkgfilename)
                         pkg['size'] = fstat.st_size

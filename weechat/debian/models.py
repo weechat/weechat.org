@@ -60,7 +60,6 @@ class Repo(models.Model):
     active = models.BooleanField(default=True)
     name = models.CharField(max_length=64)
     version = models.ForeignKey(Version, on_delete=models.CASCADE)
-    domain = models.CharField(max_length=128)
     url = models.CharField(max_length=512)
     arch = models.CharField(max_length=128)
     builder = models.ForeignKey(Builder, on_delete=models.CASCADE)
@@ -83,7 +82,7 @@ class Repo(models.Model):
 
     def path_packages_gz(self, arch):
         """Return path/name to the Packages.gz file of repository."""
-        return repo_path_join(self.domain, 'dists',
+        return repo_path_join(self.name, 'dists',
                               self.version.codename, 'main',
                               'binary-%s' % arch, 'Packages.gz')
 
