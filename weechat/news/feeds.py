@@ -27,51 +27,45 @@ from django.contrib.syndication.views import Feed
 from weechat.news.models import Info
 
 
-class LatestNewsFeed(Feed):
-    """Feed with latest news."""
-    title = 'WeeChat news'
-    description = title
-    link = '/news/'
+class WeechatFeed(Feed):
+    """A WeeChat feed."""
 
     def get_object(self, request, *args, **kwargs):
         self.request = request
         return None
 
-    def items(self):
-        """Return items with date in the past."""
-        return (Info.objects.filter(visible=1)
-                .filter(date__lte=datetime.now()).order_by('-date')[:10])
-
     def item_link(self, info):
         """Return link to item by using the domain sent in the request."""
-        return 'http://%s/news/%d' % (
-            self.request.META.get('HTTP_HOST', ''), info.id)
+        return '%s://%s/news/%d' % (
+            self.request.scheme,
+            self.request.get_host(),
+            info.id,
+        )
 
     def item_pubdate(self, info):
         """Return idem date."""
         return info.date
 
 
-class UpcomingEventsFeed(Feed):
+class LatestNewsFeed(WeechatFeed):
+    """Feed with latest news."""
+    title = 'WeeChat news'
+    description = title
+    link = '/news/'
+
+    def items(self):
+        """Return items with date in the past."""
+        return (Info.objects.filter(visible=1)
+                .filter(date__lte=datetime.now()).order_by('-date')[:10])
+
+
+class UpcomingEventsFeed(WeechatFeed):
     """Feed with upcoming events."""
     title = 'Upcoming WeeChat events'
     description = title
     link = '/events/'
 
-    def get_object(self, request, *args, **kwargs):
-        self.request = request
-        return None
-
     def items(self):
         """Return items with date in the future."""
         return (Info.objects.filter(visible=1)
                 .filter(date__gt=datetime.now()).order_by('date')[:10])
-
-    def item_link(self, info):
-        """Return link to item by using the domain sent in the request."""
-        return 'http://%s/events/%d' % (
-            self.request.META.get('HTTP_HOST', ''), info.id)
-
-    def item_pubdate(self, info):
-        """Return item date."""
-        return info.date
