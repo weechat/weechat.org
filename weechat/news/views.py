@@ -57,13 +57,8 @@ def home(request, max_info=None, max_event=None):
     )
 
 
-def paginate_news(request, info_list, info_id, page_name):
+def paginate_news(request, info_list, pagesize):
     """Paginate list of news."""
-    pagesize = request.GET.get('pagesize', 10)
-    try:
-        pagesize = max(int(pagesize), 1)
-    except ValueError:
-        pagesize = 10
     paginator = Paginator(info_list, pagesize)
     page = request.GET.get('page')
     try:
@@ -81,8 +76,18 @@ def paginate_news(request, info_list, info_id, page_name):
         last_page = paginator.num_pages
     smart_page_range = range(first_page, last_page + 1)
 
-    event = infos and infos[0].date > datetime.now()
+    return (infos, smart_page_range)
 
+
+def render_news(request, info_list, info_id, page_name):
+    """Render the paginated news."""
+    pagesize = request.GET.get('pagesize', 10)
+    try:
+        pagesize = max(int(pagesize), 1)
+    except ValueError:
+        pagesize = 10
+    infos, smart_page_range = paginate_news(request, info_list, pagesize)
+    event = infos and infos[0].date > datetime.now()
     return render(request, 'home/news.html', {
         'infos': infos,
         'info_id': info_id,
@@ -103,7 +108,7 @@ def news(request, info_id=None):
                          .filter(date__lte=datetime.now()).order_by('-date'))
     except ObjectDoesNotExist:
         info_list = []
-    return paginate_news(request, info_list, info_id, 'news')
+    return render_news(request, info_list, info_id, 'news')
 
 
 def events(request):
@@ -113,4 +118,4 @@ def events(request):
                      .filter(date__gt=datetime.now()).order_by('date'))
     except ObjectDoesNotExist:
         info_list = []
-    return paginate_news(request, info_list, None, 'events')
+    return render_news(request, info_list, None, 'events')
