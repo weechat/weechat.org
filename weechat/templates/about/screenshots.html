@@ -23,7 +23,9 @@
   </a>
   {% endfor %}
 </div>
+
 {% elif screenshot %}
+
 <div class="text-center">
   <h4>{{ screenshot.comment }}</h4>
   <a href="{% url 'about_screenshots_app' app %}">
@@ -47,7 +49,5 @@
 {% endif %}
 
 {% endif %}
-
-</div>
 
 {% endblock content %}
