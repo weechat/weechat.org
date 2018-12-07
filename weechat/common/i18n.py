@@ -32,29 +32,34 @@ def i18n_autogen(app, name, strings):
         '# -*- coding: utf-8 -*-',
         '# This file is auto-generated after changes in database, '
         'DO NOT EDIT!',
-        '',
-        'from django.utils.translation import gettext_lazy',
-        '',
-        '_i18n_%s_%s = [' % (app, name),
     ]
-    done = set()
-    for string in sorted(strings):
-        if type(string) is tuple:
-            # if type is tuple of 2 strings: use the second as note for
-            # translators
-            (message, translators) = (string[0], string[1])
-        else:
-            # single string (no note for translators)
-            (message, translators) = (string, None)
-        # add string if not already done
-        if message not in done:
-            if translators:
-                content.append('    # Translators: %s' % translators)
-            content.append('    gettext_lazy("%s"),' %
-                           (message.replace('\\', '\\\\').replace('"', '\\"')
-                            .replace('\r\n', '\\n')))
-            done.add(message)
-    content.append(']')
+    if strings:
+        content += [
+            '',
+            'from django.utils.translation import gettext_noop',
+            '',
+            '',
+            'def __i18n_%s():' % name,
+        ]
+        done = set()
+        for string in sorted(strings):
+            if type(string) is tuple:
+                # if type is tuple of 2 strings: use the second as note for
+                # translators
+                (message, translators) = (string[0], string[1])
+            else:
+                # single string (no note for translators)
+                (message, translators) = (string, None)
+            # add string if not already done
+            if message not in done:
+                if translators:
+                    content.append('    # Translators: %s' % translators)
+                content.append('    gettext_noop("%s")' %
+                               (message
+                                .replace('\\', '\\\\')
+                                .replace('"', '\\"')
+                                .replace('\r\n', '\\n')))
+                done.add(message)
     content.append('')
     # write file
     filename = project_path_join(app, '_i18n_%s.py' % name)
