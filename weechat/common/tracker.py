@@ -88,7 +88,7 @@ def commits_links(commits):
             title = ' title="branch: %s"' % commit
         images.append('<a href="https://github.com/weechat/weechat/%s/%s" '
                       'target="_blank" rel="noopener">'
-                      '<img src="%simages/%s" width="14" height="14" '
+                      '<img src="%simages/%s" width="16" height="16" '
                       'alt="*"%s></a>'
                       % (objtype, commit, settings.MEDIA_URL, img, title))
     return ' '.join(images)
