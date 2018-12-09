@@ -40,7 +40,7 @@
     <strong>{{ script_list|length }}</strong> {% trans "scripts" %}.
   </div>
   <div id="script_filters_0" class="p-2" style="{% if script_filters_displayed %}display: none{% endif %}">
-    <a href="#" onclick="toggle('script_filters_0', 'none'); toggle('script_filters_1', 'block'); set_cookie('script_filters', '1_{{ script_filters_sort }}', '/scripts', 30)">&#9654; {% if script_filters_sort == "popularity" %}{% trans "Filters by popularity" %}{% else %}{% trans "Filters by name" %}{% endif %}</a>
+    <a href="#" onclick="toggle('script_filters_0', 'none'); toggle('script_filters_1', 'block'); set_cookie('script_filters', '1_{{ script_filters_sort }}', '/scripts', 30)">&#9658; {% if script_filters_sort == "popularity" %}{% trans "Filters by popularity" %}{% else %}{% trans "Filters by name" %}{% endif %}</a>
     &nbsp; ({% if script_filters_sort == "popularity" %}<a href="{% url 'scripts_api' api %}" onclick="set_cookie('script_filters', '1_name', '/scripts', 30)">{% trans "sort filters by name" %}</a>{% else %}<a href="{% url 'scripts_api' api %}" onclick="set_cookie('script_filters', '1_popularity', '/scripts', 30)">{% trans "sort filters by popularity" %}</a>{% endif %})
   </div>
   <div id="script_filters_1" class="p-2" style="{% if not script_filters_displayed %}display: none{% endif %}">
