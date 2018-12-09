@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-07 18:39+0100\n"
-"PO-Revision-Date: 2018-12-07 18:50+0100\n"
+"PO-Revision-Date: 2018-12-09 09:00+0900\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
 "translation/ja_JP>\n"
@@ -37,7 +37,7 @@ msgstr "256 色、irc プロキシ、rmodifier、irc コマンドの転送。"
 
 #: about/_i18n_keydates.py:9
 msgid "Add hook \"line\"."
-msgstr ""
+msgstr "フック \"line\" を追加。"
 
 #: about/_i18n_keydates.py:10
 msgid "Aspell plugin."
@@ -3129,6 +3129,25 @@ msgid ""
 "blog/post/2018/10/21/Version-2.3\">development blog</a> or <a href=\"/files/"
 "changelog/ChangeLog-2.3.html\">ChangeLog</a>."
 msgstr ""
+"バージョン 2.3 をリリースしました!\n"
+"\n"
+"新しい機能:\n"
+"\n"
+"- フック \"line\" を追加\n"
+"- 起動時に読み込むプラグインを指定するオプション \"-P\" (\"--plugins\") を追"
+"加\n"
+"- コマンドライン引数で複数指定可能なオプション \"-r\" (\"--run-command\") を"
+"追加\n"
+"- コマンド /buffer close で部分的なバッファ名および複数の引数を可能に\n"
+"- /buffer localvar でバッファ番号/名を指定可能に\n"
+"- trigger プラグインで正規表現が含まれる一時変数の生成を可能に\n"
+"- relay プラグインのクライアント説明に真の IP を追加\n"
+"- \"repeat:count,string\" 書式を評価することで文字列の反復を可能に\n"
+"- 多くのバグを修正。\n"
+"\n"
+"新機能と修正されたバグの完全なリストは<a href=\"/blog/post/2018/10/21/"
+"Version-2.35\">開発ブログ</a>または <a href=\"/files/changelog/ChangeLog-2.3."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:127
 msgid ""
@@ -3689,10 +3708,8 @@ msgstr "バッファの活発さに応じて並び替える。"
 
 #. Translators: description for script "chanotify.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:131
-#, fuzzy
-#| msgid "Notify dzen when a private message is received."
 msgid "Call notify-send when a message is received."
-msgstr "プライベートメッセージを受信したら dzen に通知。"
+msgstr "メッセージを受信した場合に notify-send を呼び出す。"
 
 #. Translators: description for script "autonickprefix.pl" (0.3.0+)
 #: scripts/_i18n_scripts.py:133
@@ -3728,7 +3745,7 @@ msgstr "znc およびローカルまたはその両方のバッファをクリ�
 #. Translators: description for script "weenotify.py" (2.0+)
 #: scripts/_i18n_scripts.py:145
 msgid "Client/server to send/receive notifications and display them."
-msgstr ""
+msgstr "通知を送信/受信して表示するクライアント/サーバ。"
 
 #. Translators: description for script "colorize_lines.pl" (0.3.4+)
 #: scripts/_i18n_scripts.py:147
@@ -4494,7 +4511,7 @@ msgstr ""
 #. Translators: description for script "xdccq.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:435
 msgid "Queue XDCC messages to bots."
-msgstr ""
+msgstr "ボットに送信する XDCC メッセージのキューイング。"
 
 #. Translators: description for script "go.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:437
@@ -4632,10 +4649,8 @@ msgstr "離席中にハイライトやプライベートメッセージを受信
 
 #. Translators: description for script "execbot.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:489
-#, fuzzy
-#| msgid "Avoid sending misformatted commands as messages."
 msgid "Run remote commands via IRC messages."
-msgstr "不正な書式のコマンドをメッセージとして送信することを避ける。"
+msgstr "IRC メッセージに対してリモートコマンドを実行。"
 
 #. Translators: description for script "weetext.py" (0.4.3+)
 #: scripts/_i18n_scripts.py:491
@@ -5168,7 +5183,7 @@ msgstr "バッファ内で pastebin サイトの内容を見る。"
 #. Translators: description for script "pushbullet.rb" (0.3.0+)
 #: scripts/_i18n_scripts.py:689
 msgid "View/send SMS via pushbullet."
-msgstr ""
+msgstr "pushbullet 経由で SMS を閲覧/受信。"
 
 #. Translators: description for script "oldswarner.lua" (0.3.7+)
 #: scripts/_i18n_scripts.py:691
@@ -6411,10 +6426,8 @@ msgstr ""
 "このサイトには<strong>広告を載せない</strong>ので、URL は禁止されます。"
 
 #: templates/donate.html:35
-#, fuzzy
-#| msgid "Donations via Liberapay"
 msgid "Donate using Liberapay"
-msgstr "Liberapay 経由の寄付"
+msgstr "Liberapay を用いて寄付"
 
 #: templates/donate.html:48
 msgid "Why your donation matters?"
