@@ -537,6 +537,8 @@ def __i18n_scripts():
     gettext_noop("Send notice when typing message on bitlbee, display if user is writing in a bar item.")
     # Translators: description for script "minbif_typing_notice.rb" (0.3.2+)
     gettext_noop("Send notice when typing message on minbif, display if user is writing in a bar item.")
+    # Translators: description for script "telnot.py" (0.3.0+)
+    gettext_noop("Send notifications over Telegram.")
     # Translators: description for script "zmq_notify.rb" (0.3.0+)
     gettext_noop("Send notifications to a ZMQ socket.")
     # Translators: description for script "pyrnotify.py" (0.3.0+)
