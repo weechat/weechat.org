@@ -22,7 +22,7 @@
 
 from django.db import models
 from django.db.models.signals import post_save
-from django.utils.translation import gettext_lazy, ugettext, ugettext_noop
+from django.utils.translation import ugettext, ugettext_noop
 
 from weechat.common.i18n import i18n_autogen
 from weechat.common.templatetags.localdate import localdate
@@ -198,13 +198,13 @@ class Security(models.Model):
     def description_i18n(self):
         """Return the translated description."""
         if self.description:
-            return gettext_lazy(self.description.replace('\r\n', '\n'))
+            return ugettext(self.description.replace('\r\n', '\n'))
         return ''
 
     def workaround_i18n(self):
         """Return translated workaround."""
         if self.workaround:
-            return gettext_lazy(self.workaround.replace('\r\n', '\n'))
+            return ugettext(self.workaround.replace('\r\n', '\n'))
         return ''
 
     class Meta:

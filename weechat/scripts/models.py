@@ -33,7 +33,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.db import models
 from django.db.models.signals import post_save, post_delete
 from django.utils import translation
-from django.utils.translation import ugettext, gettext_lazy, pgettext_lazy
+from django.utils.translation import ugettext, ugettext_lazy, pgettext_lazy
 
 from weechat.common.decorators import disable_for_loaddata
 from weechat.common.forms import (
@@ -149,7 +149,7 @@ class Script(models.Model):
         return ('<img src="%simages/star.png" alt="*" title="%s" '
                 'width="10" height="10">' %
                 (settings.MEDIA_URL,
-                 gettext_lazy('Popular script')))
+                 ugettext('Popular script')))
 
     def name_with_extension(self):
         """Return the name of script with its extension."""
@@ -167,8 +167,8 @@ class Script(models.Model):
         """Return translated description."""
         if not isinstance(self.desc_en, str):
             # python 2.x
-            return gettext_lazy(self.desc_en.encode('utf-8'))
-        return gettext_lazy(self.desc_en)
+            return ugettext(self.desc_en.encode('utf-8'))
+        return ugettext(self.desc_en)
 
     def version_weechat(self):
         """Return the min/max WeeChat versions in a string."""
@@ -223,16 +223,16 @@ class NameField(forms.CharField):
     def clean(self, value):
         if not value:
             raise forms.ValidationError(
-                gettext_lazy('This field is required.'))
+                ugettext('This field is required.'))
         if not re.search('^[a-z0-9_]+$', value):
             raise forms.ValidationError(
-                gettext_lazy('This name is invalid.'))
+                ugettext('This name is invalid.'))
         scripts = (Script.objects.exclude(max_weechat='0.2.6')
                    .filter(name=value))
         if scripts:
             raise forms.ValidationError(
-                gettext_lazy('This name already exists, please choose another '
-                             'name (update script content accordingly).'))
+                ugettext('This name already exists, please choose another '
+                         'name (update script content accordingly).'))
         return value
 
     def get_bound_field(self, form, field_name):
@@ -278,64 +278,65 @@ class ScriptFormAdd(Form):
     )
     name = NameField(
         max_length=MAX_LENGTH_NAME,
-        label=gettext_lazy('Name'),
+        label=ugettext_lazy('Name'),
     )
     version = CharField(
         max_length=MAX_LENGTH_VERSION,
-        label=gettext_lazy('Version'),
-        help_text=gettext_lazy('The version of script (only digits or dots).'),
+        label=ugettext_lazy('Version'),
+        help_text=ugettext_lazy('The version of script '
+                                '(only digits or dots).'),
     )
     license = CharField(
         max_length=MAX_LENGTH_LICENSE,
-        label=gettext_lazy('License'),
-        help_text=gettext_lazy('The license (for example: GPL3, BSD, ...).'),
+        label=ugettext_lazy('License'),
+        help_text=ugettext_lazy('The license (for example: GPL3, BSD, ...).'),
     )
     file = FileField(
-        label=gettext_lazy('File'),
-        help_text=gettext_lazy('The script.'),
+        label=ugettext_lazy('File'),
+        help_text=ugettext_lazy('The script.'),
     )
     description = CharField(
         max_length=MAX_LENGTH_DESC,
-        label=gettext_lazy('Description'),
+        label=ugettext_lazy('Description'),
     )
     requirements = CharField(
         required=False,
         max_length=MAX_LENGTH_REQUIRE,
-        label=gettext_lazy('Requirements'),
+        label=ugettext_lazy('Requirements'),
     )
     min_max = ChoiceField(
         choices=[],
-        label=gettext_lazy('Min/max WeeChat version.'),
+        label=ugettext_lazy('Min/max WeeChat version.'),
     )
     author = CharField(
         max_length=MAX_LENGTH_AUTHOR,
-        label=gettext_lazy('Your name or nick'),
-        help_text=gettext_lazy('Used for git commit and scripts page.'),
+        label=ugettext_lazy('Your name or nick'),
+        help_text=ugettext_lazy('Used for git commit and scripts page.'),
     )
     mail = EmailField(
         max_length=MAX_LENGTH_MAIL,
-        label=gettext_lazy('Your e-mail'),
-        help_text=gettext_lazy('Used for git commit.'),
+        label=ugettext_lazy('Your e-mail'),
+        help_text=ugettext_lazy('Used for git commit.'),
         widget=Html5EmailInput(),
     )
     comment = CharField(
         required=False,
         max_length=1024,
-        label=gettext_lazy('Comments'),
-        help_text=gettext_lazy('Not displayed.'),
+        label=ugettext_lazy('Comments'),
+        help_text=ugettext_lazy('Not displayed.'),
         widget=forms.Textarea(attrs={'rows': '3'}),
     )
     test = TestField(
         max_length=64,
-        label=gettext_lazy('Are you a spammer?'),
-        help_text=gettext_lazy('Enter "no" if you are not a spammer.'),
+        label=ugettext_lazy('Are you a spammer?'),
+        help_text=ugettext_lazy('Enter "no" if you are not a spammer.'),
     )
 
     def __init__(self, *args, **kwargs):
         super(ScriptFormAdd, self).__init__(*args, **kwargs)
         self.label_suffix = ''
         self.fields['min_max'].choices = get_min_max_choices()
-        self.fields['name'].help_text = gettext_lazy(
+        self.fields['name'].help_text = ugettext_lazy(
             'The short name of script (max {max_chars} chars, '
             'only lower case letters, digits or "_").').format(
                 max_chars=MAX_LENGTH_NAME)
@@ -347,7 +348,7 @@ def get_script_choices():
         script_list = (Script.objects.exclude(max_weechat='0.2.6')
                        .filter(visible=1).order_by('name'))
         script_choices = []
-        script_choices.append(('', gettext_lazy('Choose...')))
+        script_choices.append(('', ugettext_lazy('Choose...')))
         for script in script_list:
             name = '%s - v%s (%s)' % (script.name_with_extension(),
                                       script.version, script.version_weechat())
@@ -362,38 +363,38 @@ class ScriptFormUpdate(Form):
     required_css_class = 'required'
     script = ChoiceField(
         choices=[],
-        label=gettext_lazy('Script'),
+        label=ugettext_lazy('Script'),
         widget=forms.Select(attrs={'autofocus': True}),
     )
     version = CharField(
         max_length=MAX_LENGTH_VERSION,
-        label=gettext_lazy('New version'),
+        label=ugettext_lazy('New version'),
     )
     file = FileField(
-        label=gettext_lazy('File'),
-        help_text=gettext_lazy('The script.'),
+        label=ugettext_lazy('File'),
+        help_text=ugettext_lazy('The script.'),
     )
     author = CharField(
         max_length=MAX_LENGTH_AUTHOR,
-        label=gettext_lazy('Your name or nick'),
-        help_text=gettext_lazy('Used for git commit.'),
+        label=ugettext_lazy('Your name or nick'),
+        help_text=ugettext_lazy('Used for git commit.'),
     )
     mail = EmailField(
         max_length=MAX_LENGTH_MAIL,
-        label=gettext_lazy('Your e-mail'),
-        help_text=gettext_lazy('Used for git commit.'),
+        label=ugettext_lazy('Your e-mail'),
+        help_text=ugettext_lazy('Used for git commit.'),
         widget=Html5EmailInput(),
     )
     comment = CharField(
         max_length=1024,
-        label=gettext_lazy('Comments'),
-        help_text=gettext_lazy('Changes in this release.'),
+        label=ugettext_lazy('Comments'),
+        help_text=ugettext_lazy('Changes in this release.'),
         widget=forms.Textarea(attrs={'rows': '3'}),
     )
     test = TestField(
         max_length=64,
-        label=gettext_lazy('Are you a spammer?'),
-        help_text=gettext_lazy('Enter "no" if you are not a spammer.'),
+        label=ugettext_lazy('Are you a spammer?'),
+        help_text=ugettext_lazy('Enter "no" if you are not a spammer.'),
     )
 
     def __init__(self, *args, **kwargs):

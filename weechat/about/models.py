@@ -22,7 +22,7 @@
 
 from django.db import models
 from django.db.models.signals import post_save
-from django.utils.translation import gettext_lazy
+from django.utils.translation import ugettext
 
 from weechat.common.i18n import i18n_autogen
 from weechat.common.templatetags.localdate import localdate
@@ -61,7 +61,7 @@ class Keydate(models.Model):
 
     def text_i18n(self):
         """Return translated key date."""
-        return gettext_lazy(self.text.replace('\r\n', '\n'))
+        return ugettext(self.text.replace('\r\n', '\n'))
 
     class Meta:
         """Meta class for KeyDate."""

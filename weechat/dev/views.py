@@ -24,7 +24,7 @@ import re
 
 from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render
-from django.utils.translation import gettext_lazy
+from django.utils.translation import ugettext_lazy
 
 from weechat.common.path import files_path_join
 from weechat.common.templatetags.version import version_as_int
@@ -34,46 +34,48 @@ from weechat.download.models import Release
 INFO_KEYS = (
     (
         'stable',
-        gettext_lazy('Stable version.'),
+        ugettext_lazy('Stable version.'),
     ),
     (
         'stable_number',
-        gettext_lazy('Stable version, as number, like plugin API: '
-                     'info_get("version_number").'),
+        ugettext_lazy('Stable version, as number, like plugin API: '
+                      'info_get("version_number").'),
     ),
     (
         'stable_date',
-        gettext_lazy('Date of stable version (format: "YYYY-MM-DD").'),
+        ugettext_lazy('Date of stable version (format: "YYYY-MM-DD").'),
     ),
     (
         'devel',
-        gettext_lazy('Development version.'),
+        ugettext_lazy('Development version.'),
     ),
     (
         'git',
-        gettext_lazy('Output of "git rev-parse HEAD" for sources repository.'),
+        ugettext_lazy('Output of "git rev-parse HEAD" for sources '
+                      'repository.'),
     ),
     (
         'git_scripts',
-        gettext_lazy('Output of "git rev-parse HEAD" for scripts repository.'),
+        ugettext_lazy('Output of "git rev-parse HEAD" for scripts '
+                      'repository.'),
     ),
     (
         'next_stable',
-        gettext_lazy('Next stable version.'),
+        ugettext_lazy('Next stable version.'),
     ),
     (
         'next_stable_number',
-        gettext_lazy('Next stable version, as number, like plugin API: '
-                     'info_get("version_number").'),
+        ugettext_lazy('Next stable version, as number, like plugin API: '
+                      'info_get("version_number").'),
     ),
     (
         'next_stable_date',
-        gettext_lazy('Approximate date of next stable version '
-                     '(format: "YYYY-MM-DD").'),
+        ugettext_lazy('Approximate date of next stable version '
+                      '(format: "YYYY-MM-DD").'),
     ),
     (
         'all',
-        gettext_lazy('All infos (one info by line, format: "info:value").'),
+        ugettext_lazy('All infos (one info by line, format: "info:value").'),
     ),
 )
 

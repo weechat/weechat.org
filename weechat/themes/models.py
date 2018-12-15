@@ -32,7 +32,7 @@ from django import forms
 from django.conf import settings
 from django.db import models
 from django.db.models.signals import post_save, post_delete
-from django.utils.translation import gettext_lazy
+from django.utils.translation import ugettext, ugettext_lazy
 
 from weechat.common.decorators import disable_for_loaddata
 from weechat.common.forms import (
@@ -104,7 +104,7 @@ class Theme(models.Model):
 
     def desc_i18n(self):
         """Return translated description."""
-        return gettext_lazy(self.desc) if self.desc else ''
+        return ugettext(self.desc) if self.desc else ''
 
     def build_url(self):
         """Return URL to the theme."""
@@ -135,37 +135,37 @@ class ThemeFormAdd(Form):
     """Form to add a theme."""
     required_css_class = 'required'
     themefile = FileField(
-        label=gettext_lazy('File'),
-        help_text=gettext_lazy('The theme.'),
+        label=ugettext_lazy('File'),
+        help_text=ugettext_lazy('The theme.'),
         widget=forms.FileInput(attrs={'autofocus': True}),
     )
     description = CharField(
         required=False,
         max_length=MAX_LENGTH_DESC,
-        label=gettext_lazy('Description'),
+        label=ugettext_lazy('Description'),
     )
     author = CharField(
         max_length=MAX_LENGTH_AUTHOR,
-        label=gettext_lazy('Your name or nick'),
-        help_text=gettext_lazy('Used for themes page.'),
+        label=ugettext_lazy('Your name or nick'),
+        help_text=ugettext_lazy('Used for themes page.'),
     )
     mail = EmailField(
         max_length=MAX_LENGTH_MAIL,
-        label=gettext_lazy('Your e-mail'),
-        help_text=gettext_lazy('No spam, never displayed.'),
+        label=ugettext_lazy('Your e-mail'),
+        help_text=ugettext_lazy('No spam, never displayed.'),
         widget=Html5EmailInput(),
     )
     comment = CharField(
         required=False,
         max_length=1024,
-        label=gettext_lazy('Comments'),
-        help_text=gettext_lazy('Not displayed.'),
+        label=ugettext_lazy('Comments'),
+        help_text=ugettext_lazy('Not displayed.'),
         widget=forms.Textarea(attrs={'rows': '3'}),
     )
     test = TestField(
         max_length=64,
-        label=gettext_lazy('Are you a spammer?'),
-        help_text=gettext_lazy('Enter "no" if you are not a spammer.'),
+        label=ugettext_lazy('Are you a spammer?'),
+        help_text=ugettext_lazy('Enter "no" if you are not a spammer.'),
     )
 
     def __init__(self, *args, **kwargs):
@@ -176,28 +176,27 @@ class ThemeFormAdd(Form):
         """Check if theme file is valid."""
         _file = self.cleaned_data['themefile']
         if _file.size > 512*1024:
-            raise forms.ValidationError(gettext_lazy('Theme file too big.'))
+            raise forms.ValidationError(ugettext('Theme file too big.'))
         props = Theme.get_props(_file.read())
         if 'name' not in props or 'weechat' not in props:
-            raise forms.ValidationError(gettext_lazy('Invalid theme file.'))
+            raise forms.ValidationError(ugettext('Invalid theme file.'))
         themes = Theme.objects.filter(name=props['name'])
         if themes:
-            raise forms.ValidationError(
-                gettext_lazy('This name already exists.'))
+            raise forms.ValidationError(ugettext('This name already exists.'))
         if not props['name'].endswith('.theme'):
             raise forms.ValidationError(
-                gettext_lazy('Invalid name inside theme file.'))
+                ugettext('Invalid name inside theme file.'))
         shortname = props['name'][0:-6]
         if not re.search('^[A-Za-z0-9_]+$', shortname):
             raise forms.ValidationError(
-                gettext_lazy('Invalid name inside theme file.'))
+                ugettext('Invalid name inside theme file.'))
         release_stable = Release.objects.get(version='stable')
         release_devel = Release.objects.get(version='devel')
         if props['weechat'] not in (release_stable.description,
                                     re.sub('-.*', '',
                                            release_devel.description)):
             raise forms.ValidationError(
-                gettext_lazy('Invalid WeeChat version, too old!'))
+                ugettext('Invalid WeeChat version, too old!'))
         _file.seek(0)
         return _file
 
@@ -207,7 +206,7 @@ def get_theme_choices():
     try:
         theme_list = Theme.objects.filter(visible=1).order_by('name')
         theme_choices = []
-        theme_choices.append(('', gettext_lazy('Choose...')))
+        theme_choices.append(('', ugettext_lazy('Choose...')))
         for theme in theme_list:
             theme_choices.append((theme.id, '%s (%s)' % (theme.name,
                                                          theme.version)))
@@ -221,34 +220,34 @@ class ThemeFormUpdate(Form):
     required_css_class = 'required'
     theme = ChoiceField(
         choices=[],
-        label=gettext_lazy('Theme'),
+        label=ugettext_lazy('Theme'),
         widget=forms.Select(attrs={'autofocus': True}),
     )
     themefile = FileField(
-        label=gettext_lazy('File'),
-        help_text=gettext_lazy('The theme.'),
+        label=ugettext_lazy('File'),
+        help_text=ugettext_lazy('The theme.'),
     )
     author = CharField(
         max_length=MAX_LENGTH_AUTHOR,
-        label=gettext_lazy('Your name or nick'),
+        label=ugettext_lazy('Your name or nick'),
     )
     mail = EmailField(
         max_length=MAX_LENGTH_MAIL,
-        label=gettext_lazy('Your e-mail'),
-        help_text=gettext_lazy('No spam, never displayed.'),
+        label=ugettext_lazy('Your e-mail'),
+        help_text=ugettext_lazy('No spam, never displayed.'),
         widget=Html5EmailInput(),
     )
     comment = CharField(
         required=False,
         max_length=1024,
-        label=gettext_lazy('Comments'),
-        help_text=gettext_lazy('Not displayed.'),
+        label=ugettext_lazy('Comments'),
+        help_text=ugettext_lazy('Not displayed.'),
         widget=forms.Textarea(attrs={'rows': '3'}),
     )
     test = TestField(
         max_length=64,
-        label=gettext_lazy('Are you a spammer?'),
-        help_text=gettext_lazy('Enter "no" if you are not a spammer.'),
+        label=ugettext_lazy('Are you a spammer?'),
+        help_text=ugettext_lazy('Enter "no" if you are not a spammer.'),
     )
 
     def __init__(self, *args, **kwargs):
@@ -260,23 +259,23 @@ class ThemeFormUpdate(Form):
         """Check if theme file is valid."""
         _file = self.cleaned_data['themefile']
         if _file.size > 512*1024:
-            raise forms.ValidationError(gettext_lazy('Theme file too big.'))
+            raise forms.ValidationError(ugettext('Theme file too big.'))
         props = Theme.get_props(_file.read())
         if 'name' not in props or 'weechat' not in props:
-            raise forms.ValidationError(gettext_lazy('Invalid theme file.'))
+            raise forms.ValidationError(ugettext('Invalid theme file.'))
         theme = Theme.objects.get(id=self.cleaned_data['theme'])
         if not theme:
-            raise forms.ValidationError(gettext_lazy('Internal error.'))
+            raise forms.ValidationError(ugettext('Internal error.'))
         if props['name'] != theme.name:
             raise forms.ValidationError(
-                gettext_lazy('Invalid name: different from theme.'))
+                ugettext('Invalid name: different from theme.'))
         release_stable = Release.objects.get(version='stable')
         release_devel = Release.objects.get(version='devel')
         if props['weechat'] not in (release_stable.description,
                                     re.sub('-.*', '',
                                            release_devel.description)):
             raise forms.ValidationError(
-                gettext_lazy('Invalid WeeChat version, too old!'))
+                ugettext('Invalid WeeChat version, too old!'))
         _file.seek(0)
         return _file
 
