@@ -70,6 +70,8 @@ STATIC_URL = '/static/'
 
 REPO_DIR = os.path.normpath(os.path.join(BASE_DIR, '..', 'repo'))
 
+ADMIN_PAGE = "admin"
+
 FIXTURE_DIRS = [
     os.path.join(BASE_DIR, 'fixtures'),
 ]
