@@ -23,10 +23,11 @@
 import re
 
 from django.core.exceptions import ObjectDoesNotExist
+from django.http import HttpResponse
 from django.shortcuts import render
-from django.utils.translation import ugettext_lazy
+from django.utils.translation import ugettext, ugettext_lazy
 
-from weechat.common.path import files_path_join
+from weechat.common.path import files_path_join, media_path_join
 from weechat.common.templatetags.version import version_as_int
 from weechat.dev.models import Task
 from weechat.download.models import Release
@@ -74,10 +75,37 @@ INFO_KEYS = (
                       '(format: "YYYY-MM-DD").'),
     ),
     (
+        'release_signing_fingerprint',
+        ugettext_lazy('Release signing key fingerprint '
+                      '(format: PGP fingerprint).'),
+    ),
+    (
+        'release_signing_key',
+        ugettext_lazy('Release signing key (format: PGP public key).'),
+    ),
+    (
+        'debian_repository_signing_fingerprint',
+        ugettext_lazy('Debian/Ubuntu repository signing key fingerprint '
+                      '(format: PGP fingerprint).'),
+    ),
+    (
+        'debian_repository_signing_key',
+        ugettext_lazy('Debian/Ubuntu repository signing key '
+                      '(format: PGP public key).'),
+    ),
+    (
         'all',
-        ugettext_lazy('All infos (one info by line, format: "info:value").'),
+        ugettext_lazy('All non-binary infos '
+                      '(one info by line, format: "info:value").'),
     ),
 )
+
+BINARY_INFO_KEYS = ('release_signing_key', 'debian_repository_signing_key')
+
+PGP_KEYS = {
+    'release_signing': 'A9AB5AB778FA5C3522FD0378F82F4B16DEC408F8',
+    'debian_repository_signing': '11E9DE8848F2B65222AA75B8D1820DB22A11534E'
+}
 
 
 def roadmap(request, allversions=False):
@@ -198,10 +226,22 @@ def get_info(name, version):
         return version_as_int(version['devel'].description)
     elif name == 'next_stable_date':
         return str(version['devel'].date)
+    elif name == 'release_signing_fingerprint':
+        return PGP_KEYS['release_signing']
+    elif name == 'debian_repository_signing_fingerprint':
+        return PGP_KEYS['debian_repository_signing']
+    elif name == 'release_signing_key':
+        fingerprint = PGP_KEYS['release_signing']
+        with open(media_path_join('pgp', fingerprint), 'rb') as _file:
+            return _file.read()
+    elif name == 'debian_repository_signing_key':
+        fingerprint = PGP_KEYS['debian_repository_signing']
+        with open(media_path_join('pgp', fingerprint), 'rb') as _file:
+            return _file.read()
     elif name == 'all':
         infos = []
         for key in INFO_KEYS:
-            if key[0] != name:
+            if key[0] != name and key[0] not in BINARY_INFO_KEYS:
                 infos.append('%s:%s' % (key[0], get_info(key[0], version)))
         return '\n'.join(infos)
     return ''
@@ -223,17 +263,27 @@ def info(request, name=None):
             },
         )
     if name:
-        return render(
-            request,
-            'dev/info.html',
-            {
-                'info': get_info(name, version),
-            },
-        )
+        if name in BINARY_INFO_KEYS:
+            response = HttpResponse(get_info(name, version),
+                                    content_type='application/octet-stream')
+            response['Content-Disposition'] = (
+                'attachment; filename="weechat_%s.pgp"' % name)
+            return response
+        else:
+            return render(
+                request,
+                'dev/info.html',
+                {
+                    'info': get_info(name, version),
+                },
+            )
     else:
         infos = []
         for oneinfo in INFO_KEYS:
-            value = get_info(oneinfo[0], version)
+            if oneinfo[0] in BINARY_INFO_KEYS:
+                value = ugettext('(binary data)')
+            else:
+                value = get_info(oneinfo[0], version)
             if oneinfo[0].endswith('_number'):
                 value = '%s (0x%08lx)' % (value, value)
             infos.append((oneinfo[0], value, oneinfo[1]))
