@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-26 16:27+0100\n"
+"POT-Creation-Date: 2018-12-26 17:58+0100\n"
 "PO-Revision-Date: 2018-12-07 18:50+0100\n"
 "Last-Translator: Alexandre Bolelli <semeion7@gmail.com>\n"
 "Language-Team: Portuguese <semeion7@gmail.com>\n"
@@ -178,13 +178,13 @@ msgstr ""
 msgid "This field is required."
 msgstr "Este campo é obrigatório."
 
-#: dev/views.py:37
+#: dev/views.py:38
 #, fuzzy
 #| msgid "Stable version"
 msgid "Stable version."
 msgstr "Versão estável"
 
-#: dev/views.py:41
+#: dev/views.py:42
 #, fuzzy
 #| msgid ""
 #| "stable version, as number, like plugin API: info_get(\"version_number\")"
@@ -193,37 +193,37 @@ msgid ""
 msgstr ""
 "versão estável, como número, como plugin da API: info_get(\"version_number\")"
 
-#: dev/views.py:46
+#: dev/views.py:47
 #, fuzzy
 #| msgid "date of stable version"
 msgid "Date of stable version (format: \"YYYY-MM-DD\")."
 msgstr "data da versão estável"
 
-#: dev/views.py:50
+#: dev/views.py:51
 #, fuzzy
 #| msgid "development version"
 msgid "Development version."
 msgstr "versão de desenvolvimento"
 
-#: dev/views.py:54
+#: dev/views.py:55
 #, fuzzy
 #| msgid "output of \"git rev-parse HEAD\" for sources repository"
 msgid "Output of \"git rev-parse HEAD\" for sources repository."
 msgstr "saída de \"git rev-parse HEAD\" para o repositório de fontes"
 
-#: dev/views.py:59
+#: dev/views.py:60
 #, fuzzy
 #| msgid "output of \"git rev-parse HEAD\" for scripts repository"
 msgid "Output of \"git rev-parse HEAD\" for scripts repository."
 msgstr "saída de \"git rev-parse HEAD\" para o repositório scripts"
 
-#: dev/views.py:64
+#: dev/views.py:65
 #, fuzzy
 #| msgid "next stable version"
 msgid "Next stable version."
 msgstr "próxima versão estável"
 
-#: dev/views.py:68
+#: dev/views.py:69
 #, fuzzy
 #| msgid ""
 #| "next stable version, as number, like plugin API: info_get(\"version_number"
@@ -235,18 +235,39 @@ msgstr ""
 "próxima versão estável, como número, como plugin da API: "
 "info_get(\"version_number\")"
 
-#: dev/views.py:73
+#: dev/views.py:74
 #, fuzzy
 #| msgid "approximate date of next stable version"
 msgid "Approximate date of next stable version (format: \"YYYY-MM-DD\")."
 msgstr "data aproximada da próxima versão estável"
 
-#: dev/views.py:78
+#: dev/views.py:79
+msgid "Release signing key fingerprint (format: PGP fingerprint)."
+msgstr ""
+
+#: dev/views.py:84
+msgid "Release signing key (format: PGP public key)."
+msgstr ""
+
+#: dev/views.py:88
+msgid ""
+"Debian/Ubuntu repository signing key fingerprint (format: PGP fingerprint)."
+msgstr ""
+
+#: dev/views.py:93
+msgid "Debian/Ubuntu repository signing key (format: PGP public key)."
+msgstr ""
+
+#: dev/views.py:98
 #, fuzzy
 #| msgid "all infos (one info by line, format: \"info:value\")"
-msgid "All infos (one info by line, format: \"info:value\")."
+msgid "All non-binary infos (one info by line, format: \"info:value\")."
 msgstr ""
 "todas as informações (uma informação por linha, formato: \"info:value\")"
+
+#: dev/views.py:284
+msgid "(binary data)"
+msgstr ""
 
 #: doc/_i18n_security.py:8
 msgid "/set irc.network.colors_receive off"

@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-26 16:27+0100\n"
+"POT-Creation-Date: 2018-12-26 17:58+0100\n"
 "PO-Revision-Date: 2018-12-26 16:26+0100\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
@@ -185,38 +185,38 @@ msgstr ""
 msgid "This field is required."
 msgstr "このフィールドは必須です。"
 
-#: dev/views.py:37
+#: dev/views.py:38
 msgid "Stable version."
 msgstr "安定版。"
 
-#: dev/views.py:41
+#: dev/views.py:42
 msgid ""
 "Stable version, as number, like plugin API: info_get(\"version_number\")."
 msgstr ""
 "安定版のバージョン番号 (数表記)、プラグイン API における "
 "info_get(\"version_number\") と同様。"
 
-#: dev/views.py:46
+#: dev/views.py:47
 msgid "Date of stable version (format: \"YYYY-MM-DD\")."
 msgstr "安定版のリリース日 (書式: \"YYYY-MM-DD\")。"
 
-#: dev/views.py:50
+#: dev/views.py:51
 msgid "Development version."
 msgstr "開発版。"
 
-#: dev/views.py:54
+#: dev/views.py:55
 msgid "Output of \"git rev-parse HEAD\" for sources repository."
 msgstr "ソースリポジトリにおける \"git rev-parse HEAD\" の出力。"
 
-#: dev/views.py:59
+#: dev/views.py:60
 msgid "Output of \"git rev-parse HEAD\" for scripts repository."
 msgstr "スクリプトリポジトリにおける \"git rev-parse HEAD\" の出力。"
 
-#: dev/views.py:64
+#: dev/views.py:65
 msgid "Next stable version."
 msgstr "次期安定版のバージョン番号。"
 
-#: dev/views.py:68
+#: dev/views.py:69
 msgid ""
 "Next stable version, as number, like plugin API: info_get(\"version_number"
 "\")."
@@ -224,13 +224,36 @@ msgstr ""
 "次期安定版のバージョン番号 (数表記)、プラグイン API における "
 "info_get(\"version_number\") と同様。"
 
-#: dev/views.py:73
+#: dev/views.py:74
 msgid "Approximate date of next stable version (format: \"YYYY-MM-DD\")."
 msgstr "次期安定版のリリース予定日 (書式: \"YYYY-MM-DD\")。"
 
-#: dev/views.py:78
-msgid "All infos (one info by line, format: \"info:value\")."
+#: dev/views.py:79
+msgid "Release signing key fingerprint (format: PGP fingerprint)."
+msgstr ""
+
+#: dev/views.py:84
+msgid "Release signing key (format: PGP public key)."
+msgstr ""
+
+#: dev/views.py:88
+msgid ""
+"Debian/Ubuntu repository signing key fingerprint (format: PGP fingerprint)."
+msgstr ""
+
+#: dev/views.py:93
+msgid "Debian/Ubuntu repository signing key (format: PGP public key)."
+msgstr ""
+
+#: dev/views.py:98
+#, fuzzy
+#| msgid "All infos (one info by line, format: \"info:value\")."
+msgid "All non-binary infos (one info by line, format: \"info:value\")."
 msgstr "全ての情報 (1 行に 1 情報、書式: \"info:value\")。"
+
+#: dev/views.py:284
+msgid "(binary data)"
+msgstr ""
 
 #: doc/_i18n_security.py:8
 msgid "/set irc.network.colors_receive off"

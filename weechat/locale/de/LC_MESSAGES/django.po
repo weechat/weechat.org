@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-26 16:27+0100\n"
+"POT-Creation-Date: 2018-12-26 17:58+0100\n"
 "PO-Revision-Date: 2018-12-26 16:25+0100\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -192,38 +192,38 @@ msgstr ""
 msgid "This field is required."
 msgstr "Dieser Eintrag ist notwendig."
 
-#: dev/views.py:37
+#: dev/views.py:38
 msgid "Stable version."
 msgstr "stabile Version."
 
-#: dev/views.py:41
+#: dev/views.py:42
 msgid ""
 "Stable version, as number, like plugin API: info_get(\"version_number\")."
 msgstr ""
 "stabile Version, als Nummer, siehe Erweiterung-API: info_get(\"version_number"
 "\")."
 
-#: dev/views.py:46
+#: dev/views.py:47
 msgid "Date of stable version (format: \"YYYY-MM-DD\")."
 msgstr "Datum der stabilen Version (Format: \"YYYY-MM-DD\")."
 
-#: dev/views.py:50
+#: dev/views.py:51
 msgid "Development version."
 msgstr "Entwicklerversion."
 
-#: dev/views.py:54
+#: dev/views.py:55
 msgid "Output of \"git rev-parse HEAD\" for sources repository."
 msgstr "Ausgabe von \"git rev-parse HEAD\" für Quelltext Repository."
 
-#: dev/views.py:59
+#: dev/views.py:60
 msgid "Output of \"git rev-parse HEAD\" for scripts repository."
 msgstr "Ausgabe von \"git rev-parse HEAD\" für Skripten Repository."
 
-#: dev/views.py:64
+#: dev/views.py:65
 msgid "Next stable version."
 msgstr "kommende stabile Version."
 
-#: dev/views.py:68
+#: dev/views.py:69
 msgid ""
 "Next stable version, as number, like plugin API: info_get(\"version_number"
 "\")."
@@ -231,16 +231,39 @@ msgstr ""
 "kommende stabile Version, als Nummer, siehe Erweiterung-API: "
 "info_get(\"version_number\")."
 
-#: dev/views.py:73
+#: dev/views.py:74
 msgid "Approximate date of next stable version (format: \"YYYY-MM-DD\")."
 msgstr ""
 "voraussichtliches Datum der kommenden stabilen Version (Format: \"YYYY-MM-DD"
 "\")."
 
-#: dev/views.py:78
-msgid "All infos (one info by line, format: \"info:value\")."
+#: dev/views.py:79
+msgid "Release signing key fingerprint (format: PGP fingerprint)."
+msgstr ""
+
+#: dev/views.py:84
+msgid "Release signing key (format: PGP public key)."
+msgstr ""
+
+#: dev/views.py:88
+msgid ""
+"Debian/Ubuntu repository signing key fingerprint (format: PGP fingerprint)."
+msgstr ""
+
+#: dev/views.py:93
+msgid "Debian/Ubuntu repository signing key (format: PGP public key)."
+msgstr ""
+
+#: dev/views.py:98
+#, fuzzy
+#| msgid "All infos (one info by line, format: \"info:value\")."
+msgid "All non-binary infos (one info by line, format: \"info:value\")."
 msgstr ""
 "alle Informationen (eine Information pro Zeile, Format: \"Info:Wert\")."
+
+#: dev/views.py:284
+msgid "(binary data)"
+msgstr ""
 
 #: doc/_i18n_security.py:8
 msgid "/set irc.network.colors_receive off"
