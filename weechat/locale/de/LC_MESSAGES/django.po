@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-26 17:58+0100\n"
-"PO-Revision-Date: 2018-12-26 16:25+0100\n"
+"PO-Revision-Date: 2018-12-26 20:24+0100\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -213,11 +213,11 @@ msgstr "Entwicklerversion."
 
 #: dev/views.py:55
 msgid "Output of \"git rev-parse HEAD\" for sources repository."
-msgstr "Ausgabe von \"git rev-parse HEAD\" für Quelltext Repository."
+msgstr "Ausgabe von \"git rev-parse HEAD\" für Quelltext Repositorium."
 
 #: dev/views.py:60
 msgid "Output of \"git rev-parse HEAD\" for scripts repository."
-msgstr "Ausgabe von \"git rev-parse HEAD\" für Skripten Repository."
+msgstr "Ausgabe von \"git rev-parse HEAD\" für Skripten Repositorium."
 
 #: dev/views.py:65
 msgid "Next stable version."
@@ -240,30 +240,37 @@ msgstr ""
 #: dev/views.py:79
 msgid "Release signing key fingerprint (format: PGP fingerprint)."
 msgstr ""
+"Fingerprint für Schlüssel zum Unterschreiben der veröffentlichten Version "
+"(Format: PGP Fingerprint)."
 
 #: dev/views.py:84
 msgid "Release signing key (format: PGP public key)."
 msgstr ""
+"Schlüssel zum Unterschreiben der veröffentlichten Version (Format: "
+"öffentlicher PGP Schlüssel)."
 
 #: dev/views.py:88
 msgid ""
 "Debian/Ubuntu repository signing key fingerprint (format: PGP fingerprint)."
 msgstr ""
+"Fingerprint für Schlüssel zum Unterschreiben des Debian/Ubuntu Repositorium "
+"(Format: PGP Fingerprint)."
 
 #: dev/views.py:93
 msgid "Debian/Ubuntu repository signing key (format: PGP public key)."
 msgstr ""
+"Schlüssel zum Unterschreiben des Debian/Ubuntu Repositorium (Format: "
+"öffentlicher PGP Schlüssel)."
 
 #: dev/views.py:98
-#, fuzzy
-#| msgid "All infos (one info by line, format: \"info:value\")."
 msgid "All non-binary infos (one info by line, format: \"info:value\")."
 msgstr ""
-"alle Informationen (eine Information pro Zeile, Format: \"Info:Wert\")."
+"alle nicht binären Informationen (eine Information pro Zeile, Format: \"Info:"
+"Wert\")."
 
 #: dev/views.py:284
 msgid "(binary data)"
-msgstr ""
+msgstr "(binäre Daten)"
 
 #: doc/_i18n_security.py:8
 msgid "/set irc.network.colors_receive off"
@@ -656,8 +663,8 @@ msgid ""
 msgstr ""
 "Als Weihnachtsgeschenk gibt es eine neue großartige Funktion für WeeChat: "
 "Unterstützung von 256 Farben!\n"
-"Diese Version, 0.3.4-rc2, ist sowohl über die Git-Repository oder als Devel-"
-"Paket verfügbar.\n"
+"Diese Version, 0.3.4-rc2, ist sowohl über die Git-Repositorium oder als "
+"Devel-Paket verfügbar.\n"
 "\n"
 "Die kommende stabile Version, 0.3.4, wird über neue Funktionen verfügen:\n"
 "- 256 Farben\n"
@@ -5051,10 +5058,8 @@ msgstr ""
 
 #. Translators: description for script "telnot.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:541
-#, fuzzy
-#| msgid "Send Growl notifications upon events."
 msgid "Send notifications over Telegram."
-msgstr "sendet eine Growl-Benachrichtigung bei einem Ereignis."
+msgstr "sendet eine Benachrichtigung über Telegram."
 
 #. Translators: description for script "zmq_notify.rb" (0.3.0+)
 #: scripts/_i18n_scripts.py:543
@@ -5552,10 +5557,8 @@ msgid "License"
 msgstr "Lizenz"
 
 #: scripts/models.py:292
-#, fuzzy
-#| msgid "The license (for example: GPL3, BSD, ...)."
 msgid "The license (for example: GPL3, BSD, etc.)."
-msgstr "Lizenzen (zum Beispiel: GPL3, BSD, ...)."
+msgstr "Lizenzen (zum Beispiel: GPL3, BSD, etc.)."
 
 #: scripts/models.py:295 scripts/models.py:374
 #: templates/doc/doc_version.html:67 themes/models.py:138 themes/models.py:227
@@ -5821,7 +5824,7 @@ msgstr "Skripten-Manager"
 
 #: templates/about/features.html:52
 msgid "Alias, aspell, charset, logger, etc."
-msgstr ""
+msgstr "Alias, aspell, charset, logger, etc."
 
 #: templates/about/features.html:68
 msgid "The future is now!"
@@ -6240,11 +6243,9 @@ msgid "send a mail to the list"
 msgstr "sende eine Mail an die Mailingliste"
 
 #: templates/about/support.html:101
-#, fuzzy
-#| msgid "<strong>weechat-support</strong> (installation, usage, bugs, ...):"
 msgid "<strong>weechat-support</strong> (installation, usage, bugs, etc.):"
 msgstr ""
-"<strong>weechat-support</strong> (Installation, Anwendung, Fehler, ...):"
+"<strong>weechat-support</strong> (Installation, Anwendung, Fehler, etc..):"
 
 #: templates/about/support.html:108
 msgid "<strong>weechat-dev</strong> (everything related to the development):"
@@ -6470,7 +6471,7 @@ msgstr "Statistiken"
 
 #: templates/dev/stats.html:19
 msgid "Git repository:"
-msgstr "Git-Repository:"
+msgstr "Git-Repositorium:"
 
 #: templates/dev/stats.html:24
 msgid "lines of code"
@@ -6853,7 +6854,8 @@ msgstr ""
 #: templates/download/debian.html:53
 msgid "<strong>Important:</strong> the Raspbian repositories are NOT signed."
 msgstr ""
-"<strong>Wichtig:</strong> das Raspbian Repository ist NICHT unterschrieben."
+"<strong>Wichtig:</strong> die Raspbian Repositorien sind NICHT "
+"unterschrieben."
 
 #: templates/download/debian.html:55
 msgid "APT configuration"
@@ -6880,7 +6882,7 @@ msgid ""
 "Create a weechat.list file with the repository, according to your "
 "distribution/version:"
 msgstr ""
-"Erstelle eine weechat.list Datei für Dein Repository, entsprechend der "
+"Erstelle eine weechat.list Datei für Dein Repositorium, entsprechend der "
 "Distribution/Version:"
 
 #: templates/download/debian.html:69
@@ -6969,7 +6971,7 @@ msgstr "nächste Build:"
 
 #: templates/download/debian.html:249
 msgid "No debian repository."
-msgstr "Kein Debian Repository."
+msgstr "Kein Debian Repositorium."
 
 #: templates/download/download.html:5
 msgid "download"
@@ -7556,7 +7558,7 @@ msgstr ""
 msgid "if script is OK, it is moved to official scripts and git repository."
 msgstr ""
 "entspricht ein Skript allen Anforderungen, dann wird es als offizielles "
-"Skript in die git Repository aufgenommen."
+"Skript in die git Repositorium aufgenommen."
 
 #: templates/scripts/pending.html:15
 msgid ""
