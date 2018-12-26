@@ -206,7 +206,7 @@ def get_theme_choices():
     try:
         theme_list = Theme.objects.filter(visible=1).order_by('name')
         theme_choices = []
-        theme_choices.append(('', ugettext_lazy('Choose...')))
+        theme_choices.append(('', ugettext(u'Choose…')))
         for theme in theme_list:
             theme_choices.append((theme.id, '%s (%s)' % (theme.name,
                                                          theme.version)))
@@ -327,7 +327,7 @@ def handler_theme_changed(sender, **kwargs):
                     strvalue = '%s' % value
                     xml += getxmlline(key, strvalue)
                     json += getjsonline(key, strvalue)
-            # FIXME: use the "Host" from request, but...
+            # FIXME: use the "Host" from request, but…
             # request is not available in this handler!
             strvalue = 'https://weechat.org/%s' % theme.build_url()[1:]
             xml += '    %s\n' % xml_value('url', strvalue)

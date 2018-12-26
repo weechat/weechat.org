@@ -41,7 +41,7 @@
       <li class="page-item"><a class="page-link" href="?pagesize={{ pagesize }}&page=1">1</a></li>
       {% endif %}
       {% if smart_page_range.0 > 2 %}
-      <li class="page-item disabled"><span class="page-link">...</span></li>
+      <li class="page-item disabled"><span class="page-link">…</span></li>
       {% endif %}
 
       {% for page in smart_page_range %}
@@ -53,7 +53,7 @@
       {% endfor %}
 
       {% if smart_page_range|last < infos.paginator.num_pages|add:"-1" %}
-      <li class="page-item disabled"><span class="page-link">...</span></li>
+      <li class="page-item disabled"><span class="page-link">…</span></li>
       {% endif %}
       {% if smart_page_range|last < infos.paginator.num_pages %}
       <li class="page-item"><a class="page-link" href="?pagesize={{ pagesize }}&page={{ infos.paginator.num_pages }}">{{ infos.paginator.num_pages }}</a></li>

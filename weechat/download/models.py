@@ -67,7 +67,7 @@ class Release(models.Model):
 
 
 class Type(models.Model):
-    """A type of package (source, debian, ...)."""
+    """A type of package (source, debian, etc.)."""
     type = models.CharField(max_length=64, primary_key=True)
     priority = models.IntegerField(default=0)
     description = models.CharField(max_length=256)

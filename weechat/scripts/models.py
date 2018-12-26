@@ -289,7 +289,7 @@ class ScriptFormAdd(Form):
     license = CharField(
         max_length=MAX_LENGTH_LICENSE,
         label=ugettext_lazy('License'),
-        help_text=ugettext_lazy('The license (for example: GPL3, BSD, ...).'),
+        help_text=ugettext_lazy('The license (for example: GPL3, BSD, etc.).'),
     )
     file = FileField(
         label=ugettext_lazy('File'),
@@ -336,7 +336,7 @@ class ScriptFormAdd(Form):
         super(ScriptFormAdd, self).__init__(*args, **kwargs)
         self.label_suffix = ''
         self.fields['min_max'].choices = get_min_max_choices()
-        self.fields['name'].help_text = ugettext_lazy(
+        self.fields['name'].help_text = ugettext(
             'The short name of script (max {max_chars} chars, '
             'only lower case letters, digits or "_").').format(
                 max_chars=MAX_LENGTH_NAME)
@@ -348,7 +348,7 @@ def get_script_choices():
         script_list = (Script.objects.exclude(max_weechat='0.2.6')
                        .filter(visible=1).order_by('name'))
         script_choices = []
-        script_choices.append(('', ugettext_lazy('Choose...')))
+        script_choices.append(('', ugettext(u'Choose…')))
         for script in script_list:
             name = '%s - v%s (%s)' % (script.name_with_extension(),
                                       script.version, script.version_weechat())
@@ -422,7 +422,7 @@ def handler_script_changed(sender, **kwargs):
                         value = ''
                     else:
                         if key == 'url':
-                            # FIXME: use the "Host" from request, but...
+                            # FIXME: use the "Host" from request, but…
                             # request is not available in this handler!
                             value = ('https://weechat.org/%s' %
                                      script.build_url()[1:])

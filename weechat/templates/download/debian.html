@@ -8,7 +8,7 @@
 {% block extrahead %}
 <script>
 var deb_apt_cmds = [
-  "...<br>...",
+  "…<br>…",
 {% for repo in repositories %}
 {% if repo.visible %}
   "$ echo \"{{ repo.apt_url }}\" | sudo tee /etc/apt/sources.list.d/weechat.list" +
@@ -79,7 +79,7 @@ var deb_apt_cmds = [
               {% endfor %}
             </select>
           </form>
-          <pre class="mt-1"><code id="deb_apt_cmd">...<br>...</code></pre>
+          <pre class="mt-1"><code id="deb_apt_cmd">…<br>…</code></pre>
           {% trans "Note: the second command line is optional, it is used to download source packages." %}
         </p>
         <p>

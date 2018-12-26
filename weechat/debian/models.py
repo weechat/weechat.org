@@ -30,7 +30,7 @@ from weechat.common.path import repo_path_join
 class Version(models.Model):
     """Version of a Debian repository (codename + version).
 
-    Examples: (wheezy, stable), (jessie, testing), (sid, unstable), ...
+    Examples: (wheezy, stable), (jessie, testing), (sid, unstable), etc.
     """
     codename = models.CharField(max_length=64, primary_key=True)
     version = models.CharField(max_length=64)

@@ -43,8 +43,8 @@ class Task(models.Model):
     def __str__(self):
         desc = (self.description
                 if len(self.description) < 100
-                else '%s...' % self.description[0:100])
-        return '%s%s%s, %s, %d%%, %s: %s (%d)' % (
+                else u'%s…' % self.description[0:100])
+        return u'%s%s%s, %s, %d%%, %s: %s (%d)' % (
             '' if self.visible else '(',
             self.version,
             '' if self.visible else ')',
