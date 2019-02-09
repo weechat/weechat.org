@@ -16,22 +16,22 @@
 # You should have received a copy of the GNU General Public License
 # along with WeeChat.org.  If not, see <https://www.gnu.org/licenses/>.
 #
-# Krzysztof Korościk <soltys@soltys.info>, 2018.
+# Krzysztof Korościk <soltys@soltys.info>, 2018, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-02-02 09:03+0100\n"
-"PO-Revision-Date: 2018-12-26 16:27+0100\n"
+"PO-Revision-Date: 2019-02-09 21:46+0100\n"
 "Last-Translator: Krzysztof Korościk <soltys@soltys.info>\n"
-"Language-Team: Polish <>\n"
+"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 2.0\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 18.12.1\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10"
+" || n%100>=20) ? 1 : 2);\n"
 
 #: about/_i18n_keydates.py:8
 msgid "256 colors, irc proxy, rmodifier, redirection of irc commands."
@@ -39,7 +39,7 @@ msgstr "256 kolorów, pośrednik irc, rmodifier, przekierowanie komend irc."
 
 #: about/_i18n_keydates.py:9
 msgid "Add hook \"line\"."
-msgstr ""
+msgstr "Dodaje uchwyt \"line\"."
 
 #: about/_i18n_keydates.py:10
 msgid "Aspell plugin."
@@ -100,6 +100,9 @@ msgid ""
 "Indexed ban list in IRC plugin, support of IRCv3.2 Client Capability "
 "Negotiation, invite-notify and chghost."
 msgstr ""
+"Indeksowana lista banów we wtyczce IRC, wsparcie dla możliwości klienta"
+" IRCv3.2 "
+"Negocjacji, invite-notify i chghost."
 
 #: about/_i18n_keydates.py:23
 msgid "Inherited values in options."
@@ -225,30 +228,31 @@ msgstr ""
 
 #: dev/views.py:79
 msgid "Release signing key fingerprint (format: PGP fingerprint)."
-msgstr ""
+msgstr "Odcisk klucza podpisu wydania (format: odcisk PGP)."
 
 #: dev/views.py:84
 msgid "Release signing key (format: PGP public key)."
-msgstr ""
+msgstr "Klucz podpisu wydania (format: klucz publiczny PGP)."
 
 #: dev/views.py:88
 msgid ""
 "Debian/Ubuntu repository signing key fingerprint (format: PGP fingerprint)."
-msgstr ""
+msgstr "Odcisk klucza podpisu repozytorium Debiana/Ubuntu (format: klucz PGP)."
 
 #: dev/views.py:93
 msgid "Debian/Ubuntu repository signing key (format: PGP public key)."
 msgstr ""
+"Klucz podpisu repozytorium Debiana/Ubuntu (format: klucz publiczny PGP)."
 
 #: dev/views.py:98
-#, fuzzy
 #| msgid "All infos (one info by line, format: \"info:value\")."
 msgid "All non-binary infos (one info by line, format: \"info:value\")."
-msgstr "Wszystkie informacje (jedna na linie, format \"info:wartość\")."
+msgstr ""
+"Wszystkie niebinarne informacje (jedna na linie, format \"info:wartość\")."
 
 #: dev/views.py:284
 msgid "(binary data)"
-msgstr ""
+msgstr "(dane binarne)"
 
 #: doc/_i18n_security.py:8
 msgid "/set irc.network.colors_receive off"
@@ -3142,6 +3146,29 @@ msgid ""
 "blog/post/2018/07/14/Version-2.2\">development blog</a> or <a href=\"/files/"
 "changelog/ChangeLog-2.2.html\">ChangeLog</a>."
 msgstr ""
+"Wersja 2.2 jest dostępna!\n"
+"\n"
+"Najważniejsze zmiany:\n"
+"\n"
+"- dodano wsparcie listy opcji dla curl\n"
+"- dodano możliwość łączenia buforów po nazwie w komendzie /buffer\n"
+"- dodano możliwość odwrócenia przetwarzania ciągu w wyrażeniu za pomocą"
+" \"rev:\"\n"
+"- dodano indeksowaną listę banów i dopełnienia dla /unban i /unquiet (wtyczka"
+" IRC)\n"
+"- dodano wsparcie dla IRCv3.2 Client Capability Negotiation\n"
+"- dodano wsparcie dla IRCv3.2 invite-notify\n"
+"- dodano wsparcie dla  IRCv3.2 chghost, dodano opcje"
+" irc.look.smart_filter_chghost "
+"i irc.color.message_chghost\n"
+"- dodano opcję xfer.network.send_ack\n"
+"- dodano wparcie dla Pythona w wersji 3.7\n"
+"- poprawiono wycieki pamięci we wtyczkach skryptowych\n"
+"- poprawiono wiele błędów.\n"
+"\n"
+"Pełną listę nowych funkcji i poprawionych błędów można znaleźć na <a href=\"/"
+"blog/post/2018/07/14/Version-2.2\">blogu developerskim</a> oraz w pliku <a "
+"href=\"/files/changelog/ChangeLog-2.2.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:126
 msgid ""
@@ -3167,6 +3194,27 @@ msgid ""
 "blog/post/2018/10/21/Version-2.3\">development blog</a> or <a href=\"/files/"
 "changelog/ChangeLog-2.3.html\">ChangeLog</a>."
 msgstr ""
+"Wersja 2.3 jest dostępna!\n"
+"\n"
+"Najważniejsze zmiany:\n"
+"\n"
+"- dodano uchwyt \"line\"\n"
+"- dodano opcję \"-P\" (lub \"--plugins\") do modyfikowania listy wtyczek"
+" ładowanych przy uruchomieniu\n"
+"- można użyć wiele razy parametru \"-r\" (\"--run-command\") w linii poleceń\n"
+"- dodano wsparcie dla nazw częściowych i wielu argumentów w komendzie /buffer"
+" close\n"
+"- dodano możliwość podania numeru/nazwy dla komendy /buffer localvar\n"
+"- dodano możliwość tworzenia zmiennych tymczasowych za pomocą wyrażeń we"
+" wtyczce trigger\n"
+"- dodano prawdziwe IP w opisie klienta we wtyczce relay\n"
+"- dodano powtarzanie ciągu w przetwarzaniu wyrażeń za pomocą"
+" \"repeat:ilość,ciąg\"\n"
+"- poprawiono wiele błędów.\n"
+"\n"
+"Pełną listę nowych funkcji i poprawionych błędów można znaleźć na <a href=\"/"
+"blog/post/2018/10/21/Version-2.3\">blogu developerskim</a> oraz w pliku <a "
+"href=\"/files/changelog/ChangeLog-2.3.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:127
 msgid ""
@@ -3459,7 +3507,7 @@ msgstr ""
 #. Translators: description for script "pv_info.pl" (0.4.0+)
 #: scripts/_i18n_scripts.py:31
 msgid "Add a bar in query buffers with whois information."
-msgstr ""
+msgstr "Dodaje pasek w buforach rozmów prywatnych z informacją whois."
 
 #. Translators: description for script "beat.pl" (0.3.0+)
 #: scripts/_i18n_scripts.py:33
@@ -3731,23 +3779,21 @@ msgstr "Blokowanie masowych podświetleń."
 
 #. Translators: description for script "autobump.py" (0.4.3+)
 #: scripts/_i18n_scripts.py:129
-#, fuzzy
 #| msgid "Jump to a higher buffer with activity."
 msgid "Bump buffers upon activity."
-msgstr "Przeskakuje do wyższego bufora z aktywnością."
+msgstr "Ustawia bufory według aktywności."
 
 #. Translators: description for script "chanotify.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:131
-#, fuzzy
 #| msgid "Notify dzen when a private message is received."
 msgid "Call notify-send when a message is received."
-msgstr "Powiadomia dzen, kiedy otrzymana zostanie wiadomość prywatna."
+msgstr "Wykonuje notify-send po otrzymaniu wiadomości."
 
 #. Translators: description for script "autonickprefix.pl" (0.3.0+)
 #: scripts/_i18n_scripts.py:133
 msgid ""
 "Change \"nick:\" prefix if the nick is changed while you're still editing."
-msgstr ""
+msgstr "Zmienia prefiks \"nick:\" jeśli nick się zmieni podczas pisania."
 
 #. Translators: description for script "mnick.pl" (0.3.0+)
 #: scripts/_i18n_scripts.py:135
@@ -3757,7 +3803,7 @@ msgstr "Zmiana nicka na wielu serwerach za pomocą własnych masek."
 #. Translators: description for script "ctrl_w.pl" (0.3.0+)
 #: scripts/_i18n_scripts.py:137
 msgid "Change the key ctrl-W to use the readline behavior."
-msgstr ""
+msgstr "Zmienia zachowanie kombinacji ctrl-W na to z readline."
 
 #. Translators: description for script "luanma.pl" (0.3.9+)
 #: scripts/_i18n_scripts.py:139
@@ -3779,7 +3825,7 @@ msgstr "Czyści bufor na znc / lokalnie albo oba."
 #. Translators: description for script "weenotify.py" (2.0+)
 #: scripts/_i18n_scripts.py:145
 msgid "Client/server to send/receive notifications and display them."
-msgstr ""
+msgstr "Klient/server do wysyłania/odbierania powiadomień i ich wyświetlania."
 
 #. Translators: description for script "colorize_lines.pl" (0.3.4+)
 #: scripts/_i18n_scripts.py:147
@@ -3999,6 +4045,7 @@ msgstr "Wyświetla zewnętrzny adres IP."
 #: scripts/_i18n_scripts.py:227
 msgid "Display hints for URLs and open them with keyboard shortcuts."
 msgstr ""
+"Wyświetla podpowiedzi dla URLi i otwiera je za pomocą skrótów klawiszowych."
 
 #. Translators: description for script "infolist.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:229
@@ -4029,7 +4076,7 @@ msgstr "Wyświetla obecny rozmiar pliku z logiem jako element paska."
 #. Translators: description for script "topicdiff_alt.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:239
 msgid "Display topic with changes highlighted."
-msgstr ""
+msgstr "Wyświetla topic z wyróżnionymi zmianami."
 
 #. Translators: description for script "terminal_title.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:241
@@ -4575,7 +4622,7 @@ msgstr ""
 #. Translators: description for script "xdccq.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:435
 msgid "Queue XDCC messages to bots."
-msgstr ""
+msgstr "Kolejkuje wiadomości XDCC do botów."
 
 #. Translators: description for script "go.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:437
@@ -4695,10 +4742,9 @@ msgstr "Pobiera cytaty z bash.org."
 
 #. Translators: description for script "foo.pl" (0.3.0+)
 #: scripts/_i18n_scripts.py:481
-#, fuzzy
 #| msgid "FiSH encryption/decryption."
 msgid "Rot n+i encryption and decryption."
-msgstr "Szyfrowanie / deszyfrowanie FiSH."
+msgstr "Szyfrowanie / deszyfrowanie rot n+i."
 
 #. Translators: description for script "xfer_run_command.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:483
@@ -4718,10 +4764,9 @@ msgstr ""
 
 #. Translators: description for script "execbot.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:489
-#, fuzzy
 #| msgid "Avoid sending misformatted commands as messages."
 msgid "Run remote commands via IRC messages."
-msgstr "Unikanie wysyłania błędnie sformatowanych komend jako wiadomości."
+msgstr "Wykonywanie zdalnych poleceń przez wiadomości IRC."
 
 #. Translators: description for script "weetext.py" (0.4.3+)
 #: scripts/_i18n_scripts.py:491
@@ -4799,7 +4844,7 @@ msgstr ""
 #. Translators: description for script "selfcensor.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:519
 msgid "Self-censor stuff you were going to say."
-msgstr ""
+msgstr "Automatycznie cenzoruj rzeczy, które zamierzasz powiedzieć."
 
 #. Translators: description for script "whois_on_query.py" (0.3.2+)
 #: scripts/_i18n_scripts.py:521
@@ -4863,10 +4908,9 @@ msgstr ""
 
 #. Translators: description for script "telnot.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:541
-#, fuzzy
 #| msgid "Send Growl notifications upon events."
 msgid "Send notifications over Telegram."
-msgstr "Wysyła powiadomienia Growl dla zdarzeń."
+msgstr "Wysyła powiadomienia na Telegram."
 
 #. Translators: description for script "zmq_notify.rb" (0.3.0+)
 #: scripts/_i18n_scripts.py:543
@@ -5276,7 +5320,7 @@ msgstr "Wyświetla zawartość strony typu pastebin w buforze."
 #. Translators: description for script "pushbullet.rb" (0.3.0+)
 #: scripts/_i18n_scripts.py:691
 msgid "View/send SMS via pushbullet."
-msgstr ""
+msgstr "Wyświetl/wyślij SMS przez pushbullet."
 
 #. Translators: description for script "oldswarner.lua" (0.3.7+)
 #: scripts/_i18n_scripts.py:693
@@ -5357,10 +5401,9 @@ msgid "License"
 msgstr "Licencja"
 
 #: scripts/models.py:292
-#, fuzzy
 #| msgid "The license (for example: GPL3, BSD, ...)."
 msgid "The license (for example: GPL3, BSD, etc.)."
-msgstr "Licencja (na przykład: GPL3, BSD, ...)."
+msgstr "Licencja (na przykład: GPL3, BSD, itp)."
 
 #: scripts/models.py:295 scripts/models.py:374
 #: templates/doc/doc_version.html:67 themes/models.py:138 themes/models.py:227
@@ -5622,7 +5665,7 @@ msgstr "Menadżer skryptów"
 
 #: templates/about/features.html:52
 msgid "Alias, aspell, charset, logger, etc."
-msgstr ""
+msgstr "Alias, aspell, charset, logger, etc."
 
 #: templates/about/features.html:68
 msgid "The future is now!"
@@ -5915,10 +5958,9 @@ msgid "Download page"
 msgstr "Strona pobierania"
 
 #: templates/about/interfaces.html:83
-#, fuzzy
 #| msgid "Not maintained any more."
 msgid "This project is not maintained any more."
-msgstr "Już nie utrzymywany."
+msgstr "Ten projekt już nie jest rozwijany."
 
 #: templates/about/interfaces.html:89
 msgid "Something missing?"
@@ -6032,11 +6074,9 @@ msgid "send a mail to the list"
 msgstr "wyślij wiadomości na listę"
 
 #: templates/about/support.html:101
-#, fuzzy
 #| msgid "<strong>weechat-support</strong> (installation, usage, bugs, ...):"
 msgid "<strong>weechat-support</strong> (installation, usage, bugs, etc.):"
-msgstr ""
-"<strong>weechat-support</strong> (instalacja, użytkowanie, błędy, ...):"
+msgstr "<strong>weechat-support</strong> (instalacja, używanie, błędy, itp):"
 
 #: templates/about/support.html:108
 msgid "<strong>weechat-dev</strong> (everything related to the development):"
@@ -6436,10 +6476,9 @@ msgid "Workaround"
 msgstr "Obejście"
 
 #: templates/doc/security.html:49
-#, fuzzy
 #| msgid "Severity"
 msgid "Severity:"
-msgstr "Istotność"
+msgstr "Istotność:"
 
 #: templates/doc/security.html:80
 msgid "There is no workaround."
@@ -6532,7 +6571,6 @@ msgstr ""
 "na tej stronie."
 
 #: templates/donate.html:35
-#, fuzzy
 #| msgid "Donations via Liberapay"
 msgid "Donate using Liberapay"
 msgstr "Dotacje przez Liberapay"
@@ -6612,10 +6650,9 @@ msgid "All repositories"
 msgstr "Wszystkie repozytoria"
 
 #: templates/download/debian.html:34
-#, fuzzy
 #| msgid "No debian repository."
 msgid "Error reading repositories:"
-msgstr "Brak repozytorium Debiana."
+msgstr "Błąd w odczycie repozytoriów:"
 
 #: templates/download/debian.html:41
 msgid ""
@@ -7151,7 +7188,6 @@ msgstr "Wyślij"
 
 #: templates/scripts/add_error.html:12 templates/scripts/update_error.html:12
 #: templates/themes/add_error.html:12 templates/themes/update_error.html:12
-#, fuzzy
 #| msgid "Oops... Something went wrong while processing the form :("
 msgid "Oops… Something went wrong while processing the form :("
 msgstr "Oops... Coś się nie udało podczas przetwarzania formularza :("
