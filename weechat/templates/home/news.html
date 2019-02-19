@@ -29,7 +29,7 @@
 
   {% if not info_id %}
   <nav aria-label="Page navigation">
-    <ul class="pagination justify-content-center">
+    <ul class="pagination flex-wrap justify-content-center">
 
       {% if infos.has_previous %}
       <li class="page-item"><a class="page-link" href="?pagesize={{ pagesize }}&page={{ infos.previous_page_number }}">{% trans "Previous" context "Previous page" %}</a></li>
