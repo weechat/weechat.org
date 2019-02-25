@@ -9,8 +9,6 @@
 
 {{ block.super }}
 
-{% if htmlsource %}
-
 <h3>{% trans "Script" %}: {{ script.name_with_extension }}</h3>
 
 <p>
@@ -29,15 +27,5 @@
 <p>
   {{ htmlsource|safe }}
 </p>
-
-{% else %}
-
-<div class="alert alert-danger">
-  {% trans "Script not found" %}
-  <br><br>
-  <a href="{% url 'scripts' %}">{% trans "Back to scripts" %}</a>
-</div>
-
-{% endif %}
 
 {% endblock content %}

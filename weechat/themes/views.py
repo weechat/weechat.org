@@ -28,8 +28,8 @@ from pygments.lexers import get_lexer_by_name
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.mail import EmailMessage
-from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.http import HttpResponseRedirect, Http404
+from django.shortcuts import render, get_object_or_404
 
 from weechat.common.path import files_path_join
 from weechat.download.models import Release
@@ -61,9 +61,9 @@ def themes(request, sort_key='updated', filter_name='', filter_value=''):
 def theme_source(request, themeid=None, themename=None):
     """Page with source of a theme."""
     if themeid:
-        theme = Theme.objects.get(id=themeid)
+        theme = get_object_or_404(Theme, id=themeid)
     else:
-        theme = Theme.objects.get(name=themename)
+        theme = get_object_or_404(Theme, name=themename)
     try:
         with open(files_path_join(theme.path(), theme.name), 'rb') as _file:
             htmlsource = highlight(_file.read(),
@@ -72,7 +72,7 @@ def theme_source(request, themeid=None, themename=None):
                                    HtmlFormatter(cssclass='pygments',
                                                  linenos='table'))
     except:  # noqa: E722
-        htmlsource = ''
+        raise Http404
     return render(
         request,
         'themes/source.html',

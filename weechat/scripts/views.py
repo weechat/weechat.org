@@ -27,8 +27,8 @@ from pygments.lexers import get_lexer_by_name
 
 from django.conf import settings
 from django.core.mail import EmailMessage
-from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.http import HttpResponseRedirect, Http404
+from django.shortcuts import render, get_object_or_404
 
 from weechat.common.path import files_path_join
 from weechat.download.models import Release
@@ -152,17 +152,17 @@ def scripts(request, api='stable', sort_key='popularity', filter_name='',
 
 def script_source(request, api='stable', scriptid='', scriptname=''):
     """Page with source of a script."""
-    script = ''
+    script = None
     if scriptid:
+        script = get_object_or_404(Script, id=scriptid)
         try:
-            script = Script.objects.get(id=scriptid)
             with open(files_path_join(script.path(),
                                       script.name_with_extension()),
                       'rb') as _file:
                 htmlsource = get_highlighted_source(_file.read(),
                                                     script.language)
         except:  # noqa: E722
-            htmlsource = ''
+            raise Http404
     else:
         sname = scriptname
         sext = ''
@@ -170,24 +170,28 @@ def script_source(request, api='stable', scriptid='', scriptname=''):
         if pos > 0:
             sext = sname[pos+1:]
             sname = sname[0:pos]
+        if api == 'legacy':
+            script = get_object_or_404(
+                Script,
+                name=sname,
+                language=get_language_from_extension(sext),
+                max_weechat=API_OLD,
+            )
+        else:
+            script = get_object_or_404(
+                Script,
+                name=sname,
+                language=get_language_from_extension(sext),
+                min_weechat__gte=API_STABLE,
+            )
         try:
-            if api == 'legacy':
-                script = Script.objects.get(
-                    name=sname,
-                    language=get_language_from_extension(sext),
-                    max_weechat=API_OLD)
-            else:
-                script = Script.objects.get(
-                    name=sname,
-                    language=get_language_from_extension(sext),
-                    min_weechat__gte=API_STABLE)
             with open(files_path_join(script.path(),
                                       script.name_with_extension()),
                       'rb') as _file:
                 htmlsource = get_highlighted_source(_file.read(),
                                                     PYGMENTS_LEXER[sext])
         except:  # noqa: E722
-            htmlsource = ''
+            raise Http404
     return render(
         request,
         'scripts/source.html',

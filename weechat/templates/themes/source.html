@@ -9,8 +9,6 @@
 
 {{ block.super }}
 
-{% if htmlsource %}
-
 <h3>{% trans "Theme" %}: {{ theme.name }}</h3>
 
 <p>
@@ -22,15 +20,5 @@
 <p>
   {{ htmlsource|safe }}
 </p>
-
-{% else %}
-
-<div class="alert alert-danger">
-  {% trans "Theme not found" %}
-  <br><br>
-  <a href="{% url 'themes' %}">{% trans "Back to themes" %}</a>
-</div>
-
-{% endif %}
 
 {% endblock content %}
