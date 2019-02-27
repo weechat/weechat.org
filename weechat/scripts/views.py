@@ -235,8 +235,9 @@ def form_add(request):
             # write script in pending directory
             filename = files_path_join('scripts', 'pending1',
                                        script.name_with_extension())
-            with open(filename, 'w') as _file:
-                _file.write(scriptfile.read().replace('\r\n', '\n'))
+            with open(filename, 'wb') as _file:
+                contents = scriptfile.read().replace(b'\r\n', b'\n')
+                _file.write(contents)
 
             # send e-mail
             try:
