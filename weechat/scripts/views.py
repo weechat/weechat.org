@@ -240,38 +240,40 @@ def form_add(request):
 
             # send e-mail
             try:
-                subject = ('WeeChat: new script %s' %
-                           script.name_with_extension())
-                body = (''
-                        'Script      : %s\n'
-                        'Version     : %s\n'
-                        'Language    : %s\n'
-                        'License     : %s\n'
-                        'Description : %s\n'
-                        'Requirements: %s\n'
-                        'Min WeeChat : %s\n'
-                        'Max WeeChat : %s\n'
-                        'Author      : %s <%s>\n'
-                        '\n'
-                        'Comment:\n%s\n' %
-                        (form.cleaned_data['name'],
-                         form.cleaned_data['version'],
-                         form.cleaned_data['language'],
-                         form.cleaned_data['license'],
-                         form.cleaned_data['description'],
-                         form.cleaned_data['requirements'],
-                         min_max[0],
-                         min_max[1],
-                         form.cleaned_data['author'],
-                         form.cleaned_data['mail'],
-                         form.cleaned_data['comment']))
-                sender = '%s <%s>' % (form.cleaned_data['author'],
-                                      form.cleaned_data['mail'])
-                email = EmailMessage(subject, body, sender,
-                                     settings.SCRIPTS_MAILTO)
-                email.attach_file(filename)
-                email.send()
-            except:  # noqa: E722
+                if settings.SCRIPTS_MAILTO:
+                    subject = ('WeeChat: new script %s' %
+                               script.name_with_extension())
+                    body = (''
+                            'Script      : %s\n'
+                            'Version     : %s\n'
+                            'Language    : %s\n'
+                            'License     : %s\n'
+                            'Description : %s\n'
+                            'Requirements: %s\n'
+                            'Min WeeChat : %s\n'
+                            'Max WeeChat : %s\n'
+                            'Author      : %s <%s>\n'
+                            '\n'
+                            'Comment:\n%s\n' %
+                            (form.cleaned_data['name'],
+                             form.cleaned_data['version'],
+                             form.cleaned_data['language'],
+                             form.cleaned_data['license'],
+                             form.cleaned_data['description'],
+                             form.cleaned_data['requirements'],
+                             min_max[0],
+                             min_max[1],
+                             form.cleaned_data['author'],
+                             form.cleaned_data['mail'],
+                             form.cleaned_data['comment']))
+                    sender = '%s <%s>' % (form.cleaned_data['author'],
+                                          form.cleaned_data['mail'])
+                    email = EmailMessage(subject, body, sender,
+                                         settings.SCRIPTS_MAILTO)
+                    email.attach_file(filename)
+                    email.send()
+            except Exception as e:  # noqa: E722
+                print(e)
                 return HttpResponseRedirect('/scripts/adderror/')
 
             # save script in database
