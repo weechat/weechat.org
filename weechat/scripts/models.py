@@ -26,6 +26,7 @@ from io import open
 import os
 import re
 from xml.sax.saxutils import escape
+from json import dump as json_dump
 
 from django import forms
 from django.conf import settings
@@ -46,7 +47,6 @@ from weechat.common.forms import (
     Html5EmailInput,
     Form,
     getxmlline,
-    getjsonline,
 )
 from weechat.common.i18n import i18n_autogen
 from weechat.common.path import files_path_join
@@ -408,13 +408,12 @@ def handler_script_changed(sender, **kwargs):
     """Build files plugins.{xml,json}(.gz) after update/delete of a script."""
     xml = '<?xml version="1.0" encoding="utf-8"?>\n'
     xml += '<plugins>\n'
-    json = '[\n'
+    json = []
     strings = []
     for script in Script.objects.filter(visible=1).order_by('id'):
         if script.visible and not script.is_legacy():
+            json_script = {'id': str(script.id)}
             xml += '  <plugin id="%s">\n' % script.id
-            json += '  {\n'
-            json += '    "id": "%s",\n' % script.id
             for key, value in script.__dict__.items():
                 value_i18n = {}
                 if key not in ['_state', 'id', 'visible', 'comment']:
@@ -440,14 +439,16 @@ def handler_script_changed(sender, **kwargs):
                                         value_i18n['desc_%s' % locale] = \
                                             escape(ugettext(value))
                                         translation.deactivate()
-                            value = escape(value)
-                    xml += getxmlline(key, value)
-                    json += getjsonline(key, value)
+                    value = str(value)
+                    xml += getxmlline(key, escape(value))
+
+                    json_script[key] = value
+
                     for field in value_i18n:
                         xml += getxmlline(field, value_i18n[field])
-                        json += getjsonline(field, value_i18n[field])
+                        json_script[field] = value_i18n[field]
             xml += '  </plugin>\n'
-            json = json[:-2] + '\n  },\n'
+            json.append(json_script)
             strings.append(
                 (
                     script.desc_en,
@@ -456,7 +457,6 @@ def handler_script_changed(sender, **kwargs):
                         script.version_weechat()),
                 ))
     xml += '</plugins>\n'
-    json = json[:-2] + '\n]\n'
 
     # create plugins.xml
     filename = files_path_join('plugins.xml')
@@ -472,7 +472,7 @@ def handler_script_changed(sender, **kwargs):
     # create plugins.json
     filename = files_path_join('plugins.json')
     with open(filename, 'w', encoding='utf-8') as _file:
-        _file.write(json)
+        json_dump(json, _file)
 
     # create plugins.json.gz
     with open(filename, 'rb') as _f_in:
