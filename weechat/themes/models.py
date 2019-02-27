@@ -27,6 +27,7 @@ import os
 import re
 import tarfile
 from xml.sax.saxutils import escape
+from json import dump as json_dump
 
 from django import forms
 from django.conf import settings
@@ -44,7 +45,6 @@ from weechat.common.forms import (
     Html5EmailInput,
     Form,
     getxmlline,
-    getjsonline,
 )
 from weechat.common.path import files_path_join
 from weechat.download.models import Release
@@ -298,12 +298,11 @@ def handler_theme_changed(sender, **kwargs):
     theme_list = Theme.objects.filter(visible=1).order_by('id')
     xml = '<?xml version="1.0" encoding="utf-8"?>\n'
     xml += '<themes>\n'
-    json = '[\n'
+    json = []
     for theme in theme_list:
         if theme.visible:
             xml += '  <theme id="%s">\n' % theme.id
-            json += '  {\n'
-            json += '    "id": "%s",\n' % theme.id
+            json_entry = {'id': theme.id}
             for key, value in theme.__dict__.items():
                 if key not in ['_state', 'id', 'visible', 'comment']:
                     if value is None:
@@ -326,7 +325,8 @@ def handler_theme_changed(sender, **kwargs):
                             value = escape(value)
                     strvalue = '%s' % value
                     xml += getxmlline(key, strvalue)
-                    json += getjsonline(key, strvalue)
+                    json_entry[key] = strvalue
+            json.append(json_entry)
             # FIXME: use the "Host" from request, but…
             # request is not available in this handler!
             strvalue = 'https://weechat.org/%s' % theme.build_url()[1:]
@@ -335,7 +335,6 @@ def handler_theme_changed(sender, **kwargs):
             xml += '  </theme>\n'
             json = json[:-2] + '\n  },\n'
     xml += '</themes>\n'
-    json = json[:-2] + '\n]\n'
 
     # create themes.xml
     filename = files_path_join('themes.xml')
@@ -351,7 +350,7 @@ def handler_theme_changed(sender, **kwargs):
     # create themes.json
     filename = files_path_join('themes.json')
     with open(filename, 'w', encoding='utf-8') as _file:
-        _file.write(json)
+        json_dump(json, _file)
 
     # create themes.json.gz
     with open(filename, 'rb') as _f_in:
