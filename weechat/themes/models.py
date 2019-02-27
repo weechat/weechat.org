@@ -21,7 +21,7 @@
 """Models for "themes" menu."""
 
 import gzip
-from hashlib import md5
+from hashlib import md5, sha512
 from io import open
 import os
 import re
@@ -52,6 +52,7 @@ from weechat.download.models import Release
 MAX_LENGTH_NAME = 64
 MAX_LENGTH_VERSION = 32
 MAX_LENGTH_MD5SUM = 256
+MAX_LENGTH_SHA512SUM = 128
 MAX_LENGTH_DESC = 1024
 MAX_LENGTH_COMMENT = 1024
 MAX_LENGTH_AUTHOR = 256
@@ -64,6 +65,7 @@ class Theme(models.Model):
     name = models.CharField(max_length=MAX_LENGTH_NAME)
     version = models.CharField(max_length=MAX_LENGTH_VERSION)
     md5sum = models.CharField(max_length=MAX_LENGTH_MD5SUM, blank=True)
+    sha512sum = models.CharField(max_length=MAX_LENGTH_SHA512SUM, blank=True)
     desc = models.CharField(max_length=MAX_LENGTH_DESC, blank=True)
     comment = models.CharField(max_length=MAX_LENGTH_COMMENT, blank=True)
     author = models.CharField(max_length=MAX_LENGTH_AUTHOR)
@@ -114,6 +116,28 @@ class Theme(models.Model):
         """Checks if the theme exists (on disk)."""
         return os.path.isfile(files_path_join(self.path(),
                                               os.path.basename(self.name)))
+
+    def md5(self):
+        try:
+            with open(files_path_join(self.path(),
+                                      self.name),
+                      'rb') as _file:
+                filemd5 = md5()
+                filemd5.update(_file.read())
+                return filemd5.hexdigest()
+        except:  # noqa: E722
+            return ''
+
+    def sha512(self):
+        try:
+            with open(files_path_join(self.path(),
+                                      self.name),
+                      'rb') as _file:
+                filesha512 = sha512()
+                filesha512.update(_file.read())
+                return filesha512.hexdigest()
+        except:  # noqa: E722
+            return ''
 
     @staticmethod
     def get_props(themestring):
@@ -312,15 +336,9 @@ def handler_theme_changed(sender, **kwargs):
                             value = value.replace('@', ' [at] ')
                             value = value.replace('.', ' [dot] ')
                         elif key == 'md5sum':
-                            try:
-                                with open(files_path_join(theme.path(),
-                                                          theme.name),
-                                          'rb') as _file:
-                                    filemd5 = md5()
-                                    filemd5.update(_file.read())
-                                    value = filemd5.hexdigest()
-                            except:  # noqa: E722
-                                value = ''
+                            value = theme.md5()
+                        elif key == 'sha512sum':
+                            value = theme.sha512()
                         elif key.startswith('desc'):
                             value = escape(value)
                     strvalue = '%s' % value
