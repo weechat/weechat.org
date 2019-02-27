@@ -21,7 +21,7 @@
 """Models for "scripts" menu."""
 
 import gzip
-from hashlib import md5
+from hashlib import md5, sha512
 from io import open
 import os
 import re
@@ -69,6 +69,7 @@ MAX_LENGTH_URL = 512
 MAX_LENGTH_LANGUAGE = 32
 MAX_LENGTH_LICENSE = 32
 MAX_LENGTH_MD5SUM = 256
+MAX_LENGTH_SHA256SUM = 128
 MAX_LENGTH_TAGS = 512
 MAX_LENGTH_DESC = 1024
 MAX_LENGTH_COMMENT = 1024
@@ -92,6 +93,7 @@ class Script(models.Model):
     language = models.CharField(max_length=MAX_LENGTH_LANGUAGE)
     license = models.CharField(max_length=MAX_LENGTH_LICENSE)
     md5sum = models.CharField(max_length=MAX_LENGTH_MD5SUM, blank=True)
+    sha512sum = models.CharField(max_length=MAX_LENGTH_SHA256SUM, blank=True)
     tags = models.CharField(max_length=MAX_LENGTH_TAGS, blank=True)
     desc_en = models.CharField(max_length=MAX_LENGTH_DESC)
     comment = models.CharField(max_length=MAX_LENGTH_COMMENT, blank=True)
@@ -210,6 +212,16 @@ class Script(models.Model):
                 filemd5 = md5()
                 filemd5.update(_file.read())
                 return filemd5.hexdigest()
+        except:  # noqa: E722
+            return ''
+
+    def sha512(self):
+        """Return the SHA256 checksum of the script."""
+        try:
+            with open(self.filename(), 'rb') as _file:
+                filesha512 = sha512()
+                filesha512.update(_file.read())
+                return filesha512.hexdigest()
         except:  # noqa: E722
             return ''
 
@@ -430,6 +442,8 @@ def handler_script_changed(sender, **kwargs):
                             value = value.replace('.', ' [dot] ')
                         elif key == 'md5sum':
                             value = script.md5()
+                        elif key == 'sha512sum':
+                            value = script.sha512()
                         elif key.startswith('desc'):
                             if key == 'desc_en':
                                 for lang, locale in \
