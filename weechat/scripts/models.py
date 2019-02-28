@@ -21,17 +21,17 @@
 """Models for "scripts" menu."""
 
 import gzip
-from hashlib import md5
-from io import open
+import hashlib
 import os
 import re
+from io import open
 from xml.sax.saxutils import escape
 
 from django import forms
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
 from django.db import models
-from django.db.models.signals import post_save, post_delete
+from django.db.models.signals import pre_save, post_save, post_delete
 from django.utils import translation
 from django.utils.translation import ugettext, ugettext_lazy, pgettext_lazy
 
@@ -68,7 +68,8 @@ MAX_LENGTH_VERSION = 32
 MAX_LENGTH_URL = 512
 MAX_LENGTH_LANGUAGE = 32
 MAX_LENGTH_LICENSE = 32
-MAX_LENGTH_MD5SUM = 256
+MAX_LENGTH_MD5SUM = 32
+MAX_LENGTH_SHA512SUM = 128
 MAX_LENGTH_TAGS = 512
 MAX_LENGTH_DESC = 1024
 MAX_LENGTH_COMMENT = 1024
@@ -92,6 +93,7 @@ class Script(models.Model):
     language = models.CharField(max_length=MAX_LENGTH_LANGUAGE)
     license = models.CharField(max_length=MAX_LENGTH_LICENSE)
     md5sum = models.CharField(max_length=MAX_LENGTH_MD5SUM, blank=True)
+    sha512sum = models.CharField(max_length=MAX_LENGTH_SHA512SUM, blank=True)
     tags = models.CharField(max_length=MAX_LENGTH_TAGS, blank=True)
     desc_en = models.CharField(max_length=MAX_LENGTH_DESC)
     comment = models.CharField(max_length=MAX_LENGTH_COMMENT, blank=True)
@@ -203,15 +205,27 @@ class Script(models.Model):
         """Check if script exists (on disk)."""
         return os.path.isfile(self.filename())
 
-    def md5(self):
-        """Return MD5 checksum of script."""
+    def checksum(self, hash_func):
+        """Return script checksum using the hash function (from hashlib)."""
         try:
             with open(self.filename(), 'rb') as _file:
-                filemd5 = md5()
-                filemd5.update(_file.read())
-                return filemd5.hexdigest()
+                return hash_func(_file.read()).hexdigest()
         except:  # noqa: E722
             return ''
+
+    def get_md5sum(self):
+        """
+        Return the script MD5 (if known), or compute it with the file
+        if it is not set in database.
+        """
+        return self.md5sum or self.checksum(hashlib.md5)
+
+    def get_sha512sum(self):
+        """
+        Return the script SHA512 (if known), or compute it with the file
+        if it is not set in database.
+        """
+        return self.sha512sum or self.checksum(hashlib.sha512)
 
     class Meta:
         ordering = ['-added']
@@ -404,7 +418,17 @@ class ScriptFormUpdate(Form):
 
 
 @disable_for_loaddata
-def handler_script_changed(sender, **kwargs):
+def handler_script_saved(sender, **kwargs):
+    try:
+        script = kwargs['instance']
+        script.md5sum = script.checksum(hashlib.md5)
+        script.sha512sum = script.checksum(hashlib.sha512)
+    except:  # noqa: E722
+        pass
+
+
+@disable_for_loaddata
+def handler_scripts_changed(sender, **kwargs):
     """Build files plugins.{xml,json}(.gz) after update/delete of a script."""
     xml = '<?xml version="1.0" encoding="utf-8"?>\n'
     xml += '<plugins>\n'
@@ -430,7 +454,9 @@ def handler_script_changed(sender, **kwargs):
                             value = value.replace('@', ' [at] ')
                             value = value.replace('.', ' [dot] ')
                         elif key == 'md5sum':
-                            value = script.md5()
+                            value = script.get_md5sum()
+                        elif key == 'sha512sum':
+                            value = script.get_sha512sum()
                         elif key.startswith('desc'):
                             if key == 'desc_en':
                                 for lang, locale in \
@@ -484,5 +510,6 @@ def handler_script_changed(sender, **kwargs):
     i18n_autogen('scripts', 'scripts', strings)
 
 
-post_save.connect(handler_script_changed, sender=Script)
-post_delete.connect(handler_script_changed, sender=Script)
+pre_save.connect(handler_script_saved, sender=Script)
+post_save.connect(handler_scripts_changed, sender=Script)
+post_delete.connect(handler_scripts_changed, sender=Script)

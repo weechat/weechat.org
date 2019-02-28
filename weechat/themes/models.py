@@ -21,17 +21,17 @@
 """Models for "themes" menu."""
 
 import gzip
-from hashlib import md5
-from io import open
+import hashlib
 import os
 import re
 import tarfile
+from io import open
 from xml.sax.saxutils import escape
 
 from django import forms
 from django.conf import settings
 from django.db import models
-from django.db.models.signals import post_save, post_delete
+from django.db.models.signals import pre_save, post_save, post_delete
 from django.utils.translation import ugettext, ugettext_lazy
 
 from weechat.common.decorators import disable_for_loaddata
@@ -51,7 +51,8 @@ from weechat.download.models import Release
 
 MAX_LENGTH_NAME = 64
 MAX_LENGTH_VERSION = 32
-MAX_LENGTH_MD5SUM = 256
+MAX_LENGTH_MD5SUM = 32
+MAX_LENGTH_SHA512SUM = 128
 MAX_LENGTH_DESC = 1024
 MAX_LENGTH_COMMENT = 1024
 MAX_LENGTH_AUTHOR = 256
@@ -64,6 +65,7 @@ class Theme(models.Model):
     name = models.CharField(max_length=MAX_LENGTH_NAME)
     version = models.CharField(max_length=MAX_LENGTH_VERSION)
     md5sum = models.CharField(max_length=MAX_LENGTH_MD5SUM, blank=True)
+    sha512sum = models.CharField(max_length=MAX_LENGTH_SHA512SUM, blank=True)
     desc = models.CharField(max_length=MAX_LENGTH_DESC, blank=True)
     comment = models.CharField(max_length=MAX_LENGTH_COMMENT, blank=True)
     author = models.CharField(max_length=MAX_LENGTH_AUTHOR)
@@ -110,10 +112,14 @@ class Theme(models.Model):
         """Return URL to the theme."""
         return '/files/%s/%s' % (self.path(), self.name)
 
+    def filename(self):
+        """Return theme filename (on disk)."""
+        return files_path_join(self.path(),
+                               os.path.basename(self.name))
+
     def file_exists(self):
         """Checks if the theme exists (on disk)."""
-        return os.path.isfile(files_path_join(self.path(),
-                                              os.path.basename(self.name)))
+        return os.path.isfile(self.filename())
 
     @staticmethod
     def get_props(themestring):
@@ -126,6 +132,28 @@ class Theme(models.Model):
                 if match:
                     props[match.group(1)] = match.group(2)
         return props
+
+    def checksum(self, hash_func):
+        """Return theme checksum using the hash function (from hashlib)."""
+        try:
+            with open(self.filename(), 'rb') as _file:
+                return hash_func(_file.read()).hexdigest()
+        except:  # noqa: E722
+            return ''
+
+    def get_md5sum(self):
+        """
+        Return the theme MD5 (if known), or compute it with the file
+        if it is not set in database.
+        """
+        return self.md5sum or self.checksum(hashlib.md5)
+
+    def get_sha512sum(self):
+        """
+        Return the theme SHA512 (if known), or compute it with the file
+        if it is not set in database.
+        """
+        return self.sha512sum or self.checksum(hashlib.sha512)
 
     class Meta:
         ordering = ['-added']
@@ -293,7 +321,17 @@ def json_value(key, value):
 
 
 @disable_for_loaddata
-def handler_theme_changed(sender, **kwargs):
+def handler_theme_saved(sender, **kwargs):
+    try:
+        theme = kwargs['instance']
+        theme.md5sum = theme.checksum(hashlib.md5)
+        theme.sha512sum = theme.checksum(hashlib.sha512)
+    except:  # noqa: E722
+        pass
+
+
+@disable_for_loaddata
+def handler_themes_changed(sender, **kwargs):
     """Build files themes.{xml,json}(.gz) after update/delete of a theme."""
     theme_list = Theme.objects.filter(visible=1).order_by('id')
     xml = '<?xml version="1.0" encoding="utf-8"?>\n'
@@ -313,15 +351,9 @@ def handler_theme_changed(sender, **kwargs):
                             value = value.replace('@', ' [at] ')
                             value = value.replace('.', ' [dot] ')
                         elif key == 'md5sum':
-                            try:
-                                with open(files_path_join(theme.path(),
-                                                          theme.name),
-                                          'rb') as _file:
-                                    filemd5 = md5()
-                                    filemd5.update(_file.read())
-                                    value = filemd5.hexdigest()
-                            except:  # noqa: E722
-                                value = ''
+                            value = theme.get_md5sum()
+                        elif key == 'sha512sum':
+                            value = theme.get_sha512sum()
                         elif key.startswith('desc'):
                             value = escape(value)
                     strvalue = '%s' % value
@@ -369,5 +401,6 @@ def handler_theme_changed(sender, **kwargs):
     tar.close()
 
 
-post_save.connect(handler_theme_changed, sender=Theme)
-post_delete.connect(handler_theme_changed, sender=Theme)
+pre_save.connect(handler_theme_saved, sender=Theme)
+post_save.connect(handler_themes_changed, sender=Theme)
+post_delete.connect(handler_themes_changed, sender=Theme)
