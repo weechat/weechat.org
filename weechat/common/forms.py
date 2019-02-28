@@ -114,17 +114,3 @@ class Form(forms.Form):
             row_ender='</p>',
             help_text_html=' <span class="helptext">%s</span>',
             errors_on_separate_row=True)
-
-
-def getxmlline(key, value):
-    """Get a XML line for a key/value."""
-    strvalue = '%s' % value
-    return '    <%s>%s</%s>\n' % (
-        key, strvalue.replace('<', '&lt;').replace('>', '&gt;'), key)
-
-
-def getjsonline(key, value):
-    """Get a JSON line for a key/value."""
-    strvalue = '%s' % value
-    return '    "%s": "%s",\n' % (
-        key, strvalue.replace('"', '\\"').replace("'", "\\'"))

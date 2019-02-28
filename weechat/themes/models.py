@@ -22,9 +22,11 @@
 
 import gzip
 import hashlib
+import json
 import os
 import re
 import tarfile
+from collections import OrderedDict
 from io import open
 from xml.sax.saxutils import escape
 
@@ -43,8 +45,6 @@ from weechat.common.forms import (
     TestField,
     Html5EmailInput,
     Form,
-    getxmlline,
-    getjsonline,
 )
 from weechat.common.path import files_path_join
 from weechat.download.models import Release
@@ -308,18 +308,6 @@ class ThemeFormUpdate(Form):
         return _file
 
 
-def xml_value(key, value):
-    """Get a XML line for a key/value."""
-    return '<%s>%s</%s>' % (
-        key, value.replace('<', '&lt;').replace('>', '&gt;'), key)
-
-
-def json_value(key, value):
-    """Get a JSON line for a key/value."""
-    return '"%s": "%s",' % (
-        key, value.replace('"', '\\"').replace("'", "\\'"))
-
-
 @disable_for_loaddata
 def handler_theme_saved(sender, **kwargs):
     try:
@@ -336,38 +324,38 @@ def handler_themes_changed(sender, **kwargs):
     theme_list = Theme.objects.filter(visible=1).order_by('id')
     xml = '<?xml version="1.0" encoding="utf-8"?>\n'
     xml += '<themes>\n'
-    json = '[\n'
+    json_data = []
     for theme in theme_list:
-        if theme.visible:
-            xml += '  <theme id="%s">\n' % theme.id
-            json += '  {\n'
-            json += '    "id": "%s",\n' % theme.id
-            for key, value in theme.__dict__.items():
-                if key not in ['_state', 'id', 'visible', 'comment']:
-                    if value is None:
-                        value = ''
-                    else:
-                        if key == 'mail':
-                            value = value.replace('@', ' [at] ')
-                            value = value.replace('.', ' [dot] ')
-                        elif key == 'md5sum':
-                            value = theme.get_md5sum()
-                        elif key == 'sha512sum':
-                            value = theme.get_sha512sum()
-                        elif key.startswith('desc'):
-                            value = escape(value)
-                    strvalue = '%s' % value
-                    xml += getxmlline(key, strvalue)
-                    json += getjsonline(key, strvalue)
-            # FIXME: use the "Host" from request, but…
-            # request is not available in this handler!
-            strvalue = 'https://weechat.org/%s' % theme.build_url()[1:]
-            xml += '    %s\n' % xml_value('url', strvalue)
-            json += '    %s\n' % json_value('url', strvalue)
-            xml += '  </theme>\n'
-            json = json[:-2] + '\n  },\n'
+        if not theme.visible:
+            continue
+        xml += '  <theme id="%s">\n' % theme.id
+        json_theme = OrderedDict([
+            ('id', '%s' % theme.id),
+        ])
+        for key, value in theme.__dict__.items():
+            if key in ('_state', 'id', 'visible', 'comment'):
+                continue
+            if value is None:
+                value = ''
+            else:
+                if key == 'mail':
+                    value = value.replace('@', ' [at] ')
+                    value = value.replace('.', ' [dot] ')
+                elif key == 'md5sum':
+                    value = theme.get_md5sum()
+                elif key == 'sha512sum':
+                    value = theme.get_sha512sum()
+            value = '%s' % value
+            xml += '    <%s>%s</%s>\n' % (key, escape(value), key)
+            json_theme[key] = value
+        # FIXME: use the "Host" from request, but…
+        # request is not available in this handler!
+        url = 'https://weechat.org/%s' % theme.build_url()[1:]
+        xml += '    <%s>%s</%s>\n' % ('url', url, 'url')
+        json_theme['url'] = url
+        xml += '  </theme>\n'
+        json_data.append(json_theme)
     xml += '</themes>\n'
-    json = json[:-2] + '\n]\n'
 
     # create themes.xml
     filename = files_path_join('themes.xml')
@@ -383,7 +371,8 @@ def handler_themes_changed(sender, **kwargs):
     # create themes.json
     filename = files_path_join('themes.json')
     with open(filename, 'w', encoding='utf-8') as _file:
-        _file.write(json)
+        _file.write(json.dumps(json_data, indent=2, ensure_ascii=False,
+                               separators=(',', ': ')))
 
     # create themes.json.gz
     with open(filename, 'rb') as _f_in:

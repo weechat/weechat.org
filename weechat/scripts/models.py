@@ -22,8 +22,10 @@
 
 import gzip
 import hashlib
+import json
 import os
 import re
+from collections import OrderedDict
 from io import open
 from xml.sax.saxutils import escape
 
@@ -45,8 +47,6 @@ from weechat.common.forms import (
     TestField,
     Html5EmailInput,
     Form,
-    getxmlline,
-    getjsonline,
 )
 from weechat.common.i18n import i18n_autogen
 from weechat.common.path import files_path_join
@@ -432,57 +432,58 @@ def handler_scripts_changed(sender, **kwargs):
     """Build files plugins.{xml,json}(.gz) after update/delete of a script."""
     xml = '<?xml version="1.0" encoding="utf-8"?>\n'
     xml += '<plugins>\n'
-    json = '[\n'
+    json_data = []
     strings = []
     for script in Script.objects.filter(visible=1).order_by('id'):
-        if script.visible and not script.is_legacy():
-            xml += '  <plugin id="%s">\n' % script.id
-            json += '  {\n'
-            json += '    "id": "%s",\n' % script.id
-            for key, value in script.__dict__.items():
-                value_i18n = {}
-                if key not in ['_state', 'id', 'visible', 'comment']:
-                    if value is None:
-                        value = ''
-                    else:
-                        if key == 'url':
-                            # FIXME: use the "Host" from request, but…
-                            # request is not available in this handler!
-                            value = ('https://weechat.org/%s' %
-                                     script.build_url()[1:])
-                        elif key == 'mail':
-                            value = value.replace('@', ' [at] ')
-                            value = value.replace('.', ' [dot] ')
-                        elif key == 'md5sum':
-                            value = script.get_md5sum()
-                        elif key == 'sha512sum':
-                            value = script.get_sha512sum()
-                        elif key.startswith('desc'):
-                            if key == 'desc_en':
-                                for lang, locale in \
-                                        settings.LANGUAGES_LOCALES.items():
-                                    if lang[0:2] != 'en':
-                                        translation.activate(lang)
-                                        value_i18n['desc_%s' % locale] = \
-                                            escape(ugettext(value))
-                                        translation.deactivate()
-                            value = escape(value)
-                    xml += getxmlline(key, value)
-                    json += getjsonline(key, value)
-                    for field in value_i18n:
-                        xml += getxmlline(field, value_i18n[field])
-                        json += getjsonline(field, value_i18n[field])
-            xml += '  </plugin>\n'
-            json = json[:-2] + '\n  },\n'
-            strings.append(
-                (
-                    script.desc_en,
-                    'description for script "%s" (%s)' % (
-                        script.name_with_extension(),
-                        script.version_weechat()),
-                ))
+        if not script.visible or script.is_legacy():
+            continue
+        xml += '  <plugin id="%s">\n' % script.id
+        json_script = OrderedDict([
+            ('id', '%s' % script.id),
+        ])
+        for key, value in script.__dict__.items():
+            value_i18n = {}
+            if key in ('_state', 'id', 'visible', 'comment'):
+                continue
+            if value is None:
+                value = ''
+            else:
+                if key == 'url':
+                    # FIXME: use the "Host" from request, but…
+                    # request is not available in this handler!
+                    value = ('https://weechat.org/%s' %
+                             script.build_url()[1:])
+                elif key == 'mail':
+                    value = value.replace('@', ' [at] ')
+                    value = value.replace('.', ' [dot] ')
+                elif key == 'md5sum':
+                    value = script.get_md5sum()
+                elif key == 'sha512sum':
+                    value = script.get_sha512sum()
+                elif key == 'desc_en':
+                    for lang, locale in settings.LANGUAGES_LOCALES.items():
+                        if lang[0:2] != 'en':
+                            translation.activate(lang)
+                            value_i18n['desc_%s' % locale] = ugettext(value)
+                            translation.deactivate()
+            value = '%s' % value
+            xml += '    <%s>%s</%s>\n' % (key, escape(value), key)
+            json_script[key] = value
+            for field in value_i18n:
+                xml += '    <%s>%s</%s>\n' % (field,
+                                              escape(value_i18n[field]),
+                                              field)
+                json_script[field] = value_i18n[field]
+        xml += '  </plugin>\n'
+        json_data.append(json_script)
+        strings.append(
+            (
+                script.desc_en,
+                'description for script "%s" (%s)' % (
+                    script.name_with_extension(),
+                    script.version_weechat()),
+            ))
     xml += '</plugins>\n'
-    json = json[:-2] + '\n]\n'
 
     # create plugins.xml
     filename = files_path_join('plugins.xml')
@@ -498,7 +499,9 @@ def handler_scripts_changed(sender, **kwargs):
     # create plugins.json
     filename = files_path_join('plugins.json')
     with open(filename, 'w', encoding='utf-8') as _file:
-        _file.write(json)
+        _file.write(json.dumps(json_data, indent=2, ensure_ascii=False,
+                               separators=(',', ': ')))
+        # json.dump(json_data, _file)
 
     # create plugins.json.gz
     with open(filename, 'rb') as _f_in:
