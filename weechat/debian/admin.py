@@ -22,8 +22,9 @@
 
 from django.contrib import admin
 
+from weechat.common.admin import WeechatAdmin
 from weechat.debian.models import Version, Builder, Repo
 
-admin.site.register(Version)
-admin.site.register(Builder)
-admin.site.register(Repo)
+admin.site.register(Version, WeechatAdmin)
+admin.site.register(Builder, WeechatAdmin)
+admin.site.register(Repo, WeechatAdmin)

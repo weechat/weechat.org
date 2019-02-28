@@ -22,11 +22,12 @@
 
 from django.contrib import admin
 
+from weechat.common.admin import WeechatAdmin
 from weechat.download.models import Release, Type, Package
 from weechat.download.models import ReleaseTodo, ReleaseProgress
 
-admin.site.register(Release)
-admin.site.register(Type)
-admin.site.register(Package)
-admin.site.register(ReleaseTodo)
-admin.site.register(ReleaseProgress)
+admin.site.register(Release, WeechatAdmin)
+admin.site.register(Type, WeechatAdmin)
+admin.site.register(Package, WeechatAdmin)
+admin.site.register(ReleaseTodo, WeechatAdmin)
+admin.site.register(ReleaseProgress, WeechatAdmin)

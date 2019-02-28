@@ -22,12 +22,7 @@
 
 from django.contrib import admin
 
+from weechat.common.admin import WeechatAdmin
 from weechat.themes.models import Theme
 
-
-class ThemeAdmin(admin.ModelAdmin):
-    """Display all themes on the same page."""
-    list_per_page = 10000
-
-
-admin.site.register(Theme, ThemeAdmin)
+admin.site.register(Theme, WeechatAdmin)

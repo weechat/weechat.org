@@ -22,6 +22,7 @@
 
 from django.contrib import admin
 
+from weechat.common.admin import WeechatAdmin
 from weechat.news.models import Info
 
-admin.site.register(Info)
+admin.site.register(Info, WeechatAdmin)

@@ -22,6 +22,7 @@
 
 from django.contrib import admin
 
+from weechat.common.admin import WeechatAdmin
 from weechat.dev.models import Task
 
-admin.site.register(Task)
+admin.site.register(Task, WeechatAdmin)

@@ -18,14 +18,17 @@
 # along with WeeChat.org.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-"""Admin for "doc" menu."""
+"""Common classes/functions for admin."""
 
 from django.contrib import admin
+from django.db import models
+from django.forms import TextInput
 
-from weechat.common.admin import WeechatAdmin
-from weechat.doc.models import Language, Version, Doc, Security
 
-admin.site.register(Language, WeechatAdmin)
-admin.site.register(Version, WeechatAdmin)
-admin.site.register(Doc, WeechatAdmin)
-admin.site.register(Security, WeechatAdmin)
+# pylint: disable=too-many-public-methods
+class WeechatAdmin(admin.ModelAdmin):
+    """WeeChat admin."""
+    list_per_page = 1000
+    formfield_overrides = {
+        models.CharField: {'widget': TextInput(attrs={'size': '75'})},
+    }
