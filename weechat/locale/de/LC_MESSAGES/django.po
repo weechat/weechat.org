@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-03-12 20:36+0100\n"
-"PO-Revision-Date: 2019-02-25 19:47+0100\n"
+"PO-Revision-Date: 2019-03-12 22:59+0100\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -7720,12 +7720,12 @@ msgid ""
 "To compile with Python 3.x support and enable quick switch between Python "
 "2.7 and 3.x, see:"
 msgstr ""
+"Um Python 3.x nutzen zu können und um schnell zwischen Python 2.7 und 3.x "
+"wechseln zu können, siehe:"
 
 #: templates/scripts/python3.html:46 templates/scripts/python3.html:220
-#, fuzzy
-#| msgid "Compatible with Python 3"
 msgid "Compile and test with Python 2.7 and 3.x"
-msgstr "Kompatibel mit Python 3"
+msgstr "Kompilieren und testen mit Python 2.7 und 3.x"
 
 #: templates/scripts/python3.html:49
 msgid "Transition roadmap"
@@ -7913,50 +7913,56 @@ msgid ""
 "compile both versions of the Python plugin and switch the Python plugin with "
 "aliases."
 msgstr ""
+"Man kann nicht Python 2.7 und 3.x zur selben Zeit in WeeChat nutzen. Es ist "
+"aber möglich zwischen beiden Python-Erweiterungen mittels einem Alias zu "
+"wechseln, sofern beide Python-Erweiterungen kompiliert wurden."
 
 #: templates/scripts/python3.html:227
 msgid ""
 "First check that you have both Python 2.7 and 3.x libraries installed to "
 "compile WeeChat with both versions."
 msgstr ""
+"Als erstes muss überprüft werden ob sowohl die Python 2.7 als auch die "
+"Python 3.x Bibliotheken installiert sind, damit WeeChat mit beiden "
+"kompiliert werden kann."
 
 #: templates/scripts/python3.html:231
 msgid ""
 "Compile WeeChat with Python 3.x and install it in home directory. From the "
 "cloned git repository:"
 msgstr ""
+"Kompiliert WeeChat mit Python 3.x und installiert es im Heimatverzeichnis, "
+"ausgehend vom geklonten Git-Repositorium:"
 
 #: templates/scripts/python3.html:243
-#, fuzzy
-#| msgid "for WeeChat"
 msgid "Run WeeChat:"
-msgstr "für WeeChat"
+msgstr "starte WeeChat:"
 
 #: templates/scripts/python3.html:248
 msgid "Check that Python version is 2.7:"
-msgstr ""
+msgstr "Überprüfen ob die Python Version 2.7 ist:"
 
 #: templates/scripts/python3.html:257
 msgid "Add aliases to quickly switch between Python 2.7 and 3.x:"
-msgstr ""
+msgstr "Alias hinzufügen um schnell zwischen Python 2.7 und 3.x zu wechseln:"
 
 #: templates/scripts/python3.html:263
 msgid "Now you can type /py2 or /py3 to switch the Python version."
-msgstr ""
+msgstr "Um zwischen den Python-Versionen zu wechseln, /py2 oder /py3 eingeben."
 
 #: templates/scripts/python3.html:265
 msgid "Note: this unloads all scripts because the Python plugin is reloaded."
 msgstr ""
+"Hinweis: dies schließt alle Skripten, das die Python-Erweiterung neu geladen "
+"wird."
 
 #: templates/scripts/python3.html:269
-#, fuzzy
-#| msgid "Compatible with Python 3"
 msgid "To switch to Python 3.x:"
-msgstr "Kompatibel mit Python 3"
+msgstr "um Python 3.x zu nutzen:"
 
 #: templates/scripts/python3.html:274
 msgid "Check that Python version is 3.x:"
-msgstr ""
+msgstr "Überprüfen ob die Python Version 3.x ist:"
 
 #: templates/scripts/source.html:17
 msgid "for WeeChat"
