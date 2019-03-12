@@ -49,73 +49,62 @@
 
 <p>
   {% trans "Here is the roadmap for the transition to Python 3 in WeeChat:" %}
-
-  <div class="table-responsive">
-    <table class="table">
-      <thead class="thead-light">
-        <tr>
-          <th>{% trans "Date" %}</th>
-          <th>{% trans "Description" %}</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="text-nowrap">{{ roadmap_start|localdate }}</td>
-          <td>
-            {% trans "Transition to Python 3 starts." %}
-            <br>
-            {% trans "All scripts that are not yet compatible with both Python 2.7 and Python 3.x can be updated to support both versions (see the status below)." %}
-            <br>
-            {% trans "You can help by converting existing scripts (see how to help below)." %}
-          </td>
-        </tr>
-        <tr>
-          <td class="text-nowrap">{{ roadmap_email|localdate }}</td>
-          <td>
-            {% trans "An e-mail is sent to the authors of Python scripts which are not compatible with Python 3 (at least they are not marked as compatible in database)." %}
-            <br>
-            {% trans "All authors are encouraged to make their scripts compatible with Python 3.x as soon as possible. Help from other people is welcome as well." %}
-          </td>
-        </tr>
-        <tr>
-          <td class="text-nowrap">{{ roadmap_new_py3k|localdate }}</td>
-          <td>
-            {% trans "All new scripts must be compatible with both Python 2.7 and Python 3.x." %}
-            <br>
-            {% trans "Script updates are still allowed to be compatible with Python 2.7 only." %}
-          </td>
-        </tr>
-        <tr>
-          <td class="text-nowrap">{{ roadmap_all_py3k|localdate }}</td>
-          <td>
-            {% trans "All new scripts as well as script updates must be compatible with both Python 2.7 and Python 3.x." %}
-            <br>
-            {% trans "Scripts must be properly tested with Python 2.7 and a Python 3.x version (if possible the latest stable)." %}
-          </td>
-        </tr>
-        <tr>
-          <td class="text-nowrap">{{ roadmap_weechat_py3k|localdate }}</td>
-          <td>
-            {% trans "New versions of WeeChat are compiled with Python 3 by default, which becomes the recommended Python version to use in WeeChat." %}
-            <br>
-            {% trans "All new scripts as well as script updates must still be compatible with Python 2.7 and Python 3.x, time for the users to upgrade to the latest version of WeeChat which is Python 3 only." %}
-            <br>
-            {% trans "Hopefully, at this date, most scripts should be compatible with Python 3." %}
-          </td>
-        </tr>
-        <tr>
-          <td class="text-nowrap">{{ roadmap_end|localdate }}</td>
-          <td>
-            {% trans "All new scripts as well as script updates must be compatible with Python 3.x. Extra support of Python 2.x is optional." %}
-            <br>
-            {% trans "Hopefully, at this date, all scripts should be compatible with Python 3." %}
-            <br>
-            {% trans "<strong>Important</strong>: at this date, all scripts that are not compatible with Python 3 are removed from repository and moved to unofficial scripts." %}
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <dl class="row">
+    <dt class="col-12">
+      {{ roadmap_start|localdate }}
+    </dt>
+    <dd class="col-12 ml-sm-4 py-2">
+      {% trans "Transition to Python 3 starts." %}
+      <br>
+      {% trans "All scripts that are not yet compatible with both Python 2.7 and Python 3.x can be updated to support both versions (see the status below)." %}
+      <br>
+      {% trans "You can help by converting existing scripts (see how to help below)." %}
+    </dd>
+    <dt class="col-12">
+      {{ roadmap_email|localdate }}
+    </dt>
+    <dd class="col-12 ml-sm-4 py-2">
+      {% trans "An e-mail is sent to the authors of Python scripts which are not compatible with Python 3 (at least they are not marked as compatible in database)." %}
+      <br>
+      {% trans "All authors are encouraged to make their scripts compatible with Python 3.x as soon as possible. Help from other people is welcome as well." %}
+    </dd>
+    <dt class="col-12">
+      {{ roadmap_new_py3k|localdate }}
+    </dt>
+    <dd class="col-12 ml-sm-4 py-2">
+      {% trans "All new scripts must be compatible with both Python 2.7 and Python 3.x." %}
+      <br>
+      {% trans "Script updates are still allowed to be compatible with Python 2.7 only." %}
+    </dd>
+    <dt class="col-12">
+      {{ roadmap_all_py3k|localdate }}
+    </dt>
+    <dd class="col-12 ml-sm-4 py-2">
+      {% trans "All new scripts as well as script updates must be compatible with both Python 2.7 and Python 3.x." %}
+      <br>
+      {% trans "Scripts must be properly tested with Python 2.7 and a Python 3.x version (if possible the latest stable)." %}
+    </dd>
+    <dt class="col-12">
+      {{ roadmap_weechat_py3k|localdate }}
+    </dt>
+    <dd class="col-12 ml-sm-4 py-2">
+      {% trans "New versions of WeeChat are compiled with Python 3 by default, which becomes the recommended Python version to use in WeeChat." %}
+      <br>
+      {% trans "All new scripts as well as script updates must still be compatible with Python 2.7 and Python 3.x, time for the users to upgrade to the latest version of WeeChat which is Python 3 only." %}
+      <br>
+      {% trans "Hopefully, at this date, most scripts should be compatible with Python 3." %}
+    </dd>
+    <dt class="col-12">
+      {{ roadmap_end|localdate }}
+    </dt>
+    <dd class="col-12 ml-sm-4 py-2">
+      {% trans "All new scripts as well as script updates must be compatible with Python 3.x. Extra support of Python 2.x is optional." %}
+      <br>
+      {% trans "Hopefully, at this date, all scripts should be compatible with Python 3." %}
+      <br>
+      {% trans "<strong>Important</strong>: at this date, all scripts that are not compatible with Python 3 are removed from repository and moved to unofficial scripts." %}
+    </dd>
+  </dl>
 </p>
 
 <h3>{% trans "Transition status" %}</h3>
