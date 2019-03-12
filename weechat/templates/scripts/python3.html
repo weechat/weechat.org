@@ -42,7 +42,8 @@
 
 <p>
   {% url 'doc' as doc_url %}
-  {% blocktrans %}To compile with Python 3 support, you must enable this CMake flag: <bkd>-DENABLE_PYTHON3=ON</kbd> (see the <a href="{{ doc_url }}">User's guide</a> for more information).{% endblocktrans %}
+  {% trans "To compile with Python 3.x support and enable quick switch between Python 2.7 and 3.x, see:" %}
+  <a class="js-scroll" href="#compilation">{% trans "Compile and test with Python 2.7 and 3.x" %}</a>
 </p>
 
 <h3>{% trans "Transition roadmap" %}</h3>
@@ -214,6 +215,68 @@
       </a>
     </li>
   </ul>
+</p>
+
+<h3 id="compilation">{% trans "Compile and test with Python 2.7 and 3.x" %}</h3>
+
+<p>
+  {% trans "You can not use Python 2.7 and 3.x at same time in WeeChat, but you could compile both versions of the Python plugin and switch the Python plugin with aliases." %}
+<p>
+
+<p>
+  {% trans "First check that you have both Python 2.7 and 3.x libraries installed to compile WeeChat with both versions." %}
+</p>
+
+<p>
+  {% trans "Compile WeeChat with Python 3.x and install it in home directory. From the cloned git repository:" %}
+  <pre><code>$ mkdir build
+$ cd build
+$ cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/dev/weechat -DENABLE_PYTHON3=ON
+$ make install
+$ mv ~/dev/weechat/lib/weechat/plugins/python.so ~/dev/weechat/python3.so
+$ rm -f CMakeCache.txt
+$ cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/dev/weechat -DENABLE_PYTHON3=OFF
+$ make install</code></pre>
+</p>
+
+<p>
+  {% trans "Run WeeChat:" %}
+  <pre><code>$ ~/dev/weechat/bin/weechat</code></pre>
+</p>
+
+<p>
+  {% trans "Check that Python version is 2.7:" %}
+  <pre><code>/debug libs
+
+Libs:
+(…)
+  python: 2.7.16rc1</code></pre>
+</p>
+
+<p>
+  {% trans "Add aliases to quickly switch between Python 2.7 and 3.x:" %}
+  <pre><code>/alias add py2 /plugin unload python; /plugin load python
+/alias add py3 /plugin unload python; /plugin load ~/dev/weechat/python3.so</code></pre>
+</p>
+
+<p>
+  {% trans "Now you can type /py2 or /py3 to switch the Python version." %}
+  <br>
+  {% trans "Note: this unloads all scripts because the Python plugin is reloaded." %}
+</p>
+
+<p>
+  {% trans "To switch to Python 3.x:" %}
+  <pre><code>/py3</code></pre>
+</p>
+
+<p>
+  {% trans "Check that Python version is 3.x:" %}
+  <pre><code>/debug libs
+
+Libs:
+(…)
+  python: 3.7.2+</code></pre>
 </p>
 
 {% endblock content %}
