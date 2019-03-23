@@ -36,6 +36,7 @@ if PRODUCTION:
 
     ADMINS = (('root', 'root@localhost'),)
     MANAGERS = ADMINS
+    ADMIN_PAGE = 'admin'
 
     # These recipients will receive new/updated scripts by e-mail.
     SCRIPTS_MAILTO = ['root <root@localhost>']
@@ -72,6 +73,7 @@ else:
 
     ADMINS = ()
     MANAGERS = ADMINS
+    ADMIN_PAGE = 'admin'
 
     # These recipients will receive new/updated scripts by e-mail.
     SCRIPTS_MAILTO = ['root <root@localhost>']
