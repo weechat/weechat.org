@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-03-21 22:00+0100\n"
-"PO-Revision-Date: 2019-03-21 21:59+0100\n"
+"PO-Revision-Date: 2019-04-01 09:00+0900\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
 "translation/ja_JP>\n"
@@ -41,7 +41,7 @@ msgstr "フック \"line\" を追加。"
 
 #: about/_i18n_keydates.py:10
 msgid "Add support of TOTP (Time-based One Time Password)."
-msgstr ""
+msgstr "TOTP (Time-based One Time Password) のサポートを追加。"
 
 #: about/_i18n_keydates.py:11
 msgid "Aspell plugin."
@@ -3202,6 +3202,29 @@ msgid ""
 "blog/post/2019/02/17/Version-2.4\">development blog</a> or <a href=\"/files/"
 "changelog/ChangeLog-2.4.html\">ChangeLog</a>."
 msgstr ""
+"バージョン 2.4 をリリースしました!\n"
+"\n"
+"新しい機能:\n"
+"\n"
+"- 一時的な (終了時に削除される) WeeChat ホームディレクトリを作成するコマンド"
+"ラインオプション \"-t\" (または \"--temp-dir\") を追加\n"
+"- Time-based One-Time Password (TOTP) のサポートを追加、\"totp_generate\" お"
+"よび \"totp_validate\" インフォを追加、weechat プロトコルの 2 番目の認証要素"
+"として TOTP のサポートを追加 (relay プラグイン)\n"
+"- 常にインデント済みバッファ番号に設定される buflist 変数 ${number2} を追加\n"
+"- /exec -sh で使われるシェルを変更するオプション exec.command.shell を追加\n"
+"- websocket 接続において close フレームのサポートを追加 (relay プラグイン)\n"
+"- API 関数 string_base_encode および string_base_decode を追加、関数 "
+"string_encode_base64 および string_decode_base64 を削除\n"
+"- ニックネームリストを 1 ページ上/下にスクロールするデフォルトキー Ctrl+F11/"
+"F12 を追加 (F11/F12 と同じ挙動)\n"
+"- バッファリストを 1 ページ上/下にスクロールするデフォルトキー Ctrl+F1/F2 を"
+"追加 (F1/F2 と同じ挙動)\n"
+"- 多くのバグを修正\n"
+"\n"
+"新機能と修正されたバグの完全なリストは<a href=\"/blog/post/2019/02/17/"
+"Version-2.4\">開発ブログ</a>または <a href=\"/files/changelog/ChangeLog-2.4."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:128
 msgid ""
@@ -7370,12 +7393,12 @@ msgid ""
 "To compile with Python 3.x support and enable quick switch between Python "
 "2.7 and 3.x, see:"
 msgstr ""
+"Python 3.x のサポートを有効化してコンパイルし、Python 2.7 と 3.x の高速切替を"
+"有効化するには、次のページを参照してください:"
 
 #: templates/scripts/python3.html:46 templates/scripts/python3.html:220
-#, fuzzy
-#| msgid "Compatible with Python 3"
 msgid "Compile and test with Python 2.7 and 3.x"
-msgstr "Python 3 と互換性を持つスクリプトの数"
+msgstr "Python 2.7 および 3.x でコンパイルとテストを行う"
 
 #: templates/scripts/python3.html:49
 msgid "Transition roadmap"
@@ -7559,50 +7582,58 @@ msgid ""
 "compile both versions of the Python plugin and switch the Python plugin with "
 "aliases."
 msgstr ""
+"WeeChat では Python 2.7 および 3.x を同時に使うことはできません。しかしなが"
+"ら、両方のバージョンで Python プラグインをコンパイルし、エイリアスを使って "
+"Python プラグインを切り替えることができます。"
 
 #: templates/scripts/python3.html:227
 msgid ""
 "First check that you have both Python 2.7 and 3.x libraries installed to "
 "compile WeeChat with both versions."
 msgstr ""
+"Python 2.7 および 3.x のライブラリで WeeChat をコンパイルするには、両方のライ"
+"ブラリがインストールされていることを確認してください。"
 
 #: templates/scripts/python3.html:231
 msgid ""
 "Compile WeeChat with Python 3.x and install it in home directory. From the "
 "cloned git repository:"
 msgstr ""
+"Python 3.x で WeeChat をコンパイルし、ホームディレクトリにインストールするに"
+"は、クローンされた git リポジトリの中で以下のコマンドを実行してください:"
 
 #: templates/scripts/python3.html:243
-#, fuzzy
-#| msgid "for WeeChat"
 msgid "Run WeeChat:"
-msgstr "WeeChat 用"
+msgstr "WeeChat を実行します:"
 
 #: templates/scripts/python3.html:248
 msgid "Check that Python version is 2.7:"
-msgstr ""
+msgstr "Python のバージョンが 2.7 であることを確認してください:"
 
 #: templates/scripts/python3.html:257
 msgid "Add aliases to quickly switch between Python 2.7 and 3.x:"
 msgstr ""
+"Python 2.7 および 3.x をすばやく切り替えるためにエイリアスを追加します:"
 
 #: templates/scripts/python3.html:263
 msgid "Now you can type /py2 or /py3 to switch the Python version."
 msgstr ""
+"これで /py2 または /py3 を使って、Python バージョンを切り替えることが可能にな"
+"りました。"
 
 #: templates/scripts/python3.html:265
 msgid "Note: this unloads all scripts because the Python plugin is reloaded."
 msgstr ""
+"注意: Python プラグインが再読込されるため、すべてのスクリプトはアンロードされ"
+"ます。"
 
 #: templates/scripts/python3.html:269
-#, fuzzy
-#| msgid "Compatible with Python 3"
 msgid "To switch to Python 3.x:"
-msgstr "Python 3 と互換性を持つスクリプトの数"
+msgstr "Python 3.x に切り替えます:"
 
 #: templates/scripts/python3.html:274
 msgid "Check that Python version is 3.x:"
-msgstr ""
+msgstr "Python のバージョンが 3.x であることを確認してください:"
 
 #: templates/scripts/source.html:17
 msgid "for WeeChat"
