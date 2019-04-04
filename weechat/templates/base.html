@@ -16,7 +16,6 @@
   {% block css %}{% endblock %}
   <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/style.css" media="screen" title="Normal">
   <link rel="alternate" type="application/rss+xml" href="{% url 'feeds_news' %}" title="WeeChat RSS feed">
-  <link href="https://plus.google.com/+WeeChat" rel="publisher">
   <title>{% block title %}{% trans "WeeChat, the extensible chat client" %}{% endblock %}{% block subtitle %}{% endblock %}</title>
   {% block extrahead %}{% endblock %}
 </head>
@@ -152,9 +151,6 @@
         </a>
         <a href="https://twitter.com/WeeChatClient" target="_blank" rel="noopener" title="Twitter">
           {% include "svg/twitter.html" %}
-        </a>
-        <a href="https://plus.google.com/+WeeChat" target="_blank" rel="noopener" title="Google+">
-          {% include "svg/google_plus.html" %}
         </a>
       </p>
       <p>
