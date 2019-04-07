@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-04 20:46+0200\n"
-"PO-Revision-Date: 2019-04-04 20:46+0200\n"
+"POT-Creation-Date: 2019-04-07 10:30+0200\n"
+"PO-Revision-Date: 2019-04-07 10:30+0200\n"
 "Last-Translator: Sébastien Helleu <flashcode@flashtux.org>\n"
 "Language-Team: French <flashcode@flashtux.org>\n"
 "Language: fr\n"
@@ -1024,7 +1024,6 @@ msgstr "Transition vers Python 3 pour les scripts"
 #: news/_i18n_info.py:58 scripts/models.py:299 templates/about/history.html:44
 #: templates/doc/doc_version.html:20 templates/download/packages.html:34
 #: templates/scripts/list.html:94 templates/scripts/pending.html:32
-#: templates/scripts/source.html:20
 msgid "Version"
 msgstr "Version"
 
@@ -5556,7 +5555,6 @@ msgstr "La version du script (seulement des chiffres ou des points)."
 
 #: scripts/models.py:305 templates/scripts/list.html:97
 #: templates/scripts/list.html:99 templates/scripts/pending.html:34
-#: templates/scripts/source.html:20
 msgid "License"
 msgstr "Licence"
 
@@ -6284,7 +6282,7 @@ msgid "About"
 msgstr "À propos"
 
 #: templates/base.html:37 templates/base.html:102 templates/home/home.html:21
-#: templates/scripts/source.html:24 templates/themes/source.html:17
+#: templates/scripts/source.html:26 templates/themes/source.html:17
 msgid "Download"
 msgstr "Téléchargement"
 
@@ -7421,7 +7419,7 @@ msgstr ""
 msgid "List:"
 msgstr "Liste :"
 
-#: templates/scripts/list.html:34
+#: templates/scripts/list.html:34 templates/scripts/source.html:18
 msgid "Version:"
 msgstr "Version :"
 
@@ -7462,7 +7460,7 @@ msgid "Language:"
 msgstr "Langage :"
 
 #: templates/scripts/list.html:59 templates/scripts/list.html:61
-#: templates/scripts/list.html:155
+#: templates/scripts/list.html:155 templates/scripts/source.html:19
 msgid "License:"
 msgstr "Licence :"
 
@@ -7488,13 +7486,12 @@ msgid "Max"
 msgstr "Max"
 
 #: templates/scripts/list.html:118 templates/scripts/list.html:120
-#: templates/scripts/pending.html:37 templates/scripts/source.html:20
+#: templates/scripts/pending.html:37
 msgid "Author"
 msgstr "Auteur"
 
 #: templates/scripts/list.html:125 templates/scripts/list.html:127
-#: templates/scripts/source.html:22 templates/themes/list.html:25
-#: templates/themes/source.html:15
+#: templates/themes/list.html:25 templates/themes/source.html:15
 msgid "Added"
 msgstr "Ajouté"
 
@@ -7503,11 +7500,11 @@ msgid "Updated"
 msgstr "Mis à jour"
 
 #: templates/scripts/list.html:151 templates/scripts/pending.html:54
-#: templates/scripts/source.html:17
 msgid "requires"
 msgstr "requiert"
 
-#: templates/scripts/list.html:158 templates/themes/list.html:22
+#: templates/scripts/list.html:158 templates/scripts/source.html:17
+#: templates/themes/list.html:22
 msgid "Author:"
 msgstr "Auteur :"
 
@@ -7879,14 +7876,21 @@ msgstr "Pour basculer vers Python 3.x :"
 msgid "Check that Python version is 3.x:"
 msgstr "Vérifiez que la version de Python est 3.x :"
 
-#: templates/scripts/source.html:17
-msgid "for WeeChat"
-msgstr "pour WeeChat"
+#: templates/scripts/source.html:21
+msgid "For WeeChat"
+msgstr "Pour WeeChat"
 
-#: templates/scripts/source.html:22 templates/themes/list.html:26
-#: templates/themes/source.html:15
-msgid "updated"
-msgstr "mise à jour"
+#: templates/scripts/source.html:21
+msgid "requires:"
+msgstr "requiert :"
+
+#: templates/scripts/source.html:23
+msgid "Added:"
+msgstr "Ajouté :"
+
+#: templates/scripts/source.html:24
+msgid "Updated:"
+msgstr "Mis à jour :"
 
 #: templates/scripts/update.html:13
 msgid ""
@@ -7973,6 +7977,10 @@ msgstr ""
 #: templates/themes/list.html:22
 msgid "Submitted by"
 msgstr "Soumis par"
+
+#: templates/themes/list.html:26 templates/themes/source.html:15
+msgid "updated"
+msgstr "mise à jour"
 
 #: templates/themes/list.html:36
 msgid "No theme found."

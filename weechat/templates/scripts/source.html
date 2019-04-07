@@ -13,13 +13,15 @@
 
 <p>
   <strong>{{ script.desc_i18n }}</strong>
-  <small>
-    ({% trans "for WeeChat" %} {{ script.version_weechat_html|safe }}{% if script.requirements %}, {% trans "requires" %}: {{ script.requirements }}{% endif %})
-  </small>
   <br>
-  {% trans "Author" %}: {{ script.author }} &mdash; {% trans "Version" %}: {{ script.version }} &mdash; {% trans "License" %}: {{ script.license }}.
+  {% trans "Author:" %} {{ script.author }}
+  &mdash; {% trans "Version:" %} {{ script.version }}
+  &mdash; {% trans "License:" %} {{ script.license }}
   <br>
-  {% trans "Added" %}: {% if script.added %}{{ script.added|date:"Y-m-d" }}{% endif %}{% if script.updated and script.added != script.updated %}, {% trans "updated" %}: {{ script.updated|date:"Y-m-d" }}{% endif %}.
+  {% trans "For WeeChat" %} {{ script.version_weechat_html|safe }}{% if script.requirements %}, {% trans "requires:" %} {{ script.requirements }}{% endif %}.
+  <br>
+  {% trans "Added:" %} {% if script.added %}{{ script.added|date:"Y-m-d" }}{% endif %}
+  {% if script.updated and script.added != script.updated %}&mdash; {% trans "Updated:" %} {{ script.updated|date:"Y-m-d" }}{% endif %}
   <br>
   <a href="{{ script.build_url }}" class="btn btn-success my-3" download>{% trans "Download" %}</a>
 </p>
