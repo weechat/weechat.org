@@ -22,10 +22,23 @@
 
 from django.db import models
 from django.db.models.signals import post_save
-from django.utils.translation import ugettext
+from django.utils.translation import ugettext, ugettext_lazy
 
 from weechat.common.i18n import i18n_autogen
 from weechat.common.templatetags.localdate import localdate
+
+
+SPONSOR_TYPE_CHOICES = (
+    (0,
+     # Translators: context: Individual / Association / Company
+     ugettext_lazy('Individual')),
+    (1,
+     # Translators: context: Individual / Association / Company
+     ugettext_lazy('Association')),
+    (2,
+     # Translators: context: Individual / Association / Company
+     ugettext_lazy('Company')),
+)
 
 
 class Screenshot(models.Model):
@@ -81,6 +94,7 @@ post_save.connect(handler_keydate_saved, sender=Keydate)
 
 class Sponsor(models.Model):
     """A WeeChat sponsor."""
+    sponsortype = models.IntegerField(choices=SPONSOR_TYPE_CHOICES, default=0)
     name = models.CharField(max_length=64)
     date = models.DateField()
     site = models.CharField(max_length=512, blank=True)
@@ -90,8 +104,11 @@ class Sponsor(models.Model):
 
     def __str__(self):
         str_num = ' (#%d)' % self.number if self.number > 1 else ''
-        return '%s%s, %s, %.02f Eur' % (self.name, str_num, self.date,
-                                        self.amount)
+        return '%s%s, %s, %s, %.02f Eur' % (self.name,
+                                            str_num,
+                                            self.sponsortype_i18n(),
+                                            self.date,
+                                            self.amount)
 
     def __unicode__(self):  # python 2.x
         return self.__str__()
@@ -99,3 +116,7 @@ class Sponsor(models.Model):
     def date_l10n(self):
         """Return the sponsor date formatted with localized date format."""
         return localdate(self.date)
+
+    def sponsortype_i18n(self):
+        """Return the translated sponsor type."""
+        return ugettext(dict(SPONSOR_TYPE_CHOICES)[self.sponsortype])

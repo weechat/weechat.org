@@ -63,18 +63,26 @@
 
   {% if sponsor_list %}
 
-  <h4>{% trans "With Paypal" %}</h4>
+  <h4>{% trans "With Paypal and other payments" %}</h4>
 
   <p>
-    {% if sort_key == "date" %}{% trans "Whole list:" %}{% else %}{% trans "Top 10, ordered by total amount donated:" %}{% endif %}
-    <span class="ml-4">
-      {% if sort_key == "date" %}
-      [<a href="{% url 'donate_sort' 'top10' %}">{% trans "show the top 10, ordered by total amount donated" %}</a>]
-      {% else %}
-      [<a href="{% url 'donate_sort' 'date' %}">{% trans "show the whole list" %}</a>]
-      {% endif %}
-    </span>
-    <div class="table-responsive">
+    <ul class="nav nav-tabs mt-3">
+      <li class="nav-item nav-link {% if sort_key == "date" %}active{% endif %}">
+        <a href="{% url 'donate_sort' 'date' %}">{% trans "Whole list" %}</a>
+      </li>
+      <li class="nav-item nav-link {% if sort_key == "type" %}active{% endif %}">
+        <a href="{% url 'donate_sort' 'type' %}">{% trans "Types" %}</a>
+      </li>
+      <li class="nav-item nav-link {% if sort_key == "top" %}active{% endif %}">
+        <a href="{% url 'donate_sort' sort_key_top %}">
+          {% blocktrans with count=sort_key_top_count %}Top {{ count }}{% endblocktrans %}
+        </a>
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    <div class="table-responsive mt-4">
       <table class="table table-striped">
         <thead>
           <tr>
@@ -83,7 +91,10 @@
             {% else %}
             <th>{% trans "Rank" %}</th>
             {% endif %}
+            <th>{% trans "Type" %}</th>
+            {% if sort_key != "type" %}
             <th>{% trans "Name" %}</th>
+            {% endif %}
             {% if view_amount %}<th class="text-right">{% trans "Amount" %}</th>{% endif %}
             {% if sort_key == "date" %}
             <th>{% trans "Comment" %}</th>
@@ -101,10 +112,17 @@
             <td class="text-nowrap" style="width: 5rem;">{{ forloop.counter }}.</td>
             {% endif %}
             <td class="text-nowrap">
+              {{ sponsor.sponsortype_i18n }}
+            </td>
+            {% if sort_key != "type" %}
+            <td class="text-nowrap">
               {{ sponsor.name }}
               {% if sponsor.number > 1 %}<small class="ml-1 text-muted">(#{{ sponsor.number }})</small>{% endif %}
             </td>
-            {% if view_amount %}<td class="text-right">{{ sponsor.amount|floatformat:"-2" }} &euro;</td>{% endif %}
+            {% endif %}
+            {% if view_amount %}
+            <td class="text-nowrap text-right">{{ sponsor.amount|floatformat:"-2" }} &euro;</td>
+            {% endif %}
             {% if sort_key == "date" %}
             <td class="quote">{% if sponsor.comment %}&ldquo; {{ sponsor.comment }} &rdquo;{% endif %}</td>
             {% else %}
@@ -115,8 +133,11 @@
           {% if view_amount %}
           <tr>
             <td></td>
+            {% if sort_key != "type" %}
+            <td></td>
+            {% endif %}
             <td><strong>{% trans "Total" %}</strong></td>
-            <td class="text-right"><strong>{{ total|floatformat:"-2" }}</strong> €</td>
+            <td class="text-nowrap text-right"><strong>{{ total|floatformat:"-2" }}</strong> €</td>
             <td></td>
           </tr>
           {% endif %}

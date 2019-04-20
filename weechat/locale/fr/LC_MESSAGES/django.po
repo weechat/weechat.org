@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-07 10:30+0200\n"
-"PO-Revision-Date: 2019-04-07 10:30+0200\n"
+"POT-Creation-Date: 2019-04-20 22:02+0200\n"
+"PO-Revision-Date: 2019-04-20 21:51+0200\n"
 "Last-Translator: Sébastien Helleu <flashcode@flashtux.org>\n"
 "Language-Team: French <flashcode@flashtux.org>\n"
 "Language: fr\n"
@@ -185,6 +185,21 @@ msgid "Trigger and Exec plugins, bare display, hidden buffers, unit tests."
 msgstr ""
 "Extensions Trigger et Exec plugins, affichage dépouillé (« bare display »), "
 "tampons cachés, tests unitaires."
+
+#. Translators: context: Individual / Association / Company
+#: about/models.py:34
+msgid "Individual"
+msgstr "Particulier"
+
+#. Translators: context: Individual / Association / Company
+#: about/models.py:37
+msgid "Association"
+msgstr "Association"
+
+#. Translators: context: Individual / Association / Company
+#: about/models.py:40
+msgid "Company"
+msgstr "Entreprise"
 
 #: common/forms.py:88 common/forms.py:90 scripts/models.py:240
 msgid "This field is required."
@@ -5544,7 +5559,7 @@ msgid "Language"
 msgstr "Langage"
 
 #: scripts/models.py:295 templates/about/interfaces.html:24
-#: templates/donate.html:86 templates/scripts/list.html:82
+#: templates/donate.html:96 templates/scripts/list.html:82
 #: templates/scripts/list.html:84 templates/scripts/pending.html:29
 msgid "Name"
 msgstr "Nom"
@@ -6078,7 +6093,7 @@ msgstr "Et donc WeeChat est né, en Juin 2003."
 msgid "Key dates"
 msgstr "Dates clés"
 
-#: templates/about/history.html:43 templates/donate.html:82
+#: templates/about/history.html:43 templates/donate.html:90
 #: templates/scripts/pending.html:38 templates/scripts/python3.html:122
 msgid "Date"
 msgstr "Date"
@@ -6104,7 +6119,7 @@ msgstr ""
 "développés par l'équipe WeeChat. Pour du support, merci de vous adresser "
 "directement aux auteurs."
 
-#: templates/about/interfaces.html:25
+#: templates/about/interfaces.html:25 templates/donate.html:94
 msgid "Type"
 msgstr "Type"
 
@@ -6530,7 +6545,7 @@ msgstr "Approximatif"
 msgid "Untranslated"
 msgstr "Non traduit"
 
-#: templates/doc/doc_version.html:71 templates/donate.html:118
+#: templates/doc/doc_version.html:71 templates/donate.html:139
 msgid "Total"
 msgstr "Total"
 
@@ -6763,34 +6778,31 @@ msgid "See the weechat page on Liberapay:"
 msgstr "Voir la page weechat sur Liberapay :"
 
 #: templates/donate.html:66
-msgid "With Paypal"
-msgstr "Avec Paypal"
+msgid "With Paypal and other payments"
+msgstr "Avec Paypal et autres moyens de paiement"
 
-#: templates/donate.html:69
-msgid "Whole list:"
-msgstr "Liste entière :"
-
-#: templates/donate.html:69
-msgid "Top 10, ordered by total amount donated:"
-msgstr "Top 10, trié par montant total des dons :"
-
-#: templates/donate.html:72
-msgid "show the top 10, ordered by total amount donated"
-msgstr "voir le top 10, trié par montant total des dons"
+#: templates/donate.html:71
+msgid "Whole list"
+msgstr "Liste entière"
 
 #: templates/donate.html:74
-msgid "show the whole list"
-msgstr "voir la liste entière"
+msgid "Types"
+msgstr "Types"
 
-#: templates/donate.html:84
+#: templates/donate.html:78
+#, python-format
+msgid "Top %(count)s"
+msgstr "Top %(count)s"
+
+#: templates/donate.html:92
 msgid "Rank"
 msgstr "Rang"
 
-#: templates/donate.html:87
+#: templates/donate.html:98
 msgid "Amount"
 msgstr "Montant"
 
-#: templates/donate.html:89
+#: templates/donate.html:100
 msgid "Comment"
 msgstr "Commentaire"
 

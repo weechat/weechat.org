@@ -72,9 +72,9 @@ urlpatterns = [
         name='home_info_id_title'),
     url(r'^events/$', view_events, name='home_events'),
     url(r'^donate/$', view_donate, name='donate'),
-    url(r'^donate/sort/(?P<sort_key>(date|top10))/$', view_donate,
+    url(r'^donate/sort/(?P<sort_key>(date|type|top[0-9]+))/$', view_donate,
         name='donate_sort'),
-    url(r'^donate/sort/(?P<sort_key>(date|top10))/'
+    url(r'^donate/sort/(?P<sort_key>(date|type|top[0-9]+))/'
         r'view/(?P<view_key>[a-zA-Z0-9_]*)/$',
         view_donate),
     url(r'^about/', include('weechat.about.urls')),

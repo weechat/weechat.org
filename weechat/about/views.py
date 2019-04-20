@@ -26,8 +26,14 @@ from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Sum
 from django.shortcuts import render
+from django.utils.translation import ugettext
 
-from weechat.about.models import Screenshot, Keydate, Sponsor
+from weechat.about.models import (
+    Screenshot,
+    Keydate,
+    Sponsor,
+    SPONSOR_TYPE_CHOICES,
+)
 from weechat.common.path import media_path_join
 from weechat.download.models import Release
 
@@ -85,27 +91,52 @@ def history(request):
 
 def donate(request, sort_key='date', view_key=''):
     """Page with link for donation and list of sponsors."""
-    if sort_key == 'top10':
-        sponsor_list = (Sponsor.objects.values('name')
+    sort_key_top = 'top10'
+    sort_key_top_count = 10
+    sort_count = 0
+    if sort_key.startswith('top'):
+        sort_key_top = sort_key
+        sort_count = max(int(sort_key[3:]), 1)
+        sort_key_top_count = sort_count
+        sort_key = 'top'
+
+    if sort_key == 'type':
+        sponsor_list = (Sponsor.objects.values('sponsortype')
                         .annotate(amount=Sum('amount'))
-                        .order_by('-amount')[:10])
+                        .order_by('-amount'))
         total = sum(sponsor['amount'] for sponsor in sponsor_list)
+        for sponsor in sponsor_list:
+            sponsor['sponsortype_i18n'] = ugettext(
+                dict(SPONSOR_TYPE_CHOICES)[sponsor['sponsortype']])
+    elif sort_key == 'top':
+        sponsor_list = (Sponsor.objects.values('sponsortype', 'name')
+                        .annotate(amount=Sum('amount'))
+                        .order_by('-amount')[:sort_count])
+        total = sum(sponsor['amount'] for sponsor in sponsor_list)
+        for sponsor in sponsor_list:
+            sponsor['sponsortype_i18n'] = ugettext(
+                dict(SPONSOR_TYPE_CHOICES)[sponsor['sponsortype']])
     else:
         # by default: sort by date
         sponsor_list = Sponsor.objects.all().order_by('-date', '-id')
         total = sum(sponsor.amount for sponsor in sponsor_list)
+
     view_amount = False
     try:
         if view_key and view_key == settings.KEY_VIEWAMOUNT:
             view_amount = True
     except AttributeError:
         pass
+
     return render(
         request,
         'donate.html',
         {
             'sponsor_list': sponsor_list,
             'sort_key': sort_key,
+            'sort_count': sort_count,
+            'sort_key_top': sort_key_top,
+            'sort_key_top_count': sort_key_top_count,
             'view_amount': view_amount,
             'total': total,
         },
