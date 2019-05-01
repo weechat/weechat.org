@@ -39,6 +39,11 @@ SPONSOR_TYPE_CHOICES = (
      # Translators: context: Individual / Association / Company
      ugettext_lazy('Company')),
 )
+SPONSOR_TYPE_SVG = {
+    0: 'person',
+    1: 'persons',
+    2: 'briefcase',
+}
 
 
 class Screenshot(models.Model):
@@ -120,3 +125,7 @@ class Sponsor(models.Model):
     def sponsortype_i18n(self):
         """Return the translated sponsor type."""
         return ugettext(dict(SPONSOR_TYPE_CHOICES)[self.sponsortype])
+
+    def sponsortype_svg(self):
+        """Return the name of SVG for the sponsor type."""
+        return SPONSOR_TYPE_SVG[self.sponsortype]

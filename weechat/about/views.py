@@ -33,6 +33,7 @@ from weechat.about.models import (
     Keydate,
     Sponsor,
     SPONSOR_TYPE_CHOICES,
+    SPONSOR_TYPE_SVG,
 )
 from weechat.common.path import media_path_join
 from weechat.download.models import Release
@@ -108,6 +109,8 @@ def donate(request, sort_key='date', view_key=''):
         for sponsor in sponsor_list:
             sponsor['sponsortype_i18n'] = ugettext(
                 dict(SPONSOR_TYPE_CHOICES)[sponsor['sponsortype']])
+            sponsor['sponsortype_svg'] = \
+                SPONSOR_TYPE_SVG[sponsor['sponsortype']]
     elif sort_key == 'top':
         sponsor_list = (Sponsor.objects.values('sponsortype', 'name')
                         .annotate(amount=Sum('amount'))
@@ -116,6 +119,8 @@ def donate(request, sort_key='date', view_key=''):
         for sponsor in sponsor_list:
             sponsor['sponsortype_i18n'] = ugettext(
                 dict(SPONSOR_TYPE_CHOICES)[sponsor['sponsortype']])
+            sponsor['sponsortype_svg'] = \
+                SPONSOR_TYPE_SVG[sponsor['sponsortype']]
     else:
         # by default: sort by date
         sponsor_list = Sponsor.objects.all().order_by('-date', '-id')

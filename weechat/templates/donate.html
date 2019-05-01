@@ -112,7 +112,11 @@
             <td class="text-nowrap" style="width: 5rem;">{{ forloop.counter }}.</td>
             {% endif %}
             <td class="text-nowrap">
-              {{ sponsor.sponsortype_i18n }}
+              <span class="sponsortype" title="{{ sponsor.sponsortype_i18n }}">
+                {% with filename="svg/"|add:sponsor.sponsortype_svg|add:".html" %}
+                {% include filename %}
+                {% endwith %}
+              </span>
             </td>
             {% if sort_key != "type" %}
             <td class="text-nowrap">
