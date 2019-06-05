@@ -27,7 +27,7 @@
 {% regroup task_list by version as task_list_by_version %}
 {% for tasks_version in task_list_by_version %}
 <h3>
-  Version {{ tasks_version.grouper }}
+  Version {{ tasks_version.grouper.version }}
   <small class="ml-2 text-muted">({% autoescape off %}{{ tasks_version.list.0.version_date }}{% endautoescape %})</small>
 </h3>
 <div class="table-responsive">

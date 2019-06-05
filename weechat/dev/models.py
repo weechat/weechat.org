@@ -32,7 +32,7 @@ from weechat.download.models import Release
 class Task(models.Model):
     """A task (a new feature or bug to fix)."""
     visible = models.BooleanField(default=True)
-    version = models.CharField(max_length=32)
+    version = models.ForeignKey(Release, on_delete=models.CASCADE)
     tracker = models.CharField(max_length=64, blank=True)
     status = models.IntegerField(default=0)
     commits = models.CharField(max_length=1024, blank=True)
@@ -46,7 +46,7 @@ class Task(models.Model):
                 else u'%s…' % self.description[0:100])
         return u'%s%s%s, %s, %d%%, %s: %s (%d)' % (
             '' if self.visible else '(',
-            self.version,
+            self.version.version,
             '' if self.visible else ')',
             self.tracker if self.tracker else '-',
             self.status,
@@ -63,10 +63,9 @@ class Task(models.Model):
         It is prefixed with "≈ " if the date is in the future.
         """
         try:
-            release_date = Release.objects.get(version=self.version).date
-            if release_date > date.today():
-                return '&asymp; %s' % localdate(release_date)
-            return localdate(release_date)
+            if self.version.date > date.today():
+                return '&asymp; %s' % localdate(self.version.date)
+            return localdate(self.version.date)
         except:  # noqa: E722
             return ''
 
@@ -83,4 +82,4 @@ class Task(models.Model):
         return commits_links(self.commits)
 
     class Meta:
-        ordering = ['-version', 'priority']
+        ordering = ['-version__date', 'priority']
