@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-20 22:02+0200\n"
+"POT-Creation-Date: 2019-06-05 18:06+0200\n"
 "PO-Revision-Date: 2019-06-01 00:45+0200\n"
 "Last-Translator: Krzysztof Korościk <soltys@soltys.info>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -30,8 +30,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 19.04.0\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10"
-" || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
 
 #: about/_i18n_keydates.py:8
 msgid "256 colors, irc proxy, rmodifier, redirection of irc commands."
@@ -188,7 +188,6 @@ msgstr "Indywidualnie"
 
 #. Translators: context: Individual / Association / Company
 #: about/models.py:37
-#| msgid "Description"
 msgid "Association"
 msgstr "Wspólne"
 
@@ -268,7 +267,7 @@ msgid "All non-binary infos (one info by line, format: \"info:value\")."
 msgstr ""
 "Wszystkie niebinarne informacje (jedna na linie, format \"info:wartość\")."
 
-#: dev/views.py:284
+#: dev/views.py:288
 msgid "(binary data)"
 msgstr "(dane binarne)"
 
@@ -3265,29 +3264,24 @@ msgstr ""
 "\n"
 "Najważniejsze zmiany:\n"
 "\n"
-"- dodano argument linii poleceń \"-t\" (lub \"--temp-dir\") do tworzenia"
-" tymczasowego "
-"katalogu WeeChat (jest on kasowany przy wyjściu)\n"
-"- dodano wsparcie dla haseł jednorazowych (TOTP), informację"
-" \"totp_generate\" "
-"i \"totp_validate\", dodano wsparcie dla TOTP jako drugiego składnika"
-" uwierzytelnienia "
-"dla protokołu weechat (wtyczka pośrednika)\n"
-"- dodano zmienną listy buforów ${number2}, ustawiona zawsze na numer bufora z"
-" wcięciem\n"
-"- dodano opcję exec.command.shell do ustawiania powłoki używanej przez /exec"
-" -sh\n"
-"- dodano wsparcie dla ramki zamykającej (close frame) w połączeniu"
-" websocketowym (wtyczka pośrednika)\n"
-"- dodano funkcje tring_base_encode i string_base_decode w API, usunięto"
-" funkcje string_encode_base64 "
-"i string_decode_base64\n"
-"- dodano domyślne skróty klawiszowe Ctrl+F11/F12 do przewijania w górę/dół"
-" jednej strony listy nicków "
-"(ta sama akcja jak dla F11/F12)\n"
-"- dodano domyślne skróty klawiszowe dla listy buforów Ctrl+F1/F2 do"
-" przewijania listy buforów o ekran "
-"w górę/dół o jedną stronę (ta sama akcja jak dla F1/F2)\n"
+"- dodano argument linii poleceń \"-t\" (lub \"--temp-dir\") do tworzenia "
+"tymczasowego katalogu WeeChat (jest on kasowany przy wyjściu)\n"
+"- dodano wsparcie dla haseł jednorazowych (TOTP), informację \"totp_generate"
+"\" i \"totp_validate\", dodano wsparcie dla TOTP jako drugiego składnika "
+"uwierzytelnienia dla protokołu weechat (wtyczka pośrednika)\n"
+"- dodano zmienną listy buforów ${number2}, ustawiona zawsze na numer bufora "
+"z wcięciem\n"
+"- dodano opcję exec.command.shell do ustawiania powłoki używanej przez /exec "
+"-sh\n"
+"- dodano wsparcie dla ramki zamykającej (close frame) w połączeniu "
+"websocketowym (wtyczka pośrednika)\n"
+"- dodano funkcje tring_base_encode i string_base_decode w API, usunięto "
+"funkcje string_encode_base64 i string_decode_base64\n"
+"- dodano domyślne skróty klawiszowe Ctrl+F11/F12 do przewijania w górę/dół "
+"jednej strony listy nicków (ta sama akcja jak dla F11/F12)\n"
+"- dodano domyślne skróty klawiszowe dla listy buforów Ctrl+F1/F2 do "
+"przewijania listy buforów o ekran w górę/dół o jedną stronę (ta sama akcja "
+"jak dla F1/F2)\n"
 "- poprawiono wiele błędów.\n"
 "\n"
 "Pełną listę nowych funkcji i poprawionych błędów można znaleźć na <a href=\"/"
@@ -6313,12 +6307,16 @@ msgid "roadmap"
 msgstr "plan wydań"
 
 #: templates/dev/roadmap.html:13
-msgid "Next versions"
+#, fuzzy
+#| msgid "Next versions"
+msgid "Future versions"
 msgstr "Następna wersja"
 
 #: templates/dev/roadmap.html:14
-msgid "All versions"
-msgstr "Wszystkie wersje"
+#, fuzzy
+#| msgid "Old versions"
+msgid "Released versions"
+msgstr "Poprzednie wersje"
 
 #: templates/dev/roadmap.html:18
 msgid "This page lists major features done or planned."
@@ -6435,7 +6433,7 @@ msgstr "Wątpliwe"
 msgid "Untranslated"
 msgstr "Nieprzetłumaczone"
 
-#: templates/doc/doc_version.html:71 templates/donate.html:139
+#: templates/doc/doc_version.html:71 templates/donate.html:143
 msgid "Total"
 msgstr "Łącznie"
 
@@ -6672,12 +6670,10 @@ msgid "With Paypal and other payments"
 msgstr "Za pomocą Paypal i innych płatności"
 
 #: templates/donate.html:71
-#| msgid "Whole list:"
 msgid "Whole list"
 msgstr "Pełna lista"
 
 #: templates/donate.html:74
-#| msgid "Type"
 msgid "Types"
 msgstr "Typy"
 
@@ -7515,11 +7511,10 @@ msgid ""
 "To compile with Python 3.x support and enable quick switch between Python "
 "2.7 and 3.x, see:"
 msgstr ""
-"Aby skompilować wsparcie dla Pythona 3 i szybko przełączać między Pythonem"
-" 2.7 a 3.x zobacz:"
+"Aby skompilować wsparcie dla Pythona 3 i szybko przełączać między Pythonem "
+"2.7 a 3.x zobacz:"
 
 #: templates/scripts/python3.html:46 templates/scripts/python3.html:220
-#| msgid "Compatible with Python 3"
 msgid "Compile and test with Python 2.7 and 3.x"
 msgstr "Skompiluj i testuj z Pythonem 2.7 i 3.x"
 
@@ -7707,8 +7702,8 @@ msgid ""
 "aliases."
 msgstr ""
 "Nie możesz używać w tym samym czasie Pythona 2.7 i 3.x w WeeChat, ale możesz "
-"skompilować dwie wersje wtyczki Python i przełączać między nimi za pomocą"
-" aliasów."
+"skompilować dwie wersje wtyczki Python i przełączać między nimi za pomocą "
+"aliasów."
 
 #: templates/scripts/python3.html:227
 msgid ""
@@ -7723,11 +7718,10 @@ msgid ""
 "Compile WeeChat with Python 3.x and install it in home directory. From the "
 "cloned git repository:"
 msgstr ""
-"Skompiluj WeeChat z Pythonem 3 i zainstaluj go w katalogu domowym. Z katalogu "
-"ze sklonowanym repozytorium:"
+"Skompiluj WeeChat z Pythonem 3 i zainstaluj go w katalogu domowym. Z "
+"katalogu ze sklonowanym repozytorium:"
 
 #: templates/scripts/python3.html:243
-#| msgid "for WeeChat"
 msgid "Run WeeChat:"
 msgstr "Uruchom Weechat:"
 
@@ -7747,8 +7741,8 @@ msgstr "Teraz możesz wpisać /py2 lub /py3 aby przełączyć wersje Pythona."
 #: templates/scripts/python3.html:265
 msgid "Note: this unloads all scripts because the Python plugin is reloaded."
 msgstr ""
-"Uwaga: to wyładuje wszystkie skrypty, ponieważ wtyczka Python zostanie"
-" przeładowana."
+"Uwaga: to wyładuje wszystkie skrypty, ponieważ wtyczka Python zostanie "
+"przeładowana."
 
 #: templates/scripts/python3.html:269
 #, fuzzy
@@ -7761,22 +7755,18 @@ msgid "Check that Python version is 3.x:"
 msgstr "Sprawdź czy wersja Pythona to 3.x:"
 
 #: templates/scripts/source.html:21
-#| msgid "for WeeChat"
 msgid "For WeeChat"
 msgstr "Dla Weechat"
 
 #: templates/scripts/source.html:21
-#| msgid "requires"
 msgid "requires:"
 msgstr "wymaga:"
 
 #: templates/scripts/source.html:23
-#| msgid "Added"
 msgid "Added:"
 msgstr "Dodano:"
 
 #: templates/scripts/source.html:24
-#| msgid "Updated"
 msgid "Updated:"
 msgstr "Uaktualniono:"
 
@@ -7935,3 +7925,6 @@ msgstr "Wewnętrzny błąd."
 #: themes/models.py:299
 msgid "Invalid name: different from theme."
 msgstr "Niewłaściwa nazwa: różni się od motywu."
+
+#~ msgid "All versions"
+#~ msgstr "Wszystkie wersje"

@@ -10,8 +10,8 @@
 {{ block.super }}
 
 <ul class="nav nav-tabs mt-4">
-  <li class="nav-item"><a class="nav-link{% if not allversions %} active{% endif %}" href="{% url 'dev_roadmap' %}">{% trans "Next versions" %}</a></li>
-  <li class="nav-item"><a class="nav-link{% if allversions %} active{% endif %}" href="{% url 'dev_roadmap_all' %}">{% trans "All versions" %}</a></li>
+  <li class="nav-item"><a class="nav-link{% if versions == "future" %} active{% endif %}" href="{% url 'dev_roadmap' %}">{% trans "Future versions" %}</a></li>
+  <li class="nav-item"><a class="nav-link{% if versions == "released" %} active{% endif %}" href="{% url 'dev_roadmap_versions' versions="released" %}">{% trans "Released versions" %}</a></li>
 </ul>
 
 <p>

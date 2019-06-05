@@ -108,18 +108,22 @@ PGP_KEYS = {
 }
 
 
-def roadmap(request, allversions=False):
+def roadmap(request, versions='future'):
     """Page with roadmap for future or all versions."""
     task_list = None
     try:
-        if allversions:
-            task_list = (Task.objects.all().filter(visible=1)
-                         .order_by('version__date', 'priority'))
-        else:
+        if versions == 'future':
+            # future versions
             task_list = (Task.objects.all().filter(visible=1)
                          .filter(version__gt=Release.objects.get(
                              version='stable').description)
                          .order_by('version__date', 'priority'))
+        else:
+            # already released versions
+            task_list = (Task.objects.all().filter(visible=1)
+                         .filter(version__lte=Release.objects.get(
+                             version='stable').description)
+                         .order_by('-version__date', 'priority'))
     except ObjectDoesNotExist:
         task_list = None
     return render(
@@ -127,7 +131,7 @@ def roadmap(request, allversions=False):
         'dev/roadmap.html',
         {
             'task_list': task_list,
-            'allversions': allversions,
+            'versions': versions,
         },
     )
 

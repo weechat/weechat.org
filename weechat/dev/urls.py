@@ -33,8 +33,8 @@ from weechat.dev.views import (
 urlpatterns = [
     url(r'^$', view_roadmap, name='dev'),
     url(r'^roadmap/$', view_roadmap, name='dev_roadmap'),
-    url(r'^roadmap/all/$', view_roadmap, {'allversions': True},
-        name='dev_roadmap_all'),
+    url(r'^roadmap/(?P<versions>future|released)/$', view_roadmap,
+        name='dev_roadmap_versions'),
     url(r'^stats/$', view_stats_repo, name='dev_stats'),
     url(r'^stats/(?P<stats>weechat|scripts|qweechat|weechat\.org)/$',
         view_stats_repo, name='dev_stats_git'),
