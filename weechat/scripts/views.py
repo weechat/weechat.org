@@ -366,6 +366,14 @@ def python3(request):
         'scripts_ok': 43,
         'scripts_remaining': 173,
     })
+    # status on 2019-07-01 (WeeChat is built with Python 3 by default)
+    status_list.append({
+        'date': datetime(2019, 7, 1),
+        'scripts': 362,
+        'python_scripts': 226,
+        'scripts_ok': 96,
+        'scripts_remaining': 130,
+    })
     # status today
     scripts = (Script.objects.filter(visible=1)
                .filter(min_weechat__gte=API_STABLE)
