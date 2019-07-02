@@ -88,11 +88,11 @@ def scripts(request, api='stable', sort_key='popularity', filter_name='',
         return item[0].lower()
 
     if api == 'legacy':
-        script_list = (Script.objects.filter(visible=1)
+        script_list = (Script.objects.filter(approved=True)
                        .filter(max_weechat=API_OLD)
                        .order_by(*get_sort_key(sort_key)))
     else:
-        script_list = (Script.objects.filter(visible=1)
+        script_list = (Script.objects.filter(approved=True)
                        .filter(min_weechat__gte=API_STABLE)
                        .order_by(*get_sort_key(sort_key)))
     if filter_name == 'tag':
@@ -216,7 +216,7 @@ def form_add(request):
 
             # add script in database
             now = datetime.now()
-            script = Script(visible=False,
+            script = Script(approved=False,
                             popularity=0,
                             name=form.cleaned_data['name'],
                             version=form.cleaned_data['version'],
@@ -338,7 +338,7 @@ def form_update(request):
 
 def pending(request):
     """Page with scripts pending for approval."""
-    script_list = (Script.objects.filter(visible=0)
+    script_list = (Script.objects.filter(approved=False)
                    .filter(min_weechat__gte=API_STABLE).order_by('-added'))
     return render(
         request,
@@ -375,14 +375,14 @@ def python3(request):
         'scripts_remaining': 130,
     })
     # status today
-    scripts = (Script.objects.filter(visible=1)
+    scripts = (Script.objects.filter(approved=True)
                .filter(min_weechat__gte=API_STABLE)
                .count())
-    python_scripts = (Script.objects.filter(visible=1)
+    python_scripts = (Script.objects.filter(approved=True)
                       .filter(min_weechat__gte=API_STABLE)
                       .filter(language='python')
                       .count())
-    scripts_ok = (Script.objects.filter(visible=1)
+    scripts_ok = (Script.objects.filter(approved=True)
                   .filter(min_weechat__gte=API_STABLE)
                   .filter(language='python')
                   .filter(tags__regex=r'(^|,)py3k-ok($|,)')

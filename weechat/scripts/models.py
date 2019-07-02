@@ -85,7 +85,7 @@ def get_language_from_extension(ext):
 
 class Script(models.Model):
     """A WeeChat script."""
-    visible = models.BooleanField(default=False)
+    approved = models.BooleanField(default=False)
     popularity = models.IntegerField()
     name = models.CharField(max_length=MAX_LENGTH_NAME)
     version = models.CharField(max_length=MAX_LENGTH_VERSION)
@@ -112,7 +112,7 @@ class Script(models.Model):
             '(legacy api) ' if self.is_legacy() else '',
             self.author,
             self.added,
-            ' [pending]' if not self.visible else '',
+            ' [pending]' if not self.approved else '',
         )
 
     def __unicode__(self):  # python 2.x
@@ -136,7 +136,7 @@ class Script(models.Model):
     def path(self):
         """Return path to script (for URL)."""
         pending = ''
-        if not self.visible:
+        if not self.approved:
             pending = '/pending'
         if self.is_legacy():
             return 'scripts/legacy%s' % pending
@@ -360,7 +360,7 @@ def get_script_choices():
     """Get list of scripts for update form."""
     try:
         script_list = (Script.objects.exclude(max_weechat='0.2.6')
-                       .filter(visible=1).order_by('name'))
+                       .filter(approved=True).order_by('name'))
         script_choices = []
         script_choices.append(('', ugettext(u'Choose…')))
         for script in script_list:
@@ -434,8 +434,8 @@ def handler_scripts_changed(sender, **kwargs):
     xml += '<plugins>\n'
     json_data = []
     strings = []
-    for script in Script.objects.filter(visible=1).order_by('id'):
-        if not script.visible or script.is_legacy():
+    for script in Script.objects.filter(approved=True).order_by('id'):
+        if not script.approved or script.is_legacy():
             continue
         xml += '  <plugin id="%s">\n' % script.id
         json_script = OrderedDict([
@@ -443,7 +443,7 @@ def handler_scripts_changed(sender, **kwargs):
         ])
         for key, value in script.__dict__.items():
             value_i18n = {}
-            if key in ('_state', 'id', 'visible', 'comment'):
+            if key in ('_state', 'id', 'approved', 'comment'):
                 continue
             if value is None:
                 value = ''
