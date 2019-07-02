@@ -72,7 +72,7 @@ MAX_LENGTH_MD5SUM = 32
 MAX_LENGTH_SHA512SUM = 128
 MAX_LENGTH_TAGS = 512
 MAX_LENGTH_DESC = 1024
-MAX_LENGTH_COMMENT = 1024
+MAX_LENGTH_APPROVAL = 1024
 MAX_LENGTH_REQUIRE = 512
 MAX_LENGTH_AUTHOR = 256
 MAX_LENGTH_MAIL = 256
@@ -96,7 +96,7 @@ class Script(models.Model):
     sha512sum = models.CharField(max_length=MAX_LENGTH_SHA512SUM, blank=True)
     tags = models.CharField(max_length=MAX_LENGTH_TAGS, blank=True)
     desc_en = models.CharField(max_length=MAX_LENGTH_DESC)
-    comment = models.CharField(max_length=MAX_LENGTH_COMMENT, blank=True)
+    approval = models.CharField(max_length=MAX_LENGTH_APPROVAL, blank=True)
     requirements = models.CharField(max_length=MAX_LENGTH_REQUIRE, blank=True)
     min_weechat = models.CharField(max_length=MAX_LENGTH_VERSION, blank=True)
     max_weechat = models.CharField(max_length=MAX_LENGTH_VERSION, blank=True)
@@ -443,7 +443,7 @@ def handler_scripts_changed(sender, **kwargs):
         ])
         for key, value in script.__dict__.items():
             value_i18n = {}
-            if key in ('_state', 'id', 'approved', 'comment'):
+            if key in ('_state', 'id', 'approved', 'approval'):
                 continue
             if value is None:
                 value = ''
