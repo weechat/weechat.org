@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-07-06 08:26+0200\n"
-"PO-Revision-Date: 2019-07-06 08:19+0200\n"
+"PO-Revision-Date: 2019-07-06 09:02+0200\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -7664,7 +7664,7 @@ msgstr "benötigt"
 #: templates/scripts/list.html:160
 #, python-format
 msgid "Script disabled (%(reason)s)."
-msgstr ""
+msgstr "Skript deaktiviert (%(reason)s)."
 
 #: templates/scripts/list.html:168 templates/scripts/source.html:25
 #: templates/themes/list.html:22
@@ -7893,7 +7893,7 @@ msgid ""
 "compatible with Python 3. Compiling by default with Python 3 should speed up "
 "the update of scripts."
 msgstr ""
-"Bedauerlicherweise sind zum heutigen Tag nur 42%% (96 von 226) der Python-"
+"Bedauerlicherweise sind zu diesem Stichtag nur 42%% (96 von 226) der Python-"
 "Skripten mit Python3 kompatibel. Standardmäßig wird WeeChat nun mit Python 3 "
 "kompiliert was hoffentlich dazu führt, dass die verbleibenden Skripten "
 "zeitnah angepasst werden."
@@ -7913,11 +7913,6 @@ msgid ""
 msgstr "Hoffentlich unterstützen an diesem Tag alle Skripten Python 3."
 
 #: templates/scripts/python3.html:106
-#, fuzzy
-#| msgid ""
-#| "<strong>Important</strong>: at this date, all scripts that are not "
-#| "compatible with Python 3 are removed from repository and moved to "
-#| "unofficial scripts."
 msgid ""
 "<strong>Important</strong>: at this date, all scripts that are not "
 "compatible with Python 3 are disabled: still visible on the scripts list "
@@ -7925,8 +7920,9 @@ msgid ""
 "WeeChat."
 msgstr ""
 "<strong>Wichtig</strong>: Skripten die an diesem Tag noch nicht mit Python 3 "
-"kompatibel sind werden aus dem Repositorium entfernt und zu den "
-"inoffiziellen Skripten verschoben."
+"kompatibel sind werden deaktiviert: Diese Skripten werden auf der "
+"Skriptseite aufgeführt, haben aber den Vermerk \"deaktiviert\" und können "
+"nicht in WeeChat installiert werden."
 
 #: templates/scripts/python3.html:111
 msgid "Transition status"
@@ -8049,6 +8045,7 @@ msgstr "Überprüfen ob die Python Version 3.x ist:"
 #, python-format
 msgid "<strong>WARNING:</strong> this script has been disabled (%(reason)s)."
 msgstr ""
+"<strong>WARNUNG:</strong> dieses Skript wurde deaktiviert (%(reason)s)."
 
 #: templates/scripts/source.html:29
 msgid "For WeeChat"
