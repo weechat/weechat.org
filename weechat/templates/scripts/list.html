@@ -138,17 +138,27 @@
     </thead>
     <tbody>
       {% for script in script_list %}
-      <tr>
-        <td class="text-nowrap">
+      <tr{% if script.disabled %} class="text-muted"{% endif %}>
+        <td class="text-nowrap{% if script.disabled %} script-disabled{% endif %}">
           <span class="mr-1 script-popular">{{ script.popularity_img|safe }}</span><a href="{% if api == 'legacy' %}{% url 'scripts_source_api_name_html' api script.name_with_extension %}{% else %}{% url 'scripts_source_name_html' script.name_with_extension %}{% endif %}">{{ script.name }}<small>.{{ script.extension }}</small></a>
         </td>
         <td>
           <div class="ml-3 float-right text-muted">
             [{% for tag in script.tagslist %}<a href="{% url 'scripts_api_filter' api 'tag' tag %}" title="{% trans "Tag:" %} {{ tag }}">{{ tag }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}]
           </div>
+          {% if script.disabled %}
+          <span class="script-disabled">{{ script.desc_i18n }}</span>
+          {% else %}
           {{ script.desc_i18n }}
+          {% endif %}
           {% if script.requirements %}
           <small class="text-muted"> ({% trans "requires" %}: {{ script.requirements }})</small>
+          {% endif %}
+          {% if script.disabled %}
+          <br>
+          {% with reason=script.disabled_i18n %}
+          <strong>{% blocktrans %}Script disabled ({{ reason }}).{% endblocktrans %}</strong>
+          {% endwith %}
           {% endif %}
         </td>
         <td class="text-center">{{ script.version }}</td>

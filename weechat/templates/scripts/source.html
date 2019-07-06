@@ -11,6 +11,14 @@
 
 <h3>{% trans "Script" %}: {{ script.name_with_extension }}</h3>
 
+{% if script.disabled %}
+<div class="alert alert-warning">
+  {% with reason=script.disabled_i18n %}
+  {% blocktrans %}<strong>WARNING:</strong> this script has been disabled ({{ reason }}).{% endblocktrans %}
+  {% endwith %}
+</div>
+{% endif %}
+
 <p>
   <strong>{{ script.desc_i18n }}</strong>
   <br>

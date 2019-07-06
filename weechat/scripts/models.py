@@ -73,6 +73,7 @@ MAX_LENGTH_SHA512SUM = 128
 MAX_LENGTH_TAGS = 512
 MAX_LENGTH_DESC = 1024
 MAX_LENGTH_APPROVAL = 1024
+MAX_LENGTH_DISABLED = 1024
 MAX_LENGTH_REQUIRE = 512
 MAX_LENGTH_AUTHOR = 256
 MAX_LENGTH_MAIL = 256
@@ -97,6 +98,7 @@ class Script(models.Model):
     tags = models.CharField(max_length=MAX_LENGTH_TAGS, blank=True)
     desc_en = models.CharField(max_length=MAX_LENGTH_DESC)
     approval = models.CharField(max_length=MAX_LENGTH_APPROVAL, blank=True)
+    disabled = models.CharField(max_length=MAX_LENGTH_DISABLED, blank=True)
     requirements = models.CharField(max_length=MAX_LENGTH_REQUIRE, blank=True)
     min_weechat = models.CharField(max_length=MAX_LENGTH_VERSION, blank=True)
     max_weechat = models.CharField(max_length=MAX_LENGTH_VERSION, blank=True)
@@ -106,13 +108,14 @@ class Script(models.Model):
     updated = models.DateTimeField(null=True)
 
     def __str__(self):
-        return '%s %s %s(%s, %s)%s' % (
+        return '%s %s%s (%s, %s)%s%s' % (
             self.name,
             self.version,
-            '(legacy api) ' if self.is_legacy() else '',
+            ' (legacy api)' if self.is_legacy() else '',
             self.author,
             self.added,
-            ' [pending]' if not self.approved else '',
+            '' if self.approved else ' [pending]',
+            ' [DISABLED]' if self.disabled else '',
         )
 
     def __unicode__(self):  # python 2.x
@@ -171,6 +174,13 @@ class Script(models.Model):
             # python 2.x
             return ugettext(self.desc_en.encode('utf-8'))
         return ugettext(self.desc_en)
+
+    def disabled_i18n(self):
+        """Return the translated disabled reason."""
+        if not isinstance(self.disabled, str):
+            # python 2.x
+            return ugettext(self.disabled.encode('utf-8'))
+        return ugettext(self.disabled)
 
     def version_weechat(self):
         """Return the min/max WeeChat versions in a string."""
@@ -434,8 +444,28 @@ def handler_scripts_changed(sender, **kwargs):
     xml += '<plugins>\n'
     json_data = []
     strings = []
-    for script in Script.objects.filter(approved=True).order_by('id'):
-        if not script.approved or script.is_legacy():
+
+    # add disabled reasons in strings to translate
+    reasons = set([script.disabled
+                   for script in Script.objects.exclude(disabled='')])
+    for reason in reasons:
+        strings.append((reason, 'reason for a disabled script'))
+
+    # build xml/json content
+    script_list = (Script.objects
+                   .exclude(max_weechat='0.2.6')
+                   .filter(approved=True)
+                   .order_by('id'))
+    for script in script_list:
+        strings.append(
+            (
+                script.desc_en,
+                'description for script "%s" (%s)' % (
+                    script.name_with_extension(),
+                    script.version_weechat()),
+            )
+        )
+        if script.disabled:
             continue
         xml += '  <plugin id="%s">\n' % script.id
         json_script = OrderedDict([
@@ -476,13 +506,6 @@ def handler_scripts_changed(sender, **kwargs):
                 json_script[field] = value_i18n[field]
         xml += '  </plugin>\n'
         json_data.append(json_script)
-        strings.append(
-            (
-                script.desc_en,
-                'description for script "%s" (%s)' % (
-                    script.name_with_extension(),
-                    script.version_weechat()),
-            ))
     xml += '</plugins>\n'
 
     # create plugins.xml
