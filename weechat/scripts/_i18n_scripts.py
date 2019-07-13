@@ -407,6 +407,8 @@ def __i18n_scripts():
     gettext_noop("Off-The-Record IRC messaging.")
     # Translators: description for script "beinc.py" (0.4.0+)
     gettext_noop("On screen display notification.")
+    # Translators: description for script "opall.js" (0.3.0+)
+    gettext_noop("Op everybody on a channel using chanserv instead of /mode.")
     # Translators: description for script "url_hinter.rb" (0.3.0+)
     gettext_noop("Open URLs without using the mouse.")
     # Translators: description for script "xclip.pl" (0.3.0+)
