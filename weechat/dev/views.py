@@ -141,9 +141,9 @@ def stats_repo(request, stats='weechat'):
     repository = ''
     sloc = ''
     sloc_lang = ''
-    svg_list = ['authors', 'files_type', 'commits_year', 'commits_year_month',
-                'commits_day', 'commits_day_max', 'commits_day_week',
-                'commits_hour_day', 'commits_hour_week']
+    svg_list = ['authors', 'tickets_author', 'files_type', 'commits_year',
+                'commits_year_month', 'commits_day', 'commits_day_max',
+                'commits_day_week', 'commits_hour_day', 'commits_hour_week']
     git_commits = ['?', '?', '?', '?']
     scripts_downloads = None
 
