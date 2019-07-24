@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-13 18:51+0200\n"
+"POT-Creation-Date: 2019-07-24 13:01+0200\n"
 "PO-Revision-Date: 2019-07-06 08:19+0200\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
@@ -6198,12 +6198,12 @@ msgid "Make a donation"
 msgstr "寄付する"
 
 #: templates/base.html:94 templates/base.html:103
-#: templates/download/debian.html:203
+#: templates/download/debian.html:204
 msgid "Stable version"
 msgstr "安定版"
 
 #: templates/base.html:95 templates/base.html:104
-#: templates/download/debian.html:203
+#: templates/download/debian.html:204
 msgid "Development version"
 msgstr "開発版"
 
@@ -6685,35 +6685,25 @@ msgstr "全てのリポジトリ"
 msgid "Error reading repositories:"
 msgstr "リポジトリ読み込み中のエラー:"
 
-#: templates/download/debian.html:41
+#: templates/download/debian.html:39
+#, fuzzy
+#| msgid ""
+#| "<strong>Important:</strong> these packages are not Debian official "
+#| "packages; please click and read instructions below before using these "
+#| "repositories."
 msgid ""
 "<strong>Important:</strong> these packages are not Debian official packages; "
-"please click and read instructions below before using these repositories."
+"please <strong>read instructions</strong> below before using these "
+"repositories."
 msgstr ""
 "<strong>重要:</strong> 以下のパッケージは Debian の公式パッケージではありませ"
 "ん。リポジトリを使う前に以下の説明を読んでください。"
 
-#: templates/download/debian.html:44
+#: templates/download/debian.html:42
 msgid "Installation instructions"
 msgstr "インストール説明"
 
-#: templates/download/debian.html:49
-msgid "GPG key"
-msgstr "GPG 鍵"
-
-#: templates/download/debian.html:51
-msgid "Import the gpg key used to sign the repository:"
-msgstr "このリポジトリに署名するために使われた gpg 鍵をインポートしてください:"
-
-#: templates/download/debian.html:53
-msgid "<strong>Important:</strong> the Raspbian repositories are NOT signed."
-msgstr "<strong>重要:</strong> Raspbian リポジトリは署名されていません。"
-
-#: templates/download/debian.html:55
-msgid "APT configuration"
-msgstr "APT 設定"
-
-#: templates/download/debian.html:57
+#: templates/download/debian.html:45
 msgid ""
 "You must use apt, apt-get or aptitude to install the packages (with sudo or "
 "as \"root\" user)."
@@ -6721,15 +6711,37 @@ msgstr ""
 "パッケージをインストールするには、apt、apt-get または aptitude を (sudo と組"
 "合わせるか \"root\" ユーザになってから) 使ってください。"
 
-#: templates/download/debian.html:58
+#: templates/download/debian.html:46
 msgid "The following examples use sudo and apt-get."
 msgstr "以下の例では sudo と apt-get を使っています。"
 
-#: templates/download/debian.html:61
-msgid "Install https transport for apt:"
-msgstr "apt で https 転送を使うためのパッケージをインストール:"
+#: templates/download/debian.html:49
+#, fuzzy
+#| msgid "XZ packages"
+msgid "Required packages"
+msgstr "XZ パッケージ"
 
-#: templates/download/debian.html:66
+#: templates/download/debian.html:52
+msgid "The following packages must be installed:"
+msgstr ""
+
+#: templates/download/debian.html:56
+msgid "GPG key"
+msgstr "GPG 鍵"
+
+#: templates/download/debian.html:59
+#, fuzzy
+#| msgid "Import the gpg key used to sign the repository:"
+msgid ""
+"Import the gpg key used to sign the repositories (except the Raspbian "
+"repositories, which are NOT signed):"
+msgstr "このリポジトリに署名するために使われた gpg 鍵をインポートしてください:"
+
+#: templates/download/debian.html:63
+msgid "APT configuration"
+msgstr "APT 設定"
+
+#: templates/download/debian.html:67
 msgid ""
 "Create a weechat.list file with the repository, according to your "
 "distribution/version:"
@@ -6737,17 +6749,17 @@ msgstr ""
 "お使いのディストリビューション/バージョンに対応するリポジトリを含む weechat."
 "list ファイルを作成してください:"
 
-#: templates/download/debian.html:69
+#: templates/download/debian.html:70
 msgid "Choose your distribution/version"
 msgstr "ディストリビューション/バージョンを選んでください"
 
 #. Translators: purpose is to "translate" only quotes here
-#: templates/download/debian.html:75 templates/download/debian.html:181
+#: templates/download/debian.html:76 templates/download/debian.html:182
 #, python-format
 msgid "“%(codename)s”"
 msgstr "「%(codename)s」"
 
-#: templates/download/debian.html:83
+#: templates/download/debian.html:84
 msgid ""
 "Note: the second command line is optional, it is used to download source "
 "packages."
@@ -6755,15 +6767,15 @@ msgstr ""
 "注意: コマンドラインの 2 行目は任意です。これはソースパッケージをダウンロード"
 "するためのものです。"
 
-#: templates/download/debian.html:86
+#: templates/download/debian.html:88
 msgid "Resynchronize your package index files:"
 msgstr "パッケージインデックスファイルを再同期:"
 
-#: templates/download/debian.html:89
+#: templates/download/debian.html:92
 msgid "Packages installation"
 msgstr "パッケージ説明"
 
-#: templates/download/debian.html:91
+#: templates/download/debian.html:95
 msgid ""
 "Install the binary packages; the \"plugins\" package is highly recommended "
 "but not mandatory, scripting API packages are optional (popular languages "
@@ -6773,15 +6785,15 @@ msgstr ""
 "が、インストールを強くお勧めします。スクリプト作成 API パッケージは任意です "
 "(人気の言語は python と perl です)。"
 
-#: templates/download/debian.html:94
+#: templates/download/debian.html:99
 msgid "Example for the stable version:"
 msgstr "安定版の導入例:"
 
-#: templates/download/debian.html:98
+#: templates/download/debian.html:104
 msgid "Example for the development version:"
 msgstr "開発版の導入例:"
 
-#: templates/download/debian.html:104
+#: templates/download/debian.html:109
 msgid ""
 "If needed, you can download the source package in order to rebuild binary "
 "packages:"
@@ -6789,39 +6801,39 @@ msgstr ""
 "必要ならば、バイナリパッケージを再ビルドするためにソースパッケージをダウン"
 "ロードすることが可能です:"
 
-#: templates/download/debian.html:114
+#: templates/download/debian.html:115
 msgid "Overview"
 msgstr "概要"
 
-#: templates/download/debian.html:162
+#: templates/download/debian.html:163
 msgid "Detail"
 msgstr "詳細"
 
-#: templates/download/debian.html:192
+#: templates/download/debian.html:193
 msgid "Important"
 msgstr "重要"
 
-#: templates/download/debian.html:204
+#: templates/download/debian.html:205
 msgid "Architecture"
 msgstr "アーキテクチャ"
 
-#: templates/download/debian.html:206
+#: templates/download/debian.html:207
 msgid "files"
 msgstr "ファイル"
 
-#: templates/download/debian.html:229
+#: templates/download/debian.html:230
 msgid "Builds by"
 msgstr "ビルドした人"
 
-#: templates/download/debian.html:231
+#: templates/download/debian.html:232
 msgid "latest build:"
 msgstr "最新ビルド:"
 
-#: templates/download/debian.html:234
+#: templates/download/debian.html:235
 msgid "next build:"
 msgstr "次回ビルド:"
 
-#: templates/download/debian.html:249
+#: templates/download/debian.html:250
 msgid "No debian repository."
 msgstr "Debian リポジトリがありません。"
 
@@ -7915,3 +7927,10 @@ msgstr "内部エラー。"
 #: themes/models.py:299
 msgid "Invalid name: different from theme."
 msgstr "不正な名前: テーマとは異なります。"
+
+#~ msgid ""
+#~ "<strong>Important:</strong> the Raspbian repositories are NOT signed."
+#~ msgstr "<strong>重要:</strong> Raspbian リポジトリは署名されていません。"
+
+#~ msgid "Install https transport for apt:"
+#~ msgstr "apt で https 転送を使うためのパッケージをインストール:"

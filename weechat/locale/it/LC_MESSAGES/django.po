@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-13 18:51+0200\n"
+"POT-Creation-Date: 2019-07-24 13:01+0200\n"
 "PO-Revision-Date: 2019-07-06 08:19+0200\n"
 "Last-Translator: Marco Paolone <marcopaolone@gmail.com>\n"
 "Language-Team: Italian <marcopaolone@gmail.com>\n"
@@ -5764,13 +5764,13 @@ msgid "Make a donation"
 msgstr "Donazioni paypal"
 
 #: templates/base.html:94 templates/base.html:103
-#: templates/download/debian.html:203
+#: templates/download/debian.html:204
 #, fuzzy
 msgid "Stable version"
 msgstr "versione stabile"
 
 #: templates/base.html:95 templates/base.html:104
-#: templates/download/debian.html:203
+#: templates/download/debian.html:204
 #, fuzzy
 #| msgid "development version"
 msgid "Development version"
@@ -6278,135 +6278,139 @@ msgstr "Repository:"
 msgid "Error reading repositories:"
 msgstr "Nessuno script trovato."
 
-#: templates/download/debian.html:41
+#: templates/download/debian.html:39
 msgid ""
 "<strong>Important:</strong> these packages are not Debian official packages; "
-"please click and read instructions below before using these repositories."
+"please <strong>read instructions</strong> below before using these "
+"repositories."
 msgstr ""
 
-#: templates/download/debian.html:44
+#: templates/download/debian.html:42
 msgid "Installation instructions"
 msgstr ""
 
-#: templates/download/debian.html:49
-msgid "GPG key"
-msgstr ""
-
-#: templates/download/debian.html:51
-msgid "Import the gpg key used to sign the repository:"
-msgstr ""
-
-#: templates/download/debian.html:53
-#, fuzzy
-msgid "<strong>Important:</strong> the Raspbian repositories are NOT signed."
-msgstr "Nessuno script trovato."
-
-#: templates/download/debian.html:55
-msgid "APT configuration"
-msgstr ""
-
-#: templates/download/debian.html:57
+#: templates/download/debian.html:45
 msgid ""
 "You must use apt, apt-get or aptitude to install the packages (with sudo or "
 "as \"root\" user)."
 msgstr ""
 
-#: templates/download/debian.html:58
+#: templates/download/debian.html:46
 msgid "The following examples use sudo and apt-get."
 msgstr ""
 
-#: templates/download/debian.html:61
-msgid "Install https transport for apt:"
+#: templates/download/debian.html:49
+#, fuzzy
+#| msgid "Packages"
+msgid "Required packages"
+msgstr "Pacchetti"
+
+#: templates/download/debian.html:52
+msgid "The following packages must be installed:"
 msgstr ""
 
-#: templates/download/debian.html:66
+#: templates/download/debian.html:56
+msgid "GPG key"
+msgstr ""
+
+#: templates/download/debian.html:59
+msgid ""
+"Import the gpg key used to sign the repositories (except the Raspbian "
+"repositories, which are NOT signed):"
+msgstr ""
+
+#: templates/download/debian.html:63
+msgid "APT configuration"
+msgstr ""
+
+#: templates/download/debian.html:67
 msgid ""
 "Create a weechat.list file with the repository, according to your "
 "distribution/version:"
 msgstr ""
 
-#: templates/download/debian.html:69
+#: templates/download/debian.html:70
 msgid "Choose your distribution/version"
 msgstr ""
 
 #. Translators: purpose is to "translate" only quotes here
-#: templates/download/debian.html:75 templates/download/debian.html:181
+#: templates/download/debian.html:76 templates/download/debian.html:182
 #, python-format
 msgid "“%(codename)s”"
 msgstr ""
 
-#: templates/download/debian.html:83
+#: templates/download/debian.html:84
 msgid ""
 "Note: the second command line is optional, it is used to download source "
 "packages."
 msgstr ""
 
-#: templates/download/debian.html:86
+#: templates/download/debian.html:88
 msgid "Resynchronize your package index files:"
 msgstr ""
 
-#: templates/download/debian.html:89
+#: templates/download/debian.html:92
 msgid "Packages installation"
 msgstr ""
 
-#: templates/download/debian.html:91
+#: templates/download/debian.html:95
 msgid ""
 "Install the binary packages; the \"plugins\" package is highly recommended "
 "but not mandatory, scripting API packages are optional (popular languages "
 "are python and perl)."
 msgstr ""
 
-#: templates/download/debian.html:94
+#: templates/download/debian.html:99
 #, fuzzy
 #| msgid "next stable version"
 msgid "Example for the stable version:"
 msgstr "prossima versione stabile"
 
-#: templates/download/debian.html:98
+#: templates/download/debian.html:104
 #, fuzzy
 #| msgid "or development version"
 msgid "Example for the development version:"
 msgstr "o la versione di sviluppo"
 
-#: templates/download/debian.html:104
+#: templates/download/debian.html:109
 msgid ""
 "If needed, you can download the source package in order to rebuild binary "
 "packages:"
 msgstr ""
 
-#: templates/download/debian.html:114
+#: templates/download/debian.html:115
 msgid "Overview"
 msgstr ""
 
-#: templates/download/debian.html:162
+#: templates/download/debian.html:163
 msgid "Detail"
 msgstr ""
 
-#: templates/download/debian.html:192
+#: templates/download/debian.html:193
 msgid "Important"
 msgstr ""
 
-#: templates/download/debian.html:204
+#: templates/download/debian.html:205
 msgid "Architecture"
 msgstr ""
 
-#: templates/download/debian.html:206
+#: templates/download/debian.html:207
 msgid "files"
 msgstr ""
 
-#: templates/download/debian.html:229
+#: templates/download/debian.html:230
 msgid "Builds by"
 msgstr ""
 
-#: templates/download/debian.html:231
+#: templates/download/debian.html:232
 msgid "latest build:"
 msgstr ""
 
-#: templates/download/debian.html:234
+#: templates/download/debian.html:235
 msgid "next build:"
 msgstr ""
 
-#: templates/download/debian.html:249
+#: templates/download/debian.html:250
 #, fuzzy
 msgid "No debian repository."
 msgstr "Nessuno script trovato."
@@ -7508,3 +7512,8 @@ msgstr "Errore interno."
 #: themes/models.py:299
 msgid "Invalid name: different from theme."
 msgstr "Nome non valido: differente dal tema."
+
+#, fuzzy
+#~ msgid ""
+#~ "<strong>Important:</strong> the Raspbian repositories are NOT signed."
+#~ msgstr "Nessuno script trovato."

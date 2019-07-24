@@ -35,79 +35,83 @@ var deb_apt_cmds = [
 </div>
 {% endif %}
 
-<div id="accordion" class="mb-3">
-  <div class="card">
-    <div class="card-header" id="instructions">
-      {% trans "<strong>Important:</strong> these packages are not Debian official packages; please click and read instructions below before using these repositories." %}
-      <br>
-      <button class="btn btn-link m-0 p-0" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        {% trans "Installation instructions" %}
-      </button>
-    </div>
-    <div id="collapseOne" class="collapse" aria-labelledby="instructions" data-parent="#accordion">
-      <div class="card-body">
-        <h5 class="mt-0">{% trans "GPG key" %}</h5>
-        <p>
-          {% trans "Import the gpg key used to sign the repository:" %}
-          <pre><code>$ sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 11E9DE8848F2B65222AA75B8D1820DB22A11534E</code></pre>
-          {% trans "<strong>Important:</strong> the Raspbian repositories are NOT signed." %}
-        </p>
-        <h5>{% trans "APT configuration" %}</h5>
-        <p>
-          {% blocktrans %}You must use apt, apt-get or aptitude to install the packages (with sudo or as "root" user).{% endblocktrans %}
-          <br>{% trans "The following examples use sudo and apt-get." %}
-        </p>
-        <p>
-          {% trans "Install https transport for apt:" %}
-          <pre><code>$ sudo apt-get install apt-transport-https</code></pre>
-        </p>
-        <p>
-          <form class="form-inline">
-            {% trans "Create a weechat.list file with the repository, according to your distribution/version:" %}
-            <select id="deb_apt" class="form-control form-control-sm ml-3"
-                    onchange="document.getElementById('deb_apt_cmd').innerHTML = deb_apt_cmds[document.getElementById('deb_apt').selectedIndex]">
-              <option selected="selected">{% trans "Choose your distribution/version" %}</option>
-              {% for repo in repositories %}
-              {% if repo.visible %}
-              <option>
-                {{ repo.name|capfirst }}
-                {% comment %}Translators: purpose is to "translate" only quotes here{% endcomment %}
-                {% blocktrans with codename=repo.version.codename %}“{{ codename }}”{% endblocktrans %}
-                ({{ repo.version.version }})
-              </option>
-              {% endif %}
-              {% endfor %}
-            </select>
-          </form>
-          <pre class="mt-1"><code id="deb_apt_cmd">…<br>…</code></pre>
-          {% trans "Note: the second command line is optional, it is used to download source packages." %}
-        </p>
-        <p>
-          {% trans "Resynchronize your package index files:" %}
-          <pre><code>$ sudo apt-get update</code></pre>
-        </p>
-        <h5>{% trans "Packages installation" %}</h5>
-        <p>
-          {% blocktrans %}Install the binary packages; the "plugins" package is highly recommended but not mandatory, scripting API packages are optional (popular languages are python and perl).{% endblocktrans %}
-          <ul>
-            <li>
-              {% trans "Example for the stable version:" %}
-              <pre><code>$ sudo apt-get install weechat-curses weechat-plugins weechat-python weechat-perl</code></pre>
-            </li>
-            <li>
-              {% trans "Example for the development version:" %}
-              <pre><code>$ sudo apt-get install weechat-devel-curses weechat-devel-plugins weechat-devel-python weechat-devel-perl</code></pre>
-            </li>
-          </ul>
-        </p>
-        <p>
-          {% trans "If needed, you can download the source package in order to rebuild binary packages:" %}
-          <pre><code>$ apt-get source weechat-devel</code></pre>
-        </p>
-      </div>
-    </div>
-  </div>
+<div class="alert alert-primary">
+  {% trans "<strong>Important:</strong> these packages are not Debian official packages; please <strong>read instructions</strong> below before using these repositories." %}
 </div>
+
+<h3>{% trans "Installation instructions" %}</h3>
+
+<p>
+  {% blocktrans %}You must use apt, apt-get or aptitude to install the packages (with sudo or as "root" user).{% endblocktrans %}
+  <br>{% trans "The following examples use sudo and apt-get." %}
+</p>
+
+<h4>{% trans "Required packages" %}</h4>
+
+<p>
+  {% trans "The following packages must be installed:" %}
+  <pre><code>$ sudo apt-get install gpg-agent apt-transport-https</code></pre>
+</p>
+
+<h4>{% trans "GPG key" %}</h4>
+
+<p>
+  {% trans "Import the gpg key used to sign the repositories (except the Raspbian repositories, which are NOT signed):" %}
+  <pre><code>$ sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 11E9DE8848F2B65222AA75B8D1820DB22A11534E</code></pre>
+</p>
+
+<h4>{% trans "APT configuration" %}</h4>
+
+<p>
+  <form class="form-inline">
+    {% trans "Create a weechat.list file with the repository, according to your distribution/version:" %}
+    <select id="deb_apt" class="form-control form-control-sm ml-3"
+            onchange="document.getElementById('deb_apt_cmd').innerHTML = deb_apt_cmds[document.getElementById('deb_apt').selectedIndex]">
+      <option selected="selected">{% trans "Choose your distribution/version" %}</option>
+      {% for repo in repositories %}
+      {% if repo.visible %}
+      <option>
+        {{ repo.name|capfirst }}
+        {% comment %}Translators: purpose is to "translate" only quotes here{% endcomment %}
+        {% blocktrans with codename=repo.version.codename %}“{{ codename }}”{% endblocktrans %}
+        ({{ repo.version.version }})
+      </option>
+      {% endif %}
+      {% endfor %}
+    </select>
+  </form>
+  <pre class="mt-1"><code id="deb_apt_cmd">…<br>…</code></pre>
+</p>
+
+<p>
+  {% trans "Note: the second command line is optional, it is used to download source packages." %}
+</p>
+
+<p>
+  {% trans "Resynchronize your package index files:" %}
+  <pre><code>$ sudo apt-get update</code></pre>
+</p>
+
+<h4>{% trans "Packages installation" %}</h4>
+
+<p>
+  {% blocktrans %}Install the binary packages; the "plugins" package is highly recommended but not mandatory, scripting API packages are optional (popular languages are python and perl).{% endblocktrans %}
+</p>
+
+<p>
+  {% trans "Example for the stable version:" %}
+  <pre><code>$ sudo apt-get install weechat-curses weechat-plugins weechat-python weechat-perl</code></pre>
+</p>
+
+<p>
+  {% trans "Example for the development version:" %}
+  <pre><code>$ sudo apt-get install weechat-devel-curses weechat-devel-plugins weechat-devel-python weechat-devel-perl</code></pre>
+</p>
+
+<p>
+  {% trans "If needed, you can download the source package in order to rebuild binary packages:" %}
+  <pre><code>$ apt-get source weechat-devel</code></pre>
+</p>
 
 {% if debpkgs %}
 
