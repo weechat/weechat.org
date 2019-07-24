@@ -439,7 +439,7 @@ def handler_script_saved(sender, **kwargs):
 
 @disable_for_loaddata
 def handler_scripts_changed(sender, **kwargs):
-    """Build files plugins.{xml,json}(.gz) after update/delete of a script."""
+    """Build files scripts.{xml,json}(.gz) after update/delete of a script."""
     xml = '<?xml version="1.0" encoding="utf-8"?>\n'
     xml += '<plugins>\n'
     json_data = []
@@ -508,25 +508,25 @@ def handler_scripts_changed(sender, **kwargs):
         json_data.append(json_script)
     xml += '</plugins>\n'
 
-    # create plugins.xml
-    filename = files_path_join('plugins.xml')
+    # create scripts.xml
+    filename = files_path_join('scripts.xml')
     with open(filename, 'w', encoding='utf-8') as _file:
         _file.write(xml)
 
-    # create plugins.xml.gz
+    # create scripts.xml.gz
     with open(filename, 'rb') as _f_in:
         _f_out = gzip.open(filename + '.gz', 'wb')
         _f_out.writelines(_f_in)
         _f_out.close()
 
-    # create plugins.json
-    filename = files_path_join('plugins.json')
+    # create scripts.json
+    filename = files_path_join('scripts.json')
     with open(filename, 'w', encoding='utf-8') as _file:
         _file.write(json.dumps(json_data, indent=2, ensure_ascii=False,
                                separators=(',', ': ')))
         # json.dump(json_data, _file)
 
-    # create plugins.json.gz
+    # create scripts.json.gz
     with open(filename, 'rb') as _f_in:
         _f_out = gzip.open(filename + '.gz', 'wb')
         _f_out.writelines(_f_in)
