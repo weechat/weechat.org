@@ -22,16 +22,16 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-25 15:31+0200\n"
-"PO-Revision-Date: 2019-07-06 08:19+0200\n"
+"PO-Revision-Date: 2019-09-07 14:55+0200\n"
 "Last-Translator: Krzysztof Korościk <soltys@soltys.info>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.04.0\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 19.08.0\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10"
+" || n%100>=20) ? 1 : 2);\n"
 
 #: about/_i18n_keydates.py:8
 msgid "256 colors, irc proxy, rmodifier, redirection of irc commands."
@@ -47,7 +47,7 @@ msgstr "Dodano wsparcie dla TOTP (Jednorazowe hasła bazujące na czasie)."
 
 #: about/_i18n_keydates.py:11
 msgid "Add support of UNIX socket in Relay plugin."
-msgstr ""
+msgstr "Dodano wsparcie dla socketów UNIXowych we wtyczce Relay."
 
 #: about/_i18n_keydates.py:12
 msgid "Aspell plugin."
@@ -1453,9 +1453,9 @@ msgstr ""
 "- dodano kodowanie da serwera i kanału, nowa komenda: /charset\n"
 "- dodano wtyczkę skryptową Ruby\n"
 "- dodano ETA (Estimated Time of Arrival) dla transferów DCC\n"
-"- komenda /nick może byc użyta jeśli nie jesteśmy połączeni z serwerem\n"
+"- komenda /nick może być użyta jeśli nie jesteśmy połączeni z serwerem\n"
 "- dodano argument server/channel do polecenia /buffer w celu przemieszczania "
-"sie między buforami\n"
+"się między buforami\n"
 "- dodano nowe skróty klawiszowe do przełączania się pomiędzy oknami: alt-W "
 "następnie alt-strzałka\n"
 "- dodano nowe skróty do przewijania do następnego/poprzedniego higlighta: "
@@ -2851,10 +2851,10 @@ msgstr ""
 "\n"
 "- nowa opcja weechat.look.align_multiline_words\n"
 "- dodano opcje \"time\" do komendy /debug\n"
-"- dodano infrmacje \"uptime\" oraz \"pid\"\n"
+"- dodano informacje \"uptime\" oraz \"pid\"\n"
 "- dodano opcjonalne argumenty do szablonów dopełnień\n"
 "- dodano opcję serwera irc \"usermode\"\n"
-"- dodano tag \"self_msg\" dla włanych wiadomości\n"
+"- dodano tag \"self_msg\" dla własnych wiadomości\n"
 "- dodano plik konfiguracyjny fifo.conf dla wtyczki fifo\n"
 "- dodano opcję \"-oc\" dla komendy /exec\n"
 "- poprawiono wiele błędów.\n"
@@ -3293,7 +3293,6 @@ msgstr ""
 "href=\"/files/changelog/ChangeLog-2.4.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:128
-#, fuzzy
 #| msgid ""
 #| "Version 1.7 is available!\n"
 #| "\n"
@@ -3334,23 +3333,26 @@ msgid ""
 "blog/post/2019/06/06/Version-2.5\">development blog</a> or <a href=\"/files/"
 "changelog/ChangeLog-2.5.html\">ChangeLog</a>."
 msgstr ""
-"Wersja 1.7 jest dostępna!\n"
+"Wersja 2.5 jest dostępna!\n"
 "\n"
 "Najważniejsze zmiany:\n"
 "\n"
-"- nowa opcja weechat.look.align_multiline_words\n"
-"- dodano opcje \"time\" do komendy /debug\n"
-"- dodano infrmacje \"uptime\" oraz \"pid\"\n"
-"- dodano opcjonalne argumenty do szablonów dopełnień\n"
-"- dodano opcję serwera irc \"usermode\"\n"
-"- dodano tag \"self_msg\" dla włanych wiadomości\n"
-"- dodano plik konfiguracyjny fifo.conf dla wtyczki fifo\n"
-"- dodano opcję \"-oc\" dla komendy /exec\n"
+"- dodano wsparcie dla gniazd UNIXowych we wtyczce pośrednika\n"
+"- dodano opcję relay.weechat.commands\n"
+"- dodano trigger dla hooków \"info\" i \"info_hashtable\"\n"
+"- dodano opcję xfer.network.speed_limit_recv\n"
+"- dodano opcję weechat.look.buffer_time_same\n"
+"- dodano opcję weechat.look.prefix_same_nick_middle\n"
+"- dodano opcję \"addreplace\" dla komendy /filter\n"
+"- dodano elementy paska \"irc_nick\", \"irc_host\" i \"irc_nick_host\"\n"
+"- dodano funkcje command_options i string_match_list do API wtyczek\n"
+"- zmieniono nazwę wtyczki aspell na spell\n"
+"- użyto getopt do parsowania argumentów z linii poleceń\n"
 "- poprawiono wiele błędów.\n"
 "\n"
 "Pełną listę nowych funkcji i poprawionych błędów można znaleźć na <a href=\"/"
-"blog/post/2017/01/15/Version-1.7\">blogu developerskim</a> oraz w pliku <a "
-"href=\"/files/changelog/ChangeLog-1.7.html\">ChangeLog</a>."
+"blog/post/2019/06/06/Version-2.5\">blogu developerskim</a> oraz w pliku <a "
+"href=\"/files/changelog/ChangeLog-2.5.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:129
 msgid ""
@@ -3871,7 +3873,7 @@ msgstr "Element paska pokazujący ilość wpisanych znaków i pozycję kursora."
 #. Translators: description for script "last_written.py" (1.5+)
 #: scripts/_i18n_scripts.py:113
 msgid "Bar item to keep track of the last buffer where you wrote something."
-msgstr ""
+msgstr "Element paska pomagający śledzić w którym buforze ostatnio pisałeś."
 
 #. Translators: description for script "http_item.lua" (0.3.7+)
 #: scripts/_i18n_scripts.py:115
@@ -3969,7 +3971,7 @@ msgstr "Klient/server do wysyłania/odbierania powiadomień i ich wyświetlania.
 #. Translators: description for script "collapse_channel.py" (1.0+)
 #: scripts/_i18n_scripts.py:149
 msgid "Collapse channel buffers from servers without focus."
-msgstr ""
+msgstr "Zwija bufory kanałów z serwerów bez fokusa."
 
 #. Translators: description for script "colorize_lines.pl" (0.3.4+)
 #: scripts/_i18n_scripts.py:151
@@ -4295,10 +4297,9 @@ msgstr "Wyświetla dane z sensorów."
 
 #. Translators: description for script "log.py" (1.0+)
 #: scripts/_i18n_scripts.py:273
-#, fuzzy
 #| msgid "Delete log file of current buffer."
 msgid "Easy toggle of logging in current buffer."
-msgstr "Usuwa plik z logiem dla obecnego bufora."
+msgstr "Proste przełączanie logowania obecnego bufora."
 
 #. Translators: description for script "topicsed.pl" (0.3.0+)
 #: scripts/_i18n_scripts.py:275
@@ -4533,10 +4534,9 @@ msgstr "Blokuje wejście (dozwolone tylko komendy)."
 
 #. Translators: description for script "himan.py" (0.3.5+)
 #: scripts/_i18n_scripts.py:357
-#, fuzzy
 #| msgid "Show highlights in the active buffer."
 msgid "Log highlights to a private buffer."
-msgstr "pokazuje powiadomienia w aktywnym buforze."
+msgstr "Pokazuje powiadomienia w prywatnym buforze."
 
 #. Translators: description for script "awaylog.pl" (0.3.0+)
 #: scripts/_i18n_scripts.py:359
@@ -4687,7 +4687,7 @@ msgstr "Wyświetlanie informacj na ekranie."
 #. Translators: description for script "opall.js" (0.3.0+)
 #: scripts/_i18n_scripts.py:411
 msgid "Op everybody on a channel using chanserv instead of /mode."
-msgstr ""
+msgstr "Nadaje status OPa każdemu na kanale używając chanserva zamiast /mode."
 
 #. Translators: description for script "url_hinter.rb" (0.3.0+)
 #: scripts/_i18n_scripts.py:413
@@ -6395,13 +6395,11 @@ msgid "roadmap"
 msgstr "plan wydań"
 
 #: templates/dev/roadmap.html:13
-#, fuzzy
 #| msgid "Next versions"
 msgid "Future versions"
-msgstr "Następna wersja"
+msgstr "Następne wersje"
 
 #: templates/dev/roadmap.html:14
-#, fuzzy
 #| msgid "Old versions"
 msgid "Released versions"
 msgstr "Poprzednie wersje"
@@ -6795,7 +6793,6 @@ msgid "Error reading repositories:"
 msgstr "Błąd w odczycie repozytoriów:"
 
 #: templates/download/debian.html:39
-#, fuzzy
 #| msgid ""
 #| "<strong>Important:</strong> these packages are not Debian official "
 #| "packages; please click and read instructions below before using these "
@@ -6806,7 +6803,7 @@ msgid ""
 "repositories."
 msgstr ""
 "<strong>Ważne:</strong> te pakiety nie są oficjalnymi pakietami Debiana; "
-"przed użyciem repozytoriów należy przeczytać poniższą instrukcję."
+"przed ich użyciem należy <strong>przeczytać</strong> poniższą instrukcję."
 
 #: templates/download/debian.html:42
 msgid "Installation instructions"
@@ -6825,32 +6822,34 @@ msgid "The following examples use sudo and apt-get."
 msgstr "Poniższe przykłady używają sudo i apt-get."
 
 #: templates/download/debian.html:49
-#, fuzzy
 #| msgid "XZ packages"
 msgid "Required packages"
-msgstr "Archiwa XZ"
+msgstr "Wymagane pakiety"
 
 #: templates/download/debian.html:52
 msgid "The following packages must be installed:"
-msgstr ""
+msgstr "Następujące pakiety muszą zostać zainstalowane:"
 
 #: templates/download/debian.html:57
 msgid ""
 "Note: in some Linux distributions, the package gpg-agent is called gnupg-"
 "agent."
 msgstr ""
+"Uwaga: w niektórych dystrybucjach pakiet gpg-agent występuje pod "
+"nazwą gnupg-agent."
 
 #: templates/download/debian.html:60
 msgid "GPG key"
 msgstr "Klucz GPG"
 
 #: templates/download/debian.html:63
-#, fuzzy
 #| msgid "Import the gpg key used to sign the repository:"
 msgid ""
 "Import the gpg key used to sign the repositories (except the Raspbian "
 "repositories, which are NOT signed):"
-msgstr "Zaimportuj klucz pgp użyty do podpisania repozytorium:"
+msgstr ""
+"Zaimportuj klucz pgp użyty do podpisania repozytoriów (poza repozytoriami "
+"Raspbiana, które NIE są podpisane):"
 
 #: templates/download/debian.html:67
 msgid "APT configuration"
@@ -7497,7 +7496,7 @@ msgstr "wymaga"
 #: templates/scripts/list.html:160
 #, python-format
 msgid "Script disabled (%(reason)s)."
-msgstr ""
+msgstr "Skrypt wyłączony (%(reason)s)."
 
 #: templates/scripts/list.html:168 templates/scripts/source.html:25
 #: templates/themes/list.html:22
@@ -7723,6 +7722,9 @@ msgid ""
 "compatible with Python 3. Compiling by default with Python 3 should speed up "
 "the update of scripts."
 msgstr ""
+"Niestety, na tą chwilę tylko 42%% skryptów Pythonowych (96 z 226) jest "
+"kompatybilnych z Pythonem 3. Domyślna kompilacja z Pythonem 3 powinna "
+"przyspieszyć aktualizację skryptów."
 
 #: templates/scripts/python3.html:102
 msgid ""
@@ -7740,7 +7742,6 @@ msgstr ""
 "Pythonem 3."
 
 #: templates/scripts/python3.html:106
-#, fuzzy
 #| msgid ""
 #| "<strong>Important</strong>: at this date, all scripts that are not "
 #| "compatible with Python 3 are removed from repository and moved to "
@@ -7751,9 +7752,10 @@ msgid ""
 "page, but marked as \"disabled\" and these scripts can not be installed in "
 "WeeChat."
 msgstr ""
-"<strong>Ważne</strong>: wszystkie skrypty, które nie będą kompatybilne z "
-"Pythonem 3 zostaną usunięte z repozytorium i przeniesione do nieoficjalnych "
-"skryptów."
+"<strong>Ważne</strong>: tego dnia, wszystkie skrypty, które nie będą "
+"kompatybilne z Pythonem 3 zostaną wyłączone: wciąż będą widoczne na "
+"liście skryptów, ale będą oznaczone jako \"wyłączone\" i nie będą mogły być "
+"zainstalowane w WeeChat."
 
 #: templates/scripts/python3.html:111
 msgid "Transition status"
@@ -7863,10 +7865,9 @@ msgstr ""
 "przeładowana."
 
 #: templates/scripts/python3.html:269
-#, fuzzy
 #| msgid "Compatible with Python 3"
 msgid "To switch to Python 3.x:"
-msgstr "Kompatybilne z Pythonem 3"
+msgstr "Aby przełączyć się na Pythona 3.x:"
 
 #: templates/scripts/python3.html:274
 msgid "Check that Python version is 3.x:"
@@ -7875,7 +7876,7 @@ msgstr "Sprawdź czy wersja Pythona to 3.x:"
 #: templates/scripts/source.html:17
 #, python-format
 msgid "<strong>WARNING:</strong> this script has been disabled (%(reason)s)."
-msgstr ""
+msgstr "<strong>UWAGA:</strong> te skrypty zostały wyłączone (%(reason)s)."
 
 #: templates/scripts/source.html:29
 msgid "For WeeChat"
