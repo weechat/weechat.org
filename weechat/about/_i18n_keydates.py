@@ -38,3 +38,4 @@ def __i18n_keydates():
     gettext_noop("SASL authentication.")
     gettext_noop("Secured data, search of regular expression in buffer with text emphasis, dynamic day change message.")
     gettext_noop("Trigger and Exec plugins, bare display, hidden buffers, unit tests.")
+    gettext_noop("Use Python 3 by default.")

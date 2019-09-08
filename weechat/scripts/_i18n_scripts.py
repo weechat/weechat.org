@@ -79,8 +79,6 @@ def __i18n_scripts():
     gettext_noop("Auto show and hide nicklist depending on buffer name.")
     # Translators: description for script "yaaa.pl" (0.3.0+)
     gettext_noop("Auto-away script.")
-    # Translators: description for script "autopong.py" (0.3.0+)
-    gettext_noop("Auto-reply to ping queries.")
     # Translators: description for script "buffer_autoset.py" (0.3.2+)
     gettext_noop("Auto-set buffer properties when a buffer is opened.")
     # Translators: description for script "responsive_layout.py" (0.4.3+)
