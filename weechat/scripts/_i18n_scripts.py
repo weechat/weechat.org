@@ -412,7 +412,7 @@ def __i18n_scripts():
     # Translators: description for script "url_hinter.rb" (0.3.0+)
     gettext_noop("Open URLs without using the mouse.")
     # Translators: description for script "buffer_open.py" (1.0+)
-    gettext_noop("Open buffers by full name, reopen closed recently closed buffers, open layout buffers.")
+    gettext_noop("Open buffers by full name, reopen recently closed buffers, open layout buffers.")
     # Translators: description for script "xclip.pl" (0.3.0+)
     gettext_noop("Paste content from X11 clipboard.")
     # Translators: description for script "autoauth.py" (0.3.0+)
