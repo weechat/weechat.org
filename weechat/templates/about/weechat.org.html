@@ -43,6 +43,10 @@
 
 <p>
   {% blocktrans %}WeeChat.org is hosted by <a href="https://www.hetzner.de/en/">Hetzner</a>.{% endblocktrans %}
+  {% for info, value in extra_info.items %}
+  <br>
+  {{ info|capfirst }}: {{ value }}
+  {% endfor %}
 </p>
 
 <h3>Copyright</h3>

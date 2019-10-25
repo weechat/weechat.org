@@ -22,13 +22,17 @@
 
 # pylint: disable=invalid-name, no-value-for-parameter
 
+from django.conf import settings
 from django.conf.urls import url
 from django.views.generic.base import TemplateView
 
 from weechat.about.views import (
     screenshots as view_screenshots,
     history as view_history,
+    about as view_about,
 )
+
+URL_ABOUT_EXTRA = getattr(settings, 'URL_ABOUT_EXTRA', 'extra')
 
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='about/features.html'),
@@ -50,7 +54,7 @@ urlpatterns = [
     url(r'^support/$',
         TemplateView.as_view(template_name='about/support.html'),
         name='about_support'),
-    url(r'^weechat\.org/$',
-        TemplateView.as_view(template_name='about/weechat.org.html'),
-        name='about_weechat.org'),
+    url(r'^weechat\.org/$', view_about, name='about_weechat.org'),
+    url(r'^weechat\.org/%s/$' % URL_ABOUT_EXTRA, view_about,
+        {'extra_info': True}),
 ]

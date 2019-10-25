@@ -22,11 +22,13 @@
 
 import os
 
+from django import __version__ as django_version
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Sum
 from django.shortcuts import render
 from django.utils.translation import ugettext
+from sys import version as python_version
 
 from weechat.about.models import (
     Screenshot,
@@ -88,6 +90,19 @@ def history(request):
             'keydate_list': Keydate.objects.all().order_by('date'),
         },
     )
+
+
+def about(request, extra_info=False):
+    """About WeeChat.org."""
+    context = {}
+    if extra_info:
+        context.update({
+            'extra_info': {
+                'django': django_version,
+                'python': python_version,
+            },
+        })
+    return render(request, 'about/weechat.org.html', context)
 
 
 def donate(request, sort_key='date', view_key=''):
