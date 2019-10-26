@@ -280,6 +280,7 @@ def info(request, name=None):
                 {
                     'info': get_info(name, version),
                 },
+                content_type='text/plain; charset=utf-8',
             )
     else:
         infos = []
