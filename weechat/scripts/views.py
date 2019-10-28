@@ -399,10 +399,10 @@ def python3(request):
     # status at the end of transition (estimates)
     status_list.append({
         'date': datetime(2019, 12, 31),
-        'scripts': 395,
-        'python_scripts': 246,
-        'scripts_ok': 246,
-        'scripts_remaining': 0,
+        'scripts': 370,
+        'python_scripts': 233,
+        'scripts_ok': 137,
+        'scripts_remaining': 96,
     })
     # compute percentages and flag "future"
     now = datetime.now()
