@@ -60,8 +60,15 @@ var deb_apt_cmds = [
 <h4>{% trans "GPG key" %}</h4>
 
 <p>
-  {% trans "Import the gpg key used to sign the repositories (except the Raspbian repositories, which are NOT signed):" %}
+  {% trans "Import the GPG key used to sign the repositories (except the Raspbian repositories, which are NOT signed):" %}
   <pre><code>$ sudo apt-key adv --keyserver hkps://keys.openpgp.org --recv-keys 11E9DE8848F2B65222AA75B8D1820DB22A11534E</code></pre>
+</p>
+
+<p>
+  {% trans "In case of problem, the GPG key can be downloaded here:" %}
+  <a href="{% url 'dev_info_name' name='debian_repository_signing_key' %}">
+    {% trans "Debian/Ubuntu repository signing key (format: PGP public key)." %}
+  </a>
 </p>
 
 <h4>{% trans "APT configuration" %}</h4>

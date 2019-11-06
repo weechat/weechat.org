@@ -124,8 +124,13 @@
     <h6>{% trans "Checking the signatures:" %}</h6>
     <ul class="signatures mt-2">
       <li>
-        {% trans "Import the gpg key:" %}
-        <pre><code>$ gpg --keyserver hkps://keys.openpgp.org --recv-keys A9AB5AB778FA5C3522FD0378F82F4B16DEC408F8</code></pre></li>
+        {% trans "Import the GPG key:" %}
+        <pre><code>$ gpg --keyserver hkps://keys.openpgp.org --recv-keys A9AB5AB778FA5C3522FD0378F82F4B16DEC408F8</code></pre>
+        {% trans "In case of problem, the GPG key can be downloaded here:" %}
+        <a href="{% url 'dev_info_name' name='release_signing_key' %}">
+          {% trans "Release signing key (format: PGP public key)." %}
+        </a>
+      </li>
       <li>
         {% trans "Display the fingerprint:" %}
         <pre><code>$ gpg --fingerprint A9AB5AB778FA5C3522FD0378F82F4B16DEC408F8</code></pre>
