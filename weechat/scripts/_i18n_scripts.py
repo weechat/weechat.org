@@ -479,6 +479,8 @@ def __i18n_scripts():
     gettext_noop("Replace keywords with emoticons.")
     # Translators: description for script "shutup.py" (0.3.6+)
     gettext_noop("Replace text from specified IRC users with random or preset text.")
+    # Translators: description for script "glitter.py" (0.3.0+)
+    gettext_noop("Replace text wrapped in ***three asterisks*** with a rainbow colored version.")
     # Translators: description for script "text_replace.py" (0.3.0+)
     gettext_noop("Replaces text you write with replacement text.")
     # Translators: description for script "upside_down.py" (0.3.0+)
