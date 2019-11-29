@@ -202,6 +202,14 @@ def script_source(request, api='stable', scriptid='', scriptname=''):
     )
 
 
+def get_script_content(script_file):
+    """Get content of script file (replace "\r\n" by "\n")."""
+    content = script_file.read()
+    if isinstance(content, bytes):
+        content = content.decode('utf-8')
+    return content.replace('\r\n', '\n')
+
+
 def form_add(request):
     """Page with form to add a script."""
     if request.method == 'POST':
@@ -236,7 +244,7 @@ def form_add(request):
             filename = files_path_join('scripts', 'pending1',
                                        script.name_with_extension())
             with open(filename, 'w') as _file:
-                _file.write(scriptfile.read().replace('\r\n', '\n'))
+                _file.write(get_script_content(scriptfile))
 
             # send e-mail
             try:
@@ -318,7 +326,7 @@ def form_update(request):
                 email = EmailMessage(subject, body, sender,
                                      settings.SCRIPTS_MAILTO)
                 email.attach(script.name_with_extension(),
-                             scriptfile.read().replace('\r\n', '\n'),
+                             get_script_content(scriptfile),
                              'text/plain')
                 email.send()
             except:  # noqa: E722
