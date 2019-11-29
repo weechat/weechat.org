@@ -83,6 +83,14 @@ def theme_source(request, themeid=None, themename=None):
     )
 
 
+def get_theme_content(theme_file):
+    """Get content of theme file (replace "\r\n" by "\n")."""
+    content = theme_file.read()
+    if isinstance(content, bytes):
+        content = content.decode('utf-8')
+    return content.replace('\r\n', '\n')
+
+
 def form_add(request):
     """Page with form to add a theme."""
     if request.method == 'POST':
@@ -91,7 +99,7 @@ def form_add(request):
             themefile = request.FILES['themefile']
 
             # get properties
-            content = themefile.read().replace('\r\n', '\n')
+            content = get_theme_content(themefile)
             props = Theme.get_props(content)
 
             # add theme in database
@@ -165,7 +173,7 @@ def form_update(request):
             theme = Theme.objects.get(id=form.cleaned_data['theme'])
 
             # get properties
-            content = themefile.read().replace('\r\n', '\n')
+            content = get_theme_content(themefile)
             props = Theme.get_props(content)
 
             # send e-mail

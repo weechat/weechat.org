@@ -126,7 +126,9 @@ class Theme(models.Model):
         """Get theme properties (from header in file)."""
         props = {}
         for line in themestring.split('\n'):
-            line = str(line.strip().decode('utf-8'))
+            line = line.strip()
+            if isinstance(line, bytes):
+                line = line.decode('utf-8')
             if line.startswith('#'):
                 match = re.match('^# \\$([A-Za-z]+): (.*)', line)
                 if match:
@@ -205,7 +207,10 @@ class ThemeFormAdd(Form):
         _file = self.cleaned_data['themefile']
         if _file.size > 512*1024:
             raise forms.ValidationError(ugettext('Theme file too big.'))
-        props = Theme.get_props(_file.read())
+        content = _file.read()
+        if isinstance(content, bytes):
+            content = content.decode('utf-8')
+        props = Theme.get_props(content)
         if 'name' not in props or 'weechat' not in props:
             raise forms.ValidationError(ugettext('Invalid theme file.'))
         themes = Theme.objects.filter(name=props['name'])
@@ -288,7 +293,10 @@ class ThemeFormUpdate(Form):
         _file = self.cleaned_data['themefile']
         if _file.size > 512*1024:
             raise forms.ValidationError(ugettext('Theme file too big.'))
-        props = Theme.get_props(_file.read())
+        content = _file.read()
+        if isinstance(content, bytes):
+            content = content.decode('utf-8')
+        props = Theme.get_props(content)
         if 'name' not in props or 'weechat' not in props:
             raise forms.ValidationError(ugettext('Invalid theme file.'))
         theme = Theme.objects.get(id=self.cleaned_data['theme'])
