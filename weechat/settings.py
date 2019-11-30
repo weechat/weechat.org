@@ -35,7 +35,7 @@ LANGUAGE_CODE = 'en-us'
 USE_I18N = True
 USE_L10N = False
 
-ugettext = lambda s: s
+ugettext = lambda s: s  # noqa: E731
 LANGUAGES = (
     ('en', ugettext('English')),
     ('fr', ugettext('French')),
@@ -55,9 +55,14 @@ LANGUAGES_LOCALES = {
     'ja': 'ja_JP',
 }
 
-# Translators: this is a date format, see: http://www.php.net/date (note: the result string must be short, use abbreviation for month if possible)
+# Translators: this is a date format, see: http://www.php.net/date
+# Translators: (note: the result string must be short, use abbreviation
+# Translators: for month if possible)
 DATE_FORMAT = ugettext('M j, Y')
-# Translators: this is a date/time format, see: http://www.php.net/date (note: the result string must be short, use abbreviation for month if possible)
+
+# Translators: this is a date/time format, see: http://www.php.net/date
+# Translators: (note: the result string must be short, use abbreviation
+# Translators: for month if possible)
 DATETIME_FORMAT = ugettext('M j, Y H:i')
 
 MEDIA_ROOT = os.path.normpath(os.path.join(BASE_DIR, '..', 'media'))
@@ -134,7 +139,7 @@ TEMPLATES = [
 
 # read settings_local.py
 try:
-    from weechat.settings_local import *
+    from weechat.settings_local import *  # noqa: F401,F403
 except ImportError:
     from warnings import warn
     warn('File "settings_local.py" not found, using default settings')
