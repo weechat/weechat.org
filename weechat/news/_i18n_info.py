@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated after changes in database, DO NOT EDIT!
 
+# flake8: noqa
+
 from django.utils.translation import gettext_noop
 
 

@@ -32,6 +32,8 @@ def i18n_autogen(app, name, strings):
         '# -*- coding: utf-8 -*-',
         '# This file is auto-generated after changes in database, '
         'DO NOT EDIT!',
+        '',
+        '# flake8: noqa',
     ]
     if strings:
         content += [
