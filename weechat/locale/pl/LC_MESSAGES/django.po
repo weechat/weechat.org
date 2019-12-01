@@ -22,16 +22,16 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-30 13:16+0100\n"
-"PO-Revision-Date: 2019-09-07 14:55+0200\n"
+"PO-Revision-Date: 2019-12-01 14:48+0100\n"
 "Last-Translator: Krzysztof Korościk <soltys@soltys.info>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.08.0\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 19.08.3\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10"
+" || n%100>=20) ? 1 : 2);\n"
 
 #: about/_i18n_keydates.py:10
 msgid "256 colors, irc proxy, rmodifier, redirection of irc commands."
@@ -187,7 +187,7 @@ msgstr ""
 
 #: about/_i18n_keydates.py:43
 msgid "Use Python 3 by default."
-msgstr ""
+msgstr "Domyślnie używa Pythona w wersji 3."
 
 #. Translators: context: Individual / Association / Company
 #: about/models.py:34
@@ -3341,7 +3341,6 @@ msgstr ""
 "href=\"/files/changelog/ChangeLog-2.5.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:131
-#, fuzzy
 #| msgid ""
 #| "Version 1.7 is available!\n"
 #| "\n"
@@ -3382,23 +3381,27 @@ msgid ""
 "blog/post/2019/09/08/Version-2.6\">development blog</a> or <a href=\"/files/"
 "changelog/ChangeLog-2.6.html\">ChangeLog</a>."
 msgstr ""
-"Wersja 1.7 jest dostępna!\n"
+"Wersja 2.6 jest dostępna!\n"
 "\n"
 "Najważniejsze zmiany:\n"
 "\n"
-"- nowa opcja weechat.look.align_multiline_words\n"
-"- dodano opcje \"time\" do komendy /debug\n"
-"- dodano informacje \"uptime\" oraz \"pid\"\n"
-"- dodano opcjonalne argumenty do szablonów dopełnień\n"
-"- dodano opcję serwera irc \"usermode\"\n"
-"- dodano tag \"self_msg\" dla własnych wiadomości\n"
-"- dodano plik konfiguracyjny fifo.conf dla wtyczki fifo\n"
-"- dodano opcję \"-oc\" dla komendy /exec\n"
+"- Python 3 jest domyślnie używany\n"
+"- dodano wsparcie dla 32767 par kolorów\n"
+"- dodano opcję \"close\" w komendzie /window\n"
+"- dodano informacje \"term_colors\" i \"term_color_pairs\"\n"
+"- dodano infolistę \"buflist\" z listą wskaźników bufora\n"
+"- opcja przetwarzania exec.command.shell zmienia domyślną wartość na"
+" \"${env:SHELL}\"\n"
+"- dodano filtry \"h=xxx\" i \"he=xxx\" do opcji filtrowania po opisie w"
+" buforze fset "
+"(przetłumaczonym lub po angielsku)\n"
+"- znak komendy jest opcjonalny w opcji serwera \"command\"\n"
+"- usunięto domyślne aliasy /ame i /amsg\n"
 "- poprawiono wiele błędów.\n"
 "\n"
 "Pełną listę nowych funkcji i poprawionych błędów można znaleźć na <a href=\"/"
-"blog/post/2017/01/15/Version-1.7\">blogu developerskim</a> oraz w pliku <a "
-"href=\"/files/changelog/ChangeLog-1.7.html\">ChangeLog</a>."
+"blog/post/2019/09/08/Version-2.6\">blogu developerskim</a> oraz w pliku <a "
+"href=\"/files/changelog/ChangeLog-2.6.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:132
 msgid ""
@@ -4602,7 +4605,7 @@ msgstr ""
 #. Translators: description for script "aesthetic.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:367
 msgid "Make messages more A E S T H E T I C A L L Y pleasing."
-msgstr ""
+msgstr "Spraw, że wiadomości będą bardziej E S T E T Y C Z N E."
 
 #. Translators: description for script "xterm_paste.pl" (0.3.9+)
 #: scripts/_i18n_scripts.py:369
@@ -4744,6 +4747,8 @@ msgid ""
 "Open buffers by full name, reopen recently closed buffers, open layout "
 "buffers."
 msgstr ""
+"Otwórz wiele buforów po pełnej nazwie, otwórz ostatnio zamknięte bufory,"
+" otwórz układ buforów."
 
 #. Translators: description for script "xclip.pl" (0.3.0+)
 #: scripts/_i18n_scripts.py:419
@@ -4934,6 +4939,7 @@ msgstr ""
 msgid ""
 "Replace text wrapped in ***three asterisks*** with a rainbow colored version."
 msgstr ""
+"Zamień tekst pomiędzy ***trzema gwiazdkami*** na tekst pokolorowany tęczą."
 
 #. Translators: description for script "text_replace.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:487
@@ -6892,7 +6898,6 @@ msgid "GPG key"
 msgstr "Klucz GPG"
 
 #: templates/download/debian.html:63
-#, fuzzy
 #| msgid ""
 #| "Import the gpg key used to sign the repositories (except the Raspbian "
 #| "repositories, which are NOT signed):"
@@ -6900,12 +6905,12 @@ msgid ""
 "Import the GPG key used to sign the repositories (except the Raspbian "
 "repositories, which are NOT signed):"
 msgstr ""
-"Zaimportuj klucz pgp użyty do podpisania repozytoriów (poza repozytoriami "
+"Zaimportuj klucz GPG użyty do podpisania repozytoriów (poza repozytoriami "
 "Raspbiana, które NIE są podpisane):"
 
 #: templates/download/debian.html:68 templates/download/packages.html:129
 msgid "In case of problem, the GPG key can be downloaded here:"
-msgstr ""
+msgstr "W razie problemów klucz GPG można pobrać stad:"
 
 #: templates/download/debian.html:74
 msgid "APT configuration"
@@ -7100,10 +7105,9 @@ msgid "Checking the signatures:"
 msgstr "Sprawdzanie sygnatur:"
 
 #: templates/download/packages.html:127
-#, fuzzy
 #| msgid "Import the gpg key:"
 msgid "Import the GPG key:"
-msgstr "Zaimportuj klucz gpg:"
+msgstr "Zaimportuj klucz GPG:"
 
 #: templates/download/packages.html:135
 msgid "Display the fingerprint:"
