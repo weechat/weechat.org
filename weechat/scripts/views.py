@@ -382,6 +382,14 @@ def python3(request):
         'scripts_ok': 96,
         'scripts_remaining': 130,
     })
+    # status on 2020-01-01 (initial end of transition)
+    status_list.append({
+        'date': datetime(2020, 1, 1),
+        'scripts': 364,
+        'python_scripts': 228,
+        'scripts_ok': 125,
+        'scripts_remaining': 103,
+    })
     # status today
     scripts = (Script.objects.filter(approved=True)
                .filter(min_weechat__gte=API_STABLE)
@@ -406,11 +414,11 @@ def python3(request):
     })
     # status at the end of transition (estimates)
     status_list.append({
-        'date': datetime(2019, 12, 31),
+        'date': datetime(2020, 5, 1),
         'scripts': 370,
         'python_scripts': 233,
-        'scripts_ok': 137,
-        'scripts_remaining': 96,
+        'scripts_ok': 160,
+        'scripts_remaining': 73,
     })
     # compute percentages and flag "future"
     now = datetime.now()
@@ -436,7 +444,8 @@ def python3(request):
             'roadmap_new_py3k': datetime(2018, 7, 1),
             'roadmap_all_py3k': datetime(2018, 9, 1),
             'roadmap_weechat_py3k': datetime(2019, 7, 1),
-            'roadmap_end': datetime(2020, 1, 1),
+            'roadmap_initial_end': datetime(2020, 1, 1),
+            'roadmap_end': datetime(2020, 5, 1),
             'status_list': status_list,
         },
     )

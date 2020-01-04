@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-08 16:44+0100\n"
-"PO-Revision-Date: 2019-12-01 14:48+0100\n"
+"POT-Creation-Date: 2020-01-04 21:48+0100\n"
+"PO-Revision-Date: 2020-01-04 21:42+0100\n"
 "Last-Translator: Krzysztof Korościk <soltys@soltys.info>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -6182,7 +6182,7 @@ msgid "Key dates"
 msgstr "Kluczowe daty"
 
 #: templates/about/history.html:43 templates/donate.html:90
-#: templates/scripts/pending.html:38 templates/scripts/python3.html:122
+#: templates/scripts/pending.html:38 templates/scripts/python3.html:130
 msgid "Date"
 msgstr "Data"
 
@@ -6214,7 +6214,7 @@ msgstr "Typ"
 msgid "Site"
 msgstr "Strona"
 
-#: templates/about/interfaces.html:27 templates/scripts/python3.html:133
+#: templates/about/interfaces.html:27 templates/scripts/python3.html:141
 msgid "Notes"
 msgstr "Notatki"
 
@@ -6386,7 +6386,7 @@ msgid "Download"
 msgstr "Pobierz"
 
 #: templates/base.html:38 templates/base.html:111 templates/dev/stats.html:14
-#: templates/home/home.html:66 templates/scripts/python3.html:123
+#: templates/home/home.html:66 templates/scripts/python3.html:131
 #: templates/scripts/scripts.html:11
 msgid "Scripts"
 msgstr "Skrypty"
@@ -7733,7 +7733,7 @@ msgstr ""
 "Aby skompilować wsparcie dla Pythona 3 i szybko przełączać między Pythonem "
 "2.7 a 3.x zobacz:"
 
-#: templates/scripts/python3.html:46 templates/scripts/python3.html:220
+#: templates/scripts/python3.html:46 templates/scripts/python3.html:228
 msgid "Compile and test with Python 2.7 and 3.x"
 msgstr "Skompiluj i testuj z Pythonem 2.7 i 3.x"
 
@@ -7836,6 +7836,24 @@ msgstr ""
 "przyspieszyć aktualizację skryptów."
 
 #: templates/scripts/python3.html:102
+msgid "It is the initial end date for the transition."
+msgstr ""
+
+#: templates/scripts/python3.html:104
+#, fuzzy, python-format
+#| msgid ""
+#| "Unfortunately, at this date, only 42%% of Python scripts (96 out of 226) "
+#| "are compatible with Python 3. Compiling by default with Python 3 should "
+#| "speed up the update of scripts."
+msgid ""
+"Unfortunately, at this date, only 46%% of Python scripts (103 out of 228) "
+"are compatible with Python 3. The end of transition is postponed (see below)."
+msgstr ""
+"Niestety, na tą chwilę tylko 42%% skryptów Pythonowych (96 z 226) jest "
+"kompatybilnych z Pythonem 3. Domyślna kompilacja z Pythonem 3 powinna "
+"przyspieszyć aktualizację skryptów."
+
+#: templates/scripts/python3.html:110
 msgid ""
 "All new scripts as well as script updates must be compatible with Python 3."
 "x. Extra support of Python 2.x is optional."
@@ -7843,14 +7861,14 @@ msgstr ""
 "Wszystkie nowe skrypty jak i aktualizacje muszą być kompatybilne z Pythonem "
 "3.x. Wsparcie dla Pythona 2.x będzie opcjonalne."
 
-#: templates/scripts/python3.html:104
+#: templates/scripts/python3.html:112
 msgid ""
 "Hopefully, at this date, all scripts should be compatible with Python 3."
 msgstr ""
 "Mamy nadzieję, że do tego czasu wszystkie skrypty będą kompatybilne z "
 "Pythonem 3."
 
-#: templates/scripts/python3.html:106
+#: templates/scripts/python3.html:114
 msgid ""
 "<strong>Important</strong>: at this date, all scripts that are not "
 "compatible with Python 3 are disabled: still visible on the scripts list "
@@ -7862,51 +7880,51 @@ msgstr ""
 "skryptów, ale będą oznaczone jako \"wyłączone\" i nie będą mogły być "
 "zainstalowane w WeeChat."
 
-#: templates/scripts/python3.html:111
+#: templates/scripts/python3.html:119
 msgid "Transition status"
 msgstr "Statystyki migracji"
 
-#: templates/scripts/python3.html:114
+#: templates/scripts/python3.html:122
 msgid ""
 "The scripts which are compatible with Python 3 have tag \"py3k-ok\"</a>."
 msgstr "Skrypty kompatybilne z Pythonem 3 posiadają tag \"py3k-ok\"</a>."
 
-#: templates/scripts/python3.html:116
+#: templates/scripts/python3.html:124
 msgid "Transition status at various dates:"
 msgstr "Statystyki migracji w konkretnych datach:"
 
-#: templates/scripts/python3.html:124
+#: templates/scripts/python3.html:132
 msgid "Python scripts"
 msgstr "Skrypty pythonowe"
 
 #. Translators: use plural form for "compatible", if needed
-#: templates/scripts/python3.html:127
+#: templates/scripts/python3.html:135
 msgid "Compatible with Python 3"
 msgstr "Kompatybilne z Pythonem 3"
 
 #. Translators: use plural form for "compatible", if needed
-#: templates/scripts/python3.html:131
+#: templates/scripts/python3.html:139
 msgid "Not yet compatible"
 msgstr "Jeszcze nie kompatybilne"
 
-#: templates/scripts/python3.html:141
+#: templates/scripts/python3.html:149
 msgid "today"
 msgstr "dziś"
 
-#: templates/scripts/python3.html:149 templates/scripts/python3.html:159
-#: templates/scripts/python3.html:171 templates/scripts/python3.html:183
+#: templates/scripts/python3.html:157 templates/scripts/python3.html:167
+#: templates/scripts/python3.html:179 templates/scripts/python3.html:191
 msgid "list"
 msgstr "lista"
 
-#: templates/scripts/python3.html:187
+#: templates/scripts/python3.html:195
 msgid "Estimates"
 msgstr "Estymata"
 
-#: templates/scripts/python3.html:195
+#: templates/scripts/python3.html:203
 msgid "How to help"
 msgstr "Jak pomóc"
 
-#: templates/scripts/python3.html:198
+#: templates/scripts/python3.html:206
 msgid ""
 "If possible, the author of script should make the necessary changes to make "
 "the script compatible with both Python 2.7 and 3.x."
@@ -7914,13 +7932,13 @@ msgstr ""
 "W miarę możliwości, autor skryptu powinien dokonać potrzebnych zmian, aby "
 "skrypt był kompatybilny z Pythonem 2.7 i Pythonem 3.x."
 
-#: templates/scripts/python3.html:202
+#: templates/scripts/python3.html:210
 msgid ""
 "Here's a list of some resources that can help to port scripts to Python 3:"
 msgstr ""
 "Lista materiałów, które mogą pomóc przy portowaniu skryptów do Pythona 3:"
 
-#: templates/scripts/python3.html:223
+#: templates/scripts/python3.html:231
 msgid ""
 "You can not use Python 2.7 and 3.x at same time in WeeChat, but you could "
 "compile both versions of the Python plugin and switch the Python plugin with "
@@ -7930,7 +7948,7 @@ msgstr ""
 "skompilować dwie wersje wtyczki Python i przełączać między nimi za pomocą "
 "aliasów."
 
-#: templates/scripts/python3.html:227
+#: templates/scripts/python3.html:235
 msgid ""
 "First check that you have both Python 2.7 and 3.x libraries installed to "
 "compile WeeChat with both versions."
@@ -7938,7 +7956,7 @@ msgstr ""
 "Najpierw upewnij się, że masz zaintalowanego Pythona i biblioteki w wersji "
 "2.7 i 3.x do kompilacji WeeChat dla obu wersji."
 
-#: templates/scripts/python3.html:231
+#: templates/scripts/python3.html:239
 msgid ""
 "Compile WeeChat with Python 3.x and install it in home directory. From the "
 "cloned git repository:"
@@ -7946,34 +7964,34 @@ msgstr ""
 "Skompiluj WeeChat z Pythonem 3 i zainstaluj go w katalogu domowym. Z "
 "katalogu ze sklonowanym repozytorium:"
 
-#: templates/scripts/python3.html:243
+#: templates/scripts/python3.html:251
 msgid "Run WeeChat:"
 msgstr "Uruchom Weechat:"
 
-#: templates/scripts/python3.html:248
+#: templates/scripts/python3.html:256
 msgid "Check that Python version is 2.7:"
 msgstr "Sprawdź czy wersja Pythona to 2.7:"
 
-#: templates/scripts/python3.html:257
+#: templates/scripts/python3.html:265
 msgid "Add aliases to quickly switch between Python 2.7 and 3.x:"
 msgstr ""
 "Dodaj aliasy do szybkiego przełączania się pomiędzy wersją Pythona 2.7 a 3.x:"
 
-#: templates/scripts/python3.html:263
+#: templates/scripts/python3.html:271
 msgid "Now you can type /py2 or /py3 to switch the Python version."
 msgstr "Teraz możesz wpisać /py2 lub /py3 aby przełączyć wersje Pythona."
 
-#: templates/scripts/python3.html:265
+#: templates/scripts/python3.html:273
 msgid "Note: this unloads all scripts because the Python plugin is reloaded."
 msgstr ""
 "Uwaga: to wyładuje wszystkie skrypty, ponieważ wtyczka Python zostanie "
 "przeładowana."
 
-#: templates/scripts/python3.html:269
+#: templates/scripts/python3.html:277
 msgid "To switch to Python 3.x:"
 msgstr "Aby przełączyć się na Pythona 3.x:"
 
-#: templates/scripts/python3.html:274
+#: templates/scripts/python3.html:282
 msgid "Check that Python version is 3.x:"
 msgstr "Sprawdź czy wersja Pythona to 3.x:"
 
@@ -8153,16 +8171,3 @@ msgstr "Wewnętrzny błąd."
 #: themes/models.py:307
 msgid "Invalid name: different from theme."
 msgstr "Niewłaściwa nazwa: różni się od motywu."
-
-#~ msgid "Remove leading and trailing whitespace before sending text."
-#~ msgstr "Usuwa biale znaki z przodu i z tylu tekstu przed wysłaniem."
-
-#~ msgid "Auto-reply to ping queries."
-#~ msgstr "Automatyczna odpowiedz na zapytania ping."
-
-#~ msgid ""
-#~ "<strong>Important:</strong> the Raspbian repositories are NOT signed."
-#~ msgstr "<strong>Ważne:</strong> repozytoria Raspbiana NIE są podpisane."
-
-#~ msgid "Install https transport for apt:"
-#~ msgstr "Zainstaluj obsługę https dla apta:"
