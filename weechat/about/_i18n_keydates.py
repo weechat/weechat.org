@@ -8,6 +8,7 @@ from django.utils.translation import gettext_noop
 
 def __i18n_keydates():
     gettext_noop("256 colors, irc proxy, rmodifier, redirection of irc commands.")
+    gettext_noop("Add calculation of expression in evaluation of expressions, add colors in log files, add filters on IRC raw buffer.")
     gettext_noop("Add hook \"line\".")
     gettext_noop("Add support of TOTP (Time-based One Time Password).")
     gettext_noop("Add support of UNIX socket in Relay plugin.")
