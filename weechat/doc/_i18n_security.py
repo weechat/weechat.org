@@ -9,6 +9,7 @@ from django.utils.translation import gettext_noop
 def __i18n_security():
     gettext_noop("/set irc.network.colors_receive off")
     gettext_noop("Buffer overflow when decoding IRC colors in strings.")
+    gettext_noop("Buffer overflow when receiving a malformed IRC message 324 (channel mode).")
     gettext_noop("Buffer overflow when removing quotes in DCC filename.")
     gettext_noop("Buffer overflows in build of strings.")
     gettext_noop("Crash when receiving special chars in IRC messages.")

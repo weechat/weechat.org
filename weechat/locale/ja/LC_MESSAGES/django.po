@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-08 20:47+0100\n"
+"POT-Creation-Date: 2020-02-08 20:57+0100\n"
 "PO-Revision-Date: 2020-01-04 21:42+0100\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
@@ -295,18 +295,23 @@ msgid "Buffer overflow when decoding IRC colors in strings."
 msgstr "文字列中の IRC 色をデコードする際にバッファオーバーフロー。"
 
 #: doc/_i18n_security.py:12
+msgid ""
+"Buffer overflow when receiving a malformed IRC message 324 (channel mode)."
+msgstr ""
+
+#: doc/_i18n_security.py:13
 msgid "Buffer overflow when removing quotes in DCC filename."
 msgstr "DCC ファイル名内の引用符を削除する際にバッファオーバーフロー。"
 
-#: doc/_i18n_security.py:13
+#: doc/_i18n_security.py:14
 msgid "Buffer overflows in build of strings."
 msgstr "文字列を作る際にバッファオーバーフロー。"
 
-#: doc/_i18n_security.py:14
+#: doc/_i18n_security.py:15
 msgid "Crash when receiving special chars in IRC messages."
 msgstr "IRC メッセージに特定の文字が含まれる際にクラッシュ。"
 
-#: doc/_i18n_security.py:15
+#: doc/_i18n_security.py:16
 msgid ""
 "Create a trigger (with WeeChat >= 1.1): /trigger add irc_dcc_quotes modifier "
 "\"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND ${\\x22} \" "
@@ -316,7 +321,7 @@ msgstr ""
 "irc_dcc_quotes modifier \"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}"
 "DCC SEND ${\\x22} \" \"/.*//\""
 
-#: doc/_i18n_security.py:16
+#: doc/_i18n_security.py:17
 msgid ""
 "Date/time conversion specifiers are expanded after replacing buffer local "
 "variables in name of log files. In some cases, this can lead to an error in "
@@ -326,18 +331,18 @@ msgstr ""
 "しばしば、strftime 関数が失敗して初期化されていないバッファを利用することでク"
 "ラッシュが引き起こされる事があります。"
 
-#: doc/_i18n_security.py:17
+#: doc/_i18n_security.py:18
 msgid ""
 "Do not use command /notify with nicks containing formatting chars like \"%\"."
 msgstr ""
 "/notify コマンドは \"%\" などの書式文字を含むニックネームと一緒に使わないでく"
 "ださい。"
 
-#: doc/_i18n_security.py:18
+#: doc/_i18n_security.py:19
 msgid "Do not use irc protocol in relay plugin."
 msgstr "リレープラグインで irc プロトコルを使わないでください。"
 
-#: doc/_i18n_security.py:19
+#: doc/_i18n_security.py:20
 msgid ""
 "Missing verifications in SSL certificate, which allows man-in-the-middle "
 "attackers to spoof an SSL chat server via an arbitrary certificate."
@@ -345,14 +350,14 @@ msgstr ""
 "SSL 証明書にある欠陥の見落とし。これにより任意の証明書を経由して SSL チャット"
 "サーバになりすました中間者攻撃を受けることになります。"
 
-#: doc/_i18n_security.py:20
+#: doc/_i18n_security.py:21
 msgid ""
 "Remove/unload all scripts calling function hook_process (for maximum safety)."
 msgstr ""
 "hook_process 関数を使っている全てのスクリプトを削除/アンロードしてください "
 "(最大限の安全を確保するために)。"
 
-#: doc/_i18n_security.py:21
+#: doc/_i18n_security.py:22
 msgid ""
 "Turn off option \"irc.network.send_unknown_commands\" or do not use "
 "formatting chars like \"%\" when sending unknown commands to server."
@@ -360,11 +365,11 @@ msgstr ""
 "オプション \"irc.network.send_unknown_commands\" をオフにするか、不明なコマン"
 "ドをサーバに送る際には \"%\" などの書式文字を使わないでください。"
 
-#: doc/_i18n_security.py:22
+#: doc/_i18n_security.py:23
 msgid "Uncontrolled format string in API function infobar_printf."
 msgstr "infobar_printf API 関数の書式文字列攻撃。"
 
-#: doc/_i18n_security.py:23
+#: doc/_i18n_security.py:24
 msgid ""
 "Uncontrolled format string when IRC commands are redirected by relay plugin. "
 "If the output or redirected command contains formatting chars like \"%\", "
@@ -374,7 +379,7 @@ msgstr ""
 "はリダイレクトされたコマンドに \"%\" などの文字列が含まれる場合、WeeChat がク"
 "ラッシュします。"
 
-#: doc/_i18n_security.py:24
+#: doc/_i18n_security.py:25
 msgid ""
 "Uncontrolled format string when sending IRC \"ison\" command for nicks "
 "monitored with command /notify."
@@ -382,7 +387,7 @@ msgstr ""
 "/notify コマンドで監視しているニックネームに対して IRC が \"ison\" コマンドを"
 "送信する際の書式文字列攻撃。"
 
-#: doc/_i18n_security.py:25
+#: doc/_i18n_security.py:26
 msgid ""
 "Uncontrolled format string when sending unknown IRC command to server (if "
 "option \"irc.network.send_unknown_commands\" is on)."
@@ -390,11 +395,11 @@ msgstr ""
 "未知の IRC コマンドをサーバに送信する際の書式文字列攻撃 (\"irc.network."
 "send_unknown_commands\" オプションが ON の場合)。"
 
-#: doc/_i18n_security.py:26
+#: doc/_i18n_security.py:27
 msgid "Unload the logger plugin: /plugin unload logger"
 msgstr "logger プラグインのアンロード: /plugin unload logger"
 
-#: doc/_i18n_security.py:27
+#: doc/_i18n_security.py:28
 msgid ""
 "Untrusted command for function hook_process could lead to execution of "
 "commands, because of shell expansions (so the problem is only caused by some "
