@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-09 21:00+0100\n"
+"POT-Creation-Date: 2020-02-20 21:27+0100\n"
 "PO-Revision-Date: 2020-01-04 21:42+0100\n"
 "Last-Translator: Alexandre Bolelli <semeion7@gmail.com>\n"
 "Language-Team: Portuguese <semeion7@gmail.com>\n"
@@ -334,35 +334,41 @@ msgid "Buffer overflows in build of strings."
 msgstr "Buffer overflows na construção de strings."
 
 #: doc/_i18n_security.py:16
-msgid "Crash when receiving special chars in IRC messages."
+#, fuzzy
+#| msgid "Crash when receiving special chars in IRC messages."
+msgid "Crash when receiving a malformed IRC message 352 (WHO)."
 msgstr "Falha durante o recebimento de caracteres especiais em mensagens IRC."
 
 #: doc/_i18n_security.py:17
+msgid "Crash when receiving special chars in IRC messages."
+msgstr "Falha durante o recebimento de caracteres especiais em mensagens IRC."
+
+#: doc/_i18n_security.py:18
 msgid ""
 "Create a trigger (with WeeChat >= 1.1): /trigger add irc_dcc_quotes modifier "
 "\"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND ${\\x22} \" "
 "\"/.*//\""
 msgstr ""
 
-#: doc/_i18n_security.py:18
+#: doc/_i18n_security.py:19
 msgid ""
 "Date/time conversion specifiers are expanded after replacing buffer local "
 "variables in name of log files. In some cases, this can lead to an error in "
 "function strftime and a crash caused by the use of an uninitialized buffer."
 msgstr ""
 
-#: doc/_i18n_security.py:19
+#: doc/_i18n_security.py:20
 msgid ""
 "Do not use command /notify with nicks containing formatting chars like \"%\"."
 msgstr ""
 "Não use o comando /notify com apelidos contendo caracteres de formatação "
 "como \"%\"."
 
-#: doc/_i18n_security.py:20
+#: doc/_i18n_security.py:21
 msgid "Do not use irc protocol in relay plugin."
 msgstr "Não use o protocolo irc no plugin de retransmissão."
 
-#: doc/_i18n_security.py:21
+#: doc/_i18n_security.py:22
 msgid ""
 "Missing verifications in SSL certificate, which allows man-in-the-middle "
 "attackers to spoof an SSL chat server via an arbitrary certificate."
@@ -371,14 +377,14 @@ msgstr ""
 "in-the-middle enganem um servidor de chat com SSL através de um certificado "
 "arbitrário."
 
-#: doc/_i18n_security.py:22
+#: doc/_i18n_security.py:23
 msgid ""
 "Remove/unload all scripts calling function hook_process (for maximum safety)."
 msgstr ""
 "Remove/descarrega todos os scripts chamando a função hook_process (para "
 "segurança máxima)."
 
-#: doc/_i18n_security.py:23
+#: doc/_i18n_security.py:24
 msgid ""
 "Turn off option \"irc.network.send_unknown_commands\" or do not use "
 "formatting chars like \"%\" when sending unknown commands to server."
@@ -387,11 +393,11 @@ msgstr ""
 "caracteres de formatação como \"%\" quando enviar comandos desconhecidos ao "
 "servidor."
 
-#: doc/_i18n_security.py:24
+#: doc/_i18n_security.py:25
 msgid "Uncontrolled format string in API function infobar_printf."
 msgstr "String de formato descontrolada na função de API infobar_printf."
 
-#: doc/_i18n_security.py:25
+#: doc/_i18n_security.py:26
 msgid ""
 "Uncontrolled format string when IRC commands are redirected by relay plugin. "
 "If the output or redirected command contains formatting chars like \"%\", "
@@ -401,7 +407,7 @@ msgstr ""
 "plugin de retransmissão. Se a saída ou comando redirecionado contém "
 "caracteres formatantes como \"%\", isto pode levar à falha do WeeChat."
 
-#: doc/_i18n_security.py:26
+#: doc/_i18n_security.py:27
 msgid ""
 "Uncontrolled format string when sending IRC \"ison\" command for nicks "
 "monitored with command /notify."
@@ -409,7 +415,7 @@ msgstr ""
 "String de formato descontrolada quando enviando comandos IRC \"ison\" para "
 "apelidos monitorados com o comando /notify."
 
-#: doc/_i18n_security.py:27
+#: doc/_i18n_security.py:28
 msgid ""
 "Uncontrolled format string when sending unknown IRC command to server (if "
 "option \"irc.network.send_unknown_commands\" is on)."
@@ -418,11 +424,11 @@ msgstr ""
 "para o servidor (se a opção \"irc.network.send_unknown_commands\" está "
 "habilitada)."
 
-#: doc/_i18n_security.py:28
+#: doc/_i18n_security.py:29
 msgid "Unload the logger plugin: /plugin unload logger"
 msgstr ""
 
-#: doc/_i18n_security.py:29
+#: doc/_i18n_security.py:30
 msgid ""
 "Untrusted command for function hook_process could lead to execution of "
 "commands, because of shell expansions (so the problem is only caused by some "

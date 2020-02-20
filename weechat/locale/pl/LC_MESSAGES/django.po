@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-09 21:00+0100\n"
+"POT-Creation-Date: 2020-02-20 21:27+0100\n"
 "PO-Revision-Date: 2020-01-04 21:42+0100\n"
 "Last-Translator: Krzysztof Korościk <soltys@soltys.info>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -314,10 +314,16 @@ msgid "Buffer overflows in build of strings."
 msgstr "Przepełnienie bufora w budowaniu ciągów."
 
 #: doc/_i18n_security.py:16
-msgid "Crash when receiving special chars in IRC messages."
+#, fuzzy
+#| msgid "Crash when receiving special chars in IRC messages."
+msgid "Crash when receiving a malformed IRC message 352 (WHO)."
 msgstr "Crash podczas otrzymywania znaków specjalnych w wiadomości IRC."
 
 #: doc/_i18n_security.py:17
+msgid "Crash when receiving special chars in IRC messages."
+msgstr "Crash podczas otrzymywania znaków specjalnych w wiadomości IRC."
+
+#: doc/_i18n_security.py:18
 msgid ""
 "Create a trigger (with WeeChat >= 1.1): /trigger add irc_dcc_quotes modifier "
 "\"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND ${\\x22} \" "
@@ -327,7 +333,7 @@ msgstr ""
 "\"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND ${\\x22} \" "
 "\"/.*//\""
 
-#: doc/_i18n_security.py:18
+#: doc/_i18n_security.py:19
 msgid ""
 "Date/time conversion specifiers are expanded after replacing buffer local "
 "variables in name of log files. In some cases, this can lead to an error in "
@@ -338,16 +344,16 @@ msgstr ""
 "prowadzić do błędu w funkcji strftime i spowodować crash spowodowany użyciem "
 "niezainicjowanego buforu."
 
-#: doc/_i18n_security.py:19
+#: doc/_i18n_security.py:20
 msgid ""
 "Do not use command /notify with nicks containing formatting chars like \"%\"."
 msgstr "Nie używaj komendy /notify z nickami zawierającymi znaki jak \"%\"."
 
-#: doc/_i18n_security.py:20
+#: doc/_i18n_security.py:21
 msgid "Do not use irc protocol in relay plugin."
 msgstr "Nie używaj protokołu irc we wtyczce pośrednika."
 
-#: doc/_i18n_security.py:21
+#: doc/_i18n_security.py:22
 msgid ""
 "Missing verifications in SSL certificate, which allows man-in-the-middle "
 "attackers to spoof an SSL chat server via an arbitrary certificate."
@@ -355,14 +361,14 @@ msgstr ""
 "Brak weryfikacji certyfikatów SSL, co może prowadzić do podmiany certyfikatu "
 "poprzez atak man-in-the-middle."
 
-#: doc/_i18n_security.py:22
+#: doc/_i18n_security.py:23
 msgid ""
 "Remove/unload all scripts calling function hook_process (for maximum safety)."
 msgstr ""
 "Usunięcie/wyładowanie wszystkich skryptów wywołujących funkcję hook_process "
 "(dla maksymalnego bezpieczeństwa)."
 
-#: doc/_i18n_security.py:23
+#: doc/_i18n_security.py:24
 msgid ""
 "Turn off option \"irc.network.send_unknown_commands\" or do not use "
 "formatting chars like \"%\" when sending unknown commands to server."
@@ -370,11 +376,11 @@ msgstr ""
 "Wyłącz opcję \"irc.network.send_unknown_commands\" lub nie używaj znaków "
 "formatujących jak \"%\" podczas wysyłania nieznanych komend do serwera."
 
-#: doc/_i18n_security.py:24
+#: doc/_i18n_security.py:25
 msgid "Uncontrolled format string in API function infobar_printf."
 msgstr "Niekontrolowane formatowanie ciągów w funkcji API infobar_printf."
 
-#: doc/_i18n_security.py:25
+#: doc/_i18n_security.py:26
 msgid ""
 "Uncontrolled format string when IRC commands are redirected by relay plugin. "
 "If the output or redirected command contains formatting chars like \"%\", "
@@ -384,7 +390,7 @@ msgstr ""
 "wtyczki pośrednika. Jeśli wyjście lub przekierowana komenda zawiera znaki "
 "formatujące jak \"%\" może to prowadzić do awarii WeeChat."
 
-#: doc/_i18n_security.py:26
+#: doc/_i18n_security.py:27
 msgid ""
 "Uncontrolled format string when sending IRC \"ison\" command for nicks "
 "monitored with command /notify."
@@ -392,7 +398,7 @@ msgstr ""
 "Niekontrolowany ciąg formatujący podczas przesyłania komendy IRC \"ison\" "
 "dla nicków monitorowanych poprzez komendę /notify."
 
-#: doc/_i18n_security.py:27
+#: doc/_i18n_security.py:28
 msgid ""
 "Uncontrolled format string when sending unknown IRC command to server (if "
 "option \"irc.network.send_unknown_commands\" is on)."
@@ -400,11 +406,11 @@ msgstr ""
 "Niekontrolowany ciąg formatujący podczas wysyłania nieznanych komend IRC do "
 "serwera (jeśli opcja \"irc.network.send_unknown_commands\" jest włączona)."
 
-#: doc/_i18n_security.py:28
+#: doc/_i18n_security.py:29
 msgid "Unload the logger plugin: /plugin unload logger"
 msgstr "Wyładować wtyczkę logger: /plugin unload logger"
 
-#: doc/_i18n_security.py:29
+#: doc/_i18n_security.py:30
 msgid ""
 "Untrusted command for function hook_process could lead to execution of "
 "commands, because of shell expansions (so the problem is only caused by some "

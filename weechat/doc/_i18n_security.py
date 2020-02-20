@@ -13,6 +13,7 @@ def __i18n_security():
     gettext_noop("Buffer overflow when receiving a malformed IRC message 324 (channel mode).")
     gettext_noop("Buffer overflow when removing quotes in DCC filename.")
     gettext_noop("Buffer overflows in build of strings.")
+    gettext_noop("Crash when receiving a malformed IRC message 352 (WHO).")
     gettext_noop("Crash when receiving special chars in IRC messages.")
     gettext_noop("Create a trigger (with WeeChat >= 1.1): /trigger add irc_dcc_quotes modifier \"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND ${\\x22} \" \"/.*//\"")
     gettext_noop("Date/time conversion specifiers are expanded after replacing buffer local variables in name of log files. In some cases, this can lead to an error in function strftime and a crash caused by the use of an uninitialized buffer.")
