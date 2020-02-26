@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-21 09:04+0100\n"
-"PO-Revision-Date: 2020-01-04 21:42+0100\n"
+"PO-Revision-Date: 2020-02-26 15:33+0100\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -30,7 +30,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: about/_i18n_keydates.py:10
 msgid "256 colors, irc proxy, rmodifier, redirection of irc commands."
@@ -41,6 +41,8 @@ msgid ""
 "Add calculation of expression in evaluation of expressions, add colors in "
 "log files, add filters on IRC raw buffer."
 msgstr ""
+"Neu: Berechnung von Ausdrücken innerhalb evaluierter Ausdrücken, Farben in "
+"log-Dateien, Filterung für IRC Raw-Buffer."
 
 #: about/_i18n_keydates.py:12
 msgid "Add hook \"line\"."
@@ -314,6 +316,8 @@ msgid ""
 "Buffer overflow when a new IRC message 005 is received with longer nick "
 "prefixes."
 msgstr ""
+"Bufferüberlauf beim Empfang einer neuen IRC Nachricht 005 mit längerem Nick-"
+"Präfix."
 
 #: doc/_i18n_security.py:12
 msgid "Buffer overflow when decoding IRC colors in strings."
@@ -323,6 +327,8 @@ msgstr "Bufferüberlauf beim Dekodieren von IRC Farbecodes, in Nachrichten."
 msgid ""
 "Buffer overflow when receiving a malformed IRC message 324 (channel mode)."
 msgstr ""
+"Bufferüberlauf beim Empfang einer fehlerhaften IRC Nachricht 324 (channel "
+"mode)."
 
 #: doc/_i18n_security.py:14
 msgid "Buffer overflow when removing quotes in DCC filename."
@@ -333,11 +339,8 @@ msgid "Buffer overflows in build of strings."
 msgstr "Bufferüberlauf beim Erstellen von Strings."
 
 #: doc/_i18n_security.py:16
-#, fuzzy
-#| msgid "Crash when receiving special chars in IRC messages."
 msgid "Crash when receiving a malformed IRC message 352 (WHO)."
-msgstr ""
-"Absturz beim Empfang von speziellen Zeichen innerhalb einer IRC Nachricht."
+msgstr "Absturz beim Empfang einer fehlerhaften IRC Nachricht 352 (WHO)."
 
 #: doc/_i18n_security.py:17
 msgid "Crash when receiving special chars in IRC messages."
@@ -3558,20 +3561,10 @@ msgstr ""
 "changelog/ChangeLog-2.7.html\">Änderungsprotokoll</a>."
 
 #: news/_i18n_info.py:133
-#, fuzzy
-#| msgid "Version 1.7.1 (security release)"
 msgid "Version 2.7.1 (security release)"
-msgstr "Version 1.7.1 (Sicherheitsupdate)"
+msgstr "Version 2.7.1 (Sicherheitsupdate)"
 
 #: news/_i18n_info.py:134
-#, fuzzy
-#| msgid ""
-#| "Version 0.3.9.1 is available, it fixes a security problem (buffer "
-#| "overflow when decoding IRC colors in strings).\n"
-#| "Upgrade is recommended for all users.\n"
-#| "\n"
-#| "More information on the <a href=\"/doc/security/\">page with security "
-#| "issues</a>."
 msgid ""
 "Version 2.7.1 is available, it fixes three security vulnerabilities.\n"
 "Upgrade is recommended for all users.\n"
@@ -3579,8 +3572,8 @@ msgid ""
 "More information on the <a href=\"/doc/security/\">page with security "
 "issues</a>."
 msgstr ""
-"Version 0.3.9.1 ist sofort verfügbar. Diese Zwischenversion behebt ein "
-"Sicherheitsproblem, beim Dekodieren von IRC Farbcodes in Nachrichten.\n"
+"Version 2.7.1 ist verfügbar. Diese Zwischenversion behebt drei "
+"Sicherheitsprobleme.\n"
 "Es wird allen Anwendern empfohlen diese Version zu installieren.\n"
 "\n"
 "Weitere Informationen findet man auf der <a href=\"/doc/security/\">Seite zu "
@@ -6972,15 +6965,11 @@ msgstr ""
 "unterteilt:"
 
 #: templates/doc/security.html:98
-#, fuzzy
-#| msgid ""
-#| "local problem which occurs in very specific conditions, low impact. "
-#| "Upgrade is not mandatory."
 msgid ""
 "minor issue occuring in very specific conditions, low impact. Upgrade is not "
 "mandatory."
 msgstr ""
-"lokales Problem, welches nur unter bestimmten Voraussetzungen auftritt und "
+"kleines Problem, welches nur unter bestimmten Voraussetzungen auftritt und "
 "eine geringe Wirkung erzielt. Upgrade ist nicht zwingend notwendig."
 
 #: templates/doc/security.html:104
@@ -8100,22 +8089,17 @@ msgstr ""
 
 #: templates/scripts/python3.html:102
 msgid "It is the initial end date for the transition."
-msgstr ""
+msgstr "Dies ist das anfängliche Enddatum für den Übergang."
 
 #: templates/scripts/python3.html:104
-#, fuzzy, python-format
-#| msgid ""
-#| "Unfortunately, at this date, only 42%% of Python scripts (96 out of 226) "
-#| "are compatible with Python 3. Compiling by default with Python 3 should "
-#| "speed up the update of scripts."
+#, python-format
 msgid ""
 "Unfortunately, at this date, only 46%% of Python scripts (103 out of 228) "
 "are compatible with Python 3. The end of transition is postponed (see below)."
 msgstr ""
-"Bedauerlicherweise sind zu diesem Stichtag nur 42%% (96 von 226) der Python-"
-"Skripten mit Python3 kompatibel. Standardmäßig wird WeeChat nun mit Python 3 "
-"kompiliert was hoffentlich dazu führt, dass die verbleibenden Skripten "
-"zeitnah angepasst werden."
+"Bedauerlicherweise sind zu diesem Stichtag nur 46%% (103 von 228) der Python-"
+"Skripten mit Python3 kompatibel. Das Ende der Übergangsphase wurde nach "
+"hinten verschoben (siehe unten)."
 
 #: templates/scripts/python3.html:110
 msgid ""
