@@ -12,6 +12,7 @@ def __i18n_keydates():
     gettext_noop("Add hook \"line\".")
     gettext_noop("Add support of TOTP (Time-based One Time Password).")
     gettext_noop("Add support of UNIX socket in Relay plugin.")
+    gettext_noop("Add support of password hash in API and weechat relay protocol (PBKDF2, SHA256, SHA512).")
     gettext_noop("Aspell plugin.")
     gettext_noop("Command /eval, aspell suggestions, IPv6 in relay, irc backlog in relay.")
     gettext_noop("Dcc chat and file, fifo plugin.")
