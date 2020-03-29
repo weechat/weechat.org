@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-29 12:24+0200\n"
-"PO-Revision-Date: 2020-02-27 19:31+0100\n"
+"PO-Revision-Date: 2020-03-29 12:59+0200\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -61,6 +61,8 @@ msgid ""
 "Add support of password hash in API and weechat relay protocol (PBKDF2, "
 "SHA256, SHA512)."
 msgstr ""
+"Unterstützung für Passwort-Hash in API und Weechat-Relay-Protokoll (PBKDF2, "
+"SHA256, SHA512) hinzugefügt."
 
 #: about/_i18n_keydates.py:16
 msgid "Aspell plugin."
@@ -78,15 +80,15 @@ msgstr "Dcc Chat und Datentransfer, FIFO Erweiterung."
 
 #: about/_i18n_keydates.py:19
 msgid "Dynamic allocation and attributes for colors."
-msgstr "dynamische Reservierung und Attribute von Farben."
+msgstr "Dynamische Reservierung und Attribute von Farben."
 
 #: about/_i18n_keydates.py:20
 msgid "First line of code."
-msgstr "erste Programmzeile."
+msgstr "Erste Programmzeile."
 
 #: about/_i18n_keydates.py:21
 msgid "First version."
-msgstr "erste Version."
+msgstr "Erste Version."
 
 #: about/_i18n_keydates.py:22
 msgid "Fset plugin (fast set of WeeChat and plugins options), PHP plugin."
@@ -96,7 +98,7 @@ msgstr ""
 
 #: about/_i18n_keydates.py:23
 msgid "Full UTF-8 support."
-msgstr "vollständige Unterstützung von UTF-8."
+msgstr "Vollständige Unterstützung von UTF-8."
 
 #: about/_i18n_keydates.py:24
 msgid "Gaps in buffers numbers, IPv6 for DCC file/chat, command /print."
@@ -120,7 +122,7 @@ msgstr ""
 
 #: about/_i18n_keydates.py:27
 msgid "Incremental text search in buffers."
-msgstr "schrittweise Textsuche im Buffer."
+msgstr "Schrittweise Textsuche im Buffer."
 
 #: about/_i18n_keydates.py:28
 msgid ""
@@ -3586,32 +3588,6 @@ msgstr ""
 "Sicherheitsfragen</a>."
 
 #: news/_i18n_info.py:135
-#, fuzzy
-#| msgid ""
-#| "Version 2.7 is available!\n"
-#| "\n"
-#| "Among the new features:\n"
-#| "\n"
-#| "- add option logger.file.color_lines (support of ANSI color codes in log "
-#| "files)\n"
-#| "- add filters on IRC raw buffer\n"
-#| "- add IRC server option \"ssl_password\"\n"
-#| "- add option irc.look.display_pv_warning_address\n"
-#| "- add options irc.color.message_kick and irc.color.reason_kick\n"
-#| "- add option xfer.file.download_temporary_suffix\n"
-#| "- add option weechat.look.nick_color_hash_salt\n"
-#| "- add different WeeChat icons sizes\n"
-#| "- add calculation of expression in evaluation of expressions with \"calc:"
-#| "xxx\"\n"
-#| "- add optional default path (evaluated) in completion \"filename\"\n"
-#| "- add modifier \"color_encode_ansi\"\n"
-#| "- add support of Guile 2.2\n"
-#| "- add support of Python 3.8\n"
-#| "- many bugs fixed.\n"
-#| "\n"
-#| "For complete list of new features and bugs fixed, please look at <a href="
-#| "\"https://blog.weechat.org/post/2019/12/08/Version-2.7\">development "
-#| "blog</a> or <a href=\"/files/changelog/ChangeLog-2.7.html\">ChangeLog</a>."
 msgid ""
 "Version 2.8 is available!\n"
 "\n"
@@ -3635,32 +3611,29 @@ msgid ""
 "\"https://blog.weechat.org/post/2020/03/29/Version-2.8\">development blog</"
 "a> or <a href=\"/files/changelog/ChangeLog-2.8.html\">ChangeLog</a>."
 msgstr ""
-"Version 2.7 ist verfügbar!\n"
+"Version 2.8 ist verfügbar!\n"
 "\n"
 "Überblick, der neuen Funktionen:\n"
 "\n"
-"- neu: Option logger.file.color_lines (Unterstützung von ANSI-Farben in "
-"Logdateien)\n"
-"- neu: Filtermöglichkeit im IRC Raw-Buffer\n"
-"- neu: IRC Server Option \"ssl_password\"\n"
-"- neu: Option irc.look.display_pv_warning_address\n"
-"- neu: Option irc.color.message_kick und irc.color.reason_kick\n"
-"- neu: Option xfer.file.download_temporary_suffix\n"
-"- neu: Option weechat.look.nick_color_hash_salt\n"
-"- neu: unterschiedliche Größen der WeeChat Icons\n"
-"- neu: Berechnung eines Ausdrucks bei der Auswertung von Ausdrücken mit "
-"\"calc:xxx\"\n"
-"- neu: optionaler Standardpfad (evaluiert) für Vervollständigung \"Dateiname"
-"\"\n"
-"- neu: modifier \"color_encode_ansi\"\n"
-"- neu: Unterstützung von Guile 2.2\n"
-"- neu: Unterstützung von Python 3.8\n"
-"- viele Fehlerbereinigungen.\n"
+"- neu: Variable \"old_full_name\" in Buffer, wird gesetzt, wenn der "
+"Buffername sich ändert\n"
+"- neu: Debug Option \"-d\" für Befehl /eval\n"
+"- neu: Funktionen crypto_hash und crypto_hash_pbkdf2 in Erweiterung-API\n"
+"- neu: Informationen \"auto_connect\" und \"weechat_headless\"\n"
+"- neu: Pointer \"window\" in Bar-Item evaluiert (buflist)\n"
+"- neu: Unterstützung von fake IRC Servern (kein I/O, zu Testzwecken)\n"
+"- akzeptiert den Hash des Passworts im init-Befehl des Weechat-Relay-"
+"Protokoll mittels der Option \"password_hash\" (PBKDF2, SHA256, SHA512)\n"
+"- Client mit Weechat-Relay-Protokoll wird abgelehnt, falls Kennwort oder "
+"totp im Befehl init empfangen, aber nicht in WeeChat hinterlegt wurden\n"
+"- neu: Unterstützung von Ruby 2.7\n"
+"- neu: Unterstützung von PHP 7.4\n"
+"- weitere Fehlerbereinigungen.\n"
 "\n"
 "Eine vollständige Liste der neuen Funktionen und Fehlerbereinigungen findet "
 "man unter folgenden Links: <a href=\"https://blog.weechat.org/"
-"post/2019/12/08/Version-2.7\">Entwickler Blog</a> oder <a href=\"/files/"
-"changelog/ChangeLog-2.7.html\">Änderungsprotokoll</a>."
+"post/2020/03/29/Version-2.8\">Entwickler Blog</a> oder <a href=\"/files/"
+"changelog/ChangeLog-2.8.html\">Änderungsprotokoll</a>."
 
 #: news/_i18n_info.py:136
 msgid ""
@@ -6807,11 +6780,11 @@ msgstr "Meilensteinplan"
 
 #: templates/dev/roadmap.html:13
 msgid "Future versions"
-msgstr "zukünftige Versionen"
+msgstr "Zukünftige Versionen"
 
 #: templates/dev/roadmap.html:14
 msgid "Released versions"
-msgstr "veröffentlichte Versionen"
+msgstr "Veröffentlichte Versionen"
 
 #: templates/dev/roadmap.html:18
 msgid "This page lists major features done or planned."
@@ -6841,7 +6814,7 @@ msgstr "geplant"
 
 #: templates/dev/roadmap.html:58
 msgid "Done"
-msgstr "fertig"
+msgstr "Fertig"
 
 #. Translators: "Done" is followed by the % of task which is implemented, for example: "Done: 75%"
 #: templates/dev/roadmap.html:61
@@ -6919,7 +6892,7 @@ msgstr "Sprache [ übersetzte Sprache ]"
 
 #: templates/doc/doc_version.html:68
 msgid "Translated"
-msgstr "übersetzt"
+msgstr "Übersetzt"
 
 #: templates/doc/doc_version.html:69
 msgid "Fuzzy"
@@ -8475,11 +8448,11 @@ msgstr "Das Theme."
 
 #: themes/models.py:180
 msgid "Used for themes page."
-msgstr "wird für Themes-Seite verwendet."
+msgstr "Wird für Themes-Seite verwendet."
 
 #: themes/models.py:185 themes/models.py:270
 msgid "No spam, never displayed."
-msgstr "kein Spam, wird nicht angezeigt."
+msgstr "Kein Spam, dieser wird nicht angezeigt."
 
 #: themes/models.py:209 themes/models.py:295
 msgid "Theme file too big."
@@ -8487,7 +8460,7 @@ msgstr "Theme Datei ist zu groß."
 
 #: themes/models.py:215 themes/models.py:301
 msgid "Invalid theme file."
-msgstr "ungültige Theme-Datei."
+msgstr "Ungültige Theme-Datei."
 
 #: themes/models.py:218
 msgid "This name already exists."
@@ -8495,16 +8468,16 @@ msgstr "Dieser Name wird schon verwendet."
 
 #: themes/models.py:221 themes/models.py:225
 msgid "Invalid name inside theme file."
-msgstr "ungültiger Name in der Theme-Datei."
+msgstr "Ungültiger Name in der Theme-Datei."
 
 #: themes/models.py:232 themes/models.py:314
 msgid "Invalid WeeChat version, too old!"
-msgstr "ungültige WeeChat Version, da zu alt!"
+msgstr "Ungültige WeeChat Version, da zu alt!"
 
 #: themes/models.py:304
 msgid "Internal error."
-msgstr "interner Fehler."
+msgstr "Interner Fehler."
 
 #: themes/models.py:307
 msgid "Invalid name: different from theme."
-msgstr "ungültiger Name: unterscheidet sich vom Theme."
+msgstr "Ungültiger Name: unterscheidet sich vom Theme."
