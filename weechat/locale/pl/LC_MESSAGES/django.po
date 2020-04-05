@@ -16,22 +16,22 @@
 # You should have received a copy of the GNU General Public License
 # along with WeeChat.org.  If not, see <https://www.gnu.org/licenses/>.
 #
-# Krzysztof Korościk <soltys@soltys.info>, 2018, 2019.
+# Krzysztof Korościk <soltys@soltys.info>, 2018, 2019, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-29 12:24+0200\n"
-"PO-Revision-Date: 2020-01-04 21:42+0100\n"
+"PO-Revision-Date: 2020-04-05 12:53+0200\n"
 "Last-Translator: Krzysztof Korościk <soltys@soltys.info>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.08.3\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 19.12.3\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10"
+" || n%100>=20) ? 1 : 2);\n"
 
 #: about/_i18n_keydates.py:10
 msgid "256 colors, irc proxy, rmodifier, redirection of irc commands."
@@ -42,6 +42,8 @@ msgid ""
 "Add calculation of expression in evaluation of expressions, add colors in "
 "log files, add filters on IRC raw buffer."
 msgstr ""
+"Dodano kalkulację wyrażeń w przetwarzanych wyrażeniach, dodano kolory "
+"w plikach z logami, dodano filtry w nieprzetworzonym buforze IRC."
 
 #: about/_i18n_keydates.py:12
 msgid "Add hook \"line\"."
@@ -60,6 +62,8 @@ msgid ""
 "Add support of password hash in API and weechat relay protocol (PBKDF2, "
 "SHA256, SHA512)."
 msgstr ""
+"Dodano wsparcie dla haszy haseł w API i protokole pośrednika weechat "
+"(PBKDF2, SHA256, SHA512)."
 
 #: about/_i18n_keydates.py:16
 msgid "Aspell plugin."
@@ -300,6 +304,8 @@ msgid ""
 "Buffer overflow when a new IRC message 005 is received with longer nick "
 "prefixes."
 msgstr ""
+"Przepełnienie bufora po otrzymaniu nowej wiadomości IRC 005 z dłuższymi "
+"prefiksami nicków."
 
 #: doc/_i18n_security.py:12
 msgid "Buffer overflow when decoding IRC colors in strings."
@@ -309,6 +315,8 @@ msgstr "Przepełnienie bufora podczas dekodowania kolorów IRC w ciągach."
 msgid ""
 "Buffer overflow when receiving a malformed IRC message 324 (channel mode)."
 msgstr ""
+"Przepełnienie bufora po otrzymaniu zniekształconej wiadomości IRC 324 (tryb"
+" kanału)."
 
 #: doc/_i18n_security.py:14
 msgid "Buffer overflow when removing quotes in DCC filename."
@@ -320,10 +328,9 @@ msgid "Buffer overflows in build of strings."
 msgstr "Przepełnienie bufora w budowaniu ciągów."
 
 #: doc/_i18n_security.py:16
-#, fuzzy
 #| msgid "Crash when receiving special chars in IRC messages."
 msgid "Crash when receiving a malformed IRC message 352 (WHO)."
-msgstr "Crash podczas otrzymywania znaków specjalnych w wiadomości IRC."
+msgstr "Crash podczas otrzymywania zniekształconej wiadomości IRC 352 (WHO)."
 
 #: doc/_i18n_security.py:17
 msgid "Crash when receiving special chars in IRC messages."
@@ -3414,7 +3421,6 @@ msgstr ""
 "href=\"/files/changelog/ChangeLog-2.6.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:132
-#, fuzzy
 #| msgid ""
 #| "Version 2.5 is available!\n"
 #| "\n"
@@ -3462,35 +3468,37 @@ msgid ""
 "\"https://blog.weechat.org/post/2019/12/08/Version-2.7\">development blog</"
 "a> or <a href=\"/files/changelog/ChangeLog-2.7.html\">ChangeLog</a>."
 msgstr ""
-"Wersja 2.5 jest dostępna!\n"
+"Wersja 2.7 jest dostępna!\n"
 "\n"
 "Najważniejsze zmiany:\n"
 "\n"
-"- dodano wsparcie dla gniazd UNIXowych we wtyczce pośrednika\n"
-"- dodano opcję relay.weechat.commands\n"
-"- dodano trigger dla hooków \"info\" i \"info_hashtable\"\n"
-"- dodano opcję xfer.network.speed_limit_recv\n"
-"- dodano opcję weechat.look.buffer_time_same\n"
-"- dodano opcję weechat.look.prefix_same_nick_middle\n"
-"- dodano opcję \"addreplace\" dla komendy /filter\n"
-"- dodano elementy paska \"irc_nick\", \"irc_host\" i \"irc_nick_host\"\n"
-"- dodano funkcje command_options i string_match_list do API wtyczek\n"
-"- zmieniono nazwę wtyczki aspell na spell\n"
-"- użyto getopt do parsowania argumentów z linii poleceń\n"
+"- dodano opcję logger.file.color_lines (wsparcie dla kodów kolorów ANSI "
+"w plikach logów)\n"
+"- dodano filtry w buforze nieprzetworzonych danych IRC\n"
+"- dodano opcję serwera IRC \"ssl_password\"\n"
+"- dodano opcję irc.look.display_pv_warning_address\n"
+"- dodano opcje irc.color.message_kick i irc.color.reason_kick\n"
+"- dodano opcję xfer.file.download_temporary_suffix\n"
+"- dodano opcję weechat.look.nick_color_hash_salt\n"
+"- dodano różne rozmiary ikon WeeChat\n"
+"- dodano kalkulacje wyrażeń w przetwarzaniu wyrażeń przez \"calc:xxx\"\n"
+"- dodano opcjonalną domyślną ścieżkę (przetwarzana) w dopełnieniu"
+" \"filename\"\n"
+"- dodano modyfikator \"color_encode_ansi\"\n"
+"- dodano wsparcie dla Guile 2.2\n"
+"- dodano wsparcie dla Pythona 3.8\n"
 "- poprawiono wiele błędów.\n"
 "\n"
 "Pełną listę nowych funkcji i poprawionych błędów można znaleźć na <a href=\"/"
-"blog/post/2019/06/06/Version-2.5\">blogu developerskim</a> oraz w pliku <a "
-"href=\"/files/changelog/ChangeLog-2.5.html\">ChangeLog</a>."
+"blog/post/2019/12/08/Version-2.7\">blogu developerskim</a> oraz w pliku <a "
+"href=\"/files/changelog/ChangeLog-2.7.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:133
-#, fuzzy
 #| msgid "Version 1.7.1 (security release)"
 msgid "Version 2.7.1 (security release)"
-msgstr "Wersja 1.7.1 (poprawki bezpieczeństwa)"
+msgstr "Wersja 2.7.1 (poprawki bezpieczeństwa)"
 
 #: news/_i18n_info.py:134
-#, fuzzy
 #| msgid ""
 #| "Version 0.3.9.1 is available, it fixes a security problem (buffer "
 #| "overflow when decoding IRC colors in strings).\n"
@@ -3505,15 +3513,13 @@ msgid ""
 "More information on the <a href=\"/doc/security/\">page with security "
 "issues</a>."
 msgstr ""
-"Wersja 0.3.9.1 jest dostępna, poprawia ona problem bezpieczeństwa "
-"(przepełnienie bufora podczas dekodowania kolorów IRC w ciągach).\n"
+"Wersja 2.7.1 jest dostępna, poprawia ona problem bezpieczeństwa.\n"
 "Aktualizacja jest zalecana dla wszystkich użytkowników.\n"
 "\n"
 "Więcej informacji można znaleźć na <a href=\"/doc/security\">stronie z "
 "problemami bezpieczeństwa</a>."
 
 #: news/_i18n_info.py:135
-#, fuzzy
 #| msgid ""
 #| "Version 2.5 is available!\n"
 #| "\n"
@@ -3558,26 +3564,29 @@ msgid ""
 "\"https://blog.weechat.org/post/2020/03/29/Version-2.8\">development blog</"
 "a> or <a href=\"/files/changelog/ChangeLog-2.8.html\">ChangeLog</a>."
 msgstr ""
-"Wersja 2.5 jest dostępna!\n"
+"Wersja 2.8 jest dostępna!\n"
 "\n"
 "Najważniejsze zmiany:\n"
 "\n"
-"- dodano wsparcie dla gniazd UNIXowych we wtyczce pośrednika\n"
-"- dodano opcję relay.weechat.commands\n"
-"- dodano trigger dla hooków \"info\" i \"info_hashtable\"\n"
-"- dodano opcję xfer.network.speed_limit_recv\n"
-"- dodano opcję weechat.look.buffer_time_same\n"
-"- dodano opcję weechat.look.prefix_same_nick_middle\n"
-"- dodano opcję \"addreplace\" dla komendy /filter\n"
-"- dodano elementy paska \"irc_nick\", \"irc_host\" i \"irc_nick_host\"\n"
-"- dodano funkcje command_options i string_match_list do API wtyczek\n"
-"- zmieniono nazwę wtyczki aspell na spell\n"
-"- użyto getopt do parsowania argumentów z linii poleceń\n"
+"- dodano zmienną bufora \"old_full_name\", ustawiana podczas zmiany nazwy\n"
+"- dodano opcję debugowania \"-d\" do komendy /eval\n"
+"- dodano funkcje crypto_hash i crypto_hash_pbkdf2 do API wtyczek\n"
+"- dodano info \"auto_connect\" i \"weechat_headless\"\n"
+"- dodano wskaźnik \"window\" dla przetworzonych elementów paska (buflist)\n"
+"- dodano wsparcie dla fałszywych serwerów IRC (brak I/O, do celów testowych)\n"
+"- hasze haseł są akceptowane w komendzie inicjującej  protokołu pośrednika"
+" weechat "
+"dzięki opcji \"password_hash\" (PBKDF2, SHA256, SHA512)\n"
+"- odrzucanie klientów protokołu pośrednika weechat jeśli otrzymano hasło albo"
+" totp "
+"przy połączeniu, ale nie zostało ono ustawione w WeeChat\n"
+"- dodano wsparcie dla Ruby 2.7\n"
+"- dodano wsparcie dla PHP 7.4\n"
 "- poprawiono wiele błędów.\n"
 "\n"
 "Pełną listę nowych funkcji i poprawionych błędów można znaleźć na <a href=\"/"
-"blog/post/2019/06/06/Version-2.5\">blogu developerskim</a> oraz w pliku <a "
-"href=\"/files/changelog/ChangeLog-2.5.html\">ChangeLog</a>."
+"blog/post/2020/03/29/Version-2.8\">blogu developerskim</a> oraz w pliku <a "
+"href=\"/files/changelog/ChangeLog-2.8.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:136
 msgid ""
@@ -6869,7 +6878,6 @@ msgstr ""
 "Podatności bezpieczeństwa są klasyfikowane z użyciem 4 klas istotności:"
 
 #: templates/doc/security.html:98
-#, fuzzy
 #| msgid ""
 #| "local problem which occurs in very specific conditions, low impact. "
 #| "Upgrade is not mandatory."
@@ -6877,7 +6885,7 @@ msgid ""
 "minor issue occuring in very specific conditions, low impact. Upgrade is not "
 "mandatory."
 msgstr ""
-"problem lokalny, który ujawnia się w specyficznych warunkach, mały wpływ. "
+"drobny błąd, który ujawnia się w specyficznych warunkach, mały wpływ. "
 "Aktualizacja nie obowiązkowa."
 
 #: templates/doc/security.html:104
@@ -7966,10 +7974,10 @@ msgstr ""
 
 #: templates/scripts/python3.html:102
 msgid "It is the initial end date for the transition."
-msgstr ""
+msgstr "Jest to początkowa data końca okresu przejściowego."
 
 #: templates/scripts/python3.html:104
-#, fuzzy, python-format
+#, python-format
 #| msgid ""
 #| "Unfortunately, at this date, only 42%% of Python scripts (96 out of 226) "
 #| "are compatible with Python 3. Compiling by default with Python 3 should "
@@ -7978,9 +7986,9 @@ msgid ""
 "Unfortunately, at this date, only 46%% of Python scripts (103 out of 228) "
 "are compatible with Python 3. The end of transition is postponed (see below)."
 msgstr ""
-"Niestety, na tą chwilę tylko 42%% skryptów Pythonowych (96 z 226) jest "
-"kompatybilnych z Pythonem 3. Domyślna kompilacja z Pythonem 3 powinna "
-"przyspieszyć aktualizację skryptów."
+"Niestety, na tą chwilę tylko 46%% skryptów Pythonowych (103 z 228) jest "
+"kompatybilnych z Pythonem 3. Zakończenie okresu przejściowego zostało"
+" opóźnione (zobacz niżej)."
 
 #: templates/scripts/python3.html:110
 msgid ""
