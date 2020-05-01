@@ -124,12 +124,19 @@ class Script(models.Model):
         """Return a list with script tags."""
         return self.tags.split(',')
 
-    def is_py3k_ok(self):
+    def is_py2_ok(self):
+        """
+        Return True if the script is a Python script compatible with
+        Python 2.x.
+        """
+        return 'py2' in self.tagslist()
+
+    def is_py3_ok(self):
         """
         Return True if the script is a Python script compatible with
         Python 3.x.
         """
-        return 'py3k-ok' in self.tagslist()
+        return 'py3' in self.tagslist()
 
     def path(self):
         """Return path to script (for URL)."""

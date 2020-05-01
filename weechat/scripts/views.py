@@ -94,14 +94,22 @@ def scripts(request, sort_key='popularity', filter_name='', filter_value=''):
         script_list = (script_list
                        .filter(tags__regex=r'(^|,)%s($|,)' % filter_value))
     elif filter_name == 'language':
-        if filter_value == 'python2-only':
+        if filter_value == 'python2-compatible':
             script_list = (script_list
                            .filter(language='python')
-                           .exclude(tags__regex=r'(^|,)py3k-ok($|,)'))
+                           .filter(tags__regex=r'(^|,)py2($|,)'))
+        elif filter_value == 'python2-only':
+            script_list = (script_list
+                           .filter(language='python')
+                           .exclude(tags__regex=r'(^|,)py3($|,)'))
         elif filter_value == 'python3-compatible':
             script_list = (script_list
                            .filter(language='python')
-                           .filter(tags__regex=r'(^|,)py3k-ok($|,)'))
+                           .filter(tags__regex=r'(^|,)py3($|,)'))
+        elif filter_value == 'python3-only':
+            script_list = (script_list
+                           .filter(language='python')
+                           .exclude(tags__regex=r'(^|,)py2($|,)'))
         else:
             script_list = script_list.filter(language=filter_value)
     elif filter_name == 'license':
@@ -114,9 +122,20 @@ def scripts(request, sort_key='popularity', filter_name='', filter_value=''):
     for script in script_list:
         languages[script.language] = languages.get(script.language, 0) + 1
         if script.language == 'python':
-            language = ('python3-compatible' if script.is_py3k_ok()
-                        else 'python2-only')
-            languages[language] = languages.get(language, 0) + 1
+            py2_ok = script.is_py2_ok()
+            py3_ok = script.is_py3_ok()
+            if py2_ok:
+                languages['python2-compatible'] = \
+                    languages.get('python2-compatible', 0) + 1
+                if not py3_ok:
+                    languages['python2-only'] = \
+                        languages.get('python2-only', 0) + 1
+            if py3_ok:
+                languages['python3-compatible'] = \
+                    languages.get('python3-compatible', 0) + 1
+                if not py2_ok:
+                    languages['python3-only'] = \
+                        languages.get('python3-only', 0) + 1
         licenses[script.license] = licenses.get(script.license, 0) + 1
         if script.tags:
             for tag in script.tagslist():
@@ -381,7 +400,7 @@ def python3(request):
                       .count())
     scripts_ok = (Script.objects.filter(approved=True)
                   .filter(language='python')
-                  .filter(tags__regex=r'(^|,)py3k-ok($|,)')
+                  .filter(tags__regex=r'(^|,)py3($|,)')
                   .count())
     scripts_remaining = python_scripts - scripts_ok
     status_list.append({
@@ -413,9 +432,9 @@ def python3(request):
             'v037_date': v037_date,
             'roadmap_start': datetime(2018, 6, 3),
             'roadmap_email': datetime(2018, 6, 16),
-            'roadmap_new_py3k': datetime(2018, 7, 1),
-            'roadmap_all_py3k': datetime(2018, 9, 1),
-            'roadmap_weechat_py3k': datetime(2019, 7, 1),
+            'roadmap_new_py3': datetime(2018, 7, 1),
+            'roadmap_all_py3': datetime(2018, 9, 1),
+            'roadmap_weechat_py3': datetime(2019, 7, 1),
             'roadmap_initial_end': datetime(2020, 1, 1),
             'roadmap_end': datetime(2020, 5, 1),
             'status_list': status_list,
