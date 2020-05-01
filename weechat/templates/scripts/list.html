@@ -18,12 +18,6 @@
     {% trans "You could experience problems like memory leaks, slowdowns, or even <strong>security problems</strong>. You are warned!" %}
 </div>
 
-{% if api == "legacy" %}
-<div class="alert alert-danger">
-  {% trans "WARNING: the legacy API is deprecated and these scripts runs only on WeeChat 0.2.x, which is OBSOLETE. You MUST NOT load these scripts with latest stable version of WeeChat!" %}
-</div>
-{% endif %}
-
 <div class="border rounded mb-3" style="background: #fafafa;">
   <div class="border-bottom p-2">
     <div class="ml-4 float-right">
@@ -31,26 +25,25 @@
       <a href="/files/scripts.xml">XML</a> (<a href="/files/scripts.xml.gz">gz</a>),
       <a href="/files/scripts.json">JSON</a> (<a href="/files/scripts.json.gz">gz</a>)
     </div>
-    {% trans "Version:" %} <strong>{{ api }}</strong>,
     {% if filter_name %}
-      {% trans "filter:" %} {{ filter_name }} = {{ filter_value }} (<a href="{% url 'scripts_api' api %}">{% trans "remove" %}</a>),
+      {% trans "Filter:" %} {{ filter_name }} = {{ filter_value }} (<a href="{% url 'scripts' %}">{% trans "remove" %}</a>),
     {% else %}
-      {% trans "no filter" %},
+      {% trans "No filter" %},
     {% endif %}
     <strong>{{ script_list|length }}</strong> {% trans "scripts" %}.
   </div>
   <div id="script_filters_0" class="p-2" style="{% if script_filters_displayed %}display: none{% endif %}">
     <a href="#" onclick="toggle('script_filters_0', 'none'); toggle('script_filters_1', 'block'); set_cookie('script_filters', '1_{{ script_filters_sort }}', '/scripts', 30)">&#9658; {% if script_filters_sort == "popularity" %}{% trans "Filters by popularity" %}{% else %}{% trans "Filters by name" %}{% endif %}</a>
-    &nbsp; ({% if script_filters_sort == "popularity" %}<a href="{% url 'scripts_api' api %}" onclick="set_cookie('script_filters', '1_name', '/scripts', 30)">{% trans "sort filters by name" %}</a>{% else %}<a href="{% url 'scripts_api' api %}" onclick="set_cookie('script_filters', '1_popularity', '/scripts', 30)">{% trans "sort filters by popularity" %}</a>{% endif %})
+    &nbsp; ({% if script_filters_sort == "popularity" %}<a href="{% url 'scripts' %}" onclick="set_cookie('script_filters', '1_name', '/scripts', 30)">{% trans "sort filters by name" %}</a>{% else %}<a href="{% url 'scripts' %}" onclick="set_cookie('script_filters', '1_popularity', '/scripts', 30)">{% trans "sort filters by popularity" %}</a>{% endif %})
   </div>
   <div id="script_filters_1" class="p-2" style="{% if not script_filters_displayed %}display: none{% endif %}">
     <a href="#" onclick="toggle('script_filters_1', 'none'); toggle('script_filters_0', 'block'); set_cookie('script_filters', '0_{{ script_filters_sort }}', '/scripts', 30)">&#9660; {% if script_filters_sort == "popularity" %}{% trans "Filters by popularity" %}{% else %}{% trans "Filters by name" %}{% endif %}</a>
-    &nbsp; ({% if script_filters_sort == "popularity" %}<a href="{% url 'scripts_api' api %}" onclick="set_cookie('script_filters', '1_name', '/scripts', 30)">{% trans "sort filters by name" %}</a>{% else %}<a href="{% url 'scripts_api' api %}" onclick="set_cookie('script_filters', '1_popularity', '/scripts', 30)">{% trans "sort filters by popularity" %}</a>{% endif %})
+    &nbsp; ({% if script_filters_sort == "popularity" %}<a href="{% url 'scripts' %}" onclick="set_cookie('script_filters', '1_name', '/scripts', 30)">{% trans "sort filters by name" %}</a>{% else %}<a href="{% url 'scripts' %}" onclick="set_cookie('script_filters', '1_popularity', '/scripts', 30)">{% trans "sort filters by popularity" %}</a>{% endif %})
     <div class="ml-4">
       {% if languages %}
       {% trans "Language:" %}
       {% for language in languages %}
-      <a href="{% url 'scripts_api_filter' api 'language' language.0 %}" title="{% trans "Language:" %} {{ language.0.capitalize }}">{{ language.0.capitalize }}<small>&nbsp;({{ language.1 }})</small></a>{% if not forloop.last %}&nbsp;&middot;{% endif %}
+      <a href="{% url 'scripts_filter' 'language' language.0 %}" title="{% trans "Language:" %} {{ language.0.capitalize }}">{{ language.0.capitalize }}<small>&nbsp;({{ language.1 }})</small></a>{% if not forloop.last %}&nbsp;&middot;{% endif %}
       {% endfor %}
       {% endif %}
     </div>
@@ -58,7 +51,7 @@
       {% if licenses %}
       {% trans "License:" %}
       {% for license in licenses %}
-      <a href="{% url 'scripts_api_filter' api 'license' license.0 %}" title="{% trans "License:" %} {{ license.0 }}">{{ license.0 }}<small>&nbsp;({{ license.1 }})</small></a>{% if not forloop.last %}&nbsp;&middot;{% endif %}
+      <a href="{% url 'scripts_filter' 'license' license.0 %}" title="{% trans "License:" %} {{ license.0 }}">{{ license.0 }}<small>&nbsp;({{ license.1 }})</small></a>{% if not forloop.last %}&nbsp;&middot;{% endif %}
       {% endfor %}
       {% endif %}
     </div>
@@ -66,7 +59,7 @@
       {% if tags %}
       {% trans "Tag:" %}
       {% for tag in tags %}
-      <a href="{% url 'scripts_api_filter' api 'tag' tag.0 %}" title="{% trans "Tag:" %} {{ tag.0 }}">{{ tag.0 }}<small>&nbsp;({{ tag.1 }})</small></a>{% if not forloop.last %}&nbsp;&middot;{% endif %}
+      <a href="{% url 'scripts_filter' 'tag' tag.0 %}" title="{% trans "Tag:" %} {{ tag.0 }}">{{ tag.0 }}<small>&nbsp;({{ tag.1 }})</small></a>{% if not forloop.last %}&nbsp;&middot;{% endif %}
       {% endfor %}
       {% endif %}
     </div>
@@ -79,59 +72,59 @@
       <tr>
         <th>
           {% if sort_key == "name" %}
-          <a href="{% url 'scripts_api' api %}">{% trans "Name" %}&nbsp;&uarr;</a>
+          <a href="{% url 'scripts' %}">{% trans "Name" %}&nbsp;&uarr;</a>
           {% else %}
-          <a href="{% url 'scripts_api_sort' api 'name' %}">{% trans "Name" %}</a>
+          <a href="{% url 'scripts_sort' 'name' %}">{% trans "Name" %}</a>
           {% endif %}
           /
           {% if sort_key == "language" %}
-          <a href="{% url 'scripts_api' api %}">{% trans "Language" context "programming language" %}&nbsp;&uarr;</a>
+          <a href="{% url 'scripts' %}">{% trans "Language" context "programming language" %}&nbsp;&uarr;</a>
           {% else %}
-          <a href="{% url 'scripts_api_sort' api 'language' %}">{% trans "Language" context "programming language" %}</a>
+          <a href="{% url 'scripts_sort' 'language' %}">{% trans "Language" context "programming language" %}</a>
           {% endif %}
         </th>
         <th>{% trans "Description" %}</th>
         <th class="text-center"><abbr title="{% trans "Version" %}">V.</abbr></th>
         <th class="text-center">
           {% if sort_key == "license" %}
-          <a href="{% url 'scripts_api' api %}">{% trans "License" %}&nbsp;&uarr;</a>
+          <a href="{% url 'scripts' %}">{% trans "License" %}&nbsp;&uarr;</a>
           {% else %}
-          <a href="{% url 'scripts_api_sort' api 'license' %}">{% trans "License" %}</a>
+          <a href="{% url 'scripts_sort' 'license' %}">{% trans "License" %}</a>
           {% endif %}
         </th>
         <th class="text-center">
           {% if sort_key == "min_weechat" %}
-          <a href="{% url 'scripts_api' api %}">{% trans "Min" %}&nbsp;&darr;</a>
+          <a href="{% url 'scripts' %}">{% trans "Min" %}&nbsp;&darr;</a>
           {% else %}
-          <a href="{% url 'scripts_api_sort' api 'min_weechat' %}">{% trans "Min" %}</a>
+          <a href="{% url 'scripts_sort' 'min_weechat' %}">{% trans "Min" %}</a>
           {% endif %}
         </th>
         <th class="text-center">
           {% if sort_key == "max_weechat" %}
-          <a href="{% url 'scripts_api' api %}">{% trans "Max" %}&nbsp;&darr;</a>
+          <a href="{% url 'scripts' %}">{% trans "Max" %}&nbsp;&darr;</a>
           {% else %}
-          <a href="{% url 'scripts_api_sort' api 'max_weechat' %}">{% trans "Max" %}</a>
+          <a href="{% url 'scripts_sort' 'max_weechat' %}">{% trans "Max" %}</a>
           {% endif %}
         </th>
         <th class="text-center">
           {% if sort_key == "author" %}
-          <a href="{% url 'scripts_api' api %}">{% trans "Author" %}&nbsp;&uarr;</a>
+          <a href="{% url 'scripts' %}">{% trans "Author" %}&nbsp;&uarr;</a>
           {% else %}
-          <a href="{% url 'scripts_api_sort' api 'author' %}">{% trans "Author" %}</a>
+          <a href="{% url 'scripts_sort' 'author' %}">{% trans "Author" %}</a>
           {% endif %}
         </th>
         <th class="text-center">
           {% if sort_key == "added" %}
-          <a href="{% url 'scripts_api' api %}">{% trans "Added" %}&nbsp;&darr;</a>
+          <a href="{% url 'scripts' %}">{% trans "Added" %}&nbsp;&darr;</a>
           {% else %}
-          <a href="{% url 'scripts_api_sort' api 'added' %}">{% trans "Added" %}</a>
+          <a href="{% url 'scripts_sort' 'added' %}">{% trans "Added" %}</a>
           {% endif %}
         </th>
         <th class="text-center">
           {% if sort_key == "updated" %}
-          <a href="{% url 'scripts_api' api %}">{% trans "Updated" %}&nbsp;&darr;</a>
+          <a href="{% url 'scripts' %}">{% trans "Updated" %}&nbsp;&darr;</a>
           {% else %}
-          <a href="{% url 'scripts_api_sort' api 'updated' %}">{% trans "Updated" %}</a>
+          <a href="{% url 'scripts_sort' 'updated' %}">{% trans "Updated" %}</a>
           {% endif %}
         </th>
       </tr>
@@ -140,11 +133,11 @@
       {% for script in script_list %}
       <tr{% if script.disabled %} class="text-muted"{% endif %}>
         <td class="text-nowrap{% if script.disabled %} script-disabled{% endif %}">
-          <span class="mr-1 script-popular">{{ script.popularity_img|safe }}</span><a href="{% if api == 'legacy' %}{% url 'scripts_source_api_name_html' api script.name_with_extension %}{% else %}{% url 'scripts_source_name_html' script.name_with_extension %}{% endif %}">{{ script.name }}<small>.{{ script.extension }}</small></a>
+          <span class="mr-1 script-popular">{{ script.popularity_img|safe }}</span><a href="{% url 'scripts_source_name_html' script.name_with_extension %}">{{ script.name }}<small>.{{ script.extension }}</small></a>
         </td>
         <td>
           <div class="ml-3 float-right text-muted">
-            [{% for tag in script.tagslist %}<a href="{% url 'scripts_api_filter' api 'tag' tag %}" title="{% trans "Tag:" %} {{ tag }}">{{ tag }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}]
+            [{% for tag in script.tagslist %}<a href="{% url 'scripts_filter' 'tag' tag %}" title="{% trans "Tag:" %} {{ tag }}">{{ tag }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}]
           </div>
           {% if script.disabled %}
           <span class="script-disabled">{{ script.desc_i18n }}</span>
@@ -162,10 +155,10 @@
           {% endif %}
         </td>
         <td class="text-center">{{ script.version }}</td>
-        <td class="text-center"><a href="{% url 'scripts_api_filter' api 'license' script.license %}" title="{% trans "License:" %} {{ script.license }}">{{ script.license }}</a></td>
+        <td class="text-center"><a href="{% url 'scripts_filter' 'license' script.license %}" title="{% trans "License:" %} {{ script.license }}">{{ script.license }}</a></td>
         <td class="text-center">{{ script.min_weechat }}</td>
         <td class="text-center">{{ script.max_weechat }}</td>
-        <td class="text-center"><a href="{% url 'scripts_api_filter' api 'author' script.author %}" title="{% trans "Author:" %} {{ script.author }}">{{ script.author }}</a></td>
+        <td class="text-center"><a href="{% url 'scripts_filter' 'author' script.author %}" title="{% trans "Author:" %} {{ script.author }}">{{ script.author }}</a></td>
         <td class="text-center text-nowrap">{% if script.added %}{{ script.added|date:"Y-m-d" }}{% endif %}</td>
         <td class="text-center text-nowrap">{% if script.updated %}{% if script.added != script.updated %}{{ script.updated|date:"Y-m-d" }}{% endif %}{% endif %}</td>
       </tr>

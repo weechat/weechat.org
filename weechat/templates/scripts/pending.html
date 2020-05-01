@@ -33,7 +33,6 @@
         <th class="text-center">{% trans "Language" context "programming language" %}</th>
         <th class="text-center">{% trans "License" %}</th>
         <th class="text-center">{% trans "Min" %}</th>
-        <th class="text-center">{% trans "Max" %}</th>
         <th class="text-center">{% trans "Author" %}</th>
         <th class="text-center">{% trans "Date" %}</th>
       </tr>
@@ -59,7 +58,6 @@
         <td class="text-center">{{ script.language_display }}</td>
         <td class="text-center">{{ script.license }}</td>
         <td class="text-center">{{ script.min_weechat }}</td>
-        <td class="text-center">{{ script.max_weechat }}</td>
         <td class="text-center">{{ script.author }}</td>
         <td class="text-center text-nowrap">{% if script.added %}{{ script.added|date:"Y-m-d" }}{% endif %}</td>
       </tr>

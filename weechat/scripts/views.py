@@ -39,12 +39,14 @@ from weechat.scripts.models import (
     get_language_from_extension,
 )
 
-API_OLD = '0.2.6'
-API_STABLE = '0.3.0'
-
 # list of keys that are sorted by default using descending order
-KEY_ORDER_BY_DESC = ['popularity', 'min_weechat', 'max_weechat', 'added',
-                     'updated']
+KEY_ORDER_BY_DESC = (
+    'popularity',
+    'min_weechat',
+    'max_weechat',
+    'added',
+    'updated',
+)
 
 PYGMENTS_LEXER = {
     'pl': 'perl',
@@ -77,8 +79,7 @@ def get_highlighted_source(source, language):
                      HtmlFormatter(cssclass='pygments', linenos='table'))
 
 
-def scripts(request, api='stable', sort_key='popularity', filter_name='',
-            filter_value=''):
+def scripts(request, sort_key='popularity', filter_name='', filter_value=''):
     """Page with list of scripts."""
 
     def sort_by_popularity(item):
@@ -87,14 +88,8 @@ def scripts(request, api='stable', sort_key='popularity', filter_name='',
     def sort_by_name(item):
         return item[0].lower()
 
-    if api == 'legacy':
-        script_list = (Script.objects.filter(approved=True)
-                       .filter(max_weechat=API_OLD)
-                       .order_by(*get_sort_key(sort_key)))
-    else:
-        script_list = (Script.objects.filter(approved=True)
-                       .filter(min_weechat__gte=API_STABLE)
-                       .order_by(*get_sort_key(sort_key)))
+    script_list = (Script.objects.filter(approved=True)
+                   .order_by(*get_sort_key(sort_key)))
     if filter_name == 'tag':
         script_list = (script_list
                        .filter(tags__regex=r'(^|,)%s($|,)' % filter_value))
@@ -137,7 +132,6 @@ def scripts(request, api='stable', sort_key='popularity', filter_name='',
         'scripts/list.html',
         {
             'script_list': script_list,
-            'api': api,
             'sort_key': sort_key,
             'filter_name': filter_name,
             'filter_value': filter_value,
@@ -150,7 +144,7 @@ def scripts(request, api='stable', sort_key='popularity', filter_name='',
     )
 
 
-def script_source(request, api='stable', scriptid='', scriptname=''):
+def script_source(request, scriptid='', scriptname=''):
     """Page with source of a script."""
     script = None
     if scriptid:
@@ -170,20 +164,11 @@ def script_source(request, api='stable', scriptid='', scriptname=''):
         if pos > 0:
             sext = sname[pos+1:]
             sname = sname[0:pos]
-        if api == 'legacy':
-            script = get_object_or_404(
-                Script,
-                name=sname,
-                language=get_language_from_extension(sext),
-                max_weechat=API_OLD,
-            )
-        else:
-            script = get_object_or_404(
-                Script,
-                name=sname,
-                language=get_language_from_extension(sext),
-                min_weechat__gte=API_STABLE,
-            )
+        script = get_object_or_404(
+            Script,
+            name=sname,
+            language=get_language_from_extension(sext),
+        )
         try:
             with open(files_path_join(script.path(),
                                       script.name_with_extension()),
@@ -216,11 +201,6 @@ def form_add(request):
         form = ScriptFormAdd(request.POST, request.FILES)
         if form.is_valid():
             scriptfile = request.FILES['file']
-            min_max = form.cleaned_data['min_max'].split(':')
-            if min_max[0] == '-':
-                min_max[0] = ''
-            if min_max[1] == '-':
-                min_max[1] = ''
 
             # add script in database
             now = datetime.now()
@@ -233,8 +213,7 @@ def form_add(request):
                             license=form.cleaned_data['license'],
                             desc_en=form.cleaned_data['description'],
                             requirements=form.cleaned_data['requirements'],
-                            min_weechat=min_max[0],
-                            max_weechat=min_max[1],
+                            min_weechat=form.cleaned_data['min_weechat'],
                             author=form.cleaned_data['author'],
                             mail=form.cleaned_data['mail'],
                             added=now,
@@ -258,7 +237,6 @@ def form_add(request):
                         'Description : %s\n'
                         'Requirements: %s\n'
                         'Min WeeChat : %s\n'
-                        'Max WeeChat : %s\n'
                         'Author      : %s <%s>\n'
                         '\n'
                         'Comment:\n%s\n' %
@@ -268,8 +246,7 @@ def form_add(request):
                          form.cleaned_data['license'],
                          form.cleaned_data['description'],
                          form.cleaned_data['requirements'],
-                         min_max[0],
-                         min_max[1],
+                         form.cleaned_data['min_weechat'],
                          form.cleaned_data['author'],
                          form.cleaned_data['mail'],
                          form.cleaned_data['comment']))
@@ -346,8 +323,7 @@ def form_update(request):
 
 def pending(request):
     """Page with scripts pending for approval."""
-    script_list = (Script.objects.filter(approved=False)
-                   .filter(min_weechat__gte=API_STABLE).order_by('-added'))
+    script_list = Script.objects.filter(approved=False).order_by('-added')
     return render(
         request,
         'scripts/pending.html',
@@ -399,15 +375,11 @@ def python3(request):
         'scripts_remaining': 99,
     })
     # status today
-    scripts = (Script.objects.filter(approved=True)
-               .filter(min_weechat__gte=API_STABLE)
-               .count())
+    scripts = Script.objects.filter(approved=True).count()
     python_scripts = (Script.objects.filter(approved=True)
-                      .filter(min_weechat__gte=API_STABLE)
                       .filter(language='python')
                       .count())
     scripts_ok = (Script.objects.filter(approved=True)
-                  .filter(min_weechat__gte=API_STABLE)
                   .filter(language='python')
                   .filter(tags__regex=r'(^|,)py3k-ok($|,)')
                   .count())

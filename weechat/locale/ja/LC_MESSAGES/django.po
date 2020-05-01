@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-29 12:24+0200\n"
+"POT-Creation-Date: 2020-05-01 09:59+0200\n"
 "PO-Revision-Date: 2020-01-04 21:42+0100\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
@@ -220,7 +220,7 @@ msgstr "非営利団体"
 msgid "Company"
 msgstr "企業"
 
-#: common/forms.py:88 common/forms.py:90 scripts/models.py:250
+#: common/forms.py:88 common/forms.py:90 scripts/models.py:227
 msgid "This field is required."
 msgstr "このフィールドは必須です。"
 
@@ -1043,9 +1043,9 @@ msgstr ""
 msgid "Transition to Python 3 for scripts"
 msgstr "スクリプトの Python 3 への移行"
 
-#: news/_i18n_info.py:60 scripts/models.py:309 templates/about/history.html:44
+#: news/_i18n_info.py:60 scripts/models.py:285 templates/about/history.html:44
 #: templates/doc/doc_version.html:20 templates/download/packages.html:34
-#: templates/scripts/list.html:94 templates/scripts/pending.html:32
+#: templates/scripts/list.html:87 templates/scripts/pending.html:32
 msgid "Version"
 msgstr "バージョン"
 
@@ -5665,15 +5665,15 @@ msgstr "iChat スタイルのタイムスタンプ。"
 msgid "iTunes control and now playing script."
 msgstr "iTunes の操作と現在再生中曲に関する情報を得るスクリプト。"
 
-#: scripts/models.py:157
+#: scripts/models.py:146
 msgid "Popular script"
 msgstr "人気のスクリプト"
 
-#: scripts/models.py:253
+#: scripts/models.py:230
 msgid "This name is invalid."
 msgstr "名前が不正です。"
 
-#: scripts/models.py:258
+#: scripts/models.py:234
 msgid ""
 "This name already exists, please choose another name (update script content "
 "accordingly)."
@@ -5681,92 +5681,94 @@ msgstr ""
 "この名前はすでに存在しています。他の名前を選んでください (スクリプトをアップ"
 "デートすることになります)。"
 
-#: scripts/models.py:300
+#: scripts/models.py:276
 msgctxt "The programming language."
 msgid "Language"
 msgstr "プログラミング言語"
 
-#: scripts/models.py:305 templates/about/interfaces.html:24
-#: templates/donate.html:96 templates/scripts/list.html:82
-#: templates/scripts/list.html:84 templates/scripts/pending.html:29
+#: scripts/models.py:281 templates/about/interfaces.html:24
+#: templates/donate.html:96 templates/scripts/list.html:75
+#: templates/scripts/list.html:77 templates/scripts/pending.html:29
 msgid "Name"
 msgstr "名称"
 
-#: scripts/models.py:310
+#: scripts/models.py:286
 msgid "The version of script (only digits or dots)."
 msgstr "スクリプトのバージョン (数字とドットのみ使用可)。"
 
-#: scripts/models.py:315 templates/scripts/list.html:97
-#: templates/scripts/list.html:99 templates/scripts/pending.html:34
+#: scripts/models.py:291 templates/scripts/list.html:90
+#: templates/scripts/list.html:92 templates/scripts/pending.html:34
 msgid "License"
 msgstr "ライセンス"
 
-#: scripts/models.py:316
+#: scripts/models.py:292
 msgid "The license (for example: GPL3, BSD, etc.)."
 msgstr "ライセンス (例: GPL3、BSD、など)。"
 
-#: scripts/models.py:319 scripts/models.py:398
+#: scripts/models.py:295 scripts/models.py:373
 #: templates/doc/doc_version.html:67 themes/models.py:168 themes/models.py:260
 msgid "File"
 msgstr "ファイル"
 
-#: scripts/models.py:320 scripts/models.py:399
+#: scripts/models.py:296 scripts/models.py:374
 msgid "The script."
 msgstr "スクリプト。"
 
-#: scripts/models.py:324 templates/dev/info_list.html:24
+#: scripts/models.py:300 templates/dev/info_list.html:24
 #: templates/dev/roadmap.html:41 templates/doc/security.html:42
-#: templates/scripts/list.html:93 templates/scripts/pending.html:30
+#: templates/scripts/list.html:86 templates/scripts/pending.html:30
 #: themes/models.py:175
 msgid "Description"
 msgstr "説明"
 
-#: scripts/models.py:329
+#: scripts/models.py:305
 msgid "Requirements"
 msgstr "実行に必要なもの"
 
-#: scripts/models.py:333
-msgid "Min/max WeeChat version."
+#: scripts/models.py:309
+#, fuzzy
+#| msgid "Min/max WeeChat version."
+msgid "Min WeeChat version."
 msgstr "WeeChat の最小および最大バージョン。"
 
-#: scripts/models.py:337 scripts/models.py:403 themes/models.py:179
+#: scripts/models.py:313 scripts/models.py:378 themes/models.py:179
 #: themes/models.py:265
 msgid "Your name or nick"
 msgstr "名前またはニックネーム"
 
-#: scripts/models.py:338
+#: scripts/models.py:314
 msgid "Used for git commit and scripts page."
 msgstr "git コミットおよびスクリプトページで利用。"
 
-#: scripts/models.py:342 scripts/models.py:408 themes/models.py:184
+#: scripts/models.py:318 scripts/models.py:383 themes/models.py:184
 #: themes/models.py:269
 msgid "Your e-mail"
 msgstr "電子メールアドレス"
 
-#: scripts/models.py:343 scripts/models.py:404 scripts/models.py:409
+#: scripts/models.py:319 scripts/models.py:379 scripts/models.py:384
 msgid "Used for git commit."
 msgstr "git コミットに利用。"
 
-#: scripts/models.py:349 scripts/models.py:414 themes/models.py:191
+#: scripts/models.py:325 scripts/models.py:389 themes/models.py:191
 #: themes/models.py:276
 msgid "Comments"
 msgstr "コメント"
 
-#: scripts/models.py:350 themes/models.py:192 themes/models.py:277
+#: scripts/models.py:326 themes/models.py:192 themes/models.py:277
 msgid "Not displayed."
 msgstr "表示されません。"
 
-#: scripts/models.py:355 scripts/models.py:420 themes/models.py:197
+#: scripts/models.py:331 scripts/models.py:395 themes/models.py:197
 #: themes/models.py:282
 msgid "Are you a spammer?"
 msgstr "スパマーですか?"
 
-#: scripts/models.py:356 scripts/models.py:421 themes/models.py:198
+#: scripts/models.py:332 scripts/models.py:396 themes/models.py:198
 #: themes/models.py:283
 msgid "Enter \"no\" if you are not a spammer."
 msgstr "スパマーでないなら \"no\" と入力してください。"
 
-#: scripts/models.py:364
+#: scripts/models.py:340
 #, python-brace-format
 msgid ""
 "The short name of script (max {max_chars} chars, only lower case letters, "
@@ -5775,19 +5777,19 @@ msgstr ""
 "スクリプトの短縮名 (最大で {max_chars} 文字、小文字、数字、\"_\" のみ使用"
 "可)。"
 
-#: scripts/models.py:375 themes/models.py:242
+#: scripts/models.py:350 themes/models.py:242
 msgid "Choose…"
 msgstr "選択…"
 
-#: scripts/models.py:390 templates/scripts/source.html:12
+#: scripts/models.py:365 templates/scripts/source.html:12
 msgid "Script"
 msgstr "スクリプト"
 
-#: scripts/models.py:395
+#: scripts/models.py:370
 msgid "New version"
 msgstr "新しいバージョン"
 
-#: scripts/models.py:415
+#: scripts/models.py:390
 msgid "Changes in this release."
 msgstr "このリリースの変更内容。"
 
@@ -6223,7 +6225,7 @@ msgid "Key dates"
 msgstr "重要な日"
 
 #: templates/about/history.html:43 templates/donate.html:90
-#: templates/scripts/pending.html:38 templates/scripts/python3.html:130
+#: templates/scripts/pending.html:37 templates/scripts/python3.html:130
 msgid "Date"
 msgstr "日付"
 
@@ -6260,25 +6262,25 @@ msgstr "サイト"
 msgid "Notes"
 msgstr "備考"
 
-#: templates/about/interfaces.html:86
+#: templates/about/interfaces.html:97
 msgid "Download page"
 msgstr "ダウンロードページ"
 
-#: templates/about/interfaces.html:100
+#: templates/about/interfaces.html:111
 msgid "This project is not maintained any more."
 msgstr "このプロジェクトはもうメンテナンスされていません。"
 
-#: templates/about/interfaces.html:106
+#: templates/about/interfaces.html:117
 msgid "Something missing?"
 msgstr "未掲載のソフトウェア?"
 
-#: templates/about/interfaces.html:109
+#: templates/about/interfaces.html:120
 msgid "You have developed another remote interface for WeeChat?"
 msgstr ""
 "もし WeeChat のリモートインターフェースを新たに開発したらどうすればいいです"
 "か?"
 
-#: templates/about/interfaces.html:112
+#: templates/about/interfaces.html:123
 msgid "Tell us more about your great software!"
 msgstr "開発されたソフトウェアについて詳細を教えてくださいね!"
 
@@ -7556,115 +7558,104 @@ msgstr ""
 "メモリリーク、速度低下、<strong>セキュリティ問題</strong>があるかもしれませ"
 "ん。警告しましたよ!"
 
-#: templates/scripts/list.html:23
-msgid ""
-"WARNING: the legacy API is deprecated and these scripts runs only on WeeChat "
-"0.2.x, which is OBSOLETE. You MUST NOT load these scripts with latest stable "
-"version of WeeChat!"
-msgstr ""
-"警告: 旧来の API は廃止予定で、古い API を使ったスクリプトは WeeChat 0.2.x 以"
-"外で動きませんし、サポートもありません。これらのスクリプトを最新の安定版 "
-"WeeChat でロードしてはいけません!"
-
-#: templates/scripts/list.html:30
+#: templates/scripts/list.html:24
 msgid "List:"
 msgstr "リスト:"
 
-#: templates/scripts/list.html:34 templates/scripts/source.html:26
-msgid "Version:"
-msgstr "バージョン:"
-
-#: templates/scripts/list.html:36
-msgid "filter:"
+#: templates/scripts/list.html:29
+#, fuzzy
+#| msgid "filter:"
+msgid "Filter:"
 msgstr "フィルタ:"
 
-#: templates/scripts/list.html:36
+#: templates/scripts/list.html:29
 msgid "remove"
 msgstr "削除"
 
-#: templates/scripts/list.html:38
-msgid "no filter"
+#: templates/scripts/list.html:31
+#, fuzzy
+#| msgid "no filter"
+msgid "No filter"
 msgstr "フィルタがありません"
 
-#: templates/scripts/list.html:40 templates/scripts/scripts.html:5
+#: templates/scripts/list.html:33 templates/scripts/scripts.html:5
 msgid "scripts"
 msgstr "スクリプト"
 
-#: templates/scripts/list.html:43 templates/scripts/list.html:47
+#: templates/scripts/list.html:36 templates/scripts/list.html:40
 msgid "Filters by popularity"
 msgstr "フィルタを人気順に表示中"
 
-#: templates/scripts/list.html:43 templates/scripts/list.html:47
+#: templates/scripts/list.html:36 templates/scripts/list.html:40
 msgid "Filters by name"
 msgstr "フィルタを人気順に表示中"
 
-#: templates/scripts/list.html:44 templates/scripts/list.html:48
+#: templates/scripts/list.html:37 templates/scripts/list.html:41
 msgid "sort filters by name"
 msgstr "フィルタを名前順にソート"
 
-#: templates/scripts/list.html:44 templates/scripts/list.html:48
+#: templates/scripts/list.html:37 templates/scripts/list.html:41
 msgid "sort filters by popularity"
 msgstr "フィルタを人気順にソート"
 
-#: templates/scripts/list.html:51 templates/scripts/list.html:53
+#: templates/scripts/list.html:44 templates/scripts/list.html:46
 msgid "Language:"
 msgstr "プログラミング言語:"
 
-#: templates/scripts/list.html:59 templates/scripts/list.html:61
-#: templates/scripts/list.html:165 templates/scripts/source.html:27
+#: templates/scripts/list.html:52 templates/scripts/list.html:54
+#: templates/scripts/list.html:158 templates/scripts/source.html:27
 msgid "License:"
 msgstr "ライセンス:"
 
-#: templates/scripts/list.html:67 templates/scripts/list.html:69
-#: templates/scripts/list.html:147
+#: templates/scripts/list.html:60 templates/scripts/list.html:62
+#: templates/scripts/list.html:140
 msgid "Tag:"
 msgstr "タグ:"
 
-#: templates/scripts/list.html:88 templates/scripts/list.html:90
+#: templates/scripts/list.html:81 templates/scripts/list.html:83
 #: templates/scripts/pending.html:33
 msgctxt "programming language"
 msgid "Language"
 msgstr "プログラミング言語"
 
-#: templates/scripts/list.html:104 templates/scripts/list.html:106
+#: templates/scripts/list.html:97 templates/scripts/list.html:99
 #: templates/scripts/pending.html:35
 msgid "Min"
 msgstr "以上"
 
-#: templates/scripts/list.html:111 templates/scripts/list.html:113
-#: templates/scripts/pending.html:36
+#: templates/scripts/list.html:104 templates/scripts/list.html:106
 msgid "Max"
 msgstr "以下"
 
-#: templates/scripts/list.html:118 templates/scripts/list.html:120
-#: templates/scripts/pending.html:37
+#: templates/scripts/list.html:111 templates/scripts/list.html:113
+#: templates/scripts/pending.html:36
 msgid "Author"
 msgstr "作者"
 
-#: templates/scripts/list.html:125 templates/scripts/list.html:127
+#: templates/scripts/list.html:118 templates/scripts/list.html:120
 #: templates/themes/list.html:25 templates/themes/source.html:15
 msgid "Added"
 msgstr "追加日"
 
-#: templates/scripts/list.html:132 templates/scripts/list.html:134
+#: templates/scripts/list.html:125 templates/scripts/list.html:127
 msgid "Updated"
 msgstr "アップデート日"
 
-#: templates/scripts/list.html:155 templates/scripts/pending.html:54
+#: templates/scripts/list.html:148 templates/scripts/pending.html:53
 msgid "requires"
 msgstr "必要なもの"
 
-#: templates/scripts/list.html:160
+#: templates/scripts/list.html:153
 #, python-format
 msgid "Script disabled (%(reason)s)."
 msgstr ""
 
-#: templates/scripts/list.html:168 templates/scripts/source.html:25
+#: templates/scripts/list.html:161 templates/scripts/source.html:25
 #: templates/themes/list.html:22
 msgid "Author:"
 msgstr "作者:"
 
-#: templates/scripts/list.html:180 templates/scripts/update.html:34
+#: templates/scripts/list.html:173 templates/scripts/update.html:34
 msgid "No script found."
 msgstr "スクリプトが見つかりません。"
 
@@ -7703,7 +7694,7 @@ msgstr ""
 msgid "Approval notes"
 msgstr "承認コメント"
 
-#: templates/scripts/pending.html:72
+#: templates/scripts/pending.html:70
 msgid "No script pending approval at this time."
 msgstr "現在のところ承認待ち状態のスクリプトはありません。"
 
@@ -8044,6 +8035,10 @@ msgstr "Python のバージョンが 3.x であることを確認してくださ
 msgid "<strong>WARNING:</strong> this script has been disabled (%(reason)s)."
 msgstr ""
 
+#: templates/scripts/source.html:26
+msgid "Version:"
+msgstr "バージョン:"
+
 #: templates/scripts/source.html:29
 msgid "For WeeChat"
 msgstr "WeeChat 用"
@@ -8214,3 +8209,12 @@ msgstr "内部エラー。"
 #: themes/models.py:307
 msgid "Invalid name: different from theme."
 msgstr "不正な名前: テーマとは異なります。"
+
+#~ msgid ""
+#~ "WARNING: the legacy API is deprecated and these scripts runs only on "
+#~ "WeeChat 0.2.x, which is OBSOLETE. You MUST NOT load these scripts with "
+#~ "latest stable version of WeeChat!"
+#~ msgstr ""
+#~ "警告: 旧来の API は廃止予定で、古い API を使ったスクリプトは WeeChat 0.2."
+#~ "x 以外で動きませんし、サポートもありません。これらのスクリプトを最新の安定"
+#~ "版 WeeChat でロードしてはいけません!"

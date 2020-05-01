@@ -108,10 +108,9 @@ class Script(models.Model):
     updated = models.DateTimeField(null=True)
 
     def __str__(self):
-        return '%s %s%s (%s, %s)%s%s' % (
+        return '%s %s (%s, %s)%s%s' % (
             self.name,
             self.version,
-            ' (legacy api)' if self.is_legacy() else '',
             self.author,
             self.added,
             '' if self.approved else ' [pending]',
@@ -120,10 +119,6 @@ class Script(models.Model):
 
     def __unicode__(self):  # python 2.x
         return self.__str__()
-
-    def is_legacy(self):
-        """Return True if a script is legacy (for WeeChat <= 0.2.6)."""
-        return self.max_weechat == '0.2.6'
 
     def tagslist(self):
         """Return a list with script tags."""
@@ -138,13 +133,7 @@ class Script(models.Model):
 
     def path(self):
         """Return path to script (for URL)."""
-        pending = ''
-        if not self.approved:
-            pending = '/pending'
-        if self.is_legacy():
-            return 'scripts/legacy%s' % pending
-        else:
-            return 'scripts%s' % pending
+        return 'scripts' if self.approved else 'scripts/pending'
 
     def popularity_img(self):
         """Return HTML code with image for popular script."""
@@ -183,24 +172,12 @@ class Script(models.Model):
         return ugettext(self.disabled)
 
     def version_weechat(self):
-        """Return the min/max WeeChat versions in a string."""
-        wee_min = self.min_weechat
-        if wee_min == '':
-            wee_min = '0.0.1'
-        if self.max_weechat == '':
-            return '%s+' % wee_min
-        else:
-            return '%s-%s' % (wee_min, self.max_weechat)
+        """Return the WeeChat supported versions in a string."""
+        return '%s+' % (self.min_weechat or '0.3.0')
 
     def version_weechat_html(self):
-        """Return the min/max WeeChat versions in a string for HTML."""
-        wee_min = self.min_weechat
-        if wee_min == '':
-            wee_min = '0.0.1'
-        if self.max_weechat == '':
-            return '&ge; %s' % wee_min
-        else:
-            return '%s &rarr; %s' % (wee_min, self.max_weechat)
+        """Return the WeeChat supported versions in a string for HTML."""
+        return '&ge; %s' % (self.min_weechat or '0.3.0')
 
     def build_url(self):
         """Return URL to the script."""
@@ -251,8 +228,7 @@ class NameField(forms.CharField):
         if not re.search('^[a-z0-9_]+$', value):
             raise forms.ValidationError(
                 ugettext('This name is invalid.'))
-        scripts = (Script.objects.exclude(max_weechat='0.2.6')
-                   .filter(name=value))
+        scripts = Script.objects.filter(name=value)
         if scripts:
             raise forms.ValidationError(
                 ugettext('This name already exists, please choose another '
@@ -263,9 +239,9 @@ class NameField(forms.CharField):
         return BootstrapBoundField(form, self, field_name)
 
 
-def get_min_max_choices():
-    """Get min/max versions for add form."""
-    version_min_max = []
+def get_min_weechat_choices():
+    """Get min WeeChat versions for add form."""
+    version_min = []
     try:
         devel_desc = Release.objects.get(version='devel').description
         releases = Release.objects.filter(
@@ -273,13 +249,13 @@ def get_min_max_choices():
             version__lte=re.sub('-.*', '', devel_desc)).order_by('date')
         for rel in releases:
             version = (
-                '{}:-'.format(rel.version),
+                rel.version,
                 '≥ {}'.format(rel.version),
             )
-            version_min_max.append(version)
+            version_min.append(version)
     except ObjectDoesNotExist:
-        version_min_max = []
-    return version_min_max
+        version_min = []
+    return version_min
 
 
 class ScriptFormAdd(Form):
@@ -328,9 +304,9 @@ class ScriptFormAdd(Form):
         max_length=MAX_LENGTH_REQUIRE,
         label=ugettext_lazy('Requirements'),
     )
-    min_max = ChoiceField(
+    min_weechat = ChoiceField(
         choices=[],
-        label=ugettext_lazy('Min/max WeeChat version.'),
+        label=ugettext_lazy('Min WeeChat version.'),
     )
     author = CharField(
         max_length=MAX_LENGTH_AUTHOR,
@@ -359,7 +335,7 @@ class ScriptFormAdd(Form):
     def __init__(self, *args, **kwargs):
         super(ScriptFormAdd, self).__init__(*args, **kwargs)
         self.label_suffix = ''
-        self.fields['min_max'].choices = get_min_max_choices()
+        self.fields['min_weechat'].choices = get_min_weechat_choices()
         self.fields['name'].help_text = ugettext(
             'The short name of script (max {max_chars} chars, '
             'only lower case letters, digits or "_").').format(
@@ -369,8 +345,7 @@ class ScriptFormAdd(Form):
 def get_script_choices():
     """Get list of scripts for update form."""
     try:
-        script_list = (Script.objects.exclude(max_weechat='0.2.6')
-                       .filter(approved=True).order_by('name'))
+        script_list = Script.objects.filter(approved=True).order_by('name')
         script_choices = []
         script_choices.append(('', ugettext(u'Choose…')))
         for script in script_list:
@@ -452,10 +427,7 @@ def handler_scripts_changed(sender, **kwargs):
         strings.append((reason, 'reason for a disabled script'))
 
     # build xml/json content
-    script_list = (Script.objects
-                   .exclude(max_weechat='0.2.6')
-                   .filter(approved=True)
-                   .order_by('id'))
+    script_list = Script.objects.filter(approved=True).order_by('id')
     for script in script_list:
         strings.append(
             (
