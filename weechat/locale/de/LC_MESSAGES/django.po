@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-01 09:59+0200\n"
+"POT-Creation-Date: 2020-05-01 10:05+0200\n"
 "PO-Revision-Date: 2020-03-29 12:59+0200\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -7728,17 +7728,20 @@ msgstr ""
 "oder hook_process_hashtable() genutzt werden um ein Blockieren von WeeChat "
 "zu verhindern"
 
-#: templates/scripts/add.html:33 templates/scripts/update.html:19
-#, python-format
+#: templates/scripts/add.html:32 templates/scripts/update.html:17
+#, fuzzy
+#| msgid ""
+#| "All new scripts as well as script updates must be compatible with Python "
+#| "3.x. Extra support of Python 2.x is optional."
 msgid ""
-"for a Python script, there's a transition to Python 3 in progress, please "
-"read the <a href=\"%(url_python3)s\">transition page</a>"
+"the Python scripts must be compatible with Python 3.x, support of Python 2.x "
+"is now optional"
 msgstr ""
-"für ein Python Skript ist eine Umstellung auf Python 3 in Planung. Bitte "
-"lese dazu die Informationen auf der <a href=\"%(url_python3)s"
-"\">Umstellungsseite</a>"
+"Alle neuen Skripten sowie alle Skripten die aktualisiert werden, müssen "
+"Python 3.x unterstützen. Eine zusätzliche Unterstützung von Python 2.x ist "
+"freiwillig."
 
-#: templates/scripts/add.html:34
+#: templates/scripts/add.html:33
 msgid ""
 "if you mention the WeeChat site in your script, the official URL is https://"
 "weechat.org (https and no \"www.\")"
@@ -7746,7 +7749,7 @@ msgstr ""
 "Wenn Du in Deinem Skript auf die WeeChat Seite verweist dann nutze bitte die "
 "offizielle URL https://weechat.org (https und nicht \"www.\")"
 
-#: templates/scripts/add.html:45 templates/scripts/update.html:28
+#: templates/scripts/add.html:44 templates/scripts/update.html:26
 #: templates/themes/add.html:24 templates/themes/update.html:16
 msgid "Submit"
 msgstr "Versenden"
@@ -7906,7 +7909,7 @@ msgstr "Skript deaktiviert (%(reason)s)."
 msgid "Author:"
 msgstr "Autor:"
 
-#: templates/scripts/list.html:173 templates/scripts/update.html:34
+#: templates/scripts/list.html:173 templates/scripts/update.html:32
 msgid "No script found."
 msgstr "Kein Skript gefunden."
 
@@ -8339,14 +8342,6 @@ msgstr ""
 "Es müssen <strong>alle</strong> nachfolgenden Regeln beachtet werden, "
 "anderenfalls wird das Skript nicht akzeptiert:"
 
-#: templates/scripts/update.html:17
-msgid ""
-"for a Python script with tag \"py3k-ok\", please ensure your new version is "
-"compatible with Python 2.7 and 3.x"
-msgstr ""
-"für ein Python Skript mit dem Tag \"py3k-ok\" muss sichergestellt werden, "
-"dass die neue Version kompatibel mit Python 2.7 und 3.x ist"
-
 #: templates/scripts/update_ok.html:12
 msgid "New release has been submitted for review."
 msgstr "Neues Release wurde zur Überprüfung übertragen."
@@ -8475,6 +8470,21 @@ msgstr "Interner Fehler."
 #: themes/models.py:307
 msgid "Invalid name: different from theme."
 msgstr "Ungültiger Name: unterscheidet sich vom Theme."
+
+#~ msgid ""
+#~ "for a Python script, there's a transition to Python 3 in progress, please "
+#~ "read the <a href=\"%(url_python3)s\">transition page</a>"
+#~ msgstr ""
+#~ "für ein Python Skript ist eine Umstellung auf Python 3 in Planung. Bitte "
+#~ "lese dazu die Informationen auf der <a href=\"%(url_python3)s"
+#~ "\">Umstellungsseite</a>"
+
+#~ msgid ""
+#~ "for a Python script with tag \"py3k-ok\", please ensure your new version "
+#~ "is compatible with Python 2.7 and 3.x"
+#~ msgstr ""
+#~ "für ein Python Skript mit dem Tag \"py3k-ok\" muss sichergestellt werden, "
+#~ "dass die neue Version kompatibel mit Python 2.7 und 3.x ist"
 
 #~ msgid ""
 #~ "WARNING: the legacy API is deprecated and these scripts runs only on "

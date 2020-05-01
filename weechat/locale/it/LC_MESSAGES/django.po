@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-01 09:59+0200\n"
+"POT-Creation-Date: 2020-05-01 10:05+0200\n"
 "PO-Revision-Date: 2020-01-04 21:42+0100\n"
 "Last-Translator: Marco Paolone <marcopaolone@gmail.com>\n"
 "Language-Team: Italian <marcopaolone@gmail.com>\n"
@@ -6961,20 +6961,19 @@ msgstr ""
 "se lo script compie qualche azione di blocco (come il prelevamento di una "
 "URL, si richiede l'uso di function_hook_process per non bloccare WeeChat"
 
-#: templates/scripts/add.html:33 templates/scripts/update.html:19
-#, python-format
+#: templates/scripts/add.html:32 templates/scripts/update.html:17
 msgid ""
-"for a Python script, there's a transition to Python 3 in progress, please "
-"read the <a href=\"%(url_python3)s\">transition page</a>"
+"the Python scripts must be compatible with Python 3.x, support of Python 2.x "
+"is now optional"
 msgstr ""
 
-#: templates/scripts/add.html:34
+#: templates/scripts/add.html:33
 msgid ""
 "if you mention the WeeChat site in your script, the official URL is https://"
 "weechat.org (https and no \"www.\")"
 msgstr ""
 
-#: templates/scripts/add.html:45 templates/scripts/update.html:28
+#: templates/scripts/add.html:44 templates/scripts/update.html:26
 #: templates/themes/add.html:24 templates/themes/update.html:16
 msgid "Submit"
 msgstr "Invia"
@@ -7138,7 +7137,7 @@ msgstr ""
 msgid "Author:"
 msgstr "Autore:"
 
-#: templates/scripts/list.html:173 templates/scripts/update.html:34
+#: templates/scripts/list.html:173 templates/scripts/update.html:32
 msgid "No script found."
 msgstr "Nessuno script trovato."
 
@@ -7525,12 +7524,6 @@ msgid ""
 msgstr ""
 "<strong>Attenzione:</strong> per favore seguire <strong>tutte</strong> "
 "queste regole, altrimenti il vostro script verrà respinto:"
-
-#: templates/scripts/update.html:17
-msgid ""
-"for a Python script with tag \"py3k-ok\", please ensure your new version is "
-"compatible with Python 2.7 and 3.x"
-msgstr ""
 
 #: templates/scripts/update_ok.html:12
 msgid "New release has been submitted for review."

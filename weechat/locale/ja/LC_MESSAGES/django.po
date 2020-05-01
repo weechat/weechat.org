@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-01 09:59+0200\n"
+"POT-Creation-Date: 2020-05-01 10:05+0200\n"
 "PO-Revision-Date: 2020-01-04 21:42+0100\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
@@ -7486,16 +7486,19 @@ msgstr ""
 "ど) では、hook_process (または hook_process_hashtable) を使って WeeChat の実"
 "行を中断させないようにしてください"
 
-#: templates/scripts/add.html:33 templates/scripts/update.html:19
-#, python-format
+#: templates/scripts/add.html:32 templates/scripts/update.html:17
+#, fuzzy
+#| msgid ""
+#| "All new scripts as well as script updates must be compatible with Python "
+#| "3.x. Extra support of Python 2.x is optional."
 msgid ""
-"for a Python script, there's a transition to Python 3 in progress, please "
-"read the <a href=\"%(url_python3)s\">transition page</a>"
+"the Python scripts must be compatible with Python 3.x, support of Python 2.x "
+"is now optional"
 msgstr ""
-"Python スクリプトについては、Python 3 への移行を進めています。<a href="
-"\"%(url_python3)s\">Python 3 移行ページ</a>を確認してください"
+"すべての新しいスクリプトおよびスクリプト更新に対して Python 3.x との互換性を"
+"持つことが求められます。Python 2.x との互換性継続は任意です。"
 
-#: templates/scripts/add.html:34
+#: templates/scripts/add.html:33
 msgid ""
 "if you mention the WeeChat site in your script, the official URL is https://"
 "weechat.org (https and no \"www.\")"
@@ -7503,7 +7506,7 @@ msgstr ""
 "WeeChat サイトをスクリプト中で参照する際には、公式の URL である https://"
 "weechat.org (https で、\"www.\" は不要) を使ってください"
 
-#: templates/scripts/add.html:45 templates/scripts/update.html:28
+#: templates/scripts/add.html:44 templates/scripts/update.html:26
 #: templates/themes/add.html:24 templates/themes/update.html:16
 msgid "Submit"
 msgstr "投稿"
@@ -7655,7 +7658,7 @@ msgstr ""
 msgid "Author:"
 msgstr "作者:"
 
-#: templates/scripts/list.html:173 templates/scripts/update.html:34
+#: templates/scripts/list.html:173 templates/scripts/update.html:32
 msgid "No script found."
 msgstr "スクリプトが見つかりません。"
 
@@ -8077,14 +8080,6 @@ msgstr ""
 "以下のルールの<strong>全て</strong>を守ってください。守られていないルールのあ"
 "るスクリプトは承認されません:"
 
-#: templates/scripts/update.html:17
-msgid ""
-"for a Python script with tag \"py3k-ok\", please ensure your new version is "
-"compatible with Python 2.7 and 3.x"
-msgstr ""
-"\"py3k-ok\" タグを付けられた Python スクリプトは、新しいバージョンが Python "
-"2.7 と 3.x で互換性があることを確認してください"
-
 #: templates/scripts/update_ok.html:12
 msgid "New release has been submitted for review."
 msgstr "新しいバージョンが投稿され、レビュー待ち状態です。"
@@ -8209,6 +8204,20 @@ msgstr "内部エラー。"
 #: themes/models.py:307
 msgid "Invalid name: different from theme."
 msgstr "不正な名前: テーマとは異なります。"
+
+#~ msgid ""
+#~ "for a Python script, there's a transition to Python 3 in progress, please "
+#~ "read the <a href=\"%(url_python3)s\">transition page</a>"
+#~ msgstr ""
+#~ "Python スクリプトについては、Python 3 への移行を進めています。<a href="
+#~ "\"%(url_python3)s\">Python 3 移行ページ</a>を確認してください"
+
+#~ msgid ""
+#~ "for a Python script with tag \"py3k-ok\", please ensure your new version "
+#~ "is compatible with Python 2.7 and 3.x"
+#~ msgstr ""
+#~ "\"py3k-ok\" タグを付けられた Python スクリプトは、新しいバージョンが "
+#~ "Python 2.7 と 3.x で互換性があることを確認してください"
 
 #~ msgid ""
 #~ "WARNING: the legacy API is deprecated and these scripts runs only on "

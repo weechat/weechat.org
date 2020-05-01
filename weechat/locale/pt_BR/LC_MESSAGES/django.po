@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-01 09:59+0200\n"
+"POT-Creation-Date: 2020-05-01 10:05+0200\n"
 "PO-Revision-Date: 2020-01-04 21:42+0100\n"
 "Last-Translator: Alexandre Bolelli <semeion7@gmail.com>\n"
 "Language-Team: Portuguese <semeion7@gmail.com>\n"
@@ -7336,20 +7336,19 @@ msgstr ""
 "se o seu script está bloqueando algo (como buscar URL), você deve usar a "
 "função hook_process (ou hook_process_hashtable) para não bloquear o WeeChat"
 
-#: templates/scripts/add.html:33 templates/scripts/update.html:19
-#, python-format
+#: templates/scripts/add.html:32 templates/scripts/update.html:17
 msgid ""
-"for a Python script, there's a transition to Python 3 in progress, please "
-"read the <a href=\"%(url_python3)s\">transition page</a>"
+"the Python scripts must be compatible with Python 3.x, support of Python 2.x "
+"is now optional"
 msgstr ""
 
-#: templates/scripts/add.html:34
+#: templates/scripts/add.html:33
 msgid ""
 "if you mention the WeeChat site in your script, the official URL is https://"
 "weechat.org (https and no \"www.\")"
 msgstr ""
 
-#: templates/scripts/add.html:45 templates/scripts/update.html:28
+#: templates/scripts/add.html:44 templates/scripts/update.html:26
 #: templates/themes/add.html:24 templates/themes/update.html:16
 msgid "Submit"
 msgstr "Entregar"
@@ -7520,7 +7519,7 @@ msgstr ""
 msgid "Author:"
 msgstr "Autor:"
 
-#: templates/scripts/list.html:173 templates/scripts/update.html:34
+#: templates/scripts/list.html:173 templates/scripts/update.html:32
 msgid "No script found."
 msgstr "Nenhum script encontrado."
 
@@ -7905,18 +7904,6 @@ msgstr ""
 "<strong>Aviso:</strong> por favor siga <strong>todas</strong> essas regras, "
 "caso contrário, seu script será rejeitado:"
 
-#: templates/scripts/update.html:17
-#, fuzzy
-#| msgid ""
-#| "for a Python script with tag \"py3k-ok\", please ensure your new version "
-#| "is compatible with Python 2.x and 3.x"
-msgid ""
-"for a Python script with tag \"py3k-ok\", please ensure your new version is "
-"compatible with Python 2.7 and 3.x"
-msgstr ""
-"para um script em Python com a tag \"py3k-ok\", por favor tenha certeza que "
-"a sua nova versão é compatível com Python 2.x e 3.x"
-
 #: templates/scripts/update_ok.html:12
 msgid "New release has been submitted for review."
 msgstr "Nova versão foi submetida para análise."
@@ -8052,6 +8039,17 @@ msgstr "Erro interno."
 #: themes/models.py:307
 msgid "Invalid name: different from theme."
 msgstr "Nome inválido: diferente do tema."
+
+#, fuzzy
+#~| msgid ""
+#~| "for a Python script with tag \"py3k-ok\", please ensure your new version "
+#~| "is compatible with Python 2.x and 3.x"
+#~ msgid ""
+#~ "for a Python script with tag \"py3k-ok\", please ensure your new version "
+#~ "is compatible with Python 2.7 and 3.x"
+#~ msgstr ""
+#~ "para um script em Python com a tag \"py3k-ok\", por favor tenha certeza "
+#~ "que a sua nova versão é compatível com Python 2.x e 3.x"
 
 #, fuzzy
 #~| msgid ""
