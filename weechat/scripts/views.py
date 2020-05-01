@@ -390,6 +390,14 @@ def python3(request):
         'scripts_ok': 125,
         'scripts_remaining': 103,
     })
+    # status on 2020-05-01 (end of transition)
+    status_list.append({
+        'date': datetime(2020, 5, 1),
+        'scripts': 364,
+        'python_scripts': 228,
+        'scripts_ok': 129,
+        'scripts_remaining': 99,
+    })
     # status today
     scripts = (Script.objects.filter(approved=True)
                .filter(min_weechat__gte=API_STABLE)
@@ -411,14 +419,6 @@ def python3(request):
         'python_scripts': python_scripts,
         'scripts_ok': scripts_ok,
         'scripts_remaining': scripts_remaining,
-    })
-    # status at the end of transition (estimates)
-    status_list.append({
-        'date': datetime(2020, 5, 1),
-        'scripts': 370,
-        'python_scripts': 233,
-        'scripts_ok': 160,
-        'scripts_remaining': 73,
     })
     # compute percentages and flag "future"
     now = datetime.now()
