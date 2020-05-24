@@ -11,6 +11,7 @@
 
 <ul class="nav nav-tabs mt-4">
   <li class="nav-item"><a class="nav-link{% if stats == "weechat" %} active{% endif %}" href="{% url 'dev_stats_git' 'weechat' %}">WeeChat</a></li>
+  <li class="nav-item"><a class="nav-link{% if stats == "weechat-relay" %} active{% endif %}" href="{% url 'dev_stats_git' 'weechat-relay' %}">WeeChat Relay</a></li>
   <li class="nav-item"><a class="nav-link{% if stats == "scripts" %} active{% endif %}" href="{% url 'dev_stats_git' 'scripts' %}">{% trans "Scripts" %}</a></li>
   <li class="nav-item"><a class="nav-link{% if stats == "qweechat" %} active{% endif %}" href="{% url 'dev_stats_git' 'qweechat' %}">QWeeChat</a></li>
   <li class="nav-item"><a class="nav-link{% if stats == "weechat.org" %} active{% endif %}" href="{% url 'dev_stats_git' 'weechat.org' %}">WeeChat.org</a></li>

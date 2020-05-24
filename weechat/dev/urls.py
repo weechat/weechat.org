@@ -36,7 +36,8 @@ urlpatterns = [
     url(r'^roadmap/(?P<versions>future|released)/$', view_roadmap,
         name='dev_roadmap_versions'),
     url(r'^stats/$', view_stats_repo, name='dev_stats'),
-    url(r'^stats/(?P<stats>weechat|scripts|qweechat|weechat\.org)/$',
+    url(r'^stats/(?P<stats>weechat|weechat-relay|scripts|qweechat'
+        r'|weechat\.org)/$',
         view_stats_repo, name='dev_stats_git'),
     url(r'^info/$', view_info, name='dev_info'),
     url(r'^info/(?P<name>[a-zA-Z0-9_]*)/$', view_info, name='dev_info_name'),

@@ -154,7 +154,7 @@ def stats_repo(request, stats='weechat'):
     except:  # noqa: E722
         pass
 
-    if stats in ('weechat', 'qweechat'):
+    if stats in ('weechat', 'weechat-relay', 'qweechat'):
         try:
             with open(files_path_join('stats',
                                       'sloc_%s.txt' % stats), 'r') as _file:
@@ -166,6 +166,9 @@ def stats_repo(request, stats='weechat'):
         repository = ('https://github.com/weechat/weechat')
         sloc_lang = 'C'
         svg_list += ['commits_version', 'commits_other_clients']
+    elif stats == 'weechat-relay':
+        repository = ('https://github.com/weechat/weechat-relay')
+        sloc_lang = 'C'
     elif stats == 'scripts':
         repository = ('https://github.com/weechat/scripts')
         svg_list += ['downloads']
