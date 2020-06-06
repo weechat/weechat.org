@@ -70,6 +70,25 @@ def tracker_links(tracker):
     return '<br>'.join(items)
 
 
+def split_commit(commit):
+    """
+    Return repository and commit id with a commit name, with one of these
+    formats:
+
+        org/repo@commit
+        repo@commit
+        commit
+
+    Default repository is weechat/weechat.
+    """
+    if '@' not in commit:
+        return ('weechat/weechat', commit)
+    repo, commit_id = commit.split('@', 1)
+    if '/' not in repo:
+        repo = 'weechat/%s' % repo
+    return (repo, commit_id)
+
+
 def commits_links(commits):
     """Replace commits or branches by URLs to gitweb on savannah."""
     if not commits:
@@ -86,9 +105,11 @@ def commits_links(commits):
             commit = commit[5:]
             img = 'link_twin.png'
             title = ' title="branch: %s"' % commit
-        images.append('<a href="https://github.com/weechat/weechat/%s/%s" '
+        repo, commit_id = split_commit(commit)
+        images.append('<a href="https://github.com/%s/%s/%s" '
                       'target="_blank" rel="noopener">'
                       '<img src="%simages/%s" width="16" height="16" '
                       'alt="*"%s></a>'
-                      % (objtype, commit, settings.MEDIA_URL, img, title))
+                      % (repo, objtype, commit_id, settings.MEDIA_URL,
+                         img, title))
     return ' '.join(images)
