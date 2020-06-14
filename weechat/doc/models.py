@@ -235,6 +235,7 @@ class Security(models.Model):
 
 def handler_security_saved(sender, **kwargs):
     """Write file _i18n_security.py with security issues to translate."""
+    # pylint: disable=unused-argument
     strings = []
     for security in Security.objects.filter(visible=1).order_by('-date'):
         if security.description:

@@ -31,18 +31,19 @@ class WeechatFeed(Feed):
     """A WeeChat feed."""
 
     def get_object(self, request, *args, **kwargs):
+        # pylint: disable=attribute-defined-outside-init
         self.request = request
-        return None
 
-    def item_link(self, info):
+    def item_link(self, item):
         """Return link to item by using the domain sent in the request."""
         return '%s://%s/news/%d' % (
             self.request.scheme,
             self.request.get_host(),
-            info.id,
+            item.id,
         )
 
-    def item_pubdate(self, info):
+    @staticmethod
+    def item_pubdate(info):
         """Return idem date."""
         return info.date
 
@@ -53,7 +54,8 @@ class LatestNewsFeed(WeechatFeed):
     description = title
     link = '/news/'
 
-    def items(self):
+    @staticmethod
+    def items():
         """Return items with date in the past."""
         return (Info.objects.filter(visible=1)
                 .filter(date__lte=datetime.now()).order_by('-date')[:10])
@@ -65,7 +67,8 @@ class UpcomingEventsFeed(WeechatFeed):
     description = title
     link = '/events/'
 
-    def items(self):
+    @staticmethod
+    def items():
         """Return items with date in the future."""
         return (Info.objects.filter(visible=1)
                 .filter(date__gt=datetime.now()).order_by('date')[:10])

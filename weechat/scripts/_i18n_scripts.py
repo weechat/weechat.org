@@ -1,12 +1,16 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated after changes in database, DO NOT EDIT!
 
+"""Translations for scripts/scripts."""
+
 # flake8: noqa
+# pylint: disable=line-too-long,too-many-statements
 
 from django.utils.translation import gettext_noop
 
 
-def __i18n_scripts():
+def __i18n_scripts_scripts():
+    """Translations for scripts/scripts."""
     # Translators: description for script "weerock.pl" (0.3.0+)
     gettext_noop("A \"now playing\" script for several music players.")
     # Translators: description for script "urlbuf.py" (0.3.0+)

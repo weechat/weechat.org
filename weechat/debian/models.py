@@ -69,7 +69,7 @@ class Repo(models.Model):
     priority = models.IntegerField(default=0)
 
     def __str__(self):
-        return '%s %s, %s, %s (%s) (%d)' % (
+        return '%s %s, %s, %s (%s) (%s)' % (
             self.name,
             self.version,
             'visible' if self.visible else 'hidden',
@@ -101,10 +101,13 @@ class Repo(models.Model):
         return 'deb-src %s %s main' % (self.url, self.version.codename)
 
     class Meta:
+        """Sort Repos by priority."""
         ordering = ['priority']
 
 
 def handler_repo_saved(sender, **kwargs):
+    """Handler called when a Repo is saved."""
+    # pylint: disable=unused-argument
     strings = []
     for repo in Repo.objects.order_by('priority'):
         if repo.message:

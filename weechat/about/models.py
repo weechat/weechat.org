@@ -88,6 +88,7 @@ class Keydate(models.Model):
 
 def handler_keydate_saved(sender, **kwargs):
     """Write file _i18n_keydates.py with key dates to translate."""
+    # pylint: disable=unused-argument
     strings = []
     for keydate in Keydate.objects.order_by('-date'):
         strings.append(keydate.text)

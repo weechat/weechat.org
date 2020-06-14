@@ -23,8 +23,9 @@
 from datetime import datetime, timedelta
 import gzip
 import os
-import pytz
 import re
+
+import pytz
 
 from django.conf import settings
 from django.shortcuts import render
@@ -35,6 +36,7 @@ from weechat.debian.models import Repo
 
 def get_repository_packages(repository):
     """Get list of packages for a repository."""
+    # pylint: disable=too-many-locals
     timezone = pytz.timezone(settings.TIME_ZONE)
     now = datetime.now(tz=timezone)
     repopkgs = []
@@ -110,7 +112,7 @@ def repos(request, active='active', files=''):
             debpkgs.extend(sorted(repo_packages,
                                   key=lambda p: p['builddatetime'],
                                   reverse=True))
-        except:  # noqa: E722
+        except:  # noqa: E722  pylint: disable=bare-except
             errors.append('%s %s' % (repository.name, repository.version))
     return render(
         request,

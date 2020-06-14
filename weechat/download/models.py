@@ -160,7 +160,7 @@ class Package(models.Model):
         """Return the size of package, in bytes (as string)."""
         try:
             return str(os.path.getsize(self.fullname()))
-        except:  # noqa: E722
+        except:  # noqa: E722  pylint: disable=bare-except
             return ''
 
     def filedate(self):
@@ -169,7 +169,7 @@ class Package(models.Model):
             timezone = pytz.timezone(settings.TIME_ZONE)
             return datetime.fromtimestamp(os.path.getmtime(self.fullname()),
                                           tz=timezone)
-        except:  # noqa: E722
+        except:  # noqa: E722  pylint: disable=bare-except
             return ''
 
     class Meta:
@@ -178,6 +178,7 @@ class Package(models.Model):
 
 def handler_package_saved(sender, **kwargs):
     """Compute SHA-1 and SHA-512 of file."""
+    # pylint: disable=unused-argument
     try:
         package = kwargs['instance']
         if package.filename and package.version.version != 'devel':
@@ -185,7 +186,7 @@ def handler_package_saved(sender, **kwargs):
                 package.sha1sum = sha1(_file.read()).hexdigest()
             with open(package.fullname(), 'rb') as _file:
                 package.sha512sum = sha512(_file.read()).hexdigest()
-    except:  # noqa: E722
+    except:  # noqa: E722  pylint: disable=bare-except
         pass
 
 

@@ -57,8 +57,7 @@ class Info(models.Model):
         if match:
             # if the title is "Version x.y.z", translate only "Version"
             return '%s %s' % (ugettext(match.group(1)), match.group(2))
-        else:
-            return ugettext(self.title)
+        return ugettext(self.title)
 
     def text_i18n(self):
         """Return translated text."""
@@ -76,12 +75,14 @@ class Info(models.Model):
 
 
 def handler_info_saved(sender, **kwargs):
+    """Write file _i18n_info.py with infos to translate."""
+    # pylint: disable=unused-argument
     strings = []
     for info in Info.objects.filter(visible=1).order_by('-date'):
-        m = PATTERN_TITLE_VERSION.match(info.title)
-        if m:
+        match = PATTERN_TITLE_VERSION.match(info.title)
+        if match:
             # if the title is "Version x.y.z", translate only "Version"
-            strings.append(m.group(1))
+            strings.append(match.group(1))
         else:
             strings.append(info.title)
         if info.text:

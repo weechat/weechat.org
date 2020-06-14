@@ -1,12 +1,16 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated after changes in database, DO NOT EDIT!
 
+"""Translations for news/info."""
+
 # flake8: noqa
+# pylint: disable=line-too-long,too-many-statements
 
 from django.utils.translation import gettext_noop
 
 
-def __i18n_info():
+def __i18n_news_info():
+    """Translations for news/info."""
     gettext_noop("10th birthday for WeeChat!\n\nHappy birthday!")
     gettext_noop("15th birthday for WeeChat!\n\nHappy birthday!")
     gettext_noop("<a href=\"http://en.wikipedia.org/wiki/Dennis_Ritchie\">Dennis Ritchie</a>, creator of the C programming language, and key developer of the Unix operating system has died.\nWeeChat is written in C, and runs on derivatives of Unix.\nSo we just say a big thank you to you, Dennis, for your wonderful job.")

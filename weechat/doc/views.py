@@ -71,6 +71,7 @@ def get_i18n_stats():
     - date: date/time of last translations update
     - langs: a dictionary with info about status of this language.
     """
+    # pylint: disable=too-many-locals
     try:
         timezone = pytz.timezone(settings.TIME_ZONE)
         filename = files_path_join('stats', 'i18n.txt')
@@ -110,7 +111,7 @@ def get_i18n_stats():
                             'total': int(total),
                         })
         return {'date': date, 'langs': langs}
-    except:  # noqa: E722
+    except:  # noqa: E722  pylint: disable=bare-except
         return None
 
 
@@ -131,13 +132,14 @@ def get_bestlang(request, languages):
 
 def documentation(request, version='stable'):
     """Page with docs for stable or devel version."""
+    # pylint: disable=too-many-locals
     timezone = pytz.timezone(settings.TIME_ZONE)
     if version == 'old':
         doc_list = None
         try:
             doc_list = sorted(os.listdir(files_path_join('doc', 'old')),
                               reverse=True)
-        except:  # noqa: E722
+        except:  # noqa: E722  pylint: disable=bare-except
             pass
         return render(
             request,

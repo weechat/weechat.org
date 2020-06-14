@@ -1,12 +1,16 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated after changes in database, DO NOT EDIT!
 
+"""Translations for doc/security."""
+
 # flake8: noqa
+# pylint: disable=line-too-long,too-many-statements
 
 from django.utils.translation import gettext_noop
 
 
-def __i18n_security():
+def __i18n_doc_security():
+    """Translations for doc/security."""
     gettext_noop("/set irc.network.colors_receive off")
     gettext_noop("Buffer overflow when a new IRC message 005 is received with longer nick prefixes.")
     gettext_noop("Buffer overflow when decoding IRC colors in strings.")

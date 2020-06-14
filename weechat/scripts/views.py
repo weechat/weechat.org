@@ -81,6 +81,7 @@ def get_highlighted_source(source, language):
 
 def scripts(request, sort_key='popularity', filter_name='', filter_value=''):
     """Page with list of scripts."""
+    # pylint: disable=too-many-locals,too-many-branches
 
     def sort_by_popularity(item):
         return (-1 * item[1], item[0].lower())
@@ -174,7 +175,7 @@ def script_source(request, scriptid='', scriptname=''):
                       'rb') as _file:
                 htmlsource = get_highlighted_source(_file.read(),
                                                     script.language)
-        except:  # noqa: E722
+        except:  # noqa: E722  pylint: disable=bare-except
             raise Http404
     else:
         sname = scriptname
@@ -194,7 +195,7 @@ def script_source(request, scriptid='', scriptname=''):
                       'rb') as _file:
                 htmlsource = get_highlighted_source(_file.read(),
                                                     PYGMENTS_LEXER[sext])
-        except:  # noqa: E722
+        except:  # noqa: E722  pylint: disable=bare-except
             raise Http404
     return render(
         request,
@@ -275,7 +276,7 @@ def form_add(request):
                                      settings.SCRIPTS_MAILTO)
                 email.attach_file(filename)
                 email.send()
-            except:  # noqa: E722
+            except:  # noqa: E722  pylint: disable=bare-except
                 return HttpResponseRedirect('/scripts/adderror/')
 
             # save script in database
@@ -325,7 +326,7 @@ def form_update(request):
                              get_script_content(scriptfile),
                              'text/plain')
                 email.send()
-            except:  # noqa: E722
+            except:  # noqa: E722  pylint: disable=bare-except
                 return HttpResponseRedirect('/scripts/updateerror/')
 
             return HttpResponseRedirect('/scripts/updateok/')
@@ -394,7 +395,7 @@ def python3(request):
         'scripts_remaining': 99,
     })
     # status today
-    scripts = Script.objects.filter(approved=True).count()
+    scripts_list = Script.objects.filter(approved=True).count()
     python_scripts = (Script.objects.filter(approved=True)
                       .filter(language='python')
                       .count())
@@ -406,7 +407,7 @@ def python3(request):
     status_list.append({
         'date': datetime.now(),
         'today': True,
-        'scripts': scripts,
+        'scripts': scripts_list,
         'python_scripts': python_scripts,
         'scripts_ok': scripts_ok,
         'scripts_remaining': scripts_remaining,

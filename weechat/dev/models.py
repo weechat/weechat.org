@@ -66,7 +66,7 @@ class Task(models.Model):
             if self.version.date > date.today():
                 return '&asymp; %s' % localdate(self.version.date)
             return localdate(self.version.date)
-        except:  # noqa: E722
+        except:  # noqa: E722  pylint: disable=bare-except
             return ''
 
     def url_tracker(self):

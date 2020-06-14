@@ -100,6 +100,7 @@ class Html5EmailInput(forms.widgets.Input):
 
 
 class Form(forms.Form):
+    """Form with "as_div" method."""
 
     def as_div(self):
         "Return this form rendered as HTML <div>s."

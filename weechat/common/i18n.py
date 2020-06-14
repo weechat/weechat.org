@@ -33,7 +33,10 @@ def i18n_autogen(app, name, strings):
         '# This file is auto-generated after changes in database, '
         'DO NOT EDIT!',
         '',
+        '"""Translations for %s/%s."""' % (app, name),
+        '',
         '# flake8: noqa',
+        '# pylint: disable=line-too-long,too-many-statements',
     ]
     if strings:
         content += [
@@ -41,11 +44,12 @@ def i18n_autogen(app, name, strings):
             'from django.utils.translation import gettext_noop',
             '',
             '',
-            'def __i18n_%s():' % name,
+            'def __i18n_%s_%s():' % (app, name),
+            '    """Translations for %s/%s."""' % (app, name),
         ]
         done = set()
         for string in sorted(strings):
-            if type(string) is tuple:
+            if isinstance(string, tuple):
                 # if type is tuple of 2 strings: use the second as note for
                 # translators
                 (message, translators) = (string[0], string[1])

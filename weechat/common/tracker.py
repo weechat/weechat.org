@@ -53,6 +53,7 @@ def _replace_savannah_link(match):
 
 
 def _replace_link(tracker):
+    """Replace GitHub and Savannah links in a string."""
     string = GITHUB_PATTERN.sub(_replace_github_link, tracker)
     return SAVANNAH_PATTERN.sub(_replace_savannah_link, string)
 

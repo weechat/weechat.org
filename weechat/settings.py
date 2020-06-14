@@ -20,6 +20,8 @@
 
 # Django settings for weechat project.
 
+"""weechat.org settings."""
+
 import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -35,7 +37,7 @@ LANGUAGE_CODE = 'en-us'
 USE_I18N = True
 USE_L10N = False
 
-ugettext = lambda s: s  # noqa: E731
+ugettext = lambda s: s  # noqa: E731  pylint: disable=C0103
 LANGUAGES = (
     ('en', ugettext('English')),
     ('fr', ugettext('French')),
@@ -139,6 +141,7 @@ TEMPLATES = [
 
 # read settings_local.py
 try:
+    # pylint: disable=wildcard-import,unused-wildcard-import
     from weechat.settings_local import *  # noqa: F401,F403
 except ImportError:
     from warnings import warn

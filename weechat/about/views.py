@@ -21,6 +21,7 @@
 """Views for "about" menu."""
 
 import os
+from sys import version as python_version
 
 from django import __version__ as django_version
 from django.conf import settings
@@ -28,7 +29,6 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Sum
 from django.shortcuts import render
 from django.utils.translation import ugettext
-from sys import version as python_version
 
 from weechat.about.models import (
     Screenshot,
@@ -60,17 +60,15 @@ def screenshots(request, app='weechat', filename=''):
                 'screenshot': screenshot,
             },
         )
-    else:
-        screenshot_list = (Screenshot.objects.filter(app=app)
-                           .order_by('priority'))
-        return render(
-            request,
-            'about/screenshots.html',
-            {
-                'app': app,
-                'screenshot_list': screenshot_list,
-            },
-        )
+    screenshot_list = Screenshot.objects.filter(app=app).order_by('priority')
+    return render(
+        request,
+        'about/screenshots.html',
+        {
+            'app': app,
+            'screenshot_list': screenshot_list,
+        },
+    )
 
 
 def history(request):

@@ -151,7 +151,7 @@ def stats_repo(request, stats='weechat'):
         with open(files_path_join('stats',
                                   'git_%s_commits.txt' % stats), 'r') as _file:
             git_commits = _file.read().strip().split(',')
-    except:  # noqa: E722
+    except:  # noqa: E722  pylint: disable=bare-except
         pass
 
     if stats in ('weechat', 'weechat-relay', 'qweechat'):
@@ -159,7 +159,7 @@ def stats_repo(request, stats='weechat'):
             with open(files_path_join('stats',
                                       'sloc_%s.txt' % stats), 'r') as _file:
                 sloc = _file.read()
-        except:  # noqa: E722
+        except:  # noqa: E722  pylint: disable=bare-except
             pass
 
     if stats == 'weechat':
@@ -176,7 +176,7 @@ def stats_repo(request, stats='weechat'):
             with open(files_path_join('stats',
                                       'scripts_downloads.txt'), 'r') as _file:
                 scripts_downloads = _file.read()
-        except:  # noqa: E722
+        except:  # noqa: E722  pylint: disable=bare-except
             pass
     elif stats == 'qweechat':
         repository = ('https://github.com/weechat/qweechat')
@@ -203,49 +203,50 @@ def stats_repo(request, stats='weechat'):
 
 def get_info(name, version):
     """Get an info."""
+    # pylint: disable=too-many-branches,too-many-return-statements
     if name == 'stable':
         return version['stable'].description
-    elif name == 'stable_number':
+    if name == 'stable_number':
         return version_as_int(version['stable'].description)
-    elif name == 'stable_date':
+    if name == 'stable_date':
         return str(version['stable'].date)
-    elif name == 'devel':
+    if name == 'devel':
         return version['devel'].description
-    elif name == 'git':
+    if name == 'git':
         git = ''
         try:
             with open(files_path_join('git_sources_head.txt'), 'r') as _file:
                 git = _file.read().strip()
-        except:  # noqa: E722
+        except:  # noqa: E722  pylint: disable=bare-except
             pass
         return git
-    elif name == 'git_scripts':
+    if name == 'git_scripts':
         git = ''
         try:
             with open(files_path_join('git_scripts_head.txt'), 'r') as _file:
                 git = _file.read().strip()
-        except:  # noqa: E722
+        except:  # noqa: E722  pylint: disable=bare-except
             pass
         return git
-    elif name == 'next_stable':
+    if name == 'next_stable':
         return re.sub('-.*', '', version['devel'].description)
-    elif name == 'next_stable_number':
+    if name == 'next_stable_number':
         return version_as_int(version['devel'].description)
-    elif name == 'next_stable_date':
+    if name == 'next_stable_date':
         return str(version['devel'].date)
-    elif name == 'release_signing_fingerprint':
+    if name == 'release_signing_fingerprint':
         return PGP_KEYS['release_signing']
-    elif name == 'debian_repository_signing_fingerprint':
+    if name == 'debian_repository_signing_fingerprint':
         return PGP_KEYS['debian_repository_signing']
-    elif name == 'release_signing_key':
+    if name == 'release_signing_key':
         fingerprint = PGP_KEYS['release_signing']
         with open(media_path_join('pgp', fingerprint), 'rb') as _file:
             return _file.read()
-    elif name == 'debian_repository_signing_key':
+    if name == 'debian_repository_signing_key':
         fingerprint = PGP_KEYS['debian_repository_signing']
         with open(media_path_join('pgp', fingerprint), 'rb') as _file:
             return _file.read()
-    elif name == 'all':
+    if name == 'all':
         infos = []
         for key in INFO_KEYS:
             if key[0] != name and key[0] not in BINARY_INFO_KEYS:
@@ -276,29 +277,27 @@ def info(request, name=None):
             response['Content-Disposition'] = (
                 'attachment; filename="weechat_%s.pgp"' % name)
             return response
-        else:
-            return render(
-                request,
-                'dev/info.html',
-                {
-                    'info': get_info(name, version),
-                },
-                content_type='text/plain; charset=utf-8',
-            )
-    else:
-        infos = []
-        for oneinfo in INFO_KEYS:
-            if oneinfo[0] in BINARY_INFO_KEYS:
-                value = ugettext('(binary data)')
-            else:
-                value = get_info(oneinfo[0], version)
-            if oneinfo[0].endswith('_number'):
-                value = '%s (0x%08lx)' % (value, value)
-            infos.append((oneinfo[0], value, oneinfo[1]))
         return render(
             request,
-            'dev/info_list.html',
+            'dev/info.html',
             {
-                'infos': infos,
+                'info': get_info(name, version),
             },
+            content_type='text/plain; charset=utf-8',
         )
+    infos = []
+    for oneinfo in INFO_KEYS:
+        if oneinfo[0] in BINARY_INFO_KEYS:
+            value = ugettext('(binary data)')
+        else:
+            value = get_info(oneinfo[0], version)
+        if oneinfo[0].endswith('_number'):
+            value = '%s (0x%08lx)' % (value, value)
+        infos.append((oneinfo[0], value, oneinfo[1]))
+    return render(
+        request,
+        'dev/info_list.html',
+        {
+            'infos': infos,
+        },
+    )

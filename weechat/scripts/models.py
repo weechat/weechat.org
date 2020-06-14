@@ -80,6 +80,7 @@ MAX_LENGTH_MAIL = 256
 
 
 def get_language_from_extension(ext):
+    """Get language for a given file extension."""
     return next((key for key, value in SCRIPT_LANGUAGE.items()
                  if value[0] == ext), None)
 
@@ -204,7 +205,7 @@ class Script(models.Model):
         try:
             with open(self.filename(), 'rb') as _file:
                 return hash_func(_file.read()).hexdigest()
-        except:  # noqa: E722
+        except:  # noqa: E722  pylint: disable=bare-except
             return ''
 
     def get_md5sum(self):
@@ -360,7 +361,7 @@ def get_script_choices():
                                       script.version, script.version_weechat())
             script_choices.append((script.id, name))
         return script_choices
-    except:  # noqa: E722
+    except:  # noqa: E722  pylint: disable=bare-except
         return []
 
 
@@ -411,25 +412,31 @@ class ScriptFormUpdate(Form):
 
 @disable_for_loaddata
 def handler_script_saved(sender, **kwargs):
+    """Compute MD5 and SHA-512 of script file."""
+    # pylint: disable=unused-argument
     try:
         script = kwargs['instance']
         script.md5sum = script.checksum(hashlib.md5)
         script.sha512sum = script.checksum(hashlib.sha512)
-    except:  # noqa: E722
+    except:  # noqa: E722  pylint: disable=bare-except
         pass
 
 
 @disable_for_loaddata
 def handler_scripts_changed(sender, **kwargs):
     """Build files scripts.{xml,json}(.gz) after update/delete of a script."""
+    # pylint: disable=unused-argument,too-many-locals,too-many-nested-blocks
+    # pylint: disable=too-many-branches,too-many-statements
     xml = '<?xml version="1.0" encoding="utf-8"?>\n'
     xml += '<plugins>\n'
     json_data = []
     strings = []
 
     # add disabled reasons in strings to translate
-    reasons = set([script.disabled
-                   for script in Script.objects.exclude(disabled='')])
+    reasons = {
+        script.disabled
+        for script in Script.objects.exclude(disabled='')
+    }
     for reason in reasons:
         strings.append((reason, 'reason for a disabled script'))
 
