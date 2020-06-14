@@ -1,0 +1,44 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+
+  build:
+
+    name: ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8]
+
+    steps:
+
+      - uses: actions/checkout@v2
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get install gettext libenchant-dev
+          python -m pip install --upgrade pip
+          pip install msgcheck django
+
+      - name: Check gettext files
+        run: msgcheck weechat/locale/*/LC_MESSAGES/django.po
+
+      - name: Lint with flake8
+        run: |
+          pip install flake8
+          # stop the build if there are Python syntax errors or undefined names
+          flake8 weechat --count --select=E9,F63,F7,F82 --show-source --statistics
+          # exit-zero treats all errors as warnings
+          flake8 weechat --count --exit-zero --max-complexity=10 --statistics
+
+      # - name: Lint with pylint
+      #   run: |
+      #     pip install pylint pylint-django
+      #     pylint --load-plugins pylint_django --disable=W0511,R0205 weechat
