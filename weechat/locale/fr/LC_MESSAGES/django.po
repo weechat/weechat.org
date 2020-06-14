@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-12 20:15+0200\n"
-"PO-Revision-Date: 2020-06-12 20:15+0200\n"
+"POT-Creation-Date: 2020-06-14 09:54+0200\n"
+"PO-Revision-Date: 2020-06-14 08:48+0200\n"
 "Last-Translator: Sébastien Helleu <flashcode@flashtux.org>\n"
 "Language-Team: French <flashcode@flashtux.org>\n"
 "Language: fr\n"
@@ -453,107 +453,137 @@ msgstr ""
 "est causé seulement par certains scripts, pas par WeeChat lui-même)."
 
 #. Translators: this is a severity level for a security vulnerability
-#: doc/models.py:37 templates/doc/security.html:97
+#: doc/models.py:37
 msgid "low"
 msgstr "faible"
 
 #. Translators: this is a severity level for a security vulnerability
-#: doc/models.py:39 templates/doc/security.html:103
+#: doc/models.py:39
 msgid "medium"
 msgstr "moyenne"
 
 #. Translators: this is a severity level for a security vulnerability
-#: doc/models.py:41 templates/doc/security.html:109
+#: doc/models.py:41
 msgid "high"
 msgstr "haute"
 
 #. Translators: this is a severity level for a security vulnerability
-#: doc/models.py:43 templates/doc/security.html:115
+#: doc/models.py:43
 msgid "critical"
 msgstr "critique"
 
-#: doc/models.py:50
+#: doc/models.py:46
+msgid ""
+"minor issue occuring in very specific conditions, low impact. Upgrade is not "
+"mandatory."
+msgstr ""
+"problème mineur survenant dans des conditions bien particulières, peu "
+"d'impact. La mise à jour n'est pas obligatoire."
+
+#: doc/models.py:48
+msgid ""
+"problem affecting a specific feature. Upgrade is <strong>recommended</"
+"strong> at least for people using the feature."
+msgstr ""
+"problème affectant une fonctionnalité spécifique. La mise à jour est "
+"<strong>recommandée</strong> au moins pour les personnes utilisant cette "
+"fonctionnalité."
+
+#: doc/models.py:51
+msgid "severe problem. Upgrade is <strong>highly recommended</strong>."
+msgstr ""
+"problème sévère. La mise à jour est <strong>fortement recommandée</strong>."
+
+#: doc/models.py:53
+msgid ""
+"critical problem, risk of damage on your system. <strong>You MUST upgrade "
+"immediately!</strong>"
+msgstr ""
+"problème critique, risque de dégâts sur votre système. <strong>Vous DEVEZ "
+"mettre à jour immédiatement !</strong>"
+
+#: doc/models.py:61
 msgid "Czech"
 msgstr "Tchèque"
 
-#: doc/models.py:51 settings.py:42 templates/about/support.html:34
+#: doc/models.py:62 settings.py:42 templates/about/support.html:34
 #: templates/about/weechat.org.html:24
 msgid "German"
 msgstr "Allemand"
 
-#: doc/models.py:52 settings.py:40 templates/about/support.html:27
+#: doc/models.py:63 settings.py:40 templates/about/support.html:27
 msgid "English"
 msgstr "Anglais"
 
-#: doc/models.py:53
+#: doc/models.py:64
 msgid "Spanish"
 msgstr "Espagnol"
 
-#: doc/models.py:54 settings.py:41 templates/about/support.html:28
+#: doc/models.py:65 settings.py:41 templates/about/support.html:28
 msgid "French"
 msgstr "Français"
 
-#: doc/models.py:55
+#: doc/models.py:66
 msgid "Hungarian"
 msgstr "Hongrois"
 
-#: doc/models.py:56 settings.py:43 templates/about/weechat.org.html:25
+#: doc/models.py:67 settings.py:43 templates/about/weechat.org.html:25
 msgid "Italian"
 msgstr "Italien"
 
-#: doc/models.py:57 settings.py:46 templates/about/weechat.org.html:26
+#: doc/models.py:68 settings.py:46 templates/about/weechat.org.html:26
 msgid "Japanese"
 msgstr "Japonais"
 
-#: doc/models.py:58 settings.py:44 templates/about/weechat.org.html:27
+#: doc/models.py:69 settings.py:44 templates/about/weechat.org.html:27
 msgid "Polish"
 msgstr "Polonais"
 
-#: doc/models.py:59
+#: doc/models.py:70
 msgid "Portuguese"
 msgstr "Portugais"
 
-#: doc/models.py:60 settings.py:45 templates/about/weechat.org.html:28
+#: doc/models.py:71 settings.py:45 templates/about/weechat.org.html:28
 msgid "Portuguese (Brazil)"
 msgstr "Portugais (Brésil)"
 
-#: doc/models.py:61
+#: doc/models.py:72
 msgid "Russian"
 msgstr "Russe"
 
-#: doc/models.py:62
+#: doc/models.py:73
 msgid "Turkish"
 msgstr "Turc"
 
-#: doc/models.py:100
+#: doc/models.py:111
 msgid "FAQ"
 msgstr "FAQ"
 
-#: doc/models.py:101
+#: doc/models.py:112
 msgid "User's guide"
 msgstr "Guide utilisateur"
 
-#: doc/models.py:102
+#: doc/models.py:113
 msgid "Plugin API reference"
 msgstr "Référence API extension"
 
-#: doc/models.py:103
+#: doc/models.py:114
 msgid "Scripting guide"
 msgstr "Guide pour scripts"
 
-#: doc/models.py:104
+#: doc/models.py:115
 msgid "Quick Start guide"
 msgstr "Guide de démarrage rapide"
 
-#: doc/models.py:105
+#: doc/models.py:116
 msgid "Tester's guide"
 msgstr "Guide du testeur"
 
-#: doc/models.py:106
+#: doc/models.py:117
 msgid "Developer's guide"
 msgstr "Guide du développeur"
 
-#: doc/models.py:107
+#: doc/models.py:118
 msgid "Relay protocol"
 msgstr "Protocole Relay"
 
@@ -6940,53 +6970,22 @@ msgstr "Corrigé dans la version"
 msgid "Release date"
 msgstr "Date de version"
 
-#: templates/doc/security.html:42 templates/doc/security.html:76
+#: templates/doc/security.html:42 templates/doc/security.html:80
 msgid "Workaround"
 msgstr "Solution de contournement"
 
-#: templates/doc/security.html:49
-msgid "Severity:"
-msgstr "Sévérité :"
-
-#: templates/doc/security.html:80
+#: templates/doc/security.html:84
 msgid "There is no workaround."
 msgstr "Il n'y a pas de solution de contournement."
 
-#: templates/doc/security.html:91
-msgid "Security vulnerabilities are classified using 4 severity levels:"
-msgstr "Les failles de sécurité sont classées avec 4 niveaux de sévérité :"
-
-#: templates/doc/security.html:98
+#: templates/doc/security.html:95
+#, python-format
 msgid ""
-"minor issue occuring in very specific conditions, low impact. Upgrade is not "
-"mandatory."
+"Security vulnerabilities are classified using %(count)s severity levels:"
 msgstr ""
-"problème mineur survenant dans des conditions bien particulières, peu "
-"d'impact. La mise à jour n'est pas obligatoire."
+"Les failles de sécurité sont classées avec %(count)s niveaux de sévérité :"
 
-#: templates/doc/security.html:104
-msgid ""
-"problem affecting a specific feature. Upgrade is <strong>recommended</"
-"strong> at least for people using the feature."
-msgstr ""
-"problème affectant une fonctionnalité spécifique. La mise à jour est "
-"<strong>recommandée</strong> au moins pour les personnes utilisant cette "
-"fonctionnalité."
-
-#: templates/doc/security.html:110
-msgid "severe problem. Upgrade is <strong>highly recommended</strong>."
-msgstr ""
-"problème sévère. La mise à jour est <strong>fortement recommandée</strong>."
-
-#: templates/doc/security.html:116
-msgid ""
-"critical problem, risk of damage on your system. <strong>You MUST upgrade "
-"immediately!</strong>"
-msgstr ""
-"problème critique, risque de dégâts sur votre système. <strong>Vous DEVEZ "
-"mettre à jour immédiatement !</strong>"
-
-#: templates/doc/security.html:125
+#: templates/doc/security.html:112
 msgid "No security vulnerability."
 msgstr "Pas de faille de sécurité."
 
@@ -8384,26 +8383,3 @@ msgstr "Erreur interne."
 #: themes/models.py:307
 msgid "Invalid name: different from theme."
 msgstr "Nom invalide : différent du thème."
-
-#~ msgid ""
-#~ "for a Python script, there's a transition to Python 3 in progress, please "
-#~ "read the <a href=\"%(url_python3)s\">transition page</a>"
-#~ msgstr ""
-#~ "pour un script Python, il y a une transition en cours vers Python 3, "
-#~ "merci de lire la <a href=\"%(url_python3)s\">page de transition</a>"
-
-#~ msgid ""
-#~ "for a Python script with tag \"py3k-ok\", please ensure your new version "
-#~ "is compatible with Python 2.7 and 3.x"
-#~ msgstr ""
-#~ "pour un script Python avec l'étiquette \"py3k-ok\", merci de vous assurer "
-#~ "que votre nouvelle version est compatible avec Python 2.7 et 3.x"
-
-#~ msgid ""
-#~ "WARNING: the legacy API is deprecated and these scripts runs only on "
-#~ "WeeChat 0.2.x, which is OBSOLETE. You MUST NOT load these scripts with "
-#~ "latest stable version of WeeChat!"
-#~ msgstr ""
-#~ "ATTENTION : l'ancienne API est obsolète et ces scripts tournent seulement "
-#~ "sur WeeChat 0.2.x, qui est OBSOLÈTE. Vous ne DEVEZ PAS charger ces "
-#~ "scripts avec la dernière version stable de WeeChat !"

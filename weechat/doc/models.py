@@ -42,6 +42,17 @@ SECURITY_SEVERITIES = (
     # Translators: this is a severity level for a security vulnerability
     (3, ugettext_noop('critical')),
 )
+SECURITY_SEVERITIES_DESC = {
+    0: ugettext_noop('minor issue occuring in very specific conditions, '
+                     'low impact. Upgrade is not mandatory.'),
+    1: ugettext_noop('problem affecting a specific feature. Upgrade is '
+                     '<strong>recommended</strong> at least for people using '
+                     'the feature.'),
+    2: ugettext_noop('severe problem. Upgrade is '
+                     '<strong>highly recommended</strong>.'),
+    3: ugettext_noop('critical problem, risk of damage on your system. '
+                     '<strong>You MUST upgrade immediately!</strong>'),
+}
 
 
 class Language(models.Model):
@@ -148,10 +159,6 @@ class Security(models.Model):
     def __unicode__(self):  # python 2.x
         return self.__str__()
 
-    def severity_svg(self):
-        """Return the path to SVG for the severity."""
-        return 'svg/severity_%d.html' % self.severity
-
     def date_l10n(self):
         """Return the date formatted with localized date format."""
         return localdate(self.date)
@@ -169,9 +176,23 @@ class Security(models.Model):
     def severity_i18n(self):
         """Return translated severity."""
         text = dict(SECURITY_SEVERITIES).get(self.severity, '')
-        if text:
-            return ugettext(text)
-        return ''
+        return ugettext(text) if text else ''
+
+    def severity_description_i18n(self):
+        """Return translated severity."""
+        text = SECURITY_SEVERITIES_DESC.get(self.severity, '')
+        return ugettext(text) if text else ''
+
+    def severity_html_indicator(self):
+        """Return HTML code for security indicator."""
+        content = []
+        content.append('<div class="d-inline-flex align-middle '
+                       'severity-flex">')
+        for i in range(0, 4):
+            css_class = '' if self.severity < i else ' severity%d' % i
+            content.append('<div class="flex-fill severity%s"></div>' % css_class)
+        content.append('</div>')
+        return ''.join(content)
 
     def css_class(self):
         """Return the CSS class for the severity."""

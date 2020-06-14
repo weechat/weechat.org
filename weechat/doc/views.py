@@ -31,7 +31,13 @@ from django.shortcuts import render, redirect
 from django.utils.translation import ugettext
 
 from weechat.common.path import files_path_join
-from weechat.doc.models import Language, Version, Doc, Security
+from weechat.doc.models import (
+    Language,
+    Version,
+    Doc,
+    Security,
+    SECURITY_SEVERITIES,
+)
 from weechat.download.models import Release
 
 I18N_MAINTAINER = {
@@ -216,10 +222,13 @@ def documentation_link(request, version='stable', name=None, lang='en'):
 def security(request):
     """Page with security vulnerabilities."""
     security_list = Security.objects.all().filter(visible=1).order_by('-date')
+    legend_list = [Security(severity=i)
+                   for i in range(0, len(SECURITY_SEVERITIES))]
     return render(
         request,
         'doc/security.html',
         {
             'security_list': security_list,
+            'legend_list': legend_list,
         },
     )

@@ -32,7 +32,7 @@
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th class="text-center">{% trans "Severity" %}</th>
+        <th class="text-center text-nowrap">{% trans "Severity" %}</th>
         <th class="text-center text-nowrap">CVE</th>
         <th class="text-center text-nowrap">{% trans "Tracker" %}</th>
         <th class="text-center">{% trans "Affected versions" %}</th>
@@ -45,10 +45,14 @@
     <tbody>
       {% for security in security_list %}
       <tr>
-        <td class="text-center">
-          <a href="#severities" title="{% trans "Severity:" %} {{ security.severity_i18n }}">
-            {% include security.severity_svg %}
-          </span>
+        <td class="text-center text-nowrap text-severity">
+          <a class="js-scroll" href="#severities">
+            {{ security.severity_html_indicator|safe }}
+            <br>
+            <span class="text-severity{{ security.severity }}">
+              {{ security.severity_i18n }}
+            </span>
+          </a>
         </td>
         <td class="text-center text-nowrap">
           {% if security.external %}
@@ -88,34 +92,17 @@
 </div>
 
 <p id="severities">
-  {% trans "Security vulnerabilities are classified using 4 severity levels:" %}
-
+  {% blocktrans with count=legend_list|length %}Security vulnerabilities are classified using {{ count }} severity levels:{% endblocktrans %}
   <ul class="list-group">
-
+    {% for security in legend_list %}
     <li class="list-group-item">
-      {% include "svg/severity_0.html" %}
-      <strong>{% trans "low" %}:</strong>
-      {% trans "minor issue occuring in very specific conditions, low impact. Upgrade is not mandatory." %}
+      <span class="mr-2">
+        {{ security.severity_html_indicator|safe }}
+      </span>
+      <span class="text-severity text-severity{{ security.severity }}">{{ security.severity_i18n }}:</span>
+      {{ security.severity_description_i18n|safe }}
     </li>
-
-    <li class="list-group-item">
-      {% include "svg/severity_1.html" %}
-      <strong>{% trans "medium" %}:</strong>
-      {% trans "problem affecting a specific feature. Upgrade is <strong>recommended</strong> at least for people using the feature." %}
-    </li>
-
-    <li class="list-group-item">
-      {% include "svg/severity_2.html" %}
-      <strong>{% trans "high" %}:</strong>
-      {% trans "severe problem. Upgrade is <strong>highly recommended</strong>." %}
-    </li>
-
-    <li class="list-group-item">
-      {% include "svg/severity_3.html" %}
-      <strong>{% trans "critical" %}:</strong>
-      {% trans "critical problem, risk of damage on your system. <strong>You MUST upgrade immediately!</strong>" %}
-    </li>
-
+    {% endfor %}
   </ul>
 </p>
 
