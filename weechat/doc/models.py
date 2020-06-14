@@ -190,7 +190,8 @@ class Security(models.Model):
                        'severity-flex">')
         for i in range(0, 4):
             css_class = '' if self.severity < i else ' severity%d' % i
-            content.append('<div class="flex-fill severity%s"></div>' % css_class)
+            content.append('<div class="flex-fill severity%s"></div>' %
+                           css_class)
         content.append('</div>')
         return ''.join(content)
 
