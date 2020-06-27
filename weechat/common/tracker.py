@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright (C) 2003-2020 Sébastien Helleu <flashcode@flashtux.org>
 #
@@ -86,7 +85,7 @@ def split_commit(commit):
         return ('weechat/weechat', commit)
     repo, commit_id = commit.split('@', 1)
     if '/' not in repo:
-        repo = 'weechat/%s' % repo
+        repo = f'weechat/{repo}'
     return (repo, commit_id)
 
 
@@ -105,12 +104,10 @@ def commits_links(commits):
             objtype = 'tree'
             commit = commit[5:]
             img = 'link_twin.png'
-            title = ' title="branch: %s"' % commit
+            title = f' title="branch: {commit}"'
         repo, commit_id = split_commit(commit)
-        images.append('<a href="https://github.com/%s/%s/%s" '
-                      'target="_blank" rel="noopener">'
-                      '<img src="%simages/%s" width="16" height="16" '
-                      'alt="*"%s></a>'
-                      % (repo, objtype, commit_id, settings.MEDIA_URL,
-                         img, title))
+        images.append(f'<a href="https://github.com/{repo}/{objtype}/'
+                      f'{commit_id}" target="_blank" rel="noopener">'
+                      f'<img src="{settings.MEDIA_URL}images/{img}" '
+                      f'width="16" height="16" alt="*"{title}></a>')
     return ' '.join(images)

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright (C) 2003-2020 Sébastien Helleu <flashcode@flashtux.org>
 #
@@ -109,17 +108,10 @@ class Script(models.Model):
     updated = models.DateTimeField(null=True)
 
     def __str__(self):
-        return '%s %s (%s, %s)%s%s' % (
-            self.name,
-            self.version,
-            self.author,
-            self.added,
-            '' if self.approved else ' [pending]',
-            ' [DISABLED]' if self.disabled else '',
-        )
-
-    def __unicode__(self):  # python 2.x
-        return self.__str__()
+        pending = '' if self.approved else ' [pending]'
+        disabled = ' [DISABLED]' if self.disabled else ''
+        return (f'{self.name} {self.version} ({self.author}, {self.added})'
+                f'{pending}{disabled}')
 
     def tagslist(self):
         """Return a list with script tags."""
@@ -146,16 +138,15 @@ class Script(models.Model):
     def popularity_img(self):
         """Return HTML code with image for popular script."""
         if self.popularity == 0:
-            return ('<img src="%simages/empty.png" alt="" '
-                    'width="10" height="10">' % settings.MEDIA_URL)
-        return ('<img src="%simages/star.png" alt="*" title="%s" '
-                'width="10" height="10">' %
-                (settings.MEDIA_URL,
-                 ugettext('Popular script')))
+            return (f'<img src="{settings.MEDIA_URL}images/empty.png" alt="" '
+                    f'width="10" height="10">')
+        return (f'<img src="{settings.MEDIA_URL}images/star.png" alt="*" '
+                f'title="{ugettext("Popular script")}" '
+                f'width="10" height="10">')
 
     def name_with_extension(self):
         """Return the name of script with its extension."""
-        return '%s.%s' % (self.name, SCRIPT_LANGUAGE[self.language][0])
+        return f'{self.name}.{SCRIPT_LANGUAGE[self.language][0]}'
 
     def extension(self):
         """Return script extension."""
@@ -189,7 +180,7 @@ class Script(models.Model):
 
     def build_url(self):
         """Return URL to the script."""
-        return '/files/%s/%s' % (self.path(), self.name_with_extension())
+        return f'/files/{self.path()}/{self.name_with_extension()}'
 
     def filename(self):
         """Return script filename (on disk)."""
@@ -357,8 +348,8 @@ def get_script_choices():
         script_choices = []
         script_choices.append(('', ugettext(u'Choose…')))
         for script in script_list:
-            name = '%s - v%s (%s)' % (script.name_with_extension(),
-                                      script.version, script.version_weechat())
+            name = (f'{script.name_with_extension()} - v{script.version} '
+                    f'({script.version_weechat()})')
             script_choices.append((script.id, name))
         return script_choices
     except:  # noqa: E722  pylint: disable=bare-except
@@ -446,16 +437,15 @@ def handler_scripts_changed(sender, **kwargs):
         strings.append(
             (
                 script.desc_en,
-                'description for script "%s" (%s)' % (
-                    script.name_with_extension(),
-                    script.version_weechat()),
+                (f'description for script "{script.name_with_extension()}" '
+                 f'({script.version_weechat()})'),
             )
         )
         if script.disabled:
             continue
-        xml += '  <plugin id="%s">\n' % script.id
+        xml += f'  <plugin id="{script.id}">\n'
         json_script = OrderedDict([
-            ('id', '%s' % script.id),
+            ('id', f'{script.id}'),
         ])
         for key, value in script.__dict__.items():
             value_i18n = {}
@@ -467,8 +457,7 @@ def handler_scripts_changed(sender, **kwargs):
                 if key == 'url':
                     # FIXME: use the "Host" from request, but…
                     # request is not available in this handler!
-                    value = ('https://weechat.org/%s' %
-                             script.build_url()[1:])
+                    value = f'https://weechat.org/{script.build_url()[1:]}'
                 elif key == 'mail':
                     value = value.replace('@', ' [at] ')
                     value = value.replace('.', ' [dot] ')
@@ -480,15 +469,13 @@ def handler_scripts_changed(sender, **kwargs):
                     for lang, locale in settings.LANGUAGES_LOCALES.items():
                         if lang[0:2] != 'en':
                             translation.activate(lang)
-                            value_i18n['desc_%s' % locale] = ugettext(value)
+                            value_i18n[f'desc_{locale}'] = ugettext(value)
                             translation.deactivate()
-            value = '%s' % value
-            xml += '    <%s>%s</%s>\n' % (key, escape(value), key)
+            value = f'{value}'
+            xml += f'    <{key}>{escape(value)}</{key}>\n'
             json_script[key] = value
             for field in value_i18n:
-                xml += '    <%s>%s</%s>\n' % (field,
-                                              escape(value_i18n[field]),
-                                              field)
+                xml += f'    <{field}>{escape(value_i18n[field])}</{field}>\n'
                 json_script[field] = value_i18n[field]
         xml += '  </plugin>\n'
         json_data.append(json_script)

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright (C) 2003-2020 Sébastien Helleu <flashcode@flashtux.org>
 #
@@ -42,7 +41,7 @@ KEY_ORDER_BY_DESC = ['version', 'added', 'updated']
 def themes(request, sort_key='updated', filter_name='', filter_value=''):
     """Page with list of themes."""
     if sort_key in KEY_ORDER_BY_DESC:
-        sort_key = '-%s' % sort_key
+        sort_key = f'-{sort_key}'
     theme_list = Theme.objects.filter(visible=1).order_by(sort_key)
     if filter_name == 'author':
         theme_list = theme_list.filter(author=filter_value)
@@ -120,22 +119,14 @@ def form_add(request):
 
             # send e-mail
             try:
-                subject = 'WeeChat: new theme %s' % theme.name
-                body = (''
-                        'Theme      : %s\n'
-                        'Version    : %s\n'
-                        'Description: %s\n'
-                        'Author     : %s\n'
-                        'Mail       : %s\n'
-                        'Comment    :\n%s\n' %
-                        (props['name'],
-                         props['weechat'],
-                         form.cleaned_data['description'],
-                         form.cleaned_data['author'],
-                         form.cleaned_data['mail'],
-                         form.cleaned_data['comment']))
-                sender = '%s <%s>' % (form.cleaned_data['author'],
-                                      form.cleaned_data['mail'])
+                subject = f'WeeChat: new theme {theme.name}'
+                sender = (f'{form.cleaned_data["author"]} '
+                          f'<{form.cleaned_data["mail"]}>')
+                body = (f'Theme      : {props["name"]}\n'
+                        f'Version    : {props["weechat"]}\n'
+                        f'Description: {form.cleaned_data["description"]}\n'
+                        f'Author     : {sender}\n'
+                        f'Comment    :\n{form.cleaned_data["comment"]}\n')
                 email = EmailMessage(subject, body, sender,
                                      settings.THEMES_MAILTO)
                 email.attach_file(filename)
@@ -178,22 +169,14 @@ def form_update(request):
 
             # send e-mail
             try:
-                subject = 'WeeChat: new version of theme %s' % theme.name
-                body = (''
-                        'Theme      : %s\n'
-                        'Version    : %s\n'
-                        'New version: %s\n'
-                        'Author     : %s\n'
-                        'Mail       : %s\n'
-                        'Comment    :\n%s\n' %
-                        (theme.name,
-                         theme.version,
-                         props['weechat'],
-                         form.cleaned_data['author'],
-                         form.cleaned_data['mail'],
-                         form.cleaned_data['comment']))
-                sender = '%s <%s>' % (form.cleaned_data['author'],
-                                      form.cleaned_data['mail'])
+                subject = f'WeeChat: new version of theme {theme.name}'
+                sender = (f'{form.cleaned_data["author"]} '
+                          f'<{form.cleaned_data["mail"]}>')
+                body = (f'Theme      : {theme.name}\n'
+                        f'Version    : {theme.version}\n'
+                        f'New version: {props["weechat"]}\n'
+                        f'Author     : {sender}\n'
+                        f'Comment    :\n{form.cleaned_data["comment"]}\n')
                 email = EmailMessage(subject, body, sender,
                                      settings.THEMES_MAILTO)
                 email.attach(theme.name, content, 'text/plain')

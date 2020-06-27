@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright (C) 2003-2020 Sébastien Helleu <flashcode@flashtux.org>
 #
@@ -74,11 +73,7 @@ class Theme(models.Model):
     updated = models.DateTimeField(null=True)
 
     def __str__(self):
-        return '%s - %s (%s, %s)' % (self.name, self.author, self.version,
-                                     self.added)
-
-    def __unicode__(self):  # python 2.x
-        return self.__str__()
+        return f'{self.name} - {self.author} ({self.version}, {self.added})'
 
     def short_name(self):
         """Return short name (without extension)."""
@@ -92,12 +87,12 @@ class Theme(models.Model):
         pending = ''
         if not self.visible:
             pending = '/pending'
-        return 'themes%s' % pending
+        return f'themes{pending}'
 
     def html_preview(self):
         """Return HTML with theme preview."""
         filename = files_path_join('themes', 'html',
-                                   os.path.basename('%s.html' % self.name))
+                                   os.path.basename(f'{self.name}.html'))
         if os.path.isfile(filename):
             with open(filename, 'r', encoding='utf-8') as _file:
                 content = _file.read()
@@ -110,7 +105,7 @@ class Theme(models.Model):
 
     def build_url(self):
         """Return URL to the theme."""
-        return '/files/%s/%s' % (self.path(), self.name)
+        return f'/files/{self.path()}/{self.name}'
 
     def filename(self):
         """Return theme filename (on disk)."""
@@ -241,8 +236,7 @@ def get_theme_choices():
         theme_choices = []
         theme_choices.append(('', ugettext(u'Choose…')))
         for theme in theme_list:
-            theme_choices.append((theme.id, '%s (%s)' % (theme.name,
-                                                         theme.version)))
+            theme_choices.append((theme.id, f'{theme.name} ({theme.version})'))
         return theme_choices
     except:  # noqa: E722  pylint: disable=bare-except
         return []
@@ -339,9 +333,9 @@ def handler_themes_changed(sender, **kwargs):
     for theme in theme_list:
         if not theme.visible:
             continue
-        xml += '  <theme id="%s">\n' % theme.id
+        xml += f'  <theme id="{theme.id}">\n'
         json_theme = OrderedDict([
-            ('id', '%s' % theme.id),
+            ('id', f'{theme.id}'),
         ])
         for key, value in theme.__dict__.items():
             if key in ('_state', 'id', 'visible', 'comment'):
@@ -356,13 +350,13 @@ def handler_themes_changed(sender, **kwargs):
                     value = theme.get_md5sum()
                 elif key == 'sha512sum':
                     value = theme.get_sha512sum()
-            value = '%s' % value
-            xml += '    <%s>%s</%s>\n' % (key, escape(value), key)
+            value = f'{value}'
+            xml += f'    <{key}>{escape(value)}</{key}>\n'
             json_theme[key] = value
         # FIXME: use the "Host" from request, but…
         # request is not available in this handler!
-        url = 'https://weechat.org/%s' % theme.build_url()[1:]
-        xml += '    <%s>%s</%s>\n' % ('url', url, 'url')
+        url = f'https://weechat.org/{theme.build_url()[1:]}'
+        xml += f'    <url>{url}</url>\n'
         json_theme['url'] = url
         xml += '  </theme>\n'
         json_data.append(json_theme)
@@ -397,7 +391,7 @@ def handler_themes_changed(sender, **kwargs):
     tar.add('themes.xml')
     for name in os.listdir(files_path_join('themes')):
         if name.endswith('.theme'):
-            tar.add('themes/%s' % name)
+            tar.add(f'themes/{name}')
     tar.close()
 
 

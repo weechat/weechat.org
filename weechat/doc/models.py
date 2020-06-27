@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright (C) 2003-2020 Sébastien Helleu <flashcode@flashtux.org>
 #
@@ -76,10 +75,7 @@ class Language(models.Model):
     priority = models.IntegerField(default=0)
 
     def __str__(self):
-        return '%s (%d)' % (self.lang, self.priority)
-
-    def __unicode__(self):  # python 2.x
-        return self.__str__()
+        return f'{self.lang} ({self.priority})'
 
     def lang_i18n(self):
         """Return the translated language."""
@@ -97,9 +93,6 @@ class Version(models.Model):
 
     def __str__(self):
         return self.version
-
-    def __unicode__(self):  # python 2.x
-        return self.__str__()
 
     class Meta:
         ordering = ['priority']
@@ -123,10 +116,7 @@ class Doc(models.Model):
     priority = models.IntegerField(default=0)
 
     def __str__(self):
-        return '%s (%s, %d)' % (self.name, self.version, self.priority)
-
-    def __unicode__(self):  # python 2.x
-        return self.__str__()
+        return f'{self.name} ({self.version}, {self.priority})'
 
     def name_i18n(self):
         """Return the translated doc name."""
@@ -151,13 +141,9 @@ class Security(models.Model):
     workaround = models.TextField(blank=True)
 
     def __str__(self):
-        return '%s, %s, %s, %s / %s, %s, %s' % (
-            self.external, self.tracker, self.severity,
-            self.affected, self.fixed, self.release_date,
-            self.description)
-
-    def __unicode__(self):  # python 2.x
-        return self.__str__()
+        return (f'{self.external}, {self.tracker}, {self.severity}, '
+                f'{self.affected} / {self.fixed}, {self.release_date}, '
+                f'{self.description}')
 
     def date_l10n(self):
         """Return the date formatted with localized date format."""
@@ -190,8 +176,8 @@ class Security(models.Model):
                        'severity-flex">')
         for i in range(0, 4):
             css_class = '' if self.severity < i else ' severity%d' % i
-            content.append('<div class="flex-fill severity%s"></div>' %
-                           css_class)
+            content.append(f'<div class="flex-fill severity{css_class}">'
+                           f'</div>')
         content.append('</div>')
         return ''.join(content)
 

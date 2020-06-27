@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright (C) 2003-2020 Sébastien Helleu <flashcode@flashtux.org>
 #
@@ -42,7 +41,7 @@ def get_repository_packages(repository):
     repopkgs = []
     for arch in repository.arch.split(','):
         build = {
-            'id': '%s_%s' % (repository.name, repository.version.version),
+            'id': f'{repository.name}_{repository.version.version}',
             'repo': repository,
             'arch': arch,
             'date': None,
@@ -56,10 +55,8 @@ def get_repository_packages(repository):
                 line = line.strip().decode('utf-8')
                 if len(line) == 0:
                     if pkg:
-                        pkg['repoarch'] = '%s_%s' % (
-                            repository.name,
-                            repository.version.codename,
-                        )
+                        pkg['repoarch'] = (f'{repository.name}_'
+                                           f'{repository.version.codename}')
                         pkg['repo'] = repository
                         pkg['distro'] = repository.name
                         pkg['arch'] = arch
@@ -77,12 +74,9 @@ def get_repository_packages(repository):
                             if nextbuilddatetime > now:
                                 pkg['nextbuilddatetime'] = nextbuilddatetime
                         pkg['basename'] = os.path.basename(pkg['Filename'])
-                        pkg['anchor'] = '%s_%s_%s_%s' % (
-                            repository.name,
-                            repository.version.codename,
-                            pkg['Version'],
-                            arch,
-                        )
+                        pkg['anchor'] = (f'{repository.name}_'
+                                         f'{repository.version.codename}_'
+                                         f'{pkg["Version"]}_{arch}')
                         if 'Source' not in pkg:
                             pkg['Source'] = pkg['Package']
                         pkg['version_type'] = ('dev'
@@ -113,7 +107,7 @@ def repos(request, active='active', files=''):
                                   key=lambda p: p['builddatetime'],
                                   reverse=True))
         except:  # noqa: E722  pylint: disable=bare-except
-            errors.append('%s %s' % (repository.name, repository.version))
+            errors.append(f'{repository.name} {repository.version}')
     return render(
         request,
         'download/debian.html',

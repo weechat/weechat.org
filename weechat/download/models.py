@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright (C) 2003-2020 Sébastien Helleu <flashcode@flashtux.org>
 #
@@ -42,17 +41,11 @@ class Release(models.Model):
     securityfix = models.CharField(max_length=256, blank=True)
 
     def __str__(self):
-        return '%s (%s)%s%s' % (
-            self.version,
-            self.date,
-            (', %d SECURITY FIX' % self.security_issues_fixed
-             if self.security_issues_fixed > 0 else ''),
-            (', fix in: %s' % ', '.join(self.securityfix.split(','))
-             if self.securityfix else ''),
-        )
-
-    def __unicode__(self):  # python 2.x
-        return self.__str__()
+        security_fix = (f', {self.security_issues_fixed} SECURITY FIX'
+                        if self.security_issues_fixed > 0 else '')
+        fixed_in = (', fix in: %s' % ', '.join(self.securityfix.split(','))
+                    if self.securityfix else '')
+        return f'{self.version} ({self.date}){security_fix}{fixed_in}'
 
     def date_l10n(self):
         """Return the release date formatted with localized date format."""
@@ -75,15 +68,12 @@ class Type(models.Model):
     directory = models.CharField(max_length=256, blank=True)
 
     def __str__(self):
-        return '%s - %s (%d)' % (self.type, self.description, self.priority)
-
-    def __unicode__(self):  # python 2.x
-        return self.__str__()
+        return f'{self.type} - {self.description} ({self.priority})'
 
     def htmldir(self):
         """Return the HTML directory for the type of package."""
         if self.directory != '':
-            return '/%s' % self.directory
+            return f'/{self.directory}'
         return ''
 
     class Meta:
@@ -111,10 +101,7 @@ class Package(models.Model):
             string = self.url
         else:
             string = self.text
-        return '%s-%s, %s' % (self.version.version, self.type.type, string)
-
-    def __unicode__(self):  # python 2.x
-        return self.__str__()
+        return f'{self.version.version}-{self.type.type}, {string}'
 
     def fullname(self):
         """Return the path for package."""
@@ -199,10 +186,7 @@ class ReleaseTodo(models.Model):
     priority = models.IntegerField(default=0)
 
     def __str__(self):
-        return '%s (%d)' % (self.description, self.priority)
-
-    def __unicode__(self):  # python 2.x
-        return self.__str__()
+        return f'{self.description} ({self.priority})'
 
     class Meta:
         ordering = ['priority']
@@ -215,10 +199,7 @@ class ReleaseProgress(models.Model):
     done = models.IntegerField(default=0)
 
     def __str__(self):
-        return '%s, %d' % (self.version, self.done)
-
-    def __unicode__(self):  # python 2.x
-        return self.__str__()
+        return f'{self.version}, {self.done}'
 
     class Meta:
         verbose_name_plural = 'release progress'

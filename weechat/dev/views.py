@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright (C) 2003-2020 Sébastien Helleu <flashcode@flashtux.org>
 #
@@ -149,7 +148,7 @@ def stats_repo(request, stats='weechat'):
 
     try:
         with open(files_path_join('stats',
-                                  'git_%s_commits.txt' % stats), 'r') as _file:
+                                  f'git_{stats}_commits.txt'), 'r') as _file:
             git_commits = _file.read().strip().split(',')
     except:  # noqa: E722  pylint: disable=bare-except
         pass
@@ -157,7 +156,7 @@ def stats_repo(request, stats='weechat'):
     if stats in ('weechat', 'weechat-relay', 'qweechat'):
         try:
             with open(files_path_join('stats',
-                                      'sloc_%s.txt' % stats), 'r') as _file:
+                                      f'sloc_{stats}.txt'), 'r') as _file:
                 sloc = _file.read()
         except:  # noqa: E722  pylint: disable=bare-except
             pass
@@ -250,7 +249,7 @@ def get_info(name, version):
         infos = []
         for key in INFO_KEYS:
             if key[0] != name and key[0] not in BINARY_INFO_KEYS:
-                infos.append('%s:%s' % (key[0], get_info(key[0], version)))
+                infos.append(f'{key[0]}:{get_info(key[0], version)}')
         return '\n'.join(infos)
     return ''
 
@@ -275,7 +274,7 @@ def info(request, name=None):
             response = HttpResponse(get_info(name, version),
                                     content_type='application/octet-stream')
             response['Content-Disposition'] = (
-                'attachment; filename="weechat_%s.pgp"' % name)
+                f'attachment; filename="weechat_{name}.pgp"')
             return response
         return render(
             request,

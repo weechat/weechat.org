@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright (C) 2003-2020 Sébastien Helleu <flashcode@flashtux.org>
 #
@@ -29,11 +28,10 @@ def i18n_autogen(app, name, strings):
     """Create a file '_i18n_xxx.py' with strings to translate."""
     # build content of file
     content = [
-        '# -*- coding: utf-8 -*-',
         '# This file is auto-generated after changes in database, '
         'DO NOT EDIT!',
         '',
-        '"""Translations for %s/%s."""' % (app, name),
+        f'"""Translations for {app}/{name}."""',
         '',
         '# flake8: noqa',
         '# pylint: disable=line-too-long,too-many-statements',
@@ -44,8 +42,8 @@ def i18n_autogen(app, name, strings):
             'from django.utils.translation import gettext_noop',
             '',
             '',
-            'def __i18n_%s_%s():' % (app, name),
-            '    """Translations for %s/%s."""' % (app, name),
+            f'def __i18n_{app}_{name}():',
+            f'    """Translations for {app}/{name}."""',
         ]
         done = set()
         for string in sorted(strings):
@@ -59,16 +57,16 @@ def i18n_autogen(app, name, strings):
             # add string if not already done
             if message not in done:
                 if translators:
-                    content.append('    # Translators: %s' % translators)
-                content.append('    gettext_noop("%s")' %
-                               (message
-                                .replace('\\', '\\\\')
-                                .replace('"', '\\"')
-                                .replace('\r\n', '\\n')))
+                    content.append(f'    # Translators: {translators}')
+                message = (message
+                           .replace('\\', '\\\\')
+                           .replace('"', '\\"')
+                           .replace('\r\n', '\\n'))
+                content.append(f'    gettext_noop("{message}")')
                 done.add(message)
     content.append('')
     # write file
-    filename = project_path_join(app, '_i18n_%s.py' % name)
+    filename = project_path_join(app, f'_i18n_{name}.py')
     with open(filename, 'w', encoding='utf-8') as _file:
         data = '\n'.join(content)
         if hasattr(data, 'decode') and isinstance(data, str):

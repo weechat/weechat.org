@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright (C) 2003-2020 Sébastien Helleu <flashcode@flashtux.org>
 #
@@ -43,9 +42,9 @@ admin.autodiscover()
 
 urlpatterns = [
     # admin
-    url(r'^%s/doc/' % settings.ADMIN_PAGE,
+    url(rf'^{settings.ADMIN_PAGE}/doc/',
         include('django.contrib.admindocs.urls')),
-    url(r'^%s/' % settings.ADMIN_PAGE, admin.site.urls),
+    url(rf'^{settings.ADMIN_PAGE}/', admin.site.urls),
 
     # set language
     url(r'^i18n/', include('django.conf.urls.i18n')),

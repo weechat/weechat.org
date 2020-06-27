@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright (C) 2003-2020 Sébastien Helleu <flashcode@flashtux.org>
 #
@@ -55,6 +54,6 @@ urlpatterns = [
         TemplateView.as_view(template_name='about/support.html'),
         name='about_support'),
     url(r'^weechat\.org/$', view_about, name='about_weechat.org'),
-    url(r'^weechat\.org/%s/$' % URL_ABOUT_EXTRA, view_about,
+    url(rf'^weechat\.org/{URL_ABOUT_EXTRA}/$', view_about,
         {'extra_info': True}),
 ]

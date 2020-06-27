@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright (C) 2003-2020 Sébastien Helleu <flashcode@flashtux.org>
 #
@@ -42,10 +41,7 @@ class Info(models.Model):
     text = models.TextField(blank=True)
 
     def __str__(self):
-        return '%s (%s)' % (self.title, self.date)
-
-    def __unicode__(self):  # python 2.x
-        return self.__str__()
+        return f'{self.title} ({self.date})'
 
     def date_l10n(self):
         """Return the info date formatted with localized date format."""
@@ -56,7 +52,7 @@ class Info(models.Model):
         match = PATTERN_TITLE_VERSION.match(self.title)
         if match:
             # if the title is "Version x.y.z", translate only "Version"
-            return '%s %s' % (ugettext(match.group(1)), match.group(2))
+            return f'{ugettext(match.group(1))} {match.group(2)}'
         return ugettext(self.title)
 
     def text_i18n(self):
@@ -67,11 +63,10 @@ class Info(models.Model):
 
     def date_title_url(self):
         """Return date+title to include in URL."""
-        return '%04d%02d%02d-%s' % (self.date.year, self.date.month,
-                                    self.date.day,
-                                    re.sub(' +', '-',
-                                           re.sub('[^ a-zA-Z0-9.]', ' ',
-                                                  self.title).strip()))
+        text_url = re.sub(' +', '-',
+                          re.sub('[^ a-zA-Z0-9.]', ' ', self.title).strip())
+        return (f'{self.date.year:0>4}{self.date.month:0>2}{self.date.day:0>2}'
+                f'-{text_url}')
 
 
 def handler_info_saved(sender, **kwargs):

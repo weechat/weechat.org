@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright (C) 2003-2020 Sébastien Helleu <flashcode@flashtux.org>
 #
@@ -54,10 +53,7 @@ class Screenshot(models.Model):
     priority = models.IntegerField(default=0)
 
     def __str__(self):
-        return '%s: %s (%d)' % (self.app, self.filename, self.priority)
-
-    def __unicode__(self):  # python 2.x
-        return self.__str__()
+        return f'{self.app}: {self.filename} ({self.priority})'
 
     class Meta:
         """Meta class for ScreenShot."""
@@ -71,11 +67,8 @@ class Keydate(models.Model):
     text = models.TextField()
 
     def __str__(self):
-        str_version = ('%s: ' % self.version) if self.version else ''
-        return '%s - %s%s' % (self.date, str_version, self.text)
-
-    def __unicode__(self):  # python 2.x
-        return self.__str__()
+        str_version = f'{self.version}: ' if self.version else ''
+        return f'{self.date} - {str_version}{self.text}'
 
     def text_i18n(self):
         """Return translated key date."""
@@ -109,15 +102,9 @@ class Sponsor(models.Model):
     comment = models.CharField(max_length=1024, blank=True)
 
     def __str__(self):
-        str_num = ' (#%d)' % self.number if self.number > 1 else ''
-        return '%s%s, %s, %s, %.02f Eur' % (self.name,
-                                            str_num,
-                                            self.sponsortype_i18n(),
-                                            self.date,
-                                            self.amount)
-
-    def __unicode__(self):  # python 2.x
-        return self.__str__()
+        str_num = f' (#{self.number})' if self.number > 1 else ''
+        return (f'{self.name}{str_num}, {self.sponsortype_i18n()}, '
+                f'{self.date}, {self.amount:.2f} €')
 
     def date_l10n(self):
         """Return the sponsor date formatted with localized date format."""

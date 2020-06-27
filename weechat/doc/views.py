@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright (C) 2003-2020 Sébastien Helleu <flashcode@flashtux.org>
 #
@@ -165,8 +164,8 @@ def documentation(request, version='stable'):
         if stable_devel == version or docv == '-':
             files = []
             for lang in languages:
-                name = '%s/weechat_%s.%s.html' % (
-                    doc.version.directory, doc.name, lang.lang)
+                name = (f'{doc.version.directory}/weechat_{doc.name}.'
+                        f'{lang.lang}.html')
                 full_name = files_path_join('doc', name)
                 if os.path.exists(full_name):
                     files.append(
@@ -214,10 +213,10 @@ def documentation_link(request, version='stable', name=None, lang='en'):
     """
     if version and name and lang:
         doc_name = DOC_SHORTCUT_ALIAS.get(name, name)
-        filename = 'weechat_%s.%s.html' % (doc_name, lang)
+        filename = f'weechat_{doc_name}.{lang}.html'
         full_name = files_path_join('doc', version, filename)
         if os.path.exists(full_name):
-            return redirect('/files/doc/%s/%s' % (version, filename))
+            return redirect(f'/files/doc/{version}/{filename}')
     return redirect('doc')
 
 

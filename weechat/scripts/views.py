@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright (C) 2003-2020 Sébastien Helleu <flashcode@flashtux.org>
 #
@@ -67,7 +66,7 @@ def get_sort_key(sort_key):
         keys.append('name')
     for i, key in enumerate(keys):
         if key in KEY_ORDER_BY_DESC:
-            keys[i] = '-%s' % key
+            keys[i] = f'-{key}'
     return keys
 
 
@@ -93,7 +92,7 @@ def scripts(request, sort_key='popularity', filter_name='', filter_value=''):
                    .order_by(*get_sort_key(sort_key)))
     if filter_name == 'tag':
         script_list = (script_list
-                       .filter(tags__regex=r'(^|,)%s($|,)' % filter_value))
+                       .filter(tags__regex=rf'(^|,){filter_value}($|,)'))
     elif filter_name == 'language':
         if filter_value == 'python2-compatible':
             script_list = (script_list
@@ -247,31 +246,19 @@ def form_add(request):
 
             # send e-mail
             try:
-                subject = ('WeeChat: new script %s' %
-                           script.name_with_extension())
-                body = (''
-                        'Script      : %s\n'
-                        'Version     : %s\n'
-                        'Language    : %s\n'
-                        'License     : %s\n'
-                        'Description : %s\n'
-                        'Requirements: %s\n'
-                        'Min WeeChat : %s\n'
-                        'Author      : %s <%s>\n'
-                        '\n'
-                        'Comment:\n%s\n' %
-                        (form.cleaned_data['name'],
-                         form.cleaned_data['version'],
-                         form.cleaned_data['language'],
-                         form.cleaned_data['license'],
-                         form.cleaned_data['description'],
-                         form.cleaned_data['requirements'],
-                         form.cleaned_data['min_weechat'],
-                         form.cleaned_data['author'],
-                         form.cleaned_data['mail'],
-                         form.cleaned_data['comment']))
-                sender = '%s <%s>' % (form.cleaned_data['author'],
-                                      form.cleaned_data['mail'])
+                subject = f'WeeChat: new script {script.name_with_extension()}'
+                sender = (f'{form.cleaned_data["author"]} '
+                          f'<{form.cleaned_data["mail"]}>')
+                body = (f'Script      : {form.cleaned_data["name"]}\n'
+                        f'Version     : {form.cleaned_data["version"]}\n'
+                        f'Language    : {form.cleaned_data["language"]}\n'
+                        f'License     : {form.cleaned_data["license"]}\n'
+                        f'Description : {form.cleaned_data["description"]}\n'
+                        f'Requirements: {form.cleaned_data["requirements"]}\n'
+                        f'Min WeeChat : {form.cleaned_data["min_weechat"]}\n'
+                        f'Author      : {sender}>\n'
+                        f'\n'
+                        f'Comment:\n{form.cleaned_data["comment"]}\n')
                 email = EmailMessage(subject, body, sender,
                                      settings.SCRIPTS_MAILTO)
                 email.attach_file(filename)
@@ -304,22 +291,16 @@ def form_update(request):
 
             # send e-mail
             try:
-                subject = ('WeeChat: new release for script %s' %
-                           script.name_with_extension())
-                body = (''
-                        'Script     : %s (%s)\n'
-                        'New version: %s\n'
-                        'Author     : %s <%s>\n'
-                        '\n'
-                        'Comment:\n%s\n' %
-                        (script.name_with_extension(),
-                         script.version_weechat(),
-                         form.cleaned_data['version'],
-                         form.cleaned_data['author'],
-                         form.cleaned_data['mail'],
-                         form.cleaned_data['comment']))
-                sender = '%s <%s>' % (form.cleaned_data['author'],
-                                      form.cleaned_data['mail'])
+                subject = (f'WeeChat: new release for script '
+                           f'{script.name_with_extension()}')
+                sender = (f'{form.cleaned_data["author"]} '
+                          f'<{form.cleaned_data["mail"]}>')
+                body = (f'Script     : {script.name_with_extension()} '
+                        f'({script.version_weechat()})\n'
+                        f'New version: {form.cleaned_data["version"]}\n'
+                        f'Author     : {sender}\n'
+                        f'\n'
+                        f'Comment:\n{form.cleaned_data["comment"]}\n')
                 email = EmailMessage(subject, body, sender,
                                      settings.SCRIPTS_MAILTO)
                 email.attach(script.name_with_extension(),

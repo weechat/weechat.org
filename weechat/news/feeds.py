@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright (C) 2003-2020 Sébastien Helleu <flashcode@flashtux.org>
 #
@@ -36,11 +35,8 @@ class WeechatFeed(Feed):
 
     def item_link(self, item):
         """Return link to item by using the domain sent in the request."""
-        return '%s://%s/news/%d' % (
-            self.request.scheme,
-            self.request.get_host(),
-            item.id,
-        )
+        return (f'{self.request.scheme}://{self.request.get_host()}/news/'
+                f'{item.id}')
 
     def item_pubdate(self, info):
         """Return idem date."""

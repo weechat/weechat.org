@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright (C) 2003-2020 Sébastien Helleu <flashcode@flashtux.org>
 #
@@ -77,7 +76,7 @@ def history(request):
                     .order_by('-date'))
     releases = []
     for release in release_list:
-        name = 'weechat-%s.png' % release.version
+        name = f'weechat-{release.version}.png'
         if os.path.exists(media_path_join('images', 'story', name)):
             releases.append((release.version, release.date))
     return render(

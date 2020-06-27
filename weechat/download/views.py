@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright (C) 2003-2020 Sébastien Helleu <flashcode@flashtux.org>
 #
@@ -106,10 +105,10 @@ def package_checksums(request, version, checksum_type):
     for package in package_list:
         checksum = package.checksum()
         if checksum:
-            checksums.append('%s  %s' % (checksum, package.filename))
+            checksums.append(f'{checksum}  {package.filename}')
     response = HttpResponse('\n'.join(checksums), content_type='text/plain')
-    response['Content-disposition'] = ('inline; filename=weechat-%s-%s.txt' %
-                                       (version, checksum_type))
+    response['Content-disposition'] = (f'inline; filename=weechat-'
+                                       f'{version}-{checksum_type}.txt')
     return response
 
 

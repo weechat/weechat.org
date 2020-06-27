@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright (C) 2003-2020 Sébastien Helleu <flashcode@flashtux.org>
 #
@@ -36,10 +35,7 @@ class Version(models.Model):
     version = models.CharField(max_length=64)
 
     def __str__(self):
-        return '%s (%s)' % (self.codename, self.version)
-
-    def __unicode__(self):  # python 2.x
-        return self.__str__()
+        return f'{self.codename} ({self.version})'
 
 
 class Builder(models.Model):
@@ -48,10 +44,7 @@ class Builder(models.Model):
     name = models.CharField(max_length=128)
 
     def __str__(self):
-        return '%s (%s)' % (self.name, self.nick)
-
-    def __unicode__(self):  # python 2.x
-        return self.__str__()
+        return f'{self.name} ({self.nick})'
 
 
 class Repo(models.Model):
@@ -69,36 +62,30 @@ class Repo(models.Model):
     priority = models.IntegerField(default=0)
 
     def __str__(self):
-        return '%s %s, %s, %s (%s) (%s)' % (
-            self.name,
-            self.version,
-            'visible' if self.visible else 'hidden',
-            'active' if self.active else 'discontinued',
-            self.arch,
-            self.priority)
-
-    def __unicode__(self):  # python 2.x
-        return self.__str__()
+        visible = 'visible' if self.visible else 'hidden'
+        active = 'active' if self.active else 'discontinued'
+        return (f'{self.name} {self.version}, {visible}, {active} '
+                f'({self.arch}) ({self.priority})')
 
     def path_packages_gz(self, arch):
         """Return path/name to the Packages.gz file of repository."""
         return repo_path_join(self.name, 'dists',
                               self.version.codename, 'main',
-                              'binary-%s' % arch, 'Packages.gz')
+                              f'binary-{arch}', 'Packages.gz')
 
     def apt_url(self):
         """
         Return the URL to use with apt for binary packages,
         for example: "deb https://weechat.org/debian sid main".
         """
-        return 'deb %s %s main' % (self.url, self.version.codename)
+        return f'deb {self.url} {self.version.codename} main'
 
     def apt_url_src(self):
         """
         Return the URL to use with apt for sources packages,
         for example: "deb-src https://weechat.org/debian sid main".
         """
-        return 'deb-src %s %s main' % (self.url, self.version.codename)
+        return f'deb-src {self.url} {self.version.codename} main'
 
     class Meta:
         """Sort Repos by priority."""
