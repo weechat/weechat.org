@@ -24,7 +24,7 @@
 
 {% elif doc_version %}
 
-  <h3>{% trans "Docs for version" %} {{ doc_version }} <small class="text-muted">({{ doc_list.0.1.0.1|localdate }})</small></h3>
+  <h3>{% trans "Docs for version" %} {{ doc_version }}</h3>
 
   <p class="row">
     <div class="table-responsive col-lg-10 col-xl-8 px-0">
@@ -55,6 +55,10 @@
         </tbody>
       </table>
     </div>
+  </p>
+
+  <p class="text-muted">
+    {% trans "Build date:" %} {{ doc_list.0.1.0.1|localdate }}
   </p>
 
   {% if version == "devel" and i18n %}
