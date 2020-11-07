@@ -245,11 +245,14 @@ def form_add(request):
                 _file.write(get_script_content(scriptfile))
 
             # send e-mail
-            try:
-                subject = f'WeeChat: new script {script.name_with_extension()}'
-                sender = (f'{form.cleaned_data["author"]} '
-                          f'<{form.cleaned_data["mail"]}>')
-                body = (f'Script      : {form.cleaned_data["name"]}\n'
+            if settings.SCRIPTS_MAILTO:
+                try:
+                    subject = (f'WeeChat: new script '
+                               f'{script.name_with_extension()}')
+                    sender = (f'{form.cleaned_data["author"]} '
+                              f'<{form.cleaned_data["mail"]}>')
+                    body = (
+                        f'Script      : {form.cleaned_data["name"]}\n'
                         f'Version     : {form.cleaned_data["version"]}\n'
                         f'Language    : {form.cleaned_data["language"]}\n'
                         f'License     : {form.cleaned_data["license"]}\n'
@@ -258,13 +261,14 @@ def form_add(request):
                         f'Min WeeChat : {form.cleaned_data["min_weechat"]}\n'
                         f'Author      : {sender}>\n'
                         f'\n'
-                        f'Comment:\n{form.cleaned_data["comment"]}\n')
-                email = EmailMessage(subject, body, sender,
-                                     settings.SCRIPTS_MAILTO)
-                email.attach_file(filename)
-                email.send()
-            except:  # noqa: E722  pylint: disable=bare-except
-                return HttpResponseRedirect('/scripts/adderror/')
+                        f'Comment:\n{form.cleaned_data["comment"]}\n'
+                    )
+                    email = EmailMessage(subject, body, sender,
+                                         settings.SCRIPTS_MAILTO)
+                    email.attach_file(filename)
+                    email.send()
+                except:  # noqa: E722  pylint: disable=bare-except
+                    return HttpResponseRedirect('/scripts/adderror/')
 
             # save script in database
             script.save()
@@ -290,6 +294,8 @@ def form_update(request):
             script = Script.objects.get(id=form.cleaned_data['script'])
 
             # send e-mail
+            if not settings.SCRIPTS_MAILTO:
+                return HttpResponseRedirect('/scripts/updateerror/')
             try:
                 subject = (f'WeeChat: new release for script '
                            f'{script.name_with_extension()}')

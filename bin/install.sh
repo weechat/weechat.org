@@ -22,19 +22,6 @@ DIR=$(cd $(dirname "$0"); pwd)
 
 cd $DIR/.. || exit 1
 
-if [ ! -f ./weechat/settings_local.py ]; then
-    echo ""
-    echo "--- Copy settings_local.template to settings_local.py"
-    cp -v ./weechat/settings_local.template ./weechat/settings_local.py
-
-    echo ""
-    read -p "--- Change settings in settings_local.py (like database)? (Y/n) " answer
-    answer=${answer:-y}
-    case $answer in
-        y|Y) $EDITOR ./weechat/settings_local.py ;;
-    esac
-fi
-
 echo ""
 echo "--- Compiling messages"
 ./manage.py compilemessages || exit 1

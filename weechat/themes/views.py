@@ -118,21 +118,24 @@ def form_add(request):
                 _file.write(content)
 
             # send e-mail
-            try:
-                subject = f'WeeChat: new theme {theme.name}'
-                sender = (f'{form.cleaned_data["author"]} '
-                          f'<{form.cleaned_data["mail"]}>')
-                body = (f'Theme      : {props["name"]}\n'
+            if settings.THEMES_MAILTO:
+                try:
+                    subject = f'WeeChat: new theme {theme.name}'
+                    sender = (f'{form.cleaned_data["author"]} '
+                              f'<{form.cleaned_data["mail"]}>')
+                    body = (
+                        f'Theme      : {props["name"]}\n'
                         f'Version    : {props["weechat"]}\n'
                         f'Description: {form.cleaned_data["description"]}\n'
                         f'Author     : {sender}\n'
-                        f'Comment    :\n{form.cleaned_data["comment"]}\n')
-                email = EmailMessage(subject, body, sender,
-                                     settings.THEMES_MAILTO)
-                email.attach_file(filename)
-                email.send()
-            except:  # noqa: E722  pylint: disable=bare-except
-                return HttpResponseRedirect('/themes/adderror/')
+                        f'Comment    :\n{form.cleaned_data["comment"]}\n'
+                    )
+                    email = EmailMessage(subject, body, sender,
+                                         settings.THEMES_MAILTO)
+                    email.attach_file(filename)
+                    email.send()
+                except:  # noqa: E722  pylint: disable=bare-except
+                    return HttpResponseRedirect('/themes/adderror/')
 
             # save theme in database
             theme.save()
@@ -168,6 +171,8 @@ def form_update(request):
             props = Theme.get_props(content)
 
             # send e-mail
+            if not settings.THEMES_MAILTO:
+                return HttpResponseRedirect('/themes/updateerror/')
             try:
                 subject = f'WeeChat: new version of theme {theme.name}'
                 sender = (f'{form.cleaned_data["author"]} '

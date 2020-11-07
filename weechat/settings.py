@@ -25,7 +25,14 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-DEBUG = False
+# Override these values in settings_local.py for production
+DEBUG = True
+SECRET_KEY = 'replace-me'
+ALLOWED_HOSTS = []
+ADMINS = []
+MANAGERS = []
+SCRIPTS_MAILTO = []
+THEMES_MAILTO = []
 
 SITE_ID = 1
 
@@ -138,10 +145,18 @@ TEMPLATES = [
     },
 ]
 
-# read settings_local.py
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'weechat.db',
+    },
+}
+
+ADMIN_PAGE = 'admin'
+
+# read settings_local.py (optional file)
 try:
     # pylint: disable=wildcard-import,unused-wildcard-import
     from weechat.settings_local import *  # noqa: F401,F403
 except ImportError:
-    from warnings import warn
-    warn('File "settings_local.py" not found, using default settings')
+    pass

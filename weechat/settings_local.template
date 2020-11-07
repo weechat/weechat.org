@@ -17,88 +17,43 @@
 # along with WeeChat.org.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-# Template for local Django settings.
+"""weechat.org local settings."""
+
+# Template for local Django settings: overrides options defined in
+# file settings.py.
+#
 # Copy this file to "settings_local.py" and make necessary changes.
 
-from os import path
+DEBUG = False
 
-PRODUCTION = False
+SECRET_KEY = 'replace-me'
 
-if PRODUCTION:
+ALLOWED_HOSTS = [
+    '.example.com',
+]
 
-    # =============== Settings for PRODUCTION ===============
+ADMINS = [
+    ('root', 'root@localhost'),
+]
+MANAGERS = ADMINS
 
-    DEBUG = False
-    TEMPLATE_DEBUG = DEBUG
+# These recipients will receive new/updated scripts by e-mail.
+SCRIPTS_MAILTO = [
+    'root <root@localhost>',
+]
 
-    ALLOWED_HOSTS = []
+# These recipients will receive new/updated themes by e-mail.
+THEMES_MAILTO = SCRIPTS_MAILTO
 
-    ADMINS = (('root', 'root@localhost'),)
-    MANAGERS = ADMINS
-    ADMIN_PAGE = 'admin'
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'weechat',
+        'USER': 'user',
+        'PASSWORD': 'password',
+        'HOST': '',
+        'PORT': '',
+    },
+}
 
-    # These recipients will receive new/updated scripts by e-mail.
-    SCRIPTS_MAILTO = ['root <root@localhost>']
-
-    # These recipients will receive new/updated themes by e-mail.
-    THEMES_MAILTO = SCRIPTS_MAILTO
-
-    # Database
-    DATABASES = {
-        'default': {
-            # postgresql_psycopg2 / postgresql / mysql / sqlite3 / oracle
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'weechat',
-            'USER': 'user',
-            'PASSWORD': 'password',
-            'HOST': '',
-            'PORT': '',
-        }
-    }
-
-    # Adjust URL for media, if different from default '/media/'
-    # (for example if media are served by another domain)
-    #MEDIA_URL = '/media/'
-
-    # Make this unique, and don't share it with anybody.
-    SECRET_KEY = 'replace-me'
-
-else:
-
-    # =============== Settings for DEVELOPMENT ===============
-
-    DEBUG = True
-    TEMPLATE_DEBUG = DEBUG
-
-    ADMINS = ()
-    MANAGERS = ADMINS
-    ADMIN_PAGE = 'admin'
-
-    # These recipients will receive new/updated scripts by e-mail.
-    SCRIPTS_MAILTO = ['root <root@localhost>']
-
-    # These recipients will receive new/updated themes by e-mail.
-    THEMES_MAILTO = SCRIPTS_MAILTO
-
-    # Default database for development is sqlite3
-    DATABASES = {
-        'default': {
-            # postgresql_psycopg2 / postgresql / mysql / sqlite3 / oracle
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': path.join(path.dirname(path.abspath(__file__)),
-                              '..', 'db', 'weechat.db'),
-            'USER': '',
-            'PASSWORD': '',
-            'HOST': '',
-            'PORT': '',
-        }
-    }
-
-    # Adjust URL for media, if different from default '/media/'
-    # (for example if media are served by another domain)
-    #MEDIA_URL = '/media/'
-
-    # Make this unique, and don't share it with anybody.
-    SECRET_KEY = 'replace-me'
-
-    INTERNAL_IPS = ('127.0.0.1',)
+INTERNAL_IPS = []
