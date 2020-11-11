@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-31 20:12+0100\n"
+"POT-Creation-Date: 2020-11-11 12:26+0100\n"
 "PO-Revision-Date: 2020-06-13 22:09+0200\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
@@ -489,12 +489,12 @@ msgstr ""
 msgid "Czech"
 msgstr "チェコ語"
 
-#: doc/models.py:61 settings.py:43 templates/about/support.html:34
+#: doc/models.py:61 settings.py:50 templates/about/support.html:34
 #: templates/about/weechat.org.html:24
 msgid "German"
 msgstr "ドイツ語"
 
-#: doc/models.py:62 settings.py:41 templates/about/support.html:27
+#: doc/models.py:62 settings.py:48 templates/about/support.html:27
 msgid "English"
 msgstr "英語"
 
@@ -502,7 +502,7 @@ msgstr "英語"
 msgid "Spanish"
 msgstr "スペイン語"
 
-#: doc/models.py:64 settings.py:42 templates/about/support.html:28
+#: doc/models.py:64 settings.py:49 templates/about/support.html:28
 msgid "French"
 msgstr "フランス語"
 
@@ -510,15 +510,15 @@ msgstr "フランス語"
 msgid "Hungarian"
 msgstr "ハンガリー語"
 
-#: doc/models.py:66 settings.py:44 templates/about/weechat.org.html:25
+#: doc/models.py:66 settings.py:51 templates/about/weechat.org.html:25
 msgid "Italian"
 msgstr "イタリア語"
 
-#: doc/models.py:67 settings.py:47 templates/about/weechat.org.html:26
+#: doc/models.py:67 settings.py:54 templates/about/weechat.org.html:26
 msgid "Japanese"
 msgstr "日本語"
 
-#: doc/models.py:68 settings.py:45 templates/about/weechat.org.html:27
+#: doc/models.py:68 settings.py:52 templates/about/weechat.org.html:27
 msgid "Polish"
 msgstr "ポーランド語"
 
@@ -526,7 +526,7 @@ msgstr "ポーランド語"
 msgid "Portuguese"
 msgstr "ポルトガル語"
 
-#: doc/models.py:70 settings.py:46 templates/about/weechat.org.html:28
+#: doc/models.py:70 settings.py:53 templates/about/weechat.org.html:28
 msgid "Portuguese (Brazil)"
 msgstr "ポルトガル語 (ブラジル)"
 
@@ -3636,6 +3636,33 @@ msgstr ""
 
 #: news/_i18n_info.py:143
 msgid ""
+"Version 3.0 is available!\n"
+"\n"
+"Among the new features:\n"
+"\n"
+"- add option script.scripts.download_enabled (it must be explicitly set to "
+"\"on\" to allow download of scripts from weechat.org)\n"
+"- add option \"-oerr\" in command /exec to send stderr to buffer (now "
+"disabled by default)\n"
+"- allow to send text on buffers and evaluate command with commands /"
+"allchan, /allpv and /allserv\n"
+"- add option fset.look.auto_refresh\n"
+"- add variable \"tg_argc\" in data set by command trigger and variable "
+"\"tg_trigger_name\" in data set by all triggers\n"
+"- add argument \"bytes\" in API function string_dyn_concat\n"
+"- add API function string_color_code_size\n"
+"- add optional list of colors in infos \"nick_color\" and \"nick_color_name"
+"\"\n"
+"- add pointer to irc_nick in focus of bar item \"buffer_nicklist\"\n"
+"- many bugs fixed.\n"
+"\n"
+"For complete list of new features and bugs fixed, please look at <a href="
+"\"https://blog.weechat.org/post/2020/11/11/Version-3.0\">development blog</"
+"a> or <a href=\"/files/changelog/ChangeLog-3.0.html\">ChangeLog</a>."
+msgstr ""
+
+#: news/_i18n_info.py:144
+msgid ""
 "Version v0.1.2 is available!\n"
 "\n"
 "News since last version are:\n"
@@ -3668,11 +3695,11 @@ msgstr ""
 "2005-05-24 追記: 起動時と Perl/Python の検出時のクラッシュを修正、現在のバー"
 "ジョンは 0.1.2.1 です。"
 
-#: news/_i18n_info.py:144
+#: news/_i18n_info.py:145
 msgid "WeeChat - Wee Enhanced Environment for Chat"
 msgstr "WeeChat - 小さくて強力なチャット環境"
 
-#: news/_i18n_info.py:145
+#: news/_i18n_info.py:146
 msgid ""
 "WeeChat has many new important features since some weeks:\n"
 "- multi-windows management (with horizontal and vertical window split)\n"
@@ -3695,11 +3722,11 @@ msgstr ""
 "まだ開発中です。\n"
 "問題やバッファ/ウィンドウ間の操作を改良するための提案を募集しています。"
 
-#: news/_i18n_info.py:146
+#: news/_i18n_info.py:147
 msgid "WeeChat in Cygwin"
 msgstr "WeeChat の Cygwin 版"
 
-#: news/_i18n_info.py:147
+#: news/_i18n_info.py:148
 msgid ""
 "WeeChat is now in Cygwin, and can be installed with setup.exe.\n"
 "Version 0.4.2 is available for 32 and 64-bit Cygwin.\n"
@@ -3714,7 +3741,7 @@ msgstr ""
 "注意: Guile プラグインは Cygwin ではまだ利用できない guile >= 2.0 が必要なの"
 "で、削除されています。"
 
-#: news/_i18n_info.py:148
+#: news/_i18n_info.py:149
 msgid ""
 "WeeChat project is started.\n"
 "\n"
@@ -3734,7 +3761,7 @@ msgstr ""
 "- 高速、軽量、スクリプトで拡張可能\n"
 "- ..."
 
-#: news/_i18n_info.py:149
+#: news/_i18n_info.py:150
 msgid ""
 "WeeChat project now accepts donations via Paypal account, with secured "
 "payment."
@@ -3742,7 +3769,7 @@ msgstr ""
 "WeeChat プロジェクトは secured payment を用いた Paypal アカウント経由の寄付を"
 "受け付けるようになりました。"
 
-#: news/_i18n_info.py:150
+#: news/_i18n_info.py:151
 msgid ""
 "WeeChat project now accepts recurring donations via Liberapay, which has "
 "very low fees (see <a href=\"https://liberapay.com/about/faq#differences"
@@ -3754,7 +3781,7 @@ msgstr ""
 "about/faq#differences\">Liberapay とその他のクラウドファンディングサービスの"
 "比較</a>を参照してください)。"
 
-#: news/_i18n_info.py:151
+#: news/_i18n_info.py:152
 msgid ""
 "WeeChat repositories (weechat, scripts, qweechat) have been moved to GitHub, "
 "in WeeChat organization: <a href=\"https://github.com/weechat\">https://"
@@ -3770,15 +3797,15 @@ msgstr ""
 "より詳しい情報は、<a href=\"/blog/post/2014/03/03/Git-repositories-moved-to-"
 "Github\">開発ブログ</a>を参照してください。"
 
-#: news/_i18n_info.py:152
+#: news/_i18n_info.py:153
 msgid "WeeChat screenshot"
 msgstr "WeeChat のスクリーンショット"
 
-#: news/_i18n_info.py:153
+#: news/_i18n_info.py:154
 msgid "WeeChat scripts page"
 msgstr "WeeChat スクリプトページ"
 
-#: news/_i18n_info.py:154
+#: news/_i18n_info.py:155
 msgid ""
 "WeeChat scripts page (today Perl scripts only) has been added.\n"
 "On this page you can submit your script (need to be approved by WeeChat "
@@ -3795,7 +3822,7 @@ msgstr ""
 "注意: Perl スクリプトを使うには WeeChat 0.0.3 より高いバージョンが必要です。"
 "今のところ開発版を使う以外に方法はありません。"
 
-#: news/_i18n_info.py:155
+#: news/_i18n_info.py:156
 msgid ""
 "WeeChat story page is now available, as screenshots. You can see differences "
 "between all versions in one view!\n"
@@ -3805,15 +3832,15 @@ msgstr ""
 "ジョンが一覧表示できます!\n"
 "開発版も載っており、頻繁に更新されています。"
 
-#: news/_i18n_info.py:156
+#: news/_i18n_info.py:157
 msgid "WeeChat users map"
 msgstr "WeeChat ユーザマップ"
 
-#: news/_i18n_info.py:157
+#: news/_i18n_info.py:158
 msgid "WeeChat will merge with irssi"
 msgstr "WeeChat は irssi と統合される予定です"
 
-#: news/_i18n_info.py:158
+#: news/_i18n_info.py:159
 msgid ""
 "WeeChat, the fast, light and extensible IRC client, is released for the "
 "first time, version 0.0.1.\n"
@@ -3861,7 +3888,7 @@ msgstr ""
 "どんな提案やバグ報告も歓迎です。開発チームと連絡を取るには WeeChat のサポート"
 "ページを参照してください。"
 
-#: news/_i18n_info.py:159
+#: news/_i18n_info.py:160
 msgid "XZ packages"
 msgstr "XZ パッケージ"
 
@@ -5874,14 +5901,14 @@ msgstr "このリリースの変更内容。"
 #. Translators: this is a date format, see: http://www.php.net/date
 #. Translators: (note: the result string must be short, use abbreviation
 #. Translators: for month if possible)
-#: settings.py:62
+#: settings.py:69
 msgid "M j, Y"
 msgstr "Y 年 m 月 j 日"
 
 #. Translators: this is a date/time format, see: http://www.php.net/date
 #. Translators: (note: the result string must be short, use abbreviation
 #. Translators: for month if possible)
-#: settings.py:67
+#: settings.py:74
 msgid "M j, Y H:i"
 msgstr "Y 年 m 月 j 日 H 時 i 分"
 
