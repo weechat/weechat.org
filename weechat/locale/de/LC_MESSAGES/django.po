@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-11 12:26+0100\n"
-"PO-Revision-Date: 2020-06-13 22:09+0200\n"
+"PO-Revision-Date: 2020-11-11 14:59+0100\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -30,7 +30,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #: about/_i18n_keydates.py:13
 msgid "256 colors, irc proxy, rmodifier, redirection of irc commands."
@@ -49,6 +49,9 @@ msgid ""
 "Add handshake, nonce, completion in weechat relay protocol, add background "
 "color for inactive bars, support of multiple lines in command line."
 msgstr ""
+"Handshake, Nonce, Vervollständigung im Weechat-Relay-Protokoll hinzugefüht, "
+"Hintergrundfarbe für inaktive Bars hinzugefügt, Unterstützung von Sie "
+"mehreren Zeilen in der Befehlszeile."
 
 #: about/_i18n_keydates.py:16
 msgid "Add hook \"line\"."
@@ -3712,6 +3715,51 @@ msgid ""
 "\"https://blog.weechat.org/post/2020/07/18/Version-2.9\">development blog</"
 "a> or <a href=\"/files/changelog/ChangeLog-2.9.html\">ChangeLog</a>."
 msgstr ""
+"Version 2.9 ist verfügbar!\n"
+"\n"
+"Über die neuen Funktionen:\n"
+"\n"
+"- neu: Befehl \"handshake\" in weechat relay protocol und nonce um "
+"Wiederholungsangriffe während der Authentifizierung zu verhindern\n"
+"- neu: Befehl \"completion\" in weechat relay protocol\n"
+"- neu: Option relay.network.auth\\_timeout, add status \"waiting\\_auth\" in "
+"irc and weechat relay protocols\n"
+"- neu: Option \"color\\_bg\\_inactive\" in Bars\n"
+"- neu: Bar Items \"buffer\\_nicklist\\_count\\_groups\" und \"buffer"
+"\\_nicklist\\_count\\_all\"\n"
+"- neu: Tastenbefehl Alt+Enter um eine neue Zeile einzufügen, die "
+"Standardeinstellung für die Input-Bar ist 0 (automatisch)\n"
+"- neu: ein skalierbares WeeChat logo (SVG)\n"
+"- neu: Base 16/32/64 En-/Dekodierung bei der Auswertung von Ausdrücken "
+"mittels \"base\\_encode:base,xxx\" und \"base\\_decode:base,xxx\"\n"
+"- neu: Groß- und Kleinschreibung beachten mittels Vergleichsoperatoren (\"==*"
+"\" and \"!!*\") sowie Beachtung von Groß- und Kleinschreibung mittels "
+"Vergleichsoperatoren (\"==-\", \"!!-\", \"=-\", \"!-\") bei der Auswertung "
+"von Ausdrücken\n"
+"- neu: Tastenbefehl Alt+Shift+B sowie Alt+Shift+N um die Buflist/Nicklist "
+"Bars umzuschalten\n"
+"- Konfigurationsdateien werden bei einem SIGHUP Signal neu geladen\n"
+"- neu:API Funktionen um Wörter in der Kommandozeile zu vervollständigen\n"
+"- Option buflist.look.sort ist evaluiert\n"
+"- neu: Unterstützung von \"UTF8MAPPING\" in IRC Server\n"
+"- zeigt IRC \"account\" Nachrichten in Buffern an\n"
+"- Argumente werden evaluiert, wenn ein Trigger vom Typ \"command\" erstellt "
+"wird\n"
+"- Befehl \"/guile eval\" ist wieder aktiviert\n"
+"- behoben: langsames Senden von Daten an Relay-Clients, wenn SSL aktiviert "
+"ist\n"
+"- neu: CI mittels GitHub Actions\n"
+"- teste für Erweiterungen werden nur durchgeführt, wenn diese aktiv sind und "
+"kompiliert wurden\n"
+"- GnuTLS ist nun eine notwendige Abhängigkeit beim Kompilieren\n"
+"- standardmäßig ist die Erstellung der JavaScript-Erweiterung deaktiviert. "
+"Das Debian-Paket \"weechat-javascript\" wurde entfernt.\n"
+"- weitere Fehlerbereinigungen.\n"
+"\n"
+"Eine vollständige Liste der neuen Funktionen und Fehlerbereinigungen findet "
+"man unter folgenden Links: <a href=\"https://blog.weechat.org/"
+"post/2020/07/18/Version-2.9\">Entwickler Blog</a> oder <a href=\"/files/"
+"changelog/ChangeLog-2.9.html\">Änderungsprotokoll</a>."
 
 #: news/_i18n_info.py:143
 msgid ""
@@ -3739,6 +3787,32 @@ msgid ""
 "\"https://blog.weechat.org/post/2020/11/11/Version-3.0\">development blog</"
 "a> or <a href=\"/files/changelog/ChangeLog-3.0.html\">ChangeLog</a>."
 msgstr ""
+"Version 3.0 ist verfügbar!\n"
+"\n"
+"Über die neuen Funktionen:\n"
+"\n"
+"- neu: Option script.scripts.download_enabled (Option muss explizit auf \"on"
+"\" gesetzt werden, um das herunterladenvon Skripts von weechat.org zu "
+"erlauben)\n"
+"- neu: Option \"-oerr\" in Befehl /exec, um stderr im Buffer "
+"auszugeben(Standardmäßig deaktiviert)\n"
+"- Ermöglichen das Senden von Text in Buffer und das Auswerten von Befehlen "
+"mittels /allchan, /allpv and /allserv\n"
+"- neu: Option fset.look.auto_refresh\n"
+"- neu: Variable \"tg_argc\" in Data, welches durch den Trigger-Befehl "
+"gesetzt wird und Variable \"tg_trigger_name\" in Data, welches durch alle "
+"Trigger erstellt wird\n"
+"- neu: Argument \"bytes\" in API Funktion string_dyn_concat\n"
+"- neu: API Funktion string_color_code_size\n"
+"- neu: optional Liste der Farben in infos \"nick_color\" und "
+"\"nick_color_name\"\n"
+"- neu: Pointer zu irc_nick in focus des Bar-Items \"buffer_nicklist\"\n"
+"- viele Fehlerbereinigungen.\n"
+"\n"
+"Eine vollständige Liste der neuen Funktionen und Fehlerbereinigungen findet "
+"man unter folgenden Links: <a href=\"https://blog.weechat.org/"
+"post/2020/11/11/Version-3.0\">Entwickler Blog</a> oder <a href=\"/files/"
+"changelog/ChangeLog-3.0.html\">Änderungsprotokoll</a>."
 
 #: news/_i18n_info.py:144
 msgid ""
@@ -6043,10 +6117,8 @@ msgid "Requirements"
 msgstr "zusätzliche Anforderungen"
 
 #: scripts/models.py:308
-#, fuzzy
-#| msgid "Min/max WeeChat version."
 msgid "Min WeeChat version."
-msgstr "Min/Max WeeChat."
+msgstr "Minimale WeeChat Version."
 
 #: scripts/models.py:312 scripts/models.py:377 themes/models.py:174
 #: themes/models.py:259
@@ -6984,10 +7056,8 @@ msgid "Docs for version"
 msgstr "Dokumentation für Version"
 
 #: templates/doc/doc_version.html:61
-#, fuzzy
-#| msgid "Builds by"
 msgid "Build date:"
-msgstr "Erstellt von"
+msgstr "Erstellungsdatum:"
 
 #: templates/doc/doc_version.html:65
 msgid "Internationalization stats"
@@ -7119,13 +7189,12 @@ msgid "There is no workaround."
 msgstr "Es gibt keine Problemlösung."
 
 #: templates/doc/security.html:95
-#, fuzzy, python-format
-#| msgid "Security vulnerabilities are classified using 4 severity levels:"
+#, python-format
 msgid ""
 "Security vulnerabilities are classified using %(count)s severity levels:"
 msgstr ""
-"Sicherheitsrelevante Probleme sind in in folgende vier Sicherheitsstufen "
-"unterteilt:"
+"Sicherheitsrelevante Probleme sind in in folgende %(count)s "
+"Sicherheitsstufen unterteilt:"
 
 #: templates/doc/security.html:112
 msgid "No security vulnerability."
@@ -7525,16 +7594,12 @@ msgid "Display the fingerprint:"
 msgstr "Fingerabdruck anzeigen:"
 
 #: templates/download/packages.html:139
-#, fuzzy
-#| msgid ""
-#| "Check that the fingerprint is correct by asking to a developer on "
-#| "#weechat (chat.freenode.net)."
 msgid ""
 "Check that the fingerprint is correct by checking the topic on #weechat "
 "channel (chat.freenode.net) or by asking to a developer."
 msgstr ""
 "Um die Echtheit des Fingerabdruckes zu verifizieren kann ein Entwickler im "
-"#weechat Channel (irc.freenode.net) angesprochen werden."
+"#weechat Channel (chat.freenode.net) angesprochen werden."
 
 #: templates/download/packages.html:142
 msgid "Trust the key:"
@@ -7891,8 +7956,6 @@ msgid "List:"
 msgstr "Liste:"
 
 #: templates/scripts/list.html:29
-#, fuzzy
-#| msgid "filter:"
 msgid "Filter:"
 msgstr "Filter:"
 
@@ -8382,11 +8445,11 @@ msgstr "benötigt:"
 
 #: templates/scripts/source.html:31
 msgid "Added:"
-msgstr "hinzugefügt:"
+msgstr "Hinzugefügt:"
 
 #: templates/scripts/source.html:32
 msgid "Updated:"
-msgstr "aktualisiert:"
+msgstr "Aktualisiert:"
 
 #: templates/scripts/update.html:13
 msgid ""
@@ -8494,7 +8557,7 @@ msgstr "Neues Theme"
 
 #: templates/themes/themes.html:13
 msgid "Update theme"
-msgstr "überarbeites Theme"
+msgstr "Überarbeites Theme"
 
 #: templates/themes/update_ok.html:12
 msgid "Updated theme has been submitted for review."
