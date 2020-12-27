@@ -22,14 +22,14 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-11 15:20+0100\n"
-"PO-Revision-Date: 2020-11-11 15:22+0100\n"
+"PO-Revision-Date: 2020-12-27 16:12+0100\n"
 "Last-Translator: Krzysztof Korościk <soltys@soltys.info>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.12.3\n"
+"X-Generator: Poedit 2.4.1\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
@@ -50,6 +50,8 @@ msgid ""
 "Add handshake, nonce, completion in weechat relay protocol, add background "
 "color for inactive bars, support of multiple lines in command line."
 msgstr ""
+"Dodano handshake, nonce, dopełnienia w protokole relay, dodano kolor tła dla "
+"nieaktywnych pasków, wsparcie wielu wierzy w linii komend."
 
 #: about/_i18n_keydates.py:16
 msgid "Add hook \"line\"."
@@ -3613,6 +3615,48 @@ msgid ""
 "\"https://blog.weechat.org/post/2020/07/18/Version-2.9\">development blog</"
 "a> or <a href=\"/files/changelog/ChangeLog-2.9.html\">ChangeLog</a>."
 msgstr ""
+"Wersja 2.9 jest dostępna!\n"
+"\n"
+"Najważniejsze zmiany:\n"
+"\n"
+"- dodano komendę \"handshake\" w protokole pośrednika weechat i nonce aby "
+"zapobiec atakom podczas autentykacji\n"
+"- dodano komendę \"completion\" w protokole pośrednika weechat\n"
+"- dodano opcję relay.network.auth\\_timeout, dodano status \"waiting\\_auth"
+"\" w protokole irc i pośrednika weechat\n"
+"- dodano opcję dla pasków \"color\\_bg\\_inactive\"\n"
+"- dodano elementy pasków \"buffer\\_nicklist\\_count\\_groups\" i \"buffer"
+"\\_nicklist\\_count\\_all\"\n"
+"- dodano skrót klawiszowy Alt+Enter do wstawiania nowej linii, domyślny "
+"rozmiar wiersza poleceń ustawiono na 0 (automatyczny)\n"
+"- dodano skalowalne logo WeeChat (SVG)\n"
+"- dodano obsługę dla kodowania base 16/32/64 do ewaluacji wyrażeń za pomocą "
+"\"base\\_encode:base,xxx\" i \"base\\_decode:base,xxx\"\n"
+"- dodano wildcardy dla operatorów porównania (\"==*\" i \"!!*\") i (\"==-"
+"\",  \"!!-\", \"=-\", \"!-\") w przetwarzaniu wyrażeń\n"
+"- dodano skróty klawiszowe Alt+Shift+B i Alt+Shift+N do przełączania "
+"widoczności pasków z buforami/nickami\n"
+"- pliki konfiguracyjne są przeładowywane, kiedy zostanie otrzymany sygnał "
+"SIGHUP\n"
+"- dodano funkcje API do uzupełniania słów w linii poleceń\n"
+"- przetwarzanie opcji buflist.look.sort\n"
+"- dodano wsparcie \"UTF8MAPPING\" dla serwerów IRC\n"
+"- wyświetlanie wiadomości IRC \"account\" w buforach\n"
+"- przetwarzanie argumentów, kiedy tworzony jest trigger typu \"command\"\n"
+"- ponownie włączono komendę \"/guile eval\"\n"
+"- naprawiono wolne przesyłanie danych do klientów pośrednika z włączonym "
+"SSL\n"
+"- dodano CI używający GitHub Actions\n"
+"- testy dla pluginów są uruchamiane tylko jeśli są one skompilowane i "
+"włączone\n"
+"- GnuTLS jest teraz wymaganą zależnością\n"
+"- wyłączono domyślnie budowanie wtyczki JavaScript, usunięto pakiet Debiana "
+"\"weechat-javascript\"\n"
+"- poprawiono wiele błędów.\n"
+"\n"
+"Pełną listę nowych funkcji i poprawionych błędów można znaleźć na <a href=\"/"
+"blog/post/2020/07/18/Version-2.9\">blogu developerskim</a> oraz w pliku <a "
+"href=\"/files/changelog/ChangeLog-2.9.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:143
 msgid ""
@@ -3640,6 +3684,31 @@ msgid ""
 "\"https://blog.weechat.org/post/2020/11/11/Version-3.0\">development blog</"
 "a> or <a href=\"/files/changelog/ChangeLog-3.0.html\">ChangeLog</a>."
 msgstr ""
+"Wersja 3.0 jest dostępna!\n"
+"\n"
+"Najważniejsze zmiany:\n"
+"\n"
+"- dodano opcję script.scripts.download_enabled (musi być ona ustawiona na "
+"\"on\", aby pobierać skrypty z weechat.org)\n"
+"- dodano opcję \"-oerr\" dla komendy /exec w celu wysyłania wyjścia błędów "
+"do bufora (teraz domyślnie wyłączona)\n"
+"- komendy /allchan, /allpv i /allserv mogą wysyłać tekst do buforów i "
+"przetwarzać polecenia\n"
+"- dodano opcję fset.look.auto_refresh\n"
+"- dodano zmienną \"tg_argc\" w danych ustawianych za pomocą triggera poleceń "
+"i zmienną \"tg_trigger_name\" dla danych ustawianych przez wszystkie "
+"triggery\n"
+"- dodano argument \"bytes\" dla funkcji API string_dyn_concat\n"
+"- dodano funkcję API string_color_code_size\n"
+"- dodano opcjonalną listę kolorów w informacjach \"nick_color\" i "
+"\"nick_color_name\"\n"
+"- dodano wskaźnik do irc_nick w zaznaczonym elemencie paska \"buffer_nicklist"
+"\"\n"
+"- poprawiono wiele błędów.\n"
+"\n"
+"Pełną listę nowych funkcji i poprawionych błędów można znaleźć na <a href=\"/"
+"blog/post/2020/11/11/Version-3.0\">blogu developerskim</a> oraz w pliku <a "
+"href=\"/files/changelog/ChangeLog-3.0.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:144
 msgid ""
@@ -5871,10 +5940,8 @@ msgid "Requirements"
 msgstr "Wymagania"
 
 #: scripts/models.py:308
-#, fuzzy
-#| msgid "Min/max WeeChat version."
 msgid "Min WeeChat version."
-msgstr "Min/max wersja WeeChat."
+msgstr "Minimalna wersja WeeChat."
 
 #: scripts/models.py:312 scripts/models.py:377 themes/models.py:174
 #: themes/models.py:259
@@ -6795,10 +6862,8 @@ msgid "Docs for version"
 msgstr "Dokumentacja dla wersji"
 
 #: templates/doc/doc_version.html:61
-#, fuzzy
-#| msgid "Builds by"
 msgid "Build date:"
-msgstr "Zbudowane przez"
+msgstr "Zbudowane dnia:"
 
 #: templates/doc/doc_version.html:65
 msgid "Internationalization stats"
@@ -6926,12 +6991,12 @@ msgid "There is no workaround."
 msgstr "Nie istnieje obejście."
 
 #: templates/doc/security.html:95
-#, fuzzy, python-format
-#| msgid "Security vulnerabilities are classified using 4 severity levels:"
+#, python-format
 msgid ""
 "Security vulnerabilities are classified using %(count)s severity levels:"
 msgstr ""
-"Podatności bezpieczeństwa są klasyfikowane z użyciem 4 klas istotności:"
+"Podatności bezpieczeństwa są klasyfikowane z użyciem %(count)s klas "
+"istotności:"
 
 #: templates/doc/security.html:112
 msgid "No security vulnerability."
@@ -7319,16 +7384,12 @@ msgid "Display the fingerprint:"
 msgstr "Wyświetl odcisk palca:"
 
 #: templates/download/packages.html:139
-#, fuzzy
-#| msgid ""
-#| "Check that the fingerprint is correct by asking to a developer on "
-#| "#weechat (chat.freenode.net)."
 msgid ""
 "Check that the fingerprint is correct by checking the topic on #weechat "
 "channel (chat.freenode.net) or by asking to a developer."
 msgstr ""
-"Sprawdź czy odcisk jest poprawny pytając developera na #weechat (chat."
-"freenode.net)."
+"Sprawdź czy odcisk jest poprawny sprawdzając temat kanału #weechat (chat."
+"freenode.net) lub pytając developera."
 
 #: templates/download/packages.html:142
 msgid "Trust the key:"
@@ -7593,16 +7654,12 @@ msgstr ""
 "funkcji hook_process (lub hook_process_hashtable), aby nie zablokować WeeChat"
 
 #: templates/scripts/add.html:32 templates/scripts/update.html:17
-#, fuzzy
-#| msgid ""
-#| "All new scripts as well as script updates must be compatible with Python "
-#| "3.x. Extra support of Python 2.x is optional."
 msgid ""
 "the Python scripts must be compatible with Python 3.x, support of Python 2.x "
 "is now optional"
 msgstr ""
-"Wszystkie nowe skrypty jak i aktualizacje muszą być kompatybilne z Pythonem "
-"3.x. Wsparcie dla Pythona 2.x będzie opcjonalne."
+"skrypty w języku Python muszą być kompatybilne z Pythonem 3.x, wsparcie dla "
+"Pythona 2.x jest opcjonalne"
 
 #: templates/scripts/add.html:33
 msgid ""
@@ -7674,20 +7731,16 @@ msgid "List:"
 msgstr "Lista:"
 
 #: templates/scripts/list.html:29
-#, fuzzy
-#| msgid "filter:"
 msgid "Filter:"
-msgstr "filtr:"
+msgstr "Filtr:"
 
 #: templates/scripts/list.html:29
 msgid "remove"
 msgstr "usuń"
 
 #: templates/scripts/list.html:31
-#, fuzzy
-#| msgid "no filter"
 msgid "No filter"
-msgstr "brak filtra"
+msgstr "Brak filtra"
 
 #: templates/scripts/list.html:33 templates/scripts/scripts.html:5
 msgid "scripts"
@@ -8035,11 +8088,8 @@ msgid "Transition status"
 msgstr "Statystyki migracji"
 
 #: templates/scripts/python3.html:122
-#, fuzzy
-#| msgid ""
-#| "The scripts which are compatible with Python 3 have tag \"py3k-ok\"</a>."
 msgid "The scripts which are compatible with Python 3 have tag \"py3\"</a>."
-msgstr "Skrypty kompatybilne z Pythonem 3 posiadają tag \"py3k-ok\"</a>."
+msgstr "Skrypty kompatybilne z Pythonem 3 posiadają tag \"py3\"</a>."
 
 #: templates/scripts/python3.html:124
 msgid "Transition status at various dates:"
