@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# Copyright (C) 2003-2020 Sébastien Helleu <flashcode@flashtux.org>
+# Copyright (C) 2003-2021 Sébastien Helleu <flashcode@flashtux.org>
 #
 # This file is part of WeeChat.org.
 #
