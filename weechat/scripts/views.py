@@ -19,6 +19,8 @@
 
 """Views for "scripts" menu."""
 
+# pylint: disable=no-name-in-module
+
 from datetime import datetime
 from pygments import highlight
 from pygments.formatters import HtmlFormatter
@@ -174,8 +176,8 @@ def script_source(request, scriptid='', scriptname=''):
                       'rb') as _file:
                 htmlsource = get_highlighted_source(_file.read(),
                                                     script.language)
-        except:  # noqa: E722  pylint: disable=bare-except
-            raise Http404
+        except Exception as exc:  # noqa: E722  pylint: disable=bare-except
+            raise Http404 from exc
     else:
         sname = scriptname
         sext = ''
@@ -194,8 +196,8 @@ def script_source(request, scriptid='', scriptname=''):
                       'rb') as _file:
                 htmlsource = get_highlighted_source(_file.read(),
                                                     PYGMENTS_LEXER[sext])
-        except:  # noqa: E722  pylint: disable=bare-except
-            raise Http404
+        except Exception as exc:  # noqa: E722  pylint: disable=bare-except
+            raise Http404 from exc
     return render(
         request,
         'scripts/source.html',

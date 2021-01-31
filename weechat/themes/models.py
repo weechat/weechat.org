@@ -194,7 +194,7 @@ class ThemeFormAdd(Form):
     )
 
     def __init__(self, *args, **kwargs):
-        super(ThemeFormAdd, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.label_suffix = ''
 
     def clean_themefile(self):
@@ -278,7 +278,7 @@ class ThemeFormUpdate(Form):
     )
 
     def __init__(self, *args, **kwargs):
-        super(ThemeFormUpdate, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.label_suffix = ''
         self.fields['theme'].choices = get_theme_choices()
 
