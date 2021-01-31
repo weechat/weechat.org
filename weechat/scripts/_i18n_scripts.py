@@ -446,6 +446,8 @@ def __i18n_scripts_scripts():
     gettext_noop("Push notification to iPod touch/iPhone with notifo.")
     # Translators: description for script "im_kayac_com_notify.py" (0.3.0+)
     gettext_noop("Push notification to im.kayac.com.")
+    # Translators: description for script "weejoin.py" (2.0+)
+    gettext_noop("Push notifications of highlights and private messages to Join.")
     # Translators: description for script "jisearch.py" (0.3.5+)
     gettext_noop("Query JiSho's API to fetch translations for kanji to english or the other way round.")
     # Translators: description for script "xdccq.py" (0.3.0+)
