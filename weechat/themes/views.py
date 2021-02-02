@@ -19,6 +19,8 @@
 
 """Views for "themes" menu."""
 
+# pylint: disable=no-name-in-module
+
 from datetime import datetime
 from pygments import highlight
 from pygments.formatters import HtmlFormatter
@@ -70,8 +72,8 @@ def theme_source(request, themeid=None, themename=None):
                                                      encoding='utf-8'),
                                    HtmlFormatter(cssclass='pygments',
                                                  linenos='table'))
-    except:  # noqa: E722  pylint: disable=bare-except
-        raise Http404
+    except Exception as exc:  # noqa: E722  pylint: disable=bare-except
+        raise Http404 from exc
     return render(
         request,
         'themes/source.html',

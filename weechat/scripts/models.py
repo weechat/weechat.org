@@ -332,7 +332,7 @@ class ScriptFormAdd(Form):
     )
 
     def __init__(self, *args, **kwargs):
-        super(ScriptFormAdd, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.label_suffix = ''
         self.fields['min_weechat'].choices = get_min_weechat_choices()
         self.fields['name'].help_text = ugettext(
@@ -396,7 +396,7 @@ class ScriptFormUpdate(Form):
     )
 
     def __init__(self, *args, **kwargs):
-        super(ScriptFormUpdate, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.label_suffix = ''
         self.fields['script'].choices = get_script_choices()
 

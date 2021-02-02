@@ -27,8 +27,7 @@ class BootstrapBoundField(forms.BoundField):
     """BoundField for bootstrap."""
 
     def css_classes(self, extra_classes=None):
-        return (super(BootstrapBoundField, self).css_classes() +
-                ' form-group row')
+        return super().css_classes() + ' form-group row'
 
     def label_tag(self, contents=None, attrs=None, label_suffix=None):
         attrs = attrs or {}
@@ -37,8 +36,7 @@ class BootstrapBoundField(forms.BoundField):
             'col-12 col-md-3 col-lg-2 col-form-label',
         ]
         attrs['class'] = ' '.join(class_list).strip()
-        return super(BootstrapBoundField, self).label_tag(contents, attrs,
-                                                          label_suffix)
+        return super().label_tag(contents, attrs, label_suffix)
 
     def build_widget_attrs(self, attrs, widget=None):
         attrs = attrs or {}
@@ -47,8 +45,7 @@ class BootstrapBoundField(forms.BoundField):
             'form-control',
         ]
         attrs['class'] = ' '.join(class_list).strip()
-        return super(BootstrapBoundField, self).build_widget_attrs(
-            attrs, widget)
+        return super().build_widget_attrs(attrs, widget)
 
 
 class CharField(forms.CharField):

@@ -17,13 +17,18 @@
 # along with WeeChat.org.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-"""Some useful views."""
+all: check
 
-from django.views.generic import TemplateView
+check: gettext lint
 
+lint: flake8 pylint
 
-class TextTemplateView(TemplateView):
-    """View for a plain text file."""
-    def render_to_response(self, context, **response_kwargs):
-        response_kwargs['content_type'] = 'text/plain'
-        return super().render_to_response(context, **response_kwargs)
+gettext:
+	msgcheck weechat/locale/*/LC_MESSAGES/django.po
+
+flake8:
+	flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+	flake8 . --count --exit-zero --max-complexity=10 --statistics
+
+pylint:
+	pylint --load-plugins pylint_django --disable=fixme,duplicate-code,django-not-configured weechat
