@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-31 10:59+0100\n"
+"POT-Creation-Date: 2021-03-03 19:33+0100\n"
 "PO-Revision-Date: 2020-06-13 22:09+0200\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
@@ -226,7 +226,7 @@ msgstr "非営利団体"
 msgid "Company"
 msgstr "企業"
 
-#: common/forms.py:87 common/forms.py:89 scripts/models.py:226
+#: common/forms.py:84 common/forms.py:86 scripts/models.py:226
 msgid "This field is required."
 msgstr "このフィールドは必須です。"
 
@@ -5828,83 +5828,86 @@ msgstr "プログラミング言語"
 msgid "Name"
 msgstr "名称"
 
-#: scripts/models.py:285
-msgid "The version of script (only digits or dots)."
-msgstr "スクリプトのバージョン (数字とドットのみ使用可)。"
+#. Translators: the URL can be changed to the appropriate language, if needed
+#: scripts/models.py:287
+msgid ""
+"The version of script. Use of <a href=\"https://semver.org/\" target=\"_blank"
+"\">Semantic versioning</a> is recommended. Only digits and dots are allowed."
+msgstr ""
 
-#: scripts/models.py:290 templates/scripts/list.html:90
+#: scripts/models.py:295 templates/scripts/list.html:90
 #: templates/scripts/list.html:92 templates/scripts/pending.html:34
 msgid "License"
 msgstr "ライセンス"
 
-#: scripts/models.py:291
+#: scripts/models.py:296
 msgid "The license (for example: GPL3, BSD, etc.)."
 msgstr "ライセンス (例: GPL3、BSD、など)。"
 
-#: scripts/models.py:294 scripts/models.py:372
+#: scripts/models.py:299 scripts/models.py:377
 #: templates/doc/doc_version.html:71 themes/models.py:163 themes/models.py:254
 msgid "File"
 msgstr "ファイル"
 
-#: scripts/models.py:295 scripts/models.py:373
+#: scripts/models.py:300 scripts/models.py:378
 msgid "The script."
 msgstr "スクリプト。"
 
-#: scripts/models.py:299 templates/dev/info_list.html:24
+#: scripts/models.py:304 templates/dev/info_list.html:24
 #: templates/dev/roadmap.html:41 templates/doc/security.html:42
 #: templates/scripts/list.html:86 templates/scripts/pending.html:30
 #: themes/models.py:170
 msgid "Description"
 msgstr "説明"
 
-#: scripts/models.py:304
+#: scripts/models.py:309
 msgid "Requirements"
 msgstr "実行に必要なもの"
 
-#: scripts/models.py:308
+#: scripts/models.py:313
 #, fuzzy
 #| msgid "Min/max WeeChat version."
 msgid "Min WeeChat version."
 msgstr "WeeChat の最小および最大バージョン。"
 
-#: scripts/models.py:312 scripts/models.py:377 themes/models.py:174
+#: scripts/models.py:317 scripts/models.py:382 themes/models.py:174
 #: themes/models.py:259
 msgid "Your name or nick"
 msgstr "名前またはニックネーム"
 
-#: scripts/models.py:313
+#: scripts/models.py:318
 msgid "Used for git commit and scripts page."
 msgstr "git コミットおよびスクリプトページで利用。"
 
-#: scripts/models.py:317 scripts/models.py:382 themes/models.py:179
+#: scripts/models.py:322 scripts/models.py:387 themes/models.py:179
 #: themes/models.py:263
 msgid "Your e-mail"
 msgstr "電子メールアドレス"
 
-#: scripts/models.py:318 scripts/models.py:378 scripts/models.py:383
+#: scripts/models.py:323 scripts/models.py:383 scripts/models.py:388
 msgid "Used for git commit."
 msgstr "git コミットに利用。"
 
-#: scripts/models.py:324 scripts/models.py:388 themes/models.py:186
+#: scripts/models.py:329 scripts/models.py:393 themes/models.py:186
 #: themes/models.py:270
 msgid "Comments"
 msgstr "コメント"
 
-#: scripts/models.py:325 themes/models.py:187 themes/models.py:271
+#: scripts/models.py:330 themes/models.py:187 themes/models.py:271
 msgid "Not displayed."
 msgstr "表示されません。"
 
-#: scripts/models.py:330 scripts/models.py:394 themes/models.py:192
+#: scripts/models.py:335 scripts/models.py:399 themes/models.py:192
 #: themes/models.py:276
 msgid "Are you a spammer?"
 msgstr "スパマーですか?"
 
-#: scripts/models.py:331 scripts/models.py:395 themes/models.py:193
+#: scripts/models.py:336 scripts/models.py:400 themes/models.py:193
 #: themes/models.py:277
 msgid "Enter \"no\" if you are not a spammer."
 msgstr "スパマーでないなら \"no\" と入力してください。"
 
-#: scripts/models.py:339
+#: scripts/models.py:344
 #, python-brace-format
 msgid ""
 "The short name of script (max {max_chars} chars, only lower case letters, "
@@ -5913,19 +5916,19 @@ msgstr ""
 "スクリプトの短縮名 (最大で {max_chars} 文字、小文字、数字、\"_\" のみ使用"
 "可)。"
 
-#: scripts/models.py:349 themes/models.py:237
+#: scripts/models.py:354 themes/models.py:237
 msgid "Choose…"
 msgstr "選択…"
 
-#: scripts/models.py:364 templates/scripts/source.html:12
+#: scripts/models.py:369 templates/scripts/source.html:12
 msgid "Script"
 msgstr "スクリプト"
 
-#: scripts/models.py:369
+#: scripts/models.py:374
 msgid "New version"
 msgstr "新しいバージョン"
 
-#: scripts/models.py:389
+#: scripts/models.py:394
 msgid "Changes in this release."
 msgstr "このリリースの変更内容。"
 
@@ -6398,25 +6401,25 @@ msgstr "サイト"
 msgid "Notes"
 msgstr "備考"
 
-#: templates/about/interfaces.html:97
+#: templates/about/interfaces.html:108
 msgid "Download page"
 msgstr "ダウンロードページ"
 
-#: templates/about/interfaces.html:111
+#: templates/about/interfaces.html:122
 msgid "This project is not maintained any more."
 msgstr "このプロジェクトはもうメンテナンスされていません。"
 
-#: templates/about/interfaces.html:117
+#: templates/about/interfaces.html:128
 msgid "Something missing?"
 msgstr "未掲載のソフトウェア?"
 
-#: templates/about/interfaces.html:120
+#: templates/about/interfaces.html:131
 msgid "You have developed another remote interface for WeeChat?"
 msgstr ""
 "もし WeeChat のリモートインターフェースを新たに開発したらどうすればいいです"
 "か?"
 
-#: templates/about/interfaces.html:123
+#: templates/about/interfaces.html:134
 msgid "Tell us more about your great software!"
 msgstr "開発されたソフトウェアについて詳細を教えてくださいね!"
 
@@ -8317,6 +8320,9 @@ msgstr "内部エラー。"
 #: themes/models.py:301
 msgid "Invalid name: different from theme."
 msgstr "不正な名前: テーマとは異なります。"
+
+#~ msgid "The version of script (only digits or dots)."
+#~ msgstr "スクリプトのバージョン (数字とドットのみ使用可)。"
 
 #~ msgid "Popular script"
 #~ msgstr "人気のスクリプト"

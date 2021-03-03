@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-31 10:59+0100\n"
+"POT-Creation-Date: 2021-03-03 19:33+0100\n"
 "PO-Revision-Date: 2021-01-15 21:37+0100\n"
 "Last-Translator: Krzysztof Korościk <soltys@soltys.info>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -228,7 +228,7 @@ msgstr "Wspólne"
 msgid "Company"
 msgstr "Firma"
 
-#: common/forms.py:87 common/forms.py:89 scripts/models.py:226
+#: common/forms.py:84 common/forms.py:86 scripts/models.py:226
 msgid "This field is required."
 msgstr "To pole jest wymagane."
 
@@ -5937,81 +5937,84 @@ msgstr "Język"
 msgid "Name"
 msgstr "Nazwa"
 
-#: scripts/models.py:285
-msgid "The version of script (only digits or dots)."
-msgstr "Wersja skryptu (tylko cyfry lub kropki)."
+#. Translators: the URL can be changed to the appropriate language, if needed
+#: scripts/models.py:287
+msgid ""
+"The version of script. Use of <a href=\"https://semver.org/\" target=\"_blank"
+"\">Semantic versioning</a> is recommended. Only digits and dots are allowed."
+msgstr ""
 
-#: scripts/models.py:290 templates/scripts/list.html:90
+#: scripts/models.py:295 templates/scripts/list.html:90
 #: templates/scripts/list.html:92 templates/scripts/pending.html:34
 msgid "License"
 msgstr "Licencja"
 
-#: scripts/models.py:291
+#: scripts/models.py:296
 msgid "The license (for example: GPL3, BSD, etc.)."
 msgstr "Licencja (na przykład: GPL3, BSD, itp)."
 
-#: scripts/models.py:294 scripts/models.py:372
+#: scripts/models.py:299 scripts/models.py:377
 #: templates/doc/doc_version.html:71 themes/models.py:163 themes/models.py:254
 msgid "File"
 msgstr "Plik"
 
-#: scripts/models.py:295 scripts/models.py:373
+#: scripts/models.py:300 scripts/models.py:378
 msgid "The script."
 msgstr "Skrypt."
 
-#: scripts/models.py:299 templates/dev/info_list.html:24
+#: scripts/models.py:304 templates/dev/info_list.html:24
 #: templates/dev/roadmap.html:41 templates/doc/security.html:42
 #: templates/scripts/list.html:86 templates/scripts/pending.html:30
 #: themes/models.py:170
 msgid "Description"
 msgstr "Opis"
 
-#: scripts/models.py:304
+#: scripts/models.py:309
 msgid "Requirements"
 msgstr "Wymagania"
 
-#: scripts/models.py:308
+#: scripts/models.py:313
 msgid "Min WeeChat version."
 msgstr "Minimalna wersja WeeChat."
 
-#: scripts/models.py:312 scripts/models.py:377 themes/models.py:174
+#: scripts/models.py:317 scripts/models.py:382 themes/models.py:174
 #: themes/models.py:259
 msgid "Your name or nick"
 msgstr "Twoje imię lub nick"
 
-#: scripts/models.py:313
+#: scripts/models.py:318
 msgid "Used for git commit and scripts page."
 msgstr "Używane przez git commit i stronę ze skryptami."
 
-#: scripts/models.py:317 scripts/models.py:382 themes/models.py:179
+#: scripts/models.py:322 scripts/models.py:387 themes/models.py:179
 #: themes/models.py:263
 msgid "Your e-mail"
 msgstr "Twój e-mail"
 
-#: scripts/models.py:318 scripts/models.py:378 scripts/models.py:383
+#: scripts/models.py:323 scripts/models.py:383 scripts/models.py:388
 msgid "Used for git commit."
 msgstr "Używane przez git commit."
 
-#: scripts/models.py:324 scripts/models.py:388 themes/models.py:186
+#: scripts/models.py:329 scripts/models.py:393 themes/models.py:186
 #: themes/models.py:270
 msgid "Comments"
 msgstr "Komentarz"
 
-#: scripts/models.py:325 themes/models.py:187 themes/models.py:271
+#: scripts/models.py:330 themes/models.py:187 themes/models.py:271
 msgid "Not displayed."
 msgstr "Niewyświetlany."
 
-#: scripts/models.py:330 scripts/models.py:394 themes/models.py:192
+#: scripts/models.py:335 scripts/models.py:399 themes/models.py:192
 #: themes/models.py:276
 msgid "Are you a spammer?"
 msgstr "Czy jesteś spamerem?"
 
-#: scripts/models.py:331 scripts/models.py:395 themes/models.py:193
+#: scripts/models.py:336 scripts/models.py:400 themes/models.py:193
 #: themes/models.py:277
 msgid "Enter \"no\" if you are not a spammer."
 msgstr "Wpisz \"no\" jeśli  nie jesteś spamerem."
 
-#: scripts/models.py:339
+#: scripts/models.py:344
 #, python-brace-format
 msgid ""
 "The short name of script (max {max_chars} chars, only lower case letters, "
@@ -6020,19 +6023,19 @@ msgstr ""
 "Krótka nazwa skryptu (maksymalnie {max_chars} znaków, tylko małe litery, "
 "cyfry lub \"_\")."
 
-#: scripts/models.py:349 themes/models.py:237
+#: scripts/models.py:354 themes/models.py:237
 msgid "Choose…"
 msgstr "Wybierz…"
 
-#: scripts/models.py:364 templates/scripts/source.html:12
+#: scripts/models.py:369 templates/scripts/source.html:12
 msgid "Script"
 msgstr "Skrypt"
 
-#: scripts/models.py:369
+#: scripts/models.py:374
 msgid "New version"
 msgstr "Nowa wersja"
 
-#: scripts/models.py:389
+#: scripts/models.py:394
 msgid "Changes in this release."
 msgstr "Zmiany w tym wydaniu."
 
@@ -6501,23 +6504,23 @@ msgstr "Strona"
 msgid "Notes"
 msgstr "Notatki"
 
-#: templates/about/interfaces.html:97
+#: templates/about/interfaces.html:108
 msgid "Download page"
 msgstr "Strona pobierania"
 
-#: templates/about/interfaces.html:111
+#: templates/about/interfaces.html:122
 msgid "This project is not maintained any more."
 msgstr "Ten projekt już nie jest rozwijany."
 
-#: templates/about/interfaces.html:117
+#: templates/about/interfaces.html:128
 msgid "Something missing?"
 msgstr "Czegoś brakuje?"
 
-#: templates/about/interfaces.html:120
+#: templates/about/interfaces.html:131
 msgid "You have developed another remote interface for WeeChat?"
 msgstr "Stworzyłeś własny zdalny interfejs dla WeeChat?"
 
-#: templates/about/interfaces.html:123
+#: templates/about/interfaces.html:134
 msgid "Tell us more about your great software!"
 msgstr "Opowiedz nam więcej o nim!"
 
@@ -8400,6 +8403,9 @@ msgstr "Wewnętrzny błąd."
 #: themes/models.py:301
 msgid "Invalid name: different from theme."
 msgstr "Niewłaściwa nazwa: różni się od motywu."
+
+#~ msgid "The version of script (only digits or dots)."
+#~ msgstr "Wersja skryptu (tylko cyfry lub kropki)."
 
 #~ msgid "Popular script"
 #~ msgstr "Popularny skrypt"

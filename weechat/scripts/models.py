@@ -282,8 +282,13 @@ class ScriptFormAdd(Form):
     version = CharField(
         max_length=MAX_LENGTH_VERSION,
         label=ugettext_lazy('Version'),
-        help_text=ugettext_lazy('The version of script '
-                                '(only digits or dots).'),
+        help_text=ugettext_lazy(
+            # Translators: the URL can be changed to the appropriate language, if needed
+            'The version of script. '
+            'Use of <a href="https://semver.org/" target="_blank">'
+            'Semantic versioning</a> is recommended. '
+            'Only digits and dots are allowed.'
+        ),
     )
     license = CharField(
         max_length=MAX_LENGTH_LICENSE,
