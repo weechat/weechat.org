@@ -430,6 +430,8 @@ def __i18n_scripts_scripts():
     gettext_noop("Popup menu to choose spell checker corrections.")
     # Translators: description for script "postpone.py" (0.3.0+)
     gettext_noop("Postpone written messages for later dispatching if target nick is not on channel.")
+    # Translators: description for script "anti_password.py" (0.4.0+)
+    gettext_noop("Prevent a password from being accidentally sent to a buffer.")
     # Translators: description for script "smile.py" (0.3.0+)
     gettext_noop("Print a random ASCII smiley.")
     # Translators: description for script "newsbar.pl" (0.3.1+)
