@@ -28,6 +28,8 @@
   <br>
   {% trans "For WeeChat" %} {{ script.version_weechat_html|safe }}{% if script.requirements %}, {% trans "requires:" %} {{ script.requirements }}{% endif %}.
   <br>
+  {% trans "Tags:" %} {{ script.tagslist|join:", " }}
+  <br>
   {% trans "Added:" %} {% if script.added %}{{ script.added|date:"Y-m-d" }}{% endif %}
   {% if script.updated and script.added != script.updated %}&mdash; {% trans "Updated:" %} {{ script.updated|date:"Y-m-d" }}{% endif %}
   <br>
