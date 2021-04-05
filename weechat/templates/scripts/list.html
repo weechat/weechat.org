@@ -12,11 +12,21 @@
 
 {% if script_list %}
 
-<div class="alert alert-primary">
-    {% trans "<strong>Important:</strong> these scripts are written by external contributors, therefore WeeChat developers are <strong>NOT RESPONSIBLE</strong> for problems caused by one of these scripts." %}
-    <br>
-    {% trans "You could experience problems like memory leaks, slowdowns, or even <strong>security problems</strong>. You are warned!" %}
-</div>
+<h3>{% trans "WeeChat official scripts" %}</h3>
+
+<p>
+  {% trans "This page shows a collection of WeeChat scripts written by external contributors, which can be installed directly in WeeChat with the command <code>/script install &lt;name&gt;</code>." %}
+  <br>
+  {% trans "WeeChat developers are <strong>NOT RESPONSIBLE</strong> for problems caused by one of these scripts: you could experience problems like memory leaks, slowdowns, or even <strong>security problems</strong>, you are warned!" %}
+</p>
+
+<p>
+  {% trans "You can contribute by adding/updating scripts or reporting issues in the GitHub repository:" %}
+  <a href="https://github.com/weechat/scripts" target="_blank" rel="noopener">
+    https://github.com/weechat/scripts
+    <img src="{{ MEDIA_URL }}images/link.png" alt="&gt;&gt;">
+  </a>
+</p>
 
 <div class="border rounded mb-3" style="background: #fafafa;">
   <div class="border-bottom p-2">

@@ -23,33 +23,19 @@ import gzip
 import hashlib
 import json
 import os
-import re
 from collections import OrderedDict
 from io import open
 from xml.sax.saxutils import escape
 
-from django import forms
 from django.conf import settings
-from django.core.exceptions import ObjectDoesNotExist
 from django.db import models
 from django.db.models.signals import pre_save, post_save, post_delete
 from django.utils import translation
-from django.utils.translation import ugettext, ugettext_lazy, pgettext_lazy
+from django.utils.translation import ugettext
 
 from weechat.common.decorators import disable_for_loaddata
-from weechat.common.forms import (
-    BootstrapBoundField,
-    CharField,
-    ChoiceField,
-    EmailField,
-    FileField,
-    TestField,
-    Html5EmailInput,
-    Form,
-)
 from weechat.common.i18n import i18n_autogen
 from weechat.common.path import files_path_join
-from weechat.download.models import Release
 
 SCRIPT_LANGUAGE = {
     'python': ('py', 'python'),
@@ -215,195 +201,6 @@ class Script(models.Model):
 
     class Meta:
         ordering = ['-added']
-
-
-class NameField(forms.CharField):
-    """Name field in new script form."""
-
-    def clean(self, value):
-        if not value:
-            raise forms.ValidationError(
-                ugettext('This field is required.'))
-        if not re.search('^[a-z0-9_]+$', value):
-            raise forms.ValidationError(
-                ugettext('This name is invalid.'))
-        scripts = Script.objects.filter(name=value)
-        if scripts:
-            raise forms.ValidationError(
-                ugettext('This name already exists, please choose another '
-                         'name (update script content accordingly).'))
-        return value
-
-    def get_bound_field(self, form, field_name):
-        return BootstrapBoundField(form, self, field_name)
-
-
-def get_min_weechat_choices():
-    """Get min WeeChat versions for add form."""
-    version_min = []
-    try:
-        devel_desc = Release.objects.get(version='devel').description
-        releases = Release.objects.filter(
-            version__gte='0.3.0',
-            version__lte=re.sub('-.*', '', devel_desc)).order_by('date')
-        for rel in releases:
-            version = (
-                rel.version,
-                '≥ {}'.format(rel.version),
-            )
-            version_min.append(version)
-    except ObjectDoesNotExist:
-        version_min = []
-    return version_min
-
-
-class ScriptFormAdd(Form):
-    """Form to add a script."""
-    languages = (
-        ('python', 'Python (.py)'),
-        ('perl', 'Perl (.pl)'),
-        ('ruby', 'Ruby (.rb)'),
-        ('lua', 'Lua (.lua)'),
-        ('tcl', 'Tcl (.tcl)'),
-        ('guile', 'Scheme (.scm)'),
-        ('javascript', 'Javascript (.js)'),
-        ('php', 'PHP (.php)'),
-    )
-    required_css_class = 'required'
-    language = ChoiceField(
-        choices=languages,
-        label=pgettext_lazy(u'The programming language.', u'Language'),
-        widget=forms.Select(attrs={'autofocus': True}),
-    )
-    name = NameField(
-        max_length=MAX_LENGTH_NAME,
-        label=ugettext_lazy('Name'),
-    )
-    version = CharField(
-        max_length=MAX_LENGTH_VERSION,
-        label=ugettext_lazy('Version'),
-        help_text=ugettext_lazy(
-            # Translators: the URL can be changed to the appropriate language, if needed
-            'The version of script. '
-            'Use of <a href="https://semver.org/" target="_blank">'
-            'Semantic versioning</a> is recommended. '
-            'Only digits and dots are allowed.'
-        ),
-    )
-    license = CharField(
-        max_length=MAX_LENGTH_LICENSE,
-        label=ugettext_lazy('License'),
-        help_text=ugettext_lazy('The license (for example: GPL3, BSD, etc.).'),
-    )
-    file = FileField(
-        label=ugettext_lazy('File'),
-        help_text=ugettext_lazy('The script.'),
-    )
-    description = CharField(
-        max_length=MAX_LENGTH_DESC,
-        label=ugettext_lazy('Description'),
-    )
-    requirements = CharField(
-        required=False,
-        max_length=MAX_LENGTH_REQUIRE,
-        label=ugettext_lazy('Requirements'),
-    )
-    min_weechat = ChoiceField(
-        choices=[],
-        label=ugettext_lazy('Min WeeChat version.'),
-    )
-    author = CharField(
-        max_length=MAX_LENGTH_AUTHOR,
-        label=ugettext_lazy('Your name or nick'),
-        help_text=ugettext_lazy('Used for git commit and scripts page.'),
-    )
-    mail = EmailField(
-        max_length=MAX_LENGTH_MAIL,
-        label=ugettext_lazy('Your e-mail'),
-        help_text=ugettext_lazy('Used for git commit.'),
-        widget=Html5EmailInput(),
-    )
-    comment = CharField(
-        required=False,
-        max_length=1024,
-        label=ugettext_lazy('Comments'),
-        help_text=ugettext_lazy('Not displayed.'),
-        widget=forms.Textarea(attrs={'rows': '3'}),
-    )
-    test = TestField(
-        max_length=64,
-        label=ugettext_lazy('Are you a spammer?'),
-        help_text=ugettext_lazy('Enter "no" if you are not a spammer.'),
-    )
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.label_suffix = ''
-        self.fields['min_weechat'].choices = get_min_weechat_choices()
-        self.fields['name'].help_text = ugettext(
-            'The short name of script (max {max_chars} chars, '
-            'only lower case letters, digits or "_").').format(
-                max_chars=MAX_LENGTH_NAME)
-
-
-def get_script_choices():
-    """Get list of scripts for update form."""
-    try:
-        script_list = Script.objects.filter(approved=True).order_by('name')
-        script_choices = []
-        script_choices.append(('', ugettext(u'Choose…')))
-        for script in script_list:
-            name = (f'{script.name_with_extension()} - v{script.version} '
-                    f'({script.version_weechat()})')
-            script_choices.append((script.id, name))
-        return script_choices
-    except:  # noqa: E722  pylint: disable=bare-except
-        return []
-
-
-class ScriptFormUpdate(Form):
-    """Form to update a script."""
-    required_css_class = 'required'
-    script = ChoiceField(
-        choices=[],
-        label=ugettext_lazy('Script'),
-        widget=forms.Select(attrs={'autofocus': True}),
-    )
-    version = CharField(
-        max_length=MAX_LENGTH_VERSION,
-        label=ugettext_lazy('New version'),
-    )
-    file = FileField(
-        label=ugettext_lazy('File'),
-        help_text=ugettext_lazy('The script.'),
-    )
-    author = CharField(
-        max_length=MAX_LENGTH_AUTHOR,
-        label=ugettext_lazy('Your name or nick'),
-        help_text=ugettext_lazy('Used for git commit.'),
-    )
-    mail = EmailField(
-        max_length=MAX_LENGTH_MAIL,
-        label=ugettext_lazy('Your e-mail'),
-        help_text=ugettext_lazy('Used for git commit.'),
-        widget=Html5EmailInput(),
-    )
-    comment = CharField(
-        max_length=1024,
-        label=ugettext_lazy('Comments'),
-        help_text=ugettext_lazy('Changes in this release.'),
-        widget=forms.Textarea(attrs={'rows': '3'}),
-    )
-    test = TestField(
-        max_length=64,
-        label=ugettext_lazy('Are you a spammer?'),
-        help_text=ugettext_lazy('Enter "no" if you are not a spammer.'),
-    )
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.label_suffix = ''
-        self.fields['script'].choices = get_script_choices()
 
 
 @disable_for_loaddata

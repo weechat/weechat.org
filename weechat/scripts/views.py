@@ -26,17 +26,13 @@ from pygments import highlight
 from pygments.formatters import HtmlFormatter
 from pygments.lexers import get_lexer_by_name
 
-from django.conf import settings
-from django.core.mail import EmailMessage
-from django.http import HttpResponseRedirect, Http404
+from django.http import Http404
 from django.shortcuts import render, get_object_or_404
 
 from weechat.common.path import files_path_join
 from weechat.download.models import Release
 from weechat.scripts.models import (
     Script,
-    ScriptFormAdd,
-    ScriptFormUpdate,
     get_language_from_extension,
 )
 
@@ -214,132 +210,6 @@ def get_script_content(script_file):
     if isinstance(content, bytes):
         content = content.decode('utf-8')
     return content.replace('\r\n', '\n')
-
-
-def form_add(request):
-    """Page with form to add a script."""
-    if request.method == 'POST':
-        form = ScriptFormAdd(request.POST, request.FILES)
-        if form.is_valid():
-            scriptfile = request.FILES['file']
-
-            # add script in database
-            now = datetime.now()
-            script = Script(approved=False,
-                            popularity=0,
-                            name=form.cleaned_data['name'],
-                            version=form.cleaned_data['version'],
-                            url='',
-                            language=form.cleaned_data['language'],
-                            license=form.cleaned_data['license'],
-                            desc_en=form.cleaned_data['description'],
-                            requirements=form.cleaned_data['requirements'],
-                            min_weechat=form.cleaned_data['min_weechat'],
-                            author=form.cleaned_data['author'],
-                            mail=form.cleaned_data['mail'],
-                            added=now,
-                            updated=now)
-
-            # write script in pending directory
-            filename = files_path_join('scripts', 'pending1',
-                                       script.name_with_extension())
-            with open(filename, 'w') as _file:
-                _file.write(get_script_content(scriptfile))
-
-            # send e-mail
-            if settings.SCRIPTS_MAILTO:
-                try:
-                    subject = (f'WeeChat: new script '
-                               f'{script.name_with_extension()}')
-                    sender = (f'{form.cleaned_data["author"]} '
-                              f'<{form.cleaned_data["mail"]}>')
-                    body = (
-                        f'Script      : {form.cleaned_data["name"]}\n'
-                        f'Version     : {form.cleaned_data["version"]}\n'
-                        f'Language    : {form.cleaned_data["language"]}\n'
-                        f'License     : {form.cleaned_data["license"]}\n'
-                        f'Description : {form.cleaned_data["description"]}\n'
-                        f'Requirements: {form.cleaned_data["requirements"]}\n'
-                        f'Min WeeChat : {form.cleaned_data["min_weechat"]}\n'
-                        f'Author      : {sender}>\n'
-                        f'\n'
-                        f'Comment:\n{form.cleaned_data["comment"]}\n'
-                    )
-                    email = EmailMessage(subject, body, sender,
-                                         settings.SCRIPTS_MAILTO)
-                    email.attach_file(filename)
-                    email.send()
-                except:  # noqa: E722  pylint: disable=bare-except
-                    return HttpResponseRedirect('/scripts/adderror/')
-
-            # save script in database
-            script.save()
-
-            return HttpResponseRedirect('/scripts/addok/')
-    else:
-        form = ScriptFormAdd()
-    return render(
-        request,
-        'scripts/add.html',
-        {
-            'form': form,
-        },
-    )
-
-
-def form_update(request):
-    """Page with form to update a script."""
-    if request.method == 'POST':
-        form = ScriptFormUpdate(request.POST, request.FILES)
-        if form.is_valid():
-            scriptfile = request.FILES['file']
-            script = Script.objects.get(id=form.cleaned_data['script'])
-
-            # send e-mail
-            if not settings.SCRIPTS_MAILTO:
-                return HttpResponseRedirect('/scripts/updateerror/')
-            try:
-                subject = (f'WeeChat: new release for script '
-                           f'{script.name_with_extension()}')
-                sender = (f'{form.cleaned_data["author"]} '
-                          f'<{form.cleaned_data["mail"]}>')
-                body = (f'Script     : {script.name_with_extension()} '
-                        f'({script.version_weechat()})\n'
-                        f'New version: {form.cleaned_data["version"]}\n'
-                        f'Author     : {sender}\n'
-                        f'\n'
-                        f'Comment:\n{form.cleaned_data["comment"]}\n')
-                email = EmailMessage(subject, body, sender,
-                                     settings.SCRIPTS_MAILTO)
-                email.attach(script.name_with_extension(),
-                             get_script_content(scriptfile),
-                             'text/plain')
-                email.send()
-            except:  # noqa: E722  pylint: disable=bare-except
-                return HttpResponseRedirect('/scripts/updateerror/')
-
-            return HttpResponseRedirect('/scripts/updateok/')
-    else:
-        form = ScriptFormUpdate()
-    return render(
-        request,
-        'scripts/update.html',
-        {
-            'form': form,
-        },
-    )
-
-
-def pending(request):
-    """Page with scripts pending for approval."""
-    script_list = Script.objects.filter(approved=False).order_by('-added')
-    return render(
-        request,
-        'scripts/pending.html',
-        {
-            'script_list': script_list,
-        },
-    )
 
 
 def python3(request):

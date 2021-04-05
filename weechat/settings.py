@@ -31,7 +31,6 @@ SECRET_KEY = 'replace-me'
 ALLOWED_HOSTS = []
 ADMINS = []
 MANAGERS = []
-SCRIPTS_MAILTO = []
 THEMES_MAILTO = []
 
 SITE_ID = 1

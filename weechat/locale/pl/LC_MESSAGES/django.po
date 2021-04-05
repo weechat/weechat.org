@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-20 18:29+0100\n"
-"PO-Revision-Date: 2021-01-15 21:37+0100\n"
+"POT-Creation-Date: 2021-04-05 10:27+0200\n"
+"PO-Revision-Date: 2021-04-05 10:25+0200\n"
 "Last-Translator: Krzysztof Korościk <soltys@soltys.info>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -238,7 +238,7 @@ msgstr "Wspólne"
 msgid "Company"
 msgstr "Firma"
 
-#: common/forms.py:84 common/forms.py:86 scripts/models.py:226
+#: common/forms.py:84 common/forms.py:86
 msgid "This field is required."
 msgstr "To pole jest wymagane."
 
@@ -502,12 +502,12 @@ msgstr ""
 msgid "Czech"
 msgstr "Czeski"
 
-#: doc/models.py:61 settings.py:50 templates/about/support.html:34
+#: doc/models.py:61 settings.py:49 templates/about/support.html:34
 #: templates/about/weechat.org.html:24
 msgid "German"
 msgstr "Niemiecki"
 
-#: doc/models.py:62 settings.py:48 templates/about/support.html:27
+#: doc/models.py:62 settings.py:47 templates/about/support.html:27
 msgid "English"
 msgstr "Angielski"
 
@@ -515,7 +515,7 @@ msgstr "Angielski"
 msgid "Spanish"
 msgstr "Hiszpański"
 
-#: doc/models.py:64 settings.py:49 templates/about/support.html:28
+#: doc/models.py:64 settings.py:48 templates/about/support.html:28
 msgid "French"
 msgstr "Francuski"
 
@@ -523,15 +523,15 @@ msgstr "Francuski"
 msgid "Hungarian"
 msgstr "Węgierski"
 
-#: doc/models.py:66 settings.py:51 templates/about/weechat.org.html:25
+#: doc/models.py:66 settings.py:50 templates/about/weechat.org.html:25
 msgid "Italian"
 msgstr "Włoski"
 
-#: doc/models.py:67 settings.py:54 templates/about/weechat.org.html:26
+#: doc/models.py:67 settings.py:53 templates/about/weechat.org.html:26
 msgid "Japanese"
 msgstr "Japoński"
 
-#: doc/models.py:68 settings.py:52 templates/about/weechat.org.html:27
+#: doc/models.py:68 settings.py:51 templates/about/weechat.org.html:27
 msgid "Polish"
 msgstr "Polski"
 
@@ -539,7 +539,7 @@ msgstr "Polski"
 msgid "Portuguese"
 msgstr "Portugalski"
 
-#: doc/models.py:70 settings.py:53 templates/about/weechat.org.html:28
+#: doc/models.py:70 settings.py:52 templates/about/weechat.org.html:28
 msgid "Portuguese (Brazil)"
 msgstr "Portugalski (Brazylia)"
 
@@ -859,7 +859,7 @@ msgstr ""
 "Uwaga: brakuje wielu rzeczy jak: połączenia TLS, zarządzanie listą "
 "znajomych, informacje o obecności, MUC oraz transporty."
 
-#: news/_i18n_info.py:33 templates/base.html:36 templates/base.html:93
+#: news/_i18n_info.py:33 templates/base.html:36 templates/base.html:97
 #: templates/home/home.html:109
 msgid "Documentation"
 msgstr "Dokumentacja"
@@ -1096,9 +1096,9 @@ msgstr ""
 msgid "Transition to Python 3 for scripts"
 msgstr "Okres przejścia skryptów na Pythona 3"
 
-#: news/_i18n_info.py:66 scripts/models.py:284 templates/about/history.html:44
+#: news/_i18n_info.py:66 templates/about/history.html:44
 #: templates/doc/doc_version.html:20 templates/download/packages.html:34
-#: templates/scripts/list.html:87 templates/scripts/pending.html:32
+#: templates/scripts/list.html:97
 msgid "Version"
 msgstr "Wersja"
 
@@ -5961,142 +5961,17 @@ msgstr "Znaczniki czasu w stylu iChat."
 msgid "iTunes control and now playing script."
 msgstr "Kontrola i wyświetlanie aktualnie odtwarzanego utworu dla iTunes."
 
-#: scripts/models.py:229
-msgid "This name is invalid."
-msgstr "Nieprawidłowa nazwa."
-
-#: scripts/models.py:233
-msgid ""
-"This name already exists, please choose another name (update script content "
-"accordingly)."
-msgstr ""
-"Ta nazwa już istnieje, wybierz inną (uaktualnij zawartość skryptu zgodnie z "
-"nią)."
-
-#: scripts/models.py:275
-msgctxt "The programming language."
-msgid "Language"
-msgstr "Język"
-
-#: scripts/models.py:280 templates/about/interfaces.html:24
-#: templates/donate.html:96 templates/scripts/list.html:75
-#: templates/scripts/list.html:77 templates/scripts/pending.html:29
-msgid "Name"
-msgstr "Nazwa"
-
-#. Translators: the URL can be changed to the appropriate language, if needed
-#: scripts/models.py:287
-msgid ""
-"The version of script. Use of <a href=\"https://semver.org/\" target=\"_blank"
-"\">Semantic versioning</a> is recommended. Only digits and dots are allowed."
-msgstr ""
-
-#: scripts/models.py:295 templates/scripts/list.html:90
-#: templates/scripts/list.html:92 templates/scripts/pending.html:34
-msgid "License"
-msgstr "Licencja"
-
-#: scripts/models.py:296
-msgid "The license (for example: GPL3, BSD, etc.)."
-msgstr "Licencja (na przykład: GPL3, BSD, itp)."
-
-#: scripts/models.py:299 scripts/models.py:377
-#: templates/doc/doc_version.html:71 themes/models.py:163 themes/models.py:254
-msgid "File"
-msgstr "Plik"
-
-#: scripts/models.py:300 scripts/models.py:378
-msgid "The script."
-msgstr "Skrypt."
-
-#: scripts/models.py:304 templates/dev/info_list.html:24
-#: templates/dev/roadmap.html:41 templates/doc/security.html:42
-#: templates/scripts/list.html:86 templates/scripts/pending.html:30
-#: themes/models.py:170
-msgid "Description"
-msgstr "Opis"
-
-#: scripts/models.py:309
-msgid "Requirements"
-msgstr "Wymagania"
-
-#: scripts/models.py:313
-msgid "Min WeeChat version."
-msgstr "Minimalna wersja WeeChat."
-
-#: scripts/models.py:317 scripts/models.py:382 themes/models.py:174
-#: themes/models.py:259
-msgid "Your name or nick"
-msgstr "Twoje imię lub nick"
-
-#: scripts/models.py:318
-msgid "Used for git commit and scripts page."
-msgstr "Używane przez git commit i stronę ze skryptami."
-
-#: scripts/models.py:322 scripts/models.py:387 themes/models.py:179
-#: themes/models.py:263
-msgid "Your e-mail"
-msgstr "Twój e-mail"
-
-#: scripts/models.py:323 scripts/models.py:383 scripts/models.py:388
-msgid "Used for git commit."
-msgstr "Używane przez git commit."
-
-#: scripts/models.py:329 scripts/models.py:393 themes/models.py:186
-#: themes/models.py:270
-msgid "Comments"
-msgstr "Komentarz"
-
-#: scripts/models.py:330 themes/models.py:187 themes/models.py:271
-msgid "Not displayed."
-msgstr "Niewyświetlany."
-
-#: scripts/models.py:335 scripts/models.py:399 themes/models.py:192
-#: themes/models.py:276
-msgid "Are you a spammer?"
-msgstr "Czy jesteś spamerem?"
-
-#: scripts/models.py:336 scripts/models.py:400 themes/models.py:193
-#: themes/models.py:277
-msgid "Enter \"no\" if you are not a spammer."
-msgstr "Wpisz \"no\" jeśli  nie jesteś spamerem."
-
-#: scripts/models.py:344
-#, python-brace-format
-msgid ""
-"The short name of script (max {max_chars} chars, only lower case letters, "
-"digits or \"_\")."
-msgstr ""
-"Krótka nazwa skryptu (maksymalnie {max_chars} znaków, tylko małe litery, "
-"cyfry lub \"_\")."
-
-#: scripts/models.py:354 themes/models.py:237
-msgid "Choose…"
-msgstr "Wybierz…"
-
-#: scripts/models.py:369 templates/scripts/source.html:12
-msgid "Script"
-msgstr "Skrypt"
-
-#: scripts/models.py:374
-msgid "New version"
-msgstr "Nowa wersja"
-
-#: scripts/models.py:394
-msgid "Changes in this release."
-msgstr "Zmiany w tym wydaniu."
-
 #. Translators: this is a date format, see: http://www.php.net/date
 #. Translators: (note: the result string must be short, use abbreviation
 #. Translators: for month if possible)
-#: settings.py:69
+#: settings.py:68
 msgid "M j, Y"
 msgstr "j N Y"
 
 #. Translators: this is a date/time format, see: http://www.php.net/date
 #. Translators: (note: the result string must be short, use abbreviation
 #. Translators: for month if possible)
-#: settings.py:74
+#: settings.py:73
 msgid "M j, Y H:i"
 msgstr "j N Y H:i"
 
@@ -6140,25 +6015,25 @@ msgid "about"
 msgstr "o WeeChat"
 
 #: templates/about/about.html:11 templates/about/history.html:45
-#: templates/base.html:83 templates/home/home.html:43
+#: templates/base.html:87 templates/home/home.html:43
 msgid "Features"
 msgstr "Cechy"
 
-#: templates/about/about.html:12 templates/base.html:84
+#: templates/about/about.html:12 templates/base.html:88
 #: templates/home/home.html:86
 msgid "Interfaces"
 msgstr "Interfejsy"
 
-#: templates/about/about.html:13 templates/base.html:85
+#: templates/about/about.html:13 templates/base.html:89
 #: templates/home/home.html:46 templates/home/home.html:89
 msgid "Screenshots"
 msgstr "Zrzuty ekranu"
 
-#: templates/about/about.html:14 templates/base.html:86
+#: templates/about/about.html:14 templates/base.html:90
 msgid "History"
 msgstr "Historia"
 
-#: templates/about/about.html:15 templates/base.html:87
+#: templates/about/about.html:15 templates/base.html:91
 #: templates/home/home.html:112
 msgid "Support"
 msgstr "Wsparcie"
@@ -6515,7 +6390,7 @@ msgid "Key dates"
 msgstr "Kluczowe daty"
 
 #: templates/about/history.html:43 templates/donate.html:90
-#: templates/scripts/pending.html:37 templates/scripts/python3.html:130
+#: templates/scripts/python3.html:129
 msgid "Date"
 msgstr "Data"
 
@@ -6539,6 +6414,11 @@ msgstr ""
 "zespół WeeChat. W razie problemów, prosimy kontaktować się bezpośrednio z "
 "autorami."
 
+#: templates/about/interfaces.html:24 templates/donate.html:96
+#: templates/scripts/list.html:85 templates/scripts/list.html:87
+msgid "Name"
+msgstr "Nazwa"
+
 #: templates/about/interfaces.html:25 templates/donate.html:94
 msgid "Type"
 msgstr "Typ"
@@ -6547,7 +6427,7 @@ msgstr "Typ"
 msgid "Site"
 msgstr "Strona"
 
-#: templates/about/interfaces.html:27 templates/scripts/python3.html:141
+#: templates/about/interfaces.html:27 templates/scripts/python3.html:140
 msgid "Notes"
 msgstr "Notatki"
 
@@ -6705,26 +6585,26 @@ msgstr ""
 msgid "WeeChat, the extensible chat client"
 msgstr "WeeChat, rozszerzalny komunikator"
 
-#: templates/base.html:34 templates/base.html:74
+#: templates/base.html:34 templates/base.html:78
 msgid "Home"
 msgstr "Strona główna"
 
-#: templates/base.html:35 templates/base.html:82
+#: templates/base.html:35 templates/base.html:86
 msgid "About"
 msgstr "O WeeChat"
 
-#: templates/base.html:37 templates/base.html:102 templates/home/home.html:21
+#: templates/base.html:37 templates/base.html:106 templates/home/home.html:21
 #: templates/scripts/source.html:36 templates/themes/source.html:17
 msgid "Download"
 msgstr "Pobierz"
 
-#: templates/base.html:38 templates/base.html:111 templates/dev/stats.html:15
-#: templates/home/home.html:66 templates/scripts/python3.html:131
+#: templates/base.html:38 templates/base.html:115 templates/dev/stats.html:15
+#: templates/home/home.html:66 templates/scripts/python3.html:130
 #: templates/scripts/scripts.html:11
 msgid "Scripts"
 msgstr "Skrypty"
 
-#: templates/base.html:39 templates/base.html:132 templates/doc/doc.html:12
+#: templates/base.html:39 templates/base.html:133 templates/doc/doc.html:12
 #: templates/download/download.html:12
 msgid "Development"
 msgstr "Rozwój"
@@ -6733,81 +6613,69 @@ msgstr "Rozwój"
 msgid "Donate"
 msgstr "Wesprzyj"
 
-#: templates/base.html:75 templates/home/home.html:143
+#: templates/base.html:79 templates/home/home.html:143
 #: templates/home/news.html:13
 msgid "Latest news"
 msgstr "Najnowsze aktualności"
 
-#: templates/base.html:76 templates/home/home.html:163
+#: templates/base.html:80 templates/home/home.html:163
 #: templates/home/news.html:14
 msgid "Upcoming events"
 msgstr "Nadchodzące wydarzenia"
 
-#: templates/base.html:77 templates/home/home.html:131
+#: templates/base.html:81 templates/home/home.html:131
 msgid "Make a donation"
 msgstr "Dotacje"
 
-#: templates/base.html:94 templates/base.html:103
+#: templates/base.html:98 templates/base.html:107
 #: templates/download/debian.html:218
 msgid "Stable version"
 msgstr "Wersja stabilna"
 
-#: templates/base.html:95 templates/base.html:104
+#: templates/base.html:99 templates/base.html:108
 #: templates/download/debian.html:218
 msgid "Development version"
 msgstr "Wersja rozwojowa"
 
-#: templates/base.html:96 templates/base.html:105 templates/doc/doc.html:13
+#: templates/base.html:100 templates/base.html:109 templates/doc/doc.html:13
 #: templates/download/download.html:13
 msgid "Old versions"
 msgstr "Poprzednie wersje"
 
-#: templates/base.html:97
+#: templates/base.html:101
 msgid "Security issues"
 msgstr "Problemy bezpieczeństwa"
 
-#: templates/base.html:106 templates/download/download.html:14
+#: templates/base.html:110 templates/download/download.html:14
 msgid "Debian/Ubuntu repositories"
 msgstr "Repozytoria Debiana/Ubuntu"
 
-#: templates/base.html:112
+#: templates/base.html:116
 msgid "Browse scripts"
 msgstr "Przeglądaj skrypty"
 
-#: templates/base.html:113 templates/scripts/scripts.html:12
-msgid "Add script"
-msgstr "Dodaj skrypt"
-
-#: templates/base.html:114 templates/scripts/scripts.html:13
-msgid "Update script"
-msgstr "Uaktualnij skrypt"
-
-#: templates/base.html:115 templates/scripts/scripts.html:14
-msgid "Pending scripts"
-msgstr "Oczekujące skrypty"
-
-#: templates/base.html:116 templates/scripts/scripts.html:15
+#: templates/base.html:117 templates/scripts/scripts.html:12
 msgid "Unofficial scripts"
 msgstr "Nieoficjalne skrypty"
 
-#: templates/base.html:133 templates/dev/dev.html:11
+#: templates/base.html:134 templates/dev/dev.html:11
 msgid "Roadmap"
 msgstr "Plan wydań"
 
-#: templates/base.html:134 templates/dev/dev.html:12
+#: templates/base.html:135 templates/dev/dev.html:12
 msgid "Statistics"
 msgstr "Statystyki"
 
-#: templates/base.html:135 templates/dev/dev.html:13
+#: templates/base.html:136 templates/dev/dev.html:13
 #: templates/dev/info_list.html:22
 msgid "Info"
 msgstr "Info"
 
-#: templates/base.html:136
+#: templates/base.html:137
 msgid "Development blog"
 msgstr "Blog deweloperski"
 
-#: templates/base.html:159
+#: templates/base.html:160
 msgid "About WeeChat.org"
 msgstr "O WeeChat.org"
 
@@ -6827,6 +6695,12 @@ msgstr ""
 #: templates/dev/info_list.html:23
 msgid "Current value"
 msgstr "Obecna wartość"
+
+#: templates/dev/info_list.html:24 templates/dev/roadmap.html:41
+#: templates/doc/security.html:42 templates/scripts/list.html:96
+#: themes/models.py:170
+msgid "Description"
+msgstr "Opis"
 
 #: templates/dev/info_list.html:40
 msgid "You can fetch these URLs from scripts or other sites."
@@ -6954,6 +6828,10 @@ msgstr "Statystyki tłumaczeń"
 msgctxt "translated language"
 msgid "Language"
 msgstr "Język"
+
+#: templates/doc/doc_version.html:71 themes/models.py:163 themes/models.py:254
+msgid "File"
+msgstr "Plik"
 
 #: templates/doc/doc_version.html:72
 msgid "Translated"
@@ -7642,8 +7520,7 @@ msgstr "Aktualnie trwają prace nad stroną."
 msgid "Page will be back soon, please come back later."
 msgstr "Strona będzie dostępna wkrótce, zapraszamy za jakiś czas."
 
-#: templates/maintenance.html:15 templates/scripts/add_ok.html:16
-#: templates/scripts/update_ok.html:14 templates/themes/add_ok.html:16
+#: templates/maintenance.html:15 templates/themes/add_ok.html:16
 #: templates/themes/update_ok.html:14
 msgid "Thank you for your patience."
 msgstr "Dziękujemy za cierpliwość."
@@ -7652,298 +7529,135 @@ msgstr "Dziękujemy za cierpliwość."
 msgid "Back"
 msgstr "Wstecz"
 
-#: templates/scripts/add.html:12
-msgid ""
-"<strong>Important:</strong> please follow <strong>all</strong> these rules, "
-"otherwise your script will be rejected:"
-msgstr ""
-"<strong>Uwaga:</strong> zastosuj się do <strong>wszystkich</strong> "
-"poniższych zasad, w przeciwnym wypadku Twój skrypt zostanie odrzucony:"
-
-#: templates/scripts/add.html:15
-#, python-format
-msgid ""
-"check that no script (or <a href=\"%(scripts_pending_url)s\">pending script</"
-"a>) does exactly same thing as your script"
-msgstr ""
-"sprawdź czy żaden skrypt (lub <a href=\"%(scripts_pending_url)s\">oczekujący "
-"skrypt</a>) nie posiada tego samego co Twoj"
-
-#: templates/scripts/add.html:17
-msgid "script name"
-msgstr "nazwa skryptu"
-
-#: templates/scripts/add.html:19
-msgid ""
-"unique name (not used by any other script, even in a different language)"
-msgstr ""
-"unikalną nazwę (nie używana przez inny skrypt, nawet jeśli są napisane w "
-"innym języku)"
-
-#: templates/scripts/add.html:20
-msgid ""
-"the script name in register function must be exactly same name as script "
-"(without extension)"
-msgstr ""
-"nazwa skryptu w funkcji rejestrującej musi być dokładnie taka sama jak nazwa "
-"skryptu (bez rozszerzenia)"
-
-#: templates/scripts/add.html:21
-msgid ""
-"the word \"weechat\" is not needed in name: for example don't use "
-"\"weechat_notify\" but \"notify\" instead (the script is only for WeeChat)"
-msgstr ""
-"słowo \"weechat\" nie jest potrzebne w nazwie: na przykład nie używaj "
-"\"weechat_notify\" tylko \"notify\" (skrypt jest tylko dla WeeChat)"
-
-#: templates/scripts/add.html:25
-msgid "script content"
-msgstr "zawartość skryptu"
-
-#: templates/scripts/add.html:27
-msgid ""
-"a comment at beginning with your name (or pseudo), your e-mail, and the "
-"chosen license (the license must be free)"
-msgstr ""
-"komentarz na początku zawierający Twoje imię (lub pseudonim), Twój e-mail, "
-"oraz wybraną licencję (licencja musi być wolna)"
-
-#: templates/scripts/add.html:28
-msgid "no shebang on first line (like \"#!/usr/bin/perl\"), it's not needed"
-msgstr ""
-"bez określenia powłoki w pierwszej linii (jak \"#!/usr/bin/perl\"), nie jest "
-"to potrzebne"
-
-#: templates/scripts/add.html:29
-msgid "use only English for code and comments"
-msgstr "używaj tylko języka angielskiego w kodzie i komentarzach"
-
-#: templates/scripts/add.html:30
-msgid ""
-"no use of extra API between WeeChat and your script (like Ruby gem \"WeeChat"
-"\"), you must use standard WeeChat API"
-msgstr ""
-"nie używać dodatkowego API pomiędzy WeeChat i Twoim skryptem (jak gem Ruby "
-"\"WeeChat\"), musisz używać standardowego API WeeChat"
-
-#: templates/scripts/add.html:31
-msgid ""
-"if your script is doing something blocking (like fetching URL), you must use "
-"function hook_process (or hook_process_hashtable) to not block WeeChat"
-msgstr ""
-"jeśli Twój skrypt robi coś blokującego (jak pobieranie URL), musisz użyć "
-"funkcji hook_process (lub hook_process_hashtable), aby nie zablokować WeeChat"
-
-#: templates/scripts/add.html:32 templates/scripts/update.html:17
-msgid ""
-"the Python scripts must be compatible with Python 3.x, support of Python 2.x "
-"is now optional"
-msgstr ""
-"skrypty w języku Python muszą być kompatybilne z Pythonem 3.x, wsparcie dla "
-"Pythona 2.x jest opcjonalne"
-
-#: templates/scripts/add.html:33
-msgid ""
-"if you mention the WeeChat site in your script, the official URL is https://"
-"weechat.org (https and no \"www.\")"
-msgstr ""
-"jeśli wymieniasz stronę WeeChat w swoim skrypcie, oficjalny URL to https://"
-"weechat.org (https bez \"www.\")"
-
-#: templates/scripts/add.html:44 templates/scripts/update.html:26
-#: templates/themes/add.html:24 templates/themes/update.html:16
-msgid "Submit"
-msgstr "Wyślij"
-
-#: templates/scripts/add_error.html:12 templates/scripts/update_error.html:12
-#: templates/themes/add_error.html:12 templates/themes/update_error.html:12
-msgid "Oops… Something went wrong while processing the form :("
-msgstr "Oops... Coś się nie udało podczas przetwarzania formularza :("
-
-#: templates/scripts/add_error.html:14 templates/scripts/update_error.html:14
-#: templates/themes/add_error.html:14 templates/themes/update_error.html:14
-msgid ""
-"You can try again or report problem to webmaster if the problem persists."
-msgstr ""
-"Możesz spróbować ponownie lub zgłosić problem webmasterowi jeśli problem "
-"pozostanie."
-
-#: templates/scripts/add_error.html:17 templates/scripts/update_error.html:17
-#: templates/themes/add_error.html:17 templates/themes/update_error.html:17
-msgid "Back to form"
-msgstr "Powrót do formularza"
-
-#: templates/scripts/add_ok.html:12
-msgid ""
-"Your script was submitted for review, it usually takes some weeks (several "
-"months if many scripts are pending)."
-msgstr ""
-"Twój skrypt został dodany do oceny, zazwyczaj trwa ona kilka tygodni (kilka "
-"miesięcy jeśli jest sporo oczekujących skryptów)."
-
-#: templates/scripts/add_ok.html:14
-msgid "You'll be informed if there is a problem with your script."
-msgstr "Zostaniesz poinformowany, jeśli wystąpią problemy z Twoim skryptem."
-
-#: templates/scripts/add_ok.html:19 templates/scripts/update_ok.html:17
-msgid "Back to scripts"
-msgstr "Powrót do skryptów"
-
-#: templates/scripts/list.html:16
-msgid ""
-"<strong>Important:</strong> these scripts are written by external "
-"contributors, therefore WeeChat developers are <strong>NOT RESPONSIBLE</"
-"strong> for problems caused by one of these scripts."
-msgstr ""
-"<strong>Ostrzeżenie:</strong> te skrypty zostały napisane przez zewnętrznych "
-"autorów, dlatego deweloperzy WeeChat <strong>NIE PONOSZĄ ODPOWIEDZIALNOŚCI</"
-"strong> za problemy spowodowane przez któryś z nich."
+#: templates/scripts/list.html:15
+#, fuzzy
+#| msgid "Unofficial scripts"
+msgid "WeeChat official scripts"
+msgstr "Nieoficjalne skrypty"
 
 #: templates/scripts/list.html:18
 msgid ""
-"You could experience problems like memory leaks, slowdowns, or even "
-"<strong>security problems</strong>. You are warned!"
+"This page shows a collection of WeeChat scripts written by external "
+"contributors, which can be installed directly in WeeChat with the command "
+"<code>/script install &lt;name&gt;</code>."
+msgstr ""
+
+#: templates/scripts/list.html:20
+#, fuzzy
+#| msgid ""
+#| "You could experience problems like memory leaks, slowdowns, or even "
+#| "<strong>security problems</strong>. You are warned!"
+msgid ""
+"WeeChat developers are <strong>NOT RESPONSIBLE</strong> for problems caused "
+"by one of these scripts: you could experience problems like memory leaks, "
+"slowdowns, or even <strong>security problems</strong>, you are warned!"
 msgstr ""
 "Możesz się spodziewać problemów jak wycieki pamięci, spowolnienia, nawet "
 "<strong>problemy bezpieczeństwa</strong>. Zostałeś ostrzeżony!"
 
 #: templates/scripts/list.html:24
+msgid ""
+"You can contribute by adding/updating scripts or reporting issues in the "
+"GitHub repository:"
+msgstr ""
+
+#: templates/scripts/list.html:34
 msgid "List:"
 msgstr "Lista:"
 
-#: templates/scripts/list.html:29
+#: templates/scripts/list.html:39
 msgid "Filter:"
 msgstr "Filtr:"
 
-#: templates/scripts/list.html:29
+#: templates/scripts/list.html:39
 msgid "remove"
 msgstr "usuń"
 
-#: templates/scripts/list.html:31
+#: templates/scripts/list.html:41
 msgid "No filter"
 msgstr "Brak filtra"
 
-#: templates/scripts/list.html:33 templates/scripts/scripts.html:5
+#: templates/scripts/list.html:43 templates/scripts/scripts.html:5
 msgid "scripts"
 msgstr "skrypty"
 
-#: templates/scripts/list.html:36 templates/scripts/list.html:40
+#: templates/scripts/list.html:46 templates/scripts/list.html:50
 msgid "Filters by popularity"
 msgstr "Filtry według popularności"
 
-#: templates/scripts/list.html:36 templates/scripts/list.html:40
+#: templates/scripts/list.html:46 templates/scripts/list.html:50
 msgid "Filters by name"
 msgstr "Filtry według nazwy"
 
-#: templates/scripts/list.html:37 templates/scripts/list.html:41
+#: templates/scripts/list.html:47 templates/scripts/list.html:51
 msgid "sort filters by name"
 msgstr "posortuj filtry według nazwy"
 
-#: templates/scripts/list.html:37 templates/scripts/list.html:41
+#: templates/scripts/list.html:47 templates/scripts/list.html:51
 msgid "sort filters by popularity"
 msgstr "posortuj filtry według popularności"
 
-#: templates/scripts/list.html:44 templates/scripts/list.html:46
+#: templates/scripts/list.html:54 templates/scripts/list.html:56
 msgid "Language:"
 msgstr "Język:"
 
-#: templates/scripts/list.html:52 templates/scripts/list.html:54
-#: templates/scripts/list.html:158 templates/scripts/source.html:27
+#: templates/scripts/list.html:62 templates/scripts/list.html:64
+#: templates/scripts/list.html:168 templates/scripts/source.html:27
 msgid "License:"
 msgstr "Licencja:"
 
-#: templates/scripts/list.html:60 templates/scripts/list.html:62
-#: templates/scripts/list.html:140
+#: templates/scripts/list.html:70 templates/scripts/list.html:72
+#: templates/scripts/list.html:150
 msgid "Tag:"
 msgstr "Tag:"
 
-#: templates/scripts/list.html:81 templates/scripts/list.html:83
-#: templates/scripts/pending.html:33
+#: templates/scripts/list.html:91 templates/scripts/list.html:93
 msgctxt "programming language"
 msgid "Language"
 msgstr "Język"
 
-#: templates/scripts/list.html:97 templates/scripts/list.html:99
-#: templates/scripts/pending.html:35
+#: templates/scripts/list.html:100 templates/scripts/list.html:102
+msgid "License"
+msgstr "Licencja"
+
+#: templates/scripts/list.html:107 templates/scripts/list.html:109
 msgid "Min"
 msgstr "Min"
 
-#: templates/scripts/list.html:104 templates/scripts/list.html:106
+#: templates/scripts/list.html:114 templates/scripts/list.html:116
 msgid "Max"
 msgstr "Max"
 
-#: templates/scripts/list.html:111 templates/scripts/list.html:113
-#: templates/scripts/pending.html:36
+#: templates/scripts/list.html:121 templates/scripts/list.html:123
 msgid "Author"
 msgstr "Autor"
 
-#: templates/scripts/list.html:118 templates/scripts/list.html:120
+#: templates/scripts/list.html:128 templates/scripts/list.html:130
 #: templates/themes/list.html:25 templates/themes/source.html:15
 msgid "Added"
 msgstr "Dodano"
 
-#: templates/scripts/list.html:125 templates/scripts/list.html:127
+#: templates/scripts/list.html:135 templates/scripts/list.html:137
 msgid "Updated"
 msgstr "Uaktualniono"
 
-#: templates/scripts/list.html:148 templates/scripts/pending.html:53
+#: templates/scripts/list.html:158
 msgid "requires"
 msgstr "wymaga"
 
-#: templates/scripts/list.html:153
+#: templates/scripts/list.html:163
 #, python-format
 msgid "Script disabled (%(reason)s)."
 msgstr "Skrypt wyłączony (%(reason)s)."
 
-#: templates/scripts/list.html:161 templates/scripts/source.html:25
+#: templates/scripts/list.html:171 templates/scripts/source.html:25
 #: templates/themes/list.html:22
 msgid "Author:"
 msgstr "Autor:"
 
-#: templates/scripts/list.html:173 templates/scripts/update.html:32
+#: templates/scripts/list.html:183
 msgid "No script found."
 msgstr "Nie znaleziono skryptu."
-
-#: templates/scripts/pending.html:12
-msgid "Following scripts are waiting for approval, possible future is:"
-msgstr "Następujące skrypty oczekują na akceptację, możliwe opcje to:"
-
-#: templates/scripts/pending.html:14
-msgid "if script is OK, it is moved to official scripts and git repository."
-msgstr ""
-"jeśli skrypt jest OK, jest przenoszony do oficjalnych skryptów i "
-"repozytorium git."
-
-#: templates/scripts/pending.html:15
-msgid ""
-"if script does not meet all requirements, it is moved to unofficial scripts."
-msgstr ""
-"jeżeli skrypt nie spełnia wszystkich wymagań, jest przenoszony do skryptów "
-"nieoficjalnych."
-
-#: templates/scripts/pending.html:16
-msgid "if script is rejected, it is deleted."
-msgstr "jeśli skrypt zostanie odrzucony, jest on kasowany."
-
-#: templates/scripts/pending.html:18
-msgid "We need your help!"
-msgstr "Potrzebujemy Twojej pomocy!"
-
-#: templates/scripts/pending.html:20
-msgid ""
-"You can help us by testing these scripts. Please report bugs to author of "
-"script and to"
-msgstr ""
-"Możesz nam pomóc z testowaniem tych skryptów. Błędy należy zgłaszać do "
-"autora skryptu oraz"
-
-#: templates/scripts/pending.html:31
-msgid "Approval notes"
-msgstr "Adnotacje zatwierdzenia"
-
-#: templates/scripts/pending.html:70
-msgid "No script pending approval at this time."
-msgstr "Brak skryptu oczekującego na akceptacje."
 
 #: templates/scripts/python3.html:11
 msgid "Why a transition to Python 3?"
@@ -8013,7 +7727,7 @@ msgstr ""
 "ponieważ wiele skryptów nie działa pod Pythonem 3.x, podczas gdy wszystkie "
 "skrypty działają z Pythonem 2.7."
 
-#: templates/scripts/python3.html:45
+#: templates/scripts/python3.html:44
 msgid ""
 "To compile with Python 3.x support and enable quick switch between Python "
 "2.7 and 3.x, see:"
@@ -8021,23 +7735,23 @@ msgstr ""
 "Aby skompilować wsparcie dla Pythona 3 i szybko przełączać między Pythonem "
 "2.7 a 3.x zobacz:"
 
-#: templates/scripts/python3.html:46 templates/scripts/python3.html:228
+#: templates/scripts/python3.html:45 templates/scripts/python3.html:227
 msgid "Compile and test with Python 2.7 and 3.x"
 msgstr "Skompiluj i testuj z Pythonem 2.7 i 3.x"
 
-#: templates/scripts/python3.html:49
+#: templates/scripts/python3.html:48
 msgid "Transition roadmap"
 msgstr "Plan przejścia"
 
-#: templates/scripts/python3.html:52
+#: templates/scripts/python3.html:51
 msgid "Here is the roadmap for the transition to Python 3 in WeeChat:"
 msgstr "Poniżej znajduje się plan przejścia na Pythona 3 w WeeChat:"
 
-#: templates/scripts/python3.html:58
+#: templates/scripts/python3.html:57
 msgid "Transition to Python 3 starts."
 msgstr "Przejście na Pythona 3 rozpoczęte."
 
-#: templates/scripts/python3.html:60
+#: templates/scripts/python3.html:59
 msgid ""
 "All scripts that are not yet compatible with both Python 2.7 and Python 3.x "
 "can be updated to support both versions (see the status below)."
@@ -8046,13 +7760,13 @@ msgstr ""
 "jak i Pythonem 3.x mogą zostać uaktualnione, aby wspierały obie wersje "
 "(zobacz status poniżej)."
 
-#: templates/scripts/python3.html:62
+#: templates/scripts/python3.html:61
 msgid "You can help by converting existing scripts (see how to help below)."
 msgstr ""
 "Możesz pomóc poprzez dostosowanie istniejących skryptów (więcej informacji "
 "poniżej)."
 
-#: templates/scripts/python3.html:68
+#: templates/scripts/python3.html:67
 msgid ""
 "An e-mail is sent to the authors of Python scripts which are not compatible "
 "with Python 3 (at least they are not marked as compatible in database)."
@@ -8060,7 +7774,7 @@ msgstr ""
 "E-mail został wysłany do autorów pythonowych skryptów, które nie są "
 "kompatybilne z Pythonem 3 (lub są oznaczone jako niekompatybilne)."
 
-#: templates/scripts/python3.html:70
+#: templates/scripts/python3.html:69
 msgid ""
 "All authors are encouraged to make their scripts compatible with Python 3.x "
 "as soon as possible. Help from other people is welcome as well."
@@ -8068,17 +7782,17 @@ msgstr ""
 "Wszyscy autorzy są zachęcani do adaptacji swoich skryptów do Pythona 3.x tak "
 "szybko jak to tylko możliwe. Pomoc od innych osób jest również mile widziana."
 
-#: templates/scripts/python3.html:76
+#: templates/scripts/python3.html:75
 msgid "All new scripts must be compatible with both Python 2.7 and Python 3.x."
 msgstr ""
 "Wszystkie nowe skrypty muszą być kompatybilne zarówno z Pythonem 2.7 jak i "
 "Pythonem 3.x."
 
-#: templates/scripts/python3.html:78
+#: templates/scripts/python3.html:77
 msgid "Script updates are still allowed to be compatible with Python 2.7 only."
 msgstr "Aktualizacje skryptów mogą być kompatybilne tylko z Pythonem 2.7."
 
-#: templates/scripts/python3.html:84
+#: templates/scripts/python3.html:83
 msgid ""
 "All new scripts as well as script updates must be compatible with both "
 "Python 2.7 and Python 3.x."
@@ -8086,7 +7800,7 @@ msgstr ""
 "Wszystkie nowe skrypty, jak i aktualizacje muszą być kompatybilne z Pythonem "
 "2.7 jak i Pythonem 3.x."
 
-#: templates/scripts/python3.html:86
+#: templates/scripts/python3.html:85
 msgid ""
 "Scripts must be properly tested with Python 2.7 and a Python 3.x version (if "
 "possible the latest stable)."
@@ -8094,7 +7808,7 @@ msgstr ""
 "Skrypty muszą być dobrze przetestowane z Pytonem 2.7 i Pythonem 3.x "
 "(najlepiej z najnowszą stabilną wersją)."
 
-#: templates/scripts/python3.html:92
+#: templates/scripts/python3.html:91
 msgid ""
 "New versions of WeeChat are compiled with Python 3 by default, which becomes "
 "the recommended Python version to use in WeeChat."
@@ -8102,7 +7816,7 @@ msgstr ""
 "Nowe wersje WeeChat będą kompilowane domyślnie z Pythonem 3, który stanie "
 "się zalecaną wersją Pythona przez WeeChat."
 
-#: templates/scripts/python3.html:94
+#: templates/scripts/python3.html:93
 msgid ""
 "All new scripts as well as script updates must still be compatible with "
 "Python 2.7 and Python 3.x, time for the users to upgrade to the latest "
@@ -8112,7 +7826,7 @@ msgstr ""
 "2.7 jak i Pythonem 3.x, dając czas użytkownikom na aktualizacje do "
 "najnowszej wersji WeeChat wspierającej tylko Pythona 3."
 
-#: templates/scripts/python3.html:96
+#: templates/scripts/python3.html:95
 #, python-format
 msgid ""
 "Unfortunately, at this date, only 42%% of Python scripts (96 out of 226) are "
@@ -8123,11 +7837,11 @@ msgstr ""
 "kompatybilnych z Pythonem 3. Domyślna kompilacja z Pythonem 3 powinna "
 "przyspieszyć aktualizację skryptów."
 
-#: templates/scripts/python3.html:102
+#: templates/scripts/python3.html:101
 msgid "It is the initial end date for the transition."
 msgstr "Jest to początkowa data końca okresu przejściowego."
 
-#: templates/scripts/python3.html:104
+#: templates/scripts/python3.html:103
 #, python-format
 msgid ""
 "Unfortunately, at this date, only 46%% of Python scripts (103 out of 228) "
@@ -8137,7 +7851,7 @@ msgstr ""
 "kompatybilnych z Pythonem 3. Zakończenie okresu przejściowego zostało "
 "opóźnione (zobacz niżej)."
 
-#: templates/scripts/python3.html:110
+#: templates/scripts/python3.html:109
 msgid ""
 "All new scripts as well as script updates must be compatible with Python 3."
 "x. Extra support of Python 2.x is optional."
@@ -8145,14 +7859,14 @@ msgstr ""
 "Wszystkie nowe skrypty jak i aktualizacje muszą być kompatybilne z Pythonem "
 "3.x. Wsparcie dla Pythona 2.x będzie opcjonalne."
 
-#: templates/scripts/python3.html:112
+#: templates/scripts/python3.html:111
 msgid ""
 "Hopefully, at this date, all scripts should be compatible with Python 3."
 msgstr ""
 "Mamy nadzieję, że do tego czasu wszystkie skrypty będą kompatybilne z "
 "Pythonem 3."
 
-#: templates/scripts/python3.html:114
+#: templates/scripts/python3.html:113
 msgid ""
 "<strong>Important</strong>: at this date, all scripts that are not "
 "compatible with Python 3 are disabled: still visible on the scripts list "
@@ -8164,50 +7878,50 @@ msgstr ""
 "skryptów, ale będą oznaczone jako \"wyłączone\" i nie będą mogły być "
 "zainstalowane w WeeChat."
 
-#: templates/scripts/python3.html:119
+#: templates/scripts/python3.html:118
 msgid "Transition status"
 msgstr "Statystyki migracji"
 
-#: templates/scripts/python3.html:122
+#: templates/scripts/python3.html:121
 msgid "The scripts which are compatible with Python 3 have tag \"py3\"</a>."
 msgstr "Skrypty kompatybilne z Pythonem 3 posiadają tag \"py3\"</a>."
 
-#: templates/scripts/python3.html:124
+#: templates/scripts/python3.html:123
 msgid "Transition status at various dates:"
 msgstr "Statystyki migracji w konkretnych datach:"
 
-#: templates/scripts/python3.html:132
+#: templates/scripts/python3.html:131
 msgid "Python scripts"
 msgstr "Skrypty pythonowe"
 
 #. Translators: use plural form for "compatible", if needed
-#: templates/scripts/python3.html:135
+#: templates/scripts/python3.html:134
 msgid "Compatible with Python 3"
 msgstr "Kompatybilne z Pythonem 3"
 
 #. Translators: use plural form for "compatible", if needed
-#: templates/scripts/python3.html:139
+#: templates/scripts/python3.html:138
 msgid "Not yet compatible"
 msgstr "Jeszcze nie kompatybilne"
 
-#: templates/scripts/python3.html:149
+#: templates/scripts/python3.html:148
 msgid "today"
 msgstr "dziś"
 
-#: templates/scripts/python3.html:157 templates/scripts/python3.html:167
-#: templates/scripts/python3.html:179 templates/scripts/python3.html:191
+#: templates/scripts/python3.html:156 templates/scripts/python3.html:166
+#: templates/scripts/python3.html:178 templates/scripts/python3.html:190
 msgid "list"
 msgstr "lista"
 
-#: templates/scripts/python3.html:195
+#: templates/scripts/python3.html:194
 msgid "Estimates"
 msgstr "Estymata"
 
-#: templates/scripts/python3.html:203
+#: templates/scripts/python3.html:202
 msgid "How to help"
 msgstr "Jak pomóc"
 
-#: templates/scripts/python3.html:206
+#: templates/scripts/python3.html:205
 msgid ""
 "If possible, the author of script should make the necessary changes to make "
 "the script compatible with both Python 2.7 and 3.x."
@@ -8215,13 +7929,13 @@ msgstr ""
 "W miarę możliwości, autor skryptu powinien dokonać potrzebnych zmian, aby "
 "skrypt był kompatybilny z Pythonem 2.7 i Pythonem 3.x."
 
-#: templates/scripts/python3.html:210
+#: templates/scripts/python3.html:209
 msgid ""
 "Here's a list of some resources that can help to port scripts to Python 3:"
 msgstr ""
 "Lista materiałów, które mogą pomóc przy portowaniu skryptów do Pythona 3:"
 
-#: templates/scripts/python3.html:231
+#: templates/scripts/python3.html:230
 msgid ""
 "You can not use Python 2.7 and 3.x at same time in WeeChat, but you could "
 "compile both versions of the Python plugin and switch the Python plugin with "
@@ -8231,7 +7945,7 @@ msgstr ""
 "skompilować dwie wersje wtyczki Python i przełączać między nimi za pomocą "
 "aliasów."
 
-#: templates/scripts/python3.html:235
+#: templates/scripts/python3.html:234
 msgid ""
 "First check that you have both Python 2.7 and 3.x libraries installed to "
 "compile WeeChat with both versions."
@@ -8239,7 +7953,7 @@ msgstr ""
 "Najpierw upewnij się, że masz zaintalowanego Pythona i biblioteki w wersji "
 "2.7 i 3.x do kompilacji WeeChat dla obu wersji."
 
-#: templates/scripts/python3.html:239
+#: templates/scripts/python3.html:238
 msgid ""
 "Compile WeeChat with Python 3.x and install it in home directory. From the "
 "cloned git repository:"
@@ -8247,36 +7961,40 @@ msgstr ""
 "Skompiluj WeeChat z Pythonem 3 i zainstaluj go w katalogu domowym. Z "
 "katalogu ze sklonowanym repozytorium:"
 
-#: templates/scripts/python3.html:251
+#: templates/scripts/python3.html:250
 msgid "Run WeeChat:"
 msgstr "Uruchom Weechat:"
 
-#: templates/scripts/python3.html:256
+#: templates/scripts/python3.html:255
 msgid "Check that Python version is 2.7:"
 msgstr "Sprawdź czy wersja Pythona to 2.7:"
 
-#: templates/scripts/python3.html:265
+#: templates/scripts/python3.html:264
 msgid "Add aliases to quickly switch between Python 2.7 and 3.x:"
 msgstr ""
 "Dodaj aliasy do szybkiego przełączania się pomiędzy wersją Pythona 2.7 a 3.x:"
 
-#: templates/scripts/python3.html:271
+#: templates/scripts/python3.html:270
 msgid "Now you can type /py2 or /py3 to switch the Python version."
 msgstr "Teraz możesz wpisać /py2 lub /py3 aby przełączyć wersje Pythona."
 
-#: templates/scripts/python3.html:273
+#: templates/scripts/python3.html:272
 msgid "Note: this unloads all scripts because the Python plugin is reloaded."
 msgstr ""
 "Uwaga: to wyładuje wszystkie skrypty, ponieważ wtyczka Python zostanie "
 "przeładowana."
 
-#: templates/scripts/python3.html:277
+#: templates/scripts/python3.html:276
 msgid "To switch to Python 3.x:"
 msgstr "Aby przełączyć się na Pythona 3.x:"
 
-#: templates/scripts/python3.html:282
+#: templates/scripts/python3.html:281
 msgid "Check that Python version is 3.x:"
 msgstr "Sprawdź czy wersja Pythona to 3.x:"
+
+#: templates/scripts/source.html:12
+msgid "Script"
+msgstr "Skrypt"
 
 #: templates/scripts/source.html:17
 #, python-format
@@ -8307,32 +8025,6 @@ msgstr "Dodano:"
 msgid "Updated:"
 msgstr "Uaktualniono:"
 
-#: templates/scripts/update.html:13
-msgid ""
-"<strong>Important:</strong> the recommended way to update a script is to "
-"send a pull request on <a href=\"https://github.com/weechat/scripts/"
-"\">Github scripts repository</a>: your changes will be public and people "
-"could comment them before they are merged in the repository. If this is not "
-"possible, then you can use this form."
-msgstr ""
-"<strong>Ważne:</strong> zalecanym sposobem aktualizacji skryptów jest "
-"wysłanie pull requestu do <a href=\"https://github.com/weechat/scripts/"
-"\">repozytorium ze skryptami na Githubie</a>: twoje zmiany będą publiczne i "
-"inni będą mogli je skomentować zanim zostaną przyjęte do repozytorium. Jeśli "
-"nie jest to możliwe, możesz dalej używać tego formularza."
-
-#: templates/scripts/update.html:15
-msgid ""
-"Please follow <strong>all</strong> these rules, otherwise your script will "
-"be rejected:"
-msgstr ""
-"Należy przestrzegać <strong>wszystkich</strong> poniższych zasad, w "
-"przeciwnym wypadku Twój skrypt zostanie odrzucony:"
-
-#: templates/scripts/update_ok.html:12
-msgid "New release has been submitted for review."
-msgstr "Nowa wersja została przekazana do oceny."
-
 #: templates/themes/add.html:12
 msgid ""
 "<strong>Warning:</strong> please follow <strong>all</strong> these rules, "
@@ -8354,6 +8046,25 @@ msgid ""
 msgstr ""
 "motyw musi być stworzony za pomocą najnowszej stabilnej wersji WeeChat "
 "(%(version)s) lub wersji rozwojowej"
+
+#: templates/themes/add.html:24 templates/themes/update.html:16
+msgid "Submit"
+msgstr "Wyślij"
+
+#: templates/themes/add_error.html:12 templates/themes/update_error.html:12
+msgid "Oops… Something went wrong while processing the form :("
+msgstr "Oops... Coś się nie udało podczas przetwarzania formularza :("
+
+#: templates/themes/add_error.html:14 templates/themes/update_error.html:14
+msgid ""
+"You can try again or report problem to webmaster if the problem persists."
+msgstr ""
+"Możesz spróbować ponownie lub zgłosić problem webmasterowi jeśli problem "
+"pozostanie."
+
+#: templates/themes/add_error.html:17 templates/themes/update_error.html:17
+msgid "Back to form"
+msgstr "Powrót do formularza"
 
 #: templates/themes/add_ok.html:12
 msgid ""
@@ -8419,13 +8130,37 @@ msgstr "Uaktualniony motyw został przekazany do oceny."
 msgid "The theme."
 msgstr "Motyw."
 
+#: themes/models.py:174 themes/models.py:259
+msgid "Your name or nick"
+msgstr "Twoje imię lub nick"
+
 #: themes/models.py:175
 msgid "Used for themes page."
 msgstr "Używany na stronie z motywami."
 
+#: themes/models.py:179 themes/models.py:263
+msgid "Your e-mail"
+msgstr "Twój e-mail"
+
 #: themes/models.py:180 themes/models.py:264
 msgid "No spam, never displayed."
 msgstr "Żadnego spamu, nigdy nie wyświetlany."
+
+#: themes/models.py:186 themes/models.py:270
+msgid "Comments"
+msgstr "Komentarz"
+
+#: themes/models.py:187 themes/models.py:271
+msgid "Not displayed."
+msgstr "Niewyświetlany."
+
+#: themes/models.py:192 themes/models.py:276
+msgid "Are you a spammer?"
+msgstr "Czy jesteś spamerem?"
+
+#: themes/models.py:193 themes/models.py:277
+msgid "Enter \"no\" if you are not a spammer."
+msgstr "Wpisz \"no\" jeśli  nie jesteś spamerem."
 
 #: themes/models.py:204 themes/models.py:289
 msgid "Theme file too big."
@@ -8447,6 +8182,10 @@ msgstr "Niewłaściwa nazwa wewnątrz pliku motywu."
 msgid "Invalid WeeChat version, too old!"
 msgstr "Niewłaściwa wersja WeeChat, za stara!"
 
+#: themes/models.py:237
+msgid "Choose…"
+msgstr "Wybierz…"
+
 #: themes/models.py:298
 msgid "Internal error."
 msgstr "Wewnętrzny błąd."
@@ -8454,9 +8193,3 @@ msgstr "Wewnętrzny błąd."
 #: themes/models.py:301
 msgid "Invalid name: different from theme."
 msgstr "Niewłaściwa nazwa: różni się od motywu."
-
-#~ msgid "The version of script (only digits or dots)."
-#~ msgstr "Wersja skryptu (tylko cyfry lub kropki)."
-
-#~ msgid "Popular script"
-#~ msgstr "Popularny skrypt"
