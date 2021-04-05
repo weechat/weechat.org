@@ -666,6 +666,8 @@ def __i18n_scripts_scripts():
     gettext_noop("Stick buffer to a window.")
     # Translators: description for script "weestreamer.py" (0.3.0+)
     gettext_noop("Streamlink companion for WeeChat.")
+    # Translators: description for script "styurl.py" (0.3.0+)
+    gettext_noop("Style URLs using a Python regex.")
     # Translators: description for script "substitution.rb" (0.3.7+)
     gettext_noop("Substitute strings in messages before they are sent.")
     # Translators: description for script "sysinfo.pl" (0.3.0+)
