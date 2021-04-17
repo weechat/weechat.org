@@ -35,6 +35,7 @@
     <thead>
       <tr>
         <th>{% trans "Tracker" %}</th>
+        <th class="text-center">{% trans "Spec" %}</th>
         <th class="text-center">{% trans "Status" %}</th>
         <th class="text-center">Git</th>
         <th class="text-center">{% trans "Plugin" %}</th>
@@ -47,6 +48,11 @@
         <td class="text-nowrap" style="width: 8rem;">
           {% autoescape off %}
           {{ task.url_tracker }}
+          {% endautoescape %}
+        </td>
+        <td class="text-center text-nowrap" style="width: 6rem";>
+          {% autoescape off %}
+          {{ task.url_spec }}
           {% endautoescape %}
         </td>
         <td class="text-center text-nowrap" style="width: 10rem;">

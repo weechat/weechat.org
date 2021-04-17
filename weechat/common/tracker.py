@@ -111,3 +111,13 @@ def commits_links(commits):
                       f'<img src="{settings.MEDIA_URL}images/{img}" '
                       f'width="16" height="16" alt="*"{title}></a>')
     return ' '.join(images)
+
+
+def spec_link(spec):
+    """Replace specification id by URLs to specification."""
+    if not spec:
+        return ''
+    return (f'<a href="https://specs.weechat.org/specs/{spec}.html" '
+            f'target="_blank" rel="noopener">'
+            f'<img src="{settings.MEDIA_URL}images/link.png" '
+            f'width="16" height="16" alt="*"></a>')

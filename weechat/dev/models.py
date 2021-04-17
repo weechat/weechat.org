@@ -23,7 +23,7 @@ from datetime import date
 
 from django.db import models
 
-from weechat.common.tracker import commits_links, tracker_links
+from weechat.common.tracker import commits_links, spec_link, tracker_links
 from weechat.common.templatetags.localdate import localdate
 from weechat.download.models import Release
 
@@ -33,6 +33,7 @@ class Task(models.Model):
     visible = models.BooleanField(default=True)
     version = models.ForeignKey(Release, on_delete=models.CASCADE)
     tracker = models.CharField(max_length=64, blank=True)
+    spec = models.CharField(max_length=512, blank=True)
     status = models.IntegerField(default=0)
     commits = models.CharField(max_length=1024, blank=True)
     component = models.CharField(max_length=64, default='core')
@@ -64,6 +65,10 @@ class Task(models.Model):
     def url_tracker(self):
         """Return the tracker URL using keyword(s) in string."""
         return tracker_links(self.tracker) or '-'
+
+    def url_spec(self):
+        """Return the link to specification."""
+        return spec_link(self.spec)
 
     def status_remaining(self):
         """Return the remaining status as % (100 - status)."""
