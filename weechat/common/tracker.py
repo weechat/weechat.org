@@ -90,7 +90,7 @@ def split_commit(commit):
 
 
 def commits_links(commits):
-    """Replace commits or branches by URLs to gitweb on savannah."""
+    """Replace commits or branches by GitHub URLs."""
     if not commits:
         return ''
     images = []
