@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-17 15:45+0200\n"
-"PO-Revision-Date: 2021-04-05 10:25+0200\n"
+"PO-Revision-Date: 2021-05-23 15:47+0200\n"
 "Last-Translator: Krzysztof Korościk <soltys@soltys.info>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -144,6 +144,8 @@ msgid ""
 "Integration of secured data with external password manager, add edition of "
 "filters."
 msgstr ""
+"Integracja zabezpieczonych danych z zewnętrznymi managerami haseł, dodano "
+"edycję filtrów."
 
 #: about/_i18n_keydates.py:35
 msgid "Javascript plugin, IRC SASL mechanism \"ecdsa-nist256p-challenge\"."
@@ -175,7 +177,7 @@ msgstr ""
 
 #: about/_i18n_keydates.py:41
 msgid "Opt-in option to download scripts from weechat.org."
-msgstr ""
+msgstr "Zgoda na pobieranie skryptów z weechat.org."
 
 #: about/_i18n_keydates.py:42
 msgid "Perl plugin."
@@ -3721,14 +3723,6 @@ msgstr ""
 "href=\"/files/changelog/ChangeLog-3.0.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:144
-#, fuzzy
-#| msgid ""
-#| "Version 1.0.1 is available!\n"
-#| "\n"
-#| "This is a bug fix and maintenance release.\n"
-#| "\n"
-#| "For complete list of bugs fixed, please look at <a href=\"/files/"
-#| "changelog/ChangeLog-1.0.1.html\">ChangeLog</a>."
 msgid ""
 "Version 3.0.1 is available!\n"
 "\n"
@@ -3737,12 +3731,12 @@ msgid ""
 "For complete list of bugs fixed, please look at <a href=\"/files/changelog/"
 "ChangeLog-3.0.1.html\">ChangeLog</a>."
 msgstr ""
-"Wersja 1.0.1 jest dostępna!\n"
+"Wersja 3.0.1 jest dostępna!\n"
 "\n"
 "Jest to wersja poprawiająca znalezione błędy.\n"
 "\n"
 "Kompletna lista poprawionych błędów znajduje się w pliku <a href=\"/files/"
-"changelog/ChangeLog-1.0.1.html\">ChangeLog</a>."
+"changelog/ChangeLog-3.0.1.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:145
 #, python-brace-format
@@ -3775,6 +3769,36 @@ msgid ""
 "\"https://blog.weechat.org/post/2021/03/07/Version-3.1\">development blog</"
 "a> or <a href=\"/files/changelog/ChangeLog-3.1.html\">ChangeLog</a>."
 msgstr ""
+"Wersja 3.1 jest dostępna!\n"
+"\n"
+"Najważniejsze zmiany:\n"
+"\n"
+"- dodano opcje weechat.look.hotlist_update_on_buffer_switch i weechat.look."
+"read_marker_update_on_buffer_switch\n"
+"- dodano opcję sec.crypt.passphrase_command umoźliwiającą odczytanie hasła z "
+"zewnętrznego programu podczas uruchomienia, usunięto opcję sec.crypt."
+"passphrase_file\n"
+"- ulepszono możliwości debugowania w komendzie /eval\n"
+"- dodano opcje \"setvar\" i \"delvar\" w komendzie /bufer, zmieniono nazwy "
+"opcji \"localvar\" na \"listvar\"\n"
+"- dodano zmienną lokalną bufrów \"completion_default_template"
+"\" (przetwarzana) nadpisującą wartość opcji weechat.completion."
+"default_template\n"
+"- dodano opcję \"recreate\" dla komendy /filter\n"
+"- dodano przetwarzanie surowych ciągów w wyrażeniach za pomocą \"raw:xxx\"\n"
+"- dodano przetwarzanie warunków podczas przetwarzania wyrażeń za pomocą "
+"\"eval_cond:xxx\"\n"
+"- dodano info_hashtable \"secured_data\"\n"
+"- dodano info \"irc_is_message_ignored\"\n"
+"- dodano opcję serwera IRC \"default_chantypes\" używaną, kiedy serwer nie "
+"wyśle wiadomości 005\n"
+"- dodano zmienną \"${tg_trigger_name}\" w komendzie triggerującej "
+"przetworzone ciągi\n"
+"- poprawiono wiele błędów.\n"
+"\n"
+"Pełną listę nowych funkcji i poprawionych błędów można znaleźć na <a href=\"/"
+"blog/post/2021/03/07/Version-3.1\">blogu developerskim</a> oraz w pliku <a "
+"href=\"/files/changelog/ChangeLog-3.1.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:146
 msgid ""
@@ -5160,7 +5184,7 @@ msgstr ""
 #. Translators: description for script "anti_password.py" (0.4.0+)
 #: scripts/_i18n_scripts.py:434
 msgid "Prevent a password from being accidentally sent to a buffer."
-msgstr ""
+msgstr "Zapobiega przypadkowemu wysłaniu hasła do bufora."
 
 #. Translators: description for script "smile.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:436
@@ -5210,10 +5234,10 @@ msgstr "Przesyłanie powiadomień do im.kayac.com."
 
 #. Translators: description for script "weejoin.py" (2.0+)
 #: scripts/_i18n_scripts.py:452
-#, fuzzy
-#| msgid "Notification on screen for highlights and private messages."
 msgid "Push notifications of highlights and private messages to Join."
-msgstr "Powiadomienia na ekranie dla higlightów oraz prywatnych wiadomości."
+msgstr ""
+"Wysyła powiadomienia o wywołaniach i prywatnych wiadomościach do aplikacji "
+"Join."
 
 #. Translators: description for script "jisearch.py" (0.3.5+)
 #: scripts/_i18n_scripts.py:454
@@ -5811,7 +5835,7 @@ msgstr "Wsparcie dla Streamlink w WeeChat."
 #. Translators: description for script "styurl.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:670
 msgid "Style URLs using a Python regex."
-msgstr ""
+msgstr "Formatowanie URLi za pomocą Pythonowych wyrażeń regularnych."
 
 #. Translators: description for script "substitution.rb" (0.3.7+)
 #: scripts/_i18n_scripts.py:672
@@ -5964,7 +5988,7 @@ msgstr "Znaczniki czasu w stylu iChat."
 #. Translators: description for script "itunes.rb" (0.3.0+)
 #: scripts/_i18n_scripts.py:728
 msgid "iTunes control and now playing script."
-msgstr "Kontrola i wyświetlanie aktualnie odtwarzanego utworu dla iTunes."
+msgstr "Kontrola i wyświetlanie aktualnie odtwarzanego utworu w iTunes."
 
 #. Translators: this is a date format, see: http://www.php.net/date
 #. Translators: (note: the result string must be short, use abbreviation
@@ -6742,7 +6766,7 @@ msgstr "Tracker"
 
 #: templates/dev/roadmap.html:38
 msgid "Spec"
-msgstr ""
+msgstr "Spec"
 
 #: templates/dev/roadmap.html:39
 msgid "Status"
@@ -7539,10 +7563,8 @@ msgid "Back"
 msgstr "Wstecz"
 
 #: templates/scripts/list.html:15
-#, fuzzy
-#| msgid "Unofficial scripts"
 msgid "WeeChat official scripts"
-msgstr "Nieoficjalne skrypty"
+msgstr "Oficjalne skrypty WeeChat"
 
 #: templates/scripts/list.html:18
 msgid ""
@@ -7550,25 +7572,28 @@ msgid ""
 "contributors, which can be installed directly in WeeChat with the command "
 "<code>/script install &lt;name&gt;</code>."
 msgstr ""
+"Ta strona zawiera zbiór skryptów WeeChat napisanych przez różnych autorów, "
+"które mogą zostać zainstalowane bezpośrednio w WeeChacie za pomocą komendy "
+"<code>/script install &lt;nazwa&gt;</code>."
 
 #: templates/scripts/list.html:20
-#, fuzzy
-#| msgid ""
-#| "You could experience problems like memory leaks, slowdowns, or even "
-#| "<strong>security problems</strong>. You are warned!"
 msgid ""
 "WeeChat developers are <strong>NOT RESPONSIBLE</strong> for problems caused "
 "by one of these scripts: you could experience problems like memory leaks, "
 "slowdowns, or even <strong>security problems</strong>, you are warned!"
 msgstr ""
-"Możesz się spodziewać problemów jak wycieki pamięci, spowolnienia, nawet "
-"<strong>problemy bezpieczeństwa</strong>. Zostałeś ostrzeżony!"
+"Deweloperzy WeeChat <strong>NIE SĄ ODPOWIEDZIALNI</strong> za problemy "
+"spowodowane przez skrypty: możesz się spodziewać problemów jak wycieki "
+"pamięci, spowolnienia, nawet <strong>problemy bezpieczeństwa</strong>, "
+"zostałeś ostrzeżony!"
 
 #: templates/scripts/list.html:24
 msgid ""
 "You can contribute by adding/updating scripts or reporting issues in the "
 "GitHub repository:"
 msgstr ""
+"Możesz pomóc dodając/aktualizując skrypty lub zgłaszając błędy w "
+"repozytorium na GitHubie:"
 
 #: templates/scripts/list.html:34
 msgid "List:"
@@ -8024,7 +8049,7 @@ msgstr "wymaga:"
 
 #: templates/scripts/source.html:31
 msgid "Tags:"
-msgstr ""
+msgstr "Tagi:"
 
 #: templates/scripts/source.html:33
 msgid "Added:"
