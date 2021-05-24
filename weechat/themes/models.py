@@ -387,12 +387,11 @@ def handler_themes_changed(sender, **kwargs):
 
     # create themes.tar.bz2 (with theme.xml + 'themes' directory)
     os.chdir(settings.FILES_ROOT)
-    tar = tarfile.open(files_path_join('themes.tar.bz2'), 'w:bz2')
-    tar.add('themes.xml')
-    for name in os.listdir(files_path_join('themes')):
-        if name.endswith('.theme'):
-            tar.add(f'themes/{name}')
-    tar.close()
+    with tarfile.open(files_path_join('themes.tar.bz2'), 'w:bz2') as tar:
+        tar.add('themes.xml')
+        for name in os.listdir(files_path_join('themes')):
+            if name.endswith('.theme'):
+                tar.add(f'themes/{name}')
 
 
 pre_save.connect(handler_theme_saved, sender=Theme)
