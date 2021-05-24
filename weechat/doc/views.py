@@ -88,11 +88,9 @@ def get_i18n_stats():
                     total = translated + fuzzy + untranslated
                     if total != 0:
                         pct_fuzzy = int(ceil((fuzzy * 100) / total))
-                        pct_untranslated = int(
+                        pct_untrans = int(
                             ceil((untranslated * 100) / total))
-                        pct_translated = 100 - pct_fuzzy - pct_untranslated
-                        if pct_translated < 0:
-                            pct_translated = 0
+                        pct_trans = max(100 - pct_fuzzy - pct_untrans, 0)
                         nick, name = I18N_MAINTAINER.get(lang, ('-', ''))
                         langs.append({
                             'lang': lang,
@@ -102,11 +100,11 @@ def get_i18n_stats():
                             'nick': nick,
                             'name': name,
                             'translated': int(translated),
-                            'pct_translated': pct_translated,
+                            'pct_translated': pct_trans,
                             'fuzzy': int(fuzzy),
                             'pct_fuzzy': pct_fuzzy,
                             'untranslated': int(untranslated),
-                            'pct_untranslated': pct_untranslated,
+                            'pct_untranslated': pct_untrans,
                             'total': int(total),
                         })
         return {'date': date, 'langs': langs}
