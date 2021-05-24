@@ -43,11 +43,7 @@ def get_release_progress():
     if len(rel_todo) > 0 and len(rel_progress) > 0 \
             and rel_progress[0].done >= 0:
         done = rel_progress[0].done
-        pct = int((float(done) / len(rel_todo)) * 100)
-        if pct < 0:
-            pct = 0
-        if pct > 100:
-            pct = 100
+        pct = min(max(int((float(done) / len(rel_todo)) * 100), 0), 100)
         next_rel_version = rel_progress[0].version.version
         next_rel_date = rel_progress[0].version.date
     return {
