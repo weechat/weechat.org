@@ -222,6 +222,8 @@ def __i18n_scripts_scripts():
     gettext_noop("Display Weechat highlights in dzen (and beep).")
     # Translators: description for script "countdown.rb" (0.3.0+)
     gettext_noop("Display a countdown on current buffer.")
+    # Translators: description for script "lossage.py" (1.0+)
+    gettext_noop("Display a history of the last keystrokes you performed and the commands invoked.")
     # Translators: description for script "whowas_timeago.py" (1.3+)
     gettext_noop("Display a human-readable time string for WHOWAS data.")
     # Translators: description for script "urlbar.py" (0.3.0+)
