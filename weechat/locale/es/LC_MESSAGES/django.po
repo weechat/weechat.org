@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-29 11:41+0200\n"
-"PO-Revision-Date: 2021-05-30 18:51+0200\n"
+"PO-Revision-Date: 2021-05-30 19:04+0200\n"
 "Last-Translator: victorhck <victorhck@mailbox.org>\n"
 "Language-Team: French <flashcode@flashtux.org>\n"
 "Language: fr\n"
@@ -328,45 +328,53 @@ msgstr ""
 #: dev/views.py:97
 msgid "All non-binary infos (one info by line, format: \"info:value\")."
 msgstr ""
+"Toda la información no binaria (una información por línea, formato:"
+" \"información:valor\")."
 
 #: dev/views.py:290
 msgid "(binary data)"
-msgstr ""
+msgstr "(datos binarios)"
 
 #: doc/_i18n_security.py:13
 msgid "/set irc.network.colors_receive off"
-msgstr ""
+msgstr "/set irc.network.colors_receive off"
 
 #: doc/_i18n_security.py:14
 msgid ""
 "Buffer overflow when a new IRC message 005 is received with longer nick "
 "prefixes."
 msgstr ""
+"Desbordamiento de búfer cuando se recibe un nuevo mensaje IRC 005 con"
+" prefijos de apodos más largos."
 
 #: doc/_i18n_security.py:15
 msgid "Buffer overflow when decoding IRC colors in strings."
 msgstr ""
+"Desbordamiento de búfer al decodificar colores IRC en cadenas de texto."
 
 #: doc/_i18n_security.py:16
 msgid ""
 "Buffer overflow when receiving a malformed IRC message 324 (channel mode)."
 msgstr ""
+"Desbordamiento del búfer al recibir un mensaje IRC 324 con formato incorrecto"
+" (modo de canal)."
 
 #: doc/_i18n_security.py:17
 msgid "Buffer overflow when removing quotes in DCC filename."
 msgstr ""
+"Desbordamiento de búfer al eliminar comillas en el nombre de archivo DCC."
 
 #: doc/_i18n_security.py:18
 msgid "Buffer overflows in build of strings."
-msgstr ""
+msgstr "El búfer se desborda en la construcción de cadenas de texto."
 
 #: doc/_i18n_security.py:19
 msgid "Crash when receiving a malformed IRC message 352 (WHO)."
-msgstr ""
+msgstr "Fallo al recibir un mensaje IRC 352 (WHO) con formato incorrecto."
 
 #: doc/_i18n_security.py:20
 msgid "Crash when receiving special chars in IRC messages."
-msgstr ""
+msgstr "Crash al recibir caracteres especiales en los mensajes de IRC."
 
 #: doc/_i18n_security.py:21
 msgid ""
@@ -374,6 +382,10 @@ msgid ""
 "\"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND ${\\x22} \" "
 "\"/.*//\""
 msgstr ""
+"Crear un disparador (con WeeChat> = 1.1): /trigger añadir modificador"
+" irc_dcc_quotes "
+"\"irc_in_privmsg\" \"${argumentos} =~ ^[^ ]+ :${\\x01}DCC SEND ${\\x22} \" "
+"\"/.*//\""
 
 #: doc/_i18n_security.py:22
 msgid ""
@@ -381,36 +393,50 @@ msgid ""
 "variables in name of log files. In some cases, this can lead to an error in "
 "function strftime and a crash caused by the use of an uninitialized buffer."
 msgstr ""
+"Los especificadores de conversión de fecha/hora se expanden después de"
+" reemplazar en el búfer local"
+"variables en nombre de los archivos de registro. En algunos casos, esto puede"
+" provocar un error en"
+"función strftime y un bloqueo causado por el uso de un búfer no inicializado."
 
 #: doc/_i18n_security.py:23
 msgid ""
 "Do not use command /notify with nicks containing formatting chars like \"%\"."
 msgstr ""
+"No utilice comando /notify con apodos que contengan caracteres de formato"
+" como \"%\"."
 
 #: doc/_i18n_security.py:24
 msgid "Do not use irc protocol in relay plugin."
-msgstr ""
+msgstr "No utilice el protocolo irc en el complemento de retransmisión."
 
 #: doc/_i18n_security.py:25
 msgid ""
 "Missing verifications in SSL certificate, which allows man-in-the-middle "
 "attackers to spoof an SSL chat server via an arbitrary certificate."
 msgstr ""
+"Faltan verificaciones en el certificado SSL, lo que permite a atacantes "
+"intermediarios falsificar un servidor de chat SSL a través de un certificado"
+" arbitrario."
 
 #: doc/_i18n_security.py:26
 msgid ""
 "Remove/unload all scripts calling function hook_process (for maximum safety)."
 msgstr ""
+"Elimine/descargue todos los scripts que llaman a la función hook_process"
+" (para máxima seguridad)."
 
 #: doc/_i18n_security.py:27
 msgid ""
 "Turn off option \"irc.network.send_unknown_commands\" or do not use "
 "formatting chars like \"%\" when sending unknown commands to server."
 msgstr ""
+"Desactive la opción \"irc.network.send_unknown_commands\" o no utilice"
+"formatear caracteres como \"%\" al enviar comandos desconocidos al servidor."
 
 #: doc/_i18n_security.py:28
 msgid "Uncontrolled format string in API function infobar_printf."
-msgstr ""
+msgstr "Cadena de formato no controlada en la función de API infobar_printf."
 
 #: doc/_i18n_security.py:29
 msgid ""
@@ -418,22 +444,32 @@ msgid ""
 "If the output or redirected command contains formatting chars like \"%\", "
 "this can lead to a crash of WeeChat."
 msgstr ""
+"Cadena de formato no controlada cuando los comandos de IRC son redirigidos"
+" por el complemento de retransmisión."
+"Si el comando de salida o redirigido contiene caracteres de formato como \""
+"%\","
+"esto puede provocar un bloqueo de WeeChat."
 
 #: doc/_i18n_security.py:30
 msgid ""
 "Uncontrolled format string when sending IRC \"ison\" command for nicks "
 "monitored with command /notify."
 msgstr ""
+"Cadena de formato no controlada al enviar el comando IRC \"ison\" para apodos"
+"monitoreado con comando /notify."
 
 #: doc/_i18n_security.py:31
 msgid ""
 "Uncontrolled format string when sending unknown IRC command to server (if "
 "option \"irc.network.send_unknown_commands\" is on)."
 msgstr ""
+"Cadena de formato no controlada al enviar un comando IRC desconocido al"
+" servidor (si"
+"la opción \"irc.network.send_unknown_commands\" está activada)."
 
 #: doc/_i18n_security.py:32
 msgid "Unload the logger plugin: /plugin unload logger"
-msgstr ""
+msgstr "Descargue el complemento logger: /plugin unload logger"
 
 #: doc/_i18n_security.py:33
 msgid ""
@@ -441,109 +477,123 @@ msgid ""
 "commands, because of shell expansions (so the problem is only caused by some "
 "scripts, not by WeeChat itself)."
 msgstr ""
+"Un comando no confiable para la función hook_process podría llevar a la"
+" ejecución de"
+"comandos, debido a expansiones de shell (por lo que el problema solo es"
+" causado por algunos"
+"scripts, no por WeeChat en sí)."
 
 #. Translators: this is a severity level for a security vulnerability
 #: doc/models.py:36
 msgid "low"
-msgstr ""
+msgstr "bajo"
 
 #. Translators: this is a severity level for a security vulnerability
 #: doc/models.py:38
 msgid "medium"
-msgstr ""
+msgstr "medio"
 
 #. Translators: this is a severity level for a security vulnerability
 #: doc/models.py:40
 msgid "high"
-msgstr ""
+msgstr "alto"
 
 #. Translators: this is a severity level for a security vulnerability
 #: doc/models.py:42
 msgid "critical"
-msgstr ""
+msgstr "crítico"
 
 #: doc/models.py:45
 msgid ""
 "minor issue occuring in very specific conditions, low impact. Upgrade is not "
 "mandatory."
 msgstr ""
+"problema menor que ocurre en condiciones muy específicas, de bajo impacto. La"
+" actualización no es"
+"obligatoria."
 
 #: doc/models.py:47
 msgid ""
 "problem affecting a specific feature. Upgrade is <strong>recommended</"
 "strong> at least for people using the feature."
 msgstr ""
+"problema que afecta a una característica específica. <strong>Se recomienda la"
+" actualización</"
+"fuerte> al menos para las personas que utilizan la función."
 
 #: doc/models.py:50
 msgid "severe problem. Upgrade is <strong>highly recommended</strong>."
 msgstr ""
+"problema severo. La actualización es <strong>muy recomendable</strong>."
 
 #: doc/models.py:52
 msgid ""
 "critical problem, risk of damage on your system. <strong>You MUST upgrade "
 "immediately!</strong>"
 msgstr ""
+"problema crítico, riesgo de daño en su sistema. <strong>¡DEBE actualizar"
+"inmediatamente!</strong>"
 
 #: doc/models.py:60
 msgid "Czech"
-msgstr ""
+msgstr "Checo"
 
 #: doc/models.py:61 settings.py:49 templates/about/support.html:34
 #: templates/about/weechat.org.html:24
 msgid "German"
-msgstr ""
+msgstr "Alemán"
 
 #: doc/models.py:62 settings.py:47 templates/about/support.html:27
 msgid "English"
-msgstr ""
+msgstr "Inglés"
 
 #: doc/models.py:63
 msgid "Spanish"
-msgstr ""
+msgstr "Español"
 
 #: doc/models.py:64 settings.py:48 templates/about/support.html:28
 msgid "French"
-msgstr ""
+msgstr "Francés"
 
 #: doc/models.py:65
 msgid "Hungarian"
-msgstr ""
+msgstr "Húngaro"
 
 #: doc/models.py:66 settings.py:50 templates/about/weechat.org.html:25
 msgid "Italian"
-msgstr ""
+msgstr "Italiano"
 
 #: doc/models.py:67 settings.py:53 templates/about/weechat.org.html:26
 msgid "Japanese"
-msgstr ""
+msgstr "Japonés"
 
 #: doc/models.py:68 settings.py:51 templates/about/weechat.org.html:27
 msgid "Polish"
-msgstr ""
+msgstr "Polaco"
 
 #: doc/models.py:69
 msgid "Portuguese"
-msgstr ""
+msgstr "Portugués"
 
 #: doc/models.py:70 settings.py:52 templates/about/weechat.org.html:28
 msgid "Portuguese (Brazil)"
-msgstr ""
+msgstr "Portugués (Brasil)"
 
 #: doc/models.py:71
 msgid "Russian"
-msgstr ""
+msgstr "Ruso"
 
 #: doc/models.py:72
 msgid "Turkish"
-msgstr ""
+msgstr "Turco"
 
 #: doc/models.py:104
 msgid "FAQ"
-msgstr ""
+msgstr "FAQ"
 
 #: doc/models.py:105
 msgid "User's guide"
-msgstr ""
+msgstr "Guía de usuario"
 
 #: doc/models.py:106
 msgid "Plugin API reference"
