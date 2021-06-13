@@ -33,7 +33,7 @@
           <tr>
             <th></th>
             {% for lang in languages %}
-            <th class="text-center{%if lang.lang == bestlang %} table-bestlang{% endif %}" title="{{ lang.lang_i18n }}"><img src="{{ MEDIA_URL }}images/flag_{{ lang.lang }}.png" width="28" height="16" class="border" alt="{{ lang.lang }}"><br>{{ lang.lang }}</th>
+            <th class="text-center{%if lang.lang == bestlang %} table-bestlang{% endif %}" title="{{ lang.lang_i18n }}"><img src="{{ MEDIA_URL }}images/flag_{{ lang.lang }}.png" width="33" height="19" class="border" alt="{{ lang.lang }}"><br>{{ lang.lang }}</th>
             {% endfor %}
           </tr>
         </thead>
@@ -80,7 +80,7 @@
         {% for item in i18n.langs %}
         <tr>
           <td class="text-nowrap" title="{{ item.lang_i18n }}">
-            <img src="{{ MEDIA_URL }}images/flag_{{ item.lang }}.png" width="28" height="16" class="border" alt="{{ item.lang }}"> {{ item.lang_i18n }}
+            <img src="{{ MEDIA_URL }}images/flag_{{ item.lang }}.png" width="33" height="19" class="border mr-2" alt="{{ item.lang }}"> {{ item.lang_i18n }}
           </td>
           <td>
             {% if item.lang == "en" %}-{% else %}{{ item.lang }}.po{% endif %}

@@ -69,6 +69,7 @@ class Language(models.Model):
         'pt': ugettext_noop('Portuguese'),
         'pt_BR': ugettext_noop('Portuguese (Brazil)'),
         'ru': ugettext_noop('Russian'),
+        'sr': ugettext_noop('Serbian'),
         'tr': ugettext_noop('Turkish'),
     }
     lang = models.CharField(max_length=8, primary_key=True)
