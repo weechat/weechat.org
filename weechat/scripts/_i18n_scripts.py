@@ -646,6 +646,8 @@ def __i18n_scripts_scripts():
     gettext_noop("Snake game.")
     # Translators: description for script "snarl_net_notify.pl" (0.3.0+)
     gettext_noop("Snarl notifications for highlights.")
+    # Translators: description for script "soju.py" (0.3.0+)
+    gettext_noop("Soju bouncer integration.")
     # Translators: description for script "sort_servers.py" (0.3.9+)
     gettext_noop("Sort buffers by server and alphabetically.")
     # Translators: description for script "sort_arza.pl" (0.3.0+)
