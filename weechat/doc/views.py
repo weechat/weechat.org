@@ -52,6 +52,7 @@ I18N_MAINTAINER = {
     'pt': ('', 'Vasco Almeida'),
     'pt_BR': ('-', ''),
     'ru': ('-', ''),
+    'sr': ('', 'Ivan Pešić'),
     'tr': ('-', ''),
 }
 
