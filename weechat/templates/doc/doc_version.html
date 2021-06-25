@@ -69,9 +69,9 @@
         <tr>
           <th>{% trans "Language" context "translated language" %}</th>
           <th>{% trans "File" %}</th>
-          <th colspan="2" class="text-right">{% trans "Translated" %}</th>
-          <th colspan="2" class="text-right">{% trans "Fuzzy" %}</th>
-          <th colspan="2" class="text-right">{% trans "Untranslated" %}</th>
+          <th colspan="2" class="text-end">{% trans "Translated" %}</th>
+          <th colspan="2" class="text-end">{% trans "Fuzzy" %}</th>
+          <th colspan="2" class="text-end">{% trans "Untranslated" %}</th>
           <th>{% trans "Total" %}</th>
           <th>{% trans "Progress" %}</th>
         </tr>
@@ -80,11 +80,11 @@
         {% for item in i18n.langs %}
         <tr>
           <td class="text-nowrap" title="{{ item.lang_i18n }}">
-            <img src="{{ MEDIA_URL }}images/flag_{{ item.lang }}.png" width="33" height="19" class="border mr-2" alt="{{ item.lang }}"> {{ item.lang_i18n }}
+            <img src="{{ MEDIA_URL }}images/flag_{{ item.lang }}.png" width="33" height="19" class="border me-2" alt="{{ item.lang }}"> {{ item.lang_i18n }}
           </td>
           <td>
             {% if item.lang == "en" %}-{% else %}{{ item.lang }}.po{% endif %}
-            <small class="ml-1 text-muted">
+            <small class="ms-1 text-muted">
               {% if item.nick and item.name %}
               (<abbr title="{{ item.name }}">{{ item.nick }}</abbr>)
               {% elif item.name %}
@@ -95,12 +95,12 @@
           {% if item.lang == "en" %}
           <td class="text-center text-muted" colspan="6">({% trans "base language" %})</td>
           {% else %}
-          <td class="text-right text-success">{{ item.translated }}</td>
-          <td class="text-right text-success"><small>{{ item.pct_translated }}%<small></td>
-          <td class="text-right" style="color: #852;">{{ item.fuzzy }}</td>
-          <td class="text-right" style="color: #852;"><small>{{ item.pct_fuzzy }}%</small></td>
-          <td class="text-right text-danger">{{ item.untranslated }}</td>
-          <td class="text-right text-danger"><small>{{ item.pct_untranslated }}%</small></td>
+          <td class="text-end text-success">{{ item.translated }}</td>
+          <td class="text-end text-success"><small>{{ item.pct_translated }}%<small></td>
+          <td class="text-end" style="color: #852;">{{ item.fuzzy }}</td>
+          <td class="text-end" style="color: #852;"><small>{{ item.pct_fuzzy }}%</small></td>
+          <td class="text-end text-danger">{{ item.untranslated }}</td>
+          <td class="text-end text-danger"><small>{{ item.pct_untranslated }}%</small></td>
           {% endif %}
           <td class="center">{{ item.total }}</td>
           <td>

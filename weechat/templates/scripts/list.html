@@ -30,7 +30,7 @@
 
 <div class="border rounded mb-3" style="background: #fafafa;">
   <div class="border-bottom p-2">
-    <div class="ml-4 float-right">
+    <div class="ms-4 float-end">
       {% trans "List:" %}
       <a href="/files/scripts.xml">XML</a> (<a href="/files/scripts.xml.gz">gz</a>),
       <a href="/files/scripts.json">JSON</a> (<a href="/files/scripts.json.gz">gz</a>)
@@ -49,7 +49,7 @@
   <div id="script_filters_1" class="p-2" style="{% if not script_filters_displayed %}display: none{% endif %}">
     <a href="#" onclick="toggle('script_filters_1', 'none'); toggle('script_filters_0', 'block'); set_cookie('script_filters', '0_{{ script_filters_sort }}', '/scripts', 30)">&#9660; {% if script_filters_sort == "popularity" %}{% trans "Filters by popularity" %}{% else %}{% trans "Filters by name" %}{% endif %}</a>
     &nbsp; ({% if script_filters_sort == "popularity" %}<a href="{% url 'scripts' %}" onclick="set_cookie('script_filters', '1_name', '/scripts', 30)">{% trans "sort filters by name" %}</a>{% else %}<a href="{% url 'scripts' %}" onclick="set_cookie('script_filters', '1_popularity', '/scripts', 30)">{% trans "sort filters by popularity" %}</a>{% endif %})
-    <div class="ml-4">
+    <div class="ms-4">
       {% if languages %}
       {% trans "Language:" %}
       {% for language in languages %}
@@ -57,7 +57,7 @@
       {% endfor %}
       {% endif %}
     </div>
-    <div class="ml-4">
+    <div class="ms-4">
       {% if licenses %}
       {% trans "License:" %}
       {% for license in licenses %}
@@ -65,7 +65,7 @@
       {% endfor %}
       {% endif %}
     </div>
-    <div class="ml-4">
+    <div class="ms-4">
       {% if tags %}
       {% trans "Tag:" %}
       {% for tag in tags %}
@@ -143,10 +143,10 @@
       {% for script in script_list %}
       <tr{% if script.disabled %} class="text-muted"{% endif %}>
         <td class="text-nowrap{% if script.disabled %} script-disabled{% endif %}">
-          <span class="mr-1 script-popular">{{ script.popularity_img|safe }}</span><a href="{% url 'scripts_source_name_html' script.name_with_extension %}">{{ script.name }}<small>.{{ script.extension }}</small></a>
+          <span class="me-1 script-popular">{{ script.popularity_img|safe }}</span><a href="{% url 'scripts_source_name_html' script.name_with_extension %}">{{ script.name }}<small>.{{ script.extension }}</small></a>
         </td>
         <td>
-          <div class="ml-3 float-right text-muted">
+          <div class="ms-3 float-end text-muted">
             [{% for tag in script.tagslist %}<a href="{% url 'scripts_filter' 'tag' tag %}" title="{% trans "Tag:" %} {{ tag }}">{{ tag }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}]
           </div>
           {% if script.disabled %}

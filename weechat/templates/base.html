@@ -23,42 +23,44 @@
 <body id="nav1-{% block menu %}{% endblock %}">
 
   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-    <a class="navbar-brand" href="{% url "home" %}">
-      <img src="{{ MEDIA_URL }}images/weechat_logo_small.png" width="48" height="33" alt="WeeChat">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarToggler">
-      <div class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <a class="nav-item nav-link nav-home" href="{% url "home" %}">{% trans "Home" %}</a>
-        <a class="nav-item nav-link nav-about" href="{% url "about" %}">{% trans "About" %}</a>
-        <a class="nav-item nav-link nav-doc" href="{% url "doc" %}">{% trans "Documentation" %}</a>
-        <a class="nav-item nav-link nav-download" href="{% url "download" %}">{% trans "Download" %}</a>
-        <a class="nav-item nav-link nav-scripts" href="{% url "scripts" %}">{% trans "Scripts" %}</a>
-        <a class="nav-item nav-link nav-dev" href="{% url "dev" %}">{% trans "Development" %}</a>
-      </div>
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url "home" %}">
+        <img src="{{ MEDIA_URL }}images/weechat_logo_small.png" width="48" height="33" alt="WeeChat">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarToggler">
+        <div class="navbar-nav me-auto mt-2 mt-lg-0">
+          <a class="nav-item nav-link nav-home" href="{% url "home" %}">{% trans "Home" %}</a>
+          <a class="nav-item nav-link nav-about" href="{% url "about" %}">{% trans "About" %}</a>
+          <a class="nav-item nav-link nav-doc" href="{% url "doc" %}">{% trans "Documentation" %}</a>
+          <a class="nav-item nav-link nav-download" href="{% url "download" %}">{% trans "Download" %}</a>
+          <a class="nav-item nav-link nav-scripts" href="{% url "scripts" %}">{% trans "Scripts" %}</a>
+          <a class="nav-item nav-link nav-dev" href="{% url "dev" %}">{% trans "Development" %}</a>
+        </div>
 
-      <div class="nav-other-links text-nowrap py-3 py-lg-0 px-3">
-        <a href="{% url 'donate' %}" title="{% trans "Donate" %}">
-          {% include "svg/heart.html" %} {% trans "Donate" %}
-        </a>
-      </div>
+        <div class="nav-other-links text-nowrap py-3 py-lg-0 px-3">
+          <a href="{% url 'donate' %}" title="{% trans "Donate" %}">
+            {% include "svg/heart.html" %} {% trans "Donate" %}
+          </a>
+        </div>
 
-      <div class="nav-languages">
-        <form name="lang" action="/i18n/setlang/" method="post">
-          {% csrf_token %}
-          <div class="form-group my-0">
-            <input type="hidden" name="language" value="{{ LANGUAGE_CODE }}">
-            <select class="form-control form-control-sm" onchange="javascript:document.forms['lang'].elements['language'].value = this.value; document.forms['lang'].submit();">
-              {% for lang in LANGUAGES %}
-              <option value="{{ lang.0 }}" onclick="javascript:document.forms['lang'].elements['language'].value = '{{ lang.0 }}'; document.forms['lang'].submit();" {% if lang.0 == LANGUAGE_CODE %} selected{% endif %}>{% language lang.0 %}{% trans lang.1 %}{% endlanguage %}</option>
-              {% endfor %}
-            </select>
-          </div>
-        </form>
-      </div>
+        <div class="nav-languages">
+          <form name="lang" action="/i18n/setlang/" method="post">
+            {% csrf_token %}
+            <div class="form-group my-0">
+              <input type="hidden" name="language" value="{{ LANGUAGE_CODE }}">
+              <select class="form-select form-select-sm" onchange="javascript:document.forms['lang'].elements['language'].value = this.value; document.forms['lang'].submit();">
+                {% for lang in LANGUAGES %}
+                <option value="{{ lang.0 }}" onclick="javascript:document.forms['lang'].elements['language'].value = '{{ lang.0 }}'; document.forms['lang'].submit();" {% if lang.0 == LANGUAGE_CODE %} selected{% endif %}>{% language lang.0 %}{% trans lang.1 %}{% endlanguage %}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </form>
+        </div>
 
+      </div>
     </div>
   </nav>
 
@@ -163,8 +165,7 @@
 
   </div> <!-- footer -->
 
-  <script src="{{ MEDIA_URL }}js/jquery-3.5.1.min.js"></script>
-  <script src="{{ MEDIA_URL }}js/popper.min.js"></script>
+  <script src="{{ MEDIA_URL }}js/jquery-3.6.0.min.js"></script>
   <script src="{{ MEDIA_URL }}js/bootstrap.min.js"></script>
 
   <script>

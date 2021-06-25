@@ -124,7 +124,7 @@
 
   <div class="table-responsive col-lg-10 col-xl-8 px-0">
     <table class="table">
-      <thead class="thead-light">
+      <thead>
         <tr>
           <th>{% trans "Date" %}</th>
           <th>{% trans "Scripts" %}</th>
@@ -142,17 +142,17 @@
       </thead>
       <tbody>
         {% for status in status_list %}
-        <tr class="{% if status.today %}table-info font-weight-bold{% endif %}{% if status.future %}text-muted{% endif %}">
+        <tr class="{% if status.today %}table-info fw-bold{% endif %}{% if status.future %}text-muted{% endif %}">
           <td class="text-nowrap">
             {{ status.date|localdate }}
-            {% if status.today %}<span class="font-weight-normal">({% trans "today" %})</span>{% endif %}
+            {% if status.today %}<span class="fw-normal">({% trans "today" %})</span>{% endif %}
           </td>
           <td class="text-nowrap">
             {{ status.scripts }}
             {% if status.future %} <sup>*</sup>{% endif %}
             {% if status.today %}
             &nbsp;
-            <span class="text-muted font-weight-normal">
+            <span class="text-muted fw-normal">
               [ <a href="{% url 'scripts' %}">{% trans "list" %}</a> ]
             </span>
             {% endif %}
@@ -162,7 +162,7 @@
             {% if status.future %} <sup>*</sup>{% endif %}
             {% if status.today %}
             &nbsp;
-            <span class="text-muted font-weight-normal">
+            <span class="text-muted fw-normal">
               [ <a href="{% url 'scripts_filter' filter_name='language' filter_value='python' %}">{% trans "list" %}</a> ]
             </span>
             {% endif %}
@@ -174,7 +174,7 @@
             </span>
             {% if status.today %}
             &nbsp;
-            <span class="text-muted font-weight-normal">
+            <span class="text-muted fw-normal">
               [ <a href="{% url 'scripts_filter' filter_name='language' filter_value='python3-compatible' %}">{% trans "list" %}</a> ]
             </span>
             {% endif %}
@@ -186,7 +186,7 @@
             </span>
             {% if status.today %}
             &nbsp;
-            <span class="text-muted font-weight-normal">
+            <span class="text-muted fw-normal">
               [ <a href="{% url 'scripts_filter' filter_name='language' filter_value='python2-only' %}">{% trans "list" %}</a> ]
             </span>
             {% endif %}

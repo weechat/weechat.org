@@ -95,7 +95,7 @@
             {% if sort_key != "type" %}
             <th>{% trans "Name" %}</th>
             {% endif %}
-            {% if view_amount %}<th class="text-right">{% trans "Amount" %}</th>{% endif %}
+            {% if view_amount %}<th class="text-end">{% trans "Amount" %}</th>{% endif %}
             {% if sort_key == "date" %}
             <th>{% trans "Comment" %}</th>
             {% else %}
@@ -121,11 +121,11 @@
             {% if sort_key != "type" %}
             <td class="text-nowrap">
               {{ sponsor.name }}
-              {% if sponsor.number > 1 %}<small class="ml-1 text-muted">(#{{ sponsor.number }})</small>{% endif %}
+              {% if sponsor.number > 1 %}<small class="ms-1 text-muted">(#{{ sponsor.number }})</small>{% endif %}
             </td>
             {% endif %}
             {% if view_amount %}
-            <td class="text-nowrap text-right">{{ sponsor.amount|floatformat:"-2" }} &euro;</td>
+            <td class="text-nowrap text-end">{{ sponsor.amount|floatformat:"-2" }} &euro;</td>
             {% endif %}
             {% if sort_key == "date" %}
             <td class="quote">{% if sponsor.comment %}&ldquo; {{ sponsor.comment }} &rdquo;{% endif %}</td>
@@ -141,7 +141,7 @@
             <td></td>
             {% endif %}
             <td><strong>{% trans "Total" %}</strong></td>
-            <td class="text-nowrap text-right"><strong>{{ total|floatformat:"-2" }}</strong> €</td>
+            <td class="text-nowrap text-end"><strong>{{ total|floatformat:"-2" }}</strong> €</td>
             <td></td>
           </tr>
           {% endif %}

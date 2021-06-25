@@ -96,7 +96,7 @@
   <ul class="list-group">
     {% for security in legend_list %}
     <li class="list-group-item">
-      <span class="mr-2">
+      <span class="me-2">
         {{ security.severity_html_indicator|safe }}
       </span>
       <span class="text-severity text-severity{{ security.severity }}">{{ security.severity_i18n }}:</span>

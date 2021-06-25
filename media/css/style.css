@@ -9,6 +9,7 @@ body {
 
 a:not(.btn), a:not(.btn):visited, a:not(.btn):hover, a:not(.btn):active {
   color: #2a6ea1;
+  text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -19,12 +20,12 @@ pre {
   margin-bottom: 0;
 }
 
-.table-striped tbody tr:nth-of-type(odd) {
-  background-color: rgba(0, 0, 0, .02);
+.table-bestlang {
+  background: #f6f6f6 !important;
 }
 
-.table-bestlang {
-  background: #f6f6f6;
+thead tr th {
+  border-bottom-color: #aaa !important;
 }
 
 /* ===== nav bar ===== */
@@ -81,10 +82,6 @@ pre {
 .nav-languages .active {
   font-weight: bold;
   text-decoration: underline;
-}
-
-.nav-languages select {
-  background: #e5f0ff;
 }
 
 /* ===== page content ===== */
