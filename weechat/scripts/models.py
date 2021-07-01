@@ -276,8 +276,8 @@ def handler_scripts_changed(sender, **kwargs):
             value = f'{value}'
             xml += f'    <{key}>{escape(value)}</{key}>\n'
             json_script[key] = value
-            for field in value_i18n:
-                xml += f'    <{field}>{escape(value_i18n[field])}</{field}>\n'
+            for field, field_value in value_i18n.items():
+                xml += f'    <{field}>{escape(field_value)}</{field}>\n'
                 json_script[field] = value_i18n[field]
         xml += '  </plugin>\n'
         json_data.append(json_script)
