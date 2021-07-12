@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-13 16:55+0200\n"
-"PO-Revision-Date: 2021-06-09 12:25+0200\n"
+"PO-Revision-Date: 2021-07-12 11:35+0200\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -240,6 +240,9 @@ msgid ""
 "Use XDG directories by default, add IRC SASL SCRAM mechanisms, add options "
 "to customize commands executed on system signals received."
 msgstr ""
+"Verwenden Sie standardmäßig XDG-Verzeichnisse, fügen Sie IRC-SASL-SCRAM-"
+"Mechanismen hinzu, fügen Sie Optionen hinzu, die bei empfangenen "
+"Systemsignalen Befehle ausführen."
 
 #. Translators: context: Individual / Association / Company
 #: about/models.py:33
@@ -586,7 +589,7 @@ msgstr "Russisch"
 
 #: doc/models.py:72
 msgid "Serbian"
-msgstr ""
+msgstr "Serbisch"
 
 #: doc/models.py:73
 msgid "Turkish"
@@ -3946,6 +3949,33 @@ msgid ""
 "\"https://blog.weechat.org/post/2021/06/13/Version-3.2\">development blog</"
 "a> or <a href=\"/files/changelog/ChangeLog-3.2.html\">ChangeLog</a>."
 msgstr ""
+"Version 3.2 ist verfügbar!\n"
+"\n"
+"Über die neuen Funktionen:\n"
+"\n"
+"- standardmäßig derden XDG Verzeichnisse genutzt (Konfiguration, Daten, "
+"Cache, Laufzeit)\n"
+"- neu: Unterstützung von IRC SASL Mechanismus SCRAM-SHA-1, SCRAM-SHA-256 und "
+"SCRAM-SHA-512\n"
+"- Systemzertifikate automatisch laden, ohne eine feste Dateizuordnung mit "
+"Zertifikaten anzugeben\n"
+"- neu: Optionen um Befehle auszuführen wenn Systemsignale empfangen werden "
+"(SIGHUP, SIGQUIT, SIGTERM, SIGUSR1, SIGUSR2)\n"
+"- neu: Bar-Item \"tls_version\" und Buflistformat\n"
+"- neu: Signale \"cursor_start\" und \"cursor_end\"\n"
+"- neu: Funktion crypto_hmac in API\n"
+"- neu: Übersetzte Zeichenkette in bei der Auswertung von Ausdrücken mit "
+"\"translate:xxx\"\n"
+"- neu: Info \"weechat_daemon\"\n"
+"- neu: Python stub für WeeChat API\n"
+"- neu: Variable \"${tg_shell_argc}\" und \"${tg_shell_argvN}\" im "
+"Triggerbefehl für evaluierte Zeichenketten\n"
+"- weitere Fehler behoben.\n"
+"\n"
+"Eine vollständige Liste der neuen Funktionen und behobenen Fehler finden Sie "
+"unter <a href=\"https://blog.weechat.org/post/2021/06/13/"
+"Version-3.2\">Entwickler Blog</a> oder <a href=\"/files/changelog/"
+"ChangeLog-3.2.html\">Änderungsprotokoll</a>."
 
 #: news/_i18n_info.py:148
 msgid ""
@@ -6006,10 +6036,8 @@ msgstr "Snarln Benachrichtigung bei Highlight-Nachrichten."
 
 #. Translators: description for script "soju.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:650
-#, fuzzy
-#| msgid "No documentation."
 msgid "Soju bouncer integration."
-msgstr "Keine Dokumentation."
+msgstr "Soju Bouncer Integration."
 
 #. Translators: description for script "sort_servers.py" (0.3.9+)
 #: scripts/_i18n_scripts.py:652
