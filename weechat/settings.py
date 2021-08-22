@@ -42,15 +42,15 @@ LANGUAGE_CODE = 'en-us'
 USE_I18N = True
 USE_L10N = False
 
-ugettext = lambda s: s  # noqa: E731  pylint: disable=C0103
+gettext = lambda s: s  # noqa: E731  pylint: disable=C0103
 LANGUAGES = (
-    ('en', ugettext('English')),
-    ('fr', ugettext('French')),
-    ('de', ugettext('German')),
-    ('it', ugettext('Italian')),
-    ('pl', ugettext('Polish')),
-    ('pt-br', ugettext('Portuguese (Brazil)')),
-    ('ja', ugettext('Japanese')),
+    ('en', gettext('English')),
+    ('fr', gettext('French')),
+    ('de', gettext('German')),
+    ('it', gettext('Italian')),
+    ('pl', gettext('Polish')),
+    ('pt-br', gettext('Portuguese (Brazil)')),
+    ('ja', gettext('Japanese')),
 )
 LANGUAGES_LOCALES = {
     'en': 'en_US',
@@ -65,12 +65,12 @@ LANGUAGES_LOCALES = {
 # Translators: this is a date format, see: http://www.php.net/date
 # Translators: (note: the result string must be short, use abbreviation
 # Translators: for month if possible)
-DATE_FORMAT = ugettext('M j, Y')
+DATE_FORMAT = gettext('M j, Y')
 
 # Translators: this is a date/time format, see: http://www.php.net/date
 # Translators: (note: the result string must be short, use abbreviation
 # Translators: for month if possible)
-DATETIME_FORMAT = ugettext('M j, Y H:i')
+DATETIME_FORMAT = gettext('M j, Y H:i')
 
 MEDIA_ROOT = os.path.normpath(os.path.join(BASE_DIR, '..', 'media'))
 MEDIA_URL = '/media/'

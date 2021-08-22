@@ -31,7 +31,7 @@ from django.conf import settings
 from django.db import models
 from django.db.models.signals import pre_save, post_save, post_delete
 from django.utils import translation
-from django.utils.translation import ugettext
+from django.utils.translation import gettext
 
 from weechat.common.decorators import disable_for_loaddata
 from weechat.common.i18n import i18n_autogen
@@ -127,7 +127,7 @@ class Script(models.Model):
             return (f'<img src="{settings.MEDIA_URL}images/empty.png" alt="" '
                     f'width="10" height="10">')
         return (f'<img src="{settings.MEDIA_URL}images/star.png" alt="*" '
-                f'title="{ugettext("Popular script")}" '
+                f'title="{gettext("Popular script")}" '
                 f'width="10" height="10">')
 
     def name_with_extension(self):
@@ -146,15 +146,15 @@ class Script(models.Model):
         """Return translated description."""
         if not isinstance(self.desc_en, str):
             # python 2.x
-            return ugettext(self.desc_en.encode('utf-8'))
-        return ugettext(self.desc_en)
+            return gettext(self.desc_en.encode('utf-8'))
+        return gettext(self.desc_en)
 
     def disabled_i18n(self):
         """Return the translated disabled reason."""
         if not isinstance(self.disabled, str):
             # python 2.x
-            return ugettext(self.disabled.encode('utf-8'))
-        return ugettext(self.disabled)
+            return gettext(self.disabled.encode('utf-8'))
+        return gettext(self.disabled)
 
     def version_weechat(self):
         """Return the WeeChat supported versions in a string."""
@@ -271,7 +271,7 @@ def handler_scripts_changed(sender, **kwargs):
                     for lang, locale in settings.LANGUAGES_LOCALES.items():
                         if lang[0:2] != 'en':
                             translation.activate(lang)
-                            value_i18n[f'desc_{locale}'] = ugettext(value)
+                            value_i18n[f'desc_{locale}'] = gettext(value)
                             translation.deactivate()
             value = f'{value}'
             xml += f'    <{key}>{escape(value)}</{key}>\n'

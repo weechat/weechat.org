@@ -21,7 +21,7 @@
 
 from django.db import models
 from django.db.models.signals import post_save
-from django.utils.translation import ugettext, ugettext_lazy
+from django.utils.translation import gettext, gettext_lazy
 
 from weechat.common.i18n import i18n_autogen
 from weechat.common.templatetags.localdate import localdate
@@ -30,13 +30,13 @@ from weechat.common.templatetags.localdate import localdate
 SPONSOR_TYPE_CHOICES = (
     (0,
      # Translators: context: Individual / Association / Company
-     ugettext_lazy('Individual')),
+     gettext_lazy('Individual')),
     (1,
      # Translators: context: Individual / Association / Company
-     ugettext_lazy('Association')),
+     gettext_lazy('Association')),
     (2,
      # Translators: context: Individual / Association / Company
-     ugettext_lazy('Company')),
+     gettext_lazy('Company')),
 )
 SPONSOR_TYPE_SVG = {
     0: 'person',
@@ -72,7 +72,7 @@ class Keydate(models.Model):
 
     def text_i18n(self):
         """Return translated key date."""
-        return ugettext(self.text.replace('\r\n', '\n'))
+        return gettext(self.text.replace('\r\n', '\n'))
 
     class Meta:
         """Meta class for KeyDate."""
@@ -112,7 +112,7 @@ class Sponsor(models.Model):
 
     def sponsortype_i18n(self):
         """Return the translated sponsor type."""
-        return ugettext(dict(SPONSOR_TYPE_CHOICES)[self.sponsortype])
+        return gettext(dict(SPONSOR_TYPE_CHOICES)[self.sponsortype])
 
     def sponsortype_svg(self):
         """Return the name of SVG for the sponsor type."""

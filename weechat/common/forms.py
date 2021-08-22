@@ -20,7 +20,7 @@
 """Common classes/functions for forms."""
 
 from django import forms
-from django.utils.translation import ugettext
+from django.utils.translation import gettext
 
 
 class BootstrapBoundField(forms.BoundField):
@@ -81,9 +81,9 @@ class TestField(forms.CharField):
 
     def clean(self, value):
         if not value:
-            raise forms.ValidationError(ugettext('This field is required.'))
+            raise forms.ValidationError(gettext('This field is required.'))
         if value.lower() != 'no':
-            raise forms.ValidationError(ugettext('This field is required.'))
+            raise forms.ValidationError(gettext('This field is required.'))
         return value
 
     def get_bound_field(self, form, field_name):

@@ -23,7 +23,7 @@ from django import template
 from django.conf import settings
 from django.utils import dateformat
 from django.utils.safestring import mark_safe
-from django.utils.translation import ugettext
+from django.utils.translation import gettext
 
 # pylint: disable=invalid-name
 register = template.Library()
@@ -38,9 +38,9 @@ def localdate(value, fmt='date'):
     Another fmt it is used as-is.
     """
     if fmt == 'date':
-        fmt = ugettext(settings.DATE_FORMAT)
+        fmt = gettext(settings.DATE_FORMAT)
     elif fmt == 'datetime':
-        fmt = ugettext(settings.DATETIME_FORMAT)
+        fmt = gettext(settings.DATETIME_FORMAT)
     return mark_safe('<time datetime="%s">%s</time>' % (
         value.isoformat(),
         dateformat.format(value, fmt),

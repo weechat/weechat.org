@@ -27,7 +27,7 @@ from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Sum
 from django.shortcuts import render
-from django.utils.translation import ugettext
+from django.utils.translation import gettext
 
 from weechat.about.models import (
     Screenshot,
@@ -119,7 +119,7 @@ def donate(request, sort_key='date', view_key=''):
                         .order_by('-amount'))
         total = sum(sponsor['amount'] for sponsor in sponsor_list)
         for sponsor in sponsor_list:
-            sponsor['sponsortype_i18n'] = ugettext(
+            sponsor['sponsortype_i18n'] = gettext(
                 dict(SPONSOR_TYPE_CHOICES)[sponsor['sponsortype']])
             sponsor['sponsortype_svg'] = \
                 SPONSOR_TYPE_SVG[sponsor['sponsortype']]
@@ -129,7 +129,7 @@ def donate(request, sort_key='date', view_key=''):
                         .order_by('-amount')[:sort_count])
         total = sum(sponsor['amount'] for sponsor in sponsor_list)
         for sponsor in sponsor_list:
-            sponsor['sponsortype_i18n'] = ugettext(
+            sponsor['sponsortype_i18n'] = gettext(
                 dict(SPONSOR_TYPE_CHOICES)[sponsor['sponsortype']])
             sponsor['sponsortype_svg'] = \
                 SPONSOR_TYPE_SVG[sponsor['sponsortype']]

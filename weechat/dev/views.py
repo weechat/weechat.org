@@ -24,7 +24,7 @@ import re
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.utils.translation import ugettext, ugettext_lazy
+from django.utils.translation import gettext, gettext_lazy
 
 from weechat.common.path import files_path_join, media_path_join
 from weechat.common.templatetags.version import version_as_int
@@ -34,68 +34,68 @@ from weechat.download.models import Release
 INFO_KEYS = (
     (
         'stable',
-        ugettext_lazy('Stable version.'),
+        gettext_lazy('Stable version.'),
     ),
     (
         'stable_number',
-        ugettext_lazy('Stable version, as number, like plugin API: '
-                      'info_get("version_number").'),
+        gettext_lazy('Stable version, as number, like plugin API: '
+                     'info_get("version_number").'),
     ),
     (
         'stable_date',
-        ugettext_lazy('Date of stable version (format: "YYYY-MM-DD").'),
+        gettext_lazy('Date of stable version (format: "YYYY-MM-DD").'),
     ),
     (
         'devel',
-        ugettext_lazy('Development version.'),
+        gettext_lazy('Development version.'),
     ),
     (
         'git',
-        ugettext_lazy('Output of "git rev-parse HEAD" for sources '
-                      'repository.'),
+        gettext_lazy('Output of "git rev-parse HEAD" for sources '
+                     'repository.'),
     ),
     (
         'git_scripts',
-        ugettext_lazy('Output of "git rev-parse HEAD" for scripts '
-                      'repository.'),
+        gettext_lazy('Output of "git rev-parse HEAD" for scripts '
+                     'repository.'),
     ),
     (
         'next_stable',
-        ugettext_lazy('Next stable version.'),
+        gettext_lazy('Next stable version.'),
     ),
     (
         'next_stable_number',
-        ugettext_lazy('Next stable version, as number, like plugin API: '
-                      'info_get("version_number").'),
+        gettext_lazy('Next stable version, as number, like plugin API: '
+                     'info_get("version_number").'),
     ),
     (
         'next_stable_date',
-        ugettext_lazy('Approximate date of next stable version '
-                      '(format: "YYYY-MM-DD").'),
+        gettext_lazy('Approximate date of next stable version '
+                     '(format: "YYYY-MM-DD").'),
     ),
     (
         'release_signing_fingerprint',
-        ugettext_lazy('Release signing key fingerprint '
-                      '(format: PGP fingerprint).'),
+        gettext_lazy('Release signing key fingerprint '
+                     '(format: PGP fingerprint).'),
     ),
     (
         'release_signing_key',
-        ugettext_lazy('Release signing key (format: PGP public key).'),
+        gettext_lazy('Release signing key (format: PGP public key).'),
     ),
     (
         'debian_repository_signing_fingerprint',
-        ugettext_lazy('Debian/Ubuntu repository signing key fingerprint '
-                      '(format: PGP fingerprint).'),
+        gettext_lazy('Debian/Ubuntu repository signing key fingerprint '
+                     '(format: PGP fingerprint).'),
     ),
     (
         'debian_repository_signing_key',
-        ugettext_lazy('Debian/Ubuntu repository signing key '
-                      '(format: PGP public key).'),
+        gettext_lazy('Debian/Ubuntu repository signing key '
+                     '(format: PGP public key).'),
     ),
     (
         'all',
-        ugettext_lazy('All non-binary infos '
-                      '(one info by line, format: "info:value").'),
+        gettext_lazy('All non-binary infos '
+                     '(one info by line, format: "info:value").'),
     ),
 )
 
@@ -287,7 +287,7 @@ def info(request, name=None):
     infos = []
     for oneinfo in INFO_KEYS:
         if oneinfo[0] in BINARY_INFO_KEYS:
-            value = ugettext('(binary data)')
+            value = gettext('(binary data)')
         else:
             value = get_info(oneinfo[0], version)
         if oneinfo[0].endswith('_number'):

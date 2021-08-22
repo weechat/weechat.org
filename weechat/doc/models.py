@@ -21,7 +21,7 @@
 
 from django.db import models
 from django.db.models.signals import post_save
-from django.utils.translation import ugettext, ugettext_noop
+from django.utils.translation import gettext, gettext_noop
 
 from weechat.common.i18n import i18n_autogen
 from weechat.common.templatetags.localdate import localdate
@@ -33,44 +33,44 @@ CVE_URL = ('<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=%(cve)s" '
 
 SECURITY_SEVERITIES = (
     # Translators: this is a severity level for a security vulnerability
-    (0, ugettext_noop('low')),
+    (0, gettext_noop('low')),
     # Translators: this is a severity level for a security vulnerability
-    (1, ugettext_noop('medium')),
+    (1, gettext_noop('medium')),
     # Translators: this is a severity level for a security vulnerability
-    (2, ugettext_noop('high')),
+    (2, gettext_noop('high')),
     # Translators: this is a severity level for a security vulnerability
-    (3, ugettext_noop('critical')),
+    (3, gettext_noop('critical')),
 )
 SECURITY_SEVERITIES_DESC = {
-    0: ugettext_noop('minor issue occuring in very specific conditions, '
-                     'low impact. Upgrade is not mandatory.'),
-    1: ugettext_noop('problem affecting a specific feature. Upgrade is '
-                     '<strong>recommended</strong> at least for people using '
-                     'the feature.'),
-    2: ugettext_noop('severe problem. Upgrade is '
-                     '<strong>highly recommended</strong>.'),
-    3: ugettext_noop('critical problem, risk of damage on your system. '
-                     '<strong>You MUST upgrade immediately!</strong>'),
+    0: gettext_noop('minor issue occuring in very specific conditions, '
+                    'low impact. Upgrade is not mandatory.'),
+    1: gettext_noop('problem affecting a specific feature. Upgrade is '
+                    '<strong>recommended</strong> at least for people using '
+                    'the feature.'),
+    2: gettext_noop('severe problem. Upgrade is '
+                    '<strong>highly recommended</strong>.'),
+    3: gettext_noop('critical problem, risk of damage on your system. '
+                    '<strong>You MUST upgrade immediately!</strong>'),
 }
 
 
 class Language(models.Model):
     """A language with at least one translated doc."""
     LANG_I18N = {
-        'cs': ugettext_noop('Czech'),
-        'de': ugettext_noop('German'),
-        'en': ugettext_noop('English'),
-        'es': ugettext_noop('Spanish'),
-        'fr': ugettext_noop('French'),
-        'hu': ugettext_noop('Hungarian'),
-        'it': ugettext_noop('Italian'),
-        'ja': ugettext_noop('Japanese'),
-        'pl': ugettext_noop('Polish'),
-        'pt': ugettext_noop('Portuguese'),
-        'pt_BR': ugettext_noop('Portuguese (Brazil)'),
-        'ru': ugettext_noop('Russian'),
-        'sr': ugettext_noop('Serbian'),
-        'tr': ugettext_noop('Turkish'),
+        'cs': gettext_noop('Czech'),
+        'de': gettext_noop('German'),
+        'en': gettext_noop('English'),
+        'es': gettext_noop('Spanish'),
+        'fr': gettext_noop('French'),
+        'hu': gettext_noop('Hungarian'),
+        'it': gettext_noop('Italian'),
+        'ja': gettext_noop('Japanese'),
+        'pl': gettext_noop('Polish'),
+        'pt': gettext_noop('Portuguese'),
+        'pt_BR': gettext_noop('Portuguese (Brazil)'),
+        'ru': gettext_noop('Russian'),
+        'sr': gettext_noop('Serbian'),
+        'tr': gettext_noop('Turkish'),
     }
     lang = models.CharField(max_length=8, primary_key=True)
     priority = models.IntegerField(default=0)
@@ -80,7 +80,7 @@ class Language(models.Model):
 
     def lang_i18n(self):
         """Return the translated language."""
-        return ugettext(self.LANG_I18N[self.lang])
+        return gettext(self.LANG_I18N[self.lang])
 
     class Meta:
         ordering = ['priority']
@@ -102,14 +102,14 @@ class Version(models.Model):
 class Doc(models.Model):
     """A WeeChat document file."""
     NAME_I18N = {
-        'faq': ugettext_noop('FAQ'),
-        'user': ugettext_noop('User\'s guide'),
-        'plugin_api': ugettext_noop('Plugin API reference'),
-        'scripting': ugettext_noop('Scripting guide'),
-        'quickstart': ugettext_noop('Quick Start guide'),
-        'tester': ugettext_noop('Tester\'s guide'),
-        'dev': ugettext_noop('Developer\'s guide'),
-        'relay_protocol': ugettext_noop('Relay protocol'),
+        'faq': gettext_noop('FAQ'),
+        'user': gettext_noop('User\'s guide'),
+        'plugin_api': gettext_noop('Plugin API reference'),
+        'scripting': gettext_noop('Scripting guide'),
+        'quickstart': gettext_noop('Quick Start guide'),
+        'tester': gettext_noop('Tester\'s guide'),
+        'dev': gettext_noop('Developer\'s guide'),
+        'relay_protocol': gettext_noop('Relay protocol'),
     }
     version = models.ForeignKey(Version, on_delete=models.CASCADE)
     name = models.CharField(max_length=64)
@@ -121,7 +121,7 @@ class Doc(models.Model):
 
     def name_i18n(self):
         """Return the translated doc name."""
-        return ugettext(self.NAME_I18N[self.name])
+        return gettext(self.NAME_I18N[self.name])
 
     class Meta:
         ordering = ['priority']
@@ -163,12 +163,12 @@ class Security(models.Model):
     def severity_i18n(self):
         """Return translated severity."""
         text = dict(SECURITY_SEVERITIES).get(self.severity, '')
-        return ugettext(text) if text else ''
+        return gettext(text) if text else ''
 
     def severity_description_i18n(self):
         """Return translated severity."""
         text = SECURITY_SEVERITIES_DESC.get(self.severity, '')
-        return ugettext(text) if text else ''
+        return gettext(text) if text else ''
 
     def severity_html_indicator(self):
         """Return HTML code for security indicator."""
@@ -207,13 +207,13 @@ class Security(models.Model):
     def description_i18n(self):
         """Return the translated description."""
         if self.description:
-            return ugettext(self.description.replace('\r\n', '\n'))
+            return gettext(self.description.replace('\r\n', '\n'))
         return ''
 
     def workaround_i18n(self):
         """Return translated workaround."""
         if self.workaround:
-            return ugettext(self.workaround.replace('\r\n', '\n'))
+            return gettext(self.workaround.replace('\r\n', '\n'))
         return ''
 
     class Meta:

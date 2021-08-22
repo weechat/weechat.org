@@ -27,7 +27,7 @@ import pytz
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render, redirect
-from django.utils.translation import ugettext
+from django.utils.translation import gettext
 
 from weechat.common.path import files_path_join
 from weechat.doc.models import (
@@ -95,7 +95,7 @@ def get_i18n_stats():
                         nick, name = I18N_MAINTAINER.get(lang, ('-', ''))
                         langs.append({
                             'lang': lang,
-                            'lang_i18n': (ugettext(Language.LANG_I18N[lang])
+                            'lang_i18n': (gettext(Language.LANG_I18N[lang])
                                           if lang in Language.LANG_I18N
                                           else lang),
                             'nick': nick,

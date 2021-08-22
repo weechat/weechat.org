@@ -23,7 +23,7 @@ import re
 
 from django.db import models
 from django.db.models.signals import post_save
-from django.utils.translation import ugettext
+from django.utils.translation import gettext
 
 from weechat.common.i18n import i18n_autogen
 from weechat.common.templatetags.localdate import localdate
@@ -52,13 +52,13 @@ class Info(models.Model):
         match = PATTERN_TITLE_VERSION.match(self.title)
         if match:
             # if the title is "Version x.y.z", translate only "Version"
-            return f'{ugettext(match.group(1))} {match.group(2)}'
-        return ugettext(self.title)
+            return f'{gettext(match.group(1))} {match.group(2)}'
+        return gettext(self.title)
 
     def text_i18n(self):
         """Return translated text."""
         if self.text:
-            return ugettext(self.text.replace('\r\n', '\n'))
+            return gettext(self.text.replace('\r\n', '\n'))
         return ''
 
     def date_title_url(self):
