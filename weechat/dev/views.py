@@ -147,16 +147,16 @@ def stats_repo(request, stats='weechat'):
     scripts_downloads = None
 
     try:
-        with open(files_path_join('stats',
-                                  f'git_{stats}_commits.txt'), 'r') as _file:
+        with open(files_path_join('stats', f'git_{stats}_commits.txt'),
+                  'r', encoding='utf-8') as _file:
             git_commits = _file.read().strip().split(',')
     except:  # noqa: E722  pylint: disable=bare-except
         pass
 
     if stats in ('weechat', 'weechat-relay', 'qweechat'):
         try:
-            with open(files_path_join('stats',
-                                      f'sloc_{stats}.txt'), 'r') as _file:
+            with open(files_path_join('stats', f'sloc_{stats}.txt'),
+                      'r', encoding='utf-8') as _file:
                 sloc = _file.read()
         except:  # noqa: E722  pylint: disable=bare-except
             pass
@@ -172,8 +172,8 @@ def stats_repo(request, stats='weechat'):
         repository = ('https://github.com/weechat/scripts')
         svg_list += ['downloads']
         try:
-            with open(files_path_join('stats',
-                                      'scripts_downloads.txt'), 'r') as _file:
+            with open(files_path_join('stats', 'scripts_downloads.txt'),
+                      'r', encoding='utf-8') as _file:
                 scripts_downloads = _file.read()
         except:  # noqa: E722  pylint: disable=bare-except
             pass
@@ -214,7 +214,8 @@ def get_info(name, version):
     if name == 'git':
         git = ''
         try:
-            with open(files_path_join('git_sources_head.txt'), 'r') as _file:
+            with open(files_path_join('git_sources_head.txt'),
+                      'r', encoding='utf-8') as _file:
                 git = _file.read().strip()
         except:  # noqa: E722  pylint: disable=bare-except
             pass
@@ -222,7 +223,8 @@ def get_info(name, version):
     if name == 'git_scripts':
         git = ''
         try:
-            with open(files_path_join('git_scripts_head.txt'), 'r') as _file:
+            with open(files_path_join('git_scripts_head.txt'),
+                      'r', encoding='utf-8') as _file:
                 git = _file.read().strip()
         except:  # noqa: E722  pylint: disable=bare-except
             pass

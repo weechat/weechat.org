@@ -76,7 +76,7 @@ def get_i18n_stats():
         timezone = pytz.timezone(settings.TIME_ZONE)
         filename = files_path_join('stats', 'i18n.txt')
         date = datetime.fromtimestamp(os.path.getmtime(filename), tz=timezone)
-        with open(filename, 'r') as _file:
+        with open(filename, 'r', encoding='utf-8') as _file:
             langs = []
             for line in _file:
                 items = line.split(':')

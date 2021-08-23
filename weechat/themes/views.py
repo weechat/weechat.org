@@ -116,7 +116,7 @@ def form_add(request):
 
             # write theme in pending directory
             filename = files_path_join('themes', 'pending', theme.name)
-            with open(filename, 'w') as _file:
+            with open(filename, 'w', encoding='utf-8') as _file:
                 _file.write(content)
 
             # send e-mail
