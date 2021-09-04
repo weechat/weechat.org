@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-13 16:55+0200\n"
+"POT-Creation-Date: 2021-09-04 21:11+0200\n"
 "PO-Revision-Date: 2021-06-06 20:58+0200\n"
 "Last-Translator: Marco Paolone <marcopaolone@gmail.com>\n"
 "Language-Team: Italian <marcopaolone@gmail.com>\n"
@@ -340,7 +340,7 @@ msgstr ""
 msgid "All non-binary infos (one info by line, format: \"info:value\")."
 msgstr "tutte le info (una info per riga, formato \"info:valore\")"
 
-#: dev/views.py:290
+#: dev/views.py:292
 msgid "(binary data)"
 msgstr ""
 
@@ -374,37 +374,49 @@ msgstr ""
 #: doc/_i18n_security.py:19
 #, fuzzy
 #| msgid "Crash when receiving special chars in IRC messages."
-msgid "Crash when receiving a malformed IRC message 352 (WHO)."
+msgid "Crash when decoding a malformed websocket frame in relay plugin."
 msgstr "Crash alla ricezione di caratteri speciali nei messaggi IRC."
 
 #: doc/_i18n_security.py:20
-msgid "Crash when receiving special chars in IRC messages."
+#, fuzzy
+#| msgid "Crash when receiving special chars in IRC messages."
+msgid "Crash when receiving a malformed IRC message 352 (WHO)."
 msgstr "Crash alla ricezione di caratteri speciali nei messaggi IRC."
 
 #: doc/_i18n_security.py:21
+msgid "Crash when receiving special chars in IRC messages."
+msgstr "Crash alla ricezione di caratteri speciali nei messaggi IRC."
+
+#: doc/_i18n_security.py:22
 msgid ""
 "Create a trigger (with WeeChat >= 1.1): /trigger add irc_dcc_quotes modifier "
 "\"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND ${\\x22} \" "
 "\"/.*//\""
 msgstr ""
 
-#: doc/_i18n_security.py:22
+#: doc/_i18n_security.py:23
 msgid ""
 "Date/time conversion specifiers are expanded after replacing buffer local "
 "variables in name of log files. In some cases, this can lead to an error in "
 "function strftime and a crash caused by the use of an uninitialized buffer."
 msgstr ""
 
-#: doc/_i18n_security.py:23
+#: doc/_i18n_security.py:24
 msgid ""
 "Do not use command /notify with nicks containing formatting chars like \"%\"."
 msgstr ""
 
-#: doc/_i18n_security.py:24
+#: doc/_i18n_security.py:25
 msgid "Do not use irc protocol in relay plugin."
 msgstr ""
 
-#: doc/_i18n_security.py:25
+#: doc/_i18n_security.py:26
+msgid ""
+"Either: remove all relays, unload relay plugin or secure relay to allow only "
+"some trusted IP addresses (option relay.network.allowed_ips)."
+msgstr ""
+
+#: doc/_i18n_security.py:27
 msgid ""
 "Missing verifications in SSL certificate, which allows man-in-the-middle "
 "attackers to spoof an SSL chat server via an arbitrary certificate."
@@ -413,30 +425,30 @@ msgstr ""
 "the-middle di falsificare un server di chat SSL tramite certificato "
 "arbitrario."
 
-#: doc/_i18n_security.py:26
+#: doc/_i18n_security.py:28
 msgid ""
 "Remove/unload all scripts calling function hook_process (for maximum safety)."
 msgstr ""
 
-#: doc/_i18n_security.py:27
+#: doc/_i18n_security.py:29
 msgid ""
 "Turn off option \"irc.network.send_unknown_commands\" or do not use "
 "formatting chars like \"%\" when sending unknown commands to server."
 msgstr ""
 
-#: doc/_i18n_security.py:28
+#: doc/_i18n_security.py:30
 msgid "Uncontrolled format string in API function infobar_printf."
 msgstr ""
 "Formato della stringa non verificato nella funzione API infobar_printf."
 
-#: doc/_i18n_security.py:29
+#: doc/_i18n_security.py:31
 msgid ""
 "Uncontrolled format string when IRC commands are redirected by relay plugin. "
 "If the output or redirected command contains formatting chars like \"%\", "
 "this can lead to a crash of WeeChat."
 msgstr ""
 
-#: doc/_i18n_security.py:30
+#: doc/_i18n_security.py:32
 #, fuzzy
 msgid ""
 "Uncontrolled format string when sending IRC \"ison\" command for nicks "
@@ -444,17 +456,17 @@ msgid ""
 msgstr ""
 "Formato della stringa non verificato nella funzione API infobar_printf."
 
-#: doc/_i18n_security.py:31
+#: doc/_i18n_security.py:33
 msgid ""
 "Uncontrolled format string when sending unknown IRC command to server (if "
 "option \"irc.network.send_unknown_commands\" is on)."
 msgstr ""
 
-#: doc/_i18n_security.py:32
+#: doc/_i18n_security.py:34
 msgid "Unload the logger plugin: /plugin unload logger"
 msgstr ""
 
-#: doc/_i18n_security.py:33
+#: doc/_i18n_security.py:35
 msgid ""
 "Untrusted command for function hook_process could lead to execution of "
 "commands, because of shell expansions (so the problem is only caused by some "
@@ -837,7 +849,7 @@ msgstr ""
 "Nota: mancano molte funzionalità, come la connessione TLS, la gestione "
 "dell'elenco contatti, informazioni di presenza, MUC e transport."
 
-#: news/_i18n_info.py:33 templates/base.html:36 templates/base.html:97
+#: news/_i18n_info.py:33 templates/base.html:37 templates/base.html:99
 #: templates/home/home.html:109
 msgid "Documentation"
 msgstr "Documentazione"
@@ -3117,6 +3129,32 @@ msgid ""
 msgstr ""
 
 #: news/_i18n_info.py:148
+msgid "Version 3.2.1 (security release)"
+msgstr ""
+
+#: news/_i18n_info.py:149
+#, fuzzy
+#| msgid ""
+#| "Version 0.2.6.1 is available. This release fixes a crash when receiving "
+#| "some special chars in IRC messages.\n"
+#| "\n"
+#| "It is strongly recommended to upgrade to this version for all users of "
+#| "version 0.2.6 (versions 0.2.5 or older are not affected by this bug)."
+msgid ""
+"Version 3.2.1 is available, it fixes a security vulnerability.\n"
+"Upgrade is recommended for all users.\n"
+"\n"
+"More information on the <a href=\"/doc/security/\">page with security "
+"issues</a>."
+msgstr ""
+"È disponibile la versione 0.2.6.1. Questo rilascio corregge un crash con la "
+"ricezione di alcuni caratteri speciali nei messaggi IRC.\n"
+"\n"
+"Si raccomanda vivamente l'aggiornamento a questa versione per tutti gli "
+"utenti della versione 0.2.6 (le versioni 0.2.5 e precedenti non sono affette "
+"da questo bug)."
+
+#: news/_i18n_info.py:150
 msgid ""
 "Version v0.1.2 is available!\n"
 "\n"
@@ -3150,11 +3188,11 @@ msgstr ""
 "Aggiunta, 24-05-2005 : corretto crash all'avvio e rilevamento Perl/Python, "
 "ora la versione è 0.1.2.1."
 
-#: news/_i18n_info.py:149
+#: news/_i18n_info.py:151
 msgid "WeeChat - Wee Enhanced Environment for Chat"
 msgstr "WeeChat - Wee Enhanced Environment for Chat"
 
-#: news/_i18n_info.py:150
+#: news/_i18n_info.py:152
 msgid ""
 "WeeChat IRC channels (official and non-official ones) have moved from "
 "freenode to <a href=\"https://libera.chat/\">libera.chat</a>.\n"
@@ -3165,7 +3203,7 @@ msgid ""
 "See you soon there!"
 msgstr ""
 
-#: news/_i18n_info.py:151
+#: news/_i18n_info.py:153
 msgid ""
 "WeeChat has many new important features since some weeks:\n"
 "- multi-windows management (with horizontal and vertical window split)\n"
@@ -3188,12 +3226,12 @@ msgstr ""
 "Sentitevi liberi di notificare qualunque problema o suggerimento per "
 "migliorare la navigazione tra buffer/finestre."
 
-#: news/_i18n_info.py:152
+#: news/_i18n_info.py:154
 #, fuzzy
 msgid "WeeChat in Cygwin"
 msgstr "WeeChat è:"
 
-#: news/_i18n_info.py:153
+#: news/_i18n_info.py:155
 msgid ""
 "WeeChat is now in Cygwin, and can be installed with setup.exe.\n"
 "Version 0.4.2 is available for 32 and 64-bit Cygwin.\n"
@@ -3202,7 +3240,7 @@ msgid ""
 "yet available in Cygwin."
 msgstr ""
 
-#: news/_i18n_info.py:154
+#: news/_i18n_info.py:156
 msgid ""
 "WeeChat project is started.\n"
 "\n"
@@ -3222,7 +3260,7 @@ msgstr ""
 "- veloce, leggero ed estensibile con script.\n"
 "-..."
 
-#: news/_i18n_info.py:155
+#: news/_i18n_info.py:157
 msgid ""
 "WeeChat project now accepts donations via Paypal account, with secured "
 "payment."
@@ -3230,7 +3268,7 @@ msgstr ""
 "Il progetto WeeChat ora accetta donazioni tramite account Paypal, con "
 "pagamento sicuro."
 
-#: news/_i18n_info.py:156
+#: news/_i18n_info.py:158
 msgid ""
 "WeeChat project now accepts recurring donations via Liberapay, which has "
 "very low fees (see <a href=\"https://liberapay.com/about/faq#differences"
@@ -3238,7 +3276,7 @@ msgid ""
 "platforms</a>)."
 msgstr ""
 
-#: news/_i18n_info.py:157
+#: news/_i18n_info.py:159
 msgid ""
 "WeeChat repositories (weechat, scripts, qweechat) have been moved to GitHub, "
 "in WeeChat organization: <a href=\"https://github.com/weechat\">https://"
@@ -3248,15 +3286,15 @@ msgid ""
 "repositories-moved-to-Github\">development blog</a>."
 msgstr ""
 
-#: news/_i18n_info.py:158
+#: news/_i18n_info.py:160
 msgid "WeeChat screenshot"
 msgstr "Schermata di WeeChat"
 
-#: news/_i18n_info.py:159
+#: news/_i18n_info.py:161
 msgid "WeeChat scripts page"
 msgstr "Pagina degli script di WeeChat"
 
-#: news/_i18n_info.py:160
+#: news/_i18n_info.py:162
 msgid ""
 "WeeChat scripts page (today Perl scripts only) has been added.\n"
 "On this page you can submit your script (need to be approved by WeeChat "
@@ -3272,7 +3310,7 @@ msgstr ""
 "Nota: gli script Perl richiedono una versione di WeeChat > 0.0.3, per cui "
 "bisogna scaricare la versione di sviluppo."
 
-#: news/_i18n_info.py:161
+#: news/_i18n_info.py:163
 msgid ""
 "WeeChat story page is now available, as screenshots. You can see differences "
 "between all versions in one view!\n"
@@ -3282,15 +3320,15 @@ msgstr ""
 "notare la differenza tra tutte le versioni in un colpo solo!\n"
 "È visibile anche la versione di sviluppo ed è aggiornata di frequente."
 
-#: news/_i18n_info.py:162
+#: news/_i18n_info.py:164
 msgid "WeeChat users map"
 msgstr "Mappa utenti WeeChat"
 
-#: news/_i18n_info.py:163
+#: news/_i18n_info.py:165
 msgid "WeeChat will merge with irssi"
 msgstr "WeeChat si unirà ad irssi"
 
-#: news/_i18n_info.py:164
+#: news/_i18n_info.py:166
 msgid ""
 "WeeChat, the fast, light and extensible IRC client, is released for the "
 "first time, version 0.0.1.\n"
@@ -3338,7 +3376,7 @@ msgstr ""
 "Tutti i suggerimenti e le notifiche di bug sono benvenuti, sulla pagina di "
 "supporto di WeeChat troverete il modo per contattarci."
 
-#: news/_i18n_info.py:165
+#: news/_i18n_info.py:167
 #, fuzzy
 #| msgid "Packages"
 msgid "XZ packages"
@@ -5364,27 +5402,27 @@ msgid "about"
 msgstr "informazioni su"
 
 #: templates/about/about.html:11 templates/about/history.html:45
-#: templates/base.html:87 templates/home/home.html:43
+#: templates/base.html:89 templates/home/home.html:43
 msgid "Features"
 msgstr "Caratteristiche"
 
-#: templates/about/about.html:12 templates/base.html:88
+#: templates/about/about.html:12 templates/base.html:90
 #: templates/home/home.html:86
 #, fuzzy
 msgid "Interfaces"
 msgstr "interfaccia testuale"
 
-#: templates/about/about.html:13 templates/base.html:89
+#: templates/about/about.html:13 templates/base.html:91
 #: templates/home/home.html:46 templates/home/home.html:89
 msgid "Screenshots"
 msgstr "Schermate"
 
-#: templates/about/about.html:14 templates/base.html:90
+#: templates/about/about.html:14 templates/base.html:92
 #, fuzzy
 msgid "History"
 msgstr "storia"
 
-#: templates/about/about.html:15 templates/base.html:91
+#: templates/about/about.html:15 templates/base.html:93
 #: templates/home/home.html:112
 msgid "Support"
 msgstr "Supporto"
@@ -5943,109 +5981,109 @@ msgstr ""
 msgid "WeeChat, the extensible chat client"
 msgstr "WeeChat, il client di chat estensibile"
 
-#: templates/base.html:34 templates/base.html:78
+#: templates/base.html:35 templates/base.html:80
 msgid "Home"
 msgstr "Home"
 
-#: templates/base.html:35 templates/base.html:86
+#: templates/base.html:36 templates/base.html:88
 msgid "About"
 msgstr "Informazioni"
 
-#: templates/base.html:37 templates/base.html:106 templates/home/home.html:21
+#: templates/base.html:38 templates/base.html:108 templates/home/home.html:21
 #: templates/scripts/source.html:36 templates/themes/source.html:17
 msgid "Download"
 msgstr "Download"
 
-#: templates/base.html:38 templates/base.html:115 templates/dev/stats.html:15
+#: templates/base.html:39 templates/base.html:117 templates/dev/stats.html:15
 #: templates/home/home.html:66 templates/scripts/python3.html:130
 #: templates/scripts/scripts.html:11
 msgid "Scripts"
 msgstr "Script"
 
-#: templates/base.html:39 templates/base.html:133 templates/doc/doc.html:12
+#: templates/base.html:40 templates/base.html:135 templates/doc/doc.html:12
 #: templates/download/download.html:12
 #, fuzzy
 msgid "Development"
 msgstr "Guida dello sviluppatore"
 
-#: templates/base.html:43 templates/base.html:44
+#: templates/base.html:44 templates/base.html:45
 #, fuzzy
 #| msgid "donate"
 msgid "Donate"
 msgstr "donazioni"
 
-#: templates/base.html:79 templates/home/home.html:143
+#: templates/base.html:81 templates/home/home.html:143
 #: templates/home/news.html:13
 #, fuzzy
 msgid "Latest news"
 msgstr "Altre notizie"
 
-#: templates/base.html:80 templates/home/home.html:163
+#: templates/base.html:82 templates/home/home.html:163
 #: templates/home/news.html:14
 msgid "Upcoming events"
 msgstr ""
 
-#: templates/base.html:81 templates/home/home.html:131
+#: templates/base.html:83 templates/home/home.html:131
 #, fuzzy
 msgid "Make a donation"
 msgstr "Donazioni paypal"
 
-#: templates/base.html:98 templates/base.html:107
-#: templates/download/debian.html:218
+#: templates/base.html:100 templates/base.html:109
+#: templates/download/debian.html:226
 #, fuzzy
 msgid "Stable version"
 msgstr "versione stabile"
 
-#: templates/base.html:99 templates/base.html:108
-#: templates/download/debian.html:218
+#: templates/base.html:101 templates/base.html:110
+#: templates/download/debian.html:226
 #, fuzzy
 #| msgid "development version"
 msgid "Development version"
 msgstr "versione di sviluppo"
 
-#: templates/base.html:100 templates/base.html:109 templates/doc/doc.html:13
+#: templates/base.html:102 templates/base.html:111 templates/doc/doc.html:13
 #: templates/download/download.html:13
 msgid "Old versions"
 msgstr "Versioni precedenti"
 
-#: templates/base.html:101
+#: templates/base.html:103
 msgid "Security issues"
 msgstr "Problemi di sicurezza"
 
-#: templates/base.html:110 templates/download/download.html:14
+#: templates/base.html:112 templates/download/download.html:14
 #, fuzzy
 msgid "Debian/Ubuntu repositories"
 msgstr "Repository:"
 
-#: templates/base.html:116
+#: templates/base.html:118
 #, fuzzy
 msgid "Browse scripts"
 msgstr "Torna agli script"
 
-#: templates/base.html:117 templates/scripts/scripts.html:12
+#: templates/base.html:119 templates/scripts/scripts.html:12
 msgid "Unofficial scripts"
 msgstr "Script non ufficiali"
 
-#: templates/base.html:134 templates/dev/dev.html:11
+#: templates/base.html:136 templates/dev/dev.html:11
 msgid "Roadmap"
 msgstr "Roadmap"
 
-#: templates/base.html:135 templates/dev/dev.html:12
+#: templates/base.html:137 templates/dev/dev.html:12
 msgid "Statistics"
 msgstr "Statistiche"
 
-#: templates/base.html:136 templates/dev/dev.html:13
+#: templates/base.html:138 templates/dev/dev.html:13
 #: templates/dev/info_list.html:22
 msgid "Info"
 msgstr "Info"
 
-#: templates/base.html:137
+#: templates/base.html:139
 #, fuzzy
 #| msgid "Devel blog"
 msgid "Development blog"
 msgstr "Blog di sviluppo"
 
-#: templates/base.html:160
+#: templates/base.html:162
 #, fuzzy
 msgid "About WeeChat.org"
 msgstr "Informazioni su WeeChat"
@@ -6533,94 +6571,94 @@ msgstr ""
 msgid "APT configuration"
 msgstr ""
 
-#: templates/download/debian.html:78
+#: templates/download/debian.html:79
 msgid ""
 "Create a weechat.list file with the repository, according to your "
 "distribution/version:"
 msgstr ""
 
-#: templates/download/debian.html:81
+#: templates/download/debian.html:84
 msgid "Choose your distribution/version"
 msgstr ""
 
 #. Translators: purpose is to "translate" only quotes here
-#: templates/download/debian.html:87 templates/download/debian.html:196
+#: templates/download/debian.html:90 templates/download/debian.html:204
 #, python-format
 msgid "“%(codename)s”"
 msgstr ""
 
-#: templates/download/debian.html:98
+#: templates/download/debian.html:102
 msgid ""
 "Note: the second command line is optional, it is used to download source "
 "packages."
 msgstr ""
 
-#: templates/download/debian.html:102
+#: templates/download/debian.html:106
 msgid "Resynchronize your package index files:"
 msgstr ""
 
-#: templates/download/debian.html:106
+#: templates/download/debian.html:110
 msgid "Packages installation"
 msgstr ""
 
-#: templates/download/debian.html:109
+#: templates/download/debian.html:113
 msgid ""
 "Install the binary packages; the \"plugins\" package is highly recommended "
 "but not mandatory, scripting API packages are optional (popular languages "
 "are python and perl)."
 msgstr ""
 
-#: templates/download/debian.html:113
+#: templates/download/debian.html:117
 #, fuzzy
 #| msgid "next stable version"
 msgid "Example for the stable version:"
 msgstr "prossima versione stabile"
 
-#: templates/download/debian.html:118
+#: templates/download/debian.html:122
 #, fuzzy
 #| msgid "or development version"
 msgid "Example for the development version:"
 msgstr "o la versione di sviluppo"
 
-#: templates/download/debian.html:123
+#: templates/download/debian.html:127
 msgid ""
 "If needed, you can download the source package in order to rebuild binary "
 "packages:"
 msgstr ""
 
-#: templates/download/debian.html:129
+#: templates/download/debian.html:133
 msgid "Overview"
 msgstr ""
 
-#: templates/download/debian.html:177
+#: templates/download/debian.html:183
 msgid "Detail"
 msgstr ""
 
-#: templates/download/debian.html:207
+#: templates/download/debian.html:215
 msgid "Important"
 msgstr ""
 
-#: templates/download/debian.html:219
+#: templates/download/debian.html:227
 msgid "Architecture"
 msgstr ""
 
-#: templates/download/debian.html:221
+#: templates/download/debian.html:229
 msgid "files"
 msgstr ""
 
-#: templates/download/debian.html:244
+#: templates/download/debian.html:252
 msgid "Builds by"
 msgstr ""
 
-#: templates/download/debian.html:246
+#: templates/download/debian.html:254
 msgid "latest build:"
 msgstr ""
 
-#: templates/download/debian.html:249
+#: templates/download/debian.html:257
 msgid "next build:"
 msgstr ""
 
-#: templates/download/debian.html:264
+#: templates/download/debian.html:272
 #, fuzzy
 msgid "No debian repository."
 msgstr "Nessuno script trovato."
