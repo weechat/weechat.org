@@ -29,7 +29,7 @@ register = template.Library()
 @register.filter()
 def txt2html(value):
     """Return text with html ascii codes (for example anti-spam for emails)."""
-    return mark_safe(''.join(['&#%d;' % ord(c) for c in value]))
+    return mark_safe(''.join([f'&#{ord(c)};' for c in value]))
 
 
 register.simple_tag(txt2html)

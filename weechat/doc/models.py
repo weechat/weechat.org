@@ -176,7 +176,7 @@ class Security(models.Model):
         content.append('<div class="d-inline-flex align-middle '
                        'severity-flex">')
         for i in range(0, 4):
-            css_class = '' if self.severity < i else ' severity%d' % i
+            css_class = '' if self.severity < i else f' severity{i}'
             content.append(f'<div class="flex-fill severity{css_class}">'
                            f'</div>')
         content.append('</div>')

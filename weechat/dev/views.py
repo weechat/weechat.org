@@ -293,7 +293,7 @@ def info(request, name=None):
         else:
             value = get_info(oneinfo[0], version)
         if oneinfo[0].endswith('_number'):
-            value = '%s (0x%08lx)' % (value, value)
+            value = f'{value} ({value:#010x})'
         infos.append((oneinfo[0], value, oneinfo[1]))
     return render(
         request,

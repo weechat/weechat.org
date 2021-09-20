@@ -43,7 +43,7 @@ class Release(models.Model):
     def __str__(self):
         security_fix = (f', {self.security_issues_fixed} SECURITY FIX'
                         if self.security_issues_fixed > 0 else '')
-        fixed_in = (', fix in: %s' % ', '.join(self.securityfix.split(','))
+        fixed_in = (f', fix in: {", ".join(self.securityfix.split(","))}'
                     if self.securityfix else '')
         return f'{self.version} ({self.date}){security_fix}{fixed_in}'
 

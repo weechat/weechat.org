@@ -41,7 +41,6 @@ def localdate(value, fmt='date'):
         fmt = gettext(settings.DATE_FORMAT)
     elif fmt == 'datetime':
         fmt = gettext(settings.DATETIME_FORMAT)
-    return mark_safe('<time datetime="%s">%s</time>' % (
-        value.isoformat(),
-        dateformat.format(value, fmt),
-    ))
+    date_iso = value.isoformat()
+    date_fmt = dateformat.format(value, fmt)
+    return mark_safe(f'<time datetime="{date_iso}">{date_fmt}</time>')

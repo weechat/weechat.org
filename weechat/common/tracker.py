@@ -37,18 +37,18 @@ SAVANNAH_PATTERN = re.compile(r'(bug|task|patch) #([0-9]+)')
 
 def _replace_github_link(match):
     """Replace a match of GitHub keyword (like "closes #123") by URL."""
-    return '<a href="%s" target="_blank" rel="noopener">%s</a>' % (
-        GITHUB_LINK % match.group(2),
-        match.group(0))
+    name = match.group(0)
+    url = GITHUB_LINK % match.group(2)
+    return f'<a href="{url}" target="_blank" rel="noopener">{name}</a>'
 
 
 def _replace_savannah_link(match):
     """Replace a match of Savannah keyword (like "bug #12345") by URL."""
     if match.group(1) not in SAVANNAH_LINKS:
         return match.group(0)
-    return '<a href="%s" target="_blank" rel="noopener">%s</a>' % (
-        SAVANNAH_LINKS[match.group(1)] % match.group(2),
-        match.group(0))
+    name = match.group(0)
+    url = SAVANNAH_LINKS[match.group(1)] % match.group(2)
+    return f'<a href="{url}" target="_blank" rel="noopener">{name}</a>'
 
 
 def _replace_link(tracker):
