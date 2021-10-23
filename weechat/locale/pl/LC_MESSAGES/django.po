@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-23 22:39+0200\n"
-"PO-Revision-Date: 2021-10-23 21:50+0200\n"
+"PO-Revision-Date: 2021-10-24 01:00+0200\n"
 "Last-Translator: Krzysztof Korościk <soltys@soltys.info>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -193,7 +193,7 @@ msgstr "Wtyczka \"script\" (zarządzanie skryptami), wsparcie SSL w relay."
 
 #: about/_i18n_keydates.py:45
 msgid "Plugin typing, enable all IRC capabilities by default."
-msgstr ""
+msgstr "Wtyczka typing, włączenie domyślnie wszystkich możliwości IRC."
 
 #: about/_i18n_keydates.py:46
 msgid "Proxy support, IPv6, SSL."
@@ -3945,6 +3945,47 @@ msgid ""
 "\"https://blog.weechat.org/post/2021/09/19/Version-3.3\">development blog</"
 "a> or <a href=\"/files/changelog/ChangeLog-3.3.html\">ChangeLog</a>."
 msgstr ""
+"Wersja 3.3 jest dostępna!\n"
+"\n"
+"Najważniejsze zmiany:\n"
+"\n"
+"- dodano nową wtyczkę \"typing\" wyświetlającą użytkowników aktualnie "
+"piszących na kanałach/prywatnych buforach IRC\n"
+"- włączono domyślnie wszystkie możliwości IRC (jeśli wspierane przez serwer "
+"i WeeChat), zmieniono domyślna wartość dla opcji irc.server_default."
+"capabilities na \"*\"\n"
+"- zaimplementowano uwierzytelnianie SASL IRCv3.2, dodano komendę /auth, "
+"domyślnie połączenie z serwerwerem zostanie ponowione po błędzie "
+"uwierzytelnienia SASL\n"
+"- dodano wsparcie dla możliwości serwera \"message-tags\" i wiadomości "
+"TAGMSG\n"
+"- dodano komendę /setname oraz wsparcie dla wiadomości i możliwości serwera "
+"\"setname\"\n"
+"- dodano wsparcie dla wiadomości IRC FAIL/WARN/NOTE\n"
+"- usunięto wsparcie dla mechanizmów SASL IRC DH-BLOWFISH i DH-AES\n"
+"- dodano nowe skróty klawiszowe do czyszczenia, dodawania i przywracania "
+"buforów w hotlistach\n"
+"- dodano opcje \"certs\" w komendzie /debug\n"
+"- dodano opcje \"-o\", \"-ol\", \"-i\" i \"-il\" w komendzie \"/plugin list"
+"\"\n"
+"- dodano podział ciągów i argumentów powłoki w przetwarzaniu wyrażeń za "
+"pomocą \"split:number,seps,flags,xxx\" i \"split_shell:number,xxx\"\n"
+"- dodano \"${re:repl_index}\" do pozyskania indeksu zastąpienia w funkcji "
+"string_eval_expression\n"
+"- dodano losową liczbę całkowitą w przetwarzaniu wyrażeń za pomocą \"random:"
+"min,max\"\n"
+"- dodano funkcje string_cut i file_copy fo API\n"
+"- kolejność dodawania do tablic hashy jest teraz zapamiętywana\n"
+"- dodano skróty klawiszowe/wartości z tagami w wyjściu "
+"irc_message_parse_to_hashtable\n"
+"- dodano opcję \"-parted\" w komendzie /allchan\n"
+"- sygnały \"irc_raw_in\" i \"irc_in\" mogą teraz zjadać wiadomości\n"
+"- poprawiono wiele błędów.\n"
+"\n"
+"Pełną listę nowych funkcji i poprawionych błędów można znaleźć na <a href="
+"\"https://blog.weechat.org/post/2021/09/19/Version-3.3\">blogu "
+"developerskim</a> oraz w pliku <a href=\"/files/changelog/ChangeLog-3.3.html"
+"\">ChangeLog</a>."
 
 #: news/_i18n_info.py:151
 msgid ""
@@ -5275,7 +5316,7 @@ msgstr "Powiadomienia poprzez centrum powiadomień OS X."
 #. Translators: description for script "weenotifier.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:408
 msgid "Notifier using IrssiNotifier."
-msgstr ""
+msgstr "Powiadomienia z użyciem IrssiNotifier."
 
 #. Translators: description for script "dzen_notifier.pl" (0.4.3+)
 #: scripts/_i18n_scripts.py:410
@@ -5825,7 +5866,7 @@ msgstr "Ustawia priorytety kanałów."
 #. Translators: description for script "weefusables.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:606
 msgid "Set message tag when confusables chars are used in words."
-msgstr ""
+msgstr "Ustawia tag wiadomości, kiedy mylące znaki zostały użyte."
 
 #. Translators: description for script "title.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:608
