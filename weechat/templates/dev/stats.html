@@ -18,7 +18,7 @@
 </ul>
 
 {% trans "Git repository:" %}
-<a href="{{ repository }}" target="_blank" rel="noopener">{{ repository }} <img src={{ MEDIA_URL}}images/link.png width="16" height="16" alt="&gt;&gt;"></a>
+<a href="{{ repository }}" target="_blank" rel="noopener">{{ repository }} <img src="{{ MEDIA_URL}}images/link.png" class="ms-1" width="16" height="16" alt="&gt;&gt;"></a>
 <br><br>
 
 {% if sloc %}
@@ -35,7 +35,7 @@
 <div class="svg pb-2 mb-2">
   <object type="image/svg+xml" data="{{ MEDIA_URL }}images/stats/{{ stats }}_{{ svg }}.svg">{{ svg }}.svg</object>
   <div class="text-center">
-    <a href="{{ MEDIA_URL }}images/stats/{{ stats }}_{{ svg }}.svg" target="_blank" rel="noopener">SVG <img src={{ MEDIA_URL}}images/link.png width="16" height="16" alt="&gt;&gt;"></a>
+    <a href="{{ MEDIA_URL }}images/stats/{{ stats }}_{{ svg }}.svg" target="_blank" rel="noopener">SVG <img src="{{ MEDIA_URL}}images/link.png" class="ms-1" width="16" height="16" alt="&gt;&gt;"></a>
   </div>
   <hr>
 </div>
@@ -46,6 +46,6 @@
 {% endif %}
 
 {% trans "Charts built with" %}
-<a href="https://github.com/flashcode/gitchart" target="_blank" rel="noopener">gitchart <img src="{{ MEDIA_URL }}images/link.png" width="16" height="16" alt="&gt;&gt;"></a>.
+<a href="https://github.com/flashcode/gitchart" target="_blank" rel="noopener">gitchart <img src="{{ MEDIA_URL }}images/link.png" class="ms-1" width="16" height="16" alt="&gt;&gt;"></a>.
 
 {% endblock content %}
