@@ -25,11 +25,14 @@ COOKIE_AGE = 3600 * 24 * 365
 
 
 class ThemeMiddleware:
+    """Theme middleware."""
 
     def __init__(self, get_response):
         self.get_response = get_response
 
-    def set_cookie(self, response, theme):
+    @classmethod
+    def set_cookie(cls, response, theme):
+        """Set the theme cookie."""
         if theme not in settings.THEMES:
             theme = settings.THEMES[0]
         response.set_cookie('theme', value=theme, max_age=COOKIE_AGE)

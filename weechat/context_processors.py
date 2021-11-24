@@ -23,6 +23,7 @@ from django.conf import settings
 
 
 def theme(request):
+    """Add theme variables in context."""
     user_theme = request.GET.get(
         'theme',
         request.COOKIES.get('theme', settings.THEMES[0]),

@@ -21,7 +21,6 @@
 
 import re
 
-from django.conf import settings
 
 GITHUB_LINK = 'https://github.com/weechat/weechat/issues/%s'
 GITHUB_PATTERN = re.compile(r'(issue|close|closes|closed|fix|fixes|fixed|'
