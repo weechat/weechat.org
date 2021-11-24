@@ -17,7 +17,7 @@
   <p>
     <ul>
       {% for dir in doc_list %}
-      <li><a href="/files/doc/old/{{ dir }}" target="_blank" rel="noopener">{% trans "Version" %} {{ dir }} <img src="{{ MEDIA_URL }}images/link.png" class="ms-1" width="16" height="16" alt="&gt;&gt;"></a></li>
+      <li><a href="/files/doc/old/{{ dir }}" target="_blank" rel="noopener">{% trans "Version" %} {{ dir }} ↗</a></li>
       {% endfor %}
     </ul>
   </p>
@@ -33,7 +33,7 @@
           <tr>
             <th></th>
             {% for lang in languages %}
-            <th class="text-center{%if lang.lang == bestlang %} table-bestlang{% endif %}" title="{{ lang.lang_i18n }}"><img src="{{ MEDIA_URL }}images/flag_{{ lang.lang }}.png" width="33" height="19" class="border" alt="{{ lang.lang }}"><br>{{ lang.lang }}</th>
+            <th class="text-center{%if lang.lang == bestlang %} doc-bestlang{% endif %}" title="{{ lang.lang_i18n }}"><img src="{{ MEDIA_URL }}images/flag_{{ lang.lang }}.png" width="33" height="19" class="border" alt="{{ lang.lang }}"><br>{{ lang.lang }}</th>
             {% endfor %}
           </tr>
         </thead>
@@ -42,9 +42,11 @@
           <tr>
             <td>{{ doc.name_i18n }}</td>
             {% for name, date, lang in files %}
-            <td class="text-center{% if lang.lang == bestlang %} table-bestlang{% endif %}">
+            <td class="h4 text-center{% if lang.lang == bestlang %} doc-bestlang{% endif %}">
               {% if name %}
-              <a href="/files/doc/{{ name }}" target="_blank" rel="noopener"><img src="{{ MEDIA_URL }}images/doc{% if doc.devel %}_dev{% endif %}.png" alt="HTML" width="17" height="22"></a>
+              <a href="/files/doc/{{ name }}" target="_blank" rel="noopener">
+                <span class="{% if doc.devel %}doc-developer{% else %}doc-user{% endif %}"><strong>🗋</strong></span>
+              </a>
               {% else %}
               -
               {% endif %}
@@ -95,12 +97,12 @@
           {% if item.lang == "en" %}
           <td class="text-center text-muted" colspan="6">({% trans "base language" %})</td>
           {% else %}
-          <td class="text-end text-success">{{ item.translated }}</td>
-          <td class="text-end text-success"><small>{{ item.pct_translated }}%<small></td>
-          <td class="text-end" style="color: #852;">{{ item.fuzzy }}</td>
-          <td class="text-end" style="color: #852;"><small>{{ item.pct_fuzzy }}%</small></td>
-          <td class="text-end text-danger">{{ item.untranslated }}</td>
-          <td class="text-end text-danger"><small>{{ item.pct_untranslated }}%</small></td>
+          <td class="text-end i18n-translated">{{ item.translated }}</td>
+          <td class="text-end i18n-translated"><small>{{ item.pct_translated }}%<small></td>
+          <td class="text-end i18n-fuzzy">{{ item.fuzzy }}</td>
+          <td class="text-end i18n-fuzzy"><small>{{ item.pct_fuzzy }}%</small></td>
+          <td class="text-end i18n-untranslated">{{ item.untranslated }}</td>
+          <td class="text-end i18n-untranslated"><small>{{ item.pct_untranslated }}%</small></td>
           {% endif %}
           <td class="center">{{ item.total }}</td>
           <td>

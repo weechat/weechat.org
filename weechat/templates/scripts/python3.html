@@ -142,7 +142,7 @@
       </thead>
       <tbody>
         {% for status in status_list %}
-        <tr class="{% if status.today %}table-info fw-bold{% endif %}{% if status.future %}text-muted{% endif %}">
+        <tr class="{% if status.today %}fw-bold{% endif %}{% if status.future %} text-muted{% endif %}">
           <td class="text-nowrap">
             {{ status.date|localdate }}
             {% if status.today %}<span class="fw-normal">({% trans "today" %})</span>{% endif %}
@@ -211,14 +211,12 @@
   <ul>
     <li>
       <a href="https://docs.python.org/3/howto/pyporting.html" target="_blank" rel="noopener">
-        https://docs.python.org/3/howto/pyporting.html
-        <img src="{{ MEDIA_URL }}images/link.png" class="ms-1" alt="&gt;&gt;">
+        https://docs.python.org/3/howto/pyporting.html ↗
       </a>
     </li>
     <li>
       <a href="https://python-future.org/compatible_idioms.html" target="_blank" rel="noopener">
-        https://python-future.org/compatible_idioms.html
-        <img src="{{ MEDIA_URL }}images/link.png" class="ms-1" alt="&gt;&gt;">
+        https://python-future.org/compatible_idioms.html ↗
       </a>
     </li>
   </ul>

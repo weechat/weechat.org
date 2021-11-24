@@ -96,20 +96,17 @@ def commits_links(commits):
     images = []
     for commit in commits.split(','):
         objtype = 'commit'
-        img = 'link.png'
-        title = ''
+        link = '↗'
         if commit.startswith('commit/'):
             commit = commit[7:]
         if commit.startswith('tree/'):
             objtype = 'tree'
             commit = commit[5:]
-            img = 'link_twin.png'
-            title = f' title="branch: {commit}"'
+            link = '⇉'
         repo, commit_id = split_commit(commit)
         images.append(f'<a href="https://github.com/{repo}/{objtype}/'
                       f'{commit_id}" target="_blank" rel="noopener">'
-                      f'<img src="{settings.MEDIA_URL}images/{img}" '
-                      f'width="16" height="16" alt="*"{title}></a>')
+                      f'{link}</a>')
     return ' '.join(images)
 
 
@@ -117,7 +114,4 @@ def spec_link(url_spec):
     """Replace specification id by URLs to specification."""
     if not url_spec:
         return ''
-    return (f'<a href="{url_spec}" '
-            f'target="_blank" rel="noopener">'
-            f'<img src="{settings.MEDIA_URL}images/link.png" '
-            f'width="16" height="16" alt="*"></a>')
+    return f'<a href="{url_spec}" target="_blank" rel="noopener">↗</a>'

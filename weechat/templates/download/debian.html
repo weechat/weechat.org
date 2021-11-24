@@ -155,7 +155,7 @@ $ sudo gpg --no-default-keyring --keyring /usr/local/share/keyrings/weechat-arch
       <div class="card-body">
         {% regroup debpkg_distro.list by repoarch as debpkg_by_repoarch %}
         {% for debpkg_repoarch in debpkg_by_repoarch %}
-        <div class="row py-1"{% if not forloop.last %} style="border-bottom: solid 1px #eee;"{% endif %}>
+        <div class="row py-1">
           <div class="col-5">
             <span class="{% if not debpkg_repoarch.list.0.repo.active %}discontinued{% endif %}">
               <a class="js-scroll" href="#{{ debpkg_repoarch.grouper }}">
@@ -168,7 +168,7 @@ $ sudo gpg --no-default-keyring --keyring /usr/local/share/keyrings/weechat-arch
             {% regroup debpkg_repoarch.list|dictsortreversed:"version_type" by Version as debpkg_by_version %}
             {% for debpkg_version in debpkg_by_version %}
             {% if "weechat" in debpkg_version.list.0.Source %}
-            <span class="text-nowrap {% if debpkg_version.list.0.version_type == "dev" %}text-danger{% else %}text-success fw-bold{% endif %}">{{ debpkg_version.grouper }}</span>{% if not forloop.last %},{% endif %}
+            <span class="text-nowrap {% if debpkg_version.list.0.version_type == "dev" %}devel-version{% else %}stable-version fw-bold{% endif %}">{{ debpkg_version.grouper }}</span>{% if not forloop.last %},{% endif %}
             {% endif %}
             {% endfor %}
             {% if not forloop.last %}<br>{% endif %}
@@ -224,7 +224,7 @@ $ sudo gpg --no-default-keyring --keyring /usr/local/share/keyrings/weechat-arch
             {% for debpkg_arch in debpkgs_by_arch %}
             <tr>
               <td class="text-nowrap">{{ debpkg_arch.list.0.Source }}</td>
-              <td class="text-nowrap {% if "dev" in debpkg_arch.list.0.Version %}text-danger{% else %}text-success fw-bold{% endif %}" title="{% if "dev" in debpkg_arch.list.0.Version %}{% trans "Development version" %}{% else %}{% trans "Stable version" %}{% endif %}">{{ debpkg_arch.list.0.Version }}</td>
+              <td class="text-nowrap {% if "dev" in debpkg_arch.list.0.Version %}devel-version{% else %}stable-version fw-bold{% endif %}" title="{% if "dev" in debpkg_arch.list.0.Version %}{% trans "Development version" %}{% else %}{% trans "Stable version" %}{% endif %}">{{ debpkg_arch.list.0.Version }}</td>
               <td class="text-nowrap" title="{% trans "Architecture" %}">{{ debpkg_arch.list.0.arch }}</td>
               <td class="text-nowrap">{{ debpkg_arch.list.0.builddatetime|localdate:"datetime" }}</td>
               <td class="text-nowrap"><a href="{% url 'download_debian_active' active=active %}{% if not allfiles %}files/#{{ debpkg_arch.list.0.anchor }}{% endif %}" id="{{ debpkg_arch.list.0.anchor }}">{{ debpkg_arch.list|length }} {% trans "files" %}</a></td>

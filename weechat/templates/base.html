@@ -12,9 +12,17 @@
   <meta name="keywords" content="weechat, free, fast, light, extensible, chat, client, irc, jabber, linux, bsd, gpl, console, terminal, curses">
   <meta name="robots" content="all">
   <link rel="shortcut icon" type="image/png" href="{{ MEDIA_URL }}images/favicon.png">
-  <link rel="stylesheet" href="{{ MEDIA_URL }}css/bootstrap.min.css">
+  {% if theme == 'auto' %}
+  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/bootstrap_dark.min.css" media="(prefers-color-scheme: dark)">
+  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/bootstrap_light.min.css" media="(not (prefers-color-scheme: dark))">
+  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/style_dark.css" media="(prefers-color-scheme: dark)">
+  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/style_light.css" media="(not (prefers-color-scheme: dark))">
+  {% else %}
+  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/bootstrap_{{ theme }}.min.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/style_{{ theme }}.css" media="screen">
+  {% endif %}
+  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/style.css" media="screen">
   {% block css %}{% endblock %}
-  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/style.css" media="screen" title="Normal">
   <link rel="alternate" type="application/rss+xml" href="{% url 'feeds_news' %}" title="WeeChat RSS feed">
   <title>{% block title %}{% trans "WeeChat, the extensible chat client" %}{% endblock %}{% block subtitle %}{% endblock %}</title>
   {% block extrahead %}{% endblock %}
@@ -22,7 +30,7 @@
 
 <body id="nav1-{% block menu %}{% endblock %}">
 
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-weechat fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="{% url "home" %}">
         <img src="{{ MEDIA_URL }}images/weechat_logo_small.png" width="48" height="33" alt="WeeChat">
@@ -46,19 +54,17 @@
           </a>
         </div>
 
-        <div class="nav-languages">
-          <form name="lang" action="/i18n/setlang/" method="post">
-            {% csrf_token %}
-            <div class="form-group my-0">
-              <input type="hidden" name="language" value="{{ LANGUAGE_CODE }}">
-              <select class="form-select form-select-sm" onchange="javascript:document.forms['lang'].elements['language'].value = this.value; document.forms['lang'].submit();">
-                {% for lang in LANGUAGES %}
-                <option value="{{ lang.0 }}" onclick="javascript:document.forms['lang'].elements['language'].value = '{{ lang.0 }}'; document.forms['lang'].submit();" {% if lang.0 == LANGUAGE_CODE %} selected{% endif %}>{% language lang.0 %}{% trans lang.1 %}{% endlanguage %}</option>
-                {% endfor %}
-              </select>
-            </div>
-          </form>
-        </div>
+        <form name="lang" action="/i18n/setlang/" method="post">
+          {% csrf_token %}
+          <div class="form-group my-0">
+            <input type="hidden" name="language" value="{{ LANGUAGE_CODE }}">
+            <select class="form-select form-select-sm" onchange="javascript:document.forms['lang'].elements['language'].value = this.value; document.forms['lang'].submit();">
+              {% for lang in LANGUAGES %}
+              <option value="{{ lang.0 }}" onclick="javascript:document.forms['lang'].elements['language'].value = '{{ lang.0 }}'; document.forms['lang'].submit();" {% if lang.0 == LANGUAGE_CODE %} selected{% endif %}>{% language lang.0 %}{% trans lang.1 %}{% endlanguage %}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </form>
 
       </div>
     </div>
@@ -136,7 +142,7 @@
           <li><a href="{% url 'dev_roadmap' %}">{% trans "Roadmap" %}</a></li>
           <li><a href="{% url 'dev_stats' %}">{% trans "Statistics" %}</a></li>
           <li><a href="{% url 'dev_info' %}">{% trans "Info" %}</a></li>
-          <li><a href="https://blog.weechat.org/" target="_blank" rel="noopener">{% trans "Development blog" %} <img src="{{ MEDIA_URL }}images/link.png" class="ms-1" width="16" height="16" alt="&gt;&gt;"></a></li>
+          <li><a href="https://blog.weechat.org/" target="_blank" rel="noopener">{% trans "Development blog" %} ↗</a></li>
         </ul>
       </div>
     </div>
@@ -160,6 +166,8 @@
         Copyright &#169; 2003-{% now "Y" %} <a href="mailto:{% txt2html "flashcode@flashtux.org" %}" title="email webmaster">Sébastien Helleu</a>
         &mdash;
         <a href="{% url 'about_weechat.org' %}">{% trans "About WeeChat.org" %}</a>
+        &mdash; Theme: <strong>{{ theme }}</strong>
+        ({% for name in other_themes %}<a href="?theme={{ name }}">{{ name }}</a>{% if not forloop.last %}, {% endif %}{% endfor %})
       </p>
     </div>
 

@@ -64,7 +64,7 @@
           <span class="text-success">{% trans "Done" %}</span>
           {% else %}
           {% comment %}Translators: "Done" is followed by the % of task which is implemented, for example: "Done: 75%"{% endcomment %}
-          <div class="progress" style="height: 20px; background-color: #e7e7e7;" title="{% trans "Done:" %} {{ task.status }}%">
+          <div class="progress" style="height: 20px;" title="{% trans "Done:" %} {{ task.status }}%">
             {% if task.status != 0 %}
             <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: {{ task.status }}%" aria-valuenow="{{ task.status }}" aria-valuemin="0" aria-valuemax="100"></div>
             {% endif %}

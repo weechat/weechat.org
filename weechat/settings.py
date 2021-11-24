@@ -62,6 +62,13 @@ LANGUAGES_LOCALES = {
     'ja': 'ja_JP',
 }
 
+# Themes
+THEMES = (
+    'auto',
+    'dark',
+    'light',
+)
+
 # Translators: this is a date format, see: http://www.php.net/date
 # Translators: (note: the result string must be short, use abbreviation
 # Translators: for month if possible)
@@ -120,6 +127,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'weechat.middleware.ThemeMiddleware',
 ]
 
 TEMPLATES = [
@@ -139,6 +147,7 @@ TEMPLATES = [
                 'django.template.context_processors.static',
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
+                'weechat.context_processors.theme',
             ],
         },
     },

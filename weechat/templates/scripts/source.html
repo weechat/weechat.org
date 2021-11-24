@@ -2,7 +2,16 @@
 
 {% load i18n %}
 
-{% block css %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/pygments.css" media="screen" title="Normal">{% endblock %}
+{% block css %}
+{{ block.super }}
+  {% if theme == 'auto' %}
+  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/pygments_dark.css" media="(prefers-color-scheme: dark)">
+  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/pygments_light.css" media="(not (prefers-color-scheme: dark))">
+  {% else %}
+  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/pygments_{{ theme }}.min.css" media="screen">
+  {% endif %}
+{% endblock %}
+
 {% block menu2_list %}active{% endblock %}
 
 {% block content %}

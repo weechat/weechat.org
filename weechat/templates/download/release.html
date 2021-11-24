@@ -19,7 +19,15 @@
 <div class="release">
   <ul class="list-unstyled">
     {% for todo in release_progress.todo %}
-    <li class="{% if forloop.counter <= release_progress.done %}done{% else %}{% if forloop.counter0 == release_progress.done %}in-progress{% endif %}{% endif %}"><em>&nbsp;</em>{{ forloop.counter }}. {{ todo.description }}</li>
+    {% if forloop.counter <= release_progress.done %}
+    <li class="done text-success"><em class="bg-success">&nbsp;</em>
+    {% elif forloop.counter0 == release_progress.done %}
+    <li class="in-progress text-warning"><em>&nbsp;</em>
+    {% else %}
+    <li class="text-muted"><em>&nbsp;</em>
+    {% endif %}
+      {{ forloop.counter }}. {{ todo.description }}
+    </li>
     {% endfor %}
   </ul>
 </div>
