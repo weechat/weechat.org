@@ -6,7 +6,7 @@
 {{ block.super }}
   {% if theme == 'auto' %}
   <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/pygments_dark.css" media="(prefers-color-scheme: dark)">
-  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/pygments_light.css" media="(prefers-color-scheme: light)">
+  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/pygments_light.css" media="(not (prefers-color-scheme: dark)), (prefers-color-scheme: light)">
   {% else %}
   <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/pygments_{{ theme }}.css" media="screen">
   {% endif %}
