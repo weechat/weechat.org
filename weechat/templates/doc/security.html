@@ -71,7 +71,7 @@
         <td class="text-center text-nowrap text-danger">{% autoescape off %}{{ security.affected_html }}{% endautoescape %}</td>
         <td class="text-center text-nowrap text-success">{{ security.fixed }}</td>
         <td class="text-center text-nowrap">{% if security.release_date %}{{ security.release_date_l10n }}{% else %}-{% endif %}</td>
-        <td class="text-center text-nowrap">{% autoescape off %}{{ security.url_commits }}{% endautoescape %}</td>
+        <td class="text-center text-nowrap commits">{% autoescape off %}{{ security.url_commits }}{% endautoescape %}</td>
         <td>
           {{ security.description_i18n }}
           <div class="mt-2">

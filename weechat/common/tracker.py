@@ -21,6 +21,8 @@
 
 import re
 
+from weechat.common.path import project_path_join
+
 
 GITHUB_LINK = 'https://github.com/weechat/weechat/issues/%s'
 GITHUB_PATTERN = re.compile(r'(issue|close|closes|closed|fix|fixes|fixed|'
@@ -92,16 +94,25 @@ def commits_links(commits):
     """Replace commits or branches by GitHub URLs."""
     if not commits:
         return ''
+
+    # read SVG with git commit/branch
+    filename = project_path_join('templates', 'svg', 'git-commit.html')
+    with open(filename, 'r', encoding='utf-8') as _file:
+        svg_commit = _file.read().strip()
+    filename = project_path_join('templates', 'svg', 'git-branch.html')
+    with open(filename, 'r', encoding='utf-8') as _file:
+        svg_branch = _file.read().strip()
+
     images = []
     for commit in commits.split(','):
         objtype = 'commit'
-        link = '↗'
+        link = svg_commit
         if commit.startswith('commit/'):
             commit = commit[7:]
         if commit.startswith('tree/'):
             objtype = 'tree'
             commit = commit[5:]
-            link = '⇉'
+            link = svg_branch
         repo, commit_id = split_commit(commit)
         images.append(f'<a href="https://github.com/{repo}/{objtype}/'
                       f'{commit_id}" target="_blank" rel="noopener">'
