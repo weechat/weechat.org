@@ -45,10 +45,14 @@
             <td class="h4 text-center{% if lang.lang == bestlang %} doc-bestlang{% endif %}">
               {% if name %}
               <a href="/files/doc/{{ name }}" target="_blank" rel="noopener">
-                <span class="{% if doc.devel %}doc-developer{% else %}doc-user{% endif %}"><strong>🗋</strong></span>
+                {% if doc.devel %}
+                <span class="doc-developer">{% include "svg/doc-dev.html" %}</span>
+                {% else %}
+                <span class="doc-user">{% include "svg/doc.html" %}</span>
+                {% endif %}
               </a>
               {% else %}
-              -
+              <span class="text-muted">-</span>
               {% endif %}
             </td>
             {% endfor %}
