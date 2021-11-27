@@ -42,7 +42,7 @@ admin.autodiscover()
 
 urlpatterns = [
     # favicon.ico
-    url(rf'^favicon.ico$',
+    url(r'^favicon.ico$',
         RedirectView.as_view(url=f'{settings.MEDIA_URL}images/favicon.png',
                              permanent=True)),
 
