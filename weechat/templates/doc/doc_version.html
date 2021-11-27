@@ -38,26 +38,52 @@
           </tr>
         </thead>
         <tbody>
-          {% for doc, files in doc_list %}
           <tr>
-            <td>{{ doc.name_i18n }}</td>
+            <th colspan="{{ languages|length|add:"1" }}" class="doc-audience doc-audience-user">
+              {% include "svg/people.html" %}
+              {% trans "Documentation for users" %}
+            </th>
+          </tr>
+          {% for doc, files in doc_list %}
+          {% if not doc.devel %}
+          <tr>
+            <td class="ps-4">{{ doc.name_i18n }}</td>
             {% for name, date, lang in files %}
-            <td class="h4 text-center{% if lang.lang == bestlang %} doc-bestlang{% endif %}">
+            <td class="h4 text-center doc-icon{% if lang.lang == bestlang %} doc-bestlang{% endif %}">
               {% if name %}
-              <a href="/files/doc/{{ name }}" target="_blank" rel="noopener">
-                {% if doc.devel %}
-                <span class="doc-developer">{% include "svg/doc-dev.html" %}</span>
-                {% else %}
-                <span class="doc-user">{% include "svg/doc.html" %}</span>
-                {% endif %}
-              </a>
+              <a href="/files/doc/{{ name }}" target="_blank" rel="noopener">{% include "svg/doc.html" %}</a>
               {% else %}
               <span class="text-muted">-</span>
               {% endif %}
             </td>
             {% endfor %}
           </tr>
+          {% endif %}
           {% endfor %}
+          <tr>
+            <th colspan="{{ languages|length|add:"1" }}" class="doc-audience doc-audience-developer">
+              {% include "svg/gear.html" %}
+              {% trans "Documentation for developers" %}
+            </th>
+          </tr>
+          {% for doc, files in doc_list %}
+          {% if doc.devel %}
+          <tr>
+            <td class="ps-4">{{ doc.name_i18n }}</td>
+            {% for name, date, lang in files %}
+            <td class="h4 text-center doc-icon{% if lang.lang == bestlang %} doc-bestlang{% endif %}">
+              {% if name %}
+              <a href="/files/doc/{{ name }}" target="_blank" rel="noopener">{% include "svg/doc.html" %}</a>
+              {% else %}
+              <span class="text-muted">-</span>
+              {% endif %}
+            </td>
+            {% endfor %}
+          </tr>
+          {% endif %}
+          {% endfor %}
+
+
         </tbody>
       </table>
     </div>

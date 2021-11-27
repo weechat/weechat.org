@@ -279,12 +279,24 @@ ul.social {
   background-color: var(--doc-bestlang-bg-color) !important;
 }
 
-.doc-user svg g, .doc-user svg path {
-  fill: var(--doc-user-svg-fill);
+.doc-audience {
+  background-color: var(--doc-audience-bg-color) !important;
 }
 
-.doc-developer svg g, .doc-developer svg path {
-  fill: var(--doc-developer-svg-fill);
+.doc-audience svg {
+  margin-right: .5rem;
+}
+
+.doc-audience-user svg g, .doc-audience-user svg path {
+  fill: var(--doc-audience-user-svg-fill);
+}
+
+.doc-audience-developer svg g, .doc-audience-developer svg path {
+  fill: var(--doc-audience-developer-svg-fill);
+}
+
+.doc-icon svg g, .doc-icon svg path {
+  fill: var(--link-color);
 }
 
 .i18n-translated {
