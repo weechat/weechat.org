@@ -41,6 +41,11 @@ from weechat.about.views import donate as view_donate
 admin.autodiscover()
 
 urlpatterns = [
+    # favicon.ico
+    url(rf'^favicon.ico$',
+        RedirectView.as_view(url=f'{settings.MEDIA_URL}images/favicon.png',
+                             permanent=True)),
+
     # admin
     url(rf'^{settings.ADMIN_PAGE}/doc/',
         include('django.contrib.admindocs.urls')),
