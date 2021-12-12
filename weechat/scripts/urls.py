@@ -21,7 +21,7 @@
 
 # pylint: disable=invalid-name, no-value-for-parameter
 
-from django.conf.urls import url
+from django.urls import path, re_path
 from django.views.generic.base import RedirectView
 
 from weechat.scripts.views import (
@@ -31,25 +31,25 @@ from weechat.scripts.views import (
 )
 
 urlpatterns = [
-    url(r'^$', view_scripts, name='scripts'),
-    url(r'^(?P<filter_name>(tag|language|license|author))/'
-        r'(?P<filter_value>(.*))/$',
-        view_scripts, name='scripts_filter'),
-    url(r'^sort/(?P<sort_key>(name|language|license|min_weechat|max_weechat|'
-        r'author|added|updated))/$',
-        view_scripts, name='scripts_sort'),
-    url(r'^source/(?P<scriptid>\d+)/$', view_script_source,
-        name='scripts_source_id'),
-    url(r'^source/(?P<scriptname>[a-zA-Z0-9_.-]+)\.html/$',
-        view_script_source, name='scripts_source_name_html'),
-    url(r'^source/(?P<scriptname>[a-zA-Z0-9_.-]+)/$',
-        view_script_source, name='scripts_source_name'),
-    url(r'^source/(?P<scriptname>[a-zA-Z0-9_.-]+)\.html/$',
-        view_script_source, name='scripts_source_name_html'),
-    url(r'^source/(?P<scriptname>[a-zA-Z0-9_.-]+)/$',
-        view_script_source, name='scripts_source_name'),
-    url(r'^add/$', RedirectView.as_view(pattern_name='scripts')),
-    url(r'^update/$', RedirectView.as_view(pattern_name='scripts')),
-    url(r'^pending/$', RedirectView.as_view(pattern_name='scripts')),
-    url(r'^python3/$', view_python3, name='scripts_python3'),
+    path('', view_scripts, name='scripts'),
+    re_path(r'^(?P<filter_name>(tag|language|license|author))/'
+            r'(?P<filter_value>(.*))/$',
+            view_scripts, name='scripts_filter'),
+    re_path(r'^sort/(?P<sort_key>(name|language|license|min_weechat|'
+            r'max_weechat|author|added|updated))/$',
+            view_scripts, name='scripts_sort'),
+    re_path(r'^source/(?P<scriptid>\d+)/$', view_script_source,
+            name='scripts_source_id'),
+    re_path(r'^source/(?P<scriptname>[a-zA-Z0-9_.-]+)\.html/$',
+            view_script_source, name='scripts_source_name_html'),
+    re_path(r'^source/(?P<scriptname>[a-zA-Z0-9_.-]+)/$',
+            view_script_source, name='scripts_source_name'),
+    re_path(r'^source/(?P<scriptname>[a-zA-Z0-9_.-]+)\.html/$',
+            view_script_source, name='scripts_source_name_html'),
+    re_path(r'^source/(?P<scriptname>[a-zA-Z0-9_.-]+)/$',
+            view_script_source, name='scripts_source_name'),
+    path('add/', RedirectView.as_view(pattern_name='scripts')),
+    path('update/', RedirectView.as_view(pattern_name='scripts')),
+    path('pending/', RedirectView.as_view(pattern_name='scripts')),
+    path('python3/', view_python3, name='scripts_python3'),
 ]

@@ -21,7 +21,7 @@
 
 # pylint: disable=invalid-name, no-value-for-parameter
 
-from django.conf.urls import url
+from django.urls import path, re_path
 
 from weechat.doc.views import (
     documentation as view_doc,
@@ -30,14 +30,15 @@ from weechat.doc.views import (
 )
 
 urlpatterns = [
-    url(r'^$', view_doc, name='doc'),
-    url(r'^(?P<version>stable|devel|old)/$', view_doc, name='doc_version'),
-    url(r'^security/$', view_security, name='doc_security'),
+    path('', view_doc, name='doc'),
+    re_path(r'^(?P<version>stable|devel|old)/$', view_doc, name='doc_version'),
+    path('security/', view_security, name='doc_security'),
 
     # shortcuts
-    url(r'^(?P<version>stable|devel)/(?P<name>[a-z_]+)/$', view_doc_link),
-    url(r'^(?P<name>[a-z_]+)/$', view_doc_link),
-    url(r'^(?P<version>stable|devel)/(?P<name>[a-z_]+)/(?P<lang>[a-z_]+)/$',
-        view_doc_link),
-    url(r'^(?P<name>[a-z_]+)/(?P<lang>[a-z_]+)/$', view_doc_link),
+    re_path(r'^(?P<version>stable|devel)/(?P<name>[a-z_]+)/$', view_doc_link),
+    re_path(r'^(?P<name>[a-z_]+)/$', view_doc_link),
+    re_path(r'^(?P<version>stable|devel)/(?P<name>[a-z_]+)/'
+            r'(?P<lang>[a-z_]+)/$',
+            view_doc_link),
+    re_path(r'^(?P<name>[a-z_]+)/(?P<lang>[a-z_]+)/$', view_doc_link),
 ]

@@ -97,8 +97,9 @@ def render_news(request, info_list, info_id, page_name):
     })
 
 
-def news(request, info_id=None):
+def news(request, info_id=None, title=None):
     """List of news."""
+    # pylint: disable=unused-argument
     try:
         if info_id:
             info_list = [Info.objects.get(id=info_id, visible=1)]

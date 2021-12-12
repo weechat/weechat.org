@@ -21,7 +21,7 @@
 
 # pylint: disable=invalid-name, no-value-for-parameter
 
-from django.conf.urls import url
+from django.urls import path, re_path
 
 from weechat.debian.views import repos as view_repos
 from weechat.download.views import (
@@ -31,17 +31,17 @@ from weechat.download.views import (
 )
 
 urlpatterns = [
-    url(r'^$', view_packages, name='download'),
-    url(r'^debian/$', view_repos, {'active': 'active'},
-        name='download_debian'),
-    url(r'^debian/(?P<active>(active|all))/$', view_repos,
-        name='download_debian_active'),
-    url(r'^debian/(?P<active>(active|all))/(?P<files>[a-zA-Z0-9.]*)/$',
-        view_repos),
-    url(r'^release/$', view_release, name='download_release'),
-    url(r'^checksums/weechat-(?P<version>[a-zA-Z0-9.]*)-'
-        r'(?P<checksum_type>[a-zA-Z0-9]*).txt/$',
-        view_package_checksums, name='package_checksums'),
-    url(r'^(?P<version>[a-zA-Z0-9.]*)/$', view_packages,
-        name='download_version'),
+    path('', view_packages, name='download'),
+    path('debian/', view_repos, kwargs={'active': 'active'},
+         name='download_debian'),
+    re_path(r'^debian/(?P<active>(active|all))/$', view_repos,
+            name='download_debian_active'),
+    re_path(r'^debian/(?P<active>(active|all))/(?P<files>[a-zA-Z0-9.]*)/$',
+            view_repos),
+    path('release/', view_release, name='download_release'),
+    re_path(r'^checksums/weechat-(?P<version>[a-zA-Z0-9.]*)-'
+            r'(?P<checksum_type>[a-zA-Z0-9]*).txt/$',
+            view_package_checksums, name='package_checksums'),
+    re_path(r'^(?P<version>[a-zA-Z0-9.]*)/$', view_packages,
+            name='download_version'),
 ]

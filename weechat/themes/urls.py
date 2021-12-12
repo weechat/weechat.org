@@ -21,7 +21,7 @@
 
 # pylint: disable=invalid-name, no-value-for-parameter
 
-from django.conf.urls import url
+from django.urls import path, re_path
 from django.views.generic.base import TemplateView
 
 from weechat.themes.views import (
@@ -32,22 +32,21 @@ from weechat.themes.views import (
 )
 
 urlpatterns = [
-    url(r'^$', view_themes, name='themes'),
-    url(r'^(?P<filter_name>(author))/(?P<filter_value>(.*))/$',
-        view_themes, name='themes_filter'),
-    url(r'^sort/(?P<sort_key>(name|version|added|updated))/$',
-        view_themes, name='themes_sort'),
-    url(r'^source/(?P<themeid>\d+)/$', view_theme_source),
-    url(r'^source/(?P<themename>[a-zA-Z0-9_]+\.theme)\.html/$',
-        view_theme_source, name='themes_source_name_html'),
-    url(r'^add/$', view_form_add, name='themes_add'),
-    url(r'^update/$', view_form_update, name='themes_update'),
-    url(r'^addok/$',
-        TemplateView.as_view(template_name='themes/add_ok.html')),
-    url(r'^adderror/$',
-        TemplateView.as_view(template_name='themes/add_error.html')),
-    url(r'^updateok/$',
-        TemplateView.as_view(template_name='themes/update_ok.html')),
-    url(r'^updateerror/$',
-        TemplateView.as_view(template_name='themes/update_error.html')),
+    path('', view_themes, name='themes'),
+    re_path(r'^(?P<filter_name>(author))/(?P<filter_value>(.*))/$',
+            view_themes, name='themes_filter'),
+    re_path(r'^sort/(?P<sort_key>(name|version|added|updated))/$',
+            view_themes, name='themes_sort'),
+    re_path(r'^source/(?P<themeid>\d+)/$', view_theme_source),
+    re_path(r'^source/(?P<themename>[a-zA-Z0-9_]+\.theme)\.html/$',
+            view_theme_source, name='themes_source_name_html'),
+    path('add/', view_form_add, name='themes_add'),
+    path('update/', view_form_update, name='themes_update'),
+    path('addok/', TemplateView.as_view(template_name='themes/add_ok.html')),
+    path('adderror/',
+         TemplateView.as_view(template_name='themes/add_error.html')),
+    path('updateok/',
+         TemplateView.as_view(template_name='themes/update_ok.html')),
+    path('updateerror/',
+         TemplateView.as_view(template_name='themes/update_error.html')),
 ]

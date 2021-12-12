@@ -21,7 +21,7 @@
 
 # pylint: disable=invalid-name, no-value-for-parameter
 
-from django.conf.urls import url
+from django.urls import path, re_path
 
 from weechat.dev.views import (
     roadmap as view_roadmap,
@@ -30,14 +30,15 @@ from weechat.dev.views import (
 )
 
 urlpatterns = [
-    url(r'^$', view_roadmap, name='dev'),
-    url(r'^roadmap/$', view_roadmap, name='dev_roadmap'),
-    url(r'^roadmap/(?P<versions>future|released)/$', view_roadmap,
-        name='dev_roadmap_versions'),
-    url(r'^stats/$', view_stats_repo, name='dev_stats'),
-    url(r'^stats/(?P<stats>weechat|weechat-relay|scripts|qweechat'
-        r'|weechat\.org)/$',
-        view_stats_repo, name='dev_stats_git'),
-    url(r'^info/$', view_info, name='dev_info'),
-    url(r'^info/(?P<name>[a-zA-Z0-9_]*)/$', view_info, name='dev_info_name'),
+    path('', view_roadmap, name='dev'),
+    path('roadmap/', view_roadmap, name='dev_roadmap'),
+    re_path(r'^roadmap/(?P<versions>future|released)/$', view_roadmap,
+            name='dev_roadmap_versions'),
+    path('stats/', view_stats_repo, name='dev_stats'),
+    re_path(r'^stats/(?P<stats>weechat|weechat-relay|scripts|qweechat'
+            r'|weechat\.org)/$',
+            view_stats_repo, name='dev_stats_git'),
+    path('info/', view_info, name='dev_info'),
+    re_path(r'^info/(?P<name>[a-zA-Z0-9_]*)/$', view_info,
+            name='dev_info_name'),
 ]
