@@ -88,8 +88,10 @@ class Repo(models.Model):
         "deb-src [signed-by=/usr/local/share/keyrings/weechat-archive-
         keyring.gpg] https://weechat.org/debian sid main".
         """
-        return (f'deb-src [signed-by=/usr/local/share/keyrings/weechat-archive-'
-                f'keyring.gpg] {self.url} {self.version.codename} main')
+        return (
+            f'deb-src [signed-by=/usr/local/share/keyrings/weechat-'
+            f'archive-keyring.gpg] {self.url} {self.version.codename} main'
+        )
 
     class Meta:
         """Sort Repos by priority."""
