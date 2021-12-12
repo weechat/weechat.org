@@ -42,7 +42,14 @@
   {% trans "Added:" %} {% if script.added %}{{ script.added|date:"Y-m-d" }}{% endif %}
   {% if script.updated and script.added != script.updated %}&mdash; {% trans "Updated:" %} {{ script.updated|date:"Y-m-d" }}{% endif %}
   <br>
-  <a href="{{ script.build_url }}" class="btn btn-success my-3" download>{% trans "Download" %}</a>
+  <div class="source">
+    <a href="{{ script.build_url }}" class="btn btn-primary my-3 me-3 px-2 px-lg-4" download>
+      {% include "svg/download.html" %} {% trans "Download" %}
+    </a>
+    <a href="{{ script.build_url_repo }}" target="_blank" rel="noopener" class="btn btn-secondary my-3 me-3 px-2 px-lg-4">
+      {% include "svg/github.html" %} {% trans "Repository" %} ↗
+    </a>
+  </div>
 </p>
 
 <p>

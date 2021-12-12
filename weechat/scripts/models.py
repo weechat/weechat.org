@@ -37,6 +37,8 @@ from weechat.common.decorators import disable_for_loaddata
 from weechat.common.i18n import i18n_autogen
 from weechat.common.path import files_path_join
 
+REPOSITORY = 'https://github.com/weechat/scripts/blob/master'
+
 SCRIPT_LANGUAGE = {
     'python': ('py', 'python'),
     'perl': ('pl', 'perl'),
@@ -169,6 +171,10 @@ class Script(models.Model):
     def build_url(self):
         """Return URL to the script."""
         return f'/files/{self.path()}/{self.name_with_extension()}'
+
+    def build_url_repo(self):
+        """Return URL to the script in repository."""
+        return f'{REPOSITORY}/{self.language}/{self.name_with_extension()}'
 
     def filename(self):
         """Return script filename (on disk)."""
