@@ -49,7 +49,7 @@
           <tr>
             <td class="ps-4">{{ doc.name_i18n }}</td>
             {% for name, date, lang in files %}
-            <td class="h4 text-center doc-icon{% if lang.lang == bestlang %} doc-bestlang{% endif %}">
+            <td class="h4 text-center{% if lang.lang == bestlang %} doc-bestlang{% endif %}">
               {% if name %}
               <a href="/files/doc/{{ name }}" target="_blank" rel="noopener">{% include "svg/doc.html" %}</a>
               {% else %}
@@ -71,7 +71,7 @@
           <tr>
             <td class="ps-4">{{ doc.name_i18n }}</td>
             {% for name, date, lang in files %}
-            <td class="h4 text-center doc-icon{% if lang.lang == bestlang %} doc-bestlang{% endif %}">
+            <td class="h4 text-center{% if lang.lang == bestlang %} doc-bestlang{% endif %}">
               {% if name %}
               <a href="/files/doc/{{ name }}" target="_blank" rel="noopener">{% include "svg/doc.html" %}</a>
               {% else %}

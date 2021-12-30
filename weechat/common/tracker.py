@@ -124,4 +124,7 @@ def spec_link(url_spec):
     """Replace specification id by URLs to specification."""
     if not url_spec:
         return ''
-    return f'<a href="{url_spec}" target="_blank" rel="noopener">↗</a>'
+    filename = project_path_join('templates', 'svg', 'doc.html')
+    with open(filename, 'r', encoding='utf-8') as _file:
+        svg_doc = _file.read().strip()
+    return f'<a href="{url_spec}" target="_blank" rel="noopener">{svg_doc}</a>'
