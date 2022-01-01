@@ -2,19 +2,28 @@
 
 {% load i18n %}
 
-{% block css %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/pygments.css" media="screen" title="Normal">{% endblock %}
+{% block css %}
+{{ block.super }}
+  {% if theme == 'auto' %}
+  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/pygments_dark.css" media="(prefers-color-scheme: dark)">
+  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/pygments_light.css" media="(not (prefers-color-scheme: dark)), (prefers-color-scheme: light)">
+  {% else %}
+  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/pygments_{{ theme }}.css" media="screen">
+  {% endif %}
+{% endblock %}
+
 {% block menu2_list %}active{% endblock %}
 
 {% block content %}
 
 {{ block.super }}
 
-<h3>{% trans "Theme" %}: {{ theme.name }}</h3>
+<h3>{% trans "Theme" %}: {{ weechat_theme.name }}</h3>
 
 <p>
-  {% trans "Added" %}: {% if theme.added %}{{ theme.added|date:"Y-m-d" }}{% endif %}{% if theme.updated and theme.added != theme.updated %}, {% trans "updated" %}: {{ theme.updated|date:"Y-m-d" }}{% endif %}.
+  {% trans "Added" %}: {% if weechat_theme.added %}{{ weechat_theme.added|date:"Y-m-d" }}{% endif %}{% if weechat_theme.updated and weechat_theme.added != weechat_theme.updated %}, {% trans "updated" %}: {{ weechat_theme.updated|date:"Y-m-d" }}{% endif %}.
   <br>
-  <a href="{{ theme.build_url }}" class="btn btn-success my-3" download>{% trans "Download" %}</a>
+  <a href="{{ weechat_theme.build_url }}" class="btn btn-success my-3" download>{% trans "Download" %}</a>
 </p>
 
 <p>

@@ -78,7 +78,7 @@ def theme_source(request, themeid=None, themename=None):
         request,
         'themes/source.html',
         {
-            'theme': theme,
+            'weechat_theme': theme,
             'htmlsource': htmlsource,
         },
     )
