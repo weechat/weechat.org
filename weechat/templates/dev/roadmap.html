@@ -28,7 +28,7 @@
 {% for tasks_version in task_list_by_version %}
 <h3>
   Version {{ tasks_version.grouper.version }}
-  <small class="ms-2 text-muted">({% autoescape off %}{{ tasks_version.list.0.version_date }}{% endautoescape %})</small>
+  <small class="ms-2 text-muted">({{ tasks_version.list.0.version_date }})</small>
 </h3>
 <div class="table-responsive">
   <table class="table table-striped">
@@ -45,15 +45,11 @@
     <tbody>
       {% for task in tasks_version.list %}
       <tr>
-        <td class="text-nowrap" style="width: 8rem;">
-          {% autoescape off %}
-          {{ task.url_tracker }}
-          {% endautoescape %}
-        </td>
+        <td class="text-nowrap" style="width: 8rem;">{{ task.url_tracker }}</td>
         <td class="text-center text-nowrap" style="width: 6rem";>
-          {% autoescape off %}
-          {{ task.url_spec }}
-          {% endautoescape %}
+          {% if task.spec %}
+          <a href="{{ task.spec }}" target="_blank" rel="noopener">{% include "svg/doc.html" %}</a>
+          {% endif %}
         </td>
         <td class="text-center text-nowrap" style="width: 10rem;">
           <strong>
@@ -76,11 +72,7 @@
           {% endif %}
           </strong>
         </td>
-        <td class="text-center text-nowrap commits" style="width: 6rem";>
-          {% autoescape off %}
-          {{ task.url_commits }}
-          {% endautoescape %}
-        </td>
+        <td class="text-center text-nowrap commits" style="width: 6rem";>{{ task.url_commits }}</td>
         <td class="text-center text-nowrap" style="width: 10rem;">
           {{ task.component }}
         </td>

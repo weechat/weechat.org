@@ -30,6 +30,7 @@ from django.db.models.signals import pre_save
 
 from weechat.common.path import files_path_join
 from weechat.common.templatetags.localdate import localdate
+from weechat.common.utils import version_to_tuple
 
 
 class Release(models.Model):
@@ -54,6 +55,13 @@ class Release(models.Model):
     def security_fixed_versions(self):
         """Return the list of versions fixing security issues."""
         return self.securityfix.split(',')
+
+    @property
+    def is_released(self):
+        """Return True if the version is released."""
+        stable_version = Release.objects.get(version='stable').description
+        stable_version_tuple = version_to_tuple(stable_version)
+        return version_to_tuple(self.version) <= stable_version_tuple
 
     class Meta:
         ordering = ['-date']

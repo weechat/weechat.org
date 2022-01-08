@@ -22,8 +22,9 @@
 from datetime import date
 
 from django.db import models
+from django.utils.safestring import mark_safe
 
-from weechat.common.tracker import commits_links, spec_link, tracker_links
+from weechat.common.tracker import commits_links, tracker_links
 from weechat.common.templatetags.localdate import localdate
 from weechat.download.models import Release
 
@@ -57,7 +58,7 @@ class Task(models.Model):
         """
         try:
             if self.version.date > date.today():
-                return f'&asymp; {localdate(self.version.date)}'
+                return mark_safe(f'&asymp; {localdate(self.version.date)}')
             return localdate(self.version.date)
         except:  # noqa: E722  pylint: disable=bare-except
             return ''
@@ -66,16 +67,12 @@ class Task(models.Model):
         """Return the tracker URL using keyword(s) in string."""
         return tracker_links(self.tracker) or '-'
 
-    def url_spec(self):
-        """Return the link to specification."""
-        return spec_link(self.spec)
-
     def status_remaining(self):
         """Return the remaining status as % (100 - status)."""
         return 100 - self.status
 
     def url_commits(self):
-        """Return the URL for commit(s)."""
+        """Return the URL for commit(s), as HTML."""
         return commits_links(self.commits)
 
     class Meta:

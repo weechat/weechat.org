@@ -33,6 +33,7 @@ from django import forms
 from django.conf import settings
 from django.db import models
 from django.db.models.signals import pre_save, post_save, post_delete
+from django.utils.safestring import mark_safe
 from django.utils.translation import gettext, gettext_lazy
 
 from weechat.common.decorators import disable_for_loaddata
@@ -96,7 +97,7 @@ class Theme(models.Model):
         if os.path.isfile(filename):
             with open(filename, 'r', encoding='utf-8') as _file:
                 content = _file.read()
-            return content
+            return mark_safe(content)
         return ''
 
     def desc_i18n(self):

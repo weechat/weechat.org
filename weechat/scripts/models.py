@@ -31,6 +31,7 @@ from django.conf import settings
 from django.db import models
 from django.db.models.signals import pre_save, post_save, post_delete
 from django.utils import translation
+from django.utils.safestring import mark_safe
 from django.utils.translation import gettext
 
 from weechat.common.decorators import disable_for_loaddata
@@ -126,11 +127,15 @@ class Script(models.Model):
     def popularity_img(self):
         """Return HTML code with image for popular script."""
         if self.popularity == 0:
-            return (f'<img src="{settings.MEDIA_URL}images/empty.png" alt="" '
-                    f'width="10" height="10">')
-        return (f'<img src="{settings.MEDIA_URL}images/star.png" alt="*" '
-                f'title="{gettext("Popular script")}" '
-                f'width="10" height="10">')
+            return mark_safe(
+                f'<img src="{settings.MEDIA_URL}images/empty.png" alt="" '
+                f'width="10" height="10">'
+            )
+        return mark_safe(
+            f'<img src="{settings.MEDIA_URL}images/star.png" alt="*" '
+            f'title="{gettext("Popular script")}" '
+            f'width="10" height="10">'
+        )
 
     def name_with_extension(self):
         """Return the name of script with its extension."""

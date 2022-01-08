@@ -9,108 +9,308 @@
 
 {{ block.super }}
 
-<h3>{% trans "Report a security issue" %}</h3>
+<ul class="nav nav-tabs mt-4">
+  <li class="nav-item"><a class="nav-link{% if version == "all" %} active{% endif %}" href="{% url 'doc_security' %}">{% trans "All vulnerabilities" %}</a></li>
+  <li class="nav-item"><a class="nav-link{% if version != "all" %} active{% endif %}" href="{% url 'doc_security_versions' %}">{% trans "Vulnerabilities by version" %}</a></li>
+</ul>
 
-<p>
-  {% blocktrans %}Please <strong>DO NOT</strong> file a GitHub issue for security related problems, but send an email to <a href="mailto:security@weechat.org">security@weechat.org</a> instead.{% endblocktrans %}
-</p>
+{% if version == "all" %}
 
 <h3>{% trans "Security vulnerabilities" %}</h3>
 
 <p>
-  {% trans "This table contains a list of all known and fixed security vulnerabilities in WeeChat stable releases (the security vulnerabilities introduced during development of a version and fixed before a stable release are not mentioned)." %}
-  <br><br>
-  {% trans "Note: you can be warned about security vulnerabilities by subscribing to this mailing list:" %}
-  <a href="https://lists.nongnu.org/mailman/listinfo/weechat-security" target="_blank" rel="noopener">
-    weechat-security ↗
-  </a>
+  {% trans "This page lists all known and fixed security vulnerabilities in WeeChat stable releases." %}
+  <br>
+  {% trans "The security vulnerabilities introduced during development of a version and fixed before a stable release are not mentioned." %}
 </p>
 
-{% if security_list %}
+<p>
+  {% trans "WeeChat Security Advisories (WSA) are sent to this mailing list, as soon as they are made public:" %}
+  <a href="https://lists.nongnu.org/mailman/listinfo/weechat-security" target="_blank" rel="noopener">weechat-security ↗</a>
+  <br>
+  {% blocktrans %}To report a security issue, please <strong>DO NOT</strong> file an issue on GitHub, but send an email to <a href="mailto:security@weechat.org">security@weechat.org</a> instead.{% endblocktrans %}
+</p>
 
-<div class="table-responsive">
-  <table class="table table-bordered">
+{% else %}
+
+{% if version %}
+
+{% if not version_error %}
+<h3>{% blocktrans %}Security vulnerabilities in version {{ version }}{% endblocktrans %}</h3>
+<p>
+  {% url 'doc_security_versions' as url_all_versions %}
+  {% blocktrans %}This page lists all known and fixed security vulnerabilities in version {{ version }} (back to the <a href="{{ url_all_versions }}">list of all versions</a>).{% endblocktrans %}
+</p>
+{% endif %}
+
+{% else %}
+
+<h3>{% trans "Security vulnerabilities" %}</h3>
+
+<p>
+  {% trans "This page lists vulnerabilities by WeeChat version (click on a version for the detail of all issues)." %}
+</p>
+
+{% endif %}
+
+{% for release in release_list %}
+{% trans "Version" %} {{ release.version }} <span class="text-muted">({{ release.date_l10n }})</span>
+<br>
+{% endfor %}
+
+{% endif %}
+
+{% if security_list_by_release %}
+
+{% for release, sec_list in security_list_by_release.items %}
+
+<h4>
+  <a href="{% url 'doc_security_version' release.version %}">{% trans "Version" %} {{ release.version }}</a>
+  <small class="ms-2 text-muted">({{ release.date_l10n }})</small>
+</h4>
+
+{% if sec_list %}
+
+<ul>
+  {% for security in sec_list %}
+  <li>
+    {{ security.wsa }}: [{{ security.scope }}] {{ security.issue_i18n }}
+    &mdash;
+    {% with fixed_version=security.fixed_html release_date=security.date_l10n %}
+    {% blocktrans %}Fixed in version {{ fixed_version }} ({{ release_date }}).{% endblocktrans %}
+    {% endwith %}
+  {% endfor %}
+</ul>
+
+{% else %}
+
+{% trans "No known security vulnerabilities." %}
+
+{% endif %}
+
+{% endfor %}
+
+{% elif security_list %}
+
+<h4>
+  {% blocktrans trimmed count counter=security_list|length %}
+  Overview: {{ counter }} vulnerability
+  {% plural %}
+  Overview: {{ counter }} vulnerabilities
+  {% endblocktrans %}
+</h4>
+
+<div class="table-responsive pt-3">
+  <table class="table table-sm">
     <thead>
       <tr>
-        <th class="text-center text-nowrap">{% trans "Severity" %}</th>
-        <th class="text-center text-nowrap">CVE</th>
-        <th class="text-center text-nowrap">{% trans "Tracker" %}</th>
-        <th class="text-center">{% trans "Affected versions" %}</th>
-        <th class="text-center">{% trans "Fixed in version" %}</th>
-        <th class="text-center">{% trans "Release date" %}</th>
-        <th class="text-center">Git</th>
-        <th>{% trans "Description" %} / {% trans "Workaround" %}</th>
+        <th class="text-nowrap"><abbr title="WeeChat Security Advisory">WSA</abbr></th>
+        <th class="text-nowrap">CVE</th>
+        <th class="text-nowrap">{% trans "Score" %}</th>
+        <th class="text-nowrap">{% trans "Severity" %}</th>
+        <th>{% trans "Issue" %}</th>
+        <th class="text-nowrap">{% trans "Scope" %}</th>
+        <th>{% trans "Vulnerability type" %}</th>
+        <th><abbr title="{% trans "Affected versions" %}">{% trans "Versions" %}</abbr></th>
+        <th><abbr title="{% trans "Fixed version" %}">{% trans "Fix" %}</</th>
+        <th>{% trans "Release date" %}</th>
       </tr>
     </thead>
     <tbody>
       {% for security in security_list %}
       <tr>
-        <td class="text-center text-nowrap text-severity">
-          <a class="js-scroll" href="#severities">
-            {{ security.severity_html_indicator|safe }}
-            <br>
-            <span class="text-severity{{ security.severity }}">
-              {{ security.severity_i18n }}
-            </span>
-          </a>
-        </td>
-        <td class="text-center text-nowrap">
-          {% if security.external %}
-          {% autoescape off %}{{ security.external_links }}{% endautoescape %}
-          {% else %}
-          -
-          {% endif %}
-        </td>
-        <td class="text-center text-nowrap">
-          {% if security.tracker %}
-          {% autoescape off %}{{ security.url_tracker }}{% endautoescape %}
-          {% else %}
-          -
-          {% endif %}
-        </td>
-        <td class="text-center text-nowrap text-danger">{% autoescape off %}{{ security.affected_html }}{% endautoescape %}</td>
-        <td class="text-center text-nowrap text-success">{{ security.fixed }}</td>
-        <td class="text-center text-nowrap">{% if security.release_date %}{{ security.release_date_l10n }}{% else %}-{% endif %}</td>
-        <td class="text-center text-nowrap commits">{% autoescape off %}{{ security.url_commits }}{% endautoescape %}</td>
-        <td>
-          {{ security.description_i18n }}
-          <div class="mt-2">
-            <img src="{{ MEDIA_URL }}images/arrow_right_green.png" width="10" height="10" alt="&gt;">
-            {% if security.workaround %}
-            {% trans "Workaround" %}:
-            <br>
-            {{ security.workaround_i18n }}
-            {% else %}
-            {% trans "There is no workaround." %}
-            {% endif %}
-          </div>
-        </td>
+        <td class="text-nowrap"><a class="js-scroll" href="#{{ security.wsa }}">{{ security.wsa }}</a></td>
+        <td class="text-nowrap">{{ security.cve|default:"-" }}</td>
+        <td class="text-nowrap text-end text-severity{{ security.severity_index }}">{{ security.cvss_score }}</td>
+        <td class="text-nowrap"><span title="{{ security.severity_i18n }}">{{ security.score_bar }}</span></td>
+        <td>{{ security.issue_i18n }}</td>
+        <td class="text-nowrap">{{ security.scope_i18n }}</td>
+        <td>{{ security.cwe_i18n }}</td>
+        <td class="text-nowrap text-danger fw-bold">{{ security.affected_html }}</td>
+        <td class="text-nowrap text-success fw-bold">{{ security.fixed }}</td>
+        <td class="text-nowrap">{% if security.release_date %}{{ security.release_date_l10n }}{% else %}-{% endif %}</td>
       </tr>
     {% endfor %}
     </tbody>
   </table>
 </div>
 
-<p id="severities">
-  {% blocktrans with count=legend_list|length %}Security vulnerabilities are classified using {{ count }} severity levels:{% endblocktrans %}
-  <ul class="list-group">
-    {% for security in legend_list %}
-    <li class="list-group-item">
-      <span class="me-2">
-        {{ security.severity_html_indicator|safe }}
+{% for security in security_list %}
+<h4 id="{{ security.wsa }}">
+  {{ security.wsa }}: [{{ security.scope }}] {{ security.issue_i18n }}
+</h4>
+
+<h5>{% trans "Vulnerability" %}</h5>
+
+<div class="col-12 col-md-8 col-lg-6 col-xl-5 ms-4">
+  <div class="row">
+    <div class="col-12 col-md-4 fw-bold">
+      CVE
+    </div>
+    <div class="col-12 col-md-8">
+      {% if security.cve %}
+      {{ security.cve }}
+      <span class="ms-2">
+        [
+        {% for name, url in security.cve_links.items %}
+        <a href="{{ url }}" target="_blank" rel="noopener">{{ name }}</a>{% if not forloop.last %} /{% endif %}
+        {% endfor %}
+        ]
       </span>
-      <span class="text-severity text-severity{{ security.severity }}">{{ security.severity_i18n }}:</span>
-      {{ security.severity_description_i18n|safe }}
-    </li>
-    {% endfor %}
-  </ul>
-</p>
+      {% else %}
+      <span class="text-muted">{% trans "Not assigned" %}</span>
+      {% endif %}
+    </div>
+  </div>
+  {% if security.cvss_vector %}
+  <div class="row">
+    <div class="col-12 col-md-4 fw-bold">
+      <abbr title="{% trans "Common Vulnerability Scoring System vector: it is established by WeeChat team and may not reflect exactly the vector displayed on NVD site." %}">
+        {% trans "CVSS vector" %}
+      </abbr>
+    </div>
+    <div class="col-12 col-md-8">
+      {{ security.cvss_vector }}
+      (<a href="{{ security.url_cvss_vector }}" target="_blank" rel="noopener">{% trans "detail" %}</a>)
+    </div>
+  </div>
+  {% endif %}
+  <div class="row">
+    <div class="col-12 col-md-4 fw-bold">
+      <abbr title="{% trans "Common Vulnerability Scoring System score: it is established by WeeChat team and may not reflect exactly the score displayed on NVD site." %}">
+        {% trans "CVSS score" %}
+      </abbr>
+    </div>
+    <div class="col-12 col-md-8 text-severity{{ security.severity_index }}">
+      {{ security.cvss_score }}
+      <span class="text-muted"> / 10</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-4 fw-bold">
+      <abbr title="{% trans "Common Vulnerability Scoring System severity: it is established by WeeChat team and may not reflect exactly the severity displayed on NVD site." %}">
+        {% trans "Severity" %}
+      </abbr>
+    </div>
+    <div class="col-12 col-md-8">
+      {{ security.score_bar }}
+      <span class="ms-2 text-severity{{ security.severity_index }}">
+        {{ security.severity_i18n }}
+      </span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-4 fw-bold">
+      <abbr title="{% trans "Also known as Common Weakness Enumeration (CWE)." %}">{% trans "Vulnerability type" %}</abbr>
+    </div>
+    <div class="col-12 col-md-8">
+      {{ security.cwe_i18n }}
+      {% if security.cwe_id > 0 %}
+      (<a href="{{ security.url_cwe }}" target="_blank" rel="noopener">{% trans "detail" %}</a>)
+      {% endif %}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-4 fw-bold">
+      {% trans "Scope" %}
+    </div>
+    <div class="col-12 col-md-8">
+      {{ security.scope_i18n }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-4 fw-bold">
+      {% trans "Affected versions" %}
+    </div>
+    <div class="col-12 col-md-8">
+      <span class="text-danger fw-bold">
+        {{ security.affected_html }}
+      </span>
+    </div>
+  </div>
+  {% if security.fixed %}
+  <div class="row">
+    <div class="col-12 col-md-4 fw-bold">
+      {% trans "Fixed version" %}
+    </div>
+    <div class="col-12 col-md-8">
+    <span class="text-success fw-bold me-2">
+      {{ security.fixed }}
+    </span>
+    ({{ security.release_date_l10n }})
+    -
+    <a href="/files/changelog/ChangeLog-{{ security.fixed }}.html" target="_blank" rel="noopener">
+      {% trans "ChangeLog" %}
+    </a>
+    </div>
+  </div>
+  {% endif %}
+  <div class="row">
+    <div class="col-12 col-md-4 fw-bold">
+    </div>
+    <div class="col-12 col-md-8">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-4 fw-bold">
+      {% trans "Tracker" %}
+    </div>
+    <div class="col-12 col-md-8">
+      {% if security.tracker %}
+      {{ security.url_tracker }}
+      {% else %}
+      <span class="text-muted">{% trans "Not available" %}</span>
+      {% endif %}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-4 fw-bold">
+      {% trans "Commits" %}
+    </div>
+    <div class="col-12 col-md-8">
+      {{ security.url_commits|default:"-" }}
+    </div>
+  </div>
+</div>
+
+<h5>{% trans "Description" %}</h5>
+
+{{ security.description_i18n }}
+
+<h5>{% trans "Mitigation" %}</h5>
+
+{% if security.mitigation %}
+{{ security.mitigation_i18n }}
+{% else %}
+{% trans "There is no known mitigation." %}
+<br>
+{% trans "The upgrade of WeeChat to the latest stable version is highly recommended." %}
+{% endif %}
+
+{% if security.credit %}
+<h5>{% trans "Credit" %}</h5>
+{% with credit=security.credit %}
+{% blocktrans %}The issue was discovered by {{ credit }}.{% endblocktrans %}
+{% endwith %}
+{% endif %}
+
+{% if not forloop.last %}<hr>{% endif %}
+
+{% endfor %}
 
 {% else %}
 
-<div class="alert alert-success">
-  {% trans "No security vulnerability." %}
+{% if version_error %}
+
+<div class="alert alert-danger">
+  {% blocktrans %}Error: there is no version called "{{ version }}".{% endblocktrans %}
 </div>
+
+{% else %}
+
+{% trans "No known security vulnerabilities." %}
+
+{% endif %}
 
 {% endif %}
 

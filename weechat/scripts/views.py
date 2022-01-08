@@ -28,6 +28,7 @@ from pygments.lexers import get_lexer_by_name
 
 from django.http import Http404
 from django.shortcuts import render, get_object_or_404
+from django.utils.safestring import mark_safe
 
 from weechat.common.path import files_path_join
 from weechat.download.models import Release
@@ -170,8 +171,8 @@ def script_source(request, scriptid='', scriptname=''):
             with open(files_path_join(script.path(),
                                       script.name_with_extension()),
                       'rb') as _file:
-                htmlsource = get_highlighted_source(_file.read(),
-                                                    script.language)
+                html_source = get_highlighted_source(_file.read(),
+                                                     script.language)
         except Exception as exc:  # noqa: E722  pylint: disable=bare-except
             raise Http404 from exc
     else:
@@ -190,8 +191,8 @@ def script_source(request, scriptid='', scriptname=''):
             with open(files_path_join(script.path(),
                                       script.name_with_extension()),
                       'rb') as _file:
-                htmlsource = get_highlighted_source(_file.read(),
-                                                    PYGMENTS_LEXER[sext])
+                html_source = get_highlighted_source(_file.read(),
+                                                     PYGMENTS_LEXER[sext])
         except Exception as exc:  # noqa: E722  pylint: disable=bare-except
             raise Http404 from exc
     return render(
@@ -199,7 +200,7 @@ def script_source(request, scriptid='', scriptname=''):
         'scripts/source.html',
         {
             'script': script,
-            'htmlsource': htmlsource,
+            'html_source': mark_safe(html_source),
         },
     )
 

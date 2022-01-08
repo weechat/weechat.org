@@ -30,12 +30,12 @@ from django.shortcuts import render, redirect
 from django.utils.translation import gettext
 
 from weechat.common.path import files_path_join
+from weechat.common.utils import version_to_tuple
 from weechat.doc.models import (
     Language,
     Version,
     Doc,
     Security,
-    SECURITY_SEVERITIES,
 )
 from weechat.download.models import Release
 
@@ -219,16 +219,66 @@ def documentation_link(request, version='stable', name=None, lang='en'):
     return redirect('doc')
 
 
-def security(request):
+def security_all(request):
     """Page with security vulnerabilities."""
     security_list = Security.objects.all().filter(visible=1).order_by('-date')
-    legend_list = [Security(severity=i)
-                   for i in range(0, len(SECURITY_SEVERITIES))]
     return render(
         request,
         'doc/security.html',
         {
+            'version': 'all',
             'security_list': security_list,
-            'legend_list': legend_list,
         },
     )
+
+
+def is_security_affecting_release(security, release):
+    """Return True if the Security issue is affecting the Release."""
+    version_tuple = version_to_tuple(release.version)
+    for version in security.affected.split(','):
+        if '-' in version:
+            version1, version2 = version.split('-', 1)
+            version1 = version_to_tuple(version1)
+            version2 = version_to_tuple(version2)
+            if version1 <= version_tuple <= version2:
+                return True
+        else:
+            if version_tuple == version_to_tuple(version):
+                return True
+    return False
+
+
+def security_version(request, version=''):
+    """Page with security vulnerabilities, by version or for a version."""
+    security_list = Security.objects.all().filter(visible=1).order_by('-date')
+    context = {
+        'version': version,
+    }
+    if version:
+        try:
+            release = Release.objects.get(version=version)
+            if not release.is_released:
+                raise ObjectDoesNotExist
+        except ObjectDoesNotExist:
+            release = None
+            context['version_error'] = True
+        if release:
+            context['security_list'] = [
+                security for security in security_list
+                if is_security_affecting_release(security, release)
+            ]
+    else:
+        security_list_by_release = {}
+        release_list = (Release.objects.all()
+                        .exclude(version='devel')
+                        .exclude(version='stable')
+                        .order_by('-date'))
+        for release in release_list:
+            if not release.is_released:
+                continue
+            security_list_by_release[release] = [
+                security for security in security_list
+                if is_security_affecting_release(security, release)
+            ]
+        context['security_list_by_release'] = security_list_by_release
+    return render(request, 'doc/security.html', context)

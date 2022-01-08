@@ -31,6 +31,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.core.mail import EmailMessage
 from django.http import HttpResponseRedirect, Http404
 from django.shortcuts import render, get_object_or_404
+from django.utils.safestring import mark_safe
 
 from weechat.common.path import files_path_join
 from weechat.download.models import Release
@@ -67,11 +68,11 @@ def theme_source(request, themeid=None, themename=None):
         theme = get_object_or_404(Theme, name=themename)
     try:
         with open(files_path_join(theme.path(), theme.name), 'rb') as _file:
-            htmlsource = highlight(_file.read(),
-                                   get_lexer_by_name('ini', stripnl=True,
-                                                     encoding='utf-8'),
-                                   HtmlFormatter(cssclass='pygments',
-                                                 linenos='table'))
+            html_source = highlight(_file.read(),
+                                    get_lexer_by_name('ini', stripnl=True,
+                                                      encoding='utf-8'),
+                                    HtmlFormatter(cssclass='pygments',
+                                                  linenos='table'))
     except Exception as exc:  # noqa: E722  pylint: disable=bare-except
         raise Http404 from exc
     return render(
@@ -79,7 +80,7 @@ def theme_source(request, themeid=None, themename=None):
         'themes/source.html',
         {
             'weechat_theme': theme,
-            'htmlsource': htmlsource,
+            'html_source': mark_safe(html_source),
         },
     )
 

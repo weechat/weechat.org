@@ -21,6 +21,8 @@
 
 import re
 
+from django.utils.safestring import mark_safe
+
 from weechat.common.path import project_path_join
 
 
@@ -68,7 +70,7 @@ def tracker_links(tracker):
     if not tracker:
         return ''
     items = [_replace_link(item) for item in tracker.split(',')]
-    return '<br>'.join(items)
+    return mark_safe('<br>'.join(items))
 
 
 def split_commit(commit):
@@ -117,14 +119,4 @@ def commits_links(commits):
         images.append(f'<a href="https://github.com/{repo}/{objtype}/'
                       f'{commit_id}" target="_blank" rel="noopener">'
                       f'{link}</a>')
-    return ' '.join(images)
-
-
-def spec_link(url_spec):
-    """Replace specification id by URLs to specification."""
-    if not url_spec:
-        return ''
-    filename = project_path_join('templates', 'svg', 'doc.html')
-    with open(filename, 'r', encoding='utf-8') as _file:
-        svg_doc = _file.read().strip()
-    return f'<a href="{url_spec}" target="_blank" rel="noopener">{svg_doc}</a>'
+    return mark_safe(' '.join(images))

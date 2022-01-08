@@ -26,13 +26,18 @@ from django.urls import path, re_path
 from weechat.doc.views import (
     documentation as view_doc,
     documentation_link as view_doc_link,
-    security as view_security,
+    security_all as view_security,
+    security_version as view_security_version,
 )
 
 urlpatterns = [
     path('', view_doc, name='doc'),
     re_path(r'^(?P<version>stable|devel|old)/$', view_doc, name='doc_version'),
     path('security/', view_security, name='doc_security'),
+    path('security/version/', view_security_version,
+         name='doc_security_versions'),
+    re_path('security/version/(?P<version>[0-9.]+)/$', view_security_version,
+            name='doc_security_version'),
 
     # shortcuts
     re_path(r'^(?P<version>stable|devel)/(?P<name>[a-z_]+)/$', view_doc_link),

@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-18 10:47+0100\n"
-"PO-Revision-Date: 2021-06-06 20:59+0200\n"
+"POT-Creation-Date: 2022-01-08 09:48+0100\n"
+"PO-Revision-Date: 2022-01-04 18:41+0100\n"
 "Last-Translator: Alexandre Bolelli <semeion7@gmail.com>\n"
 "Language-Team: Portuguese <semeion7@gmail.com>\n"
 "Language: pt_BR\n"
@@ -341,142 +341,300 @@ msgid "(binary data)"
 msgstr ""
 
 #: doc/_i18n_security.py:13
-msgid "/set irc.network.colors_receive off"
-msgstr "/set irc.network.colors_receive off"
-
-#: doc/_i18n_security.py:14
 msgid ""
-"Buffer overflow when a new IRC message 005 is received with longer nick "
-"prefixes."
+"A buffer overflow happens when a new IRC message 005 is received with longer "
+"nick prefixes.\n"
+"<br>\n"
+"Note: a \"normal\" IRC server should not send again a message 005 with new "
+"nick prefixes, so the problem should be limited to malicious IRC servers."
 msgstr ""
 
-#: doc/_i18n_security.py:15
-msgid "Buffer overflow when decoding IRC colors in strings."
+#: doc/_i18n_security.py:14
+#, fuzzy
+#| msgid "Buffer overflow when decoding IRC colors in strings."
+msgid "A buffer overflow happens when decoding some IRC colors in strings."
 msgstr "Buffer overflow durante a decodificação de strings de cores de IRC."
 
+#: doc/_i18n_security.py:15
+#, fuzzy
+#| msgid "Buffer overflows in build of strings."
+msgid "A buffer overflows happens in build of strings in different places."
+msgstr "Buffer overflows na construção de strings."
+
 #: doc/_i18n_security.py:16
+msgid ""
+"A crash happens when decoding a malformed websocket frame in relay plugin.\n"
+"<br>\n"
+"This happens even if a password is set in relay plugin, the malformed "
+"websocket frame can be received before the authentication of the client."
+msgstr ""
+
+#: doc/_i18n_security.py:17
+#, fuzzy
+#| msgid "Crash when receiving special chars in IRC messages."
+msgid ""
+"A crash happens when receiving some WeeChat internal color codes in IRC "
+"messages."
+msgstr "Falha durante o recebimento de caracteres especiais em mensagens IRC."
+
+#: doc/_i18n_security.py:18
+msgid "API"
+msgstr ""
+
+#: doc/_i18n_security.py:19
+msgid "Access of uninitialized pointer"
+msgstr ""
+
+#: doc/_i18n_security.py:20
+#, fuzzy
+#| msgid "Buffer overflow when decoding IRC colors in strings."
+msgid "Buffer overflow on malformed IRC message 324 (channel mode)."
+msgstr "Buffer overflow durante a decodificação de strings de cores de IRC."
+
+#: doc/_i18n_security.py:21
+#, fuzzy
+#| msgid "Buffer overflow when decoding IRC colors in strings."
+msgid "Buffer overflow on new IRC message 005 with nick prefixes."
+msgstr "Buffer overflow durante a decodificação de strings de cores de IRC."
+
+#: doc/_i18n_security.py:22
+#, fuzzy
+#| msgid "Buffer overflow when decoding IRC colors in strings."
+msgid "Buffer overflow when receiving a DCC file."
+msgstr "Buffer overflow durante a decodificação de strings de cores de IRC."
+
+#: doc/_i18n_security.py:23
 msgid ""
 "Buffer overflow when receiving a malformed IRC message 324 (channel mode)."
 msgstr ""
 
-#: doc/_i18n_security.py:17
+#: doc/_i18n_security.py:24
 #, fuzzy
 #| msgid "Buffer overflow when decoding IRC colors in strings."
 msgid "Buffer overflow when removing quotes in DCC filename."
 msgstr "Buffer overflow durante a decodificação de strings de cores de IRC."
 
-#: doc/_i18n_security.py:18
+#: doc/_i18n_security.py:25
 msgid "Buffer overflows in build of strings."
 msgstr "Buffer overflows na construção de strings."
 
-#: doc/_i18n_security.py:19
+#: doc/_i18n_security.py:26
+msgid "Core, IRC"
+msgstr ""
+
+#: doc/_i18n_security.py:27
+#, fuzzy
+#| msgid "Uncontrolled format string in API function infobar_printf."
+msgid "Crash in API function infobar_printf."
+msgstr "String de formato descontrolada na função de API infobar_printf."
+
+#: doc/_i18n_security.py:28
+msgid "Crash on IRC commands sent via Relay."
+msgstr ""
+
+#: doc/_i18n_security.py:29
 #, fuzzy
 #| msgid "Crash when receiving special chars in IRC messages."
-msgid "Crash when decoding a malformed websocket frame in relay plugin."
+msgid "Crash on malformed IRC message 352 (WHO)."
 msgstr "Falha durante o recebimento de caracteres especiais em mensagens IRC."
 
-#: doc/_i18n_security.py:20
+#: doc/_i18n_security.py:30
+#, fuzzy
+#| msgid "Crash when receiving special chars in IRC messages."
+msgid "Crash on malformed websocket frame in relay plugin."
+msgstr "Falha durante o recebimento de caracteres especiais em mensagens IRC."
+
+#: doc/_i18n_security.py:31
+msgid "Crash on nicks monitored with /notify."
+msgstr ""
+
+#: doc/_i18n_security.py:32
+msgid "Crash on send of unknown commands to IRC server."
+msgstr ""
+
+#: doc/_i18n_security.py:33
+#, fuzzy
+#| msgid "Buffer overflow when decoding IRC colors in strings."
+msgid "Crash when decoding IRC colors."
+msgstr "Buffer overflow durante a decodificação de strings de cores de IRC."
+
+#: doc/_i18n_security.py:34
+#, fuzzy
+#| msgid "Crash when receiving special chars in IRC messages."
+msgid "Crash when receiving WeeChat color codes in IRC messages."
+msgstr "Falha durante o recebimento de caracteres especiais em mensagens IRC."
+
+#: doc/_i18n_security.py:35
 #, fuzzy
 #| msgid "Crash when receiving special chars in IRC messages."
 msgid "Crash when receiving a malformed IRC message 352 (WHO)."
 msgstr "Falha durante o recebimento de caracteres especiais em mensagens IRC."
 
-#: doc/_i18n_security.py:21
-msgid "Crash when receiving special chars in IRC messages."
-msgstr "Falha durante o recebimento de caracteres especiais em mensagens IRC."
-
-#: doc/_i18n_security.py:22
-msgid ""
-"Create a trigger (with WeeChat >= 1.1): /trigger add irc_dcc_quotes modifier "
-"\"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND ${\\x22} \" "
-"\"/.*//\""
-msgstr ""
-
-#: doc/_i18n_security.py:23
+#: doc/_i18n_security.py:36
 msgid ""
 "Date/time conversion specifiers are expanded after replacing buffer local "
 "variables in name of log files. In some cases, this can lead to an error in "
 "function strftime and a crash caused by the use of an uninitialized buffer."
 msgstr ""
 
-#: doc/_i18n_security.py:24
+#: doc/_i18n_security.py:37
+#, fuzzy
+#| msgid ""
+#| "Do not use command /notify with nicks containing formatting chars like \"%"
+#| "\"."
 msgid ""
-"Do not use command /notify with nicks containing formatting chars like \"%\"."
+"Do not use command <code>/notify</code> with nicks containing formatting "
+"chars like \"%\"."
 msgstr ""
 "Não use o comando /notify com apelidos contendo caracteres de formatação "
 "como \"%\"."
 
-#: doc/_i18n_security.py:25
-msgid "Do not use irc protocol in relay plugin."
-msgstr "Não use o protocolo irc no plugin de retransmissão."
-
-#: doc/_i18n_security.py:26
+#: doc/_i18n_security.py:38
+#, fuzzy
+#| msgid ""
+#| "Missing verifications in SSL certificate, which allows man-in-the-middle "
+#| "attackers to spoof an SSL chat server via an arbitrary certificate."
 msgid ""
-"Either: remove all relays, unload relay plugin or secure relay to allow only "
-"some trusted IP addresses (option relay.network.allowed_ips)."
-msgstr ""
-
-#: doc/_i18n_security.py:27
-msgid ""
-"Missing verifications in SSL certificate, which allows man-in-the-middle "
-"attackers to spoof an SSL chat server via an arbitrary certificate."
+"Due to insufficient check of SSL certificate in IRC plugin, man-in-the-"
+"middle attackers can spoof a server via an arbitrary certificate."
 msgstr ""
 "Ausência de verificação de certificados SSL, o que permite que atacantes man-"
 "in-the-middle enganem um servidor de chat com SSL através de um certificado "
 "arbitrário."
 
-#: doc/_i18n_security.py:28
-msgid ""
-"Remove/unload all scripts calling function hook_process (for maximum safety)."
+#: doc/_i18n_security.py:39
+msgid "IRC"
+msgstr ""
+
+#: doc/_i18n_security.py:40
+msgid "Improper input validation"
+msgstr ""
+
+#: doc/_i18n_security.py:41
+msgid "Logger"
+msgstr ""
+
+#: doc/_i18n_security.py:42
+msgid "Out-of-bounds read"
+msgstr ""
+
+#: doc/_i18n_security.py:43
+msgid "Out-of-bounds write"
+msgstr ""
+
+#: doc/_i18n_security.py:44
+msgid "Possible man-in-the-middle attack in connection to IRC server."
+msgstr ""
+
+#: doc/_i18n_security.py:45
+msgid "Relay"
+msgstr ""
+
+#: doc/_i18n_security.py:46
+msgid "Remote execution of commands via scripts."
+msgstr ""
+
+#: doc/_i18n_security.py:47
+#, fuzzy
+#| msgid ""
+#| "Remove/unload all scripts calling function hook_process (for maximum "
+#| "safety)."
+msgid "Remove/unload all scripts calling the API function hook_process."
 msgstr ""
 "Remove/descarrega todos os scripts chamando a função hook_process (para "
 "segurança máxima)."
 
-#: doc/_i18n_security.py:29
-msgid ""
-"Turn off option \"irc.network.send_unknown_commands\" or do not use "
-"formatting chars like \"%\" when sending unknown commands to server."
-msgstr ""
-"Desabilite a  opção \"irc.network.send_unknown_commands\" ou não use "
-"caracteres de formatação como \"%\" quando enviar comandos desconhecidos ao "
-"servidor."
-
-#: doc/_i18n_security.py:30
-msgid "Uncontrolled format string in API function infobar_printf."
+#: doc/_i18n_security.py:48
+#, fuzzy
+#| msgid "Uncontrolled format string in API function infobar_printf."
+msgid "Remove/unload all scripts calling the API function infobar_printf."
 msgstr "String de formato descontrolada na função de API infobar_printf."
 
-#: doc/_i18n_security.py:31
+#: doc/_i18n_security.py:49
+#, fuzzy
+#| msgid "Uncontrolled format string in API function infobar_printf."
 msgid ""
-"Uncontrolled format string when IRC commands are redirected by relay plugin. "
-"If the output or redirected command contains formatting chars like \"%\", "
-"this can lead to a crash of WeeChat."
+"Strings are built with uncontrolled format in API function infobar_printf."
+msgstr "String de formato descontrolada na função de API infobar_printf."
+
+#: doc/_i18n_security.py:50
+#, fuzzy
+#| msgid ""
+#| "Uncontrolled format string when IRC commands are redirected by relay "
+#| "plugin. If the output or redirected command contains formatting chars "
+#| "like \"%\", this can lead to a crash of WeeChat."
+msgid ""
+"Strings are built with uncontrolled format when IRC commands are redirected "
+"by relay plugin. If the output or redirected command contains formatting "
+"chars like \"%\", this can lead to a crash of WeeChat."
 msgstr ""
 "String de formato descontrolada quando comandos IRC são redirecionados pelo "
 "plugin de retransmissão. Se a saída ou comando redirecionado contém "
 "caracteres formatantes como \"%\", isto pode levar à falha do WeeChat."
 
-#: doc/_i18n_security.py:32
+#: doc/_i18n_security.py:51
+#, fuzzy
+#| msgid ""
+#| "Uncontrolled format string when sending IRC \"ison\" command for nicks "
+#| "monitored with command /notify."
 msgid ""
-"Uncontrolled format string when sending IRC \"ison\" command for nicks "
-"monitored with command /notify."
+"Strings are built with uncontrolled format when nicks containing \"%\" are "
+"monitored with command <code>/notify</code>."
 msgstr ""
 "String de formato descontrolada quando enviando comandos IRC \"ison\" para "
 "apelidos monitorados com o comando /notify."
 
-#: doc/_i18n_security.py:33
+#: doc/_i18n_security.py:52
+#, fuzzy
+#| msgid ""
+#| "Uncontrolled format string when sending unknown IRC command to server (if "
+#| "option \"irc.network.send_unknown_commands\" is on)."
 msgid ""
-"Uncontrolled format string when sending unknown IRC command to server (if "
-"option \"irc.network.send_unknown_commands\" is on)."
+"Strings are built with uncontrolled format when unknown IRC commands are "
+"sent to server (if option \"irc.network.send_unknown_commands\" is enabled)."
 msgstr ""
 "String de formato incontrolada quando enviando um comando IRC desconhedico "
 "para o servidor (se a opção \"irc.network.send_unknown_commands\" está "
 "habilitada)."
 
-#: doc/_i18n_security.py:34
-msgid "Unload the logger plugin: /plugin unload logger"
+#: doc/_i18n_security.py:53
+msgid ""
+"There are multiple ways to mitigate this issue:\n"
+"<ul>\n"
+"  <li>Rremove all relays, see: <code>/help relay</code></li>\n"
+"  <li>Unload relay plugin with command: <code>/plugin unload relay</code> "
+"and see: <code>/help weechat.plugin.autoload</code></li>\n"
+"  <li>Secure relay to allow only some trusted IP addresses, see: <code>/help "
+"relay.network.allowed_ips</code></li>\n"
+"</ul>"
 msgstr ""
 
-#: doc/_i18n_security.py:35
+#: doc/_i18n_security.py:54
+#, fuzzy
+#| msgid ""
+#| "Turn off option \"irc.network.send_unknown_commands\" or do not use "
+#| "formatting chars like \"%\" when sending unknown commands to server."
+msgid ""
+"There are multiple ways to mitigate this issue:\n"
+"<ul>\n"
+"  <li>Turn off option to send unknown commands: <code>/set irc.network."
+"send_unknown_commands off</code></li>\n"
+"  <li>Do not use formatting chars like \"%\" when sending unknown commands "
+"to server.</li>\n"
+"</ul>"
+msgstr ""
+"Desabilite a  opção \"irc.network.send_unknown_commands\" ou não use "
+"caracteres de formatação como \"%\" quando enviar comandos desconhecidos ao "
+"servidor."
+
+#: doc/_i18n_security.py:55
+msgid ""
+"Turn of handling of colors in incoming IRC messages:\n"
+"\n"
+"<p><pre><code>/set irc.network.colors_receive off</code></pre></p>"
+msgstr ""
+
+#: doc/_i18n_security.py:56
 msgid ""
 "Untrusted command for function hook_process could lead to execution of "
 "commands, because of shell expansions (so the problem is only caused by some "
@@ -486,147 +644,158 @@ msgstr ""
 "commandos, devido às expansões de shell (então o problema somente é causado "
 "por alguns scripts, não pelo WeeChatem si)."
 
+#: doc/_i18n_security.py:57
+msgid "Use of invalid pointer in build of log filename."
+msgstr ""
+
+#: doc/_i18n_security.py:58
+#, python-brace-format
+msgid ""
+"With WeeChat ≥ 1.1, you can create a trigger:\n"
+"\n"
+"<p><pre><code>/trigger add fix_irc_352 modifier \"irc_in_352\" "
+"\"${arguments} =~ .* \\*$\" \"/.*//\"</code></pre></p>\n"
+"\n"
+"With any older version, there is no simple mitigation, you must upgrade "
+"WeeChat."
+msgstr ""
+
+#: doc/_i18n_security.py:59
+msgid ""
+"With WeeChat ≥ 1.1, you can create a trigger:\n"
+"\n"
+"<p><pre><code>/trigger add irc_dcc_quotes modifier \"irc_in_privmsg\" "
+"\"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND ${\\x22} \" \"/.*//\"</code></"
+"pre></p>\n"
+"\n"
+"With any older version, there is no simple mitigation, you must upgrade "
+"WeeChat."
+msgstr ""
+
+#: doc/_i18n_security.py:60
+msgid ""
+"You can remove all relays of type \"irc\", see <code>/help relay</code>."
+msgstr ""
+
+#: doc/_i18n_security.py:61
+msgid ""
+"You can unload the logger plugin, thus stopping recording of all buffers: "
+"<code>/plugin unload logger</code>."
+msgstr ""
+
 #. Translators: this is a severity level for a security vulnerability
-#: doc/models.py:36
+#: doc/models.py:46
+msgid "none"
+msgstr ""
+
+#. Translators: this is a severity level for a security vulnerability
+#: doc/models.py:48
 msgid "low"
 msgstr "baixo"
 
 #. Translators: this is a severity level for a security vulnerability
-#: doc/models.py:38
+#: doc/models.py:50
 msgid "medium"
 msgstr "médio"
 
 #. Translators: this is a severity level for a security vulnerability
-#: doc/models.py:40
+#: doc/models.py:52
 msgid "high"
 msgstr "alto"
 
 #. Translators: this is a severity level for a security vulnerability
-#: doc/models.py:42
+#: doc/models.py:54
 msgid "critical"
 msgstr "crítico"
 
-#: doc/models.py:45
-#, fuzzy
-#| msgid ""
-#| "local problem which occurs in very specific conditions, low impact. "
-#| "Upgrade is not mandatory."
-msgid ""
-"minor issue occuring in very specific conditions, low impact. Upgrade is not "
-"mandatory."
-msgstr ""
-"problema local que ocorre em condições muito específicas, baixo impacto. "
-"Atualização não é obrigatória."
-
-#: doc/models.py:47
-msgid ""
-"problem affecting a specific feature. Upgrade is <strong>recommended</"
-"strong> at least for people using the feature."
-msgstr ""
-"problema afetando uma característica específica. Atualização é "
-"<strong>recomendada</strong> pelo menos para pessoas usando aquela "
-"característica."
-
-#: doc/models.py:50
-msgid "severe problem. Upgrade is <strong>highly recommended</strong>."
-msgstr "problema severo. Atualização é <strong>altamente recomendada</strong>."
-
-#: doc/models.py:52
-msgid ""
-"critical problem, risk of damage on your system. <strong>You MUST upgrade "
-"immediately!</strong>"
-msgstr ""
-"problema crítico, risco de danos no seu sistema. <strong>VocE DEVE atualizar "
-"imediatamente!</strong>"
-
-#: doc/models.py:60
+#: doc/models.py:86
 msgid "Czech"
 msgstr "Tcheco"
 
-#: doc/models.py:61 settings.py:49 templates/about/support.html:34
+#: doc/models.py:87 settings.py:49 templates/about/support.html:34
 #: templates/about/weechat.org.html:24
 msgid "German"
 msgstr "Alemão"
 
-#: doc/models.py:62 settings.py:47 templates/about/support.html:27
+#: doc/models.py:88 settings.py:47 templates/about/support.html:27
 msgid "English"
 msgstr "Inglês"
 
-#: doc/models.py:63
+#: doc/models.py:89
 msgid "Spanish"
 msgstr "Espanhol"
 
-#: doc/models.py:64 settings.py:48 templates/about/support.html:28
+#: doc/models.py:90 settings.py:48 templates/about/support.html:28
 msgid "French"
 msgstr "Francês"
 
-#: doc/models.py:65
+#: doc/models.py:91
 msgid "Hungarian"
 msgstr "Húngaro"
 
-#: doc/models.py:66 settings.py:50 templates/about/weechat.org.html:25
+#: doc/models.py:92 settings.py:50 templates/about/weechat.org.html:25
 msgid "Italian"
 msgstr "Italiano"
 
-#: doc/models.py:67 settings.py:53 templates/about/weechat.org.html:26
+#: doc/models.py:93 settings.py:53 templates/about/weechat.org.html:26
 msgid "Japanese"
 msgstr "Japonês"
 
-#: doc/models.py:68 settings.py:51 templates/about/weechat.org.html:27
+#: doc/models.py:94 settings.py:51 templates/about/weechat.org.html:27
 msgid "Polish"
 msgstr "Polonês"
 
-#: doc/models.py:69
+#: doc/models.py:95
 #, fuzzy
 #| msgid "Portuguese (Brazil)"
 msgid "Portuguese"
 msgstr "Portugues (Brasil)"
 
-#: doc/models.py:70 settings.py:52 templates/about/weechat.org.html:28
+#: doc/models.py:96 settings.py:52 templates/about/weechat.org.html:28
 msgid "Portuguese (Brazil)"
 msgstr "Portugues (Brasil)"
 
-#: doc/models.py:71
+#: doc/models.py:97
 msgid "Russian"
 msgstr "Russo"
 
-#: doc/models.py:72
+#: doc/models.py:98
 msgid "Serbian"
 msgstr ""
 
-#: doc/models.py:73
+#: doc/models.py:99
 msgid "Turkish"
 msgstr "Turco"
 
-#: doc/models.py:105
+#: doc/models.py:131
 msgid "FAQ"
 msgstr "Perguntas Frequentes"
 
-#: doc/models.py:106
+#: doc/models.py:132
 msgid "User's guide"
 msgstr "Guia do usuário"
 
-#: doc/models.py:107
+#: doc/models.py:133
 msgid "Plugin API reference"
 msgstr "Referência da API do plugin"
 
-#: doc/models.py:108
+#: doc/models.py:134
 msgid "Scripting guide"
 msgstr "Guia para fazer scripts"
 
-#: doc/models.py:109
+#: doc/models.py:135
 msgid "Quick Start guide"
 msgstr "Guia de Início Rápido"
 
-#: doc/models.py:110
+#: doc/models.py:136
 msgid "Tester's guide"
 msgstr "Guia dos Testadores"
 
-#: doc/models.py:111
+#: doc/models.py:137
 msgid "Developer's guide"
 msgstr "Guia dos Developer's"
 
-#: doc/models.py:112
+#: doc/models.py:138
 msgid "Relay protocol"
 msgstr "Protocolo de retransmissão"
 
@@ -1135,7 +1304,8 @@ msgid "Transition to Python 3 for scripts"
 msgstr "Estatísticas da internacionalização"
 
 #: news/_i18n_info.py:67 templates/about/history.html:44
-#: templates/doc/doc_version.html:20 templates/download/packages.html:34
+#: templates/doc/doc_version.html:20 templates/doc/security.html:57
+#: templates/doc/security.html:68 templates/download/packages.html:34
 #: templates/scripts/list.html:96
 msgid "Version"
 msgstr "Versão"
@@ -6407,7 +6577,7 @@ msgid "About"
 msgstr "Sobre"
 
 #: templates/base.html:46 templates/base.html:114 templates/home/home.html:21
-#: templates/scripts/source.html:47 templates/themes/source.html:17
+#: templates/scripts/source.html:47 templates/themes/source.html:26
 msgid "Download"
 msgstr "Baixar"
 
@@ -6522,8 +6692,8 @@ msgid "Current value"
 msgstr "Valor atual"
 
 #: templates/dev/info_list.html:24 templates/dev/roadmap.html:42
-#: templates/doc/security.html:42 templates/scripts/list.html:95
-#: themes/models.py:170
+#: templates/doc/security.html:276 templates/scripts/list.html:95
+#: themes/models.py:171
 msgid "Description"
 msgstr "Descrição"
 
@@ -6562,7 +6732,7 @@ msgstr ""
 msgid "Dive in the <strong>future</strong> of WeeChat!"
 msgstr "Mergulhe no <strong>futuro</strong> do WeeChat!"
 
-#: templates/dev/roadmap.html:37 templates/doc/security.html:37
+#: templates/dev/roadmap.html:37 templates/doc/security.html:256
 msgid "Tracker"
 msgstr "Tracker"
 
@@ -6578,16 +6748,16 @@ msgstr "Status"
 msgid "Plugin"
 msgstr "Plugins"
 
-#: templates/dev/roadmap.html:61
+#: templates/dev/roadmap.html:57
 msgid "Planned"
 msgstr "Planejado"
 
-#: templates/dev/roadmap.html:64
+#: templates/dev/roadmap.html:60
 msgid "Done"
 msgstr "Concluído"
 
 #. Translators: "Done" is followed by the % of task which is implemented, for example: "Done: 75%"
-#: templates/dev/roadmap.html:67
+#: templates/dev/roadmap.html:63
 #, fuzzy
 #| msgid "Done"
 msgid "Done:"
@@ -6684,7 +6854,7 @@ msgctxt "translated language"
 msgid "Language"
 msgstr "Linguagem"
 
-#: templates/doc/doc_version.html:103 themes/models.py:163 themes/models.py:254
+#: templates/doc/doc_version.html:103 themes/models.py:164 themes/models.py:255
 msgid "File"
 msgstr "Arquivo"
 
@@ -6752,24 +6922,29 @@ msgstr "documentação"
 msgid "security"
 msgstr "segurança"
 
-#: templates/doc/security.html:12
+#: templates/doc/security.html:13
 #, fuzzy
-#| msgid "Security issues"
-msgid "Report a security issue"
-msgstr "Problemas de segurança"
+#| msgid "Security vulnerabilities"
+msgid "All vulnerabilities"
+msgstr "Vulnerabilidades de segurança"
 
-#: templates/doc/security.html:15
-msgid ""
-"Please <strong>DO NOT</strong> file a GitHub issue for security related "
-"problems, but send an email to <a href=\"mailto:security@weechat.org"
-"\">security@weechat.org</a> instead."
-msgstr ""
+#: templates/doc/security.html:14
+#, fuzzy
+#| msgid "Fixed in version"
+msgid "Vulnerabilities by version"
+msgstr "Corrigido na versão"
 
-#: templates/doc/security.html:18
+#: templates/doc/security.html:19 templates/doc/security.html:48
 msgid "Security vulnerabilities"
 msgstr "Vulnerabilidades de segurança"
 
-#: templates/doc/security.html:21
+#: templates/doc/security.html:22
+msgid ""
+"This page lists all known and fixed security vulnerabilities in WeeChat "
+"stable releases."
+msgstr ""
+
+#: templates/doc/security.html:24
 #, fuzzy
 #| msgid ""
 #| "This table contains a list of all known and fixed security "
@@ -6777,62 +6952,198 @@ msgstr "Vulnerabilidades de segurança"
 #| "introduced during development of a version and fixed before stable "
 #| "release are not mentioned)."
 msgid ""
-"This table contains a list of all known and fixed security vulnerabilities "
-"in WeeChat stable releases (the security vulnerabilities introduced during "
-"development of a version and fixed before a stable release are not "
-"mentioned)."
+"The security vulnerabilities introduced during development of a version and "
+"fixed before a stable release are not mentioned."
 msgstr ""
 "Esta tabela contém a lista de todas as conhecidas e agora corrigidas "
 "vulnerabilidades nos lancaçmentos estáveis do WeeChat (as vulnerabilidades "
 "introduzidas durante o desenvolvimento de uma versão e corrigidos antes do "
 "lançamento estável não são mencionadas."
 
-#: templates/doc/security.html:23
+#: templates/doc/security.html:28
 msgid ""
-"Note: you can be warned about security vulnerabilities by subscribing to "
-"this mailing list:"
+"WeeChat Security Advisories (WSA) are sent to this mailing list, as soon as "
+"they are made public:"
 msgstr ""
-"Nota: você pode ser avisado sobre vulnerabilidades de segurança inscrevendo-"
-"se nesta lista de emails:"
 
-#: templates/doc/security.html:35
+#: templates/doc/security.html:31
+msgid ""
+"To report a security issue, please <strong>DO NOT</strong> file an issue on "
+"GitHub, but send an email to <a href=\"mailto:security@weechat.org"
+"\">security@weechat.org</a> instead."
+msgstr ""
+
+#: templates/doc/security.html:39
+#, fuzzy, python-format
+#| msgid "Fixed in version"
+msgid "Security vulnerabilities in version %(version)s"
+msgstr "Corrigido na versão"
+
+#: templates/doc/security.html:42
+#, python-format
+msgid ""
+"This page lists all known and fixed security vulnerabilities in version "
+"%(version)s (back to the <a href=\"%(url_all_versions)s\">list of all "
+"versions</a>)."
+msgstr ""
+
+#: templates/doc/security.html:51
+msgid ""
+"This page lists vulnerabilities by WeeChat version (click on a version for "
+"the detail of all issues)."
+msgstr ""
+
+#: templates/doc/security.html:80
+#, python-format
+msgid "Fixed in version %(fixed_version)s (%(release_date)s)."
+msgstr ""
+
+#: templates/doc/security.html:87 templates/doc/security.html:311
+#, fuzzy
+#| msgid "Security vulnerabilities"
+msgid "No known security vulnerabilities."
+msgstr "Vulnerabilidades de segurança"
+
+#: templates/doc/security.html:96
+#, python-format
+msgid "Overview: %(counter)s vulnerability"
+msgid_plural "Overview: %(counter)s vulnerabilities"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/doc/security.html:109
+msgid "Score"
+msgstr ""
+
+#: templates/doc/security.html:110 templates/doc/security.html:192
 msgid "Severity"
 msgstr "Severidade"
 
-#: templates/doc/security.html:38
+#: templates/doc/security.html:111
+msgid "Issue"
+msgstr ""
+
+#: templates/doc/security.html:112 templates/doc/security.html:215
+msgid "Scope"
+msgstr ""
+
+#: templates/doc/security.html:113 templates/doc/security.html:204
+msgid "Vulnerability type"
+msgstr ""
+
+#: templates/doc/security.html:114 templates/doc/security.html:223
 msgid "Affected versions"
 msgstr "Versões afetadas"
 
-#: templates/doc/security.html:39
-msgid "Fixed in version"
+#: templates/doc/security.html:114
+#, fuzzy
+#| msgid "Version"
+msgid "Versions"
+msgstr "Versão"
+
+#: templates/doc/security.html:115 templates/doc/security.html:234
+#, fuzzy
+#| msgid "Fixed in version"
+msgid "Fixed version"
 msgstr "Corrigido na versão"
 
-#: templates/doc/security.html:40
+#: templates/doc/security.html:115
+msgid "Fix"
+msgstr ""
+
+#: templates/doc/security.html:116
 msgid "Release date"
 msgstr "Data de lançamento"
 
-#: templates/doc/security.html:42 templates/doc/security.html:80
-msgid "Workaround"
-msgstr "Correção"
-
-#: templates/doc/security.html:84
-msgid "There is no workaround."
-msgstr "Nao há correção."
-
-#: templates/doc/security.html:95
-#, fuzzy, python-format
-#| msgid "Security vulnerabilities are classified using 4 severity levels:"
-msgid ""
-"Security vulnerabilities are classified using %(count)s severity levels:"
-msgstr ""
-"Vulnerabilidades de segurança são classificadas usando 4 níveis de "
-"severidade:"
-
-#: templates/doc/security.html:112
+#: templates/doc/security.html:143
 #, fuzzy
 #| msgid "Security vulnerabilities"
-msgid "No security vulnerability."
+msgid "Vulnerability"
 msgstr "Vulnerabilidades de segurança"
+
+#: templates/doc/security.html:161
+msgid "Not assigned"
+msgstr ""
+
+#: templates/doc/security.html:168
+msgid ""
+"Common Vulnerability Scoring System vector: it is established by WeeChat "
+"team and may not reflect exactly the vector displayed on NVD site."
+msgstr ""
+
+#: templates/doc/security.html:169
+msgid "CVSS vector"
+msgstr ""
+
+#: templates/doc/security.html:174 templates/doc/security.html:209
+msgid "detail"
+msgstr ""
+
+#: templates/doc/security.html:180
+msgid ""
+"Common Vulnerability Scoring System score: it is established by WeeChat team "
+"and may not reflect exactly the score displayed on NVD site."
+msgstr ""
+
+#: templates/doc/security.html:181
+msgid "CVSS score"
+msgstr ""
+
+#: templates/doc/security.html:191
+msgid ""
+"Common Vulnerability Scoring System severity: it is established by WeeChat "
+"team and may not reflect exactly the severity displayed on NVD site."
+msgstr ""
+
+#: templates/doc/security.html:204
+msgid "Also known as Common Weakness Enumeration (CWE)."
+msgstr ""
+
+#: templates/doc/security.html:243 templates/download/packages.html:75
+msgid "ChangeLog"
+msgstr "ChangeLog"
+
+#: templates/doc/security.html:262
+#, fuzzy
+#| msgid "temporarily unavailable"
+msgid "Not available"
+msgstr "temporariamente indisponível"
+
+#: templates/doc/security.html:268
+#, fuzzy
+#| msgid "Comments"
+msgid "Commits"
+msgstr "Comentários"
+
+#: templates/doc/security.html:280
+msgid "Mitigation"
+msgstr ""
+
+#: templates/doc/security.html:285
+#, fuzzy
+#| msgid "There is no workaround."
+msgid "There is no known mitigation."
+msgstr "Nao há correção."
+
+#: templates/doc/security.html:287
+msgid ""
+"The upgrade of WeeChat to the latest stable version is highly recommended."
+msgstr ""
+
+#: templates/doc/security.html:291
+msgid "Credit"
+msgstr ""
+
+#: templates/doc/security.html:293
+#, python-format
+msgid "The issue was discovered by %(credit)s."
+msgstr ""
+
+#: templates/doc/security.html:306 templates/download/packages.html:163
+#, fuzzy, python-format
+#| msgid "Error: there is no version called"
+msgid "Error: there is no version called \"%(version)s\"."
+msgstr "Erro: não existe uma versão chamada"
 
 #: templates/donate.html:7
 msgid "donate"
@@ -7184,37 +7495,27 @@ msgstr ""
 msgid "Vulnerabilities fixed in versions:"
 msgstr "Corrigido na versão"
 
-#: templates/download/packages.html:64
+#: templates/download/packages.html:63
 #, fuzzy, python-format
 #| msgid ""
 #| "<strong>Warning:</strong> this version has a <a href=\"%(security_url)s"
 #| "\">vulnerability</a> which is fixed in version"
 msgid ""
-"<strong>Important:</strong> this release fixes a <a href=\"%(security_url)s"
-"\">vulnerability</a>."
-msgstr ""
+"<strong>Note:</strong> this release fixes <a href=\"%(security_url)s\">"
+"%(counter)s vulnerability</a>."
+msgid_plural ""
+"<strong>Note:</strong> this release fixes <a href=\"%(security_url)s\">"
+"%(counter)s vulnerabilities</a>."
+msgstr[0] ""
 "<strong>Aviso:</strong> esta versão tem uma <a href=\"%(security_url)s"
 "\">vulnerabilidade</a> a qual foi consertada na versão"
-
-#: templates/download/packages.html:66
-#, fuzzy, python-format
-#| msgid ""
-#| "<strong>Warning:</strong> this version has a <a href=\"%(security_url)s"
-#| "\">vulnerability</a> which is fixed in version"
-msgid ""
-"<strong>Important:</strong> this release fixes <a href=\"%(security_url)s\">"
-"%(count_issues_fixed)s vulnerabilities</a>."
-msgstr ""
+msgstr[1] ""
 "<strong>Aviso:</strong> esta versão tem uma <a href=\"%(security_url)s"
 "\">vulnerabilidade</a> a qual foi consertada na versão"
 
 #: templates/download/packages.html:68
 msgid "It is recommended to upgrade from any older version to this one."
 msgstr ""
-
-#: templates/download/packages.html:75
-msgid "ChangeLog"
-msgstr "ChangeLog"
 
 #: templates/download/packages.html:80
 msgid "Release notes"
@@ -7275,10 +7576,6 @@ msgstr "No diretório com o pacote + assinatura:"
 #: templates/download/packages.html:148
 msgid "If the signature is OK you should see a message like this one:"
 msgstr "Se a assinatura está OK você deve ser uma mensagem como esta:"
-
-#: templates/download/packages.html:163
-msgid "Error: there is no version called"
-msgstr "Erro: não existe uma versão chamada"
 
 #: templates/download/release.html:35
 #, fuzzy
@@ -7586,7 +7883,7 @@ msgid "Author"
 msgstr "Autor"
 
 #: templates/scripts/list.html:127 templates/scripts/list.html:129
-#: templates/themes/list.html:25 templates/themes/source.html:15
+#: templates/themes/list.html:25 templates/themes/source.html:24
 msgid "Added"
 msgstr "Adicionado"
 
@@ -8022,7 +8319,7 @@ msgstr ""
 msgid "Submitted by"
 msgstr "postado por"
 
-#: templates/themes/list.html:26 templates/themes/source.html:15
+#: templates/themes/list.html:26 templates/themes/source.html:24
 msgid "updated"
 msgstr "atualizado"
 
@@ -8030,7 +8327,7 @@ msgstr "atualizado"
 msgid "No theme found."
 msgstr "Nenhum tema encontrado."
 
-#: templates/themes/source.html:12 themes/models.py:250
+#: templates/themes/source.html:21 themes/models.py:251
 msgid "Theme"
 msgstr "Tema"
 
@@ -8054,78 +8351,78 @@ msgstr "Atualizar tema"
 msgid "Updated theme has been submitted for review."
 msgstr "Nova versão do tema foi submetida para análise."
 
-#: themes/models.py:164 themes/models.py:255
+#: themes/models.py:165 themes/models.py:256
 #, fuzzy
 #| msgid "the theme"
 msgid "The theme."
 msgstr "o tema"
 
-#: themes/models.py:174 themes/models.py:259
+#: themes/models.py:175 themes/models.py:260
 msgid "Your name or nick"
 msgstr "Seu nome ou nick"
 
-#: themes/models.py:175
+#: themes/models.py:176
 msgid "Used for themes page."
 msgstr ""
 
-#: themes/models.py:179 themes/models.py:263
+#: themes/models.py:180 themes/models.py:264
 msgid "Your e-mail"
 msgstr "Seu e-mail"
 
-#: themes/models.py:180 themes/models.py:264
+#: themes/models.py:181 themes/models.py:265
 #, fuzzy
 #| msgid "no spam, never displayed on site"
 msgid "No spam, never displayed."
 msgstr "sem spam, nunca exibido no site"
 
-#: themes/models.py:186 themes/models.py:270
+#: themes/models.py:187 themes/models.py:271
 msgid "Comments"
 msgstr "Comentários"
 
-#: themes/models.py:187 themes/models.py:271
+#: themes/models.py:188 themes/models.py:272
 #, fuzzy
 #| msgid "optional, not displayed"
 msgid "Not displayed."
 msgstr "opcional, não exibido"
 
-#: themes/models.py:192 themes/models.py:276
+#: themes/models.py:193 themes/models.py:277
 msgid "Are you a spammer?"
 msgstr "Você é um spammer?"
 
-#: themes/models.py:193 themes/models.py:277
+#: themes/models.py:194 themes/models.py:278
 #, fuzzy
 #| msgid "enter \"no\" if you are not a spammer"
 msgid "Enter \"no\" if you are not a spammer."
 msgstr "entrar \"no\" se você não é um spammer"
 
-#: themes/models.py:204 themes/models.py:289
+#: themes/models.py:205 themes/models.py:290
 msgid "Theme file too big."
 msgstr "Arquivo de tema muito grande."
 
-#: themes/models.py:210 themes/models.py:295
+#: themes/models.py:211 themes/models.py:296
 msgid "Invalid theme file."
 msgstr "Arquivo de tema inválido."
 
-#: themes/models.py:213
+#: themes/models.py:214
 msgid "This name already exists."
 msgstr "Este nome já existe."
 
-#: themes/models.py:216 themes/models.py:220
+#: themes/models.py:217 themes/models.py:221
 msgid "Invalid name inside theme file."
 msgstr "Nome inválido dentro do arquivo de tema."
 
-#: themes/models.py:227 themes/models.py:308
+#: themes/models.py:228 themes/models.py:309
 msgid "Invalid WeeChat version, too old!"
 msgstr "Versão WeeChat inválida, muito antiga!"
 
-#: themes/models.py:237
+#: themes/models.py:238
 msgid "Choose…"
 msgstr ""
 
-#: themes/models.py:298
+#: themes/models.py:299
 msgid "Internal error."
 msgstr "Erro interno."
 
-#: themes/models.py:301
+#: themes/models.py:302
 msgid "Invalid name: different from theme."
 msgstr "Nome inválido: diferente do tema."

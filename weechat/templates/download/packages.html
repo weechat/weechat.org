@@ -49,24 +49,24 @@
     </p>
     {% endif %}
     {% if package_version.grouper.securityfix %}
-    <p class="text-danger">
-      {% url 'doc_security' as security_url %}
+    <div class="alert alert-danger">
       {% with version=package_version.grouper.version %}
+      {% url 'doc_security_version' version as security_url %}
       {% blocktrans %}<strong>Warning:</strong> the version {{ version }} has one or more <a href="{{ security_url }}">vulnerabilities</a>, it is not recommended to use it.{% endblocktrans %}
       {% endwith %}
       {% trans "Vulnerabilities fixed in versions:" %}
       {% for fixed_version in package_version.grouper.security_fixed_versions %}{% if not forloop.first %}, {% endif %}<a href="{% url 'download_version' version=fixed_version %}">{{ fixed_version }}</a>{% endfor %}.
-    </p>
+    </div>
     {% elif version != "devel" and version != "old" and package_version.grouper.security_issues_fixed > 0 %}
-    <p class="text-success">
+    <div class="alert alert-secondary">
       {% url 'doc_security' as security_url %}
-      {% if package_version.grouper.security_issues_fixed == 1 %}
-      {% blocktrans %}<strong>Important:</strong> this release fixes a <a href="{{ security_url }}">vulnerability</a>.{% endblocktrans %}
-    {% else %}
-      {% blocktrans with package_version.grouper.security_issues_fixed as count_issues_fixed %}<strong>Important:</strong> this release fixes <a href="{{ security_url }}">{{ count_issues_fixed }} vulnerabilities</a>.{% endblocktrans %}
-      {% endif %}
+      {% blocktrans trimmed count counter=package_version.grouper.security_issues_fixed %}
+      <strong>Note:</strong> this release fixes <a href="{{ security_url }}">{{ counter }} vulnerability</a>.
+      {% plural %}
+      <strong>Note:</strong> this release fixes <a href="{{ security_url }}">{{ counter }} vulnerabilities</a>.
+      {% endblocktrans %}
       {% trans "It is recommended to upgrade from any older version to this one." %}
-    </p>
+    </div>
     {% endif %}
 
     <div class="row">
@@ -160,7 +160,7 @@ gpg: Good signature from "WeeChat (signing key) &lt;webmaster@weechat.org&gt;"</
 {% else %}
 
 <div class="alert alert-danger">
-  {% trans "Error: there is no version called" %} "{{ version }}".
+  {% blocktrans %}Error: there is no version called "{{ version }}".{% endblocktrans %}
 </div>
 
 {% endif %}

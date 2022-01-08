@@ -142,7 +142,7 @@
       {% for script in script_list %}
       <tr{% if script.disabled %} class="text-muted"{% endif %}>
         <td class="text-nowrap{% if script.disabled %} script-disabled{% endif %}">
-          <span class="me-1 script-popular">{{ script.popularity_img|safe }}</span><a href="{% url 'scripts_source_name_html' script.name_with_extension %}">{{ script.name }}<small>.{{ script.extension }}</small></a>
+          <span class="me-1 script-popular">{{ script.popularity_img }}</span><a href="{% url 'scripts_source_name_html' script.name_with_extension %}">{{ script.name }}<small>.{{ script.extension }}</small></a>
         </td>
         <td>
           <div class="ms-3 float-end text-muted">

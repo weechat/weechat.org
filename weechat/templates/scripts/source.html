@@ -35,7 +35,7 @@
   &mdash; {% trans "Version:" %} {{ script.version }}
   &mdash; {% trans "License:" %} {{ script.license }}
   <br>
-  {% trans "For WeeChat" %} {{ script.version_weechat_html|safe }}{% if script.requirements %}, {% trans "requires:" %} {{ script.requirements }}{% endif %}.
+  {% trans "For WeeChat" %} {{ script.version_weechat_html }}{% if script.requirements %}, {% trans "requires:" %} {{ script.requirements }}{% endif %}.
   <br>
   {% trans "Tags:" %} {{ script.tagslist|join:", " }}
   <br>
@@ -53,7 +53,7 @@
 </p>
 
 <p>
-  {{ htmlsource|safe }}
+  {{ html_source }}
 </p>
 
 {% endblock content %}

@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-18 10:47+0100\n"
-"PO-Revision-Date: 2021-11-24 21:22+0100\n"
+"POT-Creation-Date: 2022-01-08 09:48+0100\n"
+"PO-Revision-Date: 2022-01-04 18:41+0100\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
 "translation/ja_JP>\n"
@@ -323,59 +323,134 @@ msgid "(binary data)"
 msgstr "(バイナリデータ)"
 
 #: doc/_i18n_security.py:13
-msgid "/set irc.network.colors_receive off"
-msgstr "/set irc.network.colors_receive off"
-
-#: doc/_i18n_security.py:14
 msgid ""
-"Buffer overflow when a new IRC message 005 is received with longer nick "
-"prefixes."
+"A buffer overflow happens when a new IRC message 005 is received with longer "
+"nick prefixes.\n"
+"<br>\n"
+"Note: a \"normal\" IRC server should not send again a message 005 with new "
+"nick prefixes, so the problem should be limited to malicious IRC servers."
 msgstr ""
 
-#: doc/_i18n_security.py:15
-msgid "Buffer overflow when decoding IRC colors in strings."
+#: doc/_i18n_security.py:14
+#, fuzzy
+#| msgid "Buffer overflow when decoding IRC colors in strings."
+msgid "A buffer overflow happens when decoding some IRC colors in strings."
 msgstr "文字列中の IRC 色をデコードする際にバッファオーバーフロー。"
 
+#: doc/_i18n_security.py:15
+#, fuzzy
+#| msgid "Buffer overflows in build of strings."
+msgid "A buffer overflows happens in build of strings in different places."
+msgstr "文字列を作る際にバッファオーバーフロー。"
+
 #: doc/_i18n_security.py:16
+msgid ""
+"A crash happens when decoding a malformed websocket frame in relay plugin.\n"
+"<br>\n"
+"This happens even if a password is set in relay plugin, the malformed "
+"websocket frame can be received before the authentication of the client."
+msgstr ""
+
+#: doc/_i18n_security.py:17
+#, fuzzy
+#| msgid "Crash when receiving special chars in IRC messages."
+msgid ""
+"A crash happens when receiving some WeeChat internal color codes in IRC "
+"messages."
+msgstr "IRC メッセージに特定の文字が含まれる際にクラッシュ。"
+
+#: doc/_i18n_security.py:18
+msgid "API"
+msgstr ""
+
+#: doc/_i18n_security.py:19
+msgid "Access of uninitialized pointer"
+msgstr ""
+
+#: doc/_i18n_security.py:20
+#, fuzzy
+#| msgid "Buffer overflow when decoding IRC colors in strings."
+msgid "Buffer overflow on malformed IRC message 324 (channel mode)."
+msgstr "文字列中の IRC 色をデコードする際にバッファオーバーフロー。"
+
+#: doc/_i18n_security.py:21
+#, fuzzy
+#| msgid "Buffer overflow when decoding IRC colors in strings."
+msgid "Buffer overflow on new IRC message 005 with nick prefixes."
+msgstr "文字列中の IRC 色をデコードする際にバッファオーバーフロー。"
+
+#: doc/_i18n_security.py:22
+#, fuzzy
+#| msgid "Buffer overflow when removing quotes in DCC filename."
+msgid "Buffer overflow when receiving a DCC file."
+msgstr "DCC ファイル名内の引用符を削除する際にバッファオーバーフロー。"
+
+#: doc/_i18n_security.py:23
 msgid ""
 "Buffer overflow when receiving a malformed IRC message 324 (channel mode)."
 msgstr ""
 
-#: doc/_i18n_security.py:17
+#: doc/_i18n_security.py:24
 msgid "Buffer overflow when removing quotes in DCC filename."
 msgstr "DCC ファイル名内の引用符を削除する際にバッファオーバーフロー。"
 
-#: doc/_i18n_security.py:18
+#: doc/_i18n_security.py:25
 msgid "Buffer overflows in build of strings."
 msgstr "文字列を作る際にバッファオーバーフロー。"
 
-#: doc/_i18n_security.py:19
+#: doc/_i18n_security.py:26
+msgid "Core, IRC"
+msgstr ""
+
+#: doc/_i18n_security.py:27
+#, fuzzy
+#| msgid "Uncontrolled format string in API function infobar_printf."
+msgid "Crash in API function infobar_printf."
+msgstr "infobar_printf API 関数の書式文字列攻撃。"
+
+#: doc/_i18n_security.py:28
+msgid "Crash on IRC commands sent via Relay."
+msgstr ""
+
+#: doc/_i18n_security.py:29
 #, fuzzy
 #| msgid "Crash when receiving special chars in IRC messages."
-msgid "Crash when decoding a malformed websocket frame in relay plugin."
+msgid "Crash on malformed IRC message 352 (WHO)."
 msgstr "IRC メッセージに特定の文字が含まれる際にクラッシュ。"
 
-#: doc/_i18n_security.py:20
+#: doc/_i18n_security.py:30
+#, fuzzy
+#| msgid "Crash when receiving special chars in IRC messages."
+msgid "Crash on malformed websocket frame in relay plugin."
+msgstr "IRC メッセージに特定の文字が含まれる際にクラッシュ。"
+
+#: doc/_i18n_security.py:31
+msgid "Crash on nicks monitored with /notify."
+msgstr ""
+
+#: doc/_i18n_security.py:32
+msgid "Crash on send of unknown commands to IRC server."
+msgstr ""
+
+#: doc/_i18n_security.py:33
+#, fuzzy
+#| msgid "Buffer overflow when decoding IRC colors in strings."
+msgid "Crash when decoding IRC colors."
+msgstr "文字列中の IRC 色をデコードする際にバッファオーバーフロー。"
+
+#: doc/_i18n_security.py:34
+#, fuzzy
+#| msgid "Crash when receiving special chars in IRC messages."
+msgid "Crash when receiving WeeChat color codes in IRC messages."
+msgstr "IRC メッセージに特定の文字が含まれる際にクラッシュ。"
+
+#: doc/_i18n_security.py:35
 #, fuzzy
 #| msgid "Crash when receiving special chars in IRC messages."
 msgid "Crash when receiving a malformed IRC message 352 (WHO)."
 msgstr "IRC メッセージに特定の文字が含まれる際にクラッシュ。"
 
-#: doc/_i18n_security.py:21
-msgid "Crash when receiving special chars in IRC messages."
-msgstr "IRC メッセージに特定の文字が含まれる際にクラッシュ。"
-
-#: doc/_i18n_security.py:22
-msgid ""
-"Create a trigger (with WeeChat >= 1.1): /trigger add irc_dcc_quotes modifier "
-"\"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND ${\\x22} \" "
-"\"/.*//\""
-msgstr ""
-"トリガを作成してください (WeeChat バージョン 1.1 以上): /trigger add "
-"irc_dcc_quotes modifier \"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}"
-"DCC SEND ${\\x22} \" \"/.*//\""
-
-#: doc/_i18n_security.py:23
+#: doc/_i18n_security.py:36
 msgid ""
 "Date/time conversion specifiers are expanded after replacing buffer local "
 "variables in name of log files. In some cases, this can lead to an error in "
@@ -385,81 +460,161 @@ msgstr ""
 "しばしば、strftime 関数が失敗して初期化されていないバッファを利用することでク"
 "ラッシュが引き起こされる事があります。"
 
-#: doc/_i18n_security.py:24
+#: doc/_i18n_security.py:37
+#, fuzzy
+#| msgid ""
+#| "Do not use command /notify with nicks containing formatting chars like \"%"
+#| "\"."
 msgid ""
-"Do not use command /notify with nicks containing formatting chars like \"%\"."
+"Do not use command <code>/notify</code> with nicks containing formatting "
+"chars like \"%\"."
 msgstr ""
 "/notify コマンドは \"%\" などの書式文字を含むニックネームと一緒に使わないでく"
 "ださい。"
 
-#: doc/_i18n_security.py:25
-msgid "Do not use irc protocol in relay plugin."
-msgstr "リレープラグインで irc プロトコルを使わないでください。"
-
-#: doc/_i18n_security.py:26
+#: doc/_i18n_security.py:38
+#, fuzzy
+#| msgid ""
+#| "Missing verifications in SSL certificate, which allows man-in-the-middle "
+#| "attackers to spoof an SSL chat server via an arbitrary certificate."
 msgid ""
-"Either: remove all relays, unload relay plugin or secure relay to allow only "
-"some trusted IP addresses (option relay.network.allowed_ips)."
-msgstr ""
-
-#: doc/_i18n_security.py:27
-msgid ""
-"Missing verifications in SSL certificate, which allows man-in-the-middle "
-"attackers to spoof an SSL chat server via an arbitrary certificate."
+"Due to insufficient check of SSL certificate in IRC plugin, man-in-the-"
+"middle attackers can spoof a server via an arbitrary certificate."
 msgstr ""
 "SSL 証明書にある欠陥の見落とし。これにより任意の証明書を経由して SSL チャット"
 "サーバになりすました中間者攻撃を受けることになります。"
 
-#: doc/_i18n_security.py:28
-msgid ""
-"Remove/unload all scripts calling function hook_process (for maximum safety)."
+#: doc/_i18n_security.py:39
+msgid "IRC"
+msgstr ""
+
+#: doc/_i18n_security.py:40
+msgid "Improper input validation"
+msgstr ""
+
+#: doc/_i18n_security.py:41
+msgid "Logger"
+msgstr ""
+
+#: doc/_i18n_security.py:42
+msgid "Out-of-bounds read"
+msgstr ""
+
+#: doc/_i18n_security.py:43
+msgid "Out-of-bounds write"
+msgstr ""
+
+#: doc/_i18n_security.py:44
+msgid "Possible man-in-the-middle attack in connection to IRC server."
+msgstr ""
+
+#: doc/_i18n_security.py:45
+msgid "Relay"
+msgstr ""
+
+#: doc/_i18n_security.py:46
+msgid "Remote execution of commands via scripts."
+msgstr ""
+
+#: doc/_i18n_security.py:47
+#, fuzzy
+#| msgid ""
+#| "Remove/unload all scripts calling function hook_process (for maximum "
+#| "safety)."
+msgid "Remove/unload all scripts calling the API function hook_process."
 msgstr ""
 "hook_process 関数を使っている全てのスクリプトを削除/アンロードしてください "
 "(最大限の安全を確保するために)。"
 
-#: doc/_i18n_security.py:29
-msgid ""
-"Turn off option \"irc.network.send_unknown_commands\" or do not use "
-"formatting chars like \"%\" when sending unknown commands to server."
-msgstr ""
-"オプション \"irc.network.send_unknown_commands\" をオフにするか、不明なコマン"
-"ドをサーバに送る際には \"%\" などの書式文字を使わないでください。"
-
-#: doc/_i18n_security.py:30
-msgid "Uncontrolled format string in API function infobar_printf."
+#: doc/_i18n_security.py:48
+#, fuzzy
+#| msgid "Uncontrolled format string in API function infobar_printf."
+msgid "Remove/unload all scripts calling the API function infobar_printf."
 msgstr "infobar_printf API 関数の書式文字列攻撃。"
 
-#: doc/_i18n_security.py:31
+#: doc/_i18n_security.py:49
+#, fuzzy
+#| msgid "Uncontrolled format string in API function infobar_printf."
 msgid ""
-"Uncontrolled format string when IRC commands are redirected by relay plugin. "
-"If the output or redirected command contains formatting chars like \"%\", "
-"this can lead to a crash of WeeChat."
+"Strings are built with uncontrolled format in API function infobar_printf."
+msgstr "infobar_printf API 関数の書式文字列攻撃。"
+
+#: doc/_i18n_security.py:50
+#, fuzzy
+#| msgid ""
+#| "Uncontrolled format string when IRC commands are redirected by relay "
+#| "plugin. If the output or redirected command contains formatting chars "
+#| "like \"%\", this can lead to a crash of WeeChat."
+msgid ""
+"Strings are built with uncontrolled format when IRC commands are redirected "
+"by relay plugin. If the output or redirected command contains formatting "
+"chars like \"%\", this can lead to a crash of WeeChat."
 msgstr ""
 "リレープラグインが IRC コマンドをリダイレクトする際の書式文字列攻撃。出力また"
 "はリダイレクトされたコマンドに \"%\" などの文字列が含まれる場合、WeeChat がク"
 "ラッシュします。"
 
-#: doc/_i18n_security.py:32
+#: doc/_i18n_security.py:51
+#, fuzzy
+#| msgid ""
+#| "Uncontrolled format string when sending IRC \"ison\" command for nicks "
+#| "monitored with command /notify."
 msgid ""
-"Uncontrolled format string when sending IRC \"ison\" command for nicks "
-"monitored with command /notify."
+"Strings are built with uncontrolled format when nicks containing \"%\" are "
+"monitored with command <code>/notify</code>."
 msgstr ""
 "/notify コマンドで監視しているニックネームに対して IRC が \"ison\" コマンドを"
 "送信する際の書式文字列攻撃。"
 
-#: doc/_i18n_security.py:33
+#: doc/_i18n_security.py:52
+#, fuzzy
+#| msgid ""
+#| "Uncontrolled format string when sending unknown IRC command to server (if "
+#| "option \"irc.network.send_unknown_commands\" is on)."
 msgid ""
-"Uncontrolled format string when sending unknown IRC command to server (if "
-"option \"irc.network.send_unknown_commands\" is on)."
+"Strings are built with uncontrolled format when unknown IRC commands are "
+"sent to server (if option \"irc.network.send_unknown_commands\" is enabled)."
 msgstr ""
 "未知の IRC コマンドをサーバに送信する際の書式文字列攻撃 (\"irc.network."
 "send_unknown_commands\" オプションが ON の場合)。"
 
-#: doc/_i18n_security.py:34
-msgid "Unload the logger plugin: /plugin unload logger"
-msgstr "logger プラグインのアンロード: /plugin unload logger"
+#: doc/_i18n_security.py:53
+msgid ""
+"There are multiple ways to mitigate this issue:\n"
+"<ul>\n"
+"  <li>Rremove all relays, see: <code>/help relay</code></li>\n"
+"  <li>Unload relay plugin with command: <code>/plugin unload relay</code> "
+"and see: <code>/help weechat.plugin.autoload</code></li>\n"
+"  <li>Secure relay to allow only some trusted IP addresses, see: <code>/help "
+"relay.network.allowed_ips</code></li>\n"
+"</ul>"
+msgstr ""
 
-#: doc/_i18n_security.py:35
+#: doc/_i18n_security.py:54
+#, fuzzy
+#| msgid ""
+#| "Turn off option \"irc.network.send_unknown_commands\" or do not use "
+#| "formatting chars like \"%\" when sending unknown commands to server."
+msgid ""
+"There are multiple ways to mitigate this issue:\n"
+"<ul>\n"
+"  <li>Turn off option to send unknown commands: <code>/set irc.network."
+"send_unknown_commands off</code></li>\n"
+"  <li>Do not use formatting chars like \"%\" when sending unknown commands "
+"to server.</li>\n"
+"</ul>"
+msgstr ""
+"オプション \"irc.network.send_unknown_commands\" をオフにするか、不明なコマン"
+"ドをサーバに送る際には \"%\" などの書式文字を使わないでください。"
+
+#: doc/_i18n_security.py:55
+msgid ""
+"Turn of handling of colors in incoming IRC messages:\n"
+"\n"
+"<p><pre><code>/set irc.network.colors_receive off</code></pre></p>"
+msgstr ""
+
+#: doc/_i18n_security.py:56
 msgid ""
 "Untrusted command for function hook_process could lead to execution of "
 "commands, because of shell expansions (so the problem is only caused by some "
@@ -469,144 +624,173 @@ msgstr ""
 "の問題は一部のスクリプトが引き起こすものではなく、WeeChat それ自体が持つ問題"
 "です)。"
 
+#: doc/_i18n_security.py:57
+msgid "Use of invalid pointer in build of log filename."
+msgstr ""
+
+#: doc/_i18n_security.py:58
+#, fuzzy, python-brace-format
+#| msgid ""
+#| "Create a trigger (with WeeChat >= 1.1): /trigger add irc_dcc_quotes "
+#| "modifier \"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND "
+#| "${\\x22} \" \"/.*//\""
+msgid ""
+"With WeeChat ≥ 1.1, you can create a trigger:\n"
+"\n"
+"<p><pre><code>/trigger add fix_irc_352 modifier \"irc_in_352\" "
+"\"${arguments} =~ .* \\*$\" \"/.*//\"</code></pre></p>\n"
+"\n"
+"With any older version, there is no simple mitigation, you must upgrade "
+"WeeChat."
+msgstr ""
+"トリガを作成してください (WeeChat バージョン 1.1 以上): /trigger add "
+"irc_dcc_quotes modifier \"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}"
+"DCC SEND ${\\x22} \" \"/.*//\""
+
+#: doc/_i18n_security.py:59
+#, fuzzy
+#| msgid ""
+#| "Create a trigger (with WeeChat >= 1.1): /trigger add irc_dcc_quotes "
+#| "modifier \"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND "
+#| "${\\x22} \" \"/.*//\""
+msgid ""
+"With WeeChat ≥ 1.1, you can create a trigger:\n"
+"\n"
+"<p><pre><code>/trigger add irc_dcc_quotes modifier \"irc_in_privmsg\" "
+"\"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND ${\\x22} \" \"/.*//\"</code></"
+"pre></p>\n"
+"\n"
+"With any older version, there is no simple mitigation, you must upgrade "
+"WeeChat."
+msgstr ""
+"トリガを作成してください (WeeChat バージョン 1.1 以上): /trigger add "
+"irc_dcc_quotes modifier \"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}"
+"DCC SEND ${\\x22} \" \"/.*//\""
+
+#: doc/_i18n_security.py:60
+msgid ""
+"You can remove all relays of type \"irc\", see <code>/help relay</code>."
+msgstr ""
+
+#: doc/_i18n_security.py:61
+#, fuzzy
+#| msgid "Unload the logger plugin: /plugin unload logger"
+msgid ""
+"You can unload the logger plugin, thus stopping recording of all buffers: "
+"<code>/plugin unload logger</code>."
+msgstr "logger プラグインのアンロード: /plugin unload logger"
+
 #. Translators: this is a severity level for a security vulnerability
-#: doc/models.py:36
+#: doc/models.py:46
+msgid "none"
+msgstr ""
+
+#. Translators: this is a severity level for a security vulnerability
+#: doc/models.py:48
 msgid "low"
 msgstr "低"
 
 #. Translators: this is a severity level for a security vulnerability
-#: doc/models.py:38
+#: doc/models.py:50
 msgid "medium"
 msgstr "中"
 
 #. Translators: this is a severity level for a security vulnerability
-#: doc/models.py:40
+#: doc/models.py:52
 msgid "high"
 msgstr "高"
 
 #. Translators: this is a severity level for a security vulnerability
-#: doc/models.py:42
+#: doc/models.py:54
 msgid "critical"
 msgstr "重大"
 
-#: doc/models.py:45
-#, fuzzy
-#| msgid ""
-#| "local problem which occurs in very specific conditions, low impact. "
-#| "Upgrade is not mandatory."
-msgid ""
-"minor issue occuring in very specific conditions, low impact. Upgrade is not "
-"mandatory."
-msgstr ""
-"非常に限られた状況で起きる局地的な問題、影響力は小さい。アップグレードは必須"
-"でない。"
-
-#: doc/models.py:47
-msgid ""
-"problem affecting a specific feature. Upgrade is <strong>recommended</"
-"strong> at least for people using the feature."
-msgstr ""
-"特定の機能に影響する問題。少なくともこの機能を使っている人はアップグレードを"
-"<strong>推奨</strong>。"
-
-#: doc/models.py:50
-msgid "severe problem. Upgrade is <strong>highly recommended</strong>."
-msgstr "深刻な問題。アップグレード<strong>強く推奨</strong>。"
-
-#: doc/models.py:52
-msgid ""
-"critical problem, risk of damage on your system. <strong>You MUST upgrade "
-"immediately!</strong>"
-msgstr ""
-"システムを破壊する危険性のある重大な問題。<strong>今すぐアップグレードしてく"
-"ださい!</strong>"
-
-#: doc/models.py:60
+#: doc/models.py:86
 msgid "Czech"
 msgstr "チェコ語"
 
-#: doc/models.py:61 settings.py:49 templates/about/support.html:34
+#: doc/models.py:87 settings.py:49 templates/about/support.html:34
 #: templates/about/weechat.org.html:24
 msgid "German"
 msgstr "ドイツ語"
 
-#: doc/models.py:62 settings.py:47 templates/about/support.html:27
+#: doc/models.py:88 settings.py:47 templates/about/support.html:27
 msgid "English"
 msgstr "英語"
 
-#: doc/models.py:63
+#: doc/models.py:89
 msgid "Spanish"
 msgstr "スペイン語"
 
-#: doc/models.py:64 settings.py:48 templates/about/support.html:28
+#: doc/models.py:90 settings.py:48 templates/about/support.html:28
 msgid "French"
 msgstr "フランス語"
 
-#: doc/models.py:65
+#: doc/models.py:91
 msgid "Hungarian"
 msgstr "ハンガリー語"
 
-#: doc/models.py:66 settings.py:50 templates/about/weechat.org.html:25
+#: doc/models.py:92 settings.py:50 templates/about/weechat.org.html:25
 msgid "Italian"
 msgstr "イタリア語"
 
-#: doc/models.py:67 settings.py:53 templates/about/weechat.org.html:26
+#: doc/models.py:93 settings.py:53 templates/about/weechat.org.html:26
 msgid "Japanese"
 msgstr "日本語"
 
-#: doc/models.py:68 settings.py:51 templates/about/weechat.org.html:27
+#: doc/models.py:94 settings.py:51 templates/about/weechat.org.html:27
 msgid "Polish"
 msgstr "ポーランド語"
 
-#: doc/models.py:69
+#: doc/models.py:95
 msgid "Portuguese"
 msgstr "ポルトガル語"
 
-#: doc/models.py:70 settings.py:52 templates/about/weechat.org.html:28
+#: doc/models.py:96 settings.py:52 templates/about/weechat.org.html:28
 msgid "Portuguese (Brazil)"
 msgstr "ポルトガル語 (ブラジル)"
 
-#: doc/models.py:71
+#: doc/models.py:97
 msgid "Russian"
 msgstr "ロシア語"
 
-#: doc/models.py:72
+#: doc/models.py:98
 msgid "Serbian"
 msgstr ""
 
-#: doc/models.py:73
+#: doc/models.py:99
 msgid "Turkish"
 msgstr "トルコ語"
 
-#: doc/models.py:105
+#: doc/models.py:131
 msgid "FAQ"
 msgstr "FAQ"
 
-#: doc/models.py:106
+#: doc/models.py:132
 msgid "User's guide"
 msgstr "ユーザーズガイド"
 
-#: doc/models.py:107
+#: doc/models.py:133
 msgid "Plugin API reference"
 msgstr "プラグイン API リファレンス"
 
-#: doc/models.py:108
+#: doc/models.py:134
 msgid "Scripting guide"
 msgstr "スクリプト作成ガイド"
 
-#: doc/models.py:109
+#: doc/models.py:135
 msgid "Quick Start guide"
 msgstr "クイックスタートガイド"
 
-#: doc/models.py:110
+#: doc/models.py:136
 msgid "Tester's guide"
 msgstr "テスターガイド"
 
-#: doc/models.py:111
+#: doc/models.py:137
 msgid "Developer's guide"
 msgstr "開発者ガイド"
 
-#: doc/models.py:112
+#: doc/models.py:138
 msgid "Relay protocol"
 msgstr "リレープロトコル"
 
@@ -1127,7 +1311,8 @@ msgid "Transition to Python 3 for scripts"
 msgstr "スクリプトの Python 3 への移行"
 
 #: news/_i18n_info.py:67 templates/about/history.html:44
-#: templates/doc/doc_version.html:20 templates/download/packages.html:34
+#: templates/doc/doc_version.html:20 templates/doc/security.html:57
+#: templates/doc/security.html:68 templates/download/packages.html:34
 #: templates/scripts/list.html:96
 msgid "Version"
 msgstr "バージョン"
@@ -6713,7 +6898,7 @@ msgid "About"
 msgstr "概要"
 
 #: templates/base.html:46 templates/base.html:114 templates/home/home.html:21
-#: templates/scripts/source.html:47 templates/themes/source.html:17
+#: templates/scripts/source.html:47 templates/themes/source.html:26
 msgid "Download"
 msgstr "ダウンロード"
 
@@ -6816,8 +7001,8 @@ msgid "Current value"
 msgstr "現在の値"
 
 #: templates/dev/info_list.html:24 templates/dev/roadmap.html:42
-#: templates/doc/security.html:42 templates/scripts/list.html:95
-#: themes/models.py:170
+#: templates/doc/security.html:276 templates/scripts/list.html:95
+#: themes/models.py:171
 msgid "Description"
 msgstr "説明"
 
@@ -6857,7 +7042,7 @@ msgstr ""
 msgid "Dive in the <strong>future</strong> of WeeChat!"
 msgstr "WeeChat の<strong>機能</strong>をどうぞ!"
 
-#: templates/dev/roadmap.html:37 templates/doc/security.html:37
+#: templates/dev/roadmap.html:37 templates/doc/security.html:256
 msgid "Tracker"
 msgstr "トラッカー"
 
@@ -6873,16 +7058,16 @@ msgstr "状態"
 msgid "Plugin"
 msgstr "プラグイン"
 
-#: templates/dev/roadmap.html:61
+#: templates/dev/roadmap.html:57
 msgid "Planned"
 msgstr "計画中"
 
-#: templates/dev/roadmap.html:64
+#: templates/dev/roadmap.html:60
 msgid "Done"
 msgstr "完了"
 
 #. Translators: "Done" is followed by the % of task which is implemented, for example: "Done: 75%"
-#: templates/dev/roadmap.html:67
+#: templates/dev/roadmap.html:63
 msgid "Done:"
 msgstr "完了:"
 
@@ -6973,7 +7158,7 @@ msgctxt "translated language"
 msgid "Language"
 msgstr "翻訳言語"
 
-#: templates/doc/doc_version.html:103 themes/models.py:163 themes/models.py:254
+#: templates/doc/doc_version.html:103 themes/models.py:164 themes/models.py:255
 msgid "File"
 msgstr "ファイル"
 
@@ -7028,77 +7213,236 @@ msgstr "文書がありません。"
 msgid "security"
 msgstr "セキュリティ"
 
-#: templates/doc/security.html:12
-msgid "Report a security issue"
-msgstr "セキュリティ問題を報告"
+#: templates/doc/security.html:13
+#, fuzzy
+#| msgid "Security vulnerabilities"
+msgid "All vulnerabilities"
+msgstr "セキュリティの脆弱性"
 
-#: templates/doc/security.html:15
+#: templates/doc/security.html:14
+#, fuzzy
+#| msgid "Vulnerabilities fixed in versions:"
+msgid "Vulnerabilities by version"
+msgstr "脆弱性が修正されているバージョン:"
+
+#: templates/doc/security.html:19 templates/doc/security.html:48
+msgid "Security vulnerabilities"
+msgstr "セキュリティの脆弱性"
+
+#: templates/doc/security.html:22
 msgid ""
-"Please <strong>DO NOT</strong> file a GitHub issue for security related "
-"problems, but send an email to <a href=\"mailto:security@weechat.org"
+"This page lists all known and fixed security vulnerabilities in WeeChat "
+"stable releases."
+msgstr ""
+
+#: templates/doc/security.html:24
+#, fuzzy
+#| msgid ""
+#| "This table contains a list of all known and fixed security "
+#| "vulnerabilities in WeeChat stable releases (the security vulnerabilities "
+#| "introduced during development of a version and fixed before a stable "
+#| "release are not mentioned)."
+msgid ""
+"The security vulnerabilities introduced during development of a version and "
+"fixed before a stable release are not mentioned."
+msgstr ""
+"これは既知および修正された WeeChat 安定版の脆弱性のリストです (セキュリティの"
+"脆弱性はそのバージョンを開発する際に生じるもので、リリース前にあった脆弱性は"
+"記載されていません)。"
+
+#: templates/doc/security.html:28
+msgid ""
+"WeeChat Security Advisories (WSA) are sent to this mailing list, as soon as "
+"they are made public:"
+msgstr ""
+
+#: templates/doc/security.html:31
+#, fuzzy
+#| msgid ""
+#| "Please <strong>DO NOT</strong> file a GitHub issue for security related "
+#| "problems, but send an email to <a href=\"mailto:security@weechat.org"
+#| "\">security@weechat.org</a> instead."
+msgid ""
+"To report a security issue, please <strong>DO NOT</strong> file an issue on "
+"GitHub, but send an email to <a href=\"mailto:security@weechat.org"
 "\">security@weechat.org</a> instead."
 msgstr ""
 "セキュリティ関連の問題を GitHub issue から<strong>報告しないで</strong>くださ"
 "い。その代わり、セキュリティ関連の問題を報告する場合は <a href=\"mailto:"
 "security@weechat.org\">security@weechat.org</a> にメールを送信してください。"
 
-#: templates/doc/security.html:18
-msgid "Security vulnerabilities"
-msgstr "セキュリティの脆弱性"
+#: templates/doc/security.html:39
+#, fuzzy, python-format
+#| msgid "Vulnerabilities fixed in versions:"
+msgid "Security vulnerabilities in version %(version)s"
+msgstr "脆弱性が修正されているバージョン:"
 
-#: templates/doc/security.html:21
+#: templates/doc/security.html:42
+#, python-format
 msgid ""
-"This table contains a list of all known and fixed security vulnerabilities "
-"in WeeChat stable releases (the security vulnerabilities introduced during "
-"development of a version and fixed before a stable release are not "
-"mentioned)."
+"This page lists all known and fixed security vulnerabilities in version "
+"%(version)s (back to the <a href=\"%(url_all_versions)s\">list of all "
+"versions</a>)."
 msgstr ""
-"これは既知および修正された WeeChat 安定版の脆弱性のリストです (セキュリティの"
-"脆弱性はそのバージョンを開発する際に生じるもので、リリース前にあった脆弱性は"
-"記載されていません)。"
 
-#: templates/doc/security.html:23
+#: templates/doc/security.html:51
 msgid ""
-"Note: you can be warned about security vulnerabilities by subscribing to "
-"this mailing list:"
+"This page lists vulnerabilities by WeeChat version (click on a version for "
+"the detail of all issues)."
 msgstr ""
-"注意: セキュリティの脆弱性に関する警告を得るには以下のメーリングリストを購読"
-"してください:"
 
-#: templates/doc/security.html:35
+#: templates/doc/security.html:80
+#, python-format
+msgid "Fixed in version %(fixed_version)s (%(release_date)s)."
+msgstr ""
+
+#: templates/doc/security.html:87 templates/doc/security.html:311
+#, fuzzy
+#| msgid "No security vulnerability."
+msgid "No known security vulnerabilities."
+msgstr "セキュリティ脆弱性はありません。"
+
+#: templates/doc/security.html:96
+#, python-format
+msgid "Overview: %(counter)s vulnerability"
+msgid_plural "Overview: %(counter)s vulnerabilities"
+msgstr[0] ""
+
+#: templates/doc/security.html:109
+msgid "Score"
+msgstr ""
+
+#: templates/doc/security.html:110 templates/doc/security.html:192
 msgid "Severity"
 msgstr "重度"
 
-#: templates/doc/security.html:38
+#: templates/doc/security.html:111
+msgid "Issue"
+msgstr ""
+
+#: templates/doc/security.html:112 templates/doc/security.html:215
+msgid "Scope"
+msgstr ""
+
+#: templates/doc/security.html:113 templates/doc/security.html:204
+msgid "Vulnerability type"
+msgstr ""
+
+#: templates/doc/security.html:114 templates/doc/security.html:223
 msgid "Affected versions"
 msgstr "影響を受けるバージョン"
 
-#: templates/doc/security.html:39
-msgid "Fixed in version"
+#: templates/doc/security.html:114
+#, fuzzy
+#| msgid "Version"
+msgid "Versions"
+msgstr "バージョン"
+
+#: templates/doc/security.html:115 templates/doc/security.html:234
+#, fuzzy
+#| msgid "Fixed in version"
+msgid "Fixed version"
 msgstr "修正済みバージョン"
 
-#: templates/doc/security.html:40
+#: templates/doc/security.html:115
+msgid "Fix"
+msgstr ""
+
+#: templates/doc/security.html:116
 msgid "Release date"
 msgstr "リリース日"
 
-#: templates/doc/security.html:42 templates/doc/security.html:80
-msgid "Workaround"
-msgstr "一時的措置"
+#: templates/doc/security.html:143
+#, fuzzy
+#| msgid "No security vulnerability."
+msgid "Vulnerability"
+msgstr "セキュリティ脆弱性はありません。"
 
-#: templates/doc/security.html:84
-msgid "There is no workaround."
+#: templates/doc/security.html:161
+msgid "Not assigned"
+msgstr ""
+
+#: templates/doc/security.html:168
+msgid ""
+"Common Vulnerability Scoring System vector: it is established by WeeChat "
+"team and may not reflect exactly the vector displayed on NVD site."
+msgstr ""
+
+#: templates/doc/security.html:169
+msgid "CVSS vector"
+msgstr ""
+
+#: templates/doc/security.html:174 templates/doc/security.html:209
+#, fuzzy
+#| msgid "Detail"
+msgid "detail"
+msgstr "詳細"
+
+#: templates/doc/security.html:180
+msgid ""
+"Common Vulnerability Scoring System score: it is established by WeeChat team "
+"and may not reflect exactly the score displayed on NVD site."
+msgstr ""
+
+#: templates/doc/security.html:181
+msgid "CVSS score"
+msgstr ""
+
+#: templates/doc/security.html:191
+msgid ""
+"Common Vulnerability Scoring System severity: it is established by WeeChat "
+"team and may not reflect exactly the severity displayed on NVD site."
+msgstr ""
+
+#: templates/doc/security.html:204
+msgid "Also known as Common Weakness Enumeration (CWE)."
+msgstr ""
+
+#: templates/doc/security.html:243 templates/download/packages.html:75
+msgid "ChangeLog"
+msgstr "ChangeLog"
+
+#: templates/doc/security.html:262
+#, fuzzy
+#| msgid "temporarily unavailable"
+msgid "Not available"
+msgstr "一時的に利用できません"
+
+#: templates/doc/security.html:268
+#, fuzzy
+#| msgid "Comments"
+msgid "Commits"
+msgstr "コメント"
+
+#: templates/doc/security.html:280
+msgid "Mitigation"
+msgstr ""
+
+#: templates/doc/security.html:285
+#, fuzzy
+#| msgid "There is no workaround."
+msgid "There is no known mitigation."
 msgstr "一時的措置はありません。"
 
-#: templates/doc/security.html:95
-#, fuzzy, python-format
-#| msgid "Security vulnerabilities are classified using 4 severity levels:"
+#: templates/doc/security.html:287
 msgid ""
-"Security vulnerabilities are classified using %(count)s severity levels:"
-msgstr "セキュリティの脆弱性はその重度により 4 種類に分類されています:"
+"The upgrade of WeeChat to the latest stable version is highly recommended."
+msgstr ""
 
-#: templates/doc/security.html:112
-msgid "No security vulnerability."
-msgstr "セキュリティ脆弱性はありません。"
+#: templates/doc/security.html:291
+msgid "Credit"
+msgstr ""
+
+#: templates/doc/security.html:293
+#, python-format
+msgid "The issue was discovered by %(credit)s."
+msgstr ""
+
+#: templates/doc/security.html:306 templates/download/packages.html:163
+#, fuzzy, python-format
+#| msgid "Error: there is no version called"
+msgid "Error: there is no version called \"%(version)s\"."
+msgstr "エラー: そのバージョンは存在しません"
 
 #: templates/donate.html:7
 msgid "donate"
@@ -7434,33 +7778,26 @@ msgstr ""
 msgid "Vulnerabilities fixed in versions:"
 msgstr "脆弱性が修正されているバージョン:"
 
-#: templates/download/packages.html:64
-#, python-format
+#: templates/download/packages.html:63
+#, fuzzy, python-format
+#| msgid ""
+#| "<strong>Important:</strong> this release fixes a <a href="
+#| "\"%(security_url)s\">vulnerability</a>."
 msgid ""
-"<strong>Important:</strong> this release fixes a <a href=\"%(security_url)s"
-"\">vulnerability</a>."
-msgstr ""
+"<strong>Note:</strong> this release fixes <a href=\"%(security_url)s\">"
+"%(counter)s vulnerability</a>."
+msgid_plural ""
+"<strong>Note:</strong> this release fixes <a href=\"%(security_url)s\">"
+"%(counter)s vulnerabilities</a>."
+msgstr[0] ""
 "<strong>重要:</strong> このリリースでは<a href=\"%(security_url)s\">脆弱性</"
 "a>が修正されています。"
-
-#: templates/download/packages.html:66
-#, python-format
-msgid ""
-"<strong>Important:</strong> this release fixes <a href=\"%(security_url)s\">"
-"%(count_issues_fixed)s vulnerabilities</a>."
-msgstr ""
-"<strong>重要:</strong> このリリースでは <a href=\"%(security_url)s\">"
-"%(count_issues_fixed)s 個の脆弱性</a>が修正されています。"
 
 #: templates/download/packages.html:68
 msgid "It is recommended to upgrade from any older version to this one."
 msgstr ""
 "古いバージョンをお使いの方には、このバージョンにアップグレードすることを推奨"
 "します。"
-
-#: templates/download/packages.html:75
-msgid "ChangeLog"
-msgstr "ChangeLog"
 
 #: templates/download/packages.html:80
 msgid "Release notes"
@@ -7515,10 +7852,6 @@ msgstr "パッケージと署名ファイルがあるディレクトリ内で:"
 #: templates/download/packages.html:148
 msgid "If the signature is OK you should see a message like this one:"
 msgstr "署名が正しいなら、以下の様なメッセージが表示されれるはずです:"
-
-#: templates/download/packages.html:163
-msgid "Error: there is no version called"
-msgstr "エラー: そのバージョンは存在しません"
 
 #: templates/download/release.html:35
 msgid "No release in progress."
@@ -7786,7 +8119,7 @@ msgid "Author"
 msgstr "作者"
 
 #: templates/scripts/list.html:127 templates/scripts/list.html:129
-#: templates/themes/list.html:25 templates/themes/source.html:15
+#: templates/themes/list.html:25 templates/themes/source.html:24
 msgid "Added"
 msgstr "追加日"
 
@@ -8251,7 +8584,7 @@ msgstr ""
 msgid "Submitted by"
 msgstr "投稿者"
 
-#: templates/themes/list.html:26 templates/themes/source.html:15
+#: templates/themes/list.html:26 templates/themes/source.html:24
 msgid "updated"
 msgstr "アップデート日"
 
@@ -8259,7 +8592,7 @@ msgstr "アップデート日"
 msgid "No theme found."
 msgstr "テーマが見つかりません。"
 
-#: templates/themes/source.html:12 themes/models.py:250
+#: templates/themes/source.html:21 themes/models.py:251
 msgid "Theme"
 msgstr "テーマ"
 
@@ -8283,70 +8616,70 @@ msgstr "テーマをアップデート"
 msgid "Updated theme has been submitted for review."
 msgstr "アップデートされたテーマが投稿され、レビュー待ち状態になりました。"
 
-#: themes/models.py:164 themes/models.py:255
+#: themes/models.py:165 themes/models.py:256
 msgid "The theme."
 msgstr "テーマ。"
 
-#: themes/models.py:174 themes/models.py:259
+#: themes/models.py:175 themes/models.py:260
 msgid "Your name or nick"
 msgstr "名前またはニックネーム"
 
-#: themes/models.py:175
+#: themes/models.py:176
 msgid "Used for themes page."
 msgstr "テーマページで使われます。"
 
-#: themes/models.py:179 themes/models.py:263
+#: themes/models.py:180 themes/models.py:264
 msgid "Your e-mail"
 msgstr "電子メールアドレス"
 
-#: themes/models.py:180 themes/models.py:264
+#: themes/models.py:181 themes/models.py:265
 msgid "No spam, never displayed."
 msgstr "メールアドレスは掲載されないので、スパムの心配はありません。"
 
-#: themes/models.py:186 themes/models.py:270
+#: themes/models.py:187 themes/models.py:271
 msgid "Comments"
 msgstr "コメント"
 
-#: themes/models.py:187 themes/models.py:271
+#: themes/models.py:188 themes/models.py:272
 msgid "Not displayed."
 msgstr "表示されません。"
 
-#: themes/models.py:192 themes/models.py:276
+#: themes/models.py:193 themes/models.py:277
 msgid "Are you a spammer?"
 msgstr "スパマーですか?"
 
-#: themes/models.py:193 themes/models.py:277
+#: themes/models.py:194 themes/models.py:278
 msgid "Enter \"no\" if you are not a spammer."
 msgstr "スパマーでないなら \"no\" と入力してください。"
 
-#: themes/models.py:204 themes/models.py:289
+#: themes/models.py:205 themes/models.py:290
 msgid "Theme file too big."
 msgstr "テーマファイルが大きすぎます。"
 
-#: themes/models.py:210 themes/models.py:295
+#: themes/models.py:211 themes/models.py:296
 msgid "Invalid theme file."
 msgstr "不正なテーマファイルです。"
 
-#: themes/models.py:213
+#: themes/models.py:214
 msgid "This name already exists."
 msgstr "その名前はすでに使われています。"
 
-#: themes/models.py:216 themes/models.py:220
+#: themes/models.py:217 themes/models.py:221
 msgid "Invalid name inside theme file."
 msgstr "テーマファイルの中の名前が不正です。"
 
-#: themes/models.py:227 themes/models.py:308
+#: themes/models.py:228 themes/models.py:309
 msgid "Invalid WeeChat version, too old!"
 msgstr "不正な WeeChat バージョンです。古過ぎます!"
 
-#: themes/models.py:237
+#: themes/models.py:238
 msgid "Choose…"
 msgstr "選択…"
 
-#: themes/models.py:298
+#: themes/models.py:299
 msgid "Internal error."
 msgstr "内部エラー。"
 
-#: themes/models.py:301
+#: themes/models.py:302
 msgid "Invalid name: different from theme."
 msgstr "不正な名前: テーマとは異なります。"

@@ -50,7 +50,7 @@
       <tr>
         <td class="text-nowrap">{{ keydate.date|date:"m/Y" }}</td>
         <td>{{ keydate.version }}</td>
-        <td>{% autoescape off %}{{ keydate.text_i18n }}{% endautoescape %}</td>
+        <td>{{ keydate.text_i18n }}</td>
       </tr>
       {% endfor %}
     </tbody>
