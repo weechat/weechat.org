@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-08 09:48+0100\n"
+"POT-Creation-Date: 2022-01-23 16:42+0100\n"
 "PO-Revision-Date: 2022-01-04 18:41+0100\n"
 "Last-Translator: Marco Paolone <marcopaolone@gmail.com>\n"
 "Language-Team: Italian <marcopaolone@gmail.com>\n"
@@ -338,7 +338,7 @@ msgid ""
 "Debian/Ubuntu repository signing key fingerprint (format: PGP fingerprint)."
 msgstr ""
 
-#: dev/views.py:92 templates/download/debian.html:71
+#: dev/views.py:92 templates/download/debian.html:77
 msgid "Debian/Ubuntu repository signing key (format: PGP public key)."
 msgstr ""
 
@@ -6257,13 +6257,13 @@ msgid "Make a donation"
 msgstr "Donazioni paypal"
 
 #: templates/base.html:106 templates/base.html:115
-#: templates/download/debian.html:227
+#: templates/download/debian.html:233
 #, fuzzy
 msgid "Stable version"
 msgstr "versione stabile"
 
 #: templates/base.html:107 templates/base.html:116
-#: templates/download/debian.html:227
+#: templates/download/debian.html:233
 #, fuzzy
 #| msgid "development version"
 msgid "Development version"
@@ -6941,105 +6941,109 @@ msgid "GPG key"
 msgstr ""
 
 #: templates/download/debian.html:63
+msgid "Create GnuPG directory:"
+msgstr ""
+
+#: templates/download/debian.html:69
 msgid "Import the GPG key used to sign the repositories:"
 msgstr ""
 
-#: templates/download/debian.html:69 templates/download/packages.html:126
+#: templates/download/debian.html:75 templates/download/packages.html:126
 msgid "In case of problem, the GPG key can be downloaded here:"
 msgstr ""
 
-#: templates/download/debian.html:75
+#: templates/download/debian.html:81
 msgid "APT configuration"
 msgstr ""
 
-#: templates/download/debian.html:80
+#: templates/download/debian.html:86
 msgid ""
 "Create a weechat.list file with the repository, according to your "
 "distribution/version:"
 msgstr ""
 
-#: templates/download/debian.html:85
+#: templates/download/debian.html:91
 msgid "Choose your distribution/version"
 msgstr ""
 
 #. Translators: purpose is to "translate" only quotes here
-#: templates/download/debian.html:91 templates/download/debian.html:205
+#: templates/download/debian.html:97 templates/download/debian.html:211
 #, python-format
 msgid "“%(codename)s”"
 msgstr ""
 
-#: templates/download/debian.html:103
+#: templates/download/debian.html:109
 msgid ""
 "Note: the second command line is optional, it is used to download source "
 "packages."
 msgstr ""
 
-#: templates/download/debian.html:107
+#: templates/download/debian.html:113
 msgid "Resynchronize your package index files:"
 msgstr ""
 
-#: templates/download/debian.html:111
+#: templates/download/debian.html:117
 msgid "Packages installation"
 msgstr ""
 
-#: templates/download/debian.html:114
+#: templates/download/debian.html:120
 msgid ""
 "Install the binary packages; the \"plugins\" package is highly recommended "
 "but not mandatory, scripting API packages are optional (popular languages "
 "are python and perl)."
 msgstr ""
 
-#: templates/download/debian.html:118
+#: templates/download/debian.html:124
 #, fuzzy
 #| msgid "next stable version"
 msgid "Example for the stable version:"
 msgstr "prossima versione stabile"
 
-#: templates/download/debian.html:123
+#: templates/download/debian.html:129
 #, fuzzy
 #| msgid "or development version"
 msgid "Example for the development version:"
 msgstr "o la versione di sviluppo"
 
-#: templates/download/debian.html:128
+#: templates/download/debian.html:134
 msgid ""
 "If needed, you can download the source package in order to rebuild binary "
 "packages:"
 msgstr ""
 
-#: templates/download/debian.html:134
+#: templates/download/debian.html:140
 msgid "Overview"
 msgstr ""
 
-#: templates/download/debian.html:184
+#: templates/download/debian.html:190
 msgid "Detail"
 msgstr ""
 
-#: templates/download/debian.html:216
+#: templates/download/debian.html:222
 msgid "Important"
 msgstr ""
 
-#: templates/download/debian.html:228
+#: templates/download/debian.html:234
 msgid "Architecture"
 msgstr ""
 
-#: templates/download/debian.html:230
+#: templates/download/debian.html:236
 msgid "files"
 msgstr ""
 
-#: templates/download/debian.html:253
+#: templates/download/debian.html:259
 msgid "Builds by"
 msgstr ""
 
-#: templates/download/debian.html:255
+#: templates/download/debian.html:261
 msgid "latest build:"
 msgstr ""
 
-#: templates/download/debian.html:258
+#: templates/download/debian.html:264
 msgid "next build:"
 msgstr ""
 
-#: templates/download/debian.html:273
+#: templates/download/debian.html:279
 #, fuzzy
 msgid "No debian repository."
 msgstr "Nessuno script trovato."
