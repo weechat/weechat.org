@@ -127,7 +127,7 @@
         <td class="text-nowrap">{{ security.scope_i18n }}</td>
         <td>{{ security.cwe_i18n }}</td>
         <td class="text-nowrap text-danger fw-bold">{{ security.affected_html }}</td>
-        <td class="text-nowrap text-success fw-bold">{{ security.fixed }}</td>
+        <td class="text-nowrap text-success fw-bold">{{ security.fixed|default:"-" }}</td>
         <td class="text-nowrap">{% if security.release_date %}{{ security.release_date_l10n }}{% else %}-{% endif %}</td>
       </tr>
     {% endfor %}
