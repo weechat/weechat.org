@@ -228,23 +228,27 @@
       </span>
     </div>
   </div>
-  {% if security.fixed %}
   <div class="row">
     <div class="col-12 col-md-4 fw-bold">
       {% trans "Fixed version" %}
     </div>
     <div class="col-12 col-md-8">
-    <span class="text-success fw-bold me-2">
-      {{ security.fixed }}
-    </span>
-    ({{ security.release_date_l10n }})
-    -
-    <a href="/files/changelog/ChangeLog-{{ security.fixed }}.html" target="_blank" rel="noopener">
-      {% trans "ChangeLog" %}
-    </a>
+      {% if security.fixed %}
+      <span class="text-success fw-bold me-2">
+        {{ security.fixed }}
+      </span>
+      ({{ security.release_date_l10n }})
+      -
+      <a href="/files/changelog/ChangeLog-{{ security.fixed }}.html" target="_blank" rel="noopener">
+        {% trans "ChangeLog" %}
+      </a>
+      {% else %}
+      <span>
+        {% trans "Not yet available, stay tuned!" %}
+      </span>
+      {% endif %}
     </div>
   </div>
-  {% endif %}
   <div class="row">
     <div class="col-12 col-md-4 fw-bold">
     </div>
