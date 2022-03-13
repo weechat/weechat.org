@@ -74,7 +74,7 @@
 <ul>
   {% for security in sec_list %}
   <li>
-    {{ security.wsa }}: [{{ security.scope }}] {{ security.issue_i18n }}
+    <a href="{% url 'doc_security_wsa' security.wsa %}">{{ security.wsa }}</a>: [{{ security.scope }}] {{ security.issue_i18n }}
     &mdash;
     {% if security.fixed %}
     {% with fixed_version=security.fixed_html release_date=security.date_l10n %}
