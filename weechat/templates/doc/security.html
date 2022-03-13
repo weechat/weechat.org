@@ -33,7 +33,7 @@
 
 {% else %}
 
-{% if version %}
+{% if version and version != "wsa" %}
 
 {% if not version_error %}
 <h3>{% blocktrans %}Security vulnerabilities in version {{ version }}{% endblocktrans %}</h3>
@@ -43,7 +43,7 @@
 </p>
 {% endif %}
 
-{% else %}
+{% elif version != "wsa" %}
 
 <h3>{% trans "Security vulnerabilities" %}</h3>
 
@@ -137,7 +137,7 @@
 
 {% for security in security_list %}
 <h4 id="{{ security.wsa }}">
-  {{ security.wsa }}: [{{ security.scope }}] {{ security.issue_i18n }}
+  <a href="{% url 'doc_security_wsa' security.wsa %}">{{ security.wsa }}</a>: [{{ security.scope }}] {{ security.issue_i18n }}
 </h4>
 
 <h5>{% trans "Vulnerability" %}</h5>

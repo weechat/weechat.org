@@ -232,6 +232,19 @@ def security_all(request):
     )
 
 
+def security_wsa(request, wsa):
+    """Page with security a single vulnerability."""
+    security = Security.objects.get(wsa=wsa)
+    return render(
+        request,
+        'doc/security.html',
+        {
+            'version': 'wsa',
+            'security_list': [security],
+        },
+    )
+
+
 def is_security_affecting_release(security, release):
     """Return True if the Security issue is affecting the Release."""
     version_tuple = version_to_tuple(release.version)

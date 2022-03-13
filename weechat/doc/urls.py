@@ -27,6 +27,7 @@ from weechat.doc.views import (
     documentation as view_doc,
     documentation_link as view_doc_link,
     security_all as view_security,
+    security_wsa as view_security_wsa,
     security_version as view_security_version,
 )
 
@@ -34,6 +35,8 @@ urlpatterns = [
     path('', view_doc, name='doc'),
     re_path(r'^(?P<version>stable|devel|old)/$', view_doc, name='doc_version'),
     path('security/', view_security, name='doc_security'),
+    re_path(r'^security/(?P<wsa>WSA-[0-9]{4}-[0-9]+)/$', view_security_wsa,
+            name='doc_security_wsa'),
     path('security/version/', view_security_version,
          name='doc_security_versions'),
     re_path('security/version/(?P<version>[0-9.]+)/$', view_security_version,
