@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-03-13 21:23+0100\n"
-"PO-Revision-Date: 2022-02-25 00:33+0100\n"
+"PO-Revision-Date: 2022-03-13 22:57+0100\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -412,6 +412,9 @@ msgid ""
 "After changing options <code>weechat.network.gnutls_ca_system</code> or "
 "<code>weechat.network.gnutls_ca_user</code>, you must restart WeeChat."
 msgstr ""
+"Nachdem Sie die Optionen <code>weechat.network.gnutls_ca_system</code> oder "
+"<code>weechat.network.gnutls_ca_user</code> geändert haben, müssen Sie "
+"WeeChat neu starten."
 
 #: doc/_i18n_security.py:21
 msgid ""
@@ -425,6 +428,17 @@ msgid ""
 "Connection to IRC servers with TLS is affected, as well as any connection a "
 "server made by a plugin or a script using the function hook_connect."
 msgstr ""
+"Nach dem Ändern der Optionen <code>weechat.network.gnutls_ca_system</code> "
+"oder <code>weechat.network.gnutls_ca_user</code> geht die TLS-"
+"Verifizierungsfunktion verloren.\n"
+"<br>\n"
+"Folglich wird jede Verbindung zu einem Server mit TLS hergestellt, ohne das "
+"Zertifikat zu verifizieren, was zu einer Man-in-the-Middle-Attacke führen "
+"kann.\n"
+"<br>\n"
+"Verbindungen zu IRC-Servern mit TLS sind dabei betroffen, ebenso wie "
+"Verbindungen zu einem Server, die durch eine Erweiterung oder ein Skript mit "
+"der Funktion hook_connect hergestellt wird."
 
 #: doc/_i18n_security.py:22
 msgid "Buffer overflow on malformed IRC message 324 (channel mode)."
@@ -518,15 +532,11 @@ msgstr ""
 "Formatierungszeichen wie \"%\" enthalten."
 
 #: doc/_i18n_security.py:40
-#, fuzzy
-#| msgid ""
-#| "Due to insufficient check of SSL certificate in IRC plugin, man-in-the-"
-#| "middle attackers can spoof a server via an arbitrary certificate."
 msgid ""
 "Due to insufficient check of TLS certificate in IRC plugin, man-in-the-"
 "middle attackers can spoof a server via an arbitrary certificate."
 msgstr ""
-"Aufgrund unzureichender Überprüfung des SSL-Zertifikats in der IRC-"
+"Aufgrund unzureichender Überprüfung des TLS-Zertifikats in der IRC-"
 "Erweiterung können Man-in-the-Middle-Angreifer einen Server über ein "
 "beliebiges Zertifikat fälschen."
 
@@ -535,16 +545,12 @@ msgid "IRC"
 msgstr "IRC"
 
 #: doc/_i18n_security.py:42
-#, fuzzy
-#| msgid "Plugin"
 msgid "IRC, Plugins"
-msgstr "Erweiterung"
+msgstr "IRC, Erweiterungen"
 
 #: doc/_i18n_security.py:43
-#, fuzzy
-#| msgid "Improper input validation"
 msgid "Improper certificate validation"
-msgstr "Unsachgemäße Eingabevalidierung"
+msgstr "Unsachgemäße Zertifikatsvalidierung"
 
 #: doc/_i18n_security.py:44
 msgid "Improper input validation"
@@ -563,16 +569,12 @@ msgid "Out-of-bounds write"
 msgstr "außerhalb des zulässigen Bereichs schreibend"
 
 #: doc/_i18n_security.py:48
-#, fuzzy
-#| msgid "Possible man-in-the-middle attack in connection to IRC server."
 msgid "Possible man-in-the-middle attack in TLS connection to IRC server."
-msgstr "Möglicher Man-in-the-Middle-Angriff in Verbindung mit IRC-Server."
+msgstr "Möglicher Man-in-the-Middle-Angriff in TLS-Verbindung zum IRC-Server."
 
 #: doc/_i18n_security.py:49
-#, fuzzy
-#| msgid "Possible man-in-the-middle attack in connection to IRC server."
 msgid "Possible man-in-the-middle attack in TLS connection to servers."
-msgstr "Möglicher Man-in-the-Middle-Angriff in Verbindung mit IRC-Server."
+msgstr "Möglicher Man-in-the-Middle-Angriff bei TLS-Verbindung zu Servern."
 
 #: doc/_i18n_security.py:50
 msgid "Relay"
@@ -619,19 +621,14 @@ msgstr ""
 "enthalten, mit dem Befehl <code>/notify</code> überwacht werden."
 
 #: doc/_i18n_security.py:57
-#, fuzzy
-#| msgid ""
-#| "Strings are built with uncontrolled format when unknown IRC commands are "
-#| "sent to server (if option \"irc.network.send_unknown_commands\" is "
-#| "enabled)."
 msgid ""
 "Strings are built with uncontrolled format when unknown IRC commands are "
 "sent to server, if option <code>irc.network.send_unknown_commands</code> is "
 "enabled."
 msgstr ""
 "Zeichenfolgen werden mit unkontrolliertem Format erstellt, wenn unbekannte "
-"IRC-Befehle an den Server gesendet werden (wenn die Option \"irc.network."
-"send_unknown_commands\" aktiviert ist)."
+"IRC-Befehle an den Server gesendet werden, wenn die Option <code>irc.network."
+"send_unknown_commands</code> aktiviert ist."
 
 #: doc/_i18n_security.py:58
 msgid ""
@@ -4878,10 +4875,8 @@ msgstr "Automatische Zusammenführung neuer Buffer nach definierten Regeln."
 
 #. Translators: description for script "reop.py" (2.3+)
 #: scripts/_i18n_scripts.py:106
-#, fuzzy
-#| msgid "Automatically merge new buffers according to defined rules."
 msgid "Automatically op/voice users using reop and invite lists."
-msgstr "Automatische Zusammenführung neuer Buffer nach definierten Regeln."
+msgstr "Automatisch op/voice Anwender mittels reop und Einladungslisten."
 
 #. Translators: description for script "triggerreply.py" (0.4.0+)
 #: scripts/_i18n_scripts.py:108
@@ -5517,7 +5512,7 @@ msgstr ""
 #. Translators: description for script "maze.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:330
 msgid "Interactive maze generator and solver."
-msgstr ""
+msgstr "Interaktiver Labyrinth Generator mit Lösungstool."
 
 #. Translators: description for script "urlselect.lua" (1.0+)
 #: scripts/_i18n_scripts.py:332
@@ -7637,10 +7632,8 @@ msgid "Fixed in version %(fixed_version)s (%(release_date)s)."
 msgstr "Behoben mit Version %(fixed_version)s (%(release_date)s)."
 
 #: templates/doc/security.html:84
-#, fuzzy
-#| msgid "Not yet compatible"
 msgid "Not yet fixed."
-msgstr "Noch nicht kompatibel"
+msgstr "Noch nicht behoben."
 
 #: templates/doc/security.html:91 templates/doc/security.html:319
 msgid "No known security vulnerabilities."
@@ -7749,10 +7742,8 @@ msgid "ChangeLog"
 msgstr "Change-Log"
 
 #: templates/doc/security.html:251
-#, fuzzy
-#| msgid "Not available"
 msgid "Not yet available, stay tuned!"
-msgstr "Nicht verfügbar"
+msgstr "Noch nicht verfügbar, bleiben Sie dran!"
 
 #: templates/doc/security.html:270
 msgid "Not available"
