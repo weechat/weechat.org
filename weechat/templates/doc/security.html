@@ -10,8 +10,8 @@
 {{ block.super }}
 
 <ul class="nav nav-tabs mt-4">
-  <li class="nav-item"><a class="nav-link{% if version == "all" %} active{% endif %}" href="{% url 'doc_security' %}">{% trans "All vulnerabilities" %}</a></li>
-  <li class="nav-item"><a class="nav-link{% if version != "all" %} active{% endif %}" href="{% url 'doc_security_versions' %}">{% trans "Vulnerabilities by version" %}</a></li>
+  <li class="nav-item"><a class="nav-link{% if version == "all" or version == "wsa" %} active{% endif %}" href="{% url 'doc_security' %}">{% trans "All vulnerabilities" %}</a></li>
+  <li class="nav-item"><a class="nav-link{% if version != "all" and version != "wsa" %} active{% endif %}" href="{% url 'doc_security_versions' %}">{% trans "Vulnerabilities by version" %}</a></li>
 </ul>
 
 {% if version == "all" %}
