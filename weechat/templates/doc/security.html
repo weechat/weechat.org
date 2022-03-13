@@ -76,9 +76,13 @@
   <li>
     {{ security.wsa }}: [{{ security.scope }}] {{ security.issue_i18n }}
     &mdash;
+    {% if security.fixed %}
     {% with fixed_version=security.fixed_html release_date=security.date_l10n %}
     {% blocktrans %}Fixed in version {{ fixed_version }} ({{ release_date }}).{% endblocktrans %}
     {% endwith %}
+    {% else %}
+    {% trans "Not yet fixed." %}
+    {% endif %}
   {% endfor %}
 </ul>
 

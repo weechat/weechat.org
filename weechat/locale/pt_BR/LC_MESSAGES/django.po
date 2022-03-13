@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-13 19:06+0100\n"
+"POT-Creation-Date: 2022-03-13 21:19+0100\n"
 "PO-Revision-Date: 2022-01-04 18:41+0100\n"
 "Last-Translator: Alexandre Bolelli <semeion7@gmail.com>\n"
 "Language-Team: Portuguese <semeion7@gmail.com>\n"
@@ -6692,7 +6692,7 @@ msgid "Current value"
 msgstr "Valor atual"
 
 #: templates/dev/info_list.html:24 templates/dev/roadmap.html:42
-#: templates/doc/security.html:280 templates/scripts/list.html:95
+#: templates/doc/security.html:284 templates/scripts/list.html:95
 #: themes/models.py:171
 msgid "Description"
 msgstr "Descrição"
@@ -6732,7 +6732,7 @@ msgstr ""
 msgid "Dive in the <strong>future</strong> of WeeChat!"
 msgstr "Mergulhe no <strong>futuro</strong> do WeeChat!"
 
-#: templates/dev/roadmap.html:37 templates/doc/security.html:260
+#: templates/dev/roadmap.html:37 templates/doc/security.html:264
 msgid "Tracker"
 msgstr "Tracker"
 
@@ -6993,159 +6993,163 @@ msgid ""
 "the detail of all issues)."
 msgstr ""
 
-#: templates/doc/security.html:80
+#: templates/doc/security.html:81
 #, python-format
 msgid "Fixed in version %(fixed_version)s (%(release_date)s)."
 msgstr ""
 
-#: templates/doc/security.html:87 templates/doc/security.html:315
+#: templates/doc/security.html:84
+msgid "Not yet fixed."
+msgstr ""
+
+#: templates/doc/security.html:91 templates/doc/security.html:319
 #, fuzzy
 #| msgid "Security vulnerabilities"
 msgid "No known security vulnerabilities."
 msgstr "Vulnerabilidades de segurança"
 
-#: templates/doc/security.html:96
+#: templates/doc/security.html:100
 #, python-format
 msgid "Overview: %(counter)s vulnerability"
 msgid_plural "Overview: %(counter)s vulnerabilities"
 msgstr[0] ""
 msgstr[1] ""
 
-#: templates/doc/security.html:109
+#: templates/doc/security.html:113
 msgid "Score"
 msgstr ""
 
-#: templates/doc/security.html:110 templates/doc/security.html:192
+#: templates/doc/security.html:114 templates/doc/security.html:196
 msgid "Severity"
 msgstr "Severidade"
 
-#: templates/doc/security.html:111
+#: templates/doc/security.html:115
 msgid "Issue"
 msgstr ""
 
-#: templates/doc/security.html:112 templates/doc/security.html:215
+#: templates/doc/security.html:116 templates/doc/security.html:219
 msgid "Scope"
 msgstr ""
 
-#: templates/doc/security.html:113 templates/doc/security.html:204
+#: templates/doc/security.html:117 templates/doc/security.html:208
 msgid "Vulnerability type"
 msgstr ""
 
-#: templates/doc/security.html:114 templates/doc/security.html:223
+#: templates/doc/security.html:118 templates/doc/security.html:227
 msgid "Affected versions"
 msgstr "Versões afetadas"
 
-#: templates/doc/security.html:114
+#: templates/doc/security.html:118
 #, fuzzy
 #| msgid "Version"
 msgid "Versions"
 msgstr "Versão"
 
-#: templates/doc/security.html:115 templates/doc/security.html:233
+#: templates/doc/security.html:119 templates/doc/security.html:237
 #, fuzzy
 #| msgid "Fixed in version"
 msgid "Fixed version"
 msgstr "Corrigido na versão"
 
-#: templates/doc/security.html:115
+#: templates/doc/security.html:119
 msgid "Fix"
 msgstr ""
 
-#: templates/doc/security.html:116
+#: templates/doc/security.html:120
 msgid "Release date"
 msgstr "Data de lançamento"
 
-#: templates/doc/security.html:143
+#: templates/doc/security.html:147
 #, fuzzy
 #| msgid "Security vulnerabilities"
 msgid "Vulnerability"
 msgstr "Vulnerabilidades de segurança"
 
-#: templates/doc/security.html:161
+#: templates/doc/security.html:165
 msgid "Not assigned"
 msgstr ""
 
-#: templates/doc/security.html:168
+#: templates/doc/security.html:172
 msgid ""
 "Common Vulnerability Scoring System vector: it is established by WeeChat "
 "team and may not reflect exactly the vector displayed on NVD site."
 msgstr ""
 
-#: templates/doc/security.html:169
+#: templates/doc/security.html:173
 msgid "CVSS vector"
 msgstr ""
 
-#: templates/doc/security.html:174 templates/doc/security.html:209
+#: templates/doc/security.html:178 templates/doc/security.html:213
 msgid "detail"
 msgstr ""
 
-#: templates/doc/security.html:180
+#: templates/doc/security.html:184
 msgid ""
 "Common Vulnerability Scoring System score: it is established by WeeChat team "
 "and may not reflect exactly the score displayed on NVD site."
 msgstr ""
 
-#: templates/doc/security.html:181
+#: templates/doc/security.html:185
 msgid "CVSS score"
 msgstr ""
 
-#: templates/doc/security.html:191
+#: templates/doc/security.html:195
 msgid ""
 "Common Vulnerability Scoring System severity: it is established by WeeChat "
 "team and may not reflect exactly the severity displayed on NVD site."
 msgstr ""
 
-#: templates/doc/security.html:204
+#: templates/doc/security.html:208
 msgid "Also known as Common Weakness Enumeration (CWE)."
 msgstr ""
 
-#: templates/doc/security.html:243 templates/download/packages.html:75
+#: templates/doc/security.html:247 templates/download/packages.html:75
 msgid "ChangeLog"
 msgstr "ChangeLog"
 
-#: templates/doc/security.html:247
+#: templates/doc/security.html:251
 #, fuzzy
 #| msgid "temporarily unavailable"
 msgid "Not yet available, stay tuned!"
 msgstr "temporariamente indisponível"
 
-#: templates/doc/security.html:266
+#: templates/doc/security.html:270
 #, fuzzy
 #| msgid "temporarily unavailable"
 msgid "Not available"
 msgstr "temporariamente indisponível"
 
-#: templates/doc/security.html:272
+#: templates/doc/security.html:276
 #, fuzzy
 #| msgid "Comments"
 msgid "Commits"
 msgstr "Comentários"
 
-#: templates/doc/security.html:284
+#: templates/doc/security.html:288
 msgid "Mitigation"
 msgstr ""
 
-#: templates/doc/security.html:289
+#: templates/doc/security.html:293
 #, fuzzy
 #| msgid "There is no workaround."
 msgid "There is no known mitigation."
 msgstr "Nao há correção."
 
-#: templates/doc/security.html:291
+#: templates/doc/security.html:295
 msgid ""
 "The upgrade of WeeChat to the latest stable version is highly recommended."
 msgstr ""
 
-#: templates/doc/security.html:295
+#: templates/doc/security.html:299
 msgid "Credit"
 msgstr ""
 
-#: templates/doc/security.html:297
+#: templates/doc/security.html:301
 #, python-format
 msgid "The issue was discovered by %(credit)s."
 msgstr ""
 
-#: templates/doc/security.html:310 templates/download/packages.html:163
+#: templates/doc/security.html:314 templates/download/packages.html:163
 #, fuzzy, python-format
 #| msgid "Error: there is no version called"
 msgid "Error: there is no version called \"%(version)s\"."
