@@ -141,7 +141,7 @@
 
 {% for security in security_list %}
 <h4 id="{{ security.wsa }}">
-  <a href="{% url 'doc_security_wsa' security.wsa %}">{{ security.wsa }}</a>: [{{ security.scope }}] {{ security.issue_i18n }}
+  <a href="{% url 'doc_security_wsa' security.wsa %}">{{ security.wsa }}</a>: [{{ security.scope_i18n }}] {{ security.issue_i18n }}
 </h4>
 
 <h5>{% trans "Vulnerability" %}</h5>
