@@ -181,14 +181,34 @@ class Security(models.Model):
         """Return the date formatted with localized date format."""
         return localdate(self.date)
 
+    def cve_valid(self):
+        """Return True if the CVE is a valid CVE id."""
+        return self.cve.startswith('CVE')
+
     def cve_links(self):
         """Return URLs for the CVE."""
-        if not self.cve:
+        if not self.cve_valid():
             return {}
         return {
             name: url % {'cve': self.cve}
             for name, url in URL_CVE.items()
         }
+
+    def cve_i18n_table(self):
+        """Return CVE to display in table."""
+        if not self.cve:
+            return '-'
+        if self.cve_valid():
+            return self.cve
+        return gettext('Pending')
+
+    def cve_i18n(self):
+        """Return CVE to display in detailed info."""
+        if not self.cve:
+            return gettext('Not available')
+        if self.cve_valid():
+            return self.cve
+        return gettext('Pending')
 
     def cwe_i18n(self):
         """Return the translated vulnerability type."""

@@ -124,7 +124,7 @@
       {% for security in security_list %}
       <tr>
         <td class="text-nowrap"><a class="js-scroll" href="#{{ security.wsa }}">{{ security.wsa }}</a></td>
-        <td class="text-nowrap">{{ security.cve|default:"-" }}</td>
+        <td class="text-nowrap">{{ security.cve_i18n_table }}</td>
         <td class="text-nowrap text-end text-severity{{ security.severity_index }}">{{ security.cvss_score }}</td>
         <td class="text-nowrap"><span title="{{ security.severity_i18n }}">{{ security.score_bar }}</span></td>
         <td>{{ security.issue_i18n }}</td>
@@ -152,8 +152,8 @@
       CVE
     </div>
     <div class="col-12 col-md-8">
-      {% if security.cve %}
-      {{ security.cve }}
+      {% if security.cve_valid %}
+      {{ security.cve_i18n }}
       <span class="ms-2">
         [
         {% for name, url in security.cve_links.items %}
@@ -162,7 +162,7 @@
         ]
       </span>
       {% else %}
-      <span class="text-muted">{% trans "Not assigned" %}</span>
+      <span class="text-muted">{{ security.cve_i18n }}</span>
       {% endif %}
     </div>
   </div>
