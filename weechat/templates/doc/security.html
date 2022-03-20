@@ -152,8 +152,8 @@
       CVE
     </div>
     <div class="col-12 col-md-8">
-      {% if security.cve_valid %}
       {{ security.cve_i18n }}
+      {% if security.cve_valid %}
       <span class="ms-2">
         [
         {% for name, url in security.cve_links.items %}
@@ -161,8 +161,6 @@
         {% endfor %}
         ]
       </span>
-      {% else %}
-      <span class="text-muted">{{ security.cve_i18n }}</span>
       {% endif %}
     </div>
   </div>

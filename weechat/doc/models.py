@@ -205,7 +205,8 @@ class Security(models.Model):
     def cve_i18n(self):
         """Return CVE to display in detailed info."""
         if not self.cve:
-            return gettext('Not available')
+            not_avail = gettext('Not available')
+            return mark_safe(f'<span class="text-muted">{not_avail}</span>')
         if self.cve_valid():
             return self.cve
         return gettext('Pending')
