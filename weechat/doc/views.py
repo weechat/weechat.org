@@ -234,15 +234,14 @@ def security_all(request):
 
 def security_wsa(request, wsa):
     """Page with security a single vulnerability."""
-    security = Security.objects.get(wsa=wsa)
-    return render(
-        request,
-        'doc/security.html',
-        {
-            'version': 'wsa',
-            'security_list': [security],
-        },
-    )
+    context = {
+        'version': 'wsa',
+    }
+    try:
+        context['security_list'] = [Security.objects.get(wsa=wsa)]
+    except ObjectDoesNotExist:
+        context['wsa_error'] = True
+    return render(request, 'doc/security.html', context)
 
 
 def is_security_affecting_release(security, release):

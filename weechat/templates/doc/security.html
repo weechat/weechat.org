@@ -312,6 +312,12 @@
   {% blocktrans %}Error: there is no version called "{{ version }}".{% endblocktrans %}
 </div>
 
+{% elif wsa_error %}
+
+<div class="alert alert-danger">
+  {% trans "Security vulnerability not found." %}
+</div>
+
 {% else %}
 
 {% trans "No known security vulnerabilities." %}
