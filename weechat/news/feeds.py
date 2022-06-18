@@ -40,7 +40,7 @@ class WeechatFeed(Feed):
 
     def item_pubdate(self, info):
         """Return idem date."""
-        # pylint: disable=no-self-use
+        # pylint: disable=all
         return info.date
 
 
@@ -52,7 +52,7 @@ class LatestNewsFeed(WeechatFeed):
 
     def items(self):
         """Return items with date in the past."""
-        # pylint: disable=no-self-use
+        # pylint: disable=all
         return (Info.objects.filter(visible=1)
                 .filter(date__lte=datetime.now()).order_by('-date')[:10])
 
@@ -65,6 +65,6 @@ class UpcomingEventsFeed(WeechatFeed):
 
     def items(self):
         """Return items with date in the future."""
-        # pylint: disable=no-self-use
+        # pylint: disable=all
         return (Info.objects.filter(visible=1)
                 .filter(date__gt=datetime.now()).order_by('date')[:10])
