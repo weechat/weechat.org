@@ -72,12 +72,12 @@
     <div class="row">
       <div class="col-auto">
         <a href="/files/changelog/ChangeLog-{{ package_version.grouper.version }}.html" target="_blank" rel="noopener">
-          {% trans "ChangeLog" %} ↗
+          {% trans "ChangeLog" %} <sup>↗</sup>
         </a>
       </div>
       <div class="col-auto">
         <a href="/files/releasenotes/ReleaseNotes-{{ package_version.grouper.version }}.html" target="_blank" rel="noopener">
-          {% trans "Release notes" %} ↗
+          {% trans "Release notes" %} <sup>↗</sup>
         </a>
       </div>
     </div>
@@ -99,7 +99,7 @@
         {% elif package.directory %}
           {% if package.exists %}
             <a href="/files/{{ package.directory }}" target="_blank" rel="noopener"{% if not package.exists %} class="text-muted"{% endif %} title="{{ package.type.description }}">
-              {{ package.directory }} ↗
+              {{ package.directory }} <sup>↗</sup>
             </a>
           {% else %}
             <span class="text-muted" title="{{ package.type.description }}">{{ package.directory }}</span>
@@ -107,7 +107,7 @@
         {% else %}
           {% if package.url %}
             <a href="{{ package.url }}" target="_blank" rel="noopener">
-              {{ package.url }} ↗
+              {{ package.url }} <sup>↗</sup>
             </a>
           {% else %}
             {{ package.text }}
