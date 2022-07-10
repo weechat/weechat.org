@@ -13,6 +13,7 @@ def __i18n_about_keydates():
     gettext_noop("256 colors, irc proxy, rmodifier, redirection of irc commands.")
     gettext_noop("Add calculation of expression in evaluation of expressions, add colors in log files, add filters on IRC raw buffer.")
     gettext_noop("Add command /autojoin, add IRC option \"autojoin_dynamic\", add IRC tags in messages displayed, add Zstandard compression support in Relay plugin (weechat protocol).")
+    gettext_noop("Add command /item, add bar item \"spacer\".")
     gettext_noop("Add command /toggle, improve IRC message parser.")
     gettext_noop("Add handshake, nonce, completion in weechat relay protocol, add background color for inactive bars, support of multiple lines in command line.")
     gettext_noop("Add hook \"line\".")
