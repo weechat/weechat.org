@@ -29,14 +29,15 @@ class BootstrapBoundField(forms.BoundField):
     def css_classes(self, extra_classes=None):
         return super().css_classes() + ' form-group row'
 
-    def label_tag(self, contents=None, attrs=None, label_suffix=None):
+    # pylint: disable=arguments-differ
+    def label_tag(self, contents=None, attrs=None, **kwargs):
         attrs = attrs or {}
         class_list = [
             attrs.get('class', ''),
             'col-12 col-md-3 col-lg-2 col-form-label',
         ]
         attrs['class'] = ' '.join(class_list).strip()
-        return super().label_tag(contents, attrs, label_suffix)
+        return super().label_tag(contents, attrs, **kwargs)
 
     def build_widget_attrs(self, attrs, widget=None):
         attrs = attrs or {}
