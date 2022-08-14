@@ -29,7 +29,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          sudo apt-get install gettext libenchant-dev
+          sudo apt-get install gettext
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install flake8 msgcheck pylint pylint-django
