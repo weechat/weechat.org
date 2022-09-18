@@ -171,7 +171,7 @@ class Script(models.Model):
     def version_weechat_html(self):
         """Return the WeeChat supported versions in a string for HTML."""
         vmin = self.min_weechat or '0.3.0'
-        return f'&ge; {vmin}'
+        return mark_safe(f'&ge; {vmin}')
 
     def build_url(self):
         """Return URL to the script."""
