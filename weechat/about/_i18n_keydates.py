@@ -17,6 +17,7 @@ def __i18n_about_keydates():
     gettext_noop("Add command /toggle, improve IRC message parser.")
     gettext_noop("Add handshake, nonce, completion in weechat relay protocol, add background color for inactive bars, support of multiple lines in command line.")
     gettext_noop("Add hook \"line\".")
+    gettext_noop("Add log file rotation and compression, add option -save in command /upgrade, add key alt+backspace.")
     gettext_noop("Add support of TOTP (Time-based One Time Password).")
     gettext_noop("Add support of UNIX socket in Relay plugin.")
     gettext_noop("Add support of password hash in API and weechat relay protocol (PBKDF2, SHA256, SHA512).")
