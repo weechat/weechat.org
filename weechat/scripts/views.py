@@ -298,6 +298,7 @@ def python3(request):
             'roadmap_weechat_py3': datetime(2019, 7, 1),
             'roadmap_initial_end': datetime(2020, 1, 1),
             'roadmap_end': datetime(2020, 5, 1),
+            'roadmap_remove_python2': datetime(2022, 10, 15),
             'status_list': status_list,
         },
     )

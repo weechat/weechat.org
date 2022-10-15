@@ -112,6 +112,13 @@
       <br>
       {% blocktrans %}<strong>Important</strong>: at this date, all scripts that are not compatible with Python 3 are disabled: still visible on the scripts list page, but marked as "disabled" and these scripts can not be installed in WeeChat.{% endblocktrans %}
     </dd>
+
+    <dt class="col-12">
+      {{ roadmap_remove_python2|localdate }}
+    </dt>
+    <dd class="col-12 ms-sm-4 py-2">
+      {% trans "Starting with WeeChat 3.8, support of Python 2.x has been removed." %}
+    </dd>
   </dl>
 </p>
 
