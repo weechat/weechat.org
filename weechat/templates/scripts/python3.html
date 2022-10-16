@@ -107,17 +107,14 @@
     </dt>
     <dd class="col-12 ms-sm-4 py-2">
       {% trans "All new scripts as well as script updates must be compatible with Python 3.x. Extra support of Python 2.x is optional." %}
-      <br>
-      {% trans "Hopefully, at this date, all scripts should be compatible with Python 3." %}
-      <br>
-      {% blocktrans %}<strong>Important</strong>: at this date, all scripts that are not compatible with Python 3 are disabled: still visible on the scripts list page, but marked as "disabled" and these scripts can not be installed in WeeChat.{% endblocktrans %}
     </dd>
-
     <dt class="col-12">
       {{ roadmap_remove_python2|localdate }}
     </dt>
     <dd class="col-12 ms-sm-4 py-2">
       {% trans "Starting with WeeChat 3.8, support of Python 2.x has been removed." %}
+      <br>
+      {% blocktrans %}<strong>Important</strong>: at this date, all scripts that are not compatible with Python 3 are disabled: still visible on the scripts list page, but marked as "disabled" and these scripts can not be installed in WeeChat any more.{% endblocktrans %}
     </dd>
   </dl>
 </p>
