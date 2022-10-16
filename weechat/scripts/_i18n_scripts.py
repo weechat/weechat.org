@@ -720,3 +720,5 @@ def __i18n_scripts_scripts():
     gettext_noop("Wrap nick completion with custom prefix and/or suffix.")
     # Translators: description for script "itunes.rb" (0.3.0+)
     gettext_noop("iTunes control and now playing script.")
+    # Translators: reason for a disabled script
+    gettext_noop("not compatible with Python 3")
