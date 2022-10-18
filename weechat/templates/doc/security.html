@@ -113,8 +113,8 @@
         <th class="text-nowrap">{% trans "Score" %}</th>
         <th class="text-nowrap">{% trans "Severity" %}</th>
         <th>{% trans "Issue" %}</th>
-        <th class="text-nowrap">{% trans "Scope" %}</th>
         <th>{% trans "Vulnerability type" %}</th>
+        <th class="text-nowrap">{% trans "Scope" %}</th>
         <th><abbr title="{% trans "Affected versions" %}">{% trans "Versions" %}</abbr></th>
         <th><abbr title="{% trans "Fixed version" %}">{% trans "Fix" %}</</th>
         <th>{% trans "Release date" %}</th>
@@ -128,8 +128,8 @@
         <td class="text-nowrap text-end text-severity{{ security.severity_index }}">{{ security.cvss_score }}</td>
         <td class="text-nowrap"><span title="{{ security.severity_i18n }}">{{ security.score_bar }}</span></td>
         <td>{{ security.issue_i18n }}</td>
-        <td class="text-nowrap">{{ security.scope_i18n }}</td>
         <td>{{ security.cwe_i18n }}</td>
+        <td class="text-nowrap">{{ security.scope_i18n }}</td>
         <td class="text-nowrap text-danger fw-bold">{{ security.affected_html }}</td>
         <td class="text-nowrap text-success fw-bold">{{ security.fixed|default:"-" }}</td>
         <td class="text-nowrap">{% if security.release_date %}{{ security.release_date_l10n }}{% else %}-{% endif %}</td>
