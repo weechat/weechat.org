@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-16 16:44+0200\n"
-"PO-Revision-Date: 2022-10-16 16:44+0200\n"
+"PO-Revision-Date: 2022-10-21 00:12+0200\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -81,6 +81,9 @@ msgid ""
 "Add log file rotation and compression, add option -save in command /upgrade, "
 "add key alt+backspace."
 msgstr ""
+"Protokolldateirotation und -komprimierung hinzugefügt, Option -save im Befehl"
+" /upgrade hinzugefügt,"
+"Alt + Rücktaste hinzufügen."
 
 #: about/_i18n_keydates.py:21
 msgid "Add support of TOTP (Time-based One Time Password)."
@@ -4538,6 +4541,45 @@ msgid ""
 "href=\"https://blog.weechat.org/post/2022/10/09/Version-3.7\">development "
 "blog</a> or <a href=\"/files/changelog/ChangeLog-3.7.html\">ChangeLog</a>."
 msgstr ""
+"Version 3.7 ist verfügbar\n"
+"\n"
+"Über die neuen Funktionen:\n"
+"\n"
+"- neu: Option \"-save\" für Befehl \"/upgrade\"\n"
+"- neu: Option weechat.look.highlight_disable_regex und Buffereigenschaft"
+"\"highlight_disable_regex\"\n"
+"- Filter werden nach Namen sortiert\n"
+"- neu: Taste Alt+Backspace um das vorherige Wort zu löschen, ändern Sie die"
+" Taste Strg+w, um das vorherige Wort bis zum Leerzeichen zu löschen\n"
+"- umbenannt: API Funktion string_build_with_split_string nach "
+"string_rebuild_split_string, neu: Argumente \"index_start\" und "
+"\"index_end\"\n"
+"- neu: Info \"uptime_current\"\n"
+"- neu: API Funktion crypto_hash_file\n"
+"- neu: Unterstützung von Priorität in API Funktion hook_line\n"
+"- neu: API Funktion string_parse_size\n"
+"- neu: API Funktion file_compress\n"
+"- neu: buflist Variable \"${hotlist_priority_number}\" (Integer-Version von "
+"\"${hotlist_priority}\")\n"
+"- zeigt SETNAME Befehle in IRC Kanälen und privaten Buffer, neu: Optionen "
+"irc.color.message_setname und irc.look.smart_filter_setname\n"
+"- neu: Option irc.look.display_pv_nick_change\n"
+"- neu: Optionen um Protokolldateien zu rotieren und komprimieren: logger.file."
+"rotation_compression_level, logger.file.rotation_compression_type and logger."
+"file.rotation_size_max\n"
+"- ein spezieller Wert \"-\" für  Wörterbuch um die Rechtschreibprüfung für"
+" einen bestimmten Buffer "
+"zu deaktivieren\n"
+"- neu: verstrichene Zeit für die Triggerausführung im Monitorbuffer, wenn"
+" Trigger "
+"debug aktiviert ist, neu: Option trigger.color.identifier\n"
+"- neu: Trigger Variable \"${tg_hook_type}\"\n"
+"- weitere Fehlerbereinigungen.\n"
+"\n"
+"Eine vollständige Liste der neuen Funktionen und behobenen Fehler finden Sie "
+"unter <a href=\"https://blog.weechat.org/post/2022/10/09/Version-3.7\""
+">Entwicklungsblog</a> oder <a href=\"/files/changelog/ChangeLog-3.7.html\""
+">Änderungsprotokoll</a>."
 
 #: news/_i18n_info.py:157
 msgid ""
@@ -6454,7 +6496,7 @@ msgstr "Setzt die Priorität des Channels."
 #. Translators: description for script "openbsd_privdrop.py" (1.3+)
 #: scripts/_i18n_scripts.py:598
 msgid "Set least privilege on OpenBSD."
-msgstr ""
+msgstr "Setze die geringsten Rechte auf OpenBSD."
 
 #. Translators: description for script "weefusables.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:600
@@ -6795,10 +6837,9 @@ msgstr ""
 
 #. Translators: reason for a disabled script
 #: scripts/_i18n_scripts.py:724
-#, fuzzy
 #| msgid "Compatible with Python 3"
 msgid "not compatible with Python 3"
-msgstr "Kompatibel mit Python 3"
+msgstr "nicht kompatibel mit Python 3"
 
 #. Translators: this is a date format, see: http://www.php.net/date
 #. Translators: (note: the result string must be short, use abbreviation
@@ -8888,9 +8929,9 @@ msgstr ""
 #: templates/scripts/python3.html:115
 msgid "Starting with WeeChat 3.8, support of Python 2.x has been removed."
 msgstr ""
+"Beginnend mit WeeChat 3.8 wurde die Unterstützung von Python 2.x entfernt."
 
 #: templates/scripts/python3.html:117
-#, fuzzy
 #| msgid ""
 #| "<strong>Important</strong>: at this date, all scripts that are not "
 #| "compatible with Python 3 are disabled: still visible on the scripts list "
@@ -8905,7 +8946,7 @@ msgstr ""
 "<strong>Wichtig</strong>: Skripte, die an diesem Tag noch nicht mit Python 3 "
 "kompatibel sind, werden deaktiviert: Diese Skripte werden auf der "
 "Skriptseite aufgeführt, haben aber den Vermerk \"deaktiviert\" und können "
-"nicht in WeeChat installiert werden."
+"nicht mehr in WeeChat installiert werden."
 
 #: templates/scripts/python3.html:122
 msgid "Transition status"
