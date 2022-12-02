@@ -45,7 +45,7 @@ class Task(models.Model):
         desc = (self.description
                 if len(self.description) < 100
                 else f'{self.description[0:100]}…')
-        version = (f'({self.version.version})' if self.visible
+        version = (f'({self.version.version})' if not self.visible
                    else self.version.version)
         tracker = self.tracker if self.tracker else '-'
         return (f'{version}, {tracker}, {self.status}%, {self.component}: '
