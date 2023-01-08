@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-11 12:16+0100\n"
-"PO-Revision-Date: 2022-11-11 12:16+0100\n"
+"POT-Creation-Date: 2023-01-08 10:52+0100\n"
+"PO-Revision-Date: 2023-01-08 11:06+0100\n"
 "Last-Translator: Sébastien Helleu <flashcode@flashtux.org>\n"
 "Language-Team: French <flashcode@flashtux.org>\n"
 "Language: fr\n"
@@ -4598,6 +4598,85 @@ msgstr ""
 
 #: news/_i18n_info.py:158
 msgid ""
+"Version 3.8 is available!\n"
+"\n"
+"Among the new features:\n"
+"\n"
+"- add option weechat.look.chat_space_right\n"
+"- allow value \"0\" in buffer property \"unread\" to remove read marker from "
+"buffer\n"
+"- add command /allbuf\n"
+"- add command /hotlist\n"
+"- move some /input actions to commands /allbuf, /buffer and /hotlist\n"
+"- improve case convert and insensitive char comparisons\n"
+"- add color attributes \"blink\" and \"dim\" (half bright)\n"
+"- allow command /toggle to create option before setting the value, if "
+"allowed in the section\n"
+"- add signals \"buffer_user_input_xxx\" and \"buffer_user_closing_xxx\" for "
+"buffers created with /buffer add\n"
+"- add identifier in buffer lines\n"
+"- add option \"unicode\" in command /debug\n"
+"- add Curl options for versions 7.64.0 to 7.87.0\n"
+"- add API functions string_strcmp and string_strncmp\n"
+"- rename char comparison API functions \"utf8_char*\" to \"string_char*\"\n"
+"- return arithmetic difference between chars in API functions "
+"string_charcmp, string_charcasecmp, string_charcasecmp_range, "
+"string_strcasecmp, string_strcasecmp_range, string_strncasecmp, "
+"string_strncasecmp_range, string_strcmp_ignore_chars\n"
+"- return newly allocated string in API functions string_tolower and "
+"string_toupper\n"
+"- add API function utf8_strncpy\n"
+"- add trigger regex command \"y\" to translate chars, set default regex "
+"command to \"s\" (regex replace)\n"
+"- many bugs fixed.\n"
+"\n"
+"For complete list of new features and bugs fixed, please look at <a href="
+"\"https://blog.weechat.org/post/2023/01/08/Version-3.8\">development blog</"
+"a> or <a href=\"/files/changelog/ChangeLog-3.8.html\">ChangeLog</a>."
+msgstr ""
+"La version 3.8 est disponible !\n"
+"\n"
+"Parmi les nouvelles fonctionnalités :\n"
+"\n"
+"- ajout de l'option weechat.look.chat_space_right\n"
+"- valeur \"0\" autorisée dans la propriété de tampon \"unread\" pour "
+"supprimer le marqueur de lecture du tampon\n"
+"- ajout de la commande /allbuf\n"
+"- ajout de la commande /hotlist\n"
+"- déplacement de certaines actions de /input vers les commandes /allbuf, /"
+"buffer et /hotlist\n"
+"- amélioration de la conversion de casse et comparaison insensible à la "
+"casse des caractères\n"
+"- ajout des attributs de couleur \"blink\" (clignotement) et \"dim\" (demi-"
+"intensité)\n"
+"- la commande /toggle peut créer une option avant de définir la valeur, si "
+"cela est autorisé dans la section\n"
+"- ajout des signaux \"buffer_user_input_xxx\" et \"buffer_user_closing_xxx\" "
+"pour les tampons créés avec /buffer add\n"
+"- ajout d'un identifiant dans les lignes de tampon\n"
+"- ajout de l'option \"unicode\" dans la commande /debug\n"
+"- ajout des options Curl pour les versions 7.64.0 à 7.87.0\n"
+"- ajout des fonctions API string_strcmp et string_strncmp\n"
+"- renommage des fonctions API de comparaison \"utf8_char*\" en \"string_char*"
+"\"\n"
+"- retour de la différence arithmétique entre les caractères dans les "
+"fonctions API string_charcmp, string_charcasecmp, string_charcasecmp_range, "
+"string_strcasecmp, string_strcasecmp_range, string_strncasecmp, "
+"string_strncasecmp_range, string_strcmp_ignore_chars\n"
+"- retour d'une chaîne nouvellement allouée dans les fonctions API "
+"string_tolower et string_toupper\n"
+"- ajout de la fonction API utf8_strncpy\n"
+"- ajout de la commande trigger regex \"y\" pour traduire des caractères, la "
+"commande par défaut est \"s\" (remplacement par expression régulière)\n"
+"- nombreux bugs corrigés.\n"
+"\n"
+"Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
+"merci de consulter le <a href=\"https://blog.weechat.org/post/2023/01/08/"
+"Version-3.8\">blog de développement</a> ou le <a href=\"/files/changelog/"
+"ChangeLog-3.8.html\">ChangeLog</a>."
+
+#: news/_i18n_info.py:159
+msgid ""
 "Version v0.1.2 is available!\n"
 "\n"
 "News since last version are:\n"
@@ -4630,11 +4709,11 @@ msgstr ""
 "Ajout le 24/05/2005 : correction d'un plantage au démarrage et d'un bug de "
 "détection de Perl et Python, la version est désormais 0.1.2.1."
 
-#: news/_i18n_info.py:159
+#: news/_i18n_info.py:160
 msgid "WeeChat - Wee Enhanced Environment for Chat"
 msgstr "WeeChat - Wee Enhanced Environment for Chat"
 
-#: news/_i18n_info.py:160
+#: news/_i18n_info.py:161
 msgid ""
 "WeeChat IRC channels (official and non-official ones) have moved from "
 "freenode to <a href=\"https://libera.chat/\">libera.chat</a>.\n"
@@ -4653,7 +4732,7 @@ msgstr ""
 "\n"
 "À bientôt là-bas !"
 
-#: news/_i18n_info.py:161
+#: news/_i18n_info.py:162
 msgid ""
 "WeeChat has many new important features since some weeks:\n"
 "- multi-windows management (with horizontal and vertical window split)\n"
@@ -4678,11 +4757,11 @@ msgstr ""
 "N'hésitez pas à signaler tout problème ou suggestion d'amélioration sur la "
 "navigation entre les tampons/fenêtres."
 
-#: news/_i18n_info.py:162
+#: news/_i18n_info.py:163
 msgid "WeeChat in Cygwin"
 msgstr "WeeChat dans Cygwin"
 
-#: news/_i18n_info.py:163
+#: news/_i18n_info.py:164
 msgid ""
 "WeeChat is now in Cygwin, and can be installed with setup.exe.\n"
 "Version 0.4.2 is available for 32 and 64-bit Cygwin.\n"
@@ -4696,7 +4775,7 @@ msgstr ""
 "Note : l'extension Guile est manquante car elle requiert guile >= 2.0, qui "
 "n'est pas encore disponible sous Cygwin."
 
-#: news/_i18n_info.py:164
+#: news/_i18n_info.py:165
 msgid ""
 "WeeChat project is started.\n"
 "\n"
@@ -4716,7 +4795,7 @@ msgstr ""
 "- rapide, léger, et extensible par des scripts.\n"
 "- etc..."
 
-#: news/_i18n_info.py:165
+#: news/_i18n_info.py:166
 msgid ""
 "WeeChat project now accepts donations via Paypal account, with secured "
 "payment."
@@ -4724,7 +4803,7 @@ msgstr ""
 "Le projet WeeChat accepte désormais les dons via un compte Paypal, avec "
 "paiement sécurisé."
 
-#: news/_i18n_info.py:166
+#: news/_i18n_info.py:167
 msgid ""
 "WeeChat project now accepts recurring donations via Liberapay, which has "
 "very low fees (see <a href=\"https://liberapay.com/about/faq#differences"
@@ -4736,7 +4815,7 @@ msgstr ""
 "faq#differences\">les différences entre Liberapay et les autres plateformes "
 "de dons récurrents</a>)."
 
-#: news/_i18n_info.py:167
+#: news/_i18n_info.py:168
 msgid ""
 "WeeChat repositories (weechat, scripts, qweechat) have been moved to GitHub, "
 "in WeeChat organization: <a href=\"https://github.com/weechat\">https://"
@@ -4752,15 +4831,15 @@ msgstr ""
 "Pour plus d'information, merci de consulter le <a href=\"/blog/"
 "post/2014/03/03/Git-repositories-moved-to-Github\">blog de développement</a>."
 
-#: news/_i18n_info.py:168
+#: news/_i18n_info.py:169
 msgid "WeeChat screenshot"
 msgstr "Capture d'écran de WeeChat"
 
-#: news/_i18n_info.py:169
+#: news/_i18n_info.py:170
 msgid "WeeChat scripts page"
 msgstr "Page de scripts pour WeeChat"
 
-#: news/_i18n_info.py:170
+#: news/_i18n_info.py:171
 msgid ""
 "WeeChat scripts page (today Perl scripts only) has been added.\n"
 "On this page you can submit your script (need to be approved by WeeChat "
@@ -4777,7 +4856,7 @@ msgstr ""
 "À noter : les scripts Perl fonctionnent avec une version de WeeChat "
 "supérieure à 0.0.3, soit à ce jour la version de développement uniquement."
 
-#: news/_i18n_info.py:171
+#: news/_i18n_info.py:172
 msgid ""
 "WeeChat story page is now available, as screenshots. You can see differences "
 "between all versions in one view!\n"
@@ -4789,15 +4868,15 @@ msgstr ""
 "La version de développement est également visible et mise à jour "
 "régulièrement."
 
-#: news/_i18n_info.py:172
+#: news/_i18n_info.py:173
 msgid "WeeChat users map"
 msgstr "Carte des utilisateurs WeeChat"
 
-#: news/_i18n_info.py:173
+#: news/_i18n_info.py:174
 msgid "WeeChat will merge with irssi"
 msgstr "WeeChat va fusionner avec irssi"
 
-#: news/_i18n_info.py:174
+#: news/_i18n_info.py:175
 msgid ""
 "WeeChat, the fast, light and extensible IRC client, is released for the "
 "first time, version 0.0.1.\n"
@@ -4846,7 +4925,7 @@ msgstr ""
 "Toutes les remarques, signalisations de bugs, et suggestions sont les "
 "bienvenues, voir la page de support WeeChat pour nous contacter."
 
-#: news/_i18n_info.py:175
+#: news/_i18n_info.py:176
 msgid "XZ packages"
 msgstr "Paquets XZ"
 

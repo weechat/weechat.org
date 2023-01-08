@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-11 12:16+0100\n"
+"POT-Creation-Date: 2023-01-08 10:52+0100\n"
 "PO-Revision-Date: 2022-10-16 09:31+0200\n"
 "Last-Translator: Marco Paolone <marcopaolone@gmail.com>\n"
 "Language-Team: Italian <marcopaolone@gmail.com>\n"
@@ -3561,6 +3561,45 @@ msgstr ""
 
 #: news/_i18n_info.py:158
 msgid ""
+"Version 3.8 is available!\n"
+"\n"
+"Among the new features:\n"
+"\n"
+"- add option weechat.look.chat_space_right\n"
+"- allow value \"0\" in buffer property \"unread\" to remove read marker from "
+"buffer\n"
+"- add command /allbuf\n"
+"- add command /hotlist\n"
+"- move some /input actions to commands /allbuf, /buffer and /hotlist\n"
+"- improve case convert and insensitive char comparisons\n"
+"- add color attributes \"blink\" and \"dim\" (half bright)\n"
+"- allow command /toggle to create option before setting the value, if "
+"allowed in the section\n"
+"- add signals \"buffer_user_input_xxx\" and \"buffer_user_closing_xxx\" for "
+"buffers created with /buffer add\n"
+"- add identifier in buffer lines\n"
+"- add option \"unicode\" in command /debug\n"
+"- add Curl options for versions 7.64.0 to 7.87.0\n"
+"- add API functions string_strcmp and string_strncmp\n"
+"- rename char comparison API functions \"utf8_char*\" to \"string_char*\"\n"
+"- return arithmetic difference between chars in API functions "
+"string_charcmp, string_charcasecmp, string_charcasecmp_range, "
+"string_strcasecmp, string_strcasecmp_range, string_strncasecmp, "
+"string_strncasecmp_range, string_strcmp_ignore_chars\n"
+"- return newly allocated string in API functions string_tolower and "
+"string_toupper\n"
+"- add API function utf8_strncpy\n"
+"- add trigger regex command \"y\" to translate chars, set default regex "
+"command to \"s\" (regex replace)\n"
+"- many bugs fixed.\n"
+"\n"
+"For complete list of new features and bugs fixed, please look at <a href="
+"\"https://blog.weechat.org/post/2023/01/08/Version-3.8\">development blog</"
+"a> or <a href=\"/files/changelog/ChangeLog-3.8.html\">ChangeLog</a>."
+msgstr ""
+
+#: news/_i18n_info.py:159
+msgid ""
 "Version v0.1.2 is available!\n"
 "\n"
 "News since last version are:\n"
@@ -3593,11 +3632,11 @@ msgstr ""
 "Aggiunta, 24-05-2005 : corretto crash all'avvio e rilevamento Perl/Python, "
 "ora la versione è 0.1.2.1."
 
-#: news/_i18n_info.py:159
+#: news/_i18n_info.py:160
 msgid "WeeChat - Wee Enhanced Environment for Chat"
 msgstr "WeeChat - Wee Enhanced Environment for Chat"
 
-#: news/_i18n_info.py:160
+#: news/_i18n_info.py:161
 msgid ""
 "WeeChat IRC channels (official and non-official ones) have moved from "
 "freenode to <a href=\"https://libera.chat/\">libera.chat</a>.\n"
@@ -3608,7 +3647,7 @@ msgid ""
 "See you soon there!"
 msgstr ""
 
-#: news/_i18n_info.py:161
+#: news/_i18n_info.py:162
 msgid ""
 "WeeChat has many new important features since some weeks:\n"
 "- multi-windows management (with horizontal and vertical window split)\n"
@@ -3631,12 +3670,12 @@ msgstr ""
 "Sentitevi liberi di notificare qualunque problema o suggerimento per "
 "migliorare la navigazione tra buffer/finestre."
 
-#: news/_i18n_info.py:162
+#: news/_i18n_info.py:163
 #, fuzzy
 msgid "WeeChat in Cygwin"
 msgstr "WeeChat è:"
 
-#: news/_i18n_info.py:163
+#: news/_i18n_info.py:164
 msgid ""
 "WeeChat is now in Cygwin, and can be installed with setup.exe.\n"
 "Version 0.4.2 is available for 32 and 64-bit Cygwin.\n"
@@ -3645,7 +3684,7 @@ msgid ""
 "yet available in Cygwin."
 msgstr ""
 
-#: news/_i18n_info.py:164
+#: news/_i18n_info.py:165
 msgid ""
 "WeeChat project is started.\n"
 "\n"
@@ -3665,7 +3704,7 @@ msgstr ""
 "- veloce, leggero ed estensibile con script.\n"
 "-..."
 
-#: news/_i18n_info.py:165
+#: news/_i18n_info.py:166
 msgid ""
 "WeeChat project now accepts donations via Paypal account, with secured "
 "payment."
@@ -3673,7 +3712,7 @@ msgstr ""
 "Il progetto WeeChat ora accetta donazioni tramite account Paypal, con "
 "pagamento sicuro."
 
-#: news/_i18n_info.py:166
+#: news/_i18n_info.py:167
 msgid ""
 "WeeChat project now accepts recurring donations via Liberapay, which has "
 "very low fees (see <a href=\"https://liberapay.com/about/faq#differences"
@@ -3681,7 +3720,7 @@ msgid ""
 "platforms</a>)."
 msgstr ""
 
-#: news/_i18n_info.py:167
+#: news/_i18n_info.py:168
 msgid ""
 "WeeChat repositories (weechat, scripts, qweechat) have been moved to GitHub, "
 "in WeeChat organization: <a href=\"https://github.com/weechat\">https://"
@@ -3691,15 +3730,15 @@ msgid ""
 "repositories-moved-to-Github\">development blog</a>."
 msgstr ""
 
-#: news/_i18n_info.py:168
+#: news/_i18n_info.py:169
 msgid "WeeChat screenshot"
 msgstr "Schermata di WeeChat"
 
-#: news/_i18n_info.py:169
+#: news/_i18n_info.py:170
 msgid "WeeChat scripts page"
 msgstr "Pagina degli script di WeeChat"
 
-#: news/_i18n_info.py:170
+#: news/_i18n_info.py:171
 msgid ""
 "WeeChat scripts page (today Perl scripts only) has been added.\n"
 "On this page you can submit your script (need to be approved by WeeChat "
@@ -3715,7 +3754,7 @@ msgstr ""
 "Nota: gli script Perl richiedono una versione di WeeChat > 0.0.3, per cui "
 "bisogna scaricare la versione di sviluppo."
 
-#: news/_i18n_info.py:171
+#: news/_i18n_info.py:172
 msgid ""
 "WeeChat story page is now available, as screenshots. You can see differences "
 "between all versions in one view!\n"
@@ -3725,15 +3764,15 @@ msgstr ""
 "notare la differenza tra tutte le versioni in un colpo solo!\n"
 "È visibile anche la versione di sviluppo ed è aggiornata di frequente."
 
-#: news/_i18n_info.py:172
+#: news/_i18n_info.py:173
 msgid "WeeChat users map"
 msgstr "Mappa utenti WeeChat"
 
-#: news/_i18n_info.py:173
+#: news/_i18n_info.py:174
 msgid "WeeChat will merge with irssi"
 msgstr "WeeChat si unirà ad irssi"
 
-#: news/_i18n_info.py:174
+#: news/_i18n_info.py:175
 msgid ""
 "WeeChat, the fast, light and extensible IRC client, is released for the "
 "first time, version 0.0.1.\n"
@@ -3781,7 +3820,7 @@ msgstr ""
 "Tutti i suggerimenti e le notifiche di bug sono benvenuti, sulla pagina di "
 "supporto di WeeChat troverete il modo per contattarci."
 
-#: news/_i18n_info.py:175
+#: news/_i18n_info.py:176
 #, fuzzy
 #| msgid "Packages"
 msgid "XZ packages"

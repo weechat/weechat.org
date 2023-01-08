@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-11 12:16+0100\n"
+"POT-Creation-Date: 2023-01-08 10:52+0100\n"
 "PO-Revision-Date: 2022-10-16 10:29+0200\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
@@ -4380,6 +4380,45 @@ msgstr ""
 
 #: news/_i18n_info.py:158
 msgid ""
+"Version 3.8 is available!\n"
+"\n"
+"Among the new features:\n"
+"\n"
+"- add option weechat.look.chat_space_right\n"
+"- allow value \"0\" in buffer property \"unread\" to remove read marker from "
+"buffer\n"
+"- add command /allbuf\n"
+"- add command /hotlist\n"
+"- move some /input actions to commands /allbuf, /buffer and /hotlist\n"
+"- improve case convert and insensitive char comparisons\n"
+"- add color attributes \"blink\" and \"dim\" (half bright)\n"
+"- allow command /toggle to create option before setting the value, if "
+"allowed in the section\n"
+"- add signals \"buffer_user_input_xxx\" and \"buffer_user_closing_xxx\" for "
+"buffers created with /buffer add\n"
+"- add identifier in buffer lines\n"
+"- add option \"unicode\" in command /debug\n"
+"- add Curl options for versions 7.64.0 to 7.87.0\n"
+"- add API functions string_strcmp and string_strncmp\n"
+"- rename char comparison API functions \"utf8_char*\" to \"string_char*\"\n"
+"- return arithmetic difference between chars in API functions "
+"string_charcmp, string_charcasecmp, string_charcasecmp_range, "
+"string_strcasecmp, string_strcasecmp_range, string_strncasecmp, "
+"string_strncasecmp_range, string_strcmp_ignore_chars\n"
+"- return newly allocated string in API functions string_tolower and "
+"string_toupper\n"
+"- add API function utf8_strncpy\n"
+"- add trigger regex command \"y\" to translate chars, set default regex "
+"command to \"s\" (regex replace)\n"
+"- many bugs fixed.\n"
+"\n"
+"For complete list of new features and bugs fixed, please look at <a href="
+"\"https://blog.weechat.org/post/2023/01/08/Version-3.8\">development blog</"
+"a> or <a href=\"/files/changelog/ChangeLog-3.8.html\">ChangeLog</a>."
+msgstr ""
+
+#: news/_i18n_info.py:159
+msgid ""
 "Version v0.1.2 is available!\n"
 "\n"
 "News since last version are:\n"
@@ -4412,11 +4451,11 @@ msgstr ""
 "2005-05-24 追記: 起動時と Perl/Python の検出時のクラッシュを修正、現在のバー"
 "ジョンは 0.1.2.1 です。"
 
-#: news/_i18n_info.py:159
+#: news/_i18n_info.py:160
 msgid "WeeChat - Wee Enhanced Environment for Chat"
 msgstr "WeeChat - 小さくて強力なチャット環境"
 
-#: news/_i18n_info.py:160
+#: news/_i18n_info.py:161
 #, fuzzy
 #| msgid ""
 #| "WeeChat repositories (weechat, scripts, qweechat) have been moved to "
@@ -4441,7 +4480,7 @@ msgstr ""
 "より詳しい情報は、<a href=\"/blog/post/2014/03/03/Git-repositories-moved-to-"
 "Github\">開発ブログ</a>を参照してください。"
 
-#: news/_i18n_info.py:161
+#: news/_i18n_info.py:162
 msgid ""
 "WeeChat has many new important features since some weeks:\n"
 "- multi-windows management (with horizontal and vertical window split)\n"
@@ -4464,11 +4503,11 @@ msgstr ""
 "まだ開発中です。\n"
 "問題やバッファ/ウィンドウ間の操作を改良するための提案を募集しています。"
 
-#: news/_i18n_info.py:162
+#: news/_i18n_info.py:163
 msgid "WeeChat in Cygwin"
 msgstr "WeeChat の Cygwin 版"
 
-#: news/_i18n_info.py:163
+#: news/_i18n_info.py:164
 msgid ""
 "WeeChat is now in Cygwin, and can be installed with setup.exe.\n"
 "Version 0.4.2 is available for 32 and 64-bit Cygwin.\n"
@@ -4483,7 +4522,7 @@ msgstr ""
 "注意: Guile プラグインは Cygwin ではまだ利用できない guile >= 2.0 が必要なの"
 "で、削除されています。"
 
-#: news/_i18n_info.py:164
+#: news/_i18n_info.py:165
 msgid ""
 "WeeChat project is started.\n"
 "\n"
@@ -4503,7 +4542,7 @@ msgstr ""
 "- 高速、軽量、スクリプトで拡張可能\n"
 "- ..."
 
-#: news/_i18n_info.py:165
+#: news/_i18n_info.py:166
 msgid ""
 "WeeChat project now accepts donations via Paypal account, with secured "
 "payment."
@@ -4511,7 +4550,7 @@ msgstr ""
 "WeeChat プロジェクトは secured payment を用いた Paypal アカウント経由の寄付を"
 "受け付けるようになりました。"
 
-#: news/_i18n_info.py:166
+#: news/_i18n_info.py:167
 msgid ""
 "WeeChat project now accepts recurring donations via Liberapay, which has "
 "very low fees (see <a href=\"https://liberapay.com/about/faq#differences"
@@ -4523,7 +4562,7 @@ msgstr ""
 "about/faq#differences\">Liberapay とその他のクラウドファンディングサービスの"
 "比較</a>を参照してください)。"
 
-#: news/_i18n_info.py:167
+#: news/_i18n_info.py:168
 msgid ""
 "WeeChat repositories (weechat, scripts, qweechat) have been moved to GitHub, "
 "in WeeChat organization: <a href=\"https://github.com/weechat\">https://"
@@ -4539,15 +4578,15 @@ msgstr ""
 "より詳しい情報は、<a href=\"/blog/post/2014/03/03/Git-repositories-moved-to-"
 "Github\">開発ブログ</a>を参照してください。"
 
-#: news/_i18n_info.py:168
+#: news/_i18n_info.py:169
 msgid "WeeChat screenshot"
 msgstr "WeeChat のスクリーンショット"
 
-#: news/_i18n_info.py:169
+#: news/_i18n_info.py:170
 msgid "WeeChat scripts page"
 msgstr "WeeChat スクリプトページ"
 
-#: news/_i18n_info.py:170
+#: news/_i18n_info.py:171
 msgid ""
 "WeeChat scripts page (today Perl scripts only) has been added.\n"
 "On this page you can submit your script (need to be approved by WeeChat "
@@ -4564,7 +4603,7 @@ msgstr ""
 "注意: Perl スクリプトを使うには WeeChat 0.0.3 より高いバージョンが必要です。"
 "今のところ開発版を使う以外に方法はありません。"
 
-#: news/_i18n_info.py:171
+#: news/_i18n_info.py:172
 msgid ""
 "WeeChat story page is now available, as screenshots. You can see differences "
 "between all versions in one view!\n"
@@ -4574,15 +4613,15 @@ msgstr ""
 "ジョンが一覧表示できます!\n"
 "開発版も載っており、頻繁に更新されています。"
 
-#: news/_i18n_info.py:172
+#: news/_i18n_info.py:173
 msgid "WeeChat users map"
 msgstr "WeeChat ユーザマップ"
 
-#: news/_i18n_info.py:173
+#: news/_i18n_info.py:174
 msgid "WeeChat will merge with irssi"
 msgstr "WeeChat は irssi と統合される予定です"
 
-#: news/_i18n_info.py:174
+#: news/_i18n_info.py:175
 msgid ""
 "WeeChat, the fast, light and extensible IRC client, is released for the "
 "first time, version 0.0.1.\n"
@@ -4630,7 +4669,7 @@ msgstr ""
 "どんな提案やバグ報告も歓迎です。開発チームと連絡を取るには WeeChat のサポート"
 "ページを参照してください。"
 
-#: news/_i18n_info.py:175
+#: news/_i18n_info.py:176
 msgid "XZ packages"
 msgstr "XZ パッケージ"
 
