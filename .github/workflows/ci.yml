@@ -32,7 +32,7 @@ jobs:
           sudo apt-get install gettext
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install flake8 msgcheck pylint pylint-django
+          pip install flake8 msgcheck pylint pylint-django typing-extensions
 
       - name: Check gettext files
         run: make gettext
