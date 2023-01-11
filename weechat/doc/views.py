@@ -57,6 +57,7 @@ I18N_MAINTAINER = {
 }
 
 DOC_SHORTCUT_ALIAS = {
+    'faq': 'faq',
     'quick': 'quickstart',
     'plugin': 'plugin_api',
     'api': 'plugin_api',

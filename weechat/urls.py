@@ -29,6 +29,7 @@ from django.views.generic.base import RedirectView
 
 from weechat.common.views import TextTemplateView
 from weechat.dev.views import info as view_info
+from weechat.doc.views import documentation_link as view_doc_link
 from weechat.news.feeds import LatestNewsFeed, UpcomingEventsFeed
 from weechat.news.views import (
     home as view_home,
@@ -82,8 +83,9 @@ urlpatterns = [
             view_donate),
     path('about/', include('weechat.about.urls')),
     path('doc/', include('weechat.doc.urls')),
-    path('faq/', RedirectView.as_view(url='/files/doc/weechat_faq.en.html'),
-         name='faq'),
+    path('faq/', view_doc_link, kwargs={'name': 'faq'}),
+    re_path(r'^faq/(?P<lang>[a-z_]+)/$',
+            view_doc_link, kwargs={'name': 'faq'}),
     path('download/', include('weechat.download.urls')),
     path('scripts/', include('weechat.scripts.urls')),
     path('themes/', include('weechat.themes.urls')),
