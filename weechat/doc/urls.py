@@ -33,7 +33,7 @@ from weechat.doc.views import (
 
 urlpatterns = [
     path('', view_doc, name='doc'),
-    re_path(r'^(?P<version>stable|devel|old)/$', view_doc, name='doc_version'),
+    re_path(r'^(?P<version>stable|devel)/$', view_doc, name='doc_version'),
     path('security/', view_security, name='doc_security'),
     re_path(r'^security/(?P<wsa>WSA-[0-9]{4}-[0-9]+)/$', view_security_wsa,
             name='doc_security_wsa'),

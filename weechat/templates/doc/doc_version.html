@@ -6,23 +6,7 @@
 
 {{ block.super }}
 
-{% if version == "old" %}
-
-  <h3>{% trans "Docs for old versions" %}</h3>
-
-  <p class="alert alert-primary">
-    {% trans "<strong>Important:</strong> these old versions are <strong>not supported</strong> any more!" %}
-  </p>
-
-  <p>
-    <ul>
-      {% for dir in doc_list %}
-      <li><a href="/files/doc/old/{{ dir }}" target="_blank" rel="noopener">{% trans "Version" %} {{ dir }} <sup>↗</sup></a></li>
-      {% endfor %}
-    </ul>
-  </p>
-
-{% elif doc_version %}
+{% if doc_version %}
 
   <h3>{% trans "Docs for version" %} {{ doc_version }}</h3>
 

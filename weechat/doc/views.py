@@ -133,21 +133,6 @@ def documentation(request, version='stable'):
     """Page with docs for stable or devel version."""
     # pylint: disable=too-many-locals
     timezone = pytz.timezone(settings.TIME_ZONE)
-    if version == 'old':
-        doc_list = None
-        try:
-            doc_list = sorted(os.listdir(files_path_join('doc', 'old')),
-                              reverse=True)
-        except:  # noqa: E722  pylint: disable=bare-except
-            pass
-        return render(
-            request,
-            'doc/doc_version.html',
-            {
-                'version': version,
-                'doc_list': doc_list,
-            },
-        )
     languages = Language.objects.all().order_by('priority')
     bestlang = get_bestlang(request, languages)
     versions = Version.objects.all().order_by('priority')
