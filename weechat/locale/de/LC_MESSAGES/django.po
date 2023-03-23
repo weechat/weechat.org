@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-08 15:37+0100\n"
+"POT-Creation-Date: 2023-03-23 20:17+0100\n"
 "PO-Revision-Date: 2023-01-09 08:16+0100\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German - Germany <weechatter@arcor.de>\n"
@@ -355,7 +355,7 @@ msgstr ""
 "Fingerprint für Schlüssel zum Unterschreiben der veröffentlichten Version "
 "(Format: PGP Fingerprint)."
 
-#: dev/views.py:83 templates/download/packages.html:128
+#: dev/views.py:83 templates/download/packages.html:131
 msgid "Release signing key (format: PGP public key)."
 msgstr ""
 "Schlüssel zum Unterschreiben der veröffentlichten Version (Format: "
@@ -8115,7 +8115,7 @@ msgstr "Anerkennung"
 msgid "The issue was discovered by %(credit)s."
 msgstr "Das Problem wurde von %(credit)s entdeckt."
 
-#: templates/doc/security.html:312 templates/download/packages.html:163
+#: templates/doc/security.html:312 templates/download/packages.html:159
 #, python-format
 msgid "Error: there is no version called \"%(version)s\"."
 msgstr "Fehler: Es gibt keine Version namens \"%(version)s\"."
@@ -8308,7 +8308,7 @@ msgstr ""
 "Importieren des  GPG-Schlüssel, der zum Signieren der Repositorien verwendet "
 "wird:"
 
-#: templates/download/debian.html:75 templates/download/packages.html:126
+#: templates/download/debian.html:75 templates/download/packages.html:129
 msgid "In case of problem, the GPG key can be downloaded here:"
 msgstr ""
 "Im Falle eines Problems, kann der GPG-Schlüssel hier heruntergeladen werden:"
@@ -8506,30 +8506,30 @@ msgid "Checking the signatures:"
 msgstr "Verifizieren der Signaturen:"
 
 #: templates/download/packages.html:124
-msgid "Import the GPG key:"
-msgstr "Importiert den GPG Schlüssel:"
-
-#: templates/download/packages.html:132
-msgid "Display the fingerprint:"
-msgstr "Fingerabdruck anzeigen:"
-
-#: templates/download/packages.html:136
+#, fuzzy
+#| msgid ""
+#| "Check that the fingerprint is correct by checking the topic on #weechat "
+#| "channel (irc.libera.chat) or by asking to a developer."
 msgid ""
-"Check that the fingerprint is correct by checking the topic on #weechat "
-"channel (irc.libera.chat) or by asking to a developer."
+"Check the key fingerprint by checking the topic on #weechat channel (irc."
+"libera.chat) or by asking to a developer."
 msgstr ""
 "Um die Echtheit des Fingerabdruckes zu verifizieren kann ein Entwickler im "
 "#weechat Kanal (irc.libera.chat) angesprochen werden."
 
-#: templates/download/packages.html:139
+#: templates/download/packages.html:127
+msgid "Import the GPG key:"
+msgstr "Importiert den GPG Schlüssel:"
+
+#: templates/download/packages.html:135
 msgid "Trust the key:"
 msgstr "Schlüssel vertrauen:"
 
-#: templates/download/packages.html:144
+#: templates/download/packages.html:140
 msgid "In directory with package + signature:"
 msgstr "Im Verzeichnis mit den Paketen und Signaturen:"
 
-#: templates/download/packages.html:148
+#: templates/download/packages.html:144
 msgid "If the signature is OK you should see a message like this one:"
 msgstr "Wird die Signatur als korrekt erkannt, wird eine Nachricht angezeigt:"
 
@@ -9378,3 +9378,6 @@ msgstr "Interner Fehler."
 #: themes/models.py:302
 msgid "Invalid name: different from theme."
 msgstr "Ungültiger Name: unterscheidet sich vom Theme."
+
+#~ msgid "Display the fingerprint:"
+#~ msgstr "Fingerabdruck anzeigen:"

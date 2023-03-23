@@ -121,19 +121,15 @@
     <h6>{% trans "Checking the signatures:" %}</h6>
     <ul class="signatures mt-2">
       <li>
+        {% trans "Check the key fingerprint by checking the topic on #weechat channel (irc.libera.chat) or by asking to a developer." %}
+      </li>
+      <li>
         {% trans "Import the GPG key:" %}
         <pre><code>$ gpg --keyserver hkps://keys.openpgp.org --recv-keys A9AB5AB778FA5C3522FD0378F82F4B16DEC408F8</code></pre>
         {% trans "In case of problem, the GPG key can be downloaded here:" %}
         <a href="{% url 'dev_info_name' name='release_signing_key' %}">
           {% trans "Release signing key (format: PGP public key)." %}
         </a>
-      </li>
-      <li>
-        {% trans "Display the fingerprint:" %}
-        <pre><code>$ gpg --fingerprint A9AB5AB778FA5C3522FD0378F82F4B16DEC408F8</code></pre>
-      </li>
-      <li>
-        {% trans "Check that the fingerprint is correct by checking the topic on #weechat channel (irc.libera.chat) or by asking to a developer." %}
       </li>
       <li>
         {% trans "Trust the key:" %}
