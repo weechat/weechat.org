@@ -162,14 +162,14 @@ def stats_repo(request, stats='weechat'):
             pass
 
     if stats == 'weechat':
-        repository = ('https://github.com/weechat/weechat')
+        repository = 'https://github.com/weechat/weechat'
         sloc_lang = 'C'
         svg_list += ['commits_version', 'commits_other_clients']
     elif stats == 'weechat-relay':
-        repository = ('https://github.com/weechat/weechat-relay')
+        repository = 'https://github.com/weechat/weechat-relay'
         sloc_lang = 'C'
     elif stats == 'scripts':
-        repository = ('https://github.com/weechat/scripts')
+        repository = 'https://github.com/weechat/scripts'
         svg_list += ['downloads']
         try:
             with open(files_path_join('stats', 'scripts_downloads.txt'),
@@ -178,10 +178,10 @@ def stats_repo(request, stats='weechat'):
         except:  # noqa: E722  pylint: disable=bare-except
             pass
     elif stats == 'qweechat':
-        repository = ('https://github.com/weechat/qweechat')
+        repository = 'https://github.com/weechat/qweechat'
         sloc_lang = 'Python'
     elif stats == 'weechat.org':
-        repository = ('https://github.com/weechat/weechat.org')
+        repository = 'https://github.com/weechat/weechat.org'
     return render(
         request,
         'dev/stats.html',
