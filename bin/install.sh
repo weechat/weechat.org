@@ -18,21 +18,23 @@
 # along with WeeChat.org.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-DIR=$(cd $(dirname "$0"); pwd)
+set -o errexit
 
-cd $DIR/.. || exit 1
+DIR=$(cd "$(dirname "$0")"; pwd)
+
+cd "$DIR/.."
 
 echo ""
 echo "--- Compiling messages"
-./manage.py compilemessages || exit 1
+./manage.py compilemessages
 
 echo ""
 echo "--- Creating database"
-./manage.py migrate --run-syncdb || exit 1
+./manage.py migrate --run-syncdb
 
 echo ""
 echo "--- Loading fixtures in database"
-./manage.py loaddata ./weechat/fixtures/*.json || exit 1
+./manage.py loaddata ./weechat/fixtures/*.json
 
 echo ""
 echo "--- Install OK!"

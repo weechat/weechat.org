@@ -18,9 +18,11 @@
 # along with WeeChat.org.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-DIR=$(cd $(dirname "$0"); pwd)
+set -o errexit
 
-cd $DIR/../weechat || exit 1
+DIR=$(cd "$(dirname "$0")"; pwd)
+
+cd "${DIR}/../weechat"
 
 chmod 644 locale/*/LC_MESSAGES/django.po
 
@@ -29,7 +31,7 @@ django-admin makemessages -a
 
 # edit locale if given as argument
 if [ $# -gt 0 ]; then
-    $EDITOR locale/$1/LC_MESSAGES/django.po || exit 1
+    "$EDITOR" "locale/$1/LC_MESSAGES/django.po"
 fi
 
 # compile messages
