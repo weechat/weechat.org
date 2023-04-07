@@ -58,11 +58,22 @@ v_stable.date = date.today()
 v_stable.security_issues_fixed = 0
 v_stable.securityfix = ""
 v_stable.save()
-v_new = Release.objects.get(version="${VERSION}")
-v_new.date = date.today()
-v_new.security_issues_fixed = 0
-v_new.securityfix = ""
-v_new.save()
+if Release.objects.filter(version="${VERSION}").exists():
+    v_new = Release.objects.get(version="${VERSION}")
+    v_new.description = ""
+    v_new.date = date.today()
+    v_new.security_issues_fixed = 0
+    v_new.securityfix = ""
+    v_new.save()
+else:
+    v_new = Release(
+        version="${VERSION}",
+        description="",
+        date=date.today(),
+        security_issues_fixed=0,
+        securityfix="",
+    )
+    v_new.save()
 v_devel = Release.objects.get(version="devel")
 v_devel.description = "${NEXT_DEVEL_FULL}"
 v_devel.date = Release.objects.get(version="${NEXT_DEVEL}").date
@@ -75,7 +86,7 @@ for ext in ("gz", "xz"):
     pkg = Package(
         version=version,
         type=Type.objects.get(type=f"src1-{ext}"),
-        filename=f"weechat-${VERSION}.tar.{ext}"
+        filename=f"weechat-${VERSION}.tar.{ext}",
     )
     pkg.save()
 EOF
