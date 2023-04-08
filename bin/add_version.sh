@@ -21,8 +21,7 @@
 #
 # Add a WeeChat version in database:
 #  1. set stable version + date (today)
-#  2. set devel version + date (next version)
-#  3. add packages (.tar.gz + .tar.xz)
+#  2. add packages (.tar.gz + .tar.xz)
 #     note: files must exist in files/src directory,
 #           otherwise checksum will not be set
 #
@@ -43,10 +42,8 @@ if [ $# -lt 1 ]; then
 fi
 
 VERSION="$1"
-NEXT_DEVEL=$(echo "$VERSION" | awk -F. '{$(NF-1) = $(NF-1) + 1; $NF = 0; print}' OFS=.)
-NEXT_DEVEL_FULL="${NEXT_DEVEL}-dev"
 
-echo "Setting: stable=${VERSION}, devel=${NEXT_DEVEL_FULL}"
+echo "Setting: stable=${VERSION}"
 echo "Creating packages for WeeChat ${VERSION}: weechat-${VERSION}.tar.{gz,xz}"
 
 "${DIR}/../manage.py" shell <<EOF
@@ -74,12 +71,6 @@ else:
         securityfix="",
     )
     v_new.save()
-v_devel = Release.objects.get(version="devel")
-v_devel.description = "${NEXT_DEVEL_FULL}"
-v_devel.date = Release.objects.get(version="${NEXT_DEVEL}").date
-v_devel.security_issues_fixed = 0
-v_devel.securityfix = ""
-v_devel.save()
 version = Release.objects.get(version="${VERSION}")
 for ext in ("gz", "xz"):
     Package.objects.filter(filename=f"weechat-${VERSION}.tar.{ext}").delete()
