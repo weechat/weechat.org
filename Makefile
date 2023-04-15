@@ -27,8 +27,8 @@ gettext:
 	msgcheck weechat/locale/*/LC_MESSAGES/django.po
 
 flake8:
-	flake8 weechat --count --select=E9,F63,F7,F82 --show-source --statistics
-	flake8 weechat --count --exit-zero --max-complexity=10 --statistics
+	flake8 weechat --count --select=E9,F63,F7,F82 --exclude=migrations --show-source --statistics
+	flake8 weechat --count --exclude=migrations --exit-zero --max-complexity=10 --statistics
 
 pylint:
-	pylint --load-plugins pylint_django --disable=fixme,duplicate-code,django-not-configured weechat
+	pylint --load-plugins pylint_django --disable=fixme,duplicate-code,django-not-configured --ignore=migrations weechat
