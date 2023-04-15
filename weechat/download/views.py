@@ -32,21 +32,21 @@ def packages(request, version='stable'):
     try:
         if version == 'stable':
             stable_desc = Release.objects.get(version='stable').description
-            package_list = (Package.objects.all().filter(version=stable_desc)
+            package_list = (Package.objects.all().filter(version__version=stable_desc)
                             .order_by('type__priority'))
         elif version == 'devel':
-            package_list = (Package.objects.all().filter(version='devel')
+            package_list = (Package.objects.all().filter(version__version='devel')
                             .order_by('type__priority'))
         elif version == 'all':
-            package_list = (Package.objects.all().exclude(version='devel')
+            package_list = (Package.objects.all().exclude(version__version='devel')
                             .order_by('-version__date', 'type__priority'))
         elif version == 'old':
             stable_desc = Release.objects.get(version='stable').description
-            package_list = (Package.objects.all().exclude(version='devel')
-                            .exclude(version=stable_desc)
+            package_list = (Package.objects.all().exclude(version__version='devel')
+                            .exclude(version__version=stable_desc)
                             .order_by('-version__date', 'type__priority'))
         else:
-            package_list = (Package.objects.filter(version=version)
+            package_list = (Package.objects.filter(version__version=version)
                             .order_by('type__priority'))
     except ObjectDoesNotExist:
         package_list = None
@@ -62,7 +62,7 @@ def packages(request, version='stable'):
 
 def package_checksums(request, version, checksum_type):
     """Page with checksums of packages in a version."""
-    package_list = (Package.objects.filter(version=version)
+    package_list = (Package.objects.filter(version__version=version)
                     .order_by('type__priority'))
     checksums = []
     for package in package_list:

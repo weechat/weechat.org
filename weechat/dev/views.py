@@ -114,13 +114,13 @@ def roadmap(request, versions='future'):
         if versions == 'future':
             # future versions
             task_list = (Task.objects.all().filter(visible=1)
-                         .filter(version__gt=Release.objects.get(
+                         .filter(version__version__gt=Release.objects.get(
                              version='stable').description)
                          .order_by('version__date', 'priority'))
         else:
             # already released versions
             task_list = (Task.objects.all().filter(visible=1)
-                         .filter(version__lte=Release.objects.get(
+                         .filter(version__version__lte=Release.objects.get(
                              version='stable').description)
                          .order_by('-version__date', 'priority'))
     except ObjectDoesNotExist:

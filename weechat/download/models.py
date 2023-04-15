@@ -35,7 +35,7 @@ from weechat.common.utils import version_to_tuple
 
 class Release(models.Model):
     """A WeeChat release."""
-    version = models.CharField(max_length=64, primary_key=True)
+    version = models.CharField(max_length=64)
     description = models.CharField(max_length=64, blank=True)
     date = models.DateField(blank=True, null=True)
     security_issues_fixed = models.IntegerField(default=0)
