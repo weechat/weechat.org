@@ -413,54 +413,6 @@ ul.social {
   background: var(--discontinued-bg);
 }
 
-/* download/release */
-
-.release ul {
-  padding: 0 0 0 2em;
-}
-
-.release li {
-  margin: .2em 0 0 0;
-}
-
-.release li em {
-  padding: 0 .3em 0 .3em;
-  border: var(--release-todo-border);
-  margin: 0 .8em 0 0;
-  font-family: monospace;
-  font-style: normal;
-  font-weight: normal;
-}
-
-.release li.done, .release li.in-progress {
-  font-weight: bold;
-}
-
-.release li.in-progress em {
-  border: var(--release-in-progress-border);
-  background-color: var(--release-in-progress-bg-color);
-  animation: blink 1s step-end infinite;
-  -webkit-animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-  0% {
-    background-color: var(--release-in-progress-bg-color);
-  }
-  50% {
-    background-color: var(--body-bg-color);
-  }
-}
-
-@-webkit-keyframes blink {
-  0% {
-    background-color: var(--release-in-progress-bg-color);
-  }
-  50% {
-    background-color: var(--body-bg-color);
-  }
-}
-
 /* scripts */
 
 .script-filters {

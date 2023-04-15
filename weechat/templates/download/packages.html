@@ -12,13 +12,6 @@
 
 {% if package_list %}
 
-{% if version == "stable" and release_progress.done >= 0 and release_progress.pct < 100 %}
-<div class="alert alert-success">
-  {% url 'download_release' as download_release_url %}
-  {% blocktrans %}<strong>A new release is under construction!</strong> Follow the progress on <a href="{{ download_release_url }}">this page</a>.{% endblocktrans %}
-</div>
-{% endif %}
-
 {% if version == "old" %}
 <div class="alert alert-warning">
   {% trans "<strong>Important:</strong> it is not recommended to download or use any of these old versions: they are less stable than the latest released version, and may contain security vulnerabilities fixed in later versions." %}

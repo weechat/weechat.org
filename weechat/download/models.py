@@ -186,28 +186,3 @@ def handler_package_saved(sender, **kwargs):
 
 
 pre_save.connect(handler_package_saved, sender=Package)
-
-
-class ReleaseTodo(models.Model):
-    """A 'to do' item for a release."""
-    description = models.CharField(max_length=1024)
-    priority = models.IntegerField(default=0)
-
-    def __str__(self):
-        return f'{self.description} ({self.priority})'
-
-    class Meta:
-        ordering = ['priority']
-
-
-class ReleaseProgress(models.Model):
-    """The progress for the next release."""
-    version = models.OneToOneField(Release, primary_key=True,
-                                   on_delete=models.CASCADE)
-    done = models.IntegerField(default=0)
-
-    def __str__(self):
-        return f'{self.version}, {self.done}'
-
-    class Meta:
-        verbose_name_plural = 'release progress'

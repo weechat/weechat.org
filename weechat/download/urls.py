@@ -27,7 +27,6 @@ from weechat.debian.views import repos as view_repos
 from weechat.download.views import (
     packages as view_packages,
     package_checksums as view_package_checksums,
-    release as view_release,
 )
 
 urlpatterns = [
@@ -38,7 +37,6 @@ urlpatterns = [
             name='download_debian_active'),
     re_path(r'^debian/(?P<active>(active|all))/(?P<files>[a-zA-Z0-9.]*)/$',
             view_repos),
-    path('release/', view_release, name='download_release'),
     re_path(r'^checksums/weechat-(?P<version>[a-zA-Z0-9.]*)-'
             r'(?P<checksum_type>[a-zA-Z0-9]*).txt/$',
             view_package_checksums, name='package_checksums'),

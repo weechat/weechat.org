@@ -19,46 +19,16 @@
 
 """Views for "download" menu."""
 
-import re
-
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponse
 from django.shortcuts import render
 
 from weechat.download.models import Release, Package
-from weechat.download.models import ReleaseTodo, ReleaseProgress
-
-
-def get_release_progress():
-    """
-    Return release progress info as a tuple (version, date, todo, done, pct).
-    """
-    rel_todo = ReleaseTodo.objects.all().order_by('priority')
-    next_rel = Release.objects.get(version='devel')
-    next_rel_version = re.sub('-.*', '', next_rel.description)
-    next_rel_date = next_rel.date
-    rel_progress = ReleaseProgress.objects.all()
-    done = -1
-    pct = 0
-    if len(rel_todo) > 0 and len(rel_progress) > 0 \
-            and rel_progress[0].done >= 0:
-        done = rel_progress[0].done
-        pct = min(max(int((float(done) / len(rel_todo)) * 100), 0), 100)
-        next_rel_version = rel_progress[0].version.version
-        next_rel_date = rel_progress[0].version.date
-    return {
-        'version': next_rel_version,
-        'date': next_rel_date,
-        'todo': rel_todo,
-        'done': done,
-        'pct': pct,
-    }
 
 
 def packages(request, version='stable'):
     """Page with packages for a version (stable, devel, all, old, or x.y.z)."""
     package_list = None
-    release_progress = None
     try:
         if version == 'stable':
             stable_desc = Release.objects.get(version='stable').description
@@ -78,17 +48,14 @@ def packages(request, version='stable'):
         else:
             package_list = (Package.objects.filter(version=version)
                             .order_by('type__priority'))
-        release_progress = get_release_progress()
     except ObjectDoesNotExist:
         package_list = None
-        release_progress = None
     return render(
         request,
         'download/packages.html',
         {
             'version': version,
             'package_list': package_list,
-            'release_progress': release_progress,
         },
     )
 
@@ -106,14 +73,3 @@ def package_checksums(request, version, checksum_type):
     response['Content-disposition'] = (f'inline; filename=weechat-'
                                        f'{version}-{checksum_type}.txt')
     return response
-
-
-def release(request):
-    """Page with release in progress."""
-    return render(
-        request,
-        'download/release.html',
-        {
-            'release_progress': get_release_progress(),
-        },
-    )
