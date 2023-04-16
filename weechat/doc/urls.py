@@ -22,6 +22,7 @@
 # pylint: disable=invalid-name, no-value-for-parameter
 
 from django.urls import path, re_path
+from django.views.generic.base import RedirectView
 
 from weechat.doc.views import (
     documentation as view_doc,
@@ -33,20 +34,31 @@ from weechat.doc.views import (
 
 urlpatterns = [
     path('', view_doc, name='doc'),
-    re_path(r'^(?P<version>stable|devel)/$', view_doc, name='doc_version'),
-    path('security/', view_security, name='doc_security'),
-    re_path(r'^security/(?P<wsa>WSA-[0-9]{4}-[0-9]+)/$', view_security_wsa,
-            name='doc_security_wsa'),
-    path('security/version/', view_security_version,
-         name='doc_security_versions'),
-    re_path('security/version/(?P<version>[0-9.]+)/$', view_security_version,
-            name='doc_security_version'),
+
+    # legacy URLs (redirected to new pages)
+    path('stable/', RedirectView.as_view(url='/doc/weechat/stable/')),
+    path('devel/', RedirectView.as_view(url='/doc/weechat/devel/')),
+    path('security/', RedirectView.as_view(url='/doc/weechat/security/')),
+
+    # docs per project/version
+    re_path(r'^(?P<project>[a-zA-Z0-9._-]+)/(?P<version>stable|devel)/$',
+            view_doc, name='doc_project_version'),
+    re_path(r'(?P<project>[a-zA-Z0-9._-]+)/security/$', view_security,
+            name='doc_project_security'),
+    re_path(r'^(?P<project>[a-zA-Z0-9._-]+)/security/(?P<wsa>WSA-[0-9]{4}-[0-9]+)/$',
+            view_security_wsa, name='doc_project_security_wsa'),
+    re_path(r'(?P<project>[a-zA-Z0-9._-]+)/security/version/$', view_security_version,
+            name='doc_project_security_versions'),
+    re_path(r'(?P<project>[a-zA-Z0-9._-]+)/security/version/(?P<version>[0-9.]+)/$',
+            view_security_version, name='doc_project_security_version'),
 
     # shortcuts
-    re_path(r'^(?P<version>stable|devel)/(?P<name>[a-z_]+)/$', view_doc_link),
-    re_path(r'^(?P<name>[a-z_]+)/$', view_doc_link),
-    re_path(r'^(?P<version>stable|devel)/(?P<name>[a-z_]+)/'
-            r'(?P<lang>[a-z_]+)/$',
+    re_path(r'^(?P<project>[a-zA-Z0-9._-]+)/(?P<version>stable|devel)/'
+            r'(?P<name>[a-z_]+)/$', view_doc_link),
+    re_path(r'^(?P<project>[a-zA-Z0-9._-]+)/(?P<name>[a-z_]+)/$', view_doc_link),
+    re_path(r'^(?P<project>[a-zA-Z0-9._-]+)/(?P<version>stable|devel)/'
+            r'(?P<name>[a-z_]+)/(?P<lang>[a-z_]+)/$',
             view_doc_link),
-    re_path(r'^(?P<name>[a-z_]+)/(?P<lang>[a-z_]+)/$', view_doc_link),
+    re_path(r'^(?P<project>[a-zA-Z0-9._-]+)/(?P<name>[a-z_]+)/'
+            r'(?P<lang>[a-z_]+)/$', view_doc_link),
 ]

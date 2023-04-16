@@ -2,13 +2,15 @@
 
 {% load i18n %}{% load localdate %}
 
-{% block menu2_stable %}{% if version == "stable" %}active{% endif %}{% endblock %}
-{% block menu2_devel %}{% if version == "devel" %}active{% endif %}{% endblock %}
-{% block menu2_old %}{% if version == "old" %}active{% endif %}{% endblock %}
-
 {% block content %}
 
 {{ block.super }}
+
+<ul class="nav nav-tabs mt-4">
+  <li class="nav-item"><a class="nav-link {% if version == "stable" %}active{% endif %}" href="{% url 'download_project_version' project 'stable' %}">{% trans "Stable" %}</a></li>
+  <li class="nav-item"><a class="nav-link {% if version == "devel" %}active{% endif %}" href="{% url 'download_project_version' project 'devel' %}">{% trans "Development" %}</a></li>
+  <li class="nav-item"><a class="nav-link {% if version == "old" %}active{% endif %}" href="{% url 'download_project_version' project 'old' %}">{% trans "Old versions" %}</a></li>
+</ul>
 
 {% if package_list %}
 
@@ -31,7 +33,11 @@
       {{ package_version.grouper.version }}
       {% endif %}
       <small class="text-muted">
-        ({% if version == "devel" %}{% trans "next stable version" %}: &asymp; {% endif %}{{ package_version.grouper.date_l10n }})
+        {% if version == "devel" %}
+        {% if package_version.grouper.date %}({% trans "next stable version" %}: &asymp; {{ package_version.grouper.date_l10n }}){% endif %}
+        {% else %}
+        ({{ package_version.grouper.date_l10n }})
+        {% endif %}
       </small>
     </h4>
   </div>
@@ -44,11 +50,11 @@
     {% if package_version.grouper.securityfix %}
     <div class="alert alert-danger">
       {% with version=package_version.grouper.version %}
-      {% url 'doc_security_version' version as security_url %}
+      {% url 'doc_project_security_version' project version as security_url %}
       {% blocktrans %}<strong>Warning:</strong> the version {{ version }} has one or more <a href="{{ security_url }}">vulnerabilities</a>, it is not recommended to use it.{% endblocktrans %}
       {% endwith %}
       {% trans "Vulnerabilities fixed in versions:" %}
-      {% for fixed_version in package_version.grouper.security_fixed_versions %}{% if not forloop.first %}, {% endif %}<a href="{% url 'download_version' version=fixed_version %}">{{ fixed_version }}</a>{% endfor %}.
+      {% for fixed_version in package_version.grouper.security_fixed_versions %}{% if not forloop.first %}, {% endif %}<a href="{% url 'download_project_version' project=project version=fixed_version %}">{{ fixed_version }}</a>{% endfor %}.
     </div>
     {% elif version != "devel" and version != "old" and package_version.grouper.security_issues_fixed > 0 %}
     <div class="alert alert-secondary">
@@ -62,18 +68,20 @@
     </div>
     {% endif %}
 
+    {% if project == 'weechat' or project == 'weechat-relay' %}
     <div class="row">
       <div class="col-auto">
-        <a href="/files/changelog/ChangeLog-{{ package_version.grouper.version }}.html" target="_blank" rel="noopener">
+        <a href="/files/doc/{{ project }}/ChangeLog-{{ package_version.grouper.version }}.html" target="_blank" rel="noopener">
           {% trans "ChangeLog" %} <sup>↗</sup>
         </a>
       </div>
       <div class="col-auto">
-        <a href="/files/releasenotes/ReleaseNotes-{{ package_version.grouper.version }}.html" target="_blank" rel="noopener">
+        <a href="/files/doc/{{ project }}/ReleaseNotes-{{ package_version.grouper.version }}.html" target="_blank" rel="noopener">
           {% trans "Release notes" %} <sup>↗</sup>
         </a>
       </div>
     </div>
+    {% endif %}
 
     <h6>{% trans "Packages:" %}</h6>
 
@@ -131,7 +139,7 @@ gpg> trust</code></pre>
       </li>
       <li>
         {% trans "In directory with package + signature:" %}
-        <pre><code>$ gpg --verify weechat-{{ package_version.grouper.version }}.tar.xz.asc weechat-{{ package_version.grouper.version }}.tar.xz</code></pre>
+        <pre><code>$ gpg --verify {{ project }}-{{ package_version.grouper.version }}.tar.xz.asc {{ project }}-{{ package_version.grouper.version }}.tar.xz</code></pre>
       </li>
       <li>
         {% trans "If the signature is OK you should see a message like this one:" %}
@@ -147,11 +155,7 @@ gpg: Good signature from "WeeChat (signing key) &lt;webmaster@weechat.org&gt;"</
 {% endfor %}
 
 {% else %}
-
-<div class="alert alert-danger">
-  {% blocktrans %}Error: there is no version called "{{ version }}".{% endblocktrans %}
-</div>
-
+{% blocktrans %}No package found.{% endblocktrans %}
 {% endif %}
 
 {% endblock content %}

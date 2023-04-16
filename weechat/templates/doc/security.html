@@ -10,8 +10,8 @@
 {{ block.super }}
 
 <ul class="nav nav-tabs mt-4">
-  <li class="nav-item"><a class="nav-link{% if version == "all" or version == "wsa" %} active{% endif %}" href="{% url 'doc_security' %}">{% trans "All vulnerabilities" %}</a></li>
-  <li class="nav-item"><a class="nav-link{% if version != "all" and version != "wsa" %} active{% endif %}" href="{% url 'doc_security_versions' %}">{% trans "Vulnerabilities by version" %}</a></li>
+  <li class="nav-item"><a class="nav-link{% if version == "all" or version == "wsa" %} active{% endif %}" href="{% url 'doc_project_security' project %}">{% trans "All vulnerabilities" %}</a></li>
+  <li class="nav-item"><a class="nav-link{% if version != "all" and version != "wsa" %} active{% endif %}" href="{% url 'doc_project_security_versions' project %}">{% trans "Vulnerabilities by version" %}</a></li>
 </ul>
 
 {% if version == "all" %}
@@ -19,7 +19,7 @@
 <h3>{% trans "Security vulnerabilities" %}</h3>
 
 <p>
-  {% trans "This page lists all known and fixed security vulnerabilities in WeeChat stable releases." %}
+  {% trans "This page lists all known and fixed security vulnerabilities in stable releases." %}
   <br>
   {% trans "The security vulnerabilities introduced during development of a version and fixed before a stable release are not mentioned." %}
 </p>
@@ -38,7 +38,7 @@
 {% if not version_error %}
 <h3>{% blocktrans %}Security vulnerabilities in version {{ version }}{% endblocktrans %}</h3>
 <p>
-  {% url 'doc_security_versions' as url_all_versions %}
+  {% url 'doc_project_security_versions' project as url_all_versions %}
   {% blocktrans %}This page lists all known and fixed security vulnerabilities in version {{ version }} (back to the <a href="{{ url_all_versions }}">list of all versions</a>).{% endblocktrans %}
 </p>
 {% endif %}
@@ -48,7 +48,7 @@
 <h3>{% trans "Security vulnerabilities" %}</h3>
 
 <p>
-  {% trans "This page lists vulnerabilities by WeeChat version (click on a version for the detail of all issues)." %}
+  {% trans "This page lists vulnerabilities by version (click on a version for the detail of all issues)." %}
 </p>
 
 {% endif %}
@@ -65,7 +65,7 @@
 {% for release, sec_list in security_list_by_release.items %}
 
 <h4>
-  <a href="{% url 'doc_security_version' release.version %}">{% trans "Version" %} {{ release.version }}</a>
+  <a href="{% url 'doc_project_security_version' project release.version %}">{% trans "Version" %} {{ release.version }}</a>
   <small class="ms-2 text-muted">({{ release.date_l10n }})</small>
 </h4>
 
@@ -74,7 +74,7 @@
 <ul>
   {% for security in sec_list %}
   <li>
-    <a href="{% url 'doc_security_wsa' security.wsa %}">{{ security.wsa }}</a>: [{{ security.scope_i18n }}] {{ security.issue_i18n }}
+    <a href="{% url 'doc_project_security_wsa' project security.wsa %}">{{ security.wsa }}</a>: [{{ security.scope_i18n }}] {{ security.issue_i18n }}
     &mdash;
     {% if security.fixed %}
     {% with fixed_version=security.fixed_html release_date=security.date_l10n %}
@@ -141,7 +141,7 @@
 
 {% for security in security_list %}
 <h4 id="{{ security.wsa }}">
-  <a href="{% url 'doc_security_wsa' security.wsa %}">{{ security.wsa }}</a>: [{{ security.scope_i18n }}] {{ security.issue_i18n }}
+  <a href="{% url 'doc_project_security_wsa' project security.wsa %}">{{ security.wsa }}</a>: [{{ security.scope_i18n }}] {{ security.issue_i18n }}
 </h4>
 
 <h5>{% trans "Vulnerability" %}</h5>
@@ -241,7 +241,7 @@
       </span>
       ({{ security.release_date_l10n }})
       -
-      <a href="/files/changelog/ChangeLog-{{ security.fixed }}.html" target="_blank" rel="noopener">
+      <a href="/files/doc/{{ project }}/ChangeLog-{{ security.fixed }}.html" target="_blank" rel="noopener">
         {% trans "ChangeLog" %}
       </a>
       {% else %}
@@ -290,7 +290,7 @@
 {% else %}
 {% trans "There is no known mitigation." %}
 <br>
-{% trans "The upgrade of WeeChat to the latest stable version is highly recommended." %}
+{% trans "The upgrade to the latest stable version is highly recommended." %}
 {% endif %}
 
 {% if security.credit %}

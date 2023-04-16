@@ -72,7 +72,8 @@ def screenshots(request, app='weechat', filename=''):
 
 def history(request):
     """Page with WeeChat history, including key dates."""
-    release_list = (Release.objects.all().exclude(version='devel')
+    release_list = (Release.objects.filter(project__name='weechat')
+                    .exclude(version='devel')
                     .order_by('-date'))
     releases = []
     for release in release_list:

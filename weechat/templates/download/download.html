@@ -8,9 +8,9 @@
 {% block content %}
 
 <ul class="nav nav-tabs">
-  <li class="nav-item"><a class="nav-link {% block menu2_stable %}{% endblock %}" href="{% url 'download_version' 'stable' %}">{% trans "Stable" %}</a></li>
-  <li class="nav-item"><a class="nav-link {% block menu2_devel %}{% endblock %}" href="{% url 'download_version' 'devel' %}">{% trans "Development" %}</a></li>
-  <li class="nav-item"><a class="nav-link {% block menu2_old %}{% endblock %}" href="{% url 'download_version' 'old' %}">{% trans "Old versions" %}</a></li>
+  {% for prj in project_list %}
+  <li class="nav-item"><a class="nav-link {% if project == prj.name %}active{% endif %}" href="{% url 'download_project_version' prj.name 'stable' %}">{{ prj.description }}</a></li>
+  {% endfor %}
   <li class="nav-item"><a class="nav-link {% block menu2_debian %}{% endblock %}" href="{% url 'download_debian' %}">{% trans "Debian/Ubuntu repositories" %}</a></li>
 </ul>
 

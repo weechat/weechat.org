@@ -25,6 +25,7 @@ from django.utils.safestring import mark_safe
 from django.utils.translation import gettext, gettext_noop
 
 from weechat.common.i18n import i18n_autogen
+from weechat.common.models import Project
 from weechat.common.templatetags.localdate import localdate
 from weechat.common.tracker import commits_links, tracker_links
 
@@ -98,7 +99,8 @@ class Language(models.Model):
         'sr': gettext_noop('Serbian'),
         'tr': gettext_noop('Turkish'),
     }
-    lang = models.CharField(max_length=8, primary_key=True)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    lang = models.CharField(max_length=8)
     priority = models.IntegerField(default=0)
 
     def __str__(self):
@@ -137,6 +139,7 @@ class Doc(models.Model):
         'dev': gettext_noop('Developer\'s guide'),
         'relay_protocol': gettext_noop('Relay protocol'),
     }
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
     version = models.ForeignKey(Version, on_delete=models.CASCADE)
     name = models.CharField(max_length=64)
     devel = models.BooleanField(default=False)
@@ -147,7 +150,7 @@ class Doc(models.Model):
 
     def name_i18n(self):
         """Return the translated doc name."""
-        return gettext(self.NAME_I18N[self.name])
+        return gettext(self.NAME_I18N.get(self.name, self.name))
 
     class Meta:
         ordering = ['priority']
@@ -156,6 +159,7 @@ class Doc(models.Model):
 class Security(models.Model):
     """A security vulnerability in WeeChat."""
     visible = models.BooleanField(default=True)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
     date = models.DateTimeField()
     wsa = models.CharField(max_length=64)
     cve = models.CharField(max_length=64, blank=True)

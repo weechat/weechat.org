@@ -17,14 +17,21 @@
 # along with WeeChat.org.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-"""Admin for "download" menu."""
+"""Common models."""
 
-from django.contrib import admin
+from django.db import models
 
-from weechat.common.admin import WeechatAdmin
-from weechat.download.models import Project, Release, Type, Package
 
-admin.site.register(Project, WeechatAdmin)
-admin.site.register(Release, WeechatAdmin)
-admin.site.register(Type, WeechatAdmin)
-admin.site.register(Package, WeechatAdmin)
+class Project(models.Model):
+    """A project."""
+    visible = models.BooleanField(default=True)
+    name = models.CharField(max_length=64)
+    description = models.CharField(max_length=64, blank=True)
+    priority = models.IntegerField(default=0)
+
+    def __str__(self):
+        hidden = '' if self.visible else ', hidden'
+        return f'{self.name} ({self.priority}){hidden}'
+
+    class Meta:
+        ordering = ['priority']

@@ -21,6 +21,8 @@
 
 from django.conf import settings
 
+from weechat.common.models import Project
+
 
 def theme(request):
     """Add theme variables in context."""
@@ -34,4 +36,11 @@ def theme(request):
     return {
         'theme': user_theme,
         'other_themes': other_themes,
+    }
+
+
+def project_list(request):
+    """Add project_list variable in context."""
+    return {
+        'project_list': Project.objects.filter(visible=1).order_by('priority'),
     }

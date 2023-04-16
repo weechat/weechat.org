@@ -219,8 +219,8 @@ class ThemeFormAdd(Form):
         if not re.search('^[A-Za-z0-9_]+$', shortname):
             raise forms.ValidationError(
                 gettext('Invalid name inside theme file.'))
-        release_stable = Release.objects.get(version='stable')
-        release_devel = Release.objects.get(version='devel')
+        release_stable = Release.objects.get(project__name='weechat', version='stable')
+        release_devel = Release.objects.get(project__name='weechat', version='devel')
         if props['weechat'] not in (release_stable.description,
                                     re.sub('-.*', '',
                                            release_devel.description)):
@@ -300,8 +300,8 @@ class ThemeFormUpdate(Form):
         if props['name'] != theme.name:
             raise forms.ValidationError(
                 gettext('Invalid name: different from theme.'))
-        release_stable = Release.objects.get(version='stable')
-        release_devel = Release.objects.get(version='devel')
+        release_stable = Release.objects.get(project__name='weechat', version='stable')
+        release_devel = Release.objects.get(project__name='weechat', version='devel')
         if props['weechat'] not in (release_stable.description,
                                     re.sub('-.*', '',
                                            release_devel.description)):

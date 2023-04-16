@@ -46,7 +46,7 @@ urlpatterns = [
     re_path(r'^screenshots/(?P<app>weechat|relay)/$', view_screenshots,
             name='about_screenshots_app'),
     re_path(r'^screenshots/(?P<app>weechat|relay)/'
-            r'(?P<filename>[a-zA-Z0-9_\-.]*)/$',
+            r'(?P<filename>[a-zA-Z0-9_\-.]+)/$',
             view_screenshots, name='about_screenshot'),
     path('screenshots/<str:filename>/', view_screenshots),
     path('history/', view_history, name='about_history'),

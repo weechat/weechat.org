@@ -19,22 +19,30 @@
 
 """Models for "download" menu."""
 
-from datetime import datetime
+from datetime import date, datetime
 from hashlib import sha1, sha512
 import os
 import pytz
+import sys
 
 from django.conf import settings
 from django.db import models
 from django.db.models.signals import pre_save
 
+from weechat.common.models import Project
 from weechat.common.path import files_path_join
 from weechat.common.templatetags.localdate import localdate
 from weechat.common.utils import version_to_tuple
 
+PACKAGES_COMPRESSION_EXT = (
+    'gz',
+    'xz',
+)
+
 
 class Release(models.Model):
     """A WeeChat release."""
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
     version = models.CharField(max_length=64)
     description = models.CharField(max_length=64, blank=True)
     date = models.DateField(blank=True, null=True)
@@ -46,7 +54,10 @@ class Release(models.Model):
                         if self.security_issues_fixed > 0 else '')
         fixed_in = (f', fix in: {", ".join(self.securityfix.split(","))}'
                     if self.securityfix else '')
-        return f'{self.version} ({self.date}){security_fix}{fixed_in}'
+        return (
+            f'{self.project.name} {self.version} '
+            f'({self.date}){security_fix}{fixed_in}'
+        )
 
     def date_l10n(self):
         """Return the release date formatted with localized date format."""
@@ -59,7 +70,11 @@ class Release(models.Model):
     @property
     def is_released(self):
         """Return True if the version is released."""
-        stable_version = Release.objects.get(version='stable').description
+        stable_version = (Release.objects
+                          .get(
+                              project__name=self.project.name,
+                              version='stable',
+                          ).description)
         stable_version_tuple = version_to_tuple(stable_version)
         return version_to_tuple(self.version) <= stable_version_tuple
 
@@ -183,6 +198,84 @@ def handler_package_saved(sender, **kwargs):
                 package.sha512sum = sha512(_file.read()).hexdigest()
     except:  # noqa: E722  pylint: disable=bare-except
         pass
+
+
+def add_release(project, version):
+    """Add a project release with its packages."""
+    print(f'Adding release {version} and packages in project {project}')
+    if Release.objects.filter(project__name=project, version=version).exists():
+        release = Release.objects.get(project__name=project, version=version)
+    else:
+        release = Release(
+            project=Project.objects.get(name=project),
+            version=version,
+        )
+    release.description = ''
+    release.date = date.today()
+    release.security_issues_fixed = 0
+    release.securityfix = ''
+    release.save()
+    for ext in PACKAGES_COMPRESSION_EXT:
+        Package.objects.filter(
+            version__project__name=project,
+            filename=f'{project}-{version}.tar.{ext}'
+        ).delete()
+        package = Package(
+            version=release,
+            type=Type.objects.get(type=f'src1-{ext}'),
+            filename=f'{project}-{version}.tar.{ext}',
+        )
+        package.save()
+
+
+def set_stable_version(project, version):
+    """Set the stable version for a project."""
+    print(f'Setting stable release to {version} in project {project}')
+    if Release.objects.filter(project__name=project, version='stable').exists():
+        release = Release.objects.get(project__name=project, version='stable')
+    else:
+        release = Release(
+            project=Project.objects.get(name=project),
+            version='stable',
+        )
+    release.description = version
+    release.date = date.today()
+    release.security_issues_fixed = 0
+    release.securityfix = ''
+    release.save()
+
+
+def set_devel_version(project, version):
+    """Set the devel version for a project."""
+    print(f'Setting devel release to {version} in project {project}')
+    # keep only dot/digits (eg: "4.1.0-dev" -> "4.1.0")
+    version_digits = version.split('-')[0]
+    if Release.objects.filter(project__name=project, version='devel').exists():
+        release = Release.objects.get(project__name=project, version='devel')
+    else:
+        release = Release(
+            project=Project.objects.get(name=project),
+            version='devel',
+        )
+    release.description = version
+    if Release.objects.filter(project__name=project, version=version_digits).exists():
+        release.date = (Release.objects
+                        .get(project__name=project, version=version_digits)
+                        .date)
+    release.save()
+
+
+def release_action(action, project, version):
+    """Run a release action."""
+    if action == 'add':
+        add_release(project, version)
+    elif action == 'stable':
+        set_stable_version(project, version)
+    elif action == 'devel':
+        set_devel_version(project, version)
+    else:
+        print(f'ERROR: unsupported release action: "{action}"')
+        sys.exit(1)
 
 
 pre_save.connect(handler_package_saved, sender=Package)

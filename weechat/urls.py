@@ -64,7 +64,7 @@ urlpatterns = [
     path('download/security/', RedirectView.as_view(url='/doc/security/')),
     path('stats/', RedirectView.as_view(url='/dev/stats/')),
     path('info/', RedirectView.as_view(url='/dev/info/')),
-    re_path(r'^info/(?P<name>[a-zA-Z0-9-_]*)/$', view_info),
+    re_path(r'^info/(?P<name>[a-zA-Z0-9-_]+)/$', view_info),
     path('support/', RedirectView.as_view(url='/about/support/')),
     path('dev/support/', RedirectView.as_view(url='/about/support/')),
 
@@ -79,7 +79,7 @@ urlpatterns = [
     re_path(r'^donate/sort/(?P<sort_key>(date|type|top[0-9]+))/$',
             view_donate, name='donate_sort'),
     re_path(r'^donate/sort/(?P<sort_key>(date|type|top[0-9]+))/'
-            r'view/(?P<view_key>[a-zA-Z0-9_]*)/$',
+            r'view/(?P<view_key>[a-zA-Z0-9_]+)/$',
             view_donate),
     path('about/', include('weechat.about.urls')),
     path('doc/', include('weechat.doc.urls')),

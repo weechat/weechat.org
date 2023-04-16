@@ -21,32 +21,71 @@
 
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
+from weechat.common.models import Project
 from weechat.download.models import Release, Package
 
 
-def packages(request, version='stable'):
+def packages(request, project='weechat', version='stable'):
     """Page with packages for a version (stable, devel, all, old, or x.y.z)."""
+    get_object_or_404(Project, name=project, visible=1)
     package_list = None
     try:
         if version == 'stable':
-            stable_desc = Release.objects.get(version='stable').description
-            package_list = (Package.objects.all().filter(version__version=stable_desc)
+            stable_desc = (Release.objects
+                           .get(
+                               project__name=project,
+                               project__visible=1,
+                               version='stable',
+                           )
+                           .description)
+            package_list = (Package.objects.all()
+                            .filter(
+                                version__project__name=project,
+                                version__project__visible=1,
+                                version__version=stable_desc,
+                            )
                             .order_by('type__priority'))
         elif version == 'devel':
-            package_list = (Package.objects.all().filter(version__version='devel')
+            package_list = (Package.objects.all()
+                            .filter(
+                                version__project__name=project,
+                                version__project__visible=1,
+                                version__version='devel',
+                            )
                             .order_by('type__priority'))
         elif version == 'all':
-            package_list = (Package.objects.all().exclude(version__version='devel')
+            package_list = (Package.objects.all()
+                            .filter(
+                                version__project__name=project,
+                                version__project__visible=1,
+                            )
+                            .exclude(version__version='devel')
                             .order_by('-version__date', 'type__priority'))
         elif version == 'old':
-            stable_desc = Release.objects.get(version='stable').description
-            package_list = (Package.objects.all().exclude(version__version='devel')
+            stable_desc = (Release.objects
+                           .get(
+                               project__name=project,
+                               project__visible=1,
+                               version='stable',
+                           )
+                           .description)
+            package_list = (Package.objects.all()
+                            .filter(
+                                version__project__name=project,
+                                version__project__visible=1,
+                            )
+                            .exclude(version__version='devel')
                             .exclude(version__version=stable_desc)
                             .order_by('-version__date', 'type__priority'))
         else:
-            package_list = (Package.objects.filter(version__version=version)
+            package_list = (Package.objects
+                            .filter(
+                                version__project__name=project,
+                                version__project__visible=1,
+                                version__version=version,
+                            )
                             .order_by('type__priority'))
     except ObjectDoesNotExist:
         package_list = None
@@ -54,6 +93,7 @@ def packages(request, version='stable'):
         request,
         'download/packages.html',
         {
+            'project': project,
             'version': version,
             'package_list': package_list,
         },

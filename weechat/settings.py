@@ -148,6 +148,7 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
                 'weechat.context_processors.theme',
+                'weechat.context_processors.project_list',
             ],
         },
     },

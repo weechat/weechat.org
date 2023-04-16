@@ -215,7 +215,7 @@ def get_script_content(script_file):
 
 def python3(request):
     """Page with Python 3 transition."""
-    v037_date = Release.objects.get(version='0.3.7').date
+    v037_date = Release.objects.get(project__name='weechat', version='0.3.7').date
     v037_date = datetime(
         year=v037_date.year,
         month=v037_date.month,

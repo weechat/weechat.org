@@ -28,7 +28,7 @@ from django.utils.translation import gettext
 from weechat.common.i18n import i18n_autogen
 from weechat.common.templatetags.localdate import localdate
 
-PATTERN_TITLE_VERSION = re.compile('(Version) ([0-9.a-z-]*)$')
+PATTERN_TITLE_VERSION = re.compile('(Version) ([0-9.a-z-]+)$')
 
 
 class Info(models.Model):

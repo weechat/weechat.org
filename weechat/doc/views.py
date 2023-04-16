@@ -26,9 +26,10 @@ import pytz
 
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.utils.translation import gettext
 
+from weechat.common.models import Project
 from weechat.common.path import files_path_join
 from weechat.common.utils import version_to_tuple
 from weechat.doc.models import (
@@ -65,7 +66,7 @@ DOC_SHORTCUT_ALIAS = {
 }
 
 
-def get_i18n_stats():
+def get_i18n_stats(project):
     """Return i18n stats, as a dictionary.
 
     The returned dictionary has following keys:
@@ -75,7 +76,7 @@ def get_i18n_stats():
     # pylint: disable=too-many-locals
     try:
         timezone = pytz.timezone(settings.TIME_ZONE)
-        filename = files_path_join('stats', 'i18n.txt')
+        filename = files_path_join('stats', f'i18n_{project}.txt')
         date = datetime.fromtimestamp(os.path.getmtime(filename), tz=timezone)
         with open(filename, 'r', encoding='utf-8') as _file:
             langs = []
@@ -129,28 +130,44 @@ def get_bestlang(request, languages):
     return ''
 
 
-def documentation(request, version='stable'):
+def documentation(request, project='weechat', version='stable'):
     """Page with docs for stable or devel version."""
     # pylint: disable=too-many-locals
+    get_object_or_404(Project, name=project, visible=1)
     timezone = pytz.timezone(settings.TIME_ZONE)
-    languages = Language.objects.all().order_by('priority')
+    languages = (Language.objects
+                 .filter(
+                     project__name=project,
+                     project__visible=1,
+                 )
+                 .order_by('priority'))
     bestlang = get_bestlang(request, languages)
     versions = Version.objects.all().order_by('priority')
-    docs = Doc.objects.all().order_by('version__priority', 'priority')
+    docs = (Doc.objects
+            .filter(
+                project__name=project,
+                project__visible=1,
+            )
+            .order_by('version__priority', 'priority'))
     doc_list = []
     doc_list2 = []
     for doc in docs:
         if doc.version.version != '-':
-            docv = Release.objects.get(
-                version=doc.version.version).description
+            docv = (Release.objects
+                    .get(
+                        project__name=project,
+                        project__visible=1,
+                        version=doc.version.version,
+                    )
+                    .description)
         else:
             docv = doc.version.version
         stable_devel = 'devel' if docv.find('-') > 0 else 'stable'
         if stable_devel == version or docv == '-':
             files = []
             for lang in languages:
-                name = (f'{doc.version.directory}/weechat_{doc.name}.'
-                        f'{lang.lang}.html')
+                name = (f'{project}/{doc.version.directory}/'
+                        f'weechat_{doc.name}.{lang.lang}.html')
                 full_name = files_path_join('doc', name)
                 if os.path.exists(full_name):
                     files.append(
@@ -168,25 +185,33 @@ def documentation(request, version='stable'):
             else:
                 doc_list2.append([doc, files])
     try:
-        doc_version = Release.objects.get(version=version).description
+        doc_version = (Release.objects
+                       .get(
+                           project__name=project,
+                           project__visible=1,
+                           version=version,
+                       )
+                       .description)
     except ObjectDoesNotExist:
         doc_version = None
     return render(
         request,
         'doc/doc_version.html',
         {
+            'project': project,
             'version': version,
             'languages': languages,
             'bestlang': bestlang,
             'versions': versions,
             'doc_list': doc_list + doc_list2,
-            'i18n': get_i18n_stats(),
+            'i18n': get_i18n_stats(project),
             'doc_version': doc_version,
         },
     )
 
 
-def documentation_link(request, version='stable', name=None, lang='en'):
+def documentation_link(request, project='weechat', version='stable', name=None,
+                       lang='en'):
     """
     Shortcuts to docs, with English and stable version as default.
 
@@ -196,35 +221,54 @@ def documentation_link(request, version='stable', name=None, lang='en'):
       /doc/devel/api/fr => /files/doc/devel/weechat_plugin_api.fr.html
       /doc/user         => /files/doc/stable/weechat_user.en.html
     """
-    if version and name and lang:
+    if project and version and name and lang:
+        get_object_or_404(Project, name=project, visible=1)
         doc_name = DOC_SHORTCUT_ALIAS.get(name, name)
         filename = f'weechat_{doc_name}.{lang}.html'
-        full_name = files_path_join('doc', version, filename)
+        full_name = files_path_join('doc', project, version, filename)
         if os.path.exists(full_name):
-            return redirect(f'/files/doc/{version}/{filename}')
+            return redirect(f'/files/doc/{project}/{version}/{filename}')
     return redirect('doc')
 
 
-def security_all(request):
+def security_all(request, project='weechat'):
     """Page with security vulnerabilities."""
-    security_list = Security.objects.all().filter(visible=1).order_by('-date')
+    get_object_or_404(Project, name=project, visible=1)
+    security_list = (Security.objects.all()
+                     .filter(
+                         project__name=project,
+                         project__visible=1,
+                         visible=1,
+                     )
+                     .order_by('-date'))
     return render(
         request,
         'doc/security.html',
         {
+            'project': project,
+            'security': True,
             'version': 'all',
             'security_list': security_list,
         },
     )
 
 
-def security_wsa(request, wsa):
+def security_wsa(request, project='weechat', wsa=''):
     """Page with security a single vulnerability."""
+    get_object_or_404(Project, name=project, visible=1)
     context = {
+        'project': project,
+        'security': True,
         'version': 'wsa',
     }
     try:
-        context['security_list'] = [Security.objects.get(wsa=wsa)]
+        context['security_list'] = [
+            Security.objects.get(
+                project__name=project,
+                project__visible=1,
+                wsa=wsa,
+            )
+        ]
     except ObjectDoesNotExist:
         context['wsa_error'] = True
     return render(request, 'doc/security.html', context)
@@ -246,15 +290,28 @@ def is_security_affecting_release(security, release):
     return False
 
 
-def security_version(request, version=''):
+def security_version(request, project='weechat', version=''):
     """Page with security vulnerabilities, by version or for a version."""
-    security_list = Security.objects.all().filter(visible=1).order_by('-date')
+    get_object_or_404(Project, name=project, visible=1)
+    security_list = (Security.objects.all()
+                     .filter(
+                         project__name=project,
+                         project__visible=1,
+                         visible=1,
+                     )
+                     .order_by('-date'))
     context = {
+        'project': project,
+        'security': True,
         'version': version,
     }
     if version:
         try:
-            release = Release.objects.get(version=version)
+            release = Release.objects.get(
+                project__name=project,
+                project__visible=1,
+                version=version,
+            )
             if not release.is_released:
                 raise ObjectDoesNotExist
         except ObjectDoesNotExist:
@@ -267,7 +324,11 @@ def security_version(request, version=''):
             ]
     else:
         security_list_by_release = {}
-        release_list = (Release.objects.all()
+        release_list = (Release.objects
+                        .filter(
+                            project__name=project,
+                            project__visible=1,
+                        )
                         .exclude(version='devel')
                         .exclude(version='stable')
                         .order_by('-date'))

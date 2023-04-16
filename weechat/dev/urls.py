@@ -39,6 +39,6 @@ urlpatterns = [
             r'|weechat\.org)/$',
             view_stats_repo, name='dev_stats_git'),
     path('info/', view_info, name='dev_info'),
-    re_path(r'^info/(?P<name>[a-zA-Z0-9_]*)/$', view_info,
+    re_path(r'^info/(?P<name>[a-zA-Z0-9_]+)/$', view_info,
             name='dev_info_name'),
 ]

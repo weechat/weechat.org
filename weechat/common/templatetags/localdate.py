@@ -37,6 +37,8 @@ def localdate(value, fmt='date'):
     If fmt == "datetime", the localized date/fime format is used.
     Another fmt it is used as-is.
     """
+    if not value:
+        return ''
     if fmt == 'date':
         fmt = gettext(settings.DATE_FORMAT)
     elif fmt == 'datetime':

@@ -114,14 +114,20 @@ def roadmap(request, versions='future'):
         if versions == 'future':
             # future versions
             task_list = (Task.objects.all().filter(visible=1)
-                         .filter(version__version__gt=Release.objects.get(
-                             version='stable').description)
+                         .filter(
+                             version__version__gt=Release.objects.get(
+                                 project__name='weechat',
+                                 version='stable').description
+                         )
                          .order_by('version__date', 'priority'))
         else:
             # already released versions
             task_list = (Task.objects.all().filter(visible=1)
-                         .filter(version__version__lte=Release.objects.get(
-                             version='stable').description)
+                         .filter(
+                             version__version__lte=Release.objects.get(
+                                 project__name='weechat',
+                                 version='stable').description
+                         )
                          .order_by('-version__date', 'priority'))
     except ObjectDoesNotExist:
         task_list = None
@@ -260,8 +266,8 @@ def info(request, name=None):
     """Page with one or all available infos."""
     try:
         version = {
-            'stable': Release.objects.get(version='stable'),
-            'devel': Release.objects.get(version='devel'),
+            'stable': Release.objects.get(project__name='weechat', version='stable'),
+            'devel': Release.objects.get(project__name='weechat', version='devel'),
         }
     except ObjectDoesNotExist:
         return render(

@@ -8,9 +8,15 @@
 {% block content %}
 
 <ul class="nav nav-tabs">
-  <li class="nav-item"><a class="nav-link{% if version == "stable" %} active{% endif %}" href="{% url 'doc_version' 'stable' %}">{% trans "Stable" %}</a></li>
-  <li class="nav-item"><a class="nav-link{% if version == "devel" %} active{% endif %}" href="{% url 'doc_version' 'devel' %}">{% trans "Development" %}</a></li>
-  <li class="nav-item"><a class="nav-link {% block menu2_security %}{% endblock %}" href="{% url 'doc_security' %}">{% trans "Security" %}</a></li>
+  {% for prj in project_list %}
+  <li class="nav-item"><a class="nav-link {% if project == prj.name %}active{% endif %}" href="{% url 'doc_project_version' prj.name 'stable' %}">{{ prj.description }}</a></li>
+  {% endfor %}
+</ul>
+
+<ul class="nav nav-tabs mt-4">
+  <li class="nav-item"><a class="nav-link {% if version == "stable" %}active{% endif %}" href="{% url 'doc_project_version' project 'stable' %}">{% trans "Stable" %}</a></li>
+  <li class="nav-item"><a class="nav-link {% if version == "devel" %}active{% endif %}" href="{% url 'doc_project_version' project 'devel' %}">{% trans "Development" %}</a></li>
+  <li class="nav-item"><a class="nav-link {% if version != "stable" and version != "devel" %}active{% endif %}" href="{% url 'doc_project_security' project %}">{% trans "Security" %}</a></li>
 </ul>
 
 {% endblock content %}

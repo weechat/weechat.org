@@ -22,6 +22,7 @@
 # pylint: disable=invalid-name, no-value-for-parameter
 
 from django.urls import path, re_path
+from django.views.generic.base import RedirectView
 
 from weechat.debian.views import repos as view_repos
 from weechat.download.views import (
@@ -35,11 +36,16 @@ urlpatterns = [
          name='download_debian'),
     re_path(r'^debian/(?P<active>(active|all))/$', view_repos,
             name='download_debian_active'),
-    re_path(r'^debian/(?P<active>(active|all))/(?P<files>[a-zA-Z0-9.]*)/$',
+    re_path(r'^debian/(?P<active>(active|all))/(?P<files>[a-zA-Z0-9.]+)/$',
             view_repos),
-    re_path(r'^checksums/weechat-(?P<version>[a-zA-Z0-9.]*)-'
-            r'(?P<checksum_type>[a-zA-Z0-9]*).txt/$',
+    re_path(r'^checksums/weechat-(?P<version>[a-zA-Z0-9.]+)-'
+            r'(?P<checksum_type>[a-zA-Z0-9]+).txt/$',
             view_package_checksums, name='package_checksums'),
-    re_path(r'^(?P<version>[a-zA-Z0-9.]*)/$', view_packages,
-            name='download_version'),
+    re_path(r'^(?P<project>[a-zA-Z0-9._-]+)/(?P<version>[a-zA-Z0-9.]+)/$',
+            view_packages, name='download_project_version'),
+
+    # legacy URLs (redirected to new pages)
+    path('stable/', RedirectView.as_view(url='/download/weechat/stable/')),
+    path('devel/', RedirectView.as_view(url='/download/weechat/devel/')),
+    path('old/', RedirectView.as_view(url='/download/weechat/old/')),
 ]

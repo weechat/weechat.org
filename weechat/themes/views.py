@@ -147,8 +147,10 @@ def form_add(request):
     else:
         form = ThemeFormAdd()
     try:
-        stable_version = Release.objects.get(version='stable').description
-        release_stable = Release.objects.get(version=stable_version)
+        stable_version = Release.objects.get(project__name='weechat',
+                                             version='stable').description
+        release_stable = Release.objects.get(project__name='weechat',
+                                             version=stable_version)
     except ObjectDoesNotExist:
         release_stable = None
     return render(

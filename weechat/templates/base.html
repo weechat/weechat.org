@@ -103,17 +103,17 @@
       <div class="col-12 col-md-6 col-xl-auto">
         <ul>
           <li><a class="main" href="{% url 'doc' %}">{% trans "Documentation" %}</a></li>
-          <li><a href="{% url 'doc_version' 'stable' %}">{% trans "Stable version" %}</a></li>
-          <li><a href="{% url 'doc_version' 'devel' %}">{% trans "Development version" %}</a></li>
-          <li><a href="{% url 'doc_security' %}">{% trans "Security issues" %}</a></li>
+          {% for prj in project_list %}
+          <li><a href="{% url 'doc_project_version' prj.name 'stable' %}">{{ prj.description }}</a></li>
+          {% endfor %}
         </ul>
       </div>
       <div class="col-12 col-md-6 col-xl-auto">
         <ul>
           <li><a class="main" href="{% url 'download' %}">{% trans "Download" %}</a></li>
-          <li><a href="{% url 'download_version' 'stable' %}">{% trans "Stable version" %}</a></li>
-          <li><a href="{% url 'download_version' 'devel' %}">{% trans "Development version" %}</a></li>
-          <li><a href="{% url 'download_version' 'old' %}">{% trans "Old versions" %}</a></li>
+          {% for prj in project_list %}
+          <li><a href="{% url 'download_project_version' prj.name 'stable' %}">{{ prj.description }}</a></li>
+          {% endfor %}
           <li><a href="{% url 'download_debian' %}">{% trans "Debian/Ubuntu repositories" %}</a></li>
         </ul>
       </div>
