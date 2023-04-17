@@ -73,10 +73,11 @@
     </div>
   </p>
 
+  {% if doc_list.0.1.0.1 %}
   <p class="text-muted">
-    {% trans "Build date:" %}
-    {% if doc_list.0.1.0.1 %}{{ doc_list.0.1.0.1|localdate }}{% else %}{% trans "unknown" %}{% endif %}
+    {% trans "Build date:" %} {{ doc_list.0.1.0.1|localdate }}
   </p>
+  {% endif %}
 
   {% if version == "devel" and i18n %}
   <h3>{% trans "Internationalization stats" %}</h3>
