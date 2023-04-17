@@ -22,8 +22,9 @@
 from datetime import date, datetime
 from hashlib import sha1, sha512
 import os
-import pytz
 import sys
+
+import pytz
 
 from django.conf import settings
 from django.db import models
