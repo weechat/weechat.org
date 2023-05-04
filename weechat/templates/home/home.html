@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load i18n %}
+{% load i18n %}{% load localdate %}
 
 {% block menu %}home{% endblock %}
 
@@ -21,7 +21,7 @@
           {% include "svg/download.html" %} {% trans "Download" %}
         </a>
         {% if release_stable %}
-        <div class="text-muted">v{{ release_stable.version }}, {{ release_stable.date_l10n }}</div>
+        <div class="text-muted">v{{ release_stable.version }}, {{ release_stable.date|localdate }}</div>
         {% endif %}
       </div>
       <div class="col-auto ms-3 px-0">
@@ -145,7 +145,7 @@
         {% for info in info_list %}
         <tr>
           <td class="ps-0 text-nowrap" style="width: 20%">
-            {{ info.date_l10n }}
+            {{ info.date|localdate }}
           </td>
           <td>
             <a href="{% url 'home_info_id_title' info.id info.date_title_url %}">{{ info.title_i18n }}</a>
@@ -165,7 +165,7 @@
         {% for event in event_list %}
         <tr>
           <td class="ps-0 text-nowrap" style="width: 20%">
-            {{ event.date_l10n }}
+            {{ event.date|localdate }}
           </td>
           <td>
             <a href="{% url 'home_info_id_title' event.id event.date_title_url %}">{{ event.title_i18n }}</a>

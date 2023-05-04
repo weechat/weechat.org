@@ -106,10 +106,6 @@ class Sponsor(models.Model):
         return (f'{self.name}{str_num}, {self.sponsortype_i18n()}, '
                 f'{self.date}, {self.amount:.2f} €')
 
-    def date_l10n(self):
-        """Return the sponsor date formatted with localized date format."""
-        return localdate(self.date)
-
     def sponsortype_i18n(self):
         """Return the translated sponsor type."""
         return gettext(dict(SPONSOR_TYPE_CHOICES)[self.sponsortype])

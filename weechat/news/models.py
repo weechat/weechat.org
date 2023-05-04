@@ -43,10 +43,6 @@ class Info(models.Model):
     def __str__(self):
         return f'{self.title} ({self.date})'
 
-    def date_l10n(self):
-        """Return the info date formatted with localized date format."""
-        return localdate(self.date)
-
     def title_i18n(self):
         """Return translated title."""
         match = PATTERN_TITLE_VERSION.match(self.title)

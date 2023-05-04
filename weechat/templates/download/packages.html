@@ -38,7 +38,7 @@
         ({% trans "next stable version" %}: {% if next_stable_date %}{{ next_stable_date|localdate }}{% else %}{% trans "not planned yet" %}{% endif %})
         {% endwith %}
         {% else %}
-        ({{ package_version.grouper.date_l10n }})
+        ({{ package_version.grouper.date|localdate }})
         {% endif %}
       </small>
     </h4>

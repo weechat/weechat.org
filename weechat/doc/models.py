@@ -181,10 +181,6 @@ class Security(models.Model):
     def __str__(self):
         return f'{self.wsa}: [{self.scope}] {self.issue} ({self.release_date})'
 
-    def date_l10n(self):
-        """Return the date formatted with localized date format."""
-        return localdate(self.date)
-
     def cve_valid(self):
         """Return True if the CVE is a valid CVE id."""
         return self.cve.startswith('CVE')
@@ -265,10 +261,6 @@ class Security(models.Model):
         """Return fixed version, as HTML."""
         return mark_safe(f'<span class="text-success fw-bold">'
                          f'{self.fixed}</span>')
-
-    def release_date_l10n(self):
-        """Return the release date formatted with localized date format."""
-        return localdate(self.release_date)
 
     def url_commits(self):
         """Return URL(s) with links to commits, as HTML."""

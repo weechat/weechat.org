@@ -62,10 +62,6 @@ class Release(models.Model):
             f'({self.date}){security_fix}{fixed_in}'
         )
 
-    def date_l10n(self):
-        """Return the release date formatted with localized date format."""
-        return localdate(self.date)
-
     def next_stable_date(self):
         """Return the next stable release date (only for "devel" version)."""
         if self.version != 'devel':

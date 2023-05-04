@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load i18n %}
+{% load i18n %}{% load localdate %}
 
 {% block menu %}home{% endblock %}
 
@@ -18,7 +18,7 @@
   {% for info in infos %}
   <h4 class="mb-3">
     <a href="{% url 'home_info_id_title' info.id info.date_title_url %}">{{ info.title_i18n }}</a>
-    <small class="text-muted">({{ info.date_l10n }})</small>
+    <small class="text-muted">({{ info.date|localdate }})</small>
   </h4>
 
   <div class="pb-2 mb-2">

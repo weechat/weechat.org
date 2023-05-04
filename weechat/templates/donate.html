@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load i18n %}
+{% load i18n %}{% load localdate %}
 
 {% block menu %}home{% endblock %}
 
@@ -107,7 +107,7 @@
           {% for sponsor in sponsor_list %}
           <tr>
             {% if sort_key == "date" %}
-            <td class="text-nowrap">{{ sponsor.date_l10n }}</td>
+            <td class="text-nowrap">{{ sponsor.date|localdate }}</td>
             {% else %}
             <td class="text-nowrap" style="width: 5rem;">{{ forloop.counter }}.</td>
             {% endif %}
