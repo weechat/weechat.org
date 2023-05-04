@@ -258,8 +258,6 @@ def set_stable_version(project, version):
 def set_devel_version(project, version):
     """Set the devel version for a project."""
     print(f'Setting devel release to {version} in project {project}')
-    # keep only dot/digits (eg: "4.1.0-dev" -> "4.1.0")
-    version_digits = version.split('-')[0]
     if Release.objects.filter(project__name=project, version='devel').exists():
         release = Release.objects.get(project__name=project, version='devel')
     else:
