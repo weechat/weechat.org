@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-17 21:45+0200\n"
+"POT-Creation-Date: 2023-05-04 19:54+0200\n"
 "PO-Revision-Date: 2023-04-17 21:45+0200\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
@@ -277,38 +277,38 @@ msgstr "企業"
 msgid "This field is required."
 msgstr "このフィールドは必須です。"
 
-#: dev/views.py:37
+#: dev/views.py:35
 msgid "Stable version."
 msgstr "安定版。"
 
-#: dev/views.py:41
+#: dev/views.py:39
 msgid ""
 "Stable version, as number, like plugin API: info_get(\"version_number\")."
 msgstr ""
 "安定版のバージョン番号 (数表記)、プラグイン API における "
 "info_get(\"version_number\") と同様。"
 
-#: dev/views.py:46
+#: dev/views.py:44
 msgid "Date of stable version (format: \"YYYY-MM-DD\")."
 msgstr "安定版のリリース日 (書式: \"YYYY-MM-DD\")。"
 
-#: dev/views.py:50
+#: dev/views.py:48
 msgid "Development version."
 msgstr "開発版。"
 
-#: dev/views.py:54
+#: dev/views.py:52
 msgid "Output of \"git rev-parse HEAD\" for sources repository."
 msgstr "ソースリポジトリにおける \"git rev-parse HEAD\" の出力。"
 
-#: dev/views.py:59
+#: dev/views.py:57
 msgid "Output of \"git rev-parse HEAD\" for scripts repository."
 msgstr "スクリプトリポジトリにおける \"git rev-parse HEAD\" の出力。"
 
-#: dev/views.py:64
+#: dev/views.py:62
 msgid "Next stable version."
 msgstr "次期安定版のバージョン番号。"
 
-#: dev/views.py:68
+#: dev/views.py:66
 msgid ""
 "Next stable version, as number, like plugin API: "
 "info_get(\"version_number\")."
@@ -316,32 +316,32 @@ msgstr ""
 "次期安定版のバージョン番号 (数表記)、プラグイン API における "
 "info_get(\"version_number\") と同様。"
 
-#: dev/views.py:73
+#: dev/views.py:71
 msgid "Approximate date of next stable version (format: \"YYYY-MM-DD\")."
 msgstr "次期安定版のリリース予定日 (書式: \"YYYY-MM-DD\")。"
 
-#: dev/views.py:78
+#: dev/views.py:76
 msgid "Release signing key fingerprint (format: PGP fingerprint)."
 msgstr "リリース用署名鍵の指紋 (書式: PGP 指紋)。"
 
-#: dev/views.py:83 templates/download/packages.html:132
+#: dev/views.py:81 templates/download/packages.html:134
 msgid "Release signing key (format: PGP public key)."
 msgstr "リリース用署名鍵 (書式: PGP 公開鍵)。"
 
-#: dev/views.py:87
+#: dev/views.py:85
 msgid ""
 "Debian/Ubuntu repository signing key fingerprint (format: PGP fingerprint)."
 msgstr "Debian/Ubuntu リポジトリ署名鍵の指紋 (書式: PGP 指紋)。"
 
-#: dev/views.py:92 templates/download/debian.html:77
+#: dev/views.py:90 templates/download/debian.html:77
 msgid "Debian/Ubuntu repository signing key (format: PGP public key)."
 msgstr "Debian/Ubuntu リポジトリ署名鍵 (書式: PGP 公開鍵)。"
 
-#: dev/views.py:97
+#: dev/views.py:95
 msgid "All non-binary infos (one info by line, format: \"info:value\")."
 msgstr "全てのテキスト情報 (1 行に 1 情報、書式: \"info:value\")。"
 
-#: dev/views.py:298
+#: dev/views.py:300
 msgid "(binary data)"
 msgstr "(バイナリデータ)"
 
@@ -851,11 +851,11 @@ msgstr "開発者ガイド"
 msgid "Relay protocol"
 msgstr "リレープロトコル"
 
-#: doc/models.py:207 doc/models.py:216
+#: doc/models.py:203 doc/models.py:212
 msgid "Pending"
 msgstr ""
 
-#: doc/models.py:212 templates/doc/security.html:268
+#: doc/models.py:208 templates/doc/security.html:268
 #, fuzzy
 #| msgid "temporarily unavailable"
 msgid "Not available"
@@ -7684,7 +7684,7 @@ msgstr ""
 msgid "Also known as Common Weakness Enumeration (CWE)."
 msgstr ""
 
-#: templates/doc/security.html:245 templates/download/packages.html:75
+#: templates/doc/security.html:245 templates/download/packages.html:77
 msgid "ChangeLog"
 msgstr "ChangeLog"
 
@@ -7920,7 +7920,7 @@ msgstr ""
 msgid "Import the GPG key used to sign the repositories:"
 msgstr "このリポジトリに署名するために使われた gpg 鍵をインポートしてください:"
 
-#: templates/download/debian.html:75 templates/download/packages.html:130
+#: templates/download/debian.html:75 templates/download/packages.html:132
 msgid "In case of problem, the GPG key can be downloaded here:"
 msgstr ""
 
@@ -8050,11 +8050,15 @@ msgstr ""
 "ん: 古いバージョンは最新版に比べて不安定であり、最新版で修正されたセキュリ"
 "ティ脆弱性を含む可能性があるからです。"
 
-#: templates/download/packages.html:37
+#: templates/download/packages.html:38
 msgid "next stable version"
 msgstr "次期安定版のバージョン番号"
 
-#: templates/download/packages.html:47
+#: templates/download/packages.html:38
+msgid "unknown date"
+msgstr ""
+
+#: templates/download/packages.html:49
 msgid ""
 "<strong>Important:</strong> this version may be unstable or it may not "
 "compile, you're warned!"
@@ -8062,7 +8066,7 @@ msgstr ""
 "<strong>重要:</strong> このバージョンは不安定であり、コンパイルできないかもし"
 "れません。警告しましたよ!"
 
-#: templates/download/packages.html:54
+#: templates/download/packages.html:56
 #, python-format
 msgid ""
 "<strong>Warning:</strong> the version %(version)s has one or more <a "
@@ -8073,11 +8077,11 @@ msgstr ""
 "href=\"%(security_url)s\">脆弱性</a>があります。これを使用することはおすすめ"
 "できません。"
 
-#: templates/download/packages.html:56
+#: templates/download/packages.html:58
 msgid "Vulnerabilities fixed in versions:"
 msgstr "脆弱性が修正されているバージョン:"
 
-#: templates/download/packages.html:62
+#: templates/download/packages.html:64
 #, fuzzy, python-format
 #| msgid ""
 #| "<strong>Important:</strong> this release fixes a <a "
@@ -8092,33 +8096,33 @@ msgstr[0] ""
 "<strong>重要:</strong> このリリースでは<a href=\"%(security_url)s\">脆弱性</"
 "a>が修正されています。"
 
-#: templates/download/packages.html:67
+#: templates/download/packages.html:69
 msgid "It is recommended to upgrade from any older version to this one."
 msgstr ""
 "古いバージョンをお使いの方には、このバージョンにアップグレードすることを推奨"
 "します。"
 
-#: templates/download/packages.html:80
+#: templates/download/packages.html:82
 msgid "Release notes"
 msgstr "リリースノート"
 
-#: templates/download/packages.html:86
+#: templates/download/packages.html:88
 msgid "Packages:"
 msgstr "パッケージ:"
 
-#: templates/download/packages.html:95
+#: templates/download/packages.html:97
 msgid "Checksum"
 msgstr "チェックサム"
 
-#: templates/download/packages.html:95
+#: templates/download/packages.html:97
 msgid "GPG signature"
 msgstr "GPG 署名"
 
-#: templates/download/packages.html:122
+#: templates/download/packages.html:124
 msgid "Checking the signatures:"
 msgstr "署名の確認方法:"
 
-#: templates/download/packages.html:125
+#: templates/download/packages.html:127
 #, fuzzy
 #| msgid ""
 #| "Check that the fingerprint is correct by asking to a developer on "
@@ -8130,25 +8134,25 @@ msgstr ""
 "#weechat (irc.libera.chat) の開発者に尋ねて指紋が正しいことを確認してくださ"
 "い。"
 
-#: templates/download/packages.html:128
+#: templates/download/packages.html:130
 #, fuzzy
 #| msgid "Import the gpg key:"
 msgid "Import the GPG key:"
 msgstr "gpg キーをインポート:"
 
-#: templates/download/packages.html:136
+#: templates/download/packages.html:138
 msgid "Trust the key:"
 msgstr "キーを信用する:"
 
-#: templates/download/packages.html:141
+#: templates/download/packages.html:143
 msgid "In directory with package + signature:"
 msgstr "パッケージと署名ファイルがあるディレクトリ内で:"
 
-#: templates/download/packages.html:145
+#: templates/download/packages.html:147
 msgid "If the signature is OK you should see a message like this one:"
 msgstr "署名が正しいなら、以下の様なメッセージが表示されれるはずです:"
 
-#: templates/download/packages.html:158
+#: templates/download/packages.html:160
 #, fuzzy
 #| msgid "No theme found."
 msgid "No package found."

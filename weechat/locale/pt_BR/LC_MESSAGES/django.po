@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-17 21:45+0200\n"
+"POT-Creation-Date: 2023-05-04 19:54+0200\n"
 "PO-Revision-Date: 2023-04-17 21:45+0200\n"
 "Last-Translator: Alexandre Bolelli <semeion7@gmail.com>\n"
 "Language-Team: Portuguese <semeion7@gmail.com>\n"
@@ -272,13 +272,13 @@ msgstr ""
 msgid "This field is required."
 msgstr "Este campo é obrigatório."
 
-#: dev/views.py:37
+#: dev/views.py:35
 #, fuzzy
 #| msgid "Stable version"
 msgid "Stable version."
 msgstr "Versão estável"
 
-#: dev/views.py:41
+#: dev/views.py:39
 #, fuzzy
 #| msgid ""
 #| "stable version, as number, like plugin API: info_get(\"version_number\")"
@@ -287,37 +287,37 @@ msgid ""
 msgstr ""
 "versão estável, como número, como plugin da API: info_get(\"version_number\")"
 
-#: dev/views.py:46
+#: dev/views.py:44
 #, fuzzy
 #| msgid "date of stable version"
 msgid "Date of stable version (format: \"YYYY-MM-DD\")."
 msgstr "data da versão estável"
 
-#: dev/views.py:50
+#: dev/views.py:48
 #, fuzzy
 #| msgid "development version"
 msgid "Development version."
 msgstr "versão de desenvolvimento"
 
-#: dev/views.py:54
+#: dev/views.py:52
 #, fuzzy
 #| msgid "output of \"git rev-parse HEAD\" for sources repository"
 msgid "Output of \"git rev-parse HEAD\" for sources repository."
 msgstr "saída de \"git rev-parse HEAD\" para o repositório de fontes"
 
-#: dev/views.py:59
+#: dev/views.py:57
 #, fuzzy
 #| msgid "output of \"git rev-parse HEAD\" for scripts repository"
 msgid "Output of \"git rev-parse HEAD\" for scripts repository."
 msgstr "saída de \"git rev-parse HEAD\" para o repositório scripts"
 
-#: dev/views.py:64
+#: dev/views.py:62
 #, fuzzy
 #| msgid "next stable version"
 msgid "Next stable version."
 msgstr "próxima versão estável"
 
-#: dev/views.py:68
+#: dev/views.py:66
 #, fuzzy
 #| msgid ""
 #| "next stable version, as number, like plugin API: "
@@ -329,37 +329,37 @@ msgstr ""
 "próxima versão estável, como número, como plugin da API: "
 "info_get(\"version_number\")"
 
-#: dev/views.py:73
+#: dev/views.py:71
 #, fuzzy
 #| msgid "approximate date of next stable version"
 msgid "Approximate date of next stable version (format: \"YYYY-MM-DD\")."
 msgstr "data aproximada da próxima versão estável"
 
-#: dev/views.py:78
+#: dev/views.py:76
 msgid "Release signing key fingerprint (format: PGP fingerprint)."
 msgstr ""
 
-#: dev/views.py:83 templates/download/packages.html:132
+#: dev/views.py:81 templates/download/packages.html:134
 msgid "Release signing key (format: PGP public key)."
 msgstr ""
 
-#: dev/views.py:87
+#: dev/views.py:85
 msgid ""
 "Debian/Ubuntu repository signing key fingerprint (format: PGP fingerprint)."
 msgstr ""
 
-#: dev/views.py:92 templates/download/debian.html:77
+#: dev/views.py:90 templates/download/debian.html:77
 msgid "Debian/Ubuntu repository signing key (format: PGP public key)."
 msgstr ""
 
-#: dev/views.py:97
+#: dev/views.py:95
 #, fuzzy
 #| msgid "all infos (one info by line, format: \"info:value\")"
 msgid "All non-binary infos (one info by line, format: \"info:value\")."
 msgstr ""
 "todas as informações (uma informação por linha, formato: \"info:value\")"
 
-#: dev/views.py:298
+#: dev/views.py:300
 msgid "(binary data)"
 msgstr ""
 
@@ -856,11 +856,11 @@ msgstr "Guia dos Developer's"
 msgid "Relay protocol"
 msgstr "Protocolo de retransmissão"
 
-#: doc/models.py:207 doc/models.py:216
+#: doc/models.py:203 doc/models.py:212
 msgid "Pending"
 msgstr ""
 
-#: doc/models.py:212 templates/doc/security.html:268
+#: doc/models.py:208 templates/doc/security.html:268
 #, fuzzy
 #| msgid "temporarily unavailable"
 msgid "Not available"
@@ -7366,7 +7366,7 @@ msgstr ""
 msgid "Also known as Common Weakness Enumeration (CWE)."
 msgstr ""
 
-#: templates/doc/security.html:245 templates/download/packages.html:75
+#: templates/doc/security.html:245 templates/download/packages.html:77
 msgid "ChangeLog"
 msgstr "ChangeLog"
 
@@ -7608,7 +7608,7 @@ msgstr ""
 msgid "Import the GPG key used to sign the repositories:"
 msgstr ""
 
-#: templates/download/debian.html:75 templates/download/packages.html:130
+#: templates/download/debian.html:75 templates/download/packages.html:132
 msgid "In case of problem, the GPG key can be downloaded here:"
 msgstr ""
 
@@ -7742,11 +7742,15 @@ msgstr ""
 "<strong>Aviso:</strong> não é recomendado baixar qualquer versão antiga, "
 "porque eles são menos estáveis."
 
-#: templates/download/packages.html:37
+#: templates/download/packages.html:38
 msgid "next stable version"
 msgstr "próxima versão estável"
 
-#: templates/download/packages.html:47
+#: templates/download/packages.html:38
+msgid "unknown date"
+msgstr ""
+
+#: templates/download/packages.html:49
 #, fuzzy
 #| msgid ""
 #| "<strong>Warning:</strong> this version may be unstable or it may not "
@@ -7758,7 +7762,7 @@ msgstr ""
 "<strong>Aviso:</strong> esta versão pode ser instável ou pode não compilar, "
 "você está avisado!"
 
-#: templates/download/packages.html:54
+#: templates/download/packages.html:56
 #, fuzzy, python-format
 #| msgid ""
 #| "<strong>Warning:</strong> this version has a <a "
@@ -7771,13 +7775,13 @@ msgstr ""
 "<strong>Aviso:</strong> esta versão tem uma <a "
 "href=\"%(security_url)s\">vulnerabilidade</a> a qual foi consertada na versão"
 
-#: templates/download/packages.html:56
+#: templates/download/packages.html:58
 #, fuzzy
 #| msgid "Fixed in version"
 msgid "Vulnerabilities fixed in versions:"
 msgstr "Corrigido na versão"
 
-#: templates/download/packages.html:62
+#: templates/download/packages.html:64
 #, fuzzy, python-format
 #| msgid ""
 #| "<strong>Warning:</strong> this version has a <a "
@@ -7795,37 +7799,37 @@ msgstr[1] ""
 "<strong>Aviso:</strong> esta versão tem uma <a "
 "href=\"%(security_url)s\">vulnerabilidade</a> a qual foi consertada na versão"
 
-#: templates/download/packages.html:67
+#: templates/download/packages.html:69
 msgid "It is recommended to upgrade from any older version to this one."
 msgstr ""
 
-#: templates/download/packages.html:80
+#: templates/download/packages.html:82
 msgid "Release notes"
 msgstr "Notas de lançamento"
 
-#: templates/download/packages.html:86
+#: templates/download/packages.html:88
 #, fuzzy
 #| msgid "Packages"
 msgid "Packages:"
 msgstr "Pacotes"
 
-#: templates/download/packages.html:95
+#: templates/download/packages.html:97
 msgid "Checksum"
 msgstr ""
 
-#: templates/download/packages.html:95
+#: templates/download/packages.html:97
 #, fuzzy
 #| msgid "Checksum and GPG signature"
 msgid "GPG signature"
 msgstr "Checksum e assinatura GPG"
 
-#: templates/download/packages.html:122
+#: templates/download/packages.html:124
 #, fuzzy
 #| msgid "Checking the signatures"
 msgid "Checking the signatures:"
 msgstr "Verificando as assinaturas"
 
-#: templates/download/packages.html:125
+#: templates/download/packages.html:127
 #, fuzzy
 #| msgid ""
 #| "Check that the fingerprint is correct by asking to a developer on "
@@ -7837,25 +7841,25 @@ msgstr ""
 "Verifique que o fingerprint é correto perguntando à um desenvolvedor em "
 "#weechat (irc.libera.chat)."
 
-#: templates/download/packages.html:128
+#: templates/download/packages.html:130
 #, fuzzy
 #| msgid "Import the gpg key:"
 msgid "Import the GPG key:"
 msgstr "Importando a chave gpg:"
 
-#: templates/download/packages.html:136
+#: templates/download/packages.html:138
 msgid "Trust the key:"
 msgstr "Confie na chave:"
 
-#: templates/download/packages.html:141
+#: templates/download/packages.html:143
 msgid "In directory with package + signature:"
 msgstr "No diretório com o pacote + assinatura:"
 
-#: templates/download/packages.html:145
+#: templates/download/packages.html:147
 msgid "If the signature is OK you should see a message like this one:"
 msgstr "Se a assinatura está OK você deve ser uma mensagem como esta:"
 
-#: templates/download/packages.html:158
+#: templates/download/packages.html:160
 #, fuzzy
 #| msgid "No theme found."
 msgid "No package found."
