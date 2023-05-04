@@ -26,7 +26,6 @@ from django.utils.translation import gettext, gettext_noop
 
 from weechat.common.i18n import i18n_autogen
 from weechat.common.models import Project
-from weechat.common.templatetags.localdate import localdate
 from weechat.common.tracker import commits_links, tracker_links
 
 

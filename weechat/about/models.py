@@ -24,7 +24,6 @@ from django.db.models.signals import post_save
 from django.utils.translation import gettext, gettext_lazy
 
 from weechat.common.i18n import i18n_autogen
-from weechat.common.templatetags.localdate import localdate
 
 
 SPONSOR_TYPE_CHOICES = (

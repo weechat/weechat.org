@@ -30,11 +30,9 @@ from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
 from django.db import models
 from django.db.models.signals import pre_save
-from django.utils.safestring import mark_safe
 
 from weechat.common.models import Project
 from weechat.common.path import files_path_join
-from weechat.common.templatetags.localdate import localdate
 from weechat.common.utils import version_to_tuple
 
 PACKAGES_COMPRESSION_EXT = (
