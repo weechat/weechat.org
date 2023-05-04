@@ -27,8 +27,10 @@ import sys
 import pytz
 
 from django.conf import settings
+from django.core.exceptions import ObjectDoesNotExist
 from django.db import models
 from django.db.models.signals import pre_save
+from django.utils.safestring import mark_safe
 
 from weechat.common.models import Project
 from weechat.common.path import files_path_join
@@ -63,6 +65,19 @@ class Release(models.Model):
     def date_l10n(self):
         """Return the release date formatted with localized date format."""
         return localdate(self.date)
+
+    def next_stable_date(self):
+        """Return the next stable release date (only for "devel" version)."""
+        if self.version != 'devel':
+            return None
+        next_stable = self.description.split('-')[0]
+        try:
+            return Release.objects.get(
+                project__name=self.project.name,
+                version=next_stable,
+            ).date
+        except ObjectDoesNotExist:
+            return None
 
     def security_fixed_versions(self):
         """Return the list of versions fixing security issues."""
@@ -259,10 +274,6 @@ def set_devel_version(project, version):
             version='devel',
         )
     release.description = version
-    if Release.objects.filter(project__name=project, version=version_digits).exists():
-        release.date = (Release.objects
-                        .get(project__name=project, version=version_digits)
-                        .date)
     release.save()
 
 

@@ -19,8 +19,6 @@
 
 """Views for "dev" menu."""
 
-import re
-
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponse
 from django.shortcuts import render
@@ -209,6 +207,7 @@ def stats_repo(request, stats='weechat'):
 def get_info(name, version):
     """Get an info."""
     # pylint: disable=too-many-branches,too-many-return-statements
+    next_stable = version['devel'].description.split('-')[0]
     if name == 'stable':
         return version['stable'].description
     if name == 'stable_number':
@@ -236,11 +235,11 @@ def get_info(name, version):
             pass
         return git
     if name == 'next_stable':
-        return re.sub('-.*', '', version['devel'].description)
+        return next_stable
     if name == 'next_stable_number':
         return version_as_int(version['devel'].description)
     if name == 'next_stable_date':
-        return str(version['devel'].date)
+        return str(version[next_stable].date)
     if name == 'release_signing_fingerprint':
         return PGP_KEYS['release_signing']
     if name == 'debian_repository_signing_fingerprint':
@@ -269,6 +268,9 @@ def info(request, name=None):
             'stable': Release.objects.get(project__name='weechat', version='stable'),
             'devel': Release.objects.get(project__name='weechat', version='devel'),
         }
+        next_stable = version['devel'].description.split('-')[0]
+        version[next_stable] = Release.objects.get(project__name='weechat',
+                                                   version=next_stable)
     except ObjectDoesNotExist:
         return render(
             request,

@@ -34,7 +34,9 @@
       {% endif %}
       <small class="text-muted">
         {% if version == "devel" %}
-        {% if package_version.grouper.date %}({% trans "next stable version" %}: &asymp; {{ package_version.grouper.date_l10n }}){% endif %}
+        {% with next_stable_date=package_version.grouper.next_stable_date %}
+        ({% trans "next stable version" %}: {% if next_stable_date %}{{ next_stable_date|localdate }}{% else %}{% trans "not planned yet" %}{% endif %})
+        {% endwith %}
         {% else %}
         ({{ package_version.grouper.date_l10n }})
         {% endif %}
