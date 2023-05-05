@@ -12,6 +12,7 @@ def __i18n_news_info():
     """Translations for news/info."""
     gettext_noop("10th birthday for WeeChat!\n\nHappy birthday!")
     gettext_noop("15th birthday for WeeChat!\n\nHappy birthday!")
+    gettext_noop("20th birthday for WeeChat!\n\nHappy birthday!")
     gettext_noop("<a href=\"http://en.wikipedia.org/wiki/Dennis_Ritchie\">Dennis Ritchie</a>, creator of the C programming language, and key developer of the Unix operating system has died.\nWeeChat is written in C, and runs on derivatives of Unix.\nSo we just say a big thank you to you, Dennis, for your wonderful job.")
     gettext_noop("A Raspbian repository has been added for Raspberry Pi (thanks to Nils G. for building the packages every night).\n\nThe existing Debian repositories have been moved from flashtux.org to weechat.org, like the new Raspbian one.\n\nA new section has been added on download page with a summary of all repositories: <a href=\"/download/debian/\">Debian/Raspbian repositories</a>.")
     gettext_noop("A map of developers, contributors and users is now available. Everybody is invited to add nick/location to this map.")
@@ -39,6 +40,7 @@ def __i18n_news_info():
     gettext_noop("Git repositories moved to GitHub")
     gettext_noop("Happy birthday WeeChat, 10 years old!")
     gettext_noop("Happy birthday WeeChat, 15 years old!")
+    gettext_noop("Happy birthday WeeChat, 20 years old!")
     gettext_noop("Happy colorful Christmas with WeeChat!")
     gettext_noop("IPv6 for weechat.org")
     gettext_noop("IRC Client WeeChat is under development, a new screenshot is available: nick list and window for each channel.\nThis version is still unstable and doesn't implement all IRC commands.\nCurrent developments are:\n- IRC protocol,\n- configuration file management,\n- ncurses front-end (color display, window management),\n- Gtk+ and Qt front-ends.")
