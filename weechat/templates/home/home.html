@@ -25,7 +25,7 @@
         {% endif %}
       </div>
       <div class="col-auto ms-3 px-0">
-        <a href="{% url 'home_news' %}" class="btn btn-lg btn-secondary mt-4 mb-1 px-3 px-lg-5 js-scroll">
+        <a href="{% url 'home_news' %}" class="btn btn-lg btn-primary mt-4 mb-1 px-3 px-lg-5 js-scroll">
           {% include "svg/megaphone.html" %} {% trans "News" %}
         </a>
       </div>
@@ -39,10 +39,10 @@
     <p class="my-3">
       {% trans "Full-featured IRC plugin: multi-servers, proxy support, IPv6, SASL authentication, nicklist, DCC, and many other features." %}
     </p>
-    <a href="{% url 'about_features' %}" class="btn btn-lg btn-success mt-4 me-3 px-3 px-lg-5">
+    <a href="{% url 'about_features' %}" class="btn btn-lg btn-primary mt-4 me-3 px-3 px-lg-5">
       {% include "svg/checklist.html" %} {% trans "Features" %}
     </a>
-    <a href="{% url 'about_screenshots' %}" class="btn btn-lg btn-secondary mt-4 me-3 px-3 px-lg-5">
+    <a href="{% url 'about_screenshots' %}" class="btn btn-lg btn-primary mt-4 me-3 px-3 px-lg-5">
       {% include "svg/camera.html" %} {% trans "Screenshots" %}
     </a>
   </div>
@@ -66,7 +66,7 @@
       {% include "svg/package.html" %} {% trans "Scripts" %}
     </a>
     {% comment %}
-    <a href="{% url 'themes' %}" class="btn btn-lg btn-secondary mt-4 me-3 px-3 px-lg-5">
+    <a href="{% url 'themes' %}" class="btn btn-lg btn-primary mt-4 me-3 px-3 px-lg-5">
       {% include "svg/paintcan.html" %} {% trans "Themes" %}
     </a>
     {% endcomment %}
@@ -81,10 +81,10 @@
       <br>
       {% trans "Connect to your WeeChat from your browser, Android, Qt or even Emacs!" %}
     </p>
-    <a href="{% url 'about_interfaces' %}" class="btn btn-lg btn-success mt-4 me-3 px-3 px-lg-5">
+    <a href="{% url 'about_interfaces' %}" class="btn btn-lg btn-primary mt-4 me-3 px-3 px-lg-5">
       {% include "svg/desktop.html" %} {% trans "Interfaces" %}
     </a>
-    <a href="{% url 'about_screenshots_app' app='relay' %}" class="btn btn-lg btn-secondary mt-4 me-3 px-3 px-lg-5">
+    <a href="{% url 'about_screenshots_app' app='relay' %}" class="btn btn-lg btn-primary mt-4 me-3 px-3 px-lg-5">
       {% include "svg/camera.html" %} {% trans "Screenshots" %}
     </a>
   </div>
@@ -107,7 +107,7 @@
     <a href="{% url 'doc' %}" class="btn btn-lg btn-primary mt-4 me-3 px-3 px-lg-5">
       {% include "svg/book.html" %} {% trans "Documentation" %}
     </a>
-    <a href="{% url 'about_support' %}" class="btn btn-lg btn-secondary mt-4 ms-0 me-3 px-3 px-lg-5">
+    <a href="{% url 'about_support' %}" class="btn btn-lg btn-primary mt-4 ms-0 me-3 px-3 px-lg-5">
       {% include "svg/discussion.html" %} {% trans "Support" %}
     </a>
   </div>
@@ -126,7 +126,7 @@
         <li>{% trans "donation: any contribution is appreciated and important for motivation." %}</li>
       </ul>
     </p>
-    <a href="{% url 'donate' %}" class="btn btn-lg btn-success mt-4 me-3 px-3 px-lg-5">
+    <a href="{% url 'donate' %}" class="btn btn-lg btn-primary mt-4 me-3 px-3 px-lg-5">
       {% include "svg/heart.html" %} {% trans "Make a donation" %}
     </a>
   </div>
