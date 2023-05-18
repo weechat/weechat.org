@@ -161,6 +161,8 @@ DATABASES = {
     },
 }
 
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
 ADMIN_PAGE = 'admin'
 
 # read settings_local.py (optional file)
