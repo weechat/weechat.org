@@ -24,6 +24,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 
 from weechat.common.models import Project
+from weechat.common.utils import version_to_tuple
 from weechat.download.models import Release, Package
 
 
@@ -56,13 +57,18 @@ def packages(request, project='weechat', version='stable'):
                             )
                             .order_by('type__priority'))
         elif version == 'all':
-            package_list = (Package.objects.all()
-                            .filter(
-                                version__project__name=project,
-                                version__project__visible=1,
-                            )
-                            .exclude(version__version='devel')
-                            .order_by('-version__date', 'type__priority'))
+            package_list_unsorted = (Package.objects.all()
+                                     .filter(
+                                         version__project__name=project,
+                                         version__project__visible=1,
+                                     )
+                                     .exclude(version__version='devel'))
+            package_list = sorted(
+                package_list_unsorted,
+                key=lambda pkg: (version_to_tuple(pkg.version.version),
+                                 -1 * pkg.type.priority),
+                reverse=True,
+            )
         elif version == 'old':
             stable_desc = (Release.objects
                            .get(
@@ -71,14 +77,19 @@ def packages(request, project='weechat', version='stable'):
                                version='stable',
                            )
                            .description)
-            package_list = (Package.objects.all()
-                            .filter(
-                                version__project__name=project,
-                                version__project__visible=1,
-                            )
-                            .exclude(version__version='devel')
-                            .exclude(version__version=stable_desc)
-                            .order_by('-version__date', 'type__priority'))
+            package_list_unsorted = (Package.objects.all()
+                                     .filter(
+                                         version__project__name=project,
+                                         version__project__visible=1,
+                                     )
+                                     .exclude(version__version='devel')
+                                     .exclude(version__version=stable_desc))
+            package_list = sorted(
+                package_list_unsorted,
+                key=lambda pkg: (version_to_tuple(pkg.version.version),
+                                 -1 * pkg.type.priority),
+                reverse=True,
+            )
         else:
             package_list = (Package.objects
                             .filter(
