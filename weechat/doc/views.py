@@ -132,7 +132,7 @@ def get_bestlang(request, languages):
 
 def documentation(request, project='weechat', version='stable'):
     """Page with docs for stable or devel version."""
-    # pylint: disable=too-many-locals
+    # pylint: disable=too-many-locals,too-many-branches,too-many-nested-blocks
     get_object_or_404(Project, name=project, visible=1)
     timezone = pytz.timezone(settings.TIME_ZONE)
     languages = (Language.objects
