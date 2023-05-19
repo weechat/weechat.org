@@ -151,6 +151,7 @@ def documentation(request, project='weechat', version='stable'):
             .order_by('version__priority', 'priority'))
     doc_list = []
     doc_list2 = []
+    build_date = None
     for doc in docs:
         if doc.version.version != '-':
             docv = (Release.objects
@@ -166,24 +167,24 @@ def documentation(request, project='weechat', version='stable'):
         if stable_devel == version or docv == '-':
             files = []
             for lang in languages:
-                name = (f'{project}/{doc.version.directory}/'
-                        f'weechat_{doc.name}.{lang.lang}.html')
-                full_name = files_path_join('doc', name)
-                if os.path.exists(full_name):
-                    files.append(
-                        (
-                            os.path.normpath(name),
-                            datetime.fromtimestamp(os.path.getmtime(full_name),
-                                                   tz=timezone),
-                            lang,
-                        )
-                    )
+                if doc.url:
+                    files.append((lang, '', doc.url if lang.lang == 'en' else ''))
                 else:
-                    files.append(['', '', lang.lang])
+                    name = (f'{project}/{doc.version.directory}/'
+                            f'weechat_{doc.name}.{lang.lang}.html')
+                    full_name = files_path_join('doc', name)
+                    if os.path.exists(full_name):
+                        if not build_date:
+                            build_date = datetime.fromtimestamp(
+                                os.path.getmtime(full_name),
+                                tz=timezone)
+                        files.append((lang, os.path.normpath(name), ''))
+                    else:
+                        files.append((lang, '', ''))
             if docv == '-':
-                doc_list.append([doc, files])
+                doc_list.append((doc, files))
             else:
-                doc_list2.append([doc, files])
+                doc_list2.append((doc, files))
     try:
         doc_version = (Release.objects
                        .get(
@@ -204,6 +205,7 @@ def documentation(request, project='weechat', version='stable'):
             'bestlang': bestlang,
             'versions': versions,
             'doc_list': doc_list + doc_list2,
+            'build_date': build_date,
             'i18n': get_i18n_stats(project),
             'doc_version': doc_version,
         },

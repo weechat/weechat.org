@@ -128,28 +128,20 @@ class Version(models.Model):
 
 class Doc(models.Model):
     """A WeeChat document file."""
-    NAME_I18N = {
-        'faq': gettext_noop('FAQ'),
-        'user': gettext_noop('User\'s guide'),
-        'plugin_api': gettext_noop('Plugin API reference'),
-        'scripting': gettext_noop('Scripting guide'),
-        'quickstart': gettext_noop('Quick Start guide'),
-        'tester': gettext_noop('Tester\'s guide'),
-        'dev': gettext_noop('Developer\'s guide'),
-        'relay_protocol': gettext_noop('Relay protocol'),
-    }
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     version = models.ForeignKey(Version, on_delete=models.CASCADE)
     name = models.CharField(max_length=64)
+    description = models.CharField(max_length=256, blank=True)
+    url = models.CharField(max_length=512, blank=True)
     devel = models.BooleanField(default=False)
     priority = models.IntegerField(default=0)
 
     def __str__(self):
         return f'{self.name} ({self.version}, {self.priority})'
 
-    def name_i18n(self):
-        """Return the translated doc name."""
-        return gettext(self.NAME_I18N.get(self.name, self.name))
+    def description_i18n(self):
+        """Return the translated description with fallback to name if not set."""
+        return gettext(self.description) if self.description else self.name
 
     class Meta:
         ordering = ['priority']
@@ -293,6 +285,16 @@ class Security(models.Model):
         ordering = ['-date']
 
 
+def handler_doc_saved(sender, **kwargs):
+    """Write file _i18n_doc.py with docs to translate."""
+    # pylint: disable=unused-argument
+    strings = []
+    for doc in Doc.objects.order_by('name'):
+        if doc.description:
+            strings.append(doc.description)
+    i18n_autogen('doc', 'doc', strings)
+
+
 def handler_security_saved(sender, **kwargs):
     """Write file _i18n_security.py with security issues to translate."""
     # pylint: disable=unused-argument
@@ -309,4 +311,5 @@ def handler_security_saved(sender, **kwargs):
     i18n_autogen('doc', 'security', strings)
 
 
+post_save.connect(handler_doc_saved, sender=Doc)
 post_save.connect(handler_security_saved, sender=Security)

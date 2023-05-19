@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-05 23:48+0200\n"
-"PO-Revision-Date: 2023-05-05 23:50+0200\n"
+"POT-Creation-Date: 2023-05-19 19:00+0200\n"
+"PO-Revision-Date: 2023-05-19 18:38+0200\n"
 "Last-Translator: Sébastien Helleu <flashcode@flashtux.org>\n"
 "Language-Team: French <flashcode@flashtux.org>\n"
 "Language: fr\n"
@@ -301,71 +301,71 @@ msgstr "Entreprise"
 msgid "This field is required."
 msgstr "Ce champ est obligatoire."
 
-#: dev/views.py:35
+#: dev/views.py:36
 msgid "Stable version."
 msgstr "Version stable."
 
-#: dev/views.py:39
+#: dev/views.py:40
 msgid ""
 "Stable version, as number, like plugin API: info_get(\"version_number\")."
 msgstr ""
 "Version stable, sous forme de nombre, comme l'API extension : "
 "info_get(\"version_number\")."
 
-#: dev/views.py:44
+#: dev/views.py:45
 msgid "Date of stable version (format: \"YYYY-MM-DD\")."
 msgstr "Date de la version stable (format : \"YYYY-MM-DD\")."
 
-#: dev/views.py:48
+#: dev/views.py:49
 msgid "Development version."
 msgstr "Version de développement."
 
-#: dev/views.py:52
+#: dev/views.py:53
 msgid "Output of \"git rev-parse HEAD\" for sources repository."
 msgstr "Sortie de \"git rev-parse HEAD\" pour le dépôt des sources."
 
-#: dev/views.py:57
+#: dev/views.py:58
 msgid "Output of \"git rev-parse HEAD\" for scripts repository."
 msgstr "Sortie de \"git rev-parse HEAD\" pour le dépôt des scripts."
 
-#: dev/views.py:62
+#: dev/views.py:63
 msgid "Next stable version."
 msgstr "Prochaine version stable."
 
-#: dev/views.py:66
+#: dev/views.py:67
 msgid ""
-"Next stable version, as number, like plugin API: info_get(\"version_number"
-"\")."
+"Next stable version, as number, like plugin API: "
+"info_get(\"version_number\")."
 msgstr ""
 "Prochaine version stable, sous forme de nombre, comme l'API extension : "
 "info_get(\"version_number\")."
 
-#: dev/views.py:71
+#: dev/views.py:72
 msgid "Approximate date of next stable version (format: \"YYYY-MM-DD\")."
 msgstr ""
 "Date approximative de la prochaine version stable (format : \"YYYY-MM-DD\")."
 
-#: dev/views.py:76
+#: dev/views.py:77
 msgid "Release signing key fingerprint (format: PGP fingerprint)."
 msgstr ""
 "Fingerprint de la clé de signature des versions (format : fingerprint PGP)."
 
-#: dev/views.py:81 templates/download/packages.html:134
+#: dev/views.py:82 templates/download/packages.html:134
 msgid "Release signing key (format: PGP public key)."
 msgstr "Clé de signature de version (format : clé publique PGP)."
 
-#: dev/views.py:85
+#: dev/views.py:86
 msgid ""
 "Debian/Ubuntu repository signing key fingerprint (format: PGP fingerprint)."
 msgstr ""
 "Fingerprint de la clé de signature des dépôts Debian/Ubuntu (format : "
 "fingerprint PGP)."
 
-#: dev/views.py:90 templates/download/debian.html:77
+#: dev/views.py:91 templates/download/debian.html:77
 msgid "Debian/Ubuntu repository signing key (format: PGP public key)."
 msgstr "Clé de signature des dépôts Debian/Ubuntu (format : clé publique PGP)."
 
-#: dev/views.py:95
+#: dev/views.py:96
 msgid "All non-binary infos (one info by line, format: \"info:value\")."
 msgstr ""
 "Toutes les infos non binaires (une info par ligne, format : \"info:valeur\")."
@@ -373,6 +373,38 @@ msgstr ""
 #: dev/views.py:300
 msgid "(binary data)"
 msgstr "(données binaires)"
+
+#: doc/_i18n_doc.py:13
+msgid "Developer's guide"
+msgstr "Guide du développeur"
+
+#: doc/_i18n_doc.py:14
+msgid "FAQ"
+msgstr "FAQ"
+
+#: doc/_i18n_doc.py:15
+msgid "Plugin API reference"
+msgstr "Référence API extension"
+
+#: doc/_i18n_doc.py:16
+msgid "Quick Start guide"
+msgstr "Guide de démarrage rapide"
+
+#: doc/_i18n_doc.py:17
+msgid "Relay protocol"
+msgstr "Protocole Relay"
+
+#: doc/_i18n_doc.py:18
+msgid "Scripting guide"
+msgstr "Guide pour scripts"
+
+#: doc/_i18n_doc.py:19
+msgid "User's guide"
+msgstr "Guide utilisateur"
+
+#: doc/_i18n_doc.py:20
+msgid "Wiki (user contributions)"
+msgstr "Wiki (contributions utilisateurs)"
 
 #: doc/_i18n_security.py:13
 msgid ""
@@ -858,43 +890,11 @@ msgstr "Serbe"
 msgid "Turkish"
 msgstr "Turc"
 
-#: doc/models.py:132
-msgid "FAQ"
-msgstr "FAQ"
-
-#: doc/models.py:133
-msgid "User's guide"
-msgstr "Guide utilisateur"
-
-#: doc/models.py:134
-msgid "Plugin API reference"
-msgstr "Référence API extension"
-
-#: doc/models.py:135
-msgid "Scripting guide"
-msgstr "Guide pour scripts"
-
-#: doc/models.py:136
-msgid "Quick Start guide"
-msgstr "Guide de démarrage rapide"
-
-#: doc/models.py:137
-msgid "Tester's guide"
-msgstr "Guide du testeur"
-
-#: doc/models.py:138
-msgid "Developer's guide"
-msgstr "Guide du développeur"
-
-#: doc/models.py:139
-msgid "Relay protocol"
-msgstr "Protocole Relay"
-
-#: doc/models.py:202 doc/models.py:211
+#: doc/models.py:194 doc/models.py:203
 msgid "Pending"
 msgstr "En attente"
 
-#: doc/models.py:207 templates/doc/security.html:268
+#: doc/models.py:199 templates/doc/security.html:268
 msgid "Not available"
 msgstr "Non disponible"
 
@@ -988,8 +988,8 @@ msgstr ""
 msgid ""
 "A new mailing list has been added for the security advisories.\n"
 "To be warned immediately when a security vulnerability is found in WeeChat, "
-"just <a href=\"https://lists.nongnu.org/mailman/listinfo/weechat-security"
-"\">subscribe to the list</a>."
+"just <a href=\"https://lists.nongnu.org/mailman/listinfo/weechat-"
+"security\">subscribe to the list</a>."
 msgstr ""
 "Une nouvelle liste de diffusion a été ajoutée pour les annonces de "
 "sécurité.\n"
@@ -1158,8 +1158,9 @@ msgstr ""
 "Note : c'est une version alpha de l'interface, de nombreuses fonctionnalités "
 "sont manquantes.\n"
 "\n"
-"Plus d'informations et une capture d'écran sont disponibles sur le <a href="
-"\"/blog/post/2011/12/25/QWeeChat-Python-Qt-GUI\">blog de développement</a>.\n"
+"Plus d'informations et une capture d'écran sont disponibles sur le <a "
+"href=\"/blog/post/2011/12/25/QWeeChat-Python-Qt-GUI\">blog de développement</"
+"a>.\n"
 "\n"
 "Joyeux Noël et bonne année 2012 avec WeeChat et QWeeChat !"
 
@@ -1414,8 +1415,8 @@ msgid ""
 "a>.\n"
 "It is written in Python and uses Django, and gettext for translations."
 msgstr ""
-"Le code source de weechat.org est maintenant disponible sur GitHub : <a href="
-"\"https://github.com/weechat/weechat.org\">https://github.com/weechat/"
+"Le code source de weechat.org est maintenant disponible sur GitHub : <a "
+"href=\"https://github.com/weechat/weechat.org\">https://github.com/weechat/"
 "weechat.org</a>.\n"
 "Il est écrit en Python et utilise Django, et gettext pour les traductions."
 
@@ -1545,8 +1546,8 @@ msgstr ""
 "- paramètre de ligne de commande \"-c\" pour voir les options de "
 "configuration\n"
 "- dans la config par défaut, le nick est l'utilisateur un*x\n"
-"- code sécurisé pour éviter tout débordement de tampon (\"buffer overflow"
-"\")\n"
+"- code sécurisé pour éviter tout débordement de tampon (\"buffer "
+"overflow\")\n"
 "- nombreux bugs corrigés."
 
 #: news/_i18n_info.py:74
@@ -2391,8 +2392,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2011/01/16/Version-0.3.4\">blog "
-"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.3.4.html"
-"\">ChangeLog</a>."
+"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.3.4."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:104
 msgid ""
@@ -2442,8 +2443,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2011/05/15/Version-0.3.5\">blog "
-"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.3.5.html"
-"\">ChangeLog</a>."
+"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.3.5."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:105
 msgid ""
@@ -2499,8 +2500,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2011/10/22/Version-0.3.6\">blog "
-"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.3.6.html"
-"\">ChangeLog</a>."
+"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.3.6."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:106
 msgid ""
@@ -2542,8 +2543,8 @@ msgstr ""
 "- support des scripts Scheme (nouvelle extension \"guile\")\n"
 "- support de Python 3.x (mais version 2.x toujours recommandée)\n"
 "- ajout du protocole \"weechat\" dans l'extension relay pour les interfaces "
-"distances, comme <a href=\"/blog/post/2011/12/25/QWeeChat-Python-Qt-GUI"
-"\">QWeeChat</a>\n"
+"distances, comme <a href=\"/blog/post/2011/12/25/QWeeChat-Python-Qt-"
+"GUI\">QWeeChat</a>\n"
 "- nouvelle option irc.color.mirc_remap pour réassigner les couleurs mirc "
 "dans les messages irc\n"
 "- nouvelles options irc.look.highlight_{server|channel|pv} pour "
@@ -2565,8 +2566,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2012/02/26/Version-0.3.7\">blog "
-"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.3.7.html"
-"\">ChangeLog</a>."
+"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.3.7."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:107
 msgid ""
@@ -2613,8 +2614,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2012/06/03/Version-0.3.8\">blog "
-"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.3.8.html"
-"\">ChangeLog</a>."
+"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.3.8."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:108
 msgid ""
@@ -2668,8 +2669,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2012/09/29/Version-0.3.9\">blog "
-"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.3.9.html"
-"\">ChangeLog</a>."
+"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.3.9."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:109
 msgid "Version 0.3.9.1 (security release)"
@@ -2758,8 +2759,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2013/01/20/Version-0.4.0\">blog "
-"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.4.0.html"
-"\">ChangeLog</a>."
+"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.4.0."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:114
 msgid ""
@@ -2814,8 +2815,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2013/05/20/Version-0.4.1\">blog "
-"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.4.1.html"
-"\">ChangeLog</a>."
+"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.4.1."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:115
 msgid ""
@@ -2883,8 +2884,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2013/10/06/Version-0.4.2\">blog "
-"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.4.2.html"
-"\">ChangeLog</a>."
+"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.4.2."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:116
 msgid ""
@@ -2930,8 +2931,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2014/02/09/Version-0.4.3\">blog "
-"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.4.3.html"
-"\">ChangeLog</a>."
+"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.4.3."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:117
 msgid ""
@@ -2990,8 +2991,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2014/08/15/Version-1.0\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.0.html"
-"\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.0."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:118
 msgid ""
@@ -3062,8 +3063,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2015/01/11/Version-1.1\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.1.html"
-"\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.1."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:120
 msgid ""
@@ -3123,8 +3124,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2015/05/10/Version-1.2\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.2.html"
-"\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.2."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:122
 msgid ""
@@ -3154,8 +3155,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2015/08/16/Version-1.3\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.3.html"
-"\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.3."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:123
 msgid ""
@@ -3205,8 +3206,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2016/01/10/Version-1.4\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.4.html"
-"\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.4."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:124
 msgid ""
@@ -3241,8 +3242,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2016/05/01/Version-1.5\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.5.html"
-"\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.5."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:125
 msgid ""
@@ -3279,14 +3280,14 @@ msgstr ""
 "- ajout du support des triggers qui s'exécutent une seule fois\n"
 "- renommage des options de serveur \"default_msg_{kick|part|quit}\" en "
 "\"msg_{kick|part|quit}\", qui sont évaluées\n"
-"- support de l'échappement de la virgule dans la commande \"init"
-"\" (protocole relai weechat)\n"
+"- support de l'échappement de la virgule dans la commande "
+"\"init\" (protocole relai weechat)\n"
 "- nombreux bugs corrigés.\n"
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2016/10/02/Version-1.6\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.6.html"
-"\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.6."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:126
 msgid ""
@@ -3324,8 +3325,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2017/01/15/Version-1.7\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.7.html"
-"\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.7."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:127
 msgid "Version 1.7.1 (security release)"
@@ -3395,8 +3396,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2017/05/13/Version-1.8\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.8.html"
-"\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.8."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:130
 #, python-brace-format
@@ -3439,8 +3440,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2017/06/25/Version-1.9\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.9.html"
-"\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.9."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:131
 msgid "Version 1.9.1 (security release)"
@@ -3515,8 +3516,8 @@ msgstr ""
 "- ajout de deux nouveaux objets de barre \"buflist2\" et \"buflist3\" en "
 "utilisant les mêmes options de configuration de format\n"
 "- ajout du flag \"input_get_empty\" dans le tampon\n"
-"- ajout des signaux \"buffer_filters_enabled\" et \"buffer_filters_disabled"
-"\"\n"
+"- ajout des signaux \"buffer_filters_enabled\" et "
+"\"buffer_filters_disabled\"\n"
 "- support du chargement des extensions depuis un chemin défini dans la "
 "variable \"WEECHAT_EXTRA_LIBDIR\"\n"
 "- ajout de l'infolist \"alias_default\" (liste des alias par défaut)\n"
@@ -3544,8 +3545,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2017/12/03/Version-2.0\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/ChangeLog-2.0.html"
-"\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-2.0."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:134
 msgid ""
@@ -3578,8 +3579,8 @@ msgid ""
 "- add IRC server option \"split_msg_max_length\"\n"
 "- add option logger.file.fsync\n"
 "- add option logger.look.backlog_conditions\n"
-"- add configuration file for each script plugin (\"python.conf\", \"perl.conf"
-"\", ...)\n"
+"- add configuration file for each script plugin (\"python.conf\", \"perl."
+"conf\", ...)\n"
 "- add \"eval\" option in script commands and info \"xxx_eval\" (python, "
 "perl, ruby, lua and guile)\n"
 "- add infos \"xxx_interpreter\" and \"xxx_version\" in script plugins\n"
@@ -3605,8 +3606,8 @@ msgstr ""
 "- ajout de l'option de servuer IRC \"split_msg_max_length\"\n"
 "- ajout de l'option logger.file.fsync\n"
 "- ajout de l'option logger.look.backlog_conditions\n"
-"- ajout d'un fichier de configuration pour chaque extension (\"python.conf"
-"\", \"perl.conf\", ...)\n"
+"- ajout d'un fichier de configuration pour chaque extension (\"python."
+"conf\", \"perl.conf\", ...)\n"
 "- ajout de l'option \"eval\" dans les commandes de scripts et infos "
 "\"xxx_eval\" (python, perl, ruby, lua et guile)\n"
 "- ajout des infos \"xxx_interpreter\" et \"xxx_version\" dans les extensions "
@@ -3617,8 +3618,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2018/03/18/Version-2.1\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/ChangeLog-2.1.html"
-"\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-2.1."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:136
 msgid ""
@@ -3664,8 +3665,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2018/07/14/Version-2.2\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/ChangeLog-2.2.html"
-"\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-2.2."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:137
 msgid ""
@@ -3712,8 +3713,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2018/10/21/Version-2.3\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/ChangeLog-2.3.html"
-"\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-2.3."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:138
 #, python-brace-format
@@ -3769,8 +3770,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2019/02/17/Version-2.4\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/ChangeLog-2.4.html"
-"\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-2.4."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:139
 msgid ""
@@ -3815,8 +3816,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2019/06/06/Version-2.5\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/ChangeLog-2.5.html"
-"\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-2.5."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:140
 msgid ""
@@ -3855,15 +3856,15 @@ msgstr ""
 "défaut à \"${env:SHELL}\"\n"
 "- ajout des filtres \"h=xxx\" et \"he=xxx\" pour filtrer les options par "
 "description dans le tampon fset (traduite ou en anglais)\n"
-"- le caractère de commande est optionnel dans l'option de serveur \"command"
-"\"\n"
+"- le caractère de commande est optionnel dans l'option de serveur "
+"\"command\"\n"
 "- suppression des alias par défaut /ame et /amsg\n"
 "- nombreux bugs corrigés.\n"
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2019/09/08/Version-2.6\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/ChangeLog-2.6.html"
-"\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-2.6."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:141
 msgid ""
@@ -3880,17 +3881,17 @@ msgid ""
 "- add option xfer.file.download_temporary_suffix\n"
 "- add option weechat.look.nick_color_hash_salt\n"
 "- add different WeeChat icons sizes\n"
-"- add calculation of expression in evaluation of expressions with \"calc:xxx"
-"\"\n"
+"- add calculation of expression in evaluation of expressions with \"calc:"
+"xxx\"\n"
 "- add optional default path (evaluated) in completion \"filename\"\n"
 "- add modifier \"color_encode_ansi\"\n"
 "- add support of Guile 2.2\n"
 "- add support of Python 3.8\n"
 "- many bugs fixed.\n"
 "\n"
-"For complete list of new features and bugs fixed, please look at <a href="
-"\"https://blog.weechat.org/post/2019/12/08/Version-2.7\">development blog</"
-"a> or <a href=\"/files/changelog/ChangeLog-2.7.html\">ChangeLog</a>."
+"For complete list of new features and bugs fixed, please look at <a "
+"href=\"https://blog.weechat.org/post/2019/12/08/Version-2.7\">development "
+"blog</a> or <a href=\"/files/changelog/ChangeLog-2.7.html\">ChangeLog</a>."
 msgstr ""
 "La version 2.7 est disponible !\n"
 "\n"
@@ -3956,9 +3957,9 @@ msgid ""
 "- add support of PHP 7.4\n"
 "- many bugs fixed.\n"
 "\n"
-"For complete list of new features and bugs fixed, please look at <a href="
-"\"https://blog.weechat.org/post/2020/03/29/Version-2.8\">development blog</"
-"a> or <a href=\"/files/changelog/ChangeLog-2.8.html\">ChangeLog</a>."
+"For complete list of new features and bugs fixed, please look at <a "
+"href=\"https://blog.weechat.org/post/2020/03/29/Version-2.8\">development "
+"blog</a> or <a href=\"/files/changelog/ChangeLog-2.8.html\">ChangeLog</a>."
 msgstr ""
 "La version 2.8 est disponible !\n"
 "\n"
@@ -3999,15 +4000,15 @@ msgid ""
 "- add option relay.network.auth\\_timeout, add status \"waiting\\_auth\" in "
 "irc and weechat relay protocols\n"
 "- add option \"color\\_bg\\_inactive\" in bars\n"
-"- add bar items \"buffer\\_nicklist\\_count\\_groups\" and \"buffer"
-"\\_nicklist\\_count\\_all\"\n"
+"- add bar items \"buffer\\_nicklist\\_count\\_groups\" and "
+"\"buffer\\_nicklist\\_count\\_all\"\n"
 "- add key Alt+Enter to insert a newline, set default size for input bar to 0 "
 "(automatic)\n"
 "- add a scalable WeeChat logo (SVG)\n"
 "- add base 16/32/64 encoding/decoding in evaluation of expressions with "
 "\"base\\_encode:base,xxx\" and \"base\\_decode:base,xxx\"\n"
-"- add case sensitive wildcard matching comparison operator (\"==*\" and \"!!*"
-"\") and case sensitive/insensitive include comparison operators (\"==-\",  "
+"- add case sensitive wildcard matching comparison operator (\"==*\" and \"!!"
+"*\") and case sensitive/insensitive include comparison operators (\"==-\",  "
 "\"!!-\", \"=-\", \"!-\") in evaluation of expressions\n"
 "- add keys Alt+Shift+B and Alt+Shift+N to toggle buflist/nicklist bars\n"
 "- reload configuration files when the SIGHUP signal is received\n"
@@ -4025,9 +4026,9 @@ msgid ""
 "\"weechat-javascript\"\n"
 "- many bugs fixed.\n"
 "\n"
-"For complete list of new features and bugs fixed, please look at <a href="
-"\"https://blog.weechat.org/post/2020/07/18/Version-2.9\">development blog</"
-"a> or <a href=\"/files/changelog/ChangeLog-2.9.html\">ChangeLog</a>."
+"For complete list of new features and bugs fixed, please look at <a "
+"href=\"https://blog.weechat.org/post/2020/07/18/Version-2.9\">development "
+"blog</a> or <a href=\"/files/changelog/ChangeLog-2.9.html\">ChangeLog</a>."
 msgstr ""
 "La version 2.9 est disponible !\n"
 "\n"
@@ -4093,14 +4094,14 @@ msgid ""
 "\"tg_trigger_name\" in data set by all triggers\n"
 "- add argument \"bytes\" in API function string_dyn_concat\n"
 "- add API function string_color_code_size\n"
-"- add optional list of colors in infos \"nick_color\" and \"nick_color_name"
-"\"\n"
+"- add optional list of colors in infos \"nick_color\" and "
+"\"nick_color_name\"\n"
 "- add pointer to irc_nick in focus of bar item \"buffer_nicklist\"\n"
 "- many bugs fixed.\n"
 "\n"
-"For complete list of new features and bugs fixed, please look at <a href="
-"\"https://blog.weechat.org/post/2020/11/11/Version-3.0\">development blog</"
-"a> or <a href=\"/files/changelog/ChangeLog-3.0.html\">ChangeLog</a>."
+"For complete list of new features and bugs fixed, please look at <a "
+"href=\"https://blog.weechat.org/post/2020/11/11/Version-3.0\">development "
+"blog</a> or <a href=\"/files/changelog/ChangeLog-3.0.html\">ChangeLog</a>."
 msgstr ""
 "La version 3.0 est disponible !\n"
 "\n"
@@ -4173,9 +4174,9 @@ msgid ""
 "- add variable \"${tg_trigger_name}\" in command trigger evaluated strings\n"
 "- many bugs fixed.\n"
 "\n"
-"For complete list of new features and bugs fixed, please look at <a href="
-"\"https://blog.weechat.org/post/2021/03/07/Version-3.1\">development blog</"
-"a> or <a href=\"/files/changelog/ChangeLog-3.1.html\">ChangeLog</a>."
+"For complete list of new features and bugs fixed, please look at <a "
+"href=\"https://blog.weechat.org/post/2021/03/07/Version-3.1\">development "
+"blog</a> or <a href=\"/files/changelog/ChangeLog-3.1.html\">ChangeLog</a>."
 msgstr ""
 "La version 3.1 est disponible !\n"
 "\n"
@@ -4189,9 +4190,9 @@ msgstr ""
 "- amélioration du debug dans la commande /eval\n"
 "- ajout des options \"setvar\" et \"delvar\" dans la commande /buffer, "
 "renommage de l'option \"localvar\" en \"listvar\"\n"
-"- ajout de la variable locale du tampon \"completion_default_template"
-"\" (évaluée) pour écraser la valeur de l'option weechat.completion."
-"default_template\n"
+"- ajout de la variable locale du tampon "
+"\"completion_default_template\" (évaluée) pour écraser la valeur de l'option "
+"weechat.completion.default_template\n"
 "- ajout de l'option \"recreate\" dans la commande /filter\n"
 "- ajout de l'évaluation brute de chaîne dans l'évaluation des expressions "
 "avec \"raw:xxx\"\n"
@@ -4234,9 +4235,9 @@ msgid ""
 "trigger evaluated strings\n"
 "- many bugs fixed.\n"
 "\n"
-"For complete list of new features and bugs fixed, please look at <a href="
-"\"https://blog.weechat.org/post/2021/06/13/Version-3.2\">development blog</"
-"a> or <a href=\"/files/changelog/ChangeLog-3.2.html\">ChangeLog</a>."
+"For complete list of new features and bugs fixed, please look at <a "
+"href=\"https://blog.weechat.org/post/2021/06/13/Version-3.2\">development "
+"blog</a> or <a href=\"/files/changelog/ChangeLog-3.2.html\">ChangeLog</a>."
 msgstr ""
 "La version 3.2 est disponible !\n"
 "\n"
@@ -4302,8 +4303,8 @@ msgid ""
 "- drop support of IRC DH-BLOWFISH and DH-AES SASL mechanisms\n"
 "- add new keys to clear, remove and restore buffers in hotlist\n"
 "- add option \"certs\" in command /debug\n"
-"- add options \"-o\", \"-ol\", \"-i\" and \"-il\" in command \"/plugin list"
-"\"\n"
+"- add options \"-o\", \"-ol\", \"-i\" and \"-il\" in command \"/plugin "
+"list\"\n"
 "- add split of string and shell arguments in evaluation of expressions with "
 "\"split:number,seps,flags,xxx\" and \"split_shell:number,xxx\"\n"
 "- add \"${re:repl_index}\" to get the index of replacement in function "
@@ -4317,9 +4318,9 @@ msgid ""
 "- allow signals \"irc_raw_in\" and \"irc_in\" to eat messages\n"
 "- many bugs fixed.\n"
 "\n"
-"For complete list of new features and bugs fixed, please look at <a href="
-"\"https://blog.weechat.org/post/2021/09/19/Version-3.3\">development blog</"
-"a> or <a href=\"/files/changelog/ChangeLog-3.3.html\">ChangeLog</a>."
+"For complete list of new features and bugs fixed, please look at <a "
+"href=\"https://blog.weechat.org/post/2021/09/19/Version-3.3\">development "
+"blog</a> or <a href=\"/files/changelog/ChangeLog-3.3.html\">ChangeLog</a>."
 msgstr ""
 "La version 3.3 est disponible !\n"
 "\n"
@@ -4344,8 +4345,8 @@ msgstr ""
 "- ajout des options \"-o\", \"-ol\", \"-i\" et \"-il\" dans la commande \"/"
 "plugin list\"\n"
 "- ajout du découpage de chaîne et de paramètres shell dans l'évaluation des "
-"expressions avec \"split:number,seps,flags,xxx\" et \"split_shell:number,xxx"
-"\"\n"
+"expressions avec \"split:number,seps,flags,xxx\" et \"split_shell:number,"
+"xxx\"\n"
 "- ajout de \"${re:repl_index}\" pour obtenir l'index de remplacement dans la "
 "fonction string_eval_expression\n"
 "- ajout de nombre entier aléatoire dans l'évaluation des expressions avec "
@@ -4355,8 +4356,8 @@ msgstr ""
 "- ajout des clés/valeurs avec les étiquettes dans la sortie de "
 "irc_message_parse_to_hashtable\n"
 "- ajout de l'option \"-parted\" dans la commande /allchan\n"
-"- support de suppression de messages (\"eat\") dans les signaux \"irc_raw_in"
-"\" et \"irc_in\"\n"
+"- support de suppression de messages (\"eat\") dans les signaux "
+"\"irc_raw_in\" et \"irc_in\"\n"
 "- nombreux bugs corrigés.\n"
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
@@ -4372,19 +4373,19 @@ msgid ""
 "\n"
 "- improve the IRC message parser\n"
 "- add command /toggle\n"
-"- add user variables in evaluation of expressions with \"define:name,value"
-"\"\n"
+"- add user variables in evaluation of expressions with \"define:name,"
+"value\"\n"
 "- add support of static arrays in hdata\n"
-"- hide key and password in command \"/msg nickserv setpass nick key password"
-"\"\n"
+"- hide key and password in command \"/msg nickserv setpass nick key "
+"password\"\n"
 "- add dark theme in documentation (automatic theme, following browser/"
 "desktop settings)\n"
 "- add support of Ruby 3.0\n"
 "- many bugs fixed.\n"
 "\n"
-"For complete list of new features and bugs fixed, please look at <a href="
-"\"https://blog.weechat.org/post/2021/12/18/Version-3.4\">development blog</"
-"a> or <a href=\"/files/changelog/ChangeLog-3.4.html\">ChangeLog</a>."
+"For complete list of new features and bugs fixed, please look at <a "
+"href=\"https://blog.weechat.org/post/2021/12/18/Version-3.4\">development "
+"blog</a> or <a href=\"/files/changelog/ChangeLog-3.4.html\">ChangeLog</a>."
 msgstr ""
 "La version 3.4 est disponible !\n"
 "\n"
@@ -4443,9 +4444,9 @@ msgid ""
 "- add trigger variables \"${tg_tag_irc_xxx}\" containing IRC message tags\n"
 "- many bugs fixed.\n"
 "\n"
-"For complete list of new features and bugs fixed, please look at <a href="
-"\"https://blog.weechat.org/post/2022/03/27/Version-3.5\">development blog</"
-"a> or <a href=\"/files/changelog/ChangeLog-3.5.html\">ChangeLog</a>."
+"For complete list of new features and bugs fixed, please look at <a "
+"href=\"https://blog.weechat.org/post/2022/03/27/Version-3.5\">development "
+"blog</a> or <a href=\"/files/changelog/ChangeLog-3.5.html\">ChangeLog</a>."
 msgstr ""
 "La version 3.5 est disponible !\n"
 "\n"
@@ -4491,9 +4492,9 @@ msgid ""
 "- add support of PHP 8.2\n"
 "- many bugs fixed.\n"
 "\n"
-"For complete list of new features and bugs fixed, please look at <a href="
-"\"https://blog.weechat.org/post/2022/07/10/Version-3.6\">development blog</"
-"a> or <a href=\"/files/changelog/ChangeLog-3.6.html\">ChangeLog</a>."
+"For complete list of new features and bugs fixed, please look at <a "
+"href=\"https://blog.weechat.org/post/2022/07/10/Version-3.6\">development "
+"blog</a> or <a href=\"/files/changelog/ChangeLog-3.6.html\">ChangeLog</a>."
 msgstr ""
 "La version 3.6 est disponible !\n"
 "\n"
@@ -4535,8 +4536,8 @@ msgid ""
 "- add key Alt+Backspace to delete previous word, change key Ctrl+w to delete "
 "previous word until whitespace\n"
 "- rename API function string_build_with_split_string to "
-"string_rebuild_split_string, add arguments \"index_start\" and \"index_end"
-"\"\n"
+"string_rebuild_split_string, add arguments \"index_start\" and "
+"\"index_end\"\n"
 "- add info \"uptime_current\"\n"
 "- add API function crypto_hash_file\n"
 "- add support of priority in API function hook_line\n"
@@ -4557,9 +4558,9 @@ msgid ""
 "- add trigger variable \"${tg_hook_type}\"\n"
 "- many bugs fixed.\n"
 "\n"
-"For complete list of new features and bugs fixed, please look at <a href="
-"\"https://blog.weechat.org/post/2022/10/09/Version-3.7\">development blog</"
-"a> or <a href=\"/files/changelog/ChangeLog-3.7.html\">ChangeLog</a>."
+"For complete list of new features and bugs fixed, please look at <a "
+"href=\"https://blog.weechat.org/post/2022/10/09/Version-3.7\">development "
+"blog</a> or <a href=\"/files/changelog/ChangeLog-3.7.html\">ChangeLog</a>."
 msgstr ""
 "La version 3.7 est disponible !\n"
 "\n"
@@ -4652,9 +4653,9 @@ msgid ""
 "command to \"s\" (regex replace)\n"
 "- many bugs fixed.\n"
 "\n"
-"For complete list of new features and bugs fixed, please look at <a href="
-"\"https://blog.weechat.org/post/2023/01/08/Version-3.8\">development blog</"
-"a> or <a href=\"/files/changelog/ChangeLog-3.8.html\">ChangeLog</a>."
+"For complete list of new features and bugs fixed, please look at <a "
+"href=\"https://blog.weechat.org/post/2023/01/08/Version-3.8\">development "
+"blog</a> or <a href=\"/files/changelog/ChangeLog-3.8.html\">ChangeLog</a>."
 msgstr ""
 "La version 3.8 est disponible !\n"
 "\n"
@@ -4679,8 +4680,8 @@ msgstr ""
 "- ajout de l'option \"unicode\" dans la commande /debug\n"
 "- ajout des options Curl pour les versions 7.64.0 à 7.87.0\n"
 "- ajout des fonctions API string_strcmp et string_strncmp\n"
-"- renommage des fonctions API de comparaison \"utf8_char*\" en \"string_char*"
-"\"\n"
+"- renommage des fonctions API de comparaison \"utf8_char*\" en "
+"\"string_char*\"\n"
 "- retour de la différence arithmétique entre les caractères dans les "
 "fonctions API string_charcmp, string_charcasecmp, string_charcasecmp_range, "
 "string_strcasecmp, string_strcasecmp_range, string_strncasecmp, "
@@ -4828,9 +4829,9 @@ msgstr ""
 #: news/_i18n_info.py:169
 msgid ""
 "WeeChat project now accepts recurring donations via Liberapay, which has "
-"very low fees (see <a href=\"https://liberapay.com/about/faq#differences"
-"\">the differences between Liberapay and other recurrent crowdfunding "
-"platforms</a>)."
+"very low fees (see <a href=\"https://liberapay.com/about/"
+"faq#differences\">the differences between Liberapay and other recurrent "
+"crowdfunding platforms</a>)."
 msgstr ""
 "Le projet WeeChat accepte désormais les dons récurrents via Liberapay, qui a "
 "des frais très faibles (voir <a href=\"https://liberapay.com/about/"
@@ -4847,8 +4848,8 @@ msgid ""
 "repositories-moved-to-Github\">development blog</a>."
 msgstr ""
 "Les dépôts Git WeeChat (weechat, scripts, qweechat) ont été déplacés vers "
-"GitHub, dans l'organisation WeeChat : <a href=\"https://github.com/weechat"
-"\">https://github.com/weechat</a>.\n"
+"GitHub, dans l'organisation WeeChat : <a href=\"https://github.com/"
+"weechat\">https://github.com/weechat</a>.\n"
 "\n"
 "Pour plus d'information, merci de consulter le <a href=\"/blog/"
 "post/2014/03/03/Git-repositories-moved-to-Github\">blog de développement</a>."
@@ -7265,8 +7266,8 @@ msgid ""
 "They communicate with WeeChat using the <a href=\"%(doc)s\">relay protocol</"
 "a>."
 msgstr ""
-"Elles communiquent avec WeeChat en utilisant le <a href=\"%(doc)s"
-"\">protocole relay</a>."
+"Elles communiquent avec WeeChat en utilisant le <a "
+"href=\"%(doc)s\">protocole relay</a>."
 
 #: templates/about/features.html:139
 #, python-format
@@ -7284,11 +7285,11 @@ msgstr "Documentation et support"
 #: templates/about/features.html:151
 #, python-format
 msgid ""
-"WeeChat is translated into several languages and has a <a href=\"%(doc_url)s"
-"\">comprehensive documentation</a>, also translated."
+"WeeChat is translated into several languages and has a <a "
+"href=\"%(doc_url)s\">comprehensive documentation</a>, also translated."
 msgstr ""
-"WeeChat est traduit dans plusieurs langues et a une <a href=\"%(doc_url)s"
-"\">documentation complète</a>, également traduite."
+"WeeChat est traduit dans plusieurs langues et a une <a "
+"href=\"%(doc_url)s\">documentation complète</a>, également traduite."
 
 #: templates/about/features.html:153
 msgid ""
@@ -7468,8 +7469,8 @@ msgid ""
 "href=\"%(doc_url)s\">documentation</a> and <a href=\"%(faq_url)s\">FAQ</a>."
 msgstr ""
 "<strong>Important :</strong> avant de demander de l'aide, merci de lire "
-"attentivement la <a href=\"%(doc_url)s\">documentation</a> et la <a href="
-"\"%(faq_url)s\">FAQ</a>."
+"attentivement la <a href=\"%(doc_url)s\">documentation</a> et la <a "
+"href=\"%(faq_url)s\">FAQ</a>."
 
 #: templates/about/support.html:21
 msgid "On server irc.libera.chat:"
@@ -7773,79 +7774,122 @@ msgstr "Sécurité"
 msgid "Docs for version"
 msgstr "Docs pour la version"
 
-#: templates/doc/doc_version.html:28
+#: templates/doc/doc_version.html:14
+msgid "Which document to start with?"
+msgstr "Par quel document commencer ?"
+
+#: templates/doc/doc_version.html:16
+msgid ""
+"New to WeeChat or have questions? → <strong>Quick Start guide</strong> + "
+"<strong>FAQ</strong>."
+msgstr ""
+"Nouveau avec WeeChat ou vous avez des questions ? → <strong>Guide de "
+"démarrage rapide</strong> + <strong>FAQ</strong>."
+
+#: templates/doc/doc_version.html:18
+msgid ""
+"Want to learn all features in WeeChat? → <strong>User's guide</strong> + "
+"<strong>Wiki</strong>."
+msgstr ""
+"Envie d'apprendre toutes les fonctionnalités de WeeChat ? → <strong>Guide "
+"utilisateur</strong> + <strong>Wiki</strong>."
+
+#: templates/doc/doc_version.html:20
+msgid ""
+"Want to write a script for WeeChat? → <strong>Scripting guide</strong> + "
+"<strong>Plugin API reference</strong>."
+msgstr ""
+"Envie d'écrire un script pour WeeChat ? → <strong>Guide pour scripts</"
+"strong> + <strong>Référence API extension</strong>."
+
+#: templates/doc/doc_version.html:22
+msgid ""
+"Want to write a remote interface via relay? → <strong>Relay protocol</"
+"strong>."
+msgstr ""
+"Envie d'écrire une interface via relay ? → <strong>Protocole Relay</strong>."
+
+#: templates/doc/doc_version.html:24
+msgid ""
+"Want to contribute to WeeChat source code? → <strong>Developer's guide</"
+"strong>."
+msgstr ""
+"Envie de contribuer au code source de WeeChat ? → <strong>Guide du "
+"développeur</strong>."
+
+#: templates/doc/doc_version.html:43
 msgid "Documentation for users"
 msgstr "Documentation pour utilisateurs"
 
-#: templates/doc/doc_version.html:50
+#: templates/doc/doc_version.html:67
 msgid "Documentation for developers"
 msgstr "Documentation pour développeurs"
 
-#: templates/doc/doc_version.html:78
+#: templates/doc/doc_version.html:97
 msgid "Build date:"
 msgstr "Date de construction :"
 
-#: templates/doc/doc_version.html:83
+#: templates/doc/doc_version.html:102
 msgid "Internationalization stats"
 msgstr "Stats internationalisation"
 
-#: templates/doc/doc_version.html:88
+#: templates/doc/doc_version.html:107
 msgctxt "translated language"
 msgid "Language"
 msgstr "Langue"
 
-#: templates/doc/doc_version.html:89 themes/models.py:164 themes/models.py:255
+#: templates/doc/doc_version.html:108 themes/models.py:164 themes/models.py:255
 msgid "File"
 msgstr "Fichier"
 
-#: templates/doc/doc_version.html:90
+#: templates/doc/doc_version.html:109
 msgid "Translated"
 msgstr "Traduit"
 
-#: templates/doc/doc_version.html:91
+#: templates/doc/doc_version.html:110
 msgid "Fuzzy"
 msgstr "Approximatif"
 
-#: templates/doc/doc_version.html:92
+#: templates/doc/doc_version.html:111
 msgid "Untranslated"
 msgstr "Non traduit"
 
-#: templates/doc/doc_version.html:93 templates/donate.html:143
+#: templates/doc/doc_version.html:112 templates/donate.html:143
 msgid "Total"
 msgstr "Total"
 
-#: templates/doc/doc_version.html:94
+#: templates/doc/doc_version.html:113
 msgid "Progress"
 msgstr "Progression"
 
-#: templates/doc/doc_version.html:114
+#: templates/doc/doc_version.html:133
 msgid "base language"
 msgstr "langue de base"
 
-#: templates/doc/doc_version.html:143
+#: templates/doc/doc_version.html:162
 msgid ""
 "statistics for gettext files (*.po), auto-built from development version on"
 msgstr ""
 "statistiques sur les fichiers gettext (*.po), construites automatiquement "
 "depuis la version de développement le"
 
-#: templates/doc/doc_version.html:147
+#: templates/doc/doc_version.html:166
 msgid "Missing language?"
 msgstr "Langue manquante ?"
 
-#: templates/doc/doc_version.html:150
+#: templates/doc/doc_version.html:169
 msgid "Feel free to help us by translating WeeChat doc in your language!"
 msgstr ""
 "N'hésitez pas à nous aider en traduisant la documentation WeeChat dans votre "
 "langue !"
 
-#: templates/doc/doc_version.html:152
+#: templates/doc/doc_version.html:171
 msgid ""
 "There is more information about WeeChat translations in the developer's "
 "guide."
 msgstr "Il y a plus d'informations dans le guide du développeur."
 
-#: templates/doc/doc_version.html:156
+#: templates/doc/doc_version.html:175
 msgid "No documentation."
 msgstr "Pas de documentation."
 
@@ -7892,8 +7936,8 @@ msgstr ""
 #: templates/doc/security.html:31
 msgid ""
 "To report a security issue, please <strong>DO NOT</strong> file an issue on "
-"GitHub, but send an email to <a href=\"mailto:security@weechat.org"
-"\">security@weechat.org</a> instead."
+"GitHub, but send an email to <a href=\"mailto:security@weechat."
+"org\">security@weechat.org</a> instead."
 msgstr ""
 "Pour signaler un problème de sécurité, merci de <strong>NE PAS</strong> "
 "ouvrir un bug sur GitHub, mais plutôt d'envoyer un email à <a href=\"mailto:"
@@ -8402,8 +8446,9 @@ msgstr ""
 #: templates/download/packages.html:56
 #, python-format
 msgid ""
-"<strong>Warning:</strong> the version %(version)s has one or more <a href="
-"\"%(security_url)s\">vulnerabilities</a>, it is not recommended to use it."
+"<strong>Warning:</strong> the version %(version)s has one or more <a "
+"href=\"%(security_url)s\">vulnerabilities</a>, it is not recommended to use "
+"it."
 msgstr ""
 "<strong>Attention :</strong> la version %(version)s a une ou plusieurs <a "
 "href=\"%(security_url)s\">vulnérabilités</a>, il n'est pas recommandé de "
@@ -8416,17 +8461,17 @@ msgstr "Vulnérabilités corrigées dans les versions :"
 #: templates/download/packages.html:64
 #, python-format
 msgid ""
-"<strong>Note:</strong> this release fixes <a href=\"%(security_url)s\">"
-"%(counter)s vulnerability</a>."
+"<strong>Note:</strong> this release fixes <a "
+"href=\"%(security_url)s\">%(counter)s vulnerability</a>."
 msgid_plural ""
-"<strong>Note:</strong> this release fixes <a href=\"%(security_url)s\">"
-"%(counter)s vulnerabilities</a>."
+"<strong>Note:</strong> this release fixes <a "
+"href=\"%(security_url)s\">%(counter)s vulnerabilities</a>."
 msgstr[0] ""
-"<strong>Note :</strong> cette version corrige <a href=\"%(security_url)s\">"
-"%(counter)s vulnérabilité</a>."
+"<strong>Note :</strong> cette version corrige <a "
+"href=\"%(security_url)s\">%(counter)s vulnérabilité</a>."
 msgstr[1] ""
-"<strong>Note :</strong> cette version corrige <a href=\"%(security_url)s\">"
-"%(counter)s vulnérabilités</a>."
+"<strong>Note :</strong> cette version corrige <a "
+"href=\"%(security_url)s\">%(counter)s vulnérabilités</a>."
 
 #: templates/download/packages.html:69
 msgid "It is recommended to upgrade from any older version to this one."

@@ -10,6 +10,21 @@
 
   <h3>{% trans "Docs for version" %} {{ doc_version }}</h3>
 
+  {% if project == "weechat" %}
+  <h4>{% trans "Which document to start with?" %}</h4>
+  <p>
+    {% trans "New to WeeChat or have questions? → <strong>Quick Start guide</strong> + <strong>FAQ</strong>." %}
+    <br>
+    {% trans "Want to learn all features in WeeChat? → <strong>User's guide</strong> + <strong>Wiki</strong>." %}
+    <br>
+    {% trans "Want to write a script for WeeChat? → <strong>Scripting guide</strong> + <strong>Plugin API reference</strong>." %}
+    <br>
+    {% trans "Want to write a remote interface via relay? → <strong>Relay protocol</strong>." %}
+    <br>
+    {% trans "Want to contribute to WeeChat source code? → <strong>Developer's guide</strong>." %}
+  </p>
+  {% endif %}
+
   <p class="row">
     <div class="table-responsive col-lg-10 col-xl-8 px-0">
       <table class="table table-hover">
@@ -31,10 +46,12 @@
           {% for doc, files in doc_list %}
           {% if not doc.devel %}
           <tr>
-            <td class="ps-4">{{ doc.name_i18n }}</td>
-            {% for name, date, lang in files %}
+            <td class="ps-4">{{ doc.description_i18n }}</td>
+            {% for lang, name, url in files %}
             <td class="h4 text-center{% if lang.lang == bestlang %} doc-bestlang{% endif %}">
-              {% if name %}
+              {% if url %}
+              <a href="{{ url }}" target="_blank" rel="noopener">{% include "svg/link-external.html" %}</a>
+              {% elif name %}
               <a href="/files/doc/{{ name }}" target="_blank" rel="noopener">{% include "svg/doc.html" %}</a>
               {% else %}
               <span class="text-muted">-</span>
@@ -53,10 +70,12 @@
           {% for doc, files in doc_list %}
           {% if doc.devel %}
           <tr>
-            <td class="ps-4">{{ doc.name_i18n }}</td>
-            {% for name, date, lang in files %}
+            <td class="ps-4">{{ doc.description_i18n }}</td>
+            {% for lang, name, url in files %}
             <td class="h4 text-center{% if lang.lang == bestlang %} doc-bestlang{% endif %}">
-              {% if name %}
+              {% if url %}
+              <a href="{{ url }}" target="_blank" rel="noopener">{% include "svg/link-external.html" %}</a>
+              {% elif name %}
               <a href="/files/doc/{{ name }}" target="_blank" rel="noopener">{% include "svg/doc.html" %}</a>
               {% else %}
               <span class="text-muted">-</span>
@@ -73,9 +92,9 @@
     </div>
   </p>
 
-  {% if doc_list.0.1.0.1 %}
+  {% if build_date %}
   <p class="text-muted">
-    {% trans "Build date:" %} {{ doc_list.0.1.0.1|localdate }}
+    {% trans "Build date:" %} {{ build_date|localdate }}
   </p>
   {% endif %}
 
