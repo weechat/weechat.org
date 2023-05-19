@@ -6,7 +6,7 @@
 
 {{ block.super }}
 
-{% if doc_version %}
+{% if doc_version and doc_list %}
 
   <h3>{% trans "Docs for version" %} {{ doc_version }}</h3>
 
