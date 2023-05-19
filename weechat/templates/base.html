@@ -163,9 +163,9 @@
       </p>
       <p>
         Copyright &#169; 2003-{% now "Y" %} <a href="mailto:{% txt2html "flashcode@flashtux.org" %}" title="email webmaster">Sébastien Helleu</a>
-        &mdash;
+        —
         <a href="{% url 'about_weechat.org' %}">{% trans "About WeeChat.org" %}</a>
-        &mdash; Theme: <strong>{{ theme }}</strong>
+        — Theme: <strong>{{ theme }}</strong>
         ({% for name in other_themes %}<a href="?theme={{ name }}">{{ name }}</a>{% if not forloop.last %}, {% endif %}{% endfor %})
       </p>
     </div>

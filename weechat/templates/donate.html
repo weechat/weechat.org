@@ -125,10 +125,10 @@
             </td>
             {% endif %}
             {% if view_amount %}
-            <td class="text-nowrap text-end">{{ sponsor.amount|floatformat:"-2" }} &euro;</td>
+            <td class="text-nowrap text-end">{{ sponsor.amount|floatformat:"-2" }} €</td>
             {% endif %}
             {% if sort_key == "date" %}
-            <td class="quote">{% if sponsor.comment %}&ldquo; {{ sponsor.comment }} &rdquo;{% endif %}</td>
+            <td class="quote">{% if sponsor.comment %}“ {{ sponsor.comment }} ”{% endif %}</td>
             {% else %}
             <td class="quote"></td>
             {% endif %}

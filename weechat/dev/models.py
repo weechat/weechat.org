@@ -58,7 +58,7 @@ class Task(models.Model):
         """
         try:
             if self.version.date > date.today():
-                return mark_safe(f'&asymp; {localdate(self.version.date)}')
+                return mark_safe(f'≈ {localdate(self.version.date)}')
             return localdate(self.version.date)
         except:  # noqa: E722  pylint: disable=bare-except
             return ''

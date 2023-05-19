@@ -32,15 +32,15 @@
   <strong>{{ script.desc_i18n }}</strong>
   <br>
   {% trans "Author:" %} {{ script.author }}
-  &mdash; {% trans "Version:" %} {{ script.version }}
-  &mdash; {% trans "License:" %} {{ script.license }}
+  — {% trans "Version:" %} {{ script.version }}
+  — {% trans "License:" %} {{ script.license }}
   <br>
   {% trans "For WeeChat" %} {{ script.version_weechat_html }}{% if script.requirements %}, {% trans "requires:" %} {{ script.requirements }}{% endif %}.
   <br>
   {% trans "Tags:" %} {{ script.tagslist|join:", " }}
   <br>
   {% trans "Added:" %} {% if script.added %}{{ script.added|date:"Y-m-d" }}{% endif %}
-  {% if script.updated and script.added != script.updated %}&mdash; {% trans "Updated:" %} {{ script.updated|date:"Y-m-d" }}{% endif %}
+  {% if script.updated and script.added != script.updated %}— {% trans "Updated:" %} {{ script.updated|date:"Y-m-d" }}{% endif %}
   <br>
   <div class="source">
     <a href="{{ script.build_url }}" class="btn btn-primary my-3 me-3 px-2 px-lg-4" download>

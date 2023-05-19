@@ -81,13 +81,13 @@
       <tr>
         <th>
           {% if sort_key == "name" %}
-          <a href="{% url 'scripts' %}">{% trans "Name" %}&nbsp;&uarr;</a>
+          <a href="{% url 'scripts' %}">{% trans "Name" %}&nbsp;↑</a>
           {% else %}
           <a href="{% url 'scripts_sort' 'name' %}">{% trans "Name" %}</a>
           {% endif %}
           /
           {% if sort_key == "language" %}
-          <a href="{% url 'scripts' %}">{% trans "Language" context "programming language" %}&nbsp;&uarr;</a>
+          <a href="{% url 'scripts' %}">{% trans "Language" context "programming language" %}&nbsp;↑</a>
           {% else %}
           <a href="{% url 'scripts_sort' 'language' %}">{% trans "Language" context "programming language" %}</a>
           {% endif %}
@@ -96,42 +96,42 @@
         <th class="text-center"><abbr title="{% trans "Version" %}">V.</abbr></th>
         <th class="text-center">
           {% if sort_key == "license" %}
-          <a href="{% url 'scripts' %}">{% trans "License" %}&nbsp;&uarr;</a>
+          <a href="{% url 'scripts' %}">{% trans "License" %}&nbsp;↑</a>
           {% else %}
           <a href="{% url 'scripts_sort' 'license' %}">{% trans "License" %}</a>
           {% endif %}
         </th>
         <th class="text-center">
           {% if sort_key == "min_weechat" %}
-          <a href="{% url 'scripts' %}">{% trans "Min" %}&nbsp;&darr;</a>
+          <a href="{% url 'scripts' %}">{% trans "Min" %}&nbsp;↓</a>
           {% else %}
           <a href="{% url 'scripts_sort' 'min_weechat' %}">{% trans "Min" %}</a>
           {% endif %}
         </th>
         <th class="text-center">
           {% if sort_key == "max_weechat" %}
-          <a href="{% url 'scripts' %}">{% trans "Max" %}&nbsp;&darr;</a>
+          <a href="{% url 'scripts' %}">{% trans "Max" %}&nbsp;↓</a>
           {% else %}
           <a href="{% url 'scripts_sort' 'max_weechat' %}">{% trans "Max" %}</a>
           {% endif %}
         </th>
         <th class="text-center">
           {% if sort_key == "author" %}
-          <a href="{% url 'scripts' %}">{% trans "Author" %}&nbsp;&uarr;</a>
+          <a href="{% url 'scripts' %}">{% trans "Author" %}&nbsp;↑</a>
           {% else %}
           <a href="{% url 'scripts_sort' 'author' %}">{% trans "Author" %}</a>
           {% endif %}
         </th>
         <th class="text-center">
           {% if sort_key == "added" %}
-          <a href="{% url 'scripts' %}">{% trans "Added" %}&nbsp;&darr;</a>
+          <a href="{% url 'scripts' %}">{% trans "Added" %}&nbsp;↓</a>
           {% else %}
           <a href="{% url 'scripts_sort' 'added' %}">{% trans "Added" %}</a>
           {% endif %}
         </th>
         <th class="text-center">
           {% if sort_key == "updated" %}
-          <a href="{% url 'scripts' %}">{% trans "Updated" %}&nbsp;&darr;</a>
+          <a href="{% url 'scripts' %}">{% trans "Updated" %}&nbsp;↓</a>
           {% else %}
           <a href="{% url 'scripts_sort' 'updated' %}">{% trans "Updated" %}</a>
           {% endif %}
