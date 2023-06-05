@@ -32,6 +32,8 @@ from weechat.doc.views import (
     security_version as view_security_version,
 )
 
+LEGACY_DOC = 'faq|user|plugin_api|scripting|quickstart|dev|relay_protocol'
+
 urlpatterns = [
     path('', view_doc, name='doc'),
 
@@ -52,13 +54,29 @@ urlpatterns = [
     re_path(r'(?P<project>[a-zA-Z0-9._-]+)/security/version/(?P<version>[0-9.]+)/$',
             view_security_version, name='doc_project_security_version'),
 
+    # legacy shortcuts: project missing, weechat is default
+    # /doc/stable/user
+    re_path(rf'^(?P<version>stable|devel)/(?P<name>{LEGACY_DOC})/$', view_doc_link),
+    # /doc/user
+    re_path(rf'^(?P<name>{LEGACY_DOC})/$', view_doc_link),
+    # /doc/stable/user/en
+    re_path(rf'^(?P<version>stable|devel)/(?P<name>{LEGACY_DOC})/'
+            r'(?P<lang>[a-z][a-z])/$',
+            view_doc_link),
+    # /doc/user/en
+    re_path(rf'^(?P<name>{LEGACY_DOC})/(?P<lang>[a-z][a-z])/$', view_doc_link),
+
     # shortcuts
+    # /doc/weechat/stable/user
     re_path(r'^(?P<project>[a-zA-Z0-9._-]+)/(?P<version>stable|devel)/'
             r'(?P<name>[a-z_]+)/$', view_doc_link),
+    # /doc/weechat/user
     re_path(r'^(?P<project>[a-zA-Z0-9._-]+)/(?P<name>[a-z_]+)/$', view_doc_link),
+    # /doc/weechat/stable/user/en
     re_path(r'^(?P<project>[a-zA-Z0-9._-]+)/(?P<version>stable|devel)/'
-            r'(?P<name>[a-z_]+)/(?P<lang>[a-z_]+)/$',
+            r'(?P<name>[a-z_]+)/(?P<lang>[a-z][a-z])/$',
             view_doc_link),
+    # /doc/weechat/user/fr
     re_path(r'^(?P<project>[a-zA-Z0-9._-]+)/(?P<name>[a-z_]+)/'
-            r'(?P<lang>[a-z_]+)/$', view_doc_link),
+            r'(?P<lang>[a-z][a-z])/$', view_doc_link),
 ]
