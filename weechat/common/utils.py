@@ -20,6 +20,6 @@
 """Some useful functions."""
 
 
-def version_to_tuple(version):
-    """Convert version to a tuple of integers."""
-    return tuple(map(int, version.split('.')))
+def version_to_list(version):
+    """Convert version to a list of integers."""
+    return list(map(int, version.split('.')))

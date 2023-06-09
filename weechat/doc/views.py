@@ -31,7 +31,7 @@ from django.utils.translation import gettext
 
 from weechat.common.models import Project
 from weechat.common.path import files_path_join
-from weechat.common.utils import version_to_tuple
+from weechat.common.utils import version_to_list
 from weechat.doc.models import (
     Language,
     Version,
@@ -278,16 +278,16 @@ def security_wsa(request, project='weechat', wsa=''):
 
 def is_security_affecting_release(security, release):
     """Return True if the Security issue is affecting the Release."""
-    version_tuple = version_to_tuple(release.version)
+    version_list = version_to_list(release.version)
     for version in security.affected.split(','):
         if '-' in version:
             version1, version2 = version.split('-', 1)
-            version1 = version_to_tuple(version1)
-            version2 = version_to_tuple(version2)
-            if version1 <= version_tuple <= version2:
+            version1 = version_to_list(version1)
+            version2 = version_to_list(version2)
+            if version1 <= version_list <= version2:
                 return True
         else:
-            if version_tuple == version_to_tuple(version):
+            if version_list == version_to_list(version):
                 return True
     return False
 

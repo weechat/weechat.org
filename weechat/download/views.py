@@ -24,7 +24,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 
 from weechat.common.models import Project
-from weechat.common.utils import version_to_tuple
+from weechat.common.utils import version_to_list
 from weechat.download.models import Release, Package
 
 
@@ -65,7 +65,7 @@ def packages(request, project='weechat', version='stable'):
                                      .exclude(version__version='devel'))
             package_list = sorted(
                 package_list_unsorted,
-                key=lambda pkg: (version_to_tuple(pkg.version.version),
+                key=lambda pkg: (version_to_list(pkg.version.version),
                                  -1 * pkg.type.priority),
                 reverse=True,
             )
@@ -86,7 +86,7 @@ def packages(request, project='weechat', version='stable'):
                                      .exclude(version__version=stable_desc))
             package_list = sorted(
                 package_list_unsorted,
-                key=lambda pkg: (version_to_tuple(pkg.version.version),
+                key=lambda pkg: (version_to_list(pkg.version.version),
                                  -1 * pkg.type.priority),
                 reverse=True,
             )

@@ -26,7 +26,7 @@ from django.utils.translation import gettext, gettext_lazy
 
 from weechat.common.path import files_path_join, media_path_join
 from weechat.common.templatetags.version import version_as_int
-from weechat.common.utils import version_to_tuple
+from weechat.common.utils import version_to_list
 from weechat.dev.models import Task
 from weechat.download.models import Release
 
@@ -110,7 +110,7 @@ def roadmap(request, versions='future'):
     """Page with roadmap for future or all versions."""
     task_list = None
     try:
-        v_stable = version_to_tuple(
+        v_stable = version_to_list(
             Release.objects.get(project__name='weechat',
                                 version='stable').description
         )
@@ -118,14 +118,14 @@ def roadmap(request, versions='future'):
         if versions == 'future':
             # future versions
             tasks = [task for task in all_tasks
-                     if version_to_tuple(task.version.version) > v_stable]
+                     if version_to_list(task.version.version) > v_stable]
         else:
             # already released versions
             tasks = [task for task in all_tasks
-                     if version_to_tuple(task.version.version) <= v_stable]
+                     if version_to_list(task.version.version) <= v_stable]
         task_list = sorted(
             tasks,
-            key=lambda task: version_to_tuple(task.version.version),
+            key=lambda task: version_to_list(task.version.version),
         )
     except ObjectDoesNotExist:
         task_list = None

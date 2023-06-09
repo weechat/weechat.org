@@ -33,7 +33,7 @@ from django.db.models.signals import pre_save
 
 from weechat.common.models import Project
 from weechat.common.path import files_path_join
-from weechat.common.utils import version_to_tuple
+from weechat.common.utils import version_to_list
 
 PACKAGES_COMPRESSION_EXT = (
     'gz',
@@ -85,8 +85,8 @@ class Release(models.Model):
                               project__name=self.project.name,
                               version='stable',
                           ).description)
-        stable_version_tuple = version_to_tuple(stable_version)
-        return version_to_tuple(self.version) <= stable_version_tuple
+        stable_version_list = version_to_list(stable_version)
+        return version_to_list(self.version) <= stable_version_list
 
     class Meta:
         ordering = ['-date']
@@ -210,6 +210,72 @@ def handler_package_saved(sender, **kwargs):
         pass
 
 
+def make_symlink(link_name, target):
+    """Create a symbolic link (overwrite link_name if existing)."""
+    print(f'Making symlink: {link_name} -> {target}')
+    tmp_name = f'{link_name}.__tmp__'
+    os.symlink(target, tmp_name)
+    os.rename(tmp_name, link_name)
+
+
+def set_stable_version(project, version):
+    """
+    Set the stable version for a project and update all symbolic links to docs
+    and packages.
+    """
+    # set stable version in database
+    print(f'Setting stable release to {version} in project {project}')
+    if Release.objects.filter(project__name=project, version='stable').exists():
+        release = Release.objects.get(project__name=project, version='stable')
+    else:
+        release = Release(
+            project=Project.objects.get(name=project),
+            version='stable',
+        )
+    release.description = version
+    release.date = date.today()
+    release.security_issues_fixed = 0
+    release.securityfix = ''
+    release.save()
+
+    # update package symbolic links
+    for ext in PACKAGES_COMPRESSION_EXT:
+        make_symlink(
+            files_path_join('src', f'{project}-stable.tar.{ext}'),
+            f'{project}-{version}.tar.{ext}',
+        )
+        make_symlink(
+            files_path_join('src', f'{project}-stable.tar.{ext}.asc'),
+            f'{project}-{version}.tar.{ext}.asc',
+        )
+
+    # update doc symbolic links
+    doc_symlinks = (
+        ('ChangeLog-stable.html', f'ChangeLog-{version}.html'),
+        ('ReleaseNotes-stable.html', f'ReleaseNotes-{version}.html'),
+        ('stable', version),
+    )
+    for link_name, filename in doc_symlinks:
+        make_symlink(
+            files_path_join('doc', project, link_name),
+            filename,
+        )
+
+
+def set_devel_version(project, version):
+    """Set the devel version for a project."""
+    print(f'Setting devel release to {version} in project {project}')
+    if Release.objects.filter(project__name=project, version='devel').exists():
+        release = Release.objects.get(project__name=project, version='devel')
+    else:
+        release = Release(
+            project=Project.objects.get(name=project),
+            version='devel',
+        )
+    release.description = version
+    release.save()
+
+
 def add_release(project, version):
     """Add a project release with its packages."""
     print(f'Adding release {version} and packages in project {project}')
@@ -237,46 +303,37 @@ def add_release(project, version):
         )
         package.save()
 
-
-def set_stable_version(project, version):
-    """Set the stable version for a project."""
-    print(f'Setting stable release to {version} in project {project}')
-    if Release.objects.filter(project__name=project, version='stable').exists():
-        release = Release.objects.get(project__name=project, version='stable')
-    else:
-        release = Release(
-            project=Project.objects.get(name=project),
-            version='stable',
+    # if the version added is higher than current stable (or no current stable):
+    #   1. update stable version
+    #   2. set next devel version if version ends with ".0" (feature, not patch)
+    version_list = version_to_list(version)
+    try:
+        stable_version = (
+            Release.objects.get(project__name=project, version='stable').description
         )
-    release.description = version
-    release.date = date.today()
-    release.security_issues_fixed = 0
-    release.securityfix = ''
-    release.save()
-
-
-def set_devel_version(project, version):
-    """Set the devel version for a project."""
-    print(f'Setting devel release to {version} in project {project}')
-    if Release.objects.filter(project__name=project, version='devel').exists():
-        release = Release.objects.get(project__name=project, version='devel')
-    else:
-        release = Release(
-            project=Project.objects.get(name=project),
-            version='devel',
-        )
-    release.description = version
-    release.save()
+    except ObjectDoesNotExist:
+        stable_version = '0'
+    stable_version_list = version_to_list(stable_version)
+    if version_list > stable_version_list:
+        # update stable version
+        set_stable_version(project, version)
+        # set next devel version
+        if version_list[-1] == 0:
+            next_devel = version_list[:]
+            next_devel[-2] += 1
+            next_devel[-1] = 0
+            next_devel_string = '.'.join([str(v) for v in next_devel]) + '-dev'
+            set_devel_version(project, next_devel_string)
 
 
 def release_action(action, project, version):
     """Run a release action."""
-    if action == 'add':
-        add_release(project, version)
-    elif action == 'stable':
+    if action == 'stable':
         set_stable_version(project, version)
     elif action == 'devel':
         set_devel_version(project, version)
+    elif action == 'add':
+        add_release(project, version)
     else:
         print(f'ERROR: unsupported release action: "{action}"')
         sys.exit(1)
