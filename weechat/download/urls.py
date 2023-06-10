@@ -44,7 +44,9 @@ urlpatterns = [
     re_path(r'^(?P<project>[a-zA-Z0-9._-]+)/(?P<version>[a-zA-Z0-9.]+)/$',
             view_packages, name='download_project_version'),
 
-    # legacy URLs (redirected to new pages)
+    # legacy URLs
+    re_path(r'^(?P<version>[0-9][a-zA-Z0-9.]+)/$',
+            view_packages, name='download_project_version'),
     path('stable/', RedirectView.as_view(url='/download/weechat/stable/')),
     path('devel/', RedirectView.as_view(url='/download/weechat/devel/')),
     path('old/', RedirectView.as_view(url='/download/weechat/old/')),
