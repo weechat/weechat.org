@@ -40,6 +40,8 @@ def __i18n_scripts_scripts():
     gettext_noop("Add alerts to the message menu in Ubuntu.")
     # Translators: description for script "alternatetz.py" (0.3.0+)
     gettext_noop("Add an alternate timezone item.")
+    # Translators: description for script "wttr.tcl" (0.3.0+)
+    gettext_noop("Add an item showing weather.")
     # Translators: description for script "hlpvitem.py" (0.3.0+)
     gettext_noop("Add bar item with highlight/private messages.")
     # Translators: description for script "text_item.py" (0.3.0+)
