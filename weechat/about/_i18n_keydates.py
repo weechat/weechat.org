@@ -48,6 +48,7 @@ def __i18n_about_keydates():
     gettext_noop("Plugin \"buflist\" (list of buffers).")
     gettext_noop("Plugin \"script\" (scripts manager), SSL in relay.")
     gettext_noop("Plugin typing, enable all IRC capabilities by default.")
+    gettext_noop("Practical semantic versioning, 256 colors by default, multiline support, human readable key bindings, many identifiers case sensitive, TLS used by default.")
     gettext_noop("Proxy support, IPv6, SSL.")
     gettext_noop("Python plugin.")
     gettext_noop("Ruby plugin.")
