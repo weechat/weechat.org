@@ -43,6 +43,7 @@ urlpatterns = [
     path('security/', RedirectView.as_view(url='/doc/weechat/security/')),
 
     # docs per project/version
+    re_path(r'^(?P<project>[a-zA-Z0-9._-]+)/$', view_doc, name='doc_project_version'),
     re_path(r'^(?P<project>[a-zA-Z0-9._-]+)/(?P<version>stable|devel)/$',
             view_doc, name='doc_project_version'),
     re_path(r'(?P<project>[a-zA-Z0-9._-]+)/security/$', view_security,
