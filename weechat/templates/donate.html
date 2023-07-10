@@ -32,10 +32,10 @@
 
   <div class="row">
     <div class="col-sm-6 col-md-3 my-1 text-center">
-      <a href="https://liberapay.com/weechat/donate" target="_blank" rel="noopener"><img alt="{% trans "Donate using Liberapay" %}" src="https://liberapay.com/assets/widgets/donate.svg"></a>
+      <a href="https://liberapay.com/weechat/donate"><img alt="{% trans "Donate using Liberapay" %}" src="https://liberapay.com/assets/widgets/donate.svg"></a>
     </div>
     <div class="col-sm-6 col-md-3 my-1 text-center">
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" rel="noopener">
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
         <p>
           <input type="image" src="{{ MEDIA_URL }}images/paypal.png" width="100" height="35" alt="Donate" name="submit">
           <input type="hidden" name="cmd" value="_s-xclick">
@@ -58,7 +58,7 @@
   <h4>{% trans "With Liberapay" %}</h4>
 
   <p>
-    {% trans "See the weechat page on Liberapay:" %} <a href="https://liberapay.com/weechat" target="_blank" rel="noopener">https://liberapay.com/weechat <sup>↗</sup></a>
+    {% trans "See the weechat page on Liberapay:" %} <a href="https://liberapay.com/weechat">https://liberapay.com/weechat</a>
   </p>
 
   {% if sponsor_list %}

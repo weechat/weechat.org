@@ -27,7 +27,7 @@
     <tbody>
     {% for info in infos %}
     <tr>
-      <td><a href="{% url 'dev_info_name' info.0 %}" target="_blank" rel="noopener">{{ info.0 }}</a></td>
+      <td><a href="{% url 'dev_info_name' info.0 %}">{{ info.0 }}</a></td>
       <td>{{ info.1|linebreaksbr }}</td>
       <td>{{ info.2 }}</td>
     </tr>

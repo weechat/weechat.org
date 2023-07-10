@@ -42,7 +42,7 @@ def _replace_github_link(match):
     """Replace a match of GitHub keyword (like "closes #123") by URL."""
     name = match.group(0)
     url = GITHUB_LINK % match.group(2)
-    return f'<a href="{url}" target="_blank" rel="noopener">{name}</a>'
+    return f'<a href="{url}">{name}</a>'
 
 
 def _replace_savannah_link(match):
@@ -51,7 +51,7 @@ def _replace_savannah_link(match):
         return match.group(0)
     name = match.group(0)
     url = SAVANNAH_LINKS[match.group(1)] % match.group(2)
-    return f'<a href="{url}" target="_blank" rel="noopener">{name}</a>'
+    return f'<a href="{url}">{name}</a>'
 
 
 def _replace_link(tracker):
@@ -116,7 +116,6 @@ def commits_links(commits):
             commit = commit[5:]
             link = svg_branch
         repo, commit_id = split_commit(commit)
-        images.append(f'<a href="https://github.com/{repo}/{objtype}/'
-                      f'{commit_id}" target="_blank" rel="noopener">'
+        images.append(f'<a href="https://github.com/{repo}/{objtype}/{commit_id}">'
                       f'{link}</a>')
     return mark_safe(' '.join(images))

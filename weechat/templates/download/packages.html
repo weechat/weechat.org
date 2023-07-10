@@ -73,13 +73,13 @@
     {% if project == 'weechat' or project == 'weechat-relay' %}
     <div class="row">
       <div class="col-auto">
-        <a href="/files/doc/{{ project }}/ChangeLog-{{ package_version.grouper.version }}.html" target="_blank" rel="noopener">
-          {% trans "ChangeLog" %} <sup>↗</sup>
+        <a href="/files/doc/{{ project }}/ChangeLog-{{ package_version.grouper.version }}.html">
+          {% trans "ChangeLog" %}
         </a>
       </div>
       <div class="col-auto">
-        <a href="/files/doc/{{ project }}/ReleaseNotes-{{ package_version.grouper.version }}.html" target="_blank" rel="noopener">
-          {% trans "Release notes" %} <sup>↗</sup>
+        <a href="/files/doc/{{ project }}/ReleaseNotes-{{ package_version.grouper.version }}.html">
+          {% trans "Release notes" %}
         </a>
       </div>
     </div>
@@ -94,23 +94,23 @@
           {% if package.exists %}
             <a href="/files{{ package.type.htmldir }}/{{ package.filename }}" title="{{ package.type.description }}">{{ package.filename }}</a>
             <small class="text-muted">
-              ({{ package.filesize|filesizeformat }}{% if package.display_time %}, {{ package.filedate|localdate:"datetime" }}{% endif %}{% if package.has_checksum %}, <a href="{% url 'package_checksums' package.version.version package.checksum_type %}" target="_blank" rel="noopener" title="{% trans "Checksum" %} ({{ package.checksum_type|upper }}): {{ package.checksum }}">{{ package.checksum_type|upper }}</a>{% endif %}{% if package.has_gpg_sig %}, <a href="/files{{ package.type.htmldir }}/{{ package.filename }}.asc" target="_blank" rel="noopener" title="{% trans "GPG signature" %}">GPG</a>{% endif %})
+              ({{ package.filesize|filesizeformat }}{% if package.display_time %}, {{ package.filedate|localdate:"datetime" }}{% endif %}{% if package.has_checksum %}, <a href="{% url 'package_checksums' package.version.version package.checksum_type %}" title="{% trans "Checksum" %} ({{ package.checksum_type|upper }}): {{ package.checksum }}">{{ package.checksum_type|upper }}</a>{% endif %}{% if package.has_gpg_sig %}, <a href="/files{{ package.type.htmldir }}/{{ package.filename }}.asc" title="{% trans "GPG signature" %}">GPG</a>{% endif %})
             </small>
           {% else %}
             <span class="text-muted" title="{{ package.type.description }}">{{ package.filename }}</span>
           {% endif %}
         {% elif package.directory %}
           {% if package.exists %}
-            <a href="/files/{{ package.directory }}" target="_blank" rel="noopener"{% if not package.exists %} class="text-muted"{% endif %} title="{{ package.type.description }}">
-              {{ package.directory }} <sup>↗</sup>
+            <a href="/files/{{ package.directory }}"{% if not package.exists %} class="text-muted"{% endif %} title="{{ package.type.description }}">
+              {{ package.directory }}
             </a>
           {% else %}
             <span class="text-muted" title="{{ package.type.description }}">{{ package.directory }}</span>
           {% endif %}
         {% else %}
           {% if package.url %}
-            <a href="{{ package.url }}" target="_blank" rel="noopener">
-              {{ package.url }} <sup>↗</sup>
+            <a href="{{ package.url }}">
+              {{ package.url }}
             </a>
           {% else %}
             {{ package.text }}

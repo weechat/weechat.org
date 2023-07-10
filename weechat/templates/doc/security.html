@@ -26,7 +26,7 @@
 
 <p>
   {% trans "WeeChat Security Advisories (WSA) are sent to this mailing list, as soon as they are made public:" %}
-  <a href="https://lists.nongnu.org/mailman/listinfo/weechat-security" target="_blank" rel="noopener">weechat-security <sup>↗</sup></a>
+  <a href="https://lists.nongnu.org/mailman/listinfo/weechat-security">weechat-security</a>
   <br>
   {% blocktrans %}To report a security issue, please <strong>DO NOT</strong> file an issue on GitHub, but send an email to <a href="mailto:security@weechat.org">security@weechat.org</a> instead.{% endblocktrans %}
 </p>
@@ -157,7 +157,7 @@
       <span class="ms-2">
         [
         {% for name, url in security.cve_links.items %}
-        <a href="{{ url }}" target="_blank" rel="noopener">{{ name }}</a>{% if not forloop.last %} /{% endif %}
+        <a href="{{ url }}">{{ name }}</a>{% if not forloop.last %} /{% endif %}
         {% endfor %}
         ]
       </span>
@@ -173,7 +173,7 @@
     </div>
     <div class="col-12 col-md-8">
       {{ security.cvss_vector }}
-      (<a href="{{ security.url_cvss_vector }}" target="_blank" rel="noopener">{% trans "detail" %}</a>)
+      (<a href="{{ security.url_cvss_vector }}">{% trans "detail" %}</a>)
     </div>
   </div>
   {% endif %}
@@ -208,7 +208,7 @@
     <div class="col-12 col-md-8">
       {{ security.cwe_i18n }}
       {% if security.cwe_id > 0 %}
-      (<a href="{{ security.url_cwe }}" target="_blank" rel="noopener">{% trans "detail" %}</a>)
+      (<a href="{{ security.url_cwe }}">{% trans "detail" %}</a>)
       {% endif %}
     </div>
   </div>
@@ -241,7 +241,7 @@
       </span>
       ({{ security.release_date|localdate }})
       -
-      <a href="/files/doc/{{ project }}/ChangeLog-{{ security.fixed }}.html" target="_blank" rel="noopener">
+      <a href="/files/doc/{{ project }}/ChangeLog-{{ security.fixed }}.html">
         {% trans "ChangeLog" %}
       </a>
       {% else %}

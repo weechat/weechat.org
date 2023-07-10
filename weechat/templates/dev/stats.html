@@ -18,7 +18,7 @@
 </ul>
 
 {% trans "Git repository:" %}
-<a href="{{ repository }}" target="_blank" rel="noopener">{{ repository }} <sup>↗</sup></a>
+<a href="{{ repository }}">{{ repository }}</a>
 <br><br>
 
 {% if sloc %}
@@ -37,7 +37,7 @@
   <div class="svg my-2">
     <object type="image/svg+xml" data="{{ MEDIA_URL }}images/stats/dark/{{ stats }}_{{ svg }}.svg">{{ svg }}.svg</object>
     <div class="text-center">
-      <a href="{{ MEDIA_URL }}images/stats/dark/{{ stats }}_{{ svg }}.svg" target="_blank" rel="noopener">SVG <sup>↗</sup></a>
+      <a href="{{ MEDIA_URL }}images/stats/dark/{{ stats }}_{{ svg }}.svg">SVG</a>
     </div>
   </div>
   <hr>
@@ -47,7 +47,7 @@
   <div class="svg my-2">
     <object type="image/svg+xml" data="{{ MEDIA_URL }}images/stats/light/{{ stats }}_{{ svg }}.svg">{{ svg }}.svg</object>
     <div class="text-center">
-      <a href="{{ MEDIA_URL }}images/stats/light/{{ stats }}_{{ svg }}.svg" target="_blank" rel="noopener">SVG <sup>↗</sup></a>
+      <a href="{{ MEDIA_URL }}images/stats/light/{{ stats }}_{{ svg }}.svg">SVG</a>
     </div>
   </div>
   <hr>
@@ -59,6 +59,6 @@
 {% endif %}
 
 {% trans "Charts built with" %}
-<a href="https://github.com/flashcode/gitchart" target="_blank" rel="noopener">gitchart <sup>↗</sup></a>.
+<a href="https://github.com/flashcode/gitchart">gitchart</a>.
 
 {% endblock content %}
