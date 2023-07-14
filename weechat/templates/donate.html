@@ -12,39 +12,6 @@
 
 <div class="mx-4">
 
-  <h3>{% trans "Donate to WeeChat" %}</h3>
-
-  <p>
-    {% trans "Click on one of the buttons below and follow the instructions:" %}
-    <ul>
-      <li>{% trans "<strong>Liberapay</strong>: recurring donation with very low fees (<strong>best choice</strong>)" %}</li>
-      <li>{% trans "<strong>Paypal</strong>: one-time donation." %}</li>
-    </ul>
-  </p>
-
-  <p>
-    {% trans "You can leave name and comment, they will be displayed on this page, providing that the following conditions are met:" %}
-    <ul>
-      <li>{% trans "the comment must be only about the donation and WeeChat (for example this is not the place to ask for new features)" %}</li>
-      <li>{% trans "URLs are not allowed because there is <strong>no advertising</strong> on this site." %}</li>
-    </ul>
-  </p>
-
-  <div class="row">
-    <div class="col-sm-6 col-md-3 my-1 text-center">
-      <a href="https://liberapay.com/weechat/donate"><img alt="{% trans "Donate using Liberapay" %}" src="https://liberapay.com/assets/widgets/donate.svg"></a>
-    </div>
-    <div class="col-sm-6 col-md-3 my-1 text-center">
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-        <p>
-          <input type="image" src="{{ MEDIA_URL }}images/paypal.png" width="100" height="35" alt="Donate" name="submit">
-          <input type="hidden" name="cmd" value="_s-xclick">
-          <input type="hidden" name="hosted_button_id" value="4LSMSNLUAJWNS">
-        </p>
-      </form>
-    </div>
-  </div>
-
   <h3>{% trans "Why your donation matters?" %}</h3>
 
   <p>
@@ -53,12 +20,89 @@
     {% trans "Your donations help to pay the <strong>dedicated server</strong>, used for developments, build of packages and hosting of weechat.org." %}
   </p>
 
+  <h3>{% trans "Donate to WeeChat" %}</h3>
+
+  <p>
+    {% trans "Click on one of the links below to open the site in a new tab and follow the instructions:" %}
+  </p>
+
+  <div class="table-responsive col-lg-12 col-xl-9">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>{% trans "Link" %}</th>
+          <th>{% trans "One-time" %}</th>
+          <th>{% trans "Recurring" %}</th>
+          <th>{% trans "Fees" %}</th>
+          <th>{% trans "Notes" %}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="align-middle sponsor-icon">
+            <a href="https://github.com/sponsors/flashcode" target="_blank" rel="noopener">
+              {% include "svg/github_sponsors.html" %}
+              <strong>GitHub</strong>
+            </a>
+          </td>
+          <td class="align-middle sponsor-check">{% include "svg/check.html" %}</td>
+          <td class="align-middle sponsor-check">{% include "svg/check.html" %}</td>
+          <td class="align-middle">2.9 %</td>
+          <td class="align-middle">{% trans "Requires a GitHub account" %}</td>
+        </tr>
+        <tr>
+          <td class="align-middle sponsor-icon">
+            <a href="https://liberapay.com/weechat/donate" target="_blank" rel="noopener">
+              {% include "svg/liberapay.html" %}
+              <strong>Liberapay</strong>
+            </a>
+          </td>
+          <td class="align-middle sponsor-x">{% include "svg/x.html" %}</td>
+          <td class="align-middle sponsor-check">{% include "svg/check.html" %}</td>
+          <td class="align-middle">2.9 %</td>
+          <td class="align-middle"></td>
+        </tr>
+        <tr>
+          <td class="align-middle">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" rel="noopener">
+              <label class="link sponsor-icon" style="cursor: pointer">
+                <input type="submit" style="display: none">
+                {% include "svg/paypal.html" %}
+                <strong>PayPal</strong>
+              </label>
+              <input type="hidden" name="cmd" value="_s-xclick">
+              <input type="hidden" name="hosted_button_id" value="4LSMSNLUAJWNS">
+            </form>
+          </td>
+          <td class="align-middle sponsor-check">{% include "svg/check.html" %}</td>
+          <td class="align-middle sponsor-check">{% include "svg/check.html" %}</td>
+          <td class="align-middle">3 - 11 %</td>
+          <td class="align-middle"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    {% trans "When donating with Paypal, you can leave name and comment, they will be displayed on this page, providing that the following conditions are met:" %}
+    <ul>
+      <li>{% trans "the comment must be only about the donation and WeeChat (for example this is not the place to ask for new features)" %}</li>
+      <li>{% trans "URLs are not allowed because there is <strong>no advertising</strong> on this site." %}</li>
+    </ul>
+  </p>
+
   <h3>{% trans "They support WeeChat" %}</h3>
+
+  <h4>{% trans "With GitHub" %}</h4>
+
+  <p>
+    {% trans "See on GitHub:" %} <a href="https://github.com/sponsors/flashcode">https://github.com/sponsors/flashcode</a>
+  </p>
 
   <h4>{% trans "With Liberapay" %}</h4>
 
   <p>
-    {% trans "See the weechat page on Liberapay:" %} <a href="https://liberapay.com/weechat">https://liberapay.com/weechat</a>
+    {% trans "See on Liberapay:" %} <a href="https://liberapay.com/weechat">https://liberapay.com/weechat</a>
   </p>
 
   {% if sponsor_list %}

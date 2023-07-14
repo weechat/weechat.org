@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-24 23:53+0200\n"
-"PO-Revision-Date: 2023-05-19 18:39+0200\n"
+"POT-Creation-Date: 2023-07-15 00:15+0200\n"
+"PO-Revision-Date: 2023-07-14 23:48+0200\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
 "translation/ja_JP>\n"
@@ -317,8 +317,8 @@ msgstr "次期安定版のバージョン番号。"
 
 #: dev/views.py:67
 msgid ""
-"Next stable version, as number, like plugin API: info_get(\"version_number"
-"\")."
+"Next stable version, as number, like plugin API: "
+"info_get(\"version_number\")."
 msgstr ""
 "次期安定版のバージョン番号 (数表記)、プラグイン API における "
 "info_get(\"version_number\") と同様。"
@@ -945,13 +945,13 @@ msgstr ""
 msgid ""
 "A new mailing list has been added for the security advisories.\n"
 "To be warned immediately when a security vulnerability is found in WeeChat, "
-"just <a href=\"https://lists.nongnu.org/mailman/listinfo/weechat-security"
-"\">subscribe to the list</a>."
+"just <a href=\"https://lists.nongnu.org/mailman/listinfo/weechat-"
+"security\">subscribe to the list</a>."
 msgstr ""
 "セキュリティ勧告用の新しいメーリングリストが追加されました。\n"
-"WeeChat のセキュリティの脆弱性に関する情報を迅速に受け取るには<a href="
-"\"https://lists.nongnu.org/mailman/listinfo/weechat-security\">メーリングリス"
-"トを購読してください</a>。"
+"WeeChat のセキュリティの脆弱性に関する情報を迅速に受け取るには<a "
+"href=\"https://lists.nongnu.org/mailman/listinfo/weechat-security\">メーリン"
+"グリストを購読してください</a>。"
 
 #: news/_i18n_info.py:20
 msgid ""
@@ -1145,7 +1145,7 @@ msgstr ""
 "注意: TLS 接続、バディリスト管理、在席情報、MUC、転送などの多くの機能が実装さ"
 "れていません。"
 
-#: news/_i18n_info.py:34 templates/base.html:45 templates/base.html:105
+#: news/_i18n_info.py:34 templates/base.html:46 templates/base.html:106
 #: templates/home/home.html:109
 msgid "Documentation"
 msgstr "文書"
@@ -1383,8 +1383,8 @@ msgid ""
 "a>.\n"
 "It is written in Python and uses Django, and gettext for translations."
 msgstr ""
-"weechat.org のソースコードが GitHub で入手可能になりました: <a href="
-"\"https://github.com/weechat/weechat.org\">https://github.com/weechat/"
+"weechat.org のソースコードが GitHub で入手可能になりました: <a "
+"href=\"https://github.com/weechat/weechat.org\">https://github.com/weechat/"
 "weechat.org</a>。\n"
 "ソースコードは Python で書かれ、Django と翻訳用に gettext を使っています。"
 
@@ -1638,8 +1638,8 @@ msgstr ""
 "\n"
 "以前のバージョン以降のニュース:\n"
 "- /window コマンドを改良: 分割と結合が可能に\n"
-"- 離席しているニックネームを色違いで表示 (新しいオプション: \"irc_away_check"
-"\")\n"
+"- 離席しているニックネームを色違いで表示 (新しいオプション: "
+"\"irc_away_check\")\n"
 "- 状態バーに離席中インジケータを追加\n"
 "- ラグインジケータを追加 (長いラグの後は自動切断)\n"
 "- 補完機能を改良: コマンド引数を補完 (IRC と 内部)\n"
@@ -1901,9 +1901,9 @@ msgstr ""
 "remove_infobar\n"
 "- 多くのコマンドをエイリアスとして利用可能に\n"
 "- 多くのコマンドをサーバ接続時に利用可能に\n"
-"- \"irc_show_away_once\"、\"look_nick_complete_first"
-"\"、\"look_open_near_server\"、\"irc_away_check_max_nicks\" オプションを追"
-"加\n"
+"- "
+"\"irc_show_away_once\"、\"look_nick_complete_first\"、\"look_open_near_server\"、\"irc_away_check_max_nicks\" "
+"オプションを追加\n"
 "- WeeChat ホームディレクトリを指定する新しいコマンドライン引数 (-d または --"
 "dir) を追加\n"
 "- 一部のハンガリー語翻訳を追加\n"
@@ -2416,8 +2416,8 @@ msgstr ""
 "- カーソルモード (カーソルを画面上で自由に動かせるようになります)\n"
 "- キー用のコンテキスト\n"
 "- API による hdata (WeeChat とプラグインデータへの直接アクセス)\n"
-"- 結合されたバッファにおけるアクティブでないウィンドウと行に対する \"inactive"
-"\" 色\n"
+"- 結合されたバッファにおけるアクティブでないウィンドウと行に対する "
+"\"inactive\" 色\n"
 "- /layout における結合されたバッファのサポート、/upgrade 時にバッファとウィン"
 "ドウのレイアウトを保存\n"
 "- 自由内容バッファの水平スクロール\n"
@@ -2472,9 +2472,9 @@ msgstr ""
 "新しい機能:\n"
 "- Scheme スクリプトをサポート (新プラグイン \"guile\")\n"
 "- Python 3.x をサポート (まだバージョン 2.x を推奨)\n"
-"- リレープラグインに <a href=\"/blog/post/2011/12/25/QWeeChat-Python-Qt-GUI"
-"\">QWeeChat</a> などのリモートインターフェース向けに \"weechat\" プロトコルを"
-"追加\n"
+"- リレープラグインに <a href=\"/blog/post/2011/12/25/QWeeChat-Python-Qt-"
+"GUI\">QWeeChat</a> などのリモートインターフェース向けに \"weechat\" プロトコ"
+"ルを追加\n"
 "- irc メッセージの色を置換する新オプション irc.color.mirc_remap\n"
 "- デフォルトのニックネームハイライトをカスタマイズおよび無効化する新オプショ"
 "ン irc.look.highlight_{server|channel|pv}\n"
@@ -3461,8 +3461,8 @@ msgid ""
 "- add IRC server option \"split_msg_max_length\"\n"
 "- add option logger.file.fsync\n"
 "- add option logger.look.backlog_conditions\n"
-"- add configuration file for each script plugin (\"python.conf\", \"perl.conf"
-"\", ...)\n"
+"- add configuration file for each script plugin (\"python.conf\", \"perl."
+"conf\", ...)\n"
 "- add \"eval\" option in script commands and info \"xxx_eval\" (python, "
 "perl, ruby, lua and guile)\n"
 "- add infos \"xxx_interpreter\" and \"xxx_version\" in script plugins\n"
@@ -3479,18 +3479,18 @@ msgstr ""
 "新しい機能:\n"
 "\n"
 "- ヘッドレスモードを追加 (新しいバイナリ: \"weechat-headless\")\n"
-"- コマンド /print にオプション \"-newbuffer\"、\"-free\"、\"-switch\"、\"-y"
-"\" を追加 (自由内容バッファのサポートを含みます)\n"
+"- コマンド /print にオプション \"-newbuffer\"、\"-free\"、\"-switch\"、\"-"
+"y\" を追加 (自由内容バッファのサポートを含みます)\n"
 "- コマンド /buffer にオプション \"add\" を追加\n"
 "- 特定のテンプレートで部分補完を強制するオプション weechat.completion."
 "partial_completion_templates を追加\n"
 "- IRC サーバオプション \"split_msg_max_length\" を追加\n"
 "- オプション logger.file.fsync を追加\n"
 "- オプション logger.look.backlog_conditions を追加\n"
-"- スクリプトプラグイン毎の設定ファイルを追加 (\"python.conf\"、\"perl.conf"
-"\"、...)\n"
-"- script コマンドに \"eval\" オプションを追加、インフォ \"xxx_eval"
-"\" (python、perl、ruby、lua、guile) を追加\n"
+"- スクリプトプラグイン毎の設定ファイルを追加 (\"python.conf\"、\"perl."
+"conf\"、...)\n"
+"- script コマンドに \"eval\" オプションを追加、インフォ "
+"\"xxx_eval\" (python、perl、ruby、lua、guile) を追加\n"
 "- スクリプトプラグインにインフォ \"xxx_interpreter\"、\"xxx_version\" を追"
 "加\n"
 "- script コマンドにオプション \"version\" を追加\n"
@@ -3659,9 +3659,9 @@ msgstr ""
 #| "- add option \"-oc\" in command /exec\n"
 #| "- many bugs fixed.\n"
 #| "\n"
-#| "For complete list of new features and bugs fixed, please look at <a href="
-#| "\"/blog/post/2017/01/15/Version-1.7\">development blog</a> or <a href=\"/"
-#| "files/changelog/ChangeLog-1.7.html\">ChangeLog</a>."
+#| "For complete list of new features and bugs fixed, please look at <a "
+#| "href=\"/blog/post/2017/01/15/Version-1.7\">development blog</a> or <a "
+#| "href=\"/files/changelog/ChangeLog-1.7.html\">ChangeLog</a>."
 msgid ""
 "Version 2.5 is available!\n"
 "\n"
@@ -3719,9 +3719,9 @@ msgstr ""
 #| "- add option \"-oc\" in command /exec\n"
 #| "- many bugs fixed.\n"
 #| "\n"
-#| "For complete list of new features and bugs fixed, please look at <a href="
-#| "\"/blog/post/2017/01/15/Version-1.7\">development blog</a> or <a href=\"/"
-#| "files/changelog/ChangeLog-1.7.html\">ChangeLog</a>."
+#| "For complete list of new features and bugs fixed, please look at <a "
+#| "href=\"/blog/post/2017/01/15/Version-1.7\">development blog</a> or <a "
+#| "href=\"/files/changelog/ChangeLog-1.7.html\">ChangeLog</a>."
 msgid ""
 "Version 2.6 is available!\n"
 "\n"
@@ -3779,9 +3779,9 @@ msgstr ""
 #| "- add option \"-oc\" in command /exec\n"
 #| "- many bugs fixed.\n"
 #| "\n"
-#| "For complete list of new features and bugs fixed, please look at <a href="
-#| "\"/blog/post/2017/01/15/Version-1.7\">development blog</a> or <a href=\"/"
-#| "files/changelog/ChangeLog-1.7.html\">ChangeLog</a>."
+#| "For complete list of new features and bugs fixed, please look at <a "
+#| "href=\"/blog/post/2017/01/15/Version-1.7\">development blog</a> or <a "
+#| "href=\"/files/changelog/ChangeLog-1.7.html\">ChangeLog</a>."
 msgid ""
 "Version 2.7 is available!\n"
 "\n"
@@ -3796,17 +3796,17 @@ msgid ""
 "- add option xfer.file.download_temporary_suffix\n"
 "- add option weechat.look.nick_color_hash_salt\n"
 "- add different WeeChat icons sizes\n"
-"- add calculation of expression in evaluation of expressions with \"calc:xxx"
-"\"\n"
+"- add calculation of expression in evaluation of expressions with \"calc:"
+"xxx\"\n"
 "- add optional default path (evaluated) in completion \"filename\"\n"
 "- add modifier \"color_encode_ansi\"\n"
 "- add support of Guile 2.2\n"
 "- add support of Python 3.8\n"
 "- many bugs fixed.\n"
 "\n"
-"For complete list of new features and bugs fixed, please look at <a href="
-"\"https://blog.weechat.org/post/2019/12/08/Version-2.7\">development blog</"
-"a> or <a href=\"/files/changelog/ChangeLog-2.7.html\">ChangeLog</a>."
+"For complete list of new features and bugs fixed, please look at <a "
+"href=\"https://blog.weechat.org/post/2019/12/08/Version-2.7\">development "
+"blog</a> or <a href=\"/files/changelog/ChangeLog-2.7.html\">ChangeLog</a>."
 msgstr ""
 "バージョン 1.7 をリリースしました!\n"
 "\n"
@@ -3873,9 +3873,9 @@ msgstr ""
 #| "- add option \"-oc\" in command /exec\n"
 #| "- many bugs fixed.\n"
 #| "\n"
-#| "For complete list of new features and bugs fixed, please look at <a href="
-#| "\"/blog/post/2017/01/15/Version-1.7\">development blog</a> or <a href=\"/"
-#| "files/changelog/ChangeLog-1.7.html\">ChangeLog</a>."
+#| "For complete list of new features and bugs fixed, please look at <a "
+#| "href=\"/blog/post/2017/01/15/Version-1.7\">development blog</a> or <a "
+#| "href=\"/files/changelog/ChangeLog-1.7.html\">ChangeLog</a>."
 msgid ""
 "Version 2.8 is available!\n"
 "\n"
@@ -3895,9 +3895,9 @@ msgid ""
 "- add support of PHP 7.4\n"
 "- many bugs fixed.\n"
 "\n"
-"For complete list of new features and bugs fixed, please look at <a href="
-"\"https://blog.weechat.org/post/2020/03/29/Version-2.8\">development blog</"
-"a> or <a href=\"/files/changelog/ChangeLog-2.8.html\">ChangeLog</a>."
+"For complete list of new features and bugs fixed, please look at <a "
+"href=\"https://blog.weechat.org/post/2020/03/29/Version-2.8\">development "
+"blog</a> or <a href=\"/files/changelog/ChangeLog-2.8.html\">ChangeLog</a>."
 msgstr ""
 "バージョン 1.7 をリリースしました!\n"
 "\n"
@@ -3929,15 +3929,15 @@ msgid ""
 "- add option relay.network.auth\\_timeout, add status \"waiting\\_auth\" in "
 "irc and weechat relay protocols\n"
 "- add option \"color\\_bg\\_inactive\" in bars\n"
-"- add bar items \"buffer\\_nicklist\\_count\\_groups\" and \"buffer"
-"\\_nicklist\\_count\\_all\"\n"
+"- add bar items \"buffer\\_nicklist\\_count\\_groups\" and "
+"\"buffer\\_nicklist\\_count\\_all\"\n"
 "- add key Alt+Enter to insert a newline, set default size for input bar to 0 "
 "(automatic)\n"
 "- add a scalable WeeChat logo (SVG)\n"
 "- add base 16/32/64 encoding/decoding in evaluation of expressions with "
 "\"base\\_encode:base,xxx\" and \"base\\_decode:base,xxx\"\n"
-"- add case sensitive wildcard matching comparison operator (\"==*\" and \"!!*"
-"\") and case sensitive/insensitive include comparison operators (\"==-\",  "
+"- add case sensitive wildcard matching comparison operator (\"==*\" and \"!!"
+"*\") and case sensitive/insensitive include comparison operators (\"==-\",  "
 "\"!!-\", \"=-\", \"!-\") in evaluation of expressions\n"
 "- add keys Alt+Shift+B and Alt+Shift+N to toggle buflist/nicklist bars\n"
 "- reload configuration files when the SIGHUP signal is received\n"
@@ -3955,9 +3955,9 @@ msgid ""
 "\"weechat-javascript\"\n"
 "- many bugs fixed.\n"
 "\n"
-"For complete list of new features and bugs fixed, please look at <a href="
-"\"https://blog.weechat.org/post/2020/07/18/Version-2.9\">development blog</"
-"a> or <a href=\"/files/changelog/ChangeLog-2.9.html\">ChangeLog</a>."
+"For complete list of new features and bugs fixed, please look at <a "
+"href=\"https://blog.weechat.org/post/2020/07/18/Version-2.9\">development "
+"blog</a> or <a href=\"/files/changelog/ChangeLog-2.9.html\">ChangeLog</a>."
 msgstr ""
 
 #: news/_i18n_info.py:147
@@ -3977,14 +3977,14 @@ msgid ""
 "\"tg_trigger_name\" in data set by all triggers\n"
 "- add argument \"bytes\" in API function string_dyn_concat\n"
 "- add API function string_color_code_size\n"
-"- add optional list of colors in infos \"nick_color\" and \"nick_color_name"
-"\"\n"
+"- add optional list of colors in infos \"nick_color\" and "
+"\"nick_color_name\"\n"
 "- add pointer to irc_nick in focus of bar item \"buffer_nicklist\"\n"
 "- many bugs fixed.\n"
 "\n"
-"For complete list of new features and bugs fixed, please look at <a href="
-"\"https://blog.weechat.org/post/2020/11/11/Version-3.0\">development blog</"
-"a> or <a href=\"/files/changelog/ChangeLog-3.0.html\">ChangeLog</a>."
+"For complete list of new features and bugs fixed, please look at <a "
+"href=\"https://blog.weechat.org/post/2020/11/11/Version-3.0\">development "
+"blog</a> or <a href=\"/files/changelog/ChangeLog-3.0.html\">ChangeLog</a>."
 msgstr ""
 
 #: news/_i18n_info.py:148
@@ -4038,9 +4038,9 @@ msgid ""
 "- add variable \"${tg_trigger_name}\" in command trigger evaluated strings\n"
 "- many bugs fixed.\n"
 "\n"
-"For complete list of new features and bugs fixed, please look at <a href="
-"\"https://blog.weechat.org/post/2021/03/07/Version-3.1\">development blog</"
-"a> or <a href=\"/files/changelog/ChangeLog-3.1.html\">ChangeLog</a>."
+"For complete list of new features and bugs fixed, please look at <a "
+"href=\"https://blog.weechat.org/post/2021/03/07/Version-3.1\">development "
+"blog</a> or <a href=\"/files/changelog/ChangeLog-3.1.html\">ChangeLog</a>."
 msgstr ""
 
 #: news/_i18n_info.py:150
@@ -4067,9 +4067,9 @@ msgid ""
 "trigger evaluated strings\n"
 "- many bugs fixed.\n"
 "\n"
-"For complete list of new features and bugs fixed, please look at <a href="
-"\"https://blog.weechat.org/post/2021/06/13/Version-3.2\">development blog</"
-"a> or <a href=\"/files/changelog/ChangeLog-3.2.html\">ChangeLog</a>."
+"For complete list of new features and bugs fixed, please look at <a "
+"href=\"https://blog.weechat.org/post/2021/06/13/Version-3.2\">development "
+"blog</a> or <a href=\"/files/changelog/ChangeLog-3.2.html\">ChangeLog</a>."
 msgstr ""
 
 #: news/_i18n_info.py:151
@@ -4121,8 +4121,8 @@ msgid ""
 "- drop support of IRC DH-BLOWFISH and DH-AES SASL mechanisms\n"
 "- add new keys to clear, remove and restore buffers in hotlist\n"
 "- add option \"certs\" in command /debug\n"
-"- add options \"-o\", \"-ol\", \"-i\" and \"-il\" in command \"/plugin list"
-"\"\n"
+"- add options \"-o\", \"-ol\", \"-i\" and \"-il\" in command \"/plugin "
+"list\"\n"
 "- add split of string and shell arguments in evaluation of expressions with "
 "\"split:number,seps,flags,xxx\" and \"split_shell:number,xxx\"\n"
 "- add \"${re:repl_index}\" to get the index of replacement in function "
@@ -4136,9 +4136,9 @@ msgid ""
 "- allow signals \"irc_raw_in\" and \"irc_in\" to eat messages\n"
 "- many bugs fixed.\n"
 "\n"
-"For complete list of new features and bugs fixed, please look at <a href="
-"\"https://blog.weechat.org/post/2021/09/19/Version-3.3\">development blog</"
-"a> or <a href=\"/files/changelog/ChangeLog-3.3.html\">ChangeLog</a>."
+"For complete list of new features and bugs fixed, please look at <a "
+"href=\"https://blog.weechat.org/post/2021/09/19/Version-3.3\">development "
+"blog</a> or <a href=\"/files/changelog/ChangeLog-3.3.html\">ChangeLog</a>."
 msgstr ""
 
 #: news/_i18n_info.py:154
@@ -4158,9 +4158,9 @@ msgstr ""
 #| "- add option \"-oc\" in command /exec\n"
 #| "- many bugs fixed.\n"
 #| "\n"
-#| "For complete list of new features and bugs fixed, please look at <a href="
-#| "\"/blog/post/2017/01/15/Version-1.7\">development blog</a> or <a href=\"/"
-#| "files/changelog/ChangeLog-1.7.html\">ChangeLog</a>."
+#| "For complete list of new features and bugs fixed, please look at <a "
+#| "href=\"/blog/post/2017/01/15/Version-1.7\">development blog</a> or <a "
+#| "href=\"/files/changelog/ChangeLog-1.7.html\">ChangeLog</a>."
 msgid ""
 "Version 3.4 is available!\n"
 "\n"
@@ -4168,19 +4168,19 @@ msgid ""
 "\n"
 "- improve the IRC message parser\n"
 "- add command /toggle\n"
-"- add user variables in evaluation of expressions with \"define:name,value"
-"\"\n"
+"- add user variables in evaluation of expressions with \"define:name,"
+"value\"\n"
 "- add support of static arrays in hdata\n"
-"- hide key and password in command \"/msg nickserv setpass nick key password"
-"\"\n"
+"- hide key and password in command \"/msg nickserv setpass nick key "
+"password\"\n"
 "- add dark theme in documentation (automatic theme, following browser/"
 "desktop settings)\n"
 "- add support of Ruby 3.0\n"
 "- many bugs fixed.\n"
 "\n"
-"For complete list of new features and bugs fixed, please look at <a href="
-"\"https://blog.weechat.org/post/2021/12/18/Version-3.4\">development blog</"
-"a> or <a href=\"/files/changelog/ChangeLog-3.4.html\">ChangeLog</a>."
+"For complete list of new features and bugs fixed, please look at <a "
+"href=\"https://blog.weechat.org/post/2021/12/18/Version-3.4\">development "
+"blog</a> or <a href=\"/files/changelog/ChangeLog-3.4.html\">ChangeLog</a>."
 msgstr ""
 "バージョン 1.7 をリリースしました!\n"
 "\n"
@@ -4247,9 +4247,9 @@ msgstr ""
 #| "- add option \"-oc\" in command /exec\n"
 #| "- many bugs fixed.\n"
 #| "\n"
-#| "For complete list of new features and bugs fixed, please look at <a href="
-#| "\"/blog/post/2017/01/15/Version-1.7\">development blog</a> or <a href=\"/"
-#| "files/changelog/ChangeLog-1.7.html\">ChangeLog</a>."
+#| "For complete list of new features and bugs fixed, please look at <a "
+#| "href=\"/blog/post/2017/01/15/Version-1.7\">development blog</a> or <a "
+#| "href=\"/files/changelog/ChangeLog-1.7.html\">ChangeLog</a>."
 msgid ""
 "Version 3.5 is available!\n"
 "\n"
@@ -4266,9 +4266,9 @@ msgid ""
 "- add trigger variables \"${tg_tag_irc_xxx}\" containing IRC message tags\n"
 "- many bugs fixed.\n"
 "\n"
-"For complete list of new features and bugs fixed, please look at <a href="
-"\"https://blog.weechat.org/post/2022/03/27/Version-3.5\">development blog</"
-"a> or <a href=\"/files/changelog/ChangeLog-3.5.html\">ChangeLog</a>."
+"For complete list of new features and bugs fixed, please look at <a "
+"href=\"https://blog.weechat.org/post/2022/03/27/Version-3.5\">development "
+"blog</a> or <a href=\"/files/changelog/ChangeLog-3.5.html\">ChangeLog</a>."
 msgstr ""
 "バージョン 1.7 をリリースしました!\n"
 "\n"
@@ -4305,9 +4305,9 @@ msgstr ""
 #| "- add option \"-oc\" in command /exec\n"
 #| "- many bugs fixed.\n"
 #| "\n"
-#| "For complete list of new features and bugs fixed, please look at <a href="
-#| "\"/blog/post/2017/01/15/Version-1.7\">development blog</a> or <a href=\"/"
-#| "files/changelog/ChangeLog-1.7.html\">ChangeLog</a>."
+#| "For complete list of new features and bugs fixed, please look at <a "
+#| "href=\"/blog/post/2017/01/15/Version-1.7\">development blog</a> or <a "
+#| "href=\"/files/changelog/ChangeLog-1.7.html\">ChangeLog</a>."
 msgid ""
 "Version 3.6 is available!\n"
 "\n"
@@ -4327,9 +4327,9 @@ msgid ""
 "- add support of PHP 8.2\n"
 "- many bugs fixed.\n"
 "\n"
-"For complete list of new features and bugs fixed, please look at <a href="
-"\"https://blog.weechat.org/post/2022/07/10/Version-3.6\">development blog</"
-"a> or <a href=\"/files/changelog/ChangeLog-3.6.html\">ChangeLog</a>."
+"For complete list of new features and bugs fixed, please look at <a "
+"href=\"https://blog.weechat.org/post/2022/07/10/Version-3.6\">development "
+"blog</a> or <a href=\"/files/changelog/ChangeLog-3.6.html\">ChangeLog</a>."
 msgstr ""
 "バージョン 1.7 をリリースしました!\n"
 "\n"
@@ -4363,8 +4363,8 @@ msgid ""
 "- add key Alt+Backspace to delete previous word, change key Ctrl+w to delete "
 "previous word until whitespace\n"
 "- rename API function string_build_with_split_string to "
-"string_rebuild_split_string, add arguments \"index_start\" and \"index_end"
-"\"\n"
+"string_rebuild_split_string, add arguments \"index_start\" and "
+"\"index_end\"\n"
 "- add info \"uptime_current\"\n"
 "- add API function crypto_hash_file\n"
 "- add support of priority in API function hook_line\n"
@@ -4385,9 +4385,9 @@ msgid ""
 "- add trigger variable \"${tg_hook_type}\"\n"
 "- many bugs fixed.\n"
 "\n"
-"For complete list of new features and bugs fixed, please look at <a href="
-"\"https://blog.weechat.org/post/2022/10/09/Version-3.7\">development blog</"
-"a> or <a href=\"/files/changelog/ChangeLog-3.7.html\">ChangeLog</a>."
+"For complete list of new features and bugs fixed, please look at <a "
+"href=\"https://blog.weechat.org/post/2022/10/09/Version-3.7\">development "
+"blog</a> or <a href=\"/files/changelog/ChangeLog-3.7.html\">ChangeLog</a>."
 msgstr ""
 
 #: news/_i18n_info.py:160
@@ -4448,9 +4448,9 @@ msgid ""
 "command to \"s\" (regex replace)\n"
 "- many bugs fixed.\n"
 "\n"
-"For complete list of new features and bugs fixed, please look at <a href="
-"\"https://blog.weechat.org/post/2023/01/08/Version-3.8\">development blog</"
-"a> or <a href=\"/files/changelog/ChangeLog-3.8.html\">ChangeLog</a>."
+"For complete list of new features and bugs fixed, please look at <a "
+"href=\"https://blog.weechat.org/post/2023/01/08/Version-3.8\">development "
+"blog</a> or <a href=\"/files/changelog/ChangeLog-3.8.html\">ChangeLog</a>."
 msgstr ""
 
 #: news/_i18n_info.py:162
@@ -4518,8 +4518,8 @@ msgstr "WeeChat - 小さくて強力なチャット環境"
 #, fuzzy
 #| msgid ""
 #| "WeeChat repositories (weechat, scripts, qweechat) have been moved to "
-#| "GitHub, in WeeChat organization: <a href=\"https://github.com/weechat"
-#| "\">https://github.com/weechat</a>.\n"
+#| "GitHub, in WeeChat organization: <a href=\"https://github.com/"
+#| "weechat\">https://github.com/weechat</a>.\n"
 #| "\n"
 #| "For more info, please look at <a href=\"/blog/post/2014/03/03/Git-"
 #| "repositories-moved-to-Github\">development blog</a>."
@@ -4612,9 +4612,9 @@ msgstr ""
 #: news/_i18n_info.py:171
 msgid ""
 "WeeChat project now accepts recurring donations via Liberapay, which has "
-"very low fees (see <a href=\"https://liberapay.com/about/faq#differences"
-"\">the differences between Liberapay and other recurrent crowdfunding "
-"platforms</a>)."
+"very low fees (see <a href=\"https://liberapay.com/about/"
+"faq#differences\">the differences between Liberapay and other recurrent "
+"crowdfunding platforms</a>)."
 msgstr ""
 "WeeChat プロジェクトは Liberapay 経由の定期的な寄付を受け入れるようになりまし"
 "た。この寄付にかかる手数料はとても安価です (<a href=\"https://liberapay.com/"
@@ -6707,25 +6707,25 @@ msgid "about"
 msgstr "概要"
 
 #: templates/about/about.html:11 templates/about/history.html:45
-#: templates/base.html:95 templates/home/home.html:43
+#: templates/base.html:96 templates/home/home.html:43
 msgid "Features"
 msgstr "機能"
 
-#: templates/about/about.html:12 templates/base.html:96
+#: templates/about/about.html:12 templates/base.html:97
 #: templates/home/home.html:86
 msgid "Interfaces"
 msgstr "インターフェース"
 
-#: templates/about/about.html:13 templates/base.html:97
+#: templates/about/about.html:13 templates/base.html:98
 #: templates/home/home.html:46 templates/home/home.html:89
 msgid "Screenshots"
 msgstr "スクリーンショット"
 
-#: templates/about/about.html:14 templates/base.html:98
+#: templates/about/about.html:14 templates/base.html:99
 msgid "History"
 msgstr "歴史"
 
-#: templates/about/about.html:15 templates/base.html:99
+#: templates/about/about.html:15 templates/base.html:100
 #: templates/home/home.html:112
 msgid "Support"
 msgstr "サポート"
@@ -6993,8 +6993,8 @@ msgstr "文書とサポート"
 #: templates/about/features.html:151
 #, python-format
 msgid ""
-"WeeChat is translated into several languages and has a <a href=\"%(doc_url)s"
-"\">comprehensive documentation</a>, also translated."
+"WeeChat is translated into several languages and has a <a "
+"href=\"%(doc_url)s\">comprehensive documentation</a>, also translated."
 msgstr ""
 "WeeChat はいくつかの言語に翻訳されており、<a href=\"%(doc_url)s\">様々な文書"
 "</a>も翻訳されています。"
@@ -7089,7 +7089,7 @@ msgstr "そして WeeChat が誕生しました。2003 年 6 月のことです�
 msgid "Key dates"
 msgstr "重要な日"
 
-#: templates/about/history.html:43 templates/donate.html:90
+#: templates/about/history.html:43 templates/donate.html:134
 #: templates/scripts/python3.html:133
 msgid "Date"
 msgstr "日付"
@@ -7115,12 +7115,12 @@ msgstr ""
 "QWeeChat を除いて WeeChat チーム以外によって開発されています。サポートが必要"
 "な場合にはそれぞれの作者に直接お問い合わせください。"
 
-#: templates/about/interfaces.html:24 templates/donate.html:96
+#: templates/about/interfaces.html:24 templates/donate.html:140
 #: templates/scripts/list.html:84 templates/scripts/list.html:86
 msgid "Name"
 msgstr "名称"
 
-#: templates/about/interfaces.html:25 templates/donate.html:94
+#: templates/about/interfaces.html:25 templates/donate.html:138
 msgid "Type"
 msgstr "形式"
 
@@ -7128,7 +7128,8 @@ msgstr "形式"
 msgid "Site"
 msgstr "サイト"
 
-#: templates/about/interfaces.html:27 templates/scripts/python3.html:144
+#: templates/about/interfaces.html:27 templates/donate.html:37
+#: templates/scripts/python3.html:144
 msgid "Notes"
 msgstr "備考"
 
@@ -7278,82 +7279,82 @@ msgstr ""
 "WeeChat.org は <a href=\"https://www.hetzner.de/en/\">Hetzner</a> によってホ"
 "ストされています。"
 
-#: templates/base.html:27
+#: templates/base.html:28
 msgid "WeeChat, the extensible chat client"
 msgstr "WeeChat、拡張可能なチャットクライアント"
 
-#: templates/base.html:43 templates/base.html:86
+#: templates/base.html:44 templates/base.html:87
 msgid "Home"
 msgstr "ホーム"
 
-#: templates/base.html:44 templates/base.html:94
+#: templates/base.html:45 templates/base.html:95
 msgid "About"
 msgstr "概要"
 
-#: templates/base.html:46 templates/base.html:113 templates/home/home.html:21
+#: templates/base.html:47 templates/base.html:114 templates/home/home.html:21
 #: templates/scripts/source.html:47 templates/themes/source.html:26
 msgid "Download"
 msgstr "ダウンロード"
 
-#: templates/base.html:47 templates/base.html:122 templates/dev/stats.html:15
+#: templates/base.html:48 templates/base.html:123 templates/dev/stats.html:15
 #: templates/home/home.html:66 templates/scripts/python3.html:134
 #: templates/scripts/scripts.html:11
 msgid "Scripts"
 msgstr "スクリプト"
 
-#: templates/base.html:48 templates/base.html:140 templates/doc/doc.html:18
+#: templates/base.html:49 templates/base.html:141 templates/doc/doc.html:18
 #: templates/download/packages.html:11
 msgid "Development"
 msgstr "開発"
 
-#: templates/base.html:52 templates/base.html:53
+#: templates/base.html:53 templates/base.html:54
 msgid "Donate"
 msgstr "寄付"
 
-#: templates/base.html:87 templates/home/home.html:143
+#: templates/base.html:88 templates/home/home.html:143
 #: templates/home/news.html:13
 msgid "Latest news"
 msgstr "最新のニュース"
 
-#: templates/base.html:88 templates/home/home.html:163
+#: templates/base.html:89 templates/home/home.html:163
 #: templates/home/news.html:14
 msgid "Upcoming events"
 msgstr "今後のイベント"
 
-#: templates/base.html:89 templates/home/home.html:131
+#: templates/base.html:90 templates/home/home.html:131
 msgid "Make a donation"
 msgstr "寄付する"
 
-#: templates/base.html:117 templates/download/download.html:14
+#: templates/base.html:118 templates/download/download.html:14
 msgid "Debian/Ubuntu repositories"
 msgstr "Debian/Ubuntu リポジトリ"
 
-#: templates/base.html:123
+#: templates/base.html:124
 msgid "Browse scripts"
 msgstr "スクリプトを閲覧"
 
-#: templates/base.html:124 templates/scripts/scripts.html:12
+#: templates/base.html:125 templates/scripts/scripts.html:12
 msgid "Unofficial scripts"
 msgstr "非公式スクリプト"
 
-#: templates/base.html:141 templates/dev/dev.html:11
+#: templates/base.html:142 templates/dev/dev.html:11
 msgid "Roadmap"
 msgstr "ロードマップ"
 
-#: templates/base.html:142 templates/dev/dev.html:12
+#: templates/base.html:143 templates/dev/dev.html:12
 msgid "Statistics"
 msgstr "統計"
 
-#: templates/base.html:143 templates/dev/dev.html:13
+#: templates/base.html:144 templates/dev/dev.html:13
 #: templates/dev/info_list.html:22
 msgid "Info"
 msgstr "情報"
 
-#: templates/base.html:144
+#: templates/base.html:145
 msgid "Development blog"
 msgstr "開発ブログ"
 
-#: templates/base.html:167
+#: templates/base.html:168
 msgid "About WeeChat.org"
 msgstr "WeeChat.org について"
 
@@ -7583,7 +7584,7 @@ msgstr "曖昧"
 msgid "Untranslated"
 msgstr "未翻訳"
 
-#: templates/doc/doc_version.html:112 templates/donate.html:143
+#: templates/doc/doc_version.html:112 templates/donate.html:187
 msgid "Total"
 msgstr "合計"
 
@@ -7669,12 +7670,12 @@ msgstr ""
 #, fuzzy
 #| msgid ""
 #| "Please <strong>DO NOT</strong> file a GitHub issue for security related "
-#| "problems, but send an email to <a href=\"mailto:security@weechat.org"
-#| "\">security@weechat.org</a> instead."
+#| "problems, but send an email to <a href=\"mailto:security@weechat."
+#| "org\">security@weechat.org</a> instead."
 msgid ""
 "To report a security issue, please <strong>DO NOT</strong> file an issue on "
-"GitHub, but send an email to <a href=\"mailto:security@weechat.org"
-"\">security@weechat.org</a> instead."
+"GitHub, but send an email to <a href=\"mailto:security@weechat."
+"org\">security@weechat.org</a> instead."
 msgstr ""
 "セキュリティ関連の問題を GitHub issue から<strong>報告しないで</strong>くださ"
 "い。その代わり、セキュリティ関連の問題を報告する場合は <a href=\"mailto:"
@@ -7865,57 +7866,10 @@ msgid "donate"
 msgstr "寄付"
 
 #: templates/donate.html:15
-msgid "Donate to WeeChat"
-msgstr "WeeChat に寄付"
-
-#: templates/donate.html:18
-msgid "Click on one of the buttons below and follow the instructions:"
-msgstr "以下のボタンのどれか一つをクリックして、指示に従ってください:"
-
-#: templates/donate.html:20
-msgid ""
-"<strong>Liberapay</strong>: recurring donation with very low fees "
-"(<strong>best choice</strong>)"
-msgstr ""
-"<strong>Liberapay</strong>: 安価な手数料で定期的に寄付する (<strong>おすすめ"
-"</strong>)"
-
-#: templates/donate.html:21
-msgid "<strong>Paypal</strong>: one-time donation."
-msgstr "<strong>Paypal</strong>: 一度だけ寄付する。"
-
-#: templates/donate.html:26
-msgid ""
-"You can leave name and comment, they will be displayed on this page, "
-"providing that the following conditions are met:"
-msgstr ""
-"名前とコメントを残すこともできます。以下の条件が満たされれば、名前とコメント"
-"はこのページに掲載されます:"
-
-#: templates/donate.html:28
-msgid ""
-"the comment must be only about the donation and WeeChat (for example this is "
-"not the place to ask for new features)"
-msgstr ""
-"コメントは寄付および WeeChat に関するものに限ります (例えば、ここで新機能を要"
-"求することは適切ではありません)"
-
-#: templates/donate.html:29
-msgid ""
-"URLs are not allowed because there is <strong>no advertising</strong> on "
-"this site."
-msgstr ""
-"このサイトには<strong>広告を載せない</strong>ので、URL は禁止されます。"
-
-#: templates/donate.html:35
-msgid "Donate using Liberapay"
-msgstr "Liberapay を用いて寄付"
-
-#: templates/donate.html:48
 msgid "Why your donation matters?"
 msgstr "寄付が大切な理由とは?"
 
-#: templates/donate.html:51
+#: templates/donate.html:18
 msgid ""
 "WeeChat is written by a small group of <strong>volunteers</strong>. Any "
 "contribution will show us that the project is appreciated and keep us "
@@ -7924,7 +7878,7 @@ msgstr ""
 "WeeChat を開発しているのは小さな<strong>ボランティア</strong>団体です。このプ"
 "ロジェクトはどんな寄付でも歓迎しますし、寄付のお陰でやる気が維持されます。"
 
-#: templates/donate.html:53
+#: templates/donate.html:20
 msgid ""
 "Your donations help to pay the <strong>dedicated server</strong>, used for "
 "developments, build of packages and hosting of weechat.org."
@@ -7932,44 +7886,115 @@ msgstr ""
 "皆様からの寄付は<strong>専用サーバ</strong>の維持費に役立てられます。このサー"
 "バは開発、パッケージのビルド、weechat.org のホスティングに使われます。"
 
-#: templates/donate.html:56
+#: templates/donate.html:23
+msgid "Donate to WeeChat"
+msgstr "WeeChat に寄付"
+
+#: templates/donate.html:26
+#, fuzzy
+#| msgid "Click on one of the buttons below and follow the instructions:"
+msgid ""
+"Click on one of the links below to open the site in a new tab and follow the "
+"instructions:"
+msgstr "以下のボタンのどれか一つをクリックして、指示に従ってください:"
+
+#: templates/donate.html:33
+msgid "Link"
+msgstr ""
+
+#: templates/donate.html:34
+#, fuzzy
+#| msgid "Make a donation"
+msgid "One-time"
+msgstr "寄付する"
+
+#: templates/donate.html:35
+msgid "Recurring"
+msgstr ""
+
+#: templates/donate.html:36
+msgid "Fees"
+msgstr ""
+
+#: templates/donate.html:51
+msgid "Requires a GitHub account"
+msgstr ""
+
+#: templates/donate.html:87
+#, fuzzy
+#| msgid ""
+#| "You can leave name and comment, they will be displayed on this page, "
+#| "providing that the following conditions are met:"
+msgid ""
+"When donating with Paypal, you can leave name and comment, they will be "
+"displayed on this page, providing that the following conditions are met:"
+msgstr ""
+"名前とコメントを残すこともできます。以下の条件が満たされれば、名前とコメント"
+"はこのページに掲載されます:"
+
+#: templates/donate.html:89
+msgid ""
+"the comment must be only about the donation and WeeChat (for example this is "
+"not the place to ask for new features)"
+msgstr ""
+"コメントは寄付および WeeChat に関するものに限ります (例えば、ここで新機能を要"
+"求することは適切ではありません)"
+
+#: templates/donate.html:90
+msgid ""
+"URLs are not allowed because there is <strong>no advertising</strong> on "
+"this site."
+msgstr ""
+"このサイトには<strong>広告を載せない</strong>ので、URL は禁止されます。"
+
+#: templates/donate.html:94
 msgid "They support WeeChat"
 msgstr "WeeChat 支援者"
 
-#: templates/donate.html:58
+#: templates/donate.html:96
+msgid "With GitHub"
+msgstr ""
+
+#: templates/donate.html:99
+msgid "See on GitHub:"
+msgstr ""
+
+#: templates/donate.html:102
 msgid "With Liberapay"
 msgstr "Liberapay 経由の寄付"
 
-#: templates/donate.html:61
-msgid "See the weechat page on Liberapay:"
+#: templates/donate.html:105
+#, fuzzy
+#| msgid "See the weechat page on Liberapay:"
+msgid "See on Liberapay:"
 msgstr "Liberapay 上の WeeChat のページを参照してください:"
 
-#: templates/donate.html:66
+#: templates/donate.html:110
 msgid "With Paypal and other payments"
 msgstr "Paypal およびその他の支払い方法による寄付"
 
-#: templates/donate.html:71
+#: templates/donate.html:115
 msgid "Whole list"
 msgstr "完全なリスト"
 
-#: templates/donate.html:74
+#: templates/donate.html:118
 msgid "Types"
 msgstr "寄付元の種類"
 
-#: templates/donate.html:78
+#: templates/donate.html:122
 #, python-format
 msgid "Top %(count)s"
 msgstr "上位 %(count)s"
 
-#: templates/donate.html:92
+#: templates/donate.html:136
 msgid "Rank"
 msgstr "順位"
 
-#: templates/donate.html:98
+#: templates/donate.html:142
 msgid "Amount"
 msgstr "寄付金額"
 
-#: templates/donate.html:100
+#: templates/donate.html:144
 msgid "Comment"
 msgstr "コメント"
 
@@ -8194,11 +8219,13 @@ msgstr ""
 #: templates/download/packages.html:56
 #, python-format
 msgid ""
-"<strong>Warning:</strong> the version %(version)s has one or more <a href="
-"\"%(security_url)s\">vulnerabilities</a>, it is not recommended to use it."
+"<strong>Warning:</strong> the version %(version)s has one or more <a "
+"href=\"%(security_url)s\">vulnerabilities</a>, it is not recommended to use "
+"it."
 msgstr ""
-"<strong>警告:</strong> バージョン %(version)s には<a href=\"%(security_url)s"
-"\">脆弱性</a>があります。これを使用することはおすすめできません。"
+"<strong>警告:</strong> バージョン %(version)s には<a "
+"href=\"%(security_url)s\">脆弱性</a>があります。これを使用することはおすすめ"
+"できません。"
 
 #: templates/download/packages.html:58
 msgid "Vulnerabilities fixed in versions:"
@@ -8207,14 +8234,14 @@ msgstr "脆弱性が修正されているバージョン:"
 #: templates/download/packages.html:64
 #, fuzzy, python-format
 #| msgid ""
-#| "<strong>Important:</strong> this release fixes a <a href="
-#| "\"%(security_url)s\">vulnerability</a>."
+#| "<strong>Important:</strong> this release fixes a <a "
+#| "href=\"%(security_url)s\">vulnerability</a>."
 msgid ""
-"<strong>Note:</strong> this release fixes <a href=\"%(security_url)s\">"
-"%(counter)s vulnerability</a>."
+"<strong>Note:</strong> this release fixes <a "
+"href=\"%(security_url)s\">%(counter)s vulnerability</a>."
 msgid_plural ""
-"<strong>Note:</strong> this release fixes <a href=\"%(security_url)s\">"
-"%(counter)s vulnerabilities</a>."
+"<strong>Note:</strong> this release fixes <a "
+"href=\"%(security_url)s\">%(counter)s vulnerabilities</a>."
 msgstr[0] ""
 "<strong>重要:</strong> このリリースでは<a href=\"%(security_url)s\">脆弱性</"
 "a>が修正されています。"
@@ -9095,17 +9122,3 @@ msgstr "内部エラー。"
 #: themes/models.py:302
 msgid "Invalid name: different from theme."
 msgstr "不正な名前: テーマとは異なります。"
-
-#, fuzzy
-#~| msgid ""
-#~| "10th birthday for WeeChat!\n"
-#~| "\n"
-#~| "Happy birthday!"
-#~ msgid ""
-#~ "20th birthday for WeeChat!\n"
-#~ "\n"
-#~ "Happy birthday!"
-#~ msgstr ""
-#~ "WeeChat は 10 歳になりました!\n"
-#~ "\n"
-#~ "お誕生日おめでとう!"

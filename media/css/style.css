@@ -8,12 +8,12 @@ body {
   color: var(--body-color);
 }
 
-a:not(.btn), a:not(.btn):visited, a:not(.btn):hover, a:not(.btn):active {
+a:not(.btn), a:not(.btn):visited, a:not(.btn):hover, a:not(.btn):active, .link {
   color: var(--link-color);
   text-decoration: none;
 }
 
-a svg g, a svg path {
+a.svg-link svg g .svg-link, a.svg-link svg path {
   fill: var(--link-color);
 }
 
@@ -254,6 +254,20 @@ img.img-shadow2 {
 }
 
 /* donate */
+
+.sponsor-icon svg {
+  width: 60px;
+  height: 60px;
+  margin-right: 1.5rem;
+}
+
+.sponsor-check svg g, .sponsor-check svg path {
+  fill: var(--donate-check);
+}
+
+.sponsor-x svg g, .sponsor-x svg path {
+  fill: var(--donate-x);
+}
 
 .sponsortype .person g, .sponsortype .person path {
   fill: var(--donate-person-fill);

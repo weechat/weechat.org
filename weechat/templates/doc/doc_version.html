@@ -50,9 +50,9 @@
             {% for lang, name, url in files %}
             <td class="h4 text-center{% if lang.lang == bestlang %} doc-bestlang{% endif %}">
               {% if url %}
-              <a href="{{ url }}">{% include "svg/link-external.html" %}</a>
+              <a href="{{ url }}" class="svg-link">{% include "svg/link-external.html" %}</a>
               {% elif name %}
-              <a href="/files/doc/{{ name }}">{% include "svg/doc.html" %}</a>
+              <a href="/files/doc/{{ name }}" class="svg-link">{% include "svg/doc.html" %}</a>
               {% else %}
               <span class="text-muted">-</span>
               {% endif %}
@@ -74,9 +74,9 @@
             {% for lang, name, url in files %}
             <td class="h4 text-center{% if lang.lang == bestlang %} doc-bestlang{% endif %}">
               {% if url %}
-              <a href="{{ url }}">{% include "svg/link-external.html" %}</a>
+              <a href="{{ url }}" class="svg-link">{% include "svg/link-external.html" %}</a>
               {% elif name %}
-              <a href="/files/doc/{{ name }}">{% include "svg/doc.html" %}</a>
+              <a href="/files/doc/{{ name }}" class="svg-link">{% include "svg/doc.html" %}</a>
               {% else %}
               <span class="text-muted">-</span>
               {% endif %}
