@@ -44,8 +44,6 @@ def __i18n_scripts_scripts():
     gettext_noop("Add an item showing weather.")
     # Translators: description for script "hlpvitem.py" (0.3.0+)
     gettext_noop("Add bar item with highlight/private messages.")
-    # Translators: description for script "text_item.py" (0.3.0+)
-    gettext_noop("Add bar items with plain text.")
     # Translators: description for script "zncplayback.py" (0.3.2+)
     gettext_noop("Add support for the ZNC Playback module.")
     # Translators: description for script "bitlbee_completion.py" (0.4.3+)
