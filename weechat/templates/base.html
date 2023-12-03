@@ -59,7 +59,7 @@
           {% csrf_token %}
           <div class="form-group my-0">
             <input type="hidden" name="language" value="{{ LANGUAGE_CODE }}">
-            <select class="form-select form-select-sm" onchange="javascript:document.forms['lang'].elements['language'].value = this.value; document.forms['lang'].submit();">
+            <select class="form-select form-select-sm" aria-label="{% trans "Language" %}" onchange="javascript:document.forms['lang'].elements['language'].value = this.value; document.forms['lang'].submit();">
               {% for lang in LANGUAGES %}
               <option value="{{ lang.0 }}" onclick="javascript:document.forms['lang'].elements['language'].value = '{{ lang.0 }}'; document.forms['lang'].submit();" {% if lang.0 == LANGUAGE_CODE %} selected{% endif %}>{% language lang.0 %}{% trans lang.1 %}{% endlanguage %}</option>
               {% endfor %}
