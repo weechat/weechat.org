@@ -64,7 +64,6 @@ LANGUAGES_LOCALES = {
 
 # Themes
 THEMES = (
-    'auto',
     'dark',
     'light',
 )

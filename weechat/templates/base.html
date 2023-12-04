@@ -2,7 +2,7 @@
 
 <!-- WeeChat.org - Copyright (C) 2003-{% now "Y" %} by Sébastien Helleu (FlashCode) -->
 {% load i18n %}{% load txt2html %}
-<html lang="{{ LANGUAGE_CODE }}">
+<html lang="{{ LANGUAGE_CODE }}" data-bs-theme="{{ theme }}">
 
 <head>
   <meta charset="utf-8">
@@ -13,15 +13,8 @@
   <meta name="robots" content="all">
   <link rel="shortcut icon" type="image/png" href="{{ MEDIA_URL }}images/favicon.png">
   <link rel="me" href="https://hostux.social/@flashcode">
-  {% if theme == 'auto' %}
-  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/bootstrap_dark.min.css" media="(prefers-color-scheme: dark)">
-  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/bootstrap_light.min.css" media="(not (prefers-color-scheme: dark)), (prefers-color-scheme: light)">
-  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/style_dark.css" media="(prefers-color-scheme: dark)">
-  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/style_light.css" media="(not (prefers-color-scheme: dark)), (prefers-color-scheme: light)">
-  {% else %}
-  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/bootstrap_{{ theme }}.min.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/bootstrap.min.css" media="screen">
   <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/style_{{ theme }}.css" media="screen">
-  {% endif %}
   <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/style.css" media="screen">
   {% block css %}{% endblock %}
   <link rel="alternate" type="application/rss+xml" href="{% url 'feeds_news' %}" title="WeeChat RSS feed">

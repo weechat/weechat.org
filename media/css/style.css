@@ -39,10 +39,12 @@ tbody {
 
 td {
   color: var(--td-color);
+  background-color: inherit !important;
 }
 
 .table-striped > tbody > tr:nth-of-type(2n+1) > * {
   color: var(--table-striped-tr-color);
+  background-color: var(--table-striped-tr-bg-color) !important;
 }
 
 .alert-success {
@@ -375,27 +377,27 @@ ul.social {
 }
 
 .text-severity0 {
-  color: var(--text-severity0-color);
+  color: var(--text-severity0-color) !important;
   font-weight: bold;
 }
 
 .text-severity1 {
-  color: var(--text-severity1-color);
+  color: var(--text-severity1-color) !important;
   font-weight: bold;
 }
 
 .text-severity2 {
-  color: var(--text-severity2-color);
+  color: var(--text-severity2-color) !important;
   font-weight: bold;
 }
 
 .text-severity3 {
-  color: var(--text-severity3-color);
+  color: var(--text-severity3-color) !important;
   font-weight: bold;
 }
 
 .text-severity4 {
-  color: var(--text-severity4-color);
+  color: var(--text-severity4-color) !important;
   font-weight: bold;
 }
 
