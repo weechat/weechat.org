@@ -46,7 +46,7 @@
       {% for task in tasks_version.list %}
       <tr>
         <td class="text-nowrap" style="width: 8rem;">{{ task.url_tracker }}</td>
-        <td class="text-center text-nowrap" style="width: 6rem";>
+        <td class="text-center text-nowrap" style="width: 6rem;">
           {% if task.spec %}
           <a href="{{ task.spec }}" class="svg-link">{% include "svg/doc.html" %}</a>
           {% endif %}
@@ -72,8 +72,8 @@
           {% endif %}
           </strong>
         </td>
-        <td class="text-center text-nowrap commits" style="width: 6rem";>{{ task.url_commits }}</td>
-        <td class="text-center text-nowrap" style="width: 10rem;">
+        <td class="text-center commits" style="width: 8rem;">{{ task.url_commits }}</td>
+        <td class="text-center" style="width: 10rem;">
           {{ task.component }}
         </td>
         <td>
