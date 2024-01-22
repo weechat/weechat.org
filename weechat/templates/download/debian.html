@@ -230,7 +230,7 @@ $ sudo gpg --no-default-keyring --keyring /usr/share/keyrings/weechat-archive-ke
             {% for debpkg_arch in debpkgs_by_arch %}
             <tr>
               <td class="text-nowrap">{{ debpkg_arch.list.0.Source }}</td>
-              <td class="text-nowrap {% if "dev" in debpkg_arch.list.0.Version %}devel-version{% else %}stable-version fw-bold{% endif %}" title="{% if "dev" in debpkg_arch.list.0.Version %}{% trans "Development version" %}{% else %}{% trans "Stable version" %}{% endif %}">{{ debpkg_arch.list.0.Version }}</td>
+              <td class="text-nowrap" title="{% if "dev" in debpkg_arch.list.0.Version %}{% trans "Development version" %}{% else %}{% trans "Stable version" %}{% endif %}"><span class="{% if "dev" in debpkg_arch.list.0.Version %}devel-version{% else %}stable-version fw-bold{% endif %}">{{ debpkg_arch.list.0.Version }}</span></td>
               <td class="text-nowrap" title="{% trans "Architecture" %}">{{ debpkg_arch.list.0.arch }}</td>
               <td class="text-nowrap">{{ debpkg_arch.list.0.builddatetime|localdate:"datetime" }}</td>
               <td class="text-nowrap"><a href="{% url 'download_debian_active' active=active %}{% if not allfiles %}files/#{{ debpkg_arch.list.0.anchor }}{% endif %}" id="{{ debpkg_arch.list.0.anchor }}">{{ debpkg_arch.list|length }} {% trans "files" %}</a></td>
