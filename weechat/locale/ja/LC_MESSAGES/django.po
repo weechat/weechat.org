@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-21 11:35+0100\n"
+"POT-Creation-Date: 2024-01-22 22:00+0100\n"
 "PO-Revision-Date: 2023-12-03 20:15+0100\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
@@ -361,7 +361,7 @@ msgstr "Debian/Ubuntu リポジトリ署名鍵 (書式: PGP 公開鍵)。"
 msgid "All non-binary infos (one info by line, format: \"info:value\")."
 msgstr "全てのテキスト情報 (1 行に 1 情報、書式: \"info:value\")。"
 
-#: dev/views.py:300
+#: dev/views.py:303
 msgid "(binary data)"
 msgstr "(バイナリデータ)"
 
@@ -7703,7 +7703,7 @@ msgstr ""
 msgid "Current value"
 msgstr "現在の値"
 
-#: templates/dev/info_list.html:24 templates/dev/roadmap.html:42
+#: templates/dev/info_list.html:24 templates/dev/roadmap.html:44
 #: templates/doc/security.html:282 templates/scripts/list.html:95
 #: themes/models.py:171
 msgid "Description"
@@ -7735,42 +7735,48 @@ msgstr "次期バージョン"
 msgid "Released versions"
 msgstr "古いバージョン"
 
-#: templates/dev/roadmap.html:18
-msgid "This page lists major features done or planned."
+#: templates/dev/roadmap.html:19
+#, fuzzy
+#| msgid "Dive in the <strong>future</strong> of WeeChat!"
+msgid ""
+"This page lists major features planned: dive in the <strong>future</strong> "
+"of WeeChat!"
+msgstr "WeeChat の<strong>機能</strong>をどうぞ!"
+
+#: templates/dev/roadmap.html:21
+#, fuzzy
+#| msgid "This page lists major features done or planned."
+msgid "This page lists major features implemented in the latest releases."
 msgstr ""
 "このページは開発が終わったか開発が予定されている主な機能をリストアップしてい"
 "ます。"
 
-#: templates/dev/roadmap.html:20
-msgid "Dive in the <strong>future</strong> of WeeChat!"
-msgstr "WeeChat の<strong>機能</strong>をどうぞ!"
-
-#: templates/dev/roadmap.html:37 templates/doc/security.html:262
+#: templates/dev/roadmap.html:39 templates/doc/security.html:262
 msgid "Tracker"
 msgstr "トラッカー"
 
-#: templates/dev/roadmap.html:38
+#: templates/dev/roadmap.html:40
 msgid "Spec"
 msgstr ""
 
-#: templates/dev/roadmap.html:39
+#: templates/dev/roadmap.html:41
 msgid "Status"
 msgstr "状態"
 
-#: templates/dev/roadmap.html:41
+#: templates/dev/roadmap.html:43
 msgid "Plugin"
 msgstr "プラグイン"
 
-#: templates/dev/roadmap.html:57
+#: templates/dev/roadmap.html:59
 msgid "Planned"
 msgstr "計画中"
 
-#: templates/dev/roadmap.html:60
+#: templates/dev/roadmap.html:62
 msgid "Done"
 msgstr "完了"
 
 #. Translators: "Done" is followed by the % of task which is implemented, for example: "Done: 75%"
-#: templates/dev/roadmap.html:63
+#: templates/dev/roadmap.html:65
 msgid "Done:"
 msgstr "完了:"
 

@@ -15,9 +15,11 @@
 </ul>
 
 <p>
-  {% trans "This page lists major features done or planned." %}
-  <br>
-  {% trans "Dive in the <strong>future</strong> of WeeChat!" %}
+  {% if versions == "future" %}
+  {% trans "This page lists major features planned: dive in the <strong>future</strong> of WeeChat!" %}
+  {% elif versions == "released" %}
+  {% trans "This page lists major features implemented in the latest releases." %}
+  {% endif %}
 </p>
 
 <br>

@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-21 11:35+0100\n"
+"POT-Creation-Date: 2024-01-22 22:00+0100\n"
 "PO-Revision-Date: 2023-12-03 20:15+0100\n"
 "Last-Translator: Alexandre Bolelli <semeion7@gmail.com>\n"
 "Language-Team: Portuguese <semeion7@gmail.com>\n"
@@ -379,7 +379,7 @@ msgid "All non-binary infos (one info by line, format: \"info:value\")."
 msgstr ""
 "todas as informações (uma informação por linha, formato: \"info:value\")"
 
-#: dev/views.py:300
+#: dev/views.py:303
 msgid "(binary data)"
 msgstr ""
 
@@ -7184,7 +7184,7 @@ msgstr ""
 msgid "Current value"
 msgstr "Valor atual"
 
-#: templates/dev/info_list.html:24 templates/dev/roadmap.html:42
+#: templates/dev/info_list.html:24 templates/dev/roadmap.html:44
 #: templates/doc/security.html:282 templates/scripts/list.html:95
 #: themes/models.py:171
 msgid "Description"
@@ -7216,41 +7216,47 @@ msgstr "Próximas versões"
 msgid "Released versions"
 msgstr "Versões antigas"
 
-#: templates/dev/roadmap.html:18
-msgid "This page lists major features done or planned."
+#: templates/dev/roadmap.html:19
+#, fuzzy
+#| msgid "Dive in the <strong>future</strong> of WeeChat!"
+msgid ""
+"This page lists major features planned: dive in the <strong>future</strong> "
+"of WeeChat!"
+msgstr "Mergulhe no <strong>futuro</strong> do WeeChat!"
+
+#: templates/dev/roadmap.html:21
+#, fuzzy
+#| msgid "This page lists major features done or planned."
+msgid "This page lists major features implemented in the latest releases."
 msgstr ""
 "ESta página lista as características mais importantes feitas ou planejadas."
 
-#: templates/dev/roadmap.html:20
-msgid "Dive in the <strong>future</strong> of WeeChat!"
-msgstr "Mergulhe no <strong>futuro</strong> do WeeChat!"
-
-#: templates/dev/roadmap.html:37 templates/doc/security.html:262
+#: templates/dev/roadmap.html:39 templates/doc/security.html:262
 msgid "Tracker"
 msgstr "Tracker"
 
-#: templates/dev/roadmap.html:38
+#: templates/dev/roadmap.html:40
 msgid "Spec"
 msgstr ""
 
-#: templates/dev/roadmap.html:39
+#: templates/dev/roadmap.html:41
 msgid "Status"
 msgstr "Status"
 
-#: templates/dev/roadmap.html:41
+#: templates/dev/roadmap.html:43
 msgid "Plugin"
 msgstr "Plugins"
 
-#: templates/dev/roadmap.html:57
+#: templates/dev/roadmap.html:59
 msgid "Planned"
 msgstr "Planejado"
 
-#: templates/dev/roadmap.html:60
+#: templates/dev/roadmap.html:62
 msgid "Done"
 msgstr "Concluído"
 
 #. Translators: "Done" is followed by the % of task which is implemented, for example: "Done: 75%"
-#: templates/dev/roadmap.html:63
+#: templates/dev/roadmap.html:65
 #, fuzzy
 #| msgid "Done"
 msgid "Done:"
