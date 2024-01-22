@@ -38,7 +38,9 @@
       <tr>
         <th>{% trans "Tracker" %}</th>
         <th class="text-center">{% trans "Spec" %}</th>
+        {% if versions == "future" %}
         <th class="text-center">{% trans "Status" %}</th>
+        {% endif %}
         <th class="text-center">Git</th>
         <th class="text-center">{% trans "Plugin" %}</th>
         <th>{% trans "Description" %}</th>
@@ -53,6 +55,7 @@
           <a href="{{ task.spec }}" class="svg-link">{% include "svg/doc.html" %}</a>
           {% endif %}
         </td>
+        {% if versions == "future" %}
         <td class="text-center text-nowrap" style="width: 10rem;">
           <strong>
           {% if task.status == 0 %}
@@ -74,6 +77,7 @@
           {% endif %}
           </strong>
         </td>
+        {% endif %}
         <td class="text-center commits" style="width: 8rem;">{{ task.url_commits }}</td>
         <td class="text-center" style="width: 10rem;">
           {{ task.component }}
