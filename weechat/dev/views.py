@@ -115,6 +115,7 @@ def roadmap(request, versions='future'):
                                 version='stable').description
         )
         all_tasks = Task.objects.all().filter(visible=1).order_by('priority')
+        reverse = False
         if versions == 'future':
             # future versions
             tasks = [task for task in all_tasks
@@ -123,9 +124,11 @@ def roadmap(request, versions='future'):
             # already released versions
             tasks = [task for task in all_tasks
                      if version_to_list(task.version.version) <= v_stable]
+            reverse = True
         task_list = sorted(
             tasks,
             key=lambda task: version_to_list(task.version.version),
+            reverse=reverse,
         )
     except ObjectDoesNotExist:
         task_list = None
