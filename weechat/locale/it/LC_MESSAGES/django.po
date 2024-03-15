@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-23 07:46+0100\n"
+"POT-Creation-Date: 2024-03-15 13:44+0100\n"
 "PO-Revision-Date: 2023-08-22 12:21+0200\n"
 "Last-Translator: Marco Paolone <marcopaolone@gmail.com>\n"
 "Language-Team: Italian <marcopaolone@gmail.com>\n"
@@ -6895,77 +6895,92 @@ msgid ""
 "strong>."
 msgstr ""
 
-#: templates/doc/doc_version.html:43
+#: templates/doc/doc_version.html:31
+#, python-format
+msgid ""
+"<strong>Important:</strong> if you're compiling from git main branch or "
+"using the development version, please go to the <a "
+"href=\"%(doc_devel)s\">Development</a> page."
+msgstr ""
+
+#: templates/doc/doc_version.html:38
+#, python-format
+msgid ""
+"<strong>Important:</strong> if you're compiling or using the latest stable "
+"release, please go to the <a href=\"%(doc_stable)s\">Stable</a> page."
+msgstr ""
+
+#: templates/doc/doc_version.html:57
 #, fuzzy
 #| msgid "Documentation"
 msgid "Documentation for users"
 msgstr "Documentazione"
 
-#: templates/doc/doc_version.html:67
+#: templates/doc/doc_version.html:81
 #, fuzzy
 msgid "Documentation for developers"
 msgstr "Documentazione"
 
-#: templates/doc/doc_version.html:97
+#: templates/doc/doc_version.html:111
 msgid "Build date:"
 msgstr ""
 
-#: templates/doc/doc_version.html:102
+#: templates/doc/doc_version.html:116
 msgid "Internationalization stats"
 msgstr "Stato internazionalizzazione"
 
-#: templates/doc/doc_version.html:107
+#: templates/doc/doc_version.html:121
 #, fuzzy
 msgctxt "translated language"
 msgid "Language"
 msgstr "Linguaggio"
 
-#: templates/doc/doc_version.html:108 themes/models.py:164 themes/models.py:255
+#: templates/doc/doc_version.html:122 themes/models.py:164 themes/models.py:255
 msgid "File"
 msgstr "File"
 
-#: templates/doc/doc_version.html:109
+#: templates/doc/doc_version.html:123
 msgid "Translated"
 msgstr "Tradotto"
 
-#: templates/doc/doc_version.html:110
+#: templates/doc/doc_version.html:124
 msgid "Fuzzy"
 msgstr "Fuzzy"
 
-#: templates/doc/doc_version.html:111
+#: templates/doc/doc_version.html:125
 msgid "Untranslated"
 msgstr "Non tradotto"
 
-#: templates/doc/doc_version.html:112 templates/donate.html:187
+#: templates/doc/doc_version.html:126 templates/donate.html:187
 msgid "Total"
 msgstr "Totale"
 
-#: templates/doc/doc_version.html:113
+#: templates/doc/doc_version.html:127
 #, fuzzy
 msgid "Progress"
 msgstr "Barra di avanzamento"
 
-#: templates/doc/doc_version.html:133
+#: templates/doc/doc_version.html:147
 #, fuzzy
 msgid "base language"
 msgstr "Lingua base"
 
-#: templates/doc/doc_version.html:162
+#: templates/doc/doc_version.html:176
 msgid ""
 "statistics for gettext files (*.po), auto-built from development version on"
 msgstr ""
 "statistiche per i file gettext (*.po), generate automaticamente dalla "
 "versione di sviluppo del"
 
-#: templates/doc/doc_version.html:166
+#: templates/doc/doc_version.html:180
 msgid "Missing language?"
 msgstr "Manca una lingua?"
 
-#: templates/doc/doc_version.html:169
+#: templates/doc/doc_version.html:183
 msgid "Feel free to help us by translating WeeChat doc in your language!"
 msgstr "Sentiti libero di aiutarci traducendo WeeChat nella tua lingua!"
 
-#: templates/doc/doc_version.html:171
+#: templates/doc/doc_version.html:185
 #, fuzzy
 #| msgid "More information about WeeChat translations:"
 msgid ""
@@ -6973,7 +6988,7 @@ msgid ""
 "guide."
 msgstr "Maggiori informazioni sulle traduzioni di WeeChat:"
 
-#: templates/doc/doc_version.html:175
+#: templates/doc/doc_version.html:189
 #, fuzzy
 #| msgid "documentation"
 msgid "No documentation."

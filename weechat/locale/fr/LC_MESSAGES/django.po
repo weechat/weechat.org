@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-23 07:46+0100\n"
-"PO-Revision-Date: 2024-02-23 07:47+0100\n"
+"POT-Creation-Date: 2024-03-15 13:43+0100\n"
+"PO-Revision-Date: 2024-03-15 13:43+0100\n"
 "Last-Translator: Sébastien Helleu <flashcode@flashtux.org>\n"
 "Language-Team: French <flashcode@flashtux.org>\n"
 "Language: fr\n"
@@ -8098,79 +8098,100 @@ msgstr ""
 "Envie de contribuer au code source de WeeChat ? → <strong>Guide du "
 "développeur</strong>."
 
-#: templates/doc/doc_version.html:43
+#: templates/doc/doc_version.html:31
+#, python-format
+msgid ""
+"<strong>Important:</strong> if you're compiling from git main branch or "
+"using the development version, please go to the <a "
+"href=\"%(doc_devel)s\">Development</a> page."
+msgstr ""
+"<strong>Important :</strong> si vous compilez depuis la branche git "
+"principale ou utilisez la version en développement, merci d'aller sur la "
+"page <a href=\"%(doc_devel)s\">Développement</a>."
+
+#: templates/doc/doc_version.html:38
+#, python-format
+msgid ""
+"<strong>Important:</strong> if you're compiling or using the latest stable "
+"release, please go to the <a href=\"%(doc_stable)s\">Stable</a> page."
+msgstr ""
+"<strong>Important :</strong> si vous compilez ou utilisez la dernière "
+"version stable disponible, merci d'aller sur la page <a "
+"href=\"%(doc_stable)s\">Stable</a>."
+
+#: templates/doc/doc_version.html:57
 msgid "Documentation for users"
 msgstr "Documentation pour utilisateurs"
 
-#: templates/doc/doc_version.html:67
+#: templates/doc/doc_version.html:81
 msgid "Documentation for developers"
 msgstr "Documentation pour développeurs"
 
-#: templates/doc/doc_version.html:97
+#: templates/doc/doc_version.html:111
 msgid "Build date:"
 msgstr "Date de construction :"
 
-#: templates/doc/doc_version.html:102
+#: templates/doc/doc_version.html:116
 msgid "Internationalization stats"
 msgstr "Stats internationalisation"
 
-#: templates/doc/doc_version.html:107
+#: templates/doc/doc_version.html:121
 msgctxt "translated language"
 msgid "Language"
 msgstr "Langue"
 
-#: templates/doc/doc_version.html:108 themes/models.py:164 themes/models.py:255
+#: templates/doc/doc_version.html:122 themes/models.py:164 themes/models.py:255
 msgid "File"
 msgstr "Fichier"
 
-#: templates/doc/doc_version.html:109
+#: templates/doc/doc_version.html:123
 msgid "Translated"
 msgstr "Traduit"
 
-#: templates/doc/doc_version.html:110
+#: templates/doc/doc_version.html:124
 msgid "Fuzzy"
 msgstr "Approximatif"
 
-#: templates/doc/doc_version.html:111
+#: templates/doc/doc_version.html:125
 msgid "Untranslated"
 msgstr "Non traduit"
 
-#: templates/doc/doc_version.html:112 templates/donate.html:187
+#: templates/doc/doc_version.html:126 templates/donate.html:187
 msgid "Total"
 msgstr "Total"
 
-#: templates/doc/doc_version.html:113
+#: templates/doc/doc_version.html:127
 msgid "Progress"
 msgstr "Progression"
 
-#: templates/doc/doc_version.html:133
+#: templates/doc/doc_version.html:147
 msgid "base language"
 msgstr "langue de base"
 
-#: templates/doc/doc_version.html:162
+#: templates/doc/doc_version.html:176
 msgid ""
 "statistics for gettext files (*.po), auto-built from development version on"
 msgstr ""
 "statistiques sur les fichiers gettext (*.po), construites automatiquement "
 "depuis la version de développement le"
 
-#: templates/doc/doc_version.html:166
+#: templates/doc/doc_version.html:180
 msgid "Missing language?"
 msgstr "Langue manquante ?"
 
-#: templates/doc/doc_version.html:169
+#: templates/doc/doc_version.html:183
 msgid "Feel free to help us by translating WeeChat doc in your language!"
 msgstr ""
 "N'hésitez pas à nous aider en traduisant la documentation WeeChat dans votre "
 "langue !"
 
-#: templates/doc/doc_version.html:171
+#: templates/doc/doc_version.html:185
 msgid ""
 "There is more information about WeeChat translations in the developer's "
 "guide."
 msgstr "Il y a plus d'informations dans le guide du développeur."
 
-#: templates/doc/doc_version.html:175
+#: templates/doc/doc_version.html:189
 msgid "No documentation."
 msgstr "Pas de documentation."
 

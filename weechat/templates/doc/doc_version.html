@@ -25,6 +25,20 @@
   </p>
   {% endif %}
 
+  {% if version == "stable" %}
+  {% url 'doc_project_version' project 'devel' as doc_devel %}
+  <p>
+    {% blocktrans %}<strong>Important:</strong> if you're compiling from git main branch or using the development version, please go to the <a href="{{ doc_devel }}">Development</a> page.{% endblocktrans %}
+  </p>
+  {% endif %}
+
+  {% if version == "devel" %}
+  {% url 'doc_project_version' project 'stable' as doc_stable %}
+  <p>
+    {% blocktrans %}<strong>Important:</strong> if you're compiling or using the latest stable release, please go to the <a href="{{ doc_stable }}">Stable</a> page.{% endblocktrans %}
+  </p>
+  {% endif %}
+
   <p class="row">
     <div class="table-responsive col-lg-10 col-xl-8 px-0">
       <table class="table table-hover">
