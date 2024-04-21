@@ -33,7 +33,7 @@ from weechat.themes.views import (
 
 urlpatterns = [
     path('', view_themes, name='themes'),
-    re_path(r'^(?P<filter_name>(author))/(?P<filter_value>(.*))/$',
+    re_path(r'^(?P<filter_name>(author))/(?P<filter_value>([^/]+))/$',
             view_themes, name='themes_filter'),
     re_path(r'^sort/(?P<sort_key>(name|version|added|updated))/$',
             view_themes, name='themes_sort'),

@@ -33,7 +33,7 @@ from weechat.scripts.views import (
 urlpatterns = [
     path('', view_scripts, name='scripts'),
     re_path(r'^(?P<filter_name>(tag|language|license|author))/'
-            r'(?P<filter_value>(.*))/$',
+            r'(?P<filter_value>([^/]+))/$',
             view_scripts, name='scripts_filter'),
     re_path(r'^sort/(?P<sort_key>(name|language|license|min_weechat|'
             r'max_weechat|author|added|updated))/$',
