@@ -38,15 +38,9 @@
 
 {% else %}
 
-{% if filename %}
-<div class="alert alert-danger">
-  {% trans "Screenshot not found:" %} {{ filename }}
-</div>
-{% else %}
 <p>
   {% trans "No screenshot." %}
 </p>
-{% endif %}
 
 {% endif %}
 

@@ -24,9 +24,8 @@ from sys import version as python_version
 
 from django import __version__ as django_version
 from django.conf import settings
-from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Sum
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.utils.translation import gettext
 
 from weechat.about.models import (
@@ -46,10 +45,7 @@ def screenshots(request, app='weechat', filename=''):
     or all screenshots as thumbnails.
     """
     if filename:
-        try:
-            screenshot = Screenshot.objects.get(app=app, filename=filename)
-        except ObjectDoesNotExist:
-            screenshot = None
+        screenshot = get_object_or_404(Screenshot, app=app, filename=filename)
         return render(
             request,
             'about/screenshots.html',
