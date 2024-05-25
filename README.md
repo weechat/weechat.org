@@ -1,4 +1,4 @@
-# weechat.org
+# WeeChat.org
 
 <p align="center">
   <img src="https://weechat.org/media/images/weechat_logo_large.png" alt="WeeChat" />
@@ -41,20 +41,6 @@ And just point your browser on [http://127.0.0.1:8000/](http://127.0.0.1:8000/),
 > [!IMPORTANT]
 > Default settings can be used for testing purposes but must be overridden for production,
 see the file [settings_local.template](settings_local.template) for more information.
-
-## Authors
-
-- Design/code:
-  - Sébastien Helleu (FlashCode)
-- Translators:
-  - Alexandre Bolelli
-  - Krzysztof Korościk (soltys)
-  - Marco Paolone
-  - Nils Görs (nils_2)
-  - Ryuunosuke Ayanokouzi
-- Contributors:
-  - Håvard Pettersson
-  - Humdinger
 
 ## Copyright
 
