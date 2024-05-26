@@ -22,14 +22,29 @@
     <thead>
       <tr>
         <th>{% trans "Name" %}</th>
-        <th>{% trans "Type" %}</th>
+        <th>{% trans "Relay protocol" %}</th>
+        <th>{% trans "Client type" %}</th>
         <th>{% trans "Site" %}</th>
         <th>{% trans "Notes" %}</th>
       </tr>
     </thead>
     <tbody>
       <tr>
+        <td>WeeChat</td>
+        <td>api</td>
+        <td>Console</td>
+        <td>
+          <a href="{% url 'download_project_version' 'weechat' 'stable' %}">
+            {% trans "Download page" %}
+          </a>
+        </td>
+        <td>
+          WeeChat ≥ 4.3.0
+        </td>
+      </tr>
+      <tr>
         <td>Glowing Bear</td>
+        <td>weechat</td>
         <td>Web</td>
         <td>
           <a href="https://glowing-bear.org">
@@ -40,6 +55,7 @@
       </tr>
       <tr>
         <td>weechat-android</td>
+        <td>weechat</td>
         <td>Android</td>
         <td>
           <a href="https://github.com/ubergeek42/weechat-android">
@@ -50,6 +66,7 @@
       </tr>
       <tr>
         <td>Lith</td>
+        <td>weechat</td>
         <td>iOS / Android / Linux / Windows / macOS</td>
         <td>
           <a href="https://github.com/LithApp/Lith">
@@ -60,6 +77,7 @@
       </tr>
       <tr>
         <td>emacs.el</td>
+        <td>weechat</td>
         <td>Emacs</td>
         <td>
           <a href="https://github.com/the-kenny/weechat.el">
@@ -70,6 +88,7 @@
       </tr>
       <tr>
         <td>weechatRN</td>
+        <td>weechat</td>
         <td>iOS / Android</td>
         <td>
           <a href="https://github.com/mhoran/weechatRN">
@@ -85,6 +104,7 @@
       </tr>
       <tr>
         <td>gtk-weechat</td>
+        <td>weechat</td>
         <td>GTK</td>
         <td>
           <a href="https://github.com/0x6d61676e7573/gtk-weechat">
@@ -95,6 +115,7 @@
       </tr>
       <tr>
         <td>QWeeChat</td>
+        <td>weechat</td>
         <td>Qt</td>
         <td>
           <a href="{% url 'download_project_version' 'qweechat' 'devel' %}">
@@ -105,6 +126,7 @@
       </tr>
       <tr>
         <td>weecloud</td>
+        <td>weechat</td>
         <td>Web</td>
         <td>
           <a href="https://github.com/eirikb/weecloud">

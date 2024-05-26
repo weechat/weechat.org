@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-26 10:13+0200\n"
+"POT-Creation-Date: 2024-05-26 10:19+0200\n"
 "PO-Revision-Date: 2024-04-21 22:07+0200\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
@@ -387,7 +387,7 @@ msgstr "プラグイン API リファレンス"
 msgid "Quick Start guide"
 msgstr "クイックスタートガイド"
 
-#: doc/_i18n_doc.py:17
+#: doc/_i18n_doc.py:17 templates/about/interfaces.html:25
 msgid "Relay protocol"
 msgstr "リレープロトコル"
 
@@ -3509,8 +3509,8 @@ msgstr ""
 "- オプション logger.look.backlog_conditions を追加\n"
 "- スクリプトプラグイン毎の設定ファイルを追加 (\"python.conf\"、\"perl."
 "conf\"、...)\n"
-"- script コマンドに \"eval\" オプションを追加、インフォ "
-"\"xxx_eval\" (python、perl、ruby、lua、guile) を追加\n"
+"- script コマンドに \"eval\" オプションを追加、インフォ \"xxx_eval\" "
+"(python、perl、ruby、lua、guile) を追加\n"
 "- スクリプトプラグインにインフォ \"xxx_interpreter\"、\"xxx_version\" を追"
 "加\n"
 "- script コマンドにオプション \"version\" を追加\n"
@@ -7517,42 +7517,42 @@ msgstr ""
 msgid "Name"
 msgstr "名称"
 
-#: templates/about/interfaces.html:25 templates/donate.html:138
-msgid "Type"
-msgstr "形式"
-
 #: templates/about/interfaces.html:26
+msgid "Client type"
+msgstr ""
+
+#: templates/about/interfaces.html:27
 msgid "Site"
 msgstr "サイト"
 
-#: templates/about/interfaces.html:27 templates/donate.html:37
+#: templates/about/interfaces.html:28 templates/donate.html:37
 #: templates/scripts/python3.html:144
 msgid "Notes"
 msgstr "備考"
 
-#: templates/about/interfaces.html:80
-msgid "Public beta test:"
-msgstr ""
-
-#: templates/about/interfaces.html:101
+#: templates/about/interfaces.html:38 templates/about/interfaces.html:122
 msgid "Download page"
 msgstr "ダウンロードページ"
 
-#: templates/about/interfaces.html:114
+#: templates/about/interfaces.html:99
+msgid "Public beta test:"
+msgstr ""
+
+#: templates/about/interfaces.html:136
 msgid "This project is not maintained any more."
 msgstr "このプロジェクトはもうメンテナンスされていません。"
 
-#: templates/about/interfaces.html:120
+#: templates/about/interfaces.html:142
 msgid "Something missing?"
 msgstr "未掲載のソフトウェア?"
 
-#: templates/about/interfaces.html:123
+#: templates/about/interfaces.html:145
 msgid "You have developed another remote interface for WeeChat?"
 msgstr ""
 "もし WeeChat のリモートインターフェースを新たに開発したらどうすればいいです"
 "か?"
 
-#: templates/about/interfaces.html:126
+#: templates/about/interfaces.html:148
 msgid "Tell us more about your great software!"
 msgstr "開発されたソフトウェアについて詳細を教えてくださいね!"
 
@@ -8414,6 +8414,10 @@ msgstr "上位 %(count)s"
 #: templates/donate.html:136
 msgid "Rank"
 msgstr "順位"
+
+#: templates/donate.html:138
+msgid "Type"
+msgstr "形式"
 
 #: templates/donate.html:142
 msgid "Amount"

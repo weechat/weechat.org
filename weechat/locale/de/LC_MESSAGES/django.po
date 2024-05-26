@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-26 10:13+0200\n"
+"POT-Creation-Date: 2024-05-26 10:19+0200\n"
 "PO-Revision-Date: 2024-04-21 22:07+0200\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -436,7 +436,7 @@ msgstr "Anleitung für API Erweiterung"
 msgid "Quick Start guide"
 msgstr "Quickstart-Anleitung"
 
-#: doc/_i18n_doc.py:17
+#: doc/_i18n_doc.py:17 templates/about/interfaces.html:25
 msgid "Relay protocol"
 msgstr "Relay Protokoll"
 
@@ -7801,40 +7801,40 @@ msgstr ""
 msgid "Name"
 msgstr "Name"
 
-#: templates/about/interfaces.html:25 templates/donate.html:138
-msgid "Type"
-msgstr "Art"
-
 #: templates/about/interfaces.html:26
+msgid "Client type"
+msgstr ""
+
+#: templates/about/interfaces.html:27
 msgid "Site"
 msgstr "Seite"
 
-#: templates/about/interfaces.html:27 templates/donate.html:37
+#: templates/about/interfaces.html:28 templates/donate.html:37
 #: templates/scripts/python3.html:144
 msgid "Notes"
 msgstr "Hinweis"
 
-#: templates/about/interfaces.html:80
-msgid "Public beta test:"
-msgstr "Öffentlicher Betatest:"
-
-#: templates/about/interfaces.html:101
+#: templates/about/interfaces.html:38 templates/about/interfaces.html:122
 msgid "Download page"
 msgstr "Downloadseite"
 
-#: templates/about/interfaces.html:114
+#: templates/about/interfaces.html:99
+msgid "Public beta test:"
+msgstr "Öffentlicher Betatest:"
+
+#: templates/about/interfaces.html:136
 msgid "This project is not maintained any more."
 msgstr "Dieses Projekt wird nicht mehr betreut."
 
-#: templates/about/interfaces.html:120
+#: templates/about/interfaces.html:142
 msgid "Something missing?"
 msgstr "Fehlt etwas?"
 
-#: templates/about/interfaces.html:123
+#: templates/about/interfaces.html:145
 msgid "You have developed another remote interface for WeeChat?"
 msgstr "Du hast eine weitere Remote-Oberfläche für WeeChat entwickelt?"
 
-#: templates/about/interfaces.html:126
+#: templates/about/interfaces.html:148
 msgid "Tell us more about your great software!"
 msgstr "Erzähle uns etwas über Deine großartige Software!"
 
@@ -8668,6 +8668,10 @@ msgstr "Top %(count)s"
 #: templates/donate.html:136
 msgid "Rank"
 msgstr "Rang"
+
+#: templates/donate.html:138
+msgid "Type"
+msgstr "Art"
 
 #: templates/donate.html:142
 msgid "Amount"

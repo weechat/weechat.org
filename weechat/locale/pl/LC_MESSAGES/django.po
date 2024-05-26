@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-26 10:13+0200\n"
+"POT-Creation-Date: 2024-05-26 10:19+0200\n"
 "PO-Revision-Date: 2024-04-27 22:20+0200\n"
 "Last-Translator: Krzysztof Korościk <soltys@soltys.info>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -414,7 +414,7 @@ msgstr "Opis API wtyczek"
 msgid "Quick Start guide"
 msgstr "Szybki start"
 
-#: doc/_i18n_doc.py:17
+#: doc/_i18n_doc.py:17 templates/about/interfaces.html:25
 msgid "Relay protocol"
 msgstr "Protokół relay"
 
@@ -3576,8 +3576,8 @@ msgstr ""
 "- dodano opcję logger.look.backlog_conditions\n"
 "- dodano pliki konfiguracyjne dla każdej wtyczki (\"python.conf\", \"perl."
 "conf\", ...)\n"
-"- dodano opcję \"eval\" w komendach skryptów oraz informację "
-"\"xxx_eval\" (python, perl, ruby, lua, guile)\n"
+"- dodano opcję \"eval\" w komendach skryptów oraz informację \"xxx_eval\" "
+"(python, perl, ruby, lua, guile)\n"
 "- dodano informacje \"xxx_interpreter\" i \"xxx_version\" we wtyczkach "
 "skryptów\n"
 "- dodano opcję \"version\" w komendach skryptów\n"
@@ -4139,9 +4139,9 @@ msgstr ""
 "- ulepszono możliwości debugowania w komendzie /eval\n"
 "- dodano opcje \"setvar\" i \"delvar\" w komendzie /bufer, zmieniono nazwy "
 "opcji \"localvar\" na \"listvar\"\n"
-"- dodano zmienną lokalną bufrów "
-"\"completion_default_template\" (przetwarzana) nadpisującą wartość opcji "
-"weechat.completion.default_template\n"
+"- dodano zmienną lokalną bufrów \"completion_default_template\" "
+"(przetwarzana) nadpisującą wartość opcji weechat.completion."
+"default_template\n"
 "- dodano opcję \"recreate\" dla komendy /filter\n"
 "- dodano przetwarzanie surowych ciągów w wyrażeniach za pomocą \"raw:xxx\"\n"
 "- dodano przetwarzanie warunków podczas przetwarzania wyrażeń za pomocą "
@@ -7579,40 +7579,40 @@ msgstr ""
 msgid "Name"
 msgstr "Nazwa"
 
-#: templates/about/interfaces.html:25 templates/donate.html:138
-msgid "Type"
-msgstr "Typ"
-
 #: templates/about/interfaces.html:26
+msgid "Client type"
+msgstr ""
+
+#: templates/about/interfaces.html:27
 msgid "Site"
 msgstr "Strona"
 
-#: templates/about/interfaces.html:27 templates/donate.html:37
+#: templates/about/interfaces.html:28 templates/donate.html:37
 #: templates/scripts/python3.html:144
 msgid "Notes"
 msgstr "Notatki"
 
-#: templates/about/interfaces.html:80
-msgid "Public beta test:"
-msgstr "Publiczne testy beta:"
-
-#: templates/about/interfaces.html:101
+#: templates/about/interfaces.html:38 templates/about/interfaces.html:122
 msgid "Download page"
 msgstr "Strona pobierania"
 
-#: templates/about/interfaces.html:114
+#: templates/about/interfaces.html:99
+msgid "Public beta test:"
+msgstr "Publiczne testy beta:"
+
+#: templates/about/interfaces.html:136
 msgid "This project is not maintained any more."
 msgstr "Ten projekt już nie jest rozwijany."
 
-#: templates/about/interfaces.html:120
+#: templates/about/interfaces.html:142
 msgid "Something missing?"
 msgstr "Czegoś brakuje?"
 
-#: templates/about/interfaces.html:123
+#: templates/about/interfaces.html:145
 msgid "You have developed another remote interface for WeeChat?"
 msgstr "Stworzyłeś własny zdalny interfejs dla WeeChat?"
 
-#: templates/about/interfaces.html:126
+#: templates/about/interfaces.html:148
 msgid "Tell us more about your great software!"
 msgstr "Opowiedz nam więcej o nim!"
 
@@ -8435,6 +8435,10 @@ msgstr "Top %(count)s"
 #: templates/donate.html:136
 msgid "Rank"
 msgstr "Ranking"
+
+#: templates/donate.html:138
+msgid "Type"
+msgstr "Typ"
 
 #: templates/donate.html:142
 msgid "Amount"
