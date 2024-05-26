@@ -73,13 +73,13 @@
     {% if project == 'weechat' or project == 'weechat-relay' %}
     <div class="row">
       <div class="col-auto">
-        <a href="/files/doc/{{ project }}/ChangeLog-{{ package_version.grouper.version }}.html">
+        <a href="{{ package_version.grouper.changelog_url }}">
           {% trans "ChangeLog" %}
         </a>
       </div>
       <div class="col-auto">
-        <a href="/files/doc/{{ project }}/ReleaseNotes-{{ package_version.grouper.version }}.html">
-          {% trans "Release notes" %}
+        <a href="{{ package_version.grouper.upgrading_url }}">
+          {% trans "Upgrade guidelines" %}
         </a>
       </div>
     </div>

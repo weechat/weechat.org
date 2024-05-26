@@ -26,22 +26,25 @@ from django.utils.safestring import mark_safe
 from weechat.common.path import project_path_join
 
 
-GITHUB_LINK = 'https://github.com/weechat/weechat/issues/%s'
-GITHUB_PATTERN = re.compile(r'(issue|close|closes|closed|fix|fixes|fixed|'
-                            'resolve|resolves|resolved) #([0-9]+)')
+GITHUB_REPO = 'https://github.com/weechat/weechat'
+GITHUB_LINK_ISSUE = f'{GITHUB_REPO}/issues/%s'
+GITHUB_ISSUE_PATTERN = re.compile(r'(issue|close|closes|closed|fix|fixes|fixed|'
+                                  'resolve|resolves|resolved) #([0-9]+)')
+GITHUB_LINK_FILE = f'{GITHUB_REPO}/blob/%(version)s/%(filename)s'
+
 
 SAVANNAH_LINKS = {
     'bug': 'https://savannah.nongnu.org/bugs/?%s',
     'task': 'https://savannah.nongnu.org/task/?%s',
     'patch': 'https://savannah.nongnu.org/patch/?%s',
 }
-SAVANNAH_PATTERN = re.compile(r'(bug|task|patch) #([0-9]+)')
+SAVANNAH_ISSUE_PATTERN = re.compile(r'(bug|task|patch) #([0-9]+)')
 
 
 def _replace_github_link(match):
     """Replace a match of GitHub keyword (like "closes #123") by URL."""
     name = match.group(0)
-    url = GITHUB_LINK % match.group(2)
+    url = GITHUB_LINK_ISSUE % match.group(2)
     return f'<a href="{url}">{name}</a>'
 
 
@@ -56,8 +59,8 @@ def _replace_savannah_link(match):
 
 def _replace_link(tracker):
     """Replace GitHub and Savannah links in a string."""
-    string = GITHUB_PATTERN.sub(_replace_github_link, tracker)
-    return SAVANNAH_PATTERN.sub(_replace_savannah_link, string)
+    string = GITHUB_ISSUE_PATTERN.sub(_replace_github_link, tracker)
+    return SAVANNAH_ISSUE_PATTERN.sub(_replace_savannah_link, string)
 
 
 def tracker_links(tracker):
@@ -119,3 +122,12 @@ def commits_links(commits):
         images.append(f'<a href="https://github.com/{repo}/{objtype}/{commit_id}">'
                       f'{link}</a>')
     return mark_safe(' '.join(images))
+
+
+def repo_link_file(filename, version):
+    """Return link to a file in a given version on GitHub."""
+    url_version = 'master' if version == 'devel' else f'v{version}'
+    return GITHUB_LINK_FILE % {
+        'filename': filename,
+        'version': url_version,
+    }

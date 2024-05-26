@@ -33,6 +33,7 @@ from django.db.models.signals import pre_save
 
 from weechat.common.models import Project
 from weechat.common.path import files_path_join
+from weechat.common.tracker import repo_link_file
 from weechat.common.utils import version_to_list
 
 PACKAGES_COMPRESSION_EXT = (
@@ -76,6 +77,26 @@ class Release(models.Model):
     def security_fixed_versions(self):
         """Return the list of versions fixing security issues."""
         return self.securityfix.split(',')
+
+    def changelog_url(self):
+        """Return URL to ChangeLog file."""
+        # legacy file (WeeChat ≤ 4.3.0)
+        filename = f'ChangeLog-{self.version}.html'
+        path = files_path_join('doc', self.project.name, filename)
+        if os.path.exists(path):
+            return f'/files/doc/{self.project.name}/{filename}'
+        # new name, directly on GitHub
+        return repo_link_file('CHANGELOG.md', self.version)
+
+    def upgrading_url(self):
+        """Return URL to upgrade guidelines."""
+        # legacy file (WeeChat ≤ 4.3.0)
+        filename = f'ReleaseNotes-{self.version}.html'
+        path = files_path_join('doc', self.project.name, filename)
+        if os.path.exists(path):
+            return f'/files/doc/{self.project.name}/{filename}'
+        # new name, directly on GitHub
+        return repo_link_file('UPGRADING.md', self.version)
 
     @property
     def is_released(self):
