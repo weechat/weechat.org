@@ -83,10 +83,10 @@ class Release(models.Model):
         version = self.description if self.version == 'stable' else self.version
         if version == 'devel':
             # devel version: link to CHANGELOG.md
-            return repo_link_file('CHANGELOG.md')
+            return repo_link_file(self.project.name, 'master', 'CHANGELOG.md')
         if version_to_list(version) >= [4, 0]:
             # version ≥ 4.0.0: link to release on GitHub
-            return repo_link_release(version)
+            return repo_link_release(self.project.name, version)
         # version < 4.0.0: link to ChangeLog-x.y.z.html
         filename = f'ChangeLog-{version}.html'
         return f'/files/doc/{self.project.name}/{filename}'
@@ -96,10 +96,10 @@ class Release(models.Model):
         version = self.description if self.version == 'stable' else self.version
         if version == 'devel':
             # devel version: link to UPGRADING.md
-            return repo_link_file('UPGRADING.md')
+            return repo_link_file(self.project.name, 'master', 'UPGRADING.md')
         if version_to_list(version) >= [4, 4]:
             # version ≥ 4.4.0: link to UPGRADING.md of this version
-            return repo_link_file('UPGRADING.md', ref=f'v{version}')
+            return repo_link_file(self.project.name, f'v{version}', 'UPGRADING.md')
         # version < 4.4.0: link to ReleaseNotes-x.y.z.html
         filename = f'ReleaseNotes-{version}.html'
         return f'/files/doc/{self.project.name}/{filename}'

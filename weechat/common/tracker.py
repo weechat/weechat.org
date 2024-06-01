@@ -26,8 +26,8 @@ from django.utils.safestring import mark_safe
 from weechat.common.path import project_path_join
 
 
-GITHUB_REPO = 'https://github.com/weechat/weechat'
-GITHUB_LINK_ISSUE = f'{GITHUB_REPO}/issues/%s'
+GITHUB_REPO = 'https://github.com/weechat/%(project)s'
+GITHUB_LINK_ISSUE = f'{GITHUB_REPO}/issues/%(issue)s'
 GITHUB_ISSUE_PATTERN = re.compile(r'(issue|close|closes|closed|fix|fixes|fixed|'
                                   'resolve|resolves|resolved) #([0-9]+)')
 GITHUB_LINK_FILE = f'{GITHUB_REPO}/blob/%(ref)s/%(filename)s'
@@ -45,7 +45,10 @@ SAVANNAH_ISSUE_PATTERN = re.compile(r'(bug|task|patch) #([0-9]+)')
 def _replace_github_link(match):
     """Replace a match of GitHub keyword (like "closes #123") by URL."""
     name = match.group(0)
-    url = GITHUB_LINK_ISSUE % match.group(2)
+    url = GITHUB_LINK_ISSUE % {
+        'project': 'weechat',
+        'issue': match.group(2),
+    }
     return f'<a href="{url}">{name}</a>'
 
 
@@ -125,16 +128,18 @@ def commits_links(commits):
     return mark_safe(' '.join(images))
 
 
-def repo_link_file(filename, ref='master'):
+def repo_link_file(project, ref, filename):
     """Return link to a file in a given version on GitHub."""
     return GITHUB_LINK_FILE % {
+        'project': project,
         'ref': ref,
         'filename': filename,
     }
 
 
-def repo_link_release(version):
+def repo_link_release(project, version):
     """Return link to a release on GitHub."""
     return GITHUB_LINK_RELEASE % {
+        'project': project,
         'version': version,
     }
