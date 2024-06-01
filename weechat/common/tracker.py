@@ -30,7 +30,8 @@ GITHUB_REPO = 'https://github.com/weechat/weechat'
 GITHUB_LINK_ISSUE = f'{GITHUB_REPO}/issues/%s'
 GITHUB_ISSUE_PATTERN = re.compile(r'(issue|close|closes|closed|fix|fixes|fixed|'
                                   'resolve|resolves|resolved) #([0-9]+)')
-GITHUB_LINK_FILE = f'{GITHUB_REPO}/blob/%(version)s/%(filename)s'
+GITHUB_LINK_FILE = f'{GITHUB_REPO}/blob/%(ref)s/%(filename)s'
+GITHUB_LINK_RELEASE = f'{GITHUB_REPO}/releases/tag/v%(version)s'
 
 
 SAVANNAH_LINKS = {
@@ -124,10 +125,16 @@ def commits_links(commits):
     return mark_safe(' '.join(images))
 
 
-def repo_link_file(filename, version):
+def repo_link_file(filename, ref='master'):
     """Return link to a file in a given version on GitHub."""
-    url_version = 'master' if version == 'devel' else f'v{version}'
     return GITHUB_LINK_FILE % {
+        'ref': ref,
         'filename': filename,
-        'version': url_version,
+    }
+
+
+def repo_link_release(version):
+    """Return link to a release on GitHub."""
+    return GITHUB_LINK_RELEASE % {
+        'version': version,
     }

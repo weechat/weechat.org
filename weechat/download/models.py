@@ -33,7 +33,7 @@ from django.db.models.signals import pre_save
 
 from weechat.common.models import Project
 from weechat.common.path import files_path_join
-from weechat.common.tracker import repo_link_file
+from weechat.common.tracker import repo_link_file, repo_link_release
 from weechat.common.utils import version_to_list
 
 PACKAGES_COMPRESSION_EXT = (
@@ -80,23 +80,29 @@ class Release(models.Model):
 
     def changelog_url(self):
         """Return URL to ChangeLog file."""
-        # legacy file (WeeChat ≤ 4.3.0)
-        filename = f'ChangeLog-{self.version}.html'
-        path = files_path_join('doc', self.project.name, filename)
-        if os.path.exists(path):
-            return f'/files/doc/{self.project.name}/{filename}'
-        # new name, directly on GitHub
-        return repo_link_file('CHANGELOG.md', self.version)
+        version = self.description if self.version == 'stable' else self.version
+        if version == 'devel':
+            # devel version: link to CHANGELOG.md
+            return repo_link_file('CHANGELOG.md')
+        if version_to_list(version) >= [4, 0]:
+            # version ≥ 4.0.0: link to release on GitHub
+            return repo_link_release(version)
+        # version < 4.0.0: link to ChangeLog-x.y.z.html
+        filename = f'ChangeLog-{version}.html'
+        return f'/files/doc/{self.project.name}/{filename}'
 
     def upgrading_url(self):
         """Return URL to upgrade guidelines."""
-        # legacy file (WeeChat ≤ 4.3.0)
-        filename = f'ReleaseNotes-{self.version}.html'
-        path = files_path_join('doc', self.project.name, filename)
-        if os.path.exists(path):
-            return f'/files/doc/{self.project.name}/{filename}'
-        # new name, directly on GitHub
-        return repo_link_file('UPGRADING.md', self.version)
+        version = self.description if self.version == 'stable' else self.version
+        if version == 'devel':
+            # devel version: link to UPGRADING.md
+            return repo_link_file('UPGRADING.md')
+        if version_to_list(version) >= [4, 4]:
+            # version ≥ 4.4.0: link to UPGRADING.md of this version
+            return repo_link_file('UPGRADING.md', ref=f'v{version}')
+        # version < 4.4.0: link to ReleaseNotes-x.y.z.html
+        filename = f'ReleaseNotes-{version}.html'
+        return f'/files/doc/{self.project.name}/{filename}'
 
     @property
     def is_released(self):
