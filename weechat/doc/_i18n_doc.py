@@ -15,6 +15,8 @@ def __i18n_doc_doc():
     gettext_noop("Plugin API reference")
     gettext_noop("Quick Start guide")
     gettext_noop("Relay protocol")
+    gettext_noop("Relay: API")
+    gettext_noop("Relay: weechat")
     gettext_noop("Scripting guide")
     gettext_noop("User's guide")
     gettext_noop("Wiki (user contributions)")

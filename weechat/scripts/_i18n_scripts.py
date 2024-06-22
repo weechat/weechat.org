@@ -384,6 +384,8 @@ def __i18n_scripts_scripts():
     gettext_noop("Mastermind game.")
     # Translators: description for script "wee_most.py" (0.3.0+)
     gettext_noop("Mattermost integration.")
+    # Translators: description for script "cmus_announce.lua" (0.3.0+)
+    gettext_noop("Message current buffer/channel the currently listened to song.")
     # Translators: description for script "minesweeper.py" (0.3.0+)
     gettext_noop("Minesweeper game.")
     # Translators: description for script "strmon.pl" (0.3.0+)
