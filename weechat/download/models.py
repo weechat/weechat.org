@@ -84,10 +84,10 @@ class Release(models.Model):
         if version == 'devel':
             # devel version: link to CHANGELOG.md
             return repo_link_file(self.project.name, 'master', 'CHANGELOG.md')
-        if version_to_list(version) >= [4, 0]:
-            # version ≥ 4.0.0: link to release on GitHub
+        if version_to_list(version) >= [4, 4]:
+            # version ≥ 4.4.0: link to release on GitHub
             return repo_link_release(self.project.name, version)
-        # version < 4.0.0: link to ChangeLog-x.y.z.html
+        # version < 4.4.0: link to ChangeLog-x.y.z.html
         filename = f'ChangeLog-{version}.html'
         return f'/files/doc/{self.project.name}/{filename}'
 
