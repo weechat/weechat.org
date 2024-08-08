@@ -44,7 +44,6 @@ from weechat.common.forms import (
     FileField,
     TestField,
     Html5EmailInput,
-    Form,
 )
 from weechat.common.path import files_path_join
 from weechat.download.models import Release
@@ -157,7 +156,7 @@ class Theme(models.Model):
         ordering = ['-added']
 
 
-class ThemeFormAdd(Form):
+class ThemeFormAdd(forms.Form):
     """Form to add a theme."""
     required_css_class = 'required'
     themefile = FileField(
@@ -243,7 +242,7 @@ def get_theme_choices():
         return []
 
 
-class ThemeFormUpdate(Form):
+class ThemeFormUpdate(forms.Form):
     """Form to update a theme."""
     required_css_class = 'required'
     theme = ChoiceField(

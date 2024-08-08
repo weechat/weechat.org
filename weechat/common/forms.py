@@ -94,21 +94,3 @@ class TestField(forms.CharField):
 class Html5EmailInput(forms.widgets.Input):
     """E-mail field (with HTML5 validator)."""
     input_type = 'email'
-
-
-class Form(forms.Form):
-    """Form with "as_div" method."""
-
-    def as_div(self):
-        "Return this form rendered as HTML <div>s."
-        return self._html_output(
-            normal_row=('<div%(html_class_attr)s class="form-group row">'
-                        '%(label)s'
-                        '<div class="col-12 col-md-9 col-lg-10">'
-                        '%(field)s%(help_text)s'
-                        '</div>'
-                        '</div>'),
-            error_row='%s',
-            row_ender='</p>',
-            help_text_html=' <span class="helptext">%s</span>',
-            errors_on_separate_row=True)

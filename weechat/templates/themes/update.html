@@ -12,7 +12,7 @@
   <div class="col-12 col-md-8">
     <form action="." method="post" enctype="multipart/form-data">
       {% csrf_token %}
-      {{ form.as_div }}
+      {{ form.as_p }}
       <button type="submit" class="btn btn-primary btn-lg mt-3 px-5">{% trans "Submit" %}</button>
     </form>
   </div>
