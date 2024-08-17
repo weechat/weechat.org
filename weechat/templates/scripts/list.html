@@ -160,7 +160,7 @@
           {% endif %}
         </td>
         <td class="text-center">{{ script.version }}</td>
-        <td class="text-center"><a href="{% url 'scripts_filter' 'license' script.license %}" title="{% trans "License:" %} {{ script.license }}">{{ script.license }}</a></td>
+        <td class="text-center text-nowrap"><a href="{% url 'scripts_filter' 'license' script.license %}" title="{% trans "License:" %} {{ script.license }}">{{ script.license }}</a></td>
         <td class="text-center">{{ script.min_weechat }}</td>
         <td class="text-center">{{ script.max_weechat }}</td>
         <td class="text-center"><a href="{% url 'scripts_filter' 'author' script.author %}" title="{% trans "Author:" %} {{ script.author }}">{{ script.author }}</a></td>
