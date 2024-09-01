@@ -162,7 +162,7 @@ $ sudo gpg --no-default-keyring --keyring /usr/share/keyrings/weechat-archive-ke
         {% regroup debpkg_distro.list by repoarch as debpkg_by_repoarch %}
         {% for debpkg_repoarch in debpkg_by_repoarch %}
         <div class="row py-1">
-          <div class="col-5">
+          <div class="col">
             <span class="{% if not debpkg_repoarch.list.0.repo.active %}discontinued{% endif %}">
               <a class="js-scroll" href="#{{ debpkg_repoarch.grouper }}">
                 {{ debpkg_repoarch.list.0.repo.version.codename }}
@@ -170,14 +170,23 @@ $ sudo gpg --no-default-keyring --keyring /usr/share/keyrings/weechat-archive-ke
               </a>
             </span>
           </div>
-          <div class="col-7{% if not debpkg_repoarch.list.0.repo.active %} discontinued{% endif %}">
+          <div class="col{% if not debpkg_repoarch.list.0.repo.active %} discontinued{% endif %}">
             {% regroup debpkg_repoarch.list|dictsortreversed:"version_type" by Version as debpkg_by_version %}
             {% for debpkg_version in debpkg_by_version %}
             {% if "weechat" in debpkg_version.list.0.Source %}
             <span class="text-nowrap {% if debpkg_version.list.0.version_type == "dev" %}devel-version{% else %}stable-version fw-bold{% endif %}">{{ debpkg_version.grouper }}</span>{% if not forloop.last %},{% endif %}
             {% endif %}
             {% endfor %}
-            {% if not forloop.last %}<br>{% endif %}
+          </div>
+          <div class="col{% if not debpkg_repoarch.list.0.repo.active %} discontinued{% endif %}">
+            {% regroup debpkg_repoarch.list|dictsort:"arch" by arch as debpkg_by_arch %}
+            {% for debpkg_arch in debpkg_by_arch %}
+            {% ifchanged %}
+            {% if "weechat" in debpkg_arch.list.0.Source %}
+            <small class="text-muted">{{ debpkg_arch.grouper }}</span>{% if not forloop.last %},{% endif %}</small>
+            {% endif %}
+            {% endifchanged %}
+            {% endfor %}
           </div>
         </div>
         {% endfor %}
