@@ -4,7 +4,7 @@
   <img src="https://weechat.org/media/images/weechat_logo_large.png" alt="WeeChat" />
 </p>
 
-[![CI](https://github.com/weechat/weechat.org/workflows/CI/badge.svg)](https://github.com/weechat/weechat.org/actions)
+[![CI](https://github.com/weechat/weechat.org/actions/workflows/ci.yml/badge.svg)](https://github.com/weechat/weechat.org/actions)
 
 WeeChat.org is the website for WeeChat, the extensible chat client.
 
