@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-15 16:30+0200\n"
+"POT-Creation-Date: 2024-09-07 17:39+0200\n"
 "PO-Revision-Date: 2024-06-22 18:16+0200\n"
 "Last-Translator: Krzysztof Korościk <soltys@soltys.info>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -526,78 +526,95 @@ msgstr ""
 "hook_connect."
 
 #: doc/_i18n_security.py:22
+msgid ""
+"An integer overflow can happen when looping over items in a list.\n"
+"<br>\n"
+"This can only happen in rare conditions on 32 and 64-bit systems, as the "
+"list must contain more than 2,147,483,647 elements.\n"
+"<br>\n"
+"On 16-bit systems, this happens with a list that contains more than 32,767 "
+"elements."
+msgstr ""
+
+#: doc/_i18n_security.py:23
 msgid "Buffer overflow on malformed IRC message 324 (channel mode)."
 msgstr ""
 "Przepełnienie bufora po otrzymaniu zniekształconej wiadomości IRC 324 (tryb "
 "kanału)."
 
-#: doc/_i18n_security.py:23
+#: doc/_i18n_security.py:24
 msgid "Buffer overflow on new IRC message 005 with nick prefixes."
 msgstr ""
 "Przepełnienie bufora po otrzymaniu nowej wiadomości IRC 005 z prefiksami "
 "nicków."
 
-#: doc/_i18n_security.py:24
+#: doc/_i18n_security.py:25
 msgid "Buffer overflow when receiving a DCC file."
 msgstr "Przepełnienie bufora przy pobieraniu plików przez DCC."
 
-#: doc/_i18n_security.py:25
+#: doc/_i18n_security.py:26
 msgid ""
 "Buffer overflow when receiving a malformed IRC message 324 (channel mode)."
 msgstr ""
 "Przepełnienie bufora po otrzymaniu zniekształconej wiadomości IRC 324 (tryb "
 "kanału)."
 
-#: doc/_i18n_security.py:26
+#: doc/_i18n_security.py:27
 msgid "Buffer overflow when removing quotes in DCC filename."
 msgstr ""
 "Przepełnienie bufora podczas usuwania cudzysłowów w nazwach plików DCC."
 
-#: doc/_i18n_security.py:27
+#: doc/_i18n_security.py:28
 msgid "Buffer overflows in build of strings."
 msgstr "Przepełnienie bufora w budowaniu ciągów."
 
-#: doc/_i18n_security.py:28
+#: doc/_i18n_security.py:29
 msgid "Core, IRC"
 msgstr "Rdzeń, IRC"
 
-#: doc/_i18n_security.py:29
+#: doc/_i18n_security.py:30
+#, fuzzy
+#| msgid "IRC, Plugins"
+msgid "Core, Plugins"
+msgstr "IRC, Wtyczki"
+
+#: doc/_i18n_security.py:31
 msgid "Crash in API function infobar_printf."
 msgstr "Crash w funkcji API infobar_printf."
 
-#: doc/_i18n_security.py:30
+#: doc/_i18n_security.py:32
 msgid "Crash on IRC commands sent via Relay."
 msgstr "Crash przy wysyłaniu komend IRC przez wtyczkę Relay."
 
-#: doc/_i18n_security.py:31
+#: doc/_i18n_security.py:33
 msgid "Crash on malformed IRC message 352 (WHO)."
 msgstr "Crash przez zniekształconą wiadomość IRC 352 (WHO)."
 
-#: doc/_i18n_security.py:32
+#: doc/_i18n_security.py:34
 msgid "Crash on malformed websocket frame in relay plugin."
 msgstr "Crash przez zniekształconą ramkę websocket we wtyczce relay."
 
-#: doc/_i18n_security.py:33
+#: doc/_i18n_security.py:35
 msgid "Crash on nicks monitored with /notify."
 msgstr "Crash na nickach monitorowanych przez /notify."
 
-#: doc/_i18n_security.py:34
+#: doc/_i18n_security.py:36
 msgid "Crash on send of unknown commands to IRC server."
 msgstr "Crash przy wysyłaniu nieznanych komend do serwera IRC."
 
-#: doc/_i18n_security.py:35
+#: doc/_i18n_security.py:37
 msgid "Crash when decoding IRC colors."
 msgstr "Crash podczas dekodowania kolorów IRC w ciągach."
 
-#: doc/_i18n_security.py:36
+#: doc/_i18n_security.py:38
 msgid "Crash when receiving WeeChat color codes in IRC messages."
 msgstr "Crash podczas otrzymywania kodów kolorów WeeChat w wiadomości IRC."
 
-#: doc/_i18n_security.py:37
+#: doc/_i18n_security.py:39
 msgid "Crash when receiving a malformed IRC message 352 (WHO)."
 msgstr "Crash podczas otrzymywania zniekształconej wiadomości IRC 352 (WHO)."
 
-#: doc/_i18n_security.py:38
+#: doc/_i18n_security.py:40
 msgid ""
 "Date/time conversion specifiers are expanded after replacing buffer local "
 "variables in name of log files. In some cases, this can lead to an error in "
@@ -608,7 +625,7 @@ msgstr ""
 "prowadzić do błędu w funkcji strftime i spowodować crash spowodowany użyciem "
 "niezainicjowanego buforu."
 
-#: doc/_i18n_security.py:39
+#: doc/_i18n_security.py:41
 msgid ""
 "Do not use command <code>/notify</code> with nicks containing formatting "
 "chars like \"%\"."
@@ -616,7 +633,7 @@ msgstr ""
 "Nie używaj komendy <code>/notify</code> z nickami zawierającymi znaki "
 "formatujące jak \"%\"."
 
-#: doc/_i18n_security.py:40
+#: doc/_i18n_security.py:42
 msgid ""
 "Due to insufficient check of TLS certificate in IRC plugin, man-in-the-"
 "middle attackers can spoof a server via an arbitrary certificate."
@@ -625,66 +642,76 @@ msgstr ""
 "IRC, atakujący za pomocą ataku man-in-the-middle może podstawić inny serwer "
 "podstawiając nadrzędny certyfikat."
 
-#: doc/_i18n_security.py:41
+#: doc/_i18n_security.py:43
 msgid "IRC"
 msgstr "IRC"
 
-#: doc/_i18n_security.py:42
+#: doc/_i18n_security.py:44
 msgid "IRC, Plugins"
 msgstr "IRC, Wtyczki"
 
-#: doc/_i18n_security.py:43
+#: doc/_i18n_security.py:45
 msgid "Improper certificate validation"
 msgstr "Błędna walidacja certyfikatów"
 
-#: doc/_i18n_security.py:44
+#: doc/_i18n_security.py:46
 msgid "Improper input validation"
 msgstr "Błędna walidacja wejścia"
 
-#: doc/_i18n_security.py:45
+#: doc/_i18n_security.py:47
+msgid "Integer Overflow or Wraparound"
+msgstr ""
+
+#: doc/_i18n_security.py:48
+#, fuzzy
+#| msgid "Buffer overflows in build of strings."
+msgid "Integer overflow in loops on lists."
+msgstr "Przepełnienie bufora w budowaniu ciągów."
+
+#: doc/_i18n_security.py:49
 msgid "Logger"
 msgstr "Logger"
 
-#: doc/_i18n_security.py:46
+#: doc/_i18n_security.py:50
 msgid "Out-of-bounds read"
 msgstr "Niedozwolony odczyt"
 
-#: doc/_i18n_security.py:47
+#: doc/_i18n_security.py:51
 msgid "Out-of-bounds write"
 msgstr "Niedozwolony zapis"
 
-#: doc/_i18n_security.py:48
+#: doc/_i18n_security.py:52
 msgid "Possible man-in-the-middle attack in TLS connection to IRC server."
 msgstr "Możliwy atak typu man-in-the-middle na połączenia TLS do serwera IRC."
 
-#: doc/_i18n_security.py:49
+#: doc/_i18n_security.py:53
 msgid "Possible man-in-the-middle attack in TLS connection to servers."
 msgstr "Możliwy atak typu man-in-the-middle na połączenia TLS z serwerami."
 
-#: doc/_i18n_security.py:50
+#: doc/_i18n_security.py:54
 msgid "Relay"
 msgstr "Relay"
 
-#: doc/_i18n_security.py:51
+#: doc/_i18n_security.py:55
 msgid "Remote execution of commands via scripts."
 msgstr "Zdalne wykonanie poleceń przez skrypty."
 
-#: doc/_i18n_security.py:52
+#: doc/_i18n_security.py:56
 msgid "Remove/unload all scripts calling the API function hook_process."
 msgstr "Usuń/wyładuj wszystkie skrypty wywołujące funkcję API hook_process."
 
-#: doc/_i18n_security.py:53
+#: doc/_i18n_security.py:57
 msgid "Remove/unload all scripts calling the API function infobar_printf."
 msgstr "Usuń/wyładuj wszystkie skrypty używające funkcję API infobar_printf."
 
-#: doc/_i18n_security.py:54
+#: doc/_i18n_security.py:58
 msgid ""
 "Strings are built with uncontrolled format in API function infobar_printf."
 msgstr ""
 "Ciągi znaków są budowane z użyciem niekontrolowanego formatowania w funkcji "
 "API infobar_printf."
 
-#: doc/_i18n_security.py:55
+#: doc/_i18n_security.py:59
 msgid ""
 "Strings are built with uncontrolled format when IRC commands are redirected "
 "by relay plugin. If the output or redirected command contains formatting "
@@ -694,7 +721,7 @@ msgstr ""
 "wtyczki pośrednika. Jeśli wyjście lub przekierowana komenda zawiera znaki "
 "formatujące jak \"%\" może to prowadzić do awarii WeeChat."
 
-#: doc/_i18n_security.py:56
+#: doc/_i18n_security.py:60
 msgid ""
 "Strings are built with uncontrolled format when nicks containing \"%\" are "
 "monitored with command <code>/notify</code>."
@@ -702,7 +729,7 @@ msgstr ""
 "Ciągi znaków są budowane z użyciem niekontrolowanego formatowania, kiedy "
 "nicki zawierające \"%\" są monitorowane poprzez komendę <code>/notify</code>."
 
-#: doc/_i18n_security.py:57
+#: doc/_i18n_security.py:61
 msgid ""
 "Strings are built with uncontrolled format when unknown IRC commands are "
 "sent to server, if option <code>irc.network.send_unknown_commands</code> is "
@@ -712,7 +739,7 @@ msgstr ""
 "serwera jeśli opcja <code>irc.network.send_unknown_commands</code> jest "
 "włączona."
 
-#: doc/_i18n_security.py:58
+#: doc/_i18n_security.py:62
 msgid ""
 "There are multiple ways to mitigate this issue:\n"
 "<ul>\n"
@@ -732,7 +759,7 @@ msgstr ""
 "zobacz: <code>/help relay.network.allowed_ips</code></li>\n"
 "</ul>"
 
-#: doc/_i18n_security.py:59
+#: doc/_i18n_security.py:63
 msgid ""
 "There are multiple ways to mitigate this issue:\n"
 "<ul>\n"
@@ -750,7 +777,7 @@ msgstr ""
 "nieznanych komend do serwera.</li>\n"
 "</ul>"
 
-#: doc/_i18n_security.py:60
+#: doc/_i18n_security.py:64
 msgid ""
 "Turn of handling of colors in incoming IRC messages:\n"
 "\n"
@@ -760,7 +787,7 @@ msgstr ""
 "\n"
 "<p><pre><code>/set irc.network.colors_receive off</code></pre></p>"
 
-#: doc/_i18n_security.py:61
+#: doc/_i18n_security.py:65
 msgid ""
 "Untrusted command for function hook_process could lead to execution of "
 "commands, because of shell expansions (so the problem is only caused by some "
@@ -770,11 +797,11 @@ msgstr ""
 "komend, poprzez rozszerzenia powłoki (problem jest powodowany przez niektóre "
 "skrypty, nie przez samego WeeChat)."
 
-#: doc/_i18n_security.py:62
+#: doc/_i18n_security.py:66
 msgid "Use of invalid pointer in build of log filename."
 msgstr "Użycie niewłaściwego wskaźnika przy tworzeniu nazwy pliku z logiem."
 
-#: doc/_i18n_security.py:63
+#: doc/_i18n_security.py:67
 #, python-brace-format
 msgid ""
 "With WeeChat ≥ 1.1, you can create a trigger:\n"
@@ -793,7 +820,7 @@ msgstr ""
 "W starszych wersjach nie ma prostego sposobu na złagodzenie problemu, musisz "
 "zaktualizować WeeChat."
 
-#: doc/_i18n_security.py:64
+#: doc/_i18n_security.py:68
 msgid ""
 "With WeeChat ≥ 1.1, you can create a trigger:\n"
 "\n"
@@ -813,14 +840,14 @@ msgstr ""
 "W starszych wersjach nie ma prostego sposobu na złagodzenie problemu, musisz "
 "zaktualizować WeeChat."
 
-#: doc/_i18n_security.py:65
+#: doc/_i18n_security.py:69
 msgid ""
 "You can remove all relays of type \"irc\", see <code>/help relay</code>."
 msgstr ""
 "Możesz usunąć wszystkich pośredników typu \"irc\", zobacz <code>/help relay "
 "</code>."
 
-#: doc/_i18n_security.py:66
+#: doc/_i18n_security.py:70
 msgid ""
 "You can unload the logger plugin, thus stopping recording of all buffers: "
 "<code>/plugin unload logger</code>."
@@ -3586,8 +3613,8 @@ msgstr ""
 "- dodano opcję logger.look.backlog_conditions\n"
 "- dodano pliki konfiguracyjne dla każdej wtyczki (\"python.conf\", \"perl."
 "conf\", ...)\n"
-"- dodano opcję \"eval\" w komendach skryptów oraz informację "
-"\"xxx_eval\" (python, perl, ruby, lua, guile)\n"
+"- dodano opcję \"eval\" w komendach skryptów oraz informację \"xxx_eval\" "
+"(python, perl, ruby, lua, guile)\n"
 "- dodano informacje \"xxx_interpreter\" i \"xxx_version\" we wtyczkach "
 "skryptów\n"
 "- dodano opcję \"version\" w komendach skryptów\n"
@@ -4149,9 +4176,9 @@ msgstr ""
 "- ulepszono możliwości debugowania w komendzie /eval\n"
 "- dodano opcje \"setvar\" i \"delvar\" w komendzie /bufer, zmieniono nazwy "
 "opcji \"localvar\" na \"listvar\"\n"
-"- dodano zmienną lokalną bufrów "
-"\"completion_default_template\" (przetwarzana) nadpisującą wartość opcji "
-"weechat.completion.default_template\n"
+"- dodano zmienną lokalną bufrów \"completion_default_template\" "
+"(przetwarzana) nadpisującą wartość opcji weechat.completion."
+"default_template\n"
 "- dodano opcję \"recreate\" dla komendy /filter\n"
 "- dodano przetwarzanie surowych ciągów w wyrażeniach za pomocą \"raw:xxx\"\n"
 "- dodano przetwarzanie warunków podczas przetwarzania wyrażeń za pomocą "
@@ -8306,6 +8333,10 @@ msgid "Fixed in version %(fixed_version)s (%(release_date)s)."
 msgstr "Poprawiono w wersji %(fixed_version)s (%(release_date)s)."
 
 #: templates/doc/security.html:84
+msgid "Fixed, not yet released."
+msgstr ""
+
+#: templates/doc/security.html:84
 msgid "Not yet fixed."
 msgstr "Jeszcze nie naprawione."
 
@@ -8668,7 +8699,7 @@ msgid "Choose your distribution/version"
 msgstr "Wybierz swoją dystrybucję/wersję"
 
 #. Translators: purpose is to "translate" only quotes here
-#: templates/download/debian.html:97 templates/download/debian.html:211
+#: templates/download/debian.html:97 templates/download/debian.html:220
 #, python-format
 msgid "“%(codename)s”"
 msgstr "“%(codename)s”"
@@ -8719,43 +8750,43 @@ msgstr ""
 msgid "Overview"
 msgstr "Opis"
 
-#: templates/download/debian.html:190
+#: templates/download/debian.html:199
 msgid "Detail"
 msgstr "Szczegóły"
 
-#: templates/download/debian.html:222
+#: templates/download/debian.html:231
 msgid "Important"
 msgstr "Ważne"
 
-#: templates/download/debian.html:233
+#: templates/download/debian.html:242
 msgid "Development version"
 msgstr "Wersja rozwojowa"
 
-#: templates/download/debian.html:233
+#: templates/download/debian.html:242
 msgid "Stable version"
 msgstr "Wersja stabilna"
 
-#: templates/download/debian.html:234
+#: templates/download/debian.html:243
 msgid "Architecture"
 msgstr "Architektura"
 
-#: templates/download/debian.html:236
+#: templates/download/debian.html:245
 msgid "files"
 msgstr "pliki"
 
-#: templates/download/debian.html:259
+#: templates/download/debian.html:268
 msgid "Builds by"
 msgstr "Zbudowane przez"
 
-#: templates/download/debian.html:261
+#: templates/download/debian.html:270
 msgid "latest build:"
 msgstr "obecny:"
 
-#: templates/download/debian.html:264
+#: templates/download/debian.html:273
 msgid "next build:"
 msgstr "następna:"
 
-#: templates/download/debian.html:279
+#: templates/download/debian.html:288
 msgid "No debian repository."
 msgstr "Brak repozytorium Debiana."
 

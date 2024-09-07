@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-15 16:30+0200\n"
+"POT-Creation-Date: 2024-09-07 17:39+0200\n"
 "PO-Revision-Date: 2024-06-22 11:29+0200\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
@@ -476,89 +476,106 @@ msgid ""
 msgstr ""
 
 #: doc/_i18n_security.py:22
+msgid ""
+"An integer overflow can happen when looping over items in a list.\n"
+"<br>\n"
+"This can only happen in rare conditions on 32 and 64-bit systems, as the "
+"list must contain more than 2,147,483,647 elements.\n"
+"<br>\n"
+"On 16-bit systems, this happens with a list that contains more than 32,767 "
+"elements."
+msgstr ""
+
+#: doc/_i18n_security.py:23
 #, fuzzy
 #| msgid "Buffer overflow when decoding IRC colors in strings."
 msgid "Buffer overflow on malformed IRC message 324 (channel mode)."
 msgstr "文字列中の IRC 色をデコードする際にバッファオーバーフロー。"
 
-#: doc/_i18n_security.py:23
+#: doc/_i18n_security.py:24
 #, fuzzy
 #| msgid "Buffer overflow when decoding IRC colors in strings."
 msgid "Buffer overflow on new IRC message 005 with nick prefixes."
 msgstr "文字列中の IRC 色をデコードする際にバッファオーバーフロー。"
 
-#: doc/_i18n_security.py:24
+#: doc/_i18n_security.py:25
 #, fuzzy
 #| msgid "Buffer overflow when removing quotes in DCC filename."
 msgid "Buffer overflow when receiving a DCC file."
 msgstr "DCC ファイル名内の引用符を削除する際にバッファオーバーフロー。"
 
-#: doc/_i18n_security.py:25
+#: doc/_i18n_security.py:26
 msgid ""
 "Buffer overflow when receiving a malformed IRC message 324 (channel mode)."
 msgstr ""
 
-#: doc/_i18n_security.py:26
+#: doc/_i18n_security.py:27
 msgid "Buffer overflow when removing quotes in DCC filename."
 msgstr "DCC ファイル名内の引用符を削除する際にバッファオーバーフロー。"
 
-#: doc/_i18n_security.py:27
+#: doc/_i18n_security.py:28
 msgid "Buffer overflows in build of strings."
 msgstr "文字列を作る際にバッファオーバーフロー。"
 
-#: doc/_i18n_security.py:28
+#: doc/_i18n_security.py:29
 msgid "Core, IRC"
 msgstr ""
 
-#: doc/_i18n_security.py:29
+#: doc/_i18n_security.py:30
+#, fuzzy
+#| msgid "Plugin"
+msgid "Core, Plugins"
+msgstr "プラグイン"
+
+#: doc/_i18n_security.py:31
 #, fuzzy
 #| msgid "Uncontrolled format string in API function infobar_printf."
 msgid "Crash in API function infobar_printf."
 msgstr "infobar_printf API 関数の書式文字列攻撃。"
 
-#: doc/_i18n_security.py:30
+#: doc/_i18n_security.py:32
 msgid "Crash on IRC commands sent via Relay."
 msgstr ""
 
-#: doc/_i18n_security.py:31
+#: doc/_i18n_security.py:33
 #, fuzzy
 #| msgid "Crash when receiving special chars in IRC messages."
 msgid "Crash on malformed IRC message 352 (WHO)."
 msgstr "IRC メッセージに特定の文字が含まれる際にクラッシュ。"
 
-#: doc/_i18n_security.py:32
+#: doc/_i18n_security.py:34
 #, fuzzy
 #| msgid "Crash when receiving special chars in IRC messages."
 msgid "Crash on malformed websocket frame in relay plugin."
 msgstr "IRC メッセージに特定の文字が含まれる際にクラッシュ。"
 
-#: doc/_i18n_security.py:33
+#: doc/_i18n_security.py:35
 msgid "Crash on nicks monitored with /notify."
 msgstr ""
 
-#: doc/_i18n_security.py:34
+#: doc/_i18n_security.py:36
 msgid "Crash on send of unknown commands to IRC server."
 msgstr ""
 
-#: doc/_i18n_security.py:35
+#: doc/_i18n_security.py:37
 #, fuzzy
 #| msgid "Buffer overflow when decoding IRC colors in strings."
 msgid "Crash when decoding IRC colors."
 msgstr "文字列中の IRC 色をデコードする際にバッファオーバーフロー。"
 
-#: doc/_i18n_security.py:36
+#: doc/_i18n_security.py:38
 #, fuzzy
 #| msgid "Crash when receiving special chars in IRC messages."
 msgid "Crash when receiving WeeChat color codes in IRC messages."
 msgstr "IRC メッセージに特定の文字が含まれる際にクラッシュ。"
 
-#: doc/_i18n_security.py:37
+#: doc/_i18n_security.py:39
 #, fuzzy
 #| msgid "Crash when receiving special chars in IRC messages."
 msgid "Crash when receiving a malformed IRC message 352 (WHO)."
 msgstr "IRC メッセージに特定の文字が含まれる際にクラッシュ。"
 
-#: doc/_i18n_security.py:38
+#: doc/_i18n_security.py:40
 msgid ""
 "Date/time conversion specifiers are expanded after replacing buffer local "
 "variables in name of log files. In some cases, this can lead to an error in "
@@ -568,7 +585,7 @@ msgstr ""
 "しばしば、strftime 関数が失敗して初期化されていないバッファを利用することでク"
 "ラッシュが引き起こされる事があります。"
 
-#: doc/_i18n_security.py:39
+#: doc/_i18n_security.py:41
 #, fuzzy
 #| msgid ""
 #| "Do not use command /notify with nicks containing formatting chars like \"%"
@@ -580,7 +597,7 @@ msgstr ""
 "/notify コマンドは \"%\" などの書式文字を含むニックネームと一緒に使わないでく"
 "ださい。"
 
-#: doc/_i18n_security.py:40
+#: doc/_i18n_security.py:42
 #, fuzzy
 #| msgid ""
 #| "Missing verifications in SSL certificate, which allows man-in-the-middle "
@@ -592,53 +609,63 @@ msgstr ""
 "SSL 証明書にある欠陥の見落とし。これにより任意の証明書を経由して SSL チャット"
 "サーバになりすました中間者攻撃を受けることになります。"
 
-#: doc/_i18n_security.py:41
+#: doc/_i18n_security.py:43
 msgid "IRC"
 msgstr ""
 
-#: doc/_i18n_security.py:42
+#: doc/_i18n_security.py:44
 #, fuzzy
 #| msgid "Plugin"
 msgid "IRC, Plugins"
 msgstr "プラグイン"
 
-#: doc/_i18n_security.py:43
+#: doc/_i18n_security.py:45
 msgid "Improper certificate validation"
 msgstr ""
 
-#: doc/_i18n_security.py:44
+#: doc/_i18n_security.py:46
 msgid "Improper input validation"
 msgstr ""
 
-#: doc/_i18n_security.py:45
-msgid "Logger"
-msgstr ""
-
-#: doc/_i18n_security.py:46
-msgid "Out-of-bounds read"
-msgstr ""
-
 #: doc/_i18n_security.py:47
-msgid "Out-of-bounds write"
+msgid "Integer Overflow or Wraparound"
 msgstr ""
 
 #: doc/_i18n_security.py:48
-msgid "Possible man-in-the-middle attack in TLS connection to IRC server."
-msgstr ""
+#, fuzzy
+#| msgid "Buffer overflows in build of strings."
+msgid "Integer overflow in loops on lists."
+msgstr "文字列を作る際にバッファオーバーフロー。"
 
 #: doc/_i18n_security.py:49
-msgid "Possible man-in-the-middle attack in TLS connection to servers."
+msgid "Logger"
 msgstr ""
 
 #: doc/_i18n_security.py:50
-msgid "Relay"
+msgid "Out-of-bounds read"
 msgstr ""
 
 #: doc/_i18n_security.py:51
-msgid "Remote execution of commands via scripts."
+msgid "Out-of-bounds write"
 msgstr ""
 
 #: doc/_i18n_security.py:52
+msgid "Possible man-in-the-middle attack in TLS connection to IRC server."
+msgstr ""
+
+#: doc/_i18n_security.py:53
+msgid "Possible man-in-the-middle attack in TLS connection to servers."
+msgstr ""
+
+#: doc/_i18n_security.py:54
+msgid "Relay"
+msgstr ""
+
+#: doc/_i18n_security.py:55
+msgid "Remote execution of commands via scripts."
+msgstr ""
+
+#: doc/_i18n_security.py:56
 #, fuzzy
 #| msgid ""
 #| "Remove/unload all scripts calling function hook_process (for maximum "
@@ -648,20 +675,20 @@ msgstr ""
 "hook_process 関数を使っている全てのスクリプトを削除/アンロードしてください "
 "(最大限の安全を確保するために)。"
 
-#: doc/_i18n_security.py:53
+#: doc/_i18n_security.py:57
 #, fuzzy
 #| msgid "Uncontrolled format string in API function infobar_printf."
 msgid "Remove/unload all scripts calling the API function infobar_printf."
 msgstr "infobar_printf API 関数の書式文字列攻撃。"
 
-#: doc/_i18n_security.py:54
+#: doc/_i18n_security.py:58
 #, fuzzy
 #| msgid "Uncontrolled format string in API function infobar_printf."
 msgid ""
 "Strings are built with uncontrolled format in API function infobar_printf."
 msgstr "infobar_printf API 関数の書式文字列攻撃。"
 
-#: doc/_i18n_security.py:55
+#: doc/_i18n_security.py:59
 #, fuzzy
 #| msgid ""
 #| "Uncontrolled format string when IRC commands are redirected by relay "
@@ -676,7 +703,7 @@ msgstr ""
 "はリダイレクトされたコマンドに \"%\" などの文字列が含まれる場合、WeeChat がク"
 "ラッシュします。"
 
-#: doc/_i18n_security.py:56
+#: doc/_i18n_security.py:60
 #, fuzzy
 #| msgid ""
 #| "Uncontrolled format string when sending IRC \"ison\" command for nicks "
@@ -688,7 +715,7 @@ msgstr ""
 "/notify コマンドで監視しているニックネームに対して IRC が \"ison\" コマンドを"
 "送信する際の書式文字列攻撃。"
 
-#: doc/_i18n_security.py:57
+#: doc/_i18n_security.py:61
 #, fuzzy
 #| msgid ""
 #| "Uncontrolled format string when sending unknown IRC command to server (if "
@@ -701,7 +728,7 @@ msgstr ""
 "未知の IRC コマンドをサーバに送信する際の書式文字列攻撃 (\"irc.network."
 "send_unknown_commands\" オプションが ON の場合)。"
 
-#: doc/_i18n_security.py:58
+#: doc/_i18n_security.py:62
 msgid ""
 "There are multiple ways to mitigate this issue:\n"
 "<ul>\n"
@@ -713,7 +740,7 @@ msgid ""
 "</ul>"
 msgstr ""
 
-#: doc/_i18n_security.py:59
+#: doc/_i18n_security.py:63
 #, fuzzy
 #| msgid ""
 #| "Turn off option \"irc.network.send_unknown_commands\" or do not use "
@@ -730,14 +757,14 @@ msgstr ""
 "オプション \"irc.network.send_unknown_commands\" をオフにするか、不明なコマン"
 "ドをサーバに送る際には \"%\" などの書式文字を使わないでください。"
 
-#: doc/_i18n_security.py:60
+#: doc/_i18n_security.py:64
 msgid ""
 "Turn of handling of colors in incoming IRC messages:\n"
 "\n"
 "<p><pre><code>/set irc.network.colors_receive off</code></pre></p>"
 msgstr ""
 
-#: doc/_i18n_security.py:61
+#: doc/_i18n_security.py:65
 msgid ""
 "Untrusted command for function hook_process could lead to execution of "
 "commands, because of shell expansions (so the problem is only caused by some "
@@ -747,11 +774,11 @@ msgstr ""
 "の問題は一部のスクリプトが引き起こすものではなく、WeeChat それ自体が持つ問題"
 "です)。"
 
-#: doc/_i18n_security.py:62
+#: doc/_i18n_security.py:66
 msgid "Use of invalid pointer in build of log filename."
 msgstr ""
 
-#: doc/_i18n_security.py:63
+#: doc/_i18n_security.py:67
 #, fuzzy, python-brace-format
 #| msgid ""
 #| "Create a trigger (with WeeChat >= 1.1): /trigger add irc_dcc_quotes "
@@ -770,7 +797,7 @@ msgstr ""
 "irc_dcc_quotes modifier \"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}"
 "DCC SEND ${\\x22} \" \"/.*//\""
 
-#: doc/_i18n_security.py:64
+#: doc/_i18n_security.py:68
 #, fuzzy
 #| msgid ""
 #| "Create a trigger (with WeeChat >= 1.1): /trigger add irc_dcc_quotes "
@@ -790,12 +817,12 @@ msgstr ""
 "irc_dcc_quotes modifier \"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}"
 "DCC SEND ${\\x22} \" \"/.*//\""
 
-#: doc/_i18n_security.py:65
+#: doc/_i18n_security.py:69
 msgid ""
 "You can remove all relays of type \"irc\", see <code>/help relay</code>."
 msgstr ""
 
-#: doc/_i18n_security.py:66
+#: doc/_i18n_security.py:70
 #, fuzzy
 #| msgid "Unload the logger plugin: /plugin unload logger"
 msgid ""
@@ -3517,8 +3544,8 @@ msgstr ""
 "- オプション logger.look.backlog_conditions を追加\n"
 "- スクリプトプラグイン毎の設定ファイルを追加 (\"python.conf\"、\"perl."
 "conf\"、...)\n"
-"- script コマンドに \"eval\" オプションを追加、インフォ "
-"\"xxx_eval\" (python、perl、ruby、lua、guile) を追加\n"
+"- script コマンドに \"eval\" オプションを追加、インフォ \"xxx_eval\" "
+"(python、perl、ruby、lua、guile) を追加\n"
 "- スクリプトプラグインにインフォ \"xxx_interpreter\"、\"xxx_version\" を追"
 "加\n"
 "- script コマンドにオプション \"version\" を追加\n"
@@ -8306,6 +8333,10 @@ msgid "Fixed in version %(fixed_version)s (%(release_date)s)."
 msgstr ""
 
 #: templates/doc/security.html:84
+msgid "Fixed, not yet released."
+msgstr ""
+
+#: templates/doc/security.html:84
 #, fuzzy
 #| msgid "Not yet compatible"
 msgid "Not yet fixed."
@@ -8694,7 +8725,7 @@ msgid "Choose your distribution/version"
 msgstr "ディストリビューション/バージョンを選んでください"
 
 #. Translators: purpose is to "translate" only quotes here
-#: templates/download/debian.html:97 templates/download/debian.html:211
+#: templates/download/debian.html:97 templates/download/debian.html:220
 #, python-format
 msgid "“%(codename)s”"
 msgstr "「%(codename)s」"
@@ -8745,43 +8776,43 @@ msgstr ""
 msgid "Overview"
 msgstr "概要"
 
-#: templates/download/debian.html:190
+#: templates/download/debian.html:199
 msgid "Detail"
 msgstr "詳細"
 
-#: templates/download/debian.html:222
+#: templates/download/debian.html:231
 msgid "Important"
 msgstr "重要"
 
-#: templates/download/debian.html:233
+#: templates/download/debian.html:242
 msgid "Development version"
 msgstr "開発版"
 
-#: templates/download/debian.html:233
+#: templates/download/debian.html:242
 msgid "Stable version"
 msgstr "安定版"
 
-#: templates/download/debian.html:234
+#: templates/download/debian.html:243
 msgid "Architecture"
 msgstr "アーキテクチャ"
 
-#: templates/download/debian.html:236
+#: templates/download/debian.html:245
 msgid "files"
 msgstr "ファイル"
 
-#: templates/download/debian.html:259
+#: templates/download/debian.html:268
 msgid "Builds by"
 msgstr "ビルドした人"
 
-#: templates/download/debian.html:261
+#: templates/download/debian.html:270
 msgid "latest build:"
 msgstr "最新ビルド:"
 
-#: templates/download/debian.html:264
+#: templates/download/debian.html:273
 msgid "next build:"
 msgstr "次回ビルド:"
 
-#: templates/download/debian.html:279
+#: templates/download/debian.html:288
 msgid "No debian repository."
 msgstr "Debian リポジトリがありません。"
 
