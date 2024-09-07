@@ -81,7 +81,7 @@
     {% blocktrans %}Fixed in version {{ fixed_version }} ({{ release_date }}).{% endblocktrans %}
     {% endwith %}
     {% else %}
-    {% trans "Not yet fixed." %}
+    {% if security.commits %}{% trans "Fixed, not yet released." %}{% else %}{% trans "Not yet fixed." %}{% endif %}
     {% endif %}
   {% endfor %}
 </ul>
