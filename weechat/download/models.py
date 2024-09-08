@@ -239,11 +239,10 @@ def handler_package_saved(sender, **kwargs):
 
 def make_symlink(link_name, target):
     """Create a symbolic link (overwrite link_name if existing)."""
-    if os.path.exists(target):
-        print(f'Making symlink: {link_name} -> {target}')
-        tmp_name = f'{link_name}.__tmp__'
-        os.symlink(target, tmp_name)
-        os.rename(tmp_name, link_name)
+    print(f'Making symlink: {link_name} -> {target}')
+    tmp_name = f'{link_name}.__tmp__'
+    os.symlink(target, tmp_name)
+    os.rename(tmp_name, link_name)
 
 
 def set_stable_version(project, version):
