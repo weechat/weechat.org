@@ -66,6 +66,13 @@ urlpatterns = [
             view_doc_link),
     # /doc/user/en
     re_path(rf'^(?P<name>{LEGACY_DOC})/(?P<lang>[a-z][a-z])/$', view_doc_link),
+    # /doc/security
+    re_path(r'^security/(?P<wsa>WSA-[0-9]{4}-[0-9]+)/$',
+            view_security_wsa, name='doc_project_security_wsa'),
+    re_path(r'security/version/$', view_security_version,
+            name='doc_project_security_versions'),
+    re_path(r'security/version/(?P<version>[0-9.]+)/$',
+            view_security_version, name='doc_project_security_version'),
 
     # shortcuts
     # /doc/weechat/stable/user
