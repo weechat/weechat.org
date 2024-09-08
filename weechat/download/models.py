@@ -278,8 +278,6 @@ def set_stable_version(project, version):
 
     # update doc symbolic links
     doc_symlinks = (
-        ('ChangeLog-stable.html', f'ChangeLog-{version}.html'),
-        ('ReleaseNotes-stable.html', f'ReleaseNotes-{version}.html'),
         ('stable', version),
     )
     for link_name, filename in doc_symlinks:
