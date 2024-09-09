@@ -26,7 +26,12 @@ from django.utils.translation import gettext, gettext_noop
 
 from weechat.common.i18n import i18n_autogen
 from weechat.common.models import Project
-from weechat.common.tracker import commits_links, tracker_links
+from weechat.common.tracker import (
+    commits_links,
+    tracker_links,
+    repo_link_release,
+)
+from weechat.common.utils import version_to_list
 
 
 URL_CVE = {
@@ -280,6 +285,17 @@ class Security(models.Model):
         if self.mitigation:
             return mark_safe(gettext(self.mitigation.replace('\r\n', '\n')))
         return ''
+
+    def link_changelog(self):
+        """Return the link to the ChangeLog for the fixed version."""
+        if not self.fixed:
+            return '#'
+        if version_to_list(self.fixed) >= [4, 4]:
+            # version ≥ 4.4.0: link to release on GitHub
+            return repo_link_release(self.project.name, self.fixed)
+        # version < 4.4.0: link to ChangeLog-x.y.z.html
+        filename = f'ChangeLog-{self.fixed}.html'
+        return f'/files/doc/{self.project.name}/{filename}'
 
     class Meta:
         ordering = ['-date']

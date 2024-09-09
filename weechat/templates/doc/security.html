@@ -241,7 +241,7 @@
       </span>
       ({{ security.release_date|localdate }})
       -
-      <a href="/files/doc/{{ project }}/ChangeLog-{{ security.fixed }}.html">
+      <a href="{{ security.link_changelog }}">
         {% trans "ChangeLog" %}
       </a>
       {% else %}
