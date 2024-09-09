@@ -77,7 +77,7 @@
     <a href="{% url 'doc_project_security_wsa' project security.wsa %}">{{ security.wsa }}</a>: [{{ security.scope_i18n }}] {{ security.issue_i18n }}
     —
     {% if security.fixed %}
-    {% with fixed_version=security.fixed_html release_date=security.date|localdate %}
+    {% with fixed_version=security.fixed_html release_date=security.release_date|localdate %}
     {% blocktrans %}Fixed in version {{ fixed_version }} ({{ release_date }}).{% endblocktrans %}
     {% endwith %}
     {% else %}
