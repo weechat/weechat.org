@@ -28,6 +28,8 @@ def __i18n_news_info():
     gettext_noop("Christmas gift: <a href=\"/download/devel\">QWeeChat</a>, the first remote interface for WeeChat. It is written in Python, using Qt toolkit.\n\nNote that this is an alpha version of this interface, many features are missing.\n\nMore info and screenshot are on <a href=\"/blog/post/2011/12/25/QWeeChat-Python-Qt-GUI\">development blog</a>.\n\nMerry Christmas and happy new year 2012 with WeeChat and QWeeChat!")
     gettext_noop("Come with us on irc.libera.chat, #weechat-birthday to celebrate!")
     gettext_noop("Debian/Raspbian repositories")
+    gettext_noop("Debian/Ubuntu repositories for archs arm64 and armhf have been added, they replace Raspbian repositories (now marked as inactive).\n\nMore information on the <a href=\"https://blog.weechat.org/post/2024/09/29/Debian-Ubuntu-repositories-for-archs-arm64-and-armhf\">development blog</a>.")
+    gettext_noop("Debian/Ubuntu repositories for archs arm64/armhf")
     gettext_noop("Dennis Ritchie has left #world")
     gettext_noop("Devel blog")
     gettext_noop("Development of Jabber plugin for WeeChat has started and a first alpha version is available.\nNote: many features are missing, like TLS connection, buddy list management, presence information, MUC and transports.")
