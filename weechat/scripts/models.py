@@ -38,7 +38,7 @@ from weechat.common.decorators import disable_for_loaddata
 from weechat.common.i18n import i18n_autogen
 from weechat.common.path import files_path_join
 
-REPOSITORY = 'https://github.com/weechat/scripts/blob/master'
+REPOSITORY = 'https://github.com/weechat/scripts/blob/main'
 
 SCRIPT_LANGUAGE = {
     'python': ('py', 'python'),
