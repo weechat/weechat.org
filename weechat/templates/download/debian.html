@@ -106,7 +106,16 @@ $ sudo gpg --no-default-keyring --keyring /usr/share/keyrings/weechat-archive-ke
 </p>
 
 <p>
-  {% trans "Note: the second command line is optional, it is used to download source packages." %}
+  {% trans "Notes:" %}
+  <ul>
+    <li>
+      {% trans "If you're using an architecture like amd64 and apt complains about binary-i386 file not found, you can force the architecture like this:" %}
+      <pre><code>deb [arch=amd64 signed-by=/usr/share/keyrings/weechat-archive-keyring.gpg] https://…</code></pre>
+    </li>
+    <li>
+      {% trans "The second command line is optional, it is used to download source packages." %}
+    </li>
+  </ul>
 </p>
 
 <p>
