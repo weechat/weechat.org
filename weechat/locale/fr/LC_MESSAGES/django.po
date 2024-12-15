@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-15 09:55+0100\n"
-"PO-Revision-Date: 2024-12-15 09:58+0100\n"
+"POT-Creation-Date: 2024-12-15 10:09+0100\n"
+"PO-Revision-Date: 2024-12-15 10:10+0100\n"
 "Last-Translator: Sébastien Helleu <flashcode@flashtux.org>\n"
 "Language-Team: French <flashcode@flashtux.org>\n"
 "Language: fr\n"
@@ -410,7 +410,7 @@ msgid "Release signing key fingerprint (format: PGP fingerprint)."
 msgstr ""
 "Fingerprint de la clé de signature des versions (format : fingerprint PGP)."
 
-#: dev/views.py:82 templates/download/packages.html:134
+#: dev/views.py:82 templates/download/packages.html:137
 msgid "Release signing key (format: PGP public key)."
 msgstr "Clé de signature de version (format : clé publique PGP)."
 
@@ -1613,7 +1613,7 @@ msgstr "Transition vers Python 3 pour les scripts"
 
 #: news/_i18n_info.py:75 templates/about/history.html:44
 #: templates/doc/security.html:57 templates/doc/security.html:68
-#: templates/download/packages.html:29 templates/scripts/list.html:96
+#: templates/download/packages.html:32 templates/scripts/list.html:96
 msgid "Version"
 msgstr "Version"
 
@@ -8755,7 +8755,7 @@ msgstr ""
 msgid "Also known as Common Weakness Enumeration (CWE)."
 msgstr "Aussi connu sous le nom Common Weakness Enumeration (CWE)."
 
-#: templates/doc/security.html:245 templates/download/packages.html:77
+#: templates/doc/security.html:245 templates/download/packages.html:80
 msgid "ChangeLog"
 msgstr "ChangeLog"
 
@@ -8999,7 +8999,7 @@ msgstr "Créez le répertoire GnuPG :"
 msgid "Import the GPG key used to sign the repositories:"
 msgstr "Importez la clé GPG utilisée pour signer les dépôts :"
 
-#: templates/download/debian.html:75 templates/download/packages.html:132
+#: templates/download/debian.html:75 templates/download/packages.html:135
 msgid "In case of problem, the GPG key can be downloaded here:"
 msgstr "En cas de problème, la clé GPG peut être téléchargée ici :"
 
@@ -9131,26 +9131,27 @@ msgstr "téléchargement"
 msgid "Old versions"
 msgstr "Anciennes versions"
 
-#: templates/download/packages.html:19
+#: templates/download/packages.html:22
+#, python-format
 msgid ""
 "<strong>Important:</strong> it is not recommended to download or use any of "
-"these old versions: they are less stable than the latest released version, "
-"and may contain security vulnerabilities fixed in later versions."
+"these %(count)s old versions: they are less stable than the latest released "
+"version, and may contain security vulnerabilities fixed in later versions."
 msgstr ""
 "<strong>Important :</strong> il est déconseillé de télécharger ou d'utiliser "
-"une de ces anciennes versions : elles sont moins stables que la dernière "
-"version distribuée et peuvent contenir des failles de sécurité qui sont "
-"corrigées dans les versions ultérieures."
+"une de ces %(count)s anciennes versions : elles sont moins stables que la "
+"dernière version distribuée et peuvent contenir des failles de sécurité qui "
+"sont corrigées dans les versions ultérieures."
 
-#: templates/download/packages.html:38
+#: templates/download/packages.html:41
 msgid "next stable version"
 msgstr "prochaine version stable"
 
-#: templates/download/packages.html:38
+#: templates/download/packages.html:41
 msgid "unknown date"
 msgstr "date inconnue"
 
-#: templates/download/packages.html:49
+#: templates/download/packages.html:52
 msgid ""
 "<strong>Important:</strong> this version may be unstable or it may not "
 "compile, you're warned!"
@@ -9158,7 +9159,7 @@ msgstr ""
 "<strong>Important :</strong> cette version peut être instable ou peut ne pas "
 "compiler, vous êtes prévenus !"
 
-#: templates/download/packages.html:56
+#: templates/download/packages.html:59
 #, python-format
 msgid ""
 "<strong>Warning:</strong> the version %(version)s has one or more <a "
@@ -9169,11 +9170,11 @@ msgstr ""
 "href=\"%(security_url)s\">vulnérabilités</a>, il n'est pas recommandé de "
 "l'utiliser."
 
-#: templates/download/packages.html:58
+#: templates/download/packages.html:61
 msgid "Vulnerabilities fixed in versions:"
 msgstr "Vulnérabilités corrigées dans les versions :"
 
-#: templates/download/packages.html:64
+#: templates/download/packages.html:67
 #, python-format
 msgid ""
 "<strong>Note:</strong> this release fixes <a "
@@ -9188,33 +9189,33 @@ msgstr[1] ""
 "<strong>Note :</strong> cette version corrige <a "
 "href=\"%(security_url)s\">%(counter)s vulnérabilités</a>."
 
-#: templates/download/packages.html:69
+#: templates/download/packages.html:72
 msgid "It is recommended to upgrade from any older version to this one."
 msgstr ""
 "Il est recommandé de mettre à jour depuis n'importe quelle version plus "
 "ancienne vers celle-ci."
 
-#: templates/download/packages.html:82
+#: templates/download/packages.html:85
 msgid "Upgrade guidelines"
 msgstr "Guide de mise à jour"
 
-#: templates/download/packages.html:88
+#: templates/download/packages.html:91
 msgid "Packages:"
 msgstr "Paquets :"
 
-#: templates/download/packages.html:97
+#: templates/download/packages.html:100
 msgid "Checksum"
 msgstr "Somme ce contrôle"
 
-#: templates/download/packages.html:97
+#: templates/download/packages.html:100
 msgid "GPG signature"
 msgstr "Signature GPG"
 
-#: templates/download/packages.html:124
+#: templates/download/packages.html:127
 msgid "Checking the signatures:"
 msgstr "Vérification des signatures :"
 
-#: templates/download/packages.html:127
+#: templates/download/packages.html:130
 msgid ""
 "Check the key fingerprint by checking the topic on #weechat channel "
 "(irc.libera.chat) or by asking to a developer."
@@ -9222,23 +9223,23 @@ msgstr ""
 "Vérifier l'empreinte de la clé en vérifiant le titre du canal #weechat "
 "(irc.libera.chat) ou en demandant à un développeur."
 
-#: templates/download/packages.html:130
+#: templates/download/packages.html:133
 msgid "Import the GPG key:"
 msgstr "Importer la clé GPG :"
 
-#: templates/download/packages.html:138
+#: templates/download/packages.html:141
 msgid "Trust the key:"
 msgstr "Donner confiance à la clé :"
 
-#: templates/download/packages.html:143
+#: templates/download/packages.html:146
 msgid "In directory with package + signature:"
 msgstr "Dans le répertoire avec le paquet + signature :"
 
-#: templates/download/packages.html:147
+#: templates/download/packages.html:150
 msgid "If the signature is OK you should see a message like this one:"
 msgstr "Si la signature est OK vous devriez voir un message comme celui-ci :"
 
-#: templates/download/packages.html:160
+#: templates/download/packages.html:163
 msgid "No package found."
 msgstr "Aucun paquet trouvé."
 

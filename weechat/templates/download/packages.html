@@ -14,13 +14,16 @@
 
 {% if package_list %}
 
+{% regroup package_list by version as packages_by_version %}
+
 {% if version == "old" %}
 <div class="alert alert-warning">
-  {% trans "<strong>Important:</strong> it is not recommended to download or use any of these old versions: they are less stable than the latest released version, and may contain security vulnerabilities fixed in later versions." %}
+  {% with count=packages_by_version|length %}
+  {% blocktrans %}<strong>Important:</strong> it is not recommended to download or use any of these {{ count }} old versions: they are less stable than the latest released version, and may contain security vulnerabilities fixed in later versions.{% endblocktrans %}
+  {% endwith %}
 </div>
 {% endif %}
 
-{% regroup package_list by version as packages_by_version %}
 {% for package_version in packages_by_version %}
 
 <div class="card mb-4">
