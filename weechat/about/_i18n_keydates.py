@@ -11,11 +11,13 @@ from django.utils.translation import gettext_noop
 def __i18n_about_keydates():
     """Translations for about/keydates."""
     gettext_noop("256 colors, irc proxy, rmodifier, redirection of irc commands.")
+    gettext_noop("Add auto-reconnection to remote relay, add build information (command-line parameter), change IPv6 option in IRC servers and proxies (disable/auto/force), add export of channels in IRC list buffer, add option \"addreplace\" in many commands.")
     gettext_noop("Add calculation of expression in evaluation of expressions, add colors in log files, add filters on IRC raw buffer.")
     gettext_noop("Add command /autojoin, add IRC option \"autojoin_dynamic\", add IRC tags in messages displayed, add Zstandard compression support in Relay plugin (weechat protocol).")
     gettext_noop("Add command /item, add bar item \"spacer\".")
     gettext_noop("Add command /toggle, improve IRC message parser.")
     gettext_noop("Add commands /allbuf and /hotlist, improve case insensitive comparisons, add identifier in buffer lines, add trigger regex command to translate chars.")
+    gettext_noop("Add connection status to remote WeeChat and fix bugs in the \"api\" relay, fix color codes in IRC nick names.")
     gettext_noop("Add handshake, nonce, completion in weechat relay protocol, add background color for inactive bars, support of multiple lines in command line.")
     gettext_noop("Add hook \"line\".")
     gettext_noop("Add incremental search in commands history, add optional tag for ignored IRC messages, add support of RGB colors in IRC messages, use milliseconds for IRC anti-flood, add syntax highlighting in evaluated expressions.")
