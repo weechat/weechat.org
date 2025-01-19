@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-15 10:09+0100\n"
+"POT-Creation-Date: 2025-01-19 18:59+0100\n"
 "PO-Revision-Date: 2024-06-22 11:29+0200\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
@@ -364,26 +364,46 @@ msgstr "次期安定版のリリース予定日 (書式: \"YYYY-MM-DD\")。"
 msgid "Release signing key fingerprint (format: PGP fingerprint)."
 msgstr "リリース用署名鍵の指紋 (書式: PGP 指紋)。"
 
-#: dev/views.py:82 templates/download/packages.html:137
-msgid "Release signing key (format: PGP public key)."
+#: dev/views.py:82
+#, fuzzy
+#| msgid "Release signing key (format: PGP public key)."
+msgid "Release signing key (format: PGP public key as binary file)."
 msgstr "リリース用署名鍵 (書式: PGP 公開鍵)。"
 
-#: dev/views.py:86
+#: dev/views.py:87
+#, fuzzy
+#| msgid "Release signing key (format: PGP public key)."
+msgid "Release signing key (format: PGP public key as ASCII file)."
+msgstr "リリース用署名鍵 (書式: PGP 公開鍵)。"
+
+#: dev/views.py:92
 msgid ""
 "Debian/Ubuntu repository signing key fingerprint (format: PGP fingerprint)."
 msgstr "Debian/Ubuntu リポジトリ署名鍵の指紋 (書式: PGP 指紋)。"
 
-#: dev/views.py:91 templates/download/debian.html:77
-msgid "Debian/Ubuntu repository signing key (format: PGP public key)."
+#: dev/views.py:97
+#, fuzzy
+#| msgid "Debian/Ubuntu repository signing key (format: PGP public key)."
+msgid ""
+"Debian/Ubuntu repository signing key (format: PGP public key as binary file)."
 msgstr "Debian/Ubuntu リポジトリ署名鍵 (書式: PGP 公開鍵)。"
 
-#: dev/views.py:96
+#: dev/views.py:102
+#, fuzzy
+#| msgid "Debian/Ubuntu repository signing key (format: PGP public key)."
+msgid ""
+"Debian/Ubuntu repository signing key (format: PGP public key as ASCII file)."
+msgstr "Debian/Ubuntu リポジトリ署名鍵 (書式: PGP 公開鍵)。"
+
+#: dev/views.py:107
 msgid "All non-binary infos (one info by line, format: \"info:value\")."
 msgstr "全てのテキスト情報 (1 行に 1 情報、書式: \"info:value\")。"
 
-#: dev/views.py:303
-msgid "(binary data)"
-msgstr "(バイナリデータ)"
+#: dev/views.py:336
+#, fuzzy
+#| msgid "files"
+msgid "(file)"
+msgstr "ファイル"
 
 #: doc/_i18n_doc.py:13
 msgid "Developer's guide"
@@ -7452,6 +7472,12 @@ msgstr "iTunes の操作と現在再生中曲に関する情報を得るスク�
 msgid "not compatible with Python 3"
 msgstr "Python 3 と互換性を持つスクリプトの数"
 
+#: scripts/models.py:136
+#, fuzzy
+#| msgid "Python scripts"
+msgid "Popular script"
+msgstr "Python スクリプトの総数"
+
 #. Translators: this is a date format, see: http://www.php.net/date
 #. Translators: (note: the result string must be short, use abbreviation
 #. Translators: for month if possible)
@@ -8900,7 +8926,9 @@ msgid ""
 msgstr ""
 
 #: templates/download/debian.html:60
-msgid "GPG key"
+#, fuzzy
+#| msgid "GPG key"
+msgid "PGP key"
 msgstr "GPG 鍵"
 
 #: templates/download/debian.html:63
@@ -8910,18 +8938,32 @@ msgstr ""
 #: templates/download/debian.html:69
 #, fuzzy
 #| msgid "Import the gpg key used to sign the repository:"
-msgid "Import the GPG key used to sign the repositories:"
+msgid "Import the PGP key used to sign the repositories:"
 msgstr "このリポジトリに署名するために使われた gpg 鍵をインポートしてください:"
 
-#: templates/download/debian.html:75 templates/download/packages.html:135
-msgid "In case of problem, the GPG key can be downloaded here:"
+#: templates/download/debian.html:75
+#, fuzzy
+#| msgid "Debian/Ubuntu repository signing key (format: PGP public key)."
+msgid ""
+"In case of problem, the Debian/Ubuntu repository signing key (format: PGP "
+"public key) can be downloaded here:"
+msgstr "Debian/Ubuntu リポジトリ署名鍵 (書式: PGP 公開鍵)。"
+
+#: templates/download/debian.html:76 templates/download/packages.html:136
+#, fuzzy
+#| msgid "(binary data)"
+msgid "binary"
+msgstr "(バイナリデータ)"
+
+#: templates/download/debian.html:77 templates/download/packages.html:137
+msgid "ASCII"
 msgstr ""
 
-#: templates/download/debian.html:81
+#: templates/download/debian.html:80
 msgid "APT configuration"
 msgstr "APT 設定"
 
-#: templates/download/debian.html:86
+#: templates/download/debian.html:85
 msgid ""
 "Create a weechat.list file with the repository, according to your "
 "distribution/version:"
@@ -8929,29 +8971,29 @@ msgstr ""
 "お使いのディストリビューション/バージョンに対応するリポジトリを含む "
 "weechat.list ファイルを作成してください:"
 
-#: templates/download/debian.html:91
+#: templates/download/debian.html:90
 msgid "Choose your distribution/version"
 msgstr "ディストリビューション/バージョンを選んでください"
 
 #. Translators: purpose is to "translate" only quotes here
-#: templates/download/debian.html:97 templates/download/debian.html:229
+#: templates/download/debian.html:96 templates/download/debian.html:228
 #, python-format
 msgid "“%(codename)s”"
 msgstr "「%(codename)s」"
 
-#: templates/download/debian.html:109
+#: templates/download/debian.html:108
 #, fuzzy
 #| msgid "Notes"
 msgid "Notes:"
 msgstr "備考"
 
-#: templates/download/debian.html:112
+#: templates/download/debian.html:111
 msgid ""
 "If you're using an architecture like amd64 and apt complains about binary-"
 "i386 file not found, you can force the architecture like this:"
 msgstr ""
 
-#: templates/download/debian.html:116
+#: templates/download/debian.html:115
 #, fuzzy
 #| msgid ""
 #| "Note: the second command line is optional, it is used to download source "
@@ -8962,15 +9004,15 @@ msgstr ""
 "注意: コマンドラインの 2 行目は任意です。これはソースパッケージをダウンロード"
 "するためのものです。"
 
-#: templates/download/debian.html:122
+#: templates/download/debian.html:121
 msgid "Resynchronize your package index files:"
 msgstr "パッケージインデックスファイルを再同期:"
 
-#: templates/download/debian.html:126
+#: templates/download/debian.html:125
 msgid "Packages installation"
 msgstr "パッケージ説明"
 
-#: templates/download/debian.html:129
+#: templates/download/debian.html:128
 msgid ""
 "Install the binary packages; the \"plugins\" package is highly recommended "
 "but not mandatory, scripting API packages are optional (popular languages "
@@ -8980,15 +9022,15 @@ msgstr ""
 "が、インストールを強くお勧めします。スクリプト作成 API パッケージは任意です "
 "(人気の言語は python と perl です)。"
 
-#: templates/download/debian.html:133
+#: templates/download/debian.html:132
 msgid "Example for the stable version:"
 msgstr "安定版の導入例:"
 
-#: templates/download/debian.html:138
+#: templates/download/debian.html:137
 msgid "Example for the development version:"
 msgstr "開発版の導入例:"
 
-#: templates/download/debian.html:143
+#: templates/download/debian.html:142
 msgid ""
 "If needed, you can download the source package in order to rebuild binary "
 "packages:"
@@ -8996,47 +9038,47 @@ msgstr ""
 "必要ならば、バイナリパッケージを再ビルドするためにソースパッケージをダウン"
 "ロードすることが可能です:"
 
-#: templates/download/debian.html:149
+#: templates/download/debian.html:148
 msgid "Overview"
 msgstr "概要"
 
-#: templates/download/debian.html:208
+#: templates/download/debian.html:207
 msgid "Detail"
 msgstr "詳細"
 
-#: templates/download/debian.html:240
+#: templates/download/debian.html:239
 msgid "Important"
 msgstr "重要"
 
-#: templates/download/debian.html:251
+#: templates/download/debian.html:250
 msgid "Development version"
 msgstr "開発版"
 
-#: templates/download/debian.html:251
+#: templates/download/debian.html:250
 msgid "Stable version"
 msgstr "安定版"
 
-#: templates/download/debian.html:252
+#: templates/download/debian.html:251
 msgid "Architecture"
 msgstr "アーキテクチャ"
 
-#: templates/download/debian.html:254
+#: templates/download/debian.html:253
 msgid "files"
 msgstr "ファイル"
 
-#: templates/download/debian.html:277
+#: templates/download/debian.html:276
 msgid "Builds by"
 msgstr "ビルドした人"
 
-#: templates/download/debian.html:279
+#: templates/download/debian.html:278
 msgid "latest build:"
 msgstr "最新ビルド:"
 
-#: templates/download/debian.html:282
+#: templates/download/debian.html:281
 msgid "next build:"
 msgstr "次回ビルド:"
 
-#: templates/download/debian.html:297
+#: templates/download/debian.html:296
 msgid "No debian repository."
 msgstr "Debian リポジトリがありません。"
 
@@ -9128,7 +9170,9 @@ msgid "Checksum"
 msgstr "チェックサム"
 
 #: templates/download/packages.html:100
-msgid "GPG signature"
+#, fuzzy
+#| msgid "GPG signature"
+msgid "PGP signature"
 msgstr "GPG 署名"
 
 #: templates/download/packages.html:127
@@ -9150,22 +9194,30 @@ msgstr ""
 #: templates/download/packages.html:133
 #, fuzzy
 #| msgid "Import the gpg key:"
-msgid "Import the GPG key:"
+msgid "Import the PGP key:"
 msgstr "gpg キーをインポート:"
 
-#: templates/download/packages.html:141
+#: templates/download/packages.html:135
+#, fuzzy
+#| msgid "Release signing key (format: PGP public key)."
+msgid ""
+"In case of problem, the release signing key (format: PGP public key) can be "
+"downloaded here:"
+msgstr "リリース用署名鍵 (書式: PGP 公開鍵)。"
+
+#: templates/download/packages.html:140
 msgid "Trust the key:"
 msgstr "キーを信用する:"
 
-#: templates/download/packages.html:146
+#: templates/download/packages.html:145
 msgid "In directory with package + signature:"
 msgstr "パッケージと署名ファイルがあるディレクトリ内で:"
 
-#: templates/download/packages.html:150
+#: templates/download/packages.html:149
 msgid "If the signature is OK you should see a message like this one:"
 msgstr "署名が正しいなら、以下の様なメッセージが表示されれるはずです:"
 
-#: templates/download/packages.html:163
+#: templates/download/packages.html:162
 #, fuzzy
 #| msgid "No theme found."
 msgid "No package found."

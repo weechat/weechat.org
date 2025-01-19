@@ -79,7 +79,13 @@ INFO_KEYS = (
     ),
     (
         'release_signing_key',
-        gettext_lazy('Release signing key (format: PGP public key).'),
+        gettext_lazy('Release signing key '
+                     '(format: PGP public key as binary file).'),
+    ),
+    (
+        'release_signing_key_asc',
+        gettext_lazy('Release signing key '
+                     '(format: PGP public key as ASCII file).'),
     ),
     (
         'debian_repository_signing_fingerprint',
@@ -89,7 +95,12 @@ INFO_KEYS = (
     (
         'debian_repository_signing_key',
         gettext_lazy('Debian/Ubuntu repository signing key '
-                     '(format: PGP public key).'),
+                     '(format: PGP public key as binary file).'),
+    ),
+    (
+        'debian_repository_signing_key_asc',
+        gettext_lazy('Debian/Ubuntu repository signing key '
+                     '(format: PGP public key as ASCII file).'),
     ),
     (
         'all',
@@ -98,7 +109,15 @@ INFO_KEYS = (
     ),
 )
 
-BINARY_INFO_KEYS = ('release_signing_key', 'debian_repository_signing_key')
+INFO_PGP_KEYS_BIN = (
+    'release_signing_key',
+    'debian_repository_signing_key',
+)
+INFO_PGP_KEYS_ASC = (
+    'release_signing_key_asc',
+    'debian_repository_signing_key_asc',
+)
+INFO_PGP_KEYS = INFO_PGP_KEYS_BIN + INFO_PGP_KEYS_ASC
 
 PGP_KEYS = {
     'release_signing': 'A9AB5AB778FA5C3522FD0378F82F4B16DEC408F8',
@@ -248,17 +267,25 @@ def get_info(name, version):
     if name == 'debian_repository_signing_fingerprint':
         return PGP_KEYS['debian_repository_signing']
     if name == 'release_signing_key':
-        fingerprint = PGP_KEYS['release_signing']
-        with open(media_path_join('pgp', fingerprint), 'rb') as _file:
+        filename = PGP_KEYS['release_signing']
+        with open(media_path_join('pgp', filename), 'rb') as _file:
+            return _file.read()
+    if name == 'release_signing_key_asc':
+        filename = PGP_KEYS['release_signing'] + '.asc'
+        with open(media_path_join('pgp', filename), 'r', encoding='utf-8') as _file:
             return _file.read()
     if name == 'debian_repository_signing_key':
-        fingerprint = PGP_KEYS['debian_repository_signing']
-        with open(media_path_join('pgp', fingerprint), 'rb') as _file:
+        filename = PGP_KEYS['debian_repository_signing']
+        with open(media_path_join('pgp', filename), 'rb') as _file:
+            return _file.read()
+    if name == 'debian_repository_signing_key_asc':
+        filename = PGP_KEYS['debian_repository_signing'] + '.asc'
+        with open(media_path_join('pgp', filename), 'r', encoding='utf-8') as _file:
             return _file.read()
     if name == 'all':
         infos = []
         for key in INFO_KEYS:
-            if key[0] != name and key[0] not in BINARY_INFO_KEYS:
+            if key[0] != name and key[0] not in INFO_PGP_KEYS:
                 infos.append(f'{key[0]}:{get_info(key[0], version)}')
         return '\n'.join(infos)
     return ''
@@ -283,11 +310,17 @@ def info(request, name=None):
             },
         )
     if name:
-        if name in BINARY_INFO_KEYS:
+        if name in INFO_PGP_KEYS_BIN:
             response = HttpResponse(get_info(name, version),
                                     content_type='application/octet-stream')
-            response['Content-Disposition'] = (
-                f'attachment; filename="weechat_{name}.pgp"')
+            filename = f'weechat_{name}.pgp'
+            response['Content-Disposition'] = f'attachment; filename="{filename}"'
+            return response
+        if name in INFO_PGP_KEYS_ASC:
+            response = HttpResponse(get_info(name, version),
+                                    content_type='text/plain')
+            filename = f'weechat_{name.replace("_asc", "")}.pgp.asc'
+            response['Content-Disposition'] = f'attachment; filename="{filename}"'
             return response
         return render(
             request,
@@ -299,8 +332,8 @@ def info(request, name=None):
         )
     infos = []
     for oneinfo in INFO_KEYS:
-        if oneinfo[0] in BINARY_INFO_KEYS:
-            value = gettext('(binary data)')
+        if oneinfo[0] in INFO_PGP_KEYS:
+            value = gettext('(file)')
         else:
             value = get_info(oneinfo[0], version)
         if oneinfo[0].endswith('_number'):

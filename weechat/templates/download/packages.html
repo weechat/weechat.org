@@ -97,7 +97,7 @@
           {% if package.exists %}
             <a href="/files{{ package.type.htmldir }}/{{ package.filename }}" title="{{ package.type.description }}">{{ package.filename }}</a>
             <small class="text-muted">
-              ({{ package.filesize|filesizeformat }}{% if package.display_time %}, {{ package.filedate|localdate:"datetime" }}{% endif %}{% if package.has_checksum %}, <a href="{% url 'package_checksums' package.version.version package.checksum_type %}" title="{% trans "Checksum" %} ({{ package.checksum_type|upper }}): {{ package.checksum }}">{{ package.checksum_type|upper }}</a>{% endif %}{% if package.has_gpg_sig %}, <a href="/files{{ package.type.htmldir }}/{{ package.filename }}.asc" title="{% trans "GPG signature" %}">GPG</a>{% endif %})
+              ({{ package.filesize|filesizeformat }}{% if package.display_time %}, {{ package.filedate|localdate:"datetime" }}{% endif %}{% if package.has_checksum %}, <a href="{% url 'package_checksums' package.version.version package.checksum_type %}" title="{% trans "Checksum" %} ({{ package.checksum_type|upper }}): {{ package.checksum }}">{{ package.checksum_type|upper }}</a>{% endif %}{% if package.has_gpg_sig %}, <a href="/files{{ package.type.htmldir }}/{{ package.filename }}.asc" title="{% trans "PGP signature" %}">PGP</a>{% endif %})
             </small>
           {% else %}
             <span class="text-muted" title="{{ package.type.description }}">{{ package.filename }}</span>
@@ -130,12 +130,11 @@
         {% trans "Check the key fingerprint by checking the topic on #weechat channel (irc.libera.chat) or by asking to a developer." %}
       </li>
       <li>
-        {% trans "Import the GPG key:" %}
+        {% trans "Import the PGP key:" %}
         <pre><code>$ gpg --keyserver hkps://keys.openpgp.org --recv-keys A9AB5AB778FA5C3522FD0378F82F4B16DEC408F8</code></pre>
-        {% trans "In case of problem, the GPG key can be downloaded here:" %}
-        <a href="{% url 'dev_info_name' name='release_signing_key' %}">
-          {% trans "Release signing key (format: PGP public key)." %}
-        </a>
+        {% trans "In case of problem, the release signing key (format: PGP public key) can be downloaded here:" %}
+        <a href="{% url 'dev_info_name' name='release_signing_key' %}">{% trans "binary" %}</a> /
+        <a href="{% url 'dev_info_name' name='release_signing_key_asc' %}">{% trans "ASCII" %}</a>
       </li>
       <li>
         {% trans "Trust the key:" %}

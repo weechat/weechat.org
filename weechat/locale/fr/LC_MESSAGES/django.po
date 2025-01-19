@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-15 10:09+0100\n"
-"PO-Revision-Date: 2024-12-15 10:10+0100\n"
+"POT-Creation-Date: 2025-01-19 18:59+0100\n"
+"PO-Revision-Date: 2025-01-19 20:49+0100\n"
 "Last-Translator: Sébastien Helleu <flashcode@flashtux.org>\n"
 "Language-Team: French <flashcode@flashtux.org>\n"
 "Language: fr\n"
@@ -410,29 +410,47 @@ msgid "Release signing key fingerprint (format: PGP fingerprint)."
 msgstr ""
 "Fingerprint de la clé de signature des versions (format : fingerprint PGP)."
 
-#: dev/views.py:82 templates/download/packages.html:137
-msgid "Release signing key (format: PGP public key)."
-msgstr "Clé de signature de version (format : clé publique PGP)."
+#: dev/views.py:82
+msgid "Release signing key (format: PGP public key as binary file)."
+msgstr ""
+"Clé de signature de version (format : clé publique PGP sous forme de fichier "
+"binaire)."
 
-#: dev/views.py:86
+#: dev/views.py:87
+msgid "Release signing key (format: PGP public key as ASCII file)."
+msgstr ""
+"Clé de signature de version (format : clé publique PGP sous forme de fichier "
+"ASCII)."
+
+#: dev/views.py:92
 msgid ""
 "Debian/Ubuntu repository signing key fingerprint (format: PGP fingerprint)."
 msgstr ""
 "Fingerprint de la clé de signature des dépôts Debian/Ubuntu (format : "
 "fingerprint PGP)."
 
-#: dev/views.py:91 templates/download/debian.html:77
-msgid "Debian/Ubuntu repository signing key (format: PGP public key)."
-msgstr "Clé de signature des dépôts Debian/Ubuntu (format : clé publique PGP)."
+#: dev/views.py:97
+msgid ""
+"Debian/Ubuntu repository signing key (format: PGP public key as binary file)."
+msgstr ""
+"Clé de signature des dépôts Debian/Ubuntu (format : clé publique PGP sous "
+"forme de fichier binaire)."
 
-#: dev/views.py:96
+#: dev/views.py:102
+msgid ""
+"Debian/Ubuntu repository signing key (format: PGP public key as ASCII file)."
+msgstr ""
+"Clé de signature des dépôts Debian/Ubuntu (format : clé publique PGP sous "
+"forme de fichier ASCII)."
+
+#: dev/views.py:107
 msgid "All non-binary infos (one info by line, format: \"info:value\")."
 msgstr ""
 "Toutes les infos non binaires (une info par ligne, format : \"info:valeur\")."
 
-#: dev/views.py:303
-msgid "(binary data)"
-msgstr "(données binaires)"
+#: dev/views.py:336
+msgid "(file)"
+msgstr "(fichier)"
 
 #: doc/_i18n_doc.py:13
 msgid "Developer's guide"
@@ -7588,6 +7606,10 @@ msgstr "Contrôle et affichage de la musique jouée par iTunes."
 msgid "not compatible with Python 3"
 msgstr "non compatible avec Python 3"
 
+#: scripts/models.py:136
+msgid "Popular script"
+msgstr "Script populaire"
+
 #. Translators: this is a date format, see: http://www.php.net/date
 #. Translators: (note: the result string must be short, use abbreviation
 #. Translators: for month if possible)
@@ -8988,26 +9010,38 @@ msgstr ""
 "gnupg-agent."
 
 #: templates/download/debian.html:60
-msgid "GPG key"
-msgstr "Clé GPG"
+msgid "PGP key"
+msgstr "Clé PGP"
 
 #: templates/download/debian.html:63
 msgid "Create GnuPG directory:"
 msgstr "Créez le répertoire GnuPG :"
 
 #: templates/download/debian.html:69
-msgid "Import the GPG key used to sign the repositories:"
-msgstr "Importez la clé GPG utilisée pour signer les dépôts :"
+msgid "Import the PGP key used to sign the repositories:"
+msgstr "Importez la clé PGP utilisée pour signer les dépôts :"
 
-#: templates/download/debian.html:75 templates/download/packages.html:135
-msgid "In case of problem, the GPG key can be downloaded here:"
-msgstr "En cas de problème, la clé GPG peut être téléchargée ici :"
+#: templates/download/debian.html:75
+msgid ""
+"In case of problem, the Debian/Ubuntu repository signing key (format: PGP "
+"public key) can be downloaded here:"
+msgstr ""
+"En cas de problème, la clé de signature des dépôts Debian/Ubuntu (format : "
+"clé publique PGP) peut être téléchargée ici :"
 
-#: templates/download/debian.html:81
+#: templates/download/debian.html:76 templates/download/packages.html:136
+msgid "binary"
+msgstr "binaire"
+
+#: templates/download/debian.html:77 templates/download/packages.html:137
+msgid "ASCII"
+msgstr "ASCII"
+
+#: templates/download/debian.html:80
 msgid "APT configuration"
 msgstr "Configuration APT"
 
-#: templates/download/debian.html:86
+#: templates/download/debian.html:85
 msgid ""
 "Create a weechat.list file with the repository, according to your "
 "distribution/version:"
@@ -9015,21 +9049,21 @@ msgstr ""
 "Créez un fichier weechat.list avec le dépôt, selon votre distribution/"
 "version :"
 
-#: templates/download/debian.html:91
+#: templates/download/debian.html:90
 msgid "Choose your distribution/version"
 msgstr "Choisissez votre distribution/version"
 
 #. Translators: purpose is to "translate" only quotes here
-#: templates/download/debian.html:97 templates/download/debian.html:229
+#: templates/download/debian.html:96 templates/download/debian.html:228
 #, python-format
 msgid "“%(codename)s”"
 msgstr "« %(codename)s »"
 
-#: templates/download/debian.html:109
+#: templates/download/debian.html:108
 msgid "Notes:"
 msgstr "Notes :"
 
-#: templates/download/debian.html:112
+#: templates/download/debian.html:111
 msgid ""
 "If you're using an architecture like amd64 and apt complains about binary-"
 "i386 file not found, you can force the architecture like this:"
@@ -9038,22 +9072,22 @@ msgstr ""
 "fichier binary-i386 non trouvé, vous pouvez forcer l'architecture comme "
 "ceci :"
 
-#: templates/download/debian.html:116
+#: templates/download/debian.html:115
 msgid ""
 "The second command line is optional, it is used to download source packages."
 msgstr ""
 "La seconde ligne de commande est facultative, elle est utilisée pour "
 "télécharger les paquets sources."
 
-#: templates/download/debian.html:122
+#: templates/download/debian.html:121
 msgid "Resynchronize your package index files:"
 msgstr "Resynchronisez vos fichiers d'index de paquets :"
 
-#: templates/download/debian.html:126
+#: templates/download/debian.html:125
 msgid "Packages installation"
 msgstr "Installation des paquets"
 
-#: templates/download/debian.html:129
+#: templates/download/debian.html:128
 msgid ""
 "Install the binary packages; the \"plugins\" package is highly recommended "
 "but not mandatory, scripting API packages are optional (popular languages "
@@ -9063,15 +9097,15 @@ msgstr ""
 "recommandé mais pas obligatoire, les paquets de l'API script sont optionnels "
 "(les langages populaires sont python et perl)."
 
-#: templates/download/debian.html:133
+#: templates/download/debian.html:132
 msgid "Example for the stable version:"
 msgstr "Exemple pour la version stable :"
 
-#: templates/download/debian.html:138
+#: templates/download/debian.html:137
 msgid "Example for the development version:"
 msgstr "Exemple pour la version de développement :"
 
-#: templates/download/debian.html:143
+#: templates/download/debian.html:142
 msgid ""
 "If needed, you can download the source package in order to rebuild binary "
 "packages:"
@@ -9079,47 +9113,47 @@ msgstr ""
 "Si besoin, vous pouvez télécharger le paquet source pour recompiler les "
 "paquets binaires :"
 
-#: templates/download/debian.html:149
+#: templates/download/debian.html:148
 msgid "Overview"
 msgstr "Aperçu"
 
-#: templates/download/debian.html:208
+#: templates/download/debian.html:207
 msgid "Detail"
 msgstr "Détail"
 
-#: templates/download/debian.html:240
+#: templates/download/debian.html:239
 msgid "Important"
 msgstr "Important"
 
-#: templates/download/debian.html:251
+#: templates/download/debian.html:250
 msgid "Development version"
 msgstr "Version de développement"
 
-#: templates/download/debian.html:251
+#: templates/download/debian.html:250
 msgid "Stable version"
 msgstr "Version stable"
 
-#: templates/download/debian.html:252
+#: templates/download/debian.html:251
 msgid "Architecture"
 msgstr "Architecture"
 
-#: templates/download/debian.html:254
+#: templates/download/debian.html:253
 msgid "files"
 msgstr "fichiers"
 
-#: templates/download/debian.html:277
+#: templates/download/debian.html:276
 msgid "Builds by"
 msgstr "Constructions par"
 
-#: templates/download/debian.html:279
+#: templates/download/debian.html:278
 msgid "latest build:"
 msgstr "dernier build :"
 
-#: templates/download/debian.html:282
+#: templates/download/debian.html:281
 msgid "next build:"
 msgstr "prochain build :"
 
-#: templates/download/debian.html:297
+#: templates/download/debian.html:296
 msgid "No debian repository."
 msgstr "Pas de dépôt debian."
 
@@ -9208,8 +9242,8 @@ msgid "Checksum"
 msgstr "Somme ce contrôle"
 
 #: templates/download/packages.html:100
-msgid "GPG signature"
-msgstr "Signature GPG"
+msgid "PGP signature"
+msgstr "Signature PGP"
 
 #: templates/download/packages.html:127
 msgid "Checking the signatures:"
@@ -9224,22 +9258,30 @@ msgstr ""
 "(irc.libera.chat) ou en demandant à un développeur."
 
 #: templates/download/packages.html:133
-msgid "Import the GPG key:"
-msgstr "Importer la clé GPG :"
+msgid "Import the PGP key:"
+msgstr "Importer la clé PGP :"
 
-#: templates/download/packages.html:141
+#: templates/download/packages.html:135
+msgid ""
+"In case of problem, the release signing key (format: PGP public key) can be "
+"downloaded here:"
+msgstr ""
+"En cas de problème, la clé de signature de version (format : clé publique "
+"PGP) peut être téléchargée ici :"
+
+#: templates/download/packages.html:140
 msgid "Trust the key:"
 msgstr "Donner confiance à la clé :"
 
-#: templates/download/packages.html:146
+#: templates/download/packages.html:145
 msgid "In directory with package + signature:"
 msgstr "Dans le répertoire avec le paquet + signature :"
 
-#: templates/download/packages.html:150
+#: templates/download/packages.html:149
 msgid "If the signature is OK you should see a message like this one:"
 msgstr "Si la signature est OK vous devriez voir un message comme celui-ci :"
 
-#: templates/download/packages.html:163
+#: templates/download/packages.html:162
 msgid "No package found."
 msgstr "Aucun paquet trouvé."
 
