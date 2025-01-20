@@ -319,7 +319,7 @@ def info(request, name=None):
         if name in INFO_PGP_KEYS_ASC:
             response = HttpResponse(get_info(name, version),
                                     content_type='text/plain')
-            filename = f'weechat_{name.replace("_asc", "")}.pgp.asc'
+            filename = f'weechat_{name.removesuffix("_asc")}.asc'
             response['Content-Disposition'] = f'attachment; filename="{filename}"'
             return response
         return render(
