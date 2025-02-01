@@ -62,7 +62,8 @@ DOC_SHORTCUT_ALIAS = {
     'quick': 'quickstart',
     'plugin': 'plugin_api',
     'api': 'plugin_api',
-    'relay': 'relay_protocol',
+    'relay_api': 'relay_api',
+    'relay_weechat': 'relay_weechat',
 }
 
 

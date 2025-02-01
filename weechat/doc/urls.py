@@ -32,7 +32,7 @@ from weechat.doc.views import (
     security_version as view_security_version,
 )
 
-LEGACY_DOC = 'faq|user|plugin_api|scripting|quickstart|dev|relay_protocol'
+LEGACY_DOC = 'faq|user|plugin_api|scripting|quickstart|dev|relay_api|relay_weechat'
 
 urlpatterns = [
     path('', view_doc, name='doc'),
