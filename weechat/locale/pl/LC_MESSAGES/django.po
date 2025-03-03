@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-21 00:15+0100\n"
-"PO-Revision-Date: 2025-02-21 00:17+0100\n"
+"PO-Revision-Date: 2025-03-03 22:33+0100\n"
 "Last-Translator: Krzysztof Korościk <soltys@soltys.info>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -44,6 +44,10 @@ msgid ""
 "force), add export of channels in IRC list buffer, add option \"addreplace\" "
 "in many commands."
 msgstr ""
+"Dodano automatyczne ponowne połączenie do zdalnego pośrednika, dodano "
+"informacje o kompilacji (parametr w linii poleceń), zmieniono opcje IPv6 "
+"serwerów IRC i proxy (wyłączone/auto/wymuszone), dodano eksport kanałów w "
+"liście buforów IRC, dodano opcję \"addreplace\" do wielu komend."
 
 #: about/_i18n_keydates.py:15
 msgid ""
@@ -86,6 +90,8 @@ msgid ""
 "Add connection status to remote WeeChat and fix bugs in the \"api\" relay, "
 "fix color codes in IRC nick names."
 msgstr ""
+"Dodano status połączenia do zdalnego WeeChat i poprawiono błędy w \"api\" "
+"pośrednika, naprawiono kody kolorów na liście nicków IRC."
 
 #: about/_i18n_keydates.py:21
 msgid ""
@@ -392,16 +398,12 @@ msgid "Release signing key fingerprint (format: PGP fingerprint)."
 msgstr "Odcisk klucza podpisu wydania (format: odcisk PGP)."
 
 #: dev/views.py:82
-#, fuzzy
-#| msgid "Release signing key (format: PGP public key)."
 msgid "Release signing key (format: PGP public key as binary file)."
-msgstr "Klucz podpisu wydania (format: klucz publiczny PGP)."
+msgstr "Klucz podpisu wydania (format: klucz publiczny PGP jako plik binarny)."
 
 #: dev/views.py:87
-#, fuzzy
-#| msgid "Release signing key (format: PGP public key)."
 msgid "Release signing key (format: PGP public key as ASCII file)."
-msgstr "Klucz podpisu wydania (format: klucz publiczny PGP)."
+msgstr "Klucz podpisu wydania (format: klucz publiczny PGP jako plik ASCII)."
 
 #: dev/views.py:92
 msgid ""
@@ -409,20 +411,18 @@ msgid ""
 msgstr "Odcisk klucza podpisu repozytorium Debiana/Ubuntu (format: klucz PGP)."
 
 #: dev/views.py:97
-#, fuzzy
-#| msgid "Debian/Ubuntu repository signing key (format: PGP public key)."
 msgid ""
 "Debian/Ubuntu repository signing key (format: PGP public key as binary file)."
 msgstr ""
-"Klucz podpisu repozytorium Debiana/Ubuntu (format: klucz publiczny PGP)."
+"Klucz podpicujący repozytorium Debiana/Ubuntu (format: klucz publiczny PGP "
+"jako plik binarny)."
 
 #: dev/views.py:102
-#, fuzzy
-#| msgid "Debian/Ubuntu repository signing key (format: PGP public key)."
 msgid ""
 "Debian/Ubuntu repository signing key (format: PGP public key as ASCII file)."
 msgstr ""
-"Klucz podpisu repozytorium Debiana/Ubuntu (format: klucz publiczny PGP)."
+"Klucz podpisujący repozytorium Debiana/Ubuntu (format: klucz publiczny PGP "
+"jako plik ASCII)."
 
 #: dev/views.py:107
 msgid "All non-binary infos (one info by line, format: \"info:value\")."
@@ -430,10 +430,8 @@ msgstr ""
 "Wszystkie niebinarne informacje (jedna na linie, format \"info:wartość\")."
 
 #: dev/views.py:336
-#, fuzzy
-#| msgid "files"
 msgid "(file)"
-msgstr "pliki"
+msgstr "(plik)"
 
 #: doc/_i18n_doc.py:13
 msgid "Developer's guide"
@@ -456,10 +454,8 @@ msgid "Relay: API"
 msgstr "Relay: API"
 
 #: doc/_i18n_doc.py:18
-#, fuzzy
-#| msgid "Relay: API"
 msgid "Relay: api"
-msgstr "Relay: API"
+msgstr "Relay: api"
 
 #: doc/_i18n_doc.py:19
 msgid "Relay: weechat"
@@ -573,6 +569,13 @@ msgid ""
 "On 16-bit systems, this happens with a list that contains more than 32,767 "
 "elements."
 msgstr ""
+"Przekroczenie zakresu liczb całkowitych może wystąpić podczas "
+"przechodzeniach po elementach w liście.\n"
+"<br>\n"
+"Może to wystąpić na systemach 32 i 64 bitowych jeśli lista zawiera więcej "
+"niż 2,147,483,647 elementów.\n"
+"<br>\n"
+"Na systemach 16 bitowych lista musi zawierać więcej niż 32,767 elementów."
 
 #: doc/_i18n_security.py:23
 msgid "Buffer overflow on malformed IRC message 324 (channel mode)."
@@ -696,7 +699,7 @@ msgstr "Błędna walidacja wejścia"
 
 #: doc/_i18n_security.py:47
 msgid "Integer Overflow or Wraparound"
-msgstr ""
+msgstr "Przekroczenie zakresu liczb całkowitych lub zawinięcie"
 
 #: doc/_i18n_security.py:48
 msgid "Integer overflow in loops on lists."
@@ -1247,12 +1250,16 @@ msgid ""
 "More information on the <a href=\"https://blog.weechat.org/post/2024/09/29/"
 "Debian-Ubuntu-repositories-for-archs-arm64-and-armhf\">development blog</a>."
 msgstr ""
+"Dodano repozytoria Debian/Ubuntu dla platform arm64 i armhf, zastąpiły one "
+"repozytoria Raspbian (oznaczone jako nieaktywne).\n"
+"\n"
+"Więcej informacji można znaleźć na <a href=\"https://blog.weechat.org/post/"
+"2024/09/29/Debian-Ubuntu-repositories-for-archs-arm64-and-armhf\">blogu "
+"developerskim</a>."
 
 #: news/_i18n_info.py:32
-#, fuzzy
-#| msgid "Debian/Ubuntu repositories"
 msgid "Debian/Ubuntu repositories for archs arm64/armhf"
-msgstr "Repozytoria Debiana/Ubuntu"
+msgstr "Repozytoria Debiana/Ubuntu dla architektur arm64/armhf"
 
 #: news/_i18n_info.py:33
 msgid "Dennis Ritchie has left #world"
@@ -1323,7 +1330,7 @@ msgstr ""
 
 #: news/_i18n_info.py:42
 msgid "Git main branch"
-msgstr ""
+msgstr "Główna gałąź git"
 
 #: news/_i18n_info.py:43
 msgid "Git repositories moved to GitHub"
@@ -1529,6 +1536,20 @@ msgid ""
 "- <a href=\"https://github.com/weechat/qweechat\">https://github.com/weechat/"
 "qweechat</a>."
 msgstr ""
+"Nazwa domyślnej gałęzi została zmieniona z \"master\" na \"main\" w "
+"następujących repozytoriach git:\n"
+"- <a href=\"https://github.com/weechat/weechat\">https://github.com/weechat/"
+"weechat</a>\n"
+"- <a href=\"https://github.com/weechat/weechat.org\">https://github.com/"
+"weechat/weechat.org</a>\n"
+"- <a href=\"https://github.com/weechat/scripts\">https://github.com/weechat/"
+"scripts</a>\n"
+"- <a href=\"https://github.com/weechat/weechat-relay\">https://github.com/"
+"weechat/weechat-relay</a>\n"
+"- <a href=\"https://github.com/weechat/weercd\">https://github.com/weechat/"
+"weercd</a>\n"
+"- <a href=\"https://github.com/weechat/qweechat\">https://github.com/weechat/"
+"qweechat</a>."
 
 #: news/_i18n_info.py:68
 msgid ""
@@ -5167,14 +5188,6 @@ msgstr ""
 "changelog/ChangeLog-4.4.2.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:194
-#, fuzzy
-#| msgid ""
-#| "Version 4.4.1 is available!\n"
-#| "\n"
-#| "This is a bug fix and maintenance release.\n"
-#| "\n"
-#| "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
-#| "v4.4.1\">ChangeLog</a>."
 msgid ""
 "Version 4.4.3 is available!\n"
 "\n"
@@ -5183,22 +5196,14 @@ msgid ""
 "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
 "v4.4.3\">ChangeLog</a>."
 msgstr ""
-"Wersja 4.4.1 jest dostępna!\n"
+"Wersja 4.4.3 jest dostępna!\n"
 "\n"
 "Jest to wersja poprawiająca znalezione błędy.\n"
 "\n"
-"Kompletna lista poprawionych błędów znajduje się w pliku <a href=\"/files/"
-"changelog/ChangeLog-4.4.1.html\">ChangeLog</a>."
+"Kompletna lista poprawionych błędów znajduje się w pliku <a href=\"https://"
+"github.com/weechat/weechat/releases/tag/v4.4.3\">ChangeLog</a>."
 
 #: news/_i18n_info.py:195
-#, fuzzy
-#| msgid ""
-#| "Version 4.4.1 is available!\n"
-#| "\n"
-#| "This is a bug fix and maintenance release.\n"
-#| "\n"
-#| "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
-#| "v4.4.1\">ChangeLog</a>."
 msgid ""
 "Version 4.4.4 is available!\n"
 "\n"
@@ -5207,40 +5212,27 @@ msgid ""
 "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
 "v4.4.4\">ChangeLog</a>."
 msgstr ""
-"Wersja 4.4.1 jest dostępna!\n"
+"Wersja 4.4.4 jest dostępna!\n"
 "\n"
 "Jest to wersja poprawiająca znalezione błędy.\n"
 "\n"
-"Kompletna lista poprawionych błędów znajduje się w pliku <a href=\"/files/"
-"changelog/ChangeLog-4.4.1.html\">ChangeLog</a>."
+"Kompletna lista poprawionych błędów znajduje się w pliku <a href=\"https://"
+"github.com/weechat/weechat/releases/tag/v4.4.4\">ChangeLog</a>."
 
 #: news/_i18n_info.py:196
-#, fuzzy
-#| msgid ""
-#| "Version 4.4.0 is available!\n"
-#| "\n"
-#| "New features and bugs fixed: <a href=\"https://github.com/weechat/weechat/"
-#| "releases/tag/v4.4.0\">ChangeLog</a>."
 msgid ""
 "Version 4.5.0 is available!\n"
 "\n"
 "New features and bugs fixed: <a href=\"https://github.com/weechat/weechat/"
 "releases/tag/v4.5.0\">ChangeLog</a>."
 msgstr ""
-"Wersja 4.4.0 jest dostępna!\n"
+"Wersja 4.5.0 jest dostępna!\n"
 "\n"
 "Kompletna lista nowych funkcji i poprawionych błędów znajduje się w pliku <a "
-"href=\"/files/changelog/ChangeLog-4.4.0.html\">ChangeLog</a>."
+"href=\"https://github.com/weechat/weechat/releases/tag/v4.5.0\">ChangeLog</"
+"a>."
 
 #: news/_i18n_info.py:197
-#, fuzzy
-#| msgid ""
-#| "Version 4.4.1 is available!\n"
-#| "\n"
-#| "This is a bug fix and maintenance release.\n"
-#| "\n"
-#| "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
-#| "v4.4.1\">ChangeLog</a>."
 msgid ""
 "Version 4.5.1 is available!\n"
 "\n"
@@ -5249,22 +5241,14 @@ msgid ""
 "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
 "v4.5.1\">ChangeLog</a>."
 msgstr ""
-"Wersja 4.4.1 jest dostępna!\n"
+"Wersja 4.5.1 jest dostępna!\n"
 "\n"
 "Jest to wersja poprawiająca znalezione błędy.\n"
 "\n"
-"Kompletna lista poprawionych błędów znajduje się w pliku <a href=\"/files/"
-"changelog/ChangeLog-4.4.1.html\">ChangeLog</a>."
+"Kompletna lista poprawionych błędów znajduje się w pliku <a href=\"https://"
+"github.com/weechat/weechat/releases/tag/v4.5.1\">ChangeLog</a>."
 
 #: news/_i18n_info.py:198
-#, fuzzy
-#| msgid ""
-#| "Version 4.4.2 is available!\n"
-#| "\n"
-#| "This is a bug fix and maintenance release.\n"
-#| "\n"
-#| "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
-#| "v4.4.2\">ChangeLog</a>."
 msgid ""
 "Version 4.5.2 is available!\n"
 "\n"
@@ -5273,12 +5257,12 @@ msgid ""
 "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
 "v4.5.2\">ChangeLog</a>."
 msgstr ""
-"Wersja 4.4.2 jest dostępna!\n"
+"Wersja 4.5.2 jest dostępna!\n"
 "\n"
 "Jest to wersja poprawiająca znalezione błędy.\n"
 "\n"
-"Kompletna lista poprawionych błędów znajduje się w pliku <a href=\"/files/"
-"changelog/ChangeLog-4.4.2.html\">ChangeLog</a>."
+"Kompletna lista poprawionych błędów znajduje się w pliku <a href=\"https://"
+"github.com/weechat/weechat/releases/tag/v4.5.2\">ChangeLog</a>."
 
 #: news/_i18n_info.py:199
 msgid ""
@@ -5584,7 +5568,7 @@ msgstr ""
 #. Translators: description for script "irccloud_avatar_link.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:34
 msgid "Add IRCCloud avatar image link to WHOIS response."
-msgstr ""
+msgstr "Dodano link do obrazu awataru IRCCloud do odpowiedzi WHOIS."
 
 #. Translators: description for script "pv_info.pl" (0.4.0+)
 #: scripts/_i18n_scripts.py:36
@@ -6608,10 +6592,8 @@ msgstr "Powiadomienia poprzez centrum powiadomień OS X."
 
 #. Translators: description for script "weenotifier.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:410
-#, fuzzy
-#| msgid "Notifier using IrssiNotifier."
 msgid "Notifier using gotify or ntfy.sh."
-msgstr "Powiadomienia z użyciem IrssiNotifier."
+msgstr "Powiadomienia z użyciem gotify lub ntfy.sh."
 
 #. Translators: description for script "dzen_notifier.pl" (0.4.3+)
 #: scripts/_i18n_scripts.py:412
@@ -6666,6 +6648,8 @@ msgid ""
 "Pass highlights and private messages as OS notifications via the Kitty "
 "terminal (OSC 99)."
 msgstr ""
+"Przekaż powiadomienia i wiadomości prywatne jako powiadomienia systemowe za "
+"pomocą terminalu Kitty (OSC 99)."
 
 #. Translators: description for script "xclip.pl" (0.3.0+)
 #: scripts/_i18n_scripts.py:430
@@ -8361,14 +8345,10 @@ msgstr ""
 "strong> + <strong>Opis API wtyczek</strong>."
 
 #: templates/doc/doc_version.html:22
-#, fuzzy
-#| msgid ""
-#| "Want to write a remote interface via relay? → <strong>Relay protocol</"
-#| "strong>."
 msgid ""
 "Want to write a remote interface via relay? → <strong>Relay: api</strong>."
 msgstr ""
-"Chcesz stworzyć zdalny interfejs poprzez relay? → <strong>Protokół relay</"
+"Chcesz stworzyć zdalny interfejs poprzez relay? → <strong>Relay: api</"
 "strong>."
 
 #: templates/doc/doc_version.html:24
@@ -8555,7 +8535,7 @@ msgstr "Poprawiono w wersji %(fixed_version)s (%(release_date)s)."
 
 #: templates/doc/security.html:84
 msgid "Fixed, not yet released."
-msgstr ""
+msgstr "Naprawione ale jeszcze nie wydane."
 
 #: templates/doc/security.html:84
 msgid "Not yet fixed."
@@ -8890,39 +8870,32 @@ msgstr ""
 "agent."
 
 #: templates/download/debian.html:60
-#, fuzzy
-#| msgid "GPG key"
 msgid "PGP key"
-msgstr "Klucz GPG"
+msgstr "Klucz PGP"
 
 #: templates/download/debian.html:63
 msgid "Create GnuPG directory:"
 msgstr "Stwórz katalog GnuPG:"
 
 #: templates/download/debian.html:68
-#, fuzzy
-#| msgid "Import the GPG key used to sign the repositories:"
 msgid "Import the PGP key used to sign the repositories:"
-msgstr "Zaimportuj klucz GPG użyty do podpisania repozytoriów:"
+msgstr "Zaimportuj klucz PGP użyty do podpisania repozytoriów:"
 
 #: templates/download/debian.html:74
-#, fuzzy
-#| msgid "Debian/Ubuntu repository signing key (format: PGP public key)."
 msgid ""
 "In case of problem, the Debian/Ubuntu repository signing key (format: PGP "
 "public key) can be downloaded here:"
 msgstr ""
-"Klucz podpisu repozytorium Debiana/Ubuntu (format: klucz publiczny PGP)."
+"W razie problemów klucz używany do podpisywania repozytoriów Debiana/Ubuntu "
+"(format: klucz publiczny PGP) można pobrać stąd:"
 
 #: templates/download/debian.html:75 templates/download/packages.html:136
-#, fuzzy
-#| msgid "(binary data)"
 msgid "binary"
-msgstr "(dane binarne)"
+msgstr "binarne"
 
 #: templates/download/debian.html:76 templates/download/packages.html:137
 msgid "ASCII"
-msgstr ""
+msgstr "ASCII"
 
 #: templates/download/debian.html:79
 msgid "APT configuration"
@@ -8945,27 +8918,23 @@ msgid "“%(codename)s”"
 msgstr "“%(codename)s”"
 
 #: templates/download/debian.html:107
-#, fuzzy
-#| msgid "Notes"
 msgid "Notes:"
-msgstr "Notatki"
+msgstr "Notatki:"
 
 #: templates/download/debian.html:110
 msgid ""
 "If you're using an architecture like amd64 and apt complains about binary-"
 "i386 file not found, you can force the architecture like this:"
 msgstr ""
+"Jeśli używasz architektury jak amd64 i apt narzeka, że nie może znaleźć "
+"pliku binary-i386, możesz wymusić architekturę w taki sposób:"
 
 #: templates/download/debian.html:114
-#, fuzzy
-#| msgid ""
-#| "Note: the second command line is optional, it is used to download source "
-#| "packages."
 msgid ""
 "The second command line is optional, it is used to download source packages."
 msgstr ""
-"Uwaga: druga komenda jest opcjonalna, jest ona używana do pobierania "
-"pakietów źródłowych."
+"Druga komenda jest opcjonalna, jest ona używana do pobierania pakietów "
+"źródłowych."
 
 #: templates/download/debian.html:120
 msgid "Resynchronize your package index files:"
@@ -9054,19 +9023,16 @@ msgid "Old versions"
 msgstr "Poprzednie wersje"
 
 #: templates/download/packages.html:22
-#, fuzzy, python-format
-#| msgid ""
-#| "<strong>Important:</strong> it is not recommended to download or use any "
-#| "of these old versions: they are less stable than the latest released "
-#| "version, and may contain security vulnerabilities fixed in later versions."
+#, python-format
 msgid ""
 "<strong>Important:</strong> it is not recommended to download or use any of "
 "these %(count)s old versions: they are less stable than the latest released "
 "version, and may contain security vulnerabilities fixed in later versions."
 msgstr ""
-"<strong>Ostrzeżenie</strong> nie zaleca się pobierania i używania żadnej ze "
-"starszych wersji: są one mniej stabilne niż najnowsze wypuszczone wersje, i "
-"mogą zawierać błędy bezpieczeństwa naprawione w późniejszych wersjach."
+"<strong>Ważne</strong> nie zaleca się pobierania i używania żadnej z tych "
+"%(count)s starszych wersji: są one mniej stabilne niż najnowsze wydane "
+"wersje i mogą zawierać błędy bezpieczeństwa naprawione w późniejszych "
+"wersjach."
 
 #: templates/download/packages.html:41
 msgid "next stable version"
@@ -9133,10 +9099,8 @@ msgid "Checksum"
 msgstr "Suma kontrolna"
 
 #: templates/download/packages.html:100
-#, fuzzy
-#| msgid "GPG signature"
 msgid "PGP signature"
-msgstr "Podpis GPG"
+msgstr "Podpis PGP"
 
 #: templates/download/packages.html:127
 msgid "Checking the signatures:"
@@ -9151,18 +9115,16 @@ msgstr ""
 "(irc.libera.chat) lub pytając developera."
 
 #: templates/download/packages.html:133
-#, fuzzy
-#| msgid "Import the GPG key:"
 msgid "Import the PGP key:"
-msgstr "Zaimportuj klucz GPG:"
+msgstr "Zaimportuj klucz PGP:"
 
 #: templates/download/packages.html:135
-#, fuzzy
-#| msgid "In case of problem, the GPG key can be downloaded here:"
 msgid ""
 "In case of problem, the release signing key (format: PGP public key) can be "
 "downloaded here:"
-msgstr "W razie problemów klucz GPG można pobrać stad:"
+msgstr ""
+"W razie problemów klucz podpisujący wydania (format: klucz publiczny PGP) "
+"można pobrać stad:"
 
 #: templates/download/packages.html:140
 msgid "Trust the key:"
