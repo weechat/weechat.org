@@ -44,7 +44,7 @@ see the file [settings_local.template](weechat/settings_local.template) for more
 
 ## Copyright
 
-Copyright © 2003-2024 [Sébastien Helleu](https://github.com/flashcode)
+Copyright © 2003-2025 [Sébastien Helleu](https://github.com/flashcode)
 
 This file is part of WeeChat.org.
 
