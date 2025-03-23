@@ -1,5 +1,5 @@
 #
-# SPDX-FileCopyrightText: 2009-2018, 2024 Nils Görs <weechatter@arcor.de>
+# SPDX-FileCopyrightText: 2009-2018, 2024, 2025 Nils Görs <weechatter@arcor.de>
 #
 # This file is part of WeeChat.org.
 #
@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-23 11:32+0100\n"
-"PO-Revision-Date: 2025-02-21 00:16+0100\n"
+"PO-Revision-Date: 2025-03-23 13:20+0100\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de_DE\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: about/_i18n_keydates.py:13
 msgid "256 colors, irc proxy, rmodifier, redirection of irc commands."
@@ -45,6 +45,11 @@ msgid ""
 "force), add export of channels in IRC list buffer, add option \"addreplace\" "
 "in many commands."
 msgstr ""
+"Automatische Wiederverbindung zum Remote-Relay hinzugefügt,"
+" Build-Informationen hinzugefügt (Befehlszeilenparameter), IPv6-Option in"
+" IRC-Servern und Proxys geändert (deaktivieren/automatisch/erzwingen), Export"
+" von Kanälen im IRC-Listenbuffer hinzugefügt, Option \"addreplace\" in vielen"
+" Befehlen hinzugefügt."
 
 #: about/_i18n_keydates.py:15
 msgid ""
@@ -73,6 +78,9 @@ msgid ""
 "Add command /pipe, add key Ctrl+Alt+l (L) to toggle between remote and local "
 "commands on remote buffers (api relay), add completion resource in api relay."
 msgstr ""
+"Neuer Befehl /pipe, fügt die Taste Strg+Alt+l (L) hinzu, um zwischen Remote-"
+" und lokalen Befehlen in Remote-Buffern (api-Relay) umzuschalten, und fügt"
+" eine Vervollständigungsfunktion im api-Relay hinzu."
 
 #: about/_i18n_keydates.py:19
 msgid "Add command /toggle, improve IRC message parser."
@@ -92,6 +100,8 @@ msgid ""
 "Add connection status to remote WeeChat and fix bugs in the \"api\" relay, "
 "fix color codes in IRC nick names."
 msgstr ""
+"Fügen den Verbindungsstatus zu einem Remote-WeeChat hinzu und beheben Fehler"
+" im \"api\"-Relay, beheben Farbcodes in IRC-Namen."
 
 #: about/_i18n_keydates.py:22
 msgid ""
@@ -415,20 +425,18 @@ msgstr ""
 "(Format: PGP Fingerprint)."
 
 #: dev/views.py:82
-#, fuzzy
 #| msgid "Release signing key (format: PGP public key)."
 msgid "Release signing key (format: PGP public key as binary file)."
 msgstr ""
-"Schlüssel zum Unterschreiben der veröffentlichten Version (Format: "
-"öffentlicher PGP Schlüssel)."
+"Signaturschlüssel freigeben (Format: öffentlicher PGP-Schlüssel als"
+" Binärdatei)."
 
 #: dev/views.py:87
-#, fuzzy
 #| msgid "Release signing key (format: PGP public key)."
 msgid "Release signing key (format: PGP public key as ASCII file)."
 msgstr ""
-"Schlüssel zum Unterschreiben der veröffentlichten Version (Format: "
-"öffentlicher PGP Schlüssel)."
+"Signaturschlüssel freigeben (Format: öffentlicher PGP-Schlüssel als"
+" ASCII-Datei)."
 
 #: dev/views.py:92
 msgid ""
@@ -438,22 +446,20 @@ msgstr ""
 "(Format: PGP Fingerprint)."
 
 #: dev/views.py:97
-#, fuzzy
 #| msgid "Debian/Ubuntu repository signing key (format: PGP public key)."
 msgid ""
 "Debian/Ubuntu repository signing key (format: PGP public key as binary file)."
 msgstr ""
-"Schlüssel zum Unterschreiben des Debian/Ubuntu Repositorium (Format: "
-"öffentlicher PGP Schlüssel)."
+"Signaturschlüssel für das Debian/Ubuntu-Repositorium (Format: öffentlicher"
+" PGP-Schlüssel als Binärdatei)."
 
 #: dev/views.py:102
-#, fuzzy
 #| msgid "Debian/Ubuntu repository signing key (format: PGP public key)."
 msgid ""
 "Debian/Ubuntu repository signing key (format: PGP public key as ASCII file)."
 msgstr ""
-"Schlüssel zum Unterschreiben des Debian/Ubuntu Repositorium (Format: "
-"öffentlicher PGP Schlüssel)."
+"Signaturschlüssel für das Debian/Ubuntu-Repositorium (Format: öffentlicher"
+" PGP-Schlüssel als ASCII-Datei)."
 
 #: dev/views.py:107
 msgid "All non-binary infos (one info by line, format: \"info:value\")."
@@ -462,10 +468,9 @@ msgstr ""
 "\"Info:Wert\")."
 
 #: dev/views.py:336
-#, fuzzy
 #| msgid "files"
 msgid "(file)"
-msgstr "Dateien"
+msgstr "(Datei)"
 
 #: doc/_i18n_doc.py:13
 msgid "Developer's guide"
@@ -5351,7 +5356,6 @@ msgstr ""
 "github.com/weechat/weechat/releases/tag/v4.4.3\">Änderungsprotokoll</a>."
 
 #: news/_i18n_info.py:195
-#, fuzzy
 #| msgid ""
 #| "Version 4.4.1 is available!\n"
 #| "\n"
@@ -5367,16 +5371,15 @@ msgid ""
 "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
 "v4.4.4\">ChangeLog</a>."
 msgstr ""
-"Version 4.4.1 ist verfügbar!\n"
+"Version 4.4.4 ist verfügbar!\n"
 "\n"
 "Diese Version behebt lediglich Fehler und ist als Korrekturversion zu "
 "verstehen.\n"
 "\n"
 "Eine Liste der Fehlerbereinigungen findet man unter <a href=\"https://"
-"github.com/weechat/weechat/releases/tag/v4.4.1\">Änderungsprotokoll</a>."
+"github.com/weechat/weechat/releases/tag/v4.4.4\">Änderungsprotokoll</a>."
 
 #: news/_i18n_info.py:196
-#, fuzzy
 #| msgid ""
 #| "Version 4.4.0 is available!\n"
 #| "\n"
@@ -5388,13 +5391,12 @@ msgid ""
 "New features and bugs fixed: <a href=\"https://github.com/weechat/weechat/"
 "releases/tag/v4.5.0\">ChangeLog</a>."
 msgstr ""
-"Version 4.4.0 ist verfügbar!\n"
+"Version 4.5.0 ist verfügbar!\n"
 "\n"
 "Viele neue Funktionen und Fehlerbehebungen: <a href=\"https://github.com/"
-"weechat/weechat/releases/tag/v4.4.0\">Änderungsprotokoll</a>."
+"weechat/weechat/releases/tag/v4.5.0\">Änderungsprotokoll</a>."
 
 #: news/_i18n_info.py:197
-#, fuzzy
 #| msgid ""
 #| "Version 4.4.1 is available!\n"
 #| "\n"
@@ -5410,16 +5412,15 @@ msgid ""
 "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
 "v4.5.1\">ChangeLog</a>."
 msgstr ""
-"Version 4.4.1 ist verfügbar!\n"
+"Version 4.5.1 ist verfügbar!\n"
 "\n"
 "Diese Version behebt lediglich Fehler und ist als Korrekturversion zu "
 "verstehen.\n"
 "\n"
 "Eine Liste der Fehlerbereinigungen findet man unter <a href=\"https://"
-"github.com/weechat/weechat/releases/tag/v4.4.1\">Änderungsprotokoll</a>."
+"github.com/weechat/weechat/releases/tag/v4.5.1\">Änderungsprotokoll</a>."
 
 #: news/_i18n_info.py:198
-#, fuzzy
 #| msgid ""
 #| "Version 4.4.2 is available!\n"
 #| "\n"
@@ -5435,16 +5436,15 @@ msgid ""
 "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
 "v4.5.2\">ChangeLog</a>."
 msgstr ""
-"Version 4.4.2 ist verfügbar!\n"
+"Version 4.5.2 ist verfügbar!\n"
 "\n"
 "Diese Version behebt lediglich Fehler und ist als Korrekturversion zu "
 "verstehen.\n"
 "\n"
 "Eine Liste der Fehlerbereinigungen findet man unter <a href=\"https://"
-"github.com/weechat/weechat/releases/tag/v4.4.2\">Änderungsprotokoll</a>."
+"github.com/weechat/weechat/releases/tag/v4.5.2\">Änderungsprotokoll</a>."
 
 #: news/_i18n_info.py:199
-#, fuzzy
 #| msgid ""
 #| "Version 4.4.0 is available!\n"
 #| "\n"
@@ -5456,10 +5456,10 @@ msgid ""
 "New features and bugs fixed: <a href=\"https://github.com/weechat/weechat/"
 "releases/tag/v4.6.0\">ChangeLog</a>."
 msgstr ""
-"Version 4.4.0 ist verfügbar!\n"
+"Version 4.6.0 ist verfügbar!\n"
 "\n"
 "Viele neue Funktionen und Fehlerbehebungen: <a href=\"https://github.com/"
-"weechat/weechat/releases/tag/v4.4.0\">Änderungsprotokoll</a>."
+"weechat/weechat/releases/tag/v4.6.0\">Änderungsprotokoll</a>."
 
 #: news/_i18n_info.py:200
 msgid ""
@@ -7752,10 +7752,9 @@ msgid "not compatible with Python 3"
 msgstr "nicht kompatibel mit Python 3"
 
 #: scripts/models.py:136
-#, fuzzy
 #| msgid "Python scripts"
 msgid "Popular script"
-msgstr "Python-Skripte"
+msgstr "Beliebtes Skript"
 
 #. Translators: this is a date format, see: http://www.php.net/date
 #. Translators: (note: the result string must be short, use abbreviation
@@ -8637,7 +8636,6 @@ msgstr ""
 "strong> +<strong>API-Erweiterung-Referenz</strong>."
 
 #: templates/doc/doc_version.html:22
-#, fuzzy
 #| msgid ""
 #| "Want to write a remote interface via relay? → <strong>Relay protocol</"
 #| "strong>."
@@ -8645,7 +8643,7 @@ msgid ""
 "Want to write a remote interface via relay? → <strong>Relay: api</strong>."
 msgstr ""
 "Möchten Sie eine Remote-Schnittstelle für das Relay schreiben? → "
-"<strong>Relay-Protokoll</strong>."
+"<strong>Relay:api</strong>."
 
 #: templates/doc/doc_version.html:24
 msgid ""
@@ -9046,7 +9044,7 @@ msgid ""
 "When donating with Paypal, you can leave name and comment, they will be "
 "displayed on this page, providing that the following conditions are met:"
 msgstr ""
-"Man kann mittels PayPal spendet, kann man einen Namen und einen Kommentar "
+"Falls man über PayPal spendet, kann man einen Namen und einen Kommentar "
 "hinterlassen, diese werden auf dieser Seite veröffentlicht. Dazu müssen aber "
 "folgende Bedingungen erfüllt werden:"
 
@@ -9173,42 +9171,38 @@ msgstr ""
 "sondern gnupg-agent."
 
 #: templates/download/debian.html:60
-#, fuzzy
 #| msgid "GPG key"
 msgid "PGP key"
-msgstr "GPG Schlüssel"
+msgstr "PGP Schlüssel"
 
 #: templates/download/debian.html:63
 msgid "Create GnuPG directory:"
 msgstr "Erstellt GnuPG Verzeichnis:"
 
 #: templates/download/debian.html:68
-#, fuzzy
 #| msgid "Import the GPG key used to sign the repositories:"
 msgid "Import the PGP key used to sign the repositories:"
 msgstr ""
-"Importieren des GPG-Schlüssel, der zum Signieren der Repositorien verwendet "
+"Importieren des PGP-Schlüssel, der zum Signieren der Repositorien verwendet "
 "wird:"
 
 #: templates/download/debian.html:74
-#, fuzzy
 #| msgid "Debian/Ubuntu repository signing key (format: PGP public key)."
 msgid ""
 "In case of problem, the Debian/Ubuntu repository signing key (format: PGP "
 "public key) can be downloaded here:"
 msgstr ""
-"Schlüssel zum Unterschreiben des Debian/Ubuntu Repositorium (Format: "
-"öffentlicher PGP Schlüssel)."
+"Bei Problemen kann der Signaturschlüssel für das Debian/Ubuntu-Repositorium"
+" (Format: öffentlicher PGP-Schlüssel) hier heruntergeladen werden:"
 
 #: templates/download/debian.html:75 templates/download/packages.html:136
-#, fuzzy
 #| msgid "(binary data)"
 msgid "binary"
-msgstr "(binäre Daten)"
+msgstr "Binärdatei"
 
 #: templates/download/debian.html:76 templates/download/packages.html:137
 msgid "ASCII"
-msgstr ""
+msgstr "ASCII"
 
 #: templates/download/debian.html:79
 msgid "APT configuration"
@@ -9233,26 +9227,27 @@ msgid "“%(codename)s”"
 msgstr "“%(codename)s”"
 
 #: templates/download/debian.html:107
-#, fuzzy
 #| msgid "Notes"
 msgid "Notes:"
-msgstr "Hinweis"
+msgstr "Hinweise:"
 
 #: templates/download/debian.html:110
 msgid ""
 "If you're using an architecture like amd64 and apt complains about binary-"
 "i386 file not found, you can force the architecture like this:"
 msgstr ""
+"Wenn Sie eine Architektur wie amd64 verwenden und apt eine Fehlermeldung"
+" ausgibt, dass die Binärdatei i386 nicht gefunden wurde, können Sie die"
+" Architektur folgendermaßen erzwingen:"
 
 #: templates/download/debian.html:114
-#, fuzzy
 #| msgid ""
 #| "Note: the second command line is optional, it is used to download source "
 #| "packages."
 msgid ""
 "The second command line is optional, it is used to download source packages."
 msgstr ""
-"Hinweis: die zweite Befehlszeile ist optional, sie dient dazu die "
+"Die zweite Befehlszeile ist optional, sie dient dazu die "
 "Quellpakete herunterzuladen."
 
 #: templates/download/debian.html:120
@@ -9342,7 +9337,7 @@ msgid "Old versions"
 msgstr "Alte Versionen"
 
 #: templates/download/packages.html:22
-#, fuzzy, python-format
+#, python-format
 #| msgid ""
 #| "<strong>Important:</strong> it is not recommended to download or use any "
 #| "of these old versions: they are less stable than the latest released "
@@ -9352,8 +9347,10 @@ msgid ""
 "these %(count)s old versions: they are less stable than the latest released "
 "version, and may contain security vulnerabilities fixed in later versions."
 msgstr ""
-"<strong>Wichtig:</strong> Es wird davon abgeraten diese älteren Versionen "
-"herunter zu laden und zu nutzen, diese Versionen laufen weniger stabil als "
+"<strong>Wichtig:</strong> Es wird davon abgeraten eine dieser %(count)s"
+" älteren Versionen "
+"herunter zu laden und/oder zu nutzen. Diese Versionen laufen weniger stabil"
+" als "
 "eine aktuelle Version und beinhalten möglicherweise Sicherheitslücken die in "
 "nachfolgenden Versionen behoben wurden."
 
@@ -9422,10 +9419,9 @@ msgid "Checksum"
 msgstr "Prüfsumme"
 
 #: templates/download/packages.html:100
-#, fuzzy
 #| msgid "GPG signature"
 msgid "PGP signature"
-msgstr "GPG Signatur"
+msgstr "PGP Signatur"
 
 #: templates/download/packages.html:127
 msgid "Checking the signatures:"
@@ -9440,19 +9436,18 @@ msgstr ""
 "Kanal (irc.libera.chat) überprüfen oder dort einen Entwickler fragen."
 
 #: templates/download/packages.html:133
-#, fuzzy
 #| msgid "Import the GPG key:"
 msgid "Import the PGP key:"
-msgstr "Importiert den GPG Schlüssel:"
+msgstr "Importiert den PGP Schlüssel:"
 
 #: templates/download/packages.html:135
-#, fuzzy
 #| msgid "In case of problem, the GPG key can be downloaded here:"
 msgid ""
 "In case of problem, the release signing key (format: PGP public key) can be "
 "downloaded here:"
 msgstr ""
-"Im Falle eines Problems, kann der GPG-Schlüssel hier heruntergeladen werden:"
+"Im Falle eines Problems, kann der Signaturschlüssel (Format: öffentlicher"
+" PGP-Schlüssel) hier heruntergeladen werden:"
 
 #: templates/download/packages.html:140
 msgid "Trust the key:"
@@ -10310,3 +10305,4 @@ msgstr "Ungültiger Name: unterscheidet sich vom Theme."
 
 #~ msgid "Tired of your terminal?"
 #~ msgstr "Müde von deinem Terminal?"
+
