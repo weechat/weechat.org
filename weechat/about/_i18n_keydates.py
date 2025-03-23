@@ -15,6 +15,7 @@ def __i18n_about_keydates():
     gettext_noop("Add calculation of expression in evaluation of expressions, add colors in log files, add filters on IRC raw buffer.")
     gettext_noop("Add command /autojoin, add IRC option \"autojoin_dynamic\", add IRC tags in messages displayed, add Zstandard compression support in Relay plugin (weechat protocol).")
     gettext_noop("Add command /item, add bar item \"spacer\".")
+    gettext_noop("Add command /pipe, add key Ctrl+Alt+l (L) to toggle between remote and local commands on remote buffers (api relay), add completion resource in api relay.")
     gettext_noop("Add command /toggle, improve IRC message parser.")
     gettext_noop("Add commands /allbuf and /hotlist, improve case insensitive comparisons, add identifier in buffer lines, add trigger regex command to translate chars.")
     gettext_noop("Add connection status to remote WeeChat and fix bugs in the \"api\" relay, fix color codes in IRC nick names.")
