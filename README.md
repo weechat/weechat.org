@@ -5,6 +5,7 @@
 </p>
 
 [![CI](https://github.com/weechat/weechat.org/actions/workflows/ci.yml/badge.svg)](https://github.com/weechat/weechat.org/actions)
+[![REUSE status](https://api.reuse.software/badge/github.com/weechat/weechat.org)](https://api.reuse.software/info/github.com/weechat/weechat.org)
 
 WeeChat.org is the website for WeeChat, the extensible chat client.
 
