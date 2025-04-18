@@ -173,7 +173,7 @@ class Package(models.Model):
             return files_path_join(self.directory)
         return ''
 
-    def fullname_gpg_sig(self):
+    def fullname_pgp_sig(self):
         """Return the path for the GPG signature."""
         return self.fullname() + '.asc'
 
@@ -197,9 +197,9 @@ class Package(models.Model):
             return self.sha1sum
         return ''
 
-    def has_gpg_sig(self):
+    def has_pgp_sig(self):
         """Checks if the package has a GPG signature."""
-        return os.path.isfile(self.fullname_gpg_sig())
+        return os.path.isfile(self.fullname_pgp_sig())
 
     def exists(self):
         """Checks if the package exists (on disk)."""

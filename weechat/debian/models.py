@@ -78,21 +78,21 @@ class Repo(models.Model):
     def apt_url(self):
         """
         Return the URL to use with apt for binary packages, for example:
-        "deb [signed-by=/usr/share/keyrings/weechat-archive-keyring.gpg]
+        "deb [signed-by=/usr/share/keyrings/weechat-archive-keyring.pgp]
         https://weechat.org/debian sid main".
         """
         return (f'deb [signed-by=/usr/share/keyrings/weechat-archive-'
-                f'keyring.gpg] {self.url} {self.version.codename} main')
+                f'keyring.pgp] {self.url} {self.version.codename} main')
 
     def apt_url_src(self):
         """
         Return the URL to use with apt for sources packages, for example:
         "deb-src [signed-by=/usr/share/keyrings/weechat-archive-
-        keyring.gpg] https://weechat.org/debian sid main".
+        keyring.pgp] https://weechat.org/debian sid main".
         """
         return (
             f'deb-src [signed-by=/usr/share/keyrings/weechat-'
-            f'archive-keyring.gpg] {self.url} {self.version.codename} main'
+            f'archive-keyring.pgp] {self.url} {self.version.codename} main'
         )
 
     class Meta:

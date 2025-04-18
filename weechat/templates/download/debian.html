@@ -67,7 +67,7 @@ var deb_apt_cmds = [
 <p>
   {% trans "Import the PGP key used to sign the repositories:" %}
   <pre><code>$ sudo mkdir -p /usr/share/keyrings
-$ sudo gpg --no-default-keyring --keyring /usr/share/keyrings/weechat-archive-keyring.gpg --keyserver hkps://keys.openpgp.org --recv-keys 11E9DE8848F2B65222AA75B8D1820DB22A11534E</code></pre>
+$ sudo gpg --no-default-keyring --keyring /usr/share/keyrings/weechat-archive-keyring.pgp --keyserver hkps://keys.openpgp.org --recv-keys 11E9DE8848F2B65222AA75B8D1820DB22A11534E</code></pre>
 </p>
 
 <p>
@@ -108,7 +108,7 @@ $ sudo gpg --no-default-keyring --keyring /usr/share/keyrings/weechat-archive-ke
   <ul>
     <li>
       {% trans "If you're using an architecture like amd64 and apt complains about binary-i386 file not found, you can force the architecture like this:" %}
-      <pre><code>deb [arch=amd64 signed-by=/usr/share/keyrings/weechat-archive-keyring.gpg] https://…</code></pre>
+      <pre><code>deb [arch=amd64 signed-by=/usr/share/keyrings/weechat-archive-keyring.pgp] https://…</code></pre>
     </li>
     <li>
       {% trans "The second command line is optional, it is used to download source packages." %}

@@ -97,7 +97,7 @@
           {% if package.exists %}
             <a href="/files{{ package.type.htmldir }}/{{ package.filename }}" title="{{ package.type.description }}">{{ package.filename }}</a>
             <small class="text-muted">
-              ({{ package.filesize|filesizeformat }}{% if package.display_time %}, {{ package.filedate|localdate:"datetime" }}{% endif %}{% if package.has_checksum %}, <a href="{% url 'package_checksums' package.version.version package.checksum_type %}" title="{% trans "Checksum" %} ({{ package.checksum_type|upper }}): {{ package.checksum }}">{{ package.checksum_type|upper }}</a>{% endif %}{% if package.has_gpg_sig %}, <a href="/files{{ package.type.htmldir }}/{{ package.filename }}.asc" title="{% trans "PGP signature" %}">PGP</a>{% endif %})
+              ({{ package.filesize|filesizeformat }}{% if package.display_time %}, {{ package.filedate|localdate:"datetime" }}{% endif %}{% if package.has_checksum %}, <a href="{% url 'package_checksums' package.version.version package.checksum_type %}" title="{% trans "Checksum" %} ({{ package.checksum_type|upper }}): {{ package.checksum }}">{{ package.checksum_type|upper }}</a>{% endif %}{% if package.has_pgp_sig %}, <a href="/files{{ package.type.htmldir }}/{{ package.filename }}.asc" title="{% trans "PGP signature" %}">PGP</a>{% endif %})
             </small>
           {% else %}
             <span class="text-muted" title="{{ package.type.description }}">{{ package.filename }}</span>
