@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-23 11:32+0100\n"
+"POT-Creation-Date: 2025-04-18 21:43+0200\n"
 "PO-Revision-Date: 2025-02-21 00:17+0100\n"
 "Last-Translator: Alexandre Bolelli <semeion7@gmail.com>\n"
 "Language-Team: Portuguese <semeion7@gmail.com>\n"
@@ -300,33 +300,33 @@ msgid ""
 msgstr ""
 
 #. Translators: context: Individual / Association / Company
-#: about/models.py:32
+#: about/models.py:34
 msgid "Individual"
 msgstr ""
 
 #. Translators: context: Individual / Association / Company
-#: about/models.py:35
+#: about/models.py:37
 #, fuzzy
 #| msgid "Description"
 msgid "Association"
 msgstr "Descrição"
 
 #. Translators: context: Individual / Association / Company
-#: about/models.py:38
+#: about/models.py:40
 msgid "Company"
 msgstr ""
 
-#: common/forms.py:85 common/forms.py:87
+#: common/forms.py:87 common/forms.py:89
 msgid "This field is required."
 msgstr "Este campo é obrigatório."
 
-#: dev/views.py:36
+#: dev/views.py:38
 #, fuzzy
 #| msgid "Stable version"
 msgid "Stable version."
 msgstr "Versão estável"
 
-#: dev/views.py:40
+#: dev/views.py:42
 #, fuzzy
 #| msgid ""
 #| "stable version, as number, like plugin API: info_get(\"version_number\")"
@@ -335,37 +335,37 @@ msgid ""
 msgstr ""
 "versão estável, como número, como plugin da API: info_get(\"version_number\")"
 
-#: dev/views.py:45
+#: dev/views.py:47
 #, fuzzy
 #| msgid "date of stable version"
 msgid "Date of stable version (format: \"YYYY-MM-DD\")."
 msgstr "data da versão estável"
 
-#: dev/views.py:49
+#: dev/views.py:51
 #, fuzzy
 #| msgid "development version"
 msgid "Development version."
 msgstr "versão de desenvolvimento"
 
-#: dev/views.py:53
+#: dev/views.py:55
 #, fuzzy
 #| msgid "output of \"git rev-parse HEAD\" for sources repository"
 msgid "Output of \"git rev-parse HEAD\" for sources repository."
 msgstr "saída de \"git rev-parse HEAD\" para o repositório de fontes"
 
-#: dev/views.py:58
+#: dev/views.py:60
 #, fuzzy
 #| msgid "output of \"git rev-parse HEAD\" for scripts repository"
 msgid "Output of \"git rev-parse HEAD\" for scripts repository."
 msgstr "saída de \"git rev-parse HEAD\" para o repositório scripts"
 
-#: dev/views.py:63
+#: dev/views.py:65
 #, fuzzy
 #| msgid "next stable version"
 msgid "Next stable version."
 msgstr "próxima versão estável"
 
-#: dev/views.py:67
+#: dev/views.py:69
 #, fuzzy
 #| msgid ""
 #| "next stable version, as number, like plugin API: "
@@ -377,47 +377,47 @@ msgstr ""
 "próxima versão estável, como número, como plugin da API: "
 "info_get(\"version_number\")"
 
-#: dev/views.py:72
+#: dev/views.py:74
 #, fuzzy
 #| msgid "approximate date of next stable version"
 msgid "Approximate date of next stable version (format: \"YYYY-MM-DD\")."
 msgstr "data aproximada da próxima versão estável"
 
-#: dev/views.py:77
+#: dev/views.py:79
 msgid "Release signing key fingerprint (format: PGP fingerprint)."
 msgstr ""
 
-#: dev/views.py:82
+#: dev/views.py:84
 msgid "Release signing key (format: PGP public key as binary file)."
 msgstr ""
 
-#: dev/views.py:87
+#: dev/views.py:89
 msgid "Release signing key (format: PGP public key as ASCII file)."
 msgstr ""
 
-#: dev/views.py:92
+#: dev/views.py:94
 msgid ""
 "Debian/Ubuntu repository signing key fingerprint (format: PGP fingerprint)."
 msgstr ""
 
-#: dev/views.py:97
+#: dev/views.py:99
 msgid ""
 "Debian/Ubuntu repository signing key (format: PGP public key as binary file)."
 msgstr ""
 
-#: dev/views.py:102
+#: dev/views.py:104
 msgid ""
 "Debian/Ubuntu repository signing key (format: PGP public key as ASCII file)."
 msgstr ""
 
-#: dev/views.py:107
+#: dev/views.py:109
 #, fuzzy
 #| msgid "all infos (one info by line, format: \"info:value\")"
 msgid "All non-binary infos (one info by line, format: \"info:value\")."
 msgstr ""
 "todas as informações (uma informação por linha, formato: \"info:value\")"
 
-#: dev/views.py:336
+#: dev/views.py:338
 #, fuzzy
 #| msgid "files"
 msgid "(file)"
@@ -801,8 +801,8 @@ msgstr ""
 msgid ""
 "There are multiple ways to mitigate this issue:\n"
 "<ul>\n"
-"  <li>Turn off option to send unknown commands: <code>/set "
-"irc.network.send_unknown_commands off</code></li>\n"
+"  <li>Turn off option to send unknown commands: <code>/set irc.network."
+"send_unknown_commands off</code></li>\n"
 "  <li>Do not use formatting chars like \"%\" when sending unknown commands "
 "to server.</li>\n"
 "</ul>"
@@ -837,8 +837,8 @@ msgstr ""
 msgid ""
 "With WeeChat ≥ 1.1, you can create a trigger:\n"
 "\n"
-"<p><pre><code>/trigger add fix_irc_352 modifier \"irc_in_352\" \"$"
-"{arguments} =~ .* \\*$\" \"/.*//\"</code></pre></p>\n"
+"<p><pre><code>/trigger add fix_irc_352 modifier \"irc_in_352\" "
+"\"${arguments} =~ .* \\*$\" \"/.*//\"</code></pre></p>\n"
 "\n"
 "With any older version, there is no simple mitigation, you must upgrade "
 "WeeChat."
@@ -848,9 +848,9 @@ msgstr ""
 msgid ""
 "With WeeChat ≥ 1.1, you can create a trigger:\n"
 "\n"
-"<p><pre><code>/trigger add irc_dcc_quotes modifier \"irc_in_privmsg\" \"$"
-"{arguments} =~ ^[^ ]+ :${\\x01}DCC SEND ${\\x22} \" \"/.*//\"</code></pre></"
-"p>\n"
+"<p><pre><code>/trigger add irc_dcc_quotes modifier \"irc_in_privmsg\" "
+"\"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND ${\\x22} \" \"/.*//\"</code></"
+"pre></p>\n"
 "\n"
 "With any older version, there is no simple mitigation, you must upgrade "
 "WeeChat."
@@ -868,94 +868,94 @@ msgid ""
 msgstr ""
 
 #. Translators: this is a severity level for a security vulnerability
-#: doc/models.py:51
+#: doc/models.py:53
 msgid "none"
 msgstr ""
 
 #. Translators: this is a severity level for a security vulnerability
-#: doc/models.py:53
+#: doc/models.py:55
 msgid "low"
 msgstr "baixo"
 
 #. Translators: this is a severity level for a security vulnerability
-#: doc/models.py:55
+#: doc/models.py:57
 msgid "medium"
 msgstr "médio"
 
 #. Translators: this is a severity level for a security vulnerability
-#: doc/models.py:57
+#: doc/models.py:59
 msgid "high"
 msgstr "alto"
 
 #. Translators: this is a severity level for a security vulnerability
-#: doc/models.py:59
+#: doc/models.py:61
 msgid "critical"
 msgstr "crítico"
 
-#: doc/models.py:91
+#: doc/models.py:93
 msgid "Czech"
 msgstr "Tcheco"
 
-#: doc/models.py:92 settings.py:49 templates/about/support.html:34
+#: doc/models.py:94 settings.py:51 templates/about/support.html:34
 #: templates/about/weechat.org.html:24
 msgid "German"
 msgstr "Alemão"
 
-#: doc/models.py:93 settings.py:47 templates/about/support.html:27
+#: doc/models.py:95 settings.py:49 templates/about/support.html:27
 msgid "English"
 msgstr "Inglês"
 
-#: doc/models.py:94
+#: doc/models.py:96
 msgid "Spanish"
 msgstr "Espanhol"
 
-#: doc/models.py:95 settings.py:48 templates/about/support.html:28
+#: doc/models.py:97 settings.py:50 templates/about/support.html:28
 msgid "French"
 msgstr "Francês"
 
-#: doc/models.py:96
+#: doc/models.py:98
 msgid "Hungarian"
 msgstr "Húngaro"
 
-#: doc/models.py:97 settings.py:50 templates/about/weechat.org.html:25
+#: doc/models.py:99 settings.py:52 templates/about/weechat.org.html:25
 msgid "Italian"
 msgstr "Italiano"
 
-#: doc/models.py:98 settings.py:53 templates/about/weechat.org.html:26
+#: doc/models.py:100 settings.py:55 templates/about/weechat.org.html:26
 msgid "Japanese"
 msgstr "Japonês"
 
-#: doc/models.py:99 settings.py:51 templates/about/weechat.org.html:27
+#: doc/models.py:101 settings.py:53 templates/about/weechat.org.html:27
 msgid "Polish"
 msgstr "Polonês"
 
-#: doc/models.py:100
+#: doc/models.py:102
 #, fuzzy
 #| msgid "Portuguese (Brazil)"
 msgid "Portuguese"
 msgstr "Portugues (Brasil)"
 
-#: doc/models.py:101 settings.py:52 templates/about/weechat.org.html:28
+#: doc/models.py:103 settings.py:54 templates/about/weechat.org.html:28
 msgid "Portuguese (Brazil)"
 msgstr "Portugues (Brasil)"
 
-#: doc/models.py:102
+#: doc/models.py:104
 msgid "Russian"
 msgstr "Russo"
 
-#: doc/models.py:103
+#: doc/models.py:105
 msgid "Serbian"
 msgstr ""
 
-#: doc/models.py:104
+#: doc/models.py:106
 msgid "Turkish"
 msgstr "Turco"
 
-#: doc/models.py:199 doc/models.py:208
+#: doc/models.py:201 doc/models.py:210
 msgid "Pending"
 msgstr ""
 
-#: doc/models.py:204 templates/doc/security.html:268
+#: doc/models.py:206 templates/doc/security.html:268
 #, fuzzy
 #| msgid "temporarily unavailable"
 msgid "Not available"
@@ -1015,8 +1015,8 @@ msgstr ""
 "Um repositório para o Raspbian foi adicionado para o Raspberry Pi "
 "(agradecimentos ao Nils G. pela construção dos pacotes toda noite).\n"
 "\n"
-"Os repositórios Debian existente foram movidos de flashtux.org para "
-"weechat.org, como os novos de Raspbian.\n"
+"Os repositórios Debian existente foram movidos de flashtux.org para weechat."
+"org, como os novos de Raspbian.\n"
 "\n"
 "Uma nova seção foi adicionada na página de download com um sumário de todos "
 "os repositórios: <a href=\"/download/debian/\">Debian/Raspbian repositories</"
@@ -1424,8 +1424,8 @@ msgid ""
 "On June 26th, WeeChat will turn 20!\n"
 "\n"
 "A live streaming for the 20th anniversary and release of v4.0.0 is scheduled "
-"on Saturday, June 24th, 7pm UTC, for more info: <a href=\"https://"
-"blog.weechat.org/post/2023/06/13/live-streaming-20th-anniversary-release-"
+"on Saturday, June 24th, 7pm UTC, for more info: <a href=\"https://blog."
+"weechat.org/post/2023/06/13/live-streaming-20th-anniversary-release-"
 "v4.0.0\">https://blog.weechat.org/post/2023/06/13/live-streaming-20th-"
 "anniversary-release-v4.0.0</a>."
 msgstr ""
@@ -2471,8 +2471,8 @@ msgstr ""
 "\n"
 "Para a lista completa das novas funcionalidades e bugs corrigidos, por favor "
 "veja nosso blog em <a href=\"/blog/post/2011/01/16/Version-0.3.4\">blog de "
-"desenvolvimento</a> ou o <a href=\"/files/changelog/"
-"ChangeLog-0.3.4.html\">Log de Alterações</a>."
+"desenvolvimento</a> ou o <a href=\"/files/changelog/ChangeLog-0.3.4."
+"html\">Log de Alterações</a>."
 
 #: news/_i18n_info.py:110
 msgid ""
@@ -2521,8 +2521,8 @@ msgstr ""
 "\n"
 "Para a lista completa das novas funcionalidades e bugs corrigidos, por favor "
 "veja nosso blog em <a href=\"/blog/post/2011/05/15/Version-0.3.5\">blog de "
-"desenvolvimento</a> ou o <a href=\"/files/changelog/"
-"ChangeLog-0.3.5.html\">Log de Alterações</a>."
+"desenvolvimento</a> ou o <a href=\"/files/changelog/ChangeLog-0.3.5."
+"html\">Log de Alterações</a>."
 
 #: news/_i18n_info.py:111
 msgid ""
@@ -3291,8 +3291,8 @@ msgid ""
 "- add IRC server option \"split_msg_max_length\"\n"
 "- add option logger.file.fsync\n"
 "- add option logger.look.backlog_conditions\n"
-"- add configuration file for each script plugin (\"python.conf\", "
-"\"perl.conf\", ...)\n"
+"- add configuration file for each script plugin (\"python.conf\", \"perl."
+"conf\", ...)\n"
 "- add \"eval\" option in script commands and info \"xxx_eval\" (python, "
 "perl, ruby, lua and guile)\n"
 "- add infos \"xxx_interpreter\" and \"xxx_version\" in script plugins\n"
@@ -3345,8 +3345,8 @@ msgid ""
 "- allow specifying buffer number/name for /buffer localvar\n"
 "- allow creation of temporary variables with the regex in trigger plugin\n"
 "- add real IP in client description in relay plugin\n"
-"- add repeat of string in evaluation of expressions with "
-"\"repeat:count,string\"\n"
+"- add repeat of string in evaluation of expressions with \"repeat:count,"
+"string\"\n"
 "- many bugs fixed.\n"
 "\n"
 "For complete list of new features and bugs fixed, please look at <a href=\"/"
@@ -3482,8 +3482,8 @@ msgid ""
 "- add option \"close\" in command /window\n"
 "- add infos \"term_colors\" and \"term_color_pairs\"\n"
 "- add infolist \"buflist\" with list of buffer pointers\n"
-"- evaluate option exec.command.shell, change default value to \"${env:SHELL}"
-"\"\n"
+"- evaluate option exec.command.shell, change default value to \"${env:"
+"SHELL}\"\n"
 "- add filters \"h=xxx\" and \"he=xxx\" to filter options by description in "
 "fset buffer (translated or in English)\n"
 "- make command char optional in server option \"command\"\n"
@@ -3552,8 +3552,8 @@ msgid ""
 "- add option xfer.file.download_temporary_suffix\n"
 "- add option weechat.look.nick_color_hash_salt\n"
 "- add different WeeChat icons sizes\n"
-"- add calculation of expression in evaluation of expressions with "
-"\"calc:xxx\"\n"
+"- add calculation of expression in evaluation of expressions with \"calc:"
+"xxx\"\n"
 "- add optional default path (evaluated) in completion \"filename\"\n"
 "- add modifier \"color_encode_ansi\"\n"
 "- add support of Guile 2.2\n"
@@ -3766,8 +3766,8 @@ msgid ""
 "\n"
 "Among the new features:\n"
 "\n"
-"- add options weechat.look.hotlist_update_on_buffer_switch and "
-"weechat.look.read_marker_update_on_buffer_switch\n"
+"- add options weechat.look.hotlist_update_on_buffer_switch and weechat.look."
+"read_marker_update_on_buffer_switch\n"
 "- add option sec.crypt.passphrase_command to read passphrase from an "
 "external program on startup, remove option sec.crypt.passphrase_file\n"
 "- improve debug in command /eval\n"
@@ -3777,8 +3777,8 @@ msgid ""
 "override the value of option weechat.completion.default_template\n"
 "- add option \"recreate\" in command /filter\n"
 "- add raw string in evaluation of expressions with \"raw:xxx\"\n"
-"- add evaluation of conditions in evaluation of expressions with "
-"\"eval_cond:xxx\"\n"
+"- add evaluation of conditions in evaluation of expressions with \"eval_cond:"
+"xxx\"\n"
 "- add info_hashtable \"secured_data\"\n"
 "- add info \"irc_is_message_ignored\"\n"
 "- add IRC server option \"default_chantypes\", used when the server does not "
@@ -3872,8 +3872,8 @@ msgid ""
 "\"split:number,seps,flags,xxx\" and \"split_shell:number,xxx\"\n"
 "- add \"${re:repl_index}\" to get the index of replacement in function "
 "string_eval_expression\n"
-"- add random integer number in evaluation of expressions with "
-"\"random:min,max\"\n"
+"- add random integer number in evaluation of expressions with \"random:min,"
+"max\"\n"
 "- add functions string_cut and file_copy in API\n"
 "- remember insertion order in hashtables\n"
 "- add keys/values with tags in output of irc_message_parse_to_hashtable\n"
@@ -3916,8 +3916,8 @@ msgid ""
 "\n"
 "- improve the IRC message parser\n"
 "- add command /toggle\n"
-"- add user variables in evaluation of expressions with "
-"\"define:name,value\"\n"
+"- add user variables in evaluation of expressions with \"define:name,"
+"value\"\n"
 "- add support of static arrays in hdata\n"
 "- hide key and password in command \"/msg nickserv setpass nick key "
 "password\"\n"
@@ -4012,8 +4012,8 @@ msgid ""
 "- add command /autojoin, add IRC server option \"autojoin_dynamic\"\n"
 "- add IRC message tags in messages displayed\n"
 "- add \"zstd\" (Zstandard) compression in relay weechat protocol, remove "
-"option \"compression\" from \"init\" command, rename option "
-"relay.network.compression_level to relay.network.compression\n"
+"option \"compression\" from \"init\" command, rename option relay.network."
+"compression_level to relay.network.compression\n"
 "- add trigger variables \"${tg_tag_irc_xxx}\" containing IRC message tags\n"
 "- many bugs fixed.\n"
 "\n"
@@ -4130,14 +4130,14 @@ msgid ""
 "- add support of priority in API function hook_line\n"
 "- add API function string_parse_size\n"
 "- add API function file_compress\n"
-"- add buflist variable \"${hotlist_priority_number}\" (integer version of \"$"
-"{hotlist_priority}\")\n"
+"- add buflist variable \"${hotlist_priority_number}\" (integer version of "
+"\"${hotlist_priority}\")\n"
 "- display SETNAME command in IRC channels and private buffers, add options "
 "irc.color.message_setname and irc.look.smart_filter_setname\n"
 "- add option irc.look.display_pv_nick_change\n"
-"- add options to rotate and compress log files: "
-"logger.file.rotation_compression_level, "
-"logger.file.rotation_compression_type and logger.file.rotation_size_max\n"
+"- add options to rotate and compress log files: logger.file."
+"rotation_compression_level, logger.file.rotation_compression_type and logger."
+"file.rotation_size_max\n"
 "- allow special dict value \"-\" to disable spell checking on a specific "
 "buffer\n"
 "- add elapsed time for trigger execution on monitor buffer when trigger "
@@ -4203,9 +4203,9 @@ msgstr ""
 msgid ""
 "Version 4.0.0 is available!\n"
 "\n"
-"New features and bugs fixed: <a href=\"https://blog.weechat.org/post/"
-"2023/06/24/Version-4.0.0\">development blog</a> and <a href=\"/files/doc/"
-"weechat/ChangeLog-4.0.0.html\">ChangeLog</a>."
+"New features and bugs fixed: <a href=\"https://blog.weechat.org/"
+"post/2023/06/24/Version-4.0.0\">development blog</a> and <a href=\"/files/"
+"doc/weechat/ChangeLog-4.0.0.html\">ChangeLog</a>."
 msgstr ""
 
 #: news/_i18n_info.py:168
@@ -4296,8 +4296,8 @@ msgstr ""
 msgid ""
 "Version 4.1.0 is available!\n"
 "\n"
-"New features and bugs fixed: <a href=\"/files/doc/weechat/"
-"ChangeLog-4.1.0.html\">ChangeLog</a>."
+"New features and bugs fixed: <a href=\"/files/doc/weechat/ChangeLog-4.1.0."
+"html\">ChangeLog</a>."
 msgstr ""
 
 #: news/_i18n_info.py:177
@@ -4334,8 +4334,8 @@ msgstr ""
 msgid ""
 "Version 4.2.0 is available!\n"
 "\n"
-"New features and bugs fixed: <a href=\"/files/doc/weechat/"
-"ChangeLog-4.2.0.html\">ChangeLog</a>."
+"New features and bugs fixed: <a href=\"/files/doc/weechat/ChangeLog-4.2.0."
+"html\">ChangeLog</a>."
 msgstr ""
 
 #: news/_i18n_info.py:181
@@ -4372,8 +4372,8 @@ msgstr ""
 msgid ""
 "Version 4.3.0 is available!\n"
 "\n"
-"New features and bugs fixed: <a href=\"/files/doc/weechat/"
-"ChangeLog-4.3.0.html\">ChangeLog</a>."
+"New features and bugs fixed: <a href=\"/files/doc/weechat/ChangeLog-4.3.0."
+"html\">ChangeLog</a>."
 msgstr ""
 
 #: news/_i18n_info.py:185
@@ -4522,6 +4522,26 @@ msgstr ""
 
 #: news/_i18n_info.py:200
 msgid ""
+"Version 4.6.1 is available!\n"
+"\n"
+"This is a bug fix and maintenance release.\n"
+"\n"
+"Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
+"v4.6.1\">ChangeLog</a>."
+msgstr ""
+
+#: news/_i18n_info.py:201
+msgid ""
+"Version 4.6.2 is available!\n"
+"\n"
+"This is a bug fix and maintenance release.\n"
+"\n"
+"Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
+"v4.6.2\">ChangeLog</a>."
+msgstr ""
+
+#: news/_i18n_info.py:202
+msgid ""
 "Version v0.1.2 is available!\n"
 "\n"
 "News since last version are:\n"
@@ -4552,22 +4572,22 @@ msgstr ""
 "Add-on, 2005/05/24: corrigido crash na inicialização e detecção Perl/Python, "
 "a versão agora é 0.1.2.1."
 
-#: news/_i18n_info.py:201
+#: news/_i18n_info.py:203
 msgid "WeeChat - Wee Enhanced Environment for Chat"
 msgstr "WeeChat - Wee Enhanced Environment for Chat"
 
-#: news/_i18n_info.py:202
+#: news/_i18n_info.py:204
 msgid ""
 "WeeChat IRC channels (official and non-official ones) have moved from "
 "freenode to <a href=\"https://libera.chat/\">libera.chat</a>.\n"
 "\n"
-"For more information, please look at <a href=\"https://blog.weechat.org/post/"
-"2021/05/29/IRC-channels-moved-to-libera.chat\">development blog</a>.\n"
+"For more information, please look at <a href=\"https://blog.weechat.org/"
+"post/2021/05/29/IRC-channels-moved-to-libera.chat\">development blog</a>.\n"
 "\n"
 "See you soon there!"
 msgstr ""
 
-#: news/_i18n_info.py:203
+#: news/_i18n_info.py:205
 msgid ""
 "WeeChat has many new important features since some weeks:\n"
 "- multi-windows management (with horizontal and vertical window split)\n"
@@ -4592,12 +4612,12 @@ msgstr ""
 "Sinta-se livre para relatar qualquer problema ou sugestão para melhorar a "
 "navegação entre buffers/windows."
 
-#: news/_i18n_info.py:204
+#: news/_i18n_info.py:206
 #, fuzzy
 msgid "WeeChat in Cygwin"
 msgstr "WeeChat é:"
 
-#: news/_i18n_info.py:205
+#: news/_i18n_info.py:207
 msgid ""
 "WeeChat is now in Cygwin, and can be installed with setup.exe.\n"
 "Version 0.4.2 is available for 32 and 64-bit Cygwin.\n"
@@ -4606,7 +4626,7 @@ msgid ""
 "yet available in Cygwin."
 msgstr ""
 
-#: news/_i18n_info.py:206
+#: news/_i18n_info.py:208
 msgid ""
 "WeeChat project is started.\n"
 "\n"
@@ -4626,7 +4646,7 @@ msgstr ""
 "- rápida, leve e extensível com scripts\n"
 "- ..."
 
-#: news/_i18n_info.py:207
+#: news/_i18n_info.py:209
 msgid ""
 "WeeChat project now accepts donations via Paypal account, with secured "
 "payment."
@@ -4634,7 +4654,7 @@ msgstr ""
 "O projeto WeeChat agora aceita doações via conta Paypal, com pagamento "
 "seguro."
 
-#: news/_i18n_info.py:208
+#: news/_i18n_info.py:210
 msgid ""
 "WeeChat project now accepts recurring donations via Liberapay, which has "
 "very low fees (see <a href=\"https://liberapay.com/about/"
@@ -4642,7 +4662,7 @@ msgid ""
 "crowdfunding platforms</a>)."
 msgstr ""
 
-#: news/_i18n_info.py:209
+#: news/_i18n_info.py:211
 msgid ""
 "WeeChat repositories (weechat, scripts, qweechat) have been moved to GitHub, "
 "in WeeChat organization: <a href=\"https://github.com/weechat\">https://"
@@ -4652,15 +4672,15 @@ msgid ""
 "repositories-moved-to-Github\">development blog</a>."
 msgstr ""
 
-#: news/_i18n_info.py:210
+#: news/_i18n_info.py:212
 msgid "WeeChat screenshot"
 msgstr "Screenshot WeeChat"
 
-#: news/_i18n_info.py:211
+#: news/_i18n_info.py:213
 msgid "WeeChat scripts page"
 msgstr "Página de scripts do WeeChat"
 
-#: news/_i18n_info.py:212
+#: news/_i18n_info.py:214
 msgid ""
 "WeeChat scripts page (today Perl scripts only) has been added.\n"
 "On this page you can submit your script (need to be approved by WeeChat "
@@ -4676,7 +4696,7 @@ msgstr ""
 "Nota: scripts Perl requerem a versão de WeeChat > 0.0.3, então hoje você "
 "deve baixar a versão de desenvolvimento."
 
-#: news/_i18n_info.py:213
+#: news/_i18n_info.py:215
 msgid ""
 "WeeChat story page is now available, as screenshots. You can see differences "
 "between all versions in one view!\n"
@@ -4686,15 +4706,15 @@ msgstr ""
 "as diferenças entre todas as versões em um só lugar!\n"
 "A versão de desenvolvimento é visível também, e atualizada com freqüência."
 
-#: news/_i18n_info.py:214
+#: news/_i18n_info.py:216
 msgid "WeeChat users map"
 msgstr "Mapa de usuários do WeeChat"
 
-#: news/_i18n_info.py:215
+#: news/_i18n_info.py:217
 msgid "WeeChat will merge with irssi"
 msgstr "WeeChat irá se fundir com o irssi"
 
-#: news/_i18n_info.py:216
+#: news/_i18n_info.py:218
 msgid ""
 "WeeChat, the fast, light and extensible IRC client, is released for the "
 "first time, version 0.0.1.\n"
@@ -4742,7 +4762,7 @@ msgstr ""
 "Todas as sugestões e relatórios de erros são bem-vindos, olhe para a página "
 "de suporte do WeeChat para nos contatar."
 
-#: news/_i18n_info.py:217
+#: news/_i18n_info.py:219
 #, fuzzy
 #| msgid "Packages"
 msgid "XZ packages"
@@ -6721,23 +6741,17 @@ msgstr "Script de controle e reproduzindo-agora para iTunes."
 msgid "not compatible with Python 3"
 msgstr ""
 
-#: scripts/models.py:136
-#, fuzzy
-#| msgid "Pending scripts"
-msgid "Popular script"
-msgstr "Scripts pendentes"
-
 #. Translators: this is a date format, see: http://www.php.net/date
 #. Translators: (note: the result string must be short, use abbreviation
 #. Translators: for month if possible)
-#: settings.py:74
+#: settings.py:76
 msgid "M j, Y"
 msgstr "d/m/Y"
 
 #. Translators: this is a date/time format, see: http://www.php.net/date
 #. Translators: (note: the result string must be short, use abbreviation
 #. Translators: for month if possible)
-#: settings.py:79
+#: settings.py:81
 #, fuzzy
 #| msgid "M j, Y"
 msgid "M j, Y H:i"
@@ -7494,7 +7508,7 @@ msgstr "Valor atual"
 
 #: templates/dev/info_list.html:24 templates/dev/roadmap.html:46
 #: templates/doc/security.html:282 templates/scripts/list.html:95
-#: themes/models.py:170
+#: themes/models.py:172
 msgid "Description"
 msgstr "Descrição"
 
@@ -7705,7 +7719,7 @@ msgctxt "translated language"
 msgid "Language"
 msgstr "Linguagem"
 
-#: templates/doc/doc_version.html:122 themes/models.py:163 themes/models.py:254
+#: templates/doc/doc_version.html:122 themes/models.py:165 themes/models.py:256
 msgid "File"
 msgstr "Arquivo"
 
@@ -7820,8 +7834,8 @@ msgstr ""
 #: templates/doc/security.html:31
 msgid ""
 "To report a security issue, please <strong>DO NOT</strong> file an issue on "
-"GitHub, but send an email to <a "
-"href=\"mailto:security@weechat.org\">security@weechat.org</a> instead."
+"GitHub, but send an email to <a href=\"mailto:security@weechat."
+"org\">security@weechat.org</a> instead."
 msgstr ""
 
 #: templates/doc/security.html:39
@@ -8464,8 +8478,8 @@ msgstr "Verificando as assinaturas"
 #| "Check that the fingerprint is correct by asking to a developer on "
 #| "#weechat (irc.libera.chat)."
 msgid ""
-"Check the key fingerprint by checking the topic on #weechat channel "
-"(irc.libera.chat) or by asking to a developer."
+"Check the key fingerprint by checking the topic on #weechat channel (irc."
+"libera.chat) or by asking to a developer."
 msgstr ""
 "Verifique que o fingerprint é correto perguntando à um desenvolvedor em "
 "#weechat (irc.libera.chat)."
@@ -8573,14 +8587,14 @@ msgstr "Documentação e suporte"
 #: templates/home/home.html:102
 #, fuzzy
 #| msgid ""
-#| "WeeChat is translated into several languages and has a <a href=\"%"
-#| "(doc_url)s\">comprehensive documentation</a>, also translated."
+#| "WeeChat is translated into several languages and has a <a "
+#| "href=\"%(doc_url)s\">comprehensive documentation</a>, also translated."
 msgid ""
 "WeeChat is translated into several languages and has a comprehensive "
 "documentation."
 msgstr ""
-"WeeChat é traduzido em diversas linguagens e possui uma <a href=\"%"
-"(doc_url)s\">documentação compreensiva</a>, também traduzida."
+"WeeChat é traduzido em diversas linguagens e possui uma <a "
+"href=\"%(doc_url)s\">documentação compreensiva</a>, também traduzida."
 
 #: templates/home/home.html:104
 msgid "Excellent support for users."
@@ -8972,8 +8986,8 @@ msgstr ""
 
 #: templates/scripts/python3.html:109
 msgid ""
-"All new scripts as well as script updates must be compatible with Python "
-"3.x. Extra support of Python 2.x is optional."
+"All new scripts as well as script updates must be compatible with Python 3."
+"x. Extra support of Python 2.x is optional."
 msgstr ""
 
 #: templates/scripts/python3.html:115
@@ -9233,7 +9247,7 @@ msgstr "atualizado"
 msgid "No theme found."
 msgstr "Nenhum tema encontrado."
 
-#: templates/themes/source.html:21 themes/models.py:250
+#: templates/themes/source.html:21 themes/models.py:252
 msgid "Theme"
 msgstr "Tema"
 
@@ -9257,81 +9271,86 @@ msgstr "Atualizar tema"
 msgid "Updated theme has been submitted for review."
 msgstr "Nova versão do tema foi submetida para análise."
 
-#: themes/models.py:164 themes/models.py:255
+#: themes/models.py:166 themes/models.py:257
 #, fuzzy
 #| msgid "the theme"
 msgid "The theme."
 msgstr "o tema"
 
-#: themes/models.py:174 themes/models.py:259
+#: themes/models.py:176 themes/models.py:261
 msgid "Your name or nick"
 msgstr "Seu nome ou nick"
 
-#: themes/models.py:175
+#: themes/models.py:177
 msgid "Used for themes page."
 msgstr ""
 
-#: themes/models.py:179 themes/models.py:263
+#: themes/models.py:181 themes/models.py:265
 msgid "Your e-mail"
 msgstr "Seu e-mail"
 
-#: themes/models.py:180 themes/models.py:264
+#: themes/models.py:182 themes/models.py:266
 #, fuzzy
 #| msgid "no spam, never displayed on site"
 msgid "No spam, never displayed."
 msgstr "sem spam, nunca exibido no site"
 
-#: themes/models.py:186 themes/models.py:270
+#: themes/models.py:188 themes/models.py:272
 msgid "Comments"
 msgstr "Comentários"
 
-#: themes/models.py:187 themes/models.py:271
+#: themes/models.py:189 themes/models.py:273
 #, fuzzy
 #| msgid "optional, not displayed"
 msgid "Not displayed."
 msgstr "opcional, não exibido"
 
-#: themes/models.py:192 themes/models.py:276
+#: themes/models.py:194 themes/models.py:278
 msgid "Are you a spammer?"
 msgstr "Você é um spammer?"
 
-#: themes/models.py:193 themes/models.py:277
+#: themes/models.py:195 themes/models.py:279
 #, fuzzy
 #| msgid "enter \"no\" if you are not a spammer"
 msgid "Enter \"no\" if you are not a spammer."
 msgstr "entrar \"no\" se você não é um spammer"
 
-#: themes/models.py:204 themes/models.py:289
+#: themes/models.py:206 themes/models.py:291
 msgid "Theme file too big."
 msgstr "Arquivo de tema muito grande."
 
-#: themes/models.py:210 themes/models.py:295
+#: themes/models.py:212 themes/models.py:297
 msgid "Invalid theme file."
 msgstr "Arquivo de tema inválido."
 
-#: themes/models.py:213
+#: themes/models.py:215
 msgid "This name already exists."
 msgstr "Este nome já existe."
 
-#: themes/models.py:216 themes/models.py:220
+#: themes/models.py:218 themes/models.py:222
 msgid "Invalid name inside theme file."
 msgstr "Nome inválido dentro do arquivo de tema."
 
-#: themes/models.py:227 themes/models.py:308
+#: themes/models.py:229 themes/models.py:310
 msgid "Invalid WeeChat version, too old!"
 msgstr "Versão WeeChat inválida, muito antiga!"
 
-#: themes/models.py:237
+#: themes/models.py:239
 msgid "Choose…"
 msgstr ""
 
-#: themes/models.py:298
+#: themes/models.py:300
 msgid "Internal error."
 msgstr "Erro interno."
 
-#: themes/models.py:301
+#: themes/models.py:303
 msgid "Invalid name: different from theme."
 msgstr "Nome inválido: diferente do tema."
+
+#, fuzzy
+#~| msgid "Pending scripts"
+#~ msgid "Popular script"
+#~ msgstr "Scripts pendentes"
 
 #~ msgid ""
 #~ "Configure autojoin for all servers according to currently joined channels."
