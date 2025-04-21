@@ -27,6 +27,9 @@ from django.db.models.signals import post_save
 from weechat.common.i18n import i18n_autogen
 from weechat.common.path import repo_path_join
 
+WEECHAT_PGP_KEY_PATH = '/etc/apt/keyrings'
+WEECHAT_PGP_KEY_NAME = 'weechat.asc'
+
 
 class Version(models.Model):
     """Version of a Debian repository (codename + version).
@@ -75,25 +78,19 @@ class Repo(models.Model):
                               self.version.codename, 'main',
                               f'binary-{arch}', 'Packages.gz')
 
-    def apt_url(self):
-        """
-        Return the URL to use with apt for binary packages, for example:
-        "deb [signed-by=/usr/share/keyrings/weechat-archive-keyring.pgp]
-        https://weechat.org/debian sid main".
-        """
-        return (f'deb [signed-by=/usr/share/keyrings/weechat-archive-'
-                f'keyring.pgp] {self.url} {self.version.codename} main')
+    def apt_url(self, deb='deb'):
+        """Return the URL to use with apt for binary or sources packages."""
+        return (f'{deb} [arch={self.arch} '
+                f'signed-by={WEECHAT_PGP_KEY_PATH}/{WEECHAT_PGP_KEY_NAME}] '
+                f'{self.url} {self.version.codename} main')
+
+    def apt_url_binary(self):
+        """Return the URL to use with apt for binary packages."""
+        return self.apt_url(deb='deb')
 
     def apt_url_src(self):
-        """
-        Return the URL to use with apt for sources packages, for example:
-        "deb-src [signed-by=/usr/share/keyrings/weechat-archive-
-        keyring.pgp] https://weechat.org/debian sid main".
-        """
-        return (
-            f'deb-src [signed-by=/usr/share/keyrings/weechat-'
-            f'archive-keyring.pgp] {self.url} {self.version.codename} main'
-        )
+        """Return the URL to use with apt for sources packages."""
+        return self.apt_url(deb='deb-src')
 
     class Meta:
         """Sort Repos by priority."""

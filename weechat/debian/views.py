@@ -30,9 +30,14 @@ import pytz
 
 from django.conf import settings
 from django.shortcuts import render
+from django.urls import reverse
 
 from weechat.common.path import repo_path_join
-from weechat.debian.models import Repo
+from weechat.debian.models import (
+    Repo,
+    WEECHAT_PGP_KEY_PATH,
+    WEECHAT_PGP_KEY_NAME,
+)
 
 
 def get_repository_packages(repository):
@@ -110,6 +115,12 @@ def repos(request, active='active', files=''):
                                   reverse=True))
         except:  # noqa: E722  pylint: disable=bare-except
             errors.append(f'{repository.name} {repository.version}')
+    url_info_pgp_key = request.build_absolute_uri(
+        reverse(
+            'dev_info_name',
+            kwargs={'name': 'debian_repository_signing_key_asc'},
+        )
+    )
     return render(
         request,
         'download/debian.html',
@@ -119,5 +130,8 @@ def repos(request, active='active', files=''):
             'allfiles': files == 'files',
             'repositories': repositories,
             'errors': errors,
+            'weechat_pgp_key_path': WEECHAT_PGP_KEY_PATH,
+            'weechat_pgp_key_name': WEECHAT_PGP_KEY_NAME,
+            'url_info_pgp_key': url_info_pgp_key,
         },
     )

@@ -11,7 +11,7 @@ var deb_apt_cmds = [
   "…<br>…",
 {% for repo in repositories %}
 {% if repo.visible %}
-  "$ echo \"{{ repo.apt_url }}\" | sudo tee /etc/apt/sources.list.d/weechat.list" +
+  "$ echo \"{{ repo.apt_url_binary }}\" | sudo tee /etc/apt/sources.list.d/weechat.list" +
   "<br>" +
   "$ echo \"{{ repo.apt_url_src }}\" | sudo tee -a /etc/apt/sources.list.d/weechat.list",
 {% endif %}
@@ -60,20 +60,9 @@ var deb_apt_cmds = [
 <h4>{% trans "PGP key" %}</h4>
 
 <p>
-  {% trans "Create GnuPG directory:" %}
-  <pre><code>$ sudo mkdir -p --mode=0700 /root/.gnupg</code></pre>
-</p>
-
-<p>
   {% trans "Import the PGP key used to sign the repositories:" %}
-  <pre><code>$ sudo mkdir -p /usr/share/keyrings
-$ sudo gpg --no-default-keyring --keyring /usr/share/keyrings/weechat-archive-keyring.pgp --keyserver hkps://keys.openpgp.org --recv-keys 11E9DE8848F2B65222AA75B8D1820DB22A11534E</code></pre>
-</p>
-
-<p>
-  {% trans "In case of problem, the Debian/Ubuntu repository signing key (format: PGP public key) can be downloaded here:" %}
-  <a href="{% url 'dev_info_name' name='debian_repository_signing_key' %}">{% trans "binary" %}</a> /
-  <a href="{% url 'dev_info_name' name='debian_repository_signing_key_asc' %}">{% trans "ASCII" %}</a>
+  <pre><code>$ sudo mkdir -p {{ weechat_pgp_key_path }}
+$ curl --silent {{ url_info_pgp_key }} | sudo tee {{ weechat_pgp_key_path }}/{{ weechat_pgp_key_name }}</code></pre>
 </p>
 
 <h4>{% trans "APT configuration" %}</h4>
@@ -104,16 +93,7 @@ $ sudo gpg --no-default-keyring --keyring /usr/share/keyrings/weechat-archive-ke
 </p>
 
 <p>
-  {% trans "Notes:" %}
-  <ul>
-    <li>
-      {% trans "If you're using an architecture like amd64 and apt complains about binary-i386 file not found, you can force the architecture like this:" %}
-      <pre><code>deb [arch=amd64 signed-by=/usr/share/keyrings/weechat-archive-keyring.pgp] https://…</code></pre>
-    </li>
-    <li>
-      {% trans "The second command line is optional, it is used to download source packages." %}
-    </li>
-  </ul>
+  {% trans "Note: the second command line is optional, it is used to download source packages." %}
 </p>
 
 <p>
@@ -228,7 +208,7 @@ $ sudo gpg --no-default-keyring --keyring /usr/share/keyrings/weechat-archive-ke
                 <small class="text-muted">({{ debpkg_source.list.0.repo.version.version }})</small>
               </strong>
             </h5>
-            <small><samp>{{ debpkg_source.list.0.repo.apt_url }}</samp></small>
+            <small><samp>{{ debpkg_source.list.0.repo.apt_url_binary }}</samp></small>
           </div>
         </div>
       </div>
