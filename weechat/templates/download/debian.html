@@ -208,7 +208,11 @@ $ curl --silent {{ url_info_pgp_key }} | sudo tee {{ weechat_pgp_key_path }}/{{ 
                 <small class="text-muted">({{ debpkg_source.list.0.repo.version.version }})</small>
               </strong>
             </h5>
-            <small><samp>{{ debpkg_source.list.0.repo.apt_url_binary }}</samp></small>
+            <small>
+              <samp>{{ debpkg_source.list.0.repo.apt_url_binary }}</samp>
+              <br>
+              <samp>{{ debpkg_source.list.0.repo.apt_url_src }}</samp>
+            </small>
           </div>
         </div>
       </div>
