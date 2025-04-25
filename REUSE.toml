@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2003-2025 Sébastien Helleu <flashcode@flashtux.org>
+# SPDX-FileCopyrightText: 2025 Sébastien Helleu <flashcode@flashtux.org>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -6,29 +6,12 @@ version = 1
 
 [[annotations]]
 path = [
-    ".gitignore",
-    ".mailmap",
-    "AUTHORS.md",
-    "README.md",
     "media/.htaccess",
     "media/images/**",
-    "requirements.txt",
-    "weechat/about/_i18n_*.py",
-    "weechat/about/migrations/*.py",
-    "weechat/common/migrations/*.py",
-    "weechat/debian/_i18n_*.py",
-    "weechat/debian/migrations/*.py",
-    "weechat/dev/migrations/*.py",
-    "weechat/doc/_i18n_*.py",
-    "weechat/doc/migrations/*.py",
-    "weechat/download/migrations/*.py",
+    "weechat/**/_i18n_*.py",
+    "weechat/**/migrations/*.py",
     "weechat/fixtures/*.json",
-    "weechat/news/_i18n_*.py",
-    "weechat/news/migrations/*.py",
-    "weechat/scripts/_i18n_*.py",
-    "weechat/scripts/migrations/*.py",
     "weechat/templates/**",
-    "weechat/themes/migrations/*.py",
 ]
 precedence = "override"
 SPDX-FileCopyrightText = "2003-2025 Sébastien Helleu <flashcode@flashtux.org>"

@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2003-2025 Sébastien Helleu <flashcode@flashtux.org>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
 # WeeChat.org
 
 <p align="center">
@@ -45,6 +51,7 @@ see the file [settings_local.template](weechat/settings_local.template) for more
 
 ## Copyright
 
+<!-- REUSE-IgnoreStart -->
 Copyright © 2003-2025 [Sébastien Helleu](https://github.com/flashcode)
 
 This file is part of WeeChat.org.
@@ -61,3 +68,4 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with WeeChat.org.  If not, see <https://www.gnu.org/licenses/>.
+<!-- REUSE-IgnoreEnd -->
