@@ -158,6 +158,8 @@ def __i18n_scripts_scripts():
     gettext_noop("Colorize imageboard-style text formatting.")
     # Translators: description for script "colorizer.rb" (0.3.0+)
     gettext_noop("Colorize parts of text in certain buffers based on rules.")
+    # Translators: description for script "colorize_regex.pl" (0.3.0+)
+    gettext_noop("Colorize regex matches in chat messages.")
     # Translators: description for script "cmdind.pl" (0.4.2+)
     gettext_noop("Command line indicator: command or text.")
     # Translators: description for script "cmdqueue.py" (0.3.3+)
