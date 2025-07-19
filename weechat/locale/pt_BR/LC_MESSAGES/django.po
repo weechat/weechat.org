@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-11 11:34+0200\n"
+"POT-Creation-Date: 2025-07-19 12:23+0200\n"
 "PO-Revision-Date: 2025-04-21 14:07+0200\n"
 "Last-Translator: Alexandre Bolelli <semeion7@gmail.com>\n"
 "Language-Team: Portuguese <semeion7@gmail.com>\n"
@@ -465,6 +465,12 @@ msgstr ""
 
 #: doc/_i18n_security.py:13
 msgid ""
+"A buffer overflow happens in base 32 encoding in evaluated expressions, "
+"where padding is made in the resulting string."
+msgstr ""
+
+#: doc/_i18n_security.py:14
+msgid ""
 "A buffer overflow happens when a new IRC message 005 is received with longer "
 "nick prefixes.\n"
 "<br>\n"
@@ -472,19 +478,19 @@ msgid ""
 "nick prefixes, so the problem should be limited to malicious IRC servers."
 msgstr ""
 
-#: doc/_i18n_security.py:14
+#: doc/_i18n_security.py:15
 #, fuzzy
 #| msgid "Buffer overflow when decoding IRC colors in strings."
 msgid "A buffer overflow happens when decoding some IRC colors in strings."
 msgstr "Buffer overflow durante a decodificação de strings de cores de IRC."
 
-#: doc/_i18n_security.py:15
+#: doc/_i18n_security.py:16
 #, fuzzy
 #| msgid "Buffer overflows in build of strings."
 msgid "A buffer overflows happens in build of strings in different places."
 msgstr "Buffer overflows na construção de strings."
 
-#: doc/_i18n_security.py:16
+#: doc/_i18n_security.py:17
 msgid ""
 "A crash happens when decoding a malformed websocket frame in relay plugin.\n"
 "<br>\n"
@@ -492,7 +498,7 @@ msgid ""
 "websocket frame can be received before the authentication of the client."
 msgstr ""
 
-#: doc/_i18n_security.py:17
+#: doc/_i18n_security.py:18
 #, fuzzy
 #| msgid "Crash when receiving special chars in IRC messages."
 msgid ""
@@ -500,21 +506,21 @@ msgid ""
 "messages."
 msgstr "Falha durante o recebimento de caracteres especiais em mensagens IRC."
 
-#: doc/_i18n_security.py:18
+#: doc/_i18n_security.py:19
 msgid "API"
 msgstr ""
 
-#: doc/_i18n_security.py:19
+#: doc/_i18n_security.py:20
 msgid "Access of uninitialized pointer"
 msgstr ""
 
-#: doc/_i18n_security.py:20
+#: doc/_i18n_security.py:21
 msgid ""
 "After changing options <code>weechat.network.gnutls_ca_system</code> or "
 "<code>weechat.network.gnutls_ca_user</code>, you must restart WeeChat."
 msgstr ""
 
-#: doc/_i18n_security.py:21
+#: doc/_i18n_security.py:22
 msgid ""
 "After changing the options <code>weechat.network.gnutls_ca_system</code> or "
 "<code>weechat.network.gnutls_ca_user</code>, the TLS verification function "
@@ -527,7 +533,7 @@ msgid ""
 "server made by a plugin or a script using the function hook_connect."
 msgstr ""
 
-#: doc/_i18n_security.py:22
+#: doc/_i18n_security.py:23
 msgid ""
 "An integer overflow can happen when looping over items in a list.\n"
 "<br>\n"
@@ -538,105 +544,152 @@ msgid ""
 "elements."
 msgstr ""
 
-#: doc/_i18n_security.py:23
+#: doc/_i18n_security.py:24
+#, python-brace-format
+msgid ""
+"An integer overflow happens when using numbers with 9 or more decimals in "
+"calculation of expression, for example: <code>/eval -n ${calc:0.123456789}</"
+"code>."
+msgstr ""
+
+#: doc/_i18n_security.py:25
+msgid "An integer overflow may happen in base32 encode/decode functions."
+msgstr ""
+
+#: doc/_i18n_security.py:26
+msgid "Buffer overflow in base 32 encoding in evaluated expressions."
+msgstr ""
+
+#: doc/_i18n_security.py:27
+msgid ""
+"Buffer overflow in function util_parse_time when the received date/time has "
+"no date and a length of 117 or more chars.\n"
+"<br>\n"
+"It can be an issue in IRC plugin, where the \"time\" tag received in IRC "
+"messages is parsed using this function."
+msgstr ""
+
+#: doc/_i18n_security.py:28
+#, fuzzy
+#| msgid "Buffer overflows in build of strings."
+msgid "Buffer overflow in parsing of date/time."
+msgstr "Buffer overflows na construção de strings."
+
+#: doc/_i18n_security.py:29
+#, fuzzy
+#| msgid "Buffer overflows in build of strings."
+msgid "Buffer overflow in range of chars in evaluated expressions."
+msgstr "Buffer overflows na construção de strings."
+
+#: doc/_i18n_security.py:30
+#, fuzzy
+#| msgid "Buffer overflows in build of strings."
+msgid "Buffer overflow in syntax highlighting of evaluated expressions."
+msgstr "Buffer overflows na construção de strings."
+
+#: doc/_i18n_security.py:31
 #, fuzzy
 #| msgid "Buffer overflow when decoding IRC colors in strings."
 msgid "Buffer overflow on malformed IRC message 324 (channel mode)."
 msgstr "Buffer overflow durante a decodificação de strings de cores de IRC."
 
-#: doc/_i18n_security.py:24
+#: doc/_i18n_security.py:32
 #, fuzzy
 #| msgid "Buffer overflow when decoding IRC colors in strings."
 msgid "Buffer overflow on new IRC message 005 with nick prefixes."
 msgstr "Buffer overflow durante a decodificação de strings de cores de IRC."
 
-#: doc/_i18n_security.py:25
+#: doc/_i18n_security.py:33
 #, fuzzy
 #| msgid "Buffer overflow when decoding IRC colors in strings."
 msgid "Buffer overflow when receiving a DCC file."
 msgstr "Buffer overflow durante a decodificação de strings de cores de IRC."
 
-#: doc/_i18n_security.py:26
+#: doc/_i18n_security.py:34
 msgid ""
 "Buffer overflow when receiving a malformed IRC message 324 (channel mode)."
 msgstr ""
 
-#: doc/_i18n_security.py:27
+#: doc/_i18n_security.py:35
 #, fuzzy
 #| msgid "Buffer overflow when decoding IRC colors in strings."
 msgid "Buffer overflow when removing quotes in DCC filename."
 msgstr "Buffer overflow durante a decodificação de strings de cores de IRC."
 
-#: doc/_i18n_security.py:28
+#: doc/_i18n_security.py:36
 msgid "Buffer overflows in build of strings."
 msgstr "Buffer overflows na construção de strings."
 
-#: doc/_i18n_security.py:29
+#: doc/_i18n_security.py:37
+msgid "Core"
+msgstr ""
+
+#: doc/_i18n_security.py:38
 msgid "Core, IRC"
 msgstr ""
 
-#: doc/_i18n_security.py:30
+#: doc/_i18n_security.py:39
 #, fuzzy
 #| msgid "Plugin"
 msgid "Core, Plugins"
 msgstr "Plugins"
 
-#: doc/_i18n_security.py:31
+#: doc/_i18n_security.py:40
 #, fuzzy
 #| msgid "Uncontrolled format string in API function infobar_printf."
 msgid "Crash in API function infobar_printf."
 msgstr "String de formato descontrolada na função de API infobar_printf."
 
-#: doc/_i18n_security.py:32
+#: doc/_i18n_security.py:41
 msgid "Crash on IRC commands sent via Relay."
 msgstr ""
 
-#: doc/_i18n_security.py:33
+#: doc/_i18n_security.py:42
 #, fuzzy
 #| msgid "Crash when receiving special chars in IRC messages."
 msgid "Crash on malformed IRC message 352 (WHO)."
 msgstr "Falha durante o recebimento de caracteres especiais em mensagens IRC."
 
-#: doc/_i18n_security.py:34
+#: doc/_i18n_security.py:43
 #, fuzzy
 #| msgid "Crash when receiving special chars in IRC messages."
 msgid "Crash on malformed websocket frame in relay plugin."
 msgstr "Falha durante o recebimento de caracteres especiais em mensagens IRC."
 
-#: doc/_i18n_security.py:35
+#: doc/_i18n_security.py:44
 msgid "Crash on nicks monitored with /notify."
 msgstr ""
 
-#: doc/_i18n_security.py:36
+#: doc/_i18n_security.py:45
 msgid "Crash on send of unknown commands to IRC server."
 msgstr ""
 
-#: doc/_i18n_security.py:37
+#: doc/_i18n_security.py:46
 #, fuzzy
 #| msgid "Buffer overflow when decoding IRC colors in strings."
 msgid "Crash when decoding IRC colors."
 msgstr "Buffer overflow durante a decodificação de strings de cores de IRC."
 
-#: doc/_i18n_security.py:38
+#: doc/_i18n_security.py:47
 #, fuzzy
 #| msgid "Crash when receiving special chars in IRC messages."
 msgid "Crash when receiving WeeChat color codes in IRC messages."
 msgstr "Falha durante o recebimento de caracteres especiais em mensagens IRC."
 
-#: doc/_i18n_security.py:39
+#: doc/_i18n_security.py:48
 #, fuzzy
 #| msgid "Crash when receiving special chars in IRC messages."
 msgid "Crash when receiving a malformed IRC message 352 (WHO)."
 msgstr "Falha durante o recebimento de caracteres especiais em mensagens IRC."
 
-#: doc/_i18n_security.py:40
+#: doc/_i18n_security.py:49
 msgid ""
 "Date/time conversion specifiers are expanded after replacing buffer local "
 "variables in name of log files. In some cases, this can lead to an error in "
 "function strftime and a crash caused by the use of an uninitialized buffer."
 msgstr ""
 
-#: doc/_i18n_security.py:41
+#: doc/_i18n_security.py:50
 #, fuzzy
 #| msgid ""
 #| "Do not use command /notify with nicks containing formatting chars like \"%"
@@ -648,7 +701,7 @@ msgstr ""
 "Não use o comando /notify com apelidos contendo caracteres de formatação "
 "como \"%\"."
 
-#: doc/_i18n_security.py:42
+#: doc/_i18n_security.py:51
 #, fuzzy
 #| msgid ""
 #| "Missing verifications in SSL certificate, which allows man-in-the-middle "
@@ -661,63 +714,86 @@ msgstr ""
 "in-the-middle enganem um servidor de chat com SSL através de um certificado "
 "arbitrário."
 
-#: doc/_i18n_security.py:43
+#: doc/_i18n_security.py:52
 msgid "IRC"
 msgstr ""
 
-#: doc/_i18n_security.py:44
+#: doc/_i18n_security.py:53
 #, fuzzy
 #| msgid "Plugin"
 msgid "IRC, Plugins"
 msgstr "Plugins"
 
-#: doc/_i18n_security.py:45
+#: doc/_i18n_security.py:54
 msgid "Improper certificate validation"
 msgstr ""
 
-#: doc/_i18n_security.py:46
+#: doc/_i18n_security.py:55
 msgid "Improper input validation"
 msgstr ""
 
-#: doc/_i18n_security.py:47
+#: doc/_i18n_security.py:56
 msgid "Integer Overflow or Wraparound"
 msgstr ""
 
-#: doc/_i18n_security.py:48
+#: doc/_i18n_security.py:57
+msgid ""
+"Integer overflow happens in conversion of a version as string to an integer "
+"number, if the version is greater than 0x7FFFFFFF (127.255.255.255), so if "
+"the version is at least 0x80000000 (128.0.0.0)."
+msgstr ""
+
+#: doc/_i18n_security.py:58
+#, fuzzy
+#| msgid "Buffer overflows in build of strings."
+msgid "Integer overflow in base32 decode/encode functions."
+msgstr "Buffer overflows na construção de strings."
+
+#: doc/_i18n_security.py:59
+#, fuzzy
+#| msgid "Buffer overflows in build of strings."
+msgid "Integer overflow in conversion of version to an integer number."
+msgstr "Buffer overflows na construção de strings."
+
+#: doc/_i18n_security.py:60
 #, fuzzy
 #| msgid "Buffer overflows in build of strings."
 msgid "Integer overflow in loops on lists."
 msgstr "Buffer overflows na construção de strings."
 
-#: doc/_i18n_security.py:49
+#: doc/_i18n_security.py:61
+msgid "Integer overflow with decimal numbers in calculation of expression."
+msgstr ""
+
+#: doc/_i18n_security.py:62
 msgid "Logger"
 msgstr ""
 
-#: doc/_i18n_security.py:50
+#: doc/_i18n_security.py:63
 msgid "Out-of-bounds read"
 msgstr ""
 
-#: doc/_i18n_security.py:51
+#: doc/_i18n_security.py:64
 msgid "Out-of-bounds write"
 msgstr ""
 
-#: doc/_i18n_security.py:52
+#: doc/_i18n_security.py:65
 msgid "Possible man-in-the-middle attack in TLS connection to IRC server."
 msgstr ""
 
-#: doc/_i18n_security.py:53
+#: doc/_i18n_security.py:66
 msgid "Possible man-in-the-middle attack in TLS connection to servers."
 msgstr ""
 
-#: doc/_i18n_security.py:54
+#: doc/_i18n_security.py:67
 msgid "Relay"
 msgstr ""
 
-#: doc/_i18n_security.py:55
+#: doc/_i18n_security.py:68
 msgid "Remote execution of commands via scripts."
 msgstr ""
 
-#: doc/_i18n_security.py:56
+#: doc/_i18n_security.py:69
 #, fuzzy
 #| msgid ""
 #| "Remove/unload all scripts calling function hook_process (for maximum "
@@ -727,20 +803,20 @@ msgstr ""
 "Remove/descarrega todos os scripts chamando a função hook_process (para "
 "segurança máxima)."
 
-#: doc/_i18n_security.py:57
+#: doc/_i18n_security.py:70
 #, fuzzy
 #| msgid "Uncontrolled format string in API function infobar_printf."
 msgid "Remove/unload all scripts calling the API function infobar_printf."
 msgstr "String de formato descontrolada na função de API infobar_printf."
 
-#: doc/_i18n_security.py:58
+#: doc/_i18n_security.py:71
 #, fuzzy
 #| msgid "Uncontrolled format string in API function infobar_printf."
 msgid ""
 "Strings are built with uncontrolled format in API function infobar_printf."
 msgstr "String de formato descontrolada na função de API infobar_printf."
 
-#: doc/_i18n_security.py:59
+#: doc/_i18n_security.py:72
 #, fuzzy
 #| msgid ""
 #| "Uncontrolled format string when IRC commands are redirected by relay "
@@ -755,7 +831,7 @@ msgstr ""
 "plugin de retransmissão. Se a saída ou comando redirecionado contém "
 "caracteres formatantes como \"%\", isto pode levar à falha do WeeChat."
 
-#: doc/_i18n_security.py:60
+#: doc/_i18n_security.py:73
 #, fuzzy
 #| msgid ""
 #| "Uncontrolled format string when sending IRC \"ison\" command for nicks "
@@ -767,7 +843,7 @@ msgstr ""
 "String de formato descontrolada quando enviando comandos IRC \"ison\" para "
 "apelidos monitorados com o comando /notify."
 
-#: doc/_i18n_security.py:61
+#: doc/_i18n_security.py:74
 #, fuzzy
 #| msgid ""
 #| "Uncontrolled format string when sending unknown IRC command to server (if "
@@ -781,7 +857,7 @@ msgstr ""
 "para o servidor (se a opção \"irc.network.send_unknown_commands\" está "
 "habilitada)."
 
-#: doc/_i18n_security.py:62
+#: doc/_i18n_security.py:75
 msgid ""
 "There are multiple ways to mitigate this issue:\n"
 "<ul>\n"
@@ -793,7 +869,7 @@ msgid ""
 "</ul>"
 msgstr ""
 
-#: doc/_i18n_security.py:63
+#: doc/_i18n_security.py:76
 #, fuzzy
 #| msgid ""
 #| "Turn off option \"irc.network.send_unknown_commands\" or do not use "
@@ -801,8 +877,8 @@ msgstr ""
 msgid ""
 "There are multiple ways to mitigate this issue:\n"
 "<ul>\n"
-"  <li>Turn off option to send unknown commands: <code>/set "
-"irc.network.send_unknown_commands off</code></li>\n"
+"  <li>Turn off option to send unknown commands: <code>/set irc.network."
+"send_unknown_commands off</code></li>\n"
 "  <li>Do not use formatting chars like \"%\" when sending unknown commands "
 "to server.</li>\n"
 "</ul>"
@@ -811,14 +887,14 @@ msgstr ""
 "caracteres de formatação como \"%\" quando enviar comandos desconhecidos ao "
 "servidor."
 
-#: doc/_i18n_security.py:64
+#: doc/_i18n_security.py:77
 msgid ""
 "Turn of handling of colors in incoming IRC messages:\n"
 "\n"
 "<p><pre><code>/set irc.network.colors_receive off</code></pre></p>"
 msgstr ""
 
-#: doc/_i18n_security.py:65
+#: doc/_i18n_security.py:78
 msgid ""
 "Untrusted command for function hook_process could lead to execution of "
 "commands, because of shell expansions (so the problem is only caused by some "
@@ -828,40 +904,40 @@ msgstr ""
 "commandos, devido às expansões de shell (então o problema somente é causado "
 "por alguns scripts, não pelo WeeChatem si)."
 
-#: doc/_i18n_security.py:66
+#: doc/_i18n_security.py:79
 msgid "Use of invalid pointer in build of log filename."
 msgstr ""
 
-#: doc/_i18n_security.py:67
+#: doc/_i18n_security.py:80
 #, python-brace-format
 msgid ""
 "With WeeChat ≥ 1.1, you can create a trigger:\n"
 "\n"
-"<p><pre><code>/trigger add fix_irc_352 modifier \"irc_in_352\" \"$"
-"{arguments} =~ .* \\*$\" \"/.*//\"</code></pre></p>\n"
+"<p><pre><code>/trigger add fix_irc_352 modifier \"irc_in_352\" "
+"\"${arguments} =~ .* \\*$\" \"/.*//\"</code></pre></p>\n"
 "\n"
 "With any older version, there is no simple mitigation, you must upgrade "
 "WeeChat."
 msgstr ""
 
-#: doc/_i18n_security.py:68
+#: doc/_i18n_security.py:81
 msgid ""
 "With WeeChat ≥ 1.1, you can create a trigger:\n"
 "\n"
-"<p><pre><code>/trigger add irc_dcc_quotes modifier \"irc_in_privmsg\" \"$"
-"{arguments} =~ ^[^ ]+ :${\\x01}DCC SEND ${\\x22} \" \"/.*//\"</code></pre></"
-"p>\n"
+"<p><pre><code>/trigger add irc_dcc_quotes modifier \"irc_in_privmsg\" "
+"\"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND ${\\x22} \" \"/.*//\"</code></"
+"pre></p>\n"
 "\n"
 "With any older version, there is no simple mitigation, you must upgrade "
 "WeeChat."
 msgstr ""
 
-#: doc/_i18n_security.py:69
+#: doc/_i18n_security.py:82
 msgid ""
 "You can remove all relays of type \"irc\", see <code>/help relay</code>."
 msgstr ""
 
-#: doc/_i18n_security.py:70
+#: doc/_i18n_security.py:83
 msgid ""
 "You can unload the logger plugin, thus stopping recording of all buffers: "
 "<code>/plugin unload logger</code>."
@@ -1015,8 +1091,8 @@ msgstr ""
 "Um repositório para o Raspbian foi adicionado para o Raspberry Pi "
 "(agradecimentos ao Nils G. pela construção dos pacotes toda noite).\n"
 "\n"
-"Os repositórios Debian existente foram movidos de flashtux.org para "
-"weechat.org, como os novos de Raspbian.\n"
+"Os repositórios Debian existente foram movidos de flashtux.org para weechat."
+"org, como os novos de Raspbian.\n"
 "\n"
 "Uma nova seção foi adicionada na página de download com um sumário de todos "
 "os repositórios: <a href=\"/download/debian/\">Debian/Raspbian repositories</"
@@ -1424,8 +1500,8 @@ msgid ""
 "On June 26th, WeeChat will turn 20!\n"
 "\n"
 "A live streaming for the 20th anniversary and release of v4.0.0 is scheduled "
-"on Saturday, June 24th, 7pm UTC, for more info: <a href=\"https://"
-"blog.weechat.org/post/2023/06/13/live-streaming-20th-anniversary-release-"
+"on Saturday, June 24th, 7pm UTC, for more info: <a href=\"https://blog."
+"weechat.org/post/2023/06/13/live-streaming-20th-anniversary-release-"
 "v4.0.0\">https://blog.weechat.org/post/2023/06/13/live-streaming-20th-"
 "anniversary-release-v4.0.0</a>."
 msgstr ""
@@ -2471,8 +2547,8 @@ msgstr ""
 "\n"
 "Para a lista completa das novas funcionalidades e bugs corrigidos, por favor "
 "veja nosso blog em <a href=\"/blog/post/2011/01/16/Version-0.3.4\">blog de "
-"desenvolvimento</a> ou o <a href=\"/files/changelog/"
-"ChangeLog-0.3.4.html\">Log de Alterações</a>."
+"desenvolvimento</a> ou o <a href=\"/files/changelog/ChangeLog-0.3.4."
+"html\">Log de Alterações</a>."
 
 #: news/_i18n_info.py:110
 msgid ""
@@ -2521,8 +2597,8 @@ msgstr ""
 "\n"
 "Para a lista completa das novas funcionalidades e bugs corrigidos, por favor "
 "veja nosso blog em <a href=\"/blog/post/2011/05/15/Version-0.3.5\">blog de "
-"desenvolvimento</a> ou o <a href=\"/files/changelog/"
-"ChangeLog-0.3.5.html\">Log de Alterações</a>."
+"desenvolvimento</a> ou o <a href=\"/files/changelog/ChangeLog-0.3.5."
+"html\">Log de Alterações</a>."
 
 #: news/_i18n_info.py:111
 msgid ""
@@ -3291,8 +3367,8 @@ msgid ""
 "- add IRC server option \"split_msg_max_length\"\n"
 "- add option logger.file.fsync\n"
 "- add option logger.look.backlog_conditions\n"
-"- add configuration file for each script plugin (\"python.conf\", "
-"\"perl.conf\", ...)\n"
+"- add configuration file for each script plugin (\"python.conf\", \"perl."
+"conf\", ...)\n"
 "- add \"eval\" option in script commands and info \"xxx_eval\" (python, "
 "perl, ruby, lua and guile)\n"
 "- add infos \"xxx_interpreter\" and \"xxx_version\" in script plugins\n"
@@ -3345,8 +3421,8 @@ msgid ""
 "- allow specifying buffer number/name for /buffer localvar\n"
 "- allow creation of temporary variables with the regex in trigger plugin\n"
 "- add real IP in client description in relay plugin\n"
-"- add repeat of string in evaluation of expressions with "
-"\"repeat:count,string\"\n"
+"- add repeat of string in evaluation of expressions with \"repeat:count,"
+"string\"\n"
 "- many bugs fixed.\n"
 "\n"
 "For complete list of new features and bugs fixed, please look at <a href=\"/"
@@ -3482,8 +3558,8 @@ msgid ""
 "- add option \"close\" in command /window\n"
 "- add infos \"term_colors\" and \"term_color_pairs\"\n"
 "- add infolist \"buflist\" with list of buffer pointers\n"
-"- evaluate option exec.command.shell, change default value to \"${env:SHELL}"
-"\"\n"
+"- evaluate option exec.command.shell, change default value to \"${env:"
+"SHELL}\"\n"
 "- add filters \"h=xxx\" and \"he=xxx\" to filter options by description in "
 "fset buffer (translated or in English)\n"
 "- make command char optional in server option \"command\"\n"
@@ -3552,8 +3628,8 @@ msgid ""
 "- add option xfer.file.download_temporary_suffix\n"
 "- add option weechat.look.nick_color_hash_salt\n"
 "- add different WeeChat icons sizes\n"
-"- add calculation of expression in evaluation of expressions with "
-"\"calc:xxx\"\n"
+"- add calculation of expression in evaluation of expressions with \"calc:"
+"xxx\"\n"
 "- add optional default path (evaluated) in completion \"filename\"\n"
 "- add modifier \"color_encode_ansi\"\n"
 "- add support of Guile 2.2\n"
@@ -3766,8 +3842,8 @@ msgid ""
 "\n"
 "Among the new features:\n"
 "\n"
-"- add options weechat.look.hotlist_update_on_buffer_switch and "
-"weechat.look.read_marker_update_on_buffer_switch\n"
+"- add options weechat.look.hotlist_update_on_buffer_switch and weechat.look."
+"read_marker_update_on_buffer_switch\n"
 "- add option sec.crypt.passphrase_command to read passphrase from an "
 "external program on startup, remove option sec.crypt.passphrase_file\n"
 "- improve debug in command /eval\n"
@@ -3777,8 +3853,8 @@ msgid ""
 "override the value of option weechat.completion.default_template\n"
 "- add option \"recreate\" in command /filter\n"
 "- add raw string in evaluation of expressions with \"raw:xxx\"\n"
-"- add evaluation of conditions in evaluation of expressions with "
-"\"eval_cond:xxx\"\n"
+"- add evaluation of conditions in evaluation of expressions with \"eval_cond:"
+"xxx\"\n"
 "- add info_hashtable \"secured_data\"\n"
 "- add info \"irc_is_message_ignored\"\n"
 "- add IRC server option \"default_chantypes\", used when the server does not "
@@ -3872,8 +3948,8 @@ msgid ""
 "\"split:number,seps,flags,xxx\" and \"split_shell:number,xxx\"\n"
 "- add \"${re:repl_index}\" to get the index of replacement in function "
 "string_eval_expression\n"
-"- add random integer number in evaluation of expressions with "
-"\"random:min,max\"\n"
+"- add random integer number in evaluation of expressions with \"random:min,"
+"max\"\n"
 "- add functions string_cut and file_copy in API\n"
 "- remember insertion order in hashtables\n"
 "- add keys/values with tags in output of irc_message_parse_to_hashtable\n"
@@ -3916,8 +3992,8 @@ msgid ""
 "\n"
 "- improve the IRC message parser\n"
 "- add command /toggle\n"
-"- add user variables in evaluation of expressions with "
-"\"define:name,value\"\n"
+"- add user variables in evaluation of expressions with \"define:name,"
+"value\"\n"
 "- add support of static arrays in hdata\n"
 "- hide key and password in command \"/msg nickserv setpass nick key "
 "password\"\n"
@@ -4012,8 +4088,8 @@ msgid ""
 "- add command /autojoin, add IRC server option \"autojoin_dynamic\"\n"
 "- add IRC message tags in messages displayed\n"
 "- add \"zstd\" (Zstandard) compression in relay weechat protocol, remove "
-"option \"compression\" from \"init\" command, rename option "
-"relay.network.compression_level to relay.network.compression\n"
+"option \"compression\" from \"init\" command, rename option relay.network."
+"compression_level to relay.network.compression\n"
 "- add trigger variables \"${tg_tag_irc_xxx}\" containing IRC message tags\n"
 "- many bugs fixed.\n"
 "\n"
@@ -4130,14 +4206,14 @@ msgid ""
 "- add support of priority in API function hook_line\n"
 "- add API function string_parse_size\n"
 "- add API function file_compress\n"
-"- add buflist variable \"${hotlist_priority_number}\" (integer version of \"$"
-"{hotlist_priority}\")\n"
+"- add buflist variable \"${hotlist_priority_number}\" (integer version of "
+"\"${hotlist_priority}\")\n"
 "- display SETNAME command in IRC channels and private buffers, add options "
 "irc.color.message_setname and irc.look.smart_filter_setname\n"
 "- add option irc.look.display_pv_nick_change\n"
-"- add options to rotate and compress log files: "
-"logger.file.rotation_compression_level, "
-"logger.file.rotation_compression_type and logger.file.rotation_size_max\n"
+"- add options to rotate and compress log files: logger.file."
+"rotation_compression_level, logger.file.rotation_compression_type and logger."
+"file.rotation_size_max\n"
 "- allow special dict value \"-\" to disable spell checking on a specific "
 "buffer\n"
 "- add elapsed time for trigger execution on monitor buffer when trigger "
@@ -4203,9 +4279,9 @@ msgstr ""
 msgid ""
 "Version 4.0.0 is available!\n"
 "\n"
-"New features and bugs fixed: <a href=\"https://blog.weechat.org/post/"
-"2023/06/24/Version-4.0.0\">development blog</a> and <a href=\"/files/doc/"
-"weechat/ChangeLog-4.0.0.html\">ChangeLog</a>."
+"New features and bugs fixed: <a href=\"https://blog.weechat.org/"
+"post/2023/06/24/Version-4.0.0\">development blog</a> and <a href=\"/files/"
+"doc/weechat/ChangeLog-4.0.0.html\">ChangeLog</a>."
 msgstr ""
 
 #: news/_i18n_info.py:168
@@ -4296,8 +4372,8 @@ msgstr ""
 msgid ""
 "Version 4.1.0 is available!\n"
 "\n"
-"New features and bugs fixed: <a href=\"/files/doc/weechat/"
-"ChangeLog-4.1.0.html\">ChangeLog</a>."
+"New features and bugs fixed: <a href=\"/files/doc/weechat/ChangeLog-4.1.0."
+"html\">ChangeLog</a>."
 msgstr ""
 
 #: news/_i18n_info.py:177
@@ -4334,8 +4410,8 @@ msgstr ""
 msgid ""
 "Version 4.2.0 is available!\n"
 "\n"
-"New features and bugs fixed: <a href=\"/files/doc/weechat/"
-"ChangeLog-4.2.0.html\">ChangeLog</a>."
+"New features and bugs fixed: <a href=\"/files/doc/weechat/ChangeLog-4.2.0."
+"html\">ChangeLog</a>."
 msgstr ""
 
 #: news/_i18n_info.py:181
@@ -4372,8 +4448,8 @@ msgstr ""
 msgid ""
 "Version 4.3.0 is available!\n"
 "\n"
-"New features and bugs fixed: <a href=\"/files/doc/weechat/"
-"ChangeLog-4.3.0.html\">ChangeLog</a>."
+"New features and bugs fixed: <a href=\"/files/doc/weechat/ChangeLog-4.3.0."
+"html\">ChangeLog</a>."
 msgstr ""
 
 #: news/_i18n_info.py:185
@@ -4552,6 +4628,14 @@ msgstr ""
 
 #: news/_i18n_info.py:203
 msgid ""
+"Version 4.7.0 is available!\n"
+"\n"
+"New features and bugs fixed: <a href=\"https://github.com/weechat/weechat/"
+"releases/tag/v4.7.0\">ChangeLog</a>."
+msgstr ""
+
+#: news/_i18n_info.py:204
+msgid ""
 "Version v0.1.2 is available!\n"
 "\n"
 "News since last version are:\n"
@@ -4582,22 +4666,22 @@ msgstr ""
 "Add-on, 2005/05/24: corrigido crash na inicialização e detecção Perl/Python, "
 "a versão agora é 0.1.2.1."
 
-#: news/_i18n_info.py:204
+#: news/_i18n_info.py:205
 msgid "WeeChat - Wee Enhanced Environment for Chat"
 msgstr "WeeChat - Wee Enhanced Environment for Chat"
 
-#: news/_i18n_info.py:205
+#: news/_i18n_info.py:206
 msgid ""
 "WeeChat IRC channels (official and non-official ones) have moved from "
 "freenode to <a href=\"https://libera.chat/\">libera.chat</a>.\n"
 "\n"
-"For more information, please look at <a href=\"https://blog.weechat.org/post/"
-"2021/05/29/IRC-channels-moved-to-libera.chat\">development blog</a>.\n"
+"For more information, please look at <a href=\"https://blog.weechat.org/"
+"post/2021/05/29/IRC-channels-moved-to-libera.chat\">development blog</a>.\n"
 "\n"
 "See you soon there!"
 msgstr ""
 
-#: news/_i18n_info.py:206
+#: news/_i18n_info.py:207
 msgid ""
 "WeeChat has many new important features since some weeks:\n"
 "- multi-windows management (with horizontal and vertical window split)\n"
@@ -4622,12 +4706,12 @@ msgstr ""
 "Sinta-se livre para relatar qualquer problema ou sugestão para melhorar a "
 "navegação entre buffers/windows."
 
-#: news/_i18n_info.py:207
+#: news/_i18n_info.py:208
 #, fuzzy
 msgid "WeeChat in Cygwin"
 msgstr "WeeChat é:"
 
-#: news/_i18n_info.py:208
+#: news/_i18n_info.py:209
 msgid ""
 "WeeChat is now in Cygwin, and can be installed with setup.exe.\n"
 "Version 0.4.2 is available for 32 and 64-bit Cygwin.\n"
@@ -4636,7 +4720,7 @@ msgid ""
 "yet available in Cygwin."
 msgstr ""
 
-#: news/_i18n_info.py:209
+#: news/_i18n_info.py:210
 msgid ""
 "WeeChat project is started.\n"
 "\n"
@@ -4656,7 +4740,7 @@ msgstr ""
 "- rápida, leve e extensível com scripts\n"
 "- ..."
 
-#: news/_i18n_info.py:210
+#: news/_i18n_info.py:211
 msgid ""
 "WeeChat project now accepts donations via Paypal account, with secured "
 "payment."
@@ -4664,7 +4748,7 @@ msgstr ""
 "O projeto WeeChat agora aceita doações via conta Paypal, com pagamento "
 "seguro."
 
-#: news/_i18n_info.py:211
+#: news/_i18n_info.py:212
 msgid ""
 "WeeChat project now accepts recurring donations via Liberapay, which has "
 "very low fees (see <a href=\"https://liberapay.com/about/"
@@ -4672,7 +4756,7 @@ msgid ""
 "crowdfunding platforms</a>)."
 msgstr ""
 
-#: news/_i18n_info.py:212
+#: news/_i18n_info.py:213
 msgid ""
 "WeeChat repositories (weechat, scripts, qweechat) have been moved to GitHub, "
 "in WeeChat organization: <a href=\"https://github.com/weechat\">https://"
@@ -4682,15 +4766,15 @@ msgid ""
 "repositories-moved-to-Github\">development blog</a>."
 msgstr ""
 
-#: news/_i18n_info.py:213
+#: news/_i18n_info.py:214
 msgid "WeeChat screenshot"
 msgstr "Screenshot WeeChat"
 
-#: news/_i18n_info.py:214
+#: news/_i18n_info.py:215
 msgid "WeeChat scripts page"
 msgstr "Página de scripts do WeeChat"
 
-#: news/_i18n_info.py:215
+#: news/_i18n_info.py:216
 msgid ""
 "WeeChat scripts page (today Perl scripts only) has been added.\n"
 "On this page you can submit your script (need to be approved by WeeChat "
@@ -4706,7 +4790,7 @@ msgstr ""
 "Nota: scripts Perl requerem a versão de WeeChat > 0.0.3, então hoje você "
 "deve baixar a versão de desenvolvimento."
 
-#: news/_i18n_info.py:216
+#: news/_i18n_info.py:217
 msgid ""
 "WeeChat story page is now available, as screenshots. You can see differences "
 "between all versions in one view!\n"
@@ -4716,15 +4800,15 @@ msgstr ""
 "as diferenças entre todas as versões em um só lugar!\n"
 "A versão de desenvolvimento é visível também, e atualizada com freqüência."
 
-#: news/_i18n_info.py:217
+#: news/_i18n_info.py:218
 msgid "WeeChat users map"
 msgstr "Mapa de usuários do WeeChat"
 
-#: news/_i18n_info.py:218
+#: news/_i18n_info.py:219
 msgid "WeeChat will merge with irssi"
 msgstr "WeeChat irá se fundir com o irssi"
 
-#: news/_i18n_info.py:219
+#: news/_i18n_info.py:220
 msgid ""
 "WeeChat, the fast, light and extensible IRC client, is released for the "
 "first time, version 0.0.1.\n"
@@ -4772,7 +4856,7 @@ msgstr ""
 "Todas as sugestões e relatórios de erros são bem-vindos, olhe para a página "
 "de suporte do WeeChat para nos contatar."
 
-#: news/_i18n_info.py:220
+#: news/_i18n_info.py:221
 #, fuzzy
 #| msgid "Packages"
 msgid "XZ packages"
@@ -6758,12 +6842,6 @@ msgstr "Script de controle e reproduzindo-agora para iTunes."
 msgid "not compatible with Python 3"
 msgstr ""
 
-#: scripts/models.py:138
-#, fuzzy
-#| msgid "Pending scripts"
-msgid "Popular script"
-msgstr "Scripts pendentes"
-
 #. Translators: this is a date format, see: http://www.php.net/date
 #. Translators: (note: the result string must be short, use abbreviation
 #. Translators: for month if possible)
@@ -7857,8 +7935,8 @@ msgstr ""
 #: templates/doc/security.html:31
 msgid ""
 "To report a security issue, please <strong>DO NOT</strong> file an issue on "
-"GitHub, but send an email to <a "
-"href=\"mailto:security@weechat.org\">security@weechat.org</a> instead."
+"GitHub, but send an email to <a href=\"mailto:security@weechat."
+"org\">security@weechat.org</a> instead."
 msgstr ""
 
 #: templates/doc/security.html:39
@@ -8468,8 +8546,8 @@ msgstr "Verificando as assinaturas"
 #| "Check that the fingerprint is correct by asking to a developer on "
 #| "#weechat (irc.libera.chat)."
 msgid ""
-"Check the key fingerprint by checking the topic on #weechat channel "
-"(irc.libera.chat) or by asking to a developer."
+"Check the key fingerprint by checking the topic on #weechat channel (irc."
+"libera.chat) or by asking to a developer."
 msgstr ""
 "Verifique que o fingerprint é correto perguntando à um desenvolvedor em "
 "#weechat (irc.libera.chat)."
@@ -8585,14 +8663,14 @@ msgstr "Documentação e suporte"
 #: templates/home/home.html:102
 #, fuzzy
 #| msgid ""
-#| "WeeChat is translated into several languages and has a <a href=\"%"
-#| "(doc_url)s\">comprehensive documentation</a>, also translated."
+#| "WeeChat is translated into several languages and has a <a "
+#| "href=\"%(doc_url)s\">comprehensive documentation</a>, also translated."
 msgid ""
 "WeeChat is translated into several languages and has a comprehensive "
 "documentation."
 msgstr ""
-"WeeChat é traduzido em diversas linguagens e possui uma <a href=\"%"
-"(doc_url)s\">documentação compreensiva</a>, também traduzida."
+"WeeChat é traduzido em diversas linguagens e possui uma <a "
+"href=\"%(doc_url)s\">documentação compreensiva</a>, também traduzida."
 
 #: templates/home/home.html:104
 msgid "Excellent support for users."
@@ -8984,8 +9062,8 @@ msgstr ""
 
 #: templates/scripts/python3.html:109
 msgid ""
-"All new scripts as well as script updates must be compatible with Python "
-"3.x. Extra support of Python 2.x is optional."
+"All new scripts as well as script updates must be compatible with Python 3."
+"x. Extra support of Python 2.x is optional."
 msgstr ""
 
 #: templates/scripts/python3.html:115
@@ -9344,3 +9422,8 @@ msgstr "Erro interno."
 #: themes/models.py:303
 msgid "Invalid name: different from theme."
 msgstr "Nome inválido: diferente do tema."
+
+#, fuzzy
+#~| msgid "Pending scripts"
+#~ msgid "Popular script"
+#~ msgstr "Scripts pendentes"

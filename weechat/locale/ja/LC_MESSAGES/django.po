@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-11 11:34+0200\n"
+"POT-Creation-Date: 2025-07-19 12:23+0200\n"
 "PO-Revision-Date: 2025-04-21 14:07+0200\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
@@ -457,6 +457,12 @@ msgstr ""
 
 #: doc/_i18n_security.py:13
 msgid ""
+"A buffer overflow happens in base 32 encoding in evaluated expressions, "
+"where padding is made in the resulting string."
+msgstr ""
+
+#: doc/_i18n_security.py:14
+msgid ""
 "A buffer overflow happens when a new IRC message 005 is received with longer "
 "nick prefixes.\n"
 "<br>\n"
@@ -464,19 +470,19 @@ msgid ""
 "nick prefixes, so the problem should be limited to malicious IRC servers."
 msgstr ""
 
-#: doc/_i18n_security.py:14
+#: doc/_i18n_security.py:15
 #, fuzzy
 #| msgid "Buffer overflow when decoding IRC colors in strings."
 msgid "A buffer overflow happens when decoding some IRC colors in strings."
 msgstr "文字列中の IRC 色をデコードする際にバッファオーバーフロー。"
 
-#: doc/_i18n_security.py:15
+#: doc/_i18n_security.py:16
 #, fuzzy
 #| msgid "Buffer overflows in build of strings."
 msgid "A buffer overflows happens in build of strings in different places."
 msgstr "文字列を作る際にバッファオーバーフロー。"
 
-#: doc/_i18n_security.py:16
+#: doc/_i18n_security.py:17
 msgid ""
 "A crash happens when decoding a malformed websocket frame in relay plugin.\n"
 "<br>\n"
@@ -484,7 +490,7 @@ msgid ""
 "websocket frame can be received before the authentication of the client."
 msgstr ""
 
-#: doc/_i18n_security.py:17
+#: doc/_i18n_security.py:18
 #, fuzzy
 #| msgid "Crash when receiving special chars in IRC messages."
 msgid ""
@@ -492,21 +498,21 @@ msgid ""
 "messages."
 msgstr "IRC メッセージに特定の文字が含まれる際にクラッシュ。"
 
-#: doc/_i18n_security.py:18
+#: doc/_i18n_security.py:19
 msgid "API"
 msgstr ""
 
-#: doc/_i18n_security.py:19
+#: doc/_i18n_security.py:20
 msgid "Access of uninitialized pointer"
 msgstr ""
 
-#: doc/_i18n_security.py:20
+#: doc/_i18n_security.py:21
 msgid ""
 "After changing options <code>weechat.network.gnutls_ca_system</code> or "
 "<code>weechat.network.gnutls_ca_user</code>, you must restart WeeChat."
 msgstr ""
 
-#: doc/_i18n_security.py:21
+#: doc/_i18n_security.py:22
 msgid ""
 "After changing the options <code>weechat.network.gnutls_ca_system</code> or "
 "<code>weechat.network.gnutls_ca_user</code>, the TLS verification function "
@@ -519,7 +525,7 @@ msgid ""
 "server made by a plugin or a script using the function hook_connect."
 msgstr ""
 
-#: doc/_i18n_security.py:22
+#: doc/_i18n_security.py:23
 msgid ""
 "An integer overflow can happen when looping over items in a list.\n"
 "<br>\n"
@@ -530,96 +536,143 @@ msgid ""
 "elements."
 msgstr ""
 
-#: doc/_i18n_security.py:23
+#: doc/_i18n_security.py:24
+#, python-brace-format
+msgid ""
+"An integer overflow happens when using numbers with 9 or more decimals in "
+"calculation of expression, for example: <code>/eval -n ${calc:0.123456789}</"
+"code>."
+msgstr ""
+
+#: doc/_i18n_security.py:25
+msgid "An integer overflow may happen in base32 encode/decode functions."
+msgstr ""
+
+#: doc/_i18n_security.py:26
+msgid "Buffer overflow in base 32 encoding in evaluated expressions."
+msgstr ""
+
+#: doc/_i18n_security.py:27
+msgid ""
+"Buffer overflow in function util_parse_time when the received date/time has "
+"no date and a length of 117 or more chars.\n"
+"<br>\n"
+"It can be an issue in IRC plugin, where the \"time\" tag received in IRC "
+"messages is parsed using this function."
+msgstr ""
+
+#: doc/_i18n_security.py:28
+#, fuzzy
+#| msgid "Buffer overflows in build of strings."
+msgid "Buffer overflow in parsing of date/time."
+msgstr "文字列を作る際にバッファオーバーフロー。"
+
+#: doc/_i18n_security.py:29
+#, fuzzy
+#| msgid "Buffer overflows in build of strings."
+msgid "Buffer overflow in range of chars in evaluated expressions."
+msgstr "文字列を作る際にバッファオーバーフロー。"
+
+#: doc/_i18n_security.py:30
+#, fuzzy
+#| msgid "Buffer overflows in build of strings."
+msgid "Buffer overflow in syntax highlighting of evaluated expressions."
+msgstr "文字列を作る際にバッファオーバーフロー。"
+
+#: doc/_i18n_security.py:31
 #, fuzzy
 #| msgid "Buffer overflow when decoding IRC colors in strings."
 msgid "Buffer overflow on malformed IRC message 324 (channel mode)."
 msgstr "文字列中の IRC 色をデコードする際にバッファオーバーフロー。"
 
-#: doc/_i18n_security.py:24
+#: doc/_i18n_security.py:32
 #, fuzzy
 #| msgid "Buffer overflow when decoding IRC colors in strings."
 msgid "Buffer overflow on new IRC message 005 with nick prefixes."
 msgstr "文字列中の IRC 色をデコードする際にバッファオーバーフロー。"
 
-#: doc/_i18n_security.py:25
+#: doc/_i18n_security.py:33
 #, fuzzy
 #| msgid "Buffer overflow when removing quotes in DCC filename."
 msgid "Buffer overflow when receiving a DCC file."
 msgstr "DCC ファイル名内の引用符を削除する際にバッファオーバーフロー。"
 
-#: doc/_i18n_security.py:26
+#: doc/_i18n_security.py:34
 msgid ""
 "Buffer overflow when receiving a malformed IRC message 324 (channel mode)."
 msgstr ""
 
-#: doc/_i18n_security.py:27
+#: doc/_i18n_security.py:35
 msgid "Buffer overflow when removing quotes in DCC filename."
 msgstr "DCC ファイル名内の引用符を削除する際にバッファオーバーフロー。"
 
-#: doc/_i18n_security.py:28
+#: doc/_i18n_security.py:36
 msgid "Buffer overflows in build of strings."
 msgstr "文字列を作る際にバッファオーバーフロー。"
 
-#: doc/_i18n_security.py:29
+#: doc/_i18n_security.py:37
+msgid "Core"
+msgstr ""
+
+#: doc/_i18n_security.py:38
 msgid "Core, IRC"
 msgstr ""
 
-#: doc/_i18n_security.py:30
+#: doc/_i18n_security.py:39
 #, fuzzy
 #| msgid "Plugin"
 msgid "Core, Plugins"
 msgstr "プラグイン"
 
-#: doc/_i18n_security.py:31
+#: doc/_i18n_security.py:40
 #, fuzzy
 #| msgid "Uncontrolled format string in API function infobar_printf."
 msgid "Crash in API function infobar_printf."
 msgstr "infobar_printf API 関数の書式文字列攻撃。"
 
-#: doc/_i18n_security.py:32
+#: doc/_i18n_security.py:41
 msgid "Crash on IRC commands sent via Relay."
 msgstr ""
 
-#: doc/_i18n_security.py:33
+#: doc/_i18n_security.py:42
 #, fuzzy
 #| msgid "Crash when receiving special chars in IRC messages."
 msgid "Crash on malformed IRC message 352 (WHO)."
 msgstr "IRC メッセージに特定の文字が含まれる際にクラッシュ。"
 
-#: doc/_i18n_security.py:34
+#: doc/_i18n_security.py:43
 #, fuzzy
 #| msgid "Crash when receiving special chars in IRC messages."
 msgid "Crash on malformed websocket frame in relay plugin."
 msgstr "IRC メッセージに特定の文字が含まれる際にクラッシュ。"
 
-#: doc/_i18n_security.py:35
+#: doc/_i18n_security.py:44
 msgid "Crash on nicks monitored with /notify."
 msgstr ""
 
-#: doc/_i18n_security.py:36
+#: doc/_i18n_security.py:45
 msgid "Crash on send of unknown commands to IRC server."
 msgstr ""
 
-#: doc/_i18n_security.py:37
+#: doc/_i18n_security.py:46
 #, fuzzy
 #| msgid "Buffer overflow when decoding IRC colors in strings."
 msgid "Crash when decoding IRC colors."
 msgstr "文字列中の IRC 色をデコードする際にバッファオーバーフロー。"
 
-#: doc/_i18n_security.py:38
+#: doc/_i18n_security.py:47
 #, fuzzy
 #| msgid "Crash when receiving special chars in IRC messages."
 msgid "Crash when receiving WeeChat color codes in IRC messages."
 msgstr "IRC メッセージに特定の文字が含まれる際にクラッシュ。"
 
-#: doc/_i18n_security.py:39
+#: doc/_i18n_security.py:48
 #, fuzzy
 #| msgid "Crash when receiving special chars in IRC messages."
 msgid "Crash when receiving a malformed IRC message 352 (WHO)."
 msgstr "IRC メッセージに特定の文字が含まれる際にクラッシュ。"
 
-#: doc/_i18n_security.py:40
+#: doc/_i18n_security.py:49
 msgid ""
 "Date/time conversion specifiers are expanded after replacing buffer local "
 "variables in name of log files. In some cases, this can lead to an error in "
@@ -629,7 +682,7 @@ msgstr ""
 "しばしば、strftime 関数が失敗して初期化されていないバッファを利用することでク"
 "ラッシュが引き起こされる事があります。"
 
-#: doc/_i18n_security.py:41
+#: doc/_i18n_security.py:50
 #, fuzzy
 #| msgid ""
 #| "Do not use command /notify with nicks containing formatting chars like \"%"
@@ -641,7 +694,7 @@ msgstr ""
 "/notify コマンドは \"%\" などの書式文字を含むニックネームと一緒に使わないでく"
 "ださい。"
 
-#: doc/_i18n_security.py:42
+#: doc/_i18n_security.py:51
 #, fuzzy
 #| msgid ""
 #| "Missing verifications in SSL certificate, which allows man-in-the-middle "
@@ -653,63 +706,86 @@ msgstr ""
 "SSL 証明書にある欠陥の見落とし。これにより任意の証明書を経由して SSL チャット"
 "サーバになりすました中間者攻撃を受けることになります。"
 
-#: doc/_i18n_security.py:43
+#: doc/_i18n_security.py:52
 msgid "IRC"
 msgstr ""
 
-#: doc/_i18n_security.py:44
+#: doc/_i18n_security.py:53
 #, fuzzy
 #| msgid "Plugin"
 msgid "IRC, Plugins"
 msgstr "プラグイン"
 
-#: doc/_i18n_security.py:45
+#: doc/_i18n_security.py:54
 msgid "Improper certificate validation"
 msgstr ""
 
-#: doc/_i18n_security.py:46
+#: doc/_i18n_security.py:55
 msgid "Improper input validation"
 msgstr ""
 
-#: doc/_i18n_security.py:47
+#: doc/_i18n_security.py:56
 msgid "Integer Overflow or Wraparound"
 msgstr ""
 
-#: doc/_i18n_security.py:48
+#: doc/_i18n_security.py:57
+msgid ""
+"Integer overflow happens in conversion of a version as string to an integer "
+"number, if the version is greater than 0x7FFFFFFF (127.255.255.255), so if "
+"the version is at least 0x80000000 (128.0.0.0)."
+msgstr ""
+
+#: doc/_i18n_security.py:58
+#, fuzzy
+#| msgid "Buffer overflows in build of strings."
+msgid "Integer overflow in base32 decode/encode functions."
+msgstr "文字列を作る際にバッファオーバーフロー。"
+
+#: doc/_i18n_security.py:59
+#, fuzzy
+#| msgid "Buffer overflows in build of strings."
+msgid "Integer overflow in conversion of version to an integer number."
+msgstr "文字列を作る際にバッファオーバーフロー。"
+
+#: doc/_i18n_security.py:60
 #, fuzzy
 #| msgid "Buffer overflows in build of strings."
 msgid "Integer overflow in loops on lists."
 msgstr "文字列を作る際にバッファオーバーフロー。"
 
-#: doc/_i18n_security.py:49
+#: doc/_i18n_security.py:61
+msgid "Integer overflow with decimal numbers in calculation of expression."
+msgstr ""
+
+#: doc/_i18n_security.py:62
 msgid "Logger"
 msgstr ""
 
-#: doc/_i18n_security.py:50
+#: doc/_i18n_security.py:63
 msgid "Out-of-bounds read"
 msgstr ""
 
-#: doc/_i18n_security.py:51
+#: doc/_i18n_security.py:64
 msgid "Out-of-bounds write"
 msgstr ""
 
-#: doc/_i18n_security.py:52
+#: doc/_i18n_security.py:65
 msgid "Possible man-in-the-middle attack in TLS connection to IRC server."
 msgstr ""
 
-#: doc/_i18n_security.py:53
+#: doc/_i18n_security.py:66
 msgid "Possible man-in-the-middle attack in TLS connection to servers."
 msgstr ""
 
-#: doc/_i18n_security.py:54
+#: doc/_i18n_security.py:67
 msgid "Relay"
 msgstr ""
 
-#: doc/_i18n_security.py:55
+#: doc/_i18n_security.py:68
 msgid "Remote execution of commands via scripts."
 msgstr ""
 
-#: doc/_i18n_security.py:56
+#: doc/_i18n_security.py:69
 #, fuzzy
 #| msgid ""
 #| "Remove/unload all scripts calling function hook_process (for maximum "
@@ -719,20 +795,20 @@ msgstr ""
 "hook_process 関数を使っている全てのスクリプトを削除/アンロードしてください "
 "(最大限の安全を確保するために)。"
 
-#: doc/_i18n_security.py:57
+#: doc/_i18n_security.py:70
 #, fuzzy
 #| msgid "Uncontrolled format string in API function infobar_printf."
 msgid "Remove/unload all scripts calling the API function infobar_printf."
 msgstr "infobar_printf API 関数の書式文字列攻撃。"
 
-#: doc/_i18n_security.py:58
+#: doc/_i18n_security.py:71
 #, fuzzy
 #| msgid "Uncontrolled format string in API function infobar_printf."
 msgid ""
 "Strings are built with uncontrolled format in API function infobar_printf."
 msgstr "infobar_printf API 関数の書式文字列攻撃。"
 
-#: doc/_i18n_security.py:59
+#: doc/_i18n_security.py:72
 #, fuzzy
 #| msgid ""
 #| "Uncontrolled format string when IRC commands are redirected by relay "
@@ -747,7 +823,7 @@ msgstr ""
 "はリダイレクトされたコマンドに \"%\" などの文字列が含まれる場合、WeeChat がク"
 "ラッシュします。"
 
-#: doc/_i18n_security.py:60
+#: doc/_i18n_security.py:73
 #, fuzzy
 #| msgid ""
 #| "Uncontrolled format string when sending IRC \"ison\" command for nicks "
@@ -759,7 +835,7 @@ msgstr ""
 "/notify コマンドで監視しているニックネームに対して IRC が \"ison\" コマンドを"
 "送信する際の書式文字列攻撃。"
 
-#: doc/_i18n_security.py:61
+#: doc/_i18n_security.py:74
 #, fuzzy
 #| msgid ""
 #| "Uncontrolled format string when sending unknown IRC command to server (if "
@@ -769,10 +845,10 @@ msgid ""
 "sent to server, if option <code>irc.network.send_unknown_commands</code> is "
 "enabled."
 msgstr ""
-"未知の IRC コマンドをサーバに送信する際の書式文字列攻撃 "
-"(\"irc.network.send_unknown_commands\" オプションが ON の場合)。"
+"未知の IRC コマンドをサーバに送信する際の書式文字列攻撃 (\"irc.network."
+"send_unknown_commands\" オプションが ON の場合)。"
 
-#: doc/_i18n_security.py:62
+#: doc/_i18n_security.py:75
 msgid ""
 "There are multiple ways to mitigate this issue:\n"
 "<ul>\n"
@@ -784,7 +860,7 @@ msgid ""
 "</ul>"
 msgstr ""
 
-#: doc/_i18n_security.py:63
+#: doc/_i18n_security.py:76
 #, fuzzy
 #| msgid ""
 #| "Turn off option \"irc.network.send_unknown_commands\" or do not use "
@@ -792,8 +868,8 @@ msgstr ""
 msgid ""
 "There are multiple ways to mitigate this issue:\n"
 "<ul>\n"
-"  <li>Turn off option to send unknown commands: <code>/set "
-"irc.network.send_unknown_commands off</code></li>\n"
+"  <li>Turn off option to send unknown commands: <code>/set irc.network."
+"send_unknown_commands off</code></li>\n"
 "  <li>Do not use formatting chars like \"%\" when sending unknown commands "
 "to server.</li>\n"
 "</ul>"
@@ -801,14 +877,14 @@ msgstr ""
 "オプション \"irc.network.send_unknown_commands\" をオフにするか、不明なコマン"
 "ドをサーバに送る際には \"%\" などの書式文字を使わないでください。"
 
-#: doc/_i18n_security.py:64
+#: doc/_i18n_security.py:77
 msgid ""
 "Turn of handling of colors in incoming IRC messages:\n"
 "\n"
 "<p><pre><code>/set irc.network.colors_receive off</code></pre></p>"
 msgstr ""
 
-#: doc/_i18n_security.py:65
+#: doc/_i18n_security.py:78
 msgid ""
 "Untrusted command for function hook_process could lead to execution of "
 "commands, because of shell expansions (so the problem is only caused by some "
@@ -818,21 +894,21 @@ msgstr ""
 "の問題は一部のスクリプトが引き起こすものではなく、WeeChat それ自体が持つ問題"
 "です)。"
 
-#: doc/_i18n_security.py:66
+#: doc/_i18n_security.py:79
 msgid "Use of invalid pointer in build of log filename."
 msgstr ""
 
-#: doc/_i18n_security.py:67
+#: doc/_i18n_security.py:80
 #, fuzzy, python-brace-format
 #| msgid ""
 #| "Create a trigger (with WeeChat >= 1.1): /trigger add irc_dcc_quotes "
-#| "modifier \"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND $"
-#| "{\\x22} \" \"/.*//\""
+#| "modifier \"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND "
+#| "${\\x22} \" \"/.*//\""
 msgid ""
 "With WeeChat ≥ 1.1, you can create a trigger:\n"
 "\n"
-"<p><pre><code>/trigger add fix_irc_352 modifier \"irc_in_352\" \"$"
-"{arguments} =~ .* \\*$\" \"/.*//\"</code></pre></p>\n"
+"<p><pre><code>/trigger add fix_irc_352 modifier \"irc_in_352\" "
+"\"${arguments} =~ .* \\*$\" \"/.*//\"</code></pre></p>\n"
 "\n"
 "With any older version, there is no simple mitigation, you must upgrade "
 "WeeChat."
@@ -841,18 +917,18 @@ msgstr ""
 "irc_dcc_quotes modifier \"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}"
 "DCC SEND ${\\x22} \" \"/.*//\""
 
-#: doc/_i18n_security.py:68
+#: doc/_i18n_security.py:81
 #, fuzzy
 #| msgid ""
 #| "Create a trigger (with WeeChat >= 1.1): /trigger add irc_dcc_quotes "
-#| "modifier \"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND $"
-#| "{\\x22} \" \"/.*//\""
+#| "modifier \"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND "
+#| "${\\x22} \" \"/.*//\""
 msgid ""
 "With WeeChat ≥ 1.1, you can create a trigger:\n"
 "\n"
-"<p><pre><code>/trigger add irc_dcc_quotes modifier \"irc_in_privmsg\" \"$"
-"{arguments} =~ ^[^ ]+ :${\\x01}DCC SEND ${\\x22} \" \"/.*//\"</code></pre></"
-"p>\n"
+"<p><pre><code>/trigger add irc_dcc_quotes modifier \"irc_in_privmsg\" "
+"\"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND ${\\x22} \" \"/.*//\"</code></"
+"pre></p>\n"
 "\n"
 "With any older version, there is no simple mitigation, you must upgrade "
 "WeeChat."
@@ -861,12 +937,12 @@ msgstr ""
 "irc_dcc_quotes modifier \"irc_in_privmsg\" \"${arguments} =~ ^[^ ]+ :${\\x01}"
 "DCC SEND ${\\x22} \" \"/.*//\""
 
-#: doc/_i18n_security.py:69
+#: doc/_i18n_security.py:82
 msgid ""
 "You can remove all relays of type \"irc\", see <code>/help relay</code>."
 msgstr ""
 
-#: doc/_i18n_security.py:70
+#: doc/_i18n_security.py:83
 #, fuzzy
 #| msgid "Unload the logger plugin: /plugin unload logger"
 msgid ""
@@ -1422,8 +1498,8 @@ msgid ""
 "On June 26th, WeeChat will turn 20!\n"
 "\n"
 "A live streaming for the 20th anniversary and release of v4.0.0 is scheduled "
-"on Saturday, June 24th, 7pm UTC, for more info: <a href=\"https://"
-"blog.weechat.org/post/2023/06/13/live-streaming-20th-anniversary-release-"
+"on Saturday, June 24th, 7pm UTC, for more info: <a href=\"https://blog."
+"weechat.org/post/2023/06/13/live-streaming-20th-anniversary-release-"
 "v4.0.0\">https://blog.weechat.org/post/2023/06/13/live-streaming-20th-"
 "anniversary-release-v4.0.0</a>."
 msgstr ""
@@ -2037,8 +2113,9 @@ msgstr ""
 "remove_infobar\n"
 "- 多くのコマンドをエイリアスとして利用可能に\n"
 "- 多くのコマンドをサーバ接続時に利用可能に\n"
-"- \"irc_show_away_once\"、\"look_nick_complete_first\"、"
-"\"look_open_near_server\"、\"irc_away_check_max_nicks\" オプションを追加\n"
+"- "
+"\"irc_show_away_once\"、\"look_nick_complete_first\"、\"look_open_near_server\"、\"irc_away_check_max_nicks\" "
+"オプションを追加\n"
 "- WeeChat ホームディレクトリを指定する新しいコマンドライン引数 (-d または --"
 "dir) を追加\n"
 "- 一部のハンガリー語翻訳を追加\n"
@@ -2615,8 +2692,8 @@ msgstr ""
 "ン irc.look.highlight_{server|channel|pv}\n"
 "- irc サーバの新オプション \"capabilities\" (接続時にクライアンの機能を有効化"
 "する)\n"
-"- 時間でバッファ履歴を制限する新オプション "
-"weechat.history.max_buffer_lines_minutes\n"
+"- 時間でバッファ履歴を制限する新オプション weechat.history."
+"max_buffer_lines_minutes\n"
 "- /filter、/ignore、/list で拡張正規表現を利用\n"
 "- 正規表現のフラグとハイライトオプションのサポートを追加\n"
 "- プラグイン API に URL 転送を追加 (hook_process と hook_process_hashtable "
@@ -2852,10 +2929,10 @@ msgstr ""
 "く core で管理するように)\n"
 "- チャンネルに参加後、数分経ってからメッセージを送信したニックネームの参加"
 "メッセージのマスクを外す\n"
-"- チャンネルに参加後に表示される一部のメッセージを隠す新しいオプション "
-"irc.look.display_join_message\n"
-"- 複数のプライベートバッファを自動的に統合する新しいオプション "
-"irc.look.pv_buffer\n"
+"- チャンネルに参加後に表示される一部のメッセージを隠す新しいオプション irc."
+"look.display_join_message\n"
+"- 複数のプライベートバッファを自動的に統合する新しいオプション irc.look."
+"pv_buffer\n"
 "- UHNAMES のサポートを追加\n"
 "- SASL に DH-AES 暗号化を追加\n"
 "- リレープラグインの irc プロトコルで同じポートを使って複数の irc サーバに接"
@@ -2919,8 +2996,8 @@ msgstr ""
 "- バー要素に任意のバッファコンテキストを追加 (例えばルートバーに bitlbee の"
 "ニックネームリストを表示)\n"
 "- 新しいオプション weechat.look.hotlist_{prefix|suffix}\n"
-"- ユーザがキー割り当てエラーにならないようにする新しいオプション "
-"weechat.look.key_bind_safe\n"
+"- ユーザがキー割り当てエラーにならないようにする新しいオプション weechat."
+"look.key_bind_safe\n"
 "- curl で URL をダウンロードする際にプロキシを使うようにする新しいオプション "
 "weechat.network.proxy_curl\n"
 "- 日付変更メッセージを動的に表示\n"
@@ -3037,8 +3114,8 @@ msgstr ""
 "- 多くのバグを修正。\n"
 "\n"
 "新機能と修正されたバグの完全なリストは<a href=\"/blog/post/2014/08/15/"
-"Version-1.0\">開発ブログ</a>または <a href=\"/files/changelog/"
-"ChangeLog-1.0.html\">ChangeLog</a> を参照してください。"
+"Version-1.0\">開発ブログ</a>または <a href=\"/files/changelog/ChangeLog-1.0."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:124
 msgid ""
@@ -3053,8 +3130,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.0.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.0.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:125
 msgid ""
@@ -3107,8 +3184,8 @@ msgstr ""
 "- 多くのバグを修正。\n"
 "\n"
 "新機能と修正されたバグの完全なリストは<a href=\"/blog/post/2015/01/11/"
-"Version-1.1\">開発ブログ</a>または <a href=\"/files/changelog/"
-"ChangeLog-1.1.html\">ChangeLog</a> を参照してください。"
+"Version-1.1\">開発ブログ</a>または <a href=\"/files/changelog/ChangeLog-1.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:126
 msgid ""
@@ -3123,8 +3200,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.1.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.1.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:127
 msgid ""
@@ -3165,8 +3242,8 @@ msgstr ""
 "- 多くのバグを修正。\n"
 "\n"
 "新機能と修正されたバグの完全なリストは<a href=\"/blog/post/2015/05/10/"
-"Version-1.2\">開発ブログ</a>または <a href=\"/files/changelog/"
-"ChangeLog-1.2.html\">ChangeLog</a> を参照してください。"
+"Version-1.2\">開発ブログ</a>または <a href=\"/files/changelog/ChangeLog-1.2."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:128
 msgid ""
@@ -3196,8 +3273,8 @@ msgstr ""
 "- 多くのバグを修正。\n"
 "\n"
 "新機能と修正されたバグの完全なリストは<a href=\"/blog/post/2015/08/16/"
-"Version-1.3\">開発ブログ</a>または <a href=\"/files/changelog/"
-"ChangeLog-1.3.html\">ChangeLog</a> を参照してください。"
+"Version-1.3\">開発ブログ</a>または <a href=\"/files/changelog/ChangeLog-1.3."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:129
 msgid ""
@@ -3245,8 +3322,8 @@ msgstr ""
 "- 多くのバグを修正。\n"
 "\n"
 "新機能と修正されたバグの完全なリストは<a href=\"/blog/post/2016/01/10/"
-"Version-1.4\">開発ブログ</a>または <a href=\"/files/changelog/"
-"ChangeLog-1.4.html\">ChangeLog</a> を参照してください。"
+"Version-1.4\">開発ブログ</a>または <a href=\"/files/changelog/ChangeLog-1.4."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:130
 msgid ""
@@ -3279,8 +3356,8 @@ msgstr ""
 "- 多くのバグを修正。\n"
 "\n"
 "新機能と修正されたバグの完全なリストは<a href=\"/blog/post/2016/05/01/"
-"Version-1.5\">開発ブログ</a>または <a href=\"/files/changelog/"
-"ChangeLog-1.5.html\">ChangeLog</a> を参照してください。"
+"Version-1.5\">開発ブログ</a>または <a href=\"/files/changelog/ChangeLog-1.5."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:131
 msgid ""
@@ -3321,8 +3398,8 @@ msgstr ""
 "- 多くのバグを修正。\n"
 "\n"
 "新機能と修正されたバグの完全なリストは<a href=\"/blog/post/2016/10/02/"
-"Version-1.6\">開発ブログ</a>または <a href=\"/files/changelog/"
-"ChangeLog-1.6.html\">ChangeLog</a> を参照してください。"
+"Version-1.6\">開発ブログ</a>または <a href=\"/files/changelog/ChangeLog-1.6."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:132
 msgid ""
@@ -3359,8 +3436,8 @@ msgstr ""
 "- 多くのバグを修正。\n"
 "\n"
 "新機能と修正されたバグの完全なリストは<a href=\"/blog/post/2017/01/15/"
-"Version-1.7\">開発ブログ</a>または <a href=\"/files/changelog/"
-"ChangeLog-1.7.html\">ChangeLog</a> を参照してください。"
+"Version-1.7\">開発ブログ</a>または <a href=\"/files/changelog/ChangeLog-1.7."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:133
 msgid "Version 1.7.1 (security release)"
@@ -3424,8 +3501,8 @@ msgstr ""
 "- 多くのバグを修正。\n"
 "\n"
 "新機能と修正されたバグの完全なリストは<a href=\"/blog/post/2017/05/13/"
-"Version-1.8\">開発ブログ</a>または <a href=\"/files/changelog/"
-"ChangeLog-1.8.html\">ChangeLog</a> を参照してください。"
+"Version-1.8\">開発ブログ</a>または <a href=\"/files/changelog/ChangeLog-1.8."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:136
 #, python-brace-format
@@ -3464,8 +3541,8 @@ msgstr ""
 "- 多くのバグを修正。\n"
 "\n"
 "新機能と修正されたバグの完全なリストは<a href=\"/blog/post/2017/06/25/"
-"Version-1.9\">開発ブログ</a>または <a href=\"/files/changelog/"
-"ChangeLog-1.9.html\">ChangeLog</a> を参照してください。"
+"Version-1.9\">開発ブログ</a>または <a href=\"/files/changelog/ChangeLog-1.9."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:137
 msgid "Version 1.9.1 (security release)"
@@ -3562,8 +3639,8 @@ msgstr ""
 "- 多くのバグを修正。\n"
 "\n"
 "新機能と修正されたバグの完全なリストは<a href=\"/blog/post/2017/12/03/"
-"Version-2.0\">開発ブログ</a>または <a href=\"/files/changelog/"
-"ChangeLog-2.0.html\">ChangeLog</a> を参照してください。"
+"Version-2.0\">開発ブログ</a>または <a href=\"/files/changelog/ChangeLog-2.0."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:140
 msgid ""
@@ -3578,8 +3655,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-2.0.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-2.0.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:141
 msgid ""
@@ -3596,8 +3673,8 @@ msgid ""
 "- add IRC server option \"split_msg_max_length\"\n"
 "- add option logger.file.fsync\n"
 "- add option logger.look.backlog_conditions\n"
-"- add configuration file for each script plugin (\"python.conf\", "
-"\"perl.conf\", ...)\n"
+"- add configuration file for each script plugin (\"python.conf\", \"perl."
+"conf\", ...)\n"
 "- add \"eval\" option in script commands and info \"xxx_eval\" (python, "
 "perl, ruby, lua and guile)\n"
 "- add infos \"xxx_interpreter\" and \"xxx_version\" in script plugins\n"
@@ -3617,15 +3694,15 @@ msgstr ""
 "- コマンド /print にオプション \"-newbuffer\"、\"-free\"、\"-switch\"、\"-"
 "y\" を追加 (自由内容バッファのサポートを含みます)\n"
 "- コマンド /buffer にオプション \"add\" を追加\n"
-"- 特定のテンプレートで部分補完を強制するオプション "
-"weechat.completion.partial_completion_templates を追加\n"
+"- 特定のテンプレートで部分補完を強制するオプション weechat.completion."
+"partial_completion_templates を追加\n"
 "- IRC サーバオプション \"split_msg_max_length\" を追加\n"
 "- オプション logger.file.fsync を追加\n"
 "- オプション logger.look.backlog_conditions を追加\n"
-"- スクリプトプラグイン毎の設定ファイルを追加 (\"python.conf\"、"
-"\"perl.conf\"、...)\n"
-"- script コマンドに \"eval\" オプションを追加、インフォ \"xxx_eval\" "
-"(python、perl、ruby、lua、guile) を追加\n"
+"- スクリプトプラグイン毎の設定ファイルを追加 (\"python.conf\"、\"perl."
+"conf\"、...)\n"
+"- script コマンドに \"eval\" オプションを追加、インフォ "
+"\"xxx_eval\" (python、perl、ruby、lua、guile) を追加\n"
 "- スクリプトプラグインにインフォ \"xxx_interpreter\"、\"xxx_version\" を追"
 "加\n"
 "- script コマンドにオプション \"version\" を追加\n"
@@ -3633,8 +3710,8 @@ msgstr ""
 "- 多くのバグを修正。\n"
 "\n"
 "新機能と修正されたバグの完全なリストは<a href=\"/blog/post/2018/03/18/"
-"Version-2.1\">開発ブログ</a>または <a href=\"/files/changelog/"
-"ChangeLog-2.1.html\">ChangeLog</a> を参照してください。"
+"Version-2.1\">開発ブログ</a>または <a href=\"/files/changelog/ChangeLog-2.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:142
 msgid ""
@@ -3670,16 +3747,16 @@ msgstr ""
 "(IRC プラグイン)\n"
 "- IRCv3.2 Client Capability Negotiation のサポートを追加\n"
 "- IRCv3.2 invite-notify のサポートを追加\n"
-"- IRCv3.2 chghost を追加、オプション irc.look.smart_filter_chghost と "
-"irc.color.message_chghost を追加\n"
+"- IRCv3.2 chghost を追加、オプション irc.look.smart_filter_chghost と irc."
+"color.message_chghost を追加\n"
 "- オプション xfer.network.send_ack を追加\n"
 "- Python 3.7 のサポートを追加\n"
 "- スクリプトプラグインのメモリリークを修正\n"
 "- 多くのバグを修正。\n"
 "\n"
 "新機能と修正されたバグの完全なリストは<a href=\"/blog/post/2018/07/14/"
-"Version-2.25\">開発ブログ</a>または <a href=\"/files/changelog/"
-"ChangeLog-2.2.htmll\">ChangeLog</a> を参照してください。"
+"Version-2.25\">開発ブログ</a>または <a href=\"/files/changelog/ChangeLog-2.2."
+"htmll\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:143
 msgid ""
@@ -3697,8 +3774,8 @@ msgid ""
 "- allow specifying buffer number/name for /buffer localvar\n"
 "- allow creation of temporary variables with the regex in trigger plugin\n"
 "- add real IP in client description in relay plugin\n"
-"- add repeat of string in evaluation of expressions with "
-"\"repeat:count,string\"\n"
+"- add repeat of string in evaluation of expressions with \"repeat:count,"
+"string\"\n"
 "- many bugs fixed.\n"
 "\n"
 "For complete list of new features and bugs fixed, please look at <a href=\"/"
@@ -3722,8 +3799,8 @@ msgstr ""
 "- 多くのバグを修正。\n"
 "\n"
 "新機能と修正されたバグの完全なリストは<a href=\"/blog/post/2018/10/21/"
-"Version-2.35\">開発ブログ</a>または <a href=\"/files/changelog/"
-"ChangeLog-2.3.html\">ChangeLog</a> を参照してください。"
+"Version-2.35\">開発ブログ</a>または <a href=\"/files/changelog/ChangeLog-2.3."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:144
 #, python-brace-format
@@ -3774,8 +3851,8 @@ msgstr ""
 "- 多くのバグを修正\n"
 "\n"
 "新機能と修正されたバグの完全なリストは<a href=\"/blog/post/2019/02/17/"
-"Version-2.4\">開発ブログ</a>または <a href=\"/files/changelog/"
-"ChangeLog-2.4.html\">ChangeLog</a> を参照してください。"
+"Version-2.4\">開発ブログ</a>または <a href=\"/files/changelog/ChangeLog-2.4."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:145
 #, fuzzy
@@ -3834,8 +3911,8 @@ msgstr ""
 "- 多くのバグを修正。\n"
 "\n"
 "新機能と修正されたバグの完全なリストは<a href=\"/blog/post/2017/01/15/"
-"Version-1.7\">開発ブログ</a>または <a href=\"/files/changelog/"
-"ChangeLog-1.7.html\">ChangeLog</a> を参照してください。"
+"Version-1.7\">開発ブログ</a>または <a href=\"/files/changelog/ChangeLog-1.7."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:146
 #, fuzzy
@@ -3867,8 +3944,8 @@ msgid ""
 "- add option \"close\" in command /window\n"
 "- add infos \"term_colors\" and \"term_color_pairs\"\n"
 "- add infolist \"buflist\" with list of buffer pointers\n"
-"- evaluate option exec.command.shell, change default value to \"${env:SHELL}"
-"\"\n"
+"- evaluate option exec.command.shell, change default value to \"${env:"
+"SHELL}\"\n"
 "- add filters \"h=xxx\" and \"he=xxx\" to filter options by description in "
 "fset buffer (translated or in English)\n"
 "- make command char optional in server option \"command\"\n"
@@ -3894,8 +3971,8 @@ msgstr ""
 "- 多くのバグを修正。\n"
 "\n"
 "新機能と修正されたバグの完全なリストは<a href=\"/blog/post/2017/01/15/"
-"Version-1.7\">開発ブログ</a>または <a href=\"/files/changelog/"
-"ChangeLog-1.7.html\">ChangeLog</a> を参照してください。"
+"Version-1.7\">開発ブログ</a>または <a href=\"/files/changelog/ChangeLog-1.7."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:147
 #, fuzzy
@@ -3931,8 +4008,8 @@ msgid ""
 "- add option xfer.file.download_temporary_suffix\n"
 "- add option weechat.look.nick_color_hash_salt\n"
 "- add different WeeChat icons sizes\n"
-"- add calculation of expression in evaluation of expressions with "
-"\"calc:xxx\"\n"
+"- add calculation of expression in evaluation of expressions with \"calc:"
+"xxx\"\n"
 "- add optional default path (evaluated) in completion \"filename\"\n"
 "- add modifier \"color_encode_ansi\"\n"
 "- add support of Guile 2.2\n"
@@ -3958,8 +4035,8 @@ msgstr ""
 "- 多くのバグを修正。\n"
 "\n"
 "新機能と修正されたバグの完全なリストは<a href=\"/blog/post/2017/01/15/"
-"Version-1.7\">開発ブログ</a>または <a href=\"/files/changelog/"
-"ChangeLog-1.7.html\">ChangeLog</a> を参照してください。"
+"Version-1.7\">開発ブログ</a>または <a href=\"/files/changelog/ChangeLog-1.7."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:148
 #, fuzzy
@@ -4049,8 +4126,8 @@ msgstr ""
 "- 多くのバグを修正。\n"
 "\n"
 "新機能と修正されたバグの完全なリストは<a href=\"/blog/post/2017/01/15/"
-"Version-1.7\">開発ブログ</a>または <a href=\"/files/changelog/"
-"ChangeLog-1.7.html\">ChangeLog</a> を参照してください。"
+"Version-1.7\">開発ブログ</a>または <a href=\"/files/changelog/ChangeLog-1.7."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:151
 msgid ""
@@ -4143,8 +4220,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.0.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.0.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:154
 #, python-brace-format
@@ -4153,8 +4230,8 @@ msgid ""
 "\n"
 "Among the new features:\n"
 "\n"
-"- add options weechat.look.hotlist_update_on_buffer_switch and "
-"weechat.look.read_marker_update_on_buffer_switch\n"
+"- add options weechat.look.hotlist_update_on_buffer_switch and weechat.look."
+"read_marker_update_on_buffer_switch\n"
 "- add option sec.crypt.passphrase_command to read passphrase from an "
 "external program on startup, remove option sec.crypt.passphrase_file\n"
 "- improve debug in command /eval\n"
@@ -4164,8 +4241,8 @@ msgid ""
 "override the value of option weechat.completion.default_template\n"
 "- add option \"recreate\" in command /filter\n"
 "- add raw string in evaluation of expressions with \"raw:xxx\"\n"
-"- add evaluation of conditions in evaluation of expressions with "
-"\"eval_cond:xxx\"\n"
+"- add evaluation of conditions in evaluation of expressions with \"eval_cond:"
+"xxx\"\n"
 "- add info_hashtable \"secured_data\"\n"
 "- add info \"irc_is_message_ignored\"\n"
 "- add IRC server option \"default_chantypes\", used when the server does not "
@@ -4262,8 +4339,8 @@ msgid ""
 "\"split:number,seps,flags,xxx\" and \"split_shell:number,xxx\"\n"
 "- add \"${re:repl_index}\" to get the index of replacement in function "
 "string_eval_expression\n"
-"- add random integer number in evaluation of expressions with "
-"\"random:min,max\"\n"
+"- add random integer number in evaluation of expressions with \"random:min,"
+"max\"\n"
 "- add functions string_cut and file_copy in API\n"
 "- remember insertion order in hashtables\n"
 "- add keys/values with tags in output of irc_message_parse_to_hashtable\n"
@@ -4303,8 +4380,8 @@ msgid ""
 "\n"
 "- improve the IRC message parser\n"
 "- add command /toggle\n"
-"- add user variables in evaluation of expressions with "
-"\"define:name,value\"\n"
+"- add user variables in evaluation of expressions with \"define:name,"
+"value\"\n"
 "- add support of static arrays in hdata\n"
 "- hide key and password in command \"/msg nickserv setpass nick key "
 "password\"\n"
@@ -4332,8 +4409,8 @@ msgstr ""
 "- 多くのバグを修正。\n"
 "\n"
 "新機能と修正されたバグの完全なリストは<a href=\"/blog/post/2017/01/15/"
-"Version-1.7\">開発ブログ</a>または <a href=\"/files/changelog/"
-"ChangeLog-1.7.html\">ChangeLog</a> を参照してください。"
+"Version-1.7\">開発ブログ</a>または <a href=\"/files/changelog/ChangeLog-1.7."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:160
 #, fuzzy
@@ -4396,8 +4473,8 @@ msgid ""
 "- add command /autojoin, add IRC server option \"autojoin_dynamic\"\n"
 "- add IRC message tags in messages displayed\n"
 "- add \"zstd\" (Zstandard) compression in relay weechat protocol, remove "
-"option \"compression\" from \"init\" command, rename option "
-"relay.network.compression_level to relay.network.compression\n"
+"option \"compression\" from \"init\" command, rename option relay.network."
+"compression_level to relay.network.compression\n"
 "- add trigger variables \"${tg_tag_irc_xxx}\" containing IRC message tags\n"
 "- many bugs fixed.\n"
 "\n"
@@ -4420,8 +4497,8 @@ msgstr ""
 "- 多くのバグを修正。\n"
 "\n"
 "新機能と修正されたバグの完全なリストは<a href=\"/blog/post/2017/01/15/"
-"Version-1.7\">開発ブログ</a>または <a href=\"/files/changelog/"
-"ChangeLog-1.7.html\">ChangeLog</a> を参照してください。"
+"Version-1.7\">開発ブログ</a>または <a href=\"/files/changelog/ChangeLog-1.7."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:163
 #, fuzzy
@@ -4481,8 +4558,8 @@ msgstr ""
 "- 多くのバグを修正。\n"
 "\n"
 "新機能と修正されたバグの完全なリストは<a href=\"/blog/post/2017/01/15/"
-"Version-1.7\">開発ブログ</a>または <a href=\"/files/changelog/"
-"ChangeLog-1.7.html\">ChangeLog</a> を参照してください。"
+"Version-1.7\">開発ブログ</a>または <a href=\"/files/changelog/ChangeLog-1.7."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:164
 #, python-brace-format
@@ -4505,14 +4582,14 @@ msgid ""
 "- add support of priority in API function hook_line\n"
 "- add API function string_parse_size\n"
 "- add API function file_compress\n"
-"- add buflist variable \"${hotlist_priority_number}\" (integer version of \"$"
-"{hotlist_priority}\")\n"
+"- add buflist variable \"${hotlist_priority_number}\" (integer version of "
+"\"${hotlist_priority}\")\n"
 "- display SETNAME command in IRC channels and private buffers, add options "
 "irc.color.message_setname and irc.look.smart_filter_setname\n"
 "- add option irc.look.display_pv_nick_change\n"
-"- add options to rotate and compress log files: "
-"logger.file.rotation_compression_level, "
-"logger.file.rotation_compression_type and logger.file.rotation_size_max\n"
+"- add options to rotate and compress log files: logger.file."
+"rotation_compression_level, logger.file.rotation_compression_type and logger."
+"file.rotation_size_max\n"
 "- allow special dict value \"-\" to disable spell checking on a specific "
 "buffer\n"
 "- add elapsed time for trigger execution on monitor buffer when trigger "
@@ -4546,8 +4623,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.0.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.0.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:166
 msgid ""
@@ -4600,16 +4677,16 @@ msgstr ""
 msgid ""
 "Version 4.0.0 is available!\n"
 "\n"
-"New features and bugs fixed: <a href=\"https://blog.weechat.org/post/"
-"2023/06/24/Version-4.0.0\">development blog</a> and <a href=\"/files/doc/"
-"weechat/ChangeLog-4.0.0.html\">ChangeLog</a>."
+"New features and bugs fixed: <a href=\"https://blog.weechat.org/"
+"post/2023/06/24/Version-4.0.0\">development blog</a> and <a href=\"/files/"
+"doc/weechat/ChangeLog-4.0.0.html\">ChangeLog</a>."
 msgstr ""
 "バージョン 1.0.1 をリリースしました!\n"
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.0.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.0.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:168
 #, fuzzy
@@ -4633,8 +4710,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.0.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.0.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:169
 #, fuzzy
@@ -4658,8 +4735,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.0.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.0.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:170
 #, fuzzy
@@ -4683,8 +4760,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.0.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.0.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:171
 #, fuzzy
@@ -4708,8 +4785,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.0.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.0.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:172
 #, fuzzy
@@ -4732,8 +4809,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.0.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.0.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:173
 #, fuzzy
@@ -4756,8 +4833,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.0.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.0.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:174
 #, fuzzy
@@ -4780,8 +4857,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.0.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.0.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:175
 #, fuzzy
@@ -4804,8 +4881,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.0.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.0.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:176
 #, fuzzy
@@ -4819,15 +4896,15 @@ msgstr ""
 msgid ""
 "Version 4.1.0 is available!\n"
 "\n"
-"New features and bugs fixed: <a href=\"/files/doc/weechat/"
-"ChangeLog-4.1.0.html\">ChangeLog</a>."
+"New features and bugs fixed: <a href=\"/files/doc/weechat/ChangeLog-4.1.0."
+"html\">ChangeLog</a>."
 msgstr ""
 "バージョン 1.0.1 をリリースしました!\n"
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.0.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.0.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:177
 #, fuzzy
@@ -4850,8 +4927,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.1.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.1.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:178
 #, fuzzy
@@ -4874,8 +4951,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.1.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.1.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:179
 #, fuzzy
@@ -4898,8 +4975,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.1.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.1.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:180
 #, fuzzy
@@ -4913,15 +4990,15 @@ msgstr ""
 msgid ""
 "Version 4.2.0 is available!\n"
 "\n"
-"New features and bugs fixed: <a href=\"/files/doc/weechat/"
-"ChangeLog-4.2.0.html\">ChangeLog</a>."
+"New features and bugs fixed: <a href=\"/files/doc/weechat/ChangeLog-4.2.0."
+"html\">ChangeLog</a>."
 msgstr ""
 "バージョン 1.0.1 をリリースしました!\n"
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.0.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.0.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:181
 #, fuzzy
@@ -4944,8 +5021,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.1.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.1.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:182
 #, fuzzy
@@ -4968,8 +5045,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.1.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.1.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:183
 #, fuzzy
@@ -4992,8 +5069,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.1.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.1.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:184
 #, fuzzy
@@ -5007,15 +5084,15 @@ msgstr ""
 msgid ""
 "Version 4.3.0 is available!\n"
 "\n"
-"New features and bugs fixed: <a href=\"/files/doc/weechat/"
-"ChangeLog-4.3.0.html\">ChangeLog</a>."
+"New features and bugs fixed: <a href=\"/files/doc/weechat/ChangeLog-4.3.0."
+"html\">ChangeLog</a>."
 msgstr ""
 "バージョン 1.0.1 をリリースしました!\n"
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.0.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.0.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:185
 #, fuzzy
@@ -5038,8 +5115,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.1.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.1.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:186
 #, fuzzy
@@ -5062,8 +5139,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.1.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.1.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:187
 #, fuzzy
@@ -5086,8 +5163,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.1.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.1.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:188
 #, fuzzy
@@ -5110,8 +5187,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.1.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.1.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:189
 #, fuzzy
@@ -5134,8 +5211,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.0.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.0.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:190
 #, fuzzy
@@ -5158,8 +5235,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.0.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.0.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:191
 #, fuzzy
@@ -5180,8 +5257,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.0.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.0.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:192
 #, fuzzy
@@ -5204,8 +5281,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.1.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.1.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:193
 #, fuzzy
@@ -5228,8 +5305,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.1.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.1.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:194
 #, fuzzy
@@ -5252,8 +5329,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.1.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.1.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:195
 #, fuzzy
@@ -5276,8 +5353,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.1.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.1.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:196
 #, fuzzy
@@ -5298,8 +5375,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.0.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.0.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:197
 #, fuzzy
@@ -5322,8 +5399,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.1.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.1.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:198
 #, fuzzy
@@ -5346,8 +5423,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.1.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.1.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:199
 #, fuzzy
@@ -5368,8 +5445,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.0.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.0.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:200
 #, fuzzy
@@ -5392,8 +5469,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.1.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.1.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:201
 #, fuzzy
@@ -5416,8 +5493,8 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.1.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.1.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:202
 #, fuzzy
@@ -5440,10 +5517,32 @@ msgstr ""
 "\n"
 "これはバグフィックスとメンテナンスリリースです。\n"
 "\n"
-"修正されたバグの完全なリストは <a href=\"/files/changelog/"
-"ChangeLog-1.1.1.html\">ChangeLog</a> を参照してください。"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.1.1."
+"html\">ChangeLog</a> を参照してください。"
 
 #: news/_i18n_info.py:203
+#, fuzzy
+#| msgid ""
+#| "Version 1.0.1 is available!\n"
+#| "\n"
+#| "This is a bug fix and maintenance release.\n"
+#| "\n"
+#| "For complete list of bugs fixed, please look at <a href=\"/files/"
+#| "changelog/ChangeLog-1.0.1.html\">ChangeLog</a>."
+msgid ""
+"Version 4.7.0 is available!\n"
+"\n"
+"New features and bugs fixed: <a href=\"https://github.com/weechat/weechat/"
+"releases/tag/v4.7.0\">ChangeLog</a>."
+msgstr ""
+"バージョン 1.0.1 をリリースしました!\n"
+"\n"
+"これはバグフィックスとメンテナンスリリースです。\n"
+"\n"
+"修正されたバグの完全なリストは <a href=\"/files/changelog/ChangeLog-1.0.1."
+"html\">ChangeLog</a> を参照してください。"
+
+#: news/_i18n_info.py:204
 msgid ""
 "Version v0.1.2 is available!\n"
 "\n"
@@ -5477,11 +5576,11 @@ msgstr ""
 "2005-05-24 追記: 起動時と Perl/Python の検出時のクラッシュを修正、現在のバー"
 "ジョンは 0.1.2.1 です。"
 
-#: news/_i18n_info.py:204
+#: news/_i18n_info.py:205
 msgid "WeeChat - Wee Enhanced Environment for Chat"
 msgstr "WeeChat - 小さくて強力なチャット環境"
 
-#: news/_i18n_info.py:205
+#: news/_i18n_info.py:206
 #, fuzzy
 #| msgid ""
 #| "WeeChat repositories (weechat, scripts, qweechat) have been moved to "
@@ -5494,8 +5593,8 @@ msgid ""
 "WeeChat IRC channels (official and non-official ones) have moved from "
 "freenode to <a href=\"https://libera.chat/\">libera.chat</a>.\n"
 "\n"
-"For more information, please look at <a href=\"https://blog.weechat.org/post/"
-"2021/05/29/IRC-channels-moved-to-libera.chat\">development blog</a>.\n"
+"For more information, please look at <a href=\"https://blog.weechat.org/"
+"post/2021/05/29/IRC-channels-moved-to-libera.chat\">development blog</a>.\n"
 "\n"
 "See you soon there!"
 msgstr ""
@@ -5506,7 +5605,7 @@ msgstr ""
 "より詳しい情報は、<a href=\"/blog/post/2014/03/03/Git-repositories-moved-to-"
 "Github\">開発ブログ</a>を参照してください。"
 
-#: news/_i18n_info.py:206
+#: news/_i18n_info.py:207
 msgid ""
 "WeeChat has many new important features since some weeks:\n"
 "- multi-windows management (with horizontal and vertical window split)\n"
@@ -5529,11 +5628,11 @@ msgstr ""
 "まだ開発中です。\n"
 "問題やバッファ/ウィンドウ間の操作を改良するための提案を募集しています。"
 
-#: news/_i18n_info.py:207
+#: news/_i18n_info.py:208
 msgid "WeeChat in Cygwin"
 msgstr "WeeChat の Cygwin 版"
 
-#: news/_i18n_info.py:208
+#: news/_i18n_info.py:209
 msgid ""
 "WeeChat is now in Cygwin, and can be installed with setup.exe.\n"
 "Version 0.4.2 is available for 32 and 64-bit Cygwin.\n"
@@ -5548,7 +5647,7 @@ msgstr ""
 "注意: Guile プラグインは Cygwin ではまだ利用できない guile >= 2.0 が必要なの"
 "で、削除されています。"
 
-#: news/_i18n_info.py:209
+#: news/_i18n_info.py:210
 msgid ""
 "WeeChat project is started.\n"
 "\n"
@@ -5568,7 +5667,7 @@ msgstr ""
 "- 高速、軽量、スクリプトで拡張可能\n"
 "- ..."
 
-#: news/_i18n_info.py:210
+#: news/_i18n_info.py:211
 msgid ""
 "WeeChat project now accepts donations via Paypal account, with secured "
 "payment."
@@ -5576,7 +5675,7 @@ msgstr ""
 "WeeChat プロジェクトは secured payment を用いた Paypal アカウント経由の寄付を"
 "受け付けるようになりました。"
 
-#: news/_i18n_info.py:211
+#: news/_i18n_info.py:212
 msgid ""
 "WeeChat project now accepts recurring donations via Liberapay, which has "
 "very low fees (see <a href=\"https://liberapay.com/about/"
@@ -5588,7 +5687,7 @@ msgstr ""
 "about/faq#differences\">Liberapay とその他のクラウドファンディングサービスの"
 "比較</a>を参照してください)。"
 
-#: news/_i18n_info.py:212
+#: news/_i18n_info.py:213
 msgid ""
 "WeeChat repositories (weechat, scripts, qweechat) have been moved to GitHub, "
 "in WeeChat organization: <a href=\"https://github.com/weechat\">https://"
@@ -5604,15 +5703,15 @@ msgstr ""
 "より詳しい情報は、<a href=\"/blog/post/2014/03/03/Git-repositories-moved-to-"
 "Github\">開発ブログ</a>を参照してください。"
 
-#: news/_i18n_info.py:213
+#: news/_i18n_info.py:214
 msgid "WeeChat screenshot"
 msgstr "WeeChat のスクリーンショット"
 
-#: news/_i18n_info.py:214
+#: news/_i18n_info.py:215
 msgid "WeeChat scripts page"
 msgstr "WeeChat スクリプトページ"
 
-#: news/_i18n_info.py:215
+#: news/_i18n_info.py:216
 msgid ""
 "WeeChat scripts page (today Perl scripts only) has been added.\n"
 "On this page you can submit your script (need to be approved by WeeChat "
@@ -5629,7 +5728,7 @@ msgstr ""
 "注意: Perl スクリプトを使うには WeeChat 0.0.3 より高いバージョンが必要です。"
 "今のところ開発版を使う以外に方法はありません。"
 
-#: news/_i18n_info.py:216
+#: news/_i18n_info.py:217
 msgid ""
 "WeeChat story page is now available, as screenshots. You can see differences "
 "between all versions in one view!\n"
@@ -5639,15 +5738,15 @@ msgstr ""
 "ジョンが一覧表示できます!\n"
 "開発版も載っており、頻繁に更新されています。"
 
-#: news/_i18n_info.py:217
+#: news/_i18n_info.py:218
 msgid "WeeChat users map"
 msgstr "WeeChat ユーザマップ"
 
-#: news/_i18n_info.py:218
+#: news/_i18n_info.py:219
 msgid "WeeChat will merge with irssi"
 msgstr "WeeChat は irssi と統合される予定です"
 
-#: news/_i18n_info.py:219
+#: news/_i18n_info.py:220
 msgid ""
 "WeeChat, the fast, light and extensible IRC client, is released for the "
 "first time, version 0.0.1.\n"
@@ -5695,7 +5794,7 @@ msgstr ""
 "どんな提案やバグ報告も歓迎です。開発チームと連絡を取るには WeeChat のサポート"
 "ページを参照してください。"
 
-#: news/_i18n_info.py:220
+#: news/_i18n_info.py:221
 msgid "XZ packages"
 msgstr "XZ パッケージ"
 
@@ -7629,12 +7728,6 @@ msgstr "iTunes の操作と現在再生中曲に関する情報を得るスク�
 msgid "not compatible with Python 3"
 msgstr "Python 3 と互換性を持つスクリプトの数"
 
-#: scripts/models.py:138
-#, fuzzy
-#| msgid "Python scripts"
-msgid "Popular script"
-msgstr "Python スクリプトの総数"
-
 #. Translators: this is a date format, see: http://www.php.net/date
 #. Translators: (note: the result string must be short, use abbreviation
 #. Translators: for month if possible)
@@ -8031,8 +8124,8 @@ msgstr "WeeChat とは?"
 #: templates/about/history.html:15
 msgid "WeeChat stands for \"Wee Enhanced Environment for Chat\"."
 msgstr ""
-"WeeChat とは \"Wee Enhanced Environment for Chat (小さくて強力なチャット環境)"
-"\" の略です。"
+"WeeChat とは \"Wee Enhanced Environment for Chat (小さくて強力なチャット環"
+"境)\" の略です。"
 
 #: templates/about/history.html:20
 msgid "In early 2003, I looked for an IRC client with following features:"
@@ -8686,17 +8779,16 @@ msgstr ""
 #, fuzzy
 #| msgid ""
 #| "Please <strong>DO NOT</strong> file a GitHub issue for security related "
-#| "problems, but send an email to <a "
-#| "href=\"mailto:security@weechat.org\">security@weechat.org</a> instead."
+#| "problems, but send an email to <a href=\"mailto:security@weechat."
+#| "org\">security@weechat.org</a> instead."
 msgid ""
 "To report a security issue, please <strong>DO NOT</strong> file an issue on "
-"GitHub, but send an email to <a "
-"href=\"mailto:security@weechat.org\">security@weechat.org</a> instead."
+"GitHub, but send an email to <a href=\"mailto:security@weechat."
+"org\">security@weechat.org</a> instead."
 msgstr ""
 "セキュリティ関連の問題を GitHub issue から<strong>報告しないで</strong>くださ"
-"い。その代わり、セキュリティ関連の問題を報告する場合は <a "
-"href=\"mailto:security@weechat.org\">security@weechat.org</a> にメールを送信"
-"してください。"
+"い。その代わり、セキュリティ関連の問題を報告する場合は <a href=\"mailto:"
+"security@weechat.org\">security@weechat.org</a> にメールを送信してください。"
 
 #: templates/doc/security.html:39
 #, fuzzy, python-format
@@ -9098,8 +9190,8 @@ msgid ""
 "Create a weechat.list file with the repository, according to your "
 "distribution/version:"
 msgstr ""
-"お使いのディストリビューション/バージョンに対応するリポジトリを含む "
-"weechat.list ファイルを作成してください:"
+"お使いのディストリビューション/バージョンに対応するリポジトリを含む weechat."
+"list ファイルを作成してください:"
 
 #: templates/download/debian.html:74
 msgid "Choose your distribution/version"
@@ -9304,8 +9396,8 @@ msgstr "署名の確認方法:"
 #| "Check that the fingerprint is correct by asking to a developer on "
 #| "#weechat (irc.libera.chat)."
 msgid ""
-"Check the key fingerprint by checking the topic on #weechat channel "
-"(irc.libera.chat) or by asking to a developer."
+"Check the key fingerprint by checking the topic on #weechat channel (irc."
+"libera.chat) or by asking to a developer."
 msgstr ""
 "#weechat (irc.libera.chat) の開発者に尋ねて指紋が正しいことを確認してくださ"
 "い。"
@@ -9819,8 +9911,8 @@ msgstr ""
 
 #: templates/scripts/python3.html:109
 msgid ""
-"All new scripts as well as script updates must be compatible with Python "
-"3.x. Extra support of Python 2.x is optional."
+"All new scripts as well as script updates must be compatible with Python 3."
+"x. Extra support of Python 2.x is optional."
 msgstr ""
 "すべての新しいスクリプトおよびスクリプト更新に対して Python 3.x との互換性を"
 "持つことが求められます。Python 2.x との互換性継続は任意です。"
@@ -10167,3 +10259,8 @@ msgstr "内部エラー。"
 #: themes/models.py:303
 msgid "Invalid name: different from theme."
 msgstr "不正な名前: テーマとは異なります。"
+
+#, fuzzy
+#~| msgid "Python scripts"
+#~ msgid "Popular script"
+#~ msgstr "Python スクリプトの総数"

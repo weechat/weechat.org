@@ -22,8 +22,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-11 11:34+0200\n"
-"PO-Revision-Date: 2025-05-11 11:35+0200\n"
+"POT-Creation-Date: 2025-07-19 12:23+0200\n"
+"PO-Revision-Date: 2025-07-19 12:32+0200\n"
 "Last-Translator: Sébastien Helleu <flashcode@flashtux.org>\n"
 "Language-Team: French <flashcode@flashtux.org>\n"
 "Language: fr\n"
@@ -134,8 +134,8 @@ msgid ""
 "Add log file rotation and compression, add option -save in command /upgrade, "
 "add key alt+backspace."
 msgstr ""
-"Ajout de rotation et compression des fichiers de log, ajout de l'option "
-"-save dans la commande /upgrade, ajout de la touche alt+backspace."
+"Ajout de rotation et compression des fichiers de log, ajout de l'option -"
+"save dans la commande /upgrade, ajout de la touche alt+backspace."
 
 #: about/_i18n_keydates.py:26
 msgid ""
@@ -505,6 +505,14 @@ msgstr "Wiki (contributions utilisateurs)"
 
 #: doc/_i18n_security.py:13
 msgid ""
+"A buffer overflow happens in base 32 encoding in evaluated expressions, "
+"where padding is made in the resulting string."
+msgstr ""
+"Un dépassement de tampon se produit dans l'encodage base 32 des expressions "
+"évaluées, où le padding est effectué sur la chaîne résultante."
+
+#: doc/_i18n_security.py:14
+msgid ""
 "A buffer overflow happens when a new IRC message 005 is received with longer "
 "nick prefixes.\n"
 "<br>\n"
@@ -518,19 +526,19 @@ msgstr ""
 "message 005 avec les préfixes de pseudo, donc le problème devrait se limiter "
 "aux serveurs IRC malveillants."
 
-#: doc/_i18n_security.py:14
+#: doc/_i18n_security.py:15
 msgid "A buffer overflow happens when decoding some IRC colors in strings."
 msgstr ""
 "Un dépassement de tampon se produit lors du décodage de certaines couleurs "
 "IRC dans les chaînes de caractères."
 
-#: doc/_i18n_security.py:15
+#: doc/_i18n_security.py:16
 msgid "A buffer overflows happens in build of strings in different places."
 msgstr ""
 "Un dépassement de tampon se produit dans la construction de chaînes de "
 "caractères à différents endroits."
 
-#: doc/_i18n_security.py:16
+#: doc/_i18n_security.py:17
 msgid ""
 "A crash happens when decoding a malformed websocket frame in relay plugin.\n"
 "<br>\n"
@@ -544,7 +552,7 @@ msgstr ""
 "le paquet websocket mal formé pouvant être reçu avant l'authentification du "
 "client."
 
-#: doc/_i18n_security.py:17
+#: doc/_i18n_security.py:18
 msgid ""
 "A crash happens when receiving some WeeChat internal color codes in IRC "
 "messages."
@@ -552,15 +560,15 @@ msgstr ""
 "Un crash se produit lors de la réception de certains codes couleurs internes "
 "de WeeChat dans les messages IRC."
 
-#: doc/_i18n_security.py:18
+#: doc/_i18n_security.py:19
 msgid "API"
 msgstr "API"
 
-#: doc/_i18n_security.py:19
+#: doc/_i18n_security.py:20
 msgid "Access of uninitialized pointer"
 msgstr "Accès à un pointeur non initialisé"
 
-#: doc/_i18n_security.py:20
+#: doc/_i18n_security.py:21
 msgid ""
 "After changing options <code>weechat.network.gnutls_ca_system</code> or "
 "<code>weechat.network.gnutls_ca_user</code>, you must restart WeeChat."
@@ -569,7 +577,7 @@ msgstr ""
 "ou <code>weechat.network.gnutls_ca_user</code>, vous devez redémarrer "
 "WeeChat."
 
-#: doc/_i18n_security.py:21
+#: doc/_i18n_security.py:22
 msgid ""
 "After changing the options <code>weechat.network.gnutls_ca_system</code> or "
 "<code>weechat.network.gnutls_ca_user</code>, the TLS verification function "
@@ -593,7 +601,7 @@ msgstr ""
 "connexion à un serveur faite par une extension ou un script utilisant la "
 "fonction hook_connect."
 
-#: doc/_i18n_security.py:22
+#: doc/_i18n_security.py:23
 msgid ""
 "An integer overflow can happen when looping over items in a list.\n"
 "<br>\n"
@@ -612,83 +620,139 @@ msgstr ""
 "Sur les systèmes 16 bits, cela peut se produire avec une liste qui contient "
 "plus de 32 767 éléments."
 
-#: doc/_i18n_security.py:23
+#: doc/_i18n_security.py:24
+#, python-brace-format
+msgid ""
+"An integer overflow happens when using numbers with 9 or more decimals in "
+"calculation of expression, for example: <code>/eval -n ${calc:0.123456789}</"
+"code>."
+msgstr ""
+"Un dépassement d'entier se produit lors de l'utilisation de nombres avec 9 "
+"décimales ou plus, dans le calcul d'expression, par exemple : <code>/eval -n "
+"${calc:0.123456789}</code>."
+
+#: doc/_i18n_security.py:25
+msgid "An integer overflow may happen in base32 encode/decode functions."
+msgstr ""
+"Un dépassement d'entier peut se produire dans les fonctions d'encodage/"
+"décodage base32."
+
+#: doc/_i18n_security.py:26
+msgid "Buffer overflow in base 32 encoding in evaluated expressions."
+msgstr ""
+"Dépassement de tampon dans l'encodage base 32 des expressions évaluées."
+
+#: doc/_i18n_security.py:27
+msgid ""
+"Buffer overflow in function util_parse_time when the received date/time has "
+"no date and a length of 117 or more chars.\n"
+"<br>\n"
+"It can be an issue in IRC plugin, where the \"time\" tag received in IRC "
+"messages is parsed using this function."
+msgstr ""
+"Dépassement de tampon dans la fonction util_parse_time lorsque la date/heure "
+"reçue n'a pas de date et une longueur de 117 caractères ou plus.\n"
+"<br>\n"
+"Cela peut être problématique dans l'extension IRC, où l'heure reçue "
+"(\"time\") dans un message IRC est lue en utilisant cette fonction."
+
+#: doc/_i18n_security.py:28
+msgid "Buffer overflow in parsing of date/time."
+msgstr "Dépassement de tampon dans l'analyse de la date et de l'heure."
+
+#: doc/_i18n_security.py:29
+msgid "Buffer overflow in range of chars in evaluated expressions."
+msgstr ""
+"Dépassement de tampon dans l'intervalle de caractères des expressions "
+"évaluées."
+
+#: doc/_i18n_security.py:30
+msgid "Buffer overflow in syntax highlighting of evaluated expressions."
+msgstr ""
+"Dépassement de tampon dans la mise en valeur de syntaxe des expressions "
+"évaluées."
+
+#: doc/_i18n_security.py:31
 msgid "Buffer overflow on malformed IRC message 324 (channel mode)."
 msgstr "Dépassement de tampon sur un IRC 324 (mode de canal) mal formé."
 
-#: doc/_i18n_security.py:24
+#: doc/_i18n_security.py:32
 msgid "Buffer overflow on new IRC message 005 with nick prefixes."
 msgstr ""
 "Dépassement de tampon sur un nouveau message IRC 005 avec des préfixes de "
 "pseudo."
 
-#: doc/_i18n_security.py:25
+#: doc/_i18n_security.py:33
 msgid "Buffer overflow when receiving a DCC file."
 msgstr "Dépassement de tampon lors de la réception d'un fichier DCC."
 
-#: doc/_i18n_security.py:26
+#: doc/_i18n_security.py:34
 msgid ""
 "Buffer overflow when receiving a malformed IRC message 324 (channel mode)."
 msgstr ""
 "Dépassement de tampon lors de la réception d'un message IRC 324 (mode de "
 "canal) mal formé."
 
-#: doc/_i18n_security.py:27
+#: doc/_i18n_security.py:35
 msgid "Buffer overflow when removing quotes in DCC filename."
 msgstr ""
 "Dépassement de tampon lors de la suppression des guillemets dans le nom de "
 "fichier DCC."
 
-#: doc/_i18n_security.py:28
+#: doc/_i18n_security.py:36
 msgid "Buffer overflows in build of strings."
 msgstr "Dépassement de tampon dans la constructions de chaînes de caractères."
 
-#: doc/_i18n_security.py:29
+#: doc/_i18n_security.py:37
+msgid "Core"
+msgstr "Core"
+
+#: doc/_i18n_security.py:38
 msgid "Core, IRC"
 msgstr "Core, IRC"
 
-#: doc/_i18n_security.py:30
+#: doc/_i18n_security.py:39
 msgid "Core, Plugins"
 msgstr "Core, Extensions"
 
-#: doc/_i18n_security.py:31
+#: doc/_i18n_security.py:40
 msgid "Crash in API function infobar_printf."
 msgstr "Crash dans la fonction API infobar_printf."
 
-#: doc/_i18n_security.py:32
+#: doc/_i18n_security.py:41
 msgid "Crash on IRC commands sent via Relay."
 msgstr "Crash sur des commandes IRC envoyées via Relay."
 
-#: doc/_i18n_security.py:33
+#: doc/_i18n_security.py:42
 msgid "Crash on malformed IRC message 352 (WHO)."
 msgstr "Crash sur un message IRC 352 (WHO) mal formé."
 
-#: doc/_i18n_security.py:34
+#: doc/_i18n_security.py:43
 msgid "Crash on malformed websocket frame in relay plugin."
 msgstr "Crash sur un paquet websocket mal formé dans l'extension relay."
 
-#: doc/_i18n_security.py:35
+#: doc/_i18n_security.py:44
 msgid "Crash on nicks monitored with /notify."
 msgstr "Crash sur des pseudos surveillés avec /notify."
 
-#: doc/_i18n_security.py:36
+#: doc/_i18n_security.py:45
 msgid "Crash on send of unknown commands to IRC server."
 msgstr "Crash sur l'envoi de commandes inconnues au serveur IRC."
 
-#: doc/_i18n_security.py:37
+#: doc/_i18n_security.py:46
 msgid "Crash when decoding IRC colors."
 msgstr "Crash lors du décodage des couleurs IRC."
 
-#: doc/_i18n_security.py:38
+#: doc/_i18n_security.py:47
 msgid "Crash when receiving WeeChat color codes in IRC messages."
 msgstr ""
 "Crash lors de la réception de codes couleurs WeeChat dans les messages IRC."
 
-#: doc/_i18n_security.py:39
+#: doc/_i18n_security.py:48
 msgid "Crash when receiving a malformed IRC message 352 (WHO)."
 msgstr "Crash lors de la réception d'un message IRC 352 (WHO) mal formé."
 
-#: doc/_i18n_security.py:40
+#: doc/_i18n_security.py:49
 msgid ""
 "Date/time conversion specifiers are expanded after replacing buffer local "
 "variables in name of log files. In some cases, this can lead to an error in "
@@ -699,7 +763,7 @@ msgstr ""
 "log. Dans certains cas, cela peut provoquer une erreur dans la fonction "
 "strftime et un crash causé par l'utilisation d'une variable non initialisée."
 
-#: doc/_i18n_security.py:41
+#: doc/_i18n_security.py:50
 msgid ""
 "Do not use command <code>/notify</code> with nicks containing formatting "
 "chars like \"%\"."
@@ -707,7 +771,7 @@ msgstr ""
 "Ne pas utiliser la commande <code>/notify</code> avec des pseudos contenant "
 "des caractère de formatage comme \"%\"."
 
-#: doc/_i18n_security.py:42
+#: doc/_i18n_security.py:51
 msgid ""
 "Due to insufficient check of TLS certificate in IRC plugin, man-in-the-"
 "middle attackers can spoof a server via an arbitrary certificate."
@@ -716,80 +780,104 @@ msgstr ""
 "IRC, des attaquants de type \"man-in-the-middle\" peuvent usurper un serveur "
 "par un certificat arbitraire."
 
-#: doc/_i18n_security.py:43
+#: doc/_i18n_security.py:52
 msgid "IRC"
 msgstr "IRC"
 
-#: doc/_i18n_security.py:44
+#: doc/_i18n_security.py:53
 msgid "IRC, Plugins"
 msgstr "IRC, Extensions"
 
-#: doc/_i18n_security.py:45
+#: doc/_i18n_security.py:54
 msgid "Improper certificate validation"
 msgstr "Validation de certificat incorrecte"
 
-#: doc/_i18n_security.py:46
+#: doc/_i18n_security.py:55
 msgid "Improper input validation"
 msgstr "Validation d'entrée incorrecte"
 
-#: doc/_i18n_security.py:47
+#: doc/_i18n_security.py:56
 msgid "Integer Overflow or Wraparound"
 msgstr "Dépassement d'entier"
 
-#: doc/_i18n_security.py:48
+#: doc/_i18n_security.py:57
+msgid ""
+"Integer overflow happens in conversion of a version as string to an integer "
+"number, if the version is greater than 0x7FFFFFFF (127.255.255.255), so if "
+"the version is at least 0x80000000 (128.0.0.0)."
+msgstr ""
+"Un dépassement d'entier se produit dans la conversion d'une version de "
+"chaîne de caractères vers un nombre entier, si la version est supérieure à "
+"0x7FFFFFFF (127.255.255.255), donc si la version est au moins 0x80000000 "
+"(128.0.0.0)."
+
+#: doc/_i18n_security.py:58
+msgid "Integer overflow in base32 decode/encode functions."
+msgstr "Dépassement d'entier dans les fonctions d'encodage/décodage base32."
+
+#: doc/_i18n_security.py:59
+msgid "Integer overflow in conversion of version to an integer number."
+msgstr "Dépassement d'entier dans la conversion de version en entier."
+
+#: doc/_i18n_security.py:60
 msgid "Integer overflow in loops on lists."
 msgstr "Dépassement d'entier dans les boucles sur les listes."
 
-#: doc/_i18n_security.py:49
+#: doc/_i18n_security.py:61
+msgid "Integer overflow with decimal numbers in calculation of expression."
+msgstr ""
+"Dépassement d'entier dans les nombres décimaux dans le calcul d'expressions."
+
+#: doc/_i18n_security.py:62
 msgid "Logger"
 msgstr "Logger"
 
-#: doc/_i18n_security.py:50
+#: doc/_i18n_security.py:63
 msgid "Out-of-bounds read"
 msgstr "Lecture hors limites"
 
-#: doc/_i18n_security.py:51
+#: doc/_i18n_security.py:64
 msgid "Out-of-bounds write"
 msgstr "Écriture hors limites"
 
-#: doc/_i18n_security.py:52
+#: doc/_i18n_security.py:65
 msgid "Possible man-in-the-middle attack in TLS connection to IRC server."
 msgstr ""
 "Attaque possible de type \"man-in-the-middle\" dans la connexion TLS au "
 "serveur IRC."
 
-#: doc/_i18n_security.py:53
+#: doc/_i18n_security.py:66
 msgid "Possible man-in-the-middle attack in TLS connection to servers."
 msgstr ""
 "Attaque possible de type \"man-in-the-middle\" dans la connexion TLS aux "
 "serveurs."
 
-#: doc/_i18n_security.py:54
+#: doc/_i18n_security.py:67
 msgid "Relay"
 msgstr "Relay"
 
-#: doc/_i18n_security.py:55
+#: doc/_i18n_security.py:68
 msgid "Remote execution of commands via scripts."
 msgstr "Exécution de commandes à distance via les scripts."
 
-#: doc/_i18n_security.py:56
+#: doc/_i18n_security.py:69
 msgid "Remove/unload all scripts calling the API function hook_process."
 msgstr ""
 "Supprimer/décharger tous les scripts appelant la fonction API hook_process."
 
-#: doc/_i18n_security.py:57
+#: doc/_i18n_security.py:70
 msgid "Remove/unload all scripts calling the API function infobar_printf."
 msgstr ""
 "Supprimer/décharger tous les scripts appelant la fonction API infobar_printf."
 
-#: doc/_i18n_security.py:58
+#: doc/_i18n_security.py:71
 msgid ""
 "Strings are built with uncontrolled format in API function infobar_printf."
 msgstr ""
 "Les chaînes sont construites avec un format non spécifié dans la fonction de "
 "l'API infobar_printf."
 
-#: doc/_i18n_security.py:59
+#: doc/_i18n_security.py:72
 msgid ""
 "Strings are built with uncontrolled format when IRC commands are redirected "
 "by relay plugin. If the output or redirected command contains formatting "
@@ -800,7 +888,7 @@ msgstr ""
 "commande redirigée contient des caractères de formatage comme \"%\", cela "
 "peut provoquer un crash de WeeChat."
 
-#: doc/_i18n_security.py:60
+#: doc/_i18n_security.py:73
 msgid ""
 "Strings are built with uncontrolled format when nicks containing \"%\" are "
 "monitored with command <code>/notify</code>."
@@ -808,17 +896,17 @@ msgstr ""
 "Les chaînes sont construites avec un format non spécifié lorsque des pseudos "
 "contenant \"%\" sont surveillés avec la commande <code>/notify</code>."
 
-#: doc/_i18n_security.py:61
+#: doc/_i18n_security.py:74
 msgid ""
 "Strings are built with uncontrolled format when unknown IRC commands are "
 "sent to server, if option <code>irc.network.send_unknown_commands</code> is "
 "enabled."
 msgstr ""
 "Les chaînes sont construites avec un format non spécifié lorsque des "
-"commandes IRC inconnues sont envoyées au serveur, si l'option "
-"<code>irc.network.send_unknown_commands</code> est activée."
+"commandes IRC inconnues sont envoyées au serveur, si l'option <code>irc."
+"network.send_unknown_commands</code> est activée."
 
-#: doc/_i18n_security.py:62
+#: doc/_i18n_security.py:75
 msgid ""
 "There are multiple ways to mitigate this issue:\n"
 "<ul>\n"
@@ -838,12 +926,12 @@ msgstr ""
 "voir : <code>/help relay.network.allowed_ips</code></li>\n"
 "</ul>"
 
-#: doc/_i18n_security.py:63
+#: doc/_i18n_security.py:76
 msgid ""
 "There are multiple ways to mitigate this issue:\n"
 "<ul>\n"
-"  <li>Turn off option to send unknown commands: <code>/set "
-"irc.network.send_unknown_commands off</code></li>\n"
+"  <li>Turn off option to send unknown commands: <code>/set irc.network."
+"send_unknown_commands off</code></li>\n"
 "  <li>Do not use formatting chars like \"%\" when sending unknown commands "
 "to server.</li>\n"
 "</ul>"
@@ -856,7 +944,7 @@ msgstr ""
 "de commandes inconnues au serveur.</li>\n"
 "</ul>"
 
-#: doc/_i18n_security.py:64
+#: doc/_i18n_security.py:77
 msgid ""
 "Turn of handling of colors in incoming IRC messages:\n"
 "\n"
@@ -866,7 +954,7 @@ msgstr ""
 "\n"
 "<p><pre><code>/set irc.network.colors_receive off</code></pre></p>"
 
-#: doc/_i18n_security.py:65
+#: doc/_i18n_security.py:78
 msgid ""
 "Untrusted command for function hook_process could lead to execution of "
 "commands, because of shell expansions (so the problem is only caused by some "
@@ -876,59 +964,59 @@ msgstr ""
 "l'exécution de commandes, à cause des expansions du shell (donc le problème "
 "est causé seulement par certains scripts, pas par WeeChat lui-même)."
 
-#: doc/_i18n_security.py:66
+#: doc/_i18n_security.py:79
 msgid "Use of invalid pointer in build of log filename."
 msgstr ""
 "Utilisation d'un pointeur invalide dans la construction du nom de fichier de "
 "log."
 
-#: doc/_i18n_security.py:67
+#: doc/_i18n_security.py:80
 #, python-brace-format
 msgid ""
 "With WeeChat ≥ 1.1, you can create a trigger:\n"
 "\n"
-"<p><pre><code>/trigger add fix_irc_352 modifier \"irc_in_352\" \"$"
-"{arguments} =~ .* \\*$\" \"/.*//\"</code></pre></p>\n"
+"<p><pre><code>/trigger add fix_irc_352 modifier \"irc_in_352\" "
+"\"${arguments} =~ .* \\*$\" \"/.*//\"</code></pre></p>\n"
 "\n"
 "With any older version, there is no simple mitigation, you must upgrade "
 "WeeChat."
 msgstr ""
 "Avec WeeChat ≥ 1.1, vous pouvez créer un trigger :\n"
 "\n"
-"<p><pre><code>/trigger add fix_irc_352 modifier \"irc_in_352\" \"$"
-"{arguments} =~ .* \\*$\" \"/.*//\"</code></pre></p>\n"
+"<p><pre><code>/trigger add fix_irc_352 modifier \"irc_in_352\" "
+"\"${arguments} =~ .* \\*$\" \"/.*//\"</code></pre></p>\n"
 "\n"
 "Avec toute autre version plus ancienne, il n'y a pas d'atténuation simple, "
 "vous devez mettre à jour WeeChat."
 
-#: doc/_i18n_security.py:68
+#: doc/_i18n_security.py:81
 msgid ""
 "With WeeChat ≥ 1.1, you can create a trigger:\n"
 "\n"
-"<p><pre><code>/trigger add irc_dcc_quotes modifier \"irc_in_privmsg\" \"$"
-"{arguments} =~ ^[^ ]+ :${\\x01}DCC SEND ${\\x22} \" \"/.*//\"</code></pre></"
-"p>\n"
+"<p><pre><code>/trigger add irc_dcc_quotes modifier \"irc_in_privmsg\" "
+"\"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND ${\\x22} \" \"/.*//\"</code></"
+"pre></p>\n"
 "\n"
 "With any older version, there is no simple mitigation, you must upgrade "
 "WeeChat."
 msgstr ""
 "Avec WeeChat ≥ 1.1, vous pouvez créer un trigger :\n"
 "\n"
-"<p><pre><code>/trigger add irc_dcc_quotes modifier \"irc_in_privmsg\" \"$"
-"{arguments} =~ ^[^ ]+ :${\\x01}DCC SEND ${\\x22} \" \"/.*//\"</code></pre></"
-"p>\n"
+"<p><pre><code>/trigger add irc_dcc_quotes modifier \"irc_in_privmsg\" "
+"\"${arguments} =~ ^[^ ]+ :${\\x01}DCC SEND ${\\x22} \" \"/.*//\"</code></"
+"pre></p>\n"
 "\n"
 "Avec toute autre version plus ancienne, il n'y a pas d'atténuation simple, "
 "vous devez mettre à jour WeeChat."
 
-#: doc/_i18n_security.py:69
+#: doc/_i18n_security.py:82
 msgid ""
 "You can remove all relays of type \"irc\", see <code>/help relay</code>."
 msgstr ""
 "Vous pouvez désactiver tous les relais de type \"irc\", voir <code>/help "
 "relay</code>."
 
-#: doc/_i18n_security.py:70
+#: doc/_i18n_security.py:83
 msgid ""
 "You can unload the logger plugin, thus stopping recording of all buffers: "
 "<code>/plugin unload logger</code>."
@@ -1301,9 +1389,9 @@ msgstr ""
 "Des dépôts Debian/Ubuntu pour les architectures arm64 et armhf ont été "
 "ajoutés, ils remplacent les dépôts Raspbian (désormais inactifs).\n"
 "\n"
-"Plus d'informations sur le <a href=\"https://blog.weechat.org/post/"
-"2024/09/29/Debian-Ubuntu-repositories-for-archs-arm64-and-armhf\">blog de "
-"développement</a>."
+"Plus d'informations sur le <a href=\"https://blog.weechat.org/"
+"post/2024/09/29/Debian-Ubuntu-repositories-for-archs-arm64-and-armhf\">blog "
+"de développement</a>."
 
 #: news/_i18n_info.py:32
 msgid "Debian/Ubuntu repositories for archs arm64/armhf"
@@ -1496,8 +1584,8 @@ msgid ""
 "On June 26th, WeeChat will turn 20!\n"
 "\n"
 "A live streaming for the 20th anniversary and release of v4.0.0 is scheduled "
-"on Saturday, June 24th, 7pm UTC, for more info: <a href=\"https://"
-"blog.weechat.org/post/2023/06/13/live-streaming-20th-anniversary-release-"
+"on Saturday, June 24th, 7pm UTC, for more info: <a href=\"https://blog."
+"weechat.org/post/2023/06/13/live-streaming-20th-anniversary-release-"
 "v4.0.0\">https://blog.weechat.org/post/2023/06/13/live-streaming-20th-"
 "anniversary-release-v4.0.0</a>."
 msgstr ""
@@ -1506,8 +1594,8 @@ msgstr ""
 "Une diffusion en direct (streaming) pour le 20ème anniversaire et la sortie "
 "de la version 4.0.0 est organisé le Samedi 24 Juin à 19h UTC, pour plus "
 "d'informations: <a href=\"https://blog.weechat.org/post/2023/06/13/live-"
-"streaming-20th-anniversary-release-v4.0.0\">https://blog.weechat.org/post/"
-"2023/06/13/live-streaming-20th-anniversary-release-v4.0.0</a>."
+"streaming-20th-anniversary-release-v4.0.0\">https://blog.weechat.org/"
+"post/2023/06/13/live-streaming-20th-anniversary-release-v4.0.0</a>."
 
 #: news/_i18n_info.py:60
 msgid "QWeeChat - Python/Qt GUI"
@@ -1572,8 +1660,8 @@ msgstr ""
 "\n"
 "En espérant que vous apprécierez la nouvelle version :)\n"
 "\n"
-"Il y a plus d'informations dans le <a href=\"https://weechat.org/blog/post/"
-"2018/05/06/New-design-for-weechat.org\">blog de développement</a>."
+"Il y a plus d'informations dans le <a href=\"https://weechat.org/blog/"
+"post/2018/05/06/New-design-for-weechat.org\">blog de développement</a>."
 
 #: news/_i18n_info.py:67
 msgid ""
@@ -2591,8 +2679,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2011/01/16/Version-0.3.4\">blog "
-"de développement</a> ou le <a href=\"/files/changelog/"
-"ChangeLog-0.3.4.html\">ChangeLog</a>."
+"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.3.4."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:110
 msgid ""
@@ -2642,8 +2730,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2011/05/15/Version-0.3.5\">blog "
-"de développement</a> ou le <a href=\"/files/changelog/"
-"ChangeLog-0.3.5.html\">ChangeLog</a>."
+"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.3.5."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:111
 msgid ""
@@ -2699,8 +2787,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2011/10/22/Version-0.3.6\">blog "
-"de développement</a> ou le <a href=\"/files/changelog/"
-"ChangeLog-0.3.6.html\">ChangeLog</a>."
+"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.3.6."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:112
 msgid ""
@@ -2765,8 +2853,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2012/02/26/Version-0.3.7\">blog "
-"de développement</a> ou le <a href=\"/files/changelog/"
-"ChangeLog-0.3.7.html\">ChangeLog</a>."
+"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.3.7."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:113
 msgid ""
@@ -2813,8 +2901,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2012/06/03/Version-0.3.8\">blog "
-"de développement</a> ou le <a href=\"/files/changelog/"
-"ChangeLog-0.3.8.html\">ChangeLog</a>."
+"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.3.8."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:114
 msgid ""
@@ -2868,8 +2956,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2012/09/29/Version-0.3.9\">blog "
-"de développement</a> ou le <a href=\"/files/changelog/"
-"ChangeLog-0.3.9.html\">ChangeLog</a>."
+"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.3.9."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:115
 msgid "Version 0.3.9.1 (security release)"
@@ -2958,8 +3046,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2013/01/20/Version-0.4.0\">blog "
-"de développement</a> ou le <a href=\"/files/changelog/"
-"ChangeLog-0.4.0.html\">ChangeLog</a>."
+"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.4.0."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:120
 msgid ""
@@ -3014,8 +3102,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2013/05/20/Version-0.4.1\">blog "
-"de développement</a> ou le <a href=\"/files/changelog/"
-"ChangeLog-0.4.1.html\">ChangeLog</a>."
+"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.4.1."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:121
 msgid ""
@@ -3083,8 +3171,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2013/10/06/Version-0.4.2\">blog "
-"de développement</a> ou le <a href=\"/files/changelog/"
-"ChangeLog-0.4.2.html\">ChangeLog</a>."
+"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.4.2."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:122
 msgid ""
@@ -3130,8 +3218,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2014/02/09/Version-0.4.3\">blog "
-"de développement</a> ou le <a href=\"/files/changelog/"
-"ChangeLog-0.4.3.html\">ChangeLog</a>."
+"de développement</a> ou le <a href=\"/files/changelog/ChangeLog-0.4.3."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:123
 msgid ""
@@ -3190,8 +3278,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2014/08/15/Version-1.0\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/"
-"ChangeLog-1.0.html\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.0."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:124
 msgid ""
@@ -3262,8 +3350,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2015/01/11/Version-1.1\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/"
-"ChangeLog-1.1.html\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.1."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:126
 msgid ""
@@ -3323,8 +3411,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2015/05/10/Version-1.2\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/"
-"ChangeLog-1.2.html\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.2."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:128
 msgid ""
@@ -3354,8 +3442,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2015/08/16/Version-1.3\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/"
-"ChangeLog-1.3.html\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.3."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:129
 msgid ""
@@ -3405,8 +3493,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2016/01/10/Version-1.4\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/"
-"ChangeLog-1.4.html\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.4."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:130
 msgid ""
@@ -3441,8 +3529,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2016/05/01/Version-1.5\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/"
-"ChangeLog-1.5.html\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.5."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:131
 msgid ""
@@ -3479,14 +3567,14 @@ msgstr ""
 "- ajout du support des triggers qui s'exécutent une seule fois\n"
 "- renommage des options de serveur \"default_msg_{kick|part|quit}\" en "
 "\"msg_{kick|part|quit}\", qui sont évaluées\n"
-"- support de l'échappement de la virgule dans la commande \"init\" "
-"(protocole relai weechat)\n"
+"- support de l'échappement de la virgule dans la commande "
+"\"init\" (protocole relai weechat)\n"
 "- nombreux bugs corrigés.\n"
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2016/10/02/Version-1.6\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/"
-"ChangeLog-1.6.html\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.6."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:132
 msgid ""
@@ -3524,8 +3612,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2017/01/15/Version-1.7\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/"
-"ChangeLog-1.7.html\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.7."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:133
 msgid "Version 1.7.1 (security release)"
@@ -3595,8 +3683,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2017/05/13/Version-1.8\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/"
-"ChangeLog-1.8.html\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.8."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:136
 #, python-brace-format
@@ -3639,8 +3727,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2017/06/25/Version-1.9\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/"
-"ChangeLog-1.9.html\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-1.9."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:137
 msgid "Version 1.9.1 (security release)"
@@ -3744,8 +3832,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2017/12/03/Version-2.0\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/"
-"ChangeLog-2.0.html\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-2.0."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:140
 msgid ""
@@ -3778,8 +3866,8 @@ msgid ""
 "- add IRC server option \"split_msg_max_length\"\n"
 "- add option logger.file.fsync\n"
 "- add option logger.look.backlog_conditions\n"
-"- add configuration file for each script plugin (\"python.conf\", "
-"\"perl.conf\", ...)\n"
+"- add configuration file for each script plugin (\"python.conf\", \"perl."
+"conf\", ...)\n"
 "- add \"eval\" option in script commands and info \"xxx_eval\" (python, "
 "perl, ruby, lua and guile)\n"
 "- add infos \"xxx_interpreter\" and \"xxx_version\" in script plugins\n"
@@ -3805,8 +3893,8 @@ msgstr ""
 "- ajout de l'option de servuer IRC \"split_msg_max_length\"\n"
 "- ajout de l'option logger.file.fsync\n"
 "- ajout de l'option logger.look.backlog_conditions\n"
-"- ajout d'un fichier de configuration pour chaque extension "
-"(\"python.conf\", \"perl.conf\", ...)\n"
+"- ajout d'un fichier de configuration pour chaque extension (\"python."
+"conf\", \"perl.conf\", ...)\n"
 "- ajout de l'option \"eval\" dans les commandes de scripts et infos "
 "\"xxx_eval\" (python, perl, ruby, lua et guile)\n"
 "- ajout des infos \"xxx_interpreter\" et \"xxx_version\" dans les extensions "
@@ -3817,8 +3905,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2018/03/18/Version-2.1\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/"
-"ChangeLog-2.1.html\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-2.1."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:142
 msgid ""
@@ -3855,8 +3943,8 @@ msgstr ""
 "et /unquiet (extension IRC)\n"
 "- ajout du support pour la négociation de capacité client IRCv3.2\n"
 "- ajout du support pour invite-notify IRCv3.2\n"
-"- ajout du support pour chghost IRCv3.2, ajout des options "
-"irc.look.smart_filter_chghost et irc.color.message_chghost\n"
+"- ajout du support pour chghost IRCv3.2, ajout des options irc.look."
+"smart_filter_chghost et irc.color.message_chghost\n"
 "- ajout de l'option xfer.network.send_ack\n"
 "- ajout du support de Python 3.7\n"
 "- correction de fuites de mémoire dans les extensions de script\n"
@@ -3864,8 +3952,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2018/07/14/Version-2.2\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/"
-"ChangeLog-2.2.html\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-2.2."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:143
 msgid ""
@@ -3883,8 +3971,8 @@ msgid ""
 "- allow specifying buffer number/name for /buffer localvar\n"
 "- allow creation of temporary variables with the regex in trigger plugin\n"
 "- add real IP in client description in relay plugin\n"
-"- add repeat of string in evaluation of expressions with "
-"\"repeat:count,string\"\n"
+"- add repeat of string in evaluation of expressions with \"repeat:count,"
+"string\"\n"
 "- many bugs fixed.\n"
 "\n"
 "For complete list of new features and bugs fixed, please look at <a href=\"/"
@@ -3912,8 +4000,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2018/10/21/Version-2.3\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/"
-"ChangeLog-2.3.html\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-2.3."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:144
 #, python-brace-format
@@ -3969,8 +4057,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2019/02/17/Version-2.4\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/"
-"ChangeLog-2.4.html\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-2.4."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:145
 msgid ""
@@ -4015,8 +4103,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2019/06/06/Version-2.5\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/"
-"ChangeLog-2.5.html\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-2.5."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:146
 msgid ""
@@ -4029,8 +4117,8 @@ msgid ""
 "- add option \"close\" in command /window\n"
 "- add infos \"term_colors\" and \"term_color_pairs\"\n"
 "- add infolist \"buflist\" with list of buffer pointers\n"
-"- evaluate option exec.command.shell, change default value to \"${env:SHELL}"
-"\"\n"
+"- evaluate option exec.command.shell, change default value to \"${env:"
+"SHELL}\"\n"
 "- add filters \"h=xxx\" and \"he=xxx\" to filter options by description in "
 "fset buffer (translated or in English)\n"
 "- make command char optional in server option \"command\"\n"
@@ -4062,8 +4150,8 @@ msgstr ""
 "\n"
 "Pour une liste complète des nouvelles fonctionnalités et des bugs corrigés, "
 "merci de consulter le <a href=\"/blog/post/2019/09/08/Version-2.6\">blog de "
-"développement</a> ou le <a href=\"/files/changelog/"
-"ChangeLog-2.6.html\">ChangeLog</a>."
+"développement</a> ou le <a href=\"/files/changelog/ChangeLog-2.6."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:147
 msgid ""
@@ -4080,8 +4168,8 @@ msgid ""
 "- add option xfer.file.download_temporary_suffix\n"
 "- add option weechat.look.nick_color_hash_salt\n"
 "- add different WeeChat icons sizes\n"
-"- add calculation of expression in evaluation of expressions with "
-"\"calc:xxx\"\n"
+"- add calculation of expression in evaluation of expressions with \"calc:"
+"xxx\"\n"
 "- add optional default path (evaluated) in completion \"filename\"\n"
 "- add modifier \"color_encode_ansi\"\n"
 "- add support of Guile 2.2\n"
@@ -4105,8 +4193,8 @@ msgstr ""
 "- ajout de l'option xfer.file.download_temporary_suffix\n"
 "- ajout de l'option weechat.look.nick_color_hash_salt\n"
 "- ajout de différentes tailles d'icônes WeeChat\n"
-"- ajout du calcul d'expression dans l'évaluation des expressions avec "
-"\"calc:xxx\"\n"
+"- ajout du calcul d'expression dans l'évaluation des expressions avec \"calc:"
+"xxx\"\n"
 "- ajout du chemin optionnel (évalué) dans la complétion \"filename\"\n"
 "- ajout du modificateur \"color_encode_ansi\"\n"
 "- ajout du support de Guile 2.2\n"
@@ -4353,8 +4441,8 @@ msgid ""
 "\n"
 "Among the new features:\n"
 "\n"
-"- add options weechat.look.hotlist_update_on_buffer_switch and "
-"weechat.look.read_marker_update_on_buffer_switch\n"
+"- add options weechat.look.hotlist_update_on_buffer_switch and weechat.look."
+"read_marker_update_on_buffer_switch\n"
 "- add option sec.crypt.passphrase_command to read passphrase from an "
 "external program on startup, remove option sec.crypt.passphrase_file\n"
 "- improve debug in command /eval\n"
@@ -4364,8 +4452,8 @@ msgid ""
 "override the value of option weechat.completion.default_template\n"
 "- add option \"recreate\" in command /filter\n"
 "- add raw string in evaluation of expressions with \"raw:xxx\"\n"
-"- add evaluation of conditions in evaluation of expressions with "
-"\"eval_cond:xxx\"\n"
+"- add evaluation of conditions in evaluation of expressions with \"eval_cond:"
+"xxx\"\n"
 "- add info_hashtable \"secured_data\"\n"
 "- add info \"irc_is_message_ignored\"\n"
 "- add IRC server option \"default_chantypes\", used when the server does not "
@@ -4381,16 +4469,16 @@ msgstr ""
 "\n"
 "Parmi les nouvelles fonctionnalités :\n"
 "\n"
-"- ajout des options weechat.look.hotlist_update_on_buffer_switch et "
-"weechat.look.read_marker_update_on_buffer_switch\n"
+"- ajout des options weechat.look.hotlist_update_on_buffer_switch et weechat."
+"look.read_marker_update_on_buffer_switch\n"
 "- ajout de l'option sec.crypt.passphrase_command pour lire la phrase de "
 "chiffrement depuis un programme externe au démarrage, suppression de "
 "l'option sec.crypt.passphrase_file\n"
 "- amélioration du debug dans la commande /eval\n"
 "- ajout des options \"setvar\" et \"delvar\" dans la commande /buffer, "
 "renommage de l'option \"localvar\" en \"listvar\"\n"
-"- ajout de la variable locale du tampon \"completion_default_template\" "
-"(évaluée) pour écraser la valeur de l'option "
+"- ajout de la variable locale du tampon "
+"\"completion_default_template\" (évaluée) pour écraser la valeur de l'option "
 "weechat.completion.default_template\n"
 "- ajout de l'option \"recreate\" dans la commande /filter\n"
 "- ajout de l'évaluation brute de chaîne dans l'évaluation des expressions "
@@ -4508,8 +4596,8 @@ msgid ""
 "\"split:number,seps,flags,xxx\" and \"split_shell:number,xxx\"\n"
 "- add \"${re:repl_index}\" to get the index of replacement in function "
 "string_eval_expression\n"
-"- add random integer number in evaluation of expressions with "
-"\"random:min,max\"\n"
+"- add random integer number in evaluation of expressions with \"random:min,"
+"max\"\n"
 "- add functions string_cut and file_copy in API\n"
 "- remember insertion order in hashtables\n"
 "- add keys/values with tags in output of irc_message_parse_to_hashtable\n"
@@ -4528,8 +4616,8 @@ msgstr ""
 "- ajout de l'extension \"typing\" pour afficher les utilisateurs qui tapent "
 "des messages sur les tampons de canaux et privés IRC\n"
 "- activation de toutes les capacités IRC par défaut (si supportées par le "
-"serveur et WeeChat), changement de la valeur par défaut de l'option "
-"irc.server_default.capabilities à \"*\"\n"
+"serveur et WeeChat), changement de la valeur par défaut de l'option irc."
+"server_default.capabilities à \"*\"\n"
 "- implémentation de l'authentification SASL IRCv3.2, ajout de la commande /"
 "auth, reconnexion par défaut au serveur en cas d'échec d'authentification "
 "SASL\n"
@@ -4544,8 +4632,8 @@ msgstr ""
 "- ajout des options \"-o\", \"-ol\", \"-i\" et \"-il\" dans la commande \"/"
 "plugin list\"\n"
 "- ajout du découpage de chaîne et de paramètres shell dans l'évaluation des "
-"expressions avec \"split:number,seps,flags,xxx\" et "
-"\"split_shell:number,xxx\"\n"
+"expressions avec \"split:number,seps,flags,xxx\" et \"split_shell:number,"
+"xxx\"\n"
 "- ajout de \"${re:repl_index}\" pour obtenir l'index de remplacement dans la "
 "fonction string_eval_expression\n"
 "- ajout de nombre entier aléatoire dans l'évaluation des expressions avec "
@@ -4572,8 +4660,8 @@ msgid ""
 "\n"
 "- improve the IRC message parser\n"
 "- add command /toggle\n"
-"- add user variables in evaluation of expressions with "
-"\"define:name,value\"\n"
+"- add user variables in evaluation of expressions with \"define:name,"
+"value\"\n"
 "- add support of static arrays in hdata\n"
 "- hide key and password in command \"/msg nickserv setpass nick key "
 "password\"\n"
@@ -4638,8 +4726,8 @@ msgid ""
 "- add command /autojoin, add IRC server option \"autojoin_dynamic\"\n"
 "- add IRC message tags in messages displayed\n"
 "- add \"zstd\" (Zstandard) compression in relay weechat protocol, remove "
-"option \"compression\" from \"init\" command, rename option "
-"relay.network.compression_level to relay.network.compression\n"
+"option \"compression\" from \"init\" command, rename option relay.network."
+"compression_level to relay.network.compression\n"
 "- add trigger variables \"${tg_tag_irc_xxx}\" containing IRC message tags\n"
 "- many bugs fixed.\n"
 "\n"
@@ -4660,8 +4748,8 @@ msgstr ""
 "- ajout des étiquettes de messages IRC dans les messages affichés\n"
 "- ajout de la compression \"zstd\" (Zstandard) dans le protocole relay "
 "weechat, suppression de l'option \"compression\" de la commande \"init\", "
-"renommage de l'option relay.network.compression_level en "
-"relay.network.compression\n"
+"renommage de l'option relay.network.compression_level en relay.network."
+"compression\n"
 "- ajout des variables trigger \"${tg_tag_irc_xxx}\" contenant les étiquettes "
 "de messages IRC\n"
 "- nombreux bugs corrigés.\n"
@@ -4742,14 +4830,14 @@ msgid ""
 "- add support of priority in API function hook_line\n"
 "- add API function string_parse_size\n"
 "- add API function file_compress\n"
-"- add buflist variable \"${hotlist_priority_number}\" (integer version of \"$"
-"{hotlist_priority}\")\n"
+"- add buflist variable \"${hotlist_priority_number}\" (integer version of "
+"\"${hotlist_priority}\")\n"
 "- display SETNAME command in IRC channels and private buffers, add options "
 "irc.color.message_setname and irc.look.smart_filter_setname\n"
 "- add option irc.look.display_pv_nick_change\n"
-"- add options to rotate and compress log files: "
-"logger.file.rotation_compression_level, "
-"logger.file.rotation_compression_type and logger.file.rotation_size_max\n"
+"- add options to rotate and compress log files: logger.file."
+"rotation_compression_level, logger.file.rotation_compression_type and logger."
+"file.rotation_size_max\n"
 "- allow special dict value \"-\" to disable spell checking on a specific "
 "buffer\n"
 "- add elapsed time for trigger execution on monitor buffer when trigger "
@@ -4783,17 +4871,17 @@ msgstr ""
 "- ajout de la variable buflist \"${hotlist_priority_number}\" (version "
 "numérique de \"${hotlist_priority}\")\n"
 "- affichage de la commande SETNAME dans les canaux et tampons privés IRC, "
-"ajout des options irc.color.message_setname et "
-"irc.look.smart_filter_setname\n"
+"ajout des options irc.color.message_setname et irc.look."
+"smart_filter_setname\n"
 "- ajout de l'option irc.look.display_pv_nick_change\n"
 "- ajout des options pour la rotation et compression des fichiers de log : "
-"logger.file.rotation_compression_level, "
-"logger.file.rotation_compression_type et logger.file.rotation_size_max\n"
+"logger.file.rotation_compression_level, logger.file."
+"rotation_compression_type et logger.file.rotation_size_max\n"
 "- prise en compte de la valeur spéciale \"-\" pour désactiver la "
 "vérification orthographique sur un tampon spécifique\n"
 "- ajout du temps écoulé pour l'exécution du trigger sur le tampon moniteur "
-"lorsque le debug trigger est activé, ajout de l'option "
-"trigger.color.identifier\n"
+"lorsque le debug trigger est activé, ajout de l'option trigger.color."
+"identifier\n"
 "- ajout de la variable trigger \"${tg_hook_type}\"\n"
 "- nombreux bugs corrigés.\n"
 "\n"
@@ -4901,15 +4989,15 @@ msgstr ""
 msgid ""
 "Version 4.0.0 is available!\n"
 "\n"
-"New features and bugs fixed: <a href=\"https://blog.weechat.org/post/"
-"2023/06/24/Version-4.0.0\">development blog</a> and <a href=\"/files/doc/"
-"weechat/ChangeLog-4.0.0.html\">ChangeLog</a>."
+"New features and bugs fixed: <a href=\"https://blog.weechat.org/"
+"post/2023/06/24/Version-4.0.0\">development blog</a> and <a href=\"/files/"
+"doc/weechat/ChangeLog-4.0.0.html\">ChangeLog</a>."
 msgstr ""
 "La version 4.0.0 est disponible !\n"
 "\n"
-"Nouvelles fonctionnalités et bugs corrigés : <a href=\"https://"
-"blog.weechat.org/post/2023/06/24/Version-4.0.0\">blog de développement</a> "
-"et <a href=\"/files/doc/weechat/ChangeLog-4.0.0.html\">ChangeLog</a>."
+"Nouvelles fonctionnalités et bugs corrigés : <a href=\"https://blog.weechat."
+"org/post/2023/06/24/Version-4.0.0\">blog de développement</a> et <a href=\"/"
+"files/doc/weechat/ChangeLog-4.0.0.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:168
 msgid ""
@@ -4996,8 +5084,8 @@ msgstr ""
 "\n"
 "Il s'agit d'une version de maintenance avec corrections de bugs.\n"
 "\n"
-"Bugs corrigés : <a href=\"/files/doc/weechat/"
-"ChangeLog-4.0.5.html\">ChangeLog</a>."
+"Bugs corrigés : <a href=\"/files/doc/weechat/ChangeLog-4.0.5."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:173
 msgid ""
@@ -5012,8 +5100,8 @@ msgstr ""
 "\n"
 "Il s'agit d'une version de maintenance avec corrections de bugs.\n"
 "\n"
-"Bugs corrigés : <a href=\"/files/doc/weechat/"
-"ChangeLog-4.0.6.html\">ChangeLog</a>."
+"Bugs corrigés : <a href=\"/files/doc/weechat/ChangeLog-4.0.6."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:174
 msgid ""
@@ -5028,8 +5116,8 @@ msgstr ""
 "\n"
 "Il s'agit d'une version de maintenance avec corrections de bugs.\n"
 "\n"
-"Bugs corrigés : <a href=\"/files/doc/weechat/"
-"ChangeLog-4.0.7.html\">ChangeLog</a>."
+"Bugs corrigés : <a href=\"/files/doc/weechat/ChangeLog-4.0.7."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:175
 msgid ""
@@ -5044,15 +5132,15 @@ msgstr ""
 "\n"
 "Il s'agit d'une version de maintenance avec corrections de bugs.\n"
 "\n"
-"Bugs corrigés : <a href=\"/files/doc/weechat/"
-"ChangeLog-4.0.8.html\">ChangeLog</a>."
+"Bugs corrigés : <a href=\"/files/doc/weechat/ChangeLog-4.0.8."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:176
 msgid ""
 "Version 4.1.0 is available!\n"
 "\n"
-"New features and bugs fixed: <a href=\"/files/doc/weechat/"
-"ChangeLog-4.1.0.html\">ChangeLog</a>."
+"New features and bugs fixed: <a href=\"/files/doc/weechat/ChangeLog-4.1.0."
+"html\">ChangeLog</a>."
 msgstr ""
 "La version 4.1.0 est disponible !\n"
 "\n"
@@ -5072,8 +5160,8 @@ msgstr ""
 "\n"
 "Il s'agit d'une version de maintenance avec corrections de bugs.\n"
 "\n"
-"Bugs corrigés : <a href=\"/files/doc/weechat/"
-"ChangeLog-4.1.1.html\">ChangeLog</a>."
+"Bugs corrigés : <a href=\"/files/doc/weechat/ChangeLog-4.1.1."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:178
 msgid ""
@@ -5088,8 +5176,8 @@ msgstr ""
 "\n"
 "Il s'agit d'une version de maintenance avec corrections de bugs.\n"
 "\n"
-"Bugs corrigés : <a href=\"/files/doc/weechat/"
-"ChangeLog-4.1.2.html\">ChangeLog</a>."
+"Bugs corrigés : <a href=\"/files/doc/weechat/ChangeLog-4.1.2."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:179
 msgid ""
@@ -5104,15 +5192,15 @@ msgstr ""
 "\n"
 "Il s'agit d'une version de maintenance avec corrections de bugs.\n"
 "\n"
-"Bugs corrigés : <a href=\"/files/doc/weechat/"
-"ChangeLog-4.1.3.html\">ChangeLog</a>."
+"Bugs corrigés : <a href=\"/files/doc/weechat/ChangeLog-4.1.3."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:180
 msgid ""
 "Version 4.2.0 is available!\n"
 "\n"
-"New features and bugs fixed: <a href=\"/files/doc/weechat/"
-"ChangeLog-4.2.0.html\">ChangeLog</a>."
+"New features and bugs fixed: <a href=\"/files/doc/weechat/ChangeLog-4.2.0."
+"html\">ChangeLog</a>."
 msgstr ""
 "La version 4.2.0 est disponible !\n"
 "\n"
@@ -5132,8 +5220,8 @@ msgstr ""
 "\n"
 "Il s'agit d'une version de maintenance avec corrections de bugs.\n"
 "\n"
-"Bugs corrigés : <a href=\"/files/doc/weechat/"
-"ChangeLog-4.2.1.html\">ChangeLog</a>."
+"Bugs corrigés : <a href=\"/files/doc/weechat/ChangeLog-4.2.1."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:182
 msgid ""
@@ -5148,8 +5236,8 @@ msgstr ""
 "\n"
 "Il s'agit d'une version de maintenance avec corrections de bugs.\n"
 "\n"
-"Bugs corrigés : <a href=\"/files/doc/weechat/"
-"ChangeLog-4.2.2.html\">ChangeLog</a>."
+"Bugs corrigés : <a href=\"/files/doc/weechat/ChangeLog-4.2.2."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:183
 msgid ""
@@ -5164,15 +5252,15 @@ msgstr ""
 "\n"
 "Il s'agit d'une version de maintenance avec corrections de bugs.\n"
 "\n"
-"Bugs corrigés : <a href=\"/files/doc/weechat/"
-"ChangeLog-4.2.3.html\">ChangeLog</a>."
+"Bugs corrigés : <a href=\"/files/doc/weechat/ChangeLog-4.2.3."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:184
 msgid ""
 "Version 4.3.0 is available!\n"
 "\n"
-"New features and bugs fixed: <a href=\"/files/doc/weechat/"
-"ChangeLog-4.3.0.html\">ChangeLog</a>."
+"New features and bugs fixed: <a href=\"/files/doc/weechat/ChangeLog-4.3.0."
+"html\">ChangeLog</a>."
 msgstr ""
 "La version 4.3.0 est disponible !\n"
 "\n"
@@ -5192,8 +5280,8 @@ msgstr ""
 "\n"
 "Il s'agit d'une version de maintenance avec corrections de bugs.\n"
 "\n"
-"Bugs corrigés : <a href=\"/files/doc/weechat/"
-"ChangeLog-4.3.1.html\">ChangeLog</a>."
+"Bugs corrigés : <a href=\"/files/doc/weechat/ChangeLog-4.3.1."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:186
 msgid ""
@@ -5208,8 +5296,8 @@ msgstr ""
 "\n"
 "Il s'agit d'une version de maintenance avec corrections de bugs.\n"
 "\n"
-"Bugs corrigés : <a href=\"/files/doc/weechat/"
-"ChangeLog-4.3.2.html\">ChangeLog</a>."
+"Bugs corrigés : <a href=\"/files/doc/weechat/ChangeLog-4.3.2."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:187
 msgid ""
@@ -5224,8 +5312,8 @@ msgstr ""
 "\n"
 "Il s'agit d'une version de maintenance avec corrections de bugs.\n"
 "\n"
-"Bugs corrigés : <a href=\"/files/doc/weechat/"
-"ChangeLog-4.3.3.html\">ChangeLog</a>."
+"Bugs corrigés : <a href=\"/files/doc/weechat/ChangeLog-4.3.3."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:188
 msgid ""
@@ -5240,8 +5328,8 @@ msgstr ""
 "\n"
 "Il s'agit d'une version de maintenance avec corrections de bugs.\n"
 "\n"
-"Bugs corrigés : <a href=\"/files/doc/weechat/"
-"ChangeLog-4.3.4.html\">ChangeLog</a>."
+"Bugs corrigés : <a href=\"/files/doc/weechat/ChangeLog-4.3.4."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:189
 msgid ""
@@ -5256,8 +5344,8 @@ msgstr ""
 "\n"
 "Il s'agit d'une version de maintenance avec corrections de bugs.\n"
 "\n"
-"Bugs corrigés : <a href=\"/files/doc/weechat/"
-"ChangeLog-4.3.5.html\">ChangeLog</a>."
+"Bugs corrigés : <a href=\"/files/doc/weechat/ChangeLog-4.3.5."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:190
 msgid ""
@@ -5272,8 +5360,8 @@ msgstr ""
 "\n"
 "Il s'agit d'une version de maintenance avec corrections de bugs.\n"
 "\n"
-"Bugs corrigés : <a href=\"/files/doc/weechat/"
-"ChangeLog-4.3.6.html\">ChangeLog</a>."
+"Bugs corrigés : <a href=\"/files/doc/weechat/ChangeLog-4.3.6."
+"html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:191
 msgid ""
@@ -5452,9 +5540,22 @@ msgstr ""
 "\n"
 "Il s'agit d'une version de maintenance avec corrections de bugs.\n"
 "\n"
-"Bugs corrigés : <a href=\"https://github.com/weechat/weechat/releases/tag/v4.6.3\">ChangeLog</a>."
+"Bugs corrigés : <a href=\"https://github.com/weechat/weechat/releases/tag/"
+"v4.6.3\">ChangeLog</a>."
 
 #: news/_i18n_info.py:203
+msgid ""
+"Version 4.7.0 is available!\n"
+"\n"
+"New features and bugs fixed: <a href=\"https://github.com/weechat/weechat/"
+"releases/tag/v4.7.0\">ChangeLog</a>."
+msgstr ""
+"La version 4.7.0 est disponible !\n"
+"\n"
+"Nouvelles fonctionnalités et bugs corrigés : <a href=\"https://github.com/"
+"weechat/weechat/releases/tag/v4.7.0\">ChangeLog</a>."
+
+#: news/_i18n_info.py:204
 msgid ""
 "Version v0.1.2 is available!\n"
 "\n"
@@ -5488,30 +5589,30 @@ msgstr ""
 "Ajout le 24/05/2005 : correction d'un plantage au démarrage et d'un bug de "
 "détection de Perl et Python, la version est désormais 0.1.2.1."
 
-#: news/_i18n_info.py:204
+#: news/_i18n_info.py:205
 msgid "WeeChat - Wee Enhanced Environment for Chat"
 msgstr "WeeChat - Wee Enhanced Environment for Chat"
 
-#: news/_i18n_info.py:205
+#: news/_i18n_info.py:206
 msgid ""
 "WeeChat IRC channels (official and non-official ones) have moved from "
 "freenode to <a href=\"https://libera.chat/\">libera.chat</a>.\n"
 "\n"
-"For more information, please look at <a href=\"https://blog.weechat.org/post/"
-"2021/05/29/IRC-channels-moved-to-libera.chat\">development blog</a>.\n"
+"For more information, please look at <a href=\"https://blog.weechat.org/"
+"post/2021/05/29/IRC-channels-moved-to-libera.chat\">development blog</a>.\n"
 "\n"
 "See you soon there!"
 msgstr ""
 "Les canaux IRC WeeChat (officiels et non-officiels) ont été déplacés de "
 "freenode vers <a href=\"https://libera.chat\">libera.chat</a>.\n"
 "\n"
-"Pour plus d'information, merci de consulter le <a href=\"https://"
-"blog.weechat.org/post/2021/05/29/IRC-channels-moved-to-libera.chat\">blog de "
+"Pour plus d'information, merci de consulter le <a href=\"https://blog."
+"weechat.org/post/2021/05/29/IRC-channels-moved-to-libera.chat\">blog de "
 "développement</a>.\n"
 "\n"
 "À bientôt là-bas !"
 
-#: news/_i18n_info.py:206
+#: news/_i18n_info.py:207
 msgid ""
 "WeeChat has many new important features since some weeks:\n"
 "- multi-windows management (with horizontal and vertical window split)\n"
@@ -5536,11 +5637,11 @@ msgstr ""
 "N'hésitez pas à signaler tout problème ou suggestion d'amélioration sur la "
 "navigation entre les tampons/fenêtres."
 
-#: news/_i18n_info.py:207
+#: news/_i18n_info.py:208
 msgid "WeeChat in Cygwin"
 msgstr "WeeChat dans Cygwin"
 
-#: news/_i18n_info.py:208
+#: news/_i18n_info.py:209
 msgid ""
 "WeeChat is now in Cygwin, and can be installed with setup.exe.\n"
 "Version 0.4.2 is available for 32 and 64-bit Cygwin.\n"
@@ -5554,7 +5655,7 @@ msgstr ""
 "Note : l'extension Guile est manquante car elle requiert guile >= 2.0, qui "
 "n'est pas encore disponible sous Cygwin."
 
-#: news/_i18n_info.py:209
+#: news/_i18n_info.py:210
 msgid ""
 "WeeChat project is started.\n"
 "\n"
@@ -5574,7 +5675,7 @@ msgstr ""
 "- rapide, léger, et extensible par des scripts.\n"
 "- etc..."
 
-#: news/_i18n_info.py:210
+#: news/_i18n_info.py:211
 msgid ""
 "WeeChat project now accepts donations via Paypal account, with secured "
 "payment."
@@ -5582,7 +5683,7 @@ msgstr ""
 "Le projet WeeChat accepte désormais les dons via un compte Paypal, avec "
 "paiement sécurisé."
 
-#: news/_i18n_info.py:211
+#: news/_i18n_info.py:212
 msgid ""
 "WeeChat project now accepts recurring donations via Liberapay, which has "
 "very low fees (see <a href=\"https://liberapay.com/about/"
@@ -5594,7 +5695,7 @@ msgstr ""
 "faq#differences\">les différences entre Liberapay et les autres plateformes "
 "de dons récurrents</a>)."
 
-#: news/_i18n_info.py:212
+#: news/_i18n_info.py:213
 msgid ""
 "WeeChat repositories (weechat, scripts, qweechat) have been moved to GitHub, "
 "in WeeChat organization: <a href=\"https://github.com/weechat\">https://"
@@ -5607,18 +5708,18 @@ msgstr ""
 "GitHub, dans l'organisation WeeChat : <a href=\"https://github.com/"
 "weechat\">https://github.com/weechat</a>.\n"
 "\n"
-"Pour plus d'information, merci de consulter le <a href=\"/blog/post/"
-"2014/03/03/Git-repositories-moved-to-Github\">blog de développement</a>."
+"Pour plus d'information, merci de consulter le <a href=\"/blog/"
+"post/2014/03/03/Git-repositories-moved-to-Github\">blog de développement</a>."
 
-#: news/_i18n_info.py:213
+#: news/_i18n_info.py:214
 msgid "WeeChat screenshot"
 msgstr "Capture d'écran de WeeChat"
 
-#: news/_i18n_info.py:214
+#: news/_i18n_info.py:215
 msgid "WeeChat scripts page"
 msgstr "Page de scripts pour WeeChat"
 
-#: news/_i18n_info.py:215
+#: news/_i18n_info.py:216
 msgid ""
 "WeeChat scripts page (today Perl scripts only) has been added.\n"
 "On this page you can submit your script (need to be approved by WeeChat "
@@ -5635,7 +5736,7 @@ msgstr ""
 "À noter : les scripts Perl fonctionnent avec une version de WeeChat "
 "supérieure à 0.0.3, soit à ce jour la version de développement uniquement."
 
-#: news/_i18n_info.py:216
+#: news/_i18n_info.py:217
 msgid ""
 "WeeChat story page is now available, as screenshots. You can see differences "
 "between all versions in one view!\n"
@@ -5647,15 +5748,15 @@ msgstr ""
 "La version de développement est également visible et mise à jour "
 "régulièrement."
 
-#: news/_i18n_info.py:217
+#: news/_i18n_info.py:218
 msgid "WeeChat users map"
 msgstr "Carte des utilisateurs WeeChat"
 
-#: news/_i18n_info.py:218
+#: news/_i18n_info.py:219
 msgid "WeeChat will merge with irssi"
 msgstr "WeeChat va fusionner avec irssi"
 
-#: news/_i18n_info.py:219
+#: news/_i18n_info.py:220
 msgid ""
 "WeeChat, the fast, light and extensible IRC client, is released for the "
 "first time, version 0.0.1.\n"
@@ -5704,7 +5805,7 @@ msgstr ""
 "Toutes les remarques, signalisations de bugs, et suggestions sont les "
 "bienvenues, voir la page de support WeeChat pour nous contacter."
 
-#: news/_i18n_info.py:220
+#: news/_i18n_info.py:221
 msgid "XZ packages"
 msgstr "Paquets XZ"
 
@@ -6988,8 +7089,8 @@ msgstr "Rechercher rapidement dans l'historique de commandes."
 #: scripts/_i18n_scripts.py:470
 msgid "Quickly add/del/change entry in option irc.look.nick_color_force."
 msgstr ""
-"Ajout/suppression/changement rapide d'une entrée dans l'option "
-"irc.look.nick_color_force."
+"Ajout/suppression/changement rapide d'une entrée dans l'option irc.look."
+"nick_color_force."
 
 #. Translators: description for script "rssagg.pl" (0.3.7+)
 #: scripts/_i18n_scripts.py:472
@@ -7712,10 +7813,6 @@ msgstr "Contrôle et affichage de la musique jouée par iTunes."
 #: scripts/_i18n_scripts.py:738
 msgid "not compatible with Python 3"
 msgstr "non compatible avec Python 3"
-
-#: scripts/models.py:138
-msgid "Popular script"
-msgstr "Script populaire"
 
 #. Translators: this is a date format, see: http://www.php.net/date
 #. Translators: (note: the result string must be short, use abbreviation
@@ -8742,12 +8839,12 @@ msgstr ""
 #: templates/doc/security.html:31
 msgid ""
 "To report a security issue, please <strong>DO NOT</strong> file an issue on "
-"GitHub, but send an email to <a "
-"href=\"mailto:security@weechat.org\">security@weechat.org</a> instead."
+"GitHub, but send an email to <a href=\"mailto:security@weechat."
+"org\">security@weechat.org</a> instead."
 msgstr ""
 "Pour signaler un problème de sécurité, merci de <strong>NE PAS</strong> "
-"ouvrir un bug sur GitHub, mais plutôt d'envoyer un email à <a "
-"href=\"mailto:security@weechat.org\">security@weechat.org</a>."
+"ouvrir un bug sur GitHub, mais plutôt d'envoyer un email à <a href=\"mailto:"
+"security@weechat.org\">security@weechat.org</a>."
 
 #: templates/doc/security.html:39
 #, python-format
@@ -9317,11 +9414,11 @@ msgstr "Vérification des signatures :"
 
 #: templates/download/packages.html:130
 msgid ""
-"Check the key fingerprint by checking the topic on #weechat channel "
-"(irc.libera.chat) or by asking to a developer."
+"Check the key fingerprint by checking the topic on #weechat channel (irc."
+"libera.chat) or by asking to a developer."
 msgstr ""
-"Vérifier l'empreinte de la clé en vérifiant le titre du canal #weechat "
-"(irc.libera.chat) ou en demandant à un développeur."
+"Vérifier l'empreinte de la clé en vérifiant le titre du canal #weechat (irc."
+"libera.chat) ou en demandant à un développeur."
 
 #: templates/download/packages.html:133
 msgid "Import the PGP key:"
@@ -9839,8 +9936,8 @@ msgstr ""
 
 #: templates/scripts/python3.html:109
 msgid ""
-"All new scripts as well as script updates must be compatible with Python "
-"3.x. Extra support of Python 2.x is optional."
+"All new scripts as well as script updates must be compatible with Python 3."
+"x. Extra support of Python 2.x is optional."
 msgstr ""
 "Tous les nouveaux scripts ainsi que les mises à jour doivent être "
 "compatibles avec Python 3.x Le support supplémentaire de Python 2.x est "
@@ -9918,8 +10015,8 @@ msgstr ""
 msgid ""
 "Here's a list of some resources that can help to port scripts to Python 3:"
 msgstr ""
-"Liste de ressources qui peuvent aider pour porter les scripts vers Python "
-"3.x :"
+"Liste de ressources qui peuvent aider pour porter les scripts vers Python 3."
+"x :"
 
 #: templates/scripts/python3.html:232
 msgid ""
@@ -10186,3 +10283,6 @@ msgstr "Erreur interne."
 #: themes/models.py:303
 msgid "Invalid name: different from theme."
 msgstr "Nom invalide : différent du thème."
+
+#~ msgid "Popular script"
+#~ msgstr "Script populaire"
