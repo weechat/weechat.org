@@ -27,6 +27,7 @@ def __i18n_about_keydates():
     gettext_noop("Add support of TOTP (Time-based One Time Password).")
     gettext_noop("Add support of UNIX socket in Relay plugin.")
     gettext_noop("Add support of password hash in API and weechat relay protocol (PBKDF2, SHA256, SHA512).")
+    gettext_noop("Add support of strikethrough text in IRC messages, write configuration files on disk only if there are changes, add option to auto-expand partial completion, add fuzz testing.")
     gettext_noop("Aspell plugin.")
     gettext_noop("Buffer for /list output, buffer properties auto-saved in configuration, passive DCC.")
     gettext_noop("Command /eval, aspell suggestions, IPv6 in relay, irc backlog in relay.")
