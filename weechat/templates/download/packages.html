@@ -17,7 +17,7 @@
 {% regroup package_list by version as packages_by_version %}
 
 {% if version == "old" %}
-<div class="alert alert-warning">
+<div class="alert alert-secondary">
   {% with count=packages_by_version|length %}
   {% blocktrans %}<strong>Important:</strong> it is not recommended to download or use any of these {{ count }} old versions: they are less stable than the latest released version, and may contain security vulnerabilities fixed in later versions.{% endblocktrans %}
   {% endwith %}
@@ -53,14 +53,12 @@
     </p>
     {% endif %}
     {% if package_version.grouper.securityfix %}
-    <div class="alert alert-danger">
-      {% with version=package_version.grouper.version %}
+    <p>
+      {% with version=package_version.grouper.version fixed_versions=package_version.grouper.security_fixed_versions|join:", " %}
       {% url 'doc_project_security_version' project version as security_url %}
-      {% blocktrans %}<strong>Warning:</strong> the version {{ version }} has one or more <a href="{{ security_url }}">vulnerabilities</a>, it is not recommended to use it.{% endblocktrans %}
+      {% blocktrans %}<strong>Caution:</strong> the version {{ version }} has one or more <a href="{{ security_url }}">vulnerabilities</a> that are fixed in versions: {{ fixed_versions }}.{% endblocktrans %}
       {% endwith %}
-      {% trans "Vulnerabilities fixed in versions:" %}
-      {% for fixed_version in package_version.grouper.security_fixed_versions %}{% if not forloop.first %}, {% endif %}<a href="{% url 'download_project_version' project=project version=fixed_version %}">{{ fixed_version }}</a>{% endfor %}.
-    </div>
+    </p>
     {% elif version != "devel" and version != "old" and package_version.grouper.security_issues_fixed > 0 %}
     <div class="alert alert-secondary">
       {% url 'doc_project_security' project as security_url %}
