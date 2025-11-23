@@ -702,7 +702,7 @@ def __i18n_scripts_scripts():
     gettext_noop("Translate :shortcode: to proper emoji.")
     # Translators: description for script "translate.py" (0.3.7+)
     gettext_noop("Translate string using Google translate API.")
-    # Translators: description for script "twitch.py" (2.3+)
+    # Translators: description for script "twitch.py" (4.1.0+)
     gettext_noop("Twitch.tv chat integration.")
     # Translators: description for script "ubus.pl" (0.3.0+)
     gettext_noop("Ubus notification.")
