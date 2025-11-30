@@ -8,12 +8,10 @@
 {% block extrahead %}
 <script>
 var deb_apt_cmds = [
-  "…<br>…",
+  "…",
 {% for repo in repositories %}
 {% if repo.visible %}
-  "$ echo \"{{ repo.apt_url_binary }}\" | sudo tee /etc/apt/sources.list.d/weechat.list" +
-  "<br>" +
-  "$ echo \"{{ repo.apt_url_src }}\" | sudo tee -a /etc/apt/sources.list.d/weechat.list",
+  "{{ repo.apt_sources|escapejs }}",
 {% endif %}
 {% endfor %}
 ]
@@ -66,7 +64,7 @@ $ curl --silent {{ url_info_pgp_key }} | sudo tee {{ weechat_pgp_key_path }}/{{ 
 <p>
   <form class="row row-cols-lg-auto align-items-center">
     <div class="col-12">
-      {% trans "Create a weechat.list file with the repository, according to your distribution/version:" %}
+      {% trans "Create a file <code>/etc/apt/sources.list.d/weechat.sources</code> with the following content, according to your distribution/version:" %}
     </div>
     <div class="col-12">
       <select id="deb_apt" class="form-select form-select-sm ms-3"
@@ -85,11 +83,7 @@ $ curl --silent {{ url_info_pgp_key }} | sudo tee {{ weechat_pgp_key_path }}/{{ 
       </select>
     </div>
   </form>
-  <pre class="mt-1"><code id="deb_apt_cmd">…<br>…</code></pre>
-</p>
-
-<p>
-  {% trans "Note: the second command line is optional, it is used to download source packages." %}
+  <pre class="mt-3 p-3 border rounded"><code id="deb_apt_cmd">…</code></pre>
 </p>
 
 <p>
@@ -204,11 +198,6 @@ $ curl --silent {{ url_info_pgp_key }} | sudo tee {{ weechat_pgp_key_path }}/{{ 
                 <small class="text-muted">({{ debpkg_source.list.0.repo.version.version }})</small>
               </strong>
             </h5>
-            <small>
-              <samp>{{ debpkg_source.list.0.repo.apt_url_binary }}</samp>
-              <br>
-              <samp>{{ debpkg_source.list.0.repo.apt_url_src }}</samp>
-            </small>
           </div>
         </div>
       </div>

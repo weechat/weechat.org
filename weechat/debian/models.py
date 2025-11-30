@@ -78,19 +78,16 @@ class Repo(models.Model):
                               self.version.codename, 'main',
                               f'binary-{arch}', 'Packages.gz')
 
-    def apt_url(self, deb='deb'):
-        """Return the URL to use with apt for binary or sources packages."""
-        return (f'{deb} [arch={self.arch} '
-                f'signed-by={WEECHAT_PGP_KEY_PATH}/{WEECHAT_PGP_KEY_NAME}] '
-                f'{self.url} {self.version.codename} main')
-
-    def apt_url_binary(self):
-        """Return the URL to use with apt for binary packages."""
-        return self.apt_url(deb='deb')
-
-    def apt_url_src(self):
-        """Return the URL to use with apt for sources packages."""
-        return self.apt_url(deb='deb-src')
+    def apt_sources(self):
+        """Return the contents of sources file."""
+        return f"""\
+Types: deb deb-src
+URIs: {self.url}
+Suites: {self.version.codename}
+Components: main
+Architectures: {self.arch.replace(',', ' ')}
+Signed-By: /etc/apt/keyrings/weechat.asc
+"""
 
     class Meta:
         """Sort Repos by priority."""
