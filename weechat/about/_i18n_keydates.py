@@ -23,6 +23,7 @@ def __i18n_about_keydates():
     gettext_noop("Add hook \"line\".")
     gettext_noop("Add incremental search in commands history, add optional tag for ignored IRC messages, add support of RGB colors in IRC messages, use milliseconds for IRC anti-flood, add syntax highlighting in evaluated expressions.")
     gettext_noop("Add log file rotation and compression, add option -save in command /upgrade, add key alt+backspace.")
+    gettext_noop("Add option for completion cycle, use UTC timezone and microseconds for log files, remove IRC temporary servers.")
     gettext_noop("Add relay \"api\" (HTTP REST API), add command /remote to connect to remote WeeChat relay servers, add support of SGR mouse events.")
     gettext_noop("Add support of TOTP (Time-based One Time Password).")
     gettext_noop("Add support of UNIX socket in Relay plugin.")
