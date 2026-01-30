@@ -53,6 +53,7 @@ LANGUAGES = (
     ('pl', gettext('Polish')),
     ('pt-br', gettext('Portuguese (Brazil)')),
     ('ja', gettext('Japanese')),
+    ('sr', gettext('Serbian')),
 )
 LANGUAGES_LOCALES = {
     'en': 'en_US',
@@ -62,6 +63,7 @@ LANGUAGES_LOCALES = {
     'pl': 'pl_PL',
     'pt-br': 'pt_BR',
     'ja': 'ja_JP',
+    'sr': 'sr_RS',
 }
 
 # Themes
