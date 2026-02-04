@@ -220,8 +220,6 @@ def __i18n_scripts_scripts():
     gettext_noop("Detect multiple nicknames from the same host on irc channels.")
     # Translators: description for script "digraph.py" (0.3.7+)
     gettext_noop("Digraphs like nvim for inputting math symbols.")
-    # Translators: description for script "btc_ticker.py" (0.3.7+)
-    gettext_noop("Display Bitcoin or other crypto currency spot exchange value.")
     # Translators: description for script "infos.py" (0.3.0+)
     gettext_noop("Display WeeChats infos, useful for script developers.")
     # Translators: description for script "hilites.rb" (0.3.0+)
