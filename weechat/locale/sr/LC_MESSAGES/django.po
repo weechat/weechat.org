@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-07 00:28+0100\n"
+"POT-Creation-Date: 2026-04-28 23:32+0200\n"
 "PO-Revision-Date: 2026-02-05 11:22+0400\n"
 "Last-Translator: Иван Пешић <ivan.pesic@gmail.org>\n"
 "Language-Team: Serbian <ivan.pesic@gmail.com>\n"
@@ -8219,36 +8219,67 @@ msgstr "Релеј протокол"
 msgid "Client type"
 msgstr "Тип клијента"
 
-#: templates/about/interfaces.html:27
+#: templates/about/interfaces.html:27 templates/scripts/list.html:90
+#: templates/scripts/list.html:92
+msgctxt "programming language"
+msgid "Language"
+msgstr "Програмски језик"
+
+#. Translators: Plural form (multiple OS can be supported)
+#: templates/about/interfaces.html:29
+#, fuzzy
+#| msgid "Support"
+msgid "Supported OS"
+msgstr "Подршка"
+
+#: templates/about/interfaces.html:30
 msgid "Site"
 msgstr "Сајт"
 
-#: templates/about/interfaces.html:28 templates/donate.html:37
+#: templates/about/interfaces.html:31 templates/donate.html:37
 #: templates/scripts/python3.html:144
 msgid "Notes"
 msgstr "Напомене"
 
-#: templates/about/interfaces.html:38 templates/about/interfaces.html:122
+#: templates/about/interfaces.html:40 templates/about/interfaces.html:55
+#: templates/about/interfaces.html:70 templates/about/interfaces.html:96
+#: templates/about/interfaces.html:127 templates/about/interfaces.html:140
+#: templates/about/interfaces.html:153 templates/about/interfaces.html:166
+msgid "Cross-platform"
+msgstr ""
+
+#: templates/about/interfaces.html:43 templates/about/interfaces.html:130
 msgid "Download page"
 msgstr "Страница за преузимање"
 
-#: templates/about/interfaces.html:99
+#: templates/about/interfaces.html:53 templates/about/interfaces.html:125
+#: templates/about/interfaces.html:151
+msgid "Desktop application"
+msgstr ""
+
+#: templates/about/interfaces.html:81 templates/about/interfaces.html:94
+#: templates/about/interfaces.html:107
+msgid "Mobile application"
+msgstr ""
+
+#: templates/about/interfaces.html:116
 msgid "Public beta test:"
 msgstr "Јавни бета тест:"
 
-#: templates/about/interfaces.html:136
+#: templates/about/interfaces.html:146 templates/about/interfaces.html:159
+#: templates/about/interfaces.html:172
 msgid "This project is not maintained any more."
 msgstr "Овај пројекат се више не одржава."
 
-#: templates/about/interfaces.html:142
+#: templates/about/interfaces.html:178
 msgid "Something missing?"
 msgstr "Нешто недостаје?"
 
-#: templates/about/interfaces.html:145
+#: templates/about/interfaces.html:181
 msgid "You have developed another remote interface for WeeChat?"
 msgstr "Да ли сте развили још један удаљени интерфејс за WeeChat?"
 
-#: templates/about/interfaces.html:148
+#: templates/about/interfaces.html:184
 msgid "Tell us more about your great software!"
 msgstr "Кажите нам нешто више о вашем сјајном софтверу!"
 
@@ -8405,6 +8436,9 @@ msgid "Donate"
 msgstr "Донације"
 
 #: templates/base.html:55
+#, fuzzy
+#| msgid "Language"
+msgctxt "tongue"
 msgid "Language"
 msgstr "Језик"
 
@@ -9594,6 +9628,9 @@ msgid "sort filters by popularity"
 msgstr "сортирај филтере по популарности"
 
 #: templates/scripts/list.html:53 templates/scripts/list.html:55
+#, fuzzy
+#| msgid "Language:"
+msgctxt "programming language"
 msgid "Language:"
 msgstr "Програмски језик:"
 
@@ -9606,11 +9643,6 @@ msgstr "Лиценца:"
 #: templates/scripts/list.html:149
 msgid "Tag:"
 msgstr "Ознака:"
-
-#: templates/scripts/list.html:90 templates/scripts/list.html:92
-msgctxt "programming language"
-msgid "Language"
-msgstr "Програмски језик"
 
 #: templates/scripts/list.html:99 templates/scripts/list.html:101
 msgid "License"

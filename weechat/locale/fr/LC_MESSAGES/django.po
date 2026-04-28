@@ -22,8 +22,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-07 00:28+0100\n"
-"PO-Revision-Date: 2026-03-07 00:29+0100\n"
+"POT-Creation-Date: 2026-04-28 23:32+0200\n"
+"PO-Revision-Date: 2026-04-28 23:32+0200\n"
 "Last-Translator: Sébastien Helleu <flashcode@flashtux.org>\n"
 "Language-Team: French <flashcode@flashtux.org>\n"
 "Language: fr\n"
@@ -5688,7 +5688,8 @@ msgstr ""
 "\n"
 "Il s'agit d'une version de maintenance avec corrections de bugs.\n"
 "\n"
-"Bugs corrigés : <a href=\"https://github.com/weechat/weechat/releases/tag/v4.8.2\">ChangeLog</a>."
+"Bugs corrigés : <a href=\"https://github.com/weechat/weechat/releases/tag/"
+"v4.8.2\">ChangeLog</a>."
 
 #: news/_i18n_info.py:209
 msgid ""
@@ -8421,36 +8422,65 @@ msgstr "Protocole Relay"
 msgid "Client type"
 msgstr "Type de client"
 
-#: templates/about/interfaces.html:27
+#: templates/about/interfaces.html:27 templates/scripts/list.html:90
+#: templates/scripts/list.html:92
+msgctxt "programming language"
+msgid "Language"
+msgstr "Langage"
+
+#. Translators: Plural form (multiple OS can be supported)
+#: templates/about/interfaces.html:29
+msgid "Supported OS"
+msgstr "OS supportés"
+
+#: templates/about/interfaces.html:30
 msgid "Site"
 msgstr "Site"
 
-#: templates/about/interfaces.html:28 templates/donate.html:37
+#: templates/about/interfaces.html:31 templates/donate.html:37
 #: templates/scripts/python3.html:144
 msgid "Notes"
 msgstr "Notes"
 
-#: templates/about/interfaces.html:38 templates/about/interfaces.html:122
+#: templates/about/interfaces.html:40 templates/about/interfaces.html:55
+#: templates/about/interfaces.html:70 templates/about/interfaces.html:96
+#: templates/about/interfaces.html:127 templates/about/interfaces.html:140
+#: templates/about/interfaces.html:153 templates/about/interfaces.html:166
+msgid "Cross-platform"
+msgstr "Multiplateforme"
+
+#: templates/about/interfaces.html:43 templates/about/interfaces.html:130
 msgid "Download page"
 msgstr "Page de téléchargement"
 
-#: templates/about/interfaces.html:99
+#: templates/about/interfaces.html:53 templates/about/interfaces.html:125
+#: templates/about/interfaces.html:151
+msgid "Desktop application"
+msgstr "Application de bureau"
+
+#: templates/about/interfaces.html:81 templates/about/interfaces.html:94
+#: templates/about/interfaces.html:107
+msgid "Mobile application"
+msgstr "Application mobile"
+
+#: templates/about/interfaces.html:116
 msgid "Public beta test:"
 msgstr "Test beta publique :"
 
-#: templates/about/interfaces.html:136
+#: templates/about/interfaces.html:146 templates/about/interfaces.html:159
+#: templates/about/interfaces.html:172
 msgid "This project is not maintained any more."
 msgstr "Ce projet n'est plus maintenu."
 
-#: templates/about/interfaces.html:142
+#: templates/about/interfaces.html:178
 msgid "Something missing?"
 msgstr "Quelque chose manque ?"
 
-#: templates/about/interfaces.html:145
+#: templates/about/interfaces.html:181
 msgid "You have developed another remote interface for WeeChat?"
 msgstr "Vous avez développé une autre interface distante pour WeeChat ?"
 
-#: templates/about/interfaces.html:148
+#: templates/about/interfaces.html:184
 msgid "Tell us more about your great software!"
 msgstr "Dites-nous en plus sur votre excellent logiciel !"
 
@@ -8608,6 +8638,7 @@ msgid "Donate"
 msgstr "Donner"
 
 #: templates/base.html:55
+msgctxt "tongue"
 msgid "Language"
 msgstr "Langue"
 
@@ -9798,6 +9829,7 @@ msgid "sort filters by popularity"
 msgstr "trier les filtres par popularité"
 
 #: templates/scripts/list.html:53 templates/scripts/list.html:55
+msgctxt "programming language"
 msgid "Language:"
 msgstr "Langage :"
 
@@ -9810,11 +9842,6 @@ msgstr "Licence :"
 #: templates/scripts/list.html:149
 msgid "Tag:"
 msgstr "Étiquette :"
-
-#: templates/scripts/list.html:90 templates/scripts/list.html:92
-msgctxt "programming language"
-msgid "Language"
-msgstr "Langage"
 
 #: templates/scripts/list.html:99 templates/scripts/list.html:101
 msgid "License"
@@ -10405,6 +10432,9 @@ msgstr "Erreur interne."
 #: themes/models.py:303
 msgid "Invalid name: different from theme."
 msgstr "Nom invalide : différent du thème."
+
+#~ msgid "Desktop"
+#~ msgstr "Bureau"
 
 #~ msgid "Display Bitcoin or other crypto currency spot exchange value."
 #~ msgstr "Afficher la valeur d'échange du Bitcoin ou autre crypto-monnaie."

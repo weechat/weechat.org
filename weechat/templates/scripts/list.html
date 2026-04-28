@@ -50,9 +50,9 @@
     &nbsp; ({% if script_filters_sort == "popularity" %}<a href="{% url 'scripts' %}" onclick="set_cookie('script_filters', '1_name', '/scripts', 30)">{% trans "sort filters by name" %}</a>{% else %}<a href="{% url 'scripts' %}" onclick="set_cookie('script_filters', '1_popularity', '/scripts', 30)">{% trans "sort filters by popularity" %}</a>{% endif %})
     <div class="ms-4">
       {% if languages %}
-      {% trans "Language:" %}
+      {% trans "Language:" context "programming language" %}
       {% for language in languages %}
-      <a href="{% url 'scripts_filter' 'language' language.0 %}" title="{% trans "Language:" %} {{ language.0.capitalize }}">{{ language.0.capitalize }}<small>&nbsp;({{ language.1 }})</small></a>{% if not forloop.last %}&nbsp;&middot;{% endif %}
+      <a href="{% url 'scripts_filter' 'language' language.0 %}" title="{% trans "Language:" context "programming language" %} {{ language.0.capitalize }}">{{ language.0.capitalize }}<small>&nbsp;({{ language.1 }})</small></a>{% if not forloop.last %}&nbsp;&middot;{% endif %}
       {% endfor %}
       {% endif %}
     </div>

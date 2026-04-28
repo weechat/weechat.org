@@ -24,6 +24,9 @@
         <th>{% trans "Name" %}</th>
         <th>{% trans "Relay protocol" %}</th>
         <th>{% trans "Client type" %}</th>
+        <th>{% trans "Language" context "programming language" %}</th>
+        {% comment %}Translators: Plural form (multiple OS can be supported){% endcomment %}
+        <th>{% trans "Supported OS" %}</th>
         <th>{% trans "Site" %}</th>
         <th>{% trans "Notes" %}</th>
       </tr>
@@ -33,6 +36,8 @@
         <td>WeeChat</td>
         <td>api</td>
         <td>Console</td>
+        <td>C</td>
+        <td>{% trans "Cross-platform" %}</td>
         <td>
           <a href="{% url 'download_project_version' 'weechat' 'stable' %}">
             {% trans "Download page" %}
@@ -43,9 +48,26 @@
         </td>
       </tr>
       <tr>
+        <td>WeeChatRS</td>
+        <td>api</td>
+        <td>{% trans "Desktop application" %}</td>
+        <td>Rust</td>
+        <td>{% trans "Cross-platform" %}</td>
+        <td>
+          <a href="https://github.com/rnocx/WeeChatRS">
+            https://github.com/rnocx/WeeChatRS
+          </a>
+        </td>
+        <td>
+          WeeChat ≥ 4.3.0
+        </td>
+      </tr>
+      <tr>
         <td>Glowing Bear</td>
         <td>weechat</td>
         <td>Web</td>
+        <td>JavaScript</td>
+        <td>{% trans "Cross-platform" %}</td>
         <td>
           <a href="https://glowing-bear.org">
             https://glowing-bear.org
@@ -56,6 +78,8 @@
       <tr>
         <td>weechat-android</td>
         <td>weechat</td>
+        <td>{% trans "Mobile application" %}</td>
+        <td>Java</td>
         <td>Android</td>
         <td>
           <a href="https://github.com/ubergeek42/weechat-android">
@@ -67,7 +91,9 @@
       <tr>
         <td>Lith</td>
         <td>weechat</td>
-        <td>iOS / Android / Linux / Windows / macOS</td>
+        <td>{% trans "Mobile application" %}</td>
+        <td>C++</td>
+        <td>{% trans "Cross-platform" %}</td>
         <td>
           <a href="https://github.com/LithApp/Lith">
             https://github.com/LithApp/Lith
@@ -76,20 +102,11 @@
         <td></td>
       </tr>
       <tr>
-        <td>emacs.el</td>
-        <td>weechat</td>
-        <td>Emacs</td>
-        <td>
-          <a href="https://github.com/the-kenny/weechat.el">
-            https://github.com/the-kenny/weechat.el
-          </a>
-        </td>
-        <td></td>
-      </tr>
-      <tr>
         <td>weechatRN</td>
         <td>weechat</td>
-        <td>iOS / Android</td>
+        <td>{% trans "Mobile application" %}</td>
+        <td>TypeScript</td>
+        <td>Android, iOS</td>
         <td>
           <a href="https://github.com/mhoran/weechatRN">
             https://github.com/mhoran/weechatRN
@@ -103,20 +120,11 @@
         </td>
       </tr>
       <tr>
-        <td>gtk-weechat</td>
-        <td>weechat</td>
-        <td>GTK</td>
-        <td>
-          <a href="https://github.com/0x6d61676e7573/gtk-weechat">
-            https://github.com/0x6d61676e7573/gtk-weechat
-          </a>
-        </td>
-        <td></td>
-      </tr>
-      <tr>
         <td>QWeeChat</td>
         <td>weechat</td>
-        <td>Qt</td>
+        <td>{% trans "Desktop application" %}</td>
+        <td>Python</td>
+        <td>{% trans "Cross-platform" %}</td>
         <td>
           <a href="{% url 'download_project_version' 'qweechat' 'devel' %}">
             {% trans "Download page" %}
@@ -125,9 +133,37 @@
         <td></td>
       </tr>
       <tr>
+        <td>emacs.el</td>
+        <td>weechat</td>
+        <td>Emacs</td>
+        <td>Emacs Lisp</td>
+        <td>{% trans "Cross-platform" %}</td>
+        <td>
+          <a href="https://github.com/the-kenny/weechat.el">
+            https://github.com/the-kenny/weechat.el
+          </a>
+        </td>
+        <td>{% trans "This project is not maintained any more." %}</td>
+      </tr>
+      <tr>
+        <td>gtk-weechat</td>
+        <td>weechat</td>
+        <td>{% trans "Desktop application" %}</td>
+        <td>Python</td>
+        <td>{% trans "Cross-platform" %}</td>
+        <td>
+          <a href="https://github.com/0x6d61676e7573/gtk-weechat">
+            https://github.com/0x6d61676e7573/gtk-weechat
+          </a>
+        </td>
+        <td>{% trans "This project is not maintained any more." %}</td>
+      </tr>
+      <tr>
         <td>weecloud</td>
         <td>weechat</td>
         <td>Web</td>
+        <td>JavaScript</td>
+        <td>{% trans "Cross-platform" %}</td>
         <td>
           <a href="https://github.com/eirikb/weecloud">
             https://github.com/eirikb/weecloud
