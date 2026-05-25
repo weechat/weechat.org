@@ -68,8 +68,8 @@ LANGUAGES_LOCALES = {
 
 # Themes
 THEMES = (
-    'dark',
     'light',
+    'dark',
 )
 
 # Translators: this is a date format, see: http://www.php.net/date
