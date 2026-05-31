@@ -109,7 +109,6 @@
     <thead>
       <tr>
         <th class="text-nowrap"><abbr title="WeeChat Security Advisory">WSA</abbr></th>
-        <th class="text-nowrap">CVE</th>
         <th class="text-nowrap">{% trans "Score" %}</th>
         <th class="text-nowrap">{% trans "Severity" %}</th>
         <th>{% trans "Issue" %}</th>
@@ -124,7 +123,6 @@
       {% for security in security_list %}
       <tr>
         <td class="text-nowrap"><a class="js-scroll" href="#{{ security.wsa }}">{{ security.wsa }}</a></td>
-        <td class="text-nowrap">{{ security.cve_i18n_table }}</td>
         <td class="text-nowrap text-end text-severity{{ security.severity_index }}">{{ security.cvss_score }}</td>
         <td class="text-nowrap"><span title="{{ security.severity_i18n }}">{{ security.score_bar }}</span></td>
         <td>{{ security.issue_i18n }}</td>

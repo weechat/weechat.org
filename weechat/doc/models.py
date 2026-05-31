@@ -192,14 +192,6 @@ class Security(models.Model):
             for name, url in URL_CVE.items()
         }
 
-    def cve_i18n_table(self):
-        """Return CVE to display in table."""
-        if not self.cve:
-            return '-'
-        if self.cve_valid():
-            return self.cve
-        return gettext('Pending')
-
     def cve_i18n(self):
         """Return CVE to display in detailed info."""
         if not self.cve:
