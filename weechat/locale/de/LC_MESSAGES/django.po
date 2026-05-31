@@ -26,7 +26,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-31 16:44+0200\n"
-"PO-Revision-Date: 2026-05-24 00:45+0200\n"
+"PO-Revision-Date: 2026-05-31 22:20+0200\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de_DE\n"
@@ -151,6 +151,8 @@ msgid ""
 "Add option typing.look.item_text, add option `-e` in command /eval, evaluate "
 "option xfer.network.own_ip."
 msgstr ""
+"Neu: Option typing.look.item_text hinzugefügt, Option `-e` für den Befehl /"
+"eval hinzugefügt, Option xfer.network.own_ip evaluiert."
 
 #: about/_i18n_keydates.py:28
 msgid ""
@@ -607,10 +609,8 @@ msgid "API"
 msgstr "API"
 
 #: doc/_i18n_security.py:21
-#, fuzzy
-#| msgid "Relay"
 msgid "API, Relay"
-msgstr "Relay"
+msgstr "API, Relay"
 
 #: doc/_i18n_security.py:22
 msgid "Access of uninitialized pointer"
@@ -842,6 +842,7 @@ msgstr "IRC, Erweiterungen"
 #: doc/_i18n_security.py:57
 msgid "Improper Handling of Highly Compressed Data (Data Amplification)"
 msgstr ""
+"Unsachgemäßer Umgang mit stark komprimierten Daten (Datenamplifikation)"
 
 #: doc/_i18n_security.py:58
 msgid "Improper certificate validation"
@@ -887,14 +888,12 @@ msgid "Logger"
 msgstr "Logger"
 
 #: doc/_i18n_security.py:67
-#, fuzzy
-#| msgid "Crash on malformed HTTP message in relay plugin, protocol \"api\"."
 msgid ""
 "Missing size limit for the decompressed websocket frame in relay plugin, "
 "protocol \"api\"."
 msgstr ""
-"Absturz bei einem fehlerhaften HTTP Nachricht in der Relay-Erweiterung, im "
-"Protokoll \"api\"."
+"Fehlende Größenlimitierung für das dekomprimierte WebSocket-Frame in Relay-"
+"Erweiterung, Protokoll \"api\"."
 
 #: doc/_i18n_security.py:68
 msgid "NULL Pointer Dereference"
@@ -902,11 +901,11 @@ msgstr "Nullzeiger-Dereferenzierung"
 
 #: doc/_i18n_security.py:69
 msgid "Non-constant time password/hash comparison."
-msgstr ""
+msgstr "Passwort-/Hash-Vergleich mit nicht-konstanter Laufzeit."
 
 #: doc/_i18n_security.py:70
 msgid "Observable Timing Discrepancy"
-msgstr ""
+msgstr "Beobachtbare zeitliche Diskrepanz"
 
 #: doc/_i18n_security.py:71
 msgid "Out-of-bounds read"
@@ -979,17 +978,6 @@ msgstr ""
 "<code>irc.network.send_unknown_commands</code> aktiviert ist."
 
 #: doc/_i18n_security.py:83
-#, fuzzy
-#| msgid ""
-#| "There are multiple ways to mitigate this issue:\n"
-#| "<ul>\n"
-#| "  <li>Rremove all relays with protocol \"api\", see: <code>/help relay</"
-#| "code></li>\n"
-#| "  <li>Unload relay plugin with command: <code>/plugin unload relay</code> "
-#| "and see: <code>/help weechat.plugin.autoload</code></li>\n"
-#| "  <li>Secure relay to allow only some trusted IP addresses, see: <code>/"
-#| "help relay.network.allowed_ips</code></li>\n"
-#| "</ul>"
 msgid ""
 "There are multiple ways to mitigate this issue:\n"
 "<ul>\n"
@@ -1005,12 +993,15 @@ msgid ""
 msgstr ""
 "Es gibt mehrere Möglichkeiten, dieses Problem zu beheben:\n"
 "<ul>\n"
-"  <li>entferne alle Relays, die das Protokoll \"api\" nutzen, siehe: <code>/"
-"help relay</code></li>\n"
-"  <li>Relay Erweiterung entfernen mit Befehl: <code>/plugin unload relay</"
+"  <li>permessage-deflate-Komprimierung deaktivieren: "
+"<code>relay.network.websocket_permessage_deflate</code> (empfohlen)</li>\n"
+"  <li>entferne alle relays des Protokolls \"api\", siehe: <code>/help relay</"
+"code></li>\n"
+"  <li>Relay-Erweiterung per Befehl entfernen: <code>/plugin unload relay</"
 "code> und siehe: <code>/help weechat.plugin.autoload</code></li>\n"
-"  <li>Relay absichern, um nur einige vertrauenswürdige IP-Adressen "
-"zuzulassen, siehe: <code>/help relay.network.allowed_ips</code></li>\n"
+"  <li>Sichere Relay ab, um nur bestimmten vertrauenswürdigen IP-Adressen "
+"Zugriff zu gewährt, siehe: <code>/help relay.network.allowed_ips</code></"
+"li>\n"
 "</ul>"
 
 #: doc/_i18n_security.py:84
@@ -1107,6 +1098,11 @@ msgid ""
 "This could allow an attacker to guess a password, a hash or a TOTP and "
 "bypass relay authentication."
 msgstr ""
+"WeeChat verwendet in Relay-Erweiterung sowie bei der TOTP-Validierung einen "
+"nicht-konstanten Zeitvergleich von Passwörtern/Hashes.\n"
+"<br>\n"
+"Dies könnte einem Angreifer ermöglichen, ein Passwort, einen Hash oder ein "
+"TOTP zu erraten und die Relay-Authentifizierung zu umgehen."
 
 #: doc/_i18n_security.py:92
 msgid ""
@@ -1117,6 +1113,13 @@ msgid ""
 "In case of highly compressed frame, this can lead to memory exhaustion and "
 "the WeeChat process can be killer by the OOM killer."
 msgstr ""
+"Beim Dekomprimieren eines von einem Relay-Client empfangenen WebSocket-"
+"Frames – unter Verwendung des \"api\"-Protokolls und bei aktiviertem "
+"permessage-deflate – allokiert WeeChat Speicher ohne Obergrenze.\n"
+"<br>\n"
+"Im Falle eines stark komprimierten Frames kann dies zu einer Auslastung des "
+"Arbeitsspeichers führen, woraufhin der WeeChat-Prozess vom OOM-Killer "
+"beendet werden kann."
 
 #: doc/_i18n_security.py:93
 #, python-brace-format
@@ -5806,32 +5809,18 @@ msgstr ""
 "github.com/weechat/weechat/releases/tag/v4.8.2\">Änderungsprotokoll</a>."
 
 #: news/_i18n_info.py:209
-#, fuzzy
-#| msgid ""
-#| "Version 4.4.0 is available!\n"
-#| "\n"
-#| "New features and bugs fixed: <a href=\"https://github.com/weechat/weechat/"
-#| "releases/tag/v4.4.0\">ChangeLog</a>."
 msgid ""
 "Version 4.9.0 is available!\n"
 "\n"
 "New features and bugs fixed: <a href=\"https://github.com/weechat/weechat/"
 "releases/tag/v4.9.0\">ChangeLog</a>."
 msgstr ""
-"Version 4.4.0 ist verfügbar!\n"
+"Version 4.9.0 ist verfügbar!\n"
 "\n"
 "Viele neue Funktionen und Fehlerbehebungen: <a href=\"https://github.com/"
-"weechat/weechat/releases/tag/v4.4.0\">Änderungsprotokoll</a>."
+"weechat/weechat/releases/tag/v4.9.0\">Änderungsprotokoll</a>."
 
 #: news/_i18n_info.py:210
-#, fuzzy
-#| msgid ""
-#| "Version 4.4.1 is available!\n"
-#| "\n"
-#| "This is a bug fix and maintenance release.\n"
-#| "\n"
-#| "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
-#| "v4.4.1\">ChangeLog</a>."
 msgid ""
 "Version 4.9.1 is available!\n"
 "\n"
@@ -5840,13 +5829,13 @@ msgid ""
 "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
 "v4.9.1\">ChangeLog</a>."
 msgstr ""
-"Version 4.4.1 ist verfügbar!\n"
+"Version 4.9.1 ist verfügbar!\n"
 "\n"
 "Diese Version behebt lediglich Fehler und ist als Korrekturversion zu "
 "verstehen.\n"
 "\n"
 "Eine Liste der Fehlerbereinigungen findet man unter <a href=\"https://"
-"github.com/weechat/weechat/releases/tag/v4.4.1\">Änderungsprotokoll</a>."
+"github.com/weechat/weechat/releases/tag/v4.9.1\">Änderungsprotokoll</a>."
 
 #: news/_i18n_info.py:211
 msgid ""
@@ -9195,19 +9184,14 @@ msgstr ""
 "sobald sie veröffentlicht werden:"
 
 #: templates/doc/security.html:31
-#, fuzzy
-#| msgid ""
-#| "To report a security issue, please <strong>DO NOT</strong> file an issue "
-#| "on GitHub, but send an email to <a "
-#| "href=\"mailto:security@weechat.org\">security@weechat.org</a> instead."
 msgid ""
 "To report a security issue: <a href=\"https://github.com/weechat/weechat/"
 "security\">https://github.com/weechat/weechat/security</a> (please "
 "<strong>DO NOT</strong> file an issue on GitHub)."
 msgstr ""
-"Um ein Sicherheitsproblem zu melden, reichen Sie ein Problem bitte "
-"<strong>NICHT</strong> auf GitHub ein, sondern senden Sie stattdessen eine E-"
-"Mail an <a href=\"mailto:security@weechat.org\">security@weechat.org</a>."
+"Um ein Sicherheitsproblem zu melden: <a href=\"https://github.com/weechat/"
+"weechat/security\">https://github.com/weechat/weechat/security</a> (bitte "
+"<strong>NICHT</strong> auf GitHub melden)."
 
 #: templates/doc/security.html:39
 #, python-format
