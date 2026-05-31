@@ -32,6 +32,8 @@ GITHUB_REPO = 'https://github.com/weechat/%(project)s'
 GITHUB_LINK_ISSUE = f'{GITHUB_REPO}/issues/%(issue)s'
 GITHUB_ISSUE_PATTERN = re.compile(r'(issue|close|closes|closed|fix|fixes|fixed|'
                                   'resolve|resolves|resolved) #([0-9]+)')
+GITHUB_LINK_GHSA = f'{GITHUB_REPO}/security/advisories/%(ghsa)s'
+GITHUB_GHSA_PATTERN = re.compile(r'(GHSA-[0-9A-Za-z-]+)')
 GITHUB_LINK_FILE = f'{GITHUB_REPO}/blob/%(ref)s/%(filename)s'
 GITHUB_LINK_RELEASE = f'{GITHUB_REPO}/releases/tag/v%(version)s'
 
@@ -44,7 +46,7 @@ SAVANNAH_LINKS = {
 SAVANNAH_ISSUE_PATTERN = re.compile(r'(bug|task|patch) #([0-9]+)')
 
 
-def _replace_github_link(match):
+def _replace_github_link_issue(match):
     """Replace a match of GitHub keyword (like "closes #123") by URL."""
     name = match.group(0)
     url = GITHUB_LINK_ISSUE % {
@@ -52,6 +54,16 @@ def _replace_github_link(match):
         'issue': match.group(2),
     }
     return f'<a href="{url}">{name}</a>'
+
+
+def _replace_github_link_ghsa(match):
+    """Replace a match of GitHub GHSA (security advisory) by URL."""
+    ghsa = match.group(0)
+    url = GITHUB_LINK_GHSA % {
+        'project': 'weechat',
+        'ghsa': ghsa,
+    }
+    return f'<a href="{url}">{ghsa}</a>'
 
 
 def _replace_savannah_link(match):
@@ -65,7 +77,8 @@ def _replace_savannah_link(match):
 
 def _replace_link(tracker):
     """Replace GitHub and Savannah links in a string."""
-    string = GITHUB_ISSUE_PATTERN.sub(_replace_github_link, tracker)
+    string = GITHUB_ISSUE_PATTERN.sub(_replace_github_link_issue, tracker)
+    string = GITHUB_GHSA_PATTERN.sub(_replace_github_link_ghsa, string)
     return SAVANNAH_ISSUE_PATTERN.sub(_replace_savannah_link, string)
 
 
