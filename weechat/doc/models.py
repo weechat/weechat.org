@@ -162,7 +162,7 @@ class Security(models.Model):
     wsa = models.CharField(max_length=64)
     cve = models.CharField(max_length=64, blank=True)
     cwe_id = models.IntegerField(default=0)
-    cwe_text = models.CharField(max_length=64)
+    cwe_text = models.CharField(max_length=256)
     cvss_vector = models.CharField(max_length=64)
     cvss_score = models.DecimalField(max_digits=3, decimal_places=1)
     tracker = models.CharField(max_length=64, blank=True)
