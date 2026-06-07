@@ -22,7 +22,7 @@ def __i18n_doc_security():
     gettext_noop("Access of uninitialized pointer")
     gettext_noop("After changing options <code>weechat.network.gnutls_ca_system</code> or <code>weechat.network.gnutls_ca_user</code>, you must restart WeeChat.")
     gettext_noop("After changing the options <code>weechat.network.gnutls_ca_system</code> or <code>weechat.network.gnutls_ca_user</code>, the TLS verification function is lost.\n<br>\nConsequently, any connection to a server with TLS is made without verifying the certificate, which could lead to a man-in-the-middle attack.\n<br>\nConnection to IRC servers with TLS is affected, as well as any connection a server made by a plugin or a script using the function hook_connect.")
-    gettext_noop("An empty line received in Xfer chat (DCC chat) causes a read before the beginning of a buffer.\nThis can lead to a crash of WeeChat.")
+    gettext_noop("An empty line received in Xfer chat (DCC chat) causes a read before the beginning of a buffer.\n<br>\nThis can lead to a crash of WeeChat.")
     gettext_noop("An integer overflow can happen when looping over items in a list.\n<br>\nThis can only happen in rare conditions on 32 and 64-bit systems, as the list must contain more than 2,147,483,647 elements.\n<br>\nOn 16-bit systems, this happens with a list that contains more than 32,767 elements.")
     gettext_noop("An integer overflow happens when using numbers with 9 or more decimals in calculation of expression, for example: <code>/eval -n ${calc:0.123456789}</code>.")
     gettext_noop("An integer overflow may happen in base32 encode/decode functions.")
