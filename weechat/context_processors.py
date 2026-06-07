@@ -22,8 +22,17 @@
 """Context processors."""
 
 from django.conf import settings
+from django.utils.translation import pgettext
 
 from weechat.common.models import Project
+
+# This variable is not used (defined only for the translation with context)
+_THEMES_TRANSLATED = (
+    # Translators: name of the theme (in English: light / dark)
+    pgettext('theme name for website', 'light'),
+    # Translators: name of the theme (in English: light / dark)
+    pgettext('theme name for website', 'dark'),
+)
 
 
 def theme(request):

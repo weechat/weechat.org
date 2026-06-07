@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-07 11:44+0200\n"
+"POT-Creation-Date: 2026-06-07 14:04+0200\n"
 "PO-Revision-Date: 2026-06-07 11:16+0200\n"
 "Last-Translator: AYANOKOUZI, Ryuunosuke <i38w7i3@yahoo.co.jp>\n"
 "Language-Team: Japanese <https://github.com/l/weechat.org/tree/master/"
@@ -343,6 +343,20 @@ msgstr "企業"
 #: common/forms.py:87 common/forms.py:89
 msgid "This field is required."
 msgstr "このフィールドは必須です。"
+
+#. Translators: name of the theme (in English: light / dark)
+#: context_processors.py:32
+#, fuzzy
+#| msgid "Light"
+msgctxt "theme name for website"
+msgid "light"
+msgstr "軽量"
+
+#. Translators: name of the theme (in English: light / dark)
+#: context_processors.py:34
+msgctxt "theme name for website"
+msgid "dark"
+msgstr ""
 
 #: dev/views.py:38
 msgid "Stable version."
@@ -8879,6 +8893,12 @@ msgstr "開発ブログ"
 #: templates/base.html:158
 msgid "About WeeChat.org"
 msgstr "WeeChat.org について"
+
+#: templates/base.html:159
+#, fuzzy
+#| msgid "Theme"
+msgid "Theme:"
+msgstr "テーマ"
 
 #: templates/dev/dev.html:5
 msgid "development"

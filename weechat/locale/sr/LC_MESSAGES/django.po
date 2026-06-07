@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-07 11:44+0200\n"
+"POT-Creation-Date: 2026-06-07 14:04+0200\n"
 "PO-Revision-Date: 2026-06-07 11:16+0200\n"
 "Last-Translator: Иван Пешић <ivan.pesic@gmail.org>\n"
 "Language-Team: Serbian <ivan.pesic@gmail.com>\n"
@@ -383,6 +383,20 @@ msgstr "Компанија"
 #: common/forms.py:87 common/forms.py:89
 msgid "This field is required."
 msgstr "Ово поље је обавезно."
+
+#. Translators: name of the theme (in English: light / dark)
+#: context_processors.py:32
+#, fuzzy
+#| msgid "Light"
+msgctxt "theme name for website"
+msgid "light"
+msgstr "Лаган"
+
+#. Translators: name of the theme (in English: light / dark)
+#: context_processors.py:34
+msgctxt "theme name for website"
+msgid "dark"
+msgstr ""
 
 #: dev/views.py:38
 msgid "Stable version."
@@ -8783,6 +8797,12 @@ msgstr "Развојни блог"
 #: templates/base.html:158
 msgid "About WeeChat.org"
 msgstr "О сајту WeeChat.org"
+
+#: templates/base.html:159
+#, fuzzy
+#| msgid "Theme"
+msgid "Theme:"
+msgstr "Тема"
 
 #: templates/dev/dev.html:5
 msgid "development"
