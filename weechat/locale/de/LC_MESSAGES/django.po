@@ -26,7 +26,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-07 14:04+0200\n"
-"PO-Revision-Date: 2026-06-07 11:17+0200\n"
+"PO-Revision-Date: 2026-06-15 15:58+0200\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de_DE\n"
@@ -405,17 +405,15 @@ msgstr "Dieser Eintrag ist notwendig."
 
 #. Translators: name of the theme (in English: light / dark)
 #: context_processors.py:32
-#, fuzzy
-#| msgid "Light"
 msgctxt "theme name for website"
 msgid "light"
-msgstr "Leicht"
+msgstr "hell"
 
 #. Translators: name of the theme (in English: light / dark)
 #: context_processors.py:34
 msgctxt "theme name for website"
 msgid "dark"
-msgstr ""
+msgstr "dunkel"
 
 #: dev/views.py:38
 msgid "Stable version."
@@ -670,6 +668,10 @@ msgid ""
 "<br>\n"
 "This can lead to a crash of WeeChat."
 msgstr ""
+"Eine im Xfer-Chat (DCC-Chat) empfangene Leerzeile führt zu einem Lesezugriff "
+"vor dem Anfang eines Puffers.\n"
+"<br>\n"
+"Dies kann zu einem Absturz von WeeChat führen."
 
 #: doc/_i18n_security.py:26
 msgid ""
@@ -712,10 +714,8 @@ msgid "Buffer overflow in base 32 encoding in evaluated expressions."
 msgstr "Bufferüberlauf bei Base32-Kodierung in ausgewerteten Ausdrücken."
 
 #: doc/_i18n_security.py:30
-#, fuzzy
-#| msgid "Buffer overflow in parsing of date/time."
 msgid "Buffer overflow in dump of Relay data."
-msgstr "Bufferüberlauf beim Parsen von Datum/Uhrzeit."
+msgstr "Bufferüberlauf beim Ausgeben von Relay-Daten."
 
 #: doc/_i18n_security.py:31
 msgid ""
@@ -761,10 +761,9 @@ msgid "Buffer overflow when receiving a DCC file."
 msgstr "Bufferüberlauf beim Empfang einer DCC Datei."
 
 #: doc/_i18n_security.py:38
-#, fuzzy
-#| msgid "Buffer overflow when receiving a DCC file."
 msgid "Buffer overflow when receiving a line in a Xfer chat (DCC chat) buffer."
-msgstr "Bufferüberlauf beim Empfang einer DCC Datei."
+msgstr ""
+"Bufferüberlauf beim Empfang einer Zeile in einem Xfer-Chat-Buffer (DCC-Chat)."
 
 #: doc/_i18n_security.py:39
 msgid ""
@@ -850,7 +849,7 @@ msgstr ""
 
 #: doc/_i18n_security.py:56
 msgid "Do not use command <code>/debug dump</code>."
-msgstr ""
+msgstr "Verwenden Sie den Befehl <code>/debug dump</code> nicht."
 
 #: doc/_i18n_security.py:57
 msgid ""
@@ -887,6 +886,8 @@ msgid ""
 "Improper Limitation of a Pathname to a Restricted Directory ('Path "
 "Traversal')"
 msgstr ""
+"Unzureichende Einschränkung eines Pfadnamens auf ein eingeschränktes "
+"Verzeichnis ('Path Traversal')"
 
 #: doc/_i18n_security.py:63
 msgid "Improper certificate validation"
@@ -933,7 +934,7 @@ msgstr "Logger"
 
 #: doc/_i18n_security.py:72
 msgid "Memory Allocation with Excessive Size Value"
-msgstr ""
+msgstr "Speicherzuweisung mit übermäßigem Größenwert"
 
 #: doc/_i18n_security.py:73
 msgid ""
@@ -944,22 +945,20 @@ msgstr ""
 "Erweiterung, Protokoll \"api\"."
 
 #: doc/_i18n_security.py:74
-#, fuzzy
-#| msgid ""
-#| "Missing size limit for the decompressed websocket frame in relay plugin, "
-#| "protocol \"api\"."
 msgid ""
 "Missing size limit for the received websocket frame, HTTP message and HTTP "
 "body."
 msgstr ""
-"Fehlende Größenlimitierung für das dekomprimierte WebSocket-Frame in Relay-"
-"Erweiterung, Protokoll \"api\"."
+"Fehlende Größenbeschränkung für den empfangenen WebSocket-Frame, die HTTP-"
+"Nachricht und den HTTP-Body."
 
 #: doc/_i18n_security.py:75
 msgid ""
 "Missing size limit for the unterminated IRC message or isupport value "
 "(message 005)."
 msgstr ""
+"Fehlende Größenbeschränkung für die nicht abgeschlossene IRC-Nachricht oder "
+"den isupport-Wert (Nachricht 005)."
 
 #: doc/_i18n_security.py:76
 msgid "NULL Pointer Dereference"
@@ -1044,20 +1043,6 @@ msgstr ""
 "<code>irc.network.send_unknown_commands</code> aktiviert ist."
 
 #: doc/_i18n_security.py:91
-#, fuzzy
-#| msgid ""
-#| "There are multiple ways to mitigate this issue:\n"
-#| "<ul>\n"
-#| "  <li>Disable permessage-deflate compression: "
-#| "<code>relay.network.websocket_permessage_deflate</code> (recommended)</"
-#| "li>\n"
-#| "  <li>Rremove all relays with protocol \"api\", see: <code>/help relay</"
-#| "code></li>\n"
-#| "  <li>Unload relay plugin with command: <code>/plugin unload relay</code> "
-#| "and see: <code>/help weechat.plugin.autoload</code></li>\n"
-#| "  <li>Secure relay to allow only some trusted IP addresses, see: <code>/"
-#| "help relay.network.allowed_ips</code></li>\n"
-#| "</ul>"
 msgid ""
 "There are multiple ways to mitigate this issue:\n"
 "<ul>\n"
@@ -1071,7 +1056,7 @@ msgid ""
 "relay.network.allowed_ips</code></li>\n"
 "</ul>"
 msgstr ""
-"Es gibt mehrere Möglichkeiten, dieses Problem zu beheben:\n"
+"Es gibt mehrere Möglichkeiten, dieses Problem zu entschärfen:\n"
 "<ul>\n"
 "  <li>permessage-deflate-Komprimierung deaktivieren: "
 "<code>relay.network.websocket_permessage_deflate</code> (empfohlen)</li>\n"
@@ -1079,23 +1064,12 @@ msgstr ""
 "code></li>\n"
 "  <li>Relay-Erweiterung per Befehl entfernen: <code>/plugin unload relay</"
 "code> und siehe: <code>/help weechat.plugin.autoload</code></li>\n"
-"  <li>Sichere Relay ab, um nur bestimmten vertrauenswürdigen IP-Adressen "
+"  <li>Relay absichern, um nur bestimmten vertrauenswürdigen IP-Adressen "
 "Zugriff zu gewährt, siehe: <code>/help relay.network.allowed_ips</code></"
 "li>\n"
 "</ul>"
 
 #: doc/_i18n_security.py:92
-#, fuzzy
-#| msgid ""
-#| "There are multiple ways to mitigate this issue:\n"
-#| "<ul>\n"
-#| "  <li>Rremove all relays with protocol \"api\", see: <code>/help relay</"
-#| "code></li>\n"
-#| "  <li>Unload relay plugin with command: <code>/plugin unload relay</code> "
-#| "and see: <code>/help weechat.plugin.autoload</code></li>\n"
-#| "  <li>Secure relay to allow only some trusted IP addresses, see: <code>/"
-#| "help relay.network.allowed_ips</code></li>\n"
-#| "</ul>"
 msgid ""
 "There are multiple ways to mitigate this issue:\n"
 "<ul>\n"
@@ -1107,7 +1081,7 @@ msgid ""
 "relay.network.allowed_ips</code></li>\n"
 "</ul>"
 msgstr ""
-"Es gibt mehrere Möglichkeiten, dieses Problem zu beheben:\n"
+"Es gibt mehrere Möglichkeiten, dieses Problem zu entschärfen:\n"
 "<ul>\n"
 "  <li>entferne alle Relays, die das Protokoll \"api\" nutzen, siehe: <code>/"
 "help relay</code></li>\n"
@@ -1118,16 +1092,6 @@ msgstr ""
 "</ul>"
 
 #: doc/_i18n_security.py:93
-#, fuzzy
-#| msgid ""
-#| "There are multiple ways to mitigate this issue:\n"
-#| "<ul>\n"
-#| "  <li>Rremove all relays, see: <code>/help relay</code></li>\n"
-#| "  <li>Unload relay plugin with command: <code>/plugin unload relay</code> "
-#| "and see: <code>/help weechat.plugin.autoload</code></li>\n"
-#| "  <li>Secure relay to allow only some trusted IP addresses, see: <code>/"
-#| "help relay.network.allowed_ips</code></li>\n"
-#| "</ul>"
 msgid ""
 "There are multiple ways to mitigate this issue:\n"
 "<ul>\n"
@@ -1138,7 +1102,7 @@ msgid ""
 "relay.network.allowed_ips</code></li>\n"
 "</ul>"
 msgstr ""
-"Es gibt mehrere Möglichkeiten, dieses Problem zu beheben:\n"
+"Es gibt mehrere Möglichkeiten, dieses Problem zu entschärfen:\n"
 "<ul>\n"
 "  <li>entferne alle Relays, siehe: <code>/help relay</code></li>\n"
 "  <li>Relay Erweiterung entfernen mit Befehl: <code>/plugin unload relay</"
@@ -1148,16 +1112,6 @@ msgstr ""
 "</ul>"
 
 #: doc/_i18n_security.py:94 doc/_i18n_security.py:95
-#, fuzzy
-#| msgid ""
-#| "There are multiple ways to mitigate this issue:\n"
-#| "<ul>\n"
-#| "  <li>Rremove all relays, see: <code>/help relay</code></li>\n"
-#| "  <li>Unload relay plugin with command: <code>/plugin unload relay</code> "
-#| "and see: <code>/help weechat.plugin.autoload</code></li>\n"
-#| "  <li>Secure relay to allow only some trusted IP addresses, see: <code>/"
-#| "help relay.network.allowed_ips</code></li>\n"
-#| "</ul>"
 msgid ""
 "There are multiple ways to mitigate this issue:\n"
 "<ul>\n"
@@ -1168,7 +1122,7 @@ msgid ""
 "relay.network.allowed_ips</code></li>\n"
 "</ul>"
 msgstr ""
-"Es gibt mehrere Möglichkeiten, dieses Problem zu beheben:\n"
+"Es gibt mehrere Möglichkeiten, dieses Problem zu entschärfen:\n"
 "<ul>\n"
 "  <li>entferne alle Relays, siehe: <code>/help relay</code></li>\n"
 "  <li>Relay Erweiterung entfernen mit Befehl: <code>/plugin unload relay</"
@@ -1196,24 +1150,20 @@ msgstr ""
 "</ul>"
 
 #: doc/_i18n_security.py:97
-#, fuzzy
-#| msgid ""
-#| "Turn of handling of colors in incoming IRC messages:\n"
-#| "\n"
-#| "<p><pre><code>/set irc.network.colors_receive off</code></pre></p>"
 msgid ""
 "Turn off handling of colors in incoming IRC messages: <code>/set "
 "irc.network.colors_receive off</code>."
 msgstr ""
-"Behandlung von Farben in eingehenden IRC-Nachrichten abschalten:\n"
-"\n"
-"<p><pre><code>/set irc.network.colors_receive off</code></pre></p>"
+"Farbdarstellung in eingehenden IRC-Nachrichten deaktivieren: <code>/set "
+"irc.network.colors_receive off</code>."
 
 #: doc/_i18n_security.py:98
 msgid ""
 "Turn off option to include nick in filename: <code>/set "
 "xfer.file.use_nick_in_filename off</code>."
 msgstr ""
+"Option zum Einbeziehen des Nicknamens in den Dateinamen deaktivieren: <code>/"
+"set xfer.file.use_nick_in_filename off</code>."
 
 #: doc/_i18n_security.py:99
 msgid ""
@@ -1246,14 +1196,6 @@ msgstr ""
 "TOTP zu erraten und die Relay-Authentifizierung zu umgehen."
 
 #: doc/_i18n_security.py:102
-#, fuzzy
-#| msgid ""
-#| "When decompressing a websocket frame received from a Relay client with "
-#| "\"api\" protocol and permessage-deflate enabled, WeeChat allocates memory "
-#| "without upper limit.\n"
-#| "<br>\n"
-#| "In case of highly compressed frame, this can lead to memory exhaustion "
-#| "and the WeeChat process can be killer by the OOM killer."
 msgid ""
 "When decompressing a websocket frame received from a Relay client with "
 "\"api\" protocol and permessage-deflate enabled, WeeChat allocates memory "
@@ -1263,8 +1205,8 @@ msgid ""
 "the WeeChat process can be killed by the OOM killer."
 msgstr ""
 "Beim Dekomprimieren eines von einem Relay-Client empfangenen WebSocket-"
-"Frames – unter Verwendung des \"api\"-Protokolls und bei aktiviertem "
-"permessage-deflate – allokiert WeeChat Speicher ohne Obergrenze.\n"
+"Frames, unter Verwendung des \"api\"-Protokolls und bei aktiviertem "
+"permessage-deflate, allokiert WeeChat Speicher ohne Obergrenze.\n"
 "<br>\n"
 "Im Falle eines stark komprimierten Frames kann dies zu einer Auslastung des "
 "Arbeitsspeichers führen, woraufhin der WeeChat-Prozess vom OOM-Killer "
@@ -1276,6 +1218,9 @@ msgid ""
 "relay</code>, any HTTP request with path_items defined causes an out-of-"
 "bounds read."
 msgstr ""
+"Beim Ausgeben von Relay-Daten mittels <code>/debug dump</code> oder <code>/"
+"debug dump relay</code> führt jeder HTTP-Request mit definierten path_items "
+"zu einem Lesezugriff außerhalb der zulässigen Grenzen (Out-of-Bounds Read)."
 
 #: doc/_i18n_security.py:104
 msgid ""
@@ -1288,6 +1233,16 @@ msgid ""
 "Xfer never overwrites existing files, so if a file exists with the same "
 "name, a suffix like \".1\" is appended to the filename."
 msgstr ""
+"Beim Empfang einer DCC-Datei enthält der generierte Dateiname den Nicknamen "
+"des Gegenübers (die Option <code>xfer.file.use_nick_in_filename</code> ist "
+"standardmäßig aktiviert).\n"
+"<br>\n"
+"Enthält der Nickname Sonderzeichen, könnte die Datei außerhalb des "
+"konfigurierten Download-Pfads gespeichert werden.\n"
+"<br>\n"
+"Xfer überschreibt niemals vorhandene Dateien; existiert bereits eine Datei "
+"mit demselben Namen, wird daher ein Suffix wie „.1“ an den Dateinamen "
+"angehängt."
 
 #: doc/_i18n_security.py:105
 msgid ""
@@ -1300,6 +1255,14 @@ msgid ""
 "(\"\\r\\n\") can lead to memory exhaustion and the WeeChat process can be "
 "killed by the OOM killer."
 msgstr ""
+"Beim Empfang von Daten über den Socket baut die IRC-Erweiterung eine "
+"Teilnachricht auf, bis \"\\r\\n\" gefunden wird. \n"
+"<br>\n"
+"Es gibt keine Begrenzung für die Größe der zugewiesenen Nachricht.\n"
+"<br>\n"
+"Ein böswilliger Server, der große Datenmengen ohne Nachrichtenende "
+"(\"\\r\\n\") sendet, kann zu einer Auslastung des Arbeitsspeichers führen, "
+"wodurch der WeeChat-Prozess vom OOM-Killer beendet werden kann."
 
 #: doc/_i18n_security.py:106
 msgid ""
@@ -1312,6 +1275,16 @@ msgid ""
 "frame or HTTP message/body can lead to memory exhaustion and the WeeChat "
 "process can be killed by the OOM killer."
 msgstr ""
+"Beim Empfang eines Teils eines WebSocket-Frames, einer HTTP-Nachricht oder "
+"eines HTTP-Bodys erstellt das Relay-Plugin einen Teilpuffer, bis das Ende "
+"der Daten erreicht ist.\n"
+"<br>\n"
+"Für den zugewiesenen Buffer gibt es keine Begrenzung.\n"
+"<br>\n"
+"Ein böswilliger Client, der große Datenmengen ohne Abschluss des WebSocket-"
+"Frames oder der HTTP-Nachricht bzw. des HTTP-Bodys sendet, kann zu einer "
+"Auslastung des Arbeitsspeichers führen, wodurch der WeeChat-Prozess vom OOM-"
+"Killer beendet werden kann."
 
 #: doc/_i18n_security.py:107
 #, python-brace-format
@@ -1355,10 +1328,12 @@ msgstr ""
 #: doc/_i18n_security.py:109
 msgid "Write of DCC file received outside of configured download path."
 msgstr ""
+"Schreiben einer DCC-Datei, die außerhalb des konfigurierten Download-Pfads "
+"empfangen wurde."
 
 #: doc/_i18n_security.py:110
 msgid "Xfer"
-msgstr ""
+msgstr "Xfer"
 
 #: doc/_i18n_security.py:111
 msgid ""
@@ -6038,14 +6013,6 @@ msgstr ""
 "github.com/weechat/weechat/releases/tag/v4.9.1\">Änderungsprotokoll</a>."
 
 #: news/_i18n_info.py:211
-#, fuzzy
-#| msgid ""
-#| "Version 4.4.2 is available!\n"
-#| "\n"
-#| "This is a bug fix and maintenance release.\n"
-#| "\n"
-#| "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
-#| "v4.4.2\">ChangeLog</a>."
 msgid ""
 "Version 4.9.2 is available!\n"
 "\n"
@@ -6054,13 +6021,13 @@ msgid ""
 "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
 "v4.9.2\">ChangeLog</a>."
 msgstr ""
-"Version 4.4.2 ist verfügbar!\n"
+"Version 4.9.2 ist verfügbar!\n"
 "\n"
 "Diese Version behebt lediglich Fehler und ist als Korrekturversion zu "
 "verstehen.\n"
 "\n"
 "Eine Liste der Fehlerbereinigungen findet man unter <a href=\"https://"
-"github.com/weechat/weechat/releases/tag/v4.4.2\">Änderungsprotokoll</a>."
+"github.com/weechat/weechat/releases/tag/v4.9.2\">Änderungsprotokoll</a>."
 
 #: news/_i18n_info.py:212
 msgid ""
@@ -9092,10 +9059,8 @@ msgid "About WeeChat.org"
 msgstr "Über WeeChat.org"
 
 #: templates/base.html:159
-#, fuzzy
-#| msgid "Theme"
 msgid "Theme:"
-msgstr "Theme"
+msgstr "Theme:"
 
 #: templates/dev/dev.html:5
 msgid "development"
