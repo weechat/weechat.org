@@ -59,7 +59,7 @@ def __i18n_doc_security():
     gettext_noop("IRC")
     gettext_noop("IRC, Plugins")
     gettext_noop("Improper Handling of Highly Compressed Data (Data Amplification)")
-    gettext_noop("Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')")
+    gettext_noop("Improper Limitation of a Pathname to a Restricted Directory (\"Path Traversal\")")
     gettext_noop("Improper certificate validation")
     gettext_noop("Improper input validation")
     gettext_noop("Integer Overflow or Wraparound")
