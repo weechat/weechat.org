@@ -31,7 +31,7 @@ jobs:
 
     - name: Cache poexam
       id: cache-poexam
-      uses: actions/cache@v4
+      uses: actions/cache@v6
       with:
         path: ~/.cargo/bin/poexam
         key: poexam-${{ env.POEXAM_VERSION }}-${{ runner.os }}
