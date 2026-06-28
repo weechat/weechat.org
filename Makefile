@@ -26,7 +26,7 @@ check: gettext lint
 lint: flake8 pylint
 
 gettext:
-	poexam check
+	poexam check --file-stats --rule-stats
 
 flake8:
 	flake8 weechat --count --max-line-length=88 --select=E9,F63,F7,F82 --exclude=migrations --show-source --statistics
