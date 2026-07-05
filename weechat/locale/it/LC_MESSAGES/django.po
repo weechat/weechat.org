@@ -21,8 +21,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
-"Report-Msgid-Bugs-To: flashcode@flashtux.org\n"
-"POT-Creation-Date: 2026-06-27 15:59+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-05 17:10+0200\n"
 "PO-Revision-Date: 2026-06-28 08:35+0200\n"
 "Last-Translator: Marco Paolone <marcopaolone@gmail.com>\n"
 "Language-Team: Italian <flashcode@flashtux.org>\n"
@@ -829,6 +829,14 @@ msgid "Memory Allocation with Excessive Size Value"
 msgstr ""
 
 #: doc/_i18n_security.py:73
+msgid "Memory leak in API relay, endpoint \"handshake\"."
+msgstr ""
+
+#: doc/_i18n_security.py:74
+msgid "Missing Release of Memory after Effective Lifetime"
+msgstr ""
+
+#: doc/_i18n_security.py:75
 #, fuzzy
 #| msgid "Crash when receiving special chars in IRC messages."
 msgid ""
@@ -836,7 +844,7 @@ msgid ""
 "protocol \"api\"."
 msgstr "Crash alla ricezione di caratteri speciali nei messaggi IRC."
 
-#: doc/_i18n_security.py:74
+#: doc/_i18n_security.py:76
 #, fuzzy
 #| msgid "Crash when receiving special chars in IRC messages."
 msgid ""
@@ -844,63 +852,63 @@ msgid ""
 "body."
 msgstr "Crash alla ricezione di caratteri speciali nei messaggi IRC."
 
-#: doc/_i18n_security.py:75
+#: doc/_i18n_security.py:77
 msgid ""
 "Missing size limit for the unterminated IRC message or isupport value "
 "(message 005)."
 msgstr ""
 
-#: doc/_i18n_security.py:76
+#: doc/_i18n_security.py:78
 msgid "NULL Pointer Dereference"
 msgstr ""
 
-#: doc/_i18n_security.py:77
+#: doc/_i18n_security.py:79
 msgid "Non-constant time password/hash comparison."
 msgstr ""
 
-#: doc/_i18n_security.py:78
+#: doc/_i18n_security.py:80
 msgid "Observable Timing Discrepancy"
 msgstr ""
 
-#: doc/_i18n_security.py:79
+#: doc/_i18n_security.py:81
 msgid "Out-of-bounds read"
 msgstr ""
 
-#: doc/_i18n_security.py:80
+#: doc/_i18n_security.py:82
 msgid "Out-of-bounds write"
 msgstr ""
 
-#: doc/_i18n_security.py:81
+#: doc/_i18n_security.py:83
 msgid "Possible man-in-the-middle attack in TLS connection to IRC server."
 msgstr ""
 
-#: doc/_i18n_security.py:82
+#: doc/_i18n_security.py:84
 msgid "Possible man-in-the-middle attack in TLS connection to servers."
 msgstr ""
 
-#: doc/_i18n_security.py:83
+#: doc/_i18n_security.py:85
 msgid "Relay"
 msgstr ""
 
-#: doc/_i18n_security.py:84
+#: doc/_i18n_security.py:86
 msgid "Remote execution of commands via scripts."
 msgstr ""
 
-#: doc/_i18n_security.py:85
+#: doc/_i18n_security.py:87
 #, fuzzy
 #| msgid "Uncontrolled format string in API function infobar_printf."
 msgid "Remove/unload all scripts calling the API function hook_process."
 msgstr ""
 "Formato della stringa non verificato nella funzione API infobar_printf."
 
-#: doc/_i18n_security.py:86
+#: doc/_i18n_security.py:88
 #, fuzzy
 #| msgid "Uncontrolled format string in API function infobar_printf."
 msgid "Remove/unload all scripts calling the API function infobar_printf."
 msgstr ""
 "Formato della stringa non verificato nella funzione API infobar_printf."
 
-#: doc/_i18n_security.py:87
+#: doc/_i18n_security.py:89
 #, fuzzy
 #| msgid "Uncontrolled format string in API function infobar_printf."
 msgid ""
@@ -908,14 +916,14 @@ msgid ""
 msgstr ""
 "Formato della stringa non verificato nella funzione API infobar_printf."
 
-#: doc/_i18n_security.py:88
+#: doc/_i18n_security.py:90
 msgid ""
 "Strings are built with uncontrolled format when IRC commands are redirected "
 "by relay plugin. If the output or redirected command contains formatting "
 "chars like \"%\", this can lead to a crash of WeeChat."
 msgstr ""
 
-#: doc/_i18n_security.py:89
+#: doc/_i18n_security.py:91
 #, fuzzy
 msgid ""
 "Strings are built with uncontrolled format when nicks containing \"%\" are "
@@ -923,7 +931,7 @@ msgid ""
 msgstr ""
 "Formato della stringa non verificato nella funzione API infobar_printf."
 
-#: doc/_i18n_security.py:90
+#: doc/_i18n_security.py:92
 #, fuzzy
 msgid ""
 "Strings are built with uncontrolled format when unknown IRC commands are "
@@ -932,7 +940,17 @@ msgid ""
 msgstr ""
 "Formato della stringa non verificato nella funzione API infobar_printf."
 
-#: doc/_i18n_security.py:91
+#: doc/_i18n_security.py:93
+msgid ""
+"The messages received on \"handshake\" endpoint, which does not require "
+"authentication, are not freed if the content is not a JSON object (for "
+"example an array or any other JSON type).\n"
+"<br>\n"
+"A malicious client can send large arrays and cause memory exhaustion. The "
+"WeeChat process can be killed by the OOM killer."
+msgstr ""
+
+#: doc/_i18n_security.py:94
 msgid ""
 "There are multiple ways to mitigate this issue:\n"
 "<ul>\n"
@@ -942,12 +960,12 @@ msgid ""
 "code></li>\n"
 "  <li>Unload relay plugin with command: <code>/plugin unload relay</code> "
 "and see: <code>/help weechat.plugin.autoload</code></li>\n"
-"  <li>Secure relay to allow some trusted IP addresses, see: <code>/help "
+"  <li>Secure relay to allow only trusted IP addresses, see: <code>/help "
 "relay.network.allowed_ips</code></li>\n"
 "</ul>"
 msgstr ""
 
-#: doc/_i18n_security.py:92
+#: doc/_i18n_security.py:95 doc/_i18n_security.py:96
 msgid ""
 "There are multiple ways to mitigate this issue:\n"
 "<ul>\n"
@@ -955,12 +973,12 @@ msgid ""
 "code></li>\n"
 "  <li>Unload relay plugin with command: <code>/plugin unload relay</code> "
 "and see: <code>/help weechat.plugin.autoload</code></li>\n"
-"  <li>Secure relay to allow some trusted IP addresses, see: <code>/help "
+"  <li>Secure relay to allow only trusted IP addresses, see: <code>/help "
 "relay.network.allowed_ips</code></li>\n"
 "</ul>"
 msgstr ""
 
-#: doc/_i18n_security.py:93
+#: doc/_i18n_security.py:97 doc/_i18n_security.py:98 doc/_i18n_security.py:99
 msgid ""
 "There are multiple ways to mitigate this issue:\n"
 "<ul>\n"
@@ -972,19 +990,7 @@ msgid ""
 "</ul>"
 msgstr ""
 
-#: doc/_i18n_security.py:94 doc/_i18n_security.py:95
-msgid ""
-"There are multiple ways to mitigate this issue:\n"
-"<ul>\n"
-"  <li>Remove all relays, see: <code>/help relay</code></li>\n"
-"  <li>Unload relay plugin with command: <code>/plugin unload relay</code> "
-"and see: <code>/help weechat.plugin.autoload</code></li>\n"
-"  <li>Secure relay to allow some trusted IP addresses, see: <code>/help "
-"relay.network.allowed_ips</code></li>\n"
-"</ul>"
-msgstr ""
-
-#: doc/_i18n_security.py:96
+#: doc/_i18n_security.py:100
 msgid ""
 "There are multiple ways to mitigate this issue:\n"
 "<ul>\n"
@@ -995,30 +1001,30 @@ msgid ""
 "</ul>"
 msgstr ""
 
-#: doc/_i18n_security.py:97
+#: doc/_i18n_security.py:101
 msgid ""
 "Turn off handling of colors in incoming IRC messages: <code>/set "
 "irc.network.colors_receive off</code>."
 msgstr ""
 
-#: doc/_i18n_security.py:98
+#: doc/_i18n_security.py:102
 msgid ""
 "Turn off option to include nick in filename: <code>/set "
 "xfer.file.use_nick_in_filename off</code>."
 msgstr ""
 
-#: doc/_i18n_security.py:99
+#: doc/_i18n_security.py:103
 msgid ""
 "Untrusted command for function hook_process could lead to execution of "
 "commands, because of shell expansions (so the problem is only caused by some "
 "scripts, not by WeeChat itself)."
 msgstr ""
 
-#: doc/_i18n_security.py:100
+#: doc/_i18n_security.py:104
 msgid "Use of invalid pointer in build of log filename."
 msgstr ""
 
-#: doc/_i18n_security.py:101
+#: doc/_i18n_security.py:105
 msgid ""
 "WeeChat uses non-constant time password/hash comparison in the Relay plugin "
 "and in TOTP validation.\n"
@@ -1027,7 +1033,7 @@ msgid ""
 "bypass relay authentication."
 msgstr ""
 
-#: doc/_i18n_security.py:102
+#: doc/_i18n_security.py:106
 msgid ""
 "When decompressing a websocket frame received from a Relay client with "
 "\"api\" protocol and permessage-deflate enabled, WeeChat allocates memory "
@@ -1037,14 +1043,14 @@ msgid ""
 "the WeeChat process can be killed by the OOM killer."
 msgstr ""
 
-#: doc/_i18n_security.py:103
+#: doc/_i18n_security.py:107
 msgid ""
 "When dumping Relay data with <code>/debug dump</code> or <code>/debug dump "
 "relay</code>, any HTTP request with path_items defined causes an out-of-"
 "bounds read."
 msgstr ""
 
-#: doc/_i18n_security.py:104
+#: doc/_i18n_security.py:108
 msgid ""
 "When receiving a DCC file, the filename built contains the remote nick (the "
 "option <code>xfer.file.use_nick_in_filename</code> is on by default).\n"
@@ -1056,7 +1062,7 @@ msgid ""
 "name, a suffix like \".1\" is appended to the filename."
 msgstr ""
 
-#: doc/_i18n_security.py:105
+#: doc/_i18n_security.py:109
 msgid ""
 "When receiving data on the socket, the IRC plugin builds a partial message "
 "until \"\\r\\n\" is found.\n"
@@ -1068,7 +1074,7 @@ msgid ""
 "killed by the OOM killer."
 msgstr ""
 
-#: doc/_i18n_security.py:106
+#: doc/_i18n_security.py:110
 msgid ""
 "When receiving part of websocket frame, HTTP message or HTTP body, the Relay "
 "plugin builds a partial buffer until the end of data is found.\n"
@@ -1080,7 +1086,7 @@ msgid ""
 "process can be killed by the OOM killer."
 msgstr ""
 
-#: doc/_i18n_security.py:107
+#: doc/_i18n_security.py:111
 #, python-brace-format
 msgid ""
 "With WeeChat ≥ 1.1, you can create a trigger:\n"
@@ -1093,7 +1099,7 @@ msgid ""
 msgstr ""
 
 # noqa:punc-space-id;punc-space-str
-#: doc/_i18n_security.py:108
+#: doc/_i18n_security.py:112
 msgid ""
 "With WeeChat ≥ 1.1, you can create a trigger:\n"
 "\n"
@@ -1105,20 +1111,20 @@ msgid ""
 "WeeChat."
 msgstr ""
 
-#: doc/_i18n_security.py:109
+#: doc/_i18n_security.py:113
 msgid "Write of DCC file received outside of configured download path."
 msgstr ""
 
-#: doc/_i18n_security.py:110
+#: doc/_i18n_security.py:114
 msgid "Xfer"
 msgstr ""
 
-#: doc/_i18n_security.py:111
+#: doc/_i18n_security.py:115
 msgid ""
 "You can remove all relays of type \"irc\", see <code>/help relay</code>."
 msgstr ""
 
-#: doc/_i18n_security.py:112
+#: doc/_i18n_security.py:116
 msgid ""
 "You can unload the logger plugin, thus stopping recording of all buffers: "
 "<code>/plugin unload logger</code>."
@@ -4526,6 +4532,16 @@ msgstr ""
 
 #: news/_i18n_info.py:212
 msgid ""
+"Version 4.9.3 is available!\n"
+"\n"
+"This is a bug fix and maintenance release.\n"
+"\n"
+"Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
+"v4.9.3\">ChangeLog</a>."
+msgstr ""
+
+#: news/_i18n_info.py:213
+msgid ""
 "Version v0.1.2 is available!\n"
 "\n"
 "News since last version are:\n"
@@ -4558,11 +4574,11 @@ msgstr ""
 "Aggiunta, 24-05-2005: corretto crash all'avvio e rilevamento Perl/Python, "
 "ora la versione è 0.1.2.1."
 
-#: news/_i18n_info.py:213
+#: news/_i18n_info.py:214
 msgid "WeeChat - Wee Enhanced Environment for Chat"
 msgstr "WeeChat - Wee Enhanced Environment for Chat"
 
-#: news/_i18n_info.py:214
+#: news/_i18n_info.py:215
 msgid ""
 "WeeChat IRC channels (official and non-official ones) have moved from "
 "freenode to <a href=\"https://libera.chat/\">libera.chat</a>.\n"
@@ -4573,7 +4589,7 @@ msgid ""
 "See you soon there!"
 msgstr ""
 
-#: news/_i18n_info.py:215
+#: news/_i18n_info.py:216
 msgid ""
 "WeeChat has many new important features since some weeks:\n"
 "- multi-windows management (with horizontal and vertical window split)\n"
@@ -4596,12 +4612,12 @@ msgstr ""
 "Sentitevi liberi di notificare qualunque problema o suggerimento per "
 "migliorare la navigazione tra buffer/finestre."
 
-#: news/_i18n_info.py:216
+#: news/_i18n_info.py:217
 #, fuzzy
 msgid "WeeChat in Cygwin"
 msgstr "WeeChat è:"
 
-#: news/_i18n_info.py:217
+#: news/_i18n_info.py:218
 msgid ""
 "WeeChat is now in Cygwin, and can be installed with setup.exe.\n"
 "Version 0.4.2 is available for 32 and 64-bit Cygwin.\n"
@@ -4610,7 +4626,7 @@ msgid ""
 "yet available in Cygwin."
 msgstr ""
 
-#: news/_i18n_info.py:218
+#: news/_i18n_info.py:219
 msgid ""
 "WeeChat project is started.\n"
 "\n"
@@ -4630,7 +4646,7 @@ msgstr ""
 "- veloce, leggero ed estensibile con script.\n"
 "-..."
 
-#: news/_i18n_info.py:219
+#: news/_i18n_info.py:220
 msgid ""
 "WeeChat project now accepts donations via Paypal account, with secured "
 "payment."
@@ -4638,7 +4654,7 @@ msgstr ""
 "Il progetto WeeChat ora accetta donazioni tramite account Paypal, con "
 "pagamento sicuro."
 
-#: news/_i18n_info.py:220
+#: news/_i18n_info.py:221
 msgid ""
 "WeeChat project now accepts recurring donations via Liberapay, which has "
 "very low fees (see <a href=\"https://liberapay.com/about/"
@@ -4646,7 +4662,7 @@ msgid ""
 "crowdfunding platforms</a>)."
 msgstr ""
 
-#: news/_i18n_info.py:221
+#: news/_i18n_info.py:222
 msgid ""
 "WeeChat repositories (weechat, scripts, qweechat) have been moved to GitHub, "
 "in WeeChat organization: <a href=\"https://github.com/weechat\">https://"
@@ -4656,15 +4672,15 @@ msgid ""
 "repositories-moved-to-Github\">development blog</a>."
 msgstr ""
 
-#: news/_i18n_info.py:222
+#: news/_i18n_info.py:223
 msgid "WeeChat screenshot"
 msgstr "Schermata di WeeChat"
 
-#: news/_i18n_info.py:223
+#: news/_i18n_info.py:224
 msgid "WeeChat scripts page"
 msgstr "Pagina degli script di WeeChat"
 
-#: news/_i18n_info.py:224
+#: news/_i18n_info.py:225
 msgid ""
 "WeeChat scripts page (today Perl scripts only) has been added.\n"
 "On this page you can submit your script (need to be approved by WeeChat "
@@ -4680,7 +4696,7 @@ msgstr ""
 "Nota: gli script Perl richiedono una versione di WeeChat > 0.0.3, per cui "
 "bisogna scaricare la versione di sviluppo."
 
-#: news/_i18n_info.py:225
+#: news/_i18n_info.py:226
 msgid ""
 "WeeChat story page is now available, as screenshots. You can see differences "
 "between all versions in one view!\n"
@@ -4690,15 +4706,15 @@ msgstr ""
 "notare la differenza tra tutte le versioni in un colpo solo!\n"
 "È visibile anche la versione di sviluppo ed è aggiornata di frequente."
 
-#: news/_i18n_info.py:226
+#: news/_i18n_info.py:227
 msgid "WeeChat users map"
 msgstr "Mappa utenti WeeChat"
 
-#: news/_i18n_info.py:227
+#: news/_i18n_info.py:228
 msgid "WeeChat will merge with irssi"
 msgstr "WeeChat si unirà ad irssi"
 
-#: news/_i18n_info.py:228
+#: news/_i18n_info.py:229
 msgid ""
 "WeeChat, the fast, light and extensible IRC client, is released for the "
 "first time, version 0.0.1.\n"
@@ -4746,7 +4762,7 @@ msgstr ""
 "Tutti i suggerimenti e le notifiche di bug sono benvenuti, sulla pagina di "
 "supporto di WeeChat troverete il modo per contattarci."
 
-#: news/_i18n_info.py:229
+#: news/_i18n_info.py:230
 #, fuzzy
 #| msgid "Packages"
 msgid "XZ packages"
