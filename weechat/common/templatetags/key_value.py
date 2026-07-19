@@ -28,9 +28,9 @@ register = template.Library()
 
 
 @register.filter()
-def key_value(dict, key):
+def key_value(d, key):
     """Get value for a dict key."""
     try:
-        return dict[key]
+        return d[key]
     except KeyError:
         return ''
