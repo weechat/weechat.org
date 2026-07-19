@@ -33,12 +33,12 @@ from django.utils.translation import gettext
 
 from weechat.common.models import Project
 from weechat.common.path import files_path_join
-from weechat.common.utils import version_to_list
 from weechat.doc.models import (
     Language,
     Version,
     Doc,
     Security,
+    get_security_list_by_release,
 )
 from weechat.download.models import Release
 
@@ -280,38 +280,22 @@ def security_wsa(request, project='weechat', wsa=''):
     return render(request, 'doc/security.html', context)
 
 
-def is_security_affecting_release(security, release):
-    """Return True if the Security issue is affecting the Release."""
-    version_list = version_to_list(release.version)
-    for version in security.affected.split(','):
-        if '-' in version:
-            version1, version2 = version.split('-', 1)
-            version1 = version_to_list(version1)
-            version2 = version_to_list(version2)
-            if version1 <= version_list <= version2:
-                return True
-        else:
-            if version_list == version_to_list(version):
-                return True
-    return False
-
-
 def security_version(request, project='weechat', version=''):
     """Page with security vulnerabilities, by version or for a version."""
     get_object_or_404(Project, name=project, visible=1)
-    security_list = (Security.objects.all()
-                     .filter(
-                         project__name=project,
-                         project__visible=1,
-                         visible=1,
-                     )
-                     .order_by('-date'))
     context = {
         'project': project,
         'security': True,
         'version': version,
     }
     if version:
+        security_list = (Security.objects.all()
+                         .filter(
+                             project__name=project,
+                             project__visible=1,
+                             visible=1,
+                         )
+                         .order_by('-date'))
         try:
             release = Release.objects.get(
                 project__name=project,
@@ -326,24 +310,8 @@ def security_version(request, project='weechat', version=''):
         if release:
             context['security_list'] = [
                 security for security in security_list
-                if is_security_affecting_release(security, release)
+                if security.is_affecting_release(release)
             ]
     else:
-        security_list_by_release = {}
-        release_list = (Release.objects
-                        .filter(
-                            project__name=project,
-                            project__visible=1,
-                        )
-                        .exclude(version='devel')
-                        .exclude(version='stable')
-                        .order_by('-date'))
-        for release in release_list:
-            if not release.is_released:
-                continue
-            security_list_by_release[release] = [
-                security for security in security_list
-                if is_security_affecting_release(security, release)
-            ]
-        context['security_list_by_release'] = security_list_by_release
+        context['security_list_by_release'] = get_security_list_by_release(project)
     return render(request, 'doc/security.html', context)
