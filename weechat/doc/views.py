@@ -272,6 +272,7 @@ def security_wsa(request, project='weechat', wsa=''):
                 project__name=project,
                 project__visible=1,
                 wsa=wsa,
+                visible=1,
             )
         ]
     except ObjectDoesNotExist:
