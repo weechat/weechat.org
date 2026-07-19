@@ -58,16 +58,20 @@
       {% url 'doc_project_security_version' project package_version.grouper.version as security_url %}
       {% blocktrans %}<strong>Caution:</strong> this version has known vulnerabilities (<a href="{{ security_url }}">list</a>).{% endblocktrans %}
     </p>
-    {% elif version != "devel" and version != "old" and package_version.grouper.security_issues_fixed > 0 %}
-    <div class="alert alert-secondary">
-      {% url 'doc_project_security' project as security_url %}
-      {% blocktrans trimmed count counter=package_version.grouper.security_issues_fixed %}
-      <strong>Note:</strong> this release fixes <a href="{{ security_url }}">{{ counter }} vulnerability</a>.
-      {% plural %}
-      <strong>Note:</strong> this release fixes <a href="{{ security_url }}">{{ counter }} vulnerabilities</a>.
-      {% endblocktrans %}
-      {% trans "It is recommended to upgrade from any older version to this one." %}
-    </div>
+    {% elif version != "devel" and version != "old" %}
+      {% with count_fixes=package_version.grouper.security_issues_fixed %}
+      {% if count_fixes > 0 %}
+      <div class="alert alert-secondary">
+        {% url 'doc_project_security' project as security_url %}
+        {% blocktrans trimmed count counter=count_fixes %}
+        <strong>Note:</strong> this release fixes <a href="{{ security_url }}">{{ counter }} vulnerability</a>.
+        {% plural %}
+        <strong>Note:</strong> this release fixes <a href="{{ security_url }}">{{ counter }} vulnerabilities</a>.
+        {% endblocktrans %}
+        {% trans "It is recommended to upgrade from any older version to this one." %}
+      </div>
+      {% endif %}
+      {% endwith %}
     {% endif %}
     {% endwith %}
 

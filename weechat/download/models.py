@@ -50,15 +50,9 @@ class Release(models.Model):
     version = models.CharField(max_length=64)
     description = models.CharField(max_length=64, blank=True)
     date = models.DateField(blank=True, null=True)
-    security_issues_fixed = models.IntegerField(default=0)
 
     def __str__(self):
-        security_fix = (f', {self.security_issues_fixed} SECURITY FIX'
-                        if self.security_issues_fixed > 0 else '')
-        return (
-            f'{self.project.name} {self.version} '
-            f'({self.date}){security_fix}'
-        )
+        return f'{self.project.name} {self.version} ({self.date})'
 
     def next_stable_date(self):
         """Return the next stable release date (only for "devel" version)."""
@@ -98,6 +92,16 @@ class Release(models.Model):
         # version < 4.4.0: link to ReleaseNotes-x.y.z.html
         filename = f'ReleaseNotes-{version}.html'
         return f'/files/doc/{self.project.name}/{filename}'
+
+    def security_issues_fixed(self):
+        """Return the number of security vulnerabilities fixed by this release."""
+        from weechat.doc.models import Security
+        return Security.objects.filter(
+            project__name=self.project.name,
+            project__visible=1,
+            visible=1,
+            fixed=self.version
+        ).count()
 
     @property
     def is_released(self):
@@ -256,7 +260,6 @@ def set_stable_version(project, version):
         )
     release.description = version
     release.date = date.today()
-    release.security_issues_fixed = 0
     release.save()
 
     # update package symbolic links
@@ -307,7 +310,6 @@ def add_release(project, version):
         )
     release.description = ''
     release.date = date.today()
-    release.security_issues_fixed = 0
     release.save()
     for ext in PACKAGES_COMPRESSION_EXT:
         Package.objects.filter(
