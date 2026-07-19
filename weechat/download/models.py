@@ -28,6 +28,7 @@ import sys
 
 import pytz
 
+from django.apps import apps
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
 from django.db import models
@@ -95,8 +96,8 @@ class Release(models.Model):
 
     def security_issues_fixed(self):
         """Return the number of security vulnerabilities fixed by this release."""
-        from weechat.doc.models import Security
-        return Security.objects.filter(
+        security = apps.get_model('doc', 'Security')
+        return security.objects.filter(
             project__name=self.project.name,
             project__visible=1,
             visible=1,
