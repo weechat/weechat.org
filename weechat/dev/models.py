@@ -24,7 +24,7 @@
 from datetime import date
 
 from django.db import models
-from django.utils.safestring import mark_safe
+from django.utils.html import format_html
 
 from weechat.common.tracker import commits_links, tracker_links
 from weechat.common.templatetags.localdate import localdate
@@ -60,7 +60,7 @@ class Task(models.Model):
         """
         try:
             if self.version.date > date.today():
-                return mark_safe(f'≈ {localdate(self.version.date)}')
+                return format_html('≈ {}', localdate(self.version.date))
             return localdate(self.version.date)
         except:  # noqa: E722  pylint: disable=bare-except
             return ''

@@ -24,7 +24,7 @@
 from django import template
 from django.conf import settings
 from django.utils import dateformat
-from django.utils.safestring import mark_safe
+from django.utils.html import format_html
 from django.utils.translation import gettext
 
 # pylint: disable=invalid-name
@@ -47,4 +47,4 @@ def localdate(value, fmt='date'):
         fmt = gettext(settings.DATETIME_FORMAT)
     date_iso = value.isoformat()
     date_fmt = dateformat.format(value, fmt)
-    return mark_safe(f'<time datetime="{date_iso}">{date_fmt}</time>')
+    return format_html('<time datetime="{}">{}</time>', date_iso, date_fmt)

@@ -23,6 +23,7 @@
 
 from django.db import models
 from django.db.models.signals import post_save
+from django.utils.html import format_html
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext, gettext_noop
 
@@ -225,7 +226,7 @@ class Security(models.Model):
         """Return CVE to display in detailed info."""
         if not self.cve:
             not_avail = gettext('Not available')
-            return mark_safe(f'<span class="text-muted">{not_avail}</span>')
+            return format_html('<span class="text-muted">{}</span>', not_avail)
         if self.cve_valid():
             return self.cve
         return gettext('Pending')
@@ -278,8 +279,8 @@ class Security(models.Model):
 
     def fixed_html(self):
         """Return fixed version, as HTML."""
-        return mark_safe(f'<span class="text-success fw-bold">'
-                         f'{self.fixed}</span>')
+        return format_html('<span class="text-success fw-bold">{}</span>',
+                           self.fixed)
 
     def url_commits(self):
         """Return URL(s) with links to commits, as HTML."""

@@ -33,7 +33,7 @@ from django.conf import settings
 from django.db import models
 from django.db.models.signals import pre_save, post_save, post_delete
 from django.utils import translation
-from django.utils.safestring import mark_safe
+from django.utils.html import format_html
 from django.utils.translation import gettext
 
 from weechat.common.decorators import disable_for_loaddata
@@ -129,14 +129,17 @@ class Script(models.Model):
     def popularity_img(self):
         """Return HTML code with image for popular script."""
         if self.popularity == 0:
-            return mark_safe(
-                f'<img src="{settings.MEDIA_URL}images/empty.png" alt="" '
-                f'width="10" height="10">'
+            return format_html(
+                '<img src="{}images/empty.png" alt="" '
+                'width="10" height="10">',
+                settings.MEDIA_URL,
             )
-        return mark_safe(
-            f'<img src="{settings.MEDIA_URL}images/star.png" alt="*" '
-            f'title="{gettext("Popular script")}" '
-            f'width="10" height="10">'
+        return format_html(
+            '<img src="{}images/star.png" alt="*" '
+            'title="{}" '
+            'width="10" height="10">',
+            settings.MEDIA_URL,
+            gettext('Popular script'),
         )
 
     def name_with_extension(self):
@@ -173,7 +176,7 @@ class Script(models.Model):
     def version_weechat_html(self):
         """Return the WeeChat supported versions in a string for HTML."""
         vmin = self.min_weechat or '0.3.0'
-        return mark_safe(f'≥ {vmin}')
+        return format_html('≥ {}', vmin)
 
     def build_url(self):
         """Return URL to the script."""
