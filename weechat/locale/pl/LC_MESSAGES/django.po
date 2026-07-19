@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-19 17:18+0200\n"
+"POT-Creation-Date: 2026-07-20 00:15+0200\n"
 "PO-Revision-Date: 2026-07-05 17:18+0200\n"
 "Last-Translator: Krzysztof Korościk <soltys@soltys.info>\n"
 "Language-Team: Polish <soltys@soltys.info>\n"
@@ -1359,92 +1359,92 @@ msgstr ""
 "wszystkich buforach: <code>/plugin unload logger</code>."
 
 #. Translators: this is a severity level for a security vulnerability
-#: doc/models.py:53
+#: doc/models.py:54
 msgid "none"
 msgstr "brak"
 
 #. Translators: this is a severity level for a security vulnerability
-#: doc/models.py:55
+#: doc/models.py:56
 msgid "low"
 msgstr "niska"
 
 #. Translators: this is a severity level for a security vulnerability
-#: doc/models.py:57
+#: doc/models.py:58
 msgid "medium"
 msgstr "średnia"
 
 #. Translators: this is a severity level for a security vulnerability
-#: doc/models.py:59
+#: doc/models.py:60
 msgid "high"
 msgstr "wysoka"
 
 #. Translators: this is a severity level for a security vulnerability
-#: doc/models.py:61
+#: doc/models.py:62
 msgid "critical"
 msgstr "krytyczna"
 
-#: doc/models.py:93
+#: doc/models.py:122
 msgid "Czech"
 msgstr "Czeski"
 
-#: doc/models.py:94 settings.py:51 templates/about/support.html:34
+#: doc/models.py:123 settings.py:51 templates/about/support.html:34
 #: templates/about/weechat.org.html:24
 msgid "German"
 msgstr "Niemiecki"
 
-#: doc/models.py:95 settings.py:49 templates/about/support.html:27
+#: doc/models.py:124 settings.py:49 templates/about/support.html:27
 msgid "English"
 msgstr "Angielski"
 
-#: doc/models.py:96
+#: doc/models.py:125
 msgid "Spanish"
 msgstr "Hiszpański"
 
-#: doc/models.py:97 settings.py:50 templates/about/support.html:28
+#: doc/models.py:126 settings.py:50 templates/about/support.html:28
 msgid "French"
 msgstr "Francuski"
 
-#: doc/models.py:98
+#: doc/models.py:127
 msgid "Hungarian"
 msgstr "Węgierski"
 
-#: doc/models.py:99 settings.py:52 templates/about/weechat.org.html:25
+#: doc/models.py:128 settings.py:52 templates/about/weechat.org.html:25
 msgid "Italian"
 msgstr "Włoski"
 
-#: doc/models.py:100 settings.py:55 templates/about/weechat.org.html:26
+#: doc/models.py:129 settings.py:55 templates/about/weechat.org.html:26
 msgid "Japanese"
 msgstr "Japoński"
 
-#: doc/models.py:101 settings.py:53 templates/about/weechat.org.html:27
+#: doc/models.py:130 settings.py:53 templates/about/weechat.org.html:27
 msgid "Polish"
 msgstr "Polski"
 
-#: doc/models.py:102
+#: doc/models.py:131
 msgid "Portuguese"
 msgstr "Portugalski"
 
-#: doc/models.py:103 settings.py:54 templates/about/weechat.org.html:28
+#: doc/models.py:132 settings.py:54 templates/about/weechat.org.html:28
 msgid "Portuguese (Brazil)"
 msgstr "Portugalski (Brazylia)"
 
-#: doc/models.py:104
+#: doc/models.py:133
 msgid "Russian"
 msgstr "Rosyjski"
 
-#: doc/models.py:105 settings.py:56 templates/about/weechat.org.html:29
+#: doc/models.py:134 settings.py:56 templates/about/weechat.org.html:29
 msgid "Serbian"
 msgstr "Serbski"
 
-#: doc/models.py:106
+#: doc/models.py:135
 msgid "Turkish"
 msgstr "Turecki"
 
-#: doc/models.py:198 templates/doc/security.html:266
+#: doc/models.py:227 templates/doc/security.html:266
 msgid "Not available"
 msgstr "Jeszcze niedostępne"
 
-#: doc/models.py:202
+#: doc/models.py:231
 msgid "Pending"
 msgstr "Oczekuje"
 
@@ -9458,7 +9458,7 @@ msgstr ""
 msgid "Also known as Common Weakness Enumeration (CWE)."
 msgstr "Znane również jako Common Weakness Enumeration (CWE)."
 
-#: templates/doc/security.html:243 templates/download/packages.html:78
+#: templates/doc/security.html:243 templates/download/packages.html:82
 msgid "ChangeLog"
 msgstr "Lista zmian"
 
@@ -9826,17 +9826,21 @@ msgstr ""
 "nie kompilować, zostałeś ostrzeżony!"
 
 #: templates/download/packages.html:59
-#, python-format
+#, fuzzy, python-format
+#| msgid ""
+#| "<strong>Note:</strong> this release fixes <a "
+#| "href=\"%(security_url)s\">%(counter)s vulnerability</a>."
+#| msgid_plural ""
+#| "<strong>Note:</strong> this release fixes <a "
+#| "href=\"%(security_url)s\">%(counter)s vulnerabilities</a>."
 msgid ""
-"<strong>Caution:</strong> the version %(version)s has one or more <a "
-"href=\"%(security_url)s\">vulnerabilities</a> that are fixed in versions: "
-"%(fixed_versions)s."
+"<strong>Caution:</strong> this version has known vulnerabilities (<a "
+"href=\"%(security_url)s\">list</a>)."
 msgstr ""
-"<strong>Uwaga:</strong> wersja %(version)s zawiera jedną lub więcej<a "
-"href=\"%(security_url)s\">podatności</a>, które zostały poprawione w wersji: "
-"%(fixed_versions)s."
+"<strong>Uwaga:</strong> ta wersja naprawia <a "
+"href=\"%(security_url)s\">%(counter)s podatność</a>."
 
-#: templates/download/packages.html:65
+#: templates/download/packages.html:66
 #, python-format
 msgid ""
 "<strong>Note:</strong> this release fixes <a "
@@ -9854,31 +9858,31 @@ msgstr[2] ""
 "<strong>Uwaga:</strong> ta wersja naprawia <a "
 "href=\"%(security_url)s\">%(counter)s podatności</a>."
 
-#: templates/download/packages.html:70
+#: templates/download/packages.html:71
 msgid "It is recommended to upgrade from any older version to this one."
 msgstr "Zaleca się aktualizacje z każdej starszej wersji do tej."
 
-#: templates/download/packages.html:83
+#: templates/download/packages.html:87
 msgid "Upgrade guidelines"
 msgstr "Wskazówki dotyczące aktualizacji"
 
-#: templates/download/packages.html:89
+#: templates/download/packages.html:93
 msgid "Packages:"
 msgstr "Pakiety:"
 
-#: templates/download/packages.html:98
+#: templates/download/packages.html:102
 msgid "Checksum"
 msgstr "Suma kontrolna"
 
-#: templates/download/packages.html:98
+#: templates/download/packages.html:102
 msgid "PGP signature"
 msgstr "Podpis PGP"
 
-#: templates/download/packages.html:125
+#: templates/download/packages.html:129
 msgid "Checking the signatures:"
 msgstr "Sprawdzanie sygnatur:"
 
-#: templates/download/packages.html:128
+#: templates/download/packages.html:132
 msgid ""
 "Check the key fingerprint by checking the topic on #weechat channel "
 "(irc.libera.chat) or by asking to a developer."
@@ -9886,11 +9890,11 @@ msgstr ""
 "Sprawdź czy odcisk jest poprawny sprawdzając temat kanału #weechat "
 "(irc.libera.chat) lub pytając developera."
 
-#: templates/download/packages.html:131
+#: templates/download/packages.html:135
 msgid "Import the PGP key:"
 msgstr "Zaimportuj klucz PGP:"
 
-#: templates/download/packages.html:133
+#: templates/download/packages.html:137
 msgid ""
 "In case of problem, the release signing key (format: PGP public key) can be "
 "downloaded here:"
@@ -9898,27 +9902,27 @@ msgstr ""
 "W razie problemów klucz podpisujący wydania (format: klucz publiczny PGP) "
 "można pobrać stad:"
 
-#: templates/download/packages.html:134
+#: templates/download/packages.html:138
 msgid "binary"
 msgstr "binarne"
 
-#: templates/download/packages.html:135
+#: templates/download/packages.html:139
 msgid "ASCII"
 msgstr "ASCII"
 
-#: templates/download/packages.html:138
+#: templates/download/packages.html:142
 msgid "Trust the key:"
 msgstr "Zaufaj kluczowi:"
 
-#: templates/download/packages.html:143
+#: templates/download/packages.html:147
 msgid "In directory with package + signature:"
 msgstr "W katalogu z paczką + sygnaturą:"
 
-#: templates/download/packages.html:147
+#: templates/download/packages.html:151
 msgid "If the signature is OK you should see a message like this one:"
 msgstr "Jeśli sygnatura jest poprawa powinieneś zobaczyć wiadomość podobną do:"
 
-#: templates/download/packages.html:164
+#: templates/download/packages.html:168
 msgid "No package found."
 msgstr "Nie znaleziono pakietu."
 
@@ -10734,3 +10738,13 @@ msgstr "Wewnętrzny błąd."
 #: themes/models.py:303
 msgid "Invalid name: different from theme."
 msgstr "Niewłaściwa nazwa: różni się od motywu."
+
+#, python-format
+#~ msgid ""
+#~ "<strong>Caution:</strong> the version %(version)s has one or more <a "
+#~ "href=\"%(security_url)s\">vulnerabilities</a> that are fixed in versions: "
+#~ "%(fixed_versions)s."
+#~ msgstr ""
+#~ "<strong>Uwaga:</strong> wersja %(version)s zawiera jedną lub więcej<a "
+#~ "href=\"%(security_url)s\">podatności</a>, które zostały poprawione w "
+#~ "wersji: %(fixed_versions)s."
