@@ -1,0 +1,36 @@
+#
+# SPDX-FileCopyrightText: 2026 Sébastien Helleu <flashcode@flashtux.org>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+# This file is part of WeeChat.org.
+#
+# WeeChat.org is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 3 of the License, or
+# (at your option) any later version.
+#
+# WeeChat.org is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with WeeChat.org.  If not, see <https://www.gnu.org/licenses/>.
+#
+
+"""Tag to get value of a dict by key (variable)."""
+
+from django import template
+
+# pylint: disable=invalid-name
+register = template.Library()
+
+
+@register.filter()
+def key_value(dict, key):
+    """Get value for a dict key."""
+    try:
+        return dict[key]
+    except KeyError:
+        return ''

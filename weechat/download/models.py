@@ -76,10 +76,6 @@ class Release(models.Model):
         except ObjectDoesNotExist:
             return None
 
-    def security_fixed_versions(self):
-        """Return the list of versions fixing security issues."""
-        return self.securityfix.split(',')
-
     def changelog_url(self):
         """Return URL to ChangeLog file."""
         version = self.description if self.version == 'stable' else self.version

@@ -27,6 +27,7 @@ from django.shortcuts import render, get_object_or_404
 
 from weechat.common.models import Project
 from weechat.common.utils import version_to_list
+from weechat.doc.models import get_security_list_by_release
 from weechat.download.models import Release, Package
 
 
@@ -102,6 +103,10 @@ def packages(request, project='weechat', version='stable'):
                             .order_by('type__priority'))
     except ObjectDoesNotExist:
         package_list = None
+    security_fixed_in = {
+        release.version: list(reversed(dict.fromkeys([sec.fixed for sec in security_list])))
+        for release, security_list in get_security_list_by_release(project).items()
+    }
     return render(
         request,
         'download/packages.html',
@@ -109,6 +114,7 @@ def packages(request, project='weechat', version='stable'):
             'project': project,
             'version': version,
             'package_list': package_list,
+            'security_fixed_in': security_fixed_in,
         },
     )
 
