@@ -51,16 +51,13 @@ class Release(models.Model):
     description = models.CharField(max_length=64, blank=True)
     date = models.DateField(blank=True, null=True)
     security_issues_fixed = models.IntegerField(default=0)
-    securityfix = models.CharField(max_length=256, blank=True)
 
     def __str__(self):
         security_fix = (f', {self.security_issues_fixed} SECURITY FIX'
                         if self.security_issues_fixed > 0 else '')
-        fixed_in = (f', fix in: {", ".join(self.securityfix.split(","))}'
-                    if self.securityfix else '')
         return (
             f'{self.project.name} {self.version} '
-            f'({self.date}){security_fix}{fixed_in}'
+            f'({self.date}){security_fix}'
         )
 
     def next_stable_date(self):
@@ -260,7 +257,6 @@ def set_stable_version(project, version):
     release.description = version
     release.date = date.today()
     release.security_issues_fixed = 0
-    release.securityfix = ''
     release.save()
 
     # update package symbolic links
@@ -312,7 +308,6 @@ def add_release(project, version):
     release.description = ''
     release.date = date.today()
     release.security_issues_fixed = 0
-    release.securityfix = ''
     release.save()
     for ext in PACKAGES_COMPRESSION_EXT:
         Package.objects.filter(
