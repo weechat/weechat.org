@@ -293,7 +293,7 @@
 
 {% if security.credit %}
 <h5>{% trans "Credit" %}</h5>
-{% with credit=security.credit %}
+{% with credit=security.credit_html %}
 {% blocktrans %}The issue was discovered by {{ credit }}.{% endblocktrans %}
 {% endwith %}
 {% endif %}

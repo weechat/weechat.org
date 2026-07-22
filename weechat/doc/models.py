@@ -310,6 +310,10 @@ class Security(models.Model):
             return mark_safe(gettext(self.mitigation.replace('\r\n', '\n')))
         return ''
 
+    def credit_html(self):
+        """Return the credit as HTML."""
+        return mark_safe(self.credit)
+
     def link_changelog(self):
         """Return the link to the ChangeLog for the fixed version."""
         if not self.fixed:
