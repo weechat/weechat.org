@@ -207,7 +207,11 @@ class Security(models.Model):
     credit = models.TextField(blank=True)
 
     def __str__(self):
-        return f'{self.wsa}: [{self.scope}] {self.issue} ({self.release_date})'
+        hidden = '' if self.visible else ' [HIDDEN]'
+        return (
+            f'{self.wsa}: [{self.scope}] {self.issue} ({self.release_date})'
+            f'{hidden}'
+        )
 
     def cve_valid(self):
         """Return True if the CVE is a valid CVE id."""
