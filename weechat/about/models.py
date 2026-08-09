@@ -31,6 +31,7 @@ SPONSOR_TYPE_SVG = {
 
 class Screenshot(models.Model):
     """A WeeChat screenshot."""
+    id = models.AutoField(primary_key=True)
     app = models.CharField(max_length=256)
     filename = models.CharField(max_length=256)
     comment = models.TextField(blank=True)
@@ -46,6 +47,7 @@ class Screenshot(models.Model):
 
 class Keydate(models.Model):
     """A WeeChat key date."""
+    id = models.AutoField(primary_key=True)
     date = models.DateField()
     version = models.TextField(max_length=32)
     text = models.TextField()
@@ -77,6 +79,7 @@ post_save.connect(handler_keydate_saved, sender=Keydate)
 
 class Sponsor(models.Model):
     """A WeeChat sponsor."""
+    id = models.AutoField(primary_key=True)
     sponsortype = models.IntegerField(choices=SPONSOR_TYPE_CHOICES, default=0)
     name = models.CharField(max_length=64)
     date = models.DateField()

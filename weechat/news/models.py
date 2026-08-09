@@ -17,6 +17,7 @@ PATTERN_TITLE_VERSION = re.compile('(Version) ([0-9.a-z-]+)$')
 
 class Info(models.Model):
     """A WeeChat info."""
+    id = models.AutoField(primary_key=True)
     visible = models.BooleanField(default=False)
     date = models.DateTimeField()
     title = models.CharField(max_length=64)

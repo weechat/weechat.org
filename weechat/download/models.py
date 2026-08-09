@@ -30,6 +30,7 @@ PACKAGES_COMPRESSION_EXT = (
 
 class Release(models.Model):
     """A WeeChat release."""
+    id = models.AutoField(primary_key=True)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     version = models.CharField(max_length=64)
     description = models.CharField(max_length=64, blank=True)
@@ -125,6 +126,7 @@ class Type(models.Model):
 
 class Package(models.Model):
     """A WeeChat package."""
+    id = models.AutoField(primary_key=True)
     version = models.ForeignKey(Release, on_delete=models.CASCADE)
     type = models.ForeignKey(Type, on_delete=models.CASCADE)
     filename = models.CharField(max_length=512, blank=True)

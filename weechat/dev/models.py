@@ -16,6 +16,7 @@ from weechat.download.models import Release
 
 class Task(models.Model):
     """A task (a new feature or bug to fix)."""
+    id = models.AutoField(primary_key=True)
     visible = models.BooleanField(default=True)
     version = models.ForeignKey(Release, on_delete=models.CASCADE)
     tracker = models.CharField(max_length=64, blank=True)

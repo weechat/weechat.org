@@ -118,6 +118,7 @@ class Language(models.Model):
         'sr': gettext_noop('Serbian'),
         'tr': gettext_noop('Turkish'),
     }
+    id = models.AutoField(primary_key=True)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     lang = models.CharField(max_length=8)
     priority = models.IntegerField(default=0)
@@ -148,6 +149,7 @@ class Version(models.Model):
 
 class Doc(models.Model):
     """A WeeChat document file."""
+    id = models.AutoField(primary_key=True)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     version = models.ForeignKey(Version, on_delete=models.CASCADE)
     name = models.CharField(max_length=64)
@@ -169,6 +171,7 @@ class Doc(models.Model):
 
 class Security(models.Model):
     """A security vulnerability in WeeChat."""
+    id = models.AutoField(primary_key=True)
     visible = models.BooleanField(default=True)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     date = models.DateTimeField()

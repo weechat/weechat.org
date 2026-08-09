@@ -37,6 +37,7 @@ class Builder(models.Model):
 
 class Repo(models.Model):
     """A Debian repository."""
+    id = models.AutoField(primary_key=True)
     visible = models.BooleanField(default=True)
     active = models.BooleanField(default=True)
     name = models.CharField(max_length=64)

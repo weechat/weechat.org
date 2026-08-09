@@ -45,6 +45,7 @@ MAX_LENGTH_MAIL = 256
 
 class Theme(models.Model):
     """A WeeChat theme."""
+    id = models.AutoField(primary_key=True)
     visible = models.BooleanField(default=False)
     name = models.CharField(max_length=MAX_LENGTH_NAME)
     version = models.CharField(max_length=MAX_LENGTH_VERSION)

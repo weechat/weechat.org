@@ -60,6 +60,7 @@ def get_language_from_extension(ext):
 
 class Script(models.Model):
     """A WeeChat script."""
+    id = models.AutoField(primary_key=True)
     approved = models.BooleanField(default=False)
     popularity = models.IntegerField()
     name = models.CharField(max_length=MAX_LENGTH_NAME)
