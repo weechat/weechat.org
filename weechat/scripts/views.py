@@ -6,6 +6,7 @@
 
 # pylint: disable=no-name-in-module
 
+from dataclasses import dataclass
 from datetime import datetime
 from pygments import highlight
 from pygments.formatters import HtmlFormatter
@@ -200,45 +201,35 @@ def get_script_content(script_file):
 
 def python3(request):
     """Page with Python 3 transition."""
+    @dataclass
+    class Status:
+        date: datetime
+        today: bool
+        scripts: int
+        python_scripts: int
+        scripts_ok: int
+        scripts_remaining: int
+        python_scripts_percent: int = 0
+        scripts_ok_percent: int = 0
+        scripts_remaining_percent: int = 0
+        future: bool = False
+
     v037_date = Release.objects.get(project__name='weechat', version='0.3.7').date
     v037_date = datetime(
         year=v037_date.year,
         month=v037_date.month,
         day=v037_date.day,
     )
-    status_list = []
-    # status when the transition started
-    status_list.append({
-        'date': datetime(2018, 6, 3),
-        'scripts': 347,
-        'python_scripts': 216,
-        'scripts_ok': 43,
-        'scripts_remaining': 173,
-    })
-    # status on 2019-07-01 (WeeChat is built with Python 3 by default)
-    status_list.append({
-        'date': datetime(2019, 7, 1),
-        'scripts': 362,
-        'python_scripts': 226,
-        'scripts_ok': 96,
-        'scripts_remaining': 130,
-    })
-    # status on 2020-01-01 (initial end of transition)
-    status_list.append({
-        'date': datetime(2020, 1, 1),
-        'scripts': 364,
-        'python_scripts': 228,
-        'scripts_ok': 125,
-        'scripts_remaining': 103,
-    })
-    # status on 2020-05-01 (end of transition)
-    status_list.append({
-        'date': datetime(2020, 5, 1),
-        'scripts': 364,
-        'python_scripts': 228,
-        'scripts_ok': 129,
-        'scripts_remaining': 99,
-    })
+    status_list: list[Status] = [
+        # status when the transition started
+        Status(datetime(2018, 6, 3), False, 347, 216, 43, 173),
+        # status on 2019-07-01 (WeeChat is built with Python 3 by default)
+        Status(datetime(2019, 7, 1), False, 362, 226, 96, 130),
+        # status on 2020-01-01 (initial end of transition)
+        Status(datetime(2020, 1, 1), False, 364, 228, 125, 103),
+        # status on 2020-05-01 (end of transition)
+        Status(datetime(2020, 5, 1), False, 364, 228, 129, 99),
+    ]
     # status today
     scripts_list = Script.objects.filter(approved=True).count()
     python_scripts = (Script.objects.filter(approved=True)
@@ -249,27 +240,27 @@ def python3(request):
                   .filter(tags__regex=r'(^|,)py3($|,)')
                   .count())
     scripts_remaining = python_scripts - scripts_ok
-    status_list.append({
-        'date': datetime.now(),
-        'today': True,
-        'scripts': scripts_list,
-        'python_scripts': python_scripts,
-        'scripts_ok': scripts_ok,
-        'scripts_remaining': scripts_remaining,
-    })
+    status_list.append(
+        Status(
+            date=datetime.now(),
+            today=True,
+            scripts=scripts_list,
+            python_scripts=python_scripts,
+            scripts_ok=scripts_ok,
+            scripts_remaining=scripts_remaining,
+        )
+    )
     # compute percentages and flag "future"
     now = datetime.now()
     for status in status_list:
-        status['python_scripts_percent'] = (
-            (status['python_scripts'] * 100) // status['scripts']
+        status.python_scripts_percent = (
+            (status.python_scripts * 100) // status.scripts
         )
-        status['scripts_ok_percent'] = (
-            (status['scripts_ok'] * 100) // status['python_scripts']
+        status.scripts_ok_percent = (
+            (status.scripts_ok * 100) // status.python_scripts
         )
-        status['scripts_remaining_percent'] = (
-            100 - status['scripts_ok_percent']
-        )
-        status['future'] = status['date'] > now
+        status.scripts_remaining_percent = 100 - status.scripts_ok_percent
+        status.future = status.date > now
     return render(
         request,
         'scripts/python3.html',
