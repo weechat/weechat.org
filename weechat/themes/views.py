@@ -8,7 +8,7 @@
 
 from datetime import datetime
 from pygments import highlight
-from pygments.formatters import HtmlFormatter
+from pygments.formatters.html import HtmlFormatter
 from pygments.lexers import get_lexer_by_name
 
 from django.conf import settings
