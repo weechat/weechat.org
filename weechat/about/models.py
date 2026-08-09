@@ -95,7 +95,7 @@ class Sponsor(models.Model):
 
     def sponsortype_i18n(self):
         """Return the translated sponsor type."""
-        return gettext(dict(SPONSOR_TYPE_CHOICES)[self.sponsortype])
+        return gettext(str(dict(SPONSOR_TYPE_CHOICES)[self.sponsortype]))
 
     def sponsortype_svg(self):
         """Return the name of SVG for the sponsor type."""

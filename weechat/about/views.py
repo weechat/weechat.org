@@ -102,7 +102,7 @@ def donate(request, sort_key='date', view_key=''):
         total = sum(sponsor['amount'] for sponsor in sponsor_list)
         for sponsor in sponsor_list:
             sponsor['sponsortype_i18n'] = gettext(
-                dict(SPONSOR_TYPE_CHOICES)[sponsor['sponsortype']])
+                str(dict(SPONSOR_TYPE_CHOICES)[sponsor['sponsortype']]))
             sponsor['sponsortype_svg'] = \
                 SPONSOR_TYPE_SVG[sponsor['sponsortype']]
     elif sort_key == 'top':
@@ -112,7 +112,7 @@ def donate(request, sort_key='date', view_key=''):
         total = sum(sponsor['amount'] for sponsor in sponsor_list)
         for sponsor in sponsor_list:
             sponsor['sponsortype_i18n'] = gettext(
-                dict(SPONSOR_TYPE_CHOICES)[sponsor['sponsortype']])
+                str(dict(SPONSOR_TYPE_CHOICES)[sponsor['sponsortype']]))
             sponsor['sponsortype_svg'] = \
                 SPONSOR_TYPE_SVG[sponsor['sponsortype']]
     else:
