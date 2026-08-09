@@ -11,8 +11,8 @@ def i18n_autogen(app, name, strings):
     """Create a file '_i18n_xxx.py' with strings to translate."""
     # build content of file
     content = [
-        '# This file is auto-generated after changes in database, '
-        'DO NOT EDIT!',
+        ('# This file is auto-generated after changes in database, '
+        'DO NOT EDIT!'),
         '',
         f'"""Translations for {app}/{name}."""',
         '',
