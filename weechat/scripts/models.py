@@ -279,7 +279,7 @@ def handler_scripts_changed(sender, **kwargs):
             json_script[key] = value
             for field, field_value in value_i18n.items():
                 xml += f'    <{field}>{escape(field_value)}</{field}>\n'
-                json_script[field] = value_i18n[field]
+                json_script[field] = field_value
         xml += '  </plugin>\n'
         json_data.append(json_script)
     xml += '</plugins>\n'
