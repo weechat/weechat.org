@@ -202,7 +202,7 @@ class Script(models.Model):
         return self.sha512sum or self.checksum(hashlib.sha512)
 
     class Meta:
-        ordering = ['-added']
+        ordering = ('-added',)
 
 
 @disable_for_loaddata

@@ -99,7 +99,7 @@ class Release(models.Model):
         return version_to_list(self.version) <= stable_version_list
 
     class Meta:
-        ordering = ['-date']
+        ordering = ('-date',)
 
 
 class Type(models.Model):
@@ -120,7 +120,7 @@ class Type(models.Model):
         return ''
 
     class Meta:
-        ordering = ['priority']
+        ordering = ('priority',)
 
 
 class Package(models.Model):
@@ -204,7 +204,7 @@ class Package(models.Model):
             return ''
 
     class Meta:
-        ordering = ['version', '-type__priority']
+        ordering = ('version', '-type__priority')
 
 
 def handler_package_saved(sender, **kwargs):

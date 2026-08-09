@@ -20,4 +20,4 @@ class Project(models.Model):
         return f'{self.name} ({self.priority}){hidden}'
 
     class Meta:
-        ordering = ['priority']
+        ordering = ('priority',)

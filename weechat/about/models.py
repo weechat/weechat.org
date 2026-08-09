@@ -41,7 +41,7 @@ class Screenshot(models.Model):
 
     class Meta:
         """Meta class for ScreenShot."""
-        ordering = ['priority']
+        ordering = ('priority',)
 
 
 class Keydate(models.Model):
@@ -61,7 +61,7 @@ class Keydate(models.Model):
 
     class Meta:
         """Meta class for KeyDate."""
-        ordering = ['-date']
+        ordering = ('-date',)
 
 
 def handler_keydate_saved(sender, **kwargs):

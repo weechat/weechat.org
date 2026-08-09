@@ -130,7 +130,7 @@ class Language(models.Model):
         return gettext(self.LANG_I18N[self.lang])
 
     class Meta:
-        ordering = ['priority']
+        ordering = ('priority',)
 
 
 class Version(models.Model):
@@ -143,7 +143,7 @@ class Version(models.Model):
         return self.version
 
     class Meta:
-        ordering = ['priority']
+        ordering = ('priority',)
 
 
 class Doc(models.Model):
@@ -165,7 +165,7 @@ class Doc(models.Model):
         return gettext(self.description) if self.description else self.name
 
     class Meta:
-        ordering = ['priority']
+        ordering = ('priority',)
 
 
 class Security(models.Model):
@@ -330,7 +330,7 @@ class Security(models.Model):
         return False
 
     class Meta:
-        ordering = ['-date']
+        ordering = ('-date',)
 
 
 def handler_doc_saved(sender, **kwargs):

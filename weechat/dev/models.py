@@ -62,4 +62,4 @@ class Task(models.Model):
         return commits_links(self.commits)
 
     class Meta:
-        ordering = ['-version__date', 'priority']
+        ordering = ('-version__date', 'priority')

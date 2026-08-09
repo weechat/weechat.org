@@ -139,7 +139,7 @@ class Theme(models.Model):
         return self.sha512sum or self.checksum(hashlib.sha512)
 
     class Meta:
-        ordering = ['-added']
+        ordering = ('-added',)
 
 
 class ThemeFormAdd(forms.Form):

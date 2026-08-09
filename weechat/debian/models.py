@@ -75,7 +75,7 @@ Signed-By: /etc/apt/keyrings/weechat.asc
 
     class Meta:
         """Sort Repos by priority."""
-        ordering = ['priority']
+        ordering = ('priority',)
 
 
 def handler_repo_saved(sender, **kwargs):
