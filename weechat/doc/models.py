@@ -4,6 +4,8 @@
 
 """Models for "doc" menu."""
 
+from typing import ClassVar
+
 from django.db import models
 from django.db.models.signals import post_save
 from django.utils.html import format_html
@@ -101,7 +103,7 @@ def get_security_list_by_release(project='weechat'):
 
 class Language(models.Model):
     """A language with at least one translated doc."""
-    LANG_I18N = {
+    LANG_I18N: ClassVar[dict] = {
         'cs': gettext_noop('Czech'),
         'de': gettext_noop('German'),
         'en': gettext_noop('English'),

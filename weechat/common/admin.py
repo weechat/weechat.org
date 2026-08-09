@@ -4,6 +4,8 @@
 
 """Common classes/functions for admin."""
 
+from typing import ClassVar
+
 from django.contrib import admin
 from django.db import models
 from django.forms import TextInput
@@ -13,6 +15,6 @@ from django.forms import TextInput
 class WeechatAdmin(admin.ModelAdmin):
     """WeeChat admin."""
     list_per_page = 1000
-    formfield_overrides = {
+    formfield_overrides: ClassVar[dict] = {
         models.CharField: {'widget': TextInput(attrs={'size': '75'})},
     }
