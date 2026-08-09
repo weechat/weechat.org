@@ -63,7 +63,7 @@ def get_score_bar(score):
     content.append(
         '<div class="d-inline-flex align-middle severity-flex">'
     )
-    for i in range(0, 10):
+    for i in range(10):
         severity = get_severity(i + 1)
         css_class = f' severity{severity}' if i < score else ''
         content.append(

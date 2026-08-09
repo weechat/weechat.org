@@ -21,7 +21,7 @@ def version_as_int(version):
     try:
         items = version.split('.', 3)
         value = [0, 0, 0, 0]
-        for i in range(0, 4):
+        for i in range(4):
             if i < len(items):
                 value[i] = int(re.sub('[^0-9].*', '', items[i]))
                 if value[i] < 0:
