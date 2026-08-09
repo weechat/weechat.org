@@ -212,7 +212,7 @@ def handler_script_saved(sender, **kwargs):
         script = kwargs['instance']
         script.md5sum = script.checksum(hashlib.md5)
         script.sha512sum = script.checksum(hashlib.sha512)
-    except:  # noqa: E722  pylint: disable=bare-except
+    except:  # noqa: E722,S110  pylint: disable=bare-except
         pass
 
 

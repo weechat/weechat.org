@@ -217,7 +217,7 @@ def handler_package_saved(sender, **kwargs):
                 package.sha1sum = sha1(_file.read()).hexdigest()
             with open(package.fullname(), 'rb') as _file:
                 package.sha512sum = sha512(_file.read()).hexdigest()
-    except:  # noqa: E722  pylint: disable=bare-except
+    except:  # noqa: E722,S110  pylint: disable=bare-except
         pass
 
 

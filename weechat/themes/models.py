@@ -303,7 +303,7 @@ def handler_theme_saved(sender, **kwargs):
         theme = kwargs['instance']
         theme.md5sum = theme.checksum(hashlib.md5)
         theme.sha512sum = theme.checksum(hashlib.sha512)
-    except:  # noqa: E722  pylint: disable=bare-except
+    except:  # noqa: E722,S110  pylint: disable=bare-except
         pass
 
 
