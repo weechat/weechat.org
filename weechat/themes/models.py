@@ -11,7 +11,6 @@ import os
 import re
 import tarfile
 from collections import OrderedDict
-from io import open
 from xml.sax.saxutils import escape
 
 from django import forms

@@ -4,8 +4,6 @@
 
 """Some i18n useful functions."""
 
-from io import open
-
 from weechat.common.path import project_path_join
 
 

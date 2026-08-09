@@ -9,7 +9,6 @@ import hashlib
 import json
 import os
 from collections import OrderedDict
-from io import open
 from xml.sax.saxutils import escape
 
 from django.conf import settings
