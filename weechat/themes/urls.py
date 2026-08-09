@@ -10,10 +10,16 @@ from django.urls import path, re_path
 from django.views.generic.base import TemplateView
 
 from weechat.themes.views import (
-    themes as view_themes,
-    theme_source as view_theme_source,
     form_add as view_form_add,
+)
+from weechat.themes.views import (
     form_update as view_form_update,
+)
+from weechat.themes.views import (
+    theme_source as view_theme_source,
+)
+from weechat.themes.views import (
+    themes as view_themes,
 )
 
 urlpatterns = [

@@ -14,12 +14,11 @@ from weechat.common.i18n import i18n_autogen
 from weechat.common.models import Project
 from weechat.common.tracker import (
     commits_links,
-    tracker_links,
     repo_link_release,
+    tracker_links,
 )
 from weechat.common.utils import version_to_list
 from weechat.download.models import Release
-
 
 URL_CVE = {
     'MITRE': 'https://cve.mitre.org/cgi-bin/cvename.cgi?name=%(cve)s',

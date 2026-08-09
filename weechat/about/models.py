@@ -10,7 +10,6 @@ from django.utils.translation import gettext, gettext_lazy
 
 from weechat.common.i18n import i18n_autogen
 
-
 SPONSOR_TYPE_CHOICES = (
     (0,
      # Translators: context: Individual / Association / Company

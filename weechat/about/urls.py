@@ -11,9 +11,13 @@ from django.urls import path, re_path
 from django.views.generic.base import TemplateView
 
 from weechat.about.views import (
-    screenshots as view_screenshots,
-    history as view_history,
     about as view_about,
+)
+from weechat.about.views import (
+    history as view_history,
+)
+from weechat.about.views import (
+    screenshots as view_screenshots,
 )
 
 URL_ABOUT_EXTRA = getattr(settings, 'URL_ABOUT_EXTRA', 'extra')

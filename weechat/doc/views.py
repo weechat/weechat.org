@@ -4,23 +4,23 @@
 
 """Views for "doc" menu."""
 
+import os
 from datetime import datetime
 from math import ceil
-import os
-import pytz
 
+import pytz
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.translation import gettext
 
 from weechat.common.models import Project
 from weechat.common.path import files_path_join
 from weechat.doc.models import (
-    Language,
-    Version,
     Doc,
+    Language,
     Security,
+    Version,
     get_security_list_by_release,
 )
 from weechat.download.models import Release

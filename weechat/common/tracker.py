@@ -10,7 +10,6 @@ from django.utils.safestring import mark_safe
 
 from weechat.common.path import project_path_join
 
-
 GITHUB_REPO = 'https://github.com/weechat/%(project)s'
 GITHUB_LINK_ISSUE = f'{GITHUB_REPO}/issues/%(issue)s'
 GITHUB_ISSUE_PATTERN = re.compile(r'(issue|close|closes|closed|fix|fixes|fixed|'

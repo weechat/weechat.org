@@ -10,9 +10,13 @@ from django.urls import path, re_path
 from django.views.generic.base import RedirectView
 
 from weechat.scripts.views import (
-    scripts as view_scripts,
-    script_source as view_script_source,
     python3 as view_python3,
+)
+from weechat.scripts.views import (
+    script_source as view_script_source,
+)
+from weechat.scripts.views import (
+    scripts as view_scripts,
 )
 
 urlpatterns = [

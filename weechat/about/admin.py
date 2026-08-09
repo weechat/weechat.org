@@ -6,8 +6,8 @@
 
 from django.contrib import admin
 
+from weechat.about.models import Keydate, Screenshot, Sponsor
 from weechat.common.admin import WeechatAdmin
-from weechat.about.models import Screenshot, Keydate, Sponsor
 
 admin.site.register(Screenshot, WeechatAdmin)
 admin.site.register(Keydate, WeechatAdmin)

@@ -9,8 +9,8 @@ from datetime import date
 from django.db import models
 from django.utils.html import format_html
 
-from weechat.common.tracker import commits_links, tracker_links
 from weechat.common.templatetags.localdate import localdate
+from weechat.common.tracker import commits_links, tracker_links
 from weechat.download.models import Release
 
 

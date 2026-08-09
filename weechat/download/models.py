@@ -4,13 +4,12 @@
 
 """Models for "download" menu."""
 
-from datetime import date, datetime
-from hashlib import sha1, sha512
 import os
 import sys
+from datetime import date, datetime
+from hashlib import sha1, sha512
 
 import pytz
-
 from django.apps import apps
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist

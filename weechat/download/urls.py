@@ -11,8 +11,10 @@ from django.views.generic.base import RedirectView
 
 from weechat.debian.views import repos as view_repos
 from weechat.download.views import (
-    packages as view_packages,
     package_checksums as view_package_checksums,
+)
+from weechat.download.views import (
+    packages as view_packages,
 )
 
 urlpatterns = [

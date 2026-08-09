@@ -7,7 +7,7 @@
 from django.contrib import admin
 
 from weechat.common.admin import WeechatAdmin
-from weechat.doc.models import Language, Version, Doc, Security
+from weechat.doc.models import Doc, Language, Security, Version
 
 admin.site.register(Language, WeechatAdmin)
 admin.site.register(Version, WeechatAdmin)

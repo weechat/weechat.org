@@ -4,22 +4,21 @@
 
 """Views for Debian repositories."""
 
-from datetime import datetime, timedelta
 import gzip
 import os
 import re
+from datetime import datetime, timedelta
 
 import pytz
-
 from django.conf import settings
 from django.shortcuts import render
 from django.urls import reverse
 
 from weechat.common.path import repo_path_join
 from weechat.debian.models import (
-    Repo,
-    WEECHAT_PGP_KEY_PATH,
     WEECHAT_PGP_KEY_NAME,
+    WEECHAT_PGP_KEY_PATH,
+    Repo,
 )
 
 

@@ -11,10 +11,18 @@ from django.views.generic.base import RedirectView
 
 from weechat.doc.views import (
     documentation as view_doc,
+)
+from weechat.doc.views import (
     documentation_link as view_doc_link,
+)
+from weechat.doc.views import (
     security_all as view_security,
-    security_wsa as view_security_wsa,
+)
+from weechat.doc.views import (
     security_version as view_security_version,
+)
+from weechat.doc.views import (
+    security_wsa as view_security_wsa,
 )
 
 LEGACY_DOC = 'faq|user|plugin_api|scripting|quickstart|dev|relay_api|relay_weechat'

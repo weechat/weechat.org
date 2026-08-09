@@ -6,12 +6,12 @@
 
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import get_object_or_404, render
 
 from weechat.common.models import Project
 from weechat.common.utils import version_to_list
 from weechat.doc.models import get_security_list_by_release
-from weechat.download.models import Release, Package
+from weechat.download.models import Package, Release
 
 
 def packages(request, project='weechat', version='stable'):

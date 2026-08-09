@@ -7,7 +7,7 @@
 from django.contrib import admin
 
 from weechat.common.admin import WeechatAdmin
-from weechat.debian.models import Version, Builder, Repo
+from weechat.debian.models import Builder, Repo, Version
 
 admin.site.register(Version, WeechatAdmin)
 admin.site.register(Builder, WeechatAdmin)

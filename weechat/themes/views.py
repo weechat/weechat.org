@@ -7,16 +7,16 @@
 # pylint: disable=no-name-in-module
 
 from datetime import datetime
-from pygments import highlight
-from pygments.formatters.html import HtmlFormatter
-from pygments.lexers import get_lexer_by_name
 
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.mail import EmailMessage
-from django.http import HttpResponseRedirect, Http404
-from django.shortcuts import render, get_object_or_404
+from django.http import Http404, HttpResponseRedirect
+from django.shortcuts import get_object_or_404, render
 from django.utils.safestring import mark_safe
+from pygments import highlight
+from pygments.formatters.html import HtmlFormatter
+from pygments.lexers import get_lexer_by_name
 
 from weechat.common.path import files_path_join
 from weechat.download.models import Release

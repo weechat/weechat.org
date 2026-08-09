@@ -7,7 +7,7 @@
 from django.contrib import admin
 
 from weechat.common.admin import WeechatAdmin
-from weechat.download.models import Project, Release, Type, Package
+from weechat.download.models import Package, Project, Release, Type
 
 admin.site.register(Project, WeechatAdmin)
 admin.site.register(Release, WeechatAdmin)

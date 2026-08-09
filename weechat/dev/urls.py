@@ -9,9 +9,13 @@
 from django.urls import path, re_path
 
 from weechat.dev.views import (
-    roadmap as view_roadmap,
-    stats_repo as view_stats_repo,
     info as view_info,
+)
+from weechat.dev.views import (
+    roadmap as view_roadmap,
+)
+from weechat.dev.views import (
+    stats_repo as view_stats_repo,
 )
 
 urlpatterns = [

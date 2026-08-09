@@ -14,7 +14,7 @@ from xml.sax.saxutils import escape
 
 from django.conf import settings
 from django.db import models
-from django.db.models.signals import pre_save, post_save, post_delete
+from django.db.models.signals import post_delete, post_save, pre_save
 from django.utils import translation
 from django.utils.html import format_html
 from django.utils.translation import gettext

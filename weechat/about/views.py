@@ -10,15 +10,15 @@ from sys import version as python_version
 from django import __version__ as django_version
 from django.conf import settings
 from django.db.models import Sum
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import get_object_or_404, render
 from django.utils.translation import gettext
 
 from weechat.about.models import (
-    Screenshot,
-    Keydate,
-    Sponsor,
     SPONSOR_TYPE_CHOICES,
     SPONSOR_TYPE_SVG,
+    Keydate,
+    Screenshot,
+    Sponsor,
 )
 from weechat.common.path import media_path_join
 from weechat.download.models import Release

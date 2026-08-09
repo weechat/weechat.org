@@ -8,20 +8,24 @@
 
 from django.conf import settings
 from django.conf.urls.static import static
-from django.urls import include, path, re_path
 from django.contrib import admin
+from django.urls import include, path, re_path
 from django.views.generic.base import RedirectView
 
+from weechat.about.views import donate as view_donate
 from weechat.common.views import TextTemplateView
 from weechat.dev.views import info as view_info
 from weechat.doc.views import documentation_link as view_doc_link
 from weechat.news.feeds import LatestNewsFeed, UpcomingEventsFeed
 from weechat.news.views import (
-    home as view_home,
-    news as view_news,
     events as view_events,
 )
-from weechat.about.views import donate as view_donate
+from weechat.news.views import (
+    home as view_home,
+)
+from weechat.news.views import (
+    news as view_news,
+)
 
 # admin
 admin.autodiscover()

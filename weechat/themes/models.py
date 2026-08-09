@@ -17,7 +17,7 @@ from xml.sax.saxutils import escape
 from django import forms
 from django.conf import settings
 from django.db import models
-from django.db.models.signals import pre_save, post_save, post_delete
+from django.db.models.signals import post_delete, post_save, pre_save
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext, gettext_lazy
 
@@ -27,8 +27,8 @@ from weechat.common.forms import (
     ChoiceField,
     EmailField,
     FileField,
-    TestField,
     Html5EmailInput,
+    TestField,
 )
 from weechat.common.path import files_path_join
 from weechat.download.models import Release

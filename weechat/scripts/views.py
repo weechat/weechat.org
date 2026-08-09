@@ -8,13 +8,13 @@
 
 from dataclasses import dataclass
 from datetime import datetime
+
+from django.http import Http404
+from django.shortcuts import get_object_or_404, render
+from django.utils.safestring import mark_safe
 from pygments import highlight
 from pygments.formatters.html import HtmlFormatter
 from pygments.lexers import get_lexer_by_name
-
-from django.http import Http404
-from django.shortcuts import render, get_object_or_404
-from django.utils.safestring import mark_safe
 
 from weechat.common.path import files_path_join
 from weechat.download.models import Release
