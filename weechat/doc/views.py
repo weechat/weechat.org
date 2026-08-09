@@ -76,9 +76,8 @@ def get_i18n_stats(project):
                     untranslated = float(count[2])
                     total = translated + fuzzy + untranslated
                     if total != 0:
-                        pct_fuzzy = int(ceil((fuzzy * 100) / total))
-                        pct_untrans = int(
-                            ceil((untranslated * 100) / total))
+                        pct_fuzzy = ceil((fuzzy * 100) / total)
+                        pct_untrans = ceil((untranslated * 100) / total)
                         pct_trans = max(100 - pct_fuzzy - pct_untrans, 0)
                         nick, name = I18N_MAINTAINER.get(lang, ('-', ''))
                         langs.append({
