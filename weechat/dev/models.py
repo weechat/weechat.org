@@ -4,7 +4,7 @@
 
 """Models for "dev" menu."""
 
-from datetime import date
+import datetime
 
 from django.db import models
 from django.utils.html import format_html
@@ -43,7 +43,7 @@ class Task(models.Model):
         It is prefixed with "≈ " if the date is in the future.
         """
         try:
-            if self.version.date > date.today():
+            if self.version.date > datetime.datetime.now(tz=datetime.UTC).date():
                 return format_html('≈ {}', localdate(self.version.date))
             return localdate(self.version.date)
         except:  # noqa: E722  pylint: disable=bare-except

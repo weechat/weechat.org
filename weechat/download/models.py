@@ -4,9 +4,9 @@
 
 """Models for "download" menu."""
 
+import datetime
 import os
 import sys
-from datetime import date, datetime
 from hashlib import sha1, sha512
 
 import pytz
@@ -198,8 +198,10 @@ class Package(models.Model):
         """Return the package date/time."""
         try:
             timezone = pytz.timezone(settings.TIME_ZONE)
-            return datetime.fromtimestamp(os.path.getmtime(self.fullname()),
-                                          tz=timezone)
+            return datetime.datetime.fromtimestamp(
+                os.path.getmtime(self.fullname()),
+                tz=timezone,
+            )
         except:  # noqa: E722  pylint: disable=bare-except
             return ''
 
@@ -244,7 +246,7 @@ def set_stable_version(project, version):
             version='stable',
         )
     release.description = version
-    release.date = date.today()
+    release.date = datetime.datetime.now(tz=datetime.UTC).date()
     release.save()
 
     # update package symbolic links
@@ -294,7 +296,7 @@ def add_release(project, version):
             version=version,
         )
     release.description = ''
-    release.date = date.today()
+    release.date = datetime.datetime.now(tz=datetime.UTC).date()
     release.save()
     for ext in PACKAGES_COMPRESSION_EXT:
         Package.objects.filter(
