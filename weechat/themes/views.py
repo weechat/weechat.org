@@ -58,7 +58,7 @@ def theme_source(request, themeid=None, themename=None):
                                                       encoding='utf-8'),
                                     HtmlFormatter(cssclass='pygments',
                                                   linenos='table'))
-    except Exception as exc:  # noqa: E722  pylint: disable=bare-except
+    except Exception as exc:  # pylint: disable=bare-except
         raise Http404 from exc
     return render(
         request,

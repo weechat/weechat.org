@@ -159,7 +159,7 @@ def script_source(request, scriptid='', scriptname=''):
                       'rb') as _file:
                 html_source = get_highlighted_source(_file.read(),
                                                      script.language)
-        except Exception as exc:  # noqa: E722  pylint: disable=bare-except
+        except Exception as exc:  # pylint: disable=bare-except
             raise Http404 from exc
     else:
         sname = scriptname
@@ -179,7 +179,7 @@ def script_source(request, scriptid='', scriptname=''):
                       'rb') as _file:
                 html_source = get_highlighted_source(_file.read(),
                                                      PYGMENTS_LEXER[sext])
-        except Exception as exc:  # noqa: E722  pylint: disable=bare-except
+        except Exception as exc:  # pylint: disable=bare-except
             raise Http404 from exc
     return render(
         request,

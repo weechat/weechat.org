@@ -27,7 +27,7 @@ LANGUAGE_CODE = 'en-us'
 USE_I18N = True
 USE_L10N = False
 
-gettext = lambda s: s  # noqa: E731  pylint: disable=C3001
+gettext = lambda s: s  # pylint: disable=C3001
 LANGUAGES = (
     ('en', gettext('English')),
     ('fr', gettext('French')),
@@ -154,6 +154,6 @@ ADMIN_PAGE = 'admin'
 # read settings_local.py (optional file)
 try:
     # pylint: disable=wildcard-import,unused-wildcard-import
-    from weechat.settings_local import *  # noqa: F401,F403
+    from weechat.settings_local import *
 except ImportError:
     pass
