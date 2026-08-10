@@ -114,10 +114,10 @@ def commits_links(commits):
         objtype = 'commit'
         link = svg_commit
         if commit.startswith('commit/'):
-            commit = commit[7:]
+            commit = commit.removeprefix('commit/')
         if commit.startswith('tree/'):
+            commit = commit.removeprefix('tree/')
             objtype = 'tree'
-            commit = commit[5:]
             link = svg_branch
         repo, commit_id = split_commit(commit)
         images.append(f'<a href="https://github.com/{repo}/{objtype}/{commit_id}">'
