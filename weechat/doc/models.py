@@ -337,7 +337,6 @@ class Security(models.Model):
 
 def handler_doc_saved(sender, **kwargs):
     """Write file _i18n_doc.py with docs to translate."""
-    # pylint: disable=unused-argument
     strings = []
     for doc in Doc.objects.order_by('name'):
         if doc.description:
@@ -347,7 +346,6 @@ def handler_doc_saved(sender, **kwargs):
 
 def handler_security_saved(sender, **kwargs):
     """Write file _i18n_security.py with security issues to translate."""
-    # pylint: disable=unused-argument
     strings = []
     for security in Security.objects.filter(visible=1).order_by('-date'):
         fields = (

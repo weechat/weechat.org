@@ -4,8 +4,6 @@
 
 """URLs for "download" menu."""
 
-# pylint: disable=invalid-name, no-value-for-parameter
-
 from django.urls import path, re_path
 from django.views.generic.base import RedirectView
 

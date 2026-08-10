@@ -14,7 +14,6 @@ class BootstrapBoundField(forms.BoundField):
     def css_classes(self, extra_classes=None):
         return super().css_classes() + ' form-group row'
 
-    # pylint: disable=arguments-differ
     def label_tag(self, contents=None, attrs=None, *args, **kwargs):
         attrs = attrs or {}
         class_list = [

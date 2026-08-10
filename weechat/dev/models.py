@@ -46,7 +46,7 @@ class Task(models.Model):
             if self.version.date > datetime.datetime.now(tz=datetime.UTC).date():
                 return format_html('≈ {}', localdate(self.version.date))
             return localdate(self.version.date)
-        except:  # noqa: E722  pylint: disable=bare-except
+        except:  # noqa: E722
             return ''
 
     def url_tracker(self):

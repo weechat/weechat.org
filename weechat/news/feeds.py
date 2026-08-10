@@ -15,7 +15,6 @@ class WeechatFeed(Feed):
     """A WeeChat feed."""
 
     def get_object(self, request, *args, **kwargs):
-        # pylint: disable=attribute-defined-outside-init
         self.request = request
 
     def item_link(self, item):
@@ -25,7 +24,6 @@ class WeechatFeed(Feed):
 
     def item_pubdate(self, info):
         """Return idem date."""
-        # pylint: disable=all
         return info.date
 
 
@@ -37,7 +35,6 @@ class LatestNewsFeed(WeechatFeed):
 
     def items(self):
         """Return items with date in the past."""
-        # pylint: disable=all
         return (Info.objects.filter(visible=1)
                 .filter(date__lte=datetime.datetime.now(tz=datetime.UTC)).order_by('-date')[:10])
 
@@ -50,6 +47,5 @@ class UpcomingEventsFeed(WeechatFeed):
 
     def items(self):
         """Return items with date in the future."""
-        # pylint: disable=all
         return (Info.objects.filter(visible=1)
                 .filter(date__gt=datetime.datetime.now(tz=datetime.UTC)).order_by('date')[:10])

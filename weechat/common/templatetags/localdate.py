@@ -10,7 +10,6 @@ from django.utils import dateformat
 from django.utils.html import format_html
 from django.utils.translation import gettext
 
-# pylint: disable=invalid-name
 register = template.Library()
 
 

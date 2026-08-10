@@ -120,7 +120,7 @@ class Theme(models.Model):
         try:
             with open(self.filename(), 'rb') as _file:
                 return hash_func(_file.read()).hexdigest()
-        except:  # noqa: E722  pylint: disable=bare-except
+        except:  # noqa: E722
             return ''
 
     def get_md5sum(self):
@@ -223,7 +223,7 @@ def get_theme_choices():
         for theme in theme_list:
             theme_choices.append((theme.id, f'{theme.name} ({theme.version})'))
         return theme_choices
-    except:  # noqa: E722  pylint: disable=bare-except
+    except:  # noqa: E722
         return []
 
 
@@ -265,7 +265,7 @@ class ThemeFormUpdate(forms.Form):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.label_suffix = ''
-        self.fields['theme'].choices = get_theme_choices()
+        self.fields['theme'].choices = get_theme_choices()  # ty: ignore[unresolved-attribute]
 
     def clean_themefile(self):
         """Check if theme file is valid."""
@@ -298,19 +298,17 @@ class ThemeFormUpdate(forms.Form):
 @disable_for_loaddata
 def handler_theme_saved(sender, **kwargs):
     """Compute MD5 and SHA-512 of theme file."""
-    # pylint: disable=unused-argument
     try:
         theme = kwargs['instance']
         theme.md5sum = theme.checksum(hashlib.md5)
         theme.sha512sum = theme.checksum(hashlib.sha512)
-    except:  # noqa: E722,S110  pylint: disable=bare-except
+    except:  # noqa: E722,S110
         pass
 
 
 @disable_for_loaddata
 def handler_themes_changed(sender, **kwargs):
     """Build files themes.{xml,json}(.gz) after update/delete of a theme."""
-    # pylint: disable=unused-argument,too-many-locals
     theme_list = Theme.objects.filter(visible=1).order_by('id')
     xml = '<?xml version="1.0" encoding="utf-8"?>\n'
     xml += '<themes>\n'

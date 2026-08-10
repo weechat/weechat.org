@@ -183,7 +183,7 @@ class Script(models.Model):
         try:
             with open(self.filename(), 'rb') as _file:
                 return hash_func(_file.read()).hexdigest()
-        except:  # noqa: E722  pylint: disable=bare-except
+        except:  # noqa: E722
             return ''
 
     def get_md5sum(self):
@@ -207,20 +207,17 @@ class Script(models.Model):
 @disable_for_loaddata
 def handler_script_saved(sender, **kwargs):
     """Compute MD5 and SHA-512 of script file."""
-    # pylint: disable=unused-argument
     try:
         script = kwargs['instance']
         script.md5sum = script.checksum(hashlib.md5)
         script.sha512sum = script.checksum(hashlib.sha512)
-    except:  # noqa: E722,S110  pylint: disable=bare-except
+    except:  # noqa: E722,S110
         pass
 
 
 @disable_for_loaddata
 def handler_scripts_changed(sender, **kwargs):
     """Build files scripts.{xml,json}(.gz) after update/delete of a script."""
-    # pylint: disable=unused-argument,too-many-locals,too-many-nested-blocks
-    # pylint: disable=too-many-branches,too-many-statements
     xml = '<?xml version="1.0" encoding="utf-8"?>\n'
     xml += '<plugins>\n'
     json_data = []

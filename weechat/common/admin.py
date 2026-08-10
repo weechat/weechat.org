@@ -11,7 +11,6 @@ from django.db import models
 from django.forms import TextInput
 
 
-# pylint: disable=too-many-public-methods
 class WeechatAdmin(admin.ModelAdmin):
     """WeeChat admin."""
     list_per_page = 1000

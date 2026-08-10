@@ -8,7 +8,6 @@ import re
 
 from django import template
 
-# pylint: disable=invalid-name
 register = template.Library()
 
 
@@ -29,5 +28,5 @@ def version_as_int(version):
                 elif value[i] > 0xFF:
                     value[i] = 0xFF
         return (value[0] << 24) | (value[1] << 16) | (value[2] << 8) | value[3]
-    except:  # noqa: E722  pylint: disable=bare-except
+    except:  # noqa: E722
         return 0

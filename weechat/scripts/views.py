@@ -4,8 +4,6 @@
 
 """Views for "scripts" menu."""
 
-# pylint: disable=no-name-in-module
-
 import datetime
 from dataclasses import dataclass
 
@@ -65,7 +63,6 @@ def get_highlighted_source(source, language):
 
 def scripts(request, sort_key='popularity', filter_name='', filter_value=''):
     """Page with list of scripts."""
-    # pylint: disable=too-many-locals,too-many-branches
 
     def sort_by_popularity(item):
         return (-1 * item[1], item[0].lower())
@@ -159,7 +156,7 @@ def script_source(request, scriptid='', scriptname=''):
                       'rb') as _file:
                 html_source = get_highlighted_source(_file.read(),
                                                      script.language)
-        except Exception as exc:  # pylint: disable=bare-except
+        except Exception as exc:
             raise Http404 from exc
     else:
         sname = scriptname
@@ -179,7 +176,7 @@ def script_source(request, scriptid='', scriptname=''):
                       'rb') as _file:
                 html_source = get_highlighted_source(_file.read(),
                                                      PYGMENTS_LEXER[sext])
-        except Exception as exc:  # pylint: disable=bare-except
+        except Exception as exc:
             raise Http404 from exc
     return render(
         request,

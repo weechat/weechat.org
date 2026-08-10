@@ -52,7 +52,6 @@ class Info(models.Model):
 
 def handler_info_saved(sender, **kwargs):
     """Write file _i18n_info.py with infos to translate."""
-    # pylint: disable=unused-argument
     strings = []
     for info in Info.objects.filter(visible=1).order_by('-date'):
         match = PATTERN_TITLE_VERSION.match(info.title)

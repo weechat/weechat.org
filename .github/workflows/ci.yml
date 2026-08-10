@@ -62,19 +62,13 @@ jobs:
 
       - uses: actions/checkout@v7
 
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
+      - name: Install uv and set the Python version
+        uses: astral-sh/setup-uv@v9.0.0
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install flake8 pylint pylint-django typing-extensions
+      - name: Install the project
+        run: uv sync --locked --all-extras --dev
 
-      - name: Lint with flake8
-        run: make flake8
-
-      - name: Lint with pylint
-        run: make pylint
+      - name: Lint
+        run: make lint

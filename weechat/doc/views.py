@@ -59,7 +59,6 @@ def get_i18n_stats(project):
     - date: date/time of last translations update
     - langs: a dictionary with info about status of this language.
     """
-    # pylint: disable=too-many-locals
     try:
         timezone = pytz.timezone(settings.TIME_ZONE)
         filename = files_path_join('stats', f'i18n_{project}.txt')
@@ -96,7 +95,7 @@ def get_i18n_stats(project):
                             'total': int(total),
                         })
         return {'date': date, 'langs': langs}
-    except:  # noqa: E722  pylint: disable=bare-except
+    except:  # noqa: E722
         return None
 
 
@@ -117,7 +116,6 @@ def get_bestlang(request, languages):
 
 def documentation(request, project='weechat', version='stable'):
     """Page with docs for stable or devel version."""
-    # pylint: disable=too-many-locals,too-many-branches,too-many-nested-blocks
     get_object_or_404(Project, name=project, visible=1)
     timezone = pytz.timezone(settings.TIME_ZONE)
     languages = (Language.objects

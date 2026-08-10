@@ -6,7 +6,6 @@
 
 from django import template
 
-# pylint: disable=invalid-name
 register = template.Library()
 
 

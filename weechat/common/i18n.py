@@ -15,9 +15,6 @@ def i18n_autogen(app, name, strings):
         'DO NOT EDIT!'),
         '',
         f'"""Translations for {app}/{name}."""',
-        '',
-        '# flake8: noqa',
-        '# pylint: disable=line-too-long,too-many-statements',
     ]
     if strings:
         content += [
@@ -53,5 +50,5 @@ def i18n_autogen(app, name, strings):
     with open(filename, 'w', encoding='utf-8') as _file:
         data = '\n'.join(content)
         if hasattr(data, 'decode') and isinstance(data, str):
-            data = data.decode('utf-8')
+            data = data.decode('utf-8')  # ty: ignore[call-non-callable]
         _file.write(data)

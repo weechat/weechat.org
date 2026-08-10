@@ -4,8 +4,6 @@
 
 """URLs for "dev" menu."""
 
-# pylint: disable=invalid-name, no-value-for-parameter
-
 from django.urls import path, re_path
 
 from weechat.dev.views import (

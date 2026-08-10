@@ -80,7 +80,6 @@ Signed-By: /etc/apt/keyrings/weechat.asc
 
 def handler_repo_saved(sender, **kwargs):
     """Handler called when a Repo is saved."""
-    # pylint: disable=unused-argument
     strings = []
     for repo in Repo.objects.order_by('priority'):
         if repo.message:

@@ -185,7 +185,7 @@ def stats_repo(request, stats='weechat'):
             with open(files_path_join('stats', 'scripts_downloads.txt'),
                       'r', encoding='utf-8') as _file:
                 scripts_downloads = _file.read()
-        except:  # noqa: E722,S110  pylint: disable=bare-except
+        except:  # noqa: E722,S110
             pass
     elif stats == 'qweechat':
         repository = 'https://github.com/weechat/qweechat'
@@ -213,7 +213,6 @@ def stats_repo(request, stats='weechat'):
 
 def get_info(name, version):
     """Get an info."""
-    # pylint: disable=too-many-branches,too-many-return-statements
     next_stable = version['devel'].description.split('-')[0]
     if name == 'stable':
         return version['stable'].description
@@ -229,7 +228,7 @@ def get_info(name, version):
             with open(files_path_join('git_sources_head.txt'),
                       'r', encoding='utf-8') as _file:
                 git = _file.read().strip()
-        except:  # noqa: E722,S110  pylint: disable=bare-except
+        except:  # noqa: E722,S110
             pass
         return git
     if name == 'git_scripts':
@@ -238,7 +237,7 @@ def get_info(name, version):
             with open(files_path_join('git_scripts_head.txt'),
                       'r', encoding='utf-8') as _file:
                 git = _file.read().strip()
-        except:  # noqa: E722,S110  pylint: disable=bare-except
+        except:  # noqa: E722,S110
             pass
         return git
     if name == 'next_stable':

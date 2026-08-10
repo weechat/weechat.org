@@ -4,8 +4,6 @@
 
 """URLs for "about" menu."""
 
-# pylint: disable=invalid-name, no-value-for-parameter
-
 from django.conf import settings
 from django.urls import path, re_path
 from django.views.generic.base import TemplateView

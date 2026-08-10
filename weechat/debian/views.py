@@ -24,7 +24,6 @@ from weechat.debian.models import (
 
 def get_repository_packages(repository):
     """Get list of packages for a repository."""
-    # pylint: disable=too-many-locals
     timezone = pytz.timezone(settings.TIME_ZONE)
     now = datetime.now(tz=timezone)
     repopkgs = []
@@ -95,7 +94,7 @@ def repos(request, active='active', files=''):
             debpkgs.extend(sorted(repo_packages,
                                   key=lambda p: p['builddatetime'],
                                   reverse=True))
-        except:  # noqa: E722  pylint: disable=bare-except
+        except:  # noqa: E722
             errors.append(f'{repository.name} {repository.version}')
     url_info_pgp_key = request.build_absolute_uri(
         reverse(

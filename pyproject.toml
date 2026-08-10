@@ -1,0 +1,48 @@
+# SPDX-FileCopyrightText: 2026 Sébastien Helleu <flashcode@flashtux.org>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+[project]
+name = "weechat-org"
+version = "0.1.0"
+description = "WeeChat.org website"
+readme = "README.md"
+authors = [
+    { name = "Sébastien Helleu", email = "flashcode@flashtux.org" }
+]
+license = "GPL-3.0-or-later"
+keywords = ["weechat", "website"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Topic :: Internet :: WWW/HTTP",
+]
+requires-python = ">=3.11"
+dependencies = [
+    "django>=3.2.25",
+    "psycopg2>=2.9.9",
+    "pygments>=2.17.2",
+    "pytz>=2026.3.post1",
+]
+
+[dependency-groups]
+dev = [
+    "django-stubs>=4.2.0",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"*/migrations/*.py" = [
+    "RUF012",
+]
+
+[tool.ty.src]
+exclude = [
+    "weechat/settings.py",
+]
