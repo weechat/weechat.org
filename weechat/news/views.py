@@ -16,7 +16,7 @@ from weechat.news.models import Info
 
 def home(request, max_info=None, max_event=None):
     """Homepage."""
-    now = datetime.datetime.now(tz=datetime.UTC)
+    now = datetime.datetime.now()  # noqa: DTZ005
     info_list = (Info.objects.all().filter(visible=1).filter(date__lte=now)
                  .order_by('-date'))
     if max_info:
@@ -73,7 +73,7 @@ def render_news(request, info_list, info_id, page_name):
     except ValueError:
         pagesize = 10
     infos, smart_page_range = paginate_news(request, info_list, pagesize)
-    event = infos and infos[0].date > datetime.datetime.now(tz=datetime.UTC)
+    event = infos and infos[0].date > datetime.datetime.now()  # noqa: DTZ005
     return render(request, 'home/news.html', {
         'infos': infos,
         'info_id': info_id,
@@ -90,8 +90,11 @@ def news(request, info_id=None, title=None):
         if info_id:
             info_list = [Info.objects.get(id=info_id, visible=1)]
         else:
-            info_list = (Info.objects.all().filter(visible=1)
-                         .filter(date__lte=datetime.datetime.now(tz=datetime.UTC)).order_by('-date'))
+            info_list = (
+                Info.objects.all().filter(visible=1)
+                .filter(date__lte=datetime.datetime.now())  # noqa: DTZ005
+                .order_by('-date')
+            )
     except ObjectDoesNotExist:
         info_list = []
     return render_news(request, info_list, info_id, 'news')
@@ -100,8 +103,12 @@ def news(request, info_id=None, title=None):
 def events(request):
     """List of upcoming events."""
     try:
-        info_list = (Info.objects.all().filter(visible=1)
-                     .filter(date__gt=datetime.datetime.now(tz=datetime.UTC)).order_by('date'))
+        info_list = (
+            Info.objects.all()
+            .filter(visible=1)
+            .filter(date__gt=datetime.datetime.now())  # noqa: DTZ005
+            .order_by('date')
+        )
     except ObjectDoesNotExist:
         info_list = []
     return render_news(request, info_list, None, 'events')
