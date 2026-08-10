@@ -353,10 +353,8 @@ def handler_themes_changed(sender, **kwargs):
         _file.write(xml)
 
     # create themes.xml.gz
-    with open(filename, 'rb') as _f_in:
-        _f_out = gzip.open(filename + '.gz', 'wb')
+    with open(filename, 'rb') as _f_in, gzip.open(filename + '.gz', 'wb') as _f_out:
         _f_out.writelines(_f_in)
-        _f_out.close()
 
     # create themes.json
     filename = files_path_join('themes.json')
@@ -365,10 +363,8 @@ def handler_themes_changed(sender, **kwargs):
                                separators=(',', ': ')))
 
     # create themes.json.gz
-    with open(filename, 'rb') as _f_in:
-        _f_out = gzip.open(filename + '.gz', 'wb')
+    with open(filename, 'rb') as _f_in, gzip.open(filename + '.gz', 'wb') as _f_out:
         _f_out.writelines(_f_in)
-        _f_out.close()
 
     # create themes.tar.bz2 (with theme.xml + 'themes' directory)
     os.chdir(settings.FILES_ROOT)

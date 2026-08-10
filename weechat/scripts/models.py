@@ -290,23 +290,18 @@ def handler_scripts_changed(sender, **kwargs):
         _file.write(xml)
 
     # create scripts.xml.gz
-    with open(filename, 'rb') as _f_in:
-        _f_out = gzip.open(filename + '.gz', 'wb')
+    with open(filename, 'rb') as _f_in, gzip.open(filename + '.gz', 'wb') as _f_out:
         _f_out.writelines(_f_in)
-        _f_out.close()
 
     # create scripts.json
     filename = files_path_join('scripts.json')
     with open(filename, 'w', encoding='utf-8') as _file:
         _file.write(json.dumps(json_data, indent=2, ensure_ascii=False,
                                separators=(',', ': ')))
-        # json.dump(json_data, _file)
 
     # create scripts.json.gz
-    with open(filename, 'rb') as _f_in:
-        _f_out = gzip.open(filename + '.gz', 'wb')
+    with open(filename, 'rb') as _f_in, gzip.open(filename + '.gz', 'wb') as _f_out:
         _f_out.writelines(_f_in)
-        _f_out.close()
 
     # create _i18n_scripts.py
     i18n_autogen('scripts', 'scripts', strings)
