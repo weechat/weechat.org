@@ -13,7 +13,7 @@
 <p>
   {% trans "Python 2.x is legacy; it has an end-of-life set for 2020." %}
   <br>
-  {% blocktrans with date=python3_date|localdate date_ago=python3_date|naturaltime %}Python 3.x is the present and future of the language. Version 3.0 was released on {{ date }} ({{ date_ago }}).{% endblocktrans %}
+  {% blocktrans with date=python3_date|localdate date_ago=python3_date|naturalday %}Python 3.x is the present and future of the language. Version 3.0 was released on {{ date }} ({{ date_ago }}).{% endblocktrans %}
 </p>
 
 <p>
@@ -31,7 +31,7 @@
 <h3>{% trans "Support of Python 3 in WeeChat" %}</h3>
 
 <p>
-  {% blocktrans with date=v037_date|localdate date_ago=v037_date|naturaltime %}WeeChat supports Python 3 since version 0.3.7, which was released on {{ date }} ({{ date_ago }}).{% endblocktrans %}
+  {% blocktrans with date=v037_date|localdate date_ago=v037_date|naturalday %}WeeChat supports Python 3 since version 0.3.7, which was released on {{ date }} ({{ date_ago }}).{% endblocktrans %}
 </p>
 
 <p>

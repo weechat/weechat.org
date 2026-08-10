@@ -23,7 +23,7 @@ Homepage: [https://weechat.org/](https://weechat.org/)
 
 The following packages are **required**:
 
-- python ≥ 3.7
+- python ≥ 3.11
 - python-django ≥ 2.0
 - python-pygments
 - python-tz

@@ -6,8 +6,8 @@
 
 # pylint: disable=no-name-in-module
 
+import datetime
 from dataclasses import dataclass
-from datetime import datetime
 
 from django.http import Http404
 from django.shortcuts import get_object_or_404, render
@@ -203,7 +203,7 @@ def python3(request):
     """Page with Python 3 transition."""
     @dataclass
     class Status:
-        date: datetime
+        date: datetime.date
         today: bool
         scripts: int
         python_scripts: int
@@ -215,20 +215,16 @@ def python3(request):
         future: bool = False
 
     v037_date = Release.objects.get(project__name='weechat', version='0.3.7').date
-    v037_date = datetime(
-        year=v037_date.year,
-        month=v037_date.month,
-        day=v037_date.day,
-    )
+    v037_date = datetime.date(v037_date.year, v037_date.month, v037_date.day)
     status_list: list[Status] = [
         # status when the transition started
-        Status(datetime(2018, 6, 3), False, 347, 216, 43, 173),
+        Status(datetime.date(2018, 6, 3), False, 347, 216, 43, 173),
         # status on 2019-07-01 (WeeChat is built with Python 3 by default)
-        Status(datetime(2019, 7, 1), False, 362, 226, 96, 130),
+        Status(datetime.date(2019, 7, 1), False, 362, 226, 96, 130),
         # status on 2020-01-01 (initial end of transition)
-        Status(datetime(2020, 1, 1), False, 364, 228, 125, 103),
+        Status(datetime.date(2020, 1, 1), False, 364, 228, 125, 103),
         # status on 2020-05-01 (end of transition)
-        Status(datetime(2020, 5, 1), False, 364, 228, 129, 99),
+        Status(datetime.date(2020, 5, 1), False, 364, 228, 129, 99),
     ]
     # status today
     scripts_list = Script.objects.filter(approved=True).count()
@@ -242,7 +238,7 @@ def python3(request):
     scripts_remaining = python_scripts - scripts_ok
     status_list.append(
         Status(
-            date=datetime.now(),
+            date=datetime.datetime.now(tz=datetime.UTC).date(),
             today=True,
             scripts=scripts_list,
             python_scripts=python_scripts,
@@ -251,7 +247,7 @@ def python3(request):
         )
     )
     # compute percentages and flag "future"
-    now = datetime.now()
+    now = datetime.datetime.now(tz=datetime.UTC).date()
     for status in status_list:
         status.python_scripts_percent = (
             (status.python_scripts * 100) // status.scripts
@@ -265,16 +261,16 @@ def python3(request):
         request,
         'scripts/python3.html',
         {
-            'python3_date': datetime(2008, 12, 3),
+            'python3_date': datetime.date(2008, 12, 3),
             'v037_date': v037_date,
-            'roadmap_start': datetime(2018, 6, 3),
-            'roadmap_email': datetime(2018, 6, 16),
-            'roadmap_new_py3': datetime(2018, 7, 1),
-            'roadmap_all_py3': datetime(2018, 9, 1),
-            'roadmap_weechat_py3': datetime(2019, 7, 1),
-            'roadmap_initial_end': datetime(2020, 1, 1),
-            'roadmap_end': datetime(2020, 5, 1),
-            'roadmap_remove_python2': datetime(2022, 10, 15),
+            'roadmap_start': datetime.date(2018, 6, 3),
+            'roadmap_email': datetime.date(2018, 6, 16),
+            'roadmap_new_py3': datetime.date(2018, 7, 1),
+            'roadmap_all_py3': datetime.date(2018, 9, 1),
+            'roadmap_weechat_py3': datetime.date(2019, 7, 1),
+            'roadmap_initial_end': datetime.date(2020, 1, 1),
+            'roadmap_end': datetime.date(2020, 5, 1),
+            'roadmap_remove_python2': datetime.date(2022, 10, 15),
             'status_list': status_list,
         },
     )
