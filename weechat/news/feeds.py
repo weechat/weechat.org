@@ -4,7 +4,7 @@
 
 """WeeChat feeds."""
 
-from datetime import datetime
+import datetime
 
 from django.contrib.syndication.views import Feed
 
@@ -39,7 +39,7 @@ class LatestNewsFeed(WeechatFeed):
         """Return items with date in the past."""
         # pylint: disable=all
         return (Info.objects.filter(visible=1)
-                .filter(date__lte=datetime.now()).order_by('-date')[:10])
+                .filter(date__lte=datetime.datetime.now(tz=datetime.UTC)).order_by('-date')[:10])
 
 
 class UpcomingEventsFeed(WeechatFeed):
@@ -52,4 +52,4 @@ class UpcomingEventsFeed(WeechatFeed):
         """Return items with date in the future."""
         # pylint: disable=all
         return (Info.objects.filter(visible=1)
-                .filter(date__gt=datetime.now()).order_by('date')[:10])
+                .filter(date__gt=datetime.datetime.now(tz=datetime.UTC)).order_by('date')[:10])

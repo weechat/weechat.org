@@ -6,7 +6,7 @@
 
 # pylint: disable=no-name-in-module
 
-from datetime import datetime
+import datetime
 
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
@@ -90,7 +90,7 @@ def form_add(request):
             props = Theme.get_props(content)
 
             # add theme in database
-            now = datetime.now()
+            now = datetime.datetime.now(tz=datetime.UTC)
             theme = Theme(visible=False,
                           name=props['name'],
                           version=props['weechat'],
