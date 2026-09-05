@@ -17,9 +17,9 @@
 {% regroup package_list by version as packages_by_version %}
 
 {% if version == "old" %}
-<div class="alert alert-secondary">
+<div class="alert alert-warning">
   {% with count=packages_by_version|length %}
-  {% blocktrans %}<strong>Important:</strong> it is not recommended to download or use any of these {{ count }} old versions: they are less stable than the latest released version, and may contain security vulnerabilities fixed in later versions.{% endblocktrans %}
+  {% blocktrans %}<strong>Warning:</strong> it is not recommended to download or use any of these {{ count }} old versions: they are less stable than the latest released version, and may contain security vulnerabilities fixed in later versions.{% endblocktrans %}
   {% endwith %}
 </div>
 {% endif %}
