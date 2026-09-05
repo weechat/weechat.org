@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-05 11:07+0200\n"
-"PO-Revision-Date: 2026-07-20 10:05+0200\n"
+"PO-Revision-Date: 2026-09-05 23:48+0200\n"
 "Last-Translator: Nils Görs <weechatter@arcor.de>\n"
 "Language-Team: German <weechatter@arcor.de>\n"
 "Language: de\n"
@@ -39,6 +39,8 @@ msgid ""
 "Add builtin theme feature with default dark and light themes, improve speed "
 "of /upgrade command."
 msgstr ""
+"Funktion für integrierte Themes (mit Standard-Dark- und -Light-Themes) "
+"hinzufügen; Geschwindigkeit des Befehls /upgrade verbessert."
 
 #: about/_i18n_keydates.py:13
 msgid ""
@@ -612,6 +614,14 @@ msgid ""
 "Note: if the remote is a trusted WeeChat, the problem does not happen, as "
 "WeeChat itself never sends an array in the \"buffer_closed\" event."
 msgstr ""
+"Eine böswillige (oder kompromittierte) Relay-Gegenstelle kann ein "
+"\"buffer_closed\"-Ereignis mit einem Array senden, was in der Relay-"
+"Erweiterung zu einem Use-after-Free (Lese- und Schreibzugriff) und "
+"anschließend zu einem Double-Free führt.\n"
+"<br>\n"
+"Hinweis: Handelt es sich bei der Gegenstelle um eine vertrauenswürdige "
+"WeeChat-Instanz, tritt das Problem nicht auf, da WeeChat selbst niemals ein "
+"Array im \"buffer_closed\"-Ereignis sendet."
 
 #: doc/_i18n_security.py:18
 msgid ""
@@ -623,13 +633,12 @@ msgstr ""
 "anzugeben."
 
 #: doc/_i18n_security.py:19
-#, fuzzy
-#| msgid "A buffer overflow happens when decoding some IRC colors in strings."
 msgid ""
 "A stack buffer overflow happens when building a JOIN command with a lot of "
 "channel and keys."
 msgstr ""
-"Beim Dekodieren einiger IRC-Farben in Strings tritt ein Bufferüberlauf auf."
+"Ein Stack-Bufferüberlauf tritt auf, wenn ein JOIN-Befehl mit einer großen "
+"Anzahl an Kanälen und Schlüsseln erstellt wird."
 
 #: doc/_i18n_security.py:20
 msgid "API"
@@ -679,6 +688,7 @@ msgstr ""
 #: doc/_i18n_security.py:25
 msgid "Always connect to a trusted WeeChat remote."
 msgstr ""
+"Verbinde dich immer mit einer vertrauenswürdigen WeeChat-Remote-Instanz."
 
 #: doc/_i18n_security.py:26
 msgid ""
@@ -883,6 +893,8 @@ msgid ""
 "Disable batch capability: <code>/set irc.server_default.capabilities \"*,!"
 "batch\"</code>."
 msgstr ""
+"Deaktivieren Sie die Batch-Funktionalität: <code>/set "
+"irc.server_default.capabilities \"*,!batch\"</code>."
 
 #: doc/_i18n_security.py:60
 msgid "Do not use command <code>/debug dump</code>."
@@ -1054,17 +1066,13 @@ msgstr ""
 "Entferne/beende alle Skripte, die die API Funktion infobar_printf nutzen."
 
 #: doc/_i18n_security.py:94
-#, fuzzy
-#| msgid ""
-#| "Buffer overflow when receiving a malformed IRC message 324 (channel mode)."
 msgid "Stack buffer overflow when building a JOIN command with channel keys."
 msgstr ""
-"Bufferüberlauf beim Empfang einer fehlerhaften IRC Nachricht 324 "
-"(Kanalmoduls)."
+"Stack-Bufferüberlauf beim Erstellen eines JOIN-Befehls mit Kanalschlüsseln."
 
 #: doc/_i18n_security.py:95
 msgid "Stack-based Buffer Overflow"
-msgstr ""
+msgstr "Stack-basierter Bufferüberlauf"
 
 #: doc/_i18n_security.py:96
 msgid ""
@@ -1259,7 +1267,7 @@ msgstr ""
 
 #: doc/_i18n_security.py:112
 msgid "Use After Free"
-msgstr ""
+msgstr "Use-after-Free"
 
 #: doc/_i18n_security.py:113
 msgid "Use of invalid pointer in build of log filename."
@@ -1271,12 +1279,16 @@ msgid ""
 "Use-after-free and double free when a remote relay sends an event with an "
 "array as body."
 msgstr ""
+"\"Use-after-free\"- und \"Double-free\"-Fehler, wenn ein Remote-Relay ein "
+"Ereignis mit einem Array als Body sendet."
 
 #: doc/_i18n_security.py:115
 msgid ""
 "Use-after-free in the irc plugin when a batched message disconnects the "
 "server."
 msgstr ""
+"Use-after-Free-Schwachstelle in IRC-Erweiterung, wenn eine gebündelte "
+"Nachricht zur Trennung der Serververbindung führt."
 
 #: doc/_i18n_security.py:116
 msgid ""
@@ -1298,6 +1310,9 @@ msgid ""
 "disconnection from the server, the remaining messages are reading data that "
 "is already freed."
 msgstr ""
+"Wenn eine Batch-Nachricht empfangen wird und eine der darin enthaltenen "
+"Nachrichten einen Verbindungsabbruch zum Server verursacht, greifen die "
+"verbleibenden Nachrichten auf Daten zu, die bereits freigegeben wurden."
 
 #: doc/_i18n_security.py:118
 msgid ""
@@ -5643,32 +5658,18 @@ msgstr ""
 "changelog/ChangeLog-4.1.3.html\">Änderungsprotokoll</a>."
 
 #: news/_i18n_info.py:177
-#, fuzzy
-#| msgid ""
-#| "Version 4.4.0 is available!\n"
-#| "\n"
-#| "New features and bugs fixed: <a href=\"https://github.com/weechat/weechat/"
-#| "releases/tag/v4.4.0\">ChangeLog</a>."
 msgid ""
 "Version 4.10.0 is available!\n"
 "\n"
 "New features and bugs fixed: <a href=\"https://github.com/weechat/weechat/"
 "releases/tag/v4.10.0\">ChangeLog</a>."
 msgstr ""
-"Version 4.4.0 ist verfügbar!\n"
+"Version 4.10.0 ist verfügbar!\n"
 "\n"
 "Viele neue Funktionen und Fehlerbehebungen: <a href=\"https://github.com/"
-"weechat/weechat/releases/tag/v4.4.0\">Änderungsprotokoll</a>."
+"weechat/weechat/releases/tag/v4.10.0\">Änderungsprotokoll</a>."
 
 #: news/_i18n_info.py:178
-#, fuzzy
-#| msgid ""
-#| "Version 4.4.1 is available!\n"
-#| "\n"
-#| "This is a bug fix and maintenance release.\n"
-#| "\n"
-#| "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
-#| "v4.4.1\">ChangeLog</a>."
 msgid ""
 "Version 4.10.1 is available!\n"
 "\n"
@@ -5677,13 +5678,13 @@ msgid ""
 "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
 "v4.10.1\">ChangeLog</a>."
 msgstr ""
-"Version 4.4.1 ist verfügbar!\n"
+"Version 4.10.1 ist verfügbar!\n"
 "\n"
 "Diese Version behebt lediglich Fehler und ist als Korrekturversion zu "
 "verstehen.\n"
 "\n"
 "Eine Liste der Fehlerbereinigungen findet man unter <a href=\"https://"
-"github.com/weechat/weechat/releases/tag/v4.4.1\">Änderungsprotokoll</a>."
+"github.com/weechat/weechat/releases/tag/v4.10.1\">Änderungsprotokoll</a>."
 
 #: news/_i18n_info.py:179
 msgid ""
@@ -6225,14 +6226,6 @@ msgstr ""
 "github.com/weechat/weechat/releases/tag/v4.9.4\">Änderungsprotokoll</a>."
 
 #: news/_i18n_info.py:213
-#, fuzzy
-#| msgid ""
-#| "Version 4.9.1 is available!\n"
-#| "\n"
-#| "This is a bug fix and maintenance release.\n"
-#| "\n"
-#| "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
-#| "v4.9.1\">ChangeLog</a>."
 msgid ""
 "Version 4.9.5 is available!\n"
 "\n"
@@ -6241,13 +6234,13 @@ msgid ""
 "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
 "v4.9.5\">ChangeLog</a>."
 msgstr ""
-"Version 4.9.1 ist verfügbar!\n"
+"Version 4.9.5 ist verfügbar!\n"
 "\n"
 "Diese Version behebt lediglich Fehler und ist als Korrekturversion zu "
 "verstehen.\n"
 "\n"
 "Eine Liste der Fehlerbereinigungen findet man unter <a href=\"https://"
-"github.com/weechat/weechat/releases/tag/v4.9.1\">Änderungsprotokoll</a>."
+"github.com/weechat/weechat/releases/tag/v4.9.5\">Änderungsprotokoll</a>."
 
 #: news/_i18n_info.py:214
 msgid ""
@@ -6868,6 +6861,8 @@ msgstr "Nutzt notify-send wenn eine Nachricht empfangen wurde."
 #: scripts/_i18n_scripts.py:137
 msgid "Censor messages by nick and text using color while still logging them."
 msgstr ""
+"Zensieren Sie Nachrichten anhand von Nickname und Text unter Verwendung von "
+"Farben, während diese weiterhin protokolliert werden."
 
 #. Translators: description for script "autonickprefix.pl" (0.3.0+)
 #: scripts/_i18n_scripts.py:139
@@ -8240,6 +8235,8 @@ msgstr "Verkürzt lange URLs mittels isgd oder tinyurl."
 #: scripts/_i18n_scripts.py:623
 msgid "Show IRCv3 draft/react reactions inline on the original message."
 msgstr ""
+"Zeigt IRCv3-Draft/React-Reaktionen direkt bei der ursprünglichen Nachricht "
+"an."
 
 #. Translators: description for script "topicdiff.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:625
@@ -10094,22 +10091,16 @@ msgid "Old versions"
 msgstr "Alte Versionen"
 
 #: templates/download/packages.html:22
-#, fuzzy, python-format
-#| msgid ""
-#| "<strong>Important:</strong> it is not recommended to download or use any "
-#| "of these %(count)s old versions: they are less stable than the latest "
-#| "released version, and may contain security vulnerabilities fixed in later "
-#| "versions."
+#, python-format
 msgid ""
 "<strong>Warning:</strong> it is not recommended to download or use any of "
 "these %(count)s old versions: they are less stable than the latest released "
 "version, and may contain security vulnerabilities fixed in later versions."
 msgstr ""
 "<strong>Wichtig:</strong> Es wird davon abgeraten eine dieser %(count)s "
-"älteren Versionen herunter zu laden und/oder zu nutzen. Diese Versionen "
-"laufen weniger stabil als eine aktuelle Version und beinhalten "
-"möglicherweise Sicherheitslücken die in nachfolgenden Versionen behoben "
-"wurden."
+"älteren Versionen herunter zu laden oder zu nutzen. Diese Versionen sind "
+"weniger stabil als eine aktuelle Version und beinhalten möglicherweise "
+"Sicherheitslücken die in nachfolgenden Versionen behoben wurden."
 
 #: templates/download/packages.html:41
 msgid "next stable version"
@@ -10128,19 +10119,13 @@ msgstr ""
 "kompilieren lassen!"
 
 #: templates/download/packages.html:59
-#, fuzzy, python-format
-#| msgid ""
-#| "<strong>Note:</strong> this release fixes <a "
-#| "href=\"%(security_url)s\">%(counter)s vulnerability</a>."
-#| msgid_plural ""
-#| "<strong>Note:</strong> this release fixes <a "
-#| "href=\"%(security_url)s\">%(counter)s vulnerabilities</a>."
+#, python-format
 msgid ""
 "<strong>Caution:</strong> this version has known vulnerabilities (<a "
 "href=\"%(security_url)s\">list</a>)."
 msgstr ""
-"<strong>Hinweis:</strong> diese Version behebt <a "
-"href=\"%(security_url)s\">%(counter)s Schwachstelle</a>."
+"<strong>Hinweis:</strong> Diese Version weist bekannte Schwachstellen auf. "
+"(<a href=\"%(security_url)s\">list</a>)."
 
 #: templates/download/packages.html:66
 #, python-format
