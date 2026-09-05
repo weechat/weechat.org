@@ -7,6 +7,7 @@ from django.utils.translation import gettext_noop
 
 def __i18n_doc_doc():
     """Translations for doc/doc."""
+    gettext_noop("Cheat sheet")
     gettext_noop("Developer's guide")
     gettext_noop("FAQ")
     gettext_noop("Plugin API reference")

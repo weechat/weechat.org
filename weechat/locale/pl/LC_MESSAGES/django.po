@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-05 11:07+0200\n"
+"POT-Creation-Date: 2026-09-06 00:08+0200\n"
 "PO-Revision-Date: 2026-09-05 14:13+0200\n"
 "Last-Translator: Krzysztof Korościk <soltys@soltys.info>\n"
 "Language-Team: Polish <soltys@soltys.info>\n"
@@ -474,38 +474,44 @@ msgid "(file)"
 msgstr "(plik)"
 
 #: doc/_i18n_doc.py:10
+#, fuzzy
+#| msgid "WeeChat screenshot"
+msgid "Cheat sheet"
+msgstr "Zrzut ekranu WeeChat"
+
+#: doc/_i18n_doc.py:11
 msgid "Developer's guide"
 msgstr "Poradnik developera"
 
-#: doc/_i18n_doc.py:11
+#: doc/_i18n_doc.py:12
 msgid "FAQ"
 msgstr "FAQ"
 
-#: doc/_i18n_doc.py:12
+#: doc/_i18n_doc.py:13
 msgid "Plugin API reference"
 msgstr "Opis API wtyczek"
 
-#: doc/_i18n_doc.py:13
+#: doc/_i18n_doc.py:14
 msgid "Quick Start guide"
 msgstr "Szybki start"
 
-#: doc/_i18n_doc.py:14
+#: doc/_i18n_doc.py:15
 msgid "Relay: api"
 msgstr "Relay: api"
 
-#: doc/_i18n_doc.py:15
+#: doc/_i18n_doc.py:16
 msgid "Relay: weechat"
 msgstr "Relay: weechat"
 
-#: doc/_i18n_doc.py:16
+#: doc/_i18n_doc.py:17
 msgid "Scripting guide"
 msgstr "Poradnik pisania skryptów"
 
-#: doc/_i18n_doc.py:17
+#: doc/_i18n_doc.py:18
 msgid "User's guide"
 msgstr "Poradnik użytkownika"
 
-#: doc/_i18n_doc.py:18
+#: doc/_i18n_doc.py:19
 msgid "Wiki (user contributions)"
 msgstr "Wiki (tworzone przez użytkowników)"
 
@@ -788,59 +794,63 @@ msgid "Buffer overflows in build of strings."
 msgstr "Przepełnienie bufora w budowaniu ciągów."
 
 #: doc/_i18n_security.py:45
+msgid "Bypass of user authorization for start of DCC file transfer."
+msgstr ""
+
+#: doc/_i18n_security.py:46
 msgid "Core"
 msgstr "Rdzeń"
 
-#: doc/_i18n_security.py:46
+#: doc/_i18n_security.py:47
 msgid "Core, IRC"
 msgstr "Rdzeń, IRC"
 
-#: doc/_i18n_security.py:47
+#: doc/_i18n_security.py:48
 msgid "Core, Plugins"
 msgstr "Rdzeń, Wtyczki"
 
-#: doc/_i18n_security.py:48
+#: doc/_i18n_security.py:49
 msgid "Crash in API function infobar_printf."
 msgstr "Crash w funkcji API infobar_printf."
 
-#: doc/_i18n_security.py:49
+#: doc/_i18n_security.py:50
 msgid "Crash on IRC commands sent via Relay."
 msgstr "Crash przy wysyłaniu komend IRC przez wtyczkę Relay."
 
-#: doc/_i18n_security.py:50
+#: doc/_i18n_security.py:51
 msgid "Crash on malformed HTTP message in relay plugin, protocol \"api\"."
 msgstr ""
 "Crash przez zniekształconą wiadomość HTTP we wtyczce relay, protokół „api”."
 
-#: doc/_i18n_security.py:51
+#: doc/_i18n_security.py:52
 msgid "Crash on malformed IRC message 352 (WHO)."
 msgstr "Crash przez zniekształconą wiadomość IRC 352 (WHO)."
 
-#: doc/_i18n_security.py:52
+#: doc/_i18n_security.py:53
 msgid "Crash on malformed websocket frame in relay plugin."
 msgstr "Crash przez zniekształconą ramkę websocket we wtyczce relay."
 
-#: doc/_i18n_security.py:53
+#: doc/_i18n_security.py:54
 msgid "Crash on nicks monitored with /notify."
 msgstr "Crash na nickach monitorowanych przez /notify."
 
-#: doc/_i18n_security.py:54
+#: doc/_i18n_security.py:55
 msgid "Crash on send of unknown commands to IRC server."
 msgstr "Crash przy wysyłaniu nieznanych komend do serwera IRC."
 
-#: doc/_i18n_security.py:55
+#: doc/_i18n_security.py:56
 msgid "Crash when decoding IRC colors."
 msgstr "Crash podczas dekodowania kolorów IRC w ciągach."
 
-#: doc/_i18n_security.py:56
+#: doc/_i18n_security.py:57
 msgid "Crash when receiving WeeChat color codes in IRC messages."
 msgstr "Crash podczas otrzymywania kodów kolorów WeeChat w wiadomości IRC."
 
-#: doc/_i18n_security.py:57
+#: doc/_i18n_security.py:58
 msgid "Crash when receiving a malformed IRC message 352 (WHO)."
 msgstr "Crash podczas otrzymywania zniekształconej wiadomości IRC 352 (WHO)."
 
-#: doc/_i18n_security.py:58
+#: doc/_i18n_security.py:59
 msgid ""
 "Date/time conversion specifiers are expanded after replacing buffer local "
 "variables in name of log files. In some cases, this can lead to an error in "
@@ -851,7 +861,7 @@ msgstr ""
 "prowadzić do błędu w funkcji strftime i spowodować crash spowodowany użyciem "
 "niezainicjowanego buforu."
 
-#: doc/_i18n_security.py:59
+#: doc/_i18n_security.py:60
 msgid ""
 "Disable batch capability: <code>/set irc.server_default.capabilities \"*,!"
 "batch\"</code>."
@@ -859,11 +869,11 @@ msgstr ""
 "Wyłącz funkcję batch: <code>/set irc.server_default.capabilities \"*,!"
 "batch\"</code>."
 
-#: doc/_i18n_security.py:60
+#: doc/_i18n_security.py:61
 msgid "Do not use command <code>/debug dump</code>."
 msgstr "Nie używaj komendy <code>/debug dump</code>."
 
-#: doc/_i18n_security.py:61
+#: doc/_i18n_security.py:62
 msgid ""
 "Do not use command <code>/notify</code> with nicks containing formatting "
 "chars like \"%\"."
@@ -871,7 +881,7 @@ msgstr ""
 "Nie używaj komendy <code>/notify</code> z nickami zawierającymi znaki "
 "formatujące jak \"%\"."
 
-#: doc/_i18n_security.py:62
+#: doc/_i18n_security.py:63
 msgid ""
 "Due to insufficient check of TLS certificate in IRC plugin, man-in-the-"
 "middle attackers can spoof a server via an arbitrary certificate."
@@ -880,21 +890,21 @@ msgstr ""
 "IRC, atakujący za pomocą ataku man-in-the-middle może podstawić inny serwer "
 "podstawiając nadrzędny certyfikat."
 
-#: doc/_i18n_security.py:63
+#: doc/_i18n_security.py:64
 msgid "IRC"
 msgstr "IRC"
 
-#: doc/_i18n_security.py:64
+#: doc/_i18n_security.py:65
 msgid "IRC, Plugins"
 msgstr "IRC, Wtyczki"
 
-#: doc/_i18n_security.py:65
+#: doc/_i18n_security.py:66
 msgid "Improper Handling of Highly Compressed Data (Data Amplification)"
 msgstr ""
 "Niewłaściwe obchodzenie się z mocno skompresowanymi danymi (Data "
 "Amplification"
 
-#: doc/_i18n_security.py:66 doc/_i18n_security.py:67
+#: doc/_i18n_security.py:67 doc/_i18n_security.py:68 doc/_i18n_security.py:69
 msgid ""
 "Improper Limitation of a Pathname to a Restricted Directory (\"Path "
 "Traversal\")"
@@ -902,19 +912,23 @@ msgstr ""
 "Niepoprawne limitowanie nazwy ścieżki do katalogi zastrzeżonego („Path "
 "Traversal”)"
 
-#: doc/_i18n_security.py:68
+#: doc/_i18n_security.py:70
 msgid "Improper certificate validation"
 msgstr "Błędna walidacja certyfikatów"
 
-#: doc/_i18n_security.py:69
+#: doc/_i18n_security.py:71
 msgid "Improper input validation"
 msgstr "Błędna walidacja wejścia"
 
-#: doc/_i18n_security.py:70
+#: doc/_i18n_security.py:72
+msgid "Incorrect Authorization"
+msgstr ""
+
+#: doc/_i18n_security.py:73
 msgid "Integer Overflow or Wraparound"
 msgstr "Przekroczenie zakresu liczb całkowitych lub zawinięcie"
 
-#: doc/_i18n_security.py:71
+#: doc/_i18n_security.py:74
 msgid ""
 "Integer overflow happens in conversion of a version as string to an integer "
 "number, if the version is greater than 0x7FFFFFFF (127.255.255.255), so if "
@@ -924,43 +938,47 @@ msgstr ""
 "wersji na liczbę całkowitą, jeśli wersja jest większa od 0x7FFFFFFF "
 "(127.255.255.255), czyli jeśli wersja to co najmniej 0x80000000 (128.0.0.0)."
 
-#: doc/_i18n_security.py:72
+#: doc/_i18n_security.py:75
 msgid "Integer overflow in base32 decode/encode functions."
 msgstr ""
 "Przepełnienie liczby całkowitej w funkcjach kodujących/dekodujących base32."
 
-#: doc/_i18n_security.py:73
+#: doc/_i18n_security.py:76
 msgid "Integer overflow in conversion of version to an integer number."
 msgstr ""
 "Przepełnienie liczby całkowitej podczas konwersji wersji na liczbę całkowitą."
 
-#: doc/_i18n_security.py:74
+#: doc/_i18n_security.py:77
 msgid "Integer overflow in loops on lists."
 msgstr "Przepełnienie liczby całkowitej w pętlach operujących na listach."
 
-#: doc/_i18n_security.py:75
+#: doc/_i18n_security.py:78
 msgid "Integer overflow with decimal numbers in calculation of expression."
 msgstr ""
 "Przepełnienie liczby całkowitej w liczbach dziesiętnych podczas obliczania "
 "wyrażeń."
 
-#: doc/_i18n_security.py:76
+#: doc/_i18n_security.py:79
 msgid "Logger"
 msgstr "Logger"
 
-#: doc/_i18n_security.py:77
+#: doc/_i18n_security.py:80
 msgid "Memory Allocation with Excessive Size Value"
 msgstr "Alokacja pamięci o przekroczonym rozmiarze"
 
-#: doc/_i18n_security.py:78
+#: doc/_i18n_security.py:81
 msgid "Memory leak in API relay, endpoint \"handshake\"."
 msgstr "Wyciek pamięci w API relay, endpoint „handshake”."
 
-#: doc/_i18n_security.py:79
+#: doc/_i18n_security.py:82
 msgid "Missing Release of Memory after Effective Lifetime"
 msgstr "Brak zwolnienia pamięci po przekroczenia jej „czasu życia”"
 
-#: doc/_i18n_security.py:80
+#: doc/_i18n_security.py:83
+msgid "Missing rejection of invalid websocket frames."
+msgstr ""
+
+#: doc/_i18n_security.py:84
 msgid ""
 "Missing size limit for the decompressed websocket frame in relay plugin, "
 "protocol \"api\"."
@@ -968,7 +986,7 @@ msgstr ""
 "Brakujące ograniczenie wielkości dla zdekompresowanych ramek websocket we "
 "wtyczce relay, protokół „api”."
 
-#: doc/_i18n_security.py:81
+#: doc/_i18n_security.py:85
 msgid ""
 "Missing size limit for the received websocket frame, HTTP message and HTTP "
 "body."
@@ -976,7 +994,7 @@ msgstr ""
 "Brakujące ograniczenie wielkości dla otrzymywanych ramek websocket, "
 "wiadomość HTTP i treść HTTP."
 
-#: doc/_i18n_security.py:82
+#: doc/_i18n_security.py:86
 msgid ""
 "Missing size limit for the unterminated IRC message or isupport value "
 "(message 005)."
@@ -984,68 +1002,94 @@ msgstr ""
 "Brak limitu rozmiaru dla niezakończonej wiadomości IRC lub wartości isupport "
 "(wiadomość 005)."
 
-#: doc/_i18n_security.py:83
+#: doc/_i18n_security.py:87
+#, fuzzy
+#| msgid ""
+#| "Missing size limit for the unterminated IRC message or isupport value "
+#| "(message 005)."
+msgid ""
+"Missing size limit for the unterminated Relay text message received from a "
+"client."
+msgstr ""
+"Brak limitu rozmiaru dla niezakończonej wiadomości IRC lub wartości isupport "
+"(wiadomość 005)."
+
+#: doc/_i18n_security.py:88
+#, fuzzy
+#| msgid ""
+#| "Missing size limit for the unterminated IRC message or isupport value "
+#| "(message 005)."
+msgid "Missing size limit for the unterminated Xfer chat message."
+msgstr ""
+"Brak limitu rozmiaru dla niezakończonej wiadomości IRC lub wartości isupport "
+"(wiadomość 005)."
+
+#: doc/_i18n_security.py:89
+msgid "Missing size limit of data queued for sending to clients."
+msgstr ""
+
+#: doc/_i18n_security.py:90
 msgid "NULL Pointer Dereference"
 msgstr "Dereferencja wskaźnika NULL"
 
-#: doc/_i18n_security.py:84
+#: doc/_i18n_security.py:91
 msgid "Non-constant time password/hash comparison."
 msgstr "Porównanie haseł/skrótów w różnym czasie."
 
-#: doc/_i18n_security.py:85
+#: doc/_i18n_security.py:92
 msgid "Observable Timing Discrepancy"
 msgstr "Obserwowana rozbieżność czasowa"
 
-#: doc/_i18n_security.py:86
+#: doc/_i18n_security.py:93
 msgid "Out-of-bounds read"
 msgstr "Niedozwolony odczyt"
 
-#: doc/_i18n_security.py:87
+#: doc/_i18n_security.py:94
 msgid "Out-of-bounds write"
 msgstr "Niedozwolony zapis"
 
-#: doc/_i18n_security.py:88
+#: doc/_i18n_security.py:95
 msgid "Possible man-in-the-middle attack in TLS connection to IRC server."
 msgstr "Możliwy atak typu man-in-the-middle na połączenia TLS do serwera IRC."
 
-#: doc/_i18n_security.py:89
+#: doc/_i18n_security.py:96
 msgid "Possible man-in-the-middle attack in TLS connection to servers."
 msgstr "Możliwy atak typu man-in-the-middle na połączenia TLS z serwerami."
 
-#: doc/_i18n_security.py:90
+#: doc/_i18n_security.py:97
 msgid "Relay"
 msgstr "Relay"
 
-#: doc/_i18n_security.py:91
+#: doc/_i18n_security.py:98
 msgid "Remote execution of commands via scripts."
 msgstr "Zdalne wykonanie poleceń przez skrypty."
 
-#: doc/_i18n_security.py:92
+#: doc/_i18n_security.py:99
 msgid "Remove/unload all scripts calling the API function hook_process."
 msgstr "Usuń/wyładuj wszystkie skrypty wywołujące funkcję API hook_process."
 
-#: doc/_i18n_security.py:93
+#: doc/_i18n_security.py:100
 msgid "Remove/unload all scripts calling the API function infobar_printf."
 msgstr "Usuń/wyładuj wszystkie skrypty używające funkcję API infobar_printf."
 
-#: doc/_i18n_security.py:94
+#: doc/_i18n_security.py:101
 msgid "Stack buffer overflow when building a JOIN command with channel keys."
 msgstr ""
 "Przepełnienie bufora stosu podczas tworzenia polecenia JOIN z kluczami do "
 "kanałów."
 
-#: doc/_i18n_security.py:95
+#: doc/_i18n_security.py:102
 msgid "Stack-based Buffer Overflow"
 msgstr "Przepełnienie bufora stosu"
 
-#: doc/_i18n_security.py:96
+#: doc/_i18n_security.py:103
 msgid ""
 "Strings are built with uncontrolled format in API function infobar_printf."
 msgstr ""
 "Ciągi znaków są budowane z użyciem niekontrolowanego formatowania w funkcji "
 "API infobar_printf."
 
-#: doc/_i18n_security.py:97
+#: doc/_i18n_security.py:104
 msgid ""
 "Strings are built with uncontrolled format when IRC commands are redirected "
 "by relay plugin. If the output or redirected command contains formatting "
@@ -1055,7 +1099,7 @@ msgstr ""
 "wtyczki pośrednika. Jeśli wyjście lub przekierowana komenda zawiera znaki "
 "formatujące jak \"%\" może to prowadzić do awarii WeeChat."
 
-#: doc/_i18n_security.py:98
+#: doc/_i18n_security.py:105
 msgid ""
 "Strings are built with uncontrolled format when nicks containing \"%\" are "
 "monitored with command <code>/notify</code>."
@@ -1063,7 +1107,7 @@ msgstr ""
 "Ciągi znaków są budowane z użyciem niekontrolowanego formatowania, kiedy "
 "nicki zawierające \"%\" są monitorowane poprzez komendę <code>/notify</code>."
 
-#: doc/_i18n_security.py:99
+#: doc/_i18n_security.py:106
 msgid ""
 "Strings are built with uncontrolled format when unknown IRC commands are "
 "sent to server, if option <code>irc.network.send_unknown_commands</code> is "
@@ -1073,7 +1117,7 @@ msgstr ""
 "serwera jeśli opcja <code>irc.network.send_unknown_commands</code> jest "
 "włączona."
 
-#: doc/_i18n_security.py:100
+#: doc/_i18n_security.py:107
 msgid ""
 "The messages received on \"handshake\" endpoint, which does not require "
 "authentication, are not freed if the content is not a JSON object (for "
@@ -1089,7 +1133,33 @@ msgstr ""
 "Złośliwy klient może wysłać duże tablice i spowodować zużycie pamięci. "
 "Proces WeeChat może zostać zatrzymany przez OOM killer."
 
-#: doc/_i18n_security.py:101
+#: doc/_i18n_security.py:108
+#, fuzzy
+#| msgid ""
+#| "When receiving data on the socket, the IRC plugin builds a partial "
+#| "message until \"\\r\\n\" is found.\n"
+#| "<br>\n"
+#| "There is no limit for the allocated message.\n"
+#| "<br>\n"
+#| "A malicious server sending large amount of data without end of message "
+#| "(\"\\r\\n\") can lead to memory exhaustion and the WeeChat process can be "
+#| "killed by the OOM killer."
+msgid ""
+"The relay plugin fails to reject invalid websocket frames.\n"
+"<br>\n"
+"A malicious client sending invalid websocket frames can lead to memory "
+"exhaustion and the WeeChat process can be killed by the OOM killer."
+msgstr ""
+"Podczas odbierania danych na gnieździe, wtyczka IRC tworzy częściową "
+"wiadomość, aż do znalezienia „\\r\\n”.\n"
+"<br>\n"
+"Nie ma limitu na przydzieloną wiadomość.\n"
+"<br>\n"
+"Złośliwy serwer wysyłający dużą ilość danych bez zakończenia wiadomości "
+"(„\\r\\n”) może doprowadzić do zużycia pamięci, a proces WeeChat może zostać "
+"zatrzymany przez OOM killer."
+
+#: doc/_i18n_security.py:109
 msgid ""
 "There are multiple ways to mitigate this issue:\n"
 "<ul>\n"
@@ -1115,7 +1185,7 @@ msgstr ""
 "zobacz: <code>/help relay.network.allowed_ips</code></li>\n"
 "</ul>"
 
-#: doc/_i18n_security.py:102
+#: doc/_i18n_security.py:110
 msgid ""
 "There are multiple ways to mitigate this issue:\n"
 "<ul>\n"
@@ -1137,7 +1207,7 @@ msgstr ""
 "zobacz: <code>/help relay.network.allowed_ips</code></li>\n"
 "</ul>"
 
-#: doc/_i18n_security.py:103 doc/_i18n_security.py:104
+#: doc/_i18n_security.py:111 doc/_i18n_security.py:112
 msgid ""
 "There are multiple ways to mitigate this issue:\n"
 "<ul>\n"
@@ -1159,8 +1229,8 @@ msgstr ""
 "zobacz: <code>/help relay.network.allowed_ips</code></li>\n"
 "</ul>"
 
-#: doc/_i18n_security.py:105 doc/_i18n_security.py:106
-#: doc/_i18n_security.py:107
+#: doc/_i18n_security.py:113 doc/_i18n_security.py:114
+#: doc/_i18n_security.py:115
 msgid ""
 "There are multiple ways to mitigate this issue:\n"
 "<ul>\n"
@@ -1180,7 +1250,7 @@ msgstr ""
 "zobacz: <code>/help relay.network.allowed_ips</code></li>\n"
 "</ul>"
 
-#: doc/_i18n_security.py:108
+#: doc/_i18n_security.py:116
 msgid ""
 "There are multiple ways to mitigate this issue:\n"
 "<ul>\n"
@@ -1198,7 +1268,7 @@ msgstr ""
 "nieznanych komend do serwera.</li>\n"
 "</ul>"
 
-#: doc/_i18n_security.py:109
+#: doc/_i18n_security.py:117
 msgid ""
 "Turn off handling of colors in incoming IRC messages: <code>/set "
 "irc.network.colors_receive off</code>."
@@ -1206,7 +1276,7 @@ msgstr ""
 "Wyłącz obsługę kolorów w przychodzących wiadomościach IRC: <code>/set "
 "irc.network.colors_receive off</code>."
 
-#: doc/_i18n_security.py:110
+#: doc/_i18n_security.py:118
 msgid ""
 "Turn off option to include nick in filename: <code>/set "
 "xfer.file.use_nick_in_filename off</code>."
@@ -1214,7 +1284,19 @@ msgstr ""
 "Wyłącz opcję uwzględniania nicku w nazwie pliku: <code>/set "
 "xfer.file.use_nick_in_filename off</code>."
 
-#: doc/_i18n_security.py:111
+#: doc/_i18n_security.py:119
+msgid ""
+"Unload relay plugin with command: <code>/plugin unload relay</code> and see: "
+"<code>/help weechat.plugin.autoload</code>."
+msgstr ""
+
+#: doc/_i18n_security.py:120
+msgid ""
+"Unload xfer plugin with command: <code>/plugin unload xfer</code> and see: "
+"<code>/help weechat.plugin.autoload</code>."
+msgstr ""
+
+#: doc/_i18n_security.py:121
 msgid ""
 "Untrusted command for function hook_process could lead to execution of "
 "commands, because of shell expansions (so the problem is only caused by some "
@@ -1224,15 +1306,15 @@ msgstr ""
 "komend, poprzez rozszerzenia powłoki (problem jest powodowany przez niektóre "
 "skrypty, nie przez samego WeeChat)."
 
-#: doc/_i18n_security.py:112
+#: doc/_i18n_security.py:122
 msgid "Use After Free"
 msgstr "Use After Free"
 
-#: doc/_i18n_security.py:113
+#: doc/_i18n_security.py:123
 msgid "Use of invalid pointer in build of log filename."
 msgstr "Użycie niewłaściwego wskaźnika przy tworzeniu nazwy pliku z logiem."
 
-#: doc/_i18n_security.py:114
+#: doc/_i18n_security.py:124
 msgid ""
 "Use-after-free and double free when a remote relay sends an event with an "
 "array as body."
@@ -1240,7 +1322,7 @@ msgstr ""
 "Use-after-free i double free, gdy zdalny przekaźnik wysyła zdarzenie z "
 "tablicą jako treścią."
 
-#: doc/_i18n_security.py:115
+#: doc/_i18n_security.py:125
 msgid ""
 "Use-after-free in the irc plugin when a batched message disconnects the "
 "server."
@@ -1248,7 +1330,7 @@ msgstr ""
 "Use-after-free we wtyczce irc, kiedy wprowadzona seria wiadomość rozłącza z "
 "serwerem."
 
-#: doc/_i18n_security.py:116
+#: doc/_i18n_security.py:126
 msgid ""
 "WeeChat uses non-constant time password/hash comparison in the Relay plugin "
 "and in TOTP validation.\n"
@@ -1262,7 +1344,7 @@ msgstr ""
 "Może to pozwolić atakującemu na odgadnięcie hasła, hasha lub TOTP i "
 "ominięcie uwierzytelniania Relay."
 
-#: doc/_i18n_security.py:117
+#: doc/_i18n_security.py:127
 msgid ""
 "When a batch message is received and one of the messages causes a "
 "disconnection from the server, the remaining messages are reading data that "
@@ -1272,7 +1354,7 @@ msgstr ""
 "rozłączenie z serwerem, pozostałe wiadomości odczytują dane, które zostały "
 "już zwolnione."
 
-#: doc/_i18n_security.py:118
+#: doc/_i18n_security.py:128
 msgid ""
 "When decompressing a websocket frame received from a Relay client with "
 "\"api\" protocol and permessage-deflate enabled, WeeChat allocates memory "
@@ -1288,7 +1370,7 @@ msgstr ""
 "W przypadku mocno skompresowanej ramki może to doprowadzić do zużycia "
 "pamięci, a proces WeeChat może zostać zatrzymany przez OOM Killer."
 
-#: doc/_i18n_security.py:119
+#: doc/_i18n_security.py:129
 msgid ""
 "When dumping Relay data with <code>/debug dump</code> or <code>/debug dump "
 "relay</code>, any HTTP request with path_items defined causes an out-of-"
@@ -1298,7 +1380,36 @@ msgstr ""
 "debug dump relay</code> każde żądanie HTTP ze zdefiniowanym path_items "
 "powoduje odczyt poza zakresem."
 
-#: doc/_i18n_security.py:120
+#: doc/_i18n_security.py:130
+#, fuzzy
+#| msgid ""
+#| "When receiving data on the socket, the IRC plugin builds a partial "
+#| "message until \"\\r\\n\" is found.\n"
+#| "<br>\n"
+#| "There is no limit for the allocated message.\n"
+#| "<br>\n"
+#| "A malicious server sending large amount of data without end of message "
+#| "(\"\\r\\n\") can lead to memory exhaustion and the WeeChat process can be "
+#| "killed by the OOM killer."
+msgid ""
+"When queuing data of sending to clients, the Relay plugin builds a partial "
+"buffer.\n"
+"<br>\n"
+"There is no limit for the allocated buffer.\n"
+"<br>\n"
+"A malicious unauthenticated client sending PING control frames can can lead "
+"to memory exhaustion and the WeeChat process can be killed by the OOM killer."
+msgstr ""
+"Podczas odbierania danych na gnieździe, wtyczka IRC tworzy częściową "
+"wiadomość, aż do znalezienia „\\r\\n”.\n"
+"<br>\n"
+"Nie ma limitu na przydzieloną wiadomość.\n"
+"<br>\n"
+"Złośliwy serwer wysyłający dużą ilość danych bez zakończenia wiadomości "
+"(„\\r\\n”) może doprowadzić do zużycia pamięci, a proces WeeChat może zostać "
+"zatrzymany przez OOM killer."
+
+#: doc/_i18n_security.py:131
 msgid ""
 "When receiving a DCC file, the filename built contains the remote nick (the "
 "option <code>xfer.file.use_nick_in_filename</code> is on by default).\n"
@@ -1319,7 +1430,69 @@ msgstr ""
 "Xfer nigdy nie nadpisuje istniejących plików, więc jeśli istnieje plik o tej "
 "samej nazwie, do nazwy pliku dodawany jest sufiks, taki jak „.1”."
 
-#: doc/_i18n_security.py:121
+#: doc/_i18n_security.py:132
+#, fuzzy
+#| msgid ""
+#| "When receiving a DCC file, the filename built contains the remote nick "
+#| "(the option <code>xfer.file.use_nick_in_filename</code> is on by "
+#| "default).\n"
+#| "<br>\n"
+#| "If the nick contains special characters, the file could be written "
+#| "outside of the configured download path.\n"
+#| "<br>\n"
+#| "Xfer never overwrites existing files, so if a file exists with the same "
+#| "name, a suffix like \".1\" is appended to the filename."
+msgid ""
+"When receiving a DCC file, the filename may contain directory separator that "
+"is not the platform-native one (for example \"/\" received on Windows or \"\\"
+"\" received on Linux). This separator may be interpreted as a directory "
+"separator, so the file could be written outside of the configured download "
+"path.\n"
+"<br>\n"
+"Xfer never overwrites existing files, so if a file exists with the same "
+"name, a suffix like \".1\" is appended to the filename."
+msgstr ""
+"Podczas odbierania pliku DCC, tworzona nazwa pliku zawiera zdalny nick "
+"(opcja <code>xfer.file.use_nick_in_filename</code> jest domyślnie "
+"włączona).\n"
+"<br>\n"
+"Jeśli nick zawiera znaki specjalne, plik może zostać zapisany poza "
+"skonfigurowaną ścieżką pobierania.\n"
+"<br>\n"
+"Xfer nigdy nie nadpisuje istniejących plików, więc jeśli istnieje plik o tej "
+"samej nazwie, do nazwy pliku dodawany jest sufiks, taki jak „.1”."
+
+#: doc/_i18n_security.py:133
+#, fuzzy
+#| msgid ""
+#| "When receiving part of websocket frame, HTTP message or HTTP body, the "
+#| "Relay plugin builds a partial buffer until the end of data is found.\n"
+#| "<br>\n"
+#| "There is no limit for the allocated buffer.\n"
+#| "<br>\n"
+#| "A malicious client sending large amount of data without end of websocket "
+#| "frame or HTTP message/body can lead to memory exhaustion and the WeeChat "
+#| "process can be killed by the OOM killer."
+msgid ""
+"When receiving a text message from a client, the Relay plugin builds a "
+"partial buffer until the end of text is found.\n"
+"<br>\n"
+"There is no limit for the allocated buffer.\n"
+"<br>\n"
+"A malicious client sending large amount of data without end of text can lead "
+"to memory exhaustion and the WeeChat process can be killed by the OOM killer."
+msgstr ""
+"Po odebraniu części ramki websocket, wiadomości HTTP lub treści HTTP, "
+"wtyczka Relay buduje częściowy bufor, aż do momentu znalezienia końca "
+"danych.\n"
+"<br>\n"
+"Nie ma limitu dla przydzielonego bufora.\n"
+"<br>\n"
+"Złośliwy klient wysyłający dużą ilość danych bez końca ramki websocket lub "
+"wiadomości/treści HTTP może doprowadzić do zużycia pamięci, a proces WeeChat "
+"może zostać zatrzymany przez OOM killer."
+
+#: doc/_i18n_security.py:134
 msgid ""
 "When receiving data on the socket, the IRC plugin builds a partial message "
 "until \"\\r\\n\" is found.\n"
@@ -1339,7 +1512,38 @@ msgstr ""
 "(„\\r\\n”) może doprowadzić do zużycia pamięci, a proces WeeChat może zostać "
 "zatrzymany przez OOM killer."
 
-#: doc/_i18n_security.py:122
+#: doc/_i18n_security.py:135
+#, fuzzy
+#| msgid ""
+#| "When receiving part of websocket frame, HTTP message or HTTP body, the "
+#| "Relay plugin builds a partial buffer until the end of data is found.\n"
+#| "<br>\n"
+#| "There is no limit for the allocated buffer.\n"
+#| "<br>\n"
+#| "A malicious client sending large amount of data without end of websocket "
+#| "frame or HTTP message/body can lead to memory exhaustion and the WeeChat "
+#| "process can be killed by the OOM killer."
+msgid ""
+"When receiving part of Xfer chat message, the Xfer plugin builds a partial "
+"buffer until the end of message is found.\n"
+"<br>\n"
+"There is no limit for the allocated buffer.\n"
+"<br>\n"
+"A malicious client sending large amount of data without end of message can "
+"lead to memory exhaustion and the WeeChat process can be killed by the OOM "
+"killer."
+msgstr ""
+"Po odebraniu części ramki websocket, wiadomości HTTP lub treści HTTP, "
+"wtyczka Relay buduje częściowy bufor, aż do momentu znalezienia końca "
+"danych.\n"
+"<br>\n"
+"Nie ma limitu dla przydzielonego bufora.\n"
+"<br>\n"
+"Złośliwy klient wysyłający dużą ilość danych bez końca ramki websocket lub "
+"wiadomości/treści HTTP może doprowadzić do zużycia pamięci, a proces WeeChat "
+"może zostać zatrzymany przez OOM killer."
+
+#: doc/_i18n_security.py:136
 msgid ""
 "When receiving part of websocket frame, HTTP message or HTTP body, the Relay "
 "plugin builds a partial buffer until the end of data is found.\n"
@@ -1360,7 +1564,13 @@ msgstr ""
 "wiadomości/treści HTTP może doprowadzić do zużycia pamięci, a proces WeeChat "
 "może zostać zatrzymany przez OOM killer."
 
-#: doc/_i18n_security.py:123
+#: doc/_i18n_security.py:137
+msgid ""
+"When resuming a DCC file transfer, a peer can start it without user manual "
+"acceptance."
+msgstr ""
+
+#: doc/_i18n_security.py:138
 msgid ""
 "When writing a log file, a specific char used internally as separator may be "
 "used to forge a new path that can be outside the path configured by the "
@@ -1371,7 +1581,7 @@ msgstr ""
 "znajdować się poza ścieżką skonfigurowaną za pomocą opcji "
 "<code>logger.file.path</code>."
 
-#: doc/_i18n_security.py:124
+#: doc/_i18n_security.py:139
 #, python-brace-format
 msgid ""
 "With WeeChat ≥ 1.1, you can create a trigger:\n"
@@ -1391,7 +1601,7 @@ msgstr ""
 "zaktualizować WeeChat."
 
 # noqa:punc-space-id;punc-space-str
-#: doc/_i18n_security.py:125
+#: doc/_i18n_security.py:140
 msgid ""
 "With WeeChat ≥ 1.1, you can create a trigger:\n"
 "\n"
@@ -1411,27 +1621,27 @@ msgstr ""
 "W starszych wersjach nie ma prostego sposobu na złagodzenie problemu, musisz "
 "zaktualizować WeeChat."
 
-#: doc/_i18n_security.py:126
+#: doc/_i18n_security.py:141
 msgid "Write of DCC file received outside of configured download path."
 msgstr ""
 "Zapisanie pliku otrzymanego przez DCC poza skonfigurowaną ścieżką pobierania."
 
-#: doc/_i18n_security.py:127
+#: doc/_i18n_security.py:142
 msgid "Write of logger file outside of configured path."
 msgstr "Zapisanie pliku z logami poza skonfigurowaną ścieżką."
 
-#: doc/_i18n_security.py:128
+#: doc/_i18n_security.py:143
 msgid "Xfer"
 msgstr "Xfer"
 
-#: doc/_i18n_security.py:129
+#: doc/_i18n_security.py:144
 msgid ""
 "You can remove all relays of type \"irc\", see <code>/help relay</code>."
 msgstr ""
 "Możesz usunąć wszystkich pośredników typu \"irc\", zobacz <code>/help relay "
 "</code>."
 
-#: doc/_i18n_security.py:130
+#: doc/_i18n_security.py:145
 msgid ""
 "You can unload the logger plugin, thus stopping recording of all buffers: "
 "<code>/plugin unload logger</code>."
