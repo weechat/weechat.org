@@ -23,7 +23,18 @@ from weechat.doc.views import (
     security_wsa as view_security_wsa,
 )
 
-LEGACY_DOC = 'faq|user|plugin_api|scripting|quickstart|dev|relay_api|relay_weechat'
+LEGACY_DOC_NAMES = (
+    'cheatsheet',
+    'dev',
+    'faq',
+    'plugin_api',
+    'quickstart',
+    'relay_api',
+    'relay_weechat',
+    'scripting',
+    'user',
+)
+LEGACY_DOC = '|'.join(LEGACY_DOC_NAMES)
 
 urlpatterns = [
     path('', view_doc, name='doc'),
