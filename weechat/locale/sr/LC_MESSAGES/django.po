@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-06 00:08+0200\n"
-"PO-Revision-Date: 2026-07-05 17:19+0200\n"
+"PO-Revision-Date: 2026-09-11 12:54+0400\n"
 "Last-Translator: Иван Пешић <ivan.pesic@gmail.org>\n"
 "Language-Team: Serbian <ivan.pesic@gmail.com>\n"
 "Language: sr\n"
@@ -37,6 +37,8 @@ msgid ""
 "Add builtin theme feature with default dark and light themes, improve speed "
 "of /upgrade command."
 msgstr ""
+"Додавање функционалности уграђене теме са подразумеваном тамном и светлом "
+"темом, убрзање /upgrade команде."
 
 #: about/_i18n_keydates.py:13
 msgid ""
@@ -134,6 +136,8 @@ msgid ""
 "Add option typing.look.item_text, add option `-e` in command /eval, evaluate "
 "option xfer.network.own_ip."
 msgstr ""
+"Додавање опције typing.look.item_text, додавање опције `-e` у команду /eval, "
+"израчунавање опције xfer.network.own_ip."
 
 #: about/_i18n_keydates.py:26
 msgid ""
@@ -375,17 +379,15 @@ msgstr "Ово поље је обавезно."
 
 #. Translators: name of the theme (in English: light / dark)
 #: context_processors.py:15
-#, fuzzy
-#| msgid "Light"
 msgctxt "theme name for website"
 msgid "light"
-msgstr "Лаган"
+msgstr "светла"
 
 #. Translators: name of the theme (in English: light / dark)
 #: context_processors.py:17
 msgctxt "theme name for website"
 msgid "dark"
-msgstr ""
+msgstr "тамна"
 
 #: dev/views.py:21
 msgid "Stable version."
@@ -473,10 +475,8 @@ msgid "(file)"
 msgstr "(фајл)"
 
 #: doc/_i18n_doc.py:10
-#, fuzzy
-#| msgid "WeeChat screenshot"
 msgid "Cheat sheet"
-msgstr "WeeChat снимак екрана"
+msgstr "Пушкице"
 
 #: doc/_i18n_doc.py:11
 msgid "Developer's guide"
@@ -593,32 +593,36 @@ msgid ""
 "Note: if the remote is a trusted WeeChat, the problem does not happen, as "
 "WeeChat itself never sends an array in the \"buffer_closed\" event."
 msgstr ""
+"Злонамерни (или компромитовани) релеј удаљени може да пошаље „buffer_closed” "
+"догађај са низом, чиме у релеј додатку изазива употребу-након-ослобађања (за "
+"читање и упис) након чега следи двоструко ослобађање.\n"
+"<br>\n"
+"Напомена: ако је удаљени WeeChat којем се верује, нема проблема, јер сам "
+"WeeChat никада не шаље низ у „buffer_closed” догађају."
 
 #: doc/_i18n_security.py:18
 msgid ""
 "A malicious client could authenticate on the relay, with protocol \"api\" or "
 "\"weechat\", without giving the password configured in WeeChat."
 msgstr ""
+"Злонамерни клијент би могао да се пријави на релеј, са протоколом „api” или "
+"„weechat”, без давања лозинке конфигурисане у WeeChat."
 
 #: doc/_i18n_security.py:19
-#, fuzzy
-#| msgid "A buffer overflow happens when decoding some IRC colors in strings."
 msgid ""
 "A stack buffer overflow happens when building a JOIN command with a lot of "
 "channel and keys."
 msgstr ""
-"Прекорачење бафера се дешава приликом декодирања неких IRC боја у "
-"стринговима."
+"Долази до прекорачења стек бафера приликом изградње JOIN команде са доста "
+"канала и кључева."
 
 #: doc/_i18n_security.py:20
 msgid "API"
 msgstr "API"
 
 #: doc/_i18n_security.py:21
-#, fuzzy
-#| msgid "Relay"
 msgid "API, Relay"
-msgstr "Релеј"
+msgstr "API, Релеј"
 
 #: doc/_i18n_security.py:22
 msgid "Access of uninitialized pointer"
@@ -657,7 +661,7 @@ msgstr ""
 
 #: doc/_i18n_security.py:25
 msgid "Always connect to a trusted WeeChat remote."
-msgstr ""
+msgstr "Увек се повезује на WeeChat удаљени којем се верује."
 
 #: doc/_i18n_security.py:26
 msgid ""
@@ -666,6 +670,10 @@ msgid ""
 "<br>\n"
 "This can lead to a crash of WeeChat."
 msgstr ""
+"Празна линија примљена у Xfer чету (DCC чет) изазива читање пре почетка "
+"бафера.\n"
+"<br>\n"
+"То може да сруши WeeChat."
 
 #: doc/_i18n_security.py:27
 msgid ""
@@ -706,21 +714,21 @@ msgstr ""
 #: doc/_i18n_security.py:30
 msgid "Authentication Bypass Using an Alternate Path or Channel"
 msgstr ""
+"Заобилажење провере идентитета употребом алтернативне путање или канала"
 
 #: doc/_i18n_security.py:31
 msgid ""
 "Authentication bypass in Relay plugin, protocols \"api\" and \"weechat\"."
 msgstr ""
+"Заобилажење провере идентитета у Релеј додатку, протоколи „api” и „weechat”."
 
 #: doc/_i18n_security.py:32
 msgid "Buffer overflow in base 32 encoding in evaluated expressions."
 msgstr "Прекорачење бафера у base 32 кодирању у израчунатим изразима."
 
 #: doc/_i18n_security.py:33
-#, fuzzy
-#| msgid "Buffer overflow in parsing of date/time."
 msgid "Buffer overflow in dump of Relay data."
-msgstr "Прекорачење бафера приликом парсирања датума/времена."
+msgstr "Прекорачење бафера у испису Релеј података."
 
 #: doc/_i18n_security.py:34
 msgid ""
@@ -761,10 +769,9 @@ msgid "Buffer overflow when receiving a DCC file."
 msgstr "Прекорачење бафера приликом пријема DCC фајла."
 
 #: doc/_i18n_security.py:41
-#, fuzzy
-#| msgid "Buffer overflow when receiving a DCC file."
 msgid "Buffer overflow when receiving a line in a Xfer chat (DCC chat) buffer."
-msgstr "Прекорачење бафера приликом пријема DCC фајла."
+msgstr ""
+"Прекорачење бафера приликом пријема линије у баферу Xfer чета (DCC чет)."
 
 #: doc/_i18n_security.py:42
 msgid ""
@@ -783,7 +790,7 @@ msgstr "Прекорачење бафера у изградњи стрингов
 
 #: doc/_i18n_security.py:45
 msgid "Bypass of user authorization for start of DCC file transfer."
-msgstr ""
+msgstr "Заобилажење провере идентитета корисника при почетку DCC преноса фајла."
 
 #: doc/_i18n_security.py:46
 msgid "Core"
@@ -854,10 +861,12 @@ msgid ""
 "Disable batch capability: <code>/set irc.server_default.capabilities \"*,!"
 "batch\"</code>."
 msgstr ""
+"Искључивање batch могућности: <code>/set irc.server_default.capabilities „*,!"
+"batch”</code>."
 
 #: doc/_i18n_security.py:61
 msgid "Do not use command <code>/debug dump</code>."
-msgstr ""
+msgstr "Не користити команду <code>/debug dump</code>."
 
 #: doc/_i18n_security.py:62
 msgid ""
@@ -885,13 +894,15 @@ msgstr "IRC, Додаци"
 
 #: doc/_i18n_security.py:66
 msgid "Improper Handling of Highly Compressed Data (Data Amplification)"
-msgstr ""
+msgstr "Неправилна обрада високо компресованих података (појачање података)"
 
 #: doc/_i18n_security.py:67 doc/_i18n_security.py:68 doc/_i18n_security.py:69
 msgid ""
 "Improper Limitation of a Pathname to a Restricted Directory (\"Path "
 "Traversal\")"
 msgstr ""
+"Неправилно ограничавање имена путање до забрањеног директоријума („Path "
+"Traversal”)"
 
 #: doc/_i18n_security.py:70
 msgid "Improper certificate validation"
@@ -903,7 +914,7 @@ msgstr "Неправилна провера уноса"
 
 #: doc/_i18n_security.py:72
 msgid "Incorrect Authorization"
-msgstr ""
+msgstr "Неисправна провера идентитета"
 
 #: doc/_i18n_security.py:73
 msgid "Integer Overflow or Wraparound"
@@ -945,60 +956,61 @@ msgstr "Logger"
 
 #: doc/_i18n_security.py:80
 msgid "Memory Allocation with Excessive Size Value"
-msgstr ""
+msgstr "Алокација меморије са превеликом вредности величине"
 
 #: doc/_i18n_security.py:81
 msgid "Memory leak in API relay, endpoint \"handshake\"."
-msgstr ""
+msgstr "Цурење меморије у API релеја, крајња тачка „handshake”."
 
 #: doc/_i18n_security.py:82
 msgid "Missing Release of Memory after Effective Lifetime"
-msgstr ""
+msgstr "Недостаје ослобађање меморије након ефективног животног века"
 
 #: doc/_i18n_security.py:83
 msgid "Missing rejection of invalid websocket frames."
-msgstr ""
+msgstr "Недостаје одбацивање неисправних websocket оквира."
 
 #: doc/_i18n_security.py:84
-#, fuzzy
 #| msgid "Crash on malformed HTTP message in relay plugin, protocol \"api\"."
 msgid ""
 "Missing size limit for the decompressed websocket frame in relay plugin, "
 "protocol \"api\"."
 msgstr ""
-"Рушење у релеј додатку, протокол „api”, приликом лоше формиране HTTP поруке."
+"Недостаје ограничење величине за декомпресовани websocket оквир у релеј "
+"додатку, протокол „api”."
 
 #: doc/_i18n_security.py:85
-#, fuzzy
-#| msgid "Crash on malformed HTTP message in relay plugin, protocol \"api\"."
 msgid ""
 "Missing size limit for the received websocket frame, HTTP message and HTTP "
 "body."
 msgstr ""
-"Рушење у релеј додатку, протокол „api”, приликом лоше формиране HTTP поруке."
+"Недостаје ограничење величине за примљени websocket оквир, HTTP поруку и "
+"HTTP тело."
 
 #: doc/_i18n_security.py:86
 msgid ""
 "Missing size limit for the unterminated IRC message or isupport value "
 "(message 005)."
 msgstr ""
+"Недостаје ограничење величине за недовршену IRC поруку или isupport вредност "
+"(порука 005)."
 
 #: doc/_i18n_security.py:87
 msgid ""
 "Missing size limit for the unterminated Relay text message received from a "
 "client."
 msgstr ""
+"Недостаје ограничење величине за недовршену Релеј текст поруку примљену од "
+"клијента."
 
 #: doc/_i18n_security.py:88
-#, fuzzy
-#| msgid "Crash on malformed HTTP message in relay plugin, protocol \"api\"."
 msgid "Missing size limit for the unterminated Xfer chat message."
-msgstr ""
-"Рушење у релеј додатку, протокол „api”, приликом лоше формиране HTTP поруке."
+msgstr "Недостаје ограничење величине за недовршену Xfer чет поруку."
 
 #: doc/_i18n_security.py:89
 msgid "Missing size limit of data queued for sending to clients."
 msgstr ""
+"Недостаје ограничење величине података стављених у ред за слање клијентима."
 
 #: doc/_i18n_security.py:90
 msgid "NULL Pointer Dereference"
@@ -1006,11 +1018,11 @@ msgstr "Дереференцирање NULL показивача"
 
 #: doc/_i18n_security.py:91
 msgid "Non-constant time password/hash comparison."
-msgstr ""
+msgstr "Поређење лозинке/хеша које није у константном времену."
 
 #: doc/_i18n_security.py:92
 msgid "Observable Timing Discrepancy"
-msgstr ""
+msgstr "Приметан раскорак у тајмингу"
 
 #: doc/_i18n_security.py:93
 msgid "Out-of-bounds read"
@@ -1048,17 +1060,13 @@ msgstr ""
 "infobar_printf."
 
 #: doc/_i18n_security.py:101
-#, fuzzy
-#| msgid ""
-#| "Buffer overflow when receiving a malformed IRC message 324 (channel mode)."
 msgid "Stack buffer overflow when building a JOIN command with channel keys."
 msgstr ""
-"Прекорачење бафера приликом пријема лоше формиране IRC поруке 324 (режим "
-"канала)."
+"Прекорачење стека бафера приликом изградње JOIN команде кључевима канала."
 
 #: doc/_i18n_security.py:102
 msgid "Stack-based Buffer Overflow"
-msgstr ""
+msgstr "Прекорачење бафера заснованог на стеку"
 
 #: doc/_i18n_security.py:103
 msgid ""
@@ -1105,6 +1113,12 @@ msgid ""
 "A malicious client can send large arrays and cause memory exhaustion. The "
 "WeeChat process can be killed by the OOM killer."
 msgstr ""
+"Поруке примљене на крајњој тачки „handshake”, која не захтева проверу "
+"идентитета, се не ослобађају ако садржај није JSON објекат (на пример низ "
+"или било који други JSON тип).\n"
+"<br>\n"
+"Злонамерни клијенти могу да пошаљу велике низове и изазову исцрпљивање "
+"меморије. OOM убица онда може да убије WeeChat процес."
 
 #: doc/_i18n_security.py:108
 msgid ""
@@ -1113,19 +1127,12 @@ msgid ""
 "A malicious client sending invalid websocket frames can lead to memory "
 "exhaustion and the WeeChat process can be killed by the OOM killer."
 msgstr ""
+"Релеј додатак не одбацује неисправне websocket оквире.\n"
+"<br>\n"
+"Злонамерни клијент који шаље неисправне websocket оквире може да изазове "
+"исцрпљивање меморије, па OOM убица може да убије WeeChat процес."
 
 #: doc/_i18n_security.py:109
-#, fuzzy
-#| msgid ""
-#| "There are multiple ways to mitigate this issue:\n"
-#| "<ul>\n"
-#| "  <li>Rremove all relays with protocol \"api\", see: <code>/help relay</"
-#| "code></li>\n"
-#| "  <li>Unload relay plugin with command: <code>/plugin unload relay</code> "
-#| "and see: <code>/help weechat.plugin.autoload</code></li>\n"
-#| "  <li>Secure relay to allow only some trusted IP addresses, see: <code>/"
-#| "help relay.network.allowed_ips</code></li>\n"
-#| "</ul>"
 msgid ""
 "There are multiple ways to mitigate this issue:\n"
 "<ul>\n"
@@ -1141,26 +1148,17 @@ msgid ""
 msgstr ""
 "Постоји више начина да се овај проблем спречи:\n"
 "<ul>\n"
+"  <li>Уклањањем deflate компресије по поруци: "
+"<code>relay.network.websocket_permessage_deflate</code> (препоручено)</li>\n"
 "  <li>Уклањањем свих релеја који користе протокол „api”, погледајте: <code>/"
 "help relay</code></li>\n"
 "  <li>Уклањањем релеј додатка из меморије командом: <code>/plugin unload "
 "relay</code> и погледајте: <code>/help weechat.plugin.autoload</code></li>\n"
-"  <li>Обезбеђивањем релеја тако да се дозволе само неке IP адресе којима се "
-"верује, погледајте: <code>/help relay.network.allowed_ips</code></li>\n"
+"  <li>Обезбеђивањем релеја тако да се дозволе IP адресе којима се верује, "
+"погледајте: <code>/help relay.network.allowed_ips</code></li>\n"
 "</ul>"
 
 #: doc/_i18n_security.py:110
-#, fuzzy
-#| msgid ""
-#| "There are multiple ways to mitigate this issue:\n"
-#| "<ul>\n"
-#| "  <li>Rremove all relays with protocol \"api\", see: <code>/help relay</"
-#| "code></li>\n"
-#| "  <li>Unload relay plugin with command: <code>/plugin unload relay</code> "
-#| "and see: <code>/help weechat.plugin.autoload</code></li>\n"
-#| "  <li>Secure relay to allow only some trusted IP addresses, see: <code>/"
-#| "help relay.network.allowed_ips</code></li>\n"
-#| "</ul>"
 msgid ""
 "There are multiple ways to mitigate this issue:\n"
 "<ul>\n"
@@ -1174,26 +1172,15 @@ msgid ""
 msgstr ""
 "Постоји више начина да се овај проблем спречи:\n"
 "<ul>\n"
-"  <li>Уклањањем свих релеја који користе протокол „api”, погледајте: <code>/"
-"help relay</code></li>\n"
+"  <li>Уклањањем свих релеја који користе протокол „api” или „weechat”, "
+"погледајте: <code>/ help relay</code></li>\n"
 "  <li>Уклањањем релеј додатка из меморије командом: <code>/plugin unload "
 "relay</code> и погледајте: <code>/help weechat.plugin.autoload</code></li>\n"
-"  <li>Обезбеђивањем релеја тако да се дозволе само неке IP адресе којима се "
-"верује, погледајте: <code>/help relay.network.allowed_ips</code></li>\n"
+"  <li>Обезбеђивањем релеја тако да се дозволе IP адресе којима се верује, "
+"погледајте: <code>/help relay.network.allowed_ips</code></li>\n"
 "</ul>"
 
 #: doc/_i18n_security.py:111 doc/_i18n_security.py:112
-#, fuzzy
-#| msgid ""
-#| "There are multiple ways to mitigate this issue:\n"
-#| "<ul>\n"
-#| "  <li>Rremove all relays with protocol \"api\", see: <code>/help relay</"
-#| "code></li>\n"
-#| "  <li>Unload relay plugin with command: <code>/plugin unload relay</code> "
-#| "and see: <code>/help weechat.plugin.autoload</code></li>\n"
-#| "  <li>Secure relay to allow only some trusted IP addresses, see: <code>/"
-#| "help relay.network.allowed_ips</code></li>\n"
-#| "</ul>"
 msgid ""
 "There are multiple ways to mitigate this issue:\n"
 "<ul>\n"
@@ -1211,22 +1198,12 @@ msgstr ""
 "help relay</code></li>\n"
 "  <li>Уклањањем релеј додатка из меморије командом: <code>/plugin unload "
 "relay</code> и погледајте: <code>/help weechat.plugin.autoload</code></li>\n"
-"  <li>Обезбеђивањем релеја тако да се дозволе само неке IP адресе којима се "
-"верује, погледајте: <code>/help relay.network.allowed_ips</code></li>\n"
+"  <li>Обезбеђивањем релеја тако да се дозволе IP адресе којима се верује, "
+"погледајте: <code>/help relay.network.allowed_ips</code></li>\n"
 "</ul>"
 
 #: doc/_i18n_security.py:113 doc/_i18n_security.py:114
 #: doc/_i18n_security.py:115
-#, fuzzy
-#| msgid ""
-#| "There are multiple ways to mitigate this issue:\n"
-#| "<ul>\n"
-#| "  <li>Rremove all relays, see: <code>/help relay</code></li>\n"
-#| "  <li>Unload relay plugin with command: <code>/plugin unload relay</code> "
-#| "and see: <code>/help weechat.plugin.autoload</code></li>\n"
-#| "  <li>Secure relay to allow only some trusted IP addresses, see: <code>/"
-#| "help relay.network.allowed_ips</code></li>\n"
-#| "</ul>"
 msgid ""
 "There are multiple ways to mitigate this issue:\n"
 "<ul>\n"
@@ -1265,36 +1242,36 @@ msgstr ""
 "</ul>"
 
 #: doc/_i18n_security.py:117
-#, fuzzy
-#| msgid ""
-#| "Turn of handling of colors in incoming IRC messages:\n"
-#| "\n"
-#| "<p><pre><code>/set irc.network.colors_receive off</code></pre></p>"
 msgid ""
 "Turn off handling of colors in incoming IRC messages: <code>/set "
 "irc.network.colors_receive off</code>."
 msgstr ""
-"Искључивање обрате боја у долазним IRC порукама:\n"
-"\n"
-"<p><pre><code>/set irc.network.colors_receive off</code></pre></p>"
+"Искључивање обраде боја у долазним IRC порукама: <code>/set "
+"irc.network.colors_receive off</code>."
 
 #: doc/_i18n_security.py:118
 msgid ""
 "Turn off option to include nick in filename: <code>/set "
 "xfer.file.use_nick_in_filename off</code>."
 msgstr ""
+"Искључивање опције за укључивање надимка у имену фајла: <code>/set "
+"xfer.file.use_nick_in_filename off</code>."
 
 #: doc/_i18n_security.py:119
 msgid ""
 "Unload relay plugin with command: <code>/plugin unload relay</code> and see: "
 "<code>/help weechat.plugin.autoload</code>."
 msgstr ""
+"Уклањање релеј додатка из меморије командом: <code>/plugin unload relay"
+"</code> и погледајте: <code>/help weechat.plugin.autoload</code>."
 
 #: doc/_i18n_security.py:120
 msgid ""
 "Unload xfer plugin with command: <code>/plugin unload xfer</code> and see: "
 "<code>/help weechat.plugin.autoload</code>."
 msgstr ""
+"Уклањање xfer додатка из меморије командом: <code>/plugin unload xfer</code> "
+"и погледајте: <code>/help weechat.plugin.autoload</code>."
 
 #: doc/_i18n_security.py:121
 msgid ""
@@ -1308,7 +1285,7 @@ msgstr ""
 
 #: doc/_i18n_security.py:122
 msgid "Use After Free"
-msgstr ""
+msgstr "Употреба након ослобађања"
 
 #: doc/_i18n_security.py:123
 msgid "Use of invalid pointer in build of log filename."
@@ -1319,12 +1296,16 @@ msgid ""
 "Use-after-free and double free when a remote relay sends an event with an "
 "array as body."
 msgstr ""
+"Употреба-након-ослобађања и двоструко ослобађање када удаљени релеј пошаље "
+"догађај са низом као телом."
 
 #: doc/_i18n_security.py:125
 msgid ""
 "Use-after-free in the irc plugin when a batched message disconnects the "
 "server."
 msgstr ""
+"Употреба-након-ослобађања у irc додатку када пакетна порука раскине везу са "
+"сервером."
 
 #: doc/_i18n_security.py:126
 msgid ""
@@ -1334,6 +1315,11 @@ msgid ""
 "This could allow an attacker to guess a password, a hash or a TOTP and "
 "bypass relay authentication."
 msgstr ""
+"WeeChat у Релеј додатку и TOTP провери идентитета користи поређење "
+"лозинке/хеша у времену које није константно.\n"
+"<br>\n"
+"Ово нападачу може омогућити да погоди лозинку, хеш или TOTP и заобиђе "
+"проверу идентитета на релеју."
 
 #: doc/_i18n_security.py:127
 msgid ""
@@ -1341,6 +1327,8 @@ msgid ""
 "disconnection from the server, the remaining messages are reading data that "
 "is already freed."
 msgstr ""
+"Када се прими пакетна порука и једна од порука изазове прекид везе са "
+"сервером, остале поруке читају податке који су већ ослобођени."
 
 #: doc/_i18n_security.py:128
 msgid ""
@@ -1351,6 +1339,12 @@ msgid ""
 "In case of highly compressed frame, this can lead to memory exhaustion and "
 "the WeeChat process can be killed by the OOM killer."
 msgstr ""
+"Када се декомпресује websocket оквир примљен од Релеј клијента „api” "
+"протоколом и укљученим deflate по поруци, WeeChat алоцира меморију без "
+"горњег ограничења.\n"
+"<br>\n"
+"У случају високо компресованог оквира, ово може да исцрпи слободну меморију "
+"и OOM убица може да убије WeeChat процес."
 
 #: doc/_i18n_security.py:129
 msgid ""
@@ -1358,6 +1352,9 @@ msgid ""
 "relay</code>, any HTTP request with path_items defined causes an out-of-"
 "bounds read."
 msgstr ""
+"Када се исписују Релеј подаци командом <code>/debug dump</code> или <code>/"
+"debug dump relay</code>, било који HTTP захтев са дефинисаним path_items "
+"изазива читање ван-границе."
 
 #: doc/_i18n_security.py:130
 msgid ""
@@ -1369,6 +1366,14 @@ msgid ""
 "A malicious unauthenticated client sending PING control frames can can lead "
 "to memory exhaustion and the WeeChat process can be killed by the OOM killer."
 msgstr ""
+"When queuing data of sending to clients, the Relay plugin builds a partial "
+"buffer.\n"
+"<br>\n"
+"There is no limit for the allocated buffer.\n"
+"<br>\n"
+"Злонамерни клијент којем није проверен идентитет и који шаље PING контролне "
+"оквире може довести до исцрпљивања слободне меморије и OOM убица може да "
+"убије WeeChat процес."
 
 #: doc/_i18n_security.py:131
 msgid ""
@@ -1381,6 +1386,14 @@ msgid ""
 "Xfer never overwrites existing files, so if a file exists with the same "
 "name, a suffix like \".1\" is appended to the filename."
 msgstr ""
+"Када се прима DCC фајл, изграђено име фајла садржи удаљени надимак (опција "
+"<code>xfer.file.use_nick_in_filename</code> је подразумевано укључена).\n"
+"<br>\n"
+"Ако надимак садржи специјалне карактере, фајл би могао да се упише ван "
+"конфигурисане путање за преузимање.\n"
+"<br>\n"
+"Xfer никада не преписује постојеће фајлове, тако да ако постоји фајл под "
+"истим именом, на име фајла се надовезује суфикс као што је „.1”."
 
 #: doc/_i18n_security.py:132
 msgid ""
@@ -1393,6 +1406,14 @@ msgid ""
 "Xfer never overwrites existing files, so if a file exists with the same "
 "name, a suffix like \".1\" is appended to the filename."
 msgstr ""
+"Када се прима DCC фајл, име фајла може да садржи граничник директоријума "
+"који није својствен платформи (на пример „/” примљено на Windows систему, "
+"или „\\” примљено на Linux систему). Овај граничник може да се интерпретира "
+"као граничник директоријума, тако да би фајл могао да се упише ван "
+"конфигурисане путање за преузимање.\n"
+"<br>\n"
+"Xfer никада не преписује постојеће фајлове, тако да ако постоји фајл под "
+"истим именом, на име фајла се надовезује суфикс као што је „.1”."
 
 #: doc/_i18n_security.py:133
 msgid ""
@@ -1404,6 +1425,14 @@ msgid ""
 "A malicious client sending large amount of data without end of text can lead "
 "to memory exhaustion and the WeeChat process can be killed by the OOM killer."
 msgstr ""
+"Када се од клијента прима текст порука, Релеј додатак изграђује делимични "
+"бафер све док не наиђе на крај текста.\n"
+"<br>\n"
+"Нема ограничења за алоцирани бафер.\n"
+"<br>\n"
+"Злонамерни клијент који шаље велику количину података без краја текста може "
+"да изазове исцрпљивање слободне меморије и OOM убица може да убије WeeChat "
+"процес."
 
 #: doc/_i18n_security.py:134
 msgid ""
@@ -1416,6 +1445,14 @@ msgid ""
 "(\"\\r\\n\") can lead to memory exhaustion and the WeeChat process can be "
 "killed by the OOM killer."
 msgstr ""
+"Када се сокетом примају подаци, IRC додатак изграђује делимичну поруку све "
+"док не наиђе на „\\r\\n”.\n"
+"<br>\n"
+"Нема ограничења за алоцирани бафер.\n"
+"<br>\n"
+"Злонамерни сервер који шаље велику количину података без краја поруке "
+"(„\\r\\n”) може да изазове исцрпљивање слободне меморије и OOM убица може да "
+"убије WeeChat процес."
 
 #: doc/_i18n_security.py:135
 msgid ""
@@ -1428,6 +1465,14 @@ msgid ""
 "lead to memory exhaustion and the WeeChat process can be killed by the OOM "
 "killer."
 msgstr ""
+"Када се прима део Xfer чет поруке, Xfer додатак изграђује делимични бафер "
+"све док не наиђе на крај поруке.\n"
+"<br>\n"
+"Нема ограничења за алоцирани бафер.\n"
+"<br>\n"
+"Злонамерни сервер који шаље велику количину података без краја поруке може "
+"да изазове исцрпљивање слободне меморије и OOM убица може да убије WeeChat "
+"процес."
 
 #: doc/_i18n_security.py:136
 msgid ""
@@ -1440,12 +1485,22 @@ msgid ""
 "frame or HTTP message/body can lead to memory exhaustion and the WeeChat "
 "process can be killed by the OOM killer."
 msgstr ""
+"Када прима део websocket оквира, HTTP поруку или HTTP тело, Релеј додатак "
+"изграђује делимични бафер све док не наиђе на крај података.\n"
+"<br>\n"
+"Нема ограничења за алоцирани бафер.\n"
+"<br>\n"
+"Злонамерни сервер који шаље велику количину података без краја websocket "
+"оквира или HTTP поруке/тела може да изазове исцрпљивање слободне меморије и "
+"OOM убица може да убије WeeChat процес."
 
 #: doc/_i18n_security.py:137
 msgid ""
 "When resuming a DCC file transfer, a peer can start it without user manual "
 "acceptance."
 msgstr ""
+"Када се наставља DCC фајл трансфер, равноправни корисник може да настави "
+"трансфер без ручног прихватања корисника који прима фајл."
 
 #: doc/_i18n_security.py:138
 msgid ""
@@ -1453,6 +1508,10 @@ msgid ""
 "used to forge a new path that can be outside the path configured by the "
 "option <code>logger.file.path</code>."
 msgstr ""
+"Када се уписује фајл дневника, постоји могућност да се за изграђивање нове "
+"путање која се налази ван путање конфигурисане опцијом <code>logger.file."
+"path</code> употреби одређени карактер који се интерно користи као "
+"граничник."
 
 #: doc/_i18n_security.py:139
 #, python-brace-format
@@ -1496,22 +1555,22 @@ msgstr ""
 
 #: doc/_i18n_security.py:141
 msgid "Write of DCC file received outside of configured download path."
-msgstr ""
+msgstr "Уписивање примљеног DCC фајла ван конфигурисане путање за преузимање."
 
 #: doc/_i18n_security.py:142
 msgid "Write of logger file outside of configured path."
-msgstr ""
+msgstr "Уписивање логер фајла ван конфигурисане путање."
 
 #: doc/_i18n_security.py:143
 msgid "Xfer"
-msgstr ""
+msgstr "Xfer"
 
 #: doc/_i18n_security.py:144
 msgid ""
 "You can remove all relays of type \"irc\", see <code>/help relay</code>."
 msgstr ""
-"Можете да уклоните све релеје типа „irc”, погледајте <code>/help relay</"
-"code>."
+"Можете да уклоните све релеје типа „irc”, погледајте <code>/help relay"
+"</code>."
 
 #: doc/_i18n_security.py:145
 msgid ""
@@ -2213,22 +2272,6 @@ msgid "Version"
 msgstr "Верзија"
 
 #: news/_i18n_info.py:73
-#, fuzzy
-#| msgid ""
-#| "Version 0.0.2 is available!\n"
-#| "\n"
-#| "News since last version are:\n"
-#| "- added commands /rehash and /restart\n"
-#| "- command &amp; auto-join channels when connected to server\n"
-#| "- new commands for alias: /alias, /unalias (new section in config file)\n"
-#| "- config is now saved automatically when quitting WeeChat, /save command "
-#| "added\n"
-#| "- new commands for servers: /server, /connect, /disconnect\n"
-#| "- added autoconnect flag for each server in config file\n"
-#| "- added \"look_set_title\" option in config file\n"
-#| "- term window title is modified with WeeChat name and version\n"
-#| "- CTCP version returns more info (about OS)\n"
-#| "- many bugs fixed (including nicklist display bug)."
 msgid ""
 "Version 0.0.2 is available!\n"
 "\n"
@@ -2249,7 +2292,8 @@ msgstr ""
 "\n"
 "Новости након последње верзије су:\n"
 "- додате команде /rehash и /restart\n"
-"- команда &amp; аутоматски приступа каналима након повезивања на сервер\n"
+"- команда се извршава и аутоматски се приступа каналима након повезивања на "
+"сервер\n"
 "- нове команде за алијас: /alias, /unalias (нови одељак у конфиг фајлу)\n"
 "- конфигурација се сада аутоматски чува приликом напуштања програма WeeChat, "
 "додата је команда /save\n"
@@ -2619,31 +2663,6 @@ msgstr ""
 "- унапређено довршавање, може да се прилагоди."
 
 #: news/_i18n_info.py:87
-#, fuzzy
-#| msgid ""
-#| "Version 0.1.7 is available!\n"
-#| "\n"
-#| "News since last version are:\n"
-#| "- new commands: /upgrade, /uptime, /history\n"
-#| "- removed \"irc_default_msg_away\" setting, for RFC 2812 conformity (/"
-#| "away command wihtout argument only removes away status), new values for "
-#| "\"irc_display_away\" (off, local, channel)\n"
-#| "- replaced Texinfo doc by XML Docbook\n"
-#| "- added color for window separators\n"
-#| "- added completion system for plugins/scripts commands\n"
-#| "- added charset by server and channel, new command: /charset\n"
-#| "- added Ruby script plugin\n"
-#| "- added ETA (Estimated Time of Arrival) for DCC files\n"
-#| "- /nick command is now allowed when not connected to server\n"
-#| "- added server/channel arg to /buffer command for jumping to buffer\n"
-#| "- added new keys for switching to other windows: alt-W followed by alt-"
-#| "arrow\n"
-#| "- added new keys for scrolling to previous/next highlight: alt-P / alt-N\n"
-#| "- added \"read marker\": an indicator for first unread line in a server "
-#| "or channel buffer (new key alt-U to scroll to marker)\n"
-#| "- new window maganement: custom size for windows, auto resize when "
-#| "terminal is resized\n"
-#| "- fixed: plugins autoload and unload, some display bugs."
 msgid ""
 "Version 0.1.7 is available!\n"
 "\n"
@@ -2689,7 +2708,7 @@ msgstr ""
 "alt-стрелица\n"
 "- додати нови тастери за скроловање на претходно/наредно истицање: alt-P / "
 "alt-N\n"
-"- додат је „маркер читања”: индикатор на прву непрочитану линију у баферу "
+"- додат је маркер читања: индикатор на прву непрочитану линију у баферу "
 "сервера или канала (нови тастер alt-U за скроловање до маркера)\n"
 "- ново управљање прозором: произвољна величина прозора, аутоматска промена "
 "величине када се промени величина терминала\n"
@@ -5633,32 +5652,18 @@ msgstr ""
 "ChangeLog-4.1.3.html\">ChangeLog</a>."
 
 #: news/_i18n_info.py:177
-#, fuzzy
-#| msgid ""
-#| "Version 4.4.0 is available!\n"
-#| "\n"
-#| "New features and bugs fixed: <a href=\"https://github.com/weechat/weechat/"
-#| "releases/tag/v4.4.0\">ChangeLog</a>."
 msgid ""
 "Version 4.10.0 is available!\n"
 "\n"
 "New features and bugs fixed: <a href=\"https://github.com/weechat/weechat/"
 "releases/tag/v4.10.0\">ChangeLog</a>."
 msgstr ""
-"Доступна је верзија 4.4.0!\n"
+"Доступна је верзија 4.10.0!\n"
 "\n"
 "Нове могућности и исправљени багови: <a href=\"https://github.com/weechat/"
-"weechat/releases/tag/v4.4.0\">ChangeLog</a>."
+"weechat/releases/tag/v4.10.0\">ChangeLog</a>."
 
 #: news/_i18n_info.py:178
-#, fuzzy
-#| msgid ""
-#| "Version 4.4.1 is available!\n"
-#| "\n"
-#| "This is a bug fix and maintenance release.\n"
-#| "\n"
-#| "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
-#| "v4.4.1\">ChangeLog</a>."
 msgid ""
 "Version 4.10.1 is available!\n"
 "\n"
@@ -5667,12 +5672,12 @@ msgid ""
 "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
 "v4.10.1\">ChangeLog</a>."
 msgstr ""
-"Доступна је верзија 4.4.1!\n"
+"Доступна је верзија 4.10.1!\n"
 "\n"
 "Ово је издање одржавања које исправља багове.\n"
 "\n"
 "Исправљени багови: <a href=\"https://github.com/weechat/weechat/releases/tag/"
-"v4.4.1\">ChangeLog</a>."
+"v4.10.1\">ChangeLog</a>."
 
 #: news/_i18n_info.py:179
 msgid ""
@@ -6111,32 +6116,18 @@ msgstr ""
 "v4.8.2\">ChangeLog</a>."
 
 #: news/_i18n_info.py:208
-#, fuzzy
-#| msgid ""
-#| "Version 4.4.0 is available!\n"
-#| "\n"
-#| "New features and bugs fixed: <a href=\"https://github.com/weechat/weechat/"
-#| "releases/tag/v4.4.0\">ChangeLog</a>."
 msgid ""
 "Version 4.9.0 is available!\n"
 "\n"
 "New features and bugs fixed: <a href=\"https://github.com/weechat/weechat/"
 "releases/tag/v4.9.0\">ChangeLog</a>."
 msgstr ""
-"Доступна је верзија 4.4.0!\n"
+"Доступна је верзија 4.9.0!\n"
 "\n"
 "Нове могућности и исправљени багови: <a href=\"https://github.com/weechat/"
-"weechat/releases/tag/v4.4.0\">ChangeLog</a>."
+"weechat/releases/tag/v4.9.0\">ChangeLog</a>."
 
 #: news/_i18n_info.py:209
-#, fuzzy
-#| msgid ""
-#| "Version 4.4.1 is available!\n"
-#| "\n"
-#| "This is a bug fix and maintenance release.\n"
-#| "\n"
-#| "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
-#| "v4.4.1\">ChangeLog</a>."
 msgid ""
 "Version 4.9.1 is available!\n"
 "\n"
@@ -6145,22 +6136,14 @@ msgid ""
 "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
 "v4.9.1\">ChangeLog</a>."
 msgstr ""
-"Доступна је верзија 4.4.1!\n"
+"Доступна је верзија 4.9.1!\n"
 "\n"
 "Ово је издање одржавања које исправља багове.\n"
 "\n"
 "Исправљени багови: <a href=\"https://github.com/weechat/weechat/releases/tag/"
-"v4.4.1\">ChangeLog</a>."
+"v4.9.1\">ChangeLog</a>."
 
 #: news/_i18n_info.py:210
-#, fuzzy
-#| msgid ""
-#| "Version 4.4.2 is available!\n"
-#| "\n"
-#| "This is a bug fix and maintenance release.\n"
-#| "\n"
-#| "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
-#| "v4.4.2\">ChangeLog</a>."
 msgid ""
 "Version 4.9.2 is available!\n"
 "\n"
@@ -6169,22 +6152,14 @@ msgid ""
 "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
 "v4.9.2\">ChangeLog</a>."
 msgstr ""
-"Доступна је верзија 4.4.2!\n"
+"Доступна је верзија 4.9.2!\n"
 "\n"
 "Ово је издање одржавања које исправља багове.\n"
 "\n"
 "Исправљени багови: <a href=\"https://github.com/weechat/weechat/releases/tag/"
-"v4.4.2\">ChangeLog</a>."
+"v4.9.2\">ChangeLog</a>."
 
 #: news/_i18n_info.py:211
-#, fuzzy
-#| msgid ""
-#| "Version 4.4.3 is available!\n"
-#| "\n"
-#| "This is a bug fix and maintenance release.\n"
-#| "\n"
-#| "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
-#| "v4.4.3\">ChangeLog</a>."
 msgid ""
 "Version 4.9.3 is available!\n"
 "\n"
@@ -6193,22 +6168,14 @@ msgid ""
 "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
 "v4.9.3\">ChangeLog</a>."
 msgstr ""
-"Доступна је верзија 4.4.3!\n"
+"Доступна је верзија 4.9.3!\n"
 "\n"
 "Ово је издање одржавања које исправља багове.\n"
 "\n"
 "Исправљени багови: <a href=\"https://github.com/weechat/weechat/releases/tag/"
-"v4.4.3\">ChangeLog</a>."
+"v4.9.3\">ChangeLog</a>."
 
 #: news/_i18n_info.py:212
-#, fuzzy
-#| msgid ""
-#| "Version 4.4.4 is available!\n"
-#| "\n"
-#| "This is a bug fix and maintenance release.\n"
-#| "\n"
-#| "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
-#| "v4.4.4\">ChangeLog</a>."
 msgid ""
 "Version 4.9.4 is available!\n"
 "\n"
@@ -6218,22 +6185,15 @@ msgid ""
 "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
 "v4.9.4\">ChangeLog</a>."
 msgstr ""
-"Доступна је верзија 4.4.4!\n"
+"Доступна је верзија 4.9.4!\n"
 "\n"
-"Ово је издање одржавања које исправља багове.\n"
+"Ово је издање исправља два безбедносна пропуста, препоручује се да сви "
+"корисници пређу на ову верзију.\n"
 "\n"
 "Исправљени багови: <a href=\"https://github.com/weechat/weechat/releases/tag/"
-"v4.4.4\">ChangeLog</a>."
+"v4.9.4\">ChangeLog</a>."
 
 #: news/_i18n_info.py:213
-#, fuzzy
-#| msgid ""
-#| "Version 4.4.1 is available!\n"
-#| "\n"
-#| "This is a bug fix and maintenance release.\n"
-#| "\n"
-#| "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
-#| "v4.4.1\">ChangeLog</a>."
 msgid ""
 "Version 4.9.5 is available!\n"
 "\n"
@@ -6242,12 +6202,12 @@ msgid ""
 "Bugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/"
 "v4.9.5\">ChangeLog</a>."
 msgstr ""
-"Доступна је верзија 4.4.1!\n"
+"Доступна је верзија 4.9.5!\n"
 "\n"
 "Ово је издање одржавања које исправља багове.\n"
 "\n"
 "Исправљени багови: <a href=\"https://github.com/weechat/weechat/releases/tag/"
-"v4.4.1\">ChangeLog</a>."
+"v4.9.5\">ChangeLog</a>."
 
 #: news/_i18n_info.py:214
 msgid ""
@@ -6846,6 +6806,8 @@ msgstr "Позива notify-send приликом пријема поруке."
 #: scripts/_i18n_scripts.py:137
 msgid "Censor messages by nick and text using color while still logging them."
 msgstr ""
+"Цензурише поруке према надимку и тексту употребом беле боје за док их још "
+"увек логује."
 
 #. Translators: description for script "autonickprefix.pl" (0.3.0+)
 #: scripts/_i18n_scripts.py:139
@@ -8142,6 +8104,7 @@ msgstr "Скраћује дугачке url адресе користећи isgd
 #: scripts/_i18n_scripts.py:623
 msgid "Show IRCv3 draft/react reactions inline on the original message."
 msgstr ""
+"Приказује IRCv3 draft/react реакције унутар линије на оригиналној поруци."
 
 #. Translators: description for script "topicdiff.py" (0.3.0+)
 #: scripts/_i18n_scripts.py:625
@@ -8950,8 +8913,6 @@ msgstr "Јавни бета тест:"
 
 #: templates/about/interfaces.html:133 templates/about/interfaces.html:146
 #: templates/about/interfaces.html:159 templates/about/interfaces.html:172
-#, fuzzy
-#| msgid "This project is not maintained any more."
 msgid "This project is no longer maintained."
 msgstr "Овај пројекат се више не одржава."
 
@@ -9120,8 +9081,6 @@ msgid "Donate"
 msgstr "Донације"
 
 #: templates/base.html:55
-#, fuzzy
-#| msgid "Language"
 msgctxt "tongue"
 msgid "Language"
 msgstr "Језик"
@@ -9174,10 +9133,8 @@ msgid "About WeeChat.org"
 msgstr "О сајту WeeChat.org"
 
 #: templates/base.html:159
-#, fuzzy
-#| msgid "Theme"
 msgid "Theme:"
-msgstr "Тема"
+msgstr "Тема:"
 
 #: templates/dev/dev.html:5
 msgid "development"
@@ -9492,19 +9449,14 @@ msgstr ""
 "јавни:"
 
 #: templates/doc/security.html:31
-#, fuzzy
-#| msgid ""
-#| "To report a security issue, please <strong>DO NOT</strong> file an issue "
-#| "on GitHub, but send an email to <a "
-#| "href=\"mailto:security@weechat.org\">security@weechat.org</a> instead."
 msgid ""
 "To report a security issue: <a href=\"https://github.com/weechat/weechat/"
 "security\">https://github.com/weechat/weechat/security</a> (please "
 "<strong>DO NOT</strong> file an issue on GitHub)."
 msgstr ""
-"Ако желите да пријавите безбедносни проблем, молимо вас <strong>ДА НЕ</"
-"strong> отварате проблем на GitHub, већ да уместо тога пошаљенте и-мејл на "
-"<a href=\"mailto:security@weechat.org\">security@weechat.org</a>."
+"Ако желите да пријавите безбедносни проблем: <a href=\"https://github.com/"
+"weechat/weechat/security\">https://github.com/weechat/weechat/security</a> "
+"(молимо вас <strong>ДА НЕ</strong> отварате проблем на GitHub)."
 
 #: templates/doc/security.html:39
 #, python-format
@@ -9981,21 +9933,16 @@ msgid "Old versions"
 msgstr "Старе верзије"
 
 #: templates/download/packages.html:22
-#, fuzzy, python-format
-#| msgid ""
-#| "<strong>Important:</strong> it is not recommended to download or use any "
-#| "of these %(count)s old versions: they are less stable than the latest "
-#| "released version, and may contain security vulnerabilities fixed in later "
-#| "versions."
+#, python-format
 msgid ""
 "<strong>Warning:</strong> it is not recommended to download or use any of "
 "these %(count)s old versions: they are less stable than the latest released "
 "version, and may contain security vulnerabilities fixed in later versions."
 msgstr ""
-"<strong>Важно:</strong> не препоручује се да преузимате или користите било "
-"коју од ових %(count)s старих верзија: оне нису тако стабилне као последња "
-"објављена верзија и могу да садрже безбедносне рањивости које су исправљене "
-"у каснијим верзијама."
+"<strong>Упозорење:</strong> не препоручује се да преузимате или користите "
+"било коју од ових %(count)s старих верзија: оне нису тако стабилне као "
+"последња објављена верзија и могу да садрже безбедносне рањивости које су "
+"исправљене у каснијим верзијама."
 
 #: templates/download/packages.html:41
 msgid "next stable version"
@@ -10014,19 +9961,13 @@ msgstr ""
 "да се компајлира, упозорени сте!"
 
 #: templates/download/packages.html:59
-#, fuzzy, python-format
-#| msgid ""
-#| "<strong>Note:</strong> this release fixes <a "
-#| "href=\"%(security_url)s\">%(counter)s vulnerability</a>."
-#| msgid_plural ""
-#| "<strong>Note:</strong> this release fixes <a "
-#| "href=\"%(security_url)s\">%(counter)s vulnerabilities</a>."
+#, python-format
 msgid ""
 "<strong>Caution:</strong> this version has known vulnerabilities (<a "
 "href=\"%(security_url)s\">list</a>)."
 msgstr ""
-"<strong>Напомена:</strong> ово издање исправља <a "
-"href=\"%(security_url)s\">%(counter)s рањивост</a>."
+"<strong>Опрез:</strong> ова верзија има познате рањивости (<a "
+"href=\"%(security_url)s\">листа</a>."
 
 #: templates/download/packages.html:66
 #, python-format
@@ -10332,8 +10273,6 @@ msgid "sort filters by popularity"
 msgstr "сортирај филтере по популарности"
 
 #: templates/scripts/list.html:53 templates/scripts/list.html:55
-#, fuzzy
-#| msgid "Language:"
 msgctxt "programming language"
 msgid "Language:"
 msgstr "Програмски језик:"
