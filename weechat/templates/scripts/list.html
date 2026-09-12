@@ -146,7 +146,9 @@
         </td>
         <td>
           <div class="ms-3 float-end text-muted">
+            {% if script.tags %}
             [{% for tag in script.tagslist %}<a href="{% url 'scripts_filter' 'tag' tag %}" title="{% trans "Tag:" %} {{ tag }}">{{ tag }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}]
+            {% endif %}
           </div>
           {{ script.desc_i18n }}
           {% if script.requirements %}
