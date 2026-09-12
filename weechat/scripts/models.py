@@ -89,7 +89,7 @@ class Script(models.Model):
 
     def tagslist(self):
         """Return a list with script tags."""
-        return self.tags.split(',')
+        return self.tags.split(',') if self.tags else []
 
     def is_py2_ok(self):
         """
