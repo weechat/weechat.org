@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeeChat.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-06 00:08+0200\n"
+"POT-Creation-Date: 2026-09-12 18:35+0200\n"
 "PO-Revision-Date: 2026-09-11 12:54+0400\n"
 "Last-Translator: Иван Пешић <ivan.pesic@gmail.org>\n"
 "Language-Team: Serbian <ivan.pesic@gmail.com>\n"
@@ -790,7 +790,8 @@ msgstr "Прекорачење бафера у изградњи стрингов
 
 #: doc/_i18n_security.py:45
 msgid "Bypass of user authorization for start of DCC file transfer."
-msgstr "Заобилажење провере идентитета корисника при почетку DCC преноса фајла."
+msgstr ""
+"Заобилажење провере идентитета корисника при почетку DCC преноса фајла."
 
 #: doc/_i18n_security.py:46
 msgid "Core"
@@ -971,7 +972,6 @@ msgid "Missing rejection of invalid websocket frames."
 msgstr "Недостаје одбацивање неисправних websocket оквира."
 
 #: doc/_i18n_security.py:84
-#| msgid "Crash on malformed HTTP message in relay plugin, protocol \"api\"."
 msgid ""
 "Missing size limit for the decompressed websocket frame in relay plugin, "
 "protocol \"api\"."
@@ -1262,8 +1262,8 @@ msgid ""
 "Unload relay plugin with command: <code>/plugin unload relay</code> and see: "
 "<code>/help weechat.plugin.autoload</code>."
 msgstr ""
-"Уклањање релеј додатка из меморије командом: <code>/plugin unload relay"
-"</code> и погледајте: <code>/help weechat.plugin.autoload</code>."
+"Уклањање релеј додатка из меморије командом: <code>/plugin unload relay</"
+"code> и погледајте: <code>/help weechat.plugin.autoload</code>."
 
 #: doc/_i18n_security.py:120
 msgid ""
@@ -1315,8 +1315,8 @@ msgid ""
 "This could allow an attacker to guess a password, a hash or a TOTP and "
 "bypass relay authentication."
 msgstr ""
-"WeeChat у Релеј додатку и TOTP провери идентитета користи поређење "
-"лозинке/хеша у времену које није константно.\n"
+"WeeChat у Релеј додатку и TOTP провери идентитета користи поређење лозинке/"
+"хеша у времену које није константно.\n"
 "<br>\n"
 "Ово нападачу може омогућити да погоди лозинку, хеш или TOTP и заобиђе "
 "проверу идентитета на релеју."
@@ -1509,9 +1509,9 @@ msgid ""
 "option <code>logger.file.path</code>."
 msgstr ""
 "Када се уписује фајл дневника, постоји могућност да се за изграђивање нове "
-"путање која се налази ван путање конфигурисане опцијом <code>logger.file."
-"path</code> употреби одређени карактер који се интерно користи као "
-"граничник."
+"путање која се налази ван путање конфигурисане опцијом "
+"<code>logger.file.path</code> употреби одређени карактер који се интерно "
+"користи као граничник."
 
 #: doc/_i18n_security.py:139
 #, python-brace-format
@@ -1569,8 +1569,8 @@ msgstr "Xfer"
 msgid ""
 "You can remove all relays of type \"irc\", see <code>/help relay</code>."
 msgstr ""
-"Можете да уклоните све релеје типа „irc”, погледајте <code>/help relay"
-"</code>."
+"Можете да уклоните све релеје типа „irc”, погледајте <code>/help relay</"
+"code>."
 
 #: doc/_i18n_security.py:145
 msgid ""
@@ -7393,55 +7393,60 @@ msgstr ""
 msgid "List shared channels with user on command or WHOIS."
 msgstr "Листа дељених канала са корисником задавањем команде или WHOIS."
 
-#. Translators: description for script "input_lock.rb" (0.3.0+)
+#. Translators: description for script "tennis.py" (4.1.0+)
 #: scripts/_i18n_scripts.py:361
+msgid "Live tennis scores and ATP/WTA rankings on demand."
+msgstr ""
+
+#. Translators: description for script "input_lock.rb" (0.3.0+)
+#: scripts/_i18n_scripts.py:363
 msgid "Lock input (authorize only commands)."
 msgstr "Закључавање уноса (дозвољавају се само команде)."
 
 #. Translators: description for script "himan.py" (0.3.5+)
-#: scripts/_i18n_scripts.py:363
+#: scripts/_i18n_scripts.py:365
 msgid "Log highlights to a private buffer."
 msgstr "Логује истицања у приватни бафер."
 
 #. Translators: description for script "awaylog.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:365
+#: scripts/_i18n_scripts.py:367
 msgid "Log highlights/private messages when you are away."
 msgstr "Логује истицања/приватне поруке када сте одсутни."
 
 #. Translators: description for script "urlgrab.py" (2.9+)
-#: scripts/_i18n_scripts.py:367
+#: scripts/_i18n_scripts.py:369
 msgid "Logs url and open them in browser."
 msgstr "Логује url адресе и отвара их у прегледачу."
 
 #. Translators: description for script "spotify.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:369
+#: scripts/_i18n_scripts.py:371
 msgid "Looks up meta information about spotify-URIs and posts back to channel."
 msgstr ""
 "Тражи мета информације у вези са spotify-URI идентификаторима и постује их "
 "назад у канал."
 
 #. Translators: description for script "mnotify.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:371
+#: scripts/_i18n_scripts.py:373
 msgid "Mail notifications of private/highlight/DCC and more."
 msgstr "Обавештења поштом о приватним/истицањима/DCC и још тога."
 
 #. Translators: description for script "aesthetic.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:373
+#: scripts/_i18n_scripts.py:375
 msgid "Make messages more A E S T H E T I C A L L Y pleasing."
 msgstr "Чини поруке Е С Т Е Т С К И лепшим."
 
 #. Translators: description for script "xterm_paste.pl" (0.3.9+)
-#: scripts/_i18n_scripts.py:375
+#: scripts/_i18n_scripts.py:377
 msgid "Make xterm clipboard paste available as command."
 msgstr "Чини да је xterm клипборд налепљивање доступно као команда."
 
 #. Translators: description for script "unread_buffer.py" (1.0+)
-#: scripts/_i18n_scripts.py:377
+#: scripts/_i18n_scripts.py:379
 msgid "Mark buffer as unread."
 msgstr "Означава бафер као прочитан."
 
 #. Translators: description for script "automarkbuffer.py" (1.0+)
-#: scripts/_i18n_scripts.py:379
+#: scripts/_i18n_scripts.py:381
 msgid ""
 "Mark buffers as read if there is no new message in a specific time range."
 msgstr ""
@@ -7449,122 +7454,122 @@ msgstr ""
 "поруке."
 
 #. Translators: description for script "mastermind.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:381
+#: scripts/_i18n_scripts.py:383
 msgid "Mastermind game."
 msgstr "Mastermind игра."
 
 #. Translators: description for script "wee_most.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:383
+#: scripts/_i18n_scripts.py:385
 msgid "Mattermost integration."
 msgstr "Mattermost интеграција."
 
 #. Translators: description for script "cmus_announce.lua" (0.3.0+)
-#: scripts/_i18n_scripts.py:385
+#: scripts/_i18n_scripts.py:387
 msgid "Message current buffer/channel the currently listened to song."
 msgstr "Шаље на текући бафер/канал песму коју тренутно слушате."
 
 #. Translators: description for script "minesweeper.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:387
+#: scripts/_i18n_scripts.py:389
 msgid "Minesweeper game."
 msgstr "Minesweeper игра."
 
 #. Translators: description for script "strmon.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:389
+#: scripts/_i18n_scripts.py:391
 msgid ""
 "Monitoring of highlights/tags/buffers/nicks with sound/osd notifications."
 msgstr "Праћење истицања/ознака/бафера/надимака са звучним/osd обавештењима."
 
 #. Translators: description for script "weenetsoul.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:391
+#: scripts/_i18n_scripts.py:393
 msgid "Netsoul protocol."
 msgstr "Netsoul протокол."
 
 #. Translators: description for script "chanact.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:393
+#: scripts/_i18n_scripts.py:395
 msgid "New hotlist, use names and keybindings instead of numbers."
 msgstr "Нова врућа листа, користи имена и пречице тастатуре уместо бројева."
 
 #. Translators: description for script "notify.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:395
+#: scripts/_i18n_scripts.py:397
 msgid "Notification on screen for highlights and private messages."
 msgstr "Обавештење на екрану за истицања и приватне поруке."
 
 #. Translators: description for script "twmn_notify.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:397
+#: scripts/_i18n_scripts.py:399
 msgid "Notifications for twmn."
 msgstr "Обавештења за twmn."
 
 #. Translators: description for script "anotify.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:399
+#: scripts/_i18n_scripts.py:401
 msgid ""
 "Notifications of private messages, highlights, DCC send/receive and more."
 msgstr ""
 "Обавештења о приватним порукама, истицањима, DCC send/receive и још тога."
 
 #. Translators: description for script "prowl_notify.py" (0.3.7+)
-#: scripts/_i18n_scripts.py:401
+#: scripts/_i18n_scripts.py:403
 msgid "Notifications on iPod Touch/iPhone/iPad with Prowl."
 msgstr "Обавештења на iPod Touch/iPhone/iPad помоћу Prowl."
 
 #. Translators: description for script "gnotify.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:403
+#: scripts/_i18n_scripts.py:405
 msgid "Notifications through Growl."
 msgstr "Обавештења кроз Growl."
 
 #. Translators: description for script "growl_net_notify.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:405
+#: scripts/_i18n_scripts.py:407
 msgid "Notifications through Net::Growl."
 msgstr "Обавештења кроз Net::Growl."
 
 #. Translators: description for script "notification_center.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:407
+#: scripts/_i18n_scripts.py:409
 msgid "Notifications through OS X notification center."
 msgstr "Обавештења кроз OS X центар за обавештења."
 
 #. Translators: description for script "weenotifier.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:409
+#: scripts/_i18n_scripts.py:411
 msgid "Notifier using gotify or ntfy.sh."
 msgstr "Обавештавач који користи gotify или ntfy.sh."
 
 #. Translators: description for script "dzen_notifier.pl" (0.4.3+)
-#: scripts/_i18n_scripts.py:411
+#: scripts/_i18n_scripts.py:413
 msgid "Notify dzen when a private message is received."
 msgstr "Обавештава dzen када се прими приватна порука."
 
 #. Translators: description for script "notification.py" (1.0+)
-#: scripts/_i18n_scripts.py:413
+#: scripts/_i18n_scripts.py:415
 msgid ""
 "Notify events through desktop notifications and an optional status icon."
 msgstr ""
 "Обавештава о догађајима кроз декстоп обавештења и необавезну статусну икону."
 
 #. Translators: description for script "update_notifier.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:415
+#: scripts/_i18n_scripts.py:417
 msgid "Notify user about WeeChat updates."
 msgstr "Обавештава корисника о WeeChat ажурирањима."
 
 #. Translators: description for script "otr.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:417
+#: scripts/_i18n_scripts.py:419
 msgid "Off-The-Record IRC messaging."
 msgstr "Off-The-Record IRC поруке."
 
 #. Translators: description for script "beinc.py" (0.4.0+)
-#: scripts/_i18n_scripts.py:419
+#: scripts/_i18n_scripts.py:421
 msgid "On screen display notification."
 msgstr "Обавештења која се приказују на екрану."
 
 #. Translators: description for script "opall.js" (0.3.0+)
-#: scripts/_i18n_scripts.py:421
+#: scripts/_i18n_scripts.py:423
 msgid "Op everybody on a channel using chanserv instead of /mode."
 msgstr "Сви на каналу постају оператори помоћу chanserv уместо са /mode."
 
 #. Translators: description for script "url_hinter.rb" (0.3.0+)
-#: scripts/_i18n_scripts.py:423
+#: scripts/_i18n_scripts.py:425
 msgid "Open URLs without using the mouse."
 msgstr "Отварање URL адреса мишем."
 
 #. Translators: description for script "buffer_open.py" (1.0+)
-#: scripts/_i18n_scripts.py:425
+#: scripts/_i18n_scripts.py:427
 msgid ""
 "Open buffers by full name, reopen recently closed buffers, open layout "
 "buffers."
@@ -7573,7 +7578,7 @@ msgstr ""
 "отварање бафера распореда."
 
 #. Translators: description for script "kitty_notifications.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:427
+#: scripts/_i18n_scripts.py:429
 msgid ""
 "Pass highlights and private messages as OS notifications via the Kitty "
 "terminal (OSC 99)."
@@ -7582,32 +7587,32 @@ msgstr ""
 "преко Kitty терминала (OSC 99)."
 
 #. Translators: description for script "xclip.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:429
+#: scripts/_i18n_scripts.py:431
 msgid "Paste content from X11 clipboard."
 msgstr "Налепљује садржај из X11 клипборда."
 
 #. Translators: description for script "autoauth.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:431
+#: scripts/_i18n_scripts.py:433
 msgid "Permits to auto-authenticate when changing nick."
 msgstr "Омогућава аутоматску потврду идентитета када се мења надимак."
 
 #. Translators: description for script "sound.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:433
+#: scripts/_i18n_scripts.py:435
 msgid "Play a sound for IRC \"CTCP SOUND\" message."
 msgstr "Пушта звук за IRC „CTCP SOUND” поруку."
 
 #. Translators: description for script "snotify.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:435
+#: scripts/_i18n_scripts.py:437
 msgid "Play sound when messages are printed in buffers."
 msgstr "Пушта звук када се у баферима исписују поруке."
 
 #. Translators: description for script "spell_menu.pl" (0.4.0+)
-#: scripts/_i18n_scripts.py:437
+#: scripts/_i18n_scripts.py:439
 msgid "Popup menu to choose spell checker corrections."
 msgstr "Искачући мени за избор исправки приликом провере правописа."
 
 #. Translators: description for script "postpone.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:439
+#: scripts/_i18n_scripts.py:441
 msgid ""
 "Postpone written messages for later dispatching if target nick is not on "
 "channel."
@@ -7615,17 +7620,17 @@ msgstr ""
 "Одлаже слање написаних порука у случају да циљни надимак није на каналу."
 
 #. Translators: description for script "anti_password.py" (0.4.0+)
-#: scripts/_i18n_scripts.py:441
+#: scripts/_i18n_scripts.py:443
 msgid "Prevent a password from being accidentally sent to a buffer."
 msgstr "Спречава нехотично слање лозинке у бафер."
 
 #. Translators: description for script "smile.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:443
+#: scripts/_i18n_scripts.py:445
 msgid "Print a random ASCII smiley."
 msgstr "Исписује случајни ASCII смајли."
 
 #. Translators: description for script "newsbar.pl" (0.3.1+)
-#: scripts/_i18n_scripts.py:445
+#: scripts/_i18n_scripts.py:447
 msgid ""
 "Print highlights or text given by commands into a bar (auto popup if needed)."
 msgstr ""
@@ -7633,38 +7638,43 @@ msgstr ""
 "искакање ако је потребно)."
 
 #. Translators: description for script "parse_relayed_msg.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:447
+#: scripts/_i18n_scripts.py:449
 msgid "Proper integration of remote users' nicknames in channel and nicklist."
 msgstr ""
 "Правилна интеграција надимака удаљених корисника у канал и листу надимака."
 
 #. Translators: description for script "correction_completion.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:449
+#: scripts/_i18n_scripts.py:451
 msgid "Provides a completion for \"s/typo/correct\"."
 msgstr "Обезбеђује довршавање за „s/грешка/исправка”."
 
 #. Translators: description for script "weeprowl.py" (0.3.7+)
-#: scripts/_i18n_scripts.py:451
+#: scripts/_i18n_scripts.py:453
 msgid "Prowl notifications."
 msgstr "Prowl обавештења."
 
 #. Translators: description for script "notifo_notify.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:453
+#: scripts/_i18n_scripts.py:455
 msgid "Push notification to iPod touch/iPhone with notifo."
 msgstr "Гура обавештења на iPod touch/iPhone помоћу notifo."
 
 #. Translators: description for script "im_kayac_com_notify.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:455
+#: scripts/_i18n_scripts.py:457
 msgid "Push notification to im.kayac.com."
 msgstr "Гура обавештења на im.kayac.com."
 
 #. Translators: description for script "weejoin.py" (2.0+)
-#: scripts/_i18n_scripts.py:457
+#: scripts/_i18n_scripts.py:459
 msgid "Push notifications of highlights and private messages to Join."
 msgstr "Гура обавештења о истицањима и приватним порукама на Join."
 
+#. Translators: description for script "qr_code.py" (0.3.0+)
+#: scripts/_i18n_scripts.py:461
+msgid "QR code generator."
+msgstr ""
+
 #. Translators: description for script "jisearch.py" (0.3.5+)
-#: scripts/_i18n_scripts.py:459
+#: scripts/_i18n_scripts.py:463
 msgid ""
 "Query JiSho's API to fetch translations for kanji to english or the other "
 "way round."
@@ -7673,270 +7683,270 @@ msgstr ""
 "смер."
 
 #. Translators: description for script "xdccq.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:461
+#: scripts/_i18n_scripts.py:465
 msgid "Queue XDCC messages to bots."
 msgstr "Ставља XDCC поруке у ред за ботове."
 
 #. Translators: description for script "go.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:463
+#: scripts/_i18n_scripts.py:467
 msgid "Quick jump to buffers."
 msgstr "Брзи скок на бафере."
 
 #. Translators: description for script "histsearch.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:465
+#: scripts/_i18n_scripts.py:469
 msgid "Quick search in command history."
 msgstr "Брза претрага историје команди."
 
 #. Translators: description for script "quick_force_color.py" (0.3.4+)
-#: scripts/_i18n_scripts.py:467
+#: scripts/_i18n_scripts.py:471
 msgid "Quickly add/del/change entry in option irc.look.nick_color_force."
 msgstr ""
 "Брзо додавање/брисање/измена ставке у опцији irc.look.nick_color_force."
 
 #. Translators: description for script "rssagg.pl" (0.3.7+)
-#: scripts/_i18n_scripts.py:469
+#: scripts/_i18n_scripts.py:473
 msgid "RSS/RDF/Atom feed aggregator."
 msgstr "RSS/RDF/Atom агрегатор извора вести."
 
 #. Translators: description for script "nma.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:471
+#: scripts/_i18n_scripts.py:475
 msgid "Receive notifications in Notify My Android (android phone app)."
 msgstr ""
 "Примајте обавештења у Notify My Android (андроид апликација за телефон)."
 
 #. Translators: description for script "stalker.pl" (0.3.4+)
-#: scripts/_i18n_scripts.py:473
+#: scripts/_i18n_scripts.py:477
 msgid "Record and correlate nick!user@host information."
 msgstr "Записује и ради корелацију надимак!корисник@хост информација."
 
 #. Translators: description for script "recoverop.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:475
+#: scripts/_i18n_scripts.py:479
 msgid "Recover channel operator in empty channel."
 msgstr "Обнавља оператора канала у празно каналу."
 
 #. Translators: description for script "highlightxmpp.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:477
+#: scripts/_i18n_scripts.py:481
 msgid "Relay highlighted and private messages over XMPP (Jabber)."
 msgstr "Преусмерава истакнуте и приватне поруке преко XMPP (Jabber)."
 
 #. Translators: description for script "noirccolors.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:479
+#: scripts/_i18n_scripts.py:483
 msgid "Remove IRC colors from selected buffers."
 msgstr "Уклањања IRC боје из изабраних бафера."
 
 #. Translators: description for script "curiousignore.pl" (0.3.2+)
-#: scripts/_i18n_scripts.py:481
+#: scripts/_i18n_scripts.py:485
 msgid "Remove messages from a nick and only print nick."
 msgstr "Уклања поруке од надимка и само исписује надимак."
 
 #. Translators: description for script "unset_unused.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:483
+#: scripts/_i18n_scripts.py:487
 msgid "Remove options of scripts that are no longer installed."
 msgstr "Уклања опције скрипти које више нису инсталиране."
 
 #. Translators: description for script "im_rename.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:485
+#: scripts/_i18n_scripts.py:489
 msgid "Rename Facebook/Google+ usernames when using Minbif."
 msgstr "Мења Facebook/Google+ корисничка имена када се користи Minbif."
 
 #. Translators: description for script "autoconnect.py" (0.3.2+)
-#: scripts/_i18n_scripts.py:487
+#: scripts/_i18n_scripts.py:491
 msgid "Reopen servers and channels opened last time WeeChat closed."
 msgstr ""
 "Поново отвара сервере и канале који су били отворени онда када је WeeChat "
 "последњи пут био затворен."
 
 #. Translators: description for script "latex_unicode.py" (1.3+)
-#: scripts/_i18n_scripts.py:489
+#: scripts/_i18n_scripts.py:493
 msgid "Replace LaTeX with unicode representations."
 msgstr "Замењује LaTeX са unicode репрезентацијама."
 
 #. Translators: description for script "emoji2ascii.py" (0.3.7+)
-#: scripts/_i18n_scripts.py:491
+#: scripts/_i18n_scripts.py:495
 msgid "Replace emoji characters with ascii text and vice versa."
 msgstr "Мења емођи карактере ascii текстом и обрнуто."
 
 #. Translators: description for script "weechataboo.scm" (0.3.0+)
-#: scripts/_i18n_scripts.py:493
+#: scripts/_i18n_scripts.py:497
 msgid "Replace emotion-tags with random emoticons."
 msgstr "Мења емотикон-ознаке насумичним емотиконима."
 
 #. Translators: description for script "emote.scm" (0.4.1+)
-#: scripts/_i18n_scripts.py:495
+#: scripts/_i18n_scripts.py:499
 msgid "Replace keywords with emoticons."
 msgstr "Мења кључне речи емотиконима."
 
 #. Translators: description for script "shutup.py" (0.3.6+)
-#: scripts/_i18n_scripts.py:497
+#: scripts/_i18n_scripts.py:501
 msgid "Replace text from specified IRC users with random or preset text."
 msgstr ""
 "Мења текст одређених IRC корисника насумичним или унапред одређеним текстом."
 
 #. Translators: description for script "glitter.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:499
+#: scripts/_i18n_scripts.py:503
 msgid ""
 "Replace text wrapped in ***three asterisks*** with a rainbow colored version."
 msgstr ""
 "Мења текст омеђен са ***три звездице*** верзијом обојеном дугиним бојама."
 
 #. Translators: description for script "text_replace.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:501
+#: scripts/_i18n_scripts.py:505
 msgid "Replaces text you write with replacement text."
 msgstr "Мења текст који пишете заменским текстом."
 
 #. Translators: description for script "upside_down.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:503
+#: scripts/_i18n_scripts.py:507
 msgid "Replaces text you write with upside down text."
 msgstr "Мења текст који пишете текстом окренутим наглавачке."
 
 #. Translators: description for script "undernet_challenge.rb" (0.3.0+)
-#: scripts/_i18n_scripts.py:505
+#: scripts/_i18n_scripts.py:509
 msgid "Respond to undernet challenge when there's no identd."
 msgstr "Одговара на undernet изазов када не постоји identd."
 
 #. Translators: description for script "ipinfo.tcl" (0.3.0+)
-#: scripts/_i18n_scripts.py:507
+#: scripts/_i18n_scripts.py:511
 msgid "Retrieve information about an IP address."
 msgstr "Добавља информације у вези са IP адресом."
 
 #. Translators: description for script "bashorg.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:509
+#: scripts/_i18n_scripts.py:513
 msgid "Retrieve quotes from bash.org."
 msgstr "Преузима цитате са bash.org."
 
 #. Translators: description for script "foo.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:511
+#: scripts/_i18n_scripts.py:515
 msgid "Rot n+i encryption and decryption."
 msgstr "Rot n+i шифровање и дешифровање."
 
 #. Translators: description for script "xfer_run_command.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:513
+#: scripts/_i18n_scripts.py:517
 msgid "Run a command on end of xfer."
 msgstr "Покреће команду на крају трансфера."
 
 #. Translators: description for script "msg_command.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:515
+#: scripts/_i18n_scripts.py:519
 msgid "Run chat received in a buffer as commands."
 msgstr "Извршава чет примљен у бафер као команде."
 
 #. Translators: description for script "away_action.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:517
+#: scripts/_i18n_scripts.py:521
 msgid "Run command on highlight and privmsg when away."
 msgstr ""
 "Извршава команду приликом истицања и приватних порука када сте одсутни."
 
 #. Translators: description for script "execbot.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:519
+#: scripts/_i18n_scripts.py:523
 msgid "Run remote commands via IRC messages."
 msgstr "Извршава удаљене команде преко IRC порука."
 
 #. Translators: description for script "weetext.py" (0.4.3+)
-#: scripts/_i18n_scripts.py:521
+#: scripts/_i18n_scripts.py:525
 msgid "SMS Text Messaging using Google Voice."
 msgstr "SMS текст поруке користећи Google Voice."
 
 #. Translators: description for script "samegame.py" (0.3.6+)
-#: scripts/_i18n_scripts.py:523
+#: scripts/_i18n_scripts.py:527
 msgid "SameGame."
 msgstr "SameGame."
 
 #. Translators: description for script "histman.py" (0.4.0+)
-#: scripts/_i18n_scripts.py:525
+#: scripts/_i18n_scripts.py:529
 msgid "Save and restore global and/or buffer command history."
 msgstr "Чува и враћа глобалну и/или бафер историју команди."
 
 #. Translators: description for script "queryman.py" (0.3.7+)
-#: scripts/_i18n_scripts.py:527
+#: scripts/_i18n_scripts.py:531
 msgid "Save and restore query buffers after /quit."
 msgstr "Чува и враћа query бафере након /quit."
 
 #. Translators: description for script "autosavekey.py" (0.4.2+)
-#: scripts/_i18n_scripts.py:529
+#: scripts/_i18n_scripts.py:533
 msgid "Save channel key to autojoin or secured data."
 msgstr "Чува кључ канала за аутоматско приступање или обезбеђене податке."
 
 #. Translators: description for script "confversion.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:531
+#: scripts/_i18n_scripts.py:535
 msgid "Save config files in a version control system."
 msgstr "Чува конфиг фајлове у систему за контролу верзија."
 
 #. Translators: description for script "bufsave.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:533
+#: scripts/_i18n_scripts.py:537
 msgid "Save current buffer content to a file."
 msgstr "Чува садржај текућег бафера у фајл."
 
 #. Translators: description for script "win_scroll_screen.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:535
+#: scripts/_i18n_scripts.py:539
 msgid "Scroll by fractional screens."
 msgstr "Скролује за делове екрана."
 
 #. Translators: description for script "grep.py" (1.5+)
-#: scripts/_i18n_scripts.py:537
+#: scripts/_i18n_scripts.py:541
 msgid "Search regular expression in buffers or log files."
 msgstr "Претрага бафера или лог фајлова регуларним изразом."
 
 #. Translators: description for script "seeks.pl" (0.3.6+)
-#: scripts/_i18n_scripts.py:539
+#: scripts/_i18n_scripts.py:543
 msgid "Search terms on seeks node and display results."
 msgstr "Тражи појмове на seeks чвору и приказује резултате."
 
 #. Translators: description for script "ircrypt.py" (0.3.8+)
-#: scripts/_i18n_scripts.py:541
+#: scripts/_i18n_scripts.py:545
 msgid "Secure encryption layer for the IRC protocol based on OpenPGP."
 msgstr "Безбедносни слој шифровања за IRC протокол заснован на OpenPGP."
 
 #. Translators: description for script "challengeauth.rb" (0.3.0+)
-#: scripts/_i18n_scripts.py:543
+#: scripts/_i18n_scripts.py:547
 msgid "Securely authenticate with QuakeNet by using CHALLENGEAUTH."
 msgstr "Безбедна провера идентитета са QuakeNet употребом CHALLENGEAUTH."
 
 #. Translators: description for script "coords.pl" (0.4.2+)
-#: scripts/_i18n_scripts.py:545
+#: scripts/_i18n_scripts.py:549
 msgid "Select text, nicks or URLs on screen with mouse or keyboard."
 msgstr "Избор текста, надимака или URL адреса на екрану мишем или тастатуром."
 
 #. Translators: description for script "selfcensor.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:547
+#: scripts/_i18n_scripts.py:551
 msgid "Self-censor stuff you were going to say."
 msgstr "Аутоцензуришите оно што сте намеравали да кажете."
 
 #. Translators: description for script "whois_on_query.py" (0.3.2+)
-#: scripts/_i18n_scripts.py:549
+#: scripts/_i18n_scripts.py:553
 msgid "Send \"whois\" on nick when receiving new IRC query."
 msgstr "Шаље „whois” над надимком приликом пријема новог IRC упита."
 
 #. Translators: description for script "growl.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:551
+#: scripts/_i18n_scripts.py:555
 msgid "Send Growl notifications upon events."
 msgstr "Шаље Growl обавештења када се десе догађаји."
 
 #. Translators: description for script "kikoo.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:553
+#: scripts/_i18n_scripts.py:557
 msgid "Send a colored \"kikoo\" on current channel."
 msgstr "Шаље обојени „kikoo” на текући канал."
 
 #. Translators: description for script "emojis.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:555
+#: scripts/_i18n_scripts.py:559
 msgid "Send a random emoji to the current buffer."
 msgstr "Шаље насумични емођи у текући бафер."
 
 #. Translators: description for script "pushjet.py" (1.0+)
-#: scripts/_i18n_scripts.py:557
+#: scripts/_i18n_scripts.py:561
 msgid "Send highlights and mentions through Pushjet.io."
 msgstr "Шаље истицања и помињања кроз Pushjet.io."
 
 #. Translators: description for script "socket_notify.rb" (0.3.0+)
-#: scripts/_i18n_scripts.py:559
+#: scripts/_i18n_scripts.py:563
 msgid "Send highlights and private messages to a unix socket."
 msgstr "Шаље истицања и приватне поруке у unix сокет."
 
 #. Translators: description for script "notify_send.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:561
+#: scripts/_i18n_scripts.py:565
 msgid "Send libnotify notifications with smart delays to avoid spam."
 msgstr "Шаље libnotify обавештења са паметним кашњењем тако да се спречи спам."
 
 #. Translators: description for script "bitlbee_typing_notice.py" (0.3.6+)
-#: scripts/_i18n_scripts.py:563
+#: scripts/_i18n_scripts.py:567
 msgid ""
 "Send notice when typing message on bitlbee, display if user is writing in a "
 "bar item."
@@ -7945,7 +7955,7 @@ msgstr ""
 "корисник пише."
 
 #. Translators: description for script "minbif_typing_notice.rb" (0.3.2+)
-#: scripts/_i18n_scripts.py:565
+#: scripts/_i18n_scripts.py:569
 msgid ""
 "Send notice when typing message on minbif, display if user is writing in a "
 "bar item."
@@ -7954,32 +7964,32 @@ msgstr ""
 "корисник пише."
 
 #. Translators: description for script "telnot.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:567
+#: scripts/_i18n_scripts.py:571
 msgid "Send notifications over Telegram."
 msgstr "Шаље обавештења преко Telegram."
 
 #. Translators: description for script "zmq_notify.rb" (0.3.0+)
-#: scripts/_i18n_scripts.py:569
+#: scripts/_i18n_scripts.py:573
 msgid "Send notifications to a ZMQ socket."
 msgstr "Шаље обавештења на ZMQ сокет."
 
 #. Translators: description for script "pyrnotify.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:571
+#: scripts/_i18n_scripts.py:575
 msgid "Send notifications to remote client using ssh and libnotify."
 msgstr "Шаље обавештења удаљеном клијенту користећи ssh и libnotify."
 
 #. Translators: description for script "mqtt_notify.py" (1.0+)
-#: scripts/_i18n_scripts.py:573
+#: scripts/_i18n_scripts.py:577
 msgid "Send notifications using the MQTT protocol."
 msgstr "Шаље обавештења користећи MQTT протокол."
 
 #. Translators: description for script "amqp_notify.rb" (0.3.3+)
-#: scripts/_i18n_scripts.py:575
+#: scripts/_i18n_scripts.py:579
 msgid "Send private messages and highlights to an AMQP exchange."
 msgstr "Шаље приватне поруке и истицања на AMQP размену."
 
 #. Translators: description for script "pushsafer.rb" (0.3.0+)
-#: scripts/_i18n_scripts.py:577
+#: scripts/_i18n_scripts.py:581
 msgid ""
 "Send private/highlight messages to Android, iOS and Windows 10 devices via "
 "Pushsafer."
@@ -7988,172 +7998,172 @@ msgstr ""
 "Pushsafer."
 
 #. Translators: description for script "pushover.pl" (0.3.7+)
-#: scripts/_i18n_scripts.py:579
+#: scripts/_i18n_scripts.py:583
 msgid "Send push notifications to your mobile devices using Pushover."
 msgstr "Шаље брза обавештења на ваше мобилне уређаје користећи Pushover."
 
 #. Translators: description for script "prism.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:581
+#: scripts/_i18n_scripts.py:585
 msgid "Send text using rainbow colors."
 msgstr "Шаље текст користећи дугине боје."
 
 #. Translators: description for script "lastfm.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:583
+#: scripts/_i18n_scripts.py:587
 msgid "Send your latest Last.fm track to the current buffer."
 msgstr "Шаље вашу најновију Last.fm нумеру у текући бафер."
 
 #. Translators: description for script "fortune.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:585
+#: scripts/_i18n_scripts.py:589
 msgid "Sends a random fortune cookie."
 msgstr "Шаље насумични колачић среће."
 
 #. Translators: description for script "rnotify.tcl" (0.3.0+)
-#: scripts/_i18n_scripts.py:587
+#: scripts/_i18n_scripts.py:591
 msgid "Sends highlights to (remote) client using libnotify."
 msgstr "Шаље истицања (удаљеном) клијенту користећи libnotify."
 
 #. Translators: description for script "myuptime.rb" (0.3.0+)
-#: scripts/_i18n_scripts.py:589
+#: scripts/_i18n_scripts.py:593
 msgid "Sends machine uptime to current channel."
 msgstr "Шаље колико времена је машина укључена на текући канал."
 
 #. Translators: description for script "mpdbitl.lua" (0.3.5+)
-#: scripts/_i18n_scripts.py:591
+#: scripts/_i18n_scripts.py:595
 msgid "Set Bitlbee's status message with current MPD track."
 msgstr "Поставља Bitlbee статусну поруку на текућу MPD нумеру."
 
 #. Translators: description for script "gnome_screensaver_away.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:593
+#: scripts/_i18n_scripts.py:597
 msgid "Set away status based on Gnome screen saver."
 msgstr "Поставља статус одсутности према Gnome чувару екрана."
 
 #. Translators: description for script "fileaway.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:595
+#: scripts/_i18n_scripts.py:599
 msgid "Set away status based on presence of a file."
 msgstr "Поставља статус одсутности у зависности од присутности фајла."
 
 #. Translators: description for script "i3lock_away.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:597
+#: scripts/_i18n_scripts.py:601
 msgid "Set away status if i3lock (X display locker) is running."
 msgstr ""
 "Поставља статус одсутности ако се извршава i3lock (закључавач X дисплеја)."
 
 #. Translators: description for script "slock_away.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:599
+#: scripts/_i18n_scripts.py:603
 msgid "Set away status if slock (X display locker) is running."
 msgstr ""
 "Поставља статус одсутности ако се извршава slock (закључавач X дисплеја)."
 
 #. Translators: description for script "screen_away.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:601
+#: scripts/_i18n_scripts.py:605
 msgid "Set away status when detaching and attaching from screen or tmux."
 msgstr ""
 "Поставља статус одсутности кад се прикачи или откачи са screen или tmux."
 
 #. Translators: description for script "chanpriority.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:603
+#: scripts/_i18n_scripts.py:607
 msgid "Set channel priority."
 msgstr "Поставља приоритет канала."
 
 #. Translators: description for script "openbsd_privdrop.py" (1.3+)
-#: scripts/_i18n_scripts.py:605
+#: scripts/_i18n_scripts.py:609
 msgid "Set least privilege on OpenBSD."
 msgstr "Поставља најмање привилегије на OpenBSD."
 
 #. Translators: description for script "weefusables.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:607
+#: scripts/_i18n_scripts.py:611
 msgid "Set message tag when confusables chars are used in words."
 msgstr "Поставља ознаку поруке када се у речима користе збуњујући карактери."
 
 #. Translators: description for script "title.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:609
+#: scripts/_i18n_scripts.py:613
 msgid "Set terminal title to active buffer name and hotlist items."
 msgstr "Поставља наслов терминала на име активног бафера и ставки вруће листе."
 
 #. Translators: description for script "xfer_setip.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:611
+#: scripts/_i18n_scripts.py:615
 msgid "Set xfer own ip with external ip."
 msgstr "Поставља xfer сопствену ip на спољну ip."
 
 #. Translators: description for script "isgd.pl" (0.3.7+)
-#: scripts/_i18n_scripts.py:613
+#: scripts/_i18n_scripts.py:617
 msgid "Shorten URLs with is.gd."
 msgstr "Скраћује URL адресе са is.gd."
 
 #. Translators: description for script "url_shorten.rb" (0.3.0+)
-#: scripts/_i18n_scripts.py:615
+#: scripts/_i18n_scripts.py:619
 msgid "Shorten URLs with many shortening services."
 msgstr "Скраћује URL адресе користећи многе сервисе за скраћивање."
 
 #. Translators: description for script "urlserver.py" (0.3.4+)
-#: scripts/_i18n_scripts.py:617
+#: scripts/_i18n_scripts.py:621
 msgid "Shorten URLs with own HTTP server."
 msgstr "Скраћује URL адресе сопственим HTTP сервером."
 
 #. Translators: description for script "url_arza.pl" (0.3.6+)
-#: scripts/_i18n_scripts.py:619
+#: scripts/_i18n_scripts.py:623
 msgid "Shorten long URLs in buffers and input line."
 msgstr "Скраћује дугачке URL адресе у баферима и линији за унос."
 
 #. Translators: description for script "shortenurl.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:621
+#: scripts/_i18n_scripts.py:625
 msgid "Shorten long urls using isgd or tinyurl."
 msgstr "Скраћује дугачке url адресе користећи isgd или tinyurl."
 
 #. Translators: description for script "irc_react_inline.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:623
+#: scripts/_i18n_scripts.py:627
 msgid "Show IRCv3 draft/react reactions inline on the original message."
 msgstr ""
 "Приказује IRCv3 draft/react реакције унутар линије на оригиналној поруци."
 
 #. Translators: description for script "topicdiff.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:625
+#: scripts/_i18n_scripts.py:629
 msgid "Show differences between old and new topics."
 msgstr "Приказује разлике између старих и нових тема."
 
 #. Translators: description for script "hatwidget.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:627
+#: scripts/_i18n_scripts.py:631
 msgid "Show hats (user modes like \"@\" or \"+\") in a bar item."
 msgstr ""
 "Приказује шешире (режиме корисника као што су „@” или „+”) у ставци траке."
 
 #. Translators: description for script "xosdnotify.tcl" (0.3.0+)
-#: scripts/_i18n_scripts.py:629
+#: scripts/_i18n_scripts.py:633
 msgid "Show highlights and private messages with OSD."
 msgstr "Приказује истицања у приватне поруке помоћу OSD."
 
 #. Translators: description for script "hl_here.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:631
+#: scripts/_i18n_scripts.py:635
 msgid "Show highlights in the active buffer."
 msgstr "Приказује истицања у активном баферу."
 
 #. Translators: description for script "foo_spam.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:633
+#: scripts/_i18n_scripts.py:637
 msgid "Show info about current song in foobar2000."
 msgstr "Приказује инфо о текућој нумери у foobar2000."
 
 #. Translators: description for script "moc.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:635
+#: scripts/_i18n_scripts.py:639
 msgid "Show info about current song in moc."
 msgstr "Приказује инфо о текућој нумери у moc."
 
 #. Translators: description for script "volumeter.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:637
+#: scripts/_i18n_scripts.py:641
 msgid "Show volume of data on network interface in a bar."
 msgstr "Приказује у траци количину података на мрежном интерфејсу."
 
 #. Translators: description for script "arespond.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:639
+#: scripts/_i18n_scripts.py:643
 msgid "Simple autoresponder."
 msgstr "Једноставно аутоматско слање одговора."
 
 #. Translators: description for script "query_blocker.pl" (0.3.1+)
-#: scripts/_i18n_scripts.py:641
+#: scripts/_i18n_scripts.py:645
 msgid "Simple blocker for private message (i.e. spam)."
 msgstr "Једноставни блокер приватних порука (тј. спама)."
 
 #. Translators: description for script "mplex.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:643
+#: scripts/_i18n_scripts.py:647
 msgid ""
 "Simple remote control of multiplexer (screen or tmux), optionally set away "
 "status."
@@ -8162,130 +8172,130 @@ msgstr ""
 "поставља статус одсутности.status."
 
 #. Translators: description for script "shuffle.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:645
+#: scripts/_i18n_scripts.py:649
 msgid "Simple text shuffler."
 msgstr "Једноставни мешач текста."
 
 #. Translators: description for script "slack.py" (2.2+)
-#: scripts/_i18n_scripts.py:647
+#: scripts/_i18n_scripts.py:651
 msgid "Slack.com native client."
 msgstr "Slack.com природни клијент."
 
 #. Translators: description for script "rslap.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:649
+#: scripts/_i18n_scripts.py:653
 msgid "Slaps with random messages."
 msgstr "Шамара насумичним порукама."
 
 #. Translators: description for script "snake.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:651
+#: scripts/_i18n_scripts.py:655
 msgid "Snake game."
 msgstr "Snake игра."
 
 #. Translators: description for script "snarl_net_notify.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:653
+#: scripts/_i18n_scripts.py:657
 msgid "Snarl notifications for highlights."
 msgstr "Snarl обавештења о истицањима."
 
 #. Translators: description for script "soju.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:655
+#: scripts/_i18n_scripts.py:659
 msgid "Soju bouncer integration."
 msgstr "Интеграција Soju баунсера."
 
 #. Translators: description for script "sort_servers.py" (0.3.9+)
-#: scripts/_i18n_scripts.py:657
+#: scripts/_i18n_scripts.py:661
 msgid "Sort buffers by server and alphabetically."
 msgstr "Сортира бафере по сервери и абецедно."
 
 #. Translators: description for script "sort_arza.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:659
+#: scripts/_i18n_scripts.py:663
 msgid "Sort channels inside networks."
 msgstr "Сортира канале у мрежама."
 
 #. Translators: description for script "sort_buffers.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:661
+#: scripts/_i18n_scripts.py:665
 msgid "Sort irc buffers alphabetically."
 msgstr "Сортира irc бафере по абецеди."
 
 #. Translators: description for script "autospurdo.js" (0.3.0+)
-#: scripts/_i18n_scripts.py:663
+#: scripts/_i18n_scripts.py:667
 msgid "Speak in spurdo."
 msgstr "Говорите у spurdo."
 
 #. Translators: description for script "jnotify.pl" (0.3.1+)
-#: scripts/_i18n_scripts.py:665
+#: scripts/_i18n_scripts.py:669
 msgid "Start command/program if a user joins a channel you are in."
 msgstr ""
 "Покреће команду/програм ако се каналу на којем се налазите придружи корисник."
 
 #. Translators: description for script "stick_buffer.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:667
+#: scripts/_i18n_scripts.py:671
 msgid "Stick buffer to a window."
 msgstr "Лепи бафер за прозор."
 
 #. Translators: description for script "weestreamer.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:669
+#: scripts/_i18n_scripts.py:673
 msgid "Streamlink companion for WeeChat."
 msgstr "Streamlink пратилац за WeeChat."
 
 #. Translators: description for script "styurl.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:671
+#: scripts/_i18n_scripts.py:675
 msgid "Style URLs using a Python regex."
 msgstr "Стилизује URL адресе користећи Python регуларни израз."
 
 #. Translators: description for script "substitution.rb" (0.3.7+)
-#: scripts/_i18n_scripts.py:673
+#: scripts/_i18n_scripts.py:677
 msgid "Substitute strings in messages before they are sent."
 msgstr "Замењује стрингове у порукама пре него што се пошаљу."
 
 #. Translators: description for script "read_marker.py" (0.3.6+)
-#: scripts/_i18n_scripts.py:675
+#: scripts/_i18n_scripts.py:679
 msgid "Support of draft/read-marker IRC extension."
 msgstr "Подршка за draft/read-marker IRC проширења."
 
 #. Translators: description for script "sysinfo.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:677
+#: scripts/_i18n_scripts.py:681
 msgid "System info command."
 msgstr "Систем инфо команда."
 
 #. Translators: description for script "atcomplete.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:679
+#: scripts/_i18n_scripts.py:683
 msgid "Tab complete nicks when prefixed with \"@\"."
 msgstr "Довршавање надимака табом када им се наведе префикс „@”."
 
 #. Translators: description for script "tailer.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:681
+#: scripts/_i18n_scripts.py:685
 msgid "Tail any number of files and run any command with line appended."
 msgstr ""
 "Прати крај било ког броја фајлова и покреће било коју команду на коју "
 "надовезује најновију линију."
 
 #. Translators: description for script "weetris.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:683
+#: scripts/_i18n_scripts.py:687
 msgid "Tetris-like game."
 msgstr "Игра која подсећа на Тетрис."
 
 #. Translators: description for script "thinklight_blink.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:685
+#: scripts/_i18n_scripts.py:689
 msgid "Thinklight blink on highlight/private message."
 msgstr "Thinklight трептање приликом пријема истицања/приватне поруке."
 
 #. Translators: description for script "tictactoe.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:687
+#: scripts/_i18n_scripts.py:691
 msgid "Tic-tac-toe game."
 msgstr "Игра икс-окс."
 
 #. Translators: description for script "cron.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:689
+#: scripts/_i18n_scripts.py:693
 msgid "Time-based scheduler, like cron and at."
 msgstr "Диспечер базиран на времену, као што су cron и at."
 
 #. Translators: description for script "toggle_highlight.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:691
+#: scripts/_i18n_scripts.py:695
 msgid "Toggle notifications of normal messages for current buffer."
 msgstr "Укљ./искљ. обавештења о обичним порукама за текући бафер."
 
 #. Translators: description for script "uppercase.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:693
+#: scripts/_i18n_scripts.py:697
 msgid ""
 "Transform all your input to uppercase (useful for INTERNATIONAL CAPSLOCK "
 "DAY)."
@@ -8295,101 +8305,101 @@ msgstr ""
 
 # noqa:punc-space-id
 #. Translators: description for script "emoji.lua" (1.0+)
-#: scripts/_i18n_scripts.py:695
+#: scripts/_i18n_scripts.py:699
 msgid "Translate :shortcode: to proper emoji."
 msgstr "Преводи :краткикод: у прописни емођи."
 
 #. Translators: description for script "translate.py" (0.3.7+)
-#: scripts/_i18n_scripts.py:697
+#: scripts/_i18n_scripts.py:701
 msgid "Translate string using Google translate API."
 msgstr "Преводи стринг користећи Google преводилац API."
 
 #. Translators: description for script "twitch.py" (4.1.0+)
-#: scripts/_i18n_scripts.py:699
+#: scripts/_i18n_scripts.py:703
 msgid "Twitch.tv chat integration."
 msgstr "Twitch.tv чет интеграција."
 
 #. Translators: description for script "ubus.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:701
+#: scripts/_i18n_scripts.py:705
 msgid "Ubus notification."
 msgstr "Ubus обавештење."
 
 #. Translators: description for script "undernet_totp.py" (0.4.2+)
-#: scripts/_i18n_scripts.py:703
+#: scripts/_i18n_scripts.py:707
 msgid "UnderNET's X OTP (OATH-TOTP) authentication."
 msgstr "UnderNET X OTP (OATH-TOTP) провера идентитета."
 
 #. Translators: description for script "maildir.pl" (0.3.0+)
-#: scripts/_i18n_scripts.py:705
+#: scripts/_i18n_scripts.py:709
 msgid "Unread e-mail notification and count from a local Maildir directory."
 msgstr ""
 "Обавештење о непрочитаном и-мејлу и број из локалног Maildir директоријума."
 
 #. Translators: description for script "tmux_env.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:707
+#: scripts/_i18n_scripts.py:711
 msgid "Update WeeChat environment from tmux."
 msgstr "Ажурира WeeChat окружење из tmux."
 
 #. Translators: description for script "tts.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:709
+#: scripts/_i18n_scripts.py:713
 msgid "Use a TTS engine to pronounce messages."
 msgstr "Користи TTS механизам за изговарање порука."
 
 #. Translators: description for script "colorize_nicks.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:711
+#: scripts/_i18n_scripts.py:715
 msgid "Use the weechat nick colors in the chat area and command line."
 msgstr "Употреба weechat боја надимака у простору за чет и у командној линији."
 
 #. Translators: description for script "vimode.py" (1.0+)
-#: scripts/_i18n_scripts.py:713
+#: scripts/_i18n_scripts.py:717
 msgid "Vi-like key bindings/commands with normal and insert mode."
 msgstr ""
 "Пречице тастатуре/команде које личе на Vi са нормалним режимом и режимом "
 "уметања."
 
 #. Translators: description for script "pastebuf.lua" (0.4.3+)
-#: scripts/_i18n_scripts.py:715
+#: scripts/_i18n_scripts.py:719
 msgid "View content of pastebin site in a buffer."
 msgstr "Приказује садржај pastebin сајта у баферу."
 
 #. Translators: description for script "pushbullet.rb" (0.3.0+)
-#: scripts/_i18n_scripts.py:717
+#: scripts/_i18n_scripts.py:721
 msgid "View/send SMS via pushbullet."
 msgstr "Приказује/шаље SMS помоћу pushbullet."
 
 #. Translators: description for script "oldswarner.lua" (0.3.7+)
-#: scripts/_i18n_scripts.py:719
+#: scripts/_i18n_scripts.py:723
 msgid "Warn user if about to paste URL already existing in buffer."
 msgstr ""
 "Упозорење кориснику ако ће управо да налепи URL који већ постоји у баферу."
 
 #. Translators: description for script "weetweet.py" (0.4.0+)
-#: scripts/_i18n_scripts.py:721
+#: scripts/_i18n_scripts.py:725
 msgid "WeeChat twitter client."
 msgstr "WeeChat twitter клијент."
 
 #. Translators: description for script "whatsapp.py" (0.3.0+)
-#: scripts/_i18n_scripts.py:723
+#: scripts/_i18n_scripts.py:727
 msgid "WhatsApp protocol."
 msgstr "WhatsApp протокол."
 
 #. Translators: description for script "wmiibar.pl" (0.3.3+)
-#: scripts/_i18n_scripts.py:725
+#: scripts/_i18n_scripts.py:729
 msgid "Wmii statusbar notification for highlights."
 msgstr "Wmii обавештење о истицањима у статусној линији."
 
 #. Translators: description for script "nick_complete_wrapper.lua" (0.3.8+)
-#: scripts/_i18n_scripts.py:727
+#: scripts/_i18n_scripts.py:731
 msgid "Wrap nick completion with custom prefix and/or suffix."
 msgstr "Окружује довршавање надимка произвољним префиксом и/или суфиксом."
 
 #. Translators: description for script "itunes.rb" (0.3.0+)
-#: scripts/_i18n_scripts.py:729
+#: scripts/_i18n_scripts.py:733
 msgid "iTunes control and now playing script."
 msgstr "Скрипта за iTunes контролу и приказ тренутно се пушта."
 
 #. Translators: reason for a disabled script
-#: scripts/_i18n_scripts.py:731
+#: scripts/_i18n_scripts.py:735
 msgid "not compatible with Python 3"
 msgstr "није компатибилно са Python 3"
 
@@ -10278,12 +10288,12 @@ msgid "Language:"
 msgstr "Програмски језик:"
 
 #: templates/scripts/list.html:61 templates/scripts/list.html:63
-#: templates/scripts/list.html:163 templates/scripts/source.html:36
+#: templates/scripts/list.html:165 templates/scripts/source.html:36
 msgid "License:"
 msgstr "Лиценца:"
 
 #: templates/scripts/list.html:69 templates/scripts/list.html:71
-#: templates/scripts/list.html:149
+#: templates/scripts/list.html:150
 msgid "Tag:"
 msgstr "Ознака:"
 
@@ -10312,21 +10322,21 @@ msgstr "Додата"
 msgid "Updated"
 msgstr "Ажурирана"
 
-#: templates/scripts/list.html:153
+#: templates/scripts/list.html:155
 msgid "requires"
 msgstr "захтева"
 
-#: templates/scripts/list.html:158
+#: templates/scripts/list.html:160
 #, python-format
 msgid "⚠ Script disabled (%(reason)s)."
 msgstr "⚠ Скрипта је искључена (%(reason)s)."
 
-#: templates/scripts/list.html:166 templates/scripts/source.html:34
+#: templates/scripts/list.html:168 templates/scripts/source.html:34
 #: templates/themes/list.html:22
 msgid "Author:"
 msgstr "Аутор:"
 
-#: templates/scripts/list.html:178
+#: templates/scripts/list.html:180
 msgid "No script found."
 msgstr "Није пронађена ниједна скрипта."
 
