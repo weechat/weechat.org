@@ -16,7 +16,7 @@ from weechat.news.models import Info
 
 def home(request, max_info=None, max_event=None):
     """Homepage."""
-    now = datetime.datetime.now()  # noqa: DTZ005
+    now = datetime.datetime.now()
     info_list = (Info.objects.all().filter(visible=1).filter(date__lte=now)
                  .order_by('-date'))
     if max_info:
@@ -73,7 +73,7 @@ def render_news(request, info_list, info_id, page_name):
     except ValueError:
         pagesize = 10
     infos, smart_page_range = paginate_news(request, info_list, pagesize)
-    event = infos and infos[0].date > datetime.datetime.now()  # noqa: DTZ005
+    event = infos and infos[0].date > datetime.datetime.now()
     return render(request, 'home/news.html', {
         'infos': infos,
         'info_id': info_id,
@@ -92,7 +92,7 @@ def news(request, info_id=None, title=None):
         else:
             info_list = (
                 Info.objects.all().filter(visible=1)
-                .filter(date__lte=datetime.datetime.now())  # noqa: DTZ005
+                .filter(date__lte=datetime.datetime.now())
                 .order_by('-date')
             )
     except ObjectDoesNotExist:
@@ -106,7 +106,7 @@ def events(request):
         info_list = (
             Info.objects.all()
             .filter(visible=1)
-            .filter(date__gt=datetime.datetime.now())  # noqa: DTZ005
+            .filter(date__gt=datetime.datetime.now())
             .order_by('date')
         )
     except ObjectDoesNotExist:
