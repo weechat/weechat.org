@@ -4,9 +4,11 @@
 
 """Some useful tags for localized dates."""
 
+import datetime
+
 from django import template
 from django.conf import settings
-from django.utils import dateformat
+from django.utils import dateformat, timezone
 from django.utils.html import format_html
 from django.utils.translation import gettext
 
@@ -23,6 +25,8 @@ def localdate(value, fmt='date'):
     """
     if not value:
         return ''
+    if isinstance(value, datetime.datetime) and timezone.is_aware(value):
+        value = timezone.localtime(value)
     if fmt == 'date':
         fmt = gettext(settings.DATE_FORMAT)
     elif fmt == 'datetime':

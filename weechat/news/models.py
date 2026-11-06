@@ -8,6 +8,7 @@ import re
 
 from django.db import models
 from django.db.models.signals import post_save
+from django.utils import timezone
 from django.utils.translation import gettext
 
 from weechat.common.i18n import i18n_autogen
@@ -46,8 +47,8 @@ class Info(models.Model):
         """Return date+title to include in URL."""
         text_url = re.sub(' +', '-',
                           re.sub('[^ a-zA-Z0-9.]', ' ', self.title).strip())
-        return (f'{self.date.year:0>4}{self.date.month:0>2}{self.date.day:0>2}'
-                f'-{text_url}')
+        date = timezone.localtime(self.date)
+        return f'{date:%Y%m%d}-{text_url}'
 
 
 def handler_info_saved(sender, **kwargs):

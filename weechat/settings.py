@@ -21,6 +21,7 @@ THEMES_MAILTO = []
 SITE_ID = 1
 
 TIME_ZONE = 'Europe/Paris'
+USE_TZ = True
 
 LANGUAGE_CODE = 'en-us'
 
