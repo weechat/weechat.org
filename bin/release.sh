@@ -44,7 +44,7 @@ ACTION="$1"
 PROJECT="$2"
 VERSION="$3"
 
-"${DIR}/../manage.py" shell <<EOF
+uv run --project "${DIR}/.." python "${DIR}/../manage.py" shell <<EOF
 from weechat.download.models import release_action
 release_action("${ACTION}", "${PROJECT}", "${VERSION}")
 EOF

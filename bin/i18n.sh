@@ -13,7 +13,7 @@ cd "${DIR}/../weechat"
 chmod 644 locale/*/LC_MESSAGES/django.po
 
 # generate new messages
-django-admin makemessages -a
+uv run django-admin makemessages -a
 
 # edit locale if given as argument
 if [ $# -gt 0 ]; then
@@ -21,4 +21,4 @@ if [ $# -gt 0 ]; then
 fi
 
 # compile messages
-django-admin compilemessages
+uv run django-admin compilemessages

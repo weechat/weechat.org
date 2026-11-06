@@ -24,14 +24,15 @@ Homepage: [https://weechat.org/](https://weechat.org/)
 The following packages are **required**:
 
 - python ≥ 3.11
-- python-django ≥ 2.0
-- python-pygments
-- python-tz
-- PostgreSQL.
+- [uv](https://docs.astral.sh/uv/)
+- PostgreSQL (with libpq development files, needed to build psycopg2).
+
+The Python dependencies are installed by uv in a virtual environment
+(directory `.venv`), using the file `uv.lock`.
 
 ### Deploy
 
-Run the install script:
+Run the install script (it installs Python dependencies with uv):
 
 ```bash
 ./bin/install.sh

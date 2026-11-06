@@ -11,16 +11,20 @@ DIR=$(cd "$(dirname "$0")"; pwd)
 cd "$DIR/.."
 
 echo ""
+echo "--- Installing Python dependencies"
+uv sync --locked
+
+echo ""
 echo "--- Compiling messages"
-./manage.py compilemessages
+uv run python manage.py compilemessages
 
 echo ""
 echo "--- Creating database"
-./manage.py migrate --run-syncdb
+uv run python manage.py migrate --run-syncdb
 
 echo ""
 echo "--- Loading fixtures in database"
-./manage.py loaddata ./weechat/fixtures/*.json
+uv run python manage.py loaddata ./weechat/fixtures/*.json
 
 echo ""
 echo "--- Install OK!"

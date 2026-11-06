@@ -4,4 +4,4 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-python3 manage.py runserver $*
+uv run python manage.py runserver "$@"
