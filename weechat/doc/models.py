@@ -8,7 +8,6 @@ from decimal import Decimal
 from functools import cached_property
 from typing import ClassVar
 
-from cvss import CVSS3, CVSS4, CVSSError
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.models.signals import post_save
@@ -16,6 +15,7 @@ from django.utils.html import format_html
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext, gettext_noop
 
+from weechat.common.cvss import CVSS3, CVSS4, CVSSError
 from weechat.common.i18n import i18n_autogen
 from weechat.common.models import Project
 from weechat.common.tracker import (

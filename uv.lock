@@ -16,15 +16,6 @@ wheels = [
 ]
 
 [[package]]
-name = "cvss"
-version = "3.6"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/a5/f6/1f7d315de23f39bbc32b94bb6b33a1b6124856037bfaa3f8bdb1a49584fa/cvss-3.6.tar.gz", hash = "sha256:f21d18224efcd3c01b44ff1b37dec2e3208d29a6d0ce6c87a599c73c21ee1a99", size = 30047, upload-time = "2025-08-04T10:50:13.753Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/63/6d/fe2c65b94a28ae0481dc254e8cd664b82390069003bea945076d8a445f2b/cvss-3.6-py2.py3-none-any.whl", hash = "sha256:e342c6ad9c7eb69d2aebbbc2768a03cabd57eb947c806e145de5b936219833ea", size = 31154, upload-time = "2025-08-04T10:50:12.328Z" },
-]
-
-[[package]]
 name = "django"
 version = "5.2.17"
 source = { registry = "https://pypi.org/simple" }
@@ -159,7 +150,6 @@ name = "weechat-org"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
-    { name = "cvss" },
     { name = "django", version = "5.2.17", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
     { name = "django", version = "6.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
     { name = "psycopg2" },
@@ -174,7 +164,6 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "cvss", specifier = ">=3.6" },
     { name = "django", specifier = ">=3.2.25" },
     { name = "psycopg2", specifier = ">=2.9.9" },
     { name = "pygments", specifier = ">=2.17.2" },

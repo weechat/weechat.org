@@ -26,7 +26,6 @@ classifiers = [
 ]
 requires-python = ">=3.11"
 dependencies = [
-    "cvss>=3.6",
     "django>=3.2.25",
     "psycopg2>=2.9.9",
     "pygments>=2.17.2",
@@ -38,6 +37,11 @@ dev = [
     "django-stubs>=4.2.0",
 ]
 
+[tool.ruff]
+extend-exclude = [
+    "weechat/common/cvss",
+]
+
 [tool.ruff.lint.per-file-ignores]
 "*/migrations/*.py" = [
     "RUF012",
@@ -45,5 +49,6 @@ dev = [
 
 [tool.ty.src]
 exclude = [
+    "weechat/common/cvss",
     "weechat/settings.py",
 ]
