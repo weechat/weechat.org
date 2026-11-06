@@ -4,8 +4,12 @@
 
 """Models for "doc" menu."""
 
+from decimal import Decimal
+from functools import cached_property
 from typing import ClassVar
 
+from cvss import CVSS3, CVSS4, CVSSError
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.models.signals import post_save
 from django.utils.html import format_html
@@ -62,6 +66,47 @@ def get_severity(score):
         if score <= limit:
             return i
     return 0
+
+
+def parse_cvss_vector(vector):
+    """
+    Return a tuple (version, vector) with the CVSS version and vector
+    without the version prefix.
+
+    The vector can start with the version (e.g. "CVSS:4.0/AV:N/...");
+    if not, the default version (3.1) is used.
+    """
+    vector = vector.strip()
+    if vector.startswith('CVSS:'):
+        version, _, vector = vector[5:].partition('/')
+        return version, vector
+    return CVSS_DEFAULT_VERSION, vector
+
+
+def get_cvss_score(vector):
+    """
+    Return the CVSS base score (Decimal) computed from a vector.
+
+    Raise ValueError if the vector or its version is invalid.
+    """
+    version, vector = parse_cvss_vector(vector)
+    cvss_classes = {'3': CVSS3, '4': CVSS4}
+    cvss_class = cvss_classes.get(version.split('.')[0])
+    if not cvss_class:
+        raise ValueError(f'unsupported CVSS version: {version}')
+    try:
+        score = cvss_class(f'CVSS:{version}/{vector}').base_score
+    except CVSSError as exc:
+        raise ValueError(str(exc)) from exc
+    return Decimal(f'{score:.1f}')
+
+
+def validate_cvss_vector(value):
+    """Validate a CVSS vector."""
+    try:
+        get_cvss_score(value)
+    except ValueError as exc:
+        raise ValidationError(f'Invalid CVSS vector: {exc}') from exc
 
 
 def get_score_bar(score):
@@ -188,8 +233,10 @@ class Security(models.Model):
     cve = models.CharField(max_length=64, blank=True)
     cwe_id = models.IntegerField(default=0)
     cwe_text = models.CharField(max_length=256)
-    cvss_vector = models.CharField(max_length=256)
-    cvss_score = models.DecimalField(max_digits=3, decimal_places=1)
+    cvss_vector = models.CharField(
+        max_length=256,
+        validators=[validate_cvss_vector],
+    )
     tracker = models.CharField(max_length=64, blank=True)
     affected = models.CharField(max_length=64, blank=True)
     fixed = models.CharField(max_length=32, blank=True)
@@ -242,25 +289,19 @@ class Security(models.Model):
             return URL_CWE % {'cwe': self.cwe_id}
         return ''
 
-    def cvss_version_vector(self):
-        """
-        Return a tuple (version, vector) with the CVSS version and vector
-        without the version prefix.
-
-        The vector can start with the version (e.g. "CVSS:4.0/AV:N/...");
-        if not, the default version (3.1) is used.
-        """
-        vector = self.cvss_vector.strip()
-        if vector.startswith('CVSS:'):
-            version, _, vector = vector[5:].partition('/')
-            return version, vector
-        return CVSS_DEFAULT_VERSION, vector
+    @cached_property
+    def cvss_score(self):
+        """Return CVSS base score computed from the CVSS vector."""
+        try:
+            return get_cvss_score(self.cvss_vector)
+        except ValueError:
+            return Decimal('0.0')
 
     def url_cvss_vector(self):
         """Return URL to CVSS vector detail."""
         if not self.cvss_vector:
             return ''
-        version, vector = self.cvss_version_vector()
+        version, vector = parse_cvss_vector(self.cvss_vector)
         url = URL_CVSS_VECTOR.get(version.split('.')[0])
         if not url:
             return ''
