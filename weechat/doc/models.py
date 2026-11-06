@@ -27,10 +27,18 @@ URL_CVE = {
     'NVD': 'https://nvd.nist.gov/vuln/detail/%(cve)s',
 }
 
-URL_CVSS_VECTOR = (
-    'https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?'
-    'vector=%(vector)s&version=3.1'
-)
+URL_CVSS_VECTOR = {
+    '3': (
+        'https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?'
+        'vector=%(vector)s&version=%(version)s'
+    ),
+    '4': (
+        'https://nvd.nist.gov/vuln-metrics/cvss/v4-calculator?'
+        'vector=%(vector)s&version=%(version)s'
+    ),
+}
+
+CVSS_DEFAULT_VERSION = '3.1'
 
 URL_CWE = 'https://cwe.mitre.org/data/definitions/%(cwe)s.html'
 
@@ -180,7 +188,7 @@ class Security(models.Model):
     cve = models.CharField(max_length=64, blank=True)
     cwe_id = models.IntegerField(default=0)
     cwe_text = models.CharField(max_length=256)
-    cvss_vector = models.CharField(max_length=64)
+    cvss_vector = models.CharField(max_length=256)
     cvss_score = models.DecimalField(max_digits=3, decimal_places=1)
     tracker = models.CharField(max_length=64, blank=True)
     affected = models.CharField(max_length=64, blank=True)
@@ -234,11 +242,29 @@ class Security(models.Model):
             return URL_CWE % {'cwe': self.cwe_id}
         return ''
 
+    def cvss_version_vector(self):
+        """
+        Return a tuple (version, vector) with the CVSS version and vector
+        without the version prefix.
+
+        The vector can start with the version (e.g. "CVSS:4.0/AV:N/...");
+        if not, the default version (3.1) is used.
+        """
+        vector = self.cvss_vector.strip()
+        if vector.startswith('CVSS:'):
+            version, _, vector = vector[5:].partition('/')
+            return version, vector
+        return CVSS_DEFAULT_VERSION, vector
+
     def url_cvss_vector(self):
         """Return URL to CVSS vector detail."""
-        if self.cvss_vector:
-            return URL_CVSS_VECTOR % {'vector': self.cvss_vector}
-        return ''
+        if not self.cvss_vector:
+            return ''
+        version, vector = self.cvss_version_vector()
+        url = URL_CVSS_VECTOR.get(version.split('.')[0])
+        if not url:
+            return ''
+        return url % {'vector': vector, 'version': version}
 
     def url_tracker(self):
         """Return URL with links to tracker items."""

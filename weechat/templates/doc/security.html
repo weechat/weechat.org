@@ -171,7 +171,11 @@
     </div>
     <div class="col-12 col-md-8">
       {{ security.cvss_vector }}
-      (<a href="{{ security.url_cvss_vector }}">{% trans "detail" %}</a>)
+      {% with url_cvss_vector=security.url_cvss_vector %}
+      {% if url_cvss_vector %}
+      (<a href="{{ url_cvss_vector }}">{% trans "detail" %}</a>)
+      {% endif %}
+      {% endwith %}
     </div>
   </div>
   {% endif %}
