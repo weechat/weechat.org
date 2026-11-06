@@ -344,6 +344,23 @@ ul.social {
 
 /* doc/security */
 
+@media (min-width: 768px) {
+  .security-detail {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 1.5rem;
+  }
+
+  .security-detail > .row {
+    display: contents;
+  }
+
+  .security-detail > .row > div {
+    width: auto;
+    padding: 0;
+  }
+}
+
 .severity-flex {
   width: 120px;
   height: 12px;

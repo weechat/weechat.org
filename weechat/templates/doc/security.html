@@ -144,12 +144,12 @@
 
 <h5>{% trans "Vulnerability" %}</h5>
 
-<div class="col-12 col-md-8 col-lg-6 col-xl-5 ms-4">
+<div class="col-12 col-lg-10 col-xl-8 ms-4 security-detail">
   <div class="row">
-    <div class="col-12 col-md-4 fw-bold">
+    <div class="col-12 col-md-3 fw-bold">
       CVE
     </div>
-    <div class="col-12 col-md-8">
+    <div class="col-12 col-md-9">
       {{ security.cve_i18n }}
       {% if security.cve_valid %}
       <span class="ms-2">
@@ -164,12 +164,12 @@
   </div>
   {% if security.cvss_vector %}
   <div class="row">
-    <div class="col-12 col-md-4 fw-bold">
+    <div class="col-12 col-md-3 fw-bold">
       <abbr title="{% trans "Common Vulnerability Scoring System vector: it is established by WeeChat team and may not reflect exactly the vector displayed on NVD site." %}">
         {% trans "CVSS vector" %}
       </abbr>
     </div>
-    <div class="col-12 col-md-8">
+    <div class="col-12 col-md-9 text-break">
       {{ security.cvss_vector }}
       {% with url_cvss_vector=security.url_cvss_vector %}
       {% if url_cvss_vector %}
@@ -180,23 +180,23 @@
   </div>
   {% endif %}
   <div class="row">
-    <div class="col-12 col-md-4 fw-bold">
+    <div class="col-12 col-md-3 fw-bold">
       <abbr title="{% trans "Common Vulnerability Scoring System score: it is established by WeeChat team and may not reflect exactly the score displayed on NVD site." %}">
         {% trans "CVSS score" %}
       </abbr>
     </div>
-    <div class="col-12 col-md-8 text-severity{{ security.severity_index }}">
+    <div class="col-12 col-md-9 text-severity{{ security.severity_index }}">
       {{ security.cvss_score }}
       <span class="text-muted"> / 10</span>
     </div>
   </div>
   <div class="row">
-    <div class="col-12 col-md-4 fw-bold">
+    <div class="col-12 col-md-3 fw-bold">
       <abbr title="{% trans "Common Vulnerability Scoring System severity: it is established by WeeChat team and may not reflect exactly the severity displayed on NVD site." %}">
         {% trans "Severity" %}
       </abbr>
     </div>
-    <div class="col-12 col-md-8">
+    <div class="col-12 col-md-9">
       {{ security.score_bar }}
       <span class="ms-2 text-severity{{ security.severity_index }}">
         {{ security.severity_i18n }}
@@ -204,10 +204,10 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-12 col-md-4 fw-bold">
+    <div class="col-12 col-md-3 fw-bold">
       <abbr title="{% trans "Also known as Common Weakness Enumeration (CWE)." %}">{% trans "Vulnerability type" %}</abbr>
     </div>
-    <div class="col-12 col-md-8">
+    <div class="col-12 col-md-9">
       {{ security.cwe_i18n }}
       {% if security.cwe_id > 0 %}
       (<a href="{{ security.url_cwe }}">{% trans "detail" %}</a>)
@@ -215,28 +215,28 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-12 col-md-4 fw-bold">
+    <div class="col-12 col-md-3 fw-bold">
       {% trans "Scope" %}
     </div>
-    <div class="col-12 col-md-8">
+    <div class="col-12 col-md-9">
       {{ security.scope_i18n }}
     </div>
   </div>
   <div class="row">
-    <div class="col-12 col-md-4 fw-bold">
+    <div class="col-12 col-md-3 fw-bold">
       {% trans "Affected versions" %}
     </div>
-    <div class="col-12 col-md-8">
+    <div class="col-12 col-md-9">
       <span class="text-danger fw-bold">
         {{ security.affected_html }}
       </span>
     </div>
   </div>
   <div class="row">
-    <div class="col-12 col-md-4 fw-bold">
+    <div class="col-12 col-md-3 fw-bold">
       {% trans "Fixed version" %}
     </div>
-    <div class="col-12 col-md-8">
+    <div class="col-12 col-md-9">
       {% if security.fixed %}
       <span class="text-success fw-bold me-2">
         {{ security.fixed }}
@@ -254,16 +254,16 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-12 col-md-4 fw-bold">
+    <div class="col-12 col-md-3 fw-bold">
     </div>
-    <div class="col-12 col-md-8">
+    <div class="col-12 col-md-9">
     </div>
   </div>
   <div class="row">
-    <div class="col-12 col-md-4 fw-bold">
+    <div class="col-12 col-md-3 fw-bold">
       {% trans "Tracker" %}
     </div>
-    <div class="col-12 col-md-8">
+    <div class="col-12 col-md-9">
       {% if security.tracker %}
       {{ security.url_tracker }}
       {% else %}
@@ -272,10 +272,10 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-12 col-md-4 fw-bold">
+    <div class="col-12 col-md-3 fw-bold">
       {% trans "Commits" %}
     </div>
-    <div class="col-12 col-md-8 commits">
+    <div class="col-12 col-md-9 commits">
       {{ security.url_commits|default:"-" }}
     </div>
   </div>
