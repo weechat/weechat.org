@@ -125,6 +125,12 @@
     {% endfor %}
     </ul>
 
+    {% if project == 'weechat' and version == "stable" %}
+    <p>
+      {% blocktrans %}Container images are also available on the <a href="https://hub.docker.com/r/weechat/weechat">Docker Hub</a>.{% endblocktrans %}
+    </p>
+    {% endif %}
+
     {% if version != "devel" and version != "old" %}
     <h6>{% trans "Checking the signatures:" %}</h6>
     <ul class="signatures mt-2">
