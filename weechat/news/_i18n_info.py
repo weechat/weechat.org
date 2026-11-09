@@ -178,6 +178,7 @@ def __i18n_news_info():
     gettext_noop("Version 4.10.1 is available!\n\nThis is a bug fix and maintenance release.\n\nBugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/v4.10.1\">ChangeLog</a>.")
     gettext_noop("Version 4.10.2 is available!\n\nThis is a bug fix and maintenance release.\n\nBugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/v4.10.2\">ChangeLog</a>.")
     gettext_noop("Version 4.10.3 is available!\n\nThis is a bug fix and maintenance release.\n\nBugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/v4.10.3\">ChangeLog</a>.")
+    gettext_noop("Version 4.10.4 is available!\n\nThis is a bug fix and maintenance release.\n\nBugs fixed: <a href=\"https://github.com/weechat/weechat/releases/tag/v4.10.4\">ChangeLog</a>.")
     gettext_noop("Version 4.2.0 is available!\n\nNew features and bugs fixed: <a href=\"/files/doc/weechat/ChangeLog-4.2.0.html\">ChangeLog</a>.")
     gettext_noop("Version 4.2.1 is available!\n\nThis is a bug fix and maintenance release.\n\nBugs fixed: <a href=\"/files/doc/weechat/ChangeLog-4.2.1.html\">ChangeLog</a>.")
     gettext_noop("Version 4.2.2 is available!\n\nThis is a bug fix and maintenance release.\n\nBugs fixed: <a href=\"/files/doc/weechat/ChangeLog-4.2.2.html\">ChangeLog</a>.")
