@@ -2,6 +2,9 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+RUFF_VERSION ?= latest
+TY_VERSION ?= latest
+
 all: check
 
 check: gettext lint
@@ -12,7 +15,7 @@ gettext:
 	poexam check --file-stats --rule-stats
 
 ruff:
-	uvx ruff check
+	uvx ruff@$(RUFF_VERSION) check
 
 ty:
-	uvx ty check
+	uvx ty@$(TY_VERSION) check
