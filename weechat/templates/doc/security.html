@@ -71,6 +71,15 @@
 
 {% if sec_list %}
 
+<p>
+  {% comment %}Translators: "Affected" refers to the version (for example: "Version 4.0.0 affected by 3 vulnerabilities"){% endcomment %}
+  {% blocktrans trimmed count counter=sec_list|length %}
+  Affected by {{ counter }} vulnerability:
+  {% plural %}
+  Affected by {{ counter }} vulnerabilities:
+  {% endblocktrans %}
+</p>
+
 <ul>
   {% for security in sec_list %}
   <li>
