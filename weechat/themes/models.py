@@ -265,7 +265,7 @@ class ThemeFormUpdate(forms.Form):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.label_suffix = ''
-        self.fields['theme'].choices = get_theme_choices()  # ty: ignore[unresolved-attribute]
+        self.fields['theme'].choices = get_theme_choices()  # ty: ignore[missing-attribute]
 
     def clean_themefile(self):
         """Check if theme file is valid."""
